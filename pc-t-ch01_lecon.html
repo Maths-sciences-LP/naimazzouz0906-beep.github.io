@@ -1,23 +1,330 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cours — Ch01 Évaluer la puissance consommée</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: #f6f8fa; color: #1f2328; margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: auto; text-align: center; padding: 80px 20px; }
-        .back { display: inline-block; margin-bottom: 40px; text-decoration: none; color: #6e7781; font-size: 0.9em; }
-        .back:hover { color: #6f42c1; }
-        h1 { font-size: 1.4em; font-weight: 600; margin-bottom: 8px; }
-        p { color: #6e7781; font-size: 0.95em; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch01 – Évaluer la puissance consommée – Cours</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#6f42c1;--s:#2f855a;--d:#c53030;--o:#d97706;--t:#2d3748}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);line-height:1.7;margin:0;padding:20px}
+.c{max-width:860px;margin:auto;background:#fff;padding:35px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+header{text-align:center;border-bottom:3px solid var(--p);margin-bottom:30px;padding-bottom:18px}
+h1{margin:0 0 6px;color:var(--p);font-size:1.7em}
+.sous-titre{color:#718096;font-size:.95em;margin:0}
+h2{font-size:1.15em;color:var(--p);border-left:4px solid var(--p);padding-left:12px;margin-top:34px;margin-bottom:12px}
+.def{background:#f5f0ff;border-left:5px solid var(--p);padding:14px 18px;border-radius:0 8px 8px 0;margin:14px 0}
+.prop{background:#f0fff4;border-left:5px solid var(--s);padding:14px 18px;border-radius:0 8px 8px 0;margin:14px 0}
+.att{background:#fff5f5;border-left:5px solid var(--d);padding:14px 18px;border-radius:0 8px 8px 0;margin:14px 0}
+.meth{background:#fffbeb;border-left:5px solid var(--o);padding:14px 18px;border-radius:0 8px 8px 0;margin:14px 0}
+.ex{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:16px;margin:14px 0}
+.label{display:inline-block;font-size:.75em;font-weight:700;text-transform:uppercase;padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.label-def{background:#ede9fe;color:#5b21b6}
+.label-prop{background:#d1fae5;color:#065f46}
+.label-att{background:#fee2e2;color:#991b1b}
+.label-meth{background:#fef3c7;color:#92400e}
+.label-ex{background:#e2e8f0;color:#4a5568}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.92em}
+th,td{border:1px solid #e2e8f0;padding:10px 12px;text-align:center}
+th{background:#eef2f7;font-weight:600}
+.nb{margin-bottom:20px;display:block;text-decoration:none;color:var(--p);font-size:.85em;font-weight:700}
+.formule-box{text-align:center;background:#f5f0ff;border:2px solid var(--p);border-radius:8px;padding:14px 20px;margin:14px 0;font-size:1.05em}
+.formule-box small{display:block;margin-top:4px;color:#718096;font-size:.82em}
+.svg-wrap{text-align:center;margin:18px 0}
+.objectifs{background:#f5f0ff;border-radius:8px;padding:14px 18px;margin-bottom:28px;border:1px solid #ddd6fe}
+.objectifs ul{margin:6px 0 0 0;padding-left:20px}
+</style>
 </head>
 <body>
-<div class="container">
-    <a href="pc-term-iccer.html" class="back">← Retour</a>
-    <h1>Cours — Évaluer la puissance consommée</h1>
-    <p>Page en construction.</p>
+<div class="c">
+<a href="pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Chapitre 1 – Évaluer la puissance consommée</h1>
+  <p class="sous-titre">Terminale Bac Pro ICCER &nbsp;|&nbsp; Physique – Électricité</p>
+</header>
+
+<div class="objectifs">
+  <strong>Je vais apprendre à :</strong>
+  <ul>
+    <li>Calculer la puissance instantanée à partir de u(t) et i(t)</li>
+    <li>Mesurer un déphasage entre la tension et le courant</li>
+    <li>Calculer la puissance active et la puissance apparente</li>
+    <li>Expliquer le rôle du facteur de puissance et de la compensation</li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<h2>1. Rappels sur le courant alternatif</h2>
+
+<div class="def">
+  <span class="label label-def">Courant alternatif sinusoïdal</span><br>
+  Le courant du réseau électrique est un courant <strong>alternatif sinusoïdal</strong> : son intensité varie périodiquement en changeant de sens.
+  <ul>
+    <li><strong>Période T</strong> : durée d'un cycle complet, en secondes (s) ou millisecondes (ms)</li>
+    <li><strong>Fréquence f</strong> : nombre de cycles par seconde, en hertz (Hz)</li>
+  </ul>
+</div>
+
+<div class="formule-box">
+  \[ T = \frac{1}{f} \qquad \text{et} \qquad f = \frac{1}{T} \]
+  <small>T en secondes (s) &nbsp;|&nbsp; f en hertz (Hz)</small>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple – réseau français</span><br>
+  La fréquence du réseau est \(f = 50\) Hz.<br>
+  \[ T = \frac{1}{50} = 0{,}02 \text{ s} = \mathbf{20 \text{ ms}} \]
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Valeurs efficaces</span><br>
+  On caractérise un signal alternatif par ses <strong>valeurs efficaces</strong> :
+  <ul>
+    <li><strong>U</strong> : tension efficace, en volts (V) &nbsp;→&nbsp; en France : <strong>U = 230 V</strong></li>
+    <li><strong>I</strong> : intensité efficace, en ampères (A)</li>
+  </ul>
+  Ce sont ces valeurs que mesurent les voltmètres et ampèremètres en régime alternatif.
+</div>
+
+<!-- ============================================================ -->
+<h2>2. Déphasage entre u(t) et i(t)</h2>
+
+<div class="def">
+  <span class="label label-def">Déphasage</span><br>
+  En régime sinusoïdal monophasé, lorsqu'on applique une tension <em>u(t)</em> à un dipôle traversé par un courant <em>i(t)</em>, il peut apparaître un <strong>décalage temporel Δt</strong> entre les deux courbes.
+  <br>Ce décalage est appelé le <strong>déphasage φ</strong> (phi), exprimé en radians.
+  <ul>
+    <li>Avec une <strong>résistance</strong> : pas de déphasage (φ = 0)</li>
+    <li>Avec une <strong>bobine</strong> ou un <strong>moteur</strong> : i(t) est en retard sur u(t)</li>
+  </ul>
+</div>
+
+<div class="svg-wrap">
+  <svg width="520" height="170" viewBox="0 0 520 170" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="ah" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0,0 7,3.5 0,7" fill="#0056b3"/></marker>
+      <marker id="ah2" markerWidth="7" markerHeight="7" refX="1" refY="3.5" orient="auto"><polygon points="7,0 0,3.5 7,7" fill="#0056b3"/></marker>
+    </defs>
+    <!-- Grille légère -->
+    <line x1="40" y1="85" x2="500" y2="85" stroke="#ddd" stroke-width="1"/>
+    <line x1="40" y1="30" x2="40" y2="155" stroke="#ddd" stroke-width="1"/>
+    <line x1="140" y1="30" x2="140" y2="155" stroke="#ddd" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="240" y1="30" x2="240" y2="155" stroke="#ddd" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="340" y1="30" x2="340" y2="155" stroke="#ddd" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="440" y1="30" x2="440" y2="155" stroke="#ddd" stroke-width="1" stroke-dasharray="4,3"/>
+    <!-- Axes -->
+    <line x1="38" y1="85" x2="503" y2="85" stroke="#555" stroke-width="1.5" marker-end="url(#ah)"/>
+    <line x1="40" y1="155" x2="40" y2="22" stroke="#555" stroke-width="1.5" marker-end="url(#ah)"/>
+    <text x="506" y="89" font-size="12" fill="#555" font-family="Segoe UI,sans-serif">t (ms)</text>
+    <!-- Repères T -->
+    <text x="233" y="100" font-size="11" fill="#888" font-family="Segoe UI,sans-serif">20</text>
+    <text x="333" y="100" font-size="11" fill="#888" font-family="Segoe UI,sans-serif">30</text>
+    <text x="133" y="100" font-size="11" fill="#888" font-family="Segoe UI,sans-serif">10</text>
+    <text x="33" y="100" font-size="11" fill="#888" font-family="Segoe UI,sans-serif">0</text>
+    <!-- u(t) rouge: sin avec T=200px, amplitude=50px, départ à x=40 -->
+    <polyline fill="none" stroke="#c53030" stroke-width="2.5"
+      points="40,85 46,73 52,61 58,50 64,41 70,35 76,31 82,30 88,31 94,35 100,41 106,50 112,61 118,73 124,85 130,97 136,109 142,119 148,128 154,134 160,138 166,140 172,138 178,134 184,128 190,119 196,109 202,97 208,85 214,73 220,61 226,50 232,41 238,35 244,31 250,30 256,31 262,35 268,41 274,50 280,61 286,73 292,85 298,97 304,109 310,119 316,128 322,134 328,138 334,140 340,138 346,134 352,128 358,119 364,109 370,97 376,85 382,73 388,61 394,50 400,41 406,35 412,31 418,30 424,31 430,35 436,41 442,50 448,61 454,73 460,85 466,97 472,109 478,119 484,128 490,134 496,138 500,139"/>
+    <!-- i(t) vert: décalé de 25px (~2.5ms) -->
+    <polyline fill="none" stroke="#2f855a" stroke-width="2.5" stroke-dasharray="6,3"
+      points="40,97 46,109 52,119 58,128 64,134 70,138 76,140 82,138 88,134 94,128 100,119 106,109 112,97 118,85 124,73 130,61 136,50 142,41 148,35 154,31 160,30 166,31 172,35 178,41 184,50 190,61 196,73 202,85 208,97 214,109 220,119 226,128 232,134 238,138 244,140 250,138 256,134 262,128 268,119 274,109 280,97 286,85 292,73 298,61 304,50 310,41 316,35 322,31 328,30 334,31 340,35 346,41 352,50 358,61 364,73 370,85 376,97 382,109 388,119 394,128 400,134 406,138 412,140 418,138 424,134 430,128 436,119 442,109 448,97 454,85 460,73 466,61 472,50 478,41 484,35 490,31 496,30 500,30"/>
+    <!-- Légendes -->
+    <line x1="56" y1="22" x2="76" y2="22" stroke="#c53030" stroke-width="2.5"/>
+    <text x="80" y="26" font-size="12" fill="#c53030" font-weight="bold" font-family="Segoe UI,sans-serif">u(t)</text>
+    <line x1="140" y1="22" x2="160" y2="22" stroke="#2f855a" stroke-width="2.5" stroke-dasharray="6,3"/>
+    <text x="164" y="26" font-size="12" fill="#2f855a" font-weight="bold" font-family="Segoe UI,sans-serif">i(t)</text>
+    <!-- Flèche Δt -->
+    <line x1="82" y1="115" x2="160" y2="115" stroke="#0056b3" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ah2)"/>
+    <text x="107" y="130" font-size="12" fill="#0056b3" font-weight="bold" font-family="Segoe UI,sans-serif">Δt</text>
+    <!-- Lignes pointillées verticales pour Δt -->
+    <line x1="82" y1="30" x2="82" y2="118" stroke="#0056b3" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="160" y1="30" x2="160" y2="118" stroke="#0056b3" stroke-width="1" stroke-dasharray="3,3"/>
+  </svg>
+  <p style="font-size:.85em;color:#718096;margin-top:4px">
+    Le courant <span style="color:#2f855a;font-weight:600">i(t)</span> (vert) est en <strong>retard</strong> sur la tension <span style="color:#c53030;font-weight:600">u(t)</span> (rouge) d'un temps <strong>Δt</strong>.
+  </p>
+</div>
+
+<div class="formule-box">
+  \[ \varphi = \frac{\Delta t}{T} \times 2\pi \]
+  <small>φ en radians (rad) &nbsp;|&nbsp; Δt et T dans la même unité (s ou ms)</small>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span><br>
+  T = 20 ms, Δt = 2,5 ms :
+  \[ \varphi = \frac{2{,}5}{20} \times 2\pi = 0{,}125 \times 6{,}28 \approx \mathbf{0{,}785 \text{ rad}} \]
+</div>
+
+<!-- ============================================================ -->
+<h2>3. Puissance instantanée p(t)</h2>
+
+<div class="def">
+  <span class="label label-def">Puissance instantanée</span><br>
+  La <strong>puissance instantanée p(t)</strong> est le produit de la tension instantanée par l'intensité instantanée. Elle <strong>varie en permanence</strong> au cours du temps.
+  <div class="formule-box" style="margin-top:10px">
+    \[ p(t) = u(t) \times i(t) \]
+    <small>p(t) en watts (W)</small>
+  </div>
+  Elle peut être visualisée à l'oscilloscope ou avec un dispositif ExAO.
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Cas du dipôle résistif (sans déphasage)</span><br>
+  La puissance instantanée est toujours <strong>positive ou nulle</strong>. L'énergie est entièrement dissipée sous forme de chaleur.
+</div>
+
+<div class="att">
+  <span class="label label-att">Cas du dipôle inductif (avec déphasage)</span><br>
+  La puissance instantanée peut devenir <strong>négative</strong> par moments : l'énergie « revient » vers la source. Cela représente la puissance réactive échangée avec la bobine.
+</div>
+
+<!-- ============================================================ -->
+<h2>4. Puissance active P</h2>
+
+<div class="def">
+  <span class="label label-def">Puissance active (ou puissance moyenne)</span><br>
+  La <strong>puissance active P</strong>, aussi appelée <em>puissance moyenne</em> ou <em>puissance utile</em>, est la puissance réellement transformée en travail utile (chaleur, mouvement, lumière...).
+  <ul>
+    <li>Unité : <strong>watt (W)</strong></li>
+    <li>Se mesure avec un <strong>wattmètre</strong></li>
+    <li>Tient compte du déphasage φ</li>
+  </ul>
+</div>
+
+<div class="formule-box">
+  \[ P = U \times I \times \cos\varphi \]
+  <small>P en watts (W) &nbsp;|&nbsp; U en volts (V) &nbsp;|&nbsp; I en ampères (A)</small>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span><br>
+  Moteur : U = 230 V, I = 9,5 A, cos φ = 0,92
+  \[ P = 230 \times 9{,}5 \times 0{,}92 = \mathbf{2010{,}2 \text{ W}} \]
+</div>
+
+<!-- ============================================================ -->
+<h2>5. Puissance apparente S</h2>
+
+<div class="def">
+  <span class="label label-def">Puissance apparente</span><br>
+  La <strong>puissance apparente S</strong> est la puissance <strong>maximale que le réseau doit fournir</strong>. Elle correspond à la puissance active quand le dipôle est purement résistif (cos φ = 1).
+  <ul>
+    <li>Unité : <strong>voltampère (VA)</strong></li>
+    <li>C'est la puissance qui détermine le dimensionnement des câbles et disjoncteurs</li>
+  </ul>
+</div>
+
+<div class="formule-box">
+  \[ S = U \times I \]
+  <small>S en voltampères (VA) &nbsp;|&nbsp; U en volts (V) &nbsp;|&nbsp; I en ampères (A)</small>
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention</span><br>
+  On a toujours <strong>P ≤ S</strong>.
+  La puissance active est toujours inférieure ou égale à la puissance apparente.
+  Elles sont égales uniquement quand cos φ = 1.
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple – suite</span><br>
+  Moteur : U = 230 V, I = 9,5 A
+  \[ S = 230 \times 9{,}5 = \mathbf{2185 \text{ VA}} \]
+  On constate bien que S (2185 VA) > P (2010 W).
+</div>
+
+<!-- ============================================================ -->
+<h2>6. Facteur de puissance – cos φ</h2>
+
+<div class="def">
+  <span class="label label-def">Facteur de puissance</span><br>
+  Le <strong>facteur de puissance</strong> est le cosinus du déphasage φ entre u(t) et i(t).
+  Il indique quelle fraction de la puissance apparente est réellement utile.
+  <div class="formule-box" style="margin-top:10px">
+    \[ \cos\varphi = \frac{P}{S} \]
+    <small>cos φ est sans unité &nbsp;|&nbsp; il est toujours compris entre 0 et 1</small>
+  </div>
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Dipôles et facteur de puissance</span>
+  <table>
+    <tr><th>Type de dipôle</th><th>Composant</th><th>Déphasage φ</th><th>cos φ</th></tr>
+    <tr><td>Résistif pur</td><td>Résistance R</td><td>φ = 0</td><td style="color:#2f855a;font-weight:700">1</td></tr>
+    <tr><td>Inductif</td><td>Bobine L, moteur, transformateur</td><td>i(t) en retard</td><td style="color:#d97706;font-weight:700">&lt; 1</td></tr>
+    <tr><td>Capacitif</td><td>Condensateur C</td><td>i(t) en avance</td><td style="color:#d97706;font-weight:700">&lt; 1</td></tr>
+  </table>
+</div>
+
+<!-- ============================================================ -->
+<h2>7. Compensation du facteur de puissance</h2>
+
+<div class="prop">
+  <span class="label label-prop">Problème des appareils inductifs</span><br>
+  Les <strong>moteurs, compresseurs, ventilateurs, transformateurs</strong> contiennent des bobines qui diminuent le facteur de puissance. Un mauvais cos φ entraîne :
+  <ul>
+    <li>Un courant plus élevé dans les câbles pour la même puissance utile</li>
+    <li>Des pertes par échauffement (effet Joule) dans les câbles</li>
+    <li>Un surdimensionnement des installations (câbles, disjoncteurs)</li>
+    <li>Une pénalité financière des fournisseurs d'énergie dans l'industrie</li>
+  </ul>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Solution : batterie de condensateurs</span><br>
+  On ajoute des <strong>condensateurs</strong> (batterie de condensateurs) en parallèle avec l'installation pour compenser l'effet des bobines. Cela permet de :
+  <ul>
+    <li><strong>Rapprocher cos φ de 1</strong></li>
+    <li><strong>Réduire l'intensité du courant</strong> dans les câbles</li>
+    <li>Diminuer les pertes par effet Joule et prolonger la durée de vie des installations</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple – tube fluorescent</span><br>
+  Un tube fluorescent avec ballast électromagnétique (bobine) a cos φ ≈ 0,5 sans condensateur.<br>
+  En ajoutant un condensateur en parallèle, on peut atteindre cos φ ≈ 0,9.
+</div>
+
+<!-- ============================================================ -->
+<h2>8. Tableau récapitulatif</h2>
+
+<table>
+  <tr>
+    <th>Grandeur</th><th>Symbole</th><th>Unité</th><th>Formule</th>
+  </tr>
+  <tr>
+    <td>Période</td><td>T</td><td>seconde (s)</td>
+    <td>\(T = \dfrac{1}{f}\)</td>
+  </tr>
+  <tr>
+    <td>Fréquence</td><td>f</td><td>hertz (Hz)</td>
+    <td>\(f = \dfrac{1}{T}\)</td>
+  </tr>
+  <tr>
+    <td>Déphasage</td><td>φ</td><td>radian (rad)</td>
+    <td>\(\varphi = \dfrac{\Delta t}{T} \times 2\pi\)</td>
+  </tr>
+  <tr>
+    <td>Puissance instantanée</td><td>p(t)</td><td>watt (W)</td>
+    <td>\(p(t) = u(t) \times i(t)\)</td>
+  </tr>
+  <tr>
+    <td>Puissance active</td><td>P</td><td>watt (W)</td>
+    <td>\(P = U \times I \times \cos\varphi\)</td>
+  </tr>
+  <tr>
+    <td>Puissance apparente</td><td>S</td><td>voltampère (VA)</td>
+    <td>\(S = U \times I\)</td>
+  </tr>
+  <tr>
+    <td>Facteur de puissance</td><td>cos φ</td><td>sans unité</td>
+    <td>\(\cos\varphi = \dfrac{P}{S}\)</td>
+  </tr>
+</table>
+
 </div>
 </body>
 </html>
