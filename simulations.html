@@ -7,88 +7,279 @@
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f8f9fa; margin: 0; padding: 20px; color: #333; }
         .container { max-width: 1000px; margin: 0 auto; }
-        header { background-color: #28a745; color: white; padding: 30px; text-align: center; border-radius: 10px; margin-bottom: 40px; position: relative; }
+        header { background-color: #28a745; color: white; padding: 30px; text-align: center; border-radius: 10px; margin-bottom: 30px; position: relative; }
         .btn-accueil { position: absolute; left: 20px; top: 20px; background: rgba(255,255,255,0.2); color: white; text-decoration: none; padding: 5px 15px; border-radius: 5px; font-size: 0.9em; }
-        .domaine-titre { color: #28a745; border-bottom: 3px solid #e9ecef; padding-bottom: 10px; margin: 40px 0 20px 0; display: flex; align-items: center; gap: 10px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: white; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eee; transition: transform 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
-        .card:hover { transform: translateY(-5px); }
-        .icon { font-size: 40px; margin-bottom: 15px; }
-        .tag { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 0.75em; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; }
-        .tag-maths { background: #e3f2fd; color: #1976d2; }
-        .tag-physique { background: #f3e5f5; color: #7b1fa2; }
-        .btn-lancer { background-color: #28a745; color: white; text-decoration: none; padding: 10px; border-radius: 6px; font-weight: bold; display: block; }
+
+        /* Filtres */
+        .filtres { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; align-items: center; }
+        .filtre-label { font-weight: 600; margin-right: 5px; }
+        .btn-filtre { padding: 6px 15px; border-radius: 20px; border: 2px solid #ccc; background: white; cursor: pointer; font-size: 0.9em; transition: 0.2s; }
+        .btn-filtre.active, .btn-filtre:hover { background: #28a745; color: white; border-color: #28a745; }
+        .sep { width: 1px; background: #ddd; height: 30px; }
+
+        /* Sections thème */
+        .theme-section { margin-bottom: 35px; }
+        .theme-titre {
+            display: flex; align-items: center; gap: 12px;
+            padding: 10px 16px; border-radius: 8px; margin-bottom: 15px;
+            font-size: 1.15em; font-weight: 700; color: white;
+        }
+        .theme-elec   { background: #6f42c1; }
+        .theme-thermo { background: #e67e22; }
+        .theme-meca   { background: #0284c7; }
+        .theme-chimie { background: #b45309; }
+        .theme-signal { background: #0f766e; }
+        .theme-maths  { background: #1976d2; }
+
+        /* Cartes */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+        .card {
+            background: white; border-radius: 12px; padding: 18px;
+            text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+            border: 1px solid #eee; transition: transform 0.2s, box-shadow 0.2s;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+        .icon { font-size: 36px; margin-bottom: 10px; }
+        .badge-niveau {
+            display: inline-block; padding: 2px 10px; border-radius: 20px;
+            font-size: 0.72em; font-weight: bold; margin-bottom: 10px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .badge-term { background: #ede9fe; color: #6d28d9; }
+        .badge-2nde { background: #dbeafe; color: #1d4ed8; }
+        .card h3 { font-size: 1em; margin: 0 0 6px 0; }
+        .card p { font-size: 0.85em; color: #666; margin: 0 0 14px 0; flex-grow: 1; }
+
+        .btn-lancer {
+            display: block; padding: 9px;
+            border-radius: 6px; text-decoration: none;
+            font-weight: bold; color: white; font-size: 0.9em;
+            transition: opacity 0.15s;
+        }
+        .btn-lancer:hover { opacity: 0.85; }
+        .btn-elec   { background: #6f42c1; }
+        .btn-thermo { background: #e67e22; }
+        .btn-meca   { background: #0284c7; }
+        .btn-chimie { background: #b45309; }
+        .btn-signal { background: #0f766e; }
+        .btn-maths  { background: #1976d2; }
+
+        /* Masquage filtres */
+        .card[data-niveau="term"].hide-term { display: none; }
+        .card[data-niveau="2nde"].hide-2nde { display: none; }
     </style>
 </head>
 <body>
-
 <div class="container">
     <header>
         <a href="index.html" class="btn-accueil">← Accueil</a>
         <h1>⚙️ Laboratoire Virtuel</h1>
-        <p>Simulations Interactives</p>
+        <p>Simulations interactives — Maths & Physique-Chimie</p>
     </header>
 
-    <h2 class="domaine-titre">📐 Mathématiques</h2>
-    <div class="grid">
-        <div class="card">
-            <div>
-                <div class="icon">📈</div>
-                <span class="tag tag-maths">Maths</span>
-                <h3>Fonctions du 2nd degré</h3>
-                <p>Analyse de la parabole.</p>
+    <!-- Filtres niveau -->
+    <div class="filtres">
+        <span class="filtre-label">Niveau :</span>
+        <button class="btn-filtre active" onclick="filtrer('tous', this)">Tous</button>
+        <button class="btn-filtre" onclick="filtrer('term', this)">Terminale Pro</button>
+        <button class="btn-filtre" onclick="filtrer('2nde', this)">2nde Pro</button>
+    </div>
+
+    <!-- ÉLECTRICITÉ -->
+    <div class="theme-section" data-theme="elec">
+        <div class="theme-titre theme-elec">⚡ Électricité</div>
+        <div class="grid">
+            <div class="card" data-niveau="term">
+                <div>
+                    <div class="icon">🔋</div>
+                    <span class="badge-niveau badge-term">Terminale · Ch01</span>
+                    <h3>Puissance Électrique</h3>
+                    <p>Triangle des puissances P, Q, S et facteur cos(φ).</p>
+                </div>
+                <a href="simu-puissance.html" class="btn-lancer btn-elec">Lancer →</a>
             </div>
-            <a href="simu-traceur.html" class="btn-lancer">Lancer →</a>
-        </div>
-        <div class="card">
-            <div>
-                <div class="icon">🟰</div>
-                <span class="tag tag-maths">Maths</span>
-                <h3>Résolution d'Équations</h3>
-                <p>Résoudre pas à pas \( ax + b = c \).</p>
+            <div class="card" data-niveau="term">
+                <div>
+                    <div class="icon">🔌</div>
+                    <span class="badge-niveau badge-term">Terminale · Ch02</span>
+                    <h3>Redressement du Courant</h3>
+                    <p>Demi-alternance et pont de Graetz — conversion AC/DC.</p>
+                </div>
+                <a href="simu-redressement.html" class="btn-lancer btn-elec">Lancer →</a>
             </div>
-            <a href="simu-equations.html" class="btn-lancer">Lancer →</a>
+            <div class="card" data-niveau="term">
+                <div>
+                    <div class="icon">⚙️</div>
+                    <span class="badge-niveau badge-term">Terminale · Ch03</span>
+                    <h3>Moteur Électrique</h3>
+                    <p>Champ tournant, vitesse synchrone et glissement.</p>
+                </div>
+                <a href="simu-moteur.html" class="btn-lancer btn-elec">Lancer →</a>
+            </div>
+            <div class="card" data-niveau="2nde">
+                <div>
+                    <div class="icon">⚡</div>
+                    <span class="badge-niveau badge-2nde">2nde Pro</span>
+                    <h3>Loi d'Ohm</h3>
+                    <p>Calculer U, R ou I simplement.</p>
+                </div>
+                <a href="simu-ohm.html" class="btn-lancer btn-elec">Lancer →</a>
+            </div>
         </div>
     </div>
 
-    <h2 class="domaine-titre">🍎 Physique</h2>
-    <div class="grid">
-        <div class="card">
-            <div>
-                <div class="icon">⚖️</div>
-                <span class="tag tag-physique">Physique</span>
-                <h3>Mélangeur de Couleurs</h3>
-                <p>Synthèse additive RVB.</p>
+    <!-- THERMIQUE -->
+    <div class="theme-section" data-theme="thermo">
+        <div class="theme-titre theme-thermo">🌡️ Thermique</div>
+        <div class="grid">
+            <div class="card" data-niveau="term">
+                <div>
+                    <div class="icon">🌡️</div>
+                    <span class="badge-niveau badge-term">Terminale · Ch04</span>
+                    <h3>Rayonnement Thermique</h3>
+                    <p>Loi de Wien, corps noir, Stefan-Boltzmann, effet de serre.</p>
+                </div>
+                <a href="simu-rayonnement.html" class="btn-lancer btn-thermo">Lancer →</a>
             </div>
-            <a href="simu-melangeur.html" class="btn-lancer">Lancer →</a>
-        </div>
-        <div class="card">
-            <div>
-                <div class="icon">⚡</div>
-                <span class="tag tag-physique">Physique</span>
-                <h3>Loi d'Ohm</h3>
-                <p>Calculer U, R ou I simplement.</p>
-            </div>
-            <a href="simu-ohm.html" class="btn-lancer">Lancer →</a>
         </div>
     </div>
 
-    <h2 class="domaine-titre">🧪 Chimie</h2>
-    <div class="grid">
-        <div class="card">
-            <div><div class="icon">⚛️</div><h3>Constructeur d'Atomes</h3></div>
-            <a href="simu-atome.html" class="btn-lancer">Lancer →</a>
+    <!-- MÉCANIQUE DES FLUIDES -->
+    <div class="theme-section" data-theme="meca">
+        <div class="theme-titre theme-meca">💧 Mécanique des fluides</div>
+        <div class="grid">
+            <div class="card" data-niveau="term">
+                <div>
+                    <div class="icon">🏊</div>
+                    <span class="badge-niveau badge-term">Terminale · Ch05</span>
+                    <h3>Pression dans un Fluide</h3>
+                    <p>P = P₀ + ρgh — paradoxe hydrostatique, Pascal.</p>
+                </div>
+                <a href="simu-pression.html" class="btn-lancer btn-meca">Lancer →</a>
+            </div>
+            <div class="card" data-niveau="term">
+                <div>
+                    <div class="icon">🌊</div>
+                    <span class="badge-niveau badge-term">Terminale · Ch06</span>
+                    <h3>Débit Volumique</h3>
+                    <p>Qv = S·v — équation de continuité, remplissage.</p>
+                </div>
+                <a href="simu-debit.html" class="btn-lancer btn-meca">Lancer →</a>
+            </div>
         </div>
-        <div class="card">
-            <div><div class="icon">🌀</div><h3>Couches Électroniques</h3></div>
-            <a href="simu-atome-couches.html" class="btn-lancer">Lancer →</a>
+    </div>
+
+    <!-- CHIMIE -->
+    <div class="theme-section" data-theme="chimie">
+        <div class="theme-titre theme-chimie">🧪 Chimie</div>
+        <div class="grid">
+            <div class="card" data-niveau="term">
+                <div>
+                    <div class="icon">🔬</div>
+                    <span class="badge-niveau badge-term">Terminale · Ch07</span>
+                    <h3>Oxydoréduction</h3>
+                    <p>Pile galvanique, FEM, couples redox, protection des métaux.</p>
+                </div>
+                <a href="simu-oxydoreduction.html" class="btn-lancer btn-chimie">Lancer →</a>
+            </div>
+            <div class="card" data-niveau="2nde">
+                <div>
+                    <div class="icon">⚛️</div>
+                    <span class="badge-niveau badge-2nde">2nde Pro</span>
+                    <h3>Constructeur d'Atomes</h3>
+                    <p>Protons, neutrons, électrons.</p>
+                </div>
+                <a href="simu-atome.html" class="btn-lancer btn-chimie">Lancer →</a>
+            </div>
+            <div class="card" data-niveau="2nde">
+                <div>
+                    <div class="icon">🌀</div>
+                    <span class="badge-niveau badge-2nde">2nde Pro</span>
+                    <h3>Couches Électroniques</h3>
+                    <p>Remplissage des couches K, L, M.</p>
+                </div>
+                <a href="simu-atome-couches.html" class="btn-lancer btn-chimie">Lancer →</a>
+            </div>
+            <div class="card" data-niveau="2nde">
+                <div>
+                    <div class="icon">🧪</div>
+                    <span class="badge-niveau badge-2nde">2nde Pro</span>
+                    <h3>Modèles de l'Atome</h3>
+                    <p>Dalton, Thomson, Rutherford, Bohr.</p>
+                </div>
+                <a href="simu-modeles-atome.html" class="btn-lancer btn-chimie">Lancer →</a>
+            </div>
+            <div class="card" data-niveau="2nde">
+                <div>
+                    <div class="icon">⚖️</div>
+                    <span class="badge-niveau badge-2nde">2nde Pro</span>
+                    <h3>Mélangeur de Couleurs</h3>
+                    <p>Synthèse additive RVB.</p>
+                </div>
+                <a href="simu-melangeur.html" class="btn-lancer btn-chimie">Lancer →</a>
+            </div>
         </div>
-        <div class="card">
-            <div><div class="icon">🧪</div><h3>Modèles de l'Atome</h3></div>
-            <a href="simu-modeles-atome.html" class="btn-lancer">Lancer →</a>
+    </div>
+
+    <!-- SIGNAUX -->
+    <div class="theme-section" data-theme="signal">
+        <div class="theme-titre theme-signal">📡 Signaux</div>
+        <div class="grid">
+            <div class="card" data-niveau="term">
+                <div>
+                    <div class="icon">🔊</div>
+                    <span class="badge-niveau badge-term">Terminale · Ch08</span>
+                    <h3>Signal Sonore</h3>
+                    <p>Oscilloscope virtuel — fréquence, amplitude, longueur d'onde, écho.</p>
+                </div>
+                <a href="simu-son.html" class="btn-lancer btn-signal">Lancer →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MATHÉMATIQUES -->
+    <div class="theme-section" data-theme="maths">
+        <div class="theme-titre theme-maths">📐 Mathématiques</div>
+        <div class="grid">
+            <div class="card" data-niveau="2nde">
+                <div>
+                    <div class="icon">📈</div>
+                    <span class="badge-niveau badge-2nde">2nde Pro</span>
+                    <h3>Fonctions du 2nd degré</h3>
+                    <p>Analyse de la parabole et de ses paramètres.</p>
+                </div>
+                <a href="simu-traceur.html" class="btn-lancer btn-maths">Lancer →</a>
+            </div>
+            <div class="card" data-niveau="2nde">
+                <div>
+                    <div class="icon">🟰</div>
+                    <span class="badge-niveau badge-2nde">2nde Pro</span>
+                    <h3>Résolution d'Équations</h3>
+                    <p>Résoudre pas à pas ax + b = c.</p>
+                </div>
+                <a href="simu-equations.html" class="btn-lancer btn-maths">Lancer →</a>
+            </div>
         </div>
     </div>
 </div>
 
+<script>
+function filtrer(niveau, btn) {
+    document.querySelectorAll('.btn-filtre').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.style.display = '';
+        if (niveau === 'term' && card.dataset.niveau === '2nde') card.style.display = 'none';
+        if (niveau === '2nde' && card.dataset.niveau === 'term') card.style.display = 'none';
+    });
+    // Cacher les sections vides
+    document.querySelectorAll('.theme-section').forEach(section => {
+        const visibles = [...section.querySelectorAll('.card')].filter(c => c.style.display !== 'none');
+        section.style.display = visibles.length === 0 ? 'none' : '';
+    });
+}
+</script>
 </body>
 </html>
