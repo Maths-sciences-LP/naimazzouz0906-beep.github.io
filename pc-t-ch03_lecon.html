@@ -627,6 +627,154 @@ details summary:hover{text-decoration:underline}
   <strong>Référence BO :</strong> Terminale Bac Pro ICCER — Groupement 1 — Physique-Chimie : « Obtenir de l'énergie mécanique à l'aide d'un moteur électrique ». Connaissances exigibles : convertisseur électromécanique ; bilan de puissance ; rendement η ; plaque signalétique ; moteur CC (n ∝ U) ; moteur asynchrone (nₛ = 60f/p, nₛ ∝ f).
 </div>
 
+<!-- ====================================================
+     X. TABLEAU COMPARATIF MOTEUR CC / MOTEUR ASYNCHRONE
+     ==================================================== -->
+<h2>X – Comparaison CC vs asynchrone en ICCER</h2>
+
+<table class="recap-table">
+  <thead>
+    <tr>
+      <th>Critère</th>
+      <th>Moteur à courant continu (CC)</th>
+      <th>Moteur asynchrone triphasé</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Alimentation</strong></td>
+      <td>Courant continu (redresseur)</td>
+      <td>Courant alternatif triphasé 400 V / 50 Hz</td>
+    </tr>
+    <tr>
+      <td><strong>Vitesse</strong></td>
+      <td>\(n \propto U\) (réglable par tension)</td>
+      <td>\(n_s = 60f/p\) (réglable par variateur de fréquence)</td>
+    </tr>
+    <tr>
+      <td><strong>Réglage de vitesse</strong></td>
+      <td>Variation de tension → simple, précis</td>
+      <td>Variation de fréquence (variateur ATV) → très précis</td>
+    </tr>
+    <tr>
+      <td><strong>Entretien</strong></td>
+      <td>Bagues et balais à remplacer (usure)</td>
+      <td>Robuste, peu d'entretien (pas de balais)</td>
+    </tr>
+    <tr>
+      <td><strong>Rendement typique</strong></td>
+      <td>75 – 90 %</td>
+      <td>85 – 95 % (classe IE3)</td>
+    </tr>
+    <tr>
+      <td><strong>Applications ICCER</strong></td>
+      <td>Volets roulants, petits ventilateurs, moteurs d'asservissement</td>
+      <td>Compresseurs, CTA, pompes, groupes frigorifiques</td>
+    </tr>
+    <tr>
+      <td><strong>Démarrage</strong></td>
+      <td>Courant fort au démarrage</td>
+      <td>Démarrage étoile-triangle ou variateur pour limiter l'appel</td>
+    </tr>
+    <tr>
+      <td><strong>Avantages</strong></td>
+      <td>Bon couple à basse vitesse, contrôle simple</td>
+      <td>Robustesse, coût faible, rendement élevé</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ====================================================
+     XI. EXERCICE 5 — APPLICATIONS ICCER AVANCÉES
+     ==================================================== -->
+<h2>XI – Exercice 5 : Rendement global d'une installation</h2>
+
+<div class="exo">
+  <strong>Exercice 5 – Rendement global : moteur + pompe + réseau</strong> <span class="ticcer-badge">ICCER</span><br>
+  Une installation hydraulique de chauffage comporte :
+  <ul>
+    <li>Un moteur asynchrone triphasé : Pₐ = 2 200 W, η<sub>moteur</sub> = 88 %</li>
+    <li>Une pompe hydraulique : η<sub>pompe</sub> = 82 %</li>
+    <li>Des pertes dans le réseau de tuyauterie : P<sub>réseau</sub> = 180 W</li>
+  </ul>
+  <ol>
+    <li>Calculer la puissance mécanique Pᵤ fournie par le moteur à la pompe.</li>
+    <li>Calculer la puissance hydraulique utile transmise à l'eau par la pompe.</li>
+    <li>Calculer la puissance réellement disponible en bout de réseau (puissance hydraulique − pertes réseau).</li>
+    <li>Calculer le rendement global η<sub>global</sub> = P<sub>utile réseau</sub> / Pₐ.</li>
+    <li>Conclure sur l'intérêt d'améliorer η<sub>pompe</sub> de 82 % à 88 % (toutes choses égales par ailleurs).</li>
+  </ol>
+  <details>
+    <summary>Voir la correction</summary>
+    <div style="margin-top:10px;padding:10px;background:#f0fff4;border-radius:6px">
+      <strong>1. Puissance mécanique moteur :</strong><br>
+      \(P_u^{moteur} = P_a \times \eta_{moteur} = 2\,200 \times 0{,}88 = \mathbf{1\,936\,W}\)<br><br>
+      <strong>2. Puissance hydraulique pompe :</strong><br>
+      \(P_u^{pompe} = P_u^{moteur} \times \eta_{pompe} = 1\,936 \times 0{,}82 \approx \mathbf{1\,588\,W}\)<br><br>
+      <strong>3. Puissance utile en réseau :</strong><br>
+      \(P_{utile} = P_u^{pompe} - P_{réseau} = 1\,588 - 180 = \mathbf{1\,408\,W}\)<br><br>
+      <strong>4. Rendement global :</strong><br>
+      \(\eta_{global} = \dfrac{P_{utile}}{P_a} = \dfrac{1\,408}{2\,200} \approx \mathbf{0{,}64 = 64\,\%}\)<br><br>
+      <strong>5. Impact amélioration pompe :</strong><br>
+      Avec η<sub>pompe</sub> = 88 % : \(P_u^{pompe} = 1\,936 \times 0{,}88 \approx 1\,704\,W\)<br>
+      \(P_{utile} = 1\,704 - 180 = 1\,524\,W\) &nbsp;→&nbsp; η<sub>global</sub> = 1 524/2 200 ≈ <strong>69 %</strong><br>
+      Gain : +5 points de rendement = environ <strong>116 W supplémentaires</strong> utiles sur la même consommation électrique → économie notable sur 8 760 h/an.
+    </div>
+  </details>
+</div>
+
+<!-- ====================================================
+     XII. FOCUS VARIATEUR DE FRÉQUENCE
+     ==================================================== -->
+<h2>XII – Focus : le variateur de fréquence en ICCER</h2>
+
+<div class="def">
+  <span class="label label-def">Variateur de fréquence (VFD / ATV)</span><br>
+  Un <strong>variateur de fréquence</strong> (Variable Frequency Drive) est un convertisseur électronique qui permet de faire varier la fréquence de l'alimentation d'un moteur asynchrone, donc de régler précisément sa vitesse de rotation.
+  <br><strong>Principe :</strong> Réseau 50 Hz → Redresseur → Bus continu → Onduleur → moteur à f variable.
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Loi des ventilateurs (loi cubique)</span><br>
+  Pour une machine à fluide (pompe, ventilateur), la puissance absorbée varie avec le <strong>cube</strong> de la vitesse :
+  \[ \dfrac{P_2}{P_1} = \left(\dfrac{n_2}{n_1}\right)^3 \]
+  Exemple : réduire la vitesse de 20 % (n₂ = 0,8 × n₁) réduit la puissance à \(0{,}8^3 = 0{,}512\) soit <strong>49 % d'économie</strong> !
+</div>
+
+<div class="att">
+  <span class="label label-att">Erreur fréquente</span><br>
+  La loi cubique s'applique aux <strong>machines à fluide</strong> (pompes centrifuges, ventilateurs). Elle ne s'applique <strong>pas</strong> à toutes les charges (ex. : convoyeurs, treuils → couple quasi-constant → P ∝ n).
+</div>
+
+<!-- ====================================================
+     XIII. FOCUS MAINTENANCE PRÉVENTIVE MOTEUR
+     ==================================================== -->
+<h2>XIII – Maintenance préventive des moteurs électriques en ICCER</h2>
+
+<div class="prop">
+  <span class="label label-prop">Points de contrôle lors d'une visite préventive</span>
+  <ol>
+    <li><strong>Mesure de l'intensité de ligne</strong> (pince ampèremétrique) : comparer avec la valeur nominale plaque. Un écart > 10 % signale un problème (surcharge, bobinage défectueux).</li>
+    <li><strong>Contrôle de la tension d'alimentation</strong> : déséquilibre de phase < 2 % (moteur triphasé). Un déséquilibre provoque des échauffements.</li>
+    <li><strong>Vérification du facteur de puissance</strong> cos φ (clamp-mètre wattmétrique) : cos φ < 0,7 → corriger avec condensateurs de compensation.</li>
+    <li><strong>Mesure de la température</strong> (caméra thermique ou sonde) : la température de carcasse en régime normal < T<sub>classe</sub> (Classe F : 155 °C).</li>
+    <li><strong>Contrôle des roulements</strong> : écouter les bruits (un grincement = roulement usé → risque de grippage). Graisser selon le plan de maintenance.</li>
+    <li><strong>Mesure d'isolement</strong> (mégohmmètre) : résistance d'isolement des bobinages > 1 MΩ. Si < 500 kΩ → risque de défaut à la terre.</li>
+  </ol>
+</div>
+
+<div class="retenir" style="margin-top:14px">
+  <span class="label label-ret">Classes d'isolement des moteurs</span>
+  <table style="margin-top:8px">
+    <thead><tr><th>Classe</th><th>Température max.</th><th>Usage courant</th></tr></thead>
+    <tbody>
+      <tr><td>Classe B</td><td>130 °C</td><td>Moteurs standard anciens</td></tr>
+      <tr><td>Classe F</td><td>155 °C</td><td>Moteurs industriels courants (ICCER)</td></tr>
+      <tr><td>Classe H</td><td>180 °C</td><td>Applications sévères, environnements chauds</td></tr>
+    </tbody>
+  </table>
+</div>
+
 <div class="nav-footer">
   <a href="pc-term-iccer.html" class="nav-btn">← Retour au sommaire</a>
   <a href="pc-t-ch03_exos.html" class="nav-btn">Exercices du chapitre →</a>

@@ -675,6 +675,109 @@ details summary:hover{text-decoration:underline}
   <strong>Référence BO :</strong> Terminale Bac Pro ICCER — Groupement 2 — Physique-Chimie : « Caractériser la pression dans un fluide immobile ». Connaissances exigibles : définition de la pression (P = F/S) ; relation de Pascal (ΔP = ρgΔh) ; mesure expérimentale ; presse hydraulique (F₁/S₁ = F₂/S₂) ; vérin hydraulique.
 </div>
 
+<!-- ====================================================
+     13. INSTRUMENTS DE MESURE DE PRESSION
+     ==================================================== -->
+<h2>13. Instruments de mesure de pression en ICCER</h2>
+
+<table class="recap-table">
+  <thead>
+    <tr>
+      <th>Instrument</th>
+      <th>Principe</th>
+      <th>Plage typique</th>
+      <th>Application ICCER</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Manomètre à cadran</strong></td>
+      <td>Tube de Bourdon (déformation élastique)</td>
+      <td>0 – 600 bar</td>
+      <td>Circuits frigorigènes, ECS, hydraulique industriel</td>
+    </tr>
+    <tr>
+      <td><strong>Pressostat</strong></td>
+      <td>Membrane + contact électrique</td>
+      <td>0,5 – 40 bar</td>
+      <td>Sécurité haute/basse pression PAC, compresseur</td>
+    </tr>
+    <tr>
+      <td><strong>Capteur piézorésistif</strong></td>
+      <td>Variation de résistance sous pression</td>
+      <td>0 – 1 000 bar</td>
+      <td>Supervision GTB, mesure continue, BMS</td>
+    </tr>
+    <tr>
+      <td><strong>Vacuomètre</strong></td>
+      <td>Manomètre inversé</td>
+      <td>−1 à 0 bar</td>
+      <td>Tirage au vide des circuits frigorigènes</td>
+    </tr>
+    <tr>
+      <td><strong>Manifold de charge</strong></td>
+      <td>2 manomètres (HP + BP) + vannes</td>
+      <td>0 – 45 bar</td>
+      <td>Mesure HP/BP sur unité de climatisation / PAC</td>
+    </tr>
+    <tr>
+      <td><strong>Colonne de liquide (U)</strong></td>
+      <td>Loi de Pascal : ΔP = ρgh</td>
+      <td>0 – 5 000 Pa</td>
+      <td>Mesure de faibles pressions, réseau aéraulique</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="def">
+  <span class="label label-def">Pression relative vs pression absolue</span><br>
+  <ul>
+    <li><strong>Pression absolue</strong> : mesurée par rapport au vide absolu (0 Pa). P<sub>abs</sub> = P<sub>rel</sub> + P<sub>atm</sub></li>
+    <li><strong>Pression relative (manométrique)</strong> : mesurée par rapport à l'atmosphère. Un manomètre à zéro indique P<sub>atm</sub>.</li>
+    <li><strong>Dépression</strong> : pression relative négative (ex. : aspiration d'une pompe, tirage au vide).</li>
+  </ul>
+  En frigorigènes, on parle souvent de <strong>pression relative</strong> (lue sur le manifold), mais les tables de saturation utilisent la <strong>pression absolue</strong>.
+</div>
+
+<!-- ====================================================
+     14. EXERCICE 5 — INSTRUMENTS DE MESURE
+     ==================================================== -->
+<h2>14. Exercice 5 : Lecture de manomètre et calcul de pression</h2>
+
+<div class="exo">
+  <strong>Exercice 5 – Réseau de chauffage : lecture et calcul de pression</strong> <span class="ticcer-badge">ICCER</span><br>
+  Un réseau de chauffage hydraulique d'un immeuble de bureaux comporte :
+  <ul>
+    <li>Pression en surface (niveau 0, local technique) : P₀ = 2,5 bar (pression relative)</li>
+    <li>Hauteur du dernier niveau : h = 18 m</li>
+    <li>Fluide : eau chaude ρ = 980 kg/m³ (eau à 60 °C)</li>
+    <li>Pression atmosphérique : 1,013 bar</li>
+  </ul>
+  <ol>
+    <li>Convertir P₀ = 2,5 bar relatif en pression absolue (Pa).</li>
+    <li>Calculer ΔP = ρgh dû à la colonne d'eau de 18 m.</li>
+    <li>Calculer la pression absolue P au dernier niveau.</li>
+    <li>Exprimer cette pression en bar relatif. Est-elle dans la plage acceptable pour un réseau ECS (3 – 6 bar abs) ?</li>
+    <li>Un pressostat de sécurité est réglé à 4 bar relatif. À quelle pression absolue se déclenche-t-il ?</li>
+  </ol>
+  <details>
+    <summary>Voir la correction</summary>
+    <div style="margin-top:10px;padding:10px;background:#f0fff4;border-radius:6px">
+      <strong>1. Pression absolue en surface :</strong><br>
+      P<sub>abs,0</sub> = P<sub>rel</sub> + P<sub>atm</sub> = 2,5 + 1,013 = <strong>3,513 bar</strong> = 3,513 × 10⁵ Pa<br><br>
+      <strong>2. Pression due à la colonne d'eau :</strong><br>
+      \(\Delta P = \rho g h = 980 \times 9{,}81 \times 18 \approx 173\,124\,\text{Pa} \approx 1{,}73\,\text{bar}\)<br><br>
+      <strong>3. Pression absolue au dernier niveau :</strong><br>
+      P<sub>abs,haut</sub> = 3,513 × 10⁵ + 173 124 ≈ <strong>524 424 Pa ≈ 5,24 bar abs</strong><br><br>
+      <strong>4. Pression relative en haut :</strong><br>
+      P<sub>rel,haut</sub> = 5,24 − 1,013 ≈ <strong>4,23 bar rel</strong><br>
+      La plage acceptable pour un réseau de chauffage est généralement 1,5 – 3 bar relatif en chaud. Ici 4,23 bar rel peut indiquer une pression trop élevée → vérifier la soupape de sécurité.<br><br>
+      <strong>5. Pressostat à 4 bar rel :</strong><br>
+      P<sub>abs</sub> déclenchement = 4 + 1,013 = <strong>5,013 bar abs</strong>. Le pressostat se déclenche avant d'atteindre la limite constructeur (généralement 6 bar abs).
+    </div>
+  </details>
+</div>
+
 <div class="nav-footer">
   <a href="pc-term-iccer.html" class="nav-btn">← Retour au sommaire</a>
   <a href="pc-t-ch08_exos.html" class="nav-btn">Exercices du chapitre →</a>

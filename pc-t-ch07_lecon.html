@@ -674,6 +674,126 @@ details summary:hover{text-decoration:underline}
   <strong>Référence BO :</strong> Terminale Bac Pro ICCER — Groupement 2 — Physique-Chimie : « Utiliser le rayonnement thermique et comprendre l'effet de serre ». Connaissances exigibles : rayonnement thermique ; loi de Wien ; caméra thermique / thermogramme ; absorption IR (α, ρ, τ) ; effet de serre naturel ; principaux GES et origines ; amplification anthropique.
 </div>
 
+<!-- ====================================================
+     TABLEAU RÉCAPITULATIF DES RAYONNEMENTS
+     ==================================================== -->
+<h2>9. Tableau récapitulatif : sources de rayonnement thermique</h2>
+
+<table class="recap-table">
+  <thead>
+    <tr>
+      <th>Source</th>
+      <th>Température T (K)</th>
+      <th>λ<sub>max</sub> (µm)</th>
+      <th>Domaine</th>
+      <th>Application ICCER</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Soleil</strong></td>
+      <td>~5 780 K</td>
+      <td>~0,50</td>
+      <td>Visible (vert)</td>
+      <td>Capteurs solaires, éclairage naturel</td>
+    </tr>
+    <tr>
+      <td><strong>Corps humain</strong></td>
+      <td>~310 K (37 °C)</td>
+      <td>~9,3</td>
+      <td>Infrarouge moyen</td>
+      <td>Détecteurs de présence IR, caméras thermiques</td>
+    </tr>
+    <tr>
+      <td><strong>Paroi de bâtiment</strong></td>
+      <td>~293 K (20 °C)</td>
+      <td>~9,9</td>
+      <td>Infrarouge moyen</td>
+      <td>Thermographie bâtiment, déperditions thermiques</td>
+    </tr>
+    <tr>
+      <td><strong>Échangeur chaud PAC</strong></td>
+      <td>~323 K (50 °C)</td>
+      <td>~8,9</td>
+      <td>Infrarouge</td>
+      <td>Diagnostic PAC, suivi de condenseur</td>
+    </tr>
+    <tr>
+      <td><strong>Terre (atmosphère)</strong></td>
+      <td>~288 K (15 °C)</td>
+      <td>~10,1</td>
+      <td>Infrarouge moyen</td>
+      <td>Effet de serre, bilan énergétique planétaire</td>
+    </tr>
+    <tr>
+      <td><strong>Connexion électrique défectueuse</strong></td>
+      <td>350 – 600 K</td>
+      <td>5 – 8</td>
+      <td>Infrarouge</td>
+      <td>Thermographie électrique, maintenance préventive</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ====================================================
+     EXERCICE 5 — LOI DE WIEN & CAMÉRA THERMIQUE
+     ==================================================== -->
+<h2>10. Exercice 5 : Loi de Wien et caméra thermique</h2>
+
+<div class="exo">
+  <strong>Exercice 5 – Caméra thermique et diagnostic bâtiment</strong> <span class="ticcer-badge">ICCER</span><br>
+  Lors d'un audit énergétique, une caméra thermique est utilisée pour détecter des ponts thermiques dans une façade. L'émissivité de la paroi (crépi gris) est ε = 0,90.
+  <ol>
+    <li>La caméra détecte une zone à 8 °C sur la façade (ponte thermique). Convertir en kelvin, puis calculer λ<sub>max</sub> avec la loi de Wien.</li>
+    <li>La même caméra observe une gaine métallique en acier poli (ε ≈ 0,10). Expliquer pourquoi la mesure sera erronée et comment y remédier.</li>
+    <li>Un panneau de verre extérieur a τ = 0 (opaque à l'IR) et ρ = 0,15. Calculer α. La caméra peut-elle « voir » derrière le verre ?</li>
+    <li>À quelle température devrait-on chauffer une surface pour que son émission maximale soit dans le domaine visible (λ = 0,7 µm) ?</li>
+  </ol>
+  <details>
+    <summary>Voir la correction</summary>
+    <div style="margin-top:10px;padding:10px;background:#f0fff4;border-radius:6px">
+      <strong>1. Pont thermique à 8 °C :</strong><br>
+      T = 8 + 273 = <strong>281 K</strong><br>
+      \(\lambda_{max} = \dfrac{2{,}898 \times 10^{-3}}{281} \approx 1{,}031 \times 10^{-5}\,\text{m} = \mathbf{10{,}3\,\mu\text{m}}\) (infrarouge moyen, bien détecté par la caméra).<br><br>
+      <strong>2. Gaine métallique poli (ε ≈ 0,10) :</strong><br>
+      La caméra calcule T en supposant ε = 1 (corps noir) ou ε = 0,95 (valeur par défaut). Avec ε réel très faible, la surface réfléchit l'environnement (comme un miroir). La température affichée correspond en grande partie à l'environnement réfléchi → <strong>mesure faussée</strong>. Remède : couvrir la gaine d'un ruban adhésif noir (ε ≈ 0,95) ou régler ε dans la caméra, ou utiliser un thermomètre à contact.<br><br>
+      <strong>3. Verre opaque à l'IR :</strong><br>
+      τ = 0, ρ = 0,15 → α = 1 − ρ − τ = 1 − 0,15 − 0 = <strong>0,85</strong>. Le verre absorbe 85 % du rayonnement IR. La caméra voit <strong>la surface du verre</strong>, pas ce qui est derrière → impossible de « voir à travers » le verre avec une caméra thermique IR.<br><br>
+      <strong>4. Émission visible (λ = 0,7 µm = 7×10⁻⁷ m) :</strong><br>
+      \(T = \dfrac{2{,}898 \times 10^{-3}}{7 \times 10^{-7}} \approx \mathbf{4\,140\,\text{K}}\)<br>
+      Une température d'environ 4 000 K est nécessaire pour émettre principalement dans le rouge-visible. C'est l'ordre de grandeur d'un filament de lampe à incandescence (~2 700-3 000 K, rougeâtre-jaune).
+    </div>
+  </details>
+</div>
+
+<!-- ====================================================
+     FOCUS GES ET RÉGLEMENTATION F-GAS
+     ==================================================== -->
+<h2>11. Réglementation F-Gas et impact ICCER</h2>
+
+<div class="retenir" style="margin-top:20px">
+  <span class="label label-ret">Points clés réglementation</span>
+  <ul>
+    <li><strong>Règlement F-Gas (UE 517/2014)</strong> : réduction progressive des HFC à fort PRG</li>
+    <li>Objectif : phase-down de 79 % des HFC d'ici 2030 (en équivalents CO₂)</li>
+    <li><strong>Fluides de remplacement</strong> : HFO (R-1234yf, PRG ≈ 4), CO₂ R-744 (PRG = 1), R-32 (PRG = 675)</li>
+    <li><strong>Attestation de capacité</strong> obligatoire pour manipuler les fluides frigorigènes (catégorie I à V)</li>
+    <li>Tout rejet volontaire de fluide frigorigène est interdit et passible de sanctions</li>
+    <li>Registre d'installation obligatoire : consignation des charges, fuites détectées, interventions</li>
+  </ul>
+</div>
+
+<div class="att">
+  <span class="label label-att">Erreurs fréquentes en ICCER</span>
+  <ul>
+    <li><strong>Confondre λ<sub>max</sub> et la longueur d'onde d'émission maximale d'énergie</strong> : λ<sub>max</sub> est le pic spectral, mais une surface rayonne sur toute une gamme de longueurs d'onde.</li>
+    <li><strong>Ignorer l'émissivité ε</strong> lors des mesures thermographiques : les métaux polis (ε ≈ 0,03–0,15) faussent radicalement la mesure.</li>
+    <li><strong>Assimiler GES = CO₂ uniquement</strong> : les fluides frigorigènes HFC ont des PRG 2 000 à 23 500 fois supérieurs au CO₂.</li>
+    <li><strong>Confondre l'effet de serre naturel (indispensable) et l'amplification anthropique</strong> : sans effet de serre naturel, T = −18 °C ; le problème est l'amplification due aux émissions humaines.</li>
+    <li><strong>Croire que la thermographie "voit" à travers les matériaux</strong> : la caméra IR ne mesure que la surface d'un objet opaque à l'IR.</li>
+  </ul>
+</div>
+
 <div class="nav-footer">
   <a href="pc-term-iccer.html" class="nav-btn">← Retour au sommaire</a>
   <a href="pc-t-ch07_exos.html" class="nav-btn">Exercices du chapitre →</a>

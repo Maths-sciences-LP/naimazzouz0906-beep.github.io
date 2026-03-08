@@ -867,6 +867,96 @@ th{background:#eef2f7;font-weight:600}
   </details>
 </div>
 
+<!-- ====================================================
+     EXERCICE 5 — CHOIX DES EPI AUDITIFS
+     ==================================================== -->
+<div class="exo">
+  <details>
+    <summary>▶ Exercice 5 — Choix des EPI auditifs pour un chantier ICCER</summary>
+    <p>
+      Un technicien ICCER installe une PAC en toiture. Il est exposé à trois sources sonores simultanées :
+      <ul>
+        <li>Foreuse percussion : L₁ = 105 dB</li>
+        <li>Compresseur de service : L₂ = 88 dB</li>
+        <li>Bruit de fond (vent, circulation) : L₃ = 72 dB</li>
+      </ul>
+      La réglementation impose une exposition ≤ 80 dB sur 8 heures (valeur d'action inférieure) et interdit toute exposition > 87 dB sans EPI.
+    </p>
+    <ol>
+      <li>Quelle source domine le niveau sonore global ? (Justifier sans calcul détaillé.)</li>
+      <li>Pour protéger le technicien lors de l'utilisation de la foreuse (105 dB, durée 2h), un casque anti-bruit offrant 32 dB d'atténuation est disponible. Quel niveau reçoit-il avec ce casque ?</li>
+      <li>Ce casque est-il suffisant pour rester sous 80 dB ? Sous 87 dB ?</li>
+      <li>Des bouchons d'oreille offrent 24 dB d'atténuation. Peut-on les combiner avec le casque ? (L'atténuation combinée n'est pas la somme, mais ≈ atténuation la plus forte + 5 dB.)</li>
+      <li>Donner deux autres mesures de prévention collective pour réduire le bruit à la source.</li>
+    </ol>
+    <hr>
+    <strong>Correction :</strong>
+    <p>
+      <em>1. Source dominante :</em> La foreuse à 105 dB domine largement (écart de 17 dB avec le compresseur). En cumul de sources, la source la plus forte détermine presque à elle seule le niveau global (+ quelques dixièmes de dB).<br><br>
+      <em>2. Niveau avec casque (−32 dB) :</em><br>
+      L<sub>reçu</sub> = 105 − 32 = <strong>73 dB</strong><br><br>
+      <em>3. 73 dB < 80 dB</em> → suffisant pour rester sous 80 dB et bien en dessous de 87 dB. <strong>Le casque est adapté.</strong><br><br>
+      <em>4. Combinaison casque + bouchons :</em><br>
+      Atténuation combinée ≈ 32 + 5 = 37 dB → niveau reçu = 105 − 37 = 68 dB. Utile si la durée d'exposition est très longue ou si le niveau dépasse 105 dB. En pratique, la combinaison est recommandée au-delà de 105 dB.<br><br>
+      <em>5. Mesures collectives :</em> Encoffrement acoustique de la foreuse, utilisation d'une foreuse avec marteau intégré moins bruyant (technologie SDS+), organisation des plannings pour limiter l'exposition cumulée (rotation des travailleurs), choix d'équipements labellisés « faible bruit ».
+    </p>
+  </details>
+</div>
+
+<!-- ====================================================
+     TABLEAU SYNTHÈSE FORMULES ACOUSTIQUES
+     ==================================================== -->
+<h2>Synthèse — Formules acoustiques essentielles</h2>
+
+<table class="recap-table" style="margin-top:14px">
+  <thead>
+    <tr>
+      <th>Grandeur</th>
+      <th>Formule</th>
+      <th>Unité</th>
+      <th>Remarque</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Niveau d'intensité acoustique</td>
+      <td>\(L = 10 \log\!\left(\dfrac{I}{I_0}\right)\)</td>
+      <td>dB</td>
+      <td>I₀ = 10⁻¹² W/m²</td>
+    </tr>
+    <tr>
+      <td>Intensité depuis L</td>
+      <td>\(I = I_0 \times 10^{L/10}\)</td>
+      <td>W/m²</td>
+      <td>Inverse de la formule dB</td>
+    </tr>
+    <tr>
+      <td>Atténuation par distance</td>
+      <td>\(L_2 = L_1 - 20\log\!\left(\dfrac{r_2}{r_1}\right)\)</td>
+      <td>dB</td>
+      <td>Source ponctuelle en champ libre</td>
+    </tr>
+    <tr>
+      <td>Cumul de n sources identiques</td>
+      <td>\(L_{tot} = L_1 + 10\log(n)\)</td>
+      <td>dB</td>
+      <td>2 sources identiques → +3 dB</td>
+    </tr>
+    <tr>
+      <td>Longueur d'onde</td>
+      <td>\(\lambda = c/f\)</td>
+      <td>m</td>
+      <td>c = 340 m/s dans l'air à 20 °C</td>
+    </tr>
+    <tr>
+      <td>Niveau reçu avec EPI</td>
+      <td>\(L_{reçu} = L_{source} - A_{EPI}\)</td>
+      <td>dB</td>
+      <td>A<sub>EPI</sub> : atténuation en dB</td>
+    </tr>
+  </tbody>
+</table>
+
 <!-- NAV FOOTER -->
 <div class="nav-footer">
   <a href="pc-term-iccer.html">← Sommaire ICCER</a>
