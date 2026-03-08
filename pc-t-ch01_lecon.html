@@ -41,6 +41,13 @@ th{background:#eef2f7;font-weight:600}
 .anim-wrap{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:16px;margin:18px 0;text-align:center}
 .anim-wrap button{background:var(--p);color:#fff;border:none;padding:6px 16px;border-radius:6px;cursor:pointer;margin:6px 4px;font-size:.85em}
 .anim-wrap button:hover{background:#0756b5}
+.situation-pro{background:linear-gradient(135deg,#ebf5ff 0%,#f0fff4 100%);border:2px solid var(--p);border-radius:10px;padding:18px 22px;margin:18px 0}
+.situation-pro::before{content:"🎯 Situation professionnelle";display:block;font-weight:700;color:var(--p);font-size:.95em;margin-bottom:12px;text-transform:uppercase;letter-spacing:.04em}
+.situation-pro .sp-grid{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;font-size:.93em;margin-bottom:12px}
+.situation-pro .sp-label{font-weight:600;color:#4a5568;white-space:nowrap}
+.nav-footer{display:flex;justify-content:space-between;margin-top:36px;padding-top:16px;border-top:1px solid #e2e8f0;flex-wrap:wrap;gap:10px}
+.nav-btn{text-decoration:none;font-size:.85em;font-weight:600;padding:8px 16px;border-radius:6px;color:var(--p);border:1px solid var(--p);transition:0.2s}
+.nav-btn:hover{background:var(--p);color:#fff}
 .chart-wrap{max-width:700px;margin:18px auto}
 .exo{background:#fafafa;border:1px dashed #cbd5e0;border-radius:8px;padding:16px;margin:14px 0}
 details summary{cursor:pointer;font-weight:600;color:var(--p);margin-top:8px;padding:6px 0}
@@ -81,6 +88,24 @@ ol.steps{list-style:none;counter-reset:step;padding:0;margin:8px 0}
     <li>Construire et interpréter le triangle des puissances</li>
     <li>Dimensionner un disjoncteur et estimer une facture d'énergie</li>
   </ul>
+</div>
+
+<!-- ===== SITUATION PROFESSIONNELLE ===== -->
+<div class="situation-pro">
+  <div class="sp-grid">
+    <span class="sp-label">Technicien :</span><span>Julien, technicien ICCER (2ᵉ année de Bac Pro)</span>
+    <span class="sp-label">Entreprise :</span><span>Thermipro SARL — installation de systèmes de climatisation et de pompes à chaleur</span>
+    <span class="sp-label">Mission :</span><span>Julien doit choisir le disjoncteur et la section du câble d'alimentation pour un climatiseur réversible à installer dans un local commercial de 80 m².</span>
+    <span class="sp-label">Plaque signalétique :</span><span>Alimentation 230 V / 50 Hz — Courant absorbé I = 13 A — Puissance absorbée P = 2 200 W</span>
+  </div>
+  <strong>Questions de Julien :</strong>
+  <ol style="margin:8px 0 0 0;padding-left:20px;font-size:.93em">
+    <li>Pourquoi 230 × 13 = 2 990 VA ≠ 2 200 W ? Qu'est-ce qui explique cet écart ?</li>
+    <li>Quel est le facteur de puissance cos φ de cet appareil et que signifie-t-il ?</li>
+    <li>Quel disjoncteur choisir et quel câble utiliser pour l'alimentation ?</li>
+    <li>Quel sera le coût mensuel d'électricité (fonctionnement 8 h/j, 22 jours/mois, tarif 0,22 €/kWh) ?</li>
+  </ol>
+  <p style="font-size:.82em;color:#718096;margin:10px 0 0 0"><em>Ces questions trouveront une réponse complète au fil de ce chapitre.</em></p>
 </div>
 
 <!-- ===== INTRODUCTION ===== -->
@@ -794,6 +819,11 @@ ol.steps{list-style:none;counter-reset:step;padding:0;margin:8px 0}
       </ul>
     </div>
   </div>
+</div>
+
+<div class="nav-footer">
+  <a href="pc-term-iccer.html" class="nav-btn">← Retour au sommaire</a>
+  <a href="pc-t-ch01_exos.html" class="nav-btn">Exercices du chapitre →</a>
 </div>
 
 </div><!-- fin .c -->
