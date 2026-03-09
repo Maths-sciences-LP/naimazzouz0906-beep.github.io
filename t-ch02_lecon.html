@@ -6,6 +6,7 @@
 <title>Ch02 – Probabilités – Cours</title>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 :root{--p:#0969da;--s:#2f855a;--d:#c53030;--o:#d97706;--t:#2d3748}
 body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);line-height:1.7;margin:0;padding:20px}
@@ -66,6 +67,7 @@ details p{margin:6px 0 0 0;color:#4a5568}
 .maj{color:#a0aec0;font-size:.75em;margin:5px 0 0 0;font-style:italic}
 .legende-arbre{font-size:.82em;color:#718096;text-align:center;margin-top:6px;font-style:italic}
 .chemin-highlight{background:#fffbeb;border:1.5px solid var(--o);border-radius:6px;padding:10px 14px;margin:8px 0}
+.chart-wrapper{max-width:560px;margin:16px auto;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:16px}
 </style>
   <link rel="stylesheet" href="nav.css">
 </head>
@@ -754,6 +756,55 @@ details p{margin:6px 0 0 0;color:#4a5568}
   </ul>
   <p style="color:#7c3aed;font-size:.9em"><em>Ces notions apparaissent dans les programmes de mathématiques du Bac Professionnel dans d'autres filières, ainsi qu'en BTS. Si vous vous orientez vers un BTS du bâtiment ou de l'industrie, vous les rencontrerez rapidement.</em></p>
 </div>
+
+<!-- GRAPHIQUE Chart.js -->
+<h2>Graphique — Comparaison de probabilités</h2>
+
+<p>
+  Dans une chaîne de production, une machine A est défectueuse 15 % du temps, une machine B 8 %.
+  Les probabilités d'obtenir 0, 1 ou 2 pièces défectueuses sur 2 tirages sont comparées ci-dessous.
+</p>
+
+<div class="chart-wrapper">
+  <canvas id="chartProbaT"></canvas>
+</div>
+
+<script>
+(function(){
+  // P(X=k) simple pour 2 essais indépendants
+  // Machine A: p=0.15, Machine B: p=0.08
+  function binom2(k,p){
+    if(k===0) return (1-p)*(1-p);
+    if(k===1) return 2*p*(1-p);
+    return p*p;
+  }
+  const pA=0.15,pB=0.08;
+  const labels=['0 défaut','1 défaut','2 défauts'];
+  const dA=labels.map((_,k)=>Math.round(binom2(k,pA)*10000)/100);
+  const dB=labels.map((_,k)=>Math.round(binom2(k,pB)*10000)/100);
+  new Chart(document.getElementById('chartProbaT'),{
+    type:'bar',
+    data:{
+      labels,
+      datasets:[
+        {label:'Machine A (p=15%)',data:dA,backgroundColor:'rgba(0,86,179,0.65)',borderColor:'#0056b3',borderWidth:1.5},
+        {label:'Machine B (p=8%)',data:dB,backgroundColor:'rgba(47,133,90,0.65)',borderColor:'#2f855a',borderWidth:1.5}
+      ]
+    },
+    options:{
+      responsive:true,
+      plugins:{
+        legend:{position:'bottom',labels:{font:{size:12}}},
+        title:{display:true,text:'Distribution du nombre de défauts sur 2 pièces produites (%)',font:{size:12}}
+      },
+      scales:{
+        x:{title:{display:true,text:'Nombre de pièces défectueuses'}},
+        y:{title:{display:true,text:'Probabilité (%)'},beginAtZero:true,max:100,grid:{color:'#f0f0f0'}}
+      }
+    }
+  });
+})();
+</script>
 
 <!-- ==================== Nav footer ==================== -->
 <div class="nav-footer">

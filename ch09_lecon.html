@@ -6,6 +6,7 @@
 <title>Ch09 – Fonctions de référence</title>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 :root{--p:#0056b3;--d:#c53030;--s:#2f855a;--o:#d97706;--t:#2d3748}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:var(--t);line-height:1.7;margin:0;padding:20px}
@@ -36,6 +37,15 @@ td.vx{font-weight:600;background:#f7fafc}
 .recap-item p{margin:4px 0;font-size:.9em}
 .nb{margin-bottom:20px;display:block;text-decoration:none;color:var(--p);font-size:.85em;font-weight:700}
 .nb:hover{text-decoration:underline}
+.chart-wrapper{max-width:580px;margin:16px auto;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:16px}
+canvas.anim{display:block;margin:12px auto;border-radius:10px;border:1px solid #e2e8f0;background:#fff}
+.ctrl-vis{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0;align-items:center;font-size:.9em}
+.ctrl-vis input[type=range]{width:130px;accent-color:var(--p)}
+.ctrl-vis select{padding:4px 8px;border:1px solid #e2e8f0;border-radius:6px;font-family:inherit}
+.anim-result{text-align:center;font-size:1em;font-weight:700;color:var(--p);min-height:1.5em;margin-top:4px}
+.nav-footer{display:flex;justify-content:space-between;margin-top:36px;padding-top:16px;border-top:1px solid #e2e8f0;flex-wrap:wrap;gap:10px}
+.nav-btn{text-decoration:none;font-size:.85em;font-weight:600;padding:8px 16px;border-radius:6px;color:var(--p);border:1px solid var(--p);transition:.2s}
+.nav-btn:hover{background:var(--p);color:#fff}
 </style>
 </head>
 <body>
@@ -208,6 +218,154 @@ earrow) sur ([0;+infty[)</p>
     <li>Identifier les <strong>extrema</strong> : points les plus hauts (max) ou les plus bas (min)</li>
     <li>Lire les intervalles sur l'axe des (x)</li>
   </ol>
+</div>
+
+
+<h2>6. Graphique — Les 3 fonctions de référence</h2>
+
+<p>Voici les courbes des trois fonctions de référence sur le même repère. Observe leurs comportements différents.</p>
+
+<div class="chart-wrapper">
+  <canvas id="chartFonctions"></canvas>
+</div>
+
+<script>
+(function(){
+  const xs=[];
+  for(let x=-3;x<=3;x+=0.2) xs.push(Math.round(x*10)/10);
+  const fCarre=xs.map(x=>x*x);
+  const fInverse=xs.map(x=>Math.abs(x)<0.15?null:Math.round(1/x*100)/100);
+  const fRacine=xs.map(x=>x>=0?Math.round(Math.sqrt(x)*100)/100:null);
+  new Chart(document.getElementById('chartFonctions'),{
+    type:'line',
+    data:{
+      labels:xs,
+      datasets:[
+        {label:'f(x) = x²',data:fCarre,borderColor:'#0056b3',backgroundColor:'transparent',borderWidth:2.5,pointRadius:0,tension:.2,spanGaps:true},
+        {label:'g(x) = 1/x',data:fInverse,borderColor:'#c53030',backgroundColor:'transparent',borderWidth:2.5,pointRadius:0,tension:.2,spanGaps:false},
+        {label:'h(x) = √x',data:fRacine,borderColor:'#2f855a',backgroundColor:'transparent',borderWidth:2.5,pointRadius:0,tension:.2,spanGaps:false}
+      ]
+    },
+    options:{
+      responsive:true,
+      plugins:{
+        legend:{position:'bottom',labels:{font:{size:12}}},
+        title:{display:true,text:'Les 3 fonctions de référence sur [−3 ; 3]',font:{size:12}}
+      },
+      scales:{
+        x:{title:{display:true,text:'x'},ticks:{maxTicksLimit:10}},
+        y:{title:{display:true,text:'f(x)'},min:-4,max:10,grid:{color:'#f0f0f0'}}
+      }
+    }
+  });
+})();
+</script>
+
+<p style="font-size:.9em;color:#718096;text-align:center">
+  <span style="color:#0056b3;font-weight:700">Bleu</span> : \(x^2\) — en forme de U, minimum en 0. &nbsp;
+  <span style="color:#c53030;font-weight:700">Rouge</span> : \(1/x\) — deux branches, non définie en 0. &nbsp;
+  <span style="color:#2f855a;font-weight:700">Vert</span> : \(\sqrt{x}\) — définie seulement pour x ≥ 0.
+</p>
+
+<h2>7. Animation — Calculer une image pour chaque fonction</h2>
+
+<p style="font-size:.9em;color:#718096">Choisis la fonction et déplace le curseur pour voir l'image d'un nombre.</p>
+
+<div class="ctrl-vis">
+  <label>Fonction :
+    <select id="selFref">
+      <option value="carre">f(x) = x²</option>
+      <option value="inverse">g(x) = 1/x (x ≠ 0)</option>
+      <option value="racine">h(x) = √x (x ≥ 0)</option>
+    </select>
+  </label>
+  <label>x = <input type="range" id="sliderFref" min="0.1" max="9" step="0.1" value="4"> <strong id="lblFref">4</strong></label>
+</div>
+<canvas id="canvasFref" class="anim" width="560" height="160"></canvas>
+<div class="anim-result" id="resuFref"></div>
+
+<script>
+(function(){
+  const cv=document.getElementById('canvasFref'),ctx=cv.getContext('2d');
+  const sel=document.getElementById('selFref'),sl=document.getElementById('sliderFref'),lbl=document.getElementById('lblFref');
+  function getRange(f){
+    if(f==='carre') return {min:-5,max:5,step:0.1};
+    if(f==='inverse') return {min:0.1,max:5,step:0.1};
+    return {min:0,max:9,step:0.1};
+  }
+  function compute(f,x){
+    if(f==='carre') return x*x;
+    if(f==='inverse') return x===0?null:1/x;
+    return x>=0?Math.sqrt(x):null;
+  }
+  function fname(f){return f==='carre'?'x²':f==='inverse'?'1/x':'√x';}
+  function draw(){
+    const f=sel.value;
+    const range=getRange(f);
+    sl.min=range.min; sl.max=range.max; sl.step=range.step;
+    const x=parseFloat(sl.value);
+    lbl.textContent=x;
+    const fx=compute(f,x);
+    ctx.clearRect(0,0,cv.width,cv.height);
+    const W=cv.width,H=cv.height;
+    ctx.fillStyle='#f8fafc'; ctx.fillRect(0,0,W,H);
+    const colors={carre:'#0056b3',inverse:'#c53030',racine:'#2f855a'};
+    const col=colors[f];
+    // Draw machine
+    const bx=60,by=30,bw=160,bh=50;
+    ctx.fillStyle='#ebf5ff'; ctx.strokeStyle=col; ctx.lineWidth=2;
+    ctx.beginPath(); ctx.roundRect(bx,by,bw,bh,8); ctx.fill(); ctx.stroke();
+    ctx.fillStyle=col; ctx.font='bold 15px Segoe UI,sans-serif'; ctx.textAlign='center';
+    ctx.fillText('f(x) = '+fname(f), bx+bw/2, by+bh/2+5);
+    // Arrow in
+    ctx.fillStyle='#4a5568'; ctx.font='13px Segoe UI,sans-serif'; ctx.textAlign='center';
+    ctx.fillText('x = '+x, bx+bw/2-90, by+bh/2+5);
+    ctx.strokeStyle='#4a5568'; ctx.lineWidth=1.5;
+    ctx.beginPath(); ctx.moveTo(bx-40,by+bh/2); ctx.lineTo(bx-5,by+bh/2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(bx-10,by+bh/2-5); ctx.lineTo(bx-5,by+bh/2); ctx.lineTo(bx-10,by+bh/2+5); ctx.stroke();
+    // Arrow out
+    ctx.beginPath(); ctx.moveTo(bx+bw+5,by+bh/2); ctx.lineTo(bx+bw+45,by+bh/2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(bx+bw+40,by+bh/2-5); ctx.lineTo(bx+bw+45,by+bh/2); ctx.lineTo(bx+bw+40,by+bh/2+5); ctx.stroke();
+    // Result box
+    const rx=bx+bw+50,ry=by,rw=150,rh=bh;
+    if(fx!==null){
+      const fxStr=Math.round(fx*1000)/1000;
+      ctx.fillStyle='#f0fff4'; ctx.strokeStyle=col; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.roundRect(rx,ry,rw,rh,8); ctx.fill(); ctx.stroke();
+      ctx.fillStyle=col; ctx.font='bold 18px Segoe UI,sans-serif'; ctx.textAlign='center';
+      ctx.fillText('f('+x+') = '+fxStr, rx+rw/2, ry+rh/2+6);
+      document.getElementById('resuFref').textContent='f('+x+') = '+fname(f)+' pour x='+x+' → résultat : '+fxStr;
+    } else {
+      ctx.fillStyle='#fff5f5'; ctx.strokeStyle='#c53030'; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.roundRect(rx,ry,rw,rh,8); ctx.fill(); ctx.stroke();
+      ctx.fillStyle='#c53030'; ctx.font='bold 13px Segoe UI,sans-serif'; ctx.textAlign='center';
+      ctx.fillText('Non définie !', rx+rw/2, ry+rh/2+5);
+      document.getElementById('resuFref').textContent='Non définie pour cette valeur de x.';
+    }
+    // Tableau
+    const tvY=110, cols=[0,1,4,9];
+    ctx.font='12px Segoe UI,sans-serif'; ctx.textAlign='center'; ctx.fillStyle='#4a5568';
+    ctx.fillText('x',40,tvY); cols.forEach((v,i)=>{ctx.fillText(v,(i+1)*100+20,tvY);});
+    ctx.fillStyle='#718096'; ctx.fillText('f(x)',40,tvY+25);
+    cols.forEach((v,i)=>{
+      const r=compute(f,v);
+      ctx.fillStyle=r!==null?col:'#c53030';
+      ctx.fillText(r!==null?(Math.round(r*100)/100):'∅', (i+1)*100+20, tvY+25);
+    });
+    ctx.strokeStyle='#e2e8f0'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(10,tvY+8); ctx.lineTo(W-10,tvY+8); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(10,tvY-12); ctx.lineTo(W-10,tvY-12); ctx.stroke();
+  }
+  sel.addEventListener('change',()=>{const r=getRange(sel.value);sl.min=r.min;sl.max=r.max;sl.value=r.min;draw();});
+  sl.addEventListener('input',draw);
+  draw();
+})();
+</script>
+
+<div class="nav-footer">
+  <a href="ch08_lecon.html" class="nav-btn">← Ch08 – Fonction affine</a>
+  <a href="maths-2nde-mama.html" class="nav-btn">Sommaire</a>
+  <a href="ch09_exos.html" class="nav-btn">Exercices Ch09 →</a>
 </div>
 
 </div>

@@ -6,6 +6,7 @@
 <title>Ch08 – Pression dans un fluide immobile – Cours</title>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 :root{--p:#6f42c1;--s:#2f855a;--d:#c53030;--o:#d97706;--t:#2d3748}
 body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);line-height:1.7;margin:0;padding:20px}
@@ -57,6 +58,7 @@ details summary:hover{text-decoration:underline}
 .nav-btn{display:inline-block;padding:10px 20px;border-radius:8px;font-weight:700;font-size:.9em;text-decoration:none;background:var(--p);color:#fff;transition:background .2s}
 .nav-btn:hover{background:#5a32a3}
 @media(max-width:600px){.two-col,.info-grid{grid-template-columns:1fr}}
+.chart-wrapper{max-width:580px;margin:16px auto;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:16px}
 </style>
 </head>
 <body>
@@ -777,6 +779,51 @@ details summary:hover{text-decoration:underline}
     </div>
   </details>
 </div>
+
+<h2>Graphique — Évolution de la pression avec la profondeur</h2>
+
+<p>
+  La pression dans un fluide immobile augmente linéairement avec la profondeur selon \(P = P_0 + \rho g h\).
+  Ce graphique illustre cette évolution pour l'eau (\(\rho = 1000\) kg/m³) et pour l'huile (\(\rho = 900\) kg/m³).
+</p>
+
+<div class="chart-wrapper">
+  <canvas id="chartPression"></canvas>
+</div>
+
+<script>
+(function(){
+  const depths=[0,1,2,3,4,5,6,7,8,9,10];
+  const P0=101325; // Pa
+  const g=9.81;
+  const rhoEau=1000, rhoHuile=900;
+  const pEau=depths.map(h=>Math.round((P0+rhoEau*g*h)/1000*10)/10); // kPa
+  const pHuile=depths.map(h=>Math.round((P0+rhoHuile*g*h)/1000*10)/10);
+  new Chart(document.getElementById('chartPression'),{
+    type:'line',
+    data:{
+      labels:depths,
+      datasets:[
+        {label:'Eau (ρ=1000 kg/m³)',data:pEau,borderColor:'#0056b3',backgroundColor:'rgba(0,86,179,.08)',borderWidth:2.5,pointRadius:4,tension:.1},
+        {label:'Huile (ρ=900 kg/m³)',data:pHuile,borderColor:'#d97706',backgroundColor:'rgba(217,119,6,.08)',borderWidth:2.5,pointRadius:4,tension:.1}
+      ]
+    },
+    options:{
+      responsive:true,
+      plugins:{
+        legend:{position:'bottom',labels:{font:{size:12}}},
+        title:{display:true,text:'Pression (kPa) en fonction de la profondeur (m) — P₀ = 101,3 kPa',font:{size:12}}
+      },
+      scales:{
+        x:{title:{display:true,text:'Profondeur h (m)'}},
+        y:{title:{display:true,text:'Pression P (kPa)'},beginAtZero:false,grid:{color:'#f0f0f0'}}
+      }
+    }
+  });
+})();
+</script>
+
+<p style="font-size:.9em;color:#718096;text-align:center">La pression augmente linéairement avec la profondeur. L'eau exerce une pression plus forte que l'huile à même profondeur car elle est plus dense.</p>
 
 <div class="nav-footer">
   <a href="pc-term-iccer.html" class="nav-btn">← Retour au sommaire</a>

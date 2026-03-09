@@ -1,48 +1,771 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ch02 – Statistiques &agrave; une variable</title>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <style>
-    :root{--primary:#0056b3;--danger:#c53030;--success:#2f855a;--text:#2d3748}
-    body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:var(--text);line-height:1.6;margin:0;padding:20px}
-    .container{max-width:800px;margin:auto;background:white;padding:30px;border-radius:12px;border:1px solid #e2e8f0}
-    header{text-align:center;border-bottom:3px solid var(--primary);margin-bottom:25px;padding-bottom:15px}
-    h1{margin:0;color:var(--primary);font-size:1.6em}
-    h2{font-size:1.1em;color:var(--primary);border-left:4px solid var(--primary);padding-left:10px;margin-top:25px}
-    .box{padding:15px;border-radius:8px;margin:15px 0;border:1px solid #e2e8f0}
-    .rule{background:#fff5f5;border-left:5px solid var(--danger)}
-    .method{background:#f0f7ff;border-left:5px solid var(--primary)}
-    .exo{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:15px;margin:15px 0}
-    .correction{background:#f0fff4;border-left:4px solid var(--success);padding:10px 15px;margin-top:10px;border-radius:0 8px 8px 0;display:none}
-    .btn-corr{background:var(--primary);color:white;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.85em;margin-top:8px}
-    table{width:100%;border-collapse:collapse;margin:15px 0;font-size:.9em}
-    th,td{border:1px solid #e2e8f0;padding:10px;text-align:center}
-    th{background:#f7fafc}
-    .ds-head{background:#eef2f7;padding:12px 15px;border-radius:8px;margin-bottom:20px;font-size:.9em}
-    .nav-back{margin-bottom:15px;display:block;text-decoration:none;color:var(--primary);font-size:.8em;font-weight:bold}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch02 – Statistiques à une variable – 2nde MAMA</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root{--p:#0056b3;--s:#2f855a;--d:#c53030;--o:#d97706;--t:#2d3748}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:var(--t);line-height:1.7;margin:0;padding:20px}
+.c{max-width:860px;margin:auto;background:#fff;padding:35px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+
+header{text-align:center;border-bottom:3px solid var(--p);margin-bottom:28px;padding-bottom:16px}
+h1{margin:0 0 6px;color:var(--p);font-size:1.65em}
+.sous-titre{color:#718096;font-size:.92em;margin:0}
+.maj{font-size:.78em;color:#a0aec0;text-align:center;margin-top:4px}
+
+h2{color:var(--p);border-left:4px solid var(--p);padding-left:14px;margin:32px 0 14px;font-size:1.15em}
+h3{color:#4a5568;font-size:1em;margin:18px 0 8px}
+
+.objectifs{background:#ebf5ff;border:1px solid #93c5fd;border-radius:10px;padding:16px 20px;margin:0 0 28px}
+.objectifs h3{margin:0 0 10px;color:var(--p)}
+.objectifs ul{margin:0;padding-left:20px}
+.objectifs li{margin:4px 0;font-size:.94em}
+
+.situation{background:#fef9e7;border:1px solid #f6e05e;border-radius:10px;padding:16px 20px;margin:0 0 28px}
+.situation h3{margin:0 0 8px;color:#92400e}
+.situation p{margin:4px 0;font-size:.94em}
+
+.def-box{background:#ebf5ff;border-left:4px solid var(--p);border-radius:0 8px 8px 0;padding:12px 16px;margin:10px 0}
+.formule{background:#f0fff4;border-left:4px solid var(--s);border-radius:0 8px 8px 0;padding:12px 16px;margin:10px 0;font-weight:600}
+.exemple{background:#fffbeb;border-left:4px solid var(--o);border-radius:0 8px 8px 0;padding:12px 16px;margin:10px 0;font-size:.93em}
+.attention{background:#fff5f5;border-left:4px solid var(--d);border-radius:0 8px 8px 0;padding:12px 16px;margin:10px 0;font-size:.93em}
+.methode{background:#f0fff4;border:1px solid #a7f3d0;border-radius:8px;padding:14px 18px;margin:12px 0}
+.methode strong{color:var(--s)}
+.retenir{background:#f0fff4;border:1px solid #a7f3d0;border-radius:10px;padding:18px 22px;margin:14px 0}
+.erreur-item{background:#fff5f5;border-left:4px solid var(--d);border-radius:0 8px 8px 0;padding:10px 14px;margin:8px 0;font-size:.93em}
+
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.91em}
+th,td{border:1px solid #e2e8f0;padding:9px 12px;text-align:center}
+th{background:#eef2f7;font-weight:600}
+td.tl{text-align:left}
+
+.schema{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px;margin:10px 0;text-align:center}
+.schema figcaption{font-size:.8em;color:#718096;margin-top:6px}
+
+.nb{margin-bottom:16px;display:block;text-decoration:none;color:var(--p);font-size:.85em;font-weight:700}
+.nav-footer{display:flex;justify-content:space-between;margin-top:36px;padding-top:16px;border-top:1px solid #e2e8f0;flex-wrap:wrap;gap:10px}
+.nav-btn{text-decoration:none;font-size:.85em;font-weight:600;padding:8px 16px;border-radius:6px;color:var(--p);border:1px solid var(--p);transition:.2s}
+.nav-btn:hover{background:var(--p);color:#fff}
+
+.context-tag{display:inline-block;background:#fef3c7;color:#92400e;border-radius:4px;font-size:.72em;font-weight:700;text-transform:uppercase;padding:2px 8px;margin-bottom:8px;letter-spacing:.03em}
+.chart-wrapper{max-width:580px;margin:16px auto;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:16px}
+canvas.anim{display:block;margin:12px auto;border-radius:10px;border:1px solid #e2e8f0;background:#fff}
+.ctrl-vis{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0;align-items:center;font-size:.9em}
+.ctrl-vis input[type=range]{width:130px;accent-color:var(--p)}
+.anim-result{text-align:center;font-size:1em;font-weight:700;color:var(--p);min-height:1.5em;margin-top:6px}
+</style>
 </head>
 <body>
-<div class="container">
-  <a href="maths-2nde-mama.html" class="nav-back">&larr; RETOUR SOMMAIRE</a>
-  <header><h1>Cours &ndash; Statistiques &agrave; une variable</h1></header>
-  <h2>1. Vocabulaire</h2>
-  <p><strong>Population</strong> : ensemble &eacute;tudi&eacute;. <strong>Individu</strong> : &eacute;l&eacute;ment de la population. <strong>Caract&egrave;re</strong> : propri&eacute;t&eacute; mesur&eacute;e. <strong>Effectif</strong> : nombre d'individus. <strong>Fr&eacute;quence</strong> : proportion.</p>
-  <h2>2. Tableau de donn&eacute;es</h2>
-  <table><tr><th>Valeur \(x_i\)</th><th>Effectif \(n_i\)</th><th>Fr&eacute;quence \(f_i\)</th></tr>
-  <tr><td>Valeur 1</td><td>\(n_1\)</td><td>\(f_1 = n_1/N\)</td></tr>
-  <tr><td>...</td><td>...</td><td>...</td></tr>
-  <tr><td><strong>Total</strong></td><td>\(N\)</td><td>1 (ou 100%)</td></tr></table>
-  <h2>3. Fr&eacute;quence</h2>
-  <div class="box method">\[ f_i = \frac{n_i}{N} \quad \text{(ou } f_i \times 100 \text{ pour le \%)} \]</div>
-  <h2>4. Repr&eacute;sentations graphiques</h2>
-  <ul><li><strong>Diagramme en b&acirc;tons</strong> : effectifs discrets</li><li><strong>Histogramme</strong> : donn&eacute;es group&eacute;es en classes</li><li><strong>Diagramme circulaire</strong> : fr&eacute;quences en secteurs (angle = \(f_i \times 360°\))</li></ul>
+<div class="c">
+<a href="maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
+<header>
+  <h1>Chapitre 2 – Statistiques à une variable</h1>
+  <p class="sous-titre">Seconde Bac Pro MAMA &nbsp;|&nbsp; Agencement · Menuiserie · Ameublement &nbsp;|&nbsp; Mathématiques</p>
+  <p class="maj">9 mars 2026</p>
+</header>
+
+<!-- Objectifs -->
+<div class="objectifs">
+  <h3>Objectifs du chapitre</h3>
+  <ul>
+    <li>Recueillir et organiser des données statistiques</li>
+    <li>Construire un tableau de fréquences</li>
+    <li>Représenter une série statistique (diagrammes)</li>
+    <li>Calculer moyenne, médiane, mode</li>
+    <li>Calculer et interpréter étendue et écart interquartile</li>
+    <li>Construire et interpréter un diagramme en boîte</li>
+  </ul>
 </div>
+
+<!-- Situation professionnelle -->
+<div class="situation">
+  <h3>Situation professionnelle – MAMA</h3>
+  <p>Un atelier produit des liteaux de bois. Un contrôleur mesure la longueur (en cm) de 20 liteaux :</p>
+  <p style="font-size:1em;font-weight:600;letter-spacing:.02em">48 ; 50 ; 49 ; 51 ; 50 ; 48 ; 52 ; 50 ; 49 ; 51 ; 50 ; 48 ; 53 ; 51 ; 50 ; 49 ; 52 ; 50 ; 51 ; 48</p>
+  <p>Comment analyser cette série de mesures pour contrôler la qualité de la production ?</p>
+</div>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 1 – POURQUOI LES STATISTIQUES ?                     -->
+<!-- ============================================================ -->
+<h2>1. Introduction – Pourquoi les statistiques ?</h2>
+
+<p>Les <strong>statistiques</strong> permettent d'analyser un grand nombre de données pour en dégager des informations utiles à la prise de décision.</p>
+
+<p>Dans les métiers du bois (MAMA), on utilise les statistiques pour :</p>
+<ul>
+  <li><strong>Contrôler la qualité :</strong> dimensions des pièces produites, respect des tolérances</li>
+  <li><strong>Optimiser la production :</strong> suivre les temps de fabrication, repérer les anomalies</li>
+  <li><strong>Gérer les coûts :</strong> analyser les dépenses en matériaux sur plusieurs mois</li>
+  <li><strong>Suivre les résultats :</strong> résultats d'élèves ou de contrôles en atelier</li>
+</ul>
+
+<div class="exemple">
+  <strong>Exemples concrets :</strong><br>
+  — Un menuisier mesure les 50 planches d'un lot pour vérifier qu'elles font bien 200 cm ± 2 mm.<br>
+  — Un chef d'atelier compare le temps de fabrication de deux opérateurs sur 30 pièces chacun.<br>
+  — Un gestionnaire suit le coût mensuel des consommables sur une année.
+</div>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 2 – VOCABULAIRE ET ORGANISATION                     -->
+<!-- ============================================================ -->
+<h2>2. Vocabulaire et organisation des données</h2>
+
+<h3>2.1 Vocabulaire de base</h3>
+
+<div class="def-box">
+  <strong>Population :</strong> l'ensemble de tous les éléments étudiés.<br>
+  <em>Exemple : toutes les planches produites par l'atelier.</em>
+</div>
+
+<div class="def-box">
+  <strong>Individu :</strong> chaque élément de la population.<br>
+  <em>Exemple : une planche particulière.</em>
+</div>
+
+<div class="def-box">
+  <strong>Caractère :</strong> la propriété mesurée ou observée sur chaque individu.<br>
+  <em>Exemple : la longueur d'un litteau (caractère quantitatif).</em>
+</div>
+
+<div class="def-box">
+  <strong>Effectif (\(n_i\)) :</strong> le nombre d'individus ayant la même valeur du caractère.<br>
+  <em>Exemple : 4 liteaux mesurent 48 cm → effectif de 48 cm est 4.</em>
+</div>
+
+<div class="def-box">
+  <strong>Effectif total (\(N\)) :</strong> le nombre total d'individus dans la série.<br>
+  <em>Exemple : \(N = 20\) liteaux au total.</em>
+</div>
+
+<div class="def-box">
+  <strong>Fréquence (\(f_i\)) :</strong> proportion d'individus ayant une valeur donnée.
+  \[f_i = \frac{n_i}{N}\]
+  La fréquence peut s'exprimer en fraction décimale (entre 0 et 1) ou en pourcentage (entre 0 % et 100 %).
+</div>
+
+<h3>2.2 Tableau des effectifs et fréquences</h3>
+<p>On organise les données dans un <strong>tableau statistique</strong>. Voici le tableau pour les liteaux :</p>
+
+<table>
+  <tr>
+    <th>Longueur \(x_i\) (cm)</th>
+    <th>Effectif \(n_i\)</th>
+    <th>Fréquence \(f_i\)</th>
+    <th>Fréquence (en %)</th>
+  </tr>
+  <tr><td>48</td><td>4</td><td>4/20 = 0,20</td><td>20 %</td></tr>
+  <tr><td>49</td><td>3</td><td>3/20 = 0,15</td><td>15 %</td></tr>
+  <tr><td>50</td><td>7</td><td>7/20 = 0,35</td><td>35 %</td></tr>
+  <tr><td>51</td><td>4</td><td>4/20 = 0,20</td><td>20 %</td></tr>
+  <tr><td>52</td><td>2</td><td>2/20 = 0,10</td><td>10 %</td></tr>
+  <tr><td>53</td><td>1</td><td>1/20 = 0,05</td><td>5 %</td></tr>
+  <tr><th>Total</th><th>20</th><th>1,00</th><th>100 %</th></tr>
+</table>
+
+<div class="attention">
+  <strong>Vérification :</strong> La somme des effectifs doit être égale à \(N\) et la somme des fréquences doit être égale à 1 (ou 100 %).
+</div>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 3 – REPRÉSENTATIONS GRAPHIQUES                      -->
+<!-- ============================================================ -->
+<h2>3. Représentations graphiques</h2>
+
+<h3>3.1 Diagramme en bâtons</h3>
+<div class="def-box">
+  <strong>Quand l'utiliser :</strong> pour des données <em>discrètes</em> (valeurs séparées, sans continuité). Chaque valeur est représentée par un trait vertical dont la hauteur est proportionnelle à l'effectif.
+</div>
+<div class="exemple">
+  <strong>Exemple :</strong> nombre de liteaux par longueur (48, 49, 50, 51, 52, 53 cm). Les valeurs sont distinctes et entières → diagramme en bâtons adapté.
+</div>
+
+<h3>3.2 Diagramme en colonnes (barres)</h3>
+<div class="def-box">
+  <strong>Quand l'utiliser :</strong> pour comparer des catégories ou des valeurs discrètes. Les barres ont une largeur et sont espacées.
+</div>
+
+<div class="schema">
+  <svg width="500" height="220" viewBox="0 0 500 220" aria-label="Diagramme en colonnes des longueurs de liteaux">
+    <!-- Axes -->
+    <line x1="55" y1="10" x2="55" y2="175" stroke="#4a5568" stroke-width="1.5"/>
+    <line x1="55" y1="175" x2="490" y2="175" stroke="#4a5568" stroke-width="1.5"/>
+
+    <!-- Grille horizontale -->
+    <line x1="55" y1="150" x2="490" y2="150" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="55" y1="125" x2="490" y2="125" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="55" y1="100" x2="490" y2="100" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="55" y1="75" x2="490" y2="75" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="55" y1="50" x2="490" y2="50" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="55" y1="25" x2="490" y2="25" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Etiquettes axe Y (effectifs) : 25px par unite, 175=0, 150=1, 125=2, 100=3, 75=4, 50=5, 25=7 -->
+    <text x="48" y="178" text-anchor="end" font-size="11" fill="#718096">0</text>
+    <text x="48" y="153" text-anchor="end" font-size="11" fill="#718096">1</text>
+    <text x="48" y="128" text-anchor="end" font-size="11" fill="#718096">2</text>
+    <text x="48" y="103" text-anchor="end" font-size="11" fill="#718096">3</text>
+    <text x="48" y="78" text-anchor="end" font-size="11" fill="#718096">4</text>
+    <text x="48" y="53" text-anchor="end" font-size="11" fill="#718096">5</text>
+    <text x="48" y="28" text-anchor="end" font-size="11" fill="#718096">7</text>
+
+    <!-- Colonne 48, n=4 : hauteur=100, y=175-100=75 -->
+    <rect x="70" y="75" width="55" height="100" fill="#4299e1" opacity=".85" rx="3"/>
+    <text x="97" y="70" text-anchor="middle" font-size="12" fill="#2b6cb0" font-weight="700">4</text>
+    <text x="97" y="192" text-anchor="middle" font-size="12" fill="#4a5568">48</text>
+
+    <!-- Colonne 49, n=3 : hauteur=75, y=100 -->
+    <rect x="145" y="100" width="55" height="75" fill="#4299e1" opacity=".85" rx="3"/>
+    <text x="172" y="95" text-anchor="middle" font-size="12" fill="#2b6cb0" font-weight="700">3</text>
+    <text x="172" y="192" text-anchor="middle" font-size="12" fill="#4a5568">49</text>
+
+    <!-- Colonne 50, n=7 : hauteur=175, y=0 (max=175px) -->
+    <rect x="220" y="25" width="55" height="150" fill="#48bb78" opacity=".85" rx="3"/>
+    <text x="247" y="20" text-anchor="middle" font-size="12" fill="#276749" font-weight="700">7</text>
+    <text x="247" y="192" text-anchor="middle" font-size="12" fill="#4a5568">50</text>
+
+    <!-- Colonne 51, n=4 : hauteur=100, y=75 -->
+    <rect x="295" y="75" width="55" height="100" fill="#4299e1" opacity=".85" rx="3"/>
+    <text x="322" y="70" text-anchor="middle" font-size="12" fill="#2b6cb0" font-weight="700">4</text>
+    <text x="322" y="192" text-anchor="middle" font-size="12" fill="#4a5568">51</text>
+
+    <!-- Colonne 52, n=2 : hauteur=50, y=125 -->
+    <rect x="370" y="125" width="55" height="50" fill="#fc8181" opacity=".85" rx="3"/>
+    <text x="397" y="120" text-anchor="middle" font-size="12" fill="#c53030" font-weight="700">2</text>
+    <text x="397" y="192" text-anchor="middle" font-size="12" fill="#4a5568">52</text>
+
+    <!-- Colonne 53, n=1 : hauteur=25, y=150 -->
+    <rect x="445" y="150" width="40" height="25" fill="#fc8181" opacity=".85" rx="3"/>
+    <text x="465" y="145" text-anchor="middle" font-size="12" fill="#c53030" font-weight="700">1</text>
+    <text x="465" y="192" text-anchor="middle" font-size="12" fill="#4a5568">53</text>
+
+    <!-- Titres axes -->
+    <text x="270" y="210" text-anchor="middle" font-size="11" fill="#718096">Longueur (cm)</text>
+    <text x="12" y="100" text-anchor="middle" font-size="11" fill="#718096" transform="rotate(-90 12 100)">Effectif</text>
+  </svg>
+  <figcaption>Diagramme en colonnes – Longueurs des 20 liteaux</figcaption>
+</div>
+
+<h3>3.3 Diagramme en secteurs (camembert)</h3>
+<div class="def-box">
+  <strong>Quand l'utiliser :</strong> pour montrer la répartition en proportions (parts d'un tout). Adapté quand le nombre de catégories est limité (6 ou moins).
+</div>
+<div class="exemple">
+  <strong>Exemple :</strong> répartition des types de matériaux (contreplaqué, OSB, MDF...) dans une commande. Chaque secteur représente un type de panneau.
+</div>
+
+<h3>3.4 Diagramme en ligne (évolution)</h3>
+<div class="def-box">
+  <strong>Quand l'utiliser :</strong> pour représenter l'évolution d'une grandeur dans le temps (données chronologiques).
+</div>
+<div class="exemple">
+  <strong>Exemple :</strong> évolution du coût mensuel des matériaux sur 12 mois, ou évolution de la production d'un atelier semaine par semaine.
+</div>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 4 – INDICATEURS DE POSITION                         -->
+<!-- ============================================================ -->
+<h2>4. Indicateurs de position</h2>
+<p>Les <strong>indicateurs de position</strong> donnent une valeur représentative de la série.</p>
+
+<h3>4.1 La moyenne</h3>
+<div class="formule">
+  La <strong>moyenne</strong> \(\bar{x}\) est calculée par :
+  \[\bar{x} = \frac{\sum x_i \times n_i}{N} = \frac{x_1 n_1 + x_2 n_2 + \cdots + x_k n_k}{N}\]
+  où \(x_i\) est chaque valeur, \(n_i\) son effectif et \(N\) l'effectif total.
+</div>
+
+<div class="exemple">
+  <strong>Calcul pour les liteaux :</strong>
+  \[\bar{x} = \frac{48 \times 4 + 49 \times 3 + 50 \times 7 + 51 \times 4 + 52 \times 2 + 53 \times 1}{20}\]
+  \[\bar{x} = \frac{192 + 147 + 350 + 204 + 104 + 53}{20} = \frac{1\,001}{20} \approx \mathbf{50{,}05 \text{ cm}}\]
+</div>
+
+<div class="attention">
+  <strong>Interprétation :</strong> La moyenne est sensible aux valeurs extrêmes. Une très grande ou très petite valeur peut la "tirer" vers le haut ou vers le bas.
+</div>
+
+<h3>4.2 La médiane</h3>
+<div class="formule">
+  La <strong>médiane</strong> \(Me\) est la valeur qui partage la série (triée dans l'ordre croissant) en deux parties égales :<br>
+  — 50 % des valeurs sont inférieures ou égales à la médiane<br>
+  — 50 % des valeurs sont supérieures ou égales à la médiane
+</div>
+
+<div class="methode">
+  <strong>Méthode pour trouver la médiane :</strong>
+  <ol>
+    <li>Trier la série dans l'ordre croissant.</li>
+    <li>Si \(N\) est impair : la médiane est la valeur au rang \(\dfrac{N+1}{2}\).</li>
+    <li>Si \(N\) est pair : la médiane est la moyenne des valeurs aux rangs \(\dfrac{N}{2}\) et \(\dfrac{N}{2}+1\).</li>
+  </ol>
+</div>
+
+<div class="exemple">
+  <strong>Calcul pour les liteaux (\(N = 20\), pair) :</strong><br>
+  Série triée : 48, 48, 48, 48, 49, 49, 49, 50, 50, <strong>50</strong>, <strong>50</strong>, 50, 50, 50, 51, 51, 51, 51, 52, 52, 53<br>
+  Les valeurs aux rangs 10 et 11 sont toutes les deux <strong>50</strong>.<br>
+  \[Me = \frac{50 + 50}{2} = \mathbf{50 \text{ cm}}\]
+</div>
+
+<h3>4.3 Le mode</h3>
+<div class="formule">
+  Le <strong>mode</strong> (ou valeur modale) est la valeur qui apparaît le plus souvent dans la série, c'est-à-dire celle dont l'effectif est le plus grand.
+</div>
+
+<div class="exemple">
+  <strong>Pour les liteaux :</strong> la valeur 50 cm apparaît 7 fois (effectif le plus grand).<br>
+  <strong>Mode = 50 cm</strong>
+</div>
+
+<div class="retenir">
+  <strong>Résumé – Indicateurs de position des liteaux :</strong>
+  <ul>
+    <li>Moyenne : \(\bar{x} \approx 50{,}05\) cm</li>
+    <li>Médiane : \(Me = 50\) cm</li>
+    <li>Mode : \(Mo = 50\) cm</li>
+  </ul>
+  Les trois indicateurs sont très proches, ce qui indique une série assez régulière centrée autour de 50 cm.
+</div>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 5 – INDICATEURS DE DISPERSION                       -->
+<!-- ============================================================ -->
+<h2>5. Indicateurs de dispersion</h2>
+<p>Les <strong>indicateurs de dispersion</strong> mesurent l'écart ou la variabilité des valeurs autour de la valeur centrale.</p>
+
+<h3>5.1 L'étendue</h3>
+<div class="formule">
+  \[\text{Étendue} = x_{\max} - x_{\min}\]
+</div>
+
+<div class="exemple">
+  <strong>Pour les liteaux :</strong> \(x_{\max} = 53\) cm, \(x_{\min} = 48\) cm<br>
+  \[\text{Étendue} = 53 - 48 = \mathbf{5 \text{ cm}}\]
+</div>
+
+<div class="attention">
+  <strong>Limite :</strong> l'étendue ne dépend que des deux valeurs extrêmes. Elle peut être très grande à cause d'une seule valeur aberrante.
+</div>
+
+<h3>5.2 Les quartiles</h3>
+<div class="def-box">
+  <strong>Quartile 1 (\(Q_1\)) :</strong> valeur telle que 25 % des données lui sont inférieures ou égales.<br>
+  <strong>Quartile 3 (\(Q_3\)) :</strong> valeur telle que 75 % des données lui sont inférieures ou égales.<br>
+  <em>Remarque : la médiane est le deuxième quartile \(Q_2 = Me\).</em>
+</div>
+
+<div class="methode">
+  <strong>Méthode pour calculer \(Q_1\) et \(Q_3\) :</strong><br>
+  On coupe la série triée en deux moitiés :<br>
+  — \(Q_1\) est la médiane de la première moitié (données inférieures à \(Me\))<br>
+  — \(Q_3\) est la médiane de la seconde moitié (données supérieures à \(Me\))
+</div>
+
+<div class="exemple">
+  <strong>Pour les liteaux (\(N = 20\)) :</strong><br>
+  Série triée, coupée en deux moitiés de 10 valeurs :<br>
+  Première moitié (rangs 1 à 10) : 48, 48, 48, 48, 49, 49, 49, 50, 50, 50<br>
+  \(Q_1\) = médiane de ces 10 valeurs = moyenne des valeurs aux rangs 5 et 6 = \(\dfrac{49 + 49}{2} = \mathbf{49}\) cm<br><br>
+  Seconde moitié (rangs 11 à 20) : 50, 50, 50, 50, 51, 51, 51, 51, 52, 53<br>
+  \(Q_3\) = médiane de ces 10 valeurs = moyenne des valeurs aux rangs 5 et 6 = \(\dfrac{51 + 51}{2} = \mathbf{51}\) cm
+</div>
+
+<h3>5.3 L'écart interquartile</h3>
+<div class="formule">
+  \[\text{Écart interquartile} = Q_3 - Q_1\]
+</div>
+
+<div class="exemple">
+  <strong>Pour les liteaux :</strong>
+  \[\text{Écart interquartile} = 51 - 49 = \mathbf{2 \text{ cm}}\]
+  <strong>Interprétation :</strong> 50 % des liteaux ont une longueur comprise dans l'intervalle \([Q_1\,;\,Q_3] = [49\,;\,51]\) cm.
+</div>
+
+<div class="retenir">
+  <strong>Résumé – Indicateurs de dispersion des liteaux :</strong>
+  <ul>
+    <li>Étendue = 5 cm (de 48 à 53 cm)</li>
+    <li>\(Q_1 = 49\) cm &nbsp;|&nbsp; \(Q_3 = 51\) cm</li>
+    <li>Écart interquartile = 2 cm</li>
+    <li>50 % des liteaux sont dans l'intervalle \([49\,;\,51]\) cm</li>
+  </ul>
+</div>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 6 – DIAGRAMME EN BOITE                              -->
+<!-- ============================================================ -->
+<h2>6. Diagramme en boîte à moustaches</h2>
+
+<h3>6.1 Construction</h3>
+<div class="def-box">
+  Le <strong>diagramme en boîte</strong> (ou boîte à moustaches, <em>box plot</em>) résume une série statistique à l'aide de cinq valeurs :
+  \[\text{min} \quad Q_1 \quad Me \quad Q_3 \quad \text{max}\]
+  — La <strong>boîte</strong> s'étend de \(Q_1\) à \(Q_3\) et contient 50 % des données.<br>
+  — Le trait vertical dans la boîte représente la <strong>médiane</strong>.<br>
+  — Les <strong>moustaches</strong> s'étendent de min à \(Q_1\) et de \(Q_3\) à max.
+</div>
+
+<div class="schema">
+  <svg width="480" height="125" viewBox="0 0 480 125" aria-label="Diagramme en boîte des liteaux">
+    <!-- Axe -->
+    <line x1="30" y1="88" x2="460" y2="88" stroke="#4a5568" stroke-width="1.5"/>
+
+    <!-- Echelle : 48->80, 53->440 --> <!-- pas = (440-80)/(53-48) = 72 par cm -->
+    <!-- 48=80, 49=152, 50=224, 51=296, 52=368, 53=440 -->
+
+    <!-- Graduations -->
+    <line x1="80"  y1="86" x2="80"  y2="93" stroke="#4a5568" stroke-width="1.5"/>
+    <line x1="152" y1="86" x2="152" y2="93" stroke="#4a5568" stroke-width="1.5"/>
+    <line x1="224" y1="86" x2="224" y2="93" stroke="#4a5568" stroke-width="1.5"/>
+    <line x1="296" y1="86" x2="296" y2="93" stroke="#4a5568" stroke-width="1.5"/>
+    <line x1="368" y1="86" x2="368" y2="93" stroke="#4a5568" stroke-width="1.5"/>
+    <line x1="440" y1="86" x2="440" y2="93" stroke="#4a5568" stroke-width="1.5"/>
+
+    <text x="80"  y="105" text-anchor="middle" font-size="11" fill="#4a5568">48</text>
+    <text x="152" y="105" text-anchor="middle" font-size="11" fill="#4a5568">49</text>
+    <text x="224" y="105" text-anchor="middle" font-size="11" fill="#4a5568">50</text>
+    <text x="296" y="105" text-anchor="middle" font-size="11" fill="#4a5568">51</text>
+    <text x="368" y="105" text-anchor="middle" font-size="11" fill="#4a5568">52</text>
+    <text x="440" y="105" text-anchor="middle" font-size="11" fill="#4a5568">53</text>
+
+    <!-- Moustache gauche : min=48(80) a Q1=49(152) -->
+    <line x1="80" y1="58" x2="152" y2="58" stroke="#2b6cb0" stroke-width="2"/>
+    <line x1="80" y1="50" x2="80" y2="66" stroke="#2b6cb0" stroke-width="2"/>
+
+    <!-- Boite : Q1=49(152) a Q3=51(296), hauteur=30, y=43 -->
+    <rect x="152" y="43" width="144" height="30" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2" rx="2"/>
+
+    <!-- Mediane : Me=50(224) -->
+    <line x1="224" y1="43" x2="224" y2="73" stroke="#c53030" stroke-width="2.5"/>
+
+    <!-- Moustache droite : Q3=51(296) a max=53(440) -->
+    <line x1="296" y1="58" x2="440" y2="58" stroke="#2b6cb0" stroke-width="2"/>
+    <line x1="440" y1="50" x2="440" y2="66" stroke="#2b6cb0" stroke-width="2"/>
+
+    <!-- Etiquettes -->
+    <text x="80"  y="38" text-anchor="middle" font-size="10" fill="#718096">min=48</text>
+    <text x="152" y="38" text-anchor="middle" font-size="10" fill="#2b6cb0">Q&#x2081;=49</text>
+    <text x="224" y="38" text-anchor="middle" font-size="10" fill="#c53030">Me=50</text>
+    <text x="296" y="38" text-anchor="middle" font-size="10" fill="#2b6cb0">Q&#x2083;=51</text>
+    <text x="440" y="38" text-anchor="middle" font-size="10" fill="#718096">max=53</text>
+
+    <text x="260" y="120" text-anchor="middle" font-size="11" fill="#718096">Longueur des liteaux (cm)</text>
+  </svg>
+  <figcaption>Diagramme en boîte – min=48, Q₁=49, Me=50, Q₃=51, max=53</figcaption>
+</div>
+
+<h3>6.2 Interprétation</h3>
+<div class="methode">
+  <strong>Comment lire un diagramme en boîte :</strong>
+  <ul>
+    <li><strong>Boîte longue :</strong> la moitié centrale des données est très dispersée.</li>
+    <li><strong>Boîte courte :</strong> la moitié centrale est très concentrée (bonne régularité).</li>
+    <li><strong>Médiane proche du milieu de la boîte :</strong> distribution symétrique.</li>
+    <li><strong>Médiane décentrée :</strong> distribution asymétrique (plus de données d'un côté).</li>
+    <li><strong>Moustaches longues :</strong> données très dispersées aux extrêmes.</li>
+  </ul>
+</div>
+
+<div class="exemple">
+  <strong>Pour les liteaux :</strong><br>
+  — La boîte est assez courte (\(Q_3 - Q_1 = 2\) cm) → la production est régulière.<br>
+  — La médiane (50) est au centre de la boîte → distribution presque symétrique.<br>
+  — La moustache droite est plus longue (jusqu'à 53 cm) → quelques liteaux légèrement plus longs.
+</div>
+
+<h3>6.3 Comparaison de deux séries</h3>
+<p>On peut placer deux diagrammes en boîte sur le même axe pour comparer deux séries en un coup d'œil.</p>
+
+<div class="schema">
+  <svg width="480" height="165" viewBox="0 0 480 165" aria-label="Comparaison de deux diagrammes en boîte">
+    <!-- Axe commun -->
+    <line x1="30" y1="138" x2="460" y2="138" stroke="#4a5568" stroke-width="1.5"/>
+
+    <!-- Echelle : 46->60, 56->420 --> <!-- pas = (420-60)/(56-46) = 36 par cm -->
+    <!-- 46=60, 47=96, 48=132, 49=168, 50=204, 51=240, 52=276, 53=312, 54=348, 55=384, 56=420 -->
+
+    <line x1="60"  y1="136" x2="60"  y2="143" stroke="#4a5568" stroke-width="1.5"/>
+    <text x="60"  y="155" text-anchor="middle" font-size="11" fill="#4a5568">46</text>
+    <line x1="132" y1="136" x2="132" y2="143" stroke="#4a5568" stroke-width="1.5"/>
+    <text x="132" y="155" text-anchor="middle" font-size="11" fill="#4a5568">48</text>
+    <line x1="204" y1="136" x2="204" y2="143" stroke="#4a5568" stroke-width="1.5"/>
+    <text x="204" y="155" text-anchor="middle" font-size="11" fill="#4a5568">50</text>
+    <line x1="276" y1="136" x2="276" y2="143" stroke="#4a5568" stroke-width="1.5"/>
+    <text x="276" y="155" text-anchor="middle" font-size="11" fill="#4a5568">52</text>
+    <line x1="348" y1="136" x2="348" y2="143" stroke="#4a5568" stroke-width="1.5"/>
+    <text x="348" y="155" text-anchor="middle" font-size="11" fill="#4a5568">54</text>
+    <line x1="420" y1="136" x2="420" y2="143" stroke="#4a5568" stroke-width="1.5"/>
+    <text x="420" y="155" text-anchor="middle" font-size="11" fill="#4a5568">56</text>
+
+    <!-- Série A (reguliere) : min=48(132), Q1=49(168), Me=50(204), Q3=51(240), max=53(312) -->
+    <text x="20" y="68" text-anchor="middle" font-size="12" fill="#2b6cb0" font-weight="700">A</text>
+    <line x1="132" y1="62" x2="168" y2="62" stroke="#2b6cb0" stroke-width="2"/>
+    <line x1="132" y1="55" x2="132" y2="69" stroke="#2b6cb0" stroke-width="2"/>
+    <rect x="168" y="47" width="72" height="30" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2" rx="2"/>
+    <line x1="204" y1="47" x2="204" y2="77" stroke="#c53030" stroke-width="2.5"/>
+    <line x1="240" y1="62" x2="312" y2="62" stroke="#2b6cb0" stroke-width="2"/>
+    <line x1="312" y1="55" x2="312" y2="69" stroke="#2b6cb0" stroke-width="2"/>
+
+    <!-- Série B (dispersee) : min=46(60), Q1=48(132), Me=50(204), Q3=52(276), max=55(384) -->
+    <text x="20" y="112" text-anchor="middle" font-size="12" fill="#276749" font-weight="700">B</text>
+    <line x1="60" y1="106" x2="132" y2="106" stroke="#276749" stroke-width="2"/>
+    <line x1="60" y1="99" x2="60" y2="113" stroke="#276749" stroke-width="2"/>
+    <rect x="132" y="91" width="144" height="30" fill="#c6f6d5" stroke="#276749" stroke-width="2" rx="2"/>
+    <line x1="204" y1="91" x2="204" y2="121" stroke="#c53030" stroke-width="2.5"/>
+    <line x1="276" y1="106" x2="384" y2="106" stroke="#276749" stroke-width="2"/>
+    <line x1="384" y1="99" x2="384" y2="113" stroke="#276749" stroke-width="2"/>
+
+    <text x="260" y="165" text-anchor="middle" font-size="11" fill="#718096">Longueur (cm)</text>
+  </svg>
+  <figcaption>Comparaison – Série A plus concentrée que Série B (même médiane, dispersion différente)</figcaption>
+</div>
+
+<div class="exemple">
+  <strong>Lecture :</strong><br>
+  — Les deux séries ont la même médiane (50 cm).<br>
+  — La série A est plus concentrée (boîte plus courte) : production plus régulière.<br>
+  — La série B est plus dispersée (boîte et moustaches plus larges) : production moins régulière.
+</div>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 7 – APPLICATIONS CONCRÈTES MAMA                     -->
+<!-- ============================================================ -->
+<h2>7. Applications concrètes MAMA</h2>
+
+<h3>Contrôle qualité – Analyse des dimensions produites par une machine</h3>
+<div class="exemple">
+  <span class="context-tag">Contrôle qualité</span><br>
+  Une machine tronçonne des liteaux censés mesurer 50 cm. On mesure 30 pièces et on calcule la moyenne, la médiane et les quartiles.
+  <ul>
+    <li>Si la <strong>moyenne est éloignée de 50 cm</strong> → la machine est mal réglée (biais systématique).</li>
+    <li>Si l'<strong>étendue ou l'écart interquartile est trop grand</strong> → la machine est imprécise.</li>
+    <li>On compare l'étendue à la <strong>tolérance</strong> fixée par le cahier des charges.</li>
+  </ul>
+</div>
+
+<h3>Comparaison de deux opérateurs – Temps de fabrication</h3>
+<div class="exemple">
+  <span class="context-tag">Temps de fabrication</span><br>
+  Deux opérateurs fabriquent chacun 20 pièces. On compare leurs indicateurs :
+  <ul>
+    <li><strong>Rapidité :</strong> on compare les <em>moyennes</em> → l'opérateur avec la plus petite moyenne est plus rapide en moyenne.</li>
+    <li><strong>Régularité :</strong> on compare les <em>écarts interquartiles</em> → le plus petit indique l'opérateur le plus régulier.</li>
+  </ul>
+</div>
+
+<h3>Analyse des coûts de matériaux</h3>
+<div class="exemple">
+  <span class="context-tag">Gestion des coûts</span><br>
+  On suit les coûts mensuels des matériaux sur 12 mois :
+  <ul>
+    <li>La <strong>moyenne</strong> donne le coût mensuel habituel.</li>
+    <li>L'<strong>étendue</strong> montre la variation entre le mois le moins cher et le plus cher.</li>
+    <li>Un coût très éloigné des autres (valeur aberrante) mérite une investigation.</li>
+  </ul>
+</div>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 8 – À RETENIR                                       -->
+<!-- ============================================================ -->
+<h2>8. À retenir</h2>
+
+<table>
+  <tr>
+    <th>Indicateur</th>
+    <th>Formule / Méthode</th>
+    <th>Ce qu'il mesure</th>
+    <th>Exemple liteaux</th>
+  </tr>
+  <tr>
+    <td class="tl"><strong>Moyenne \(\bar{x}\)</strong></td>
+    <td>\(\dfrac{\sum x_i\, n_i}{N}\)</td>
+    <td class="tl">Valeur centrale pondérée</td>
+    <td>≈ 50,05 cm</td>
+  </tr>
+  <tr>
+    <td class="tl"><strong>Médiane \(Me\)</strong></td>
+    <td>Valeur centrale après tri</td>
+    <td class="tl">50 % au-dessus, 50 % en dessous</td>
+    <td>50 cm</td>
+  </tr>
+  <tr>
+    <td class="tl"><strong>Mode \(Mo\)</strong></td>
+    <td>Valeur la plus fréquente</td>
+    <td class="tl">Valeur la plus courante</td>
+    <td>50 cm</td>
+  </tr>
+  <tr>
+    <td class="tl"><strong>Étendue</strong></td>
+    <td>\(x_{\max} - x_{\min}\)</td>
+    <td class="tl">Amplitude totale de la série</td>
+    <td>5 cm</td>
+  </tr>
+  <tr>
+    <td class="tl"><strong>Quartile \(Q_1\)</strong></td>
+    <td>Médiane de la 1re moitié</td>
+    <td class="tl">25 % des valeurs en dessous</td>
+    <td>49 cm</td>
+  </tr>
+  <tr>
+    <td class="tl"><strong>Quartile \(Q_3\)</strong></td>
+    <td>Médiane de la 2e moitié</td>
+    <td class="tl">75 % des valeurs en dessous</td>
+    <td>51 cm</td>
+  </tr>
+  <tr>
+    <td class="tl"><strong>Écart interquartile</strong></td>
+    <td>\(Q_3 - Q_1\)</td>
+    <td class="tl">Dispersion des 50 % centraux</td>
+    <td>2 cm</td>
+  </tr>
+</table>
+
+<div class="retenir" style="margin-top:16px">
+  <strong>Le diagramme en boîte en un coup d'œil :</strong><br>
+  5 valeurs clés : <strong>min – \(Q_1\) – médiane – \(Q_3\) – max</strong><br>
+  La boîte = 50 % des données. Plus la boîte est courte, plus la production est régulière.
+</div>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 9 – ERREURS FRÉQUENTES                              -->
+<!-- ============================================================ -->
+<h2>9. Erreurs fréquentes</h2>
+
+<div class="erreur-item">
+  <strong>Erreur 1 – Confondre moyenne et médiane</strong><br>
+  La moyenne tient compte de toutes les valeurs (y compris les extrêmes). La médiane représente la valeur du milieu. Sur une série avec des valeurs aberrantes, la médiane est plus représentative que la moyenne.
+</div>
+
+<div class="erreur-item">
+  <strong>Erreur 2 – Oublier de trier pour trouver la médiane</strong><br>
+  La médiane se calcule toujours sur une série <em>triée dans l'ordre croissant</em>. Sans tri, le résultat est faux.
+</div>
+
+<div class="erreur-item">
+  <strong>Erreur 3 – Confondre étendue et écart interquartile</strong><br>
+  Étendue = max − min (porte sur toute la série). Écart interquartile = Q₃ − Q₁ (porte sur les 50 % centraux). L'écart interquartile est moins sensible aux valeurs extrêmes.
+</div>
+
+<div class="erreur-item">
+  <strong>Erreur 4 – Mauvaise lecture d'un diagramme en boîte</strong><br>
+  Le trait vertical dans la boîte représente la <em>médiane</em>, pas la moyenne. La boîte contient exactement 50 % des données (de Q₁ à Q₃), pas toute la série.
+</div>
+
+<div class="erreur-item">
+  <strong>Erreur 5 – Oublier que la somme des fréquences doit valoir 1</strong><br>
+  Si la somme des fréquences n'est pas égale à 1 (ou 100 %), il y a une erreur dans les effectifs ou dans les calculs de fréquences.
+</div>
+
+
+<!-- GRAPHIQUES ET ANIMATIONS -->
+<h2>Graphique — Diagramme en barres des fréquences</h2>
+
+<p>
+  Voici les notes obtenues par 20 élèves d'une classe de 2nde Pro à un DS de maths. Le diagramme ci-dessous représente la distribution des fréquences.
+</p>
+
+<div class="chart-wrapper">
+  <canvas id="chartStat"></canvas>
+</div>
+
+<script>
+(function(){
+  const notes=['0-4','5-7','8-10','11-13','14-16','17-20'];
+  const effectifs=[1,2,5,7,4,1];
+  const total=effectifs.reduce((a,b)=>a+b,0);
+  const freqs=effectifs.map(e=>Math.round(e/total*100));
+  new Chart(document.getElementById('chartStat'),{
+    type:'bar',
+    data:{
+      labels:notes,
+      datasets:[
+        {label:'Effectif',data:effectifs,backgroundColor:'rgba(0,86,179,0.65)',borderColor:'#0056b3',borderWidth:1.5,yAxisID:'y'},
+        {type:'line',label:'Fréquence (%)',data:freqs,borderColor:'#2f855a',backgroundColor:'transparent',borderWidth:2,pointRadius:5,tension:.3,yAxisID:'y2'}
+      ]
+    },
+    options:{
+      responsive:true,
+      plugins:{
+        legend:{position:'bottom',labels:{font:{size:12}}},
+        title:{display:true,text:'Répartition des notes — DS de mathématiques (n=20)',font:{size:12}}
+      },
+      scales:{
+        x:{title:{display:true,text:'Notes (intervalles)'}},
+        y:{title:{display:true,text:'Effectif'},position:'left',beginAtZero:true,grid:{color:'#f0f0f0'}},
+        y2:{title:{display:true,text:'Fréquence (%)'},position:'right',beginAtZero:true,max:60,grid:{display:false}}
+      }
+    }
+  });
+})();
+</script>
+
+<p style="font-size:.9em;color:#718096;text-align:center">Les barres montrent les effectifs (axe gauche), la courbe verte montre les fréquences en % (axe droit).</p>
+
+<h2>Animation — Calculatrice de moyenne et médiane</h2>
+
+<p style="font-size:.9em;color:#718096">Saisis des valeurs séparées par des virgules pour calculer automatiquement moyenne, médiane, étendue et quartiles.</p>
+
+<div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:18px;margin:16px 0">
+  <div class="ctrl-vis">
+    <label style="flex:1;max-width:400px">Valeurs : <input type="text" id="inpValeurs" value="12, 15, 8, 19, 11, 14, 9, 16, 13, 10" style="width:100%;padding:6px 10px;border:1px solid #e2e8f0;border-radius:6px;font-family:inherit;margin-top:4px"></label>
+    <button onclick="calcStats()" style="padding:8px 18px;background:var(--p);color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:700">Calculer</button>
+  </div>
+  <div id="statsResult" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:12px"></div>
+</div>
+
+<script>
+function calcStats(){
+  const raw=document.getElementById('inpValeurs').value;
+  const vals=raw.split(/[,;\s]+/).map(Number).filter(v=>!isNaN(v)&&v!==undefined);
+  if(vals.length<2){document.getElementById('statsResult').innerHTML='<p style="color:#c53030">Entrez au moins 2 valeurs.</p>';return;}
+  const n=vals.length;
+  const sorted=[...vals].sort((a,b)=>a-b);
+  const moy=vals.reduce((a,b)=>a+b,0)/n;
+  const med=n%2===0?(sorted[n/2-1]+sorted[n/2])/2:sorted[Math.floor(n/2)];
+  const q1=sorted[Math.floor(n/4)];
+  const q3=sorted[Math.ceil(3*n/4)-1]??sorted[n-1];
+  const etendue=sorted[n-1]-sorted[0];
+  const items=[
+    {label:'Moyenne',val:Math.round(moy*100)/100,color:'#0056b3'},
+    {label:'Médiane',val:med,color:'#2f855a'},
+    {label:'Q₁',val:q1,color:'#d97706'},
+    {label:'Q₃',val:q3,color:'#d97706'},
+    {label:'Étendue',val:etendue,color:'#c53030'},
+    {label:'n (effectif)',val:n,color:'#6b7280'}
+  ];
+  document.getElementById('statsResult').innerHTML=items.map(it=>
+    `<div style="background:#fff;border:2px solid ${it.color};border-radius:8px;padding:10px;text-align:center">
+      <div style="font-size:.78em;font-weight:700;color:${it.color};text-transform:uppercase">${it.label}</div>
+      <div style="font-size:1.4em;font-weight:700;color:${it.color};margin-top:4px">${it.val}</div>
+    </div>`
+  ).join('');
+}
+calcStats();
+</script>
+
+<!-- Navigation bas de page -->
+<div class="nav-footer">
+  <a href="ch01_lecon.html" class="nav-btn">← Ch01</a>
+  <a href="maths-2nde-mama.html" class="nav-btn">Sommaire</a>
+  <a href="ch02_exos.html" class="nav-btn">Exercices Ch02 →</a>
+</div>
+
+</div><!-- fin .c -->
 <script src="nav.js"></script>
 </body>
 </html>

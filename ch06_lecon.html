@@ -6,6 +6,7 @@
 <title>Ch06 – Inéquations du premier degré – 2nde MAMA</title>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 :root{--p:#0056b3;--s:#2f855a;--d:#c53030;--o:#d97706;--t:#2d3748;--mama:#6b5c00}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:var(--t);line-height:1.7;margin:0;padding:20px}
@@ -80,6 +81,12 @@ details[open] summary{margin-bottom:6px}
 .simu-link{display:inline-flex;align-items:center;gap:8px;background:#ebf5ff;border:1px solid #93c5fd;border-radius:8px;padding:10px 16px;text-decoration:none;color:var(--p);font-weight:600;font-size:.9em;transition:.2s;margin:4px}
 .simu-link:hover{background:var(--p);color:#fff}
 
+.chart-wrapper{max-width:580px;margin:16px auto;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:16px}
+canvas.anim{display:block;margin:12px auto;border-radius:10px;border:1px solid #e2e8f0;background:#fff}
+.ctrl-vis{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0;align-items:center;font-size:.9em}
+.ctrl-vis input[type=range]{width:130px;accent-color:var(--p)}
+.ctrl-vis select{padding:4px 8px;border:1px solid #e2e8f0;border-radius:6px;font-family:inherit}
+.anim-result{text-align:center;font-size:1em;font-weight:700;color:var(--p);min-height:1.5em;margin-top:6px}
 /* Comparaison visuelle équation/inéquation */
 .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0}
 .compare-card{border-radius:8px;padding:14px;text-align:center;font-size:.92em}
@@ -545,6 +552,128 @@ une dimension minimale à respecter, une quantité à produire au minimum...</p>
 
 
 <!-- SIMULATIONS -->
+<h2>Visualiser graphiquement une inéquation</h2>
+
+<p>
+  Résoudre \(2x - 4 < 0\) revient à chercher pour quelles valeurs de \(x\) la droite \(f(x) = 2x - 4\) est <strong>en dessous</strong> de l'axe des abscisses (\(y = 0\)).
+</p>
+
+<div class="chart-wrapper">
+  <canvas id="chartIneq"></canvas>
+</div>
+
+<script>
+(function(){
+  const xs=[-1,0,1,2,3,4,5];
+  const vals=xs.map(x=>2*x-4);
+  const colors=vals.map(v=>v<0?'rgba(0,86,179,0.6)':'rgba(197,48,48,0.6)');
+  new Chart(document.getElementById('chartIneq'),{
+    type:'bar',
+    data:{
+      labels:xs,
+      datasets:[
+        {label:'f(x) = 2x − 4',data:vals,backgroundColor:colors,borderColor:colors.map(c=>c.replace('0.6','1')),borderWidth:1.5},
+        {type:'line',label:'y = 0',data:xs.map(()=>0),borderColor:'#718096',borderDash:[5,4],pointRadius:0,borderWidth:1.5}
+      ]
+    },
+    options:{
+      responsive:true,
+      plugins:{
+        legend:{position:'bottom',labels:{font:{size:12}}},
+        title:{display:true,text:'Barres bleues (x<2) : f(x)<0 → solutions de 2x−4<0',font:{size:12}}
+      },
+      scales:{
+        x:{title:{display:true,text:'x'}},
+        y:{title:{display:true,text:'f(x)'},grid:{color:'#f0f0f0'}}
+      }
+    }
+  });
+})();
+</script>
+
+<p style="font-size:.9em;color:#718096;text-align:center">Les barres <span style="color:#0056b3;font-weight:700">bleues</span> (en dessous de 0) indiquent les solutions : \(x &lt; 2\). Les barres <span style="color:#c53030;font-weight:700">rouges</span> indiquent où l'inéquation n'est pas vérifiée.</p>
+
+<h2>Animation — Droite graduée interactive</h2>
+
+<p style="font-size:.9em;color:#718096">Règle les paramètres pour voir comment change l'ensemble solution d'une inéquation \(ax + b \leq c\) ou \(ax + b \geq c\).</p>
+
+<div class="ctrl-vis">
+  <label>a = <input type="range" id="ia" min="1" max="5" step="1" value="2"> <strong id="la2">2</strong></label>
+  <label>b = <input type="range" id="ib" min="-8" max="8" step="1" value="-4"> <strong id="lb2">-4</strong></label>
+  <label>c = <input type="range" id="ic" min="-5" max="10" step="1" value="0"> <strong id="lc2">0</strong></label>
+  <label>Signe :
+    <select id="isign">
+      <option value="le">≤</option>
+      <option value="lt">&lt;</option>
+      <option value="ge">≥</option>
+      <option value="gt">&gt;</option>
+    </select>
+  </label>
+</div>
+<canvas id="canvasIneq" class="anim" width="560" height="100"></canvas>
+<div class="anim-result" id="resuIneq"></div>
+
+<script>
+(function(){
+  const cv=document.getElementById('canvasIneq'),ctx=cv.getContext('2d');
+  const ia=document.getElementById('ia'),ib=document.getElementById('ib'),ic=document.getElementById('ic'),isign=document.getElementById('isign');
+  const la2=document.getElementById('la2'),lb2=document.getElementById('lb2'),lc2=document.getElementById('lc2');
+  function fmt(n){return n<0?'('+n+')':''+n;}
+  function draw(){
+    const a=+ia.value,b=+ib.value,c=+ic.value,sign=isign.value;
+    la2.textContent=a; lb2.textContent=b; lc2.textContent=c;
+    // sol: ax+b ≤/≥ c → ax ≤/≥ c-b → x ≤/≥ (c-b)/a
+    const raw=(c-b)/a;
+    const sol=Math.round(raw*100)/100;
+    const isLe=sign==='le'||sign==='lt';
+    const strict=sign==='lt'||sign==='gt';
+    ctx.clearRect(0,0,cv.width,cv.height);
+    const W=cv.width,H=cv.height;
+    // Draw number line
+    const yc=H/2,x0=50,x1=W-50,range=10,unit=(x1-x0)/range; // -5 to +5 mapped
+    function toX(v){return x0+(v+5)*unit;}
+    // Axis
+    ctx.strokeStyle='#4a5568'; ctx.lineWidth=2;
+    ctx.beginPath(); ctx.moveTo(x0,yc); ctx.lineTo(x1,yc); ctx.stroke();
+    // Ticks
+    ctx.fillStyle='#718096'; ctx.font='11px Segoe UI,system-ui,sans-serif'; ctx.textAlign='center';
+    for(let i=-5;i<=5;i++){
+      const px=toX(i);
+      ctx.beginPath(); ctx.moveTo(px,yc-5); ctx.lineTo(px,yc+5); ctx.stroke();
+      ctx.fillText(i,px,yc+18);
+    }
+    // Colored zone
+    const solX=toX(Math.max(-5,Math.min(5,sol)));
+    if(isLe){
+      // color from left to sol
+      ctx.fillStyle='rgba(0,86,179,0.25)';
+      ctx.fillRect(x0,yc-10,Math.max(0,solX-x0),20);
+      // Arrow left
+      ctx.fillStyle='#0056b3'; ctx.font='bold 16px sans-serif'; ctx.textAlign='left';
+      ctx.fillText('←',x0-5,yc+5);
+    } else {
+      ctx.fillStyle='rgba(0,86,179,0.25)';
+      ctx.fillRect(solX,yc-10,Math.max(0,x1-solX),20);
+      ctx.fillStyle='#0056b3'; ctx.textAlign='right';
+      ctx.fillText('→',x1+5,yc+5);
+    }
+    // Point at sol
+    ctx.beginPath(); ctx.arc(solX,yc,7,0,2*Math.PI);
+    ctx.fillStyle=strict?'#fff':'#0056b3';
+    ctx.strokeStyle='#0056b3'; ctx.lineWidth=2.5;
+    ctx.fill(); ctx.stroke();
+    // Label sol
+    ctx.fillStyle='#0056b3'; ctx.font='bold 12px Segoe UI,system-ui,sans-serif'; ctx.textAlign='center';
+    ctx.fillText('x='+sol, solX, yc-16);
+    // Result
+    const signStr={le:'≤',lt:'<',ge:'≥',gt:'>'}[sign];
+    document.getElementById('resuIneq').textContent=`${a}x ${b>=0?'+'+b:b} ${signStr} ${c}  →  x ${signStr} ${sol}`;
+  }
+  [ia,ib,ic,isign].forEach(el=>el.addEventListener('input',draw));
+  draw();
+})();
+</script>
+
 <h2>Simulations interactives</h2>
 <p>Entraîne-toi avec les outils interactifs de ce chapitre :</p>
 <div>

@@ -6,6 +6,7 @@
 <title>Ch05 – Équations du premier degré – 2nde MAMA</title>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 :root{--p:#0056b3;--s:#2f855a;--d:#c53030;--o:#d97706;--t:#2d3748;--mama:#6b5c00}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:var(--t);line-height:1.7;margin:0;padding:20px}
@@ -71,6 +72,11 @@ details[open] summary{margin-bottom:6px}
 
 .hors-prog{background:#faf5ff;border:2px dashed #9f7aea;border-radius:8px;padding:16px 20px;margin:18px 0}
 .hors-prog::before{content:"⭐ Pour aller plus loin (hors programme)";display:block;font-weight:700;color:#6d28d9;font-size:.9em;margin-bottom:10px;text-transform:uppercase;letter-spacing:.03em}
+.chart-wrapper{max-width:580px;margin:16px auto;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:16px}
+canvas.anim{display:block;margin:12px auto;border-radius:10px;border:1px solid #e2e8f0;background:#fff}
+.ctrl-vis{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0;align-items:center;font-size:.9em}
+.ctrl-vis input[type=range]{width:130px;accent-color:var(--p)}
+.anim-result{text-align:center;font-size:1em;font-weight:700;color:var(--p);min-height:1.5em;margin-top:6px}
 
 .correct{background:#d1fae5;color:#065f46;font-weight:600;padding:8px 12px;border-radius:6px;border-left:4px solid var(--s);margin-top:8px}
 
@@ -436,6 +442,94 @@ details[open] summary{margin-bottom:6px}
     <strong>Outils :</strong> GeoGebra (gratuit en ligne), Desmos, ou la calculatrice (mode grapheur).
   </p>
 </div>
+
+<!-- GRAPHIQUES ET ANIMATIONS -->
+<h2>Visualiser la résolution graphique</h2>
+
+<p>
+  Résoudre \(2x - 5 = 0\) revient à trouver l'abscisse du point où la droite \(f(x) = 2x - 5\) coupe l'axe des abscisses (\(y = 0\)).
+</p>
+
+<div class="chart-wrapper">
+  <canvas id="chartEq"></canvas>
+</div>
+
+<script>
+(function(){
+  const xs=[-3,-2,-1,0,1,2,3,4];
+  new Chart(document.getElementById('chartEq'),{
+    type:'line',
+    data:{
+      labels:xs,
+      datasets:[
+        {label:'f(x) = 2x − 5',data:xs.map(x=>2*x-5),borderColor:'#0056b3',backgroundColor:'rgba(0,86,179,.08)',borderWidth:2.5,pointRadius:4,tension:.1},
+        {label:'y = 0',data:xs.map(()=>0),borderColor:'#c53030',backgroundColor:'transparent',borderWidth:1.5,borderDash:[6,3],pointRadius:0,tension:0}
+      ]
+    },
+    options:{
+      responsive:true,
+      plugins:{
+        legend:{position:'bottom',labels:{font:{size:12}}},
+        title:{display:true,text:'Résolution graphique de 2x − 5 = 0 → solution : x = 2,5',font:{size:12}}
+      },
+      scales:{
+        x:{title:{display:true,text:'x'},grid:{color:'#f0f0f0'}},
+        y:{title:{display:true,text:'f(x)'},grid:{color:'#f0f0f0'}}
+      }
+    }
+  });
+})();
+</script>
+
+<p style="font-size:.9em;color:#718096;text-align:center">La droite bleue coupe l'axe rouge (\(y=0\)) en \(x = 2{,}5\), confirmant la solution algébrique.</p>
+
+<h2>Animation — Résoudre une équation étape par étape</h2>
+
+<p style="font-size:.9em;color:#718096">Choisis les coefficients d'une équation \(ax + b = c\) et observe les étapes de résolution.</p>
+
+<div class="ctrl-vis">
+  <label>a = <input type="range" id="sa" min="1" max="6" step="1" value="2"> <strong id="la">2</strong></label>
+  <label>b = <input type="range" id="sb" min="-10" max="10" step="1" value="-5"> <strong id="lb">-5</strong></label>
+  <label>c = <input type="range" id="sc" min="-10" max="10" step="1" value="3"> <strong id="lc">3</strong></label>
+</div>
+<canvas id="canvasEq" class="anim" width="560" height="200"></canvas>
+<div class="anim-result" id="resuEq"></div>
+
+<script>
+(function(){
+  const cv=document.getElementById('canvasEq'),ctx=cv.getContext('2d');
+  const sa=document.getElementById('sa'),sb=document.getElementById('sb'),sc=document.getElementById('sc');
+  const la=document.getElementById('la'),lb=document.getElementById('lb'),lc=document.getElementById('lc');
+  function fmtN(n){return n>=0?'+'+n:''+n;}
+  function draw(){
+    const a=+sa.value,b=+sb.value,c=+sc.value;
+    la.textContent=a; lb.textContent=b; lc.textContent=c;
+    const sol=(c-b)/a;
+    const solStr=Number.isInteger(sol)?sol.toString():(Math.round(sol*100)/100).toString();
+    ctx.clearRect(0,0,cv.width,cv.height);
+    const W=cv.width,H=cv.height;
+    ctx.fillStyle='#f8fafc'; ctx.fillRect(0,0,W,H);
+    // Boîtes étapes
+    const steps=[
+      {txt:`Équation : ${a}x ${fmtN(b)} = ${c}`, bg:'#ebf5ff',bd:'#0056b3'},
+      {txt:`On isole les x : ${a}x = ${c} − (${b}) = ${c-b}`, bg:'#fffbeb',bd:'#d97706'},
+      {txt:`On divise par ${a} : x = ${c-b} ÷ ${a} = ${solStr}`, bg:'#f0fff4',bd:'#2f855a'},
+      {txt:`✔ Vérification : ${a}×(${solStr}) ${fmtN(b)} = ${Math.round(a*sol+b*10)/10}`, bg:'#dbeafe',bd:'#1e40af'}
+    ];
+    const boxH=38, pad=8, startY=12;
+    steps.forEach((s,i)=>{
+      const y=startY+i*(boxH+6);
+      ctx.fillStyle=s.bg; ctx.strokeStyle=s.bd; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.roundRect(10,y,W-20,boxH,6); ctx.fill(); ctx.stroke();
+      ctx.fillStyle='#2d3748'; ctx.font=`${i===0?'700':'500'} 13px Segoe UI,system-ui,sans-serif`;
+      ctx.textAlign='left'; ctx.fillText(s.txt,20,y+24);
+    });
+    document.getElementById('resuEq').textContent=`Solution : x = ${solStr}`;
+  }
+  [sa,sb,sc].forEach(el=>el.addEventListener('input',draw));
+  draw();
+})();
+</script>
 
 <!-- SIMULATIONS -->
 <h2>Simulations interactives</h2>

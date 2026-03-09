@@ -6,6 +6,7 @@
 <title>Ch04 – Probabilités et fluctuation des fréquences – 2nde MAMA</title>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 :root{--p:#0056b3;--s:#2f855a;--d:#c53030;--o:#d97706;--t:#2d3748;--mama:#6b5c00}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:var(--t);line-height:1.7;margin:0;padding:20px}
@@ -76,6 +77,12 @@ details[open] summary{margin-bottom:6px}
 
 .schema{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px;margin:10px 0;text-align:center}
 .schema figcaption{font-size:.8em;color:#718096;margin-top:6px}
+.chart-wrapper{max-width:580px;margin:16px auto;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:16px}
+canvas.anim{display:block;margin:12px auto;border-radius:10px;border:1px solid #e2e8f0;background:#fff}
+.ctrl-vis{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0;align-items:center;font-size:.9em}
+.ctrl-vis input[type=range]{width:140px;accent-color:var(--p)}
+.ctrl-vis input[type=number]{width:60px;padding:4px 8px;border:1px solid #e2e8f0;border-radius:6px;font-family:inherit}
+.anim-result{text-align:center;font-size:.95em;font-weight:700;color:var(--p);min-height:1.5em;margin-top:6px}
 </style>
 </head>
 <body>
@@ -579,6 +586,113 @@ details[open] summary{margin-bottom:6px}
 
 
 <!-- SIMULATIONS -->
+<h2>Graphique — Probabilités théoriques vs fréquences observées</h2>
+
+<p>
+  En théorie, un dé équilibré donne chaque face avec une probabilité de \(\frac{1}{6} \approx 16{,}7\%\).
+  En pratique, on observe des fluctuations. Voici un exemple de 60 lancers :
+</p>
+
+<div class="chart-wrapper">
+  <canvas id="chartProba"></canvas>
+</div>
+
+<script>
+(function(){
+  const faces=['1','2','3','4','5','6'];
+  const obs=[8,11,9,12,10,10]; // exemple de 60 lancers
+  const total=obs.reduce((a,b)=>a+b,0);
+  const freqObs=obs.map(n=>Math.round(n/total*1000)/10);
+  const probaTheo=faces.map(()=>Math.round(100/6*10)/10);
+  new Chart(document.getElementById('chartProba'),{
+    type:'bar',
+    data:{
+      labels:faces,
+      datasets:[
+        {label:'Fréquence observée (%)',data:freqObs,backgroundColor:'rgba(0,86,179,0.65)',borderColor:'#0056b3',borderWidth:1.5},
+        {type:'line',label:'Probabilité théorique (16,7%)',data:probaTheo,borderColor:'#c53030',backgroundColor:'transparent',borderWidth:2,borderDash:[6,3],pointRadius:0}
+      ]
+    },
+    options:{
+      responsive:true,
+      plugins:{
+        legend:{position:'bottom',labels:{font:{size:12}}},
+        title:{display:true,text:'60 lancers d\'un dé — fréquences observées vs probabilité théorique',font:{size:12}}
+      },
+      scales:{
+        x:{title:{display:true,text:'Face du dé'}},
+        y:{title:{display:true,text:'Fréquence / Probabilité (%)'},beginAtZero:true,max:30,grid:{color:'#f0f0f0'}}
+      }
+    }
+  });
+})();
+</script>
+
+<p style="font-size:.9em;color:#718096;text-align:center">Les barres bleues fluctuent autour de la droite rouge théorique (16,7%). Plus le nombre de lancers augmente, plus elles s'en rapprochent.</p>
+
+<h2>Animation — Simulateur de lancers de pièce</h2>
+
+<p style="font-size:.9em;color:#718096">Lance une pièce virtuellement et observe comment la fréquence des Pile se stabilise autour de 0,5 quand le nombre de lancers augmente.</p>
+
+<div class="ctrl-vis">
+  <label>Nombre de lancers : <input type="range" id="nbLancers" min="10" max="500" step="10" value="50"> <strong id="lblLancers">50</strong></label>
+  <button onclick="lancerPiece()" style="padding:8px 16px;background:var(--p);color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:700;font-size:.88em">▶ Lancer</button>
+</div>
+<canvas id="canvasProba" class="anim" width="560" height="200"></canvas>
+<div class="anim-result" id="resuProba"></div>
+
+<script>
+(function(){
+  const cv=document.getElementById('canvasProba'),ctx=cv.getContext('2d');
+  const slN=document.getElementById('nbLancers'),lblN=document.getElementById('lblLancers');
+  slN.addEventListener('input',()=>{lblN.textContent=slN.value;});
+  window.lancerPiece=function(){
+    const n=+slN.value;
+    const results=[];
+    let piles=0;
+    const freqs=[];
+    for(let i=0;i<n;i++){
+      const r=Math.random()<0.5;
+      if(r) piles++;
+      results.push(r?1:0);
+      freqs.push(piles/(i+1));
+    }
+    draw(freqs,n,piles);
+  };
+  function draw(freqs,n,piles){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    const W=cv.width,H=cv.height,pad=30;
+    const dx=(W-2*pad)/freqs.length;
+    // Axes
+    ctx.strokeStyle='#718096'; ctx.lineWidth=1.5;
+    ctx.beginPath(); ctx.moveTo(pad,pad); ctx.lineTo(pad,H-pad); ctx.lineTo(W-pad,H-pad); ctx.stroke();
+    // Théorique y=0.5
+    const y05=pad+(H-2*pad)*0.5;
+    ctx.strokeStyle='#c53030'; ctx.lineWidth=1.5; ctx.setLineDash([6,4]);
+    ctx.beginPath(); ctx.moveTo(pad,y05); ctx.lineTo(W-pad,y05); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle='#c53030'; ctx.font='11px Segoe UI,sans-serif'; ctx.textAlign='right';
+    ctx.fillText('0,5',pad-4,y05+4);
+    // Courbe fréquences
+    ctx.strokeStyle='#0056b3'; ctx.lineWidth=2;
+    ctx.beginPath();
+    freqs.forEach((f,i)=>{
+      const x=pad+i*dx, y=pad+(H-2*pad)*(1-f);
+      i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+    });
+    ctx.stroke();
+    // Labels
+    ctx.fillStyle='#718096'; ctx.font='11px Segoe UI,sans-serif'; ctx.textAlign='center';
+    ctx.fillText('Lancers',W/2,H-5);
+    ctx.fillText('0',pad-8,H-pad+4); ctx.fillText('1',pad-8,pad+4);
+    // Résultat
+    const f=Math.round(piles/n*1000)/1000;
+    document.getElementById('resuProba').textContent=`${n} lancers : ${piles} Pile — fréquence = ${f} (théorie : 0,5)`;
+  }
+  lancerPiece();
+})();
+</script>
+
 <h2>Simulations interactives</h2>
 <p>Entra&icirc;ne-toi avec les outils interactifs :</p>
 <div>
