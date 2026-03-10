@@ -200,6 +200,33 @@
     .about-text p { font-size: .93rem; color: #334155; margin-bottom: 8px; }
     .about-text p:last-child { margin: 0; }
 
+    /* ── Météo ── */
+    .meteo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 10px;
+    }
+    .meteo-day {
+      background: #fff;
+      border-radius: 10px;
+      padding: 14px 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07);
+      transition: transform .15s;
+    }
+    .meteo-day:first-child {
+      border: 2px solid #2563eb;
+    }
+    .meteo-day:hover { transform: translateY(-2px); }
+    .meteo-jour { font-size: .78rem; font-weight: 700; color: #64748b; text-transform: uppercase; }
+    .meteo-date { font-size: .72rem; color: #94a3b8; margin-bottom: 6px; }
+    .meteo-icon { font-size: 1.8rem; margin: 6px 0; }
+    .meteo-temp { font-size: .88rem; font-weight: 700; color: #1e293b; }
+    .meteo-temp span { font-weight: 400; color: #64748b; font-size: .82rem; }
+    .meteo-detail { font-size: .72rem; color: #64748b; margin-top: 4px; }
+    .meteo-loading { text-align: center; padding: 40px; color: #64748b; font-size: .9rem; }
+    .meteo-error { text-align: center; padding: 20px; color: #dc2626; font-size: .88rem; }
+
     /* ── Footer ── */
     footer {
       background: #1e3a5f;
@@ -354,6 +381,14 @@
       </div>
     </section>
 
+    <!-- ── Météo Bagnolet ── -->
+    <section>
+      <h2 class="section-title">Météo de la semaine – Bagnolet</h2>
+      <div id="meteo-container">
+        <div class="meteo-loading">Chargement de la météo...</div>
+      </div>
+    </section>
+
     <!-- ── À propos ── -->
     <section>
       <h2 class="section-title">À propos du site</h2>
@@ -372,6 +407,80 @@
   <footer>
     <p>Site pédagogique &mdash; M. Azzouz &mdash; Lycée Eugène Hénaff &mdash; Académie de Créteil</p>
   </footer>
+
+  <script>
+    (function() {
+      var JOURS = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+      var MOIS = ['jan','fév','mar','avr','mai','juin','juil','août','sep','oct','nov','déc'];
+
+      // WMO Weather interpretation codes → emoji
+      var WMO = {
+        0:'☀️', 1:'🌤️', 2:'⛅', 3:'☁️',
+        45:'🌫️', 48:'🌫️',
+        51:'🌦️', 53:'🌦️', 55:'🌧️',
+        56:'🌧️', 57:'🌧️',
+        61:'🌧️', 63:'🌧️', 65:'🌧️',
+        66:'🌧️', 67:'🌧️',
+        71:'🌨️', 73:'🌨️', 75:'❄️',
+        77:'❄️',
+        80:'🌦️', 81:'🌧️', 82:'⛈️',
+        85:'🌨️', 86:'❄️',
+        95:'⛈️', 96:'⛈️', 99:'⛈️'
+      };
+      var WMO_TXT = {
+        0:'Ciel dégagé', 1:'Peu nuageux', 2:'Partiellement nuageux', 3:'Couvert',
+        45:'Brouillard', 48:'Brouillard givrant',
+        51:'Bruine légère', 53:'Bruine', 55:'Bruine forte',
+        56:'Bruine verglaçante', 57:'Bruine verglaçante forte',
+        61:'Pluie légère', 63:'Pluie', 65:'Pluie forte',
+        66:'Pluie verglaçante', 67:'Pluie verglaçante forte',
+        71:'Neige légère', 73:'Neige', 75:'Neige forte',
+        77:'Grains de neige',
+        80:'Averses légères', 81:'Averses', 82:'Averses violentes',
+        85:'Averses de neige', 86:'Averses de neige fortes',
+        95:'Orage', 96:'Orage avec grêle', 99:'Orage violent'
+      };
+
+      var url = 'https://api.open-meteo.com/v1/forecast?latitude=48.87&longitude=2.42'
+        + '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max'
+        + '&timezone=Europe%2FParis&forecast_days=7';
+
+      fetch(url)
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          var d = data.daily;
+          var html = '<div class="meteo-grid">';
+          for (var i = 0; i < d.time.length; i++) {
+            var date = new Date(d.time[i] + 'T00:00:00');
+            var jour = JOURS[date.getDay()];
+            var dateStr = date.getDate() + ' ' + MOIS[date.getMonth()];
+            var code = d.weather_code[i];
+            var icon = WMO[code] || '🌡️';
+            var desc = WMO_TXT[code] || '';
+            var tMax = Math.round(d.temperature_2m_max[i]);
+            var tMin = Math.round(d.temperature_2m_min[i]);
+            var pluie = d.precipitation_sum[i];
+            var vent = Math.round(d.wind_speed_10m_max[i]);
+
+            html += '<div class="meteo-day">';
+            html += '<div class="meteo-jour">' + jour + '</div>';
+            html += '<div class="meteo-date">' + dateStr + '</div>';
+            html += '<div class="meteo-icon">' + icon + '</div>';
+            html += '<div class="meteo-temp">' + tMax + '° <span>' + tMin + '°</span></div>';
+            html += '<div class="meteo-detail">' + desc + '</div>';
+            if (pluie > 0) html += '<div class="meteo-detail">Pluie : ' + pluie + ' mm</div>';
+            html += '<div class="meteo-detail">Vent : ' + vent + ' km/h</div>';
+            html += '</div>';
+          }
+          html += '</div>';
+          document.getElementById('meteo-container').innerHTML = html;
+        })
+        .catch(function() {
+          document.getElementById('meteo-container').innerHTML =
+            '<div class="meteo-error">Impossible de charger la météo. Réessaie plus tard.</div>';
+        });
+    })();
+  </script>
 
 </body>
 </html>
