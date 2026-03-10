@@ -46,6 +46,10 @@ tr:nth-child(even) td{background:#f8fafc}
 .comp-legend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;font-size:.82em}
 .comp-legend span{padding:3px 9px;border-radius:4px;font-weight:600}
 @media print{.nb{display:none}.rep-zone{background:#fff}}
+.corr{background:#f0fff4;border-left:4px solid var(--s);padding:14px 18px;margin-top:6px;margin-bottom:14px;border-radius:0 10px 10px 0;display:none}
+.corr p{margin:6px 0}
+.bc{background:var(--p);color:#fff;border:none;padding:7px 16px;border-radius:6px;cursor:pointer;font-size:.85em;margin-top:4px}
+.bc:hover{opacity:.85}
 </style>
 </head>
 <body><div class="c">
@@ -144,6 +148,13 @@ tr:nth-child(even) td{background:#f8fafc}
       <tr><td>D — Alimentation moteur</td><td>&nbsp;</td><td>&nbsp;</td></tr>
     </table>
   </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>A — Réseau HTB :</strong> niveau HTB, tension typique 225 kV (ou 400 kV selon le réseau)</p>
+    <p><strong>B — Entre postes :</strong> niveau MT, tension typique 20 kV</p>
+    <p><strong>C — Sortie poste livraison :</strong> niveau BT, tension typique 400 V</p>
+    <p><strong>D — Alimentation moteur :</strong> niveau BT, tension typique 400 V</p>
+  </div>
 
   <p class="q">
     <span class="q-num">2.</span>
@@ -152,6 +163,11 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">2 pts</span>
   </p>
   <div class="rep-zone" style="min-height:60px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(P = \sqrt{3} \times U \times I \times \cos\varphi\)</p>
+    <p>avec : \(P\) en watts (W), \(U\) tension entre phases en volts (V), \(I\) courant de ligne en ampères (A), \(\cos\varphi\) sans unité (0 à 1)</p>
+  </div>
 
   <p class="q">
     <span class="q-num">3.</span>
@@ -160,6 +176,11 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">3 pts</span>
   </p>
   <div class="rep-zone" style="min-height:90px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(P = \sqrt{3} \times U \times I \times \cos\varphi \Rightarrow I = \dfrac{P}{\sqrt{3} \times U \times \cos\varphi}\)</p>
+    <p>\(I = \dfrac{15\,000}{1{,}732 \times 400 \times 0{,}85} = \dfrac{15\,000}{588{,}9} \approx 25\,\text{A}\)</p>
+  </div>
 
   <p class="q">
     <span class="q-num">4.</span>
@@ -168,6 +189,11 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">3 pts</span>
   </p>
   <div class="rep-zone" style="min-height:90px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(P_J = R \times I^2\)</p>
+    <p>\(P_J = 0{,}3 \times 25^2 = 0{,}3 \times 625 = 187{,}5\,\text{W} \approx 188\,\text{W}\)</p>
+  </div>
 </div>
 
 <!-- EXERCICE 2 -->
@@ -189,6 +215,10 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">1 pt</span>
   </p>
   <div class="rep-zone" style="min-height:55px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Un transformateur modifie la valeur de la tension alternative (élever ou abaisser). Il ne modifie pas la fréquence du courant alternatif.</p>
+  </div>
 
   <p class="q">
     <span class="q-num">2.</span>
@@ -199,6 +229,12 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">2 pts</span>
   </p>
   <div class="rep-zone" style="min-height:65px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(\dfrac{N_1}{N_2} = \dfrac{U_1}{U_2}\)</p>
+    <p>\(N_1\) : nombre de spires au primaire (côté alimentation), \(U_1\) : tension primaire</p>
+    <p>\(N_2\) : nombre de spires au secondaire (côté utilisation), \(U_2\) : tension secondaire</p>
+  </div>
 
   <p class="q">
     <span class="q-num">3.</span>
@@ -207,6 +243,11 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">3 pts</span>
   </p>
   <div class="rep-zone" style="min-height:80px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(\dfrac{N_1}{N_2} = \dfrac{U_1}{U_2} \Rightarrow U_2 = U_1 \times \dfrac{N_2}{N_1}\)</p>
+    <p>\(U_2 = 20\,000 \times \dfrac{20}{800} = 20\,000 \times 0{,}025 = 500\,\text{V}\)</p>
+  </div>
 
   <p class="q">
     <span class="q-num">4.</span>
@@ -215,6 +256,12 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">2 pts</span>
   </p>
   <div class="rep-zone" style="min-height:75px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Conservation de la puissance : \(U_1 \times I_1 = U_2 \times I_2\)</p>
+    <p>\(\Rightarrow \dfrac{I_2}{I_1} = \dfrac{U_1}{U_2} = \dfrac{20\,000}{500} = 40\)</p>
+    <p>Le courant secondaire est 40 fois plus élevé que le courant primaire. Quand on abaisse la tension, le courant augmente (et inversement).</p>
+  </div>
 
   <p class="q">
     <span class="q-num">5.</span>
@@ -223,9 +270,16 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">2 pts</span>
   </p>
   <div class="rep-zone" style="min-height:75px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>On élève la tension pour réduire le courant (\(I = P/U\), donc si \(U\) augmente, \(I\) diminue à puissance constante).</p>
+    <p>Les pertes Joule \(P_J = R \times I^2\) diminuent alors fortement (elles sont proportionnelles à \(I^2\)).</p>
+    <p>Exemple : doubler la tension divise le courant par 2 et les pertes Joule par 4.</p>
+  </div>
 </div>
 
 </div>
+<script>function toggle(b){var d=b.nextElementSibling;if(d.style.display==='block'){d.style.display='none';b.textContent='Voir la correction'}else{d.style.display='block';b.textContent='Masquer la correction'}}</script>
 <script src="nav.js"></script>
 </body>
 </html>

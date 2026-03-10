@@ -45,6 +45,10 @@ tr:nth-child(even) td{background:#f8fafc}
 .comp-legend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;font-size:.82em}
 .comp-legend span{padding:3px 9px;border-radius:4px;font-weight:600}
 @media print{.nb{display:none}.rep-zone{background:#fff}}
+.corr{background:#f0fff4;border-left:4px solid var(--s);padding:14px 18px;margin-top:6px;margin-bottom:14px;border-radius:0 10px 10px 0;display:none}
+.corr p{margin:6px 0}
+.bc{background:var(--p);color:#fff;border:none;padding:7px 16px;border-radius:6px;cursor:pointer;font-size:.85em;margin-top:4px}
+.bc:hover{opacity:.85}
 </style>
 </head>
 <body><div class="c">
@@ -126,6 +130,12 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">2 pts</span>
   </p>
   <div class="rep-zone" style="min-height:80px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Électrode positive (+) :</strong> cathode lors de la décharge (plaque PbO₂ — dioxyde de plomb)</p>
+    <p><strong>Électrode négative (−) :</strong> anode lors de la décharge (plaque Pb — plomb)</p>
+    <p><strong>Électrolyte :</strong> solution d'acide sulfurique H₂SO₄ dilué</p>
+  </div>
 
   <p class="q">
     <span class="q-num">2.</span>
@@ -137,6 +147,11 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">2 pts</span>
   </p>
   <div class="rep-zone" style="min-height:80px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Oxydation (anode −) :</strong> \(\text{Pb} \rightarrow \text{Pb}^{2+} + 2e^-\) &nbsp;(le plomb se transforme en ions Pb²⁺)</p>
+    <p><strong>Réduction (cathode +) :</strong> \(\text{PbO}_2 + 4\text{H}^+ + 2e^- \rightarrow \text{Pb}^{2+} + 2\text{H}_2\text{O}\) &nbsp;(le PbO₂ est réduit)</p>
+  </div>
 
   <p class="q">
     <span class="q-num">3.</span>
@@ -147,6 +162,11 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">3 pts</span>
   </p>
   <div class="rep-zone" style="min-height:90px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(W = U \times Q = 48\,\text{V} \times 500\,\text{Ah} = 24\,000\,\text{Wh} = 24\,\text{kWh}\)</p>
+    <p>Conversion en joules : \(24\,000\,\text{Wh} \times 3\,600\,\text{s/h} = 86\,400\,000\,\text{J} = 86{,}4\,\text{MJ}\)</p>
+  </div>
 
   <p class="q">
     <span class="q-num">4.</span>
@@ -155,6 +175,11 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">3 pts</span>
   </p>
   <div class="rep-zone" style="min-height:80px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Autonomie \(= \dfrac{W}{P} = \dfrac{24\,000\,\text{Wh}}{2\,000\,\text{W}} = 12\,\text{h}\)</p>
+    <p>Le chariot peut travailler environ 12 heures sur une charge complète. 12 h &gt; 8 h → la batterie est suffisante pour un poste de travail.</p>
+  </div>
 </div>
 
 <!-- EXERCICE 2 -->
@@ -182,6 +207,12 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">2 pts</span>
   </p>
   <div class="rep-zone" style="min-height:60px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Li-ion : densité d'énergie 200 Wh/kg, tension 3,7 V/élément, 500–2 000 cycles</p>
+    <p>Pb-acide : densité d'énergie 35 Wh/kg, tension 2 V/élément, 300–500 cycles</p>
+    <p>Le paramètre lié à la masse est la <strong>densité d'énergie</strong> : plus elle est élevée, plus la batterie est légère pour un même besoin.</p>
+  </div>
 
   <p class="q">
     <span class="q-num">2.</span>
@@ -190,6 +221,10 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">2 pts</span>
   </p>
   <div class="rep-zone" style="min-height:70px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(m = \dfrac{W}{\text{densité}} = \dfrac{24\,000\,\text{Wh}}{200\,\text{Wh/kg}} = 120\,\text{kg}\)</p>
+  </div>
 
   <p class="q">
     <span class="q-num">3.</span>
@@ -198,6 +233,10 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">3 pts</span>
   </p>
   <div class="rep-zone" style="min-height:80px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(m = \dfrac{24\,000}{35} \approx 686\,\text{kg}\)</p>
+  </div>
 
   <p class="q">
     <span class="q-num">4.</span>
@@ -206,6 +245,12 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">2 pts</span>
   </p>
   <div class="rep-zone" style="min-height:75px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La batterie Li-ion est environ 5,7 fois plus légère (120 kg vs 686 kg) pour la même énergie stockée.</p>
+    <p>\(\dfrac{m_{Pb}}{m_{Li\text{-}ion}} = \dfrac{686}{120} \approx 5{,}7\)</p>
+    <p>Pour un chariot élévateur, la masse est un critère important → Li-ion préférable.</p>
+  </div>
 
   <p class="q">
     <span class="q-num">5.</span>
@@ -214,9 +259,15 @@ tr:nth-child(even) td{background:#f8fafc}
     <span class="pts-q">1 pt</span>
   </p>
   <div class="rep-zone" style="min-height:60px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Avantage Li-ion :</strong> durée de vie plus longue (cycles), recharge plus rapide, densité d'énergie élevée.</p>
+    <p><strong>Inconvénient :</strong> coût initial plus élevé, risque thermique (emballement), nécessite un BMS (Battery Management System).</p>
+  </div>
 </div>
 
 </div>
+<script>function toggle(b){var d=b.nextElementSibling;if(d.style.display==='block'){d.style.display='none';b.textContent='Voir la correction'}else{d.style.display='block';b.textContent='Masquer la correction'}}</script>
 <script src="nav.js"></script>
 </body>
 </html>
