@@ -1,282 +1,327 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Ch10 – Oxydoréduction et corrosion – Exercices</title>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <link rel="stylesheet" href="../../../styles.css">
-<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
-.enonce{background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:10px 14px;margin:10px 0;font-size:.93em}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch10 – Exercices – Oxydoréduction et corrosion | ICCER Terminale</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
 </head>
-<body>
-<div class="c">
-  <a href="pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-  <header>
-    <h1>Chapitre 10 – Exercices</h1>
-    <p class="sous-titre">Oxydoréduction et protection des métaux contre la corrosion &nbsp;|&nbsp; Terminale Bac Pro ICCER</p>
-  </header>
-  <div class="intro-box">
-    <strong>Compétences travaillées :</strong> identifier oxydant / réducteur &nbsp;|&nbsp; écrire les demi-équations et l'équation bilan &nbsp;|&nbsp; utiliser la classification électrochimique (règle du gamma) &nbsp;|&nbsp; expliquer la corrosion et les protections.
+<body><div class="c">
+<a href="../../../physique-chimie/terminale-iccer/pc-term-iccer.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 10 – Exercices</h1>
+  <p class="sous-titre">Oxydoréduction et protection des métaux contre la corrosion &nbsp;|&nbsp; Terminale Bac Pro ICCER</p>
+</header>
+
+<div class="intro-box">
+  <strong>Rappels du cours — formules essentielles</strong>
+  <p><strong>Demi-équation d'oxydation (réducteur perd des électrons) :</strong><br>
+  \[\mathrm{Red \longrightarrow Ox + n\,e^-}\]</p>
+  <p><strong>Demi-équation de réduction (oxydant gagne des électrons) :</strong><br>
+  \[\mathrm{Ox + n\,e^- \longrightarrow Red}\]</p>
+  <p><strong>Équation bilan :</strong> on additionne les deux demi-équations en égalisant le nombre d'électrons échangés.</p>
+  <p><strong>Couples redox classiques et potentiels standard :</strong></p>
+  <table style="width:100%;border-collapse:collapse;font-size:.93em">
+    <tr style="background:var(--p-bg)"><th style="padding:4px 8px;border:1px solid var(--p-border)">Couple</th><th style="padding:4px 8px;border:1px solid var(--p-border)">E° (V)</th><th style="padding:4px 8px;border:1px solid var(--p-border)">Caractère</th></tr>
+    <tr><td style="padding:4px 8px;border:1px solid var(--p-border)">\(\mathrm{Zn^{2+}/Zn}\)</td><td style="padding:4px 8px;border:1px solid var(--p-border)">−0,76 V</td><td style="padding:4px 8px;border:1px solid var(--p-border)">Zn : réducteur très fort</td></tr>
+    <tr><td style="padding:4px 8px;border:1px solid var(--p-border)">\(\mathrm{Fe^{2+}/Fe}\)</td><td style="padding:4px 8px;border:1px solid var(--p-border)">−0,44 V</td><td style="padding:4px 8px;border:1px solid var(--p-border)">Fe : réducteur fort</td></tr>
+    <tr><td style="padding:4px 8px;border:1px solid var(--p-border)">\(\mathrm{H^+/H_2}\)</td><td style="padding:4px 8px;border:1px solid var(--p-border)">0,00 V</td><td style="padding:4px 8px;border:1px solid var(--p-border)">référence</td></tr>
+    <tr><td style="padding:4px 8px;border:1px solid var(--p-border)">\(\mathrm{Cu^{2+}/Cu}\)</td><td style="padding:4px 8px;border:1px solid var(--p-border)">+0,34 V</td><td style="padding:4px 8px;border:1px solid var(--p-border)">Cu²⁺ : oxydant modéré</td></tr>
+    <tr><td style="padding:4px 8px;border:1px solid var(--p-border)">\(\mathrm{O_2/H_2O}\)</td><td style="padding:4px 8px;border:1px solid var(--p-border)">+1,23 V</td><td style="padding:4px 8px;border:1px solid var(--p-border)">O₂ : oxydant fort</td></tr>
+  </table>
+  <p style="margin-top:8px"><strong>Règle du gamma :</strong> la réaction spontanée met en jeu l'oxydant du couple de E° le plus élevé avec le réducteur du couple de E° le plus faible.</p>
+  <p><strong>Force électromotrice d'une pile :</strong> \(E = E°_\text{cathode} - E°_\text{anode}\) &nbsp; (cathode = réduction, anode = oxydation)</p>
+  <p><strong>Quantité d'électrons et masse déposée :</strong> \(Q = I \times t\) &nbsp;|&nbsp; \(n(e^-) = \dfrac{Q}{F}\) (F = 96 500 C/mol) &nbsp;|&nbsp; \(m = n \times M\)</p>
+  <p><strong>Protection cathodique :</strong> l'anode sacrificielle (métal de E° inférieur) s'oxyde à la place du métal à protéger.</p>
+  <p><strong>Épaisseur de dépôt :</strong> \(e = \dfrac{m}{\rho \times S}\)</p>
+</div>
+
+<h2>Exercices de base</h2>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 1</span>
+    <span class="exo-title">Identifier oxydant et réducteur — réaction Fe / CuSO₄</span>
+    <span class="diff diff-1">Niveau 1</span>
   </div>
-
-  <h2>Je teste mes acquis – QCM</h2>
-  <p style="font-size:.9em;color:#718096">Cocher la bonne réponse, puis vérifier.</p>
-  <div class="qcm-grid">
-    <div class="qcm-item">
-      <strong>1. L'oxydation est :</strong>
-      <ul>
-        <li>a. un gain d'électrons</li>
-        <li class="ok">b. une perte d'électrons ✓</li>
-        <li>c. un gain de protons</li>
-      </ul>
-      <button class="bcq" onclick="showQcm(this,1)">Voir la réponse</button>
-      <div class="qcm-corr" id="qcm1">Réponse b — OIL : Oxidation Is Loss (d'électrons). La réduction est un gain (RIG).</div>
-    </div>
-    <div class="qcm-item">
-      <strong>2. Dans le couple Cu²⁺/Cu, l'espèce Cu²⁺ est :</strong>
-      <ul>
-        <li class="ok">a. l'oxydant ✓</li>
-        <li>b. le réducteur</li>
-        <li>c. ni l'un ni l'autre</li>
-      </ul>
-      <button class="bcq" onclick="showQcm(this,2)">Voir la réponse</button>
-      <div class="qcm-corr" id="qcm2">Réponse a — Cu²⁺ capte 2 électrons pour donner Cu : c'est l'oxydant du couple.</div>
-    </div>
-    <div class="qcm-item">
-      <strong>3. La règle du gamma prédit que la réaction spontanée se produit entre :</strong>
-      <ul>
-        <li>a. les deux oxydants les plus forts</li>
-        <li class="ok">b. l'oxydant le plus fort et le réducteur le plus fort ✓</li>
-        <li>c. les deux réducteurs les plus faibles</li>
-      </ul>
-      <button class="bcq" onclick="showQcm(this,3)">Voir la réponse</button>
-      <div class="qcm-corr" id="qcm3">Réponse b — L'oxydant le plus fort (E° le plus élevé) réagit avec le réducteur le plus fort (E° le plus faible).</div>
-    </div>
-    <div class="qcm-item">
-      <strong>4. La corrosion du fer conduit à la formation de :</strong>
-      <ul>
-        <li>a. Al₂O₃</li>
-        <li class="ok">b. rouille : Fe₂O₃·nH₂O ✓</li>
-        <li>c. Cr₂O₃</li>
-      </ul>
-      <button class="bcq" onclick="showQcm(this,4)">Voir la réponse</button>
-      <div class="qcm-corr" id="qcm4">Réponse b — La rouille est de l'oxyde de fer(III) hydraté, de couleur orange-brun.</div>
-    </div>
-    <div class="qcm-item">
-      <strong>5. La passivation de l'aluminium est due à la formation de :</strong>
-      <ul>
-        <li class="ok">a. Al₂O₃ (alumine) ✓</li>
-        <li>b. AlCl₃</li>
-        <li>c. Al(OH)₃</li>
-      </ul>
-      <button class="bcq" onclick="showQcm(this,5)">Voir la réponse</button>
-      <div class="qcm-corr" id="qcm5">Réponse a — L'alumine Al₂O₃ forme une couche fine, dense et adhérente qui stoppe la corrosion.</div>
-    </div>
-    <div class="qcm-item">
-      <strong>6. Pour protéger l'acier par anode sacrificielle, on utilise de préférence :</strong>
-      <ul>
-        <li>a. du cuivre (E° = +0,34 V)</li>
-        <li>b. du fer (E° = −0,44 V)</li>
-        <li class="ok">c. du zinc (E° = −0,76 V) ✓</li>
-      </ul>
-      <button class="bcq" onclick="showQcm(this,6)">Voir la réponse</button>
-      <div class="qcm-corr" id="qcm6">Réponse c — Le zinc est plus réducteur que le fer (E° plus faible). Il se corrode en premier et protège l'acier.</div>
-    </div>
-  </div>
-
-  <hr class="section-sep">
-  <div class="section-label">Je m'exerce – exercices guidés</div>
-
-  <div class="exo">
-    <div class="exo-header">
-      <span class="exo-num">Exercice 1</span>
-      <span class="exo-title">Identifier oxydant et réducteur</span>
-      <span class="diff diff-1">★ Facile</span>
-    </div>
-    <p class="enonce">On considère les couples oxydant/réducteur suivants :<br>
-    \(\mathrm{Fe^{2+}/Fe}\) &nbsp;(\(E° = -0{,}44\text{ V}\)) &nbsp;|&nbsp; \(\mathrm{Cu^{2+}/Cu}\) &nbsp;(\(E° = +0{,}34\text{ V}\)) &nbsp;|&nbsp; \(\mathrm{Zn^{2+}/Zn}\) &nbsp;(\(E° = -0{,}76\text{ V}\))</p>
-    <div class="q"><strong>1.</strong> Pour chaque couple, identifier l'espèce oxydante et l'espèce réductrice.</div>
-    <div class="q"><strong>2.</strong> Écrire la demi-équation de réduction de chaque couple (la forme Ox + ne⁻ → Red).</div>
-    <div class="q"><strong>3.</strong> Classer ces trois couples par ordre de pouvoir oxydant croissant.</div>
-    <button class="bc" onclick="toggle(this)">Voir la correction</button>
-    <div class="corr">
-      <p><strong>1.</strong></p>
-      <p>• Couple Fe²⁺/Fe : <strong style="color:#c53030">Fe²⁺</strong> est l'oxydant ; <strong style="color:#2f855a">Fe</strong> est le réducteur.<br>
-      • Couple Cu²⁺/Cu : <strong style="color:#c53030">Cu²⁺</strong> est l'oxydant ; <strong style="color:#2f855a">Cu</strong> est le réducteur.<br>
-      • Couple Zn²⁺/Zn : <strong style="color:#c53030">Zn²⁺</strong> est l'oxydant ; <strong style="color:#2f855a">Zn</strong> est le réducteur.</p>
-      <p><strong>2.</strong></p>
-      <p>\[\mathrm{Fe^{2+} + 2\,e^- \longrightarrow Fe}\]
-      \[\mathrm{Cu^{2+} + 2\,e^- \longrightarrow Cu}\]
-      \[\mathrm{Zn^{2+} + 2\,e^- \longrightarrow Zn}\]</p>
-      <p><strong>3.</strong> Ordre de pouvoir oxydant croissant (E° croissant) :<br>
-      Zn²⁺ (&minus;0,76 V) &lt; Fe²⁺ (&minus;0,44 V) &lt; Cu²⁺ (+0,34 V)<br>
-      <em>Cu²⁺ est l'oxydant le plus fort des trois.</em></p>
-    </div>
-  </div>
-
-  <div class="exo">
-    <div class="exo-header">
-      <span class="exo-num">Exercice 2</span>
-      <span class="exo-title">Écriture de l'équation bilan : zinc et ions cuivre</span>
-      <span class="diff diff-1">★ Facile</span>
-    </div>
-    <p class="enonce">On plonge une lame de zinc dans une solution de sulfate de cuivre CuSO₄. On observe le dépôt d'un solide rougeâtre sur la lame.<br>
-    Couples : \(\mathrm{Cu^{2+}/Cu}\) (\(E° = +0{,}34\text{ V}\)) et \(\mathrm{Zn^{2+}/Zn}\) (\(E° = -0{,}76\text{ V}\)).</p>
-    <div class="q"><strong>1.</strong> Identifier l'oxydant et le réducteur qui réagissent.</div>
-    <div class="q"><strong>2.</strong> Écrire la demi-équation d'oxydation du zinc.</div>
-    <div class="q"><strong>3.</strong> Écrire la demi-équation de réduction des ions cuivre.</div>
-    <div class="q"><strong>4.</strong> Combiner les deux demi-équations pour obtenir l'équation bilan.</div>
-    <div class="q"><strong>5.</strong> Vérifier l'équilibre des charges et des éléments.</div>
-    <button class="bc" onclick="toggle(this)">Voir la correction</button>
-    <div class="corr">
-      <p><strong>1.</strong> Oxydant : Cu²⁺ (E° le plus élevé = +0,34 V) &nbsp;|&nbsp; Réducteur : Zn (E° le plus faible = &minus;0,76 V).</p>
-      <p><strong>2.</strong> Demi-équation d'oxydation du zinc :
-      \[\mathrm{Zn \longrightarrow Zn^{2+} + 2\,e^-}\]</p>
-      <p><strong>3.</strong> Demi-équation de réduction des ions Cu²⁺ :
-      \[\mathrm{Cu^{2+} + 2\,e^- \longrightarrow Cu}\]</p>
-      <p><strong>4.</strong> Les deux demi-équations mettent en jeu 2 électrons chacune. On les additionne directement :
-      \[\mathrm{Zn + Cu^{2+} + 2\,e^- \longrightarrow Zn^{2+} + Cu + 2\,e^-}\]
-      Après simplification des 2 e⁻ :
-      \[\boxed{\mathrm{Zn_{(s)} + Cu^{2+}_{(aq)} \longrightarrow Zn^{2+}_{(aq)} + Cu_{(s)}}}\]</p>
-      <p><strong>5.</strong> Charges : gauche 0 + (+2) = +2 ; droite +2 + 0 = +2 ✓<br>
-      Éléments : 1 Zn et 1 Cu des deux côtés ✓</p>
-    </div>
-  </div>
-
-  <div class="exo">
-    <div class="exo-header">
-      <span class="exo-num">Exercice 3</span>
-      <span class="exo-title">Écriture de la demi-équation O₂/H₂O et équation bilan de corrosion</span>
-      <span class="diff diff-2">★★ Intermédiaire</span>
-    </div>
-    <p class="enonce">Le fer se corrode en présence de dioxygène O₂ et d'eau en milieu acide.<br>
-    Couples : \(\mathrm{O_2/H_2O}\) et \(\mathrm{Fe^{2+}/Fe}\) (\(E° = -0{,}44\text{ V}\)).</p>
-    <div class="q"><strong>1.</strong> Écrire la demi-équation de réduction du couple O₂/H₂O en milieu acide (les produits et réactifs sont O₂, H⁺, H₂O et e⁻).</div>
-    <div class="q"><strong>2.</strong> Vérifier l'équilibre en oxygène, en hydrogène et en charges de cette demi-équation.</div>
-    <div class="q"><strong>3.</strong> Écrire la demi-équation d'oxydation du fer.</div>
-    <div class="q"><strong>4.</strong> Déterminer les coefficients multiplicateurs pour équilibrer les électrons.</div>
-    <div class="q"><strong>5.</strong> Écrire l'équation bilan de la corrosion du fer.</div>
-    <button class="bc" onclick="toggle(this)">Voir la correction</button>
-    <div class="corr">
-      <p><strong>1.</strong> Demi-équation de réduction de O₂ :
-      \[\mathrm{O_2 + 4\,H^+ + 4\,e^- \longrightarrow 2\,H_2O}\]</p>
-      <p><strong>2.</strong> Vérification :<br>
-      • Oxygène : 1 O₂ = 2 O à gauche ; 2 H₂O = 2 O à droite ✓<br>
-      • Hydrogène : 4 H⁺ à gauche ; 2 × 2 = 4 H à droite (dans 2 H₂O) ✓<br>
-      • Charges : (0) + 4(+1) + 4(−1) = 0 à gauche ; 0 à droite ✓</p>
-      <p><strong>3.</strong> Demi-équation d'oxydation du fer :
-      \[\mathrm{Fe \longrightarrow Fe^{2+} + 2\,e^-}\]</p>
-      <p><strong>4.</strong> O₂ consomme 4 e⁻, Fe libère 2 e⁻. Il faut multiplier Fe par 2 :
-      \[\mathrm{2\,Fe \longrightarrow 2\,Fe^{2+} + 4\,e^-}\]</p>
-      <p><strong>5.</strong> Addition des deux demi-équations (4 e⁻ de chaque côté s'annulent) :
-      \[\boxed{\mathrm{2\,Fe_{(s)} + O_{2(g)} + 4\,H^+_{(aq)} \longrightarrow 2\,Fe^{2+}_{(aq)} + 2\,H_2O_{(l)}}}\]
-      Le fer est le réducteur (oxydé) ; le dioxygène est l'oxydant (réduit).</p>
-    </div>
-  </div>
-
-  <div class="exo">
-    <div class="exo-header">
-      <span class="exo-num">Exercice 4</span>
-      <span class="exo-title">Application de la règle du gamma — prévoir la réaction spontanée</span>
-      <span class="diff diff-2">★★ Intermédiaire</span>
-    </div>
-    <p class="enonce">On dispose des couples et potentiels standard suivants :<br>
-    \(\mathrm{Ag^+/Ag}\) : \(E° = +0{,}80\text{ V}\) &nbsp;|&nbsp; \(\mathrm{Fe^{2+}/Fe}\) : \(E° = -0{,}44\text{ V}\) &nbsp;|&nbsp; \(\mathrm{Zn^{2+}/Zn}\) : \(E° = -0{,}76\text{ V}\)</p>
-    <div class="q"><strong>1.</strong> Classer ces couples dans l'ordre croissant de E°.</div>
-    <div class="q"><strong>2.</strong> D'après la règle du gamma, la réaction entre Ag⁺ et Fe est-elle spontanée ? Laquelle des deux espèces est oxydée ?</div>
-    <div class="q"><strong>3.</strong> Écrire l'équation bilan de la réaction spontanée entre Ag⁺ et Fe. (Ag⁺ + e⁻ → Ag ; Fe → Fe²⁺ + 2e⁻)</div>
-    <div class="q"><strong>4.</strong> La réaction entre Ag et Fe²⁺ est-elle spontanée ? Justifier.</div>
-    <button class="bc" onclick="toggle(this)">Voir la correction</button>
-    <div class="corr">
-      <p><strong>1.</strong> Ordre croissant de E° :<br>
-      Zn²⁺/Zn (−0,76 V) &lt; Fe²⁺/Fe (−0,44 V) &lt; Ag⁺/Ag (+0,80 V)</p>
-      <p><strong>2.</strong> Ag⁺ a le E° le plus élevé → <strong>oxydant le plus fort</strong>.<br>
-      Fe a le E° le plus faible → <strong>réducteur le plus fort</strong>.<br>
-      D'après la règle du gamma : <strong>oui</strong>, la réaction Ag⁺ + Fe est spontanée.<br>
-      C'est le fer Fe qui est <strong>oxydé</strong> (il est le réducteur).</p>
-      <p><strong>3.</strong> Demi-équation réduction : \(\mathrm{Ag^+ + e^- \longrightarrow Ag}\) — à multiplier par 2.<br>
-      Demi-équation oxydation : \(\mathrm{Fe \longrightarrow Fe^{2+} + 2\,e^-}\)<br>
-      \[\boxed{\mathrm{Fe_{(s)} + 2\,Ag^+_{(aq)} \longrightarrow Fe^{2+}_{(aq)} + 2\,Ag_{(s)}}}\]
-      Vérification des charges : gauche 0 + 2(+1) = +2 ; droite +2 + 0 = +2 ✓</p>
-      <p><strong>4.</strong> Non : la réaction Ag + Fe²⁺ n'est <strong>pas spontanée</strong>. Elle correspond au sens inverse de la réaction spontanée. Pour qu'une réaction soit spontanée, il faut que l'oxydant ait un E° plus élevé que le réducteur — ce n'est pas le cas ici (E°(Fe²⁺/Fe) = −0,44 V &lt; E°(Ag⁺/Ag) = +0,80 V, donc Fe²⁺ ne peut pas oxyder Ag spontanément).</p>
-    </div>
-  </div>
-
-  <hr class="section-sep">
-  <div class="section-label">J'approfondis – exercices avancés</div>
-
-  <div class="exo">
-    <div class="exo-header">
-      <span class="exo-num">Exercice 5</span>
-      <span class="exo-title">Protection cathodique d'une coque de navire</span>
-      <span class="diff diff-3">★★★ Avancé</span>
-    </div>
-    <p class="enonce">La coque d'un navire est en acier (fer). Pour la protéger contre la corrosion en eau de mer, on fixe des blocs de zinc sur la coque. Les ions Cl⁻ de l'eau de mer renforcent la conductivité du milieu.<br>
-    Données : \(E°(\mathrm{Fe^{2+}/Fe}) = -0{,}44\text{ V}\) ; \(E°(\mathrm{Zn^{2+}/Zn}) = -0{,}76\text{ V}\) ; \(E°(\mathrm{O_2/H_2O}) = +1{,}23\text{ V}\).</p>
-    <div class="q"><strong>1.</strong> Classer les trois couples dans l'ordre croissant de E°.</div>
-    <div class="q"><strong>2.</strong> Sans zinc, quelle réaction spontanée se produit (oxydant : O₂ ; réducteur : Fe) ? Nommer ce phénomène.</div>
-    <div class="q"><strong>3.</strong> En présence du zinc en contact avec la coque, quel métal se corrode en premier ? Justifier avec la règle du gamma.</div>
-    <div class="q"><strong>4.</strong> Expliquer pourquoi le fer est protégé même si la coque est rayée au niveau du zinc.</div>
-    <div class="q"><strong>5.</strong> Que se passerait-il si on utilisait du cuivre (E° = +0,34 V) à la place du zinc ? Justifier.</div>
-    <button class="bc" onclick="toggle(this)">Voir la correction</button>
-    <div class="corr">
-      <p><strong>1.</strong> Ordre croissant :<br>
-      Zn²⁺/Zn (−0,76 V) &lt; Fe²⁺/Fe (−0,44 V) &lt; O₂/H₂O (+1,23 V)</p>
-      <p><strong>2.</strong> Sans zinc, la réaction spontanée est :<br>
-      Oxydant le plus fort : O₂ (E° = +1,23 V) &nbsp;|&nbsp; Réducteur le plus fort : Fe (E° = −0,44 V)<br>
-      \[\mathrm{2\,Fe + O_2 + 4\,H^+ \longrightarrow 2\,Fe^{2+} + 2\,H_2O}\]
-      Ce phénomène est la <strong>corrosion du fer</strong> (oxydation par le dioxygène).</p>
-      <p><strong>3.</strong> En présence de zinc (E° = −0,76 V &lt; E°(Fe²⁺/Fe) = −0,44 V), le zinc est le <strong>réducteur le plus fort</strong>. D'après la règle du gamma, c'est le zinc qui réagit spontanément avec O₂ (oxydant le plus fort). Le <strong>zinc se corrode en premier</strong> à la place du fer → il joue le rôle d'<strong>anode sacrificielle</strong>.</p>
-      <p><strong>4.</strong> L'anode sacrificielle assure une protection <strong>électrochimique</strong> et non seulement mécanique. Même si le revêtement est rayé, tant que le zinc est en contact électrique avec la coque, il continue de se corroder préférentiellement et d'empêcher l'oxydation du fer.</p>
-      <p><strong>5.</strong> Le cuivre a E° = +0,34 V &gt; E°(Fe²⁺/Fe) = −0,44 V. Le fer serait alors le <strong>réducteur le plus fort</strong>. C'est le fer qui se corroderait en premier, accélérant la corrosion de la coque ! Le cuivre n'est donc <strong>pas adapté</strong> comme anode sacrificielle pour l'acier.</p>
-    </div>
-  </div>
-
-  <div class="exo">
-    <div class="exo-header">
-      <span class="exo-num">Exercice 6</span>
-      <span class="exo-title">Passivation de l'aluminium — analyse documentaire</span>
-      <span class="diff diff-3">★★★ Avancé</span>
-    </div>
-    <p class="enonce">
-      Un technicien en aéronautique compare deux matériaux pour la structure d'un fuselage :<br>
-      <strong>Matériau A :</strong> Acier (Fe) — densité ρ = 7,9 g/cm³ — rouille en présence d'air humide (Fe₂O₃·nH₂O poreuse)<br>
-      <strong>Matériau B :</strong> Alliage d'aluminium (Al) — densité ρ = 2,7 g/cm³ — forme Al₂O₃ spontanément à l'air<br>
-      Réaction de passivation de l'aluminium : \(\mathrm{4\,Al + 3\,O_2 \longrightarrow 2\,Al_2O_3}\)
-    </p>
-    <div class="q"><strong>1.</strong> Dans la réaction de passivation, l'aluminium est-il oxydé ou réduit ? Justifier en indiquant quel transfert d'électrons se produit.</div>
-    <div class="q"><strong>2.</strong> Quelle est la différence fondamentale entre la couche Al₂O₃ formée sur l'aluminium et la rouille Fe₂O₃·nH₂O formée sur le fer ?</div>
-    <div class="q"><strong>3.</strong> Pour une pièce structurale de masse identique, quelle est l'épaisseur relative que peut avoir la pièce en aluminium par rapport à celle en acier ? (Indication : comparer les densités.)</div>
-    <div class="q"><strong>4.</strong> Donner deux avantages de l'aluminium pour la construction aéronautique.</div>
-    <div class="q"><strong>5.</strong> Citer une limite de la passivation de l'aluminium.</div>
-    <button class="bc" onclick="toggle(this)">Voir la correction</button>
-    <div class="corr">
-      <p><strong>1.</strong> Dans la réaction \(\mathrm{4\,Al + 3\,O_2 \longrightarrow 2\,Al_2O_3}\), l'aluminium Al (état 0) est transformé en Al³⁺ (dans Al₂O₃) : il <strong>perd des électrons</strong>. C'est donc une <strong>oxydation</strong>. O₂ est réduit (il gagne des électrons → O²⁻).</p>
-      <p><strong>2.</strong> Différence fondamentale :<br>
-      • Al₂O₃ : couche <strong>dense, adhérente, imperméable</strong> → isole le métal → stoppe la corrosion (protection auto-régénérante).<br>
-      • Fe₂O₃·nH₂O (rouille) : couche <strong>poreuse, friable, non adhérente</strong> → n'isole pas le métal → la corrosion se poursuit jusqu'à destruction totale.</p>
-      <p><strong>3.</strong> Pour une masse m identique, le volume V = m/ρ. L'aluminium est environ 7,9/2,7 ≈ <strong>2,9 fois moins dense</strong> que l'acier. Pour la même masse, la pièce en aluminium peut donc être environ <strong>2,9 fois plus épaisse</strong> (ou plus grande), ce qui peut améliorer la rigidité structurale tout en maintenant le gain de masse.</p>
-      <p><strong>4.</strong> Avantages de l'aluminium en aéronautique :<br>
-      • <strong>Faible densité</strong> (2,7 g/cm³ contre 7,9 pour l'acier) → gain de masse → économie de carburant.<br>
-      • <strong>Passivation naturelle</strong> → protection contre la corrosion sans traitement supplémentaire coûteux.</p>
-      <p><strong>5.</strong> Limite : la couche d'alumine Al₂O₃ est détruite en milieu très basique ou en présence d'ions Cl⁻ en concentration élevée (eau de mer), ce qui peut provoquer une corrosion localisée par piqûres.</p>
-    </div>
+  <p>On plonge un clou en fer dans une solution de sulfate de cuivre CuSO₄. On observe le dépôt d'un solide rougeâtre (cuivre) sur le clou et la disparition progressive des ions Cu²⁺ en solution.</p>
+  <p>La réaction bilan observée est : \(\mathrm{Fe + CuSO_4 \longrightarrow FeSO_4 + Cu}\)</p>
+  <p class="q"><strong>1.</strong> Identifier l'oxydant et le réducteur dans cette réaction. Justifier en indiquant quelle espèce perd ou gagne des électrons.</p>
+  <p class="q"><strong>2.</strong> Écrire la demi-équation d'oxydation (le réducteur cède ses électrons).</p>
+  <p class="q"><strong>3.</strong> Écrire la demi-équation de réduction (l'oxydant capte les électrons).</p>
+  <p class="q"><strong>4.</strong> Vérifier que la somme des deux demi-équations redonne bien l'équation bilan.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Dans cette réaction :<br>
+    — Le <strong>fer Fe</strong> passe de l'état 0 à l'état Fe²⁺ : il <strong>perd des électrons</strong> → c'est le <strong>réducteur</strong>.<br>
+    — L'ion <strong>Cu²⁺</strong> passe de Cu²⁺ à Cu (état 0) : il <strong>gagne des électrons</strong> → c'est l'<strong>oxydant</strong>.</p>
+    <p><strong>2.</strong> Demi-équation d'oxydation (Fe cède 2 e⁻) :
+    \[\mathrm{Fe \longrightarrow Fe^{2+} + 2\,e^-}\]</p>
+    <p><strong>3.</strong> Demi-équation de réduction (Cu²⁺ capte 2 e⁻) :
+    \[\mathrm{Cu^{2+} + 2\,e^- \longrightarrow Cu}\]</p>
+    <p><strong>4.</strong> Vérification : les deux demi-équations échangent 2 e⁻ chacune — on les additionne directement :
+    \[\mathrm{Fe + Cu^{2+} + 2\,e^- \longrightarrow Fe^{2+} + Cu + 2\,e^-}\]
+    Après simplification des 2 e⁻ :
+    \[\boxed{\mathrm{Fe_{(s)} + Cu^{2+}_{(aq)} \longrightarrow Fe^{2+}_{(aq)} + Cu_{(s)}}}\]
+    Ce qui correspond bien à \(\mathrm{Fe + CuSO_4 \longrightarrow FeSO_4 + Cu}\) ✓</p>
   </div>
 </div>
-<script>
-function toggle(btn){
-  const c=btn.nextElementSibling;
-  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
-  else{c.style.display='block';btn.textContent='Masquer la correction';}
-}
-function showQcm(btn,n){
-  const d=document.getElementById('qcm'+n);
-  if(d.style.display==='block'){d.style.display='none';btn.textContent='Voir la réponse';}
-  else{d.style.display='block';btn.textContent='Masquer la réponse';}
-}
-</script>
-<script src="/nav.js"></script>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Comparer le pouvoir réducteur et oxydant — Zn²⁺/Zn et Cu²⁺/Cu</span>
+    <span class="diff diff-1">Niveau 1</span>
+  </div>
+  <p>On donne les potentiels standard des couples redox :<br>
+  \(E°(\mathrm{Zn^{2+}/Zn}) = -0{,}76\text{ V}\) &nbsp;&nbsp; et &nbsp;&nbsp; \(E°(\mathrm{Cu^{2+}/Cu}) = +0{,}34\text{ V}\)</p>
+  <p class="q"><strong>1.</strong> Lequel des deux métaux (Zn ou Cu) est le meilleur réducteur ? Justifier en utilisant les valeurs de E°.</p>
+  <p class="q"><strong>2.</strong> Lequel des deux ions (Zn²⁺ ou Cu²⁺) est le meilleur oxydant ? Justifier.</p>
+  <p class="q"><strong>3.</strong> D'après la règle du gamma, la réaction entre Zn et Cu²⁺ est-elle spontanée ? Et la réaction entre Cu et Zn²⁺ ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Le <strong>meilleur réducteur</strong> est le métal dont le E° est le plus <strong>faible</strong> (négatif).<br>
+    E°(Zn²⁺/Zn) = −0,76 V &lt; E°(Cu²⁺/Cu) = +0,34 V<br>
+    → Le <strong>zinc Zn</strong> est le meilleur réducteur des deux.</p>
+    <p><strong>2.</strong> Le <strong>meilleur oxydant</strong> est l'ion dont le E° est le plus <strong>élevé</strong> (positif).<br>
+    E°(Cu²⁺/Cu) = +0,34 V &gt; E°(Zn²⁺/Zn) = −0,76 V<br>
+    → L'ion <strong>Cu²⁺</strong> est le meilleur oxydant des deux.</p>
+    <p><strong>3.</strong> D'après la règle du gamma, la réaction spontanée oppose l'oxydant de E° le plus élevé et le réducteur de E° le plus faible :<br>
+    — Réaction Zn + Cu²⁺ : E°(Cu²⁺/Cu) = +0,34 V &gt; E°(Zn²⁺/Zn) = −0,76 V → <strong>réaction spontanée ✓</strong><br>
+    — Réaction Cu + Zn²⁺ : ce serait le sens inverse → <strong>non spontanée ✗</strong> (le cuivre ne peut pas réduire les ions Zn²⁺)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">La rouille — réaction de corrosion du fer en milieu aéré</span>
+    <span class="diff diff-1">Niveau 1</span>
+  </div>
+  <p>Le fer se corrode en présence d'eau et de dioxygène O₂ dissous. Les deux couples redox en jeu sont :<br>
+  \(\mathrm{Fe^{2+}/Fe}\) (\(E° = -0{,}44\text{ V}\)) et \(\mathrm{O_2/H_2O}\) (\(E° = +1{,}23\text{ V}\))</p>
+  <p class="q"><strong>1.</strong> D'après les valeurs de E°, quel est l'oxydant et quel est le réducteur dans la réaction de corrosion ?</p>
+  <p class="q"><strong>2.</strong> Écrire la demi-équation de réduction de O₂ en milieu acide : \(\mathrm{O_2 + 4\,H^+ + 4\,e^- \longrightarrow 2\,H_2O}\). Vérifier l'équilibre des charges.</p>
+  <p class="q"><strong>3.</strong> Écrire la demi-équation d'oxydation du fer.</p>
+  <p class="q"><strong>4.</strong> En équilibrant le nombre d'électrons échangés, écrire l'équation bilan de la corrosion du fer. Identifier l'étape d'oxydation et l'étape de réduction.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> E°(O₂/H₂O) = +1,23 V &gt; E°(Fe²⁺/Fe) = −0,44 V<br>
+    → <strong>O₂ est l'oxydant</strong> (E° le plus élevé) ; <strong>Fe est le réducteur</strong> (E° le plus faible).</p>
+    <p><strong>2.</strong> Demi-équation de réduction :
+    \[\mathrm{O_2 + 4\,H^+ + 4\,e^- \longrightarrow 2\,H_2O}\]
+    Vérification des charges : gauche = 0 + 4(+1) + 4(−1) = 0 ; droite = 0 ✓</p>
+    <p><strong>3.</strong> Demi-équation d'oxydation du fer :
+    \[\mathrm{Fe \longrightarrow Fe^{2+} + 2\,e^-}\]</p>
+    <p><strong>4.</strong> O₂ consomme 4 e⁻ et Fe libère 2 e⁻. Il faut multiplier la demi-équation du fer par 2 :
+    \[\mathrm{2\,Fe \longrightarrow 2\,Fe^{2+} + 4\,e^-}\]
+    Addition des deux demi-équations (les 4 e⁻ s'annulent) :
+    \[\boxed{\mathrm{2\,Fe_{(s)} + O_{2(g)} + 4\,H^+_{(aq)} \longrightarrow 2\,Fe^{2+}_{(aq)} + 2\,H_2O_{(l)}}}\]
+    — <strong>Oxydation</strong> : \(\mathrm{2\,Fe \longrightarrow 2\,Fe^{2+} + 4\,e^-}\) (le fer se corrode)<br>
+    — <strong>Réduction</strong> : \(\mathrm{O_2 + 4\,H^+ + 4\,e^- \longrightarrow 2\,H_2O}\) (le dioxygène est réduit)</p>
+  </div>
+</div>
+
+<h2>Exercices guidés</h2>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Pile zinc-cuivre — calcul de la fem</span>
+    <span class="diff diff-2">Niveau 2</span>
+  </div>
+  <p>On réalise une pile électrochimique avec :<br>
+  — une électrode de zinc (Zn) plongée dans une solution de ZnSO₄ ;<br>
+  — une électrode de cuivre (Cu) plongée dans une solution de CuSO₄.<br>
+  Données : \(E°(\mathrm{Zn^{2+}/Zn}) = -0{,}76\text{ V}\) &nbsp;|&nbsp; \(E°(\mathrm{Cu^{2+}/Cu}) = +0{,}34\text{ V}\)</p>
+  <div class="methode">
+    <strong>Méthode :</strong> Dans une pile, l'<strong>anode</strong> est le siège de l'<strong>oxydation</strong> (le métal le plus réducteur, E° le plus faible). La <strong>cathode</strong> est le siège de la <strong>réduction</strong> (E° le plus élevé). La fem est \(E = E°_\text{cathode} - E°_\text{anode}\).
+  </div>
+  <p class="q"><strong>1.</strong> Identifier l'anode et la cathode. Justifier avec les valeurs de E°.</p>
+  <p class="q"><strong>2.</strong> Écrire la demi-réaction à l'anode.</p>
+  <p class="q"><strong>3.</strong> Écrire la demi-réaction à la cathode.</p>
+  <p class="q"><strong>4.</strong> Écrire l'équation bilan de la réaction de la pile.</p>
+  <p class="q"><strong>5.</strong> Calculer la force électromotrice E de la pile. Quel métal se dissout lors du fonctionnement de la pile ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> E°(Zn²⁺/Zn) = −0,76 V est le plus faible → <strong>anode = zinc</strong> (oxydation).<br>
+    E°(Cu²⁺/Cu) = +0,34 V est le plus élevé → <strong>cathode = cuivre</strong> (réduction).</p>
+    <p><strong>2.</strong> À l'anode (oxydation du zinc) :
+    \[\mathrm{Zn \longrightarrow Zn^{2+} + 2\,e^-}\]</p>
+    <p><strong>3.</strong> À la cathode (réduction des ions Cu²⁺) :
+    \[\mathrm{Cu^{2+} + 2\,e^- \longrightarrow Cu}\]</p>
+    <p><strong>4.</strong> Les deux demi-réactions échangent 2 e⁻. Équation bilan :
+    \[\boxed{\mathrm{Zn_{(s)} + Cu^{2+}_{(aq)} \longrightarrow Zn^{2+}_{(aq)} + Cu_{(s)}}}\]</p>
+    <p><strong>5.</strong> Calcul de la fem :
+    \[E = E°_\text{cathode} - E°_\text{anode} = (+0{,}34) - (-0{,}76) = \mathbf{+1{,}10\text{ V}}\]
+    C'est le <strong>zinc (anode)</strong> qui se dissout progressivement lors du fonctionnement de la pile.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Protection par anode sacrificielle — masse de zinc consommée</span>
+    <span class="diff diff-2">Niveau 2</span>
+  </div>
+  <p>Une canalisation en acier (fer) enterrée est protégée par une anode sacrificielle en zinc fixée à la paroi.<br>
+  Données : \(E°(\mathrm{Fe^{2+}/Fe}) = -0{,}44\text{ V}\) &nbsp;|&nbsp; \(E°(\mathrm{Zn^{2+}/Zn}) = -0{,}76\text{ V}\) &nbsp;|&nbsp; \(E°(\mathrm{Cu^{2+}/Cu}) = +0{,}34\text{ V}\)<br>
+  \(M_\mathrm{Zn} = 65\text{ g/mol}\) &nbsp;|&nbsp; lors du fonctionnement, \(n(e^-) = 0{,}5\text{ mol}\) ont été échangés.</p>
+  <div class="methode">
+    <strong>Méthode :</strong> La demi-équation d'oxydation du zinc indique le rapport stœchiométrique entre Zn consommé et e⁻ échangés : \(\mathrm{Zn \to Zn^{2+} + 2\,e^-}\), donc 1 mol de Zn → 2 mol e⁻.
+  </div>
+  <p class="q"><strong>1.</strong> Expliquer le principe de protection cathodique par anode sacrificielle.</p>
+  <p class="q"><strong>2.</strong> Pourquoi utilise-t-on du zinc et non du cuivre comme anode sacrificielle pour protéger le fer ? Justifier à l'aide des potentiels standard.</p>
+  <p class="q"><strong>3.</strong> Écrire la demi-réaction à l'anode sacrificielle (zinc) et à la cathode (fer).</p>
+  <p class="q"><strong>4.</strong> Si \(n(e^-) = 0{,}5\text{ mol}\) ont été échangés, calculer la quantité de matière de zinc consommée, puis la masse de zinc \(m_\mathrm{Zn}\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Principe : en mettant en contact électrique un métal de E° inférieur (l'anode sacrificielle, zinc) avec le métal à protéger (fer), on crée une pile. D'après la règle du gamma, c'est le métal de E° le plus faible (zinc) qui s'oxyde en premier. Le fer, rendu cathode, est protégé : il ne se corrode pas.</p>
+    <p><strong>2.</strong> E°(Zn²⁺/Zn) = −0,76 V &lt; E°(Fe²⁺/Fe) = −0,44 V : le zinc est un <strong>meilleur réducteur que le fer</strong>, donc c'est bien lui qui s'oxyde préférentiellement → <strong>zinc adapté ✓</strong><br>
+    E°(Cu²⁺/Cu) = +0,34 V &gt; E°(Fe²⁺/Fe) = −0,44 V : si on mettait du cuivre, c'est le fer qui serait le réducteur le plus fort → il s'oxiderait encore plus vite → <strong>cuivre inadapté ✗</strong></p>
+    <p><strong>3.</strong> À l'anode sacrificielle (zinc, oxydation) :
+    \[\mathrm{Zn \longrightarrow Zn^{2+} + 2\,e^-}\]
+    À la cathode (fer, réduction protégée) :
+    \[\mathrm{Fe^{2+} + 2\,e^- \longrightarrow Fe}\]
+    Le fer est réduit (ou n'est pas oxydé) : il est protégé.</p>
+    <p><strong>4.</strong> D'après la demi-équation, 1 mol de Zn → 2 mol d'électrons.<br>
+    \[n(\mathrm{Zn}) = \dfrac{n(e^-)}{2} = \dfrac{0{,}5}{2} = 0{,}25\text{ mol}\]
+    \[m_\mathrm{Zn} = n \times M = 0{,}25 \times 65 = \mathbf{16{,}25\text{ g}}\]</p>
+  </div>
+</div>
+
+<h2>Exercices d'application</h2>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">Galvanisation — calcul de l'épaisseur de zinc déposée</span>
+    <span class="diff diff-2">Niveau 2</span>
+  </div>
+  <p>La galvanisation est un procédé de protection de l'acier par dépôt d'une couche de zinc en surface. Une pièce en acier est plongée dans un bain de zinc fondu.<br>
+  Données : masse de zinc déposée \(m_\mathrm{Zn} = 50\text{ g}\), surface de la pièce \(S = 0{,}5\text{ m}^2\), densité du zinc \(\rho_\mathrm{Zn} = 7\,133\text{ kg/m}^3\).<br>
+  Formule de l'épaisseur : \(e = \dfrac{m}{\rho \times S}\)</p>
+  <p class="q"><strong>1.</strong> Citer deux avantages de la galvanisation par rapport à la protection par peinture seule.</p>
+  <p class="q"><strong>2.</strong> Expliquer brièvement pourquoi la galvanisation protège l'acier même si le revêtement est légèrement rayé (aspect redox).</p>
+  <p class="q"><strong>3.</strong> Convertir la masse de zinc en kg, puis calculer l'épaisseur de zinc déposée en mètres. Exprimer le résultat en microomètres (μm).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Avantages de la galvanisation par rapport à la peinture :<br>
+    — <strong>Protection mécanique et électrochimique</strong> : même si le zinc est rayé, il protège encore le fer par protection cathodique (anode sacrificielle).<br>
+    — <strong>Durabilité supérieure</strong> : la couche de zinc résiste à l'abrasion et aux chocs mieux que la peinture, qui peut s'écailler sans assurer de protection électrochimique.</p>
+    <p><strong>2.</strong> Même rayée, la couche de zinc reste en contact électrique avec l'acier. E°(Zn²⁺/Zn) = −0,76 V &lt; E°(Fe²⁺/Fe) = −0,44 V : c'est toujours le zinc qui joue le rôle d'anode sacrificielle et s'oxyde préférentiellement, protégeant le fer.</p>
+    <p><strong>3.</strong> Conversion : \(m_\mathrm{Zn} = 50\text{ g} = 0{,}050\text{ kg}\)<br>
+    \[e = \dfrac{m}{\rho \times S} = \dfrac{0{,}050}{7\,133 \times 0{,}5} = \dfrac{0{,}050}{3\,566{,}5} \approx 1{,}40 \times 10^{-5}\text{ m}\]
+    \[\boxed{e \approx 14\text{ μm}}\]
+    (Une épaisseur typique de galvanisation à chaud est de l'ordre de 50 à 100 μm ; ici on obtient 14 μm, cohérent avec un dépôt léger.)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 7</span>
+    <span class="exo-title">Électrolyse — dépôt de cuivre (cuivrage)</span>
+    <span class="diff diff-3">Niveau 3</span>
+  </div>
+  <p>On réalise un dépôt électrolytique de cuivre (cuivrage) sur une pièce en acier.<br>
+  Données : tension U = 6 V, intensité I = 2 A, durée t = 30 min.<br>
+  Demi-équation cathodique : \(\mathrm{Cu^{2+} + 2\,e^- \longrightarrow Cu}\)<br>
+  \(M_\mathrm{Cu} = 64\text{ g/mol}\) &nbsp;|&nbsp; \(F = 96\,500\text{ C/mol}\)</p>
+  <p class="q"><strong>1.</strong> Calculer la charge Q (en coulombs) ayant traversé le circuit.</p>
+  <p class="q"><strong>2.</strong> En déduire la quantité de matière d'électrons \(n(e^-)\).</p>
+  <p class="q"><strong>3.</strong> D'après la demi-équation, calculer la quantité de matière de cuivre déposée \(n(\mathrm{Cu})\).</p>
+  <p class="q"><strong>4.</strong> Calculer la masse de cuivre déposée \(m_\mathrm{Cu}\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Conversion : t = 30 min = 30 × 60 = 1 800 s
+    \[Q = I \times t = 2 \times 1\,800 = \mathbf{3\,600\text{ C}}\]</p>
+    <p><strong>2.</strong>
+    \[n(e^-) = \dfrac{Q}{F} = \dfrac{3\,600}{96\,500} \approx \mathbf{3{,}73 \times 10^{-2}\text{ mol}}\]</p>
+    <p><strong>3.</strong> D'après \(\mathrm{Cu^{2+} + 2\,e^- \to Cu}\) : 2 mol e⁻ donnent 1 mol Cu.
+    \[n(\mathrm{Cu}) = \dfrac{n(e^-)}{2} = \dfrac{3{,}73 \times 10^{-2}}{2} \approx \mathbf{1{,}86 \times 10^{-2}\text{ mol}}\]</p>
+    <p><strong>4.</strong>
+    \[m_\mathrm{Cu} = n \times M = 1{,}86 \times 10^{-2} \times 64 \approx \mathbf{1{,}19\text{ g}}\]</p>
+  </div>
+</div>
+
+<h2>Exercices contextualisés ICCER</h2>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 8</span>
+    <span class="exo-title">Circuit de chauffage mixte acier/cuivre — corrosion galvanique</span>
+    <span class="diff diff-2">Niveau 2</span>
+  </div>
+  <p>Un plombier chauffagiste installe un circuit de chauffage central comprenant des canalisations en acier (fer) et des raccords en cuivre. Il sait que la mise en contact direct de deux métaux différents en présence d'eau peut provoquer une corrosion galvanique accélérée.</p>
+  <p>Données : \(E°(\mathrm{Fe^{2+}/Fe}) = -0{,}44\text{ V}\) &nbsp;|&nbsp; \(E°(\mathrm{Cu^{2+}/Cu}) = +0{,}34\text{ V}\)</p>
+  <p class="q"><strong>1.</strong> Expliquer le phénomène de corrosion galvanique en termes redox : lorsque les deux métaux sont en contact électrique via l'eau, quel métal joue le rôle d'anode et lequel joue le rôle de cathode ?</p>
+  <p class="q"><strong>2.</strong> Quel métal se corrode préférentiellement ? Justifier avec les valeurs de E°.</p>
+  <p class="q"><strong>3.</strong> Écrire la demi-réaction à l'anode et à la cathode.</p>
+  <p class="q"><strong>4.</strong> Quelle solution technique le plombier chauffagiste doit-il adopter pour limiter la corrosion galvanique ? Expliquer le rôle de chaque solution.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Lorsque acier (Fe) et cuivre (Cu) sont en contact électrique via l'eau (électrolyte), ils forment une pile galvanique.<br>
+    E°(Fe²⁺/Fe) = −0,44 V &lt; E°(Cu²⁺/Cu) = +0,34 V<br>
+    → Le fer est le réducteur le plus fort : il joue le rôle d'<strong>anode</strong> (oxydation).<br>
+    → Le cuivre joue le rôle de <strong>cathode</strong> (réduction).</p>
+    <p><strong>2.</strong> C'est le <strong>fer (acier)</strong> qui se corrode préférentiellement, car E°(Fe²⁺/Fe) est plus faible que E°(Cu²⁺/Cu) : d'après la règle du gamma, le fer est le réducteur qui s'oxyde spontanément en présence des ions présents dans l'eau.</p>
+    <p><strong>3.</strong> À l'anode (acier, oxydation) :
+    \[\mathrm{Fe \longrightarrow Fe^{2+} + 2\,e^-}\]
+    À la cathode (cuivre) : les électrons libérés par le fer permettent la réduction du dioxygène dissous ou le dépôt de Cu :
+    \[\mathrm{O_2 + 4\,H^+ + 4\,e^- \longrightarrow 2\,H_2O}\]</p>
+    <p><strong>4.</strong> Solutions techniques :<br>
+    — <strong>Manchon diélectrique</strong> (isolant électrique) : interposé entre les deux métaux différents, il interrompt le contact électrique et supprime le circuit galvanique → pas de transfert d'électrons → pas de corrosion galvanique.<br>
+    — <strong>Disconnecteur / raccord isolant</strong> : même principe, adapté aux raccords vissés.<br>
+    — <strong>Inhibiteur de corrosion</strong> dans l'eau du circuit : ralentit les réactions d'oxydation sans éliminer le contact.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 9</span>
+    <span class="exo-title">Traitement de l'eau d'un circuit de chauffage — inhibiteurs de corrosion</span>
+    <span class="diff diff-3">Niveau 3</span>
+  </div>
+  <p>Un technicien de maintenance énergétique contrôle l'eau d'un circuit de chauffage fermé. L'analyse révèle une concentration en ions fer(II) de \(c(\mathrm{Fe^{2+}}) = 0{,}01\text{ mol/L}\). Il ajoute un traitement à base de polyphosphates pour réduire la corrosion interne des canalisations en acier.</p>
+  <p>Données : \(M_\mathrm{Fe} = 56\text{ g/mol}\)</p>
+  <p class="q"><strong>1.</strong> La présence d'ions Fe²⁺ dans l'eau de circuit est-elle le signe d'une oxydation ou d'une réduction du fer ? Justifier en écrivant la demi-équation correspondante.</p>
+  <p class="q"><strong>2.</strong> Expliquer en termes redox pourquoi l'ajout de polyphosphates ralentit la corrosion. (Les polyphosphates forment une couche protectrice en précipitant à la surface du métal, réduisant le contact entre le fer et l'eau/oxygène.)</p>
+  <p class="q"><strong>3.</strong> Calculer la concentration massique \(\gamma(\mathrm{Fe^{2+}})\) en g/L sachant que \(c = 0{,}01\text{ mol/L}\). Ce taux est-il préoccupant ? (Valeur indicative : au-delà de 0,2 mg/L soit 0,0002 g/L, l'eau est considérée comme corrosive.)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> La présence d'ions Fe²⁺ indique que le fer a <strong>perdu des électrons</strong> : c'est une <strong>oxydation</strong> du fer.
+    \[\mathrm{Fe \longrightarrow Fe^{2+} + 2\,e^-}\]
+    C'est la preuve que des canalisations en acier sont en cours de corrosion dans le circuit.</p>
+    <p><strong>2.</strong> Explication redox :<br>
+    La corrosion du fer nécessite que le métal soit en contact avec l'eau contenant des espèces oxydantes (O₂ dissous, H⁺). Les polyphosphates (PO₄³⁻ polymérisés) réagissent avec les ions Fe²⁺ et Ca²⁺ de l'eau pour précipiter à la surface interne des canalisations et former une <strong>couche insoluble et adhérente</strong>. Cette couche :<br>
+    — isole physiquement le fer de l'eau et du dioxygène dissous ;<br>
+    — réduit la surface de contact métal/électrolyte ;<br>
+    → Les transferts d'électrons (oxydation du fer) sont ainsi ralentis : la cinétique de corrosion diminue fortement.</p>
+    <p><strong>3.</strong> Calcul de la concentration massique :
+    \[\gamma(\mathrm{Fe^{2+}}) = c \times M = 0{,}01 \times 56 = 0{,}56\text{ g/L}\]
+    \[\boxed{\gamma(\mathrm{Fe^{2+}}) = 0{,}56\text{ g/L} = 560\text{ mg/L}}\]
+    Ce taux est <strong>très préoccupant</strong> : il est environ 2 800 fois supérieur au seuil indicatif de 0,2 mg/L. Une intervention rapide est nécessaire (vidange, rinçage du circuit, dosage d'inhibiteur, recherche des canalisations dégradées).</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir — Oxydoréduction et protection des métaux</strong>
+  <ul>
+    <li>L'<strong>oxydation</strong> est une perte d'électrons ; la <strong>réduction</strong> est un gain d'électrons.</li>
+    <li>L'<strong>oxydant</strong> capte des électrons (\(\mathrm{Ox + n\,e^- \to Red}\)) ; le <strong>réducteur</strong> en cède (\(\mathrm{Red \to Ox + n\,e^-}\)).</li>
+    <li>Plus le <strong>potentiel standard E°</strong> est faible, plus l'espèce réduite est un bon <strong>réducteur</strong>.</li>
+    <li>La <strong>règle du gamma</strong> prédit la réaction spontanée : oxydant (E° élevé) + réducteur (E° faible).</li>
+    <li>La <strong>force électromotrice</strong> d'une pile : \(E = E°_\text{cathode} - E°_\text{anode} > 0\).</li>
+    <li>L'<strong>anode sacrificielle</strong> (Zn) protège le fer car E°(Zn²⁺/Zn) &lt; E°(Fe²⁺/Fe) : le zinc s'oxyde en premier.</li>
+    <li>En circuit de chauffage, le contact acier/cuivre sans isolation électrique provoque une <strong>corrosion galvanique</strong> de l'acier → utiliser des <strong>manchons diélectriques</strong>.</li>
+  </ul>
+</div>
+
+</div>
+<script>function toggle(b){const c=b.nextElementSibling;c.style.display=c.style.display==='block'?'none':'block';b.textContent=c.style.display==='block'?'Masquer la correction':'Voir la correction';}</script>
+<script src="../../../nav.js"></script>
 </body>
 </html>

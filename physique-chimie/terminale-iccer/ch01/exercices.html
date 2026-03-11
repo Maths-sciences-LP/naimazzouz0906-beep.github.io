@@ -3,450 +3,273 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch01 – Évaluer la puissance consommée – Exercices</title>
+<title>Ch01 – Exercices – Puissance électrique (P, S, Q, cos φ) | ICCER Terminale</title>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
-/* QCM */
-
-/* Exercices */
-
-.enonce{background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:10px 14px;margin:10px 0;font-size:.93em}
-
-.plaque{background:#1e3a5f;color:#fff;border-radius:8px;display:inline-block;padding:10px 24px;font-family:'Courier New',monospace;font-size:.93em;margin:10px 0;text-align:left;line-height:1.9}
-.plaque strong{color:#ffd700}</style>
+.methode{background:#fffbeb;border:1px solid #f59e0b;border-radius:8px;padding:14px;margin:16px 0}
+.methode strong{color:#d97706}
+.attention{background:#fff1f2;border:1px solid #fda4af;border-radius:8px;padding:14px;margin:16px 0}
+.attention strong{color:#be123c}</style>
 </head>
-<body>
-<div class="c">
-<a href="pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+<body><div class="c">
+<a href="../../../physique-chimie/terminale-iccer/pc-term-iccer.html" class="nb">← Retour au sommaire</a>
 
 <header>
-  <h1>Chapitre 1 – Exercices</h1>
-  <p class="sous-titre">Évaluer la puissance consommée &nbsp;|&nbsp; Terminale Bac Pro ICCER</p>
+  <h1>Ch01 – Évaluer la puissance consommée</h1>
+  <p class="sous-titre">Exercices | Terminale Bac Pro ICCER – Puissance P, S, Q, cos&nbsp;φ, compensation</p>
 </header>
 
+<!-- ===== RAPPELS DU COURS ===== -->
 <div class="intro-box">
-  <strong>Compétences travaillées :</strong> calculer T et f &nbsp;|&nbsp; lire un déphasage graphiquement &nbsp;|&nbsp; calculer P, S et cos φ &nbsp;|&nbsp; expliquer la compensation de puissance réactive.
+  <strong>Rappels du cours</strong>
+  <p>En électricité, on distingue trois types de puissances :</p>
+  <ul>
+    <li><strong>Puissance active</strong> \(P\) (en W) : énergie réellement consommée (effet utile).</li>
+    <li><strong>Puissance réactive</strong> \(Q\) (en var) : énergie stockée puis restituée par les bobines et condensateurs.</li>
+    <li><strong>Puissance apparente</strong> \(S\) (en VA) : puissance totale fournie par la source.</li>
+  </ul>
+  <p>Formules essentielles :</p>
+  <ul>
+    <li><strong>Monophasé :</strong> \(P = U \cdot I \cdot \cos\varphi\) &nbsp;|&nbsp; \(S = U \cdot I\) &nbsp;|&nbsp; \(Q = U \cdot I \cdot \sin\varphi\)</li>
+    <li><strong>Triphasé :</strong> \(P = \sqrt{3} \cdot U \cdot I \cdot \cos\varphi\) &nbsp;|&nbsp; \(S = \sqrt{3} \cdot U \cdot I\)</li>
+    <li><strong>Triangle des puissances :</strong> \(S^2 = P^2 + Q^2\) &nbsp;|&nbsp; \(\cos\varphi = \dfrac{P}{S}\) &nbsp;|&nbsp; \(\tan\varphi = \dfrac{Q}{P}\)</li>
+    <li><strong>Compensation :</strong> \(Q_C = P \cdot (\tan\varphi_1 - \tan\varphi_2)\)</li>
+  </ul>
 </div>
 
-<!-- ================================================================ -->
-<!-- QCM -->
-<!-- ================================================================ -->
-<h2>Je teste mes acquis – QCM</h2>
-<p style="font-size:.9em;color:#718096">Cocher la (ou les) bonne(s) réponse(s), puis vérifier.</p>
-
-<div class="qcm-grid">
-  <!-- Q1 -->
-  <div class="qcm-item">
-    <strong>1. En faisant le produit u(t) × i(t), on obtient :</strong>
-    <ul>
-      <li>a. la puissance moyenne</li>
-      <li class="ok" data-q="1">b. la puissance instantanée ✓</li>
-      <li>c. la puissance active</li>
-    </ul>
-    <button class="bcq" onclick="showQcm(this,1)">Voir la réponse</button>
-    <div class="qcm-corr" id="qcm1">Réponse b — p(t) = u(t) × i(t) est la puissance instantanée.</div>
-  </div>
-  <!-- Q2 -->
-  <div class="qcm-item">
-    <strong>2. La puissance instantanée peut être visualisée avec :</strong>
-    <ul>
-      <li class="ok" data-q="2">a. un wattmètre ✓</li>
-      <li>b. un multimètre</li>
-      <li class="ok" data-q="2">c. un dispositif ExAO ✓</li>
-    </ul>
-    <button class="bcq" onclick="showQcm(this,2)">Voir la réponse</button>
-    <div class="qcm-corr" id="qcm2">Réponses a et c — Le wattmètre mesure la puissance ; l'ExAO permet de visualiser les courbes et leur produit.</div>
-  </div>
-  <!-- Q3 -->
-  <div class="qcm-item">
-    <strong>3. Le déphasage u(t)/i(t) pour un dipôle résistif est :</strong>
-    <ul>
-      <li class="ok" data-q="3">a. nul ✓</li>
-      <li>b. moyen</li>
-      <li>c. grand</li>
-    </ul>
-    <button class="bcq" onclick="showQcm(this,3)">Voir la réponse</button>
-    <div class="qcm-corr" id="qcm3">Réponse a — Pour une résistance pure, φ = 0 : pas de déphasage.</div>
-  </div>
-  <!-- Q4 -->
-  <div class="qcm-item">
-    <strong>4. Quels composants introduisent un déphasage ?</strong>
-    <ul>
-      <li class="ok" data-q="4">a. le condensateur ✓</li>
-      <li class="ok" data-q="4">b. la bobine ✓</li>
-      <li>c. le dipôle résistif</li>
-    </ul>
-    <button class="bcq" onclick="showQcm(this,4)">Voir la réponse</button>
-    <div class="qcm-corr" id="qcm4">Réponses a et b — Le condensateur et la bobine créent tous les deux un déphasage.</div>
-  </div>
-  <!-- Q5 -->
-  <div class="qcm-item">
-    <strong>5. La puissance moyenne s'appelle aussi :</strong>
-    <ul>
-      <li>a. la puissance apparente</li>
-      <li>b. la puissance instantanée</li>
-      <li class="ok" data-q="5">c. la puissance active ✓</li>
-    </ul>
-    <button class="bcq" onclick="showQcm(this,5)">Voir la réponse</button>
-    <div class="qcm-corr" id="qcm5">Réponse c — La puissance active = puissance moyenne = puissance utile.</div>
-  </div>
-  <!-- Q6 -->
-  <div class="qcm-item">
-    <strong>6. Le facteur de puissance cos φ est toujours :</strong>
-    <ul>
-      <li>a. égal à 1</li>
-      <li class="ok" data-q="6">b. positif et inférieur ou égal à 1 ✓</li>
-      <li>c. supérieur ou égal à 1</li>
-    </ul>
-    <button class="bcq" onclick="showQcm(this,6)">Voir la réponse</button>
-    <div class="qcm-corr" id="qcm6">Réponse b — cos φ est compris entre 0 (déphasage maximal) et 1 (pas de déphasage).</div>
-  </div>
-  <!-- Q7 -->
-  <div class="qcm-item">
-    <strong>7. La puissance active P s'obtient avec :</strong>
-    <ul>
-      <li>a. P = UI / cos φ</li>
-      <li>b. P = cos φ / UI</li>
-      <li class="ok" data-q="7">c. P = UI cos φ ✓</li>
-    </ul>
-    <button class="bcq" onclick="showQcm(this,7)">Voir la réponse</button>
-    <div class="qcm-corr" id="qcm7">Réponse c — La formule est P = U × I × cos φ.</div>
-  </div>
-  <!-- Q8 -->
-  <div class="qcm-item">
-    <strong>8. La puissance active peut être mesurée avec :</strong>
-    <ul>
-      <li class="ok" data-q="8">a. un wattmètre ✓</li>
-      <li>b. un ohmmètre</li>
-      <li class="ok" data-q="8">c. un ampèremètre + voltmètre + cos φ ✓</li>
-    </ul>
-    <button class="bcq" onclick="showQcm(this,8)">Voir la réponse</button>
-    <div class="qcm-corr" id="qcm8">Réponses a et c — Le wattmètre mesure directement P. On peut aussi calculer P = U × I × cos φ.</div>
-  </div>
-  <!-- Q9 -->
-  <div class="qcm-item">
-    <strong>9. La puissance apparente S peut être :</strong>
-    <ul>
-      <li class="ok" data-q="9">a. égale à la puissance active ✓</li>
-      <li class="ok" data-q="9">b. supérieure à la puissance active ✓</li>
-      <li>c. inférieure à la puissance active</li>
-    </ul>
-    <button class="bcq" onclick="showQcm(this,9)">Voir la réponse</button>
-    <div class="qcm-corr" id="qcm9">Réponses a et b — On a toujours P ≤ S. Égalité uniquement quand cos φ = 1.</div>
-  </div>
-  <!-- Q10 -->
-  <div class="qcm-item">
-    <strong>10. La formule du déphasage φ est :</strong>
-    <ul>
-      <li class="ok" data-q="10">a. φ = (Δt/T) × 2π ✓</li>
-      <li>b. φ = (T/Δt) × 2π</li>
-      <li>c. φ = (Δt/T) × π</li>
-    </ul>
-    <button class="bcq" onclick="showQcm(this,10)">Voir la réponse</button>
-    <div class="qcm-corr" id="qcm10">Réponse a — φ = (Δt / T) × 2π, avec Δt et T dans la même unité.</div>
-  </div>
+<div class="attention">
+  <strong>Attention !</strong> Le facteur de puissance \(\cos\varphi\) est compris entre 0 et 1. Pour un récepteur purement résistif (résistance chauffante, radiateur électrique), \(\cos\varphi = 1\). Pour un moteur, \(\cos\varphi\) est typiquement 0,7 à 0,9. Un mauvais \(\cos\varphi\) augmente le courant à puissance utile égale, ce qui surcharge les câbles et augmente les pertes Joule.
 </div>
 
-<hr class="section-sep">
-<div class="section-label">Je m'exerce – exercices guidés</div>
+<!-- ===== EXERCICES DE BASE ===== -->
+<h2>Exercices de base</h2>
 
-<!-- ================================================================ -->
-<!-- Exercice 1 : Fréquence et Période -->
-<!-- ================================================================ -->
 <div class="exo">
   <div class="exo-header">
     <span class="exo-num">Exercice 1</span>
-    <span class="exo-title">Fréquence et Période</span>
-    <span class="diff diff-1">★ Facile</span>
+    <span class="exo-title">Résistance chauffante – calcul de P et S</span>
+    <span class="diff diff-1">Niveau 1</span>
   </div>
-  <p class="enonce">Le réseau électrique français délivre une tension alternative de fréquence f = 50 Hz.</p>
-  <div class="q"><strong>1.</strong> Rappeler la formule mathématique qui permet de calculer la période T à partir de la fréquence f.</div>
-  <div class="q"><strong>2.</strong> Calculer la période T du signal en secondes (détailler le calcul).</div>
-  <div class="q"><strong>3.</strong> Convertir ce résultat en millisecondes (ms).</div>
-  <div class="q"><strong>4.</strong> Aux États-Unis, la fréquence est de 60 Hz. La période du signal américain est-elle plus longue ou plus courte que celle du signal français ? Justifier par une phrase.</div>
+  <p>Une résistance chauffante est alimentée sous <strong>230 V</strong> monophasé. Elle absorbe un courant de <strong>8 A</strong>. C'est un récepteur purement résistif : \(\cos\varphi = 1\).</p>
+  <p class="q"><strong>1.</strong> Rappeler la formule de la puissance active en monophasé.</p>
+  <p class="q"><strong>2.</strong> Calculer la puissance active \(P\) absorbée.</p>
+  <p class="q"><strong>3.</strong> Calculer la puissance apparente \(S = U \cdot I\).</p>
+  <p class="q"><strong>4.</strong> Comparer \(P\) et \(S\) : que conclure pour un récepteur purement résistif ?</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>1.</strong> Formule : \(T = \dfrac{1}{f}\)</p>
-    <p><strong>2.</strong> \(T = \dfrac{1}{50} = 0{,}02 \text{ s}\)</p>
-    <p><strong>3.</strong> On multiplie par 1000 : \(T = 0{,}02 \times 1000 = \mathbf{20 \text{ ms}}\)</p>
-    <p><strong>4.</strong> La période américaine est <strong>plus courte</strong>.<br>
-    Justification : la fréquence est plus élevée (60 > 50 Hz), donc les cycles sont plus rapides, ils durent moins longtemps.</p>
+    <p><strong>1.</strong> \(P = U \cdot I \cdot \cos\varphi\)</p>
+    <p><strong>2.</strong> \(P = 230 \times 8 \times 1 = \mathbf{1\,840\ W = 1{,}84\ kW}\)</p>
+    <p><strong>3.</strong> \(S = U \cdot I = 230 \times 8 = \mathbf{1\,840\ VA}\)</p>
+    <p><strong>4.</strong> \(P = S\) quand \(\cos\varphi = 1\). Pour un récepteur purement résistif, toute la puissance apparente est convertie en puissance utile. La puissance réactive est nulle (\(Q = 0\)).</p>
   </div>
 </div>
 
-<!-- ================================================================ -->
-<!-- Exercice 2 : Test d'un récepteur -->
-<!-- ================================================================ -->
 <div class="exo">
   <div class="exo-header">
     <span class="exo-num">Exercice 2</span>
-    <span class="exo-title">Test d'un récepteur</span>
-    <span class="diff diff-1">★ Facile</span>
+    <span class="exo-title">Lire un triangle des puissances</span>
+    <span class="diff diff-1">Niveau 1</span>
   </div>
-  <p class="enonce">Dans un circuit électrique, on visualise avec un dispositif ExAO les courbes d'intensité du courant i(t) et de la tension u(t) aux bornes d'un récepteur. Les deux courbes sont parfaitement superposées : elles atteignent leur maximum et leur minimum exactement au même instant.</p>
-  <div class="q"><strong>1.</strong> Que peut-on dire du récepteur testé ? <strong>Justifier</strong> la réponse.</div>
-  <div class="q"><strong>2.</strong> Proposer une valeur du cos φ pour ce récepteur.</div>
-  <div class="q"><strong>3.</strong> Si U = 6,6 V et I = 0,18 A, calculer la puissance active P et la puissance apparente S.</div>
+  <p>Un récepteur industriel présente les caractéristiques suivantes : \(P = 2\,400\ \text{W}\) et \(Q = 1\,800\ \text{var}\).</p>
+  <p class="q"><strong>1.</strong> Rappeler la relation entre \(S\), \(P\) et \(Q\).</p>
+  <p class="q"><strong>2.</strong> Calculer la puissance apparente \(S\).</p>
+  <p class="q"><strong>3.</strong> Calculer le facteur de puissance \(\cos\varphi = P/S\).</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>1.</strong> C'est un <strong>dipôle résistif</strong> (résistance pure), car il n'apparaît pas de déphasage entre i(t) et u(t).</p>
-    <p><strong>2.</strong> cos φ = <strong>1</strong> (pas de déphasage → φ = 0 → cos 0 = 1).</p>
-    <p><strong>3.</strong> \(P = U \times I \times \cos\varphi = 6{,}6 \times 0{,}18 \times 1 = \mathbf{1{,}19 \text{ W}}\)<br>
-    \(S = U \times I = 6{,}6 \times 0{,}18 = \mathbf{1{,}19 \text{ VA}}\)<br>
-    On constate P = S quand cos φ = 1, comme attendu.</p>
+    <p><strong>1.</strong> \(S^2 = P^2 + Q^2\) donc \(S = \sqrt{P^2 + Q^2}\)</p>
+    <p><strong>2.</strong> \(S = \sqrt{2\,400^2 + 1\,800^2} = \sqrt{5\,760\,000 + 3\,240\,000} = \sqrt{9\,000\,000} = \mathbf{3\,000\ VA = 3\ kVA}\)</p>
+    <p><strong>3.</strong> \(\cos\varphi = \dfrac{P}{S} = \dfrac{2\,400}{3\,000} = \mathbf{0{,}8}\)</p>
+    <p>Ce facteur de puissance de 0,8 est typique d'une installation comportant des moteurs électriques.</p>
   </div>
 </div>
 
-<!-- ================================================================ -->
-<!-- Exercice 3 : Condensateur – déphasage graphique -->
-<!-- ================================================================ -->
 <div class="exo">
   <div class="exo-header">
     <span class="exo-num">Exercice 3</span>
-    <span class="exo-title">Condensateur – lecture graphique du déphasage</span>
-    <span class="diff diff-2">★★ Intermédiaire</span>
+    <span class="exo-title">Conversions kW / kVA / kvar</span>
+    <span class="diff diff-1">Niveau 1</span>
   </div>
-  <p class="enonce">Aux bornes d'un condensateur, on visualise les signaux u(t) (rouge) et i(t) (vert) avec un dispositif ExAO. Un carreau horizontal représente 5 ms. On mesure un décalage Δt = 3,75 ms entre les deux courbes. La période est T = 52,5 ms.</p>
-  <div class="q"><strong>1.</strong> Que représente la valeur Δt = 3,75 ms sur la courbe ?</div>
-  <div class="q"><strong>2.</strong> Calculer le déphasage φ en radians, puis cos φ.</div>
-  <div class="q"><strong>3.</strong> Comparer avec le cas du dipôle résistif. Conclure sur le type de ce dipôle.</div>
+  <p>Un récepteur a les caractéristiques suivantes : \(P = 4{,}5\ \text{kW}\), \(\cos\varphi = 0{,}9\).</p>
+  <p class="q"><strong>1.</strong> Convertir \(P\) en watts.</p>
+  <p class="q"><strong>2.</strong> Calculer \(S\) en kVA à partir de \(S = P / \cos\varphi\).</p>
+  <p class="q"><strong>3.</strong> Calculer \(\sin\varphi\) (sachant \(\sin^2\varphi + \cos^2\varphi = 1\)), puis calculer \(Q\) en kvar.</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>1.</strong> Δt est l'<strong>écart de temps entre les deux courbes</strong> (le décalage temporel entre les maxima de u(t) et i(t)).</p>
-    <p><strong>2.</strong>
-    \[\varphi = \frac{\Delta t}{T} \times 2\pi = \frac{3{,}75}{52{,}5} \times 2\pi \approx 0{,}071 \times 6{,}28 \approx \mathbf{0{,}45 \text{ rad}}\]
-    \[\cos\varphi = \cos(0{,}45) \approx \mathbf{0{,}90}\]
-    </p>
-    <p><strong>3.</strong> Pour un dipôle résistif, cos φ = 1. Ici cos φ = 0,90 &lt; 1 : il y a un déphasage → c'est bien un <strong>dipôle capacitif</strong> (condensateur).</p>
+    <p><strong>1.</strong> \(P = 4{,}5\ \text{kW} = \mathbf{4\,500\ W}\)</p>
+    <p><strong>2.</strong> \(S = \dfrac{P}{\cos\varphi} = \dfrac{4{,}5}{0{,}9} = \mathbf{5\ kVA}\)</p>
+    <p><strong>3.</strong> \(\sin\varphi = \sqrt{1 - \cos^2\varphi} = \sqrt{1 - 0{,}81} = \sqrt{0{,}19} \approx 0{,}436\)</p>
+    <p>\(Q = S \times \sin\varphi = 5 \times 0{,}436 \approx \mathbf{2{,}18\ kvar}\)</p>
+    <p>Vérification : \(\sqrt{4{,}5^2 + 2{,}18^2} = \sqrt{20{,}25 + 4{,}75} = \sqrt{25} = 5\ \text{kVA}\) ✓</p>
   </div>
 </div>
 
-<!-- ================================================================ -->
-<!-- Exercice 4 : Calculs de puissance – pompe hydraulique -->
-<!-- ================================================================ -->
+<!-- ===== EXERCICES GUIDÉS ===== -->
+<h2>Exercices guidés</h2>
+
 <div class="exo">
   <div class="exo-header">
     <span class="exo-num">Exercice 4</span>
-    <span class="exo-title">Calculs de puissance – pompe hydraulique</span>
-    <span class="diff diff-2">★★ Intermédiaire</span>
+    <span class="exo-title">Radiateur électrique monophasé – courant, puissance apparente et énergie</span>
+    <span class="diff diff-2">Niveau 2</span>
   </div>
-  <p class="enonce">Un technicien intervient sur une pompe hydraulique. La plaque signalétique indique :</p>
-  <div class="plaque">
-    <strong>U</strong> = 230 V &nbsp;|&nbsp; <strong>I</strong> = 4,5 A &nbsp;|&nbsp; <strong>cos φ</strong> = 0,80
+  <p>Un radiateur électrique monophasé fonctionne sous \(U = 230\ \text{V}\). Sa puissance nominale est \(P = 2\,000\ \text{W}\) et \(\cos\varphi = 1\).</p>
+  <div class="methode">
+    <strong>Méthode :</strong> Pour un récepteur résistif (\(\cos\varphi = 1\)), la formule \(P = U \cdot I\) permet de calculer le courant directement. L'énergie consommée sur une durée \(t\) vaut \(W = P \times t\). Si \(t\) est en heures, \(W\) est en Wh.
   </div>
-  <div class="q"><strong>1. Puissance apparente :</strong> Calculer la puissance apparente S. Indiquer l'unité du résultat.</div>
-  <div class="q"><strong>2. Puissance active :</strong> Calculer la puissance active P réellement utile pour la pompe. Indiquer l'unité.</div>
-  <div class="q"><strong>3. Analyse :</strong> Comparer S et P. Expliquer par une phrase pourquoi elles sont différentes.</div>
+  <p class="q"><strong>1.</strong> Calculer l'intensité \(I\) absorbée par le radiateur.</p>
+  <p class="q"><strong>2.</strong> Calculer la puissance apparente \(S\).</p>
+  <p class="q"><strong>3.</strong> Calculer l'énergie consommée en 3 heures de fonctionnement (en Wh puis en kWh).</p>
+  <p class="q"><strong>4.</strong> Quel est le coût de fonctionnement sur 3 h si le kWh coûte 0,25 € ?</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>1.</strong> Formule : \(S = U \times I\)
-    \[S = 230 \times 4{,}5 = \mathbf{1035 \text{ VA}}\] (voltampères)</p>
-    <p><strong>2.</strong> Formule : \(P = U \times I \times \cos\varphi\)
-    \[P = 230 \times 4{,}5 \times 0{,}80 = 1035 \times 0{,}80 = \mathbf{828 \text{ W}}\] (watts)</p>
-    <p><strong>3.</strong> On constate que S > P (1035 VA > 828 W).<br>
-    La différence s'explique par le <strong>déphasage</strong> dû à la bobine du moteur : une partie de la puissance fournie par le réseau n'est pas transformée en travail utile.</p>
+    <p><strong>1.</strong> \(I = \dfrac{P}{U \cdot \cos\varphi} = \dfrac{2\,000}{230 \times 1} \approx \mathbf{8{,}70\ A}\)</p>
+    <p><strong>2.</strong> \(S = U \cdot I = 230 \times 8{,}70 \approx \mathbf{2\,000\ VA}\) (égal à \(P\) car \(\cos\varphi = 1\))</p>
+    <p><strong>3.</strong> \(W = P \times t = 2\,000 \times 3 = \mathbf{6\,000\ Wh = 6\ kWh}\)</p>
+    <p><strong>4.</strong> \(\text{Coût} = 6 \times 0{,}25 = \mathbf{1{,}50\ €}\)</p>
   </div>
 </div>
 
-<!-- ================================================================ -->
-<!-- Exercice 5 : Moteur électrique -->
-<!-- ================================================================ -->
 <div class="exo">
   <div class="exo-header">
     <span class="exo-num">Exercice 5</span>
-    <span class="exo-title">Moteur électrique</span>
-    <span class="diff diff-2">★★ Intermédiaire</span>
+    <span class="exo-title">Moteur triphasé – courant de ligne et puissance mécanique</span>
+    <span class="diff diff-2">Niveau 2</span>
   </div>
-  <p class="enonce">La fiche technique d'un moteur électrique monophasé donne les indications suivantes :</p>
-  <div class="plaque">
-    <strong>230 V</strong> &nbsp;|&nbsp; <strong>50 Hz</strong><br>
-    <strong>cos φ</strong> = 0,92<br>
-    <strong>I</strong> = 9,5 A
+  <p>Un moteur triphasé est alimenté sous \(U = 400\ \text{V}\). Sa puissance active absorbée est \(P = 5\ \text{kW}\), son facteur de puissance \(\cos\varphi = 0{,}8\) et son rendement \(\eta = 0{,}85\).</p>
+  <div class="methode">
+    <strong>Méthode :</strong> En triphasé, \(P = \sqrt{3} \cdot U \cdot I \cdot \cos\varphi\). Pour isoler \(I\), on divise les deux membres par \(\sqrt{3} \cdot U \cdot \cos\varphi\). Le rendement relie la puissance mécanique utile et la puissance électrique absorbée : \(\eta = P_{\text{utile}} / P_{\text{absorbée}}\).
   </div>
-  <div class="q"><strong>1.</strong> Calculer la puissance apparente de ce moteur.</div>
-  <div class="q"><strong>2.</strong> Calculer la puissance active.</div>
-  <div class="q"><strong>3.</strong> Expliquer pourquoi ce moteur présente un facteur de puissance inférieur à 1.</div>
+  <p class="q"><strong>1.</strong> Rappeler la formule de la puissance active triphasée.</p>
+  <p class="q"><strong>2.</strong> Calculer le courant de ligne \(I\) absorbé par le moteur.</p>
+  <p class="q"><strong>3.</strong> Calculer la puissance mécanique utile \(P_{\text{utile}} = \eta \times P\).</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>1.</strong> \(S = U \times I = 230 \times 9{,}5 = \mathbf{2185 \text{ VA}}\)</p>
-    <p><strong>2.</strong> \(P = U \times I \times \cos\varphi = 230 \times 9{,}5 \times 0{,}92 = \mathbf{2010{,}2 \text{ W}}\)</p>
-    <p><strong>3.</strong> Le moteur contient des <strong>bobines</strong> (enroulements) qui créent un déphasage entre la tension et le courant, ce qui diminue le facteur de puissance en dessous de 1.</p>
+    <p><strong>1.</strong> \(P = \sqrt{3} \cdot U \cdot I \cdot \cos\varphi\)</p>
+    <p><strong>2.</strong> \(I = \dfrac{P}{\sqrt{3} \cdot U \cdot \cos\varphi} = \dfrac{5\,000}{\sqrt{3} \times 400 \times 0{,}8} = \dfrac{5\,000}{554{,}3} \approx \mathbf{9{,}02\ A}\)</p>
+    <p><strong>3.</strong> \(P_{\text{utile}} = \eta \times P = 0{,}85 \times 5\,000 = \mathbf{4\,250\ W = 4{,}25\ kW}\)</p>
+    <p>Les pertes dans le moteur sont : \(P_{\text{pertes}} = 5\,000 - 4\,250 = 750\ \text{W}\), dissipées sous forme de chaleur.</p>
   </div>
 </div>
 
-<hr class="section-sep">
-<div class="section-label">J'approfondis – exercices avancés</div>
+<!-- ===== EXERCICES D'APPLICATION ===== -->
+<h2>Exercices d'application</h2>
 
-<!-- ================================================================ -->
-<!-- Exercice 6 : Écran plat -->
-<!-- ================================================================ -->
 <div class="exo">
   <div class="exo-header">
     <span class="exo-num">Exercice 6</span>
-    <span class="exo-title">Écran plat</span>
-    <span class="diff diff-3">★★★ Avancé</span>
-    <span class="badge-appro">Approfondissement</span>
+    <span class="exo-title">Impact du facteur de puissance sur le courant absorbé</span>
+    <span class="diff diff-2">Niveau 2</span>
   </div>
-  <p class="enonce">L'écran plat du salon de Livia affiche une plaque signalétique indiquant : 230 V, 50 Hz, 1,8 A et 180 W. Livia affirme que cet appareil possède un facteur de puissance.</p>
-  <div class="q"><strong>1.</strong> Proposer une méthode pour vérifier par le calcul l'affirmation de Livia.</div>
-  <div class="q"><strong>2.</strong> Calculer la puissance apparente S, puis le facteur de puissance cos φ s'il existe.</div>
-  <div class="q"><strong>3.</strong> Livia a-t-elle raison ? Expliquer pourquoi.</div>
+  <p>Une installation 230 V monophasé fournit une puissance active de \(P = 3\ \text{kW}\). On compare deux situations : \(\cos\varphi_1 = 0{,}7\) (sans compensation) et \(\cos\varphi_2 = 0{,}95\) (avec condensateur de compensation).</p>
+  <p class="q"><strong>1.</strong> Calculer le courant \(I_1\) pour \(\cos\varphi_1 = 0{,}7\).</p>
+  <p class="q"><strong>2.</strong> Calculer le courant \(I_2\) pour \(\cos\varphi_2 = 0{,}95\).</p>
+  <p class="q"><strong>3.</strong> Calculer les puissances apparentes \(S_1\) et \(S_2\) correspondantes.</p>
+  <p class="q"><strong>4.</strong> Conclure sur l'intérêt d'améliorer le facteur de puissance.</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>1.</strong> On calcule S = U × I et P donnée par la plaque. Si P ≠ S, alors cos φ ≠ 1, donc il existe un déphasage et un facteur de puissance différent de 1.</p>
-    <p><strong>2.</strong> \(S = U \times I = 230 \times 1{,}8 = 414 \text{ VA}\)<br>
-    \(\cos\varphi = \dfrac{P}{S} = \dfrac{180}{414} \approx \mathbf{0{,}43}\)</p>
-    <p><strong>3.</strong> <strong>Oui, Livia a raison.</strong> La puissance active (180 W) est inférieure à la puissance apparente (414 VA), ce qui confirme l'existence d'un facteur de puissance. L'écran plat contient des composants inductifs ou capacitifs (alimentation à découpage) qui créent un déphasage.</p>
+    <p><strong>1.</strong> \(I_1 = \dfrac{P}{U \cdot \cos\varphi_1} = \dfrac{3\,000}{230 \times 0{,}7} = \dfrac{3\,000}{161} \approx \mathbf{18{,}6\ A}\)</p>
+    <p><strong>2.</strong> \(I_2 = \dfrac{P}{U \cdot \cos\varphi_2} = \dfrac{3\,000}{230 \times 0{,}95} = \dfrac{3\,000}{218{,}5} \approx \mathbf{13{,}7\ A}\)</p>
+    <p><strong>3.</strong> \(S_1 = U \cdot I_1 = 230 \times 18{,}6 \approx \mathbf{4\,278\ VA \approx 4{,}3\ kVA}\)</p>
+    <p>\(S_2 = U \cdot I_2 = 230 \times 13{,}7 \approx \mathbf{3\,151\ VA \approx 3{,}15\ kVA}\)</p>
+    <p><strong>4.</strong> Améliorer \(\cos\varphi\) de 0,7 à 0,95 réduit le courant de 18,6 A à 13,7 A (réduction de 26 %). La puissance active consommée reste identique (\(P = 3\ \text{kW}\)), mais les câbles, disjoncteurs et compteurs sont moins sollicités. Les pertes Joule en ligne (\(P_{\text{pertes}} = R \cdot I^2\)) sont également réduites.</p>
   </div>
 </div>
 
-<!-- ================================================================ -->
-<!-- Exercice 7 : Comparaison de moteurs -->
-<!-- ================================================================ -->
 <div class="exo">
   <div class="exo-header">
     <span class="exo-num">Exercice 7</span>
-    <span class="exo-title">Comparaison de moteurs</span>
-    <span class="diff diff-3">★★★ Avancé</span>
-    <span class="badge-appro">Approfondissement</span>
+    <span class="exo-title">Bilan de puissance d'une installation triphasée multi-récepteurs</span>
+    <span class="diff diff-3">Niveau 3</span>
   </div>
-  <p class="enonce">Dylan travaille dans un atelier de menuiserie. Deux moteurs sont présents sur le site :</p>
+  <p>Une installation triphasée 400 V comporte trois récepteurs :</p>
   <table>
-    <tr><th>Moteur M1</th><th>Moteur M2</th></tr>
-    <tr><td>230 V – 50 Hz &nbsp;|&nbsp; 0,8 kW<br>η = 80 % &nbsp;|&nbsp; cos φ = 0,9</td><td>230 V – 50 Hz &nbsp;|&nbsp; 0,75 kW<br>η = 75 % &nbsp;|&nbsp; cos φ = 0,5</td></tr>
+    <tr><th>Récepteur</th><th>Puissance active \(P\)</th><th>\(\cos\varphi\)</th></tr>
+    <tr><td>Récepteur 1 (résistance)</td><td>1 kW</td><td>1</td></tr>
+    <tr><td>Récepteur 2 (moteur ventilation)</td><td>2 kW</td><td>0,8</td></tr>
+    <tr><td>Récepteur 3 (compresseur)</td><td>3 kW</td><td>0,7</td></tr>
   </table>
-  <p style="font-size:.9em">La lettre η (êta) symbolise le <strong>rendement</strong>. On rappelle : \(\eta = \dfrac{P_\text{active}}{P_\text{absorbée}}\)</p>
-  <div class="q"><strong>1.</strong> Quelles sont les grandeurs et unités des indications notées sur les plaques ?</div>
-  <div class="q"><strong>2.</strong> Calculer et comparer les puissances actives (absorbées) des deux moteurs.</div>
-  <div class="q"><strong>3.</strong> Calculer et comparer les intensités de courant.</div>
-  <div class="q"><strong>4.</strong> Dylan affirme que la puissance absorbée par M1 est plus importante car le courant demandé est plus important. A-t-il raison ? Expliquer.</div>
+  <p class="q"><strong>1.</strong> Calculer \(P_{\text{totale}}\).</p>
+  <p class="q"><strong>2.</strong> Calculer les puissances réactives \(Q_1\), \(Q_2\), \(Q_3\) de chaque récepteur (utiliser \(\tan\varphi = Q/P\)).</p>
+  <p class="q"><strong>3.</strong> Calculer \(Q_{\text{totale}} = Q_1 + Q_2 + Q_3\).</p>
+  <p class="q"><strong>4.</strong> Calculer \(S_{\text{totale}} = \sqrt{P_{\text{totale}}^2 + Q_{\text{totale}}^2}\) puis \(\cos\varphi_{\text{global}}\).</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>1.</strong> Sur les plaques :</p>
-    <ul>
-      <li>230 V : tension d'alimentation (V)</li>
-      <li>50 Hz : fréquence (Hz)</li>
-      <li>0,8 kW / 0,75 kW : puissance mécanique utile (kW)</li>
-      <li>η : rendement (sans unité, souvent en %)</li>
-      <li>cos φ : facteur de puissance (sans unité)</li>
-    </ul>
-    <p><strong>2.</strong> On calcule la puissance absorbée : \(P_\text{absorbée} = \dfrac{P_\text{utile}}{\eta}\)<br>
-    M1 : \(P_1 = \dfrac{800}{0{,}80} = \mathbf{1000 \text{ W}}\)<br>
-    M2 : \(P_2 = \dfrac{750}{0{,}75} = \mathbf{1000 \text{ W}}\)<br>
-    Les deux puissances absorbées sont <strong>identiques</strong> (1000 W).</p>
-    <p><strong>3.</strong> On utilise \(I = \dfrac{P}{U \times \cos\varphi}\)<br>
-    M1 : \(I_1 = \dfrac{1000}{230 \times 0{,}9} \approx \mathbf{4{,}8 \text{ A}}\)<br>
-    M2 : \(I_2 = \dfrac{1000}{230 \times 0{,}5} \approx \mathbf{8{,}7 \text{ A}}\)<br>
-    M2 demande un courant <strong>nettement supérieur</strong> à M1 malgré la même puissance active.</p>
-    <p><strong>4.</strong> <strong>Non, Dylan a tort.</strong> Les puissances absorbées sont égales. Mais M2 a un mauvais facteur de puissance (0,5) qui impose un courant plus élevé. C'est M2 qui charge davantage le réseau, pas M1.</p>
+    <p><strong>1.</strong> \(P_{\text{totale}} = 1 + 2 + 3 = \mathbf{6\ kW}\)</p>
+    <p><strong>2.</strong> Pour chaque récepteur, \(Q = P \times \tan\varphi\) :</p>
+    <p>\(\cos\varphi_1 = 1 \Rightarrow \tan\varphi_1 = 0 \Rightarrow Q_1 = 1 \times 0 = \mathbf{0\ kvar}\)</p>
+    <p>\(\cos\varphi_2 = 0{,}8 \Rightarrow \sin\varphi_2 = 0{,}6 \Rightarrow \tan\varphi_2 = \dfrac{0{,}6}{0{,}8} = 0{,}75 \Rightarrow Q_2 = 2 \times 0{,}75 = \mathbf{1{,}5\ kvar}\)</p>
+    <p>\(\cos\varphi_3 = 0{,}7 \Rightarrow \sin\varphi_3 = \sqrt{1-0{,}49} \approx 0{,}714 \Rightarrow \tan\varphi_3 \approx \dfrac{0{,}714}{0{,}7} \approx 1{,}020 \Rightarrow Q_3 = 3 \times 1{,}020 \approx \mathbf{3{,}06\ kvar}\)</p>
+    <p><strong>3.</strong> \(Q_{\text{totale}} = 0 + 1{,}5 + 3{,}06 = \mathbf{4{,}56\ kvar}\)</p>
+    <p><strong>4.</strong> \(S_{\text{totale}} = \sqrt{6^2 + 4{,}56^2} = \sqrt{36 + 20{,}79} = \sqrt{56{,}79} \approx \mathbf{7{,}54\ kVA}\)</p>
+    <p>\(\cos\varphi_{\text{global}} = \dfrac{P_{\text{totale}}}{S_{\text{totale}}} = \dfrac{6}{7{,}54} \approx \mathbf{0{,}80}\)</p>
   </div>
 </div>
 
-<!-- ================================================================ -->
-<!-- Exercice 8 : Économie d'énergie -->
-<!-- ================================================================ -->
+<!-- ===== EXERCICES CONTEXTUALISÉS ICCER ===== -->
+<h2>Exercices contextualisés ICCER</h2>
+
 <div class="exo">
   <div class="exo-header">
     <span class="exo-num">Exercice 8</span>
-    <span class="exo-title">Économie d'énergie et compensation</span>
-    <span class="diff diff-3">★★★ Avancé</span>
-    <span class="badge-appro">Approfondissement</span>
+    <span class="exo-title">Installation d'une pompe à chaleur triphasée – choix du disjoncteur</span>
+    <span class="diff diff-2">Niveau 2</span>
   </div>
-  <p class="enonce">L'entreprise dans laquelle travaille Kévin utilise un four à induction et des moteurs pour actionner des tapis roulants. Il découvre qu'il est recommandé d'installer des compensations de puissance réactive (batteries de condensateurs) proches des sources.</p>
-  <div class="q"><strong>1.</strong> Dans une installation industrielle, quelle est l'utilité de la puissance active ? De la puissance réactive ?</div>
-  <div class="q"><strong>2.</strong> Quels appareils utilisent de la puissance réactive dans l'entreprise de Kévin ? Donner le nom du composant qui provoque cela.</div>
-  <div class="q"><strong>3.</strong> Pourquoi utiliser une batterie de condensateurs ?</div>
+  <p>Un technicien CVC installe une pompe à chaleur triphasée. Les données de la plaque signalétique sont : \(U = 400\ \text{V}\), puissance électrique absorbée \(P = 3{,}5\ \text{kW}\), \(\cos\varphi = 0{,}82\).</p>
+  <p class="q"><strong>1.</strong> Rappeler la formule de la puissance active triphasée.</p>
+  <p class="q"><strong>2.</strong> Calculer le courant de ligne \(I\) absorbé par la pompe à chaleur.</p>
+  <p class="q"><strong>3.</strong> Choisir le calibre du disjoncteur de protection parmi : 10 A / 16 A / 20 A / 25 A. Justifier le choix.</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>1.</strong><br>
-    — La <strong>puissance active P</strong> est transformée en travail utile : puissance mécanique (moteurs, tapis), chaleur (four à induction), etc.<br>
-    — La <strong>puissance réactive</strong> est utilisée par les circuits magnétiques des machines (bobines) : elle est échangée entre la source et les composants inductifs sans produire de travail.</p>
-    <p><strong>2.</strong> Le four à induction et les moteurs (tapis roulants) consomment de la puissance réactive. Ce sont les <strong>bobines</strong> (enroulements internes) qui en sont la cause.</p>
-    <p><strong>3.</strong> Une batterie de condensateurs produit de la puissance réactive capacitive qui <strong>compense</strong> la puissance réactive inductive des moteurs. Cela permet de :<br>
-    — Réduire l'intensité du courant dans les câbles<br>
-    — Diminuer les pertes par effet Joule<br>
-    — Éviter les pénalités financières liées au mauvais facteur de puissance</p>
+    <p><strong>1.</strong> \(P = \sqrt{3} \cdot U \cdot I \cdot \cos\varphi\)</p>
+    <p><strong>2.</strong> \(I = \dfrac{P}{\sqrt{3} \cdot U \cdot \cos\varphi} = \dfrac{3\,500}{\sqrt{3} \times 400 \times 0{,}82} = \dfrac{3\,500}{568{,}2} \approx \mathbf{6{,}16\ A}\)</p>
+    <p><strong>3.</strong> Le courant nominal est d'environ 6,2 A. On choisit le calibre immédiatement supérieur : <strong>10 A</strong>.</p>
+    <p>En pratique, le technicien doit aussi vérifier le courant de démarrage du compresseur (pouvant atteindre 3 à 6 fois \(I_n\)). Si les appels de courant au démarrage provoquent des déclenchements intempestifs, on peut opter pour un disjoncteur <strong>16 A</strong> avec courbe de déclenchement type D (adapté aux moteurs).</p>
   </div>
 </div>
 
-<!-- ================================================================ -->
-<!-- Exercice 9 : Tube fluorescent -->
-<!-- ================================================================ -->
 <div class="exo">
   <div class="exo-header">
     <span class="exo-num">Exercice 9</span>
-    <span class="exo-title">Tube fluorescent et condensateur</span>
-    <span class="diff diff-3">★★★ Avancé</span>
-    <span class="badge-appro">Approfondissement</span>
+    <span class="exo-title">Compensation du facteur de puissance d'une installation de chauffage</span>
+    <span class="diff diff-3">Niveau 3</span>
   </div>
-  <p class="enonce">L'éclairage du garage d'Hugo est réalisé à l'aide de tubes fluorescents. Ces lampes fonctionnent avec un ballast électromagnétique (bobine) et un starter. On ajoute parfois un condensateur C en parallèle dans le dispositif. Hugo affirme que ce condensateur est indispensable.
-  <br><br>
-  Données : Sans condensateur C : cos φ = 0,5 &nbsp;|&nbsp; Avec condensateur C : cos φ = 0,9<br>
-  Tension du réseau : U = 230 V &nbsp;|&nbsp; Puissance consommée : P = 33 W (sans condensateur).</p>
-  <div class="q"><strong>1.</strong> Comment est branché le condensateur dans le circuit d'une lampe fluorescente ?</div>
-  <div class="q"><strong>2.</strong> Pensez-vous que la présence du condensateur est indispensable ? Pourquoi ?</div>
-  <div class="q"><strong>3.</strong> Calculer l'intensité du courant sans condensateur, puis avec condensateur, à l'aide de la formule \(I = \dfrac{P}{U \times \cos\varphi}\).</div>
-  <div class="q"><strong>4.</strong> Expliquer, à l'aide des résultats, le rôle du condensateur.</div>
+  <p>Un plombier chauffagiste relève la plaque signalétique d'une chaudière électrique : \(U = 230\ \text{V}\), \(P = 6\ \text{kW}\), \(\cos\varphi = 1\). Pour l'ensemble de l'installation du client, le \(\cos\varphi\) global est de 0,75. Un condensateur de correction est ajouté pour relever ce \(\cos\varphi\) global à 0,95. La puissance active totale de l'installation est \(P_{\text{globale}} = 8\ \text{kW}\).</p>
+  <p class="q"><strong>1.</strong> Calculer la puissance réactive \(Q_1\) avant compensation (\(\cos\varphi_1 = 0{,}75\)).</p>
+  <p class="q"><strong>2.</strong> Calculer la puissance réactive \(Q_2\) après compensation (\(\cos\varphi_2 = 0{,}95\)).</p>
+  <p class="q"><strong>3.</strong> Calculer la puissance réactive du condensateur à installer : \(Q_C = Q_1 - Q_2\).</p>
+  <p class="q"><strong>4.</strong> Calculer les puissances apparentes \(S_1\) et \(S_2\) avant et après compensation. Conclure.</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>1.</strong> Le condensateur est branché <strong>en parallèle</strong> avec la lampe fluorescente (et son ballast).</p>
-    <p><strong>2.</strong> Le condensateur n'est pas indispensable au fonctionnement de la lampe (elle fonctionne sans), mais il est utile pour améliorer le facteur de puissance et réduire le courant dans les câbles. Il est recommandé mais pas obligatoire pour le fonctionnement.</p>
-    <p><strong>3.</strong><br>
-    Sans C : \(I = \dfrac{33}{230 \times 0{,}5} = \dfrac{33}{115} \approx \mathbf{0{,}287 \text{ A}}\)<br>
-    Avec C : \(I = \dfrac{33}{230 \times 0{,}9} = \dfrac{33}{207} \approx \mathbf{0{,}159 \text{ A}}\)</p>
-    <p><strong>4.</strong> Le condensateur <strong>réduit l'intensité du courant</strong> de 0,287 A à 0,159 A (presque deux fois moins). En compensant l'effet de la bobine (ballast), il améliore le facteur de puissance (de 0,5 à 0,9), ce qui diminue le courant nécessaire dans les câbles pour la même puissance active utile.</p>
+    <p><strong>1.</strong> \(\tan\varphi_1 = \dfrac{\sin\varphi_1}{\cos\varphi_1}\) avec \(\sin\varphi_1 = \sqrt{1 - 0{,}75^2} = \sqrt{0{,}4375} \approx 0{,}661\)</p>
+    <p>\(\tan\varphi_1 = \dfrac{0{,}661}{0{,}75} \approx 0{,}882\)</p>
+    <p>\(Q_1 = P \times \tan\varphi_1 = 8\,000 \times 0{,}882 \approx \mathbf{7\,056\ var \approx 7{,}06\ kvar}\)</p>
+    <p><strong>2.</strong> \(\sin\varphi_2 = \sqrt{1 - 0{,}95^2} = \sqrt{0{,}0975} \approx 0{,}312\)</p>
+    <p>\(\tan\varphi_2 = \dfrac{0{,}312}{0{,}95} \approx 0{,}329\)</p>
+    <p>\(Q_2 = P \times \tan\varphi_2 = 8\,000 \times 0{,}329 \approx \mathbf{2\,629\ var \approx 2{,}63\ kvar}\)</p>
+    <p><strong>3.</strong> \(Q_C = Q_1 - Q_2 = 7\,056 - 2\,629 \approx \mathbf{4\,427\ var \approx 4{,}43\ kvar}\)</p>
+    <p>Il faut installer un condensateur fournissant une puissance réactive capacitive de <strong>4,43 kvar</strong>.</p>
+    <p><strong>4.</strong> \(S_1 = \dfrac{P}{\cos\varphi_1} = \dfrac{8\,000}{0{,}75} \approx \mathbf{10\,667\ VA \approx 10{,}67\ kVA}\)</p>
+    <p>\(S_2 = \dfrac{P}{\cos\varphi_2} = \dfrac{8\,000}{0{,}95} \approx \mathbf{8\,421\ VA \approx 8{,}42\ kVA}\)</p>
+    <p><strong>Conclusion :</strong> La compensation réduit la puissance apparente de 10,67 kVA à 8,42 kVA (réduction de 21 %). Le courant absorbé diminue dans la même proportion, ce qui réduit les pertes Joule en ligne et les contraintes sur les câbles et disjoncteurs. La puissance active utile (\(P = 8\ \text{kW}\)) reste inchangée.</p>
   </div>
 </div>
 
-<!-- ================================================================ -->
-<!-- Exercice 10 : Évaluation – Compresseurs -->
-<!-- ================================================================ -->
-<div class="exo">
-  <div class="exo-header">
-    <span class="exo-num">Exercice 10</span>
-    <span class="exo-title">Je m'évalue – Compresseurs d'air</span>
-    <span class="diff diff-3">★★★ Avancé</span>
-    <span class="badge-appro">Évaluation</span>
-  </div>
-  <p class="enonce">Émilie travaille dans un atelier. Le disjoncteur de la ligne associée à deux compresseurs d'air (identiques) se déclenche régulièrement. Elle regarde la fiche technique du moteur monophasé d'un compresseur :</p>
-  <table style="max-width:400px;margin:10px auto">
-    <tr><th>P<sub>consommée</sub></th><th>U</th><th>cos φ</th></tr>
-    <tr><td>2 100 W</td><td>230 V</td><td>0,80</td></tr>
-  </table>
-  <p class="enonce">Émilie affirme que le courant demandé dans la ligne est sûrement trop élevé pour le disjoncteur de 20 A lorsque les deux compresseurs fonctionnent en même temps. <strong>A-t-elle raison ?</strong></p>
-  <div class="q"><strong>1.</strong> Expliquer brièvement le problème soulevé par Émilie.</div>
-  <div class="q"><strong>2.</strong> Comment visualiser expérimentalement la tension instantanée aux bornes d'une bobine et l'intensité de courant instantanée la traversant ?</div>
-  <div class="q"><strong>3.</strong> Calculer le courant I<sub>c</sub> demandé par un seul compresseur en utilisant : \(I = \dfrac{P}{U \times \cos\varphi}\)</div>
-  <div class="q"><strong>4.</strong> Calculer le courant total I<sub>L</sub> appelé par les deux compresseurs.</div>
-  <div class="q"><strong>5.</strong> Émilie a-t-elle raison ? Justifier.</div>
-  <button class="bc" onclick="toggle(this)">Voir la correction</button>
-  <div class="corr">
-    <p><strong>1.</strong> Lorsque les deux compresseurs fonctionnent en même temps, le courant demandé s'additionne. Si ce courant total dépasse 20 A, le disjoncteur se déclenche pour protéger l'installation.</p>
-    <p><strong>2.</strong> On les visualise avec un <strong>système ExAO</strong> (Expérimentation Assistée par Ordinateur) monté dans un circuit électrique contenant la bobine.</p>
-    <p><strong>3.</strong>
-    \[I_c = \frac{P}{U \times \cos\varphi} = \frac{2100}{230 \times 0{,}80} = \frac{2100}{184} \approx \mathbf{11{,}4 \text{ A}}\]</p>
-    <p><strong>4.</strong> Les deux compresseurs sont identiques :
-    \[I_L = I_c + I_c = 11{,}4 + 11{,}4 = \mathbf{22{,}8 \text{ A}}\]</p>
-    <p><strong>5.</strong> <strong>Oui, Émilie a raison.</strong> Le courant total (22,8 A) est supérieur au courant admis par le disjoncteur (20 A), donc le disjoncteur se déclenche bien pour protéger l'installation.</p>
-  </div>
+<!-- ===== À RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir – Puissance électrique (P, S, Q, cos&nbsp;φ)</strong>
+  <ul>
+    <li>Triangle des puissances : \(S^2 = P^2 + Q^2\), \(\cos\varphi = P/S\), \(\tan\varphi = Q/P\).</li>
+    <li>Monophasé : \(P = U \cdot I \cdot \cos\varphi\) — Triphasé : \(P = \sqrt{3} \cdot U \cdot I \cdot \cos\varphi\).</li>
+    <li>Un \(\cos\varphi\) faible augmente le courant à puissance active égale → plus de pertes, câbles plus sollicités.</li>
+    <li>La compensation par condensateur réduit \(Q\) et améliore \(\cos\varphi\) sans modifier \(P\).</li>
+    <li>Pour un récepteur résistif pur (\(\cos\varphi = 1\)) : \(P = S\) et \(Q = 0\).</li>
+  </ul>
 </div>
 
-</div><!-- fin .c -->
-
-<script>
-function toggle(btn){
-  const c=btn.nextElementSibling;
-  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
-  else{c.style.display='block';btn.textContent='Masquer la correction';}
-}
-function showQcm(btn,n){
-  const d=document.getElementById('qcm'+n);
-  if(d.style.display==='block'){d.style.display='none';btn.textContent='Voir la réponse';}
-  else{d.style.display='block';btn.textContent='Masquer la réponse';}
-}
-</script>
-<script src="/nav.js"></script>
+</div>
+<script>function toggle(b){const c=b.nextElementSibling;c.style.display=c.style.display==='block'?'none':'block';b.textContent=c.style.display==='block'?'Masquer la correction':'Voir la correction';}</script>
+<script src="../../../nav.js"></script>
 </body>
 </html>
