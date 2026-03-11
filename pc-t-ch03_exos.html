@@ -1,24 +1,361 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercices — Ch03 Étudier le moteur électrique</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: #f6f8fa; color: #1f2328; margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: auto; text-align: center; padding: 80px 20px; }
-        .back { display: inline-block; margin-bottom: 40px; text-decoration: none; color: #6e7781; font-size: 0.9em; }
-        .back:hover { color: #6f42c1; }
-        h1 { font-size: 1.4em; font-weight: 600; margin-bottom: 8px; }
-        p { color: #6e7781; font-size: 0.95em; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch03 – Moteur électrique – Exercices</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#6f42c1;--s:#2f855a;--d:#c53030;--o:#d97706;--t:#2d3748}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);line-height:1.7;margin:0;padding:20px}
+.c{max-width:860px;margin:auto;background:#fff;padding:35px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+header{text-align:center;border-bottom:3px solid var(--p);margin-bottom:30px;padding-bottom:18px}
+h1{margin:0 0 6px;color:var(--p);font-size:1.7em}
+.sous-titre{color:#718096;font-size:.95em;margin:0}
+.nb{margin-bottom:20px;display:block;text-decoration:none;color:var(--p);font-size:.85em;font-weight:700}
+.intro-box{background:#f5f0ff;border:1px solid #ddd6fe;border-radius:8px;padding:14px 18px;margin-bottom:24px;font-size:.93em}
+h2{font-size:1.05em;color:var(--p);margin-top:32px;margin-bottom:8px;border-left:4px solid var(--p);padding-left:10px}
+.qcm-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+@media(max-width:600px){.qcm-grid{grid-template-columns:1fr}}
+.qcm-item{border:1px solid #e2e8f0;border-radius:8px;padding:12px 14px;font-size:.91em}
+.qcm-item strong{display:block;margin-bottom:4px;color:var(--p)}
+.qcm-item ul{margin:4px 0 0 0;padding-left:16px;list-style:none}
+.qcm-item ul li::before{content:'☐ ';color:#999}
+.qcm-item ul li.ok::before{content:'☑ ';color:var(--s);font-weight:700}
+.qcm-item ul li.ok{color:var(--s);font-weight:600}
+.bcq{background:var(--p);color:#fff;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.82em;margin-top:10px}
+.bcq:hover{background:#5a32a3}
+.qcm-corr{display:none;margin-top:10px;background:#f0fff4;border-left:3px solid var(--s);padding:8px 12px;border-radius:0 6px 6px 0;font-size:.88em}
+.exo{border:1px solid #e2e8f0;border-radius:10px;padding:22px;margin:22px 0}
+.exo-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.exo-num{background:var(--p);color:#fff;font-weight:700;font-size:.88em;padding:4px 12px;border-radius:20px;white-space:nowrap}
+.exo-title{font-weight:600;font-size:1em}
+.diff{font-size:.78em;padding:2px 8px;border-radius:4px;font-weight:600}
+.diff-1{background:#d1fae5;color:#065f46}
+.diff-2{background:#fef3c7;color:#92400e}
+.diff-3{background:#fee2e2;color:#991b1b}
+.badge-appro{background:#ede9fe;color:#5b21b6;font-size:.78em;padding:2px 8px;border-radius:4px;font-weight:600}
+.q{margin:10px 0 4px;padding-left:4px}
+.enonce{background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:10px 14px;margin:10px 0;font-size:.93em}
+.corr{background:#f0fff4;border-left:4px solid var(--s);padding:14px 18px;margin-top:14px;border-radius:0 10px 10px 0;display:none}
+.corr p{margin:6px 0}
+.corr ul{margin:4px 0;padding-left:20px}
+.bc{background:var(--p);color:#fff;border:none;padding:7px 16px;border-radius:6px;cursor:pointer;font-size:.85em;margin-top:10px}
+.bc:hover{background:#5a32a3}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.91em}
+th,td{border:1px solid #e2e8f0;padding:8px 10px;text-align:center}
+th{background:#eef2f7;font-weight:600}
+.section-sep{border:none;border-top:2px dashed #e2e8f0;margin:32px 0}
+.section-label{font-size:.82em;font-weight:700;text-transform:uppercase;color:#718096;letter-spacing:.05em;margin-bottom:8px}
+.plaque{background:#1e3a5f;color:#fff;border-radius:8px;display:inline-block;padding:10px 24px;font-family:'Courier New',monospace;font-size:.93em;margin:10px 0;text-align:left;line-height:1.9}
+.plaque strong{color:#ffd700}
+</style>
 </head>
 <body>
-<div class="container">
-    <a href="pc-term-iccer.html" class="back">← Retour</a>
-    <h1>Exercices — Étudier le moteur électrique</h1>
-    <p>Page en construction.</p>
+<div class="c">
+<a href="pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Chapitre 3 – Exercices</h1>
+  <p class="sous-titre">Obtenir de l'énergie mécanique à l'aide d'un moteur électrique &nbsp;|&nbsp; Terminale Bac Pro ICCER</p>
+</header>
+
+<div class="intro-box">
+  <strong>Compétences travaillées :</strong> lire une plaque signalétique &nbsp;|&nbsp; calculer le rendement η &nbsp;|&nbsp; calculer la puissance absorbée &nbsp;|&nbsp; calculer la vitesse de synchronisme &nbsp;|&nbsp; différencier moteur CC et asynchrone.
 </div>
+
+<h2>Je teste mes acquis – QCM</h2>
+<p style="font-size:.9em;color:#718096">Cocher la (ou les) bonne(s) réponse(s), puis vérifier.</p>
+
+<div class="qcm-grid">
+  <div class="qcm-item">
+    <strong>1. Un moteur électrique est :</strong>
+    <ul>
+      <li class="ok">a. un convertisseur électromécanique ✓</li>
+      <li>b. un générateur de courant</li>
+      <li>c. un redresseur de tension</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,1)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm1">Réponse a — Un moteur convertit l'énergie électrique (P<sub>a</sub>) en énergie mécanique utile (P<sub>u</sub>), avec des pertes.</div>
+  </div>
+  <div class="qcm-item">
+    <strong>2. La puissance indiquée sur la plaque d'un moteur asynchrone est :</strong>
+    <ul>
+      <li>a. la puissance absorbée P<sub>a</sub></li>
+      <li class="ok">b. la puissance utile mécanique P<sub>u</sub> ✓</li>
+      <li>c. la puissance réactive Q</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,2)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm2">Réponse b — La puissance sur la plaque est toujours la puissance mécanique utile (en kW). Pour calculer P<sub>a</sub>, on utilise η ou la formule triphasée.</div>
+  </div>
+  <div class="qcm-item">
+    <strong>3. Le rendement η d'un moteur est :</strong>
+    <ul>
+      <li>a. toujours égal à 1</li>
+      <li class="ok">b. toujours strictement inférieur à 1 ✓</li>
+      <li>c. parfois supérieur à 1</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,3)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm3">Réponse b — Il y a toujours des pertes (effet Joule, frottements). η est compris entre 0 et 1 (0 % à 100 %).</div>
+  </div>
+  <div class="qcm-item">
+    <strong>4. La vitesse de synchronisme d'un moteur asynchrone triphasé vaut :</strong>
+    <ul>
+      <li>a. \(n_s = p \times f\)</li>
+      <li class="ok">b. \(n_s = \dfrac{60 \times f}{p}\) ✓</li>
+      <li>c. \(n_s = \dfrac{f}{60 \times p}\)</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,4)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm4">Réponse b — \(n_s = \dfrac{60f}{p}\) en tr/min, avec f la fréquence en Hz et p le nombre de paires de pôles.</div>
+  </div>
+  <div class="qcm-item">
+    <strong>5. Pour un moteur CC, la vitesse est proportionnelle à :</strong>
+    <ul>
+      <li class="ok">a. la tension d'alimentation U ✓</li>
+      <li>b. la fréquence f</li>
+      <li>c. le courant I</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,5)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm5">Réponse a — Pour un moteur CC, n ∝ U. Pour régler la vitesse d'un moteur CC, on fait varier la tension.</div>
+  </div>
+  <div class="qcm-item">
+    <strong>6. La puissance absorbée par un moteur asynchrone triphasé vaut :</strong>
+    <ul>
+      <li>a. \(P_a = U \times I \times \cos\varphi\)</li>
+      <li class="ok">b. \(P_a = \sqrt{3} \times U \times I \times \cos\varphi\) ✓</li>
+      <li>c. \(P_a = 3 \times U \times I \times \cos\varphi\)</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,6)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm6">Réponse b — La formule triphasée fait intervenir √3 (≈ 1,73). U est la tension entre phases (tension de ligne).</div>
+  </div>
+  <div class="qcm-item">
+    <strong>7. Le glissement d'un moteur asynchrone industriel est typiquement :</strong>
+    <ul>
+      <li>a. 0 % (vitesse réelle = vitesse synchronisme)</li>
+      <li class="ok">b. 2 % à 5 % ✓</li>
+      <li>c. 20 % à 50 %</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,7)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm7">Réponse b — Le rotor tourne légèrement moins vite que le champ statorique. Le glissement est de l'ordre de 2 à 5 % en fonctionnement nominal.</div>
+  </div>
+  <div class="qcm-item">
+    <strong>8. Pour faire varier la vitesse d'un moteur asynchrone, on utilise :</strong>
+    <ul>
+      <li>a. un rhéostat pour modifier la tension</li>
+      <li class="ok">b. un variateur de fréquence (onduleur) ✓</li>
+      <li>c. un transformateur</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,8)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm8">Réponse b — La vitesse d'un moteur asynchrone est proportionnelle à la fréquence d'alimentation. On utilise un variateur de fréquence pour la modifier.</div>
+  </div>
+</div>
+
+<hr class="section-sep">
+<div class="section-label">Je m'exerce – exercices guidés</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 1</span>
+    <span class="exo-title">Lire une plaque signalétique – moteur CC</span>
+    <span class="diff diff-1">★ Facile</span>
+  </div>
+  <p class="enonce">Un technicien ICCER trouve un moteur à courant continu dans un local technique. Sa plaque signalétique indique :</p>
+  <div class="plaque">
+    <strong>U</strong> = 24 V DC &nbsp;|&nbsp; <strong>I</strong> = 8 A &nbsp;|&nbsp; <strong>n</strong> = 1 200 tr/min &nbsp;|&nbsp; <strong>η</strong> = 75 %
+  </div>
+  <div class="q"><strong>1.</strong> Quelle est la puissance électrique absorbée P<sub>a</sub> par ce moteur (formule pour un moteur CC : P<sub>a</sub> = U × I) ?</div>
+  <div class="q"><strong>2.</strong> Calculer la puissance utile mécanique P<sub>u</sub> en utilisant le rendement η.</div>
+  <div class="q"><strong>3.</strong> Calculer les pertes dans le moteur.</div>
+  <div class="q"><strong>4.</strong> On souhaite faire tourner ce moteur à 800 tr/min (à couple constant). Quelle tension faut-il lui appliquer ? Justifier.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(P_a = U \times I = 24 \times 8 = \mathbf{192\text{ W}}\)</p>
+    <p><strong>2.</strong> \(P_u = P_a \times \eta = 192 \times 0{,}75 = \mathbf{144\text{ W}}\)</p>
+    <p><strong>3.</strong> Pertes = P<sub>a</sub> − P<sub>u</sub> = 192 − 144 = <strong>48 W</strong></p>
+    <p><strong>4.</strong> Pour un moteur CC, n ∝ U à couple constant :<br>
+    \(\dfrac{n_2}{n_1} = \dfrac{U_2}{U_1} \Rightarrow U_2 = U_1 \times \dfrac{n_2}{n_1} = 24 \times \dfrac{800}{1200} = 24 \times 0{,}667 \approx \mathbf{16\text{ V}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Calcul de rendement – pompe de chauffage</span>
+    <span class="diff diff-1">★ Facile</span>
+  </div>
+  <p class="enonce">La pompe hydraulique d'un système de chauffage est entraînée par un moteur électrique. Le moteur absorbe P<sub>a</sub> = 350 W et fournit une puissance mécanique utile P<sub>u</sub> = 290 W.</p>
+  <div class="q"><strong>1.</strong> Écrire la formule du rendement η d'un moteur.</div>
+  <div class="q"><strong>2.</strong> Calculer η en % et en valeur décimale.</div>
+  <div class="q"><strong>3.</strong> Calculer les pertes dans le moteur.</div>
+  <div class="q"><strong>4.</strong> Ce rendement est-il satisfaisant pour un moteur industriel ? Justifier.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(\eta = \dfrac{P_u}{P_a}\)</p>
+    <p><strong>2.</strong> \(\eta = \dfrac{290}{350} \approx 0{,}829 = \mathbf{82{,}9\%}\)</p>
+    <p><strong>3.</strong> Pertes = 350 − 290 = <strong>60 W</strong></p>
+    <p><strong>4.</strong> Oui, 82,9 % est un rendement <strong>correct</strong> pour un moteur de petite puissance. Les bons moteurs industriels ont un rendement entre 80 % et 95 %.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">Vitesse de synchronisme – moteur asynchrone</span>
+    <span class="diff diff-2">★★ Intermédiaire</span>
+  </div>
+  <p class="enonce">Un technicien dispose de trois moteurs asynchrones triphasés (réseau 50 Hz) dont les caractéristiques sont :
+  <table>
+    <tr><th>Moteur</th><th>Paires de pôles p</th><th>Vitesse sur plaque</th></tr>
+    <tr><td>A</td><td>1</td><td>2 900 tr/min</td></tr>
+    <tr><td>B</td><td>2</td><td>1 450 tr/min</td></tr>
+    <tr><td>C</td><td>3</td><td>960 tr/min</td></tr>
+  </table>
+  Formule : \(n_s = \dfrac{60 \times f}{p}\)</p>
+  <div class="q"><strong>1.</strong> Calculer la vitesse de synchronisme n<sub>s</sub> de chaque moteur.</div>
+  <div class="q"><strong>2.</strong> Calculer le glissement (en tr/min) pour chaque moteur.</div>
+  <div class="q"><strong>3.</strong> Un ventilateur de CTA est prévu pour fonctionner à 1 500 tr/min. Quel moteur choisir ? Justifier.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong>
+    Moteur A : \(n_s = \dfrac{60 \times 50}{1} = 3000\text{ tr/min}\)<br>
+    Moteur B : \(n_s = \dfrac{60 \times 50}{2} = 1500\text{ tr/min}\)<br>
+    Moteur C : \(n_s = \dfrac{60 \times 50}{3} = 1000\text{ tr/min}\)</p>
+    <p><strong>2.</strong>
+    Moteur A : 3000 − 2900 = <strong>100 tr/min</strong> (glissement 3,3 %)<br>
+    Moteur B : 1500 − 1450 = <strong>50 tr/min</strong> (glissement 3,3 %)<br>
+    Moteur C : 1000 − 960 = <strong>40 tr/min</strong> (glissement 4 %)</p>
+    <p><strong>3.</strong> On choisit le <strong>moteur B</strong> (n<sub>s</sub> = 1 500 tr/min, vitesse réelle ≈ 1 450 tr/min). Le moteur A tourne à environ 2 900 tr/min — trop rapide. Le moteur C tourne à 960 tr/min — trop lent. Le moteur B est le plus proche de 1 500 tr/min et pourra être utilisé avec un variateur ou un accouplement adapté.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Exploitation complète d'une plaque signalétique</span>
+    <span class="diff diff-2">★★ Intermédiaire</span>
+  </div>
+  <p class="enonce">Un moteur asynchrone triphasé présente la plaque signalétique suivante :</p>
+  <div class="plaque">
+    <strong>U</strong> = 400 V (Δ) &nbsp;|&nbsp; <strong>I</strong> = 8,6 A &nbsp;|&nbsp; <strong>cos φ</strong> = 0,80<br>
+    <strong>P<sub>u</sub></strong> = 4 kW &nbsp;|&nbsp; <strong>η</strong> = 85 % &nbsp;|&nbsp; <strong>n</strong> = 1 455 tr/min<br>
+    <strong>f</strong> = 50 Hz &nbsp;|&nbsp; <strong>p</strong> = 2
+  </div>
+  <div class="q"><strong>1.</strong> Calculer la puissance absorbée P<sub>a</sub> avec la formule triphasée : \(P_a = \sqrt{3} \times U \times I \times \cos\varphi\) (avec √3 ≈ 1,732).</div>
+  <div class="q"><strong>2.</strong> Vérifier le rendement η à l'aide de P<sub>a</sub> et P<sub>u</sub>.</div>
+  <div class="q"><strong>3.</strong> Calculer la vitesse de synchronisme n<sub>s</sub>.</div>
+  <div class="q"><strong>4.</strong> Calculer le glissement en tr/min et en %. Est-ce cohérent avec un moteur asynchrone en fonctionnement normal ?</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(P_a = \sqrt{3} \times U \times I \times \cos\varphi = 1{,}732 \times 400 \times 8{,}6 \times 0{,}80 \approx 1{,}732 \times 400 \times 6{,}88 \approx \mathbf{4764\text{ W}}\)</p>
+    <p><strong>2.</strong> \(\eta = \dfrac{P_u}{P_a} = \dfrac{4000}{4764} \approx 0{,}840 = 84\%\)<br>
+    La légère différence avec 85 % s'explique par les arrondis dans les données de plaque. Le résultat est cohérent.</p>
+    <p><strong>3.</strong> \(n_s = \dfrac{60 \times f}{p} = \dfrac{60 \times 50}{2} = \mathbf{1500\text{ tr/min}}\)</p>
+    <p><strong>4.</strong> Glissement = 1 500 − 1 455 = <strong>45 tr/min</strong><br>
+    En % : \(\dfrac{45}{1500} \times 100 = \mathbf{3\%}\)<br>
+    Oui, 3 % est dans la plage normale (2 % à 5 %) pour un moteur asynchrone industriel en fonctionnement nominal.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Variateur de vitesse – centrale de traitement d'air</span>
+    <span class="diff diff-2">★★ Intermédiaire</span>
+  </div>
+  <p class="enonce">Le ventilateur de soufflage d'une CTA est entraîné par un moteur asynchrone : p = 2, f = 50 Hz, P<sub>u</sub> = 5,5 kW, η = 88 %, cos φ = 0,85, U = 400 V (Δ). Un variateur de fréquence permet de réduire la vitesse à 70 % de la vitesse nominale.</p>
+  <div class="q"><strong>1.</strong> Calculer la vitesse de synchronisme n<sub>s</sub> à f = 50 Hz.</div>
+  <div class="q"><strong>2.</strong> Calculer la puissance absorbée P<sub>a</sub> à vitesse nominale.</div>
+  <div class="q"><strong>3.</strong> Le variateur réduit la vitesse à 70 %. La fréquence de l'onduleur vaut alors f' = 50 × 0,70 = 35 Hz. Calculer la nouvelle vitesse de synchronisme.</div>
+  <div class="q"><strong>4.</strong> La puissance absorbée est proportionnelle au cube de la vitesse. Calculer la nouvelle puissance P'<sub>a</sub> et le gain en énergie en %.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(n_s = \dfrac{60 \times 50}{2} = \mathbf{1500\text{ tr/min}}\)</p>
+    <p><strong>2.</strong> \(P_a = \dfrac{P_u}{\eta} = \dfrac{5500}{0{,}88} \approx \mathbf{6250\text{ W}}\)<br>
+    Vérification : \(P_a = \sqrt{3} \times 400 \times I \times 0{,}85 = 6250\text{ W} \Rightarrow I \approx 10{,}6\text{ A}\)</p>
+    <p><strong>3.</strong> \(n'_s = \dfrac{60 \times 35}{2} = \mathbf{1050\text{ tr/min}}\)</p>
+    <p><strong>4.</strong> \(\dfrac{P'_a}{P_a} = \left(\dfrac{n'}{n}\right)^3 = (0{,}70)^3 = 0{,}343\)<br>
+    \(P'_a = 6250 \times 0{,}343 \approx \mathbf{2144\text{ W}}\)<br>
+    Gain = (1 − 0,343) × 100 = <strong>65,7 %</strong> d'économie d'énergie.</p>
+  </div>
+</div>
+
+<hr class="section-sep">
+<div class="section-label">J'approfondis – exercices avancés</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">Comparaison de deux moteurs</span>
+    <span class="diff diff-3">★★★ Avancé</span>
+    <span class="badge-appro">Approfondissement</span>
+  </div>
+  <p class="enonce">Karim doit choisir entre deux moteurs asynchrones triphasés (400 V, 50 Hz) pour entraîner un compresseur de climatisation :</p>
+  <table>
+    <tr><th>Moteur</th><th>P<sub>u</sub></th><th>η</th><th>cos φ</th><th>p</th></tr>
+    <tr><td>M1</td><td>3 kW</td><td>90 %</td><td>0,88</td><td>2</td></tr>
+    <tr><td>M2</td><td>3 kW</td><td>82 %</td><td>0,72</td><td>2</td></tr>
+  </table>
+  <div class="q"><strong>1.</strong> Calculer la puissance absorbée P<sub>a</sub> de chaque moteur.</div>
+  <div class="q"><strong>2.</strong> Calculer l'intensité absorbée I de chaque moteur.</div>
+  <div class="q"><strong>3.</strong> Comparer les deux moteurs. Lequel Karim devrait-il choisir et pourquoi ?</div>
+  <div class="q"><strong>4.</strong> Calculer le surcoût annuel en énergie de M2 par rapport à M1, si le moteur fonctionne 2 000 h/an et que le prix du kWh est 0,18 €.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong>
+    M1 : \(P_{a1} = \dfrac{3000}{0{,}90} \approx \mathbf{3333\text{ W}}\)<br>
+    M2 : \(P_{a2} = \dfrac{3000}{0{,}82} \approx \mathbf{3659\text{ W}}\)</p>
+    <p><strong>2.</strong> Formule : \(I = \dfrac{P_a}{\sqrt{3} \times U \times \cos\varphi}\)<br>
+    M1 : \(I_1 = \dfrac{3333}{1{,}732 \times 400 \times 0{,}88} \approx \dfrac{3333}{609} \approx \mathbf{5{,}5\text{ A}}\)<br>
+    M2 : \(I_2 = \dfrac{3659}{1{,}732 \times 400 \times 0{,}72} \approx \dfrac{3659}{499} \approx \mathbf{7{,}3\text{ A}}\)</p>
+    <p><strong>3.</strong> M1 a un meilleur rendement (90 % vs 82 %) et un meilleur facteur de puissance (0,88 vs 0,72). Il absorbe moins de puissance et moins de courant pour la même puissance utile → Karim devrait choisir <strong>M1</strong>.</p>
+    <p><strong>4.</strong> Différence de puissance : ΔP<sub>a</sub> = 3659 − 3333 = 326 W = 0,326 kW<br>
+    Énergie supplémentaire par an : 0,326 × 2000 = 652 kWh<br>
+    Surcoût annuel : 652 × 0,18 = <strong>117,36 €/an</strong></p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 7</span>
+    <span class="exo-title">Je m'évalue – Bilan d'une installation hydraulique</span>
+    <span class="diff diff-3">★★★ Avancé</span>
+    <span class="badge-appro">Évaluation</span>
+  </div>
+  <p class="enonce">Une installation hydraulique de chauffage comporte un moteur asynchrone triphasé (400 V, 50 Hz, p = 2, cos φ = 0,82, η<sub>moteur</sub> = 88 %) qui entraîne une pompe (η<sub>pompe</sub> = 78 %). La puissance hydraulique utile fournie par la pompe est P<sub>hydr</sub> = 1 500 W.</p>
+  <div class="q"><strong>1.</strong> Calculer la puissance mécanique utile P<sub>u</sub> fournie par le moteur à la pompe.</div>
+  <div class="q"><strong>2.</strong> Calculer la puissance électrique absorbée P<sub>a</sub> par le moteur.</div>
+  <div class="q"><strong>3.</strong> Calculer le rendement global de l'installation η<sub>global</sub> = P<sub>hydr</sub> / P<sub>a</sub>.</div>
+  <div class="q"><strong>4.</strong> Calculer le courant absorbé par le moteur.</div>
+  <div class="q"><strong>5.</strong> Calculer la vitesse de synchronisme et interpréter physiquement le glissement.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> La pompe a un rendement de 78 % :
+    \[P_u = \frac{P_{hydr}}{\eta_{pompe}} = \frac{1500}{0{,}78} \approx \mathbf{1923\text{ W}}\]</p>
+    <p><strong>2.</strong> Le moteur a un rendement de 88 % :
+    \[P_a = \frac{P_u}{\eta_{moteur}} = \frac{1923}{0{,}88} \approx \mathbf{2185\text{ W}}\]</p>
+    <p><strong>3.</strong> \[\eta_{global} = \frac{P_{hydr}}{P_a} = \frac{1500}{2185} \approx 0{,}686 = \mathbf{68{,}6\%}\]<br>
+    Le rendement global est le produit des rendements : 0,88 × 0,78 ≈ 68,6 %.</p>
+    <p><strong>4.</strong> \[I = \frac{P_a}{\sqrt{3} \times U \times \cos\varphi} = \frac{2185}{1{,}732 \times 400 \times 0{,}82} \approx \frac{2185}{568} \approx \mathbf{3{,}85\text{ A}}\]</p>
+    <p><strong>5.</strong> \(n_s = \dfrac{60 \times 50}{2} = 1500\text{ tr/min}\)<br>
+    La vitesse réelle du rotor est légèrement inférieure à 1 500 tr/min (≈ 1 450 tr/min). C'est le <strong>glissement</strong> : le rotor ne peut pas atteindre la vitesse du champ tournant statorique car cela supprimerait le phénomène d'induction qui crée le couple moteur.</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+function toggle(btn){
+  const c=btn.nextElementSibling;
+  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
+  else{c.style.display='block';btn.textContent='Masquer la correction';}
+}
+function showQcm(btn,n){
+  const d=document.getElementById('qcm'+n);
+  if(d.style.display==='block'){d.style.display='none';btn.textContent='Voir la réponse';}
+  else{d.style.display='block';btn.textContent='Masquer la réponse';}
+}
+</script>
 <script src="nav.js"></script>
 </body>
 </html>

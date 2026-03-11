@@ -1,24 +1,326 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercices — Ch02 Convertir un courant continu en alternatif et inversement</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: #f6f8fa; color: #1f2328; margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: auto; text-align: center; padding: 80px 20px; }
-        .back { display: inline-block; margin-bottom: 40px; text-decoration: none; color: #6e7781; font-size: 0.9em; }
-        .back:hover { color: #6f42c1; }
-        h1 { font-size: 1.4em; font-weight: 600; margin-bottom: 8px; }
-        p { color: #6e7781; font-size: 0.95em; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch02 – Courant continu / alternatif – Exercices</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#6f42c1;--s:#2f855a;--d:#c53030;--o:#d97706;--t:#2d3748}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);line-height:1.7;margin:0;padding:20px}
+.c{max-width:860px;margin:auto;background:#fff;padding:35px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+header{text-align:center;border-bottom:3px solid var(--p);margin-bottom:30px;padding-bottom:18px}
+h1{margin:0 0 6px;color:var(--p);font-size:1.7em}
+.sous-titre{color:#718096;font-size:.95em;margin:0}
+.nb{margin-bottom:20px;display:block;text-decoration:none;color:var(--p);font-size:.85em;font-weight:700}
+.intro-box{background:#f5f0ff;border:1px solid #ddd6fe;border-radius:8px;padding:14px 18px;margin-bottom:24px;font-size:.93em}
+h2{font-size:1.05em;color:var(--p);margin-top:32px;margin-bottom:8px;border-left:4px solid var(--p);padding-left:10px}
+.qcm-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+@media(max-width:600px){.qcm-grid{grid-template-columns:1fr}}
+.qcm-item{border:1px solid #e2e8f0;border-radius:8px;padding:12px 14px;font-size:.91em}
+.qcm-item strong{display:block;margin-bottom:4px;color:var(--p)}
+.qcm-item ul{margin:4px 0 0 0;padding-left:16px;list-style:none}
+.qcm-item ul li::before{content:'☐ ';color:#999}
+.qcm-item ul li.ok::before{content:'☑ ';color:var(--s);font-weight:700}
+.qcm-item ul li.ok{color:var(--s);font-weight:600}
+.bcq{background:var(--p);color:#fff;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.82em;margin-top:10px}
+.bcq:hover{background:#5a32a3}
+.qcm-corr{display:none;margin-top:10px;background:#f0fff4;border-left:3px solid var(--s);padding:8px 12px;border-radius:0 6px 6px 0;font-size:.88em}
+.exo{border:1px solid #e2e8f0;border-radius:10px;padding:22px;margin:22px 0}
+.exo-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.exo-num{background:var(--p);color:#fff;font-weight:700;font-size:.88em;padding:4px 12px;border-radius:20px;white-space:nowrap}
+.exo-title{font-weight:600;font-size:1em}
+.diff{font-size:.78em;padding:2px 8px;border-radius:4px;font-weight:600}
+.diff-1{background:#d1fae5;color:#065f46}
+.diff-2{background:#fef3c7;color:#92400e}
+.diff-3{background:#fee2e2;color:#991b1b}
+.badge-appro{background:#ede9fe;color:#5b21b6;font-size:.78em;padding:2px 8px;border-radius:4px;font-weight:600}
+.q{margin:10px 0 4px;padding-left:4px}
+.enonce{background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:10px 14px;margin:10px 0;font-size:.93em}
+.corr{background:#f0fff4;border-left:4px solid var(--s);padding:14px 18px;margin-top:14px;border-radius:0 10px 10px 0;display:none}
+.corr p{margin:6px 0}
+.corr ul{margin:4px 0;padding-left:20px}
+.bc{background:var(--p);color:#fff;border:none;padding:7px 16px;border-radius:6px;cursor:pointer;font-size:.85em;margin-top:10px}
+.bc:hover{background:#5a32a3}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.91em}
+th,td{border:1px solid #e2e8f0;padding:8px 10px;text-align:center}
+th{background:#eef2f7;font-weight:600}
+.section-sep{border:none;border-top:2px dashed #e2e8f0;margin:32px 0}
+.section-label{font-size:.82em;font-weight:700;text-transform:uppercase;color:#718096;letter-spacing:.05em;margin-bottom:8px}
+</style>
 </head>
 <body>
-<div class="container">
-    <a href="pc-term-iccer.html" class="back">← Retour</a>
-    <h1>Exercices — Convertir un courant continu en alternatif et inversement</h1>
-    <p>Page en construction.</p>
+<div class="c">
+<a href="pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Chapitre 2 – Exercices</h1>
+  <p class="sous-titre">Obtenir un courant continu à partir d'un courant alternatif et inversement &nbsp;|&nbsp; Terminale Bac Pro ICCER</p>
+</header>
+
+<div class="intro-box">
+  <strong>Compétences travaillées :</strong> identifier le rôle d'une diode &nbsp;|&nbsp; calculer la valeur moyenne après redressement &nbsp;|&nbsp; expliquer le filtrage par condensateur &nbsp;|&nbsp; identifier les applications d'un onduleur.
 </div>
+
+<h2>Je teste mes acquis – QCM</h2>
+<p style="font-size:.9em;color:#718096">Cocher la (ou les) bonne(s) réponse(s), puis vérifier.</p>
+
+<div class="qcm-grid">
+  <div class="qcm-item">
+    <strong>1. Une diode laisse passer le courant :</strong>
+    <ul>
+      <li class="ok">a. dans un seul sens ✓</li>
+      <li>b. dans les deux sens</li>
+      <li>c. uniquement au-delà de 10 V</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,1)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm1">Réponse a — La diode est un composant unidirectionnel : elle conduit de l'anode vers la cathode (sens passant) et bloque dans l'autre sens.</div>
+  </div>
+  <div class="qcm-item">
+    <strong>2. Un redresseur simple alternance utilise :</strong>
+    <ul>
+      <li class="ok">a. une seule diode ✓</li>
+      <li>b. deux diodes</li>
+      <li>c. quatre diodes</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,2)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm2">Réponse a — Une seule diode laisse passer une demi-alternance sur deux.</div>
+  </div>
+  <div class="qcm-item">
+    <strong>3. Le pont de Graetz est composé de :</strong>
+    <ul>
+      <li>a. deux diodes</li>
+      <li>b. trois diodes</li>
+      <li class="ok">c. quatre diodes ✓</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,3)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm3">Réponse c — Le pont de Graetz comporte 4 diodes montées en pont et redresse les deux alternances.</div>
+  </div>
+  <div class="qcm-item">
+    <strong>4. La valeur moyenne après redressement double alternance vaut :</strong>
+    <ul>
+      <li>a. \(V_m / \pi\)</li>
+      <li class="ok">b. \(2 V_m / \pi\) ✓</li>
+      <li>c. \(V_m / 2\)</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,4)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm4">Réponse b — \(V_{moy} = \dfrac{2 V_m}{\pi}\) pour un redressement double alternance.</div>
+  </div>
+  <div class="qcm-item">
+    <strong>5. Le condensateur de filtrage sert à :</strong>
+    <ul>
+      <li>a. amplifier la tension</li>
+      <li class="ok">b. lisser l'ondulation de la tension DC ✓</li>
+      <li>c. convertir DC en AC</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,5)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm5">Réponse b — Le condensateur se charge aux pics de tension et se décharge lentement entre eux, réduisant l'ondulation résiduelle.</div>
+  </div>
+  <div class="qcm-item">
+    <strong>6. Un onduleur réalise la conversion :</strong>
+    <ul>
+      <li>a. AC → DC</li>
+      <li class="ok">b. DC → AC ✓</li>
+      <li>c. DC → DC</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,6)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm6">Réponse b — L'onduleur est l'inverse du redresseur : il convertit une tension continue en tension alternative à fréquence et amplitude réglables.</div>
+  </div>
+  <div class="qcm-item">
+    <strong>7. Un variateur de vitesse contient :</strong>
+    <ul>
+      <li>a. uniquement un redresseur</li>
+      <li>b. uniquement un onduleur</li>
+      <li class="ok">c. un redresseur + filtre + onduleur ✓</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,7)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm7">Réponse c — Chaîne complète : AC → redresseur → condensateur (DC) → onduleur → AC à fréquence variable.</div>
+  </div>
+  <div class="qcm-item">
+    <strong>8. Pour mieux filtrer, on choisit un condensateur :</strong>
+    <ul>
+      <li class="ok">a. de grande capacité ✓</li>
+      <li>b. de faible capacité</li>
+      <li>c. la capacité n'a pas d'influence</li>
+    </ul>
+    <button class="bcq" onclick="showQcm(this,8)">Voir la réponse</button>
+    <div class="qcm-corr" id="qcm8">Réponse a — Plus C est grand, plus la constante de temps τ = RC est grande et moins l'ondulation est importante.</div>
+  </div>
+</div>
+
+<hr class="section-sep">
+<div class="section-label">Je m'exerce – exercices guidés</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 1</span>
+    <span class="exo-title">Sens passant et sens bloquant d'une diode</span>
+    <span class="diff diff-1">★ Facile</span>
+  </div>
+  <p class="enonce">Dans un circuit, une diode est montée en série avec une résistance R = 100 Ω et une alimentation de 5 V. La tension de seuil de la diode est V<sub>seuil</sub> ≈ 0,7 V.</p>
+  <div class="q"><strong>1.</strong> Expliquer en une phrase ce qu'est le « sens passant » d'une diode.</div>
+  <div class="q"><strong>2.</strong> Dans quel sens le courant circule-t-il en sens passant ?</div>
+  <div class="q"><strong>3.</strong> En sens passant, calculer la tension aux bornes de R et le courant I.</div>
+  <div class="q"><strong>4.</strong> Si on inverse la polarité, quelle est la valeur du courant ?</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Le sens passant est le sens où la diode conduit le courant (tension à l'anode supérieure à la tension à la cathode).</p>
+    <p><strong>2.</strong> Le courant circule de l'<strong>anode vers la cathode</strong>.</p>
+    <p><strong>3.</strong> \(U_R = 5 - 0{,}7 = 4{,}3\text{ V}\) &nbsp;|&nbsp; \(I = \dfrac{U_R}{R} = \dfrac{4{,}3}{100} = \mathbf{43\text{ mA}}\)</p>
+    <p><strong>4.</strong> En sens bloquant, le courant est nul : <strong>I = 0 A</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Redressement simple alternance</span>
+    <span class="diff diff-1">★ Facile</span>
+  </div>
+  <p class="enonce">Un redresseur simple alternance est alimenté par le réseau 230 V efficace / 50 Hz. Formules : \(V_m = U_{eff} \times \sqrt{2}\) et \(V_{moy} = V_m / \pi\).</p>
+  <div class="q"><strong>1.</strong> Calculer la valeur de crête V<sub>m</sub>.</div>
+  <div class="q"><strong>2.</strong> Calculer la valeur moyenne V<sub>moy</sub> après redressement simple alternance.</div>
+  <div class="q"><strong>3.</strong> Exprimer V<sub>moy</sub> en pourcentage de V<sub>m</sub>.</div>
+  <div class="q"><strong>4.</strong> Pourquoi ce redressement est-il peu utilisé en pratique ?</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(V_m = 230 \times \sqrt{2} \approx 230 \times 1{,}414 \approx \mathbf{325\text{ V}}\)</p>
+    <p><strong>2.</strong> \(V_{moy} = \dfrac{325}{\pi} \approx \dfrac{325}{3{,}14} \approx \mathbf{103{,}5\text{ V}}\)</p>
+    <p><strong>3.</strong> \(\dfrac{V_{moy}}{V_m} = \dfrac{1}{\pi} \approx 31{,}8\%\) de V<sub>m</sub> seulement.</p>
+    <p><strong>4.</strong> Il n'exploite qu'<strong>une demi-alternance sur deux</strong> : la valeur moyenne est faible et l'ondulation est importante. On préfère le pont de Graetz qui double la valeur moyenne.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">Pont de Graetz – redressement double alternance</span>
+    <span class="diff diff-2">★★ Intermédiaire</span>
+  </div>
+  <p class="enonce">Un transformateur délivre U<sub>eff</sub> = 12 V alternatif à l'entrée d'un pont de Graetz (4 diodes, V<sub>seuil</sub> = 0,7 V chacune). Formules : \(V_m = U_{eff} \times \sqrt{2}\) et \(V_{moy} = \dfrac{2V_m}{\pi}\).</p>
+  <div class="q"><strong>1.</strong> Quel est l'avantage du pont de Graetz par rapport au redressement simple alternance ?</div>
+  <div class="q"><strong>2.</strong> Calculer V<sub>m</sub>, puis V<sub>moy</sub>.</div>
+  <div class="q"><strong>3.</strong> À chaque instant, 2 diodes sont en série dans le circuit. Calculer la tension continue réelle V<sub>DC</sub>.</div>
+  <div class="q"><strong>4.</strong> Comparer V<sub>moy</sub> simple alternance et double alternance pour la même entrée. Conclure.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Le pont de Graetz exploite les <strong>deux alternances</strong> du signal AC, ce qui double la valeur moyenne et réduit l'ondulation.</p>
+    <p><strong>2.</strong> \(V_m = 12 \times \sqrt{2} \approx 17{,}0\text{ V}\) &nbsp;|&nbsp; \(V_{moy} = \dfrac{2 \times 17{,}0}{\pi} \approx \mathbf{10{,}8\text{ V}}\)</p>
+    <p><strong>3.</strong> Chute 2 diodes : 2 × 0,7 = 1,4 V<br>
+    \(V_{DC} = 10{,}8 - 1{,}4 \approx \mathbf{9{,}4\text{ V}}\)</p>
+    <p><strong>4.</strong> Simple alternance ≈ 5,4 V — Double alternance ≈ 10,8 V.<br>
+    Le pont de Graetz donne une valeur moyenne <strong>deux fois plus élevée</strong>, c'est pourquoi il est systématiquement préféré.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Filtrage par condensateur</span>
+    <span class="diff diff-2">★★ Intermédiaire</span>
+  </div>
+  <p class="enonce">Un pont de Graetz (réseau 50 Hz, T = 20 ms) alimente une charge R = 100 Ω. On filtre avec un condensateur C. Condition de bon filtrage : \(\tau = RC \gg T/2\).</p>
+  <div class="q"><strong>1.</strong> Expliquer en une phrase le phénomène d'ondulation de la tension après le pont de Graetz.</div>
+  <div class="q"><strong>2.</strong> Calculer T/2 pour le réseau 50 Hz.</div>
+  <div class="q"><strong>3.</strong> On choisit C = 4 700 µF. Calculer τ. La condition est-elle respectée ?</div>
+  <div class="q"><strong>4.</strong> Que se passe-t-il si on réduit C à 100 µF ?</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> La tension n'est pas parfaitement constante : elle présente des <strong>ondulations</strong> (ripple) car elle suit les demi-sinusoïdes redressées entre chaque pic.</p>
+    <p><strong>2.</strong> \(T/2 = 20/2 = \mathbf{10\text{ ms}}\)</p>
+    <p><strong>3.</strong> \(\tau = R \times C = 100 \times 4700 \times 10^{-6} = \mathbf{0{,}47\text{ s}} = 470\text{ ms}\)<br>
+    470 ms ≫ 10 ms → condition <strong>largement respectée</strong>, filtrage très efficace.</p>
+    <p><strong>4.</strong> Avec C = 100 µF : τ = 10 ms = T/2 → condition <strong>non respectée</strong>, tension très ondulée et inutilisable pour la plupart des applications.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Onduleur et variateur de vitesse</span>
+    <span class="diff diff-2">★★ Intermédiaire</span>
+  </div>
+  <p class="enonce">Le compresseur d'une climatisation est entraîné par un moteur asynchrone (n<sub>nom</sub> = 1 450 tr/min à f = 50 Hz) commandé par un variateur de fréquence.</p>
+  <div class="q"><strong>1.</strong> Décrire la chaîne de conversion complète d'un variateur de fréquence.</div>
+  <div class="q"><strong>2.</strong> La vitesse est proportionnelle à la fréquence. Calculer la vitesse si l'onduleur génère f = 30 Hz.</div>
+  <div class="q"><strong>3.</strong> La puissance absorbée est proportionnelle au cube de la vitesse. À f = 25 Hz (50 % de la vitesse nominale), calculer P(25 Hz)/P(50 Hz) en %.</div>
+  <div class="q"><strong>4.</strong> Expliquer l'intérêt du variateur de fréquence pour les économies d'énergie.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Réseau AC 50 Hz → <strong>Redresseur</strong> (pont de Graetz) → <strong>Condensateur</strong> (DC lissé) → <strong>Onduleur</strong> (DC → AC à fréquence variable) → Moteur asynchrone.</p>
+    <p><strong>2.</strong> \(n = 1450 \times \dfrac{30}{50} = 1450 \times 0{,}6 = \mathbf{870\text{ tr/min}}\)</p>
+    <p><strong>3.</strong> \(\dfrac{P(25\text{ Hz})}{P(50\text{ Hz})} = \left(\dfrac{25}{50}\right)^3 = (0{,}5)^3 = 0{,}125 = \mathbf{12{,}5\%}\)<br>
+    La puissance est réduite à seulement 12,5 % de la puissance nominale.</p>
+    <p><strong>4.</strong> En adaptant la fréquence à la demande réelle, le variateur permet des <strong>économies d'énergie considérables</strong> par rapport à un fonctionnement tout-ou-rien.</p>
+  </div>
+</div>
+
+<hr class="section-sep">
+<div class="section-label">J'approfondis – exercices avancés</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">Alimentation électronique d'un automate</span>
+    <span class="diff diff-3">★★★ Avancé</span>
+    <span class="badge-appro">Approfondissement</span>
+  </div>
+  <p class="enonce">Léa travaille sur l'alimentation d'un automate industriel. Elle identifie la chaîne suivante : transformateur (230 V AC → 15 V AC), pont de Graetz (V<sub>seuil</sub> = 0,7 V par diode), condensateur C = 2 200 µF, charge R = 50 Ω. Réseau 50 Hz.</p>
+  <div class="q"><strong>1.</strong> Calculer V<sub>m</sub> en sortie du transformateur.</div>
+  <div class="q"><strong>2.</strong> Calculer V<sub>moy</sub> en sortie du pont de Graetz.</div>
+  <div class="q"><strong>3.</strong> Calculer la tension continue réelle V<sub>DC</sub> (avec chute sur les 2 diodes passantes).</div>
+  <div class="q"><strong>4.</strong> Calculer τ et vérifier l'efficacité du filtrage (T/2 = 10 ms).</div>
+  <div class="q"><strong>5.</strong> Calculer le courant moyen I fourni à la charge et la puissance dissipée.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(V_m = 15 \times \sqrt{2} \approx \mathbf{21{,}2\text{ V}}\)</p>
+    <p><strong>2.</strong> \(V_{moy} = \dfrac{2 \times 21{,}2}{\pi} \approx \mathbf{13{,}5\text{ V}}\)</p>
+    <p><strong>3.</strong> \(V_{DC} = 13{,}5 - 2 \times 0{,}7 = 13{,}5 - 1{,}4 \approx \mathbf{12{,}1\text{ V}}\)</p>
+    <p><strong>4.</strong> \(\tau = 50 \times 2200 \times 10^{-6} = \mathbf{110\text{ ms}}\) — 110 ms ≫ 10 ms → filtrage <strong>très efficace</strong>.</p>
+    <p><strong>5.</strong> \(I = \dfrac{V_{DC}}{R} = \dfrac{12{,}1}{50} \approx \mathbf{242\text{ mA}}\) &nbsp;|&nbsp; \(P = 12{,}1 \times 0{,}242 \approx \mathbf{2{,}93\text{ W}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 7</span>
+    <span class="exo-title">Je m'évalue – Onduleur photovoltaïque</span>
+    <span class="diff diff-3">★★★ Avancé</span>
+    <span class="badge-appro">Évaluation</span>
+  </div>
+  <p class="enonce">Un bâtiment est équipé de panneaux photovoltaïques : V<sub>DC</sub> = 380 V, P<sub>DC</sub> = 5 000 W. Un onduleur monophasé (η<sub>ond</sub> = 96 %) convertit cette énergie en 230 V AC / 50 Hz pour l'injection réseau.</p>
+  <div class="q"><strong>1.</strong> Quelle conversion réalise l'onduleur dans cette installation ?</div>
+  <div class="q"><strong>2.</strong> Calculer la puissance AC injectée P<sub>AC</sub>.</div>
+  <div class="q"><strong>3.</strong> Calculer les pertes dans l'onduleur (en watts).</div>
+  <div class="q"><strong>4.</strong> En cas de coupure du réseau, l'onduleur doit-il continuer à fonctionner ? Expliquer (sécurité des techniciens).</div>
+  <div class="q"><strong>5.</strong> Quelle différence entre un onduleur raccordé au réseau et un onduleur sur batterie (site isolé) ?</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> L'onduleur convertit la tension <strong>continue DC</strong> (panneaux) en tension <strong>alternative AC</strong> (230 V / 50 Hz) compatible avec le réseau.</p>
+    <p><strong>2.</strong> \(P_{AC} = P_{DC} \times \eta_{ond} = 5000 \times 0{,}96 = \mathbf{4800\text{ W}}\)</p>
+    <p><strong>3.</strong> Pertes = 5 000 − 4 800 = <strong>200 W</strong> dissipés en chaleur dans l'onduleur.</p>
+    <p><strong>4.</strong> <strong>Non</strong> — L'onduleur doit s'arrêter automatiquement (fonction « anti-îlotage »). S'il continuait à injecter 230 V sur un réseau coupé, un technicien travaillant sur la ligne risquerait l'électrocution en croyant la ligne hors tension.</p>
+    <p><strong>5.</strong>
+    — <strong>Raccordé au réseau</strong> : l'onduleur se synchronise avec le réseau (fréquence, phase) et s'arrête en son absence.<br>
+    — <strong>Sur batterie (off-grid)</strong> : l'onduleur utilise des batteries comme source DC et crée lui-même le signal AC sans réseau de référence (sites isolés, secours d'urgence).</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+function toggle(btn){
+  const c=btn.nextElementSibling;
+  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
+  else{c.style.display='block';btn.textContent='Masquer la correction';}
+}
+function showQcm(btn,n){
+  const d=document.getElementById('qcm'+n);
+  if(d.style.display==='block'){d.style.display='none';btn.textContent='Voir la réponse';}
+  else{d.style.display='block';btn.textContent='Masquer la réponse';}
+}
+</script>
 <script src="nav.js"></script>
 </body>
 </html>
