@@ -349,10 +349,10 @@ svg-wrap{display:flex;justify-content:center;margin:16px 0}
     - Classe 4 : très puissant, peut brûler la peau et enflammer des matériaux (ex : laser de découpe industrielle).
   </div>
 
-  <p>Un atelier de carrosserie utilise deux équipements laser :</p>
+  <p>Un atelier de menuiserie industrielle utilise deux équipements laser :</p>
   <ul>
-    <li><strong>Équipement A</strong> : géomètre laser (contrôle parallélisme roues), visible rouge, 0,8 mW, classe 2.</li>
-    <li><strong>Équipement B</strong> : laser de soudure robotisée, infrarouge, 500 W, classe 4.</li>
+    <li><strong>Équipement A</strong> : traceur laser pour mesure d'équerrage et de planéité, visible rouge, 1 mW, classe 2.</li>
+    <li><strong>Équipement B</strong> : machine de découpe laser pour panneaux de bois et plastique, infrarouge, 80 W, classe 4.</li>
   </ul>
 
   <p class="q"><strong>1.</strong> Pour l'équipement A (classe 2) : peut-on regarder le faisceau directement ? Quelle protection est suffisante ?</p>
@@ -362,12 +362,12 @@ svg-wrap{display:flex;justify-content:center;margin:16px 0}
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1.</strong> Classe 2 : il ne faut pas regarder volontairement et longuement le faisceau, mais le réflexe naturel de clignement des yeux (&lt;0,25 s) suffit à protéger la rétine pour une exposition accidentelle brève. Aucun EPI spécial n'est requis mais il faut éviter de pointer le laser vers les yeux.</p>
-    <p><strong>2.</strong> Classe 4 (500 W, infrarouge) :</p>
+    <p><strong>2.</strong> Classe 4 (80 W, infrarouge) :</p>
     <p>- Lunettes de protection laser adaptées à la longueur d'onde IR (certification EN 207).</p>
     <p>- Signalisation de la zone de danger (panneaux laser, accès interdit).</p>
-    <p>- Verrouillage de la zone (barrières, interlock d'accès).</p>
+    <p>- Cabine ou barrière fermée lors des opérations de découpe.</p>
     <p>- Formation obligatoire des opérateurs.</p>
-    <p>- Vêtements de protection (le faisceau peut brûler la peau).</p>
+    <p>- Vêtements de protection (le faisceau peut brûler la peau) et dispositif d'aspiration des fumées de découpe.</p>
     <p><strong>3.</strong> L'infrarouge est invisible : l'œil ne perçoit aucune lumière, donc le réflexe de clignement ne se déclenche pas. La rétine peut être brûlée sans aucun avertissement sensoriel. De plus, la pupille ne se contracte pas en présence d'IR (pas de réaction à l'éblouissement), laissant passer plus d'énergie dans l'œil.</p>
   </div>
 </div>
@@ -476,7 +476,7 @@ const ctxSon = document.getElementById('chartSon').getContext('2d');
 new Chart(ctxSon, {
   type: 'bar',
   data: {
-    labels: ['Conversation (60 dB)', 'Ponceuse (95 dB)', 'Compresseur (100 dB)', 'Meuleuse (110 dB)', 'Seuil douleur (120 dB)'],
+    labels: ['Conversation (60 dB)', 'Ponceuse (95 dB)', 'Scie à format (100 dB)', 'Défonceuse (110 dB)', 'Seuil douleur (120 dB)'],
     datasets: [{
       label: 'Niveau sonore (dB)',
       data: [60, 95, 100, 110, 120],
@@ -496,7 +496,7 @@ new Chart(ctxSon, {
     responsive: true,
     plugins: {
       legend: { display: false },
-      title: { display: true, text: 'Niveaux sonores en atelier automobile (dB)', font: { size: 14 } },
+      title: { display: true, text: 'Niveaux sonores en atelier de menuiserie (dB)', font: { size: 14 } },
       annotation: {}
     },
     scales: {
