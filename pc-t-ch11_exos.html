@@ -121,14 +121,14 @@ th{background:#eef2f7;font-weight:600}
     <div class="qcm-corr" id="qcm5">Réponse b — \(\Delta L = 20\log(r_2/r_1) = 20\log(2) \approx 6\text{ dB}\).</div>
   </div>
   <div class="qcm-item">
-    <strong>6. Les ultrasons sont utilisés en maintenance ICCER pour :</strong>
+    <strong>6. Les ultrasons sont utilisés en maintenance industrielle pour :</strong>
     <ul>
-      <li class="ok">a. détecter des fuites de fluide frigorigène ✓</li>
+      <li class="ok">a. détecter des fissures ou des défauts dans les matériaux ✓</li>
       <li>b. mesurer la température</li>
       <li>c. contrôler la tension électrique</li>
     </ul>
     <button class="bcq" onclick="showQcm(this,6)">Voir la réponse</button>
-    <div class="qcm-corr" id="qcm6">Réponse a — Les fuites de fluide sous pression génèrent des ultrasons détectables par un capteur acoustique. C'est une technique de contrôle non destructif (CND) courante en ICCER.</div>
+    <div class="qcm-corr" id="qcm6">Réponse a — Les ultrasons permettent de détecter des fissures, des défauts internes ou des variations d'épaisseur dans les matériaux. C'est une technique de contrôle non destructif (CND) courante.</div>
   </div>
 </div>
 
@@ -185,25 +185,25 @@ th{background:#eef2f7;font-weight:600}
     <span class="exo-title">Calcul d'un niveau sonore en dB</span>
     <span class="diff diff-2">★★ Intermédiaire</span>
   </div>
-  <p class="enonce">Dans un atelier de maintenance ICCER, on mesure différentes sources sonores. Intensité de référence : I<sub>0</sub> = 10<sup>−12</sup> W/m². Formule : \(L = 10\log\!\left(\dfrac{I}{I_0}\right)\).</p>
+  <p class="enonce">Dans un atelier de menuiserie, on mesure différentes sources sonores. Intensité de référence : I<sub>0</sub> = 10<sup>−12</sup> W/m². Formule : \(L = 10\log\!\left(\dfrac{I}{I_0}\right)\).</p>
   <table>
     <tr><th>Source</th><th>Intensité I (W/m²)</th><th>Niveau L (dB) à calculer</th></tr>
     <tr><td>Silence absolu (référence)</td><td>10⁻¹² W/m²</td><td>?</td></tr>
     <tr><td>Conversation normale</td><td>10⁻⁶ W/m²</td><td>?</td></tr>
-    <tr><td>Groupe froid en toiture</td><td>10⁻⁴ W/m²</td><td>?</td></tr>
+    <tr><td>Scie à panneaux en fonctionnement</td><td>10⁻⁴ W/m²</td><td>?</td></tr>
     <tr><td>Seuil douleur</td><td>1 W/m²</td><td>?</td></tr>
   </table>
   <div class="q"><strong>1.</strong> Calculer le niveau sonore L en dB pour chacune des 4 sources.</div>
-  <div class="q"><strong>2.</strong> Le seuil réglementaire en zone de travail est 85 dB. Le groupe froid à 80 dB respecte-t-il cette limite ?</div>
+  <div class="q"><strong>2.</strong> Le seuil réglementaire en zone de travail est 85 dB. La scie à panneaux à 80 dB respecte-t-elle cette limite ?</div>
   <div class="q"><strong>3.</strong> Un opérateur travaille à côté d'une machine émettant L = 92 dB. Quelles mesures de protection doit-il prendre ?</div>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1.</strong>
     Référence : \(L = 10\log\!\left(\dfrac{10^{-12}}{10^{-12}}\right) = 10\log(1) = \mathbf{0\text{ dB}}\)<br>
     Conversation : \(L = 10\log\!\left(\dfrac{10^{-6}}{10^{-12}}\right) = 10\log(10^6) = 10 \times 6 = \mathbf{60\text{ dB}}\)<br>
-    Groupe froid : \(L = 10\log\!\left(\dfrac{10^{-4}}{10^{-12}}\right) = 10\log(10^8) = 10 \times 8 = \mathbf{80\text{ dB}}\)<br>
+    Scie à panneaux : \(L = 10\log\!\left(\dfrac{10^{-4}}{10^{-12}}\right) = 10\log(10^8) = 10 \times 8 = \mathbf{80\text{ dB}}\)<br>
     Seuil douleur : \(L = 10\log\!\left(\dfrac{1}{10^{-12}}\right) = 10\log(10^{12}) = 10 \times 12 = \mathbf{120\text{ dB}}\)</p>
-    <p><strong>2.</strong> Le groupe froid émet 80 dB &lt; 85 dB → il <strong>respecte</strong> la limite réglementaire.</p>
+    <p><strong>2.</strong> La scie à panneaux émet 80 dB &lt; 85 dB → elle <strong>respecte</strong> la limite réglementaire.</p>
     <p><strong>3.</strong> 92 dB dépasse 85 dB. L'opérateur doit porter des <strong>protections auditives</strong> (casque antibruit ou bouchons d'oreilles adaptés, atténuation ≥ 10 dB). Une exposition prolongée sans protection peut provoquer une surdité professionnelle irréversible.</p>
   </div>
 </div>
@@ -214,8 +214,8 @@ th{background:#eef2f7;font-weight:600}
     <span class="exo-title">Atténuation du son avec la distance</span>
     <span class="diff diff-2">★★ Intermédiaire</span>
   </div>
-  <p class="enonce">Une CTA installée en toiture produit un niveau sonore L<sub>1</sub> = 75 dB à r<sub>1</sub> = 1 m de la machine (source ponctuelle). Formule d'atténuation : \(\Delta L = 20 \log\!\left(\dfrac{r_1}{r_2}\right)\) et \(L_2 = L_1 + \Delta L\).</p>
-  <div class="q"><strong>1.</strong> Un locataire du bâtiment se plaint du bruit à r<sub>2</sub> = 10 m de la CTA. Calculer ΔL et le niveau sonore L<sub>2</sub> à cette distance.</div>
+  <p class="enonce">Un système d'aspiration de poussières installé dans un atelier de menuiserie produit un niveau sonore L<sub>1</sub> = 75 dB à r<sub>1</sub> = 1 m de la machine (source ponctuelle). Formule d'atténuation : \(\Delta L = 20 \log\!\left(\dfrac{r_1}{r_2}\right)\) et \(L_2 = L_1 + \Delta L\).</p>
+  <div class="q"><strong>1.</strong> Un menuisier travaille à r<sub>2</sub> = 10 m du système d'aspiration. Calculer ΔL et le niveau sonore L<sub>2</sub> à cette distance.</div>
   <div class="q"><strong>2.</strong> À quelle distance r<sub>3</sub> faut-il se trouver pour que le niveau tombe à 55 dB ?</div>
   <div class="q"><strong>3.</strong> Vérifier la règle « doubler la distance → −6 dB » en calculant L à 2 m.</div>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
@@ -235,22 +235,22 @@ th{background:#eef2f7;font-weight:600}
 <div class="exo">
   <div class="exo-header">
     <span class="exo-num">Exercice 5</span>
-    <span class="exo-title">Bruit d'un ventilo-convecteur</span>
+    <span class="exo-title">Bruit d'une ponceuse industrielle</span>
     <span class="diff diff-2">★★ Intermédiaire</span>
   </div>
-  <p class="enonce">Un ventilo-convecteur installé dans une chambre d'hôtel émet une vibration caractéristique à f = 150 Hz dans l'air (c = 340 m/s). L'intensité sonore mesurée à 1 m est I = 3,2 × 10⁻⁷ W/m².</p>
+  <p class="enonce">Une ponceuse à bande large utilisée dans un atelier de menuiserie émet une vibration caractéristique à f = 150 Hz dans l'air (c = 340 m/s). L'intensité sonore mesurée à 1 m est I = 3,2 × 10⁻⁷ W/m².</p>
   <div class="q"><strong>1.</strong> Calculer la longueur d'onde λ et la période T de ce son.</div>
   <div class="q"><strong>2.</strong> Ce son appartient-il au domaine des graves, des médiums ou des aigus ?<br><em>(Graves : 20–300 Hz ; Médiums : 300–3 000 Hz ; Aigus : 3 000–20 000 Hz)</em></div>
   <div class="q"><strong>3.</strong> Calculer le niveau sonore L à 1 m (I<sub>0</sub> = 10⁻¹² W/m²).</div>
-  <div class="q"><strong>4.</strong> Le seuil de gêne nocturne est 35 dB. Le niveau calculé pose-t-il problème ? Calculer à quelle distance on serait à 35 dB.</div>
+  <div class="q"><strong>4.</strong> Le seuil de confort dans un bureau adjacent est de 35 dB. Le niveau calculé pose-t-il problème ? Calculer à quelle distance on serait à 35 dB.</div>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1.</strong>
     \(\lambda = \dfrac{c}{f} = \dfrac{340}{150} \approx \mathbf{2{,}27\text{ m}}\)<br>
     \(T = \dfrac{1}{f} = \dfrac{1}{150} \approx 6{,}67 \times 10^{-3}\text{ s} = \mathbf{6{,}67\text{ ms}}\)</p>
-    <p><strong>2.</strong> f = 150 Hz ∈ [20 Hz ; 300 Hz] → domaine des <strong>graves</strong>. Ce sont les basses fréquences, difficiles à atténuer avec les parois légères.</p>
+    <p><strong>2.</strong> f = 150 Hz ∈ [20 Hz ; 300 Hz] → domaine des <strong>graves</strong>. Ce sont les basses fréquences, difficiles à atténuer avec les cloisons légères de l'atelier.</p>
     <p><strong>3.</strong> \(L = 10\log\!\left(\dfrac{3{,}2 \times 10^{-7}}{10^{-12}}\right) = 10\log(3{,}2 \times 10^5) = 10 \times (5 + \log 3{,}2) \approx 10 \times (5 + 0{,}505) \approx \mathbf{55{,}1\text{ dB}}\)</p>
-    <p><strong>4.</strong> 55 dB > 35 dB → problème de confort sonore nocturne.<br>
+    <p><strong>4.</strong> 55 dB > 35 dB → le niveau sonore est trop élevé pour un bureau adjacent.<br>
     On cherche r tel que L = 35 dB :
     \(\Delta L = 35 - 55 = -20\text{ dB} = 20\log\!\left(\dfrac{1}{r}\right)\)<br>
     \(\log(1/r) = -1 \Rightarrow r = 10\text{ m}\)<br>
