@@ -1,121 +1,101 @@
-# Prompt de filière — Terminale Bac Pro ERA et MA
+# PROMPT FILIÈRE — TERMINALE BAC PRO ERA / MA
 
-## Classes concernées
-**Terminale Bac Professionnel**
-- ERA : Étude et Réalisation d'Agencement
-- MA : Menuiserie Agencement
+Ce prompt décrit les contextes professionnels à utiliser lorsque tu génères du contenu pour les classes de Terminale Bac Professionnel ERA et MA.
 
----
+ERA signifie : Étude et Réalisation d'Agencement
+MA signifie : Menuiserie Agencement
 
-## Règle d'usage
-Ne jamais utiliser les sigles **ERA** ou **MA** dans les situations d'exercices ou les mises en contexte.
-Utiliser à la place les **noms de métiers** listés ci-dessous.
+Ces formations concernent les métiers du bois, de la fabrication de mobilier et de l'aménagement intérieur.
 
 ---
 
-## Métiers de référence
+## OBJECTIF
 
-Lors de la rédaction des mises en situation, utiliser l'un de ces métiers comme protagoniste :
+Lorsque tu produis :
+- un cours
+- des exercices
+- un devoir surveillé
+- une simulation
 
-- Menuisier
-- Menuisier agenceur
-- Fabricant de meubles
-- Installateur d'agencement
-- Poseur de menuiseries
-- Artisan menuisier
-- Aménageur d'intérieur
+tu peux contextualiser certaines situations dans les métiers du bois, de l'agencement ou de l'aménagement intérieur.
 
-**Exemple de formulation :**
-> "Un menuisier agenceur doit calculer la surface..."
-> "Un installateur d'agencement réalise un placard..."
-> "Un artisan menuisier fabrique une série de caissons..."
+Cependant :
+- les situations professionnelles ne sont pas obligatoires
+- il est également intéressant d'utiliser des situations issues de la vie quotidienne, du sport, de la science, du climat ou de la santé.
 
 ---
 
-## Contextes professionnels à utiliser
+## MÉTIERS ASSOCIÉS
 
-Les situations d'exercices et les exemples de cours doivent être tirés des domaines suivants :
+Ne pas utiliser les sigles ERA ou MA dans les situations.
+Utiliser des noms de métiers réels.
 
-### Fabrication de meubles
-- Calcul des dimensions d'un meuble
-- Optimisation du débit (découpe de panneaux)
-- Surface de matériaux nécessaire
-- Masse d'un meuble (volume × densité)
-- Coût de fabrication
-
-### Fabrication d'étagères
-- Résistance à la flexion d'une étagère
-- Calcul de la charge maximale admissible
-- Nombre d'étagères dans une armoire
-- Répartition des espaces
-
-### Fabrication de caissons
-- Calcul du volume d'un caisson
-- Découpe de panneaux de bois
-- Surface de chant à poser
-- Nombre de pièces dans une série
-
-### Installation de placards
-- Mesures d'un espace mural
-- Calcul des cotes de fabrication
-- Répartition intérieure d'un placard
-- Angle et aplomb lors de la pose
-
-### Aménagement de magasins
-- Surface de vente disponible
-- Nombre de linéaires de présentation
-- Disposition du mobilier dans l'espace
-- Calcul des passages obligatoires
-
-### Pose de cuisines
-- Implantation des meubles bas et hauts
-- Calcul du plan de travail
-- Surface de carrelage ou crédence
-- Découpe d'un plan de travail
-
-### Assemblage de mobilier
-- Nombre de chevilles, vis, équerres
-- Calcul de la surface de colle
-- Résistance d'un assemblage
-
-### Éclairage d'un atelier
-- Puissance lumineuse nécessaire (lux)
-- Nombre de luminaires
-- Consommation électrique
-- Éclairement d'un poste de travail
-
-### Acoustique d'une pièce
-- Surface de matériaux absorbants
-- Réduction du bruit (dB)
-- Isolation phonique d'une cloison
-
-### Isolation thermique d'un bâtiment
-- Coefficient de transmission thermique (U)
-- Surface à isoler
-- Épaisseur d'isolant nécessaire
-- Économies d'énergie réalisées
+Exemples :
+- menuisier
+- menuisier agenceur
+- fabricant de meubles
+- installateur d'agencement
+- poseur de cuisines
+- installateur de placards
+- artisan menuisier
+- aménageur d'intérieur
+- fabricant de mobilier
 
 ---
 
-## Valeurs numériques typiques
+## EXEMPLES DE CONTEXTES POSSIBLES
 
-Utiliser des valeurs réalistes pour les exercices :
+### Fabrication de mobilier :
+- dimensions d'un meuble
+- découpe de panneaux de bois
+- calcul d'une surface
+- optimisation d'une planche de bois
 
-| Grandeur | Valeur typique | Unité |
-|---|---|---|
-| Dimensions meuble | 0,3 à 2,5 | m |
-| Épaisseur panneau | 16 à 22 | mm |
-| Masse volumique bois | 600 à 800 | kg/m³ |
-| Charge étagère | 10 à 50 | kg |
-| Surface atelier | 50 à 500 | m² |
-| Éclairement atelier | 300 à 750 | lux |
-| Niveau sonore atelier | 70 à 90 | dB |
+### Aménagement intérieur :
+- installation d'étagères
+- fabrication de placards
+- installation de cuisines
+- fabrication de caissons
+
+### Atelier de fabrication :
+- puissance d'une machine
+- éclairage d'un atelier
+- acoustique d'un atelier
+- température d'un local
+
+### Bâtiment :
+- isolation thermique
+- éclairage d'une pièce
+- propagation du son
+- consommation d'énergie d'un bâtiment
 
 ---
 
-## Cohérence pédagogique
+## RÈGLES IMPORTANTES
 
-- Les exemples doivent être **crédibles** pour un élève en formation professionnelle
-- Les dimensions doivent correspondre à des **meubles ou agencements réels**
-- Favoriser les situations où l'élève se projette dans son futur métier
-- Relier les calculs mathématiques à des **actes professionnels concrets** (devis, fabrication, pose)
+Ne pas écrire dans les exercices :
+"élève de ERA"
+"classe MA"
+
+Toujours utiliser des situations réalistes liées aux métiers.
+
+Exemple :
+"Un menuisier doit fabriquer une étagère pour un magasin."
+
+---
+
+## DIVERSIFIER LES CONTEXTES
+
+Même pour cette filière, il est important de varier les contextes :
+- sport
+- science
+- climat
+- santé
+- vie quotidienne
+- consommation énergétique
+
+---
+
+## OBJECTIF FINAL
+
+Produire des contenus pédagogiques adaptés à des élèves de Terminale Bac Professionnel ERA / MA, avec des exemples réalistes liés aux métiers du bois et de l'agencement.
