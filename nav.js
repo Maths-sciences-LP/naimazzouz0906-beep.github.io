@@ -96,13 +96,13 @@
       types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé' },
       chapters: [
         { id: '01', title: 'Évaluer la puissance consommée' },
-        { id: '02', title: 'Courant alternatif et courant continu' },
-        { id: '03', title: 'Énergie mécanique et moteur électrique' },
-        { id: '07', title: 'Rayonnement thermique et effet de serre' },
-        { id: '08', title: 'Pression dans un fluide immobile' },
-        { id: '09', title: 'Transport de masse par un fluide en mouvement' },
-        { id: '10', title: 'Réaction d\'oxydoréduction et protection des métaux' },
-        { id: '11', title: 'Propagation d\'un signal sonore' }
+        { id: '02', title: 'Obtenir un courant continu à partir d\'un courant alternatif et inversement' },
+        { id: '03', title: 'Obtenir de l\'énergie mécanique à l\'aide d\'un moteur électrique' },
+        { id: '07', title: 'Utiliser le rayonnement thermique et comprendre l\'effet de serre' },
+        { id: '08', title: 'Caractériser la pression dans un fluide immobile' },
+        { id: '09', title: 'Décrire le transport de masse et de volume par un fluide en mouvement' },
+        { id: '10', title: 'Oxydoréduction et protection des métaux contre la corrosion' },
+        { id: '11', title: 'Caractériser la propagation d\'un signal sonore' }
       ]
     },
 
@@ -114,9 +114,9 @@
       types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé' },
       chapters: [
         { id: '01', title: 'Transporter l\'énergie sous forme électrique' },
-        { id: '02', title: 'Stocker l\'énergie — système électrochimique' },
+        { id: '02', title: 'Stocker l\'énergie à l\'aide d\'un système électrochimique' },
         { id: '03', title: 'Rayonnement thermique et effet de serre' },
-        { id: '04', title: 'Accélération et vitesse d\'un objet' },
+        { id: '04', title: 'Caractériser la vitesse et l\'accélération' },
         { id: '05', title: 'Oxydoréduction et protection des métaux' },
         { id: '06', title: 'Choisir une source lumineuse' },
         { id: '07', title: 'Transmettre l\'information' },
