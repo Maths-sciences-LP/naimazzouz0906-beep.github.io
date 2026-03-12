@@ -282,6 +282,59 @@
   </div>
 </div>
 
+<!-- --- Exercice 2.5 --- -->
+<div class="exo">
+  <strong>Exercice 2.5 &mdash; Loi normale &mdash; Temp&eacute;rature de sortie d&rsquo;une chaudi&egrave;re</strong>
+  <p>La temp&eacute;rature \(T\) (en &deg;C) de l&rsquo;eau en sortie d&rsquo;une chaudi&egrave;re suit une loi normale \(\mathcal{N}(65\;;\;4)\), soit \(\mu = 65\) &deg;C et \(\sigma = 2\) &deg;C. La temp&eacute;rature est conforme si elle est comprise entre 61 &deg;C et 69 &deg;C.</p>
+  <ol>
+    <li>Quel pourcentage des mesures est conforme ? (Utiliser la r&egrave;gle 68-95-99,7.)</li>
+    <li>Calculer \(P(T > 68)\) par centrage-r&eacute;duction.</li>
+    <li>Le technicien d&eacute;clenche une alerte si \(T > 70\). Calculer la probabilit&eacute; d&rsquo;alerte.</li>
+    <li>D&eacute;terminer la temp&eacute;rature \(t_0\) d&eacute;pass&eacute;e seulement 1&nbsp;% du temps.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>L&rsquo;intervalle [61 ; 69] correspond &agrave; \([\mu - 2\sigma\;;\;\mu + 2\sigma]\).<br>
+      Par la r&egrave;gle 68-95-99,7, environ <strong>95,4&nbsp;%</strong> des mesures sont conformes.</li>
+      <li>\(P(T > 68) = P\!\left(Z > \dfrac{68-65}{2}\right) = P(Z > 1{,}5) = 1 - \Phi(1{,}5) \approx 1 - 0{,}9332 = 0{,}0668\)<br>
+      Environ <strong>6,7&nbsp;%</strong>.</li>
+      <li>\(P(T > 70) = P\!\left(Z > \dfrac{70-65}{2}\right) = P(Z > 2{,}5) = 1 - \Phi(2{,}5) \approx 1 - 0{,}9938 = 0{,}0062\)<br>
+      Environ <strong>0,6&nbsp;%</strong> de probabilit&eacute; d&rsquo;alerte.</li>
+      <li>On cherche \(t_0\) tel que \(P(T > t_0) = 0{,}01\), soit \(P(T \leqslant t_0) = 0{,}99\).<br>
+      \(\Phi\!\left(\dfrac{t_0 - 65}{2}\right) = 0{,}99\), donc \(\dfrac{t_0 - 65}{2} = 2{,}326\).<br>
+      \(t_0 = 65 + 2 \times 2{,}326 = 69{,}65\) &deg;C.<br>
+      La temp&eacute;rature <strong>69,7 &deg;C</strong> (arrondi) n&rsquo;est d&eacute;pass&eacute;e que 1&nbsp;% du temps.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- --- Exercice 2.6 --- -->
+<div class="exo">
+  <strong>Exercice 2.6 &mdash; Approximation binomiale &rarr; normale</strong>
+  <p>Un fabricant de tuiles annonce un taux de casse au transport de 4&nbsp;%. Un couvreur re&ccedil;oit une palette de \(n = 200\) tuiles. Soit \(X\) le nombre de tuiles cass&eacute;es.</p>
+  <ol>
+    <li>Justifier que \(X \sim B(200\,;\,0{,}04)\) et v&eacute;rifier les conditions d&rsquo;approximation par une loi normale.</li>
+    <li>Donner les param&egrave;tres \(\mu\) et \(\sigma\) de la loi normale approch&eacute;e.</li>
+    <li>Calculer \(P(X \leqslant 10)\) avec correction de continuit&eacute;.</li>
+    <li>Calculer \(P(X \geqslant 15)\). Que peut conclure le couvreur s&rsquo;il constate 15 tuiles cass&eacute;es ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Chaque tuile est cass&eacute;e ou non (Bernoulli), ind&eacute;pendamment, avec \(p = 0{,}04\) constant.<br>
+      \(n = 200 \geqslant 30\) &check; ; \(np = 8 \geqslant 5\) &check; ; \(n(1-p) = 192 \geqslant 5\) &check;.<br>
+      L&rsquo;approximation normale est justifi&eacute;e.</li>
+      <li>\(\mu = np = 200 \times 0{,}04 = 8\)<br>
+      \(\sigma = \sqrt{np(1-p)} = \sqrt{200 \times 0{,}04 \times 0{,}96} = \sqrt{7{,}68} \approx 2{,}77\)</li>
+      <li>\(P(X \leqslant 10) \approx P(Y \leqslant 10{,}5) = \Phi\!\left(\dfrac{10{,}5 - 8}{2{,}77}\right) = \Phi(0{,}90) \approx 0{,}816\)<br>
+      Environ <strong>81,6&nbsp;%</strong>.</li>
+      <li>\(P(X \geqslant 15) \approx P(Y \geqslant 14{,}5) = 1 - \Phi\!\left(\dfrac{14{,}5 - 8}{2{,}77}\right) = 1 - \Phi(2{,}35) \approx 1 - 0{,}9906 = 0{,}0094\)<br>
+      Moins de <strong>1&nbsp;%</strong> de chances. Si le couvreur observe 15 tuiles cass&eacute;es, il y a de fortes raisons de penser que le taux de casse r&eacute;el est sup&eacute;rieur &agrave; 4&nbsp;% : il peut r&eacute;clamer aupr&egrave;s du fournisseur.</li>
+    </ol>
+  </div>
+</div>
+
 <!-- ===================================================== -->
 <!--              NIVEAU 3 — APPROFONDIR                   -->
 <!-- ===================================================== -->
@@ -380,6 +433,33 @@
       \(P(T^+) = 0{,}95 \times 0{,}08 + 0{,}10 \times 0{,}92 = 0{,}076 + 0{,}092 = 0{,}168\)</li>
       <li>\(P(F \mid T^+) = \dfrac{P(T^+ \mid F) \times P(F)}{P(T^+)} = \dfrac{0{,}076}{0{,}168} \approx 0{,}4524\)</li>
       <li>Seulement 45&nbsp;% des tests positifs correspondent &agrave; une vraie fissure. Plus de la moiti&eacute; des alertes sont de faux positifs. Ce r&eacute;sultat s&rsquo;explique par la faible pr&eacute;valence des fissures (8&nbsp;%). Le test est utile comme pr&eacute;-tri (il d&eacute;tecte bien les vraies fissures : 95&nbsp;%), mais un test positif doit &ecirc;tre confirm&eacute; par une inspection visuelle approfondie.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- --- Exercice 3.4 --- -->
+<div class="exo">
+  <strong>Exercice 3.4 &mdash; TLC &mdash; Consommation &eacute;nerg&eacute;tique</strong>
+  <p>Un bureau d&rsquo;&eacute;tudes thermiques mesure la consommation &eacute;nerg&eacute;tique annuelle de logements identiques. La consommation d&rsquo;un logement est une variable al&eacute;atoire d&rsquo;esp&eacute;rance \(\mu = 120\) kWh/m&sup2; et d&rsquo;&eacute;cart-type \(\sigma = 25\) kWh/m&sup2;.</p>
+  <p>On s&eacute;lectionne un &eacute;chantillon de \(n = 40\) logements et on calcule la consommation moyenne \(\bar{X}\).</p>
+  <ol>
+    <li>Par le TLC, donner la loi approximative de \(\bar{X}\). Calculer \(\sigma_{\bar{X}}\).</li>
+    <li>Calculer \(P(\bar{X} \leqslant 115)\).</li>
+    <li>Calculer \(P(115 \leqslant \bar{X} \leqslant 125)\).</li>
+    <li>Le bureau d&rsquo;&eacute;tudes certifie un b&acirc;timent &laquo;&nbsp;basse consommation&nbsp;&raquo; si \(\bar{X} \leqslant 110\). Quelle est la probabilit&eacute; de certification si la vraie moyenne est bien 120 kWh/m&sup2; (fausse certification) ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Par le TLC (\(n = 40 \geqslant 30\)) : \(\bar{X} \sim \mathcal{N}\!\left(120\;;\;\dfrac{625}{40}\right) = \mathcal{N}(120\;;\;15{,}625)\)<br>
+      \(\sigma_{\bar{X}} = \dfrac{25}{\sqrt{40}} \approx 3{,}95\) kWh/m&sup2;.</li>
+      <li>\(P(\bar{X} \leqslant 115) = \Phi\!\left(\dfrac{115 - 120}{3{,}95}\right) = \Phi(-1{,}27) = 1 - \Phi(1{,}27) \approx 1 - 0{,}8980 = 0{,}102\)<br>
+      Environ <strong>10,2&nbsp;%</strong>.</li>
+      <li>\(P(115 \leqslant \bar{X} \leqslant 125) = \Phi\!\left(\dfrac{125-120}{3{,}95}\right) - \Phi\!\left(\dfrac{115-120}{3{,}95}\right) = \Phi(1{,}27) - \Phi(-1{,}27)\)<br>
+      \(= 2\Phi(1{,}27) - 1 \approx 2 \times 0{,}8980 - 1 = 0{,}796\)<br>
+      Environ <strong>79,6&nbsp;%</strong>.</li>
+      <li>\(P(\bar{X} \leqslant 110) = \Phi\!\left(\dfrac{110-120}{3{,}95}\right) = \Phi(-2{,}53) \approx 1 - 0{,}9943 = 0{,}0057\)<br>
+      Moins de <strong>0,6&nbsp;%</strong> de risque de fausse certification. Le test est fiable.</li>
     </ol>
   </div>
 </div>
