@@ -365,3 +365,15 @@
   injectCss();
 
 })();
+
+/* ── GoatCounter — Statistiques de visites ─────────────────────────── */
+/* Créer un compte gratuit sur https://www.goatcounter.com              */
+/* Remplacer VOTRE-IDENTIFIANT par votre code site (ex: maths-sciences) */
+(function () {
+  if (window.location.host.indexOf('github.io') === -1) return; // skip en local
+  var s = document.createElement('script');
+  s.async = true;
+  s.dataset.goatcounter = 'https://maths-sciences-lp.goatcounter.com/count';
+  s.src = '//gc.zgo.at/count.js';
+  document.head.appendChild(s);
+})();
