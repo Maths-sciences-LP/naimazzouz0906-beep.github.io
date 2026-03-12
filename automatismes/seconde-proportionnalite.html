@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Automatismes – Proportionnalité & fonctions – Seconde Bac Pro</title>
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{--p:#0891b2;--s:#2f855a;--d:#155e75;--o:#d97706;--t:#2d3748}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);margin:0;padding:20px;line-height:1.7}
+.c{max-width:860px;margin:auto;background:#fff;padding:30px 35px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+header{text-align:center;border-bottom:3px solid var(--p);margin-bottom:26px;padding-bottom:14px}
+.surtitre{margin:0 0 4px;color:#718096;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+h1{margin:0 0 5px;color:var(--p);font-size:1.55em}
+.sous-titre{margin:0;color:#718096;font-size:.88em}
+.nav-haut{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.nav-haut a{color:#155e75;text-decoration:none;font-size:.83em;font-weight:700;padding:5px 11px;border-radius:6px;background:#ecfeff;border:1px solid #a5f3fc;transition:.15s}
+.nav-haut a:hover{background:#cffafe}
+.fml{background:#ecfeff;border:1.5px solid var(--p);border-radius:8px;padding:12px 18px;margin:14px 0;font-size:.94em}
+.alerte{background:#fffbeb;border-left:4px solid var(--o);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0;font-size:.9em}
+.bloc-niveau{border:2px solid #e2e8f0;border-radius:10px;margin:22px 0;overflow:hidden}
+.bloc-niveau-header{padding:11px 18px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:1em;border-bottom:1px solid #e2e8f0}
+.n1 .bloc-niveau-header{background:#d1fae5;color:#065f46;border-bottom-color:#a7f3d0}
+.n2 .bloc-niveau-header{background:#dbeafe;color:#1e40af;border-bottom-color:#93c5fd}
+.n3 .bloc-niveau-header{background:#f3e8ff;color:#6d28d9;border-bottom-color:#d8b4fe}
+.bloc-niveau-body{padding:16px 18px}
+.exo{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:13px 16px;margin:10px 0}
+.exo-q{margin:0 0 8px;font-weight:600;font-size:.97em}
+.exo-q .num{color:var(--p);margin-right:4px}
+details{margin-top:6px}
+details summary{cursor:pointer;color:#155e75;font-size:.86em;font-weight:600;list-style:none;padding:3px 0;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:'▸ Voir la réponse'}
+details[open] summary::before{content:'▾ Masquer la réponse'}
+.corr{background:#f0fff4;border-left:4px solid var(--s);padding:9px 13px;border-radius:0 8px 8px 0;margin-top:8px;font-size:.91em;line-height:1.55}
+.corr b{color:#065f46}
+.qcm-opts{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.qo{padding:6px 16px;border-radius:6px;border:2px solid #e2e8f0;background:#fff;cursor:pointer;font-size:.9em;transition:.15s;font-family:inherit}
+.qo:hover:not(:disabled){border-color:var(--p);background:#ecfeff}
+.qo.ok{background:#d1fae5;border-color:var(--s);color:#065f46;font-weight:700}
+.qo.ko{background:#fee2e2;border-color:var(--p);color:#991b1b}
+.qo:disabled{cursor:default}
+.fb{font-size:.85em;min-height:1.3em;font-weight:600;margin-top:3px}
+.fb.ok{color:var(--s)}.fb.ko{color:var(--p)}
+</style>
+</head>
+<body>
+<div class="c">
+
+  <nav class="nav-haut">
+    <a href="index.html">← Automatismes</a>
+    <a href="../maths-2nde-mama.html">↗ Maths 2nde</a>
+  </nav>
+
+  <header>
+    <p class="surtitre">⚡ Automatismes – Seconde Bac Pro</p>
+    <h1>📊 Proportionnalité &amp; fonctions</h1>
+    <p class="sous-titre">Mise à jour : 12 mars 2026</p>
+  </header>
+
+  <div class="alerte">
+    <strong>Objectif :</strong> Maîtriser la proportionnalité, les pourcentages, les échelles et la lecture de fonctions.
+  </div>
+
+  <div class="fml">
+    <strong>📋 Formulaire express</strong>
+    <p style="margin:8px 0 4px"><b>4<sup>e</sup> proportionnelle (produit en croix) :</b> si \(\dfrac{a}{b} = \dfrac{c}{d}\) alors \(a \times d = b \times c\)</p>
+    <p style="margin:4px 0"><b>Pourcentage :</b> \(\text{pourcentage} = \dfrac{\text{valeur}}{\text{total}} \times 100\)</p>
+    <p style="margin:4px 0"><b>Image par une fonction :</b> \(f(a)\) = on remplace \(x\) par \(a\) dans l'expression de \(f\)</p>
+    <p style="margin:4px 0"><b>Échelle :</b> \(\text{échelle} = \dfrac{\text{distance sur le plan}}{\text{distance réelle}}\)</p>
+  </div>
+
+  <!-- ═══ NIVEAU 1 ═══ -->
+  <div class="bloc-niveau n1">
+    <div class="bloc-niveau-header">🟢 Niveau 1 — Bases</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> 3 kg de pommes coûtent 5,40 €. Combien coûtent 5 kg ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 8 €</button>
+          <button class="qo" onclick="qcm(this,true,'Prix au kg : 5,40 ÷ 3 = 1,80 €. Pour 5 kg : 1,80 × 5 = 9 €.')">B) 9 €</button>
+          <button class="qo" onclick="qcm(this,false,'10,80 € serait le prix de 6 kg.')">C) 10,80 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 7,20 €</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Sur un plan à l'échelle 1/50, un mur mesure 8 cm. Quelle est sa longueur réelle ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 40 cm</button>
+          <button class="qo" onclick="qcm(this,true,'8 cm × 50 = 400 cm = 4 m.')">B) 4 m</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 16 cm</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 0,16 m</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Un article coûte 45 € et augmente de 20 %. Quel est le nouveau prix ?</p>
+        <details><summary></summary>
+        <div class="corr">
+          Augmentation : \(45 \times \dfrac{20}{100} = 45 \times 0{,}2 = 9\) €<br>
+          Nouveau prix : \(45 + 9 = \mathbf{54}\) <b>€</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Soit \(f(x) = 3x - 2\). Que vaut \(f(4)\) ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'f(4) = 3 × 4 − 2 = 12 − 2 = 10.')">A) 10</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 14</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 12</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 8</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul :<br>
+        a) 2 kg coûtent 6 €. Prix de 7 kg ? &nbsp;&nbsp; b) \(f(x) = x^2\), \(f(-3)\) = ? &nbsp;&nbsp; c) 30 % de 60 ? &nbsp;&nbsp; d) Échelle 1/100, 5 cm sur le plan = ? m</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) Prix au kg : 6 ÷ 2 = 3 €. Pour 7 kg : 3 × 7 = <b>21 €</b><br>
+          b) \(f(-3) = (-3)^2 = \mathbf{9}\)<br>
+          c) \(60 \times 0{,}3 = \mathbf{18}\)<br>
+          d) \(5 \times 100 = 500\) cm = <b>5 m</b>
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 2 ═══ -->
+  <div class="bloc-niveau n2">
+    <div class="bloc-niveau-header">🔵 Niveau 2 — Entraînement</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Un article passe de 60 € à 45 €. Quel est le pourcentage de réduction ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 15 %</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 20 %</button>
+          <button class="qo" onclick="qcm(this,true,'Réduction : 60 − 45 = 15 €. Taux : 15 ÷ 60 = 0,25 = 25 %.')">C) 25 %</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 33 %</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Soit \(f(x) = 3x - 2\). Trouver \(x\) tel que \(f(x) = 7\).</p>
+        <details><summary></summary>
+        <div class="corr">
+          On résout \(3x - 2 = 7\)<br>
+          \(3x = 9\)<br>
+          \(\mathbf{x = 3}\)<br>
+          Vérification : \(f(3) = 3 \times 3 - 2 = 7\) ✓
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Quel est le coefficient de proportionnalité si 4 → 12, 7 → 21, 10 → 30 ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 2</button>
+          <button class="qo" onclick="qcm(this,true,'12 ÷ 4 = 3, 21 ÷ 7 = 3, 30 ÷ 10 = 3. Le coefficient est constant : c\'est bien 3.')">B) 3</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 4</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 8</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Un plan est à l'échelle 1/200. Un salon mesure 3,5 cm × 2 cm sur le plan. Quelles sont les dimensions réelles ? Quelle est l'aire réelle ?</p>
+        <details><summary></summary>
+        <div class="corr">
+          Longueur réelle : \(3{,}5 \times 200 = 700\) cm = <b>7 m</b><br>
+          Largeur réelle : \(2 \times 200 = 400\) cm = <b>4 m</b><br>
+          Aire réelle : \(7 \times 4 = \mathbf{28}\) <b>m²</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul :<br>
+        a) \(f(x) = -2x + 5\). \(f(0)\) = ? \(f(3)\) = ? &nbsp;&nbsp; b) 4<sup>e</sup> proportionnelle : \(\dfrac{3}{x} = \dfrac{5}{20}\) &nbsp;&nbsp; c) Remise de 30 % sur 85 € ? &nbsp;&nbsp; d) Coefficient directeur entre \(A(1\,;3)\) et \(B(4\,;9)\) ?</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(f(0) = -2 \times 0 + 5 = \mathbf{5}\) ; \(f(3) = -2 \times 3 + 5 = \mathbf{-1}\)<br>
+          b) \(5x = 3 \times 20 = 60\) donc \(x = \mathbf{12}\)<br>
+          c) Remise : \(85 \times 0{,}3 = 25{,}50\) €. Prix final : \(85 - 25{,}50 = \mathbf{59{,}50}\) <b>€</b><br>
+          d) \(\dfrac{9 - 3}{4 - 1} = \dfrac{6}{3} = \mathbf{2}\)
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 3 ═══ -->
+  <div class="bloc-niveau n3">
+    <div class="bloc-niveau-header">🟣 Niveau 3 — Automatisation</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Un menuisier achète 12 m² de panneau à 18,50 €/m². Il bénéficie d'une remise professionnelle de 12 %. Quel est le montant final ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'Prix brut : 12 × 18,50 = 222 €. Remise : 222 × 0,12 = 26,64 €. Final : 222 − 26,64 = 195,36 €.')">A) 195,36 €</button>
+          <button class="qo" onclick="qcm(this,false,'222 € est le prix avant remise.')">B) 222 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 199,80 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 190 €</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Le chiffre d'affaires d'une entreprise passe de 45 000 € à 52 000 €. Calculer le taux d'évolution.</p>
+        <details><summary></summary>
+        <div class="corr">
+          Variation : \(52\,000 - 45\,000 = 7\,000\) €<br>
+          Taux d'évolution : \(\dfrac{7\,000}{45\,000} \approx 0{,}1556\)<br>
+          Soit une <b>augmentation d'environ 15,6 %</b>.
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Soit \(f(x) = 2x^2 - 5x + 1\). Pour quel(s) \(x\) a-t-on \(f(x) = 1\) ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'2x² − 5x + 1 = 1 ⟹ 2x² − 5x = 0 ⟹ x(2x − 5) = 0 ⟹ x = 0 ou x = 2,5.')">A) \(x = 0\) ou \(x = 2{,}5\)</button>
+          <button class="qo" onclick="qcm(this,false,'Il y a deux solutions.')">B) \(x = 0\) seulement</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) \(x = 1\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) Pas de solution</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Un peintre utilise 0,3 L de peinture par m². Le pot coûte 12 €/L. Il doit peindre un mur de 8 m². Combien de litres faut-il ? Quel est le prix total ?</p>
+        <details><summary></summary>
+        <div class="corr">
+          Volume nécessaire : \(0{,}3 \times 8 = \mathbf{2{,}4}\) <b>L</b><br>
+          Prix total : \(2{,}4 \times 12 = \mathbf{28{,}80}\) <b>€</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul :<br>
+        a) Deux augmentations successives de +10 % puis +10 % : équivaut à +? % au total &nbsp;&nbsp; b) \(f(x) = x^2 - 4\), résoudre \(f(x) = 0\) &nbsp;&nbsp; c) \(\dfrac{3}{8}\) en pourcentage ? &nbsp;&nbsp; d) Longueur réelle 6 m, échelle 1/150, taille sur le plan ?</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(1{,}1 \times 1{,}1 = 1{,}21\) soit <b>+21 %</b> (et non +20 %)<br>
+          b) \(x^2 - 4 = 0 \Rightarrow x^2 = 4 \Rightarrow \mathbf{x = 2}\) ou \(\mathbf{x = -2}\)<br>
+          c) \(\dfrac{3}{8} = 0{,}375 = \mathbf{37{,}5\,\%}\)<br>
+          d) \(\dfrac{6\,\text{m}}{150} = \dfrac{600\,\text{cm}}{150} = \mathbf{4}\) <b>cm</b>
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function qcm(btn, ok, expl) {
+  const opts = btn.closest('.qcm-opts');
+  opts.querySelectorAll('.qo').forEach(b => { b.disabled = true; });
+  const fb = opts.nextElementSibling;
+  if (ok) { btn.classList.add('ok'); fb.className = 'fb ok'; fb.textContent = '✓ Correct ! ' + (expl || ''); }
+  else { btn.classList.add('ko'); fb.className = 'fb ko'; fb.textContent = '✗ Incorrect. ' + (expl || ''); }
+}
+</script>
+<script src="../nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Automatismes – Calcul littéral – Seconde Bac Pro</title>
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{--p:#7c3aed;--s:#2f855a;--d:#7c2d12;--o:#d97706;--t:#2d3748}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);margin:0;padding:20px;line-height:1.7}
+.c{max-width:860px;margin:auto;background:#fff;padding:30px 35px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+header{text-align:center;border-bottom:3px solid var(--p);margin-bottom:26px;padding-bottom:14px}
+.surtitre{margin:0 0 4px;color:#718096;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+h1{margin:0 0 5px;color:var(--p);font-size:1.55em}
+.sous-titre{margin:0;color:#718096;font-size:.88em}
+.nav-haut{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.nav-haut a{color:#5b21b6;text-decoration:none;font-size:.83em;font-weight:700;padding:5px 11px;border-radius:6px;background:#f5f0ff;border:1px solid #c4b5fd;transition:.15s}
+.nav-haut a:hover{background:#ede9fe}
+.fml{background:#f5f0ff;border:1.5px solid var(--p);border-radius:8px;padding:12px 18px;margin:14px 0;font-size:.94em}
+.fml-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:8px}
+@media(max-width:560px){.fml-grid{grid-template-columns:1fr}}
+.fml-row{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:5px 0;border-bottom:1px solid #c4b5fd;align-items:center;font-size:.93em}
+.fml-row:last-child{border-bottom:none}
+.fml-f{font-weight:600;color:#5b21b6}
+.fml-df{color:#1e40af}
+.alerte{background:#fffbeb;border-left:4px solid var(--o);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0;font-size:.9em}
+.bloc-niveau{border:2px solid #e2e8f0;border-radius:10px;margin:22px 0;overflow:hidden}
+.bloc-niveau-header{padding:11px 18px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:1em;border-bottom:1px solid #e2e8f0}
+.n1 .bloc-niveau-header{background:#d1fae5;color:#065f46;border-bottom-color:#a7f3d0}
+.n2 .bloc-niveau-header{background:#dbeafe;color:#1e40af;border-bottom-color:#93c5fd}
+.n3 .bloc-niveau-header{background:#f3e8ff;color:#6d28d9;border-bottom-color:#d8b4fe}
+.bloc-niveau-body{padding:16px 18px}
+.exo{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:13px 16px;margin:10px 0}
+.exo-q{margin:0 0 8px;font-weight:600;font-size:.97em}
+.exo-q .num{color:var(--p);margin-right:4px}
+details{margin-top:6px}
+details summary{cursor:pointer;color:#7c3aed;font-size:.86em;font-weight:600;list-style:none;padding:3px 0;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:'▸ Voir la réponse'}
+details[open] summary::before{content:'▾ Masquer la réponse'}
+.corr{background:#f0fff4;border-left:4px solid var(--s);padding:9px 13px;border-radius:0 8px 8px 0;margin-top:8px;font-size:.91em;line-height:1.55}
+.corr b{color:#065f46}
+.qcm-opts{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.qo{padding:6px 16px;border-radius:6px;border:2px solid #e2e8f0;background:#fff;cursor:pointer;font-size:.9em;transition:.15s;font-family:inherit}
+.qo:hover:not(:disabled){border-color:var(--p);background:#f5f0ff}
+.qo.ok{background:#d1fae5;border-color:var(--s);color:#065f46;font-weight:700}
+.qo.ko{background:#fee2e2;border-color:#dc2626;color:#991b1b}
+.qo:disabled{cursor:default}
+.fb{font-size:.85em;min-height:1.3em;font-weight:600;margin-top:3px}
+.fb.ok{color:var(--s)}.fb.ko{color:#dc2626}
+</style>
+</head>
+<body>
+<div class="c">
+
+  <nav class="nav-haut">
+    <a href="index.html">← Automatismes</a>
+    <a href="../maths-2nde-mama.html">↗ Maths 2nde</a>
+  </nav>
+
+  <header>
+    <p class="surtitre">⚡ Automatismes – Seconde Bac Pro</p>
+    <h1>✏️ Calcul littéral</h1>
+    <p class="sous-titre">Mise à jour : 12 mars 2026</p>
+  </header>
+
+  <div class="alerte">
+    <strong>Objectif :</strong> Développer, factoriser, réduire des expressions et résoudre des équations simples.
+  </div>
+
+  <div class="fml">
+    <strong>📋 Formulaire – Calcul littéral</strong>
+    <div class="fml-grid" style="margin-top:10px">
+      <div class="fml-row"><span class="fml-f">\(a(b+c)=ab+ac\)</span><span class="fml-df">Développer</span></div>
+      <div class="fml-row"><span class="fml-f">\(ab+ac=a(b+c)\)</span><span class="fml-df">Factoriser</span></div>
+      <div class="fml-row"><span class="fml-f">\(ax=b \Rightarrow x=\dfrac{b}{a}\)</span><span class="fml-df">Résoudre (multiplication)</span></div>
+      <div class="fml-row"><span class="fml-f">\(a+x=b \Rightarrow x=b-a\)</span><span class="fml-df">Résoudre (addition)</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 1 ═══ -->
+  <div class="bloc-niveau n1">
+    <div class="bloc-niveau-header">🟢 Niveau 1 — Bases</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Développer \(3(x+5)\).</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(3x+5\)</button>
+          <button class="qo" onclick="qcm(this,true,'On distribue : 3×x + 3×5 = 3x + 15.')">B) \(3x+15\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) \(3x+8\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(8x\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Factoriser \(6x+18\).</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(6(x+18)\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) \(3(2x+6)\)</button>
+          <button class="qo" onclick="qcm(this,true,'Le plus grand facteur commun est 6 : 6x + 18 = 6(x + 3).')">C) \(6(x+3)\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(2(3x+9)\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Réduire l'expression \(4x+3-2x+7\).</p>
+        <details><summary></summary>
+        <div class="corr">
+          On regroupe les termes en \(x\) et les constantes :<br>
+          \(4x - 2x + 3 + 7 = \mathbf{2x + 10}\)
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Résoudre \(5x = 35\).</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(x = 5\)</button>
+          <button class="qo" onclick="qcm(this,true,'On divise les deux membres par 5 : x = 35 ÷ 5 = 7.')">B) \(x = 7\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) \(x = 30\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(x = 40\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul : répondre mentalement.<br>
+        a) Résoudre \(x+8=3\) &nbsp;&nbsp; b) Résoudre \(-3x=12\) &nbsp;&nbsp; c) Développer \(-2(3x-4)\) &nbsp;&nbsp; d) Factoriser \(x^2-5x\)</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(x = 3 - 8 = \mathbf{-5}\)<br>
+          b) \(x = \dfrac{12}{-3} = \mathbf{-4}\)<br>
+          c) \(-2\times 3x + (-2)\times(-4) = \mathbf{-6x + 8}\)<br>
+          d) Facteur commun \(x\) : \(\mathbf{x(x - 5)}\)
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 2 ═══ -->
+  <div class="bloc-niveau n2">
+    <div class="bloc-niveau-header">🔵 Niveau 2 — Entraînement</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> La formule de la distance est \(d = v \times t\). Exprimer \(v\) en fonction de \(d\) et \(t\).</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(v = d + t\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) \(v = d - t\)</button>
+          <button class="qo" onclick="qcm(this,true,'Si d = v × t, on divise par t : v = d / t.')">C) \(v = \dfrac{d}{t}\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(v = d \times t\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> On donne \(U = R \times I\) et \(P = U \times I\). Exprimer \(P\) en fonction de \(R\) et \(I\).</p>
+        <details><summary></summary>
+        <div class="corr">
+          On remplace \(U\) par \(R \times I\) dans \(P = U \times I\) :<br>
+          \(P = (R \times I) \times I = R \times I^2\)<br>
+          \(\mathbf{P = R \, I^2}\)
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Développer \((x+3)(x-2)\).</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'(x+3)(x−2) = x²−2x+3x−6 = x²+x−6.')">A) \(x^2 + x - 6\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) \(x^2 - 6\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) \(x^2 + 5x - 6\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(x^2 - x - 6\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Résoudre \(3x + 7 = 2x - 5\).</p>
+        <details><summary></summary>
+        <div class="corr">
+          On regroupe les termes en \(x\) d'un côté :<br>
+          \(3x - 2x = -5 - 7\)<br>
+          \(x = -12\)<br>
+          La solution est \(\mathbf{x = -12}\).
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul : répondre mentalement.<br>
+        a) Développer \(4(2x-1)\) &nbsp;&nbsp; b) Factoriser \(12x-8\) &nbsp;&nbsp; c) Réduire \(3x^2+2x-x^2+5x\) &nbsp;&nbsp; d) Résoudre \(7x=-21\)</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(4\times 2x + 4\times(-1) = \mathbf{8x - 4}\)<br>
+          b) Facteur commun 4 : \(\mathbf{4(3x - 2)}\)<br>
+          c) \(3x^2 - x^2 + 2x + 5x = \mathbf{2x^2 + 7x}\)<br>
+          d) \(x = \dfrac{-21}{7} = \mathbf{-3}\)
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 3 ═══ -->
+  <div class="bloc-niveau n3">
+    <div class="bloc-niveau-header">🟣 Niveau 3 — Automatisation</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Un menuisier découpe une planche de \(L\) cm en 3 morceaux : le premier mesure \(x\) cm, le deuxième \(2x\) cm et le troisième \((x+10)\) cm. Quelle équation traduit cette situation ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'x + 2x + (x+10) = 4x + 10 = L.')">A) \(4x + 10 = L\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) \(3x + 10 = L\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) \(3x = L - 10\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(4x = L - 10\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> La formule du périmètre d'un rectangle est \(P = 2(L + l)\).<br>a) Exprimer \(L\) en fonction de \(P\) et \(l\).<br>b) Application : \(P = 48\) cm et \(l = 10\) cm. Trouver \(L\).</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>a)</b> \(P = 2(L + l)\)<br>
+          \(\dfrac{P}{2} = L + l\)<br>
+          \(L = \dfrac{P}{2} - l\)<br>
+          \(\mathbf{L = \dfrac{P - 2l}{2}}\)<br><br>
+          <b>b)</b> \(L = \dfrac{48 - 2\times 10}{2} = \dfrac{48 - 20}{2} = \dfrac{28}{2} = \mathbf{14\text{ cm}}\)
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Factoriser \(3x^2 + 9x\).</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'Le facteur commun est 3x : 3x² + 9x = 3x(x + 3).')">A) \(3x(x + 3)\)</button>
+          <button class="qo" onclick="qcm(this,false,'Factorisation incomplète : 3 n\'est pas le plus grand facteur commun.')">B) \(3(x^2 + 3x)\)</button>
+          <button class="qo" onclick="qcm(this,false,'Factorisation incomplète : x n\'est pas le plus grand facteur commun.')">C) \(x(3x + 9)\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(9x(x + 1)\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Un chauffagiste utilise la formule \(P = m \times c \times \Delta T\) pour calculer l'énergie nécessaire au chauffage de l'eau.<br>Données : \(m = 50\) kg, \(c = 4\,180\) J/(kg·°C), \(\Delta T = 30\)°C.<br>a) Calculer \(P\).<br>b) Exprimer \(\Delta T\) en fonction de \(P\), \(m\) et \(c\).</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>a)</b> \(P = 50 \times 4\,180 \times 30\)<br>
+          \(P = 50 \times 125\,400 = \mathbf{6\,270\,000\text{ J}} = 6{,}27\text{ MJ}\)<br><br>
+          <b>b)</b> On isole \(\Delta T\) :<br>
+          \(P = m \times c \times \Delta T\)<br>
+          \(\mathbf{\Delta T = \dfrac{P}{m \times c}}\)
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul : répondre rapidement.<br>
+        a) Résoudre \(5(x-2) = 3x+4\) &nbsp;&nbsp; b) Développer et réduire \((2x+1)(x-3)\) &nbsp;&nbsp; c) Factoriser \(15x^2-10x\) &nbsp;&nbsp; d) Si \(A = \pi r^2\), exprimer \(r\)</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>a)</b> \(5x - 10 = 3x + 4\) → \(2x = 14\) → \(\mathbf{x = 7}\)<br>
+          <b>b)</b> \(2x^2 - 6x + x - 3 = \mathbf{2x^2 - 5x - 3}\)<br>
+          <b>c)</b> Facteur commun \(5x\) : \(\mathbf{5x(3x - 2)}\)<br>
+          <b>d)</b> \(r^2 = \dfrac{A}{\pi}\) donc \(\mathbf{r = \sqrt{\dfrac{A}{\pi}}}\)
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function qcm(btn, ok, expl) {
+  const opts = btn.closest('.qcm-opts');
+  opts.querySelectorAll('.qo').forEach(b => { b.disabled = true; });
+  const fb = opts.nextElementSibling;
+  if (ok) {
+    btn.classList.add('ok');
+    fb.className = 'fb ok';
+    fb.textContent = '✓ Correct ! ' + (expl || '');
+  } else {
+    btn.classList.add('ko');
+    fb.className = 'fb ko';
+    fb.textContent = '✗ Incorrect. ' + (expl || '');
+  }
+}
+</script>
+<script src="../nav.js"></script>
+</body>
+</html>

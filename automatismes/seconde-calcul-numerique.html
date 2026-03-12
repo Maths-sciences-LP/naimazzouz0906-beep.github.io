@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Automatismes – Calcul numérique – Seconde Bac Pro</title>
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{--p:#0056b3;--s:#2f855a;--d:#7c2d12;--o:#d97706;--t:#2d3748}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);margin:0;padding:20px;line-height:1.7}
+.c{max-width:860px;margin:auto;background:#fff;padding:30px 35px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+header{text-align:center;border-bottom:3px solid var(--p);margin-bottom:26px;padding-bottom:14px}
+.surtitre{margin:0 0 4px;color:#718096;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+h1{margin:0 0 5px;color:var(--p);font-size:1.55em}
+.sous-titre{margin:0;color:#718096;font-size:.88em}
+.nav-haut{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.nav-haut a{color:#1e3b6e;text-decoration:none;font-size:.83em;font-weight:700;padding:5px 11px;border-radius:6px;background:#ebf5ff;border:1px solid #bee3f8;transition:.15s}
+.nav-haut a:hover{background:#dbeafe}
+.fml{background:#ebf5ff;border:1.5px solid var(--p);border-radius:8px;padding:12px 18px;margin:14px 0;font-size:.94em}
+.fml-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:8px}
+@media(max-width:560px){.fml-grid{grid-template-columns:1fr}}
+.fml-row{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:5px 0;border-bottom:1px solid #bee3f8;align-items:center;font-size:.93em}
+.fml-row:last-child{border-bottom:none}
+.fml-f{font-weight:600;color:#1e3b6e}
+.fml-df{color:#1e40af}
+.alerte{background:#fffbeb;border-left:4px solid var(--o);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0;font-size:.9em}
+.bloc-niveau{border:2px solid #e2e8f0;border-radius:10px;margin:22px 0;overflow:hidden}
+.bloc-niveau-header{padding:11px 18px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:1em;border-bottom:1px solid #e2e8f0}
+.n1 .bloc-niveau-header{background:#d1fae5;color:#065f46;border-bottom-color:#a7f3d0}
+.n2 .bloc-niveau-header{background:#dbeafe;color:#1e40af;border-bottom-color:#93c5fd}
+.n3 .bloc-niveau-header{background:#f3e8ff;color:#6d28d9;border-bottom-color:#d8b4fe}
+.bloc-niveau-body{padding:16px 18px}
+.exo{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:13px 16px;margin:10px 0}
+.exo-q{margin:0 0 8px;font-weight:600;font-size:.97em}
+.exo-q .num{color:var(--p);margin-right:4px}
+details{margin-top:6px}
+details summary{cursor:pointer;color:#0056b3;font-size:.86em;font-weight:600;list-style:none;padding:3px 0;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:'▸ Voir la réponse'}
+details[open] summary::before{content:'▾ Masquer la réponse'}
+.corr{background:#f0fff4;border-left:4px solid var(--s);padding:9px 13px;border-radius:0 8px 8px 0;margin-top:8px;font-size:.91em;line-height:1.55}
+.corr b{color:#065f46}
+.qcm-opts{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.qo{padding:6px 16px;border-radius:6px;border:2px solid #e2e8f0;background:#fff;cursor:pointer;font-size:.9em;transition:.15s;font-family:inherit}
+.qo:hover:not(:disabled){border-color:var(--p);background:#ebf5ff}
+.qo.ok{background:#d1fae5;border-color:var(--s);color:#065f46;font-weight:700}
+.qo.ko{background:#fee2e2;border-color:#dc2626;color:#991b1b}
+.qo:disabled{cursor:default}
+.fb{font-size:.85em;min-height:1.3em;font-weight:600;margin-top:3px}
+.fb.ok{color:var(--s)}.fb.ko{color:#dc2626}
+</style>
+</head>
+<body>
+<div class="c">
+
+  <nav class="nav-haut">
+    <a href="index.html">← Automatismes</a>
+    <a href="../maths-2nde-mama.html">↗ Maths 2nde</a>
+  </nav>
+
+  <header>
+    <p class="surtitre">⚡ Automatismes – Seconde Bac Pro</p>
+    <h1>🔢 Calcul numérique</h1>
+    <p class="sous-titre">Mise à jour : 12 mars 2026</p>
+  </header>
+
+  <div class="alerte">
+    <strong>Objectif :</strong> Calculer mentalement avec des fractions, pourcentages, puissances de 10 et notation scientifique.
+  </div>
+
+  <div class="fml">
+    <strong>📋 Formulaire – Calcul numérique</strong>
+    <div class="fml-grid" style="margin-top:10px">
+      <div class="fml-row"><span class="fml-f">\(\dfrac{a}{b}+\dfrac{c}{d}=\dfrac{ad+bc}{bd}\)</span><span class="fml-df">Addition de fractions</span></div>
+      <div class="fml-row"><span class="fml-f">\(\dfrac{a}{b}\times\dfrac{c}{d}=\dfrac{a\times c}{b\times d}\)</span><span class="fml-df">Multiplication de fractions</span></div>
+      <div class="fml-row"><span class="fml-f">\(t\%\text{ de }N = \dfrac{t}{100}\times N\)</span><span class="fml-df">Pourcentage d'un nombre</span></div>
+      <div class="fml-row"><span class="fml-f">\(a\times 10^n\) avec \(1\leq a &lt; 10\)</span><span class="fml-df">Notation scientifique</span></div>
+    </div>
+    <p style="margin:8px 0 0;font-size:.9em;color:#1e3b6e"><strong>Rappel :</strong> \(10^{-n}=\dfrac{1}{10^n}\) &nbsp;|&nbsp; \(10^a\times 10^b = 10^{a+b}\) &nbsp;|&nbsp; \(\dfrac{10^a}{10^b}=10^{a-b}\)</p>
+  </div>
+
+  <!-- ═══ NIVEAU 1 ═══ -->
+  <div class="bloc-niveau n1">
+    <div class="bloc-niveau-header">🟢 Niveau 1 — Bases</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Combien vaut 25 % de 80 ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'25 % de 80 = 0,25 × 80 = 20.')">A) 20</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 25</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 15</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 40</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Quelle est l'écriture décimale de \(\dfrac{3}{4}\) ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 0,34</button>
+          <button class="qo" onclick="qcm(this,true,'3 ÷ 4 = 0,75.')">B) 0,75</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 1,33</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 0,25</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Calculer \(\dfrac{2}{5}+\dfrac{1}{3}\).</p>
+        <details><summary></summary>
+        <div class="corr">
+          On réduit au même dénominateur (15) :<br>
+          \(\dfrac{2}{5}=\dfrac{6}{15}\) &nbsp;et&nbsp; \(\dfrac{1}{3}=\dfrac{5}{15}\)<br>
+          \(\dfrac{6}{15}+\dfrac{5}{15}=\mathbf{\dfrac{11}{15}}\)
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Quelle est l'écriture en notation scientifique de 0,00047 ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(4{,}7\times 10^{-3}\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) \(47\times 10^{-5}\)</button>
+          <button class="qo" onclick="qcm(this,true,'On déplace la virgule de 4 rangs vers la droite : 0,00047 = 4,7 × 10⁻⁴.')">C) \(4{,}7\times 10^{-4}\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(0{,}47\times 10^{-3}\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul : répondre mentalement.<br>
+        a) \(3{,}2\times 10^3 = ?\) &nbsp;&nbsp; b) Moyenne de 12, 8, 15 et 5 &nbsp;&nbsp; c) Arrondir 3,847 au dixième &nbsp;&nbsp; d) 60 % de 150</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(3{,}2\times 10^3 = \mathbf{3\,200}\)<br>
+          b) \(\dfrac{12+8+15+5}{4}=\dfrac{40}{4}=\mathbf{10}\)<br>
+          c) \(\mathbf{3{,}8}\) (le chiffre des centièmes est 4 &lt; 5, on ne change pas le dixième)<br>
+          d) \(0{,}6\times 150 = \mathbf{90}\)
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 2 ═══ -->
+  <div class="bloc-niveau n2">
+    <div class="bloc-niveau-header">🔵 Niveau 2 — Entraînement</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Comparer \(\dfrac{2}{3}\) et \(\dfrac{3}{5}\).</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(\dfrac{2}{3} &lt; \dfrac{3}{5}\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) \(\dfrac{2}{3} = \dfrac{3}{5}\)</button>
+          <button class="qo" onclick="qcm(this,true,'On réduit au même dénominateur : 2/3 = 10/15 et 3/5 = 9/15. Comme 10 > 9, on a 2/3 > 3/5.')">C) \(\dfrac{2}{3} &gt; \dfrac{3}{5}\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) On ne peut pas comparer</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Calculer \(\dfrac{3}{4}\times\dfrac{2}{5}\).</p>
+        <details><summary></summary>
+        <div class="corr">
+          \(\dfrac{3}{4}\times\dfrac{2}{5}=\dfrac{3\times 2}{4\times 5}=\dfrac{6}{20}\)<br>
+          On simplifie par 2 : \(\dfrac{6}{20}=\mathbf{\dfrac{3}{10}}\)
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Un article coûte 80 € et bénéficie d'une réduction de 15 %. Quel est le nouveau prix ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 65 €</button>
+          <button class="qo" onclick="qcm(this,true,'Réduction : 15 % de 80 = 0,15 × 80 = 12 €. Nouveau prix : 80 − 12 = 68 €.')">B) 68 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 12 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 92 €</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> a) Écrire 0,0036 en notation scientifique.<br>b) Calculer \(2{,}5\times 10^4 \times 3\times 10^{-2}\).</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>a)</b> \(0{,}0036 = \mathbf{3{,}6\times 10^{-3}}\) (on décale la virgule de 3 rangs)<br><br>
+          <b>b)</b> \(2{,}5\times 3 = 7{,}5\) et \(10^4\times 10^{-2}=10^{4+(-2)}=10^2\)<br>
+          Donc \(2{,}5\times 10^4\times 3\times 10^{-2}=\mathbf{7{,}5\times 10^2} = 750\)
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul : répondre mentalement.<br>
+        a) \(\dfrac{5}{8}+\dfrac{3}{8}\) &nbsp;&nbsp; b) \(\dfrac{7}{3}-\dfrac{2}{3}\) &nbsp;&nbsp; c) 45 % de 200 &nbsp;&nbsp; d) Arrondir 12,345 au centième</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(\dfrac{5}{8}+\dfrac{3}{8}=\mathbf{\dfrac{8}{8}=1}\)<br>
+          b) \(\dfrac{7}{3}-\dfrac{2}{3}=\mathbf{\dfrac{5}{3}}\)<br>
+          c) \(0{,}45\times 200=\mathbf{90}\)<br>
+          d) \(\mathbf{12{,}35}\) (le chiffre des millièmes est 5, on arrondit au-dessus)
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 3 ═══ -->
+  <div class="bloc-niveau n3">
+    <div class="bloc-niveau-header">🟣 Niveau 3 — Automatisation</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Dans une classe de 32 élèves, il y a 12 filles. Quelle est la fréquence des filles, exprimée en pourcentage ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 12 %</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 32 %</button>
+          <button class="qo" onclick="qcm(this,true,'Fréquence = 12/32 = 0,375, soit 37,5 %.')">C) 37,5 %</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 40 %</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Un fournisseur propose un matériau à 250 € HT. La TVA est de 20 %.<br>a) Calculer le prix TTC.<br>b) Retrouver le prix HT à partir du prix TTC.</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>a)</b> TVA = 20 % de 250 = 0,20 × 250 = 50 €<br>
+          Prix TTC = 250 + 50 = <b>300 €</b><br>
+          (ou directement : 250 × 1,20 = 300 €)<br><br>
+          <b>b)</b> Pour retrouver le HT à partir du TTC :<br>
+          Prix HT = \(\dfrac{\text{TTC}}{1{,}20}=\dfrac{300}{1{,}20}=\mathbf{250\text{ €}}\)
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Calculer \((2{,}4\times 10^3)\times(5\times 10^{-1})\).</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(12\times 10^2\)</button>
+          <button class="qo" onclick="qcm(this,true,'2,4 × 5 = 12 et 10³ × 10⁻¹ = 10². Donc 12 × 10² = 1,2 × 10³.')">B) \(1{,}2\times 10^3\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) \(10\times 10^2\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(7{,}4\times 10^2\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Un technicien mesure une longueur de 3,456 m.<br>a) Arrondir au centimètre près.<br>b) Arrondir au millimètre près.<br>c) Écrire cette longueur en mm, puis en notation scientifique.</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>a)</b> Au centimètre près = au centième de mètre : <b>3,46 m</b> (le millième est 6 ≥ 5)<br><br>
+          <b>b)</b> Au millimètre près = au millième de mètre : <b>3,456 m</b> (déjà au mm)<br><br>
+          <b>c)</b> \(3{,}456\text{ m}= 3\,456\text{ mm}\)<br>
+          En notation scientifique : \(\mathbf{3{,}456\times 10^3\text{ mm}}\)
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul : répondre rapidement.<br>
+        a) \(\dfrac{3}{7}+\dfrac{2}{7}+\dfrac{5}{7}\) &nbsp;&nbsp; b) 25 % de 25 % de 400 &nbsp;&nbsp; c) \(\dfrac{6\times 10^5}{3\times 10^2}\) &nbsp;&nbsp; d) Fréquence : 18 défauts sur 450 pièces</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(\dfrac{3+2+5}{7}=\dfrac{10}{7}=\mathbf{\dfrac{10}{7}\approx 1{,}43}\)<br>
+          b) 25 % de 400 = 100, puis 25 % de 100 = <b>25</b><br>
+          c) \(\dfrac{6}{3}\times 10^{5-2}=\mathbf{2\times 10^3}=2\,000\)<br>
+          d) \(\dfrac{18}{450}=0{,}04=\mathbf{4\,\%}\)
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function qcm(btn, ok, expl) {
+  const opts = btn.closest('.qcm-opts');
+  opts.querySelectorAll('.qo').forEach(b => { b.disabled = true; });
+  const fb = opts.nextElementSibling;
+  if (ok) {
+    btn.classList.add('ok');
+    fb.className = 'fb ok';
+    fb.textContent = '✓ Correct ! ' + (expl || '');
+  } else {
+    btn.classList.add('ko');
+    fb.className = 'fb ko';
+    fb.textContent = '✗ Incorrect. ' + (expl || '');
+  }
+}
+</script>
+<script src="../nav.js"></script>
+</body>
+</html>

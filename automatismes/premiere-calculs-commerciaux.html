@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Automatismes – Calculs commerciaux – Première Bac Pro</title>
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{--p:#6366f1;--s:#2f855a;--d:#4338ca;--o:#d97706;--t:#2d3748}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);margin:0;padding:20px;line-height:1.7}
+.c{max-width:860px;margin:auto;background:#fff;padding:30px 35px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+header{text-align:center;border-bottom:3px solid var(--p);margin-bottom:26px;padding-bottom:14px}
+.surtitre{margin:0 0 4px;color:#718096;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+h1{margin:0 0 5px;color:var(--p);font-size:1.55em}
+.sous-titre{margin:0;color:#718096;font-size:.88em}
+.nav-haut{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.nav-haut a{color:#4338ca;text-decoration:none;font-size:.83em;font-weight:700;padding:5px 11px;border-radius:6px;background:#eef2ff;border:1px solid #c7d2fe;transition:.15s}
+.nav-haut a:hover{background:#e0e7ff}
+.fml{background:#f5f3ff;border:1.5px solid var(--p);border-radius:8px;padding:12px 18px;margin:14px 0;font-size:.94em}
+.fml-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:8px}
+@media(max-width:560px){.fml-grid{grid-template-columns:1fr}}
+.fml-row{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:5px 0;border-bottom:1px solid #c7d2fe;align-items:center;font-size:.93em}
+.fml-row:last-child{border-bottom:none}
+.fml-f{font-weight:600;color:#4338ca}
+.fml-df{color:#1e40af}
+.alerte{background:#fffbeb;border-left:4px solid var(--o);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0;font-size:.9em}
+.bloc-niveau{border:2px solid #e2e8f0;border-radius:10px;margin:22px 0;overflow:hidden}
+.bloc-niveau-header{padding:11px 18px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:1em;border-bottom:1px solid #e2e8f0}
+.n1 .bloc-niveau-header{background:#d1fae5;color:#065f46;border-bottom-color:#a7f3d0}
+.n2 .bloc-niveau-header{background:#dbeafe;color:#1e40af;border-bottom-color:#93c5fd}
+.n3 .bloc-niveau-header{background:#f3e8ff;color:#6d28d9;border-bottom-color:#d8b4fe}
+.bloc-niveau-body{padding:16px 18px}
+.exo{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:13px 16px;margin:10px 0}
+.exo-q{margin:0 0 8px;font-weight:600;font-size:.97em}
+.exo-q .num{color:var(--p);margin-right:4px}
+details{margin-top:6px}
+details summary{cursor:pointer;color:#4338ca;font-size:.86em;font-weight:600;list-style:none;padding:3px 0;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:'▸ Voir la réponse'}
+details[open] summary::before{content:'▾ Masquer la réponse'}
+.corr{background:#f0fff4;border-left:4px solid var(--s);padding:9px 13px;border-radius:0 8px 8px 0;margin-top:8px;font-size:.91em;line-height:1.55}
+.corr b{color:#065f46}
+.qcm-opts{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.qo{padding:6px 16px;border-radius:6px;border:2px solid #e2e8f0;background:#fff;cursor:pointer;font-size:.9em;transition:.15s;font-family:inherit}
+.qo:hover:not(:disabled){border-color:var(--p);background:#f5f3ff}
+.qo.ok{background:#d1fae5;border-color:var(--s);color:#065f46;font-weight:700}
+.qo.ko{background:#fee2e2;border-color:#dc2626;color:#991b1b}
+.qo:disabled{cursor:default}
+.fb{font-size:.85em;min-height:1.3em;font-weight:600;margin-top:3px}
+.fb.ok{color:var(--s)}.fb.ko{color:#dc2626}
+</style>
+</head>
+<body>
+<div class="c">
+
+  <nav class="nav-haut">
+    <a href="index.html">← Automatismes</a>
+    <a href="../maths-1ere-pro.html">↗ Maths 1ère</a>
+  </nav>
+
+  <header>
+    <p class="surtitre">⚡ Automatismes – Première Bac Pro</p>
+    <h1>💰 Calculs commerciaux</h1>
+    <p class="sous-titre">Mise à jour : 12 mars 2026</p>
+  </header>
+
+  <div class="alerte">
+    <strong>Objectif :</strong> Calculer un intérêt simple, une valeur acquise, retrouver un taux ou un capital.
+  </div>
+
+  <div class="fml">
+    <strong>📋 Formulaire</strong>
+    <div class="fml-grid" style="margin-top:10px">
+      <div class="fml-row"><span class="fml-f">\(I = C \times t \times n\)</span><span class="fml-df">Intérêt simple (C = capital, t = taux, n = durée en années)</span></div>
+      <div class="fml-row"><span class="fml-f">Valeur acquise = \(C + I\)</span><span class="fml-df">Capital + intérêts produits</span></div>
+      <div class="fml-row"><span class="fml-f">\(t = \frac{I}{C \times n}\)</span><span class="fml-df">Retrouver le taux</span></div>
+      <div class="fml-row"><span class="fml-f">\(C = \frac{I}{t \times n}\)</span><span class="fml-df">Retrouver le capital</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 1 ═══ -->
+  <div class="bloc-niveau n1">
+    <div class="bloc-niveau-header">🟢 Niveau 1 — Bases</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> On place 2 000 € à un taux annuel de 3 % pendant 1 an. Quel est l'intérêt produit ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'I = C × t × n = 2 000 × 0,03 × 1 = 60 €.')">A) 60 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 600 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 6 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 30 €</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Avec les données précédentes (2 000 € à 3 % pendant 1 an), quelle est la valeur acquise ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 2 600 €</button>
+          <button class="qo" onclick="qcm(this,true,'Valeur acquise = C + I = 2 000 + 60 = 2 060 €.')">B) 2 060 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 2 030 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 2 003 €</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> On place 5 000 € à un taux annuel de 2 % pendant 6 mois. Calculer l'intérêt et la valeur acquise.</p>
+        <details><summary></summary>
+        <div class="corr">
+          6 mois = 0,5 an<br>
+          \(I = C \times t \times n = 5\,000 \times 0{,}02 \times 0{,}5\)<br>
+          <b>\(I = 50\) €</b><br><br>
+          Valeur acquise = \(5\,000 + 50 = \mathbf{5\,050}\) €
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Un capital de 10 000 € rapporte 400 € d'intérêts en 1 an. Quel est le taux annuel ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 0,4 %</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 2 %</button>
+          <button class="qo" onclick="qcm(this,true,'t = I / (C × n) = 400 / (10 000 × 1) = 0,04 = 4 %.')">C) 4 %</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 40 %</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash calculs intérêts.<br>
+        a) I pour C = 1 000 €, t = 5 %, n = 1 an &nbsp;&nbsp; b) Valeur acquise pour C = 3 000 €, I = 90 € &nbsp;&nbsp; c) I pour C = 4 000 €, t = 2 %, n = 3 ans &nbsp;&nbsp; d) t si C = 2 000 €, I = 100 €, n = 1 an</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(I = 1\,000 \times 0{,}05 \times 1 = \mathbf{50}\) €<br>
+          b) VA = \(3\,000 + 90 = \mathbf{3\,090}\) €<br>
+          c) \(I = 4\,000 \times 0{,}02 \times 3 = \mathbf{240}\) €<br>
+          d) \(t = \frac{100}{2\,000 \times 1} = 0{,}05 = \mathbf{5\;\%}\)
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 2 ═══ -->
+  <div class="bloc-niveau n2">
+    <div class="bloc-niveau-header">🔵 Niveau 2 — Entraînement</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> On place 8 000 € à un taux annuel de 4,5 % pendant 2 ans (intérêts simples). Quel est l'intérêt total ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 360 €</button>
+          <button class="qo" onclick="qcm(this,true,'I = 8 000 × 0,045 × 2 = 720 €.')">B) 720 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 1 440 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 800 €</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Un placement rapporte 150 € d'intérêts en 6 mois à un taux annuel de 3 %. Retrouver le capital placé.</p>
+        <details><summary></summary>
+        <div class="corr">
+          6 mois = 0,5 an<br>
+          \(I = C \times t \times n\)<br>
+          \(150 = C \times 0{,}03 \times 0{,}5\)<br>
+          \(150 = C \times 0{,}015\)<br>
+          \(C = \frac{150}{0{,}015}\)<br>
+          <b>\(C = 10\,000\) €</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Combien de temps faut-il pour que 6 000 € placés à 5 % rapportent 750 € d'intérêts ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 1 an</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 2 ans</button>
+          <button class="qo" onclick="qcm(this,true,'n = I / (C × t) = 750 / (6 000 × 0,05) = 750 / 300 = 2,5 ans.')">C) 2,5 ans</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 3 ans</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Comparer deux placements :<br>
+        – Placement A : 5 000 € à 3 % pendant 2 ans<br>
+        – Placement B : 4 000 € à 4 % pendant 2 ans<br>
+        Lequel rapporte le plus ?</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>Placement A :</b> \(I_A = 5\,000 \times 0{,}03 \times 2 = 300\) €<br>
+          <b>Placement B :</b> \(I_B = 4\,000 \times 0{,}04 \times 2 = 320\) €<br><br>
+          <b>Le placement B rapporte plus</b> (320 € > 300 €), malgré un capital initial inférieur, grâce à un taux plus élevé.
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash.<br>
+        a) I pour C = 12 000 €, t = 2,5 %, n = 1 an &nbsp;&nbsp; b) VA pour C = 7 000 €, t = 3 %, n = 2 ans &nbsp;&nbsp; c) n si C = 5 000 €, t = 4 %, I = 400 €</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(I = 12\,000 \times 0{,}025 \times 1 = \mathbf{300}\) €<br>
+          b) \(I = 7\,000 \times 0{,}03 \times 2 = 420\) € → VA = \(7\,000 + 420 = \mathbf{7\,420}\) €<br>
+          c) \(n = \frac{400}{5\,000 \times 0{,}04} = \frac{400}{200} = \mathbf{2}\) ans
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 3 ═══ -->
+  <div class="bloc-niveau n3">
+    <div class="bloc-niveau-header">🟣 Niveau 3 — Automatisation</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Un artisan est à découvert de 1 500 € pendant 15 jours. Sa banque applique un taux d'agios de 12 % par an. Quel est le montant des agios ? (Utiliser 360 jours par an.)</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 15 €</button>
+          <button class="qo" onclick="qcm(this,true,'n = 15/360. I = 1 500 × 0,12 × (15/360) = 1 500 × 0,12 × 0,04167 ≈ 7,50 €.')">B) 7,50 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 180 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 22,50 €</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Un fournisseur propose un escompte commercial : une facture de 10 000 € payée 60 jours avant l'échéance bénéficie d'un escompte au taux de 6 % par an. Calculer le montant de l'escompte et le prix net à payer.</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>Escompte :</b><br>
+          \(E = \text{Valeur nominale} \times t \times \frac{j}{360}\)<br>
+          \(E = 10\,000 \times 0{,}06 \times \frac{60}{360}\)<br>
+          \(E = 10\,000 \times 0{,}06 \times 0{,}1\overline{6}\)<br>
+          <b>\(E = 100\) €</b><br><br>
+          <b>Prix net à payer :</b><br>
+          \(10\,000 - 100 = \mathbf{9\,900}\) €
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> On place 3 000 € à un taux annuel de 2,5 % pendant 9 mois. Quelle est la valeur acquise ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 3 075 €</button>
+          <button class="qo" onclick="qcm(this,true,'n = 9/12 = 0,75 an. I = 3 000 × 0,025 × 0,75 = 56,25 €. VA = 3 000 + 56,25 = 3 056,25 €.')">B) 3 056,25 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 3 225 €</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 3 067,50 €</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Un menuisier agenceur hésite entre deux placements pour sa trésorerie :<br>
+        – Placement A : 15 000 € à 2 % pendant 18 mois<br>
+        – Placement B : 15 000 € à 3 % pendant 10 mois<br>
+        Quel placement produit le plus d'intérêts ? Lequel offre le meilleur rendement mensuel ?</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>Placement A :</b><br>
+          \(I_A = 15\,000 \times 0{,}02 \times \frac{18}{12} = 15\,000 \times 0{,}02 \times 1{,}5 = \mathbf{450}\) €<br>
+          Rendement mensuel : \(\frac{450}{18} = 25\) €/mois<br><br>
+          <b>Placement B :</b><br>
+          \(I_B = 15\,000 \times 0{,}03 \times \frac{10}{12} = 15\,000 \times 0{,}03 \times 0{,}833 = \mathbf{375}\) €<br>
+          Rendement mensuel : \(\frac{375}{10} = 37{,}50\) €/mois<br><br>
+          <b>Le placement A rapporte plus en montant total</b> (450 € > 375 €).<br>
+          <b>Le placement B offre un meilleur rendement mensuel</b> (37,50 €/mois > 25 €/mois).
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash mélanges.<br>
+        a) Agios : découvert 2 000 € pendant 10 jours à 9 %/an (base 360) &nbsp;&nbsp; b) I pour 6 000 € à 1,5 % pendant 8 mois &nbsp;&nbsp; c) VA pour 20 000 € à 3,5 % pendant 1 an</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(I = 2\,000 \times 0{,}09 \times \frac{10}{360} = \mathbf{5}\) €<br>
+          b) \(I = 6\,000 \times 0{,}015 \times \frac{8}{12} = 6\,000 \times 0{,}015 \times 0{,}6\overline{6} = \mathbf{60}\) €<br>
+          c) \(I = 20\,000 \times 0{,}035 \times 1 = 700\) € → VA = \(20\,000 + 700 = \mathbf{20\,700}\) €
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function qcm(btn, ok, expl) {
+  const opts = btn.closest('.qcm-opts');
+  opts.querySelectorAll('.qo').forEach(b => { b.disabled = true; });
+  const fb = opts.nextElementSibling;
+  if (ok) { btn.classList.add('ok'); fb.className = 'fb ok'; fb.textContent = '✓ Correct ! ' + (expl || ''); }
+  else { btn.classList.add('ko'); fb.className = 'fb ko'; fb.textContent = '✗ Incorrect. ' + (expl || ''); }
+}
+</script>
+<script src="../nav.js"></script>
+</body>
+</html>

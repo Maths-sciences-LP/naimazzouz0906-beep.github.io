@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Automatismes – Fonctions – Première Bac Pro</title>
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{--p:#0891b2;--s:#2f855a;--d:#155e75;--o:#d97706;--t:#2d3748}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);margin:0;padding:20px;line-height:1.7}
+.c{max-width:860px;margin:auto;background:#fff;padding:30px 35px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+header{text-align:center;border-bottom:3px solid var(--p);margin-bottom:26px;padding-bottom:14px}
+.surtitre{margin:0 0 4px;color:#718096;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+h1{margin:0 0 5px;color:var(--p);font-size:1.55em}
+.sous-titre{margin:0;color:#718096;font-size:.88em}
+.nav-haut{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.nav-haut a{color:#155e75;text-decoration:none;font-size:.83em;font-weight:700;padding:5px 11px;border-radius:6px;background:#ecfeff;border:1px solid #a5f3fc;transition:.15s}
+.nav-haut a:hover{background:#cffafe}
+.fml{background:#f0fdfa;border:1.5px solid var(--p);border-radius:8px;padding:12px 18px;margin:14px 0;font-size:.94em}
+.fml-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:8px}
+@media(max-width:560px){.fml-grid{grid-template-columns:1fr}}
+.fml-row{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:5px 0;border-bottom:1px solid #a5f3fc;align-items:center;font-size:.93em}
+.fml-row:last-child{border-bottom:none}
+.fml-f{font-weight:600;color:#155e75}
+.fml-df{color:#1e40af}
+.alerte{background:#fffbeb;border-left:4px solid var(--o);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0;font-size:.9em}
+.bloc-niveau{border:2px solid #e2e8f0;border-radius:10px;margin:22px 0;overflow:hidden}
+.bloc-niveau-header{padding:11px 18px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:1em;border-bottom:1px solid #e2e8f0}
+.n1 .bloc-niveau-header{background:#d1fae5;color:#065f46;border-bottom-color:#a7f3d0}
+.n2 .bloc-niveau-header{background:#dbeafe;color:#1e40af;border-bottom-color:#93c5fd}
+.n3 .bloc-niveau-header{background:#f3e8ff;color:#6d28d9;border-bottom-color:#d8b4fe}
+.bloc-niveau-body{padding:16px 18px}
+.exo{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:13px 16px;margin:10px 0}
+.exo-q{margin:0 0 8px;font-weight:600;font-size:.97em}
+.exo-q .num{color:var(--p);margin-right:4px}
+details{margin-top:6px}
+details summary{cursor:pointer;color:#155e75;font-size:.86em;font-weight:600;list-style:none;padding:3px 0;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:'▸ Voir la réponse'}
+details[open] summary::before{content:'▾ Masquer la réponse'}
+.corr{background:#f0fff4;border-left:4px solid var(--s);padding:9px 13px;border-radius:0 8px 8px 0;margin-top:8px;font-size:.91em;line-height:1.55}
+.corr b{color:#065f46}
+.qcm-opts{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.qo{padding:6px 16px;border-radius:6px;border:2px solid #e2e8f0;background:#fff;cursor:pointer;font-size:.9em;transition:.15s;font-family:inherit}
+.qo:hover:not(:disabled){border-color:var(--p);background:#f0fdfa}
+.qo.ok{background:#d1fae5;border-color:var(--s);color:#065f46;font-weight:700}
+.qo.ko{background:#fee2e2;border-color:#dc2626;color:#991b1b}
+.qo:disabled{cursor:default}
+.fb{font-size:.85em;min-height:1.3em;font-weight:600;margin-top:3px}
+.fb.ok{color:var(--s)}.fb.ko{color:#dc2626}
+</style>
+</head>
+<body>
+<div class="c">
+
+  <nav class="nav-haut">
+    <a href="index.html">← Automatismes</a>
+    <a href="../maths-1ere-pro.html">↗ Maths 1ère</a>
+  </nav>
+
+  <header>
+    <p class="surtitre">⚡ Automatismes – Première Bac Pro</p>
+    <h1>📈 Fonctions</h1>
+    <p class="sous-titre">Mise à jour : 12 mars 2026</p>
+  </header>
+
+  <div class="alerte">
+    <strong>Objectif :</strong> Lire un tableau de variations, déterminer un coefficient directeur, résoudre graphiquement des équations et inéquations.
+  </div>
+
+  <div class="fml">
+    <strong>📋 Formulaire</strong>
+    <div class="fml-grid" style="margin-top:10px">
+      <div class="fml-row"><span class="fml-f">Coeff. directeur</span><span class="fml-df">\(m = \frac{y_2 - y_1}{x_2 - x_1}\)</span></div>
+      <div class="fml-row"><span class="fml-f">Droites parallèles</span><span class="fml-df">Même coefficient directeur \(m\)</span></div>
+      <div class="fml-row"><span class="fml-f">f croissante</span><span class="fml-df">Si \(a < b\) alors \(f(a) \leq f(b)\)</span></div>
+      <div class="fml-row"><span class="fml-f">Extremum</span><span class="fml-df">Maximum ou minimum de la fonction</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 1 ═══ -->
+  <div class="bloc-niveau n1">
+    <div class="bloc-niveau-header">🟢 Niveau 1 — Bases</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Soit \(f(x) = 2x^2 - 3\). Calculer \(f(2)\).</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(f(2) = 1\)</button>
+          <button class="qo" onclick="qcm(this,true,'f(2) = 2×(2)² − 3 = 2×4 − 3 = 8 − 3 = 5.')">B) \(f(2) = 5\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) \(f(2) = 7\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(f(2) = 4\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Soit \(f(x) = -x + 5\). Calculer \(f(-1)\).</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(f(-1) = 4\)</button>
+          <button class="qo" onclick="qcm(this,true,'f(−1) = −(−1) + 5 = 1 + 5 = 6.')">B) \(f(-1) = 6\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) \(f(-1) = -6\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(f(-1) = 5\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Calculer le coefficient directeur de la droite passant par \(A(1\;;\;3)\) et \(B(4\;;\;9)\).</p>
+        <details><summary></summary>
+        <div class="corr">
+          \(m = \frac{y_B - y_A}{x_B - x_A} = \frac{9 - 3}{4 - 1} = \frac{6}{3}\)<br>
+          <b>\(m = 2\)</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Les droites \(y = 3x + 1\) et \(y = 3x - 5\) sont-elles parallèles ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'Les deux droites ont le même coefficient directeur m = 3, donc elles sont parallèles.')">A) Oui</button>
+          <button class="qo" onclick="qcm(this,false,'Elles ont le même coefficient directeur m = 3.')">B) Non</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash images.<br>
+        a) \(f(x) = 3x - 1\), \(f(0) = \)? &nbsp;&nbsp; b) \(f(x) = x^2\), \(f(-3) = \)? &nbsp;&nbsp; c) \(f(x) = -2x + 10\), \(f(5) = \)? &nbsp;&nbsp; d) \(f(x) = x^2 + 1\), \(f(1) = \)?</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(f(0) = 3 \times 0 - 1 = \mathbf{-1}\)<br>
+          b) \(f(-3) = (-3)^2 = \mathbf{9}\)<br>
+          c) \(f(5) = -2 \times 5 + 10 = \mathbf{0}\)<br>
+          d) \(f(1) = 1^2 + 1 = \mathbf{2}\)
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 2 ═══ -->
+  <div class="bloc-niveau n2">
+    <div class="bloc-niveau-header">🔵 Niveau 2 — Entraînement</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Une fonction \(f\) est croissante sur \([0\;;\;3]\) et décroissante sur \([3\;;\;7]\). Quel type d'extremum \(f\) admet-elle en \(x = 3\) ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'Croissante puis décroissante : la fonction monte puis redescend → c\'est un maximum.')">A) Un maximum</button>
+          <button class="qo" onclick="qcm(this,false,'Un minimum se produit quand f décroît puis croît.')">B) Un minimum</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) Ni l'un ni l'autre</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) On ne peut pas savoir</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Soit \(f(x) = x^2 - 4x + 3\). Calculer \(f(0)\), \(f(1)\), \(f(2)\), \(f(3)\), \(f(4)\). Déterminer le signe de \(f(x)\) pour ces valeurs.</p>
+        <details><summary></summary>
+        <div class="corr">
+          \(f(0) = 0 - 0 + 3 = \mathbf{3}\) (positif)<br>
+          \(f(1) = 1 - 4 + 3 = \mathbf{0}\)<br>
+          \(f(2) = 4 - 8 + 3 = \mathbf{-1}\) (négatif)<br>
+          \(f(3) = 9 - 12 + 3 = \mathbf{0}\)<br>
+          \(f(4) = 16 - 16 + 3 = \mathbf{3}\) (positif)<br><br>
+          <b>f(x) est positive pour x &le; 1, négative entre 1 et 3, puis positive pour x &ge; 3.</b><br>
+          Les solutions de \(f(x) = 0\) sont \(x = 1\) et \(x = 3\).
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Soit la droite \(y = -2x + 7\). Quel est le coefficient directeur et l'ordonnée à l'origine ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(m = 7\), \(p = -2\)</button>
+          <button class="qo" onclick="qcm(this,true,'Dans y = mx + p, m = −2 (coefficient directeur) et p = 7 (ordonnée à l\'origine).')">B) \(m = -2\), \(p = 7\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) \(m = 2\), \(p = 7\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(m = -2\), \(p = -7\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Graphiquement, on lit que les courbes de \(f\) et \(g\) se coupent en \(x = -1\) et \(x = 3\). Donner les solutions de \(f(x) = g(x)\). Pour quelles valeurs de \(x\) a-t-on \(f(x) > g(x)\) si la courbe de \(f\) est au-dessus de celle de \(g\) sur \(]-1\;;\;3[\) ?</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>Solutions de \(f(x) = g(x)\) :</b> \(x = -1\) et \(x = 3\) (points d'intersection).<br><br>
+          <b>\(f(x) > g(x)\)</b> lorsque la courbe de \(f\) est au-dessus de celle de \(g\) :<br>
+          <b>pour \(x \in ]-1\;;\;3[\)</b>.
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash lectures graphiques.<br>
+        a) Coeff. directeur de la droite passant par \((0\;;\;1)\) et \((2\;;\;5)\) &nbsp;&nbsp; b) \(f(x) = 4x - 3\), résoudre \(f(x) = 0\) &nbsp;&nbsp; c) Ordonnée à l'origine de \(y = -x + 8\)</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(m = \frac{5-1}{2-0} = \frac{4}{2} = \mathbf{2}\)<br>
+          b) \(4x - 3 = 0 \Rightarrow 4x = 3 \Rightarrow x = \mathbf{\frac{3}{4} = 0{,}75}\)<br>
+          c) L'ordonnée à l'origine est \(p = \mathbf{8}\)
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 3 ═══ -->
+  <div class="bloc-niveau n3">
+    <div class="bloc-niveau-header">🟣 Niveau 3 — Automatisation</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Le tableau de variations d'une fonction \(f\) indique : \(f\) décroissante de \(f(0) = 5\) à \(f(3) = -1\), puis croissante de \(f(3) = -1\) à \(f(6) = 4\). Combien l'équation \(f(x) = 0\) admet-elle de solutions ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 0</button>
+          <button class="qo" onclick="qcm(this,false,'f passe de 5 à −1 (une solution) et de −1 à 4 (une autre solution).')">B) 1</button>
+          <button class="qo" onclick="qcm(this,true,'Sur [0;3], f passe de 5 à −1 : elle traverse 0 → 1 solution. Sur [3;6], f passe de −1 à 4 : elle traverse 0 → 1 solution. Total : 2.')">C) 2</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 3</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> On donne le tableau de variations suivant :<br>
+        \(x\) : 0 → 2 → 5<br>
+        \(f(x)\) : 1 ↗ 7 ↘ 3<br>
+        Décrire l'allure de la courbe (sens de variation, extremum, valeurs remarquables).</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>La courbe part du point (0 ; 1).</b><br>
+          Elle <b>monte</b> (f croissante) jusqu'au point <b>(2 ; 7)</b> qui est un <b>maximum</b>.<br>
+          Puis elle <b>descend</b> (f décroissante) jusqu'au point <b>(5 ; 3)</b>.<br><br>
+          La courbe a donc une forme de « bosse » avec un sommet en \(x = 2\) où \(f(2) = 7\).<br>
+          <b>Le maximum de f est 7, atteint en x = 2.</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Le coefficient directeur d'une droite est \(m = -3\). La fonction affine associée est-elle croissante ou décroissante ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) Croissante</button>
+          <button class="qo" onclick="qcm(this,true,'m = −3 < 0, donc la fonction affine est décroissante.')">B) Décroissante</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) Constante</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) On ne peut pas savoir</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> On lit graphiquement que la droite \(y = c\) (avec \(c = 2\)) coupe la courbe de \(f\) en \(x = 1\) et \(x = 5\). La courbe de \(f\) est en dessous de la droite \(y = 2\) pour \(x \in ]1\;;\;5[\). Résoudre \(f(x) < 2\).</p>
+        <details><summary></summary>
+        <div class="corr">
+          Les points d'intersection sont \(x = 1\) et \(x = 5\), donc \(f(1) = 2\) et \(f(5) = 2\).<br><br>
+          La courbe de \(f\) est <b>en dessous</b> de la droite \(y = 2\) entre ces deux points.<br><br>
+          <b>Solution de \(f(x) < 2\) : \(x \in ]1\;;\;5[\).</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash mélanges.<br>
+        a) \(f(x) = -5x + 2\) : sens de variation ? &nbsp;&nbsp; b) Coeff. directeur de la droite passant par \((3\;;\;1)\) et \((7\;;\;9)\) ? &nbsp;&nbsp; c) \(f(x) = x^2 - 1\), \(f(-2) = \)? &nbsp;&nbsp; d) \(y = 2x + 3\) et \(y = 2x - 1\) : parallèles ?</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(m = -5 < 0\) → <b>décroissante</b><br>
+          b) \(m = \frac{9-1}{7-3} = \frac{8}{4} = \mathbf{2}\)<br>
+          c) \(f(-2) = (-2)^2 - 1 = 4 - 1 = \mathbf{3}\)<br>
+          d) Même coefficient directeur \(m = 2\) → <b>oui, parallèles</b>
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function qcm(btn, ok, expl) {
+  const opts = btn.closest('.qcm-opts');
+  opts.querySelectorAll('.qo').forEach(b => { b.disabled = true; });
+  const fb = opts.nextElementSibling;
+  if (ok) { btn.classList.add('ok'); fb.className = 'fb ok'; fb.textContent = '✓ Correct ! ' + (expl || ''); }
+  else { btn.classList.add('ko'); fb.className = 'fb ko'; fb.textContent = '✗ Incorrect. ' + (expl || ''); }
+}
+</script>
+<script src="../nav.js"></script>
+</body>
+</html>

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Automatismes – Terminale Bac Professionnel</title>
+<title>Automatismes – Mathématiques Bac Professionnel</title>
 <style>
-:root{--p:#0969da;--s:#2f855a;--t:#2d3748}
+:root{--p:#0056b3;--s:#2f855a;--t:#2d3748}
 body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);margin:0;padding:20px;line-height:1.6}
 .c{max-width:900px;margin:auto}
 
 /* Header */
-header{background:linear-gradient(135deg,#0f3460,#0969da);color:#fff;padding:30px 35px;border-radius:14px;margin-bottom:28px;text-align:center}
+header{background:linear-gradient(135deg,#0056b3,#2563eb);color:#fff;padding:30px 35px;border-radius:14px;margin-bottom:28px;text-align:center;transition:background .3s}
 header h1{margin:0 0 6px;font-size:1.9em;letter-spacing:-0.5px}
 header p{margin:0;opacity:.85;font-size:.95em}
 .date{margin-top:8px;opacity:.7;font-size:.85em}
@@ -19,6 +19,20 @@ header p{margin:0;opacity:.85;font-size:.95em}
 .nav-haut{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
 .nav-haut a{color:var(--p);text-decoration:none;font-size:.85em;font-weight:700;padding:6px 12px;border-radius:6px;background:#ebf5ff;border:1px solid #bfdbfe;transition:.15s}
 .nav-haut a:hover{background:#dbeafe}
+
+/* Tabs */
+.tabs{display:flex;gap:0;margin-bottom:24px;border-radius:10px;overflow:hidden;border:2px solid #e2e8f0;background:#fff}
+.tab-btn{flex:1;padding:13px 10px;text-align:center;font-weight:700;font-size:.95em;cursor:pointer;border:none;background:#fff;color:#64748b;transition:all .2s;position:relative}
+.tab-btn:not(:last-child){border-right:1px solid #e2e8f0}
+.tab-btn:hover{background:#f1f5f9}
+.tab-btn.active-sec{background:#0056b3;color:#fff}
+.tab-btn.active-pre{background:#7c3aed;color:#fff}
+.tab-btn.active-ter{background:#0f3460;color:#fff}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+/* Section title */
+.section-title{font-size:1.15em;border-left:4px solid var(--p);padding-left:10px;margin:0 0 16px;transition:color .3s,border-color .3s}
 
 /* Pourquoi section */
 .pourquoi{background:#fff;border-radius:12px;padding:22px 28px;border:1px solid #e2e8f0;margin-bottom:26px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
@@ -37,7 +51,21 @@ header p{margin:0;opacity:.85;font-size:.95em}
 .card a{display:block;text-align:center;padding:9px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9em;color:#fff;transition:opacity .15s}
 .card a:hover{opacity:.87}
 
-/* Couleurs par thème */
+/* Couleurs par thème – Seconde (bleu) */
+.th-calc{border-color:#bfdbfe}.th-calc h3{color:#0056b3}.th-calc a{background:#0056b3}
+.th-litt{border-color:#a5d8ff}.th-litt h3{color:#0369a1}.th-litt a{background:#0369a1}
+.th-prop{border-color:#93c5fd}.th-prop h3{color:#1d4ed8}.th-prop a{background:#1d4ed8}
+.th-mesure{border-color:#7dd3fc}.th-mesure h3{color:#0c4a6e}.th-mesure a{background:#0c4a6e}
+.th-geom2{border-color:#bae6fd}.th-geom2 h3{color:#075985}.th-geom2 a{background:#075985}
+
+/* Couleurs par thème – Première (violet) */
+.th-stat1{border-color:#ddd6fe}.th-stat1 h3{color:#7c3aed}.th-stat1 a{background:#7c3aed}
+.th-alg1{border-color:#c4b5fd}.th-alg1 h3{color:#6d28d9}.th-alg1 a{background:#6d28d9}
+.th-fonc1{border-color:#e9d5ff}.th-fonc1 h3{color:#8b5cf6}.th-fonc1 a{background:#8b5cf6}
+.th-geom1{border-color:#d8b4fe}.th-geom1 h3{color:#5b21b6}.th-geom1 a{background:#5b21b6}
+.th-comm{border-color:#f0abfc}.th-comm h3{color:#a21caf}.th-comm a{background:#a21caf}
+
+/* Couleurs par thème – Terminale */
 .th-proba{border-color:#bae6fd}.th-proba h3{color:#0284c7}.th-proba a{background:#0284c7}
 .th-suites{border-color:#bbf7d0}.th-suites h3{color:#16a34a}.th-suites a{background:#16a34a}
 .th-poly{border-color:#fed7aa}.th-poly h3{color:#d97706}.th-poly a{background:#d97706}
@@ -65,15 +93,14 @@ header p{margin:0;opacity:.85;font-size:.95em}
 
   <nav class="nav-haut">
     <a href="../index.html">← Accueil du site</a>
-    <a href="../maths-term-iccer.html">↗ Maths Term. ICCER</a>
-    <a href="../maths-term-erama.html">↗ Maths Term. ERA-MA</a>
+    <a href="../automatismes.html">↗ Automatismes (référence)</a>
   </nav>
 
-  <header>
+  <header id="main-header">
     <div style="font-size:2.4em;margin-bottom:8px">⚡</div>
     <h1>Automatismes – Mathématiques</h1>
-    <p>Terminale Bac Professionnel – Groupements A, B et C</p>
-    <div class="date">Mise à jour : 08 mars 2026</div>
+    <p>Seconde, Première et Terminale Bac Professionnel</p>
+    <div class="date">Mise à jour : 12 mars 2026</div>
   </header>
 
   <!-- Pourquoi -->
@@ -90,80 +117,245 @@ header p{margin:0;opacity:.85;font-size:.95em}
     </div>
   </div>
 
-  <!-- Cartes thèmes -->
-  <h2 style="color:var(--p);font-size:1.15em;border-left:4px solid var(--p);padding-left:10px;margin:0 0 16px">Les 5 thèmes d'automatismes</h2>
-  <div class="grid">
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active-sec" data-tab="seconde" id="tab-seconde">Seconde</button>
+    <button class="tab-btn" data-tab="premiere" id="tab-premiere">Première</button>
+    <button class="tab-btn" data-tab="terminale" id="tab-terminale">Terminale</button>
+  </div>
 
-    <div class="card th-proba">
-      <div>
-        <div class="card-icon">🎲</div>
-        <h3>Probabilités</h3>
-        <p>Calculer une probabilité, utiliser l'événement contraire, lire un tableau croisé, probabilités conditionnelles.</p>
-        <div class="niveaux">
-          <span class="nbadge n1">Bases</span>
-          <span class="nbadge n2">Entraînement</span>
-          <span class="nbadge n3">Automatisation</span>
+  <!-- ==================== SECONDE ==================== -->
+  <div class="tab-content active" id="content-seconde">
+    <h2 class="section-title" style="color:#0056b3;border-color:#0056b3">Les 5 thèmes – Seconde</h2>
+    <div class="grid">
+
+      <div class="card th-calc">
+        <div>
+          <div class="card-icon">🔢</div>
+          <h3>Calcul numérique</h3>
+          <p>Maîtriser les priorités opératoires, les fractions, les puissances et les ordres de grandeur.</p>
+          <div class="niveaux">
+            <span class="nbadge n1">Bases</span>
+            <span class="nbadge n2">Entraînement</span>
+            <span class="nbadge n3">Automatisation</span>
+          </div>
         </div>
+        <a href="seconde-calcul-numerique.html">S'entraîner →</a>
       </div>
-      <a href="probabilites.html">S'entraîner →</a>
-    </div>
 
-    <div class="card th-suites">
-      <div>
-        <div class="card-icon">📈</div>
-        <h3>Suites</h3>
-        <p>Calculer un terme d'une suite arithmétique, interpréter une évolution, reconnaître la raison.</p>
-        <div class="niveaux">
-          <span class="nbadge n1">Bases</span>
-          <span class="nbadge n2">Entraînement</span>
-          <span class="nbadge n3">Automatisation</span>
+      <div class="card th-litt">
+        <div>
+          <div class="card-icon">✏️</div>
+          <h3>Calcul littéral</h3>
+          <p>Développer, factoriser, réduire une expression, substituer une valeur numérique dans une formule.</p>
+          <div class="niveaux">
+            <span class="nbadge n1">Bases</span>
+            <span class="nbadge n2">Entraînement</span>
+            <span class="nbadge n3">Automatisation</span>
+          </div>
         </div>
+        <a href="seconde-calcul-litteral.html">S'entraîner →</a>
       </div>
-      <a href="suites.html">S'entraîner →</a>
-    </div>
 
-    <div class="card th-poly">
-      <div>
-        <div class="card-icon">📐</div>
-        <h3>Fonctions polynômes du 2nd degré</h3>
-        <p>Calculer le discriminant, trouver les racines, lire graphiquement, écrire la forme factorisée.</p>
-        <div class="niveaux">
-          <span class="nbadge n1">Bases</span>
-          <span class="nbadge n2">Entraînement</span>
-          <span class="nbadge n3">Automatisation</span>
+      <div class="card th-prop">
+        <div>
+          <div class="card-icon">📊</div>
+          <h3>Proportionnalité & fonctions</h3>
+          <p>Reconnaître une situation de proportionnalité, calculer un coefficient, lire et tracer un graphique de fonction.</p>
+          <div class="niveaux">
+            <span class="nbadge n1">Bases</span>
+            <span class="nbadge n2">Entraînement</span>
+            <span class="nbadge n3">Automatisation</span>
+          </div>
         </div>
+        <a href="seconde-proportionnalite.html">S'entraîner →</a>
       </div>
-      <a href="polynomes.html">S'entraîner →</a>
-    </div>
 
-    <div class="card th-deriv">
-      <div>
-        <div class="card-icon">📉</div>
-        <h3>Dérivation</h3>
-        <p>Dériver une fonction polynôme, reconnaître la dérivée, calculer f'(a), étudier les variations.</p>
-        <div class="niveaux">
-          <span class="nbadge n1">Bases</span>
-          <span class="nbadge n2">Entraînement</span>
-          <span class="nbadge n3">Automatisation</span>
+      <div class="card th-mesure">
+        <div>
+          <div class="card-icon">📏</div>
+          <h3>Grandeurs & mesures</h3>
+          <p>Convertir des unités, calculer des périmètres, des aires et des volumes dans des contextes concrets.</p>
+          <div class="niveaux">
+            <span class="nbadge n1">Bases</span>
+            <span class="nbadge n2">Entraînement</span>
+            <span class="nbadge n3">Automatisation</span>
+          </div>
         </div>
+        <a href="seconde-grandeurs.html">S'entraîner →</a>
       </div>
-      <a href="derivation.html">S'entraîner →</a>
-    </div>
 
-    <div class="card th-vect">
-      <div>
-        <div class="card-icon">🧭</div>
-        <h3>Vecteurs</h3>
-        <p>Coordonnées d'un vecteur, somme de vecteurs, produit par un réel, relation de Chasles.</p>
-        <div class="niveaux">
-          <span class="nbadge n1">Bases</span>
-          <span class="nbadge n2">Entraînement</span>
-          <span class="nbadge n3">Automatisation</span>
+      <div class="card th-geom2">
+        <div>
+          <div class="card-icon">📐</div>
+          <h3>Géométrie</h3>
+          <p>Utiliser le théorème de Pythagore, la trigonométrie, repérer dans le plan et calculer des distances.</p>
+          <div class="niveaux">
+            <span class="nbadge n1">Bases</span>
+            <span class="nbadge n2">Entraînement</span>
+            <span class="nbadge n3">Automatisation</span>
+          </div>
         </div>
+        <a href="seconde-geometrie.html">S'entraîner →</a>
       </div>
-      <a href="vecteurs.html">S'entraîner →</a>
-    </div>
 
+    </div>
+  </div>
+
+  <!-- ==================== PREMIERE ==================== -->
+  <div class="tab-content" id="content-premiere">
+    <h2 class="section-title" style="color:#7c3aed;border-color:#7c3aed">Les 5 thèmes – Première</h2>
+    <div class="grid">
+
+      <div class="card th-stat1">
+        <div>
+          <div class="card-icon">🎲</div>
+          <h3>Statistiques & probabilités</h3>
+          <p>Calculer moyenne, médiane, écart-type, interpréter un diagramme et résoudre des problèmes de probabilités.</p>
+          <div class="niveaux">
+            <span class="nbadge n1">Bases</span>
+            <span class="nbadge n2">Entraînement</span>
+            <span class="nbadge n3">Automatisation</span>
+          </div>
+        </div>
+        <a href="premiere-stats-probas.html">S'entraîner →</a>
+      </div>
+
+      <div class="card th-alg1">
+        <div>
+          <div class="card-icon">✖️</div>
+          <h3>Algèbre</h3>
+          <p>Résoudre des équations et inéquations du premier degré, manipuler des expressions algébriques.</p>
+          <div class="niveaux">
+            <span class="nbadge n1">Bases</span>
+            <span class="nbadge n2">Entraînement</span>
+            <span class="nbadge n3">Automatisation</span>
+          </div>
+        </div>
+        <a href="premiere-algebre.html">S'entraîner →</a>
+      </div>
+
+      <div class="card th-fonc1">
+        <div>
+          <div class="card-icon">📈</div>
+          <h3>Fonctions</h3>
+          <p>Lire un graphique, déterminer image et antécédent, étudier les variations d'une fonction affine ou du second degré.</p>
+          <div class="niveaux">
+            <span class="nbadge n1">Bases</span>
+            <span class="nbadge n2">Entraînement</span>
+            <span class="nbadge n3">Automatisation</span>
+          </div>
+        </div>
+        <a href="premiere-fonctions.html">S'entraîner →</a>
+      </div>
+
+      <div class="card th-geom1">
+        <div>
+          <div class="card-icon">📐</div>
+          <h3>Géométrie</h3>
+          <p>Travailler avec les vecteurs, utiliser les coordonnées dans le plan, calculer distances et milieux.</p>
+          <div class="niveaux">
+            <span class="nbadge n1">Bases</span>
+            <span class="nbadge n2">Entraînement</span>
+            <span class="nbadge n3">Automatisation</span>
+          </div>
+        </div>
+        <a href="premiere-geometrie.html">S'entraîner →</a>
+      </div>
+
+      <div class="card th-comm">
+        <div>
+          <div class="card-icon">💰</div>
+          <h3>Calculs commerciaux</h3>
+          <p>Calculer des pourcentages, des taux d'évolution, des prix HT/TTC et des remises successives.</p>
+          <div class="niveaux">
+            <span class="nbadge n1">Bases</span>
+            <span class="nbadge n2">Entraînement</span>
+            <span class="nbadge n3">Automatisation</span>
+          </div>
+        </div>
+        <a href="premiere-calculs-commerciaux.html">S'entraîner →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== TERMINALE ==================== -->
+  <div class="tab-content" id="content-terminale">
+    <h2 class="section-title" style="color:#0969da;border-color:#0969da">Les 5 thèmes – Terminale</h2>
+    <div class="grid">
+
+      <div class="card th-proba">
+        <div>
+          <div class="card-icon">🎲</div>
+          <h3>Probabilités</h3>
+          <p>Calculer une probabilité, utiliser l'événement contraire, lire un tableau croisé, probabilités conditionnelles.</p>
+          <div class="niveaux">
+            <span class="nbadge n1">Bases</span>
+            <span class="nbadge n2">Entraînement</span>
+            <span class="nbadge n3">Automatisation</span>
+          </div>
+        </div>
+        <a href="probabilites.html">S'entraîner →</a>
+      </div>
+
+      <div class="card th-suites">
+        <div>
+          <div class="card-icon">📈</div>
+          <h3>Suites</h3>
+          <p>Calculer un terme d'une suite arithmétique, interpréter une évolution, reconnaître la raison.</p>
+          <div class="niveaux">
+            <span class="nbadge n1">Bases</span>
+            <span class="nbadge n2">Entraînement</span>
+            <span class="nbadge n3">Automatisation</span>
+          </div>
+        </div>
+        <a href="suites.html">S'entraîner →</a>
+      </div>
+
+      <div class="card th-poly">
+        <div>
+          <div class="card-icon">📐</div>
+          <h3>Fonctions polynômes du 2nd degré</h3>
+          <p>Calculer le discriminant, trouver les racines, lire graphiquement, écrire la forme factorisée.</p>
+          <div class="niveaux">
+            <span class="nbadge n1">Bases</span>
+            <span class="nbadge n2">Entraînement</span>
+            <span class="nbadge n3">Automatisation</span>
+          </div>
+        </div>
+        <a href="polynomes.html">S'entraîner →</a>
+      </div>
+
+      <div class="card th-deriv">
+        <div>
+          <div class="card-icon">📉</div>
+          <h3>Dérivation</h3>
+          <p>Dériver une fonction polynôme, reconnaître la dérivée, calculer f'(a), étudier les variations.</p>
+          <div class="niveaux">
+            <span class="nbadge n1">Bases</span>
+            <span class="nbadge n2">Entraînement</span>
+            <span class="nbadge n3">Automatisation</span>
+          </div>
+        </div>
+        <a href="derivation.html">S'entraîner →</a>
+      </div>
+
+      <div class="card th-vect">
+        <div>
+          <div class="card-icon">🧭</div>
+          <h3>Vecteurs</h3>
+          <p>Coordonnées d'un vecteur, somme de vecteurs, produit par un réel, relation de Chasles.</p>
+          <div class="niveaux">
+            <span class="nbadge n1">Bases</span>
+            <span class="nbadge n2">Entraînement</span>
+            <span class="nbadge n3">Automatisation</span>
+          </div>
+        </div>
+        <a href="vecteurs.html">S'entraîner →</a>
+      </div>
+
+    </div>
   </div>
 
   <!-- Comment utiliser -->
@@ -178,6 +370,44 @@ header p{margin:0;opacity:.85;font-size:.95em}
   </div>
 
 </div>
+
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.tab-btn');
+  var contents = document.querySelectorAll('.tab-content');
+  var header = document.getElementById('main-header');
+
+  var gradients = {
+    seconde: 'linear-gradient(135deg,#0056b3,#2563eb)',
+    premiere: 'linear-gradient(135deg,#7c3aed,#a78bfa)',
+    terminale: 'linear-gradient(135deg,#0f3460,#0969da)'
+  };
+
+  var activeClasses = {
+    seconde: 'active-sec',
+    premiere: 'active-pre',
+    terminale: 'active-ter'
+  };
+
+  function switchTab(target){
+    tabs.forEach(function(t){
+      t.className = 'tab-btn';
+      if(t.dataset.tab === target) t.classList.add(activeClasses[target]);
+    });
+    contents.forEach(function(c){
+      c.classList.remove('active');
+      if(c.id === 'content-' + target) c.classList.add('active');
+    });
+    header.style.background = gradients[target];
+  }
+
+  tabs.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      switchTab(this.dataset.tab);
+    });
+  });
+})();
+</script>
 <script src="../nav.js"></script>
 </body>
 </html>

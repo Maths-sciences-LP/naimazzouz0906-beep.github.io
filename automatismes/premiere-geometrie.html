@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Automatismes – Géométrie – Première Bac Pro</title>
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{--p:#059669;--s:#2f855a;--d:#065f46;--o:#d97706;--t:#2d3748}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);margin:0;padding:20px;line-height:1.7}
+.c{max-width:860px;margin:auto;background:#fff;padding:30px 35px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+header{text-align:center;border-bottom:3px solid var(--p);margin-bottom:26px;padding-bottom:14px}
+.surtitre{margin:0 0 4px;color:#718096;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+h1{margin:0 0 5px;color:var(--p);font-size:1.55em}
+.sous-titre{margin:0;color:#718096;font-size:.88em}
+.nav-haut{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.nav-haut a{color:#065f46;text-decoration:none;font-size:.83em;font-weight:700;padding:5px 11px;border-radius:6px;background:#ecfdf5;border:1px solid #a7f3d0;transition:.15s}
+.nav-haut a:hover{background:#d1fae5}
+.fml{background:#f0fdf4;border:1.5px solid var(--p);border-radius:8px;padding:12px 18px;margin:14px 0;font-size:.94em}
+.fml-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:8px}
+@media(max-width:560px){.fml-grid{grid-template-columns:1fr}}
+.fml-row{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:5px 0;border-bottom:1px solid #a7f3d0;align-items:center;font-size:.93em}
+.fml-row:last-child{border-bottom:none}
+.fml-f{font-weight:600;color:#065f46}
+.fml-df{color:#1e40af}
+.alerte{background:#fffbeb;border-left:4px solid var(--o);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0;font-size:.9em}
+.bloc-niveau{border:2px solid #e2e8f0;border-radius:10px;margin:22px 0;overflow:hidden}
+.bloc-niveau-header{padding:11px 18px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:1em;border-bottom:1px solid #e2e8f0}
+.n1 .bloc-niveau-header{background:#d1fae5;color:#065f46;border-bottom-color:#a7f3d0}
+.n2 .bloc-niveau-header{background:#dbeafe;color:#1e40af;border-bottom-color:#93c5fd}
+.n3 .bloc-niveau-header{background:#f3e8ff;color:#6d28d9;border-bottom-color:#d8b4fe}
+.bloc-niveau-body{padding:16px 18px}
+.exo{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:13px 16px;margin:10px 0}
+.exo-q{margin:0 0 8px;font-weight:600;font-size:.97em}
+.exo-q .num{color:var(--p);margin-right:4px}
+details{margin-top:6px}
+details summary{cursor:pointer;color:#065f46;font-size:.86em;font-weight:600;list-style:none;padding:3px 0;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:'▸ Voir la réponse'}
+details[open] summary::before{content:'▾ Masquer la réponse'}
+.corr{background:#f0fff4;border-left:4px solid var(--s);padding:9px 13px;border-radius:0 8px 8px 0;margin-top:8px;font-size:.91em;line-height:1.55}
+.corr b{color:#065f46}
+.qcm-opts{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.qo{padding:6px 16px;border-radius:6px;border:2px solid #e2e8f0;background:#fff;cursor:pointer;font-size:.9em;transition:.15s;font-family:inherit}
+.qo:hover:not(:disabled){border-color:var(--p);background:#f0fdf4}
+.qo.ok{background:#d1fae5;border-color:var(--s);color:#065f46;font-weight:700}
+.qo.ko{background:#fee2e2;border-color:#dc2626;color:#991b1b}
+.qo:disabled{cursor:default}
+.fb{font-size:.85em;min-height:1.3em;font-weight:600;margin-top:3px}
+.fb.ok{color:var(--s)}.fb.ko{color:#dc2626}
+</style>
+</head>
+<body>
+<div class="c">
+
+  <nav class="nav-haut">
+    <a href="index.html">← Automatismes</a>
+    <a href="../maths-1ere-pro.html">↗ Maths 1ère</a>
+  </nav>
+
+  <header>
+    <p class="surtitre">⚡ Automatismes – Première Bac Pro</p>
+    <h1>📐 Géométrie</h1>
+    <p class="sous-titre">Mise à jour : 12 mars 2026</p>
+  </header>
+
+  <div class="alerte">
+    <strong>Objectif :</strong> Reconnaître et nommer les solides, calculer des aires et des volumes courants (cube, pavé, cylindre, pyramide, cône, sphère/boule).
+  </div>
+
+  <div class="fml">
+    <strong>📋 Formulaire</strong>
+    <div class="fml-grid" style="margin-top:10px">
+      <div class="fml-row"><span class="fml-f">\(V_{\text{cube}} = a^3\)</span><span class="fml-df">Cube d'arête \(a\)</span></div>
+      <div class="fml-row"><span class="fml-f">\(V_{\text{pavé}} = L \times l \times h\)</span><span class="fml-df">Pavé droit</span></div>
+      <div class="fml-row"><span class="fml-f">\(V_{\text{cylindre}} = \pi r^2 h\)</span><span class="fml-df">Cylindre de révolution</span></div>
+      <div class="fml-row"><span class="fml-f">\(V_{\text{pyramide}} = \frac{1}{3} \times A_{\text{base}} \times h\)</span><span class="fml-df">Pyramide ou cône</span></div>
+      <div class="fml-row"><span class="fml-f">\(V_{\text{boule}} = \frac{4}{3}\pi r^3\)</span><span class="fml-df">Boule de rayon \(r\)</span></div>
+      <div class="fml-row"><span class="fml-f">Cercle ≠ Disque</span><span class="fml-df">Ligne (périmètre) ≠ Surface (aire)</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 1 ═══ -->
+  <div class="bloc-niveau n1">
+    <div class="bloc-niveau-header">🟢 Niveau 1 — Bases</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Calculer l'aire d'un triangle de base 10 cm et de hauteur 6 cm.</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 60 cm²</button>
+          <button class="qo" onclick="qcm(this,true,'Aire = (base × hauteur) / 2 = (10 × 6) / 2 = 30 cm².')">B) 30 cm²</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 16 cm²</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 40 cm²</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Calculer le volume d'un cube d'arête 5 cm.</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 15 cm³</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 25 cm³</button>
+          <button class="qo" onclick="qcm(this,true,'V = a³ = 5³ = 5 × 5 × 5 = 125 cm³.')">C) 125 cm³</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 150 cm³</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Calculer le volume d'un pavé droit de dimensions 4 cm × 3 cm × 2 cm.</p>
+        <details><summary></summary>
+        <div class="corr">
+          \(V = L \times l \times h = 4 \times 3 \times 2\)<br>
+          <b>\(V = 24\) cm³</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> « Le cercle est une ligne, le disque est une surface. » Vrai ou faux ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'Le cercle est la ligne courbe (périmètre = 2πr). Le disque est la surface délimitée par le cercle (aire = πr²).')">A) Vrai</button>
+          <button class="qo" onclick="qcm(this,false,'Le cercle est bien une ligne (courbe fermée) et le disque est la surface intérieure.')">B) Faux</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash formules.<br>
+        a) Aire d'un rectangle 7 × 4 &nbsp;&nbsp; b) Périmètre d'un cercle de rayon 5 &nbsp;&nbsp; c) Volume d'un cube d'arête 3 &nbsp;&nbsp; d) Aire d'un disque de rayon 2</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(A = 7 \times 4 = \mathbf{28}\) cm²<br>
+          b) \(P = 2\pi r = 2\pi \times 5 = \mathbf{10\pi \approx 31{,}4}\) cm<br>
+          c) \(V = 3^3 = \mathbf{27}\) cm³<br>
+          d) \(A = \pi r^2 = \pi \times 4 = \mathbf{4\pi \approx 12{,}6}\) cm²
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 2 ═══ -->
+  <div class="bloc-niveau n2">
+    <div class="bloc-niveau-header">🔵 Niveau 2 — Entraînement</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Calculer le volume d'un cylindre de rayon 3 cm et de hauteur 10 cm. (Arrondir au cm³.)</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 90 cm³</button>
+          <button class="qo" onclick="qcm(this,true,'V = πr²h = π × 9 × 10 = 90π ≈ 283 cm³.')">B) 283 cm³</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 188 cm³</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 942 cm³</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Quelle est la différence entre une sphère et une boule ? Calculer le volume d'une boule de rayon 6 cm. (Arrondir au cm³.)</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>Sphère :</b> c'est la surface (l'enveloppe), comme la peau d'un ballon.<br>
+          <b>Boule :</b> c'est le volume entier (intérieur + surface), comme une balle pleine.<br><br>
+          <b>Volume de la boule :</b><br>
+          \(V = \frac{4}{3}\pi r^3 = \frac{4}{3}\pi \times 6^3 = \frac{4}{3}\pi \times 216 = 288\pi\)<br>
+          <b>\(V \approx 905\) cm³</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Un pavé droit a pour dimensions 6 cm × 4 cm × 3 cm. Quelle est l'aire de sa plus grande face ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'La plus grande face est 6 × 4 = 24 cm² (les deux plus grandes dimensions).')">A) 24 cm²</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 18 cm²</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 12 cm²</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 72 cm²</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Calculer le volume d'une pyramide à base carrée de côté 4 m et de hauteur 6 m.</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>Aire de la base</b> (carré) : \(A = 4^2 = 16\) m²<br><br>
+          <b>Volume :</b> \(V = \frac{1}{3} \times A_{\text{base}} \times h = \frac{1}{3} \times 16 \times 6 = \frac{96}{3}\)<br>
+          <b>\(V = 32\) m³</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash volumes.<br>
+        a) Volume d'un pavé 5 × 2 × 3 &nbsp;&nbsp; b) Volume d'un cube d'arête 10 &nbsp;&nbsp; c) Aire d'un disque de rayon 3 (valeur exacte)</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(V = 5 \times 2 \times 3 = \mathbf{30}\) cm³<br>
+          b) \(V = 10^3 = \mathbf{1\,000}\) cm³<br>
+          c) \(A = \pi \times 3^2 = \mathbf{9\pi}\) cm²
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 3 ═══ -->
+  <div class="bloc-niveau n3">
+    <div class="bloc-niveau-header">🟣 Niveau 3 — Automatisation</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Une citerne cylindrique a un rayon de 1,5 m et une hauteur de 3 m. Quel est son volume en litres ? (1 m³ = 1 000 L)</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 14 137 L</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 7 069 L</button>
+          <button class="qo" onclick="qcm(this,true,'V = π × 1,5² × 3 = π × 2,25 × 3 = 6,75π ≈ 21,2 m³ → 21 206 L.')">C) 21 206 L</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 42 412 L</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Un tas de sciure a la forme d'un cône de rayon 2 m et de hauteur 1,5 m. Calculer son volume. (Arrondir au dixième.)</p>
+        <details><summary></summary>
+        <div class="corr">
+          Le cône est une pyramide à base circulaire :<br>
+          \(V = \frac{1}{3} \times \pi r^2 \times h = \frac{1}{3} \times \pi \times 2^2 \times 1{,}5\)<br>
+          \(V = \frac{1}{3} \times \pi \times 4 \times 1{,}5 = \frac{1}{3} \times 6\pi = 2\pi\)<br>
+          <b>\(V = 2\pi \approx 6{,}3\) m³</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Combien de petits cubes de 10 cm d'arête peut-on ranger dans une boîte de 50 cm × 30 cm × 20 cm ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 15</button>
+          <button class="qo" onclick="qcm(this,true,'En longueur : 50/10 = 5. En largeur : 30/10 = 3. En hauteur : 20/10 = 2. Total : 5 × 3 × 2 = 30.')">B) 30</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 60</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 150</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Un réservoir est composé d'un cylindre surmonté d'une demi-sphère. Le cylindre a un rayon de 2 m et une hauteur de 5 m. La demi-sphère a le même rayon. Calculer le volume total. (Arrondir au dixième.)</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>Volume du cylindre :</b><br>
+          \(V_{\text{cyl}} = \pi r^2 h = \pi \times 4 \times 5 = 20\pi\)<br><br>
+          <b>Volume de la demi-sphère :</b><br>
+          \(V_{\text{demi-sphère}} = \frac{1}{2} \times \frac{4}{3}\pi r^3 = \frac{2}{3}\pi \times 8 = \frac{16\pi}{3}\)<br><br>
+          <b>Volume total :</b><br>
+          \(V = 20\pi + \frac{16\pi}{3} = \frac{60\pi + 16\pi}{3} = \frac{76\pi}{3}\)<br>
+          <b>\(V \approx 79{,}6\) m³</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash mélanges aires + volumes.<br>
+        a) Volume d'un cylindre r = 5, h = 2 (valeur exacte) &nbsp;&nbsp; b) Aire totale d'un cube d'arête 4 &nbsp;&nbsp; c) Volume d'une boule de rayon 3 (valeur exacte) &nbsp;&nbsp; d) Aire latérale d'un cylindre r = 3, h = 7</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(V = \pi \times 25 \times 2 = \mathbf{50\pi}\) cm³<br>
+          b) Un cube a 6 faces de \(4^2 = 16\) cm² chacune : \(A = 6 \times 16 = \mathbf{96}\) cm²<br>
+          c) \(V = \frac{4}{3}\pi \times 27 = \mathbf{36\pi}\) cm³<br>
+          d) \(A_{\text{lat}} = 2\pi r h = 2\pi \times 3 \times 7 = \mathbf{42\pi \approx 131{,}9}\) cm²
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function qcm(btn, ok, expl) {
+  const opts = btn.closest('.qcm-opts');
+  opts.querySelectorAll('.qo').forEach(b => { b.disabled = true; });
+  const fb = opts.nextElementSibling;
+  if (ok) { btn.classList.add('ok'); fb.className = 'fb ok'; fb.textContent = '✓ Correct ! ' + (expl || ''); }
+  else { btn.classList.add('ko'); fb.className = 'fb ko'; fb.textContent = '✗ Incorrect. ' + (expl || ''); }
+}
+</script>
+<script src="../nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Automatismes – Grandeurs & mesures – Seconde Bac Pro</title>
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{--p:#d97706;--s:#2f855a;--d:#92400e;--o:#d97706;--t:#2d3748}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);margin:0;padding:20px;line-height:1.7}
+.c{max-width:860px;margin:auto;background:#fff;padding:30px 35px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+header{text-align:center;border-bottom:3px solid var(--p);margin-bottom:26px;padding-bottom:14px}
+.surtitre{margin:0 0 4px;color:#718096;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+h1{margin:0 0 5px;color:var(--p);font-size:1.55em}
+.sous-titre{margin:0;color:#718096;font-size:.88em}
+.nav-haut{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.nav-haut a{color:#92400e;text-decoration:none;font-size:.83em;font-weight:700;padding:5px 11px;border-radius:6px;background:#fffbeb;border:1px solid #fde68a;transition:.15s}
+.nav-haut a:hover{background:#fef3c7}
+.fml{background:#fffbeb;border:1.5px solid var(--p);border-radius:8px;padding:12px 18px;margin:14px 0;font-size:.94em}
+.alerte{background:#fffbeb;border-left:4px solid var(--o);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0;font-size:.9em}
+.bloc-niveau{border:2px solid #e2e8f0;border-radius:10px;margin:22px 0;overflow:hidden}
+.bloc-niveau-header{padding:11px 18px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:1em;border-bottom:1px solid #e2e8f0}
+.n1 .bloc-niveau-header{background:#d1fae5;color:#065f46;border-bottom-color:#a7f3d0}
+.n2 .bloc-niveau-header{background:#dbeafe;color:#1e40af;border-bottom-color:#93c5fd}
+.n3 .bloc-niveau-header{background:#f3e8ff;color:#6d28d9;border-bottom-color:#d8b4fe}
+.bloc-niveau-body{padding:16px 18px}
+.exo{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:13px 16px;margin:10px 0}
+.exo-q{margin:0 0 8px;font-weight:600;font-size:.97em}
+.exo-q .num{color:var(--p);margin-right:4px}
+details{margin-top:6px}
+details summary{cursor:pointer;color:#92400e;font-size:.86em;font-weight:600;list-style:none;padding:3px 0;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:'▸ Voir la réponse'}
+details[open] summary::before{content:'▾ Masquer la réponse'}
+.corr{background:#f0fff4;border-left:4px solid var(--s);padding:9px 13px;border-radius:0 8px 8px 0;margin-top:8px;font-size:.91em;line-height:1.55}
+.corr b{color:#065f46}
+.qcm-opts{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.qo{padding:6px 16px;border-radius:6px;border:2px solid #e2e8f0;background:#fff;cursor:pointer;font-size:.9em;transition:.15s;font-family:inherit}
+.qo:hover:not(:disabled){border-color:var(--p);background:#fffbeb}
+.qo.ok{background:#d1fae5;border-color:var(--s);color:#065f46;font-weight:700}
+.qo.ko{background:#fee2e2;border-color:var(--p);color:#991b1b}
+.qo:disabled{cursor:default}
+.fb{font-size:.85em;min-height:1.3em;font-weight:600;margin-top:3px}
+.fb.ok{color:var(--s)}.fb.ko{color:var(--p)}
+</style>
+</head>
+<body>
+<div class="c">
+
+  <nav class="nav-haut">
+    <a href="index.html">← Automatismes</a>
+    <a href="../maths-2nde-mama.html">↗ Maths 2nde</a>
+  </nav>
+
+  <header>
+    <p class="surtitre">⚡ Automatismes – Seconde Bac Pro</p>
+    <h1>📏 Grandeurs &amp; mesures</h1>
+    <p class="sous-titre">Mise à jour : 12 mars 2026</p>
+  </header>
+
+  <div class="alerte">
+    <strong>Objectif :</strong> Convertir rapidement entre unités de longueur, aire et volume, vérifier la cohérence des résultats.
+  </div>
+
+  <div class="fml">
+    <strong>📋 Formulaire express</strong>
+    <p style="margin:8px 0 4px"><b>Longueurs :</b> km → m → dm → cm → mm (×10 à chaque rang)</p>
+    <p style="margin:4px 0"><b>Aires :</b> km² → m² → dm² → cm² → mm² (<b>×100</b> à chaque rang)</p>
+    <p style="margin:4px 0"><b>Volumes :</b> m³ → dm³ → cm³ → mm³ (<b>×1000</b> à chaque rang)</p>
+    <p style="margin:4px 0"><b>Capacités :</b> 1 L = 1 dm³ = 1 000 cm³ &nbsp;|&nbsp; 1 m³ = 1 000 L</p>
+  </div>
+
+  <!-- ═══ NIVEAU 1 ═══ -->
+  <div class="bloc-niveau n1">
+    <div class="bloc-niveau-header">🟢 Niveau 1 — Bases</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> 3,5 m = ? cm</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 35</button>
+          <button class="qo" onclick="qcm(this,true,'1 m = 100 cm, donc 3,5 × 100 = 350 cm.')">B) 350</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 3 500</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 0,035</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> 2 m² = ? cm²</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'Attention, pour les aires on multiplie par 100² = 10 000.')">A) 200</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 2 000</button>
+          <button class="qo" onclick="qcm(this,true,'1 m² = 10 000 cm², donc 2 m² = 20 000 cm².')">C) 20 000</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 200 000</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Convertir 5 000 cm³ en litres.</p>
+        <details><summary></summary>
+        <div class="corr">
+          \(1\,\text{L} = 1\,\text{dm}^3 = 1\,000\,\text{cm}^3\)<br>
+          \(5\,000 \div 1\,000 = \mathbf{5}\) <b>L</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> 1 850 mm = ? m</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 18,5</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 185</button>
+          <button class="qo" onclick="qcm(this,true,'1 m = 1 000 mm, donc 1 850 ÷ 1 000 = 1,85 m.')">C) 1,85</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 0,185</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul :<br>
+        a) 0,72 km en m &nbsp;&nbsp; b) 45 000 mm² en cm² &nbsp;&nbsp; c) 80 L en m³ &nbsp;&nbsp; d) 3,2 dm³ en L</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(0{,}72 \times 1\,000 = \mathbf{720}\) <b>m</b><br>
+          b) \(45\,000 \div 100 = \mathbf{450}\) <b>cm²</b><br>
+          c) \(80 \div 1\,000 = \mathbf{0{,}08}\) <b>m³</b><br>
+          d) 1 dm³ = 1 L, donc \(\mathbf{3{,}2}\) <b>L</b>
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 2 ═══ -->
+  <div class="bloc-niveau n2">
+    <div class="bloc-niveau-header">🔵 Niveau 2 — Entraînement</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Une pièce mesure 4,2 m × 3,5 m. Quelle est son aire en m² ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 7,7 m²</button>
+          <button class="qo" onclick="qcm(this,true,'4,2 × 3,5 = 14,7 m².')">B) 14,7 m²</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 15,4 m²</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 12 m²</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Un réservoir cylindrique a un rayon de 30 cm et une hauteur de 1,2 m. Quel est son volume en litres ?</p>
+        <details><summary></summary>
+        <div class="corr">
+          On convertit tout en cm : \(r = 30\) cm, \(h = 120\) cm.<br>
+          \(V = \pi r^2 h = \pi \times 30^2 \times 120 = \pi \times 108\,000 \approx 339\,292\) cm³<br>
+          \(339\,292 \div 1\,000 \approx \mathbf{339}\) <b>L</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> 0,025 m³ = ? L</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 2,5</button>
+          <button class="qo" onclick="qcm(this,true,'1 m³ = 1 000 L, donc 0,025 × 1 000 = 25 L.')">B) 25</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 250</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 0,25</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Un panneau mesure 150 cm × 80 cm. Exprimer son aire en m², dm² et cm².</p>
+        <details><summary></summary>
+        <div class="corr">
+          Aire : \(150 \times 80 = \mathbf{12\,000}\) <b>cm²</b><br>
+          En dm² : \(12\,000 \div 100 = \mathbf{120}\) <b>dm²</b><br>
+          En m² : \(12\,000 \div 10\,000 = \mathbf{1{,}2}\) <b>m²</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul :<br>
+        a) 4 500 mL en L &nbsp;&nbsp; b) 2,5 m³ en dm³ &nbsp;&nbsp; c) Périmètre d'un terrain 25 m × 40 m en km &nbsp;&nbsp; d) 7,2 t en kg</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(4\,500 \div 1\,000 = \mathbf{4{,}5}\) <b>L</b><br>
+          b) \(2{,}5 \times 1\,000 = \mathbf{2\,500}\) <b>dm³</b><br>
+          c) \(2 \times (25 + 40) = 130\) m = \(\mathbf{0{,}13}\) <b>km</b><br>
+          d) \(7{,}2 \times 1\,000 = \mathbf{7\,200}\) <b>kg</b>
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 3 ═══ -->
+  <div class="bloc-niveau n3">
+    <div class="bloc-niveau-header">🟣 Niveau 3 — Automatisation</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Un technicien commande 3,5 m³ de béton. Combien de seaux de 12 L peut-il remplir ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 29</button>
+          <button class="qo" onclick="qcm(this,true,'3,5 m³ = 3 500 L. 3 500 ÷ 12 ≈ 291,7 → il faut 292 seaux (arrondi au supérieur).')">B) 292</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 350</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 42</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Un tuyau a un diamètre intérieur de 22 mm et une longueur de 15 m. Quel volume d'eau peut-il contenir (en L) ?</p>
+        <details><summary></summary>
+        <div class="corr">
+          Rayon : \(r = 11\) mm = \(1{,}1\) cm<br>
+          Longueur : \(15\) m = \(1\,500\) cm<br>
+          Section : \(\pi r^2 = \pi \times 1{,}1^2 = \pi \times 1{,}21 \approx 3{,}801\) cm²<br>
+          Volume : \(3{,}801 \times 1\,500 \approx 5\,702\) cm³<br>
+          \(5\,702 \div 1\,000 \approx \mathbf{5{,}7}\) <b>L</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Une peinture couvre 10 m² par litre. Un mur mesure 4,5 m × 2,8 m. Combien de litres faut-il ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'Aire : 4,5 × 2,8 = 12,6 m². Volume : 12,6 ÷ 10 = 1,26 L.')">A) 1,26 L</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 12,6 L</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 0,126 L</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 2,52 L</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Une dalle de béton mesure 6 m × 4 m × 0,12 m. Calculer son volume en m³, en litres, puis sa masse sachant que la densité du béton est 2 400 kg/m³.</p>
+        <details><summary></summary>
+        <div class="corr">
+          Volume : \(6 \times 4 \times 0{,}12 = \mathbf{2{,}88}\) <b>m³</b><br>
+          En litres : \(2{,}88 \times 1\,000 = \mathbf{2\,880}\) <b>L</b><br>
+          Masse : \(2{,}88 \times 2\,400 = \mathbf{6\,912}\) <b>kg</b> (soit environ 6,9 tonnes)
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul :<br>
+        a) 15 ha en m² &nbsp;&nbsp; b) 0,5 cm³ en mm³ &nbsp;&nbsp; c) 1 200 g en kg &nbsp;&nbsp; d) 90 km/h en m/s</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(1\,\text{ha} = 10\,000\,\text{m}^2\), donc \(15 \times 10\,000 = \mathbf{150\,000}\) <b>m²</b><br>
+          b) \(1\,\text{cm}^3 = 1\,000\,\text{mm}^3\), donc \(0{,}5 \times 1\,000 = \mathbf{500}\) <b>mm³</b><br>
+          c) \(1\,200 \div 1\,000 = \mathbf{1{,}2}\) <b>kg</b><br>
+          d) \(90 \div 3{,}6 = \mathbf{25}\) <b>m/s</b>
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function qcm(btn, ok, expl) {
+  const opts = btn.closest('.qcm-opts');
+  opts.querySelectorAll('.qo').forEach(b => { b.disabled = true; });
+  const fb = opts.nextElementSibling;
+  if (ok) { btn.classList.add('ok'); fb.className = 'fb ok'; fb.textContent = '✓ Correct ! ' + (expl || ''); }
+  else { btn.classList.add('ko'); fb.className = 'fb ko'; fb.textContent = '✗ Incorrect. ' + (expl || ''); }
+}
+</script>
+<script src="../nav.js"></script>
+</body>
+</html>

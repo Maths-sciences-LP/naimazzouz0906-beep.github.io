@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Automatismes – Algèbre – Première Bac Pro</title>
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{--p:#7c3aed;--s:#2f855a;--d:#5b21b6;--o:#d97706;--t:#2d3748}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);margin:0;padding:20px;line-height:1.7}
+.c{max-width:860px;margin:auto;background:#fff;padding:30px 35px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+header{text-align:center;border-bottom:3px solid var(--p);margin-bottom:26px;padding-bottom:14px}
+.surtitre{margin:0 0 4px;color:#718096;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+h1{margin:0 0 5px;color:var(--p);font-size:1.55em}
+.sous-titre{margin:0;color:#718096;font-size:.88em}
+.nav-haut{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.nav-haut a{color:#5b21b6;text-decoration:none;font-size:.83em;font-weight:700;padding:5px 11px;border-radius:6px;background:#f5f0ff;border:1px solid #c4b5fd;transition:.15s}
+.nav-haut a:hover{background:#ede9fe}
+.fml{background:#faf5ff;border:1.5px solid var(--p);border-radius:8px;padding:12px 18px;margin:14px 0;font-size:.94em}
+.fml-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:8px}
+@media(max-width:560px){.fml-grid{grid-template-columns:1fr}}
+.fml-row{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:5px 0;border-bottom:1px solid #c4b5fd;align-items:center;font-size:.93em}
+.fml-row:last-child{border-bottom:none}
+.fml-f{font-weight:600;color:#5b21b6}
+.fml-df{color:#1e40af}
+.alerte{background:#fffbeb;border-left:4px solid var(--o);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0;font-size:.9em}
+.bloc-niveau{border:2px solid #e2e8f0;border-radius:10px;margin:22px 0;overflow:hidden}
+.bloc-niveau-header{padding:11px 18px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:1em;border-bottom:1px solid #e2e8f0}
+.n1 .bloc-niveau-header{background:#d1fae5;color:#065f46;border-bottom-color:#a7f3d0}
+.n2 .bloc-niveau-header{background:#dbeafe;color:#1e40af;border-bottom-color:#93c5fd}
+.n3 .bloc-niveau-header{background:#f3e8ff;color:#6d28d9;border-bottom-color:#d8b4fe}
+.bloc-niveau-body{padding:16px 18px}
+.exo{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:13px 16px;margin:10px 0}
+.exo-q{margin:0 0 8px;font-weight:600;font-size:.97em}
+.exo-q .num{color:var(--p);margin-right:4px}
+details{margin-top:6px}
+details summary{cursor:pointer;color:#5b21b6;font-size:.86em;font-weight:600;list-style:none;padding:3px 0;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:'▸ Voir la réponse'}
+details[open] summary::before{content:'▾ Masquer la réponse'}
+.corr{background:#f0fff4;border-left:4px solid var(--s);padding:9px 13px;border-radius:0 8px 8px 0;margin-top:8px;font-size:.91em;line-height:1.55}
+.corr b{color:#065f46}
+.qcm-opts{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.qo{padding:6px 16px;border-radius:6px;border:2px solid #e2e8f0;background:#fff;cursor:pointer;font-size:.9em;transition:.15s;font-family:inherit}
+.qo:hover:not(:disabled){border-color:var(--p);background:#faf5ff}
+.qo.ok{background:#d1fae5;border-color:var(--s);color:#065f46;font-weight:700}
+.qo.ko{background:#fee2e2;border-color:#dc2626;color:#991b1b}
+.qo:disabled{cursor:default}
+.fb{font-size:.85em;min-height:1.3em;font-weight:600;margin-top:3px}
+.fb.ok{color:var(--s)}.fb.ko{color:#dc2626}
+</style>
+</head>
+<body>
+<div class="c">
+
+  <nav class="nav-haut">
+    <a href="index.html">← Automatismes</a>
+    <a href="../maths-1ere-pro.html">↗ Maths 1ère</a>
+  </nav>
+
+  <header>
+    <p class="surtitre">⚡ Automatismes – Première Bac Pro</p>
+    <h1>✖️ Algèbre</h1>
+    <p class="sous-titre">Mise à jour : 12 mars 2026</p>
+  </header>
+
+  <div class="alerte">
+    <strong>Objectif :</strong> Résoudre des équations et inéquations du 1er degré, développer et factoriser des expressions algébriques.
+  </div>
+
+  <div class="fml">
+    <strong>📋 Formulaire</strong>
+    <div class="fml-grid" style="margin-top:10px">
+      <div class="fml-row"><span class="fml-f">\(ax + b = c\)</span><span class="fml-df">\(x = \frac{c - b}{a}\)</span></div>
+      <div class="fml-row"><span class="fml-f">\(ax + b < c\)</span><span class="fml-df">Attention : si \(a < 0\), on inverse l'inégalité</span></div>
+      <div class="fml-row"><span class="fml-f">\((x+a)(x+b)\)</span><span class="fml-df">\(= x^2 + (a+b)x + ab\)</span></div>
+      <div class="fml-row"><span class="fml-f">\(x^2 - a^2\)</span><span class="fml-df">\(= (x-a)(x+a)\)</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 1 ═══ -->
+  <div class="bloc-niveau n1">
+    <div class="bloc-niveau-header">🟢 Niveau 1 — Bases</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Résoudre \(3x + 5 = 17\).</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(x = 6\)</button>
+          <button class="qo" onclick="qcm(this,true,'3x = 17 − 5 = 12, donc x = 12/3 = 4.')">B) \(x = 4\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) \(x = 7\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(x = 3\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Résoudre \(-2x + 4 = 10\).</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'-2x = 10 − 4 = 6, donc x = 6/(−2) = −3.')">A) \(x = -3\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) \(x = 3\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) \(x = -7\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(x = 7\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Résoudre l'inéquation \(4x - 3 < 9\).</p>
+        <details><summary></summary>
+        <div class="corr">
+          \(4x - 3 < 9\)<br>
+          \(4x < 9 + 3\)<br>
+          \(4x < 12\)<br>
+          \(x < 3\) &nbsp; (on divise par 4, positif, le sens ne change pas)<br>
+          <b>Solution : \(x < 3\)</b>, soit \(]-\infty\;;\;3[\).
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Développer \((x + 3)(x + 5)\).</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(x^2 + 15\)</button>
+          <button class="qo" onclick="qcm(this,true,'(x+3)(x+5) = x² + 5x + 3x + 15 = x² + 8x + 15.')">B) \(x^2 + 8x + 15\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) \(x^2 + 8x + 8\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(2x + 8\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash équations simples.<br>
+        a) \(5x = 20\) &nbsp;&nbsp; b) \(x + 7 = 3\) &nbsp;&nbsp; c) \(2x - 1 = 9\) &nbsp;&nbsp; d) \(-x = 6\)</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(x = 20 \div 5 = \mathbf{4}\)<br>
+          b) \(x = 3 - 7 = \mathbf{-4}\)<br>
+          c) \(2x = 10\), \(x = \mathbf{5}\)<br>
+          d) \(x = \mathbf{-6}\)
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 2 ═══ -->
+  <div class="bloc-niveau n2">
+    <div class="bloc-niveau-header">🔵 Niveau 2 — Entraînement</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Factoriser \(x^2 - 9\).</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \((x - 9)(x + 1)\)</button>
+          <button class="qo" onclick="qcm(this,true,'x² − 9 = x² − 3² = (x−3)(x+3) grâce à l\'identité remarquable a²−b².')">B) \((x - 3)(x + 3)\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) \((x - 3)^2\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(x(x - 9)\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Résoudre \(-5x + 2 \geq 12\). Attention à l'inversion du signe !</p>
+        <details><summary></summary>
+        <div class="corr">
+          \(-5x + 2 \geq 12\)<br>
+          \(-5x \geq 12 - 2\)<br>
+          \(-5x \geq 10\)<br>
+          On divise par −5 (<b>négatif → on inverse l'inégalité</b>) :<br>
+          \(x \leq \frac{10}{-5}\)<br>
+          <b>Solution : \(x \leq -2\)</b>, soit \(]-\infty\;;\;-2]\).
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Développer \((x - 2)(x + 7)\).</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(x^2 - 14\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) \(x^2 - 5x - 14\)</button>
+          <button class="qo" onclick="qcm(this,true,'(x−2)(x+7) = x² + 7x − 2x − 14 = x² + 5x − 14.')">C) \(x^2 + 5x - 14\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(x^2 + 5x + 14\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Factoriser \(x^2 - 25\), puis résoudre \(x^2 - 25 = 0\).</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>Factorisation :</b> \(x^2 - 25 = x^2 - 5^2 = (x - 5)(x + 5)\)<br><br>
+          <b>Résolution :</b> \((x - 5)(x + 5) = 0\)<br>
+          Un produit est nul si l'un des facteurs est nul :<br>
+          \(x - 5 = 0 \Rightarrow x = 5\) &nbsp; ou &nbsp; \(x + 5 = 0 \Rightarrow x = -5\)<br>
+          <b>Solutions : \(x = 5\) ou \(x = -5\)</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash développer + factoriser.<br>
+        a) Développer \((x + 1)(x + 4)\) &nbsp;&nbsp; b) Factoriser \(x^2 - 16\) &nbsp;&nbsp; c) Développer \((x - 3)(x + 3)\)</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \((x+1)(x+4) = x^2 + 4x + x + 4 = \mathbf{x^2 + 5x + 4}\)<br>
+          b) \(x^2 - 16 = x^2 - 4^2 = \mathbf{(x-4)(x+4)}\)<br>
+          c) \((x-3)(x+3) = x^2 + 3x - 3x - 9 = \mathbf{x^2 - 9}\)
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 3 ═══ -->
+  <div class="bloc-niveau n3">
+    <div class="bloc-niveau-header">🟣 Niveau 3 — Automatisation</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Un technicien chauffagiste doit installer un tuyau. La longueur totale est composée de 3 sections égales plus un raccord de 0,8 m. La longueur totale est de 5 m. Quelle est la longueur d'une section ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(x = 1{,}2\) m</button>
+          <button class="qo" onclick="qcm(this,true,'3x + 0,8 = 5 → 3x = 4,2 → x = 1,4 m.')">B) \(x = 1{,}4\) m</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) \(x = 1{,}6\) m</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(x = 1{,}5\) m</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Résoudre simultanément : \(2x + 1 > 5\) et \(3x - 4 < 11\). Donner l'ensemble des solutions commun.</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>Inéquation 1 :</b> \(2x + 1 > 5 \Rightarrow 2x > 4 \Rightarrow x > 2\)<br>
+          <b>Inéquation 2 :</b> \(3x - 4 < 11 \Rightarrow 3x < 15 \Rightarrow x < 5\)<br><br>
+          L'ensemble des solutions commun est l'intersection :<br>
+          <b>\(2 < x < 5\)</b>, soit l'intervalle \(]2\;;\;5[\).
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Identifier la forme \(a^2 - b^2\) dans l'expression \(4x^2 - 9\), puis factoriser.</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \((4x - 9)(4x + 9)\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) \((2x - 9)(2x + 9)\)</button>
+          <button class="qo" onclick="qcm(this,true,'4x² = (2x)² et 9 = 3², donc 4x²−9 = (2x)²−3² = (2x−3)(2x+3).')">C) \((2x - 3)(2x + 3)\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \((x - 3)(4x + 3)\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Développer et réduire : \((3x - 2)(x + 4) - (x^2 + 5x)\).</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>Étape 1 — Développer \((3x - 2)(x + 4)\) :</b><br>
+          \(= 3x \times x + 3x \times 4 - 2 \times x - 2 \times 4\)<br>
+          \(= 3x^2 + 12x - 2x - 8\)<br>
+          \(= 3x^2 + 10x - 8\)<br><br>
+          <b>Étape 2 — Soustraire \((x^2 + 5x)\) :</b><br>
+          \(= 3x^2 + 10x - 8 - x^2 - 5x\)<br>
+          \(= (3x^2 - x^2) + (10x - 5x) - 8\)<br>
+          <b>\(= 2x^2 + 5x - 8\)</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash mélanges.<br>
+        a) Résoudre \(7x - 3 = 18\) &nbsp;&nbsp; b) Factoriser \(x^2 - 49\) &nbsp;&nbsp; c) Développer \((x + 6)(x - 6)\) &nbsp;&nbsp; d) Résoudre \(-3x > 12\)</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(7x = 21\), \(x = \mathbf{3}\)<br>
+          b) \(x^2 - 49 = x^2 - 7^2 = \mathbf{(x-7)(x+7)}\)<br>
+          c) \((x+6)(x-6) = \mathbf{x^2 - 36}\)<br>
+          d) \(-3x > 12 \Rightarrow x < -4\) (inversion car division par négatif) → <b>\(x < -4\)</b>
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function qcm(btn, ok, expl) {
+  const opts = btn.closest('.qcm-opts');
+  opts.querySelectorAll('.qo').forEach(b => { b.disabled = true; });
+  const fb = opts.nextElementSibling;
+  if (ok) { btn.classList.add('ok'); fb.className = 'fb ok'; fb.textContent = '✓ Correct ! ' + (expl || ''); }
+  else { btn.classList.add('ko'); fb.className = 'fb ko'; fb.textContent = '✗ Incorrect. ' + (expl || ''); }
+}
+</script>
+<script src="../nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Automatismes – Statistiques & probabilités – Première Bac Pro</title>
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{--p:#dc2626;--s:#2f855a;--d:#991b1b;--o:#d97706;--t:#2d3748}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);margin:0;padding:20px;line-height:1.7}
+.c{max-width:860px;margin:auto;background:#fff;padding:30px 35px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+header{text-align:center;border-bottom:3px solid var(--p);margin-bottom:26px;padding-bottom:14px}
+.surtitre{margin:0 0 4px;color:#718096;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+h1{margin:0 0 5px;color:var(--p);font-size:1.55em}
+.sous-titre{margin:0;color:#718096;font-size:.88em}
+.nav-haut{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.nav-haut a{color:#991b1b;text-decoration:none;font-size:.83em;font-weight:700;padding:5px 11px;border-radius:6px;background:#fee2e2;border:1px solid #fecaca;transition:.15s}
+.nav-haut a:hover{background:#fecaca}
+.fml{background:#fef2f2;border:1.5px solid var(--p);border-radius:8px;padding:12px 18px;margin:14px 0;font-size:.94em}
+.fml-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:8px}
+@media(max-width:560px){.fml-grid{grid-template-columns:1fr}}
+.fml-row{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:5px 0;border-bottom:1px solid #fecaca;align-items:center;font-size:.93em}
+.fml-row:last-child{border-bottom:none}
+.fml-f{font-weight:600;color:#991b1b}
+.fml-df{color:#1e40af}
+.alerte{background:#fffbeb;border-left:4px solid var(--o);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0;font-size:.9em}
+.bloc-niveau{border:2px solid #e2e8f0;border-radius:10px;margin:22px 0;overflow:hidden}
+.bloc-niveau-header{padding:11px 18px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:1em;border-bottom:1px solid #e2e8f0}
+.n1 .bloc-niveau-header{background:#d1fae5;color:#065f46;border-bottom-color:#a7f3d0}
+.n2 .bloc-niveau-header{background:#dbeafe;color:#1e40af;border-bottom-color:#93c5fd}
+.n3 .bloc-niveau-header{background:#f3e8ff;color:#6d28d9;border-bottom-color:#d8b4fe}
+.bloc-niveau-body{padding:16px 18px}
+.exo{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:13px 16px;margin:10px 0}
+.exo-q{margin:0 0 8px;font-weight:600;font-size:.97em}
+.exo-q .num{color:var(--p);margin-right:4px}
+details{margin-top:6px}
+details summary{cursor:pointer;color:#991b1b;font-size:.86em;font-weight:600;list-style:none;padding:3px 0;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:'▸ Voir la réponse'}
+details[open] summary::before{content:'▾ Masquer la réponse'}
+.corr{background:#f0fff4;border-left:4px solid var(--s);padding:9px 13px;border-radius:0 8px 8px 0;margin-top:8px;font-size:.91em;line-height:1.55}
+.corr b{color:#065f46}
+.qcm-opts{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.qo{padding:6px 16px;border-radius:6px;border:2px solid #e2e8f0;background:#fff;cursor:pointer;font-size:.9em;transition:.15s;font-family:inherit}
+.qo:hover:not(:disabled){border-color:var(--p);background:#fef2f2}
+.qo.ok{background:#d1fae5;border-color:var(--s);color:#065f46;font-weight:700}
+.qo.ko{background:#fee2e2;border-color:var(--p);color:#991b1b}
+.qo:disabled{cursor:default}
+.fb{font-size:.85em;min-height:1.3em;font-weight:600;margin-top:3px}
+.fb.ok{color:var(--s)}.fb.ko{color:var(--p)}
+</style>
+</head>
+<body>
+<div class="c">
+
+  <nav class="nav-haut">
+    <a href="index.html">← Automatismes</a>
+    <a href="../maths-1ere-pro.html">↗ Maths 1ère</a>
+  </nav>
+
+  <header>
+    <p class="surtitre">⚡ Automatismes – Première Bac Pro</p>
+    <h1>🎲 Statistiques & probabilités</h1>
+    <p class="sous-titre">Mise à jour : 12 mars 2026</p>
+  </header>
+
+  <div class="alerte">
+    <strong>Objectif :</strong> Calculer des probabilités simples, lire des diagrammes, calculer des indicateurs statistiques (moyenne, médiane, étendue).
+  </div>
+
+  <div class="fml">
+    <strong>📋 Formulaire</strong>
+    <div class="fml-grid" style="margin-top:10px">
+      <div class="fml-row"><span class="fml-f">\(P(\bar{A}) = 1 - P(A)\)</span><span class="fml-df">Probabilité de l'événement contraire</span></div>
+      <div class="fml-row"><span class="fml-f">\(P(A \cup B) = P(A) + P(B)\)</span><span class="fml-df">Si A et B incompatibles</span></div>
+      <div class="fml-row"><span class="fml-f">\(\bar{x} = \frac{\sum x_i \cdot n_i}{\sum n_i}\)</span><span class="fml-df">Moyenne pondérée</span></div>
+      <div class="fml-row"><span class="fml-f">Médiane</span><span class="fml-df">Valeur qui partage la série en deux</span></div>
+      <div class="fml-row"><span class="fml-f">Étendue = max − min</span><span class="fml-df">Mesure de dispersion</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 1 ═══ -->
+  <div class="bloc-niveau n1">
+    <div class="bloc-niveau-header">🟢 Niveau 1 — Bases</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> On lance un dé équilibré à 6 faces. Quelle est la probabilité d'obtenir 3 ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(\frac{1}{3}\)</button>
+          <button class="qo" onclick="qcm(this,true,'Le dé a 6 faces équiprobables et une seule porte le 3 : P(3) = 1/6.')">B) \(\frac{1}{6}\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) \(\frac{3}{6}\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(\frac{1}{2}\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> On lance un dé équilibré à 6 faces. Quelle est la probabilité d'obtenir un nombre pair ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) \(\frac{1}{6}\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) \(\frac{1}{3}\)</button>
+          <button class="qo" onclick="qcm(this,true,'Les nombres pairs sont 2, 4, 6 → 3 cas favorables sur 6 → P = 3/6 = 1/2.')">C) \(\frac{1}{2}\)</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) \(\frac{2}{3}\)</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Un sac contient 4 billes rouges, 3 billes bleues et 5 billes vertes. On tire une bille au hasard. Calculer la probabilité de tirer une bille rouge.</p>
+        <details><summary></summary>
+        <div class="corr">
+          Nombre total de billes : 4 + 3 + 5 = <b>12</b><br>
+          Nombre de billes rouges : 4<br>
+          \(P(\text{rouge}) = \frac{4}{12} = \mathbf{\frac{1}{3}}\)
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Soit la série statistique : {4 ; 7 ; 7 ; 9 ; 13}. Quels sont le mode et la médiane ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'Le mode est 7 (plus fréquent), mais la médiane aussi est 7.')">A) Mode = 9, Médiane = 7</button>
+          <button class="qo" onclick="qcm(this,true,'Le mode est 7 (valeur la plus fréquente). La série ordonnée a 5 valeurs, la médiane est la 3ᵉ : 7.')">B) Mode = 7, Médiane = 7</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) Mode = 7, Médiane = 9</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) Mode = 4, Médiane = 8</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul statistique.<br>
+        a) Étendue de {3 ; 8 ; 12 ; 5 ; 1} &nbsp;&nbsp; b) Moyenne de {10 ; 20 ; 30} &nbsp;&nbsp; c) Médiane de {2 ; 5 ; 8 ; 11} &nbsp;&nbsp; d) P(obtenir un as dans un jeu de 32 cartes)</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) Étendue = 12 − 1 = <b>11</b><br>
+          b) Moyenne = (10 + 20 + 30) / 3 = <b>20</b><br>
+          c) Médiane = (5 + 8) / 2 = <b>6,5</b> (nombre pair de valeurs)<br>
+          d) Il y a 4 as dans un jeu de 32 cartes : P = 4/32 = <b>1/8</b>
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 2 ═══ -->
+  <div class="bloc-niveau n2">
+    <div class="bloc-niveau-header">🔵 Niveau 2 — Entraînement</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Dans un lycée, on a interrogé 200 élèves. 80 font du sport, dont 30 font du football. Quelle est la fréquence des footballeurs parmi les sportifs ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'30/200 = 0,15 est la fréquence parmi tous les élèves, pas parmi les sportifs.')">A) 15 %</button>
+          <button class="qo" onclick="qcm(this,true,'Parmi les sportifs (80), il y a 30 footballeurs : 30/80 = 0,375 = 37,5 %.')">B) 37,5 %</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 40 %</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 25 %</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Voici les notes d'un contrôle :<br>
+        | Note | 8 | 10 | 12 | 14 | 16 |<br>
+        | Effectif | 3 | 5 | 8 | 4 | 2 |<br>
+        Calculer l'étendue et la moyenne pondérée.</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>Étendue</b> = 16 − 8 = <b>8</b><br><br>
+          <b>Moyenne pondérée :</b><br>
+          \(\bar{x} = \frac{8 \times 3 + 10 \times 5 + 12 \times 8 + 14 \times 4 + 16 \times 2}{3 + 5 + 8 + 4 + 2}\)<br>
+          \(\bar{x} = \frac{24 + 50 + 96 + 56 + 32}{22} = \frac{258}{22} \approx \mathbf{11{,}7}\)
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> A et B sont deux événements incompatibles avec P(A) = 0,3 et P(B) = 0,5. Que vaut \(P(A \cup B)\) ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 0,15</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 0,2</button>
+          <button class="qo" onclick="qcm(this,true,'A et B incompatibles ⇒ P(A∪B) = P(A) + P(B) = 0,3 + 0,5 = 0,8.')">C) 0,8</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 1</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Un diagramme en bâtons indique les ventes d'un magasin par jour :<br>
+        Lundi : 12, Mardi : 18, Mercredi : 15, Jeudi : 20, Vendredi : 25.<br>
+        Quel jour a le plus de ventes ? Calculer la moyenne journalière.</p>
+        <details><summary></summary>
+        <div class="corr">
+          Le jour avec le plus de ventes est <b>vendredi</b> (25 ventes).<br><br>
+          Moyenne journalière : \(\frac{12 + 18 + 15 + 20 + 25}{5} = \frac{90}{5} = \mathbf{18}\) ventes par jour.
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash probabilités.<br>
+        a) P(A) = 0,7 → P(Ā) = ? &nbsp;&nbsp; b) On tire une carte d'un jeu de 52 : P(cœur) = ? &nbsp;&nbsp; c) Deux événements incompatibles : P(A) = 0,4, P(B) = 0,35, P(A∪B) = ?</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(P(\bar{A}) = 1 - 0{,}7 = \mathbf{0{,}3}\)<br>
+          b) 13 cœurs sur 52 : \(P(\text{cœur}) = \frac{13}{52} = \mathbf{\frac{1}{4}}\)<br>
+          c) \(P(A \cup B) = 0{,}4 + 0{,}35 = \mathbf{0{,}75}\)
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 3 ═══ -->
+  <div class="bloc-niveau n3">
+    <div class="bloc-niveau-header">🟣 Niveau 3 — Automatisation</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Un technicien vérifie des pièces. La probabilité qu'une pièce soit conforme est 0,9. Si elle est conforme, la probabilité qu'elle passe le test final est 0,8. Quelle est la probabilité qu'une pièce soit conforme ET passe le test final ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 0,9</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 0,8</button>
+          <button class="qo" onclick="qcm(this,true,'P(A∩B) = P(A) × P(B sachant A) = 0,9 × 0,8 = 0,72.')">C) 0,72</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 1,7</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Voici les résultats d'un contrôle (valeurs ordonnées) :<br>
+        3 ; 5 ; 7 ; 8 ; 9 ; 10 ; 11 ; 12 ; 14 ; 15 ; 16 ; 18<br>
+        Déterminer la médiane, le premier quartile Q₁, le troisième quartile Q₃ et l'intervalle interquartile. Interpréter.</p>
+        <details><summary></summary>
+        <div class="corr">
+          12 valeurs ordonnées.<br>
+          <b>Médiane</b> : moyenne des 6ᵉ et 7ᵉ valeurs = (10 + 11) / 2 = <b>10,5</b><br>
+          <b>Q₁</b> : médiane de la première moitié {3 ; 5 ; 7 ; 8 ; 9 ; 10} = (7 + 8) / 2 = <b>7,5</b><br>
+          <b>Q₃</b> : médiane de la seconde moitié {11 ; 12 ; 14 ; 15 ; 16 ; 18} = (14 + 15) / 2 = <b>14,5</b><br>
+          <b>Intervalle interquartile</b> = Q₃ − Q₁ = 14,5 − 7,5 = <b>7</b><br><br>
+          <b>Interprétation :</b> 50 % des notes sont comprises entre 7,5 et 14,5. L'étendue interquartile de 7 points montre une dispersion modérée des résultats.
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> La probabilité qu'il pleuve demain est P(A) = 0,35. Quelle est la probabilité qu'il ne pleuve pas ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 0,35</button>
+          <button class="qo" onclick="qcm(this,true,'P(Ā) = 1 − P(A) = 1 − 0,35 = 0,65.')">B) 0,65</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 0,50</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 1,35</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Voici les températures relevées sur 10 jours (en °C) :<br>
+        12 ; 14 ; 14 ; 15 ; 16 ; 18 ; 18 ; 18 ; 20 ; 21<br>
+        Calculer la moyenne, la médiane, Q₁, Q₃ et l'étendue.</p>
+        <details><summary></summary>
+        <div class="corr">
+          <b>Moyenne :</b> \(\bar{x} = \frac{12+14+14+15+16+18+18+18+20+21}{10} = \frac{166}{10} = \mathbf{16{,}6\;°C}\)<br><br>
+          <b>Médiane :</b> 10 valeurs → moyenne des 5ᵉ et 6ᵉ = (16 + 18) / 2 = <b>17 °C</b><br><br>
+          <b>Q₁ :</b> médiane de {12 ; 14 ; 14 ; 15 ; 16} = <b>14 °C</b> (3ᵉ valeur)<br>
+          <b>Q₃ :</b> médiane de {18 ; 18 ; 18 ; 20 ; 21} = <b>18 °C</b> (3ᵉ valeur)<br><br>
+          <b>Étendue :</b> 21 − 12 = <b>9 °C</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash mélanges stats + probas.<br>
+        a) Moyenne de {5 ; 5 ; 10 ; 10 ; 10 ; 20} &nbsp;&nbsp; b) P(A) = 0,6, P(B) = 0,25, A et B incompatibles → P(A∪B) ? &nbsp;&nbsp; c) Étendue de {100 ; 150 ; 200 ; 250} &nbsp;&nbsp; d) Un sac : 3 jetons rouges, 7 bleus → P(bleu) ?</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(\bar{x} = \frac{5+5+10+10+10+20}{6} = \frac{60}{6} = \mathbf{10}\)<br>
+          b) \(P(A \cup B) = 0{,}6 + 0{,}25 = \mathbf{0{,}85}\)<br>
+          c) Étendue = 250 − 100 = <b>150</b><br>
+          d) \(P(\text{bleu}) = \frac{7}{10} = \mathbf{0{,}7}\)
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function qcm(btn, ok, expl) {
+  const opts = btn.closest('.qcm-opts');
+  opts.querySelectorAll('.qo').forEach(b => { b.disabled = true; });
+  const fb = opts.nextElementSibling;
+  if (ok) { btn.classList.add('ok'); fb.className = 'fb ok'; fb.textContent = '✓ Correct ! ' + (expl || ''); }
+  else { btn.classList.add('ko'); fb.className = 'fb ko'; fb.textContent = '✗ Incorrect. ' + (expl || ''); }
+}
+</script>
+<script src="../nav.js"></script>
+</body>
+</html>

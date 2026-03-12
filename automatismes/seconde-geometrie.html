@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Automatismes – Géométrie – Seconde Bac Pro</title>
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}}</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{--p:#059669;--s:#2f855a;--d:#065f46;--o:#d97706;--t:#2d3748}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:var(--t);margin:0;padding:20px;line-height:1.7}
+.c{max-width:860px;margin:auto;background:#fff;padding:30px 35px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+header{text-align:center;border-bottom:3px solid var(--p);margin-bottom:26px;padding-bottom:14px}
+.surtitre{margin:0 0 4px;color:#718096;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+h1{margin:0 0 5px;color:var(--p);font-size:1.55em}
+.sous-titre{margin:0;color:#718096;font-size:.88em}
+.nav-haut{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.nav-haut a{color:#065f46;text-decoration:none;font-size:.83em;font-weight:700;padding:5px 11px;border-radius:6px;background:#ecfdf5;border:1px solid #a7f3d0;transition:.15s}
+.nav-haut a:hover{background:#d1fae5}
+.fml{background:#ecfdf5;border:1.5px solid var(--p);border-radius:8px;padding:12px 18px;margin:14px 0;font-size:.94em}
+.alerte{background:#fffbeb;border-left:4px solid var(--o);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0;font-size:.9em}
+.bloc-niveau{border:2px solid #e2e8f0;border-radius:10px;margin:22px 0;overflow:hidden}
+.bloc-niveau-header{padding:11px 18px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:1em;border-bottom:1px solid #e2e8f0}
+.n1 .bloc-niveau-header{background:#d1fae5;color:#065f46;border-bottom-color:#a7f3d0}
+.n2 .bloc-niveau-header{background:#dbeafe;color:#1e40af;border-bottom-color:#93c5fd}
+.n3 .bloc-niveau-header{background:#f3e8ff;color:#6d28d9;border-bottom-color:#d8b4fe}
+.bloc-niveau-body{padding:16px 18px}
+.exo{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:13px 16px;margin:10px 0}
+.exo-q{margin:0 0 8px;font-weight:600;font-size:.97em}
+.exo-q .num{color:var(--p);margin-right:4px}
+details{margin-top:6px}
+details summary{cursor:pointer;color:#065f46;font-size:.86em;font-weight:600;list-style:none;padding:3px 0;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:'▸ Voir la réponse'}
+details[open] summary::before{content:'▾ Masquer la réponse'}
+.corr{background:#f0fff4;border-left:4px solid var(--s);padding:9px 13px;border-radius:0 8px 8px 0;margin-top:8px;font-size:.91em;line-height:1.55}
+.corr b{color:#065f46}
+.qcm-opts{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.qo{padding:6px 16px;border-radius:6px;border:2px solid #e2e8f0;background:#fff;cursor:pointer;font-size:.9em;transition:.15s;font-family:inherit}
+.qo:hover:not(:disabled){border-color:var(--p);background:#ecfdf5}
+.qo.ok{background:#d1fae5;border-color:var(--s);color:#065f46;font-weight:700}
+.qo.ko{background:#fee2e2;border-color:var(--p);color:#991b1b}
+.qo:disabled{cursor:default}
+.fb{font-size:.85em;min-height:1.3em;font-weight:600;margin-top:3px}
+.fb.ok{color:var(--s)}.fb.ko{color:var(--p)}
+</style>
+</head>
+<body>
+<div class="c">
+
+  <nav class="nav-haut">
+    <a href="index.html">← Automatismes</a>
+    <a href="../maths-2nde-mama.html">↗ Maths 2nde</a>
+  </nav>
+
+  <header>
+    <p class="surtitre">⚡ Automatismes – Seconde Bac Pro</p>
+    <h1>📐 Géométrie</h1>
+    <p class="sous-titre">Mise à jour : 12 mars 2026</p>
+  </header>
+
+  <div class="alerte">
+    <strong>Objectif :</strong> Reconnaître et appliquer le théorème de Pythagore et le théorème de Thalès, calculer des aires rapidement.
+  </div>
+
+  <div class="fml">
+    <strong>📋 Formulaire express</strong>
+    <p style="margin:8px 0 4px"><b>Pythagore :</b> Dans un triangle rectangle, \(a^2 + b^2 = c^2\) (où \(c\) est l'hypoténuse)</p>
+    <p style="margin:4px 0"><b>Thalès :</b> \(\dfrac{AM}{AB} = \dfrac{AN}{AC}\) (droites parallèles coupant deux sécantes)</p>
+    <p style="margin:4px 0"><b>Aires :</b> Carré \(= a^2\) &nbsp;|&nbsp; Rectangle \(= L \times \ell\) &nbsp;|&nbsp; Disque \(= \pi r^2\) &nbsp;|&nbsp; Triangle \(= \dfrac{b \times h}{2}\)</p>
+  </div>
+
+  <!-- ═══ NIVEAU 1 ═══ -->
+  <div class="bloc-niveau n1">
+    <div class="bloc-niveau-header">🟢 Niveau 1 — Bases</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Quelle est l'aire d'un carré de côté 7 cm ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'14 cm² serait le double du côté, pas l\'aire.')">A) 14 cm²</button>
+          <button class="qo" onclick="qcm(this,false,'28 cm² est le périmètre.')">B) 28 cm²</button>
+          <button class="qo" onclick="qcm(this,true,'Aire = côté² = 7² = 49 cm².')">C) 49 cm²</button>
+          <button class="qo" onclick="qcm(this,false,'343 serait le volume d\'un cube.')">D) 343 cm²</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Quelle est l'aire d'un rectangle de 5 m × 3 m ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'8 m² est la somme des côtés.')">A) 8 m²</button>
+          <button class="qo" onclick="qcm(this,false,'16 m² est le périmètre.')">B) 16 m²</button>
+          <button class="qo" onclick="qcm(this,true,'Aire = L × ℓ = 5 × 3 = 15 m².')">C) 15 m²</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 30 m²</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Calculer l'aire d'un disque de rayon 4 cm (arrondir à l'unité).</p>
+        <details><summary></summary>
+        <div class="corr">
+          \(\mathcal{A} = \pi r^2 = \pi \times 4^2 = 16\pi \approx \mathbf{50}\) <b>cm²</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Un triangle rectangle a des côtés de 3 cm et 4 cm. Quelle est la longueur de l'hypoténuse ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'7 est la somme, pas l\'hypoténuse.')">A) 7 cm</button>
+          <button class="qo" onclick="qcm(this,true,'c² = 3² + 4² = 9 + 16 = 25, donc c = √25 = 5 cm.')">B) 5 cm</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) √7 cm</button>
+          <button class="qo" onclick="qcm(this,false,'25 est c², pas c.')">D) 25 cm</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul :<br>
+        a) Aire d'un triangle de base 10 cm et hauteur 6 cm &nbsp;&nbsp; b) \(\sqrt{169 - 25}\) &nbsp;&nbsp; c) Un carré a une aire de 64 cm² : côté ? &nbsp;&nbsp; d) Périmètre d'un disque de rayon 5 cm</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(\dfrac{10 \times 6}{2} = \mathbf{30}\) <b>cm²</b><br>
+          b) \(\sqrt{169 - 25} = \sqrt{144} = \mathbf{12}\)<br>
+          c) \(\sqrt{64} = \mathbf{8}\) <b>cm</b><br>
+          d) \(2\pi r = 2\pi \times 5 = 10\pi \approx \mathbf{31{,}4}\) <b>cm</b>
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 2 ═══ -->
+  <div class="bloc-niveau n2">
+    <div class="bloc-niveau-header">🔵 Niveau 2 — Entraînement</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Théorème de Thalès : \(\dfrac{AM}{AB} = \dfrac{AN}{AC} = \dfrac{2}{5}\). Si \(AN = 3\), que vaut \(AC\) ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'AN/AC = 2/5, donc 3/AC = 2/5, soit AC = 3 × 5 ÷ 2 = 7,5.')">A) 7,5</button>
+          <button class="qo" onclick="qcm(this,false,'')">B) 6</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 1,2</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 3,75</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Un triangle rectangle a une hypoténuse de 13 cm et un côté de 5 cm. Calculer l'autre côté, puis l'aire du triangle.</p>
+        <details><summary></summary>
+        <div class="corr">
+          \(b^2 = 13^2 - 5^2 = 169 - 25 = 144\)<br>
+          \(b = \sqrt{144} = \mathbf{12}\) <b>cm</b><br>
+          Aire : \(\dfrac{5 \times 12}{2} = \mathbf{30}\) <b>cm²</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Quelle est l'aire d'un demi-disque de diamètre 10 cm ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,true,'Rayon = 5 cm. Aire disque = π × 5² = 25π ≈ 78,5. Demi-disque ≈ 39,3 cm².')">A) ≈ 39,3 cm²</button>
+          <button class="qo" onclick="qcm(this,false,'C\'est l\'aire du disque entier.')">B) ≈ 78,5 cm²</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) ≈ 157 cm²</button>
+          <button class="qo" onclick="qcm(this,false,'C\'est le périmètre du disque.')">D) ≈ 31,4 cm²</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Un escalier : chaque marche fait 17 cm de haut et 28 cm de profondeur. Calculer la longueur de la « pente » (hypoténuse d'une marche). Hauteur totale pour 14 marches ?</p>
+        <details><summary></summary>
+        <div class="corr">
+          Hypoténuse d'une marche : \(\sqrt{17^2 + 28^2} = \sqrt{289 + 784} = \sqrt{1073} \approx \mathbf{32{,}8}\) <b>cm</b><br>
+          Hauteur totale : \(14 \times 17 = \mathbf{238}\) <b>cm</b> = 2,38 m
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul :<br>
+        a) Diagonale d'un carré de côté 6 cm &nbsp;&nbsp; b) Thalès : \(\dfrac{4}{10} = \dfrac{x}{15}\) &nbsp;&nbsp; c) Aire d'un terrain en L : 8×12 + 5×4 &nbsp;&nbsp; d) Périmètre d'un triangle équilatéral de côté 9 cm</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(d = 6\sqrt{2} \approx \mathbf{8{,}49}\) <b>cm</b><br>
+          b) \(x = \dfrac{4 \times 15}{10} = \mathbf{6}\)<br>
+          c) \(8 \times 12 + 5 \times 4 = 96 + 20 = \mathbf{116}\) <b>m²</b><br>
+          d) \(3 \times 9 = \mathbf{27}\) <b>cm</b>
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NIVEAU 3 ═══ -->
+  <div class="bloc-niveau n3">
+    <div class="bloc-niveau-header">🟣 Niveau 3 — Automatisation</div>
+    <div class="bloc-niveau-body">
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q1.</span> Une poutre sous un toit : le pied est au sol à 4 m du mur, le sommet est à 3 m de hauteur. Quelle est la longueur de la poutre ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'')">A) 7 m</button>
+          <button class="qo" onclick="qcm(this,true,'c² = 4² + 3² = 16 + 9 = 25, donc c = √25 = 5 m.')">B) 5 m</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) √7 m</button>
+          <button class="qo" onclick="qcm(this,false,'25 est c², pas c.')">D) 25 m</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q2.</span> Un terrain trapézoïdal a des bases de 12 m et 8 m, une hauteur de 6 m. Calculer son aire. Puis, sachant que les côtés obliques mesurent 7 m chacun, calculer le périmètre (clôture).</p>
+        <details><summary></summary>
+        <div class="corr">
+          Aire du trapèze : \(\dfrac{(12 + 8) \times 6}{2} = \dfrac{20 \times 6}{2} = \mathbf{60}\) <b>m²</b><br>
+          Périmètre : \(12 + 8 + 7 + 7 = \mathbf{34}\) <b>m</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q3.</span> Deux triangles sont semblables avec un rapport \(k = 3\). Si l'aire du petit triangle est 5 cm², quelle est l'aire du grand ?</p>
+        <div class="qcm-opts">
+          <button class="qo" onclick="qcm(this,false,'Les aires ne sont pas multipliées par k mais par k².')">A) 15 cm²</button>
+          <button class="qo" onclick="qcm(this,true,'Les aires sont multipliées par k² = 3² = 9. Donc 5 × 9 = 45 cm².')">B) 45 cm²</button>
+          <button class="qo" onclick="qcm(this,false,'')">C) 125 cm²</button>
+          <button class="qo" onclick="qcm(this,false,'')">D) 9 cm²</button>
+        </div>
+        <p class="fb"></p>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q4.</span> Un tuyau a un rayon extérieur de 5 cm et un rayon intérieur de 3 cm. Calculer l'aire de la section (couronne circulaire).</p>
+        <details><summary></summary>
+        <div class="corr">
+          Aire de la couronne : \(\pi R^2 - \pi r^2 = \pi(R^2 - r^2)\)<br>
+          \(= \pi(5^2 - 3^2) = \pi(25 - 9) = 16\pi \approx \mathbf{50{,}3}\) <b>cm²</b>
+        </div>
+        </details>
+      </div>
+
+      <div class="exo">
+        <p class="exo-q"><span class="num">Q5.</span> Flash-calcul :<br>
+        a) Diagonale d'un rectangle 9 × 12 &nbsp;&nbsp; b) Aire d'une couronne (\(R = 10\), \(r = 6\)) &nbsp;&nbsp; c) Pythagore : côtés 5 et 12, hypoténuse ? &nbsp;&nbsp; d) Hauteur d'un triangle équilatéral de côté 8 cm</p>
+        <details><summary></summary>
+        <div class="corr">
+          a) \(\sqrt{9^2 + 12^2} = \sqrt{81 + 144} = \sqrt{225} = \mathbf{15}\)<br>
+          b) \(\pi(10^2 - 6^2) = \pi(100 - 36) = 64\pi \approx \mathbf{201{,}1}\) <b>cm²</b><br>
+          c) \(\sqrt{5^2 + 12^2} = \sqrt{25 + 144} = \sqrt{169} = \mathbf{13}\)<br>
+          d) \(h = \dfrac{8\sqrt{3}}{2} = 4\sqrt{3} \approx \mathbf{6{,}93}\) <b>cm</b>
+        </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function qcm(btn, ok, expl) {
+  const opts = btn.closest('.qcm-opts');
+  opts.querySelectorAll('.qo').forEach(b => { b.disabled = true; });
+  const fb = opts.nextElementSibling;
+  if (ok) { btn.classList.add('ok'); fb.className = 'fb ok'; fb.textContent = '✓ Correct ! ' + (expl || ''); }
+  else { btn.classList.add('ko'); fb.className = 'fb ko'; fb.textContent = '✗ Incorrect. ' + (expl || ''); }
+}
+</script>
+<script src="../nav.js"></script>
+</body>
+</html>
