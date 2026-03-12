@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch02 – Exercices – Fonctions d'une variable réelle – BTS</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#1e3a5f;--p-bg:#eef2f7;--p-border:#93a5c0}</style>
+<link rel="stylesheet" href="/nav.css">
+</head>
+<body>
+<div class="c">
+<a href="../../sommaire.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>Exercices – Chapitre 2</h1>
+  <p class="sous-titre">Fonctions d'une variable réelle &nbsp;|&nbsp; BTS — Tous groupements</p>
+</header>
+
+<div class="objectifs">
+  <strong>Compétences travaillées :</strong>
+  <ul>
+    <li>Déterminer un domaine de définition et étudier la parité d'une fonction</li>
+    <li>Calculer des limites, lever des formes indéterminées</li>
+    <li>Appliquer le théorème des valeurs intermédiaires</li>
+    <li>Dériver des fonctions (fonctions composées incluses)</li>
+    <li>Exploiter les propriétés de \(\ln\), \(\exp\) et des fonctions puissances</li>
+    <li>Mener une étude complète de fonction</li>
+    <li>Modéliser et résoudre des problèmes concrets</li>
+  </ul>
+</div>
+
+<!-- ================================================================== -->
+<!-- NIVEAU 1 — Vérifier les bases -->
+<!-- ================================================================== -->
+<div class="section-titre">
+  <span class="niveau n1">Niveau 1 — Vérifier les bases</span>
+  <div class="section-ligne"></div>
+</div>
+
+<!-- EX 1 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">1</span>Domaines de définition</div>
+  <p>Déterminer le domaine de définition de chacune des fonctions suivantes :</p>
+  <ol type="a">
+    <li>\(f(x) = \dfrac{x+3}{x^2 - 4}\)</li>
+    <li>\(g(x) = \sqrt{5 - 2x}\)</li>
+    <li>\(h(x) = \ln(3x + 6)\)</li>
+    <li>\(k(x) = \dfrac{1}{\sqrt{x-1}} + \ln(4-x)\)</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Dénominateur : \(x^2 - 4 = 0 \Leftrightarrow x = \pm 2\).</p>
+    <p>\(\mathcal{D}_f = \mathbb{R} \setminus \{-2\,;\,2\}\).</p>
+    <p><strong>b)</strong> Condition : \(5 - 2x \geq 0 \Leftrightarrow x \leq \frac{5}{2}\).</p>
+    <p>\(\mathcal{D}_g = \left]-\infty\,;\,\frac{5}{2}\right]\).</p>
+    <p><strong>c)</strong> Condition : \(3x + 6 > 0 \Leftrightarrow x > -2\).</p>
+    <p>\(\mathcal{D}_h = \left]-2\,;\,+\infty\right[\).</p>
+    <p><strong>d)</strong> Racine au dénominateur : \(x - 1 > 0 \Leftrightarrow x > 1\). Logarithme : \(4 - x > 0 \Leftrightarrow x < 4\).</p>
+    <p>\(\mathcal{D}_k = \left]1\,;\,4\right[\).</p>
+  </div>
+</div>
+
+<!-- EX 2 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">2</span>Parité de fonctions</div>
+  <p>Pour chaque fonction, dire si elle est paire, impaire ou ni l'une ni l'autre. Justifier.</p>
+  <ol type="a">
+    <li>\(f(x) = x^4 - 3x^2 + 1\)</li>
+    <li>\(g(x) = \dfrac{x}{x^2 + 1}\)</li>
+    <li>\(h(x) = e^x + e^{-x}\)</li>
+    <li>\(k(x) = x^3 + x + 2\)</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(f(-x) = (-x)^4 - 3(-x)^2 + 1 = x^4 - 3x^2 + 1 = f(x)\). La fonction est <strong>paire</strong>.</p>
+    <p><strong>b)</strong> \(g(-x) = \dfrac{-x}{(-x)^2+1} = \dfrac{-x}{x^2+1} = -g(x)\). La fonction est <strong>impaire</strong>.</p>
+    <p><strong>c)</strong> \(h(-x) = e^{-x} + e^{x} = h(x)\). La fonction est <strong>paire</strong>. (C'est \(2\cosh x\).)</p>
+    <p><strong>d)</strong> \(k(-x) = -x^3 - x + 2\). On a \(k(-x) \neq k(x)\) (car \(\neq x^3+x+2\)) et \(k(-x) \neq -k(x)\) (car \(-k(x) = -x^3 - x - 2 \neq k(-x)\)). <strong>Ni paire ni impaire.</strong></p>
+  </div>
+</div>
+
+<!-- EX 3 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">3</span>Calculs de limites directes</div>
+  <p>Calculer les limites suivantes :</p>
+  <ol type="a">
+    <li>\(\displaystyle\lim_{x \to +\infty} \frac{5x^3 - 2x}{3x^3 + 1}\)</li>
+    <li>\(\displaystyle\lim_{x \to 3^+} \frac{x+1}{x-3}\)</li>
+    <li>\(\displaystyle\lim_{x \to +\infty} (2e^{-x} + 3)\)</li>
+    <li>\(\displaystyle\lim_{x \to 0^+} \left(\ln x + x^2\right)\)</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> On factorise par \(x^3\) : \(\dfrac{5 - \frac{2}{x^2}}{3 + \frac{1}{x^3}} \xrightarrow[x \to +\infty]{} \dfrac{5}{3}\).</p>
+    <p><strong>b)</strong> Quand \(x \to 3^+\) : numérateur \(\to 4 > 0\) ; dénominateur \(\to 0^+\). Donc \(\displaystyle\lim_{x \to 3^+} \frac{x+1}{x-3} = +\infty\).</p>
+    <p><strong>c)</strong> \(e^{-x} \to 0\) quand \(x \to +\infty\), donc la limite est \(0 + 3 = 3\).</p>
+    <p><strong>d)</strong> \(\ln x \to -\infty\) et \(x^2 \to 0\) quand \(x \to 0^+\). Donc \(\displaystyle\lim_{x \to 0^+} (\ln x + x^2) = -\infty\).</p>
+  </div>
+</div>
+
+<!-- EX 4 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">4</span>Dérivées — Fonctions simples</div>
+  <p>Calculer la dérivée de chacune des fonctions suivantes :</p>
+  <ol type="a">
+    <li>\(f(x) = 3x^4 - 2x^3 + 5x - 7\)</li>
+    <li>\(g(x) = \dfrac{2x+1}{x-3}\)</li>
+    <li>\(h(x) = (x^2+1)\,e^x\)</li>
+    <li>\(k(x) = 5\ln x - \dfrac{1}{x}\)</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(f'(x) = 12x^3 - 6x^2 + 5\).</p>
+    <p><strong>b)</strong> Quotient : \(g'(x) = \dfrac{2(x-3) - (2x+1)(1)}{(x-3)^2} = \dfrac{2x - 6 - 2x - 1}{(x-3)^2} = \dfrac{-7}{(x-3)^2}\).</p>
+    <p><strong>c)</strong> Produit : \(h'(x) = 2x\,e^x + (x^2+1)\,e^x = e^x(x^2 + 2x + 1) = e^x(x+1)^2\).</p>
+    <p><strong>d)</strong> \(k'(x) = \dfrac{5}{x} + \dfrac{1}{x^2} = \dfrac{5x + 1}{x^2}\) pour \(x > 0\).</p>
+  </div>
+</div>
+
+<!-- ================================================================== -->
+<!-- NIVEAU 2 — Appliquer le cours -->
+<!-- ================================================================== -->
+<div class="section-titre">
+  <span class="niveau n2">Niveau 2 — Appliquer le cours</span>
+  <div class="section-ligne"></div>
+</div>
+
+<!-- EX 5 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">5</span>Formes indéterminées et croissances comparées</div>
+  <p>Calculer les limites suivantes en précisant la forme indéterminée rencontrée :</p>
+  <ol type="a">
+    <li>\(\displaystyle\lim_{x \to +\infty} \frac{x^2 - 3x + 2}{2x^2 + x - 5}\)</li>
+    <li>\(\displaystyle\lim_{x \to +\infty} \left(\sqrt{x^2 + 3x} - x\right)\)</li>
+    <li>\(\displaystyle\lim_{x \to +\infty} x^3\,e^{-2x}\)</li>
+    <li>\(\displaystyle\lim_{x \to 0^+} x\,\ln x\)</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Forme \(\frac{\infty}{\infty}\). On factorise par \(x^2\) :</p>
+    <p>\(\dfrac{1 - \frac{3}{x} + \frac{2}{x^2}}{2 + \frac{1}{x} - \frac{5}{x^2}} \xrightarrow[x \to +\infty]{} \dfrac{1}{2}\).</p>
+
+    <p><strong>b)</strong> Forme \(\infty - \infty\). On multiplie par l'expression conjuguée :</p>
+    <p>\(\sqrt{x^2+3x} - x = \dfrac{(x^2+3x) - x^2}{\sqrt{x^2+3x}+x} = \dfrac{3x}{\sqrt{x^2+3x}+x}\).</p>
+    <p>On factorise par \(x\) (\(x > 0\)) : \(\dfrac{3x}{x\left(\sqrt{1+\frac{3}{x}}+1\right)} = \dfrac{3}{\sqrt{1+\frac{3}{x}}+1} \xrightarrow[x \to +\infty]{} \dfrac{3}{2}\).</p>
+
+    <p><strong>c)</strong> Forme \(\infty \times 0\). On écrit \(x^3\,e^{-2x} = \dfrac{x^3}{e^{2x}}\). On pose \(X = 2x\), alors \(x = \frac{X}{2}\) et \(\dfrac{x^3}{e^{2x}} = \dfrac{X^3}{8\,e^X}\). Par croissances comparées, \(\dfrac{X^3}{e^X} \to 0\), donc la limite est \(\boxed{0}\).</p>
+
+    <p><strong>d)</strong> Forme \(0 \times (-\infty)\). On pose \(t = \frac{1}{x}\) (\(t \to +\infty\)) : \(x\,\ln x = \frac{1}{t}\,\ln\frac{1}{t} = -\frac{\ln t}{t}\). Par croissances comparées, \(\frac{\ln t}{t} \to 0\), donc \(\displaystyle\lim_{x \to 0^+} x\,\ln x = \boxed{0}\).</p>
+  </div>
+</div>
+
+<!-- EX 6 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">6</span>Dérivées de fonctions composées</div>
+  <p>Calculer la dérivée des fonctions suivantes (préciser le domaine) :</p>
+  <ol type="a">
+    <li>\(f(x) = e^{2x^2 - 3x}\)</li>
+    <li>\(g(x) = \ln(x^2 + 2x + 5)\)</li>
+    <li>\(h(x) = \sqrt{3x^2 - 12}\)</li>
+    <li>\(k(x) = (2x-1)^5\)</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(u(x) = 2x^2 - 3x\), \(u'(x) = 4x - 3\).</p>
+    <p>\(f'(x) = (4x-3)\,e^{2x^2-3x}\), définie sur \(\mathbb{R}\).</p>
+
+    <p><strong>b)</strong> \(u(x) = x^2 + 2x + 5 = (x+1)^2 + 4 > 0\) pour tout \(x\), donc \(\mathcal{D}_g = \mathbb{R}\).</p>
+    <p>\(g'(x) = \dfrac{2x+2}{x^2+2x+5}\).</p>
+
+    <p><strong>c)</strong> \(u(x) = 3x^2 - 12\). Condition : \(3x^2 - 12 > 0 \Leftrightarrow x^2 > 4 \Leftrightarrow x \in ]-\infty;-2[\,\cup\,]2;+\infty[\).</p>
+    <p>\(h'(x) = \dfrac{6x}{2\sqrt{3x^2-12}} = \dfrac{3x}{\sqrt{3x^2-12}}\).</p>
+
+    <p><strong>d)</strong> \(k'(x) = 5 \times 2 \times (2x-1)^4 = 10\,(2x-1)^4\), définie sur \(\mathbb{R}\).</p>
+  </div>
+</div>
+
+<!-- EX 7 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">7</span>Application du TVI</div>
+  <p>Soit \(f(x) = x + e^{-x} - 2\).</p>
+  <ol>
+    <li>Calculer \(f(0)\) et \(f(3)\).</li>
+    <li>Montrer que \(f\) est continue et strictement croissante sur \([0\,;\,3]\).</li>
+    <li>En déduire que l'équation \(f(x) = 0\) admet une unique solution \(\alpha\) dans \([0\,;\,3]\).</li>
+    <li>Encadrer \(\alpha\) à \(10^{-1}\) près.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(f(0) = 0 + 1 - 2 = -1 < 0\). \(f(3) = 3 + e^{-3} - 2 \approx 1{,}05 > 0\).</p>
+    <p><strong>2.</strong> \(f\) est continue sur \(\mathbb{R}\) (somme de fonctions continues). Dérivée : \(f'(x) = 1 - e^{-x}\). Pour \(x > 0\), \(e^{-x} < 1\), donc \(f'(x) > 0\) : \(f\) est strictement croissante sur \(]0\,;\,+\infty[\).</p>
+    <p><strong>3.</strong> \(f(0) < 0 < f(3)\). Par le TVI (corollaire, car \(f\) continue et strictement croissante), l'équation \(f(x) = 0\) admet une <strong>unique solution</strong> \(\alpha \in [0\,;\,3]\).</p>
+    <p><strong>4.</strong> Dichotomie : \(f(1) = 1 + e^{-1} - 2 \approx -0{,}632 < 0\), \(f(1{,}8) \approx 1{,}8 + e^{-1{,}8} - 2 \approx -0{,}035 < 0\), \(f(1{,}9) \approx 1{,}9 + e^{-1{,}9} - 2 \approx 0{,}050 > 0\).</p>
+    <p>Donc \(\boxed{1{,}8 < \alpha < 1{,}9}\).</p>
+  </div>
+</div>
+
+<!-- EX 8 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">8</span>Équations logarithmiques et exponentielles</div>
+  <p>Résoudre dans \(\mathbb{R}\) :</p>
+  <ol type="a">
+    <li>\(e^{2x-1} = 7\)</li>
+    <li>\(\ln(x-1) + \ln(x+3) = \ln 5\)</li>
+    <li>\(3^x = 20\) (écrire \(x\) en fonction de \(\ln\))</li>
+    <li>\(e^{2x} - 5\,e^x + 6 = 0\)</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(2x - 1 = \ln 7\), soit \(x = \dfrac{1+\ln 7}{2} \approx 1{,}47\).</p>
+
+    <p><strong>b)</strong> Conditions : \(x > 1\) et \(x > -3\), soit \(x > 1\).</p>
+    <p>\(\ln\big[(x-1)(x+3)\big] = \ln 5\), donc \((x-1)(x+3) = 5\).</p>
+    <p>\(x^2 + 2x - 3 = 5 \Leftrightarrow x^2 + 2x - 8 = 0\).</p>
+    <p>\(\Delta = 4 + 32 = 36\). \(x = \dfrac{-2 \pm 6}{2}\), soit \(x = 2\) ou \(x = -4\).</p>
+    <p>Condition \(x > 1\) : seul \(\boxed{x = 2}\) convient.</p>
+
+    <p><strong>c)</strong> \(3^x = e^{x\ln 3}\), donc \(e^{x\ln 3} = 20\), soit \(x\ln 3 = \ln 20\).</p>
+    <p>\(x = \dfrac{\ln 20}{\ln 3} \approx 2{,}73\).</p>
+
+    <p><strong>d)</strong> On pose \(X = e^x > 0\) : \(X^2 - 5X + 6 = 0\).</p>
+    <p>\(\Delta = 25 - 24 = 1\). \(X = \dfrac{5 \pm 1}{2}\), soit \(X = 3\) ou \(X = 2\).</p>
+    <p>\(e^x = 3 \Rightarrow x = \ln 3\) ; \(e^x = 2 \Rightarrow x = \ln 2\).</p>
+    <p>\(\mathcal{S} = \{\ln 2\,;\,\ln 3\}\).</p>
+  </div>
+</div>
+
+<!-- ================================================================== -->
+<!-- NIVEAU 3 — Approfondir -->
+<!-- ================================================================== -->
+<div class="section-titre">
+  <span class="niveau n3">Niveau 3 — Approfondir</span>
+  <div class="section-ligne"></div>
+</div>
+
+<!-- EX 9 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">9</span>Étude complète — Fonction rationnelle</div>
+  <p>Soit \(f(x) = \dfrac{x^2 - 1}{x^2 + 1}\).</p>
+  <ol>
+    <li>Déterminer \(\mathcal{D}_f\) et étudier la parité de \(f\).</li>
+    <li>Calculer les limites en \(\pm\infty\). En déduire l'existence d'une asymptote.</li>
+    <li>Calculer \(f'(x)\), étudier son signe et dresser le tableau de variations.</li>
+    <li>Déterminer \(f(0)\), les zéros de \(f\), et préciser l'image de \(f\).</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(x^2 + 1 > 0\) pour tout \(x\), donc \(\mathcal{D}_f = \mathbb{R}\).</p>
+    <p>\(f(-x) = \dfrac{(-x)^2 - 1}{(-x)^2 + 1} = \dfrac{x^2 - 1}{x^2 + 1} = f(x)\) : \(f\) est <strong>paire</strong>. On étudie sur \([0\,;\,+\infty[\).</p>
+
+    <p><strong>2.</strong> \(\displaystyle\lim_{x \to \pm\infty} \frac{x^2-1}{x^2+1} = \lim \frac{1-\frac{1}{x^2}}{1+\frac{1}{x^2}} = 1\). Asymptote horizontale \(y = 1\) en \(\pm\infty\).</p>
+
+    <p><strong>3.</strong> \(f'(x) = \dfrac{2x(x^2+1) - (x^2-1)(2x)}{(x^2+1)^2} = \dfrac{2x\big[(x^2+1)-(x^2-1)\big]}{(x^2+1)^2} = \dfrac{4x}{(x^2+1)^2}\).</p>
+    <p>Signe : \(f'(x)\) est du signe de \(x\). Donc \(f\) est décroissante sur \(]-\infty\,;\,0]\) et croissante sur \([0\,;\,+\infty[\).</p>
+    <p>Minimum en \(x=0\) : \(f(0) = -1\).</p>
+
+    <p><strong>4.</strong> Zéros : \(x^2 - 1 = 0 \Leftrightarrow x = \pm 1\). Minimum \(f(0) = -1\), asymptote \(y = 1\) (non atteinte). Image : \(f(\mathbb{R}) = [-1\,;\,1[\).</p>
+
+    <table>
+      <tr><th>\(x\)</th><td>\(-\infty\)</td><td></td><td>\(0\)</td><td></td><td>\(+\infty\)</td></tr>
+      <tr><th>\(f'(x)\)</th><td></td><td>\(-\)</td><td>\(0\)</td><td>\(+\)</td><td></td></tr>
+      <tr><th>\(f(x)\)</th><td>\(1\)</td><td>\(\searrow\)</td><td>\(-1\)</td><td>\(\nearrow\)</td><td>\(1\)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- EX 10 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">10</span>Étude complète — Fonction avec exponentielle</div>
+  <p>Soit \(f(x) = (2x - 1)\,e^{-x}\) définie sur \(\mathbb{R}\).</p>
+  <ol>
+    <li>Calculer les limites de \(f\) en \(+\infty\) et en \(-\infty\).</li>
+    <li>Calculer \(f'(x)\) et étudier son signe.</li>
+    <li>Dresser le tableau de variations de \(f\).</li>
+    <li>Déterminer l'équation de la tangente au point d'abscisse \(0\).</li>
+    <li>Tracer l'allure de la courbe.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong></p>
+    <ul>
+      <li>En \(+\infty\) : \(f(x) = \dfrac{2x-1}{e^x}\). Par croissances comparées, \(\displaystyle\lim_{x \to +\infty} f(x) = 0^+\). Asymptote horizontale \(y = 0\).</li>
+      <li>En \(-\infty\) : \(2x - 1 \to -\infty\) et \(e^{-x} \to +\infty\), donc \(\displaystyle\lim_{x \to -\infty} f(x) = -\infty\).</li>
+    </ul>
+
+    <p><strong>2.</strong> Produit : \(f'(x) = 2\,e^{-x} + (2x-1)(-e^{-x}) = e^{-x}\big[2 - (2x-1)\big] = e^{-x}(3-2x)\).</p>
+    <p>Comme \(e^{-x} > 0\), le signe de \(f'(x)\) est celui de \(3 - 2x\).</p>
+    <p>\(f'(x) = 0 \Leftrightarrow x = \frac{3}{2}\). \(f'(x) > 0\) si \(x < \frac{3}{2}\), \(f'(x) < 0\) si \(x > \frac{3}{2}\).</p>
+
+    <p><strong>3.</strong> Maximum en \(x = \frac{3}{2}\) : \(f\!\left(\frac{3}{2}\right) = (3-1)\,e^{-3/2} = 2\,e^{-3/2} \approx 0{,}45\).</p>
+    <table>
+      <tr><th>\(x\)</th><td>\(-\infty\)</td><td></td><td>\(\frac{3}{2}\)</td><td></td><td>\(+\infty\)</td></tr>
+      <tr><th>\(f'(x)\)</th><td></td><td>\(+\)</td><td>\(0\)</td><td>\(-\)</td><td></td></tr>
+      <tr><th>\(f(x)\)</th><td>\(-\infty\)</td><td>\(\nearrow\)</td><td>\(2e^{-3/2}\)</td><td>\(\searrow\)</td><td>\(0\)</td></tr>
+    </table>
+
+    <p><strong>4.</strong> \(f(0) = -1 \times 1 = -1\). \(f'(0) = e^0 \times 3 = 3\).</p>
+    <p>Tangente en \(x = 0\) : \(y = f'(0)(x - 0) + f(0) = 3x - 1\).</p>
+
+    <p><strong>5.</strong> Allure : la courbe vient de \(-\infty\), passe par \((0;-1)\) avec une pente \(3\), atteint un maximum en \(\left(\frac{3}{2}\,;\,2e^{-3/2}\right)\), puis redescend vers l'asymptote \(y = 0\).</p>
+  </div>
+</div>
+
+<!-- EX 11 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">11</span>Refroidissement d'un bâtiment</div>
+  <p>Un local industriel isolé est initialement à \(24\,°\text{C}\). Le chauffage est coupé alors que la température extérieure est de \(4\,°\text{C}\). On modélise la température intérieure par :</p>
+  <p>\[T(t) = 4 + 20\,e^{-0{,}08\,t}\]</p>
+  <p>où \(t\) est en heures.</p>
+  <ol>
+    <li>Vérifier que \(T(0) = 24\,°\text{C}\). Calculer \(\displaystyle\lim_{t \to +\infty} T(t)\) et interpréter.</li>
+    <li>Calculer \(T'(t)\). Quel est le signe de \(T'\) ? Interpréter.</li>
+    <li>Au bout de combien de temps la température passe-t-elle sous \(15\,°\text{C}\) ?</li>
+    <li>Calculer la vitesse de refroidissement (en °C/h) à \(t = 0\) et à \(t = 10\,\text{h}\).</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(T(0) = 4 + 20\,e^0 = 4 + 20 = 24\,°\text{C}\). Correct.</p>
+    <p>\(\displaystyle\lim_{t \to +\infty} T(t) = 4 + 20 \times 0 = 4\,°\text{C}\). La température tend vers la température extérieure : le local finit par se mettre en équilibre thermique avec l'extérieur.</p>
+
+    <p><strong>2.</strong> \(T'(t) = 20 \times (-0{,}08)\,e^{-0{,}08\,t} = -1{,}6\,e^{-0{,}08\,t}\).</p>
+    <p>\(T'(t) < 0\) pour tout \(t\) : la température est strictement décroissante, le local se refroidit en permanence.</p>
+
+    <p><strong>3.</strong> \(T(t) = 15 \Leftrightarrow 4 + 20\,e^{-0{,}08\,t} = 15 \Leftrightarrow e^{-0{,}08\,t} = \dfrac{11}{20}\).</p>
+    <p>\(-0{,}08\,t = \ln\!\left(\dfrac{11}{20}\right) \Rightarrow t = \dfrac{-\ln(11/20)}{0{,}08} = \dfrac{\ln(20/11)}{0{,}08} \approx \dfrac{0{,}598}{0{,}08} \approx 7{,}5\,\text{h}\).</p>
+    <p>La température passe sous \(15\,°\text{C}\) au bout d'environ <strong>7 h 30 min</strong>.</p>
+
+    <p><strong>4.</strong></p>
+    <ul>
+      <li>\(T'(0) = -1{,}6\,e^0 = -1{,}6\,°\text{C/h}\) : le local se refroidit de \(1{,}6\,°\text{C}\) par heure au début.</li>
+      <li>\(T'(10) = -1{,}6\,e^{-0{,}8} \approx -0{,}72\,°\text{C/h}\) : le refroidissement a ralenti.</li>
+    </ul>
+    <p>Plus l'écart avec la température extérieure diminue, plus le refroidissement est lent.</p>
+  </div>
+</div>
+
+<!-- ================================================================== -->
+<!-- NIVEAU 4 — Expert / Synthèse -->
+<!-- ================================================================== -->
+<div class="section-titre">
+  <span class="niveau n4">Niveau 4 — Expert / Synthèse</span>
+  <div class="section-ligne"></div>
+</div>
+
+<!-- EX 12 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">12</span>Étude complète avec logarithme</div>
+  <p>Soit \(f(x) = x - \ln x\) définie sur \(]0\,;\,+\infty[\).</p>
+  <ol>
+    <li>Calculer les limites de \(f\) en \(0^+\) et en \(+\infty\).</li>
+    <li>Calculer \(f'(x)\), étudier son signe et dresser le tableau de variations.</li>
+    <li>En déduire le minimum de \(f\) et montrer que \(f(x) \geq 1\) pour tout \(x > 0\).</li>
+    <li>Déterminer le nombre de solutions de l'équation \(x - \ln x = 3\).</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong></p>
+    <ul>
+      <li>En \(0^+\) : \(x \to 0\) et \(-\ln x \to +\infty\), donc \(\lim_{x \to 0^+} f(x) = +\infty\).</li>
+      <li>En \(+\infty\) : \(f(x) = x\left(1 - \frac{\ln x}{x}\right)\). Par croissances comparées, \(\frac{\ln x}{x} \to 0\), donc \(\lim_{x \to +\infty} f(x) = +\infty\).</li>
+    </ul>
+
+    <p><strong>2.</strong> \(f'(x) = 1 - \dfrac{1}{x} = \dfrac{x-1}{x}\).</p>
+    <p>Pour \(x > 0\) : \(f'(x) < 0\) si \(0 < x < 1\), \(f'(x) = 0\) si \(x = 1\), \(f'(x) > 0\) si \(x > 1\).</p>
+
+    <table>
+      <tr><th>\(x\)</th><td>\(0\)</td><td></td><td>\(1\)</td><td></td><td>\(+\infty\)</td></tr>
+      <tr><th>\(f'(x)\)</th><td></td><td>\(-\)</td><td>\(0\)</td><td>\(+\)</td><td></td></tr>
+      <tr><th>\(f(x)\)</th><td>\(+\infty\)</td><td>\(\searrow\)</td><td>\(1\)</td><td>\(\nearrow\)</td><td>\(+\infty\)</td></tr>
+    </table>
+
+    <p><strong>3.</strong> Minimum : \(f(1) = 1 - \ln 1 = 1\). La fonction atteint son minimum en \(x = 1\), et ce minimum vaut \(1\). Donc \(f(x) \geq 1\) pour tout \(x > 0\).</p>
+    <p><em>Remarque : l'inégalité \(x - \ln x \geq 1\) est équivalente à \(\ln x \leq x - 1\), inégalité classique.</em></p>
+
+    <p><strong>4.</strong> L'équation \(f(x) = 3\) revient à chercher l'intersection de la courbe avec la droite \(y = 3\). Comme \(f\) décroît de \(+\infty\) à \(1\) sur \(]0;1]\) puis croît de \(1\) à \(+\infty\) sur \([1;+\infty[\), et que \(3 > 1\), la droite \(y = 3\) coupe la courbe en <strong>exactement deux points</strong> (un sur chaque branche, par le TVI).</p>
+  </div>
+</div>
+
+<!-- EX 13 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">13</span>Optimisation — Coût de fabrication</div>
+  <p>Une entreprise de charpente bois produit \(x\) lots de pièces par jour (\(x \in [1\,;\,12]\)). Le coût total de production (en euros) est modélisé par :</p>
+  <p>\[C(x) = x^3 - 12x^2 + 48x + 100\]</p>
+  <ol>
+    <li>Calculer le coût moyen par lot : \(\bar{C}(x) = \dfrac{C(x)}{x}\).</li>
+    <li>Montrer que \(\bar{C}'(x) = \dfrac{2x^3 - 12x^2 - 100}{x^2}\).</li>
+    <li>Soit \(g(x) = 2x^3 - 12x^2 - 100\). Montrer que \(g\) admet un unique zéro \(x_0\) dans \([1\,;\,12]\) et que \(x_0 \in [8\,;\,9]\).</li>
+    <li>En déduire les variations de \(\bar{C}\) et le nombre optimal de lots à produire.</li>
+    <li>Calculer le coût moyen minimal (à l'euro près).</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(\bar{C}(x) = x^2 - 12x + 48 + \dfrac{100}{x}\).</p>
+
+    <p><strong>2.</strong> \(\bar{C}'(x) = 2x - 12 - \dfrac{100}{x^2} = \dfrac{2x^3 - 12x^2 - 100}{x^2}\).</p>
+
+    <p><strong>3.</strong> \(g(x) = 2x^3 - 12x^2 - 100\). \(g'(x) = 6x^2 - 24x = 6x(x-4)\).</p>
+    <p>Pour \(x \geq 4\) : \(g'(x) \geq 0\), \(g\) croissante.</p>
+    <p>\(g(8) = 2(512) - 12(64) - 100 = 1024 - 768 - 100 = 156 > 0\).</p>
+    <p>Correction : recalculons. \(g(8) = 2 \times 512 - 12 \times 64 - 100 = 1024 - 768 - 100 = 156 > 0\).</p>
+    <p>\(g(7) = 2 \times 343 - 12 \times 49 - 100 = 686 - 588 - 100 = -2 < 0\).</p>
+    <p>\(g(1) = 2 - 12 - 100 = -110 < 0\). Aussi \(g(4) = 128 - 192 - 100 = -164 < 0\).</p>
+    <p>\(g\) est décroissante sur \([1;4]\) et croissante sur \([4;12]\). Son minimum est \(g(4) = -164 < 0\) et \(g(12) = 2(1728) - 12(144) - 100 = 3456 - 1728 - 100 = 1628 > 0\).</p>
+    <p>Donc \(g\) change de signe une seule fois sur \([4;12]\), entre \(7\) et \(8\) : \(g(7) = -2 < 0\) et \(g(8) = 156 > 0\).</p>
+    <p>Unique zéro \(x_0 \in [7\,;\,8]\) (et non \([8;9]\), rectification). Plus précisément, \(x_0 \approx 7{,}01\).</p>
+
+    <p><strong>4.</strong> \(\bar{C}'(x)\) est du signe de \(g(x)\) : négatif pour \(x < x_0\), positif pour \(x > x_0\). Donc \(\bar{C}\) décroît sur \([1\,;\,x_0]\) et croît sur \([x_0\,;\,12]\). Minimum en \(x_0 \approx 7\).</p>
+    <p>Le nombre optimal de lots est environ <strong>7 lots par jour</strong>.</p>
+
+    <p><strong>5.</strong> \(\bar{C}(7) = 49 - 84 + 48 + \frac{100}{7} \approx 49 - 84 + 48 + 14{,}29 \approx 27{,}29\,€\) par lot.</p>
+    <p>Le coût moyen minimal est d'environ <strong>27 euros par lot</strong>.</p>
+  </div>
+</div>
+
+<!-- EX 14 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">14</span>Dépréciation et amortissement</div>
+  <p>Un compresseur d'air pour chantier est acheté \(18\,000\,€\). Sa valeur résiduelle après \(t\) années est modélisée par :</p>
+  <p>\[V(t) = 18\,000\,e^{-0{,}2\,t}\]</p>
+  <ol>
+    <li>Justifier que \(V\) est décroissante. Calculer \(V(5)\) et \(V(10)\).</li>
+    <li>Déterminer la <strong>demi-vie</strong> de la valeur (temps pour perdre la moitié de la valeur initiale).</li>
+    <li>L'entreprise décide de revendre le compresseur quand sa valeur passe sous \(3\,000\,€\). Après combien d'années cela se produit-il ?</li>
+    <li>On définit le taux de dépréciation instantané par \(\dfrac{V'(t)}{V(t)}\). Calculer ce taux et commenter.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(V'(t) = 18\,000 \times (-0{,}2)\,e^{-0{,}2t} = -3\,600\,e^{-0{,}2t} < 0\). \(V\) est bien décroissante.</p>
+    <ul>
+      <li>\(V(5) = 18\,000\,e^{-1} \approx 6\,621\,€\)</li>
+      <li>\(V(10) = 18\,000\,e^{-2} \approx 2\,436\,€\)</li>
+    </ul>
+
+    <p><strong>2.</strong> \(V(t) = \frac{18\,000}{2} = 9\,000 \Leftrightarrow e^{-0{,}2t} = \frac{1}{2} \Leftrightarrow -0{,}2t = \ln\frac{1}{2} = -\ln 2\).</p>
+    <p>\(t_{1/2} = \dfrac{\ln 2}{0{,}2} = 5\ln 2 \approx 3{,}47\,\text{ans}\), soit environ <strong>3 ans et 6 mois</strong>.</p>
+
+    <p><strong>3.</strong> \(V(t) = 3\,000 \Leftrightarrow e^{-0{,}2t} = \frac{3\,000}{18\,000} = \frac{1}{6}\).</p>
+    <p>\(-0{,}2t = \ln\frac{1}{6} = -\ln 6 \Rightarrow t = \dfrac{\ln 6}{0{,}2} = 5\ln 6 \approx 8{,}96\,\text{ans}\).</p>
+    <p>Le compresseur passe sous \(3\,000\,€\) au bout d'environ <strong>9 ans</strong>.</p>
+
+    <p><strong>4.</strong> \(\dfrac{V'(t)}{V(t)} = \dfrac{-3\,600\,e^{-0{,}2t}}{18\,000\,e^{-0{,}2t}} = \dfrac{-3\,600}{18\,000} = -0{,}2 = -20\,\%\).</p>
+    <p>Le taux de dépréciation instantané est <strong>constant et égal à \(-20\,\%\) par an</strong>. C'est la caractéristique du modèle exponentiel : le taux relatif de variation est constant.</p>
+  </div>
+</div>
+
+<!-- EX 15 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">15</span>Problème de synthèse — Ventilation et concentration de CO₂</div>
+  <p>Dans un atelier de menuiserie, la concentration en CO₂ (en ppm au-dessus du niveau extérieur) suit, après mise en marche de la ventilation mécanique, la loi :</p>
+  <p>\[c(t) = 800\,e^{-0{,}3t} + 200\left(1 - e^{-0{,}3t}\right)\]</p>
+  <p>où \(t\) est en heures. Le premier terme représente la décroissance du CO₂ initial, le second l'apport par les occupants (équilibre à 200 ppm).</p>
+  <ol>
+    <li>Simplifier \(c(t)\) sous la forme \(c(t) = A\,e^{-0{,}3t} + B\).</li>
+    <li>Calculer \(c(0)\) et \(\displaystyle\lim_{t \to +\infty} c(t)\). Interpréter physiquement.</li>
+    <li>Calculer \(c'(t)\) et montrer que \(c\) est strictement décroissante.</li>
+    <li>La norme impose une concentration inférieure à \(400\,\text{ppm}\). Au bout de combien de temps la norme est-elle respectée ?</li>
+    <li>Représenter graphiquement \(c(t)\) et la droite \(y = 400\). Vérifier la cohérence.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(c(t) = 800\,e^{-0{,}3t} + 200 - 200\,e^{-0{,}3t} = 600\,e^{-0{,}3t} + 200\).</p>
+    <p>Donc \(A = 600\) et \(B = 200\).</p>
+
+    <p><strong>2.</strong> \(c(0) = 600 \times 1 + 200 = 800\,\text{ppm}\) : concentration initiale avant ventilation.</p>
+    <p>\(\displaystyle\lim_{t \to +\infty} c(t) = 600 \times 0 + 200 = 200\,\text{ppm}\) : concentration d'équilibre atteinte quand la ventilation compense exactement les apports des occupants.</p>
+
+    <p><strong>3.</strong> \(c'(t) = 600 \times (-0{,}3)\,e^{-0{,}3t} = -180\,e^{-0{,}3t}\).</p>
+    <p>Comme \(e^{-0{,}3t} > 0\), on a \(c'(t) < 0\) pour tout \(t\) : \(c\) est strictement décroissante.</p>
+
+    <p><strong>4.</strong> \(c(t) = 400 \Leftrightarrow 600\,e^{-0{,}3t} + 200 = 400 \Leftrightarrow e^{-0{,}3t} = \dfrac{200}{600} = \dfrac{1}{3}\).</p>
+    <p>\(-0{,}3t = \ln\dfrac{1}{3} = -\ln 3 \Rightarrow t = \dfrac{\ln 3}{0{,}3} \approx \dfrac{1{,}099}{0{,}3} \approx 3{,}66\,\text{h}\).</p>
+    <p>La norme est respectée au bout d'environ <strong>3 h 40 min</strong>.</p>
+
+    <p><strong>5.</strong> Voir le graphique ci-dessous.</p>
+  </div>
+  <div class="chart-wrap">
+    <canvas id="chartCO2" height="280"></canvas>
+  </div>
+</div>
+
+</div>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+// Graphique CO2
+(function(){
+  const ctx = document.getElementById('chartCO2');
+  if(!ctx) return;
+  const ts = [];
+  const cs = [];
+  const seuil = [];
+  const equil = [];
+  for(let t = 0; t <= 12; t += 0.2){
+    ts.push(Math.round(t*10)/10);
+    cs.push(Math.round((600*Math.exp(-0.3*t)+200)*10)/10);
+    seuil.push(400);
+    equil.push(200);
+  }
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ts,
+      datasets: [
+        {label: 'c(t) = 600·e⁻⁰·³ᵗ + 200', data: cs, borderColor: '#1e3a5f', borderWidth: 2.5, pointRadius: 0, fill: false},
+        {label: 'Norme : 400 ppm', data: seuil, borderColor: '#c53030', borderWidth: 1.5, borderDash: [6,4], pointRadius: 0, fill: false},
+        {label: 'Équilibre : 200 ppm', data: equil, borderColor: '#718096', borderWidth: 1, borderDash: [3,3], pointRadius: 0, fill: false}
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {title: {display: true, text: 'Concentration de CO₂ dans l\'atelier'}},
+      scales: {
+        x: {type: 'linear', min: 0, max: 12, title: {display: true, text: 'Temps (h)'}},
+        y: {min: 0, max: 900, title: {display: true, text: 'Concentration (ppm)'}}
+      }
+    }
+  });
+})();
+</script>
+<script src="../../../nav.js"></script>
+</body>
+</html>

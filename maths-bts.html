@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mathématiques BTS — Tous groupements</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="print.css" media="print">
+  <style>
+    :root{--p:#1e3a5f;--p-bg:#eef2f7;--p-border:#93a5c0}
+
+    .bts-intro{background:#eef2f7;border-left:5px solid #1e3a5f;padding:16px 20px;border-radius:0 8px 8px 0;margin:20px 0;font-size:.93em}
+    .bts-intro strong{color:#1e3a5f}
+
+    /* Badges groupements */
+    .g{display:inline-block;font-size:.7em;font-weight:700;padding:2px 8px;border-radius:12px;margin:0 2px;vertical-align:middle}
+    .g-b1{background:#dbeafe;color:#1e40af}
+    .g-b2{background:#e0e7ff;color:#3730a3}
+    .g-b3{background:#ede9fe;color:#5b21b6}
+    .g-c1{background:#dcfce7;color:#166534}
+    .g-c2{background:#fef9c3;color:#854d0e}
+    .g-d1{background:#fce7f3;color:#9d174d}
+    .g-d2{background:#ffe4e6;color:#9f1239}
+    .g-all{background:#f1f5f9;color:#334155;border:1px solid #cbd5e0}
+
+    /* Table modules */
+    .mod-table{width:100%;border-collapse:collapse;font-size:.88em;margin:20px 0}
+    .mod-table th{background:#1e3a5f;color:#fff;padding:10px 12px;text-align:left;font-size:.85em}
+    .mod-table td{padding:10px 12px;border-bottom:1px solid #e2e8f0;vertical-align:middle}
+    .mod-table tr:hover{background:#f8fafc}
+    .mod-table .ch-num{font-weight:700;color:#1e3a5f;white-space:nowrap;width:50px}
+    .mod-table .ch-title a{text-decoration:none;color:#0969da;font-weight:600}
+    .mod-table .ch-title a:hover{text-decoration:underline}
+    .mod-table .ch-badges{white-space:nowrap}
+
+    /* Légende */
+    .legend{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px 18px;margin:20px 0;font-size:.88em}
+    .legend h3{margin:0 0 10px;font-size:1em;color:#1e3a5f}
+    .legend-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+    .legend-item{display:flex;align-items:center;gap:8px}
+
+    /* Cards BTS */
+    .bts-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:20px 0}
+    .bts-card{background:#fff;border:1.5px solid #e2e8f0;border-radius:8px;padding:14px 16px}
+    .bts-card h4{margin:0 0 6px;font-size:.95em;color:#1e3a5f}
+    .bts-card p{margin:0;font-size:.85em;color:#64748b}
+    .bts-card .bts-list{font-size:.82em;color:#475569;margin-top:6px;line-height:1.5}
+
+    /* Status badges */
+    .st{display:inline-block;font-size:.7em;font-weight:700;padding:2px 8px;border-radius:4px;margin-left:6px}
+    .st-ok{background:#dcfce7;color:#166534}
+    .st-wip{background:#fef3c7;color:#92400e}
+    .st-todo{background:#f1f5f9;color:#94a3b8}
+  </style>
+</head>
+<body>
+<div class="container">
+
+<a href="index.html" class="nb">← Retour à l'accueil</a>
+
+<header>
+  <h1>Mathématiques — BTS</h1>
+  <p class="sous-titre">Programme complet — Tous groupements (B1, B2, B3, C1, C2, D1, D2)</p>
+</header>
+
+<div class="bts-intro">
+  <strong>Programme national BTS 2023.</strong> Ce cours couvre l'ensemble des modules de mathématiques
+  des BTS à groupements. Chaque chapitre indique les groupements concernés grâce à un système de badges.
+  Les BTS en lien avec le bâtiment, l'énergie et le bois (FED, Bâtiment, ERA, Systèmes constructifs bois…)
+  sont dans les <span class="g g-b1">B1</span> et <span class="g g-c1">C1</span>.
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<h2>Légende des groupements</h2>
+
+<div class="legend">
+  <div class="legend-grid">
+    <div class="legend-item"><span class="g g-b1">B1</span> Bâtiment, FED, Maintenance, Aéro…</div>
+    <div class="legend-item"><span class="g g-b2">B2</span> Microtechniques, Électrotechnique</div>
+    <div class="legend-item"><span class="g g-b3">B3</span> Systèmes photoniques</div>
+    <div class="legend-item"><span class="g g-c1">C1</span> Bois, Chaudronnerie, Forge, Naval…</div>
+    <div class="legend-item"><span class="g g-c2">C2</span> Métiers de la mode</div>
+    <div class="legend-item"><span class="g g-d1">D1</span> Biologie, Biotechnologies, Chimie</div>
+    <div class="legend-item"><span class="g g-d2">D2</span> Métiers de l'eau</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<h2>BTS en lien avec les filières du lycée</h2>
+
+<div class="bts-cards">
+  <div class="bts-card">
+    <h4><span class="g g-b1">B1</span> BTS Fluides Énergies Domotique</h4>
+    <p>3 options — Suite des Bac Pro ICCER/TMSEC</p>
+    <div class="bts-list">Modules : Suit, Fct, Fct Signal, Inté, EqD, Four, Lap, Proba1/2, Stat Des/Inf, Géo, Vect, Mat, cplx</div>
+  </div>
+  <div class="bts-card">
+    <h4><span class="g g-b1">B1</span> BTS Bâtiment</h4>
+    <p>Suite des Bac Pro du bâtiment</p>
+    <div class="bts-list">Modules : Suit, Fct, Fct Signal, Inté, EqD, Four, Lap, Proba1/2, Stat Des/Inf, Géo, Vect, Mat, cplx</div>
+  </div>
+  <div class="bts-card">
+    <h4><span class="g g-b1">B1</span> BTS Enveloppe des bâtiments</h4>
+    <p>Conception et réalisation — Suite Bac Pro</p>
+    <div class="bts-list">Modules : idem B1 complet</div>
+  </div>
+  <div class="bts-card">
+    <h4><span class="g g-c1">C1</span> BTS Développement et réalisation bois</h4>
+    <p>Suite des Bac Pro ERA / TMA / SCBH</p>
+    <div class="bts-list">Modules : Suit, Fct, Inté, Proba1, Stat Des, cplx, Conf Géo</div>
+  </div>
+  <div class="bts-card">
+    <h4><span class="g g-c1">C1</span> BTS Systèmes constructifs bois et habitat</h4>
+    <p>Suite des Bac Pro bois et construction</p>
+    <div class="bts-list">Modules : Suit, Fct, Inté, Proba1, Stat Des, cplx, Conf Géo</div>
+  </div>
+  <div class="bts-card">
+    <h4><span class="g g-c1">C1</span> BTS Étude et réalisation d'agencement</h4>
+    <p>Suite directe du Bac Pro ERA</p>
+    <div class="bts-list">Modules : Suit, Fct, Inté, Proba1, Stat Des, cplx, Conf Géo</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<h2>Programme complet — 18 modules</h2>
+
+<table class="mod-table">
+  <tr>
+    <th>Ch.</th>
+    <th>Module</th>
+    <th>Groupements</th>
+    <th>État</th>
+  </tr>
+
+  <tr>
+    <td class="ch-num">01</td>
+    <td class="ch-title"><a href="maths/bts/ch01/lecon.html">Suites numériques</a></td>
+    <td class="ch-badges"><span class="g g-b1">B1</span><span class="g g-b2">B2</span><span class="g g-c1">C1</span><span class="g g-d1">D1</span></td>
+    <td><span class="st st-wip">En cours</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">02</td>
+    <td class="ch-title"><a href="maths/bts/ch02/lecon.html">Fonctions d'une variable réelle</a></td>
+    <td class="ch-badges"><span class="g g-all">Tous</span></td>
+    <td><span class="st st-wip">En cours</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">03</td>
+    <td class="ch-title"><a href="maths/bts/ch03/lecon.html">Fonctions pour le traitement du signal</a></td>
+    <td class="ch-badges"><span class="g g-b1">B1</span><span class="g g-b2">B2</span><span class="g g-b3">B3</span></td>
+    <td><span class="st st-todo">À venir</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">04</td>
+    <td class="ch-title"><a href="maths/bts/ch04/lecon.html">Calcul intégral</a></td>
+    <td class="ch-badges"><span class="g g-b1">B1</span><span class="g g-b2">B2</span><span class="g g-c1">C1</span><span class="g g-d1">D1</span><span class="g g-d2">D2</span></td>
+    <td><span class="st st-todo">À venir</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">05</td>
+    <td class="ch-title"><a href="maths/bts/ch05/lecon.html">Équations différentielles</a></td>
+    <td class="ch-badges"><span class="g g-b1">B1</span><span class="g g-b2">B2</span></td>
+    <td><span class="st st-todo">À venir</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">06</td>
+    <td class="ch-title"><a href="maths/bts/ch06/lecon.html">Séries de Fourier</a></td>
+    <td class="ch-badges"><span class="g g-b1">B1</span></td>
+    <td><span class="st st-todo">À venir</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">07</td>
+    <td class="ch-title"><a href="maths/bts/ch07/lecon.html">Transformée de Laplace</a></td>
+    <td class="ch-badges"><span class="g g-b1">B1</span></td>
+    <td><span class="st st-todo">À venir</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">08</td>
+    <td class="ch-title"><a href="maths/bts/ch08/lecon.html">Probabilités 1</a></td>
+    <td class="ch-badges"><span class="g g-all">Tous</span></td>
+    <td><span class="st st-wip">En cours</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">09</td>
+    <td class="ch-title"><a href="maths/bts/ch09/lecon.html">Probabilités 2</a></td>
+    <td class="ch-badges"><span class="g g-b1">B1</span><span class="g g-b2">B2</span><span class="g g-d1">D1</span><span class="g g-d2">D2</span></td>
+    <td><span class="st st-todo">À venir</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">10</td>
+    <td class="ch-title"><a href="maths/bts/ch10/lecon.html">Statistique descriptive</a></td>
+    <td class="ch-badges"><span class="g g-all">Tous</span></td>
+    <td><span class="st st-todo">À venir</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">11</td>
+    <td class="ch-title"><a href="maths/bts/ch11/lecon.html">Statistique inférentielle</a></td>
+    <td class="ch-badges"><span class="g g-b1">B1</span><span class="g g-b2">B2</span><span class="g g-d1">D1</span><span class="g g-d2">D2</span></td>
+    <td><span class="st st-todo">À venir</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">12</td>
+    <td class="ch-title"><a href="maths/bts/ch12/lecon.html">Nombres complexes</a></td>
+    <td class="ch-badges"><span class="g g-b1">B1</span><span class="g g-b2">B2</span><span class="g g-c1">C1</span></td>
+    <td><span class="st st-todo">À venir</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">13</td>
+    <td class="ch-title"><a href="maths/bts/ch13/lecon.html">Configurations géométriques</a></td>
+    <td class="ch-badges"><span class="g g-b1">B1</span><span class="g g-c1">C1</span></td>
+    <td><span class="st st-todo">À venir</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">14</td>
+    <td class="ch-title"><a href="maths/bts/ch14/lecon.html">Modélisation géométrique</a></td>
+    <td class="ch-badges"><span class="g g-b1">B1</span></td>
+    <td><span class="st st-todo">À venir</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">15</td>
+    <td class="ch-title"><a href="maths/bts/ch15/lecon.html">Calcul vectoriel</a></td>
+    <td class="ch-badges"><span class="g g-b1">B1</span></td>
+    <td><span class="st st-todo">À venir</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">16</td>
+    <td class="ch-title"><a href="maths/bts/ch16/lecon.html">Matrices et systèmes linéaires</a></td>
+    <td class="ch-badges"><span class="g g-b1">B1</span></td>
+    <td><span class="st st-todo">À venir</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">17</td>
+    <td class="ch-title"><a href="maths/bts/ch17/lecon.html">Calcul et algorithmique</a></td>
+    <td class="ch-badges"><span class="g g-d1">D1</span><span class="g g-d2">D2</span></td>
+    <td><span class="st st-todo">À venir</span></td>
+  </tr>
+
+  <tr>
+    <td class="ch-num">18</td>
+    <td class="ch-title"><a href="maths/bts/ch18/lecon.html">Fiabilité</a></td>
+    <td class="ch-badges"><span class="g g-c1">C1</span></td>
+    <td><span class="st st-todo">À venir</span></td>
+  </tr>
+</table>
+
+</div>
+<script src="nav.js"></script>
+</body>
+</html>

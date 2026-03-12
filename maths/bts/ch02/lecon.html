@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch02 – Fonctions d'une variable réelle – BTS</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#1e3a5f;--p-bg:#eef2f7;--p-border:#93a5c0}</style>
+<link rel="stylesheet" href="/nav.css">
+</head>
+<body>
+<div class="c">
+<a href="../../sommaire.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>Chapitre 2 – Fonctions d'une variable réelle</h1>
+  <p class="sous-titre">BTS — Tous groupements &nbsp;|&nbsp; Module Fct</p>
+</header>
+
+<div class="objectifs">
+  <strong>Objectifs du chapitre :</strong>
+  <ul>
+    <li>Maîtriser les notions de domaine de définition, parité et périodicité</li>
+    <li>Calculer des limites de fonctions (en l'infini, en un point, formes indéterminées)</li>
+    <li>Exploiter la continuité et le théorème des valeurs intermédiaires (TVI)</li>
+    <li>Dériver des fonctions composées et appliquer les règles opératoires</li>
+    <li>Connaître les propriétés des fonctions \(\ln\), \(\exp\) et puissances</li>
+    <li>Mener une étude complète de fonction (variations, asymptotes, représentation)</li>
+    <li>Modéliser des phénomènes physiques par des fonctions (décroissance, optimisation)</li>
+  </ul>
+</div>
+
+<!-- ==================== SITUATION PROFESSIONNELLE ==================== -->
+<h2>Situation professionnelle</h2>
+
+<div class="situation">
+  <h3>Thermique du bâtiment — Loi de refroidissement</h3>
+  <p>Un ingénieur thermicien étudie le refroidissement d'un local technique après l'arrêt du système de chauffage. La température intérieure suit une loi de la forme :</p>
+  <p>\[T(t) = T_{\text{ext}} + (T_0 - T_{\text{ext}})\,e^{-kt}\]</p>
+  <p>où \(T_0 = 22\,°\text{C}\) est la température initiale, \(T_{\text{ext}} = 5\,°\text{C}\) la température extérieure et \(k > 0\) un coefficient dépendant de l'isolation.</p>
+  <p><strong>Problème :</strong> Au bout de combien de temps la température descend-elle sous \(12\,°\text{C}\) ? Quelle est la vitesse de refroidissement à un instant donné ? Pour répondre, il faut maîtriser les <em>fonctions d'une variable réelle</em> : limites, continuité, dérivation, exponentielle.</p>
+</div>
+
+<!-- ==================== 1. RAPPELS ==================== -->
+<h2>1. Rappels sur les fonctions</h2>
+
+<h3>1.1. Domaine de définition</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Domaine de définition</span><br>
+  Le <strong>domaine de définition</strong> \(\mathcal{D}_f\) d'une fonction \(f\) est l'ensemble des valeurs de \(x\) pour lesquelles \(f(x)\) existe (a un sens dans \(\mathbb{R}\)).
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Déterminer un domaine de définition</span><br>
+  Vérifier que :
+  <ul>
+    <li>Aucun <strong>dénominateur</strong> ne s'annule</li>
+    <li>L'expression sous une <strong>racine carrée</strong> (ou d'indice pair) est \(\geq 0\)</li>
+    <li>L'argument d'un <strong>logarithme</strong> est strictement positif</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span>
+  <p>Déterminer \(\mathcal{D}_f\) pour \(f(x) = \ln(2x - 3) + \dfrac{1}{\sqrt{x+1}}\).</p>
+  <ul>
+    <li>Logarithme : \(2x - 3 > 0 \Leftrightarrow x > \frac{3}{2}\)</li>
+    <li>Racine au dénominateur : \(x + 1 > 0 \Leftrightarrow x > -1\) (et non nul, vérifié car \(>0\))</li>
+  </ul>
+  <p>Intersection : \(\mathcal{D}_f = \left]\frac{3}{2}\,;\,+\infty\right[\).</p>
+</div>
+
+<h3>1.2. Parité</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Parité</span><br>
+  Soit \(f\) définie sur un domaine \(\mathcal{D}\) symétrique par rapport à \(0\).
+  <ul>
+    <li>\(f\) est <strong>paire</strong> si \(\forall x \in \mathcal{D},\; f(-x) = f(x)\) — courbe symétrique par rapport à l'axe \((Oy)\)</li>
+    <li>\(f\) est <strong>impaire</strong> si \(\forall x \in \mathcal{D},\; f(-x) = -f(x)\) — courbe symétrique par rapport à l'origine \(O\)</li>
+  </ul>
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propriété</span><br>
+  La parité permet de réduire l'étude d'une fonction à \([0\,;\,+\infty[\) puis de compléter par symétrie.
+</div>
+
+<h3>1.3. Périodicité</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Périodicité</span><br>
+  \(f\) est <strong>périodique de période</strong> \(T > 0\) si \(\forall x \in \mathcal{D},\; f(x + T) = f(x)\).
+  <br>L'étude se réduit à un intervalle de longueur \(T\).
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span>
+  <p>La fonction \(f(x) = \sin(x)\) est impaire et périodique de période \(2\pi\). Son étude se réduit à \([0\,;\,\pi]\).</p>
+</div>
+
+<!-- ==================== 2. LIMITES ==================== -->
+<h2>2. Limites de fonctions</h2>
+
+<h3>2.1. Limites en l'infini</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Limite en \(+\infty\)</span><br>
+  On dit que \(f(x)\) tend vers \(\ell \in \mathbb{R}\) quand \(x\) tend vers \(+\infty\) si \(f(x)\) se rapproche aussi près que l'on veut de \(\ell\) pour \(x\) assez grand. On note :
+  \[\lim_{x \to +\infty} f(x) = \ell\]
+  Si \(f(x)\) croît sans borne, on écrit \(\lim_{x \to +\infty} f(x) = +\infty\).
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Limites des fonctions de référence</span><br>
+  <table>
+    <tr><th>Fonction</th><th>\(\lim_{x \to +\infty}\)</th><th>\(\lim_{x \to -\infty}\)</th></tr>
+    <tr><td>\(x^n\) (\(n \geq 1\))</td><td>\(+\infty\)</td><td>\((-1)^n \cdot \infty\)</td></tr>
+    <tr><td>\(\dfrac{1}{x^n}\)</td><td>\(0\)</td><td>\(0\)</td></tr>
+    <tr><td>\(\sqrt{x}\)</td><td>\(+\infty\)</td><td>non définie</td></tr>
+    <tr><td>\(e^x\)</td><td>\(+\infty\)</td><td>\(0\)</td></tr>
+    <tr><td>\(\ln(x)\)</td><td>\(+\infty\)</td><td>non définie</td></tr>
+  </table>
+</div>
+
+<h3>2.2. Limites en un point</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Limite en un point \(a\)</span><br>
+  On dit que \(\lim_{x \to a} f(x) = \ell\) si \(f(x)\) se rapproche de \(\ell\) quand \(x\) se rapproche de \(a\) (sans nécessairement que \(f(a)\) existe).
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Opérations sur les limites</span><br>
+  Si \(\lim f = \ell\) et \(\lim g = \ell'\), alors :
+  <ul>
+    <li>\(\lim (f + g) = \ell + \ell'\)</li>
+    <li>\(\lim (f \times g) = \ell \times \ell'\)</li>
+    <li>\(\lim \dfrac{f}{g} = \dfrac{\ell}{\ell'}\) si \(\ell' \neq 0\)</li>
+  </ul>
+  Ces règles s'étendent aux cas où \(\ell\) ou \(\ell'\) est infini, <strong>sauf dans les formes indéterminées</strong>.
+</div>
+
+<h3>2.3. Formes indéterminées</h3>
+
+<div class="att">
+  <span class="label label-att">Attention — Formes indéterminées</span><br>
+  Les sept formes indéterminées sont :
+  \[\frac{0}{0} \quad;\quad \frac{\infty}{\infty} \quad;\quad 0 \times \infty \quad;\quad \infty - \infty \quad;\quad 0^0 \quad;\quad 1^{\infty} \quad;\quad \infty^0\]
+  <strong>On ne peut pas conclure directement</strong> : il faut lever l'indétermination (factorisation, conjugaison, croissances comparées, règle de L'Hôpital...).
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Lever une forme indéterminée \(\frac{\infty}{\infty}\)</span><br>
+  Pour un quotient de polynômes, <strong>factoriser par le terme de plus haut degré</strong> au numérateur et au dénominateur.
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span>
+  <p>Calculer \(\displaystyle\lim_{x \to +\infty} \frac{3x^2 - 5x + 1}{2x^2 + 7}\).</p>
+  <p>Forme \(\dfrac{\infty}{\infty}\). On factorise par \(x^2\) :</p>
+  \[\frac{3x^2 - 5x + 1}{2x^2 + 7} = \frac{x^2\left(3 - \frac{5}{x} + \frac{1}{x^2}\right)}{x^2\left(2 + \frac{7}{x^2}\right)} = \frac{3 - \frac{5}{x} + \frac{1}{x^2}}{2 + \frac{7}{x^2}} \xrightarrow[x \to +\infty]{} \frac{3}{2}\]
+</div>
+
+<div class="retenir">
+  <strong>Croissances comparées (à retenir) :</strong>
+  \[\lim_{x \to +\infty} \frac{e^x}{x^n} = +\infty \qquad \lim_{x \to +\infty} \frac{\ln x}{x^n} = 0 \qquad (n \geq 1)\]
+  L'exponentielle l'emporte sur toute puissance ; toute puissance l'emporte sur le logarithme.
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Croissances comparées</span>
+  <p>\(\displaystyle\lim_{x \to +\infty} x^2\,e^{-x}\) : forme \(\infty \times 0\).</p>
+  <p>On écrit \(x^2\,e^{-x} = \dfrac{x^2}{e^x}\). Par croissances comparées, \(e^x\) l'emporte sur \(x^2\), donc \(\displaystyle\lim_{x \to +\infty} x^2\,e^{-x} = 0\).</p>
+</div>
+
+<!-- ==================== 3. CONTINUITÉ ==================== -->
+<h2>3. Continuité</h2>
+
+<div class="def">
+  <span class="label label-def">Définition — Continuité en un point</span><br>
+  \(f\) est <strong>continue en \(a\)</strong> si :
+  <ol>
+    <li>\(f(a)\) existe</li>
+    <li>\(\displaystyle\lim_{x \to a} f(x)\) existe</li>
+    <li>\(\displaystyle\lim_{x \to a} f(x) = f(a)\)</li>
+  </ol>
+  \(f\) est <strong>continue sur un intervalle \(I\)</strong> si elle est continue en tout point de \(I\).
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Fonctions continues usuelles</span><br>
+  Les fonctions polynomiales, rationnelles (sur leur domaine), \(\sqrt{}\), \(\sin\), \(\cos\), \(\exp\), \(\ln\) sont continues sur leur domaine de définition.
+  <br>Toute somme, produit, quotient (dénominateur non nul) ou composée de fonctions continues est continue.
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Théorème des valeurs intermédiaires (TVI)</span><br>
+  Si \(f\) est <strong>continue sur \([a\,;\,b]\)</strong> et si \(k\) est un réel compris entre \(f(a)\) et \(f(b)\), alors il existe <strong>au moins un</strong> \(c \in [a\,;\,b]\) tel que \(f(c) = k\).
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Corollaire — TVI et stricte monotonie</span><br>
+  Si \(f\) est continue et <strong>strictement monotone</strong> sur \([a\,;\,b]\), alors pour tout \(k\) compris entre \(f(a)\) et \(f(b)\), l'équation \(f(x) = k\) admet une <strong>unique</strong> solution dans \([a\,;\,b]\).
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Application du TVI</span>
+  <p>Montrer que l'équation \(x^3 + x - 1 = 0\) admet une unique solution sur \([0\,;\,1]\).</p>
+  <p>Posons \(f(x) = x^3 + x - 1\). \(f\) est continue (polynomiale) et strictement croissante sur \(\mathbb{R}\) (car \(f'(x) = 3x^2 + 1 > 0\)).</p>
+  <p>\(f(0) = -1 < 0\) et \(f(1) = 1 > 0\). Par le TVI (corollaire), il existe un unique \(c \in [0\,;\,1]\) tel que \(f(c) = 0\).</p>
+  <p>Par dichotomie : \(f(0{,}68) \approx -0{,}006 < 0\) et \(f(0{,}69) \approx 0{,}019 > 0\), donc \(c \approx 0{,}68\).</p>
+</div>
+
+<!-- ==================== 4. DÉRIVATION ==================== -->
+<h2>4. Dérivation</h2>
+
+<h3>4.1. Rappels</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Nombre dérivé</span><br>
+  Le <strong>nombre dérivé</strong> de \(f\) en \(a\), noté \(f'(a)\), est la limite (si elle existe) :
+  \[f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}\]
+  Géométriquement, c'est le <strong>coefficient directeur de la tangente</strong> à la courbe de \(f\) au point d'abscisse \(a\).
+</div>
+
+<h3>4.2. Dérivées des fonctions usuelles</h3>
+
+<div class="formula-box">
+  <table>
+    <tr><th>Fonction \(f(x)\)</th><th>Dérivée \(f'(x)\)</th><th>Domaine</th></tr>
+    <tr><td>\(k\) (constante)</td><td>\(0\)</td><td>\(\mathbb{R}\)</td></tr>
+    <tr><td>\(x^n\)</td><td>\(n\,x^{n-1}\)</td><td>\(\mathbb{R}\)</td></tr>
+    <tr><td>\(\dfrac{1}{x}\)</td><td>\(-\dfrac{1}{x^2}\)</td><td>\(\mathbb{R}^*\)</td></tr>
+    <tr><td>\(\sqrt{x}\)</td><td>\(\dfrac{1}{2\sqrt{x}}\)</td><td>\(\mathbb{R}_+^*\)</td></tr>
+    <tr><td>\(x^{\alpha}\) (\(\alpha \in \mathbb{R}\))</td><td>\(\alpha\,x^{\alpha - 1}\)</td><td>\(\mathbb{R}_+^*\)</td></tr>
+    <tr><td>\(e^x\)</td><td>\(e^x\)</td><td>\(\mathbb{R}\)</td></tr>
+    <tr><td>\(\ln x\)</td><td>\(\dfrac{1}{x}\)</td><td>\(\mathbb{R}_+^*\)</td></tr>
+    <tr><td>\(\sin x\)</td><td>\(\cos x\)</td><td>\(\mathbb{R}\)</td></tr>
+    <tr><td>\(\cos x\)</td><td>\(-\sin x\)</td><td>\(\mathbb{R}\)</td></tr>
+  </table>
+</div>
+
+<h3>4.3. Règles opératoires</h3>
+
+<div class="prop">
+  <span class="label label-prop">Opérations sur les dérivées</span><br>
+  <table>
+    <tr><th>Opération</th><th>Dérivée</th></tr>
+    <tr><td>\(k\,f\)</td><td>\(k\,f'\)</td></tr>
+    <tr><td>\(f + g\)</td><td>\(f' + g'\)</td></tr>
+    <tr><td>\(f \times g\)</td><td>\(f'\,g + f\,g'\)</td></tr>
+    <tr><td>\(\dfrac{f}{g}\)</td><td>\(\dfrac{f'\,g - f\,g'}{g^2}\)</td></tr>
+  </table>
+</div>
+
+<h3>4.4. Dérivée de fonctions composées</h3>
+
+<div class="prop">
+  <span class="label label-prop">Théorème — Dérivation en chaîne</span><br>
+  Si \(f = g \circ u\) (c'est-à-dire \(f(x) = g\big(u(x)\big)\)), alors :
+  \[\boxed{f'(x) = u'(x) \times g'\big(u(x)\big)}\]
+</div>
+
+<div class="formula-box">
+  <strong>Cas particuliers fondamentaux :</strong>
+  <table>
+    <tr><th>Fonction</th><th>Dérivée</th></tr>
+    <tr><td>\(\big[u(x)\big]^n\)</td><td>\(n\,u'(x)\,\big[u(x)\big]^{n-1}\)</td></tr>
+    <tr><td>\(e^{u(x)}\)</td><td>\(u'(x)\,e^{u(x)}\)</td></tr>
+    <tr><td>\(\ln\big(u(x)\big)\)</td><td>\(\dfrac{u'(x)}{u(x)}\)</td></tr>
+    <tr><td>\(\sqrt{u(x)}\)</td><td>\(\dfrac{u'(x)}{2\sqrt{u(x)}}\)</td></tr>
+  </table>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span>
+  <p>Dériver \(f(x) = e^{3x^2 - 1}\).</p>
+  <p>On pose \(u(x) = 3x^2 - 1\), donc \(u'(x) = 6x\).</p>
+  <p>\(f(x) = e^{u(x)}\), d'où \(f'(x) = u'(x)\,e^{u(x)} = 6x\,e^{3x^2 - 1}\).</p>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span>
+  <p>Dériver \(g(x) = \ln(x^2 + 4)\).</p>
+  <p>On pose \(u(x) = x^2 + 4\), donc \(u'(x) = 2x\).</p>
+  <p>\(g'(x) = \dfrac{u'(x)}{u(x)} = \dfrac{2x}{x^2 + 4}\).</p>
+</div>
+
+<!-- ==================== 5. LOGARITHME ET EXPONENTIELLE ==================== -->
+<h2>5. Fonctions logarithme népérien et exponentielle</h2>
+
+<h3>5.1. Fonction exponentielle</h3>
+
+<div class="def">
+  <span class="label label-def">Définition</span><br>
+  La fonction exponentielle est l'unique fonction \(f\) dérivable sur \(\mathbb{R}\) telle que :
+  \[f' = f \quad \text{et} \quad f(0) = 1\]
+  On la note \(\exp\) ou \(x \mapsto e^x\).
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propriétés algébriques</span><br>
+  Pour tous \(a, b \in \mathbb{R}\) :
+  <ul>
+    <li>\(e^{a+b} = e^a \times e^b\)</li>
+    <li>\(e^{a-b} = \dfrac{e^a}{e^b}\)</li>
+    <li>\(\left(e^a\right)^n = e^{na}\)</li>
+    <li>\(e^0 = 1\) ; \(e^x > 0\) pour tout \(x\)</li>
+  </ul>
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Limites fondamentales</span><br>
+  \[\lim_{x \to +\infty} e^x = +\infty \qquad \lim_{x \to -\infty} e^x = 0\]
+  \[\lim_{x \to 0} \frac{e^x - 1}{x} = 1\]
+</div>
+
+<h3>5.2. Fonction logarithme népérien</h3>
+
+<div class="def">
+  <span class="label label-def">Définition</span><br>
+  Le <strong>logarithme népérien</strong> est la fonction réciproque de l'exponentielle :
+  \[\forall x > 0,\; y = \ln x \Longleftrightarrow x = e^y\]
+  Domaine : \(]0\,;\,+\infty[\). Image : \(\mathbb{R}\).
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propriétés algébriques</span><br>
+  Pour tous \(a, b > 0\) :
+  <ul>
+    <li>\(\ln(a \times b) = \ln a + \ln b\)</li>
+    <li>\(\ln\!\left(\dfrac{a}{b}\right) = \ln a - \ln b\)</li>
+    <li>\(\ln(a^n) = n\,\ln a\)</li>
+    <li>\(\ln 1 = 0\) ; \(\ln e = 1\)</li>
+    <li>\(\ln\!\left(\sqrt{a}\right) = \frac{1}{2}\,\ln a\)</li>
+  </ul>
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Limites fondamentales</span><br>
+  \[\lim_{x \to +\infty} \ln x = +\infty \qquad \lim_{x \to 0^+} \ln x = -\infty\]
+  \[\lim_{x \to 0} \frac{\ln(1+x)}{x} = 1\]
+</div>
+
+<div class="retenir">
+  <strong>Relation fondamentale :</strong>
+  \[\ln\big(e^x\big) = x \quad \forall x \in \mathbb{R} \qquad e^{\ln x} = x \quad \forall x > 0\]
+</div>
+
+<div class="chart-wrap">
+  <canvas id="chartExpLn" height="280"></canvas>
+</div>
+
+<h3>5.3. Résolution d'équations et inéquations</h3>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Résoudre des équations exponentielles et logarithmiques</span><br>
+  <ul>
+    <li>\(e^{f(x)} = e^{g(x)} \Longleftrightarrow f(x) = g(x)\)</li>
+    <li>\(e^{f(x)} = k > 0 \Longleftrightarrow f(x) = \ln k\)</li>
+    <li>\(\ln\big(f(x)\big) = \ln\big(g(x)\big) \Longleftrightarrow f(x) = g(x)\) (avec \(f(x)>0\), \(g(x)>0\))</li>
+    <li>\(\ln\big(f(x)\big) = k \Longleftrightarrow f(x) = e^k\) (avec \(f(x)>0\))</li>
+  </ul>
+  Pour les inéquations, utiliser le sens de variation (\(\exp\) et \(\ln\) strictement croissantes).
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span>
+  <p>Résoudre \(2\,e^{3x-1} = 10\).</p>
+  <p>\(e^{3x-1} = 5\), donc \(3x - 1 = \ln 5\), d'où \(x = \dfrac{1 + \ln 5}{3} \approx 0{,}87\).</p>
+</div>
+
+<!-- ==================== 6. FONCTIONS PUISSANCES ==================== -->
+<h2>6. Fonctions puissances</h2>
+
+<div class="def">
+  <span class="label label-def">Définition — Fonction puissance \(x^{\alpha}\)</span><br>
+  Pour \(\alpha \in \mathbb{R}\) et \(x > 0\), on définit :
+  \[x^{\alpha} = e^{\alpha \ln x}\]
+  Cette définition prolonge la notion de puissance entière à tout exposant réel.
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propriétés</span><br>
+  Pour \(x > 0\), \(y > 0\) et \(\alpha, \beta \in \mathbb{R}\) :
+  <ul>
+    <li>\(x^{\alpha} \times x^{\beta} = x^{\alpha + \beta}\)</li>
+    <li>\(\dfrac{x^{\alpha}}{x^{\beta}} = x^{\alpha - \beta}\)</li>
+    <li>\((x^{\alpha})^{\beta} = x^{\alpha\beta}\)</li>
+    <li>\((xy)^{\alpha} = x^{\alpha}\,y^{\alpha}\)</li>
+  </ul>
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Dérivée</span><br>
+  \[\frac{d}{dx}\left(x^{\alpha}\right) = \alpha\,x^{\alpha - 1} \qquad (x > 0)\]
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span>
+  <p>Dériver \(f(x) = x^{3/2}\) pour \(x > 0\).</p>
+  <p>\(f'(x) = \frac{3}{2}\,x^{1/2} = \frac{3}{2}\sqrt{x}\).</p>
+</div>
+
+<!-- ==================== 7. ÉTUDE COMPLÈTE DE FONCTION ==================== -->
+<h2>7. Étude complète de fonction</h2>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Étude complète</span><br>
+  <ol>
+    <li><strong>Domaine de définition</strong> \(\mathcal{D}_f\)</li>
+    <li><strong>Parité / périodicité</strong> éventuelle (réduction du domaine d'étude)</li>
+    <li><strong>Limites</strong> aux bornes du domaine — <strong>asymptotes</strong></li>
+    <li><strong>Dérivée</strong> \(f'(x)\) — signe de \(f'\) — <strong>tableau de variations</strong></li>
+    <li><strong>Points remarquables</strong> : zéros de \(f\), extrema, points d'inflexion</li>
+    <li><strong>Représentation graphique</strong></li>
+  </ol>
+</div>
+
+<div class="def">
+  <span class="label label-def">Asymptotes</span><br>
+  <ul>
+    <li><strong>Asymptote horizontale</strong> \(y = \ell\) si \(\lim_{x \to \pm\infty} f(x) = \ell\)</li>
+    <li><strong>Asymptote verticale</strong> \(x = a\) si \(\lim_{x \to a} f(x) = \pm\infty\)</li>
+    <li><strong>Asymptote oblique</strong> \(y = ax + b\) si \(\lim_{x \to \pm\infty} \big[f(x) - (ax+b)\big] = 0\)</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Étude de \(f(x) = x\,e^{-x}\)</span>
+  <p><strong>1. Domaine :</strong> \(\mathcal{D}_f = \mathbb{R}\).</p>
+  <p><strong>2. Limites :</strong></p>
+  <ul>
+    <li>\(\lim_{x \to +\infty} x\,e^{-x} = \lim \dfrac{x}{e^x} = 0\) (croissances comparées) — asymptote horizontale \(y = 0\) en \(+\infty\)</li>
+    <li>\(\lim_{x \to -\infty} x\,e^{-x} = -\infty\) (car \(x \to -\infty\) et \(e^{-x} \to +\infty\))</li>
+  </ul>
+  <p><strong>3. Dérivée :</strong> \(f'(x) = e^{-x} + x\,(-e^{-x}) = e^{-x}(1 - x)\).</p>
+  <p>Comme \(e^{-x} > 0\), le signe de \(f'(x)\) est celui de \(1 - x\).</p>
+  <ul>
+    <li>\(f'(x) > 0\) si \(x < 1\) — \(f\) croissante</li>
+    <li>\(f'(x) = 0\) si \(x = 1\) — maximum</li>
+    <li>\(f'(x) < 0\) si \(x > 1\) — \(f\) décroissante</li>
+  </ul>
+  <p><strong>4. Maximum :</strong> \(f(1) = 1 \times e^{-1} = \dfrac{1}{e} \approx 0{,}37\).</p>
+</div>
+
+<div class="chart-wrap">
+  <canvas id="chartXeX" height="280"></canvas>
+</div>
+
+<!-- ==================== 8. APPLICATIONS ==================== -->
+<h2>8. Applications — Modélisation</h2>
+
+<h3>8.1. Décroissance radioactive / Loi de refroidissement de Newton</h3>
+
+<div class="prop">
+  <span class="label label-prop">Modèle exponentiel décroissant</span><br>
+  Lorsqu'une grandeur \(y\) décroît proportionnellement à sa valeur actuelle, elle suit une loi de la forme :
+  \[\boxed{y(t) = y_0\,e^{-kt}} \qquad (k > 0)\]
+  <ul>
+    <li>\(y_0\) : valeur initiale</li>
+    <li>\(k\) : constante de décroissance</li>
+    <li>Demi-vie : \(t_{1/2} = \dfrac{\ln 2}{k}\)</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Refroidissement d'un local</span>
+  <p>Un local technique est à \(T_0 = 22\,°\text{C}\). Le chauffage est coupé, la température extérieure est \(T_{\text{ext}} = 5\,°\text{C}\). La constante de refroidissement est \(k = 0{,}12\,\text{h}^{-1}\).</p>
+  <p>\(T(t) = 5 + 17\,e^{-0{,}12\,t}\)</p>
+  <p><strong>Question :</strong> Au bout de combien d'heures la température passe-t-elle sous \(12\,°\text{C}\) ?</p>
+  <p>\(T(t) = 12 \Longleftrightarrow 5 + 17\,e^{-0{,}12\,t} = 12 \Longleftrightarrow e^{-0{,}12\,t} = \dfrac{7}{17}\)</p>
+  <p>\(-0{,}12\,t = \ln\!\left(\dfrac{7}{17}\right) \Longrightarrow t = \dfrac{-\ln(7/17)}{0{,}12} = \dfrac{\ln(17/7)}{0{,}12} \approx 7{,}4\,\text{h}\)</p>
+  <p>La température passe sous \(12\,°\text{C}\) au bout d'environ <strong>7 h 24 min</strong>.</p>
+</div>
+
+<div class="chart-wrap">
+  <canvas id="chartRefroid" height="280"></canvas>
+</div>
+
+<h3>8.2. Dépréciation d'un équipement</h3>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Dépréciation exponentielle</span>
+  <p>Une chaudière industrielle achetée \(25\,000\,€\) se déprécie selon \(V(t) = 25\,000\,e^{-0{,}15\,t}\) (en euros, \(t\) en années).</p>
+  <ul>
+    <li>Valeur après 5 ans : \(V(5) = 25\,000\,e^{-0{,}75} \approx 11\,809\,€\)</li>
+    <li>Taux de dépréciation instantané à \(t = 5\) : \(V'(5) = -0{,}15 \times 11\,809 \approx -1\,771\,€/\text{an}\)</li>
+    <li>Durée pour atteindre \(5\,000\,€\) : \(t = \dfrac{\ln(25\,000/5\,000)}{0{,}15} = \dfrac{\ln 5}{0{,}15} \approx 10{,}7\,\text{ans}\)</li>
+  </ul>
+</div>
+
+<h3>8.3. Optimisation de coûts</h3>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Coût de production</span>
+  <p>Le coût total de fabrication de \(x\) éléments de charpente (en dizaines) est modélisé par :</p>
+  <p>\[C(x) = 0{,}5\,x^3 - 6\,x^2 + 25\,x + 50 \qquad (x \in [1\,;\,10])\]</p>
+  <p>Le <strong>coût moyen</strong> par dizaine est \(\bar{C}(x) = \dfrac{C(x)}{x} = 0{,}5\,x^2 - 6\,x + 25 + \dfrac{50}{x}\).</p>
+  <p>Pour minimiser \(\bar{C}\), on dérive : \(\bar{C}'(x) = x - 6 - \dfrac{50}{x^2}\).</p>
+  <p>On résout numériquement \(\bar{C}'(x) = 0\) et on trouve \(x \approx 7{,}3\). Le coût moyen est minimal pour une production d'environ <strong>73 éléments</strong>.</p>
+</div>
+
+<!-- ==================== RÉSUMÉ ==================== -->
+<div class="retenir">
+  <strong>L'essentiel du chapitre :</strong>
+  <ul>
+    <li>Domaine, parité, périodicité : préalables à toute étude de fonction</li>
+    <li>Limites : résultat en \(\pm\infty\) et en un point ; 7 formes indéterminées à lever</li>
+    <li>Croissances comparées : \(e^x \gg x^n \gg \ln x\)</li>
+    <li>TVI : existence (et unicité si monotonie) de solutions d'équations</li>
+    <li>Dérivation : tableau des dérivées, règles opératoires, dérivation en chaîne</li>
+    <li>\(\ln\) et \(\exp\) : fonctions réciproques, propriétés algébriques, limites</li>
+    <li>Fonctions puissances : \(x^{\alpha} = e^{\alpha\ln x}\)</li>
+    <li>Étude de fonction : domaine, limites, dérivée, tableau de variations, graphique</li>
+    <li>Applications : refroidissement de Newton, dépréciation, optimisation de coûts</li>
+  </ul>
+</div>
+
+</div>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+// Graphique exp et ln
+(function(){
+  const ctx = document.getElementById('chartExpLn');
+  if(!ctx) return;
+  const xs = [];
+  const yExp = [];
+  const yLn = [];
+  const yId = [];
+  for(let x = -3; x <= 4; x += 0.1){
+    xs.push(Math.round(x*100)/100);
+    yExp.push(Math.round(Math.exp(x)*1000)/1000);
+    yLn.push(x > 0 ? Math.round(Math.log(x)*1000)/1000 : null);
+    yId.push(Math.round(x*100)/100);
+  }
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: xs,
+      datasets: [
+        {label: 'y = eˣ', data: yExp, borderColor: '#1e3a5f', borderWidth: 2, pointRadius: 0, fill: false},
+        {label: 'y = ln(x)', data: yLn, borderColor: '#2da44e', borderWidth: 2, pointRadius: 0, fill: false},
+        {label: 'y = x', data: yId, borderColor: '#aaa', borderWidth: 1, borderDash: [5,5], pointRadius: 0, fill: false}
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {title: {display: true, text: 'Fonctions exponentielle et logarithme népérien'}},
+      scales: {
+        x: {type: 'linear', min: -3, max: 4, title: {display: true, text: 'x'}},
+        y: {min: -4, max: 8, title: {display: true, text: 'y'}}
+      }
+    }
+  });
+})();
+
+// Graphique f(x) = x·e^(-x)
+(function(){
+  const ctx = document.getElementById('chartXeX');
+  if(!ctx) return;
+  const xs = [];
+  const ys = [];
+  for(let x = -2; x <= 8; x += 0.1){
+    xs.push(Math.round(x*100)/100);
+    ys.push(Math.round(x * Math.exp(-x)*10000)/10000);
+  }
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: xs,
+      datasets: [
+        {label: 'f(x) = x·e⁻ˣ', data: ys, borderColor: '#1e3a5f', borderWidth: 2.5, pointRadius: 0, fill: false},
+        {label: 'Maximum (1, 1/e)', data: xs.map((x,i) => Math.abs(x-1)<0.05 ? ys[i] : null), borderColor: '#c53030', backgroundColor: '#c53030', pointRadius: 6, pointStyle: 'circle', showLine: false},
+        {label: 'y = 0 (asymptote)', data: xs.map(() => 0), borderColor: '#aaa', borderWidth: 1, borderDash: [5,5], pointRadius: 0, fill: false}
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {title: {display: true, text: 'Étude de f(x) = x·e⁻ˣ'}},
+      scales: {
+        x: {type: 'linear', min: -2, max: 8, title: {display: true, text: 'x'}},
+        y: {min: -1, max: 1, title: {display: true, text: 'f(x)'}}
+      }
+    }
+  });
+})();
+
+// Graphique refroidissement
+(function(){
+  const ctx = document.getElementById('chartRefroid');
+  if(!ctx) return;
+  const ts = [];
+  const ys = [];
+  const y12 = [];
+  for(let t = 0; t <= 24; t += 0.5){
+    ts.push(t);
+    ys.push(Math.round((5 + 17*Math.exp(-0.12*t))*100)/100);
+    y12.push(12);
+  }
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ts,
+      datasets: [
+        {label: 'T(t) = 5 + 17·e⁻⁰·¹²ᵗ', data: ys, borderColor: '#1e3a5f', borderWidth: 2.5, pointRadius: 0, fill: false},
+        {label: 'T = 12 °C (seuil)', data: y12, borderColor: '#c53030', borderWidth: 1.5, borderDash: [6,4], pointRadius: 0, fill: false},
+        {label: 'T = 5 °C (ext.)', data: ts.map(() => 5), borderColor: '#718096', borderWidth: 1, borderDash: [3,3], pointRadius: 0, fill: false}
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {title: {display: true, text: 'Refroidissement d\'un local technique'}},
+      scales: {
+        x: {type: 'linear', min: 0, max: 24, title: {display: true, text: 'Temps (h)'}},
+        y: {min: 0, max: 25, title: {display: true, text: 'Température (°C)'}}
+      }
+    }
+  });
+})();
+</script>
+<script src="../../../nav.js"></script>
+</body>
+</html>

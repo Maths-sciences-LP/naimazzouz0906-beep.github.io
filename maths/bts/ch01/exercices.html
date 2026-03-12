@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch01 – Suites numériques – Exercices – BTS</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#1e3a5f;--p-bg:#eef2f7;--p-border:#93a5c0}</style>
+<link rel="stylesheet" href="/nav.css">
+</head>
+<body>
+<div class="c">
+<a href="../../sommaire.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>Chapitre 1 – Suites numériques</h1>
+  <p class="sous-titre">BTS &nbsp;|&nbsp; Exercices &nbsp;|&nbsp; Groupements B1, B2, C1, D1</p>
+  <p class="maj">Dernière mise à jour : mars 2026</p>
+</header>
+
+<div class="objectifs">
+  <strong>Compétences travaillées :</strong>
+  <ul>
+    <li>Reconnaître le type d'une suite et calculer ses termes</li>
+    <li>Calculer des sommes de termes consécutifs</li>
+    <li>Étudier le sens de variation et la convergence</li>
+    <li>Résoudre des problèmes concrets (intérêts, amortissements, évolutions)</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- NIVEAU 1 — Connaître et appliquer directement      -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="niveau-header niv1">
+  <span class="badge-niv badge-1">Niveau 1</span>
+  <h2>Connaître et appliquer directement</h2>
+</div>
+
+<!-- ── Exercice 1 ── -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num-badge">Exercice 1</span>
+    <span class="exo-title">Reconnaître le type de suite</span>
+  </div>
+  <p>Pour chacune des suites suivantes, indiquer si elle est arithmétique, géométrique, ou ni l'un ni l'autre. Préciser la raison le cas échéant.</p>
+  <p>a) \(u_n = 7 + 3n\)</p>
+  <p>b) \(v_n = 5 \times 2^n\)</p>
+  <p>c) \(w_n = n^2 + 1\)</p>
+  <p>d) \(t_0 = 100\) et \(t_{n+1} = t_n - 8\)</p>
+  <p>e) \(s_0 = 1000\) et \(s_{n+1} = 0{,}95\,s_n\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(u_{n+1} - u_n = [7 + 3(n+1)] - [7 + 3n] = 3\). Suite <strong>arithmétique</strong> de raison \(r = 3\).</p>
+    <p><strong>b)</strong> \(\dfrac{v_{n+1}}{v_n} = \dfrac{5 \times 2^{n+1}}{5 \times 2^n} = 2\). Suite <strong>géométrique</strong> de raison \(q = 2\).</p>
+    <p><strong>c)</strong> \(w_{n+1} - w_n = (n+1)^2 + 1 - n^2 - 1 = 2n + 1\). La différence dépend de \(n\) : <strong>ni arithmétique ni géométrique</strong>.</p>
+    <p><strong>d)</strong> \(t_{n+1} - t_n = -8\). Suite <strong>arithmétique</strong> de raison \(r = -8\).</p>
+    <p><strong>e)</strong> \(\dfrac{s_{n+1}}{s_n} = 0{,}95\). Suite <strong>géométrique</strong> de raison \(q = 0{,}95\).</p>
+  </div>
+</div>
+
+<!-- ── Exercice 2 ── -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num-badge">Exercice 2</span>
+    <span class="exo-title">Calcul de termes</span>
+  </div>
+  <p>1) \((u_n)\) est arithmétique avec \(u_0 = 12\) et \(r = -2{,}5\). Calculer \(u_5\), \(u_{10}\) et \(u_{20}\).</p>
+  <p>2) \((v_n)\) est géométrique avec \(v_0 = 800\) et \(q = 0{,}9\). Calculer \(v_1\), \(v_5\) et \(v_{10}\).</p>
+  <p>3) \((w_n)\) est arithmétique avec \(w_3 = 17\) et \(w_7 = 29\). Déterminer \(r\), \(w_0\) et \(w_{15}\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1)</strong> \(u_n = 12 + n \times (-2{,}5) = 12 - 2{,}5n\).</p>
+    <p>\(u_5 = 12 - 12{,}5 = -0{,}5\), \(u_{10} = 12 - 25 = -13\), \(u_{20} = 12 - 50 = -38\).</p>
+    <p><strong>2)</strong> \(v_n = 800 \times 0{,}9^n\).</p>
+    <p>\(v_1 = 720\), \(v_5 = 800 \times 0{,}9^5 \approx 800 \times 0{,}5905 \approx 472{,}4\), \(v_{10} = 800 \times 0{,}9^{10} \approx 800 \times 0{,}3487 \approx 278{,}9\).</p>
+    <p><strong>3)</strong> \(w_7 - w_3 = (7 - 3)\,r \Rightarrow 29 - 17 = 4r \Rightarrow r = 3\).</p>
+    <p>\(w_0 = w_3 - 3r = 17 - 9 = 8\). Donc \(w_n = 8 + 3n\).</p>
+    <p>\(w_{15} = 8 + 45 = 53\).</p>
+  </div>
+</div>
+
+<!-- ── Exercice 3 ── -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num-badge">Exercice 3</span>
+    <span class="exo-title">Calcul de sommes</span>
+  </div>
+  <p>1) Calculer \(S = 5 + 8 + 11 + 14 + \cdots + 62\).</p>
+  <p>2) Calculer \(S = 3 + 6 + 12 + 24 + \cdots + 3 \times 2^9\).</p>
+  <p>3) Calculer \(\displaystyle\sum_{k=0}^{n} 4 \times 0{,}5^k\) en fonction de \(n\), puis déterminer sa limite quand \(n \to +\infty\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1)</strong> Suite arithmétique de premier terme 5, raison 3, dernier terme 62.</p>
+    <p>Nombre de termes : \(62 = 5 + (n-1) \times 3 \Rightarrow n - 1 = 19 \Rightarrow n = 20\) termes.</p>
+    <p>\(S = \dfrac{20 \times (5 + 62)}{2} = \dfrac{20 \times 67}{2} = 670\).</p>
+    <p><strong>2)</strong> Suite géométrique de premier terme 3, raison 2, 10 termes (de \(3 \times 2^0\) à \(3 \times 2^9\)).</p>
+    <p>\(S = 3 \times \dfrac{1 - 2^{10}}{1 - 2} = 3 \times \dfrac{1 - 1024}{-1} = 3 \times 1023 = 3\,069\).</p>
+    <p><strong>3)</strong> \(\displaystyle\sum_{k=0}^{n} 4 \times 0{,}5^k = 4 \times \dfrac{1 - 0{,}5^{n+1}}{1 - 0{,}5} = 4 \times \dfrac{1 - 0{,}5^{n+1}}{0{,}5} = 8(1 - 0{,}5^{n+1})\).</p>
+    <p>Quand \(n \to +\infty\) : \(0{,}5^{n+1} \to 0\), donc \(S \to 8\).</p>
+  </div>
+</div>
+
+<!-- ── Exercice 4 ── -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num-badge">Exercice 4</span>
+    <span class="exo-title">Limites directes</span>
+  </div>
+  <p>Déterminer les limites suivantes :</p>
+  <p>a) \(\displaystyle\lim_{n \to +\infty} (3n - 100)\)</p>
+  <p>b) \(\displaystyle\lim_{n \to +\infty} 7 \times 0{,}8^n\)</p>
+  <p>c) \(\displaystyle\lim_{n \to +\infty} \dfrac{4n + 1}{n - 3}\)</p>
+  <p>d) \(\displaystyle\lim_{n \to +\infty} \left(12 - 5 \times 0{,}6^n\right)\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Suite arithmétique de raison \(r = 3 > 0\). \(\lim = +\infty\).</p>
+    <p><strong>b)</strong> Suite géométrique avec \(|q| = 0{,}8 < 1\). \(\lim = 0\).</p>
+    <p><strong>c)</strong> Termes dominants : \(\dfrac{4n}{n} = 4\). Donc \(\lim = 4\).</p>
+    <p><strong>d)</strong> \(0{,}6^n \to 0\), donc \(\lim = 12 - 5 \times 0 = 12\).</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- NIVEAU 2 — Appliquer et calculer                   -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="niveau-header niv2">
+  <span class="badge-niv badge-2">Niveau 2</span>
+  <h2>Appliquer et calculer</h2>
+</div>
+
+<!-- ── Exercice 5 ── -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num-badge">Exercice 5</span>
+    <span class="exo-title">Intérêts composés — Placement financier</span>
+  </div>
+  <p>Un artisan place 15 000 € sur un livret à intérêts composés au taux annuel de 2,8 %.</p>
+  <p>1) Exprimer le capital \(C_n\) après \(n\) années.</p>
+  <p>2) Calculer le capital après 6 ans.</p>
+  <p>3) Au bout de combien d'années le capital dépassera-t-il 20 000 € ? (On pourra utiliser la calculatrice ou le logarithme.)</p>
+  <p>4) Calculer la somme des capitaux de l'année 0 à l'année 5 : \(C_0 + C_1 + \cdots + C_5\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1)</strong> \(C_n = 15\,000 \times 1{,}028^n\). Suite géométrique de raison \(q = 1{,}028\).</p>
+    <p><strong>2)</strong> \(C_6 = 15\,000 \times 1{,}028^6 \approx 15\,000 \times 1{,}1809 \approx 17\,713\) €.</p>
+    <p><strong>3)</strong> On cherche \(n\) tel que \(15\,000 \times 1{,}028^n > 20\,000\), soit \(1{,}028^n > \dfrac{4}{3}\).</p>
+    <p>En passant au logarithme : \(n > \dfrac{\ln(4/3)}{\ln(1{,}028)} = \dfrac{0{,}2877}{0{,}02761} \approx 10{,}42\).</p>
+    <p>Le capital dépassera 20 000 € <strong>à partir de la 11e année</strong>.</p>
+    <p><strong>4)</strong> \(S = 15\,000 \times \dfrac{1 - 1{,}028^6}{1 - 1{,}028} = 15\,000 \times \dfrac{1 - 1{,}1809}{-0{,}028} = 15\,000 \times \dfrac{-0{,}1809}{-0{,}028} \approx 96\,911\) €.</p>
+  </div>
+</div>
+
+<!-- ── Exercice 6 ── -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num-badge">Exercice 6</span>
+    <span class="exo-title">Sens de variation et limites</span>
+  </div>
+  <p>Soit la suite \((u_n)\) définie pour \(n \geq 1\) par \(u_n = \dfrac{2n^2 - 3}{n^2 + n}\).</p>
+  <p>1) Calculer \(u_1\), \(u_2\), \(u_5\) et \(u_{10}\).</p>
+  <p>2) Étudier le sens de variation de \((u_n)\) en calculant le signe de \(u_{n+1} - u_n\).</p>
+  <p>3) Déterminer \(\displaystyle\lim_{n \to +\infty} u_n\).</p>
+  <p>4) La suite est-elle majorée ? Minorée ? Bornée ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1)</strong> \(u_1 = \dfrac{2 - 3}{1 + 1} = \dfrac{-1}{2} = -0{,}5\), \(u_2 = \dfrac{8 - 3}{4 + 2} = \dfrac{5}{6} \approx 0{,}833\), \(u_5 = \dfrac{50 - 3}{25 + 5} = \dfrac{47}{30} \approx 1{,}567\), \(u_{10} = \dfrac{200 - 3}{100 + 10} = \dfrac{197}{110} \approx 1{,}791\).</p>
+    <p><strong>2)</strong> On simplifie \(u_n = \dfrac{2n^2 - 3}{n(n+1)}\). Après calcul :</p>
+    <p>\(u_{n+1} - u_n = \dfrac{2(n+1)^2 - 3}{(n+1)(n+2)} - \dfrac{2n^2 - 3}{n(n+1)}\)</p>
+    <p>En réduisant au dénominateur commun \(n(n+1)(n+2)\) :</p>
+    <p>Numérateur : \(n(2n^2 + 4n - 1) - (n+2)(2n^2 - 3) = n(2n^2 + 4n - 1) - (2n^3 + 4n^2 - 3n - 6)\)</p>
+    <p>\(= 2n^3 + 4n^2 - n - 2n^3 - 4n^2 + 3n + 6 = 2n + 6 = 2(n + 3) > 0\) pour tout \(n \geq 1\).</p>
+    <p>Donc \(u_{n+1} > u_n\) : la suite est <strong>strictement croissante</strong>.</p>
+    <p><strong>3)</strong> \(\displaystyle\lim_{n \to +\infty} \dfrac{2n^2 - 3}{n^2 + n} = \lim_{n \to +\infty} \dfrac{2n^2}{n^2} = 2\). La suite converge vers \(\ell = 2\).</p>
+    <p><strong>4)</strong> La suite est croissante donc minorée par \(u_1 = -0{,}5\). Elle converge vers 2, donc elle est majorée par 2 (qu'elle n'atteint jamais). Elle est <strong>bornée</strong>.</p>
+  </div>
+</div>
+
+<!-- ── Exercice 7 ── -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num-badge">Exercice 7</span>
+    <span class="exo-title">Évolution de la production d'un atelier</span>
+  </div>
+  <p>Un atelier de menuiserie produit 240 panneaux la première semaine. Chaque semaine, la production augmente de 15 panneaux grâce à l'optimisation du processus.</p>
+  <p>1) Modéliser la production de la semaine \(n\) (\(n \geq 1\)) par une suite \((P_n)\). Quelle est sa nature ?</p>
+  <p>2) Quelle sera la production lors de la 12e semaine ?</p>
+  <p>3) Calculer la production totale sur les 12 premières semaines.</p>
+  <p>4) À partir de quelle semaine la production dépassera-t-elle 400 panneaux ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1)</strong> \(P_1 = 240\) et \(P_{n+1} = P_n + 15\). Suite <strong>arithmétique</strong> de premier terme \(P_1 = 240\) et de raison \(r = 15\).</p>
+    <p>Terme général : \(P_n = 240 + (n - 1) \times 15 = 225 + 15n\).</p>
+    <p><strong>2)</strong> \(P_{12} = 225 + 15 \times 12 = 225 + 180 = 405\) panneaux.</p>
+    <p><strong>3)</strong> Somme de \(P_1\) à \(P_{12}\) : 12 termes, premier = 240, dernier = 405.</p>
+    <p>\(S = \dfrac{12 \times (240 + 405)}{2} = \dfrac{12 \times 645}{2} = 3\,870\) panneaux.</p>
+    <p><strong>4)</strong> \(P_n > 400 \Leftrightarrow 225 + 15n > 400 \Leftrightarrow 15n > 175 \Leftrightarrow n > 11{,}67\).</p>
+    <p>La production dépassera 400 panneaux <strong>à partir de la 12e semaine</strong>.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- NIVEAU 3 — Analyser et résoudre                    -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="niveau-header niv3">
+  <span class="badge-niv badge-3">Niveau 3</span>
+  <h2>Analyser et résoudre</h2>
+</div>
+
+<!-- ── Exercice 8 ── -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num-badge">Exercice 8</span>
+    <span class="exo-title">Amortissement d'un emprunt par annuités constantes</span>
+  </div>
+  <p>Une entreprise de travaux publics emprunte 200 000 € pour l'achat d'une grue. Le taux annuel est de 4,2 % et l'emprunt est remboursé en 8 annuités constantes.</p>
+  <p>1) Calculer le montant de l'annuité constante \(a\).</p>
+  <p>2) Construire le tableau d'amortissement pour les trois premières années.</p>
+  <p>3) Calculer le coût total du crédit (total des intérêts versés).</p>
+  <p>4) Si l'entreprise souhaite que l'annuité ne dépasse pas 30 000 €, quelle durée minimale doit-elle choisir ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1)</strong> \(a = 200\,000 \times \dfrac{0{,}042}{1 - 1{,}042^{-8}}\).</p>
+    <p>\(1{,}042^{-8} = \dfrac{1}{1{,}042^8} \approx \dfrac{1}{1{,}3907} \approx 0{,}7191\).</p>
+    <p>\(a = 200\,000 \times \dfrac{0{,}042}{1 - 0{,}7191} = 200\,000 \times \dfrac{0{,}042}{0{,}2809} \approx 29\,904\) €.</p>
+    <p><strong>2)</strong></p>
+    <table>
+      <tr><th>Année</th><th>Capital début</th><th>Intérêts (4,2 %)</th><th>Amortissement</th><th>Annuité</th></tr>
+      <tr><td>1</td><td>200 000</td><td>8 400</td><td>21 504</td><td>29 904</td></tr>
+      <tr><td>2</td><td>178 496</td><td>7 497</td><td>22 407</td><td>29 904</td></tr>
+      <tr><td>3</td><td>156 089</td><td>6 556</td><td>23 348</td><td>29 904</td></tr>
+    </table>
+    <p><strong>3)</strong> Total remboursé : \(8 \times 29\,904 = 239\,232\) €. Coût du crédit : \(239\,232 - 200\,000 = 39\,232\) €.</p>
+    <p><strong>4)</strong> On cherche \(n\) tel que \(a \leq 30\,000\), soit \(200\,000 \times \dfrac{0{,}042}{1 - 1{,}042^{-n}} \leq 30\,000\).</p>
+    <p>\(\dfrac{0{,}042}{1 - 1{,}042^{-n}} \leq 0{,}15 \Rightarrow 1 - 1{,}042^{-n} \geq 0{,}28 \Rightarrow 1{,}042^{-n} \leq 0{,}72\).</p>
+    <p>\(-n \ln(1{,}042) \leq \ln(0{,}72) \Rightarrow n \geq \dfrac{-\ln(0{,}72)}{\ln(1{,}042)} = \dfrac{0{,}3285}{0{,}04114} \approx 7{,}98\).</p>
+    <p>Il faut au minimum <strong>8 ans</strong> (ce qui est cohérent avec la question 1).</p>
+  </div>
+</div>
+
+<!-- ── Exercice 9 ── -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num-badge">Exercice 9</span>
+    <span class="exo-title">Suite définie par récurrence — Convergence</span>
+  </div>
+  <p>On considère la suite \((u_n)\) définie par \(u_0 = 10\) et \(u_{n+1} = 0{,}7\,u_n + 6\).</p>
+  <p>1) Calculer \(u_1\), \(u_2\), \(u_3\) et \(u_4\).</p>
+  <p>2) On admet que \((u_n)\) converge vers une limite \(\ell\). Déterminer \(\ell\) en résolvant \(\ell = 0{,}7\,\ell + 6\).</p>
+  <p>3) On pose \(v_n = u_n - \ell\). Montrer que \((v_n)\) est géométrique. Préciser sa raison et son premier terme.</p>
+  <p>4) En déduire l'expression de \(u_n\) en fonction de \(n\).</p>
+  <p>5) Retrouver la limite de \((u_n)\) à partir de l'expression explicite.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1)</strong> \(u_1 = 0{,}7 \times 10 + 6 = 13\), \(u_2 = 0{,}7 \times 13 + 6 = 15{,}1\), \(u_3 = 0{,}7 \times 15{,}1 + 6 = 16{,}57\), \(u_4 = 0{,}7 \times 16{,}57 + 6 \approx 17{,}60\).</p>
+    <p><strong>2)</strong> \(\ell = 0{,}7\ell + 6 \Rightarrow 0{,}3\ell = 6 \Rightarrow \ell = 20\).</p>
+    <p><strong>3)</strong> \(v_n = u_n - 20\). Calculons \(v_{n+1}\) :</p>
+    <p>\(v_{n+1} = u_{n+1} - 20 = 0{,}7\,u_n + 6 - 20 = 0{,}7\,u_n - 14 = 0{,}7(u_n - 20) = 0{,}7\,v_n\).</p>
+    <p>Donc \((v_n)\) est <strong>géométrique</strong> de raison \(q = 0{,}7\) et de premier terme \(v_0 = u_0 - 20 = -10\).</p>
+    <p><strong>4)</strong> \(v_n = -10 \times 0{,}7^n\), donc \(u_n = v_n + 20\), soit :</p>
+    <p>\[\boxed{u_n = 20 - 10 \times 0{,}7^n}\]</p>
+    <p><strong>5)</strong> \(|0{,}7| < 1\), donc \(0{,}7^n \to 0\) quand \(n \to +\infty\). Ainsi \(u_n \to 20 - 0 = 20\). On retrouve \(\ell = 20\).</p>
+  </div>
+</div>
+
+<!-- ── Exercice 10 ── -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num-badge">Exercice 10</span>
+    <span class="exo-title">Refroidissement d'un bâtiment en panne de chauffage</span>
+  </div>
+  <p>La chaudière d'un immeuble de bureaux tombe en panne. La température intérieure, initialement à 21 °C, diminue selon le modèle :</p>
+  <p>\[T_n = T_{\text{ext}} + (T_0 - T_{\text{ext}}) \times q^n\]</p>
+  <p>où \(T_{\text{ext}} = 2\) °C et \(q = 0{,}88\) (\(n\) en heures).</p>
+  <p>1) Exprimer \(T_n\) numériquement.</p>
+  <p>2) Compléter le tableau pour \(n = 0, 1, 2, 3, 5, 10, 15, 20\).</p>
+  <p>3) Déterminer la limite de \(T_n\) quand \(n \to +\infty\). Interpréter.</p>
+  <p>4) Au bout de combien d'heures la température passera-t-elle sous 14 °C ? (Utiliser la calculatrice ou le logarithme.)</p>
+  <p>5) Le technicien doit intervenir avant que la température ne descende sous 10 °C pour éviter le gel des canalisations. De combien de temps dispose-t-il ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1)</strong> \(T_n = 2 + 19 \times 0{,}88^n\).</p>
+    <p><strong>2)</strong></p>
+    <table>
+      <tr><th>\(n\)</th><th>0</th><th>1</th><th>2</th><th>3</th><th>5</th><th>10</th><th>15</th><th>20</th></tr>
+      <tr><td>\(T_n\) (°C)</td><td>21,0</td><td>18,7</td><td>16,7</td><td>14,9</td><td>11,9</td><td>6,7</td><td>4,1</td><td>2,9</td></tr>
+    </table>
+    <p><strong>3)</strong> \(|0{,}88| < 1\), donc \(0{,}88^n \to 0\). Ainsi \(T_n \to 2\) °C. La température intérieure tend vers la température extérieure.</p>
+    <p><strong>4)</strong> \(T_n < 14 \Leftrightarrow 2 + 19 \times 0{,}88^n < 14 \Leftrightarrow 0{,}88^n < \dfrac{12}{19}\).</p>
+    <p>\(n > \dfrac{\ln(12/19)}{\ln(0{,}88)} = \dfrac{-0{,}4595}{-0{,}1278} \approx 3{,}6\).</p>
+    <p>La température passe sous 14 °C <strong>après environ 4 heures</strong>.</p>
+    <p><strong>5)</strong> \(T_n < 10 \Leftrightarrow 0{,}88^n < \dfrac{8}{19} \Rightarrow n > \dfrac{\ln(8/19)}{\ln(0{,}88)} = \dfrac{-0{,}8649}{-0{,}1278} \approx 6{,}8\).</p>
+    <p>Le technicien dispose d'environ <strong>6 heures et 48 minutes</strong> avant que la température ne passe sous 10 °C.</p>
+  </div>
+</div>
+
+<!-- ── Exercice 11 ── -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num-badge">Exercice 11</span>
+    <span class="exo-title">Limites — Formes indéterminées</span>
+  </div>
+  <p>Lever l'indétermination et calculer les limites suivantes :</p>
+  <p>a) \(\displaystyle\lim_{n \to +\infty} \dfrac{n^3 - 2n^2 + 1}{5n^3 + 3n}\)</p>
+  <p>b) \(\displaystyle\lim_{n \to +\infty} \left(\sqrt{n^2 + 3n} - n\right)\)</p>
+  <p>c) \(\displaystyle\lim_{n \to +\infty} \dfrac{3^n + 2^n}{3^n - 2^n}\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> On factorise par \(n^3\) : \(\dfrac{n^3(1 - \frac{2}{n} + \frac{1}{n^3})}{n^3(5 + \frac{3}{n^2})} \to \dfrac{1}{5}\).</p>
+    <p><strong>b)</strong> Forme \(\infty - \infty\). On multiplie par l'expression conjuguée :</p>
+    <p>\(\sqrt{n^2 + 3n} - n = \dfrac{(n^2 + 3n) - n^2}{\sqrt{n^2 + 3n} + n} = \dfrac{3n}{\sqrt{n^2 + 3n} + n}\).</p>
+    <p>On factorise par \(n\) : \(\dfrac{3n}{n(\sqrt{1 + \frac{3}{n}} + 1)} = \dfrac{3}{\sqrt{1 + \frac{3}{n}} + 1} \to \dfrac{3}{1 + 1} = \dfrac{3}{2}\).</p>
+    <p><strong>c)</strong> Forme \(\dfrac{\infty}{\infty}\). On factorise par \(3^n\) :</p>
+    <p>\(\dfrac{3^n(1 + (2/3)^n)}{3^n(1 - (2/3)^n)}\). Comme \((2/3)^n \to 0\), on obtient \(\dfrac{1 + 0}{1 - 0} = 1\).</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- NIVEAU 4 — Approfondir et modéliser                -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="niveau-header niv4">
+  <span class="badge-niv badge-4">Niveau 4</span>
+  <h2>Approfondir et modéliser</h2>
+</div>
+
+<!-- ── Exercice 12 ── -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num-badge">Exercice 12</span>
+    <span class="exo-title">Modélisation — Concentration d'un polluant</span>
+  </div>
+  <p>Un bassin de rétention d'eaux pluviales contient initialement 500 mg/L de polluant. Chaque jour, un système de filtration élimine 15 % du polluant, mais les eaux de ruissellement apportent 20 mg/L de polluant supplémentaire.</p>
+  <p>On note \(P_n\) la concentration (en mg/L) au jour \(n\).</p>
+  <p>1) Justifier que \(P_{n+1} = 0{,}85\,P_n + 20\).</p>
+  <p>2) Calculer les concentrations \(P_0\) à \(P_5\).</p>
+  <p>3) Déterminer la limite \(\ell\) de \((P_n)\) en admettant sa convergence.</p>
+  <p>4) Poser \(v_n = P_n - \ell\). Montrer que \((v_n)\) est géométrique et en déduire l'expression de \(P_n\).</p>
+  <p>5) Au bout de combien de jours la concentration sera-t-elle inférieure à 150 mg/L ?</p>
+  <p>6) La norme autorise une concentration maximale de 140 mg/L pour le rejet dans le milieu naturel. Le système de filtration est-il suffisant à long terme ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1)</strong> Chaque jour, il reste 85 % du polluant (filtration de 15 %) et on ajoute 20 mg/L. D'où : \(P_{n+1} = 0{,}85\,P_n + 20\).</p>
+    <p><strong>2)</strong> \(P_0 = 500\), \(P_1 = 0{,}85 \times 500 + 20 = 445\), \(P_2 = 0{,}85 \times 445 + 20 = 398{,}25\), \(P_3 \approx 358{,}51\), \(P_4 \approx 324{,}73\), \(P_5 \approx 296{,}02\).</p>
+    <p><strong>3)</strong> \(\ell = 0{,}85\,\ell + 20 \Rightarrow 0{,}15\,\ell = 20 \Rightarrow \ell = \dfrac{20}{0{,}15} = \dfrac{400}{3} \approx 133{,}3\) mg/L.</p>
+    <p><strong>4)</strong> \(v_n = P_n - \dfrac{400}{3}\). On vérifie : \(v_{n+1} = P_{n+1} - \dfrac{400}{3} = 0{,}85\,P_n + 20 - \dfrac{400}{3} = 0{,}85\left(P_n - \dfrac{400}{3}\right) = 0{,}85\,v_n\).</p>
+    <p>Donc \((v_n)\) est géométrique de raison \(0{,}85\) et \(v_0 = 500 - \dfrac{400}{3} = \dfrac{1100}{3}\).</p>
+    <p>\(v_n = \dfrac{1100}{3} \times 0{,}85^n\), donc \(P_n = \dfrac{400}{3} + \dfrac{1100}{3} \times 0{,}85^n = \dfrac{400 + 1100 \times 0{,}85^n}{3}\).</p>
+    <p><strong>5)</strong> \(P_n < 150 \Leftrightarrow \dfrac{400 + 1100 \times 0{,}85^n}{3} < 150 \Leftrightarrow 1100 \times 0{,}85^n < 50 \Leftrightarrow 0{,}85^n < \dfrac{1}{22}\).</p>
+    <p>\(n > \dfrac{\ln(1/22)}{\ln(0{,}85)} = \dfrac{-3{,}0910}{-0{,}1625} \approx 19{,}0\).</p>
+    <p>La concentration sera inférieure à 150 mg/L <strong>à partir du 20e jour</strong>.</p>
+    <p><strong>6)</strong> La limite est \(\ell \approx 133{,}3\) mg/L \(< 140\) mg/L. Le système de filtration est <strong>suffisant à long terme</strong> : la concentration se stabilisera en dessous de la norme.</p>
+  </div>
+</div>
+
+<!-- ── Exercice 13 ── -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num-badge">Exercice 13</span>
+    <span class="exo-title">Comparaison de deux offres d'emprunt</span>
+  </div>
+  <p>Un entrepreneur du bâtiment hésite entre deux offres pour financer l'achat d'un chariot élévateur à 40 000 € :</p>
+  <ul>
+    <li><strong>Offre A :</strong> taux annuel 3 %, remboursement en 5 annuités constantes.</li>
+    <li><strong>Offre B :</strong> taux annuel 2,5 %, remboursement en 7 annuités constantes.</li>
+  </ul>
+  <p>1) Calculer le montant de l'annuité pour chaque offre.</p>
+  <p>2) Calculer le coût total du crédit pour chaque offre.</p>
+  <p>3) Quelle offre est la moins coûteuse en termes d'intérêts ? Quel autre critère pourrait influencer le choix ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Offre A :</strong></p>
+    <p>\(a_A = 40\,000 \times \dfrac{0{,}03}{1 - 1{,}03^{-5}} = 40\,000 \times \dfrac{0{,}03}{1 - 0{,}8626} = 40\,000 \times \dfrac{0{,}03}{0{,}1374} \approx 8\,734\) €.</p>
+    <p>Coût total : \(5 \times 8\,734 = 43\,670\) €. Intérêts : \(43\,670 - 40\,000 = 3\,670\) €.</p>
+    <p><strong>Offre B :</strong></p>
+    <p>\(a_B = 40\,000 \times \dfrac{0{,}025}{1 - 1{,}025^{-7}} = 40\,000 \times \dfrac{0{,}025}{1 - 0{,}8413} = 40\,000 \times \dfrac{0{,}025}{0{,}1587} \approx 6\,302\) €.</p>
+    <p>Coût total : \(7 \times 6\,302 = 44\,114\) €. Intérêts : \(44\,114 - 40\,000 = 4\,114\) €.</p>
+    <p><strong>3)</strong> L'offre A coûte <strong>3 670 €</strong> d'intérêts contre <strong>4 114 €</strong> pour l'offre B. L'offre A est la moins coûteuse en intérêts.</p>
+    <p>Cependant, l'offre B a une annuité plus faible (6 302 € vs 8 734 €), ce qui réduit la charge annuelle. Si la trésorerie de l'entreprise est tendue, l'offre B peut être préférable malgré un coût total supérieur.</p>
+  </div>
+</div>
+
+<!-- ── Exercice 14 ── -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num-badge">Exercice 14</span>
+    <span class="exo-title">Suite et théorème de convergence</span>
+  </div>
+  <p>Soit la suite \((u_n)\) définie par \(u_0 = 1\) et \(u_{n+1} = \sqrt{2u_n + 3}\).</p>
+  <p>1) Calculer \(u_1\), \(u_2\) et \(u_3\) (valeurs approchées au centième).</p>
+  <p>2) Conjecturer le sens de variation et la convergence de la suite.</p>
+  <p>3) Montrer par récurrence que, pour tout \(n \geq 0\), \(0 \leq u_n \leq 3\).</p>
+  <p>4) Montrer que la suite est croissante en étudiant le signe de \(u_{n+1} - u_n\).</p>
+  <p>5) En déduire que la suite converge, puis déterminer sa limite.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1)</strong> \(u_1 = \sqrt{2 \times 1 + 3} = \sqrt{5} \approx 2{,}24\), \(u_2 = \sqrt{2 \times 2{,}236 + 3} = \sqrt{7{,}472} \approx 2{,}73\), \(u_3 = \sqrt{2 \times 2{,}733 + 3} = \sqrt{8{,}466} \approx 2{,}91\).</p>
+    <p><strong>2)</strong> La suite semble croissante et converger vers 3.</p>
+    <p><strong>3)</strong> <em>Initialisation :</em> \(u_0 = 1 \in [0\,;3]\). Vrai.</p>
+    <p><em>Hérédité :</em> Supposons \(0 \leq u_n \leq 3\). Alors \(0 \leq 2u_n \leq 6\), donc \(3 \leq 2u_n + 3 \leq 9\), d'où \(\sqrt{3} \leq \sqrt{2u_n + 3} \leq 3\).</p>
+    <p>Comme \(\sqrt{3} > 0\), on a bien \(0 \leq u_{n+1} \leq 3\). La propriété est héréditaire.</p>
+    <p><strong>4)</strong> On étudie le signe de \(u_{n+1} - u_n = \sqrt{2u_n + 3} - u_n\).</p>
+    <p>Posons \(f(x) = \sqrt{2x + 3} - x\). Étudions le signe de \(f\) sur \([0\,;3]\).</p>
+    <p>\(f(x) = 0 \Leftrightarrow \sqrt{2x + 3} = x \Leftrightarrow 2x + 3 = x^2\) (avec \(x \geq 0\)) \(\Leftrightarrow x^2 - 2x - 3 = 0\).</p>
+    <p>\(\Delta = 16\), \(x = 3\) ou \(x = -1\). Comme \(u_n \in [0\,;3[\) (strictement, pour \(n \geq 0\), \(u_n < 3\)) et \(f(0) = \sqrt{3} > 0\), on a \(f(u_n) > 0\) pour \(u_n \in [0\,;3[\).</p>
+    <p>Donc \(u_{n+1} - u_n > 0\) : la suite est <strong>strictement croissante</strong>.</p>
+    <p><strong>5)</strong> La suite est croissante et majorée par 3, donc elle <strong>converge</strong> (théorème de convergence monotone).</p>
+    <p>Soit \(\ell\) sa limite. Par passage à la limite : \(\ell = \sqrt{2\ell + 3}\), soit \(\ell^2 = 2\ell + 3\), donc \(\ell^2 - 2\ell - 3 = 0\).</p>
+    <p>Solutions : \(\ell = 3\) ou \(\ell = -1\). Comme tous les termes sont positifs, \(\ell \geq 0\), d'où \(\boxed{\ell = 3}\).</p>
+  </div>
+</div>
+
+<!-- ── Exercice 15 ── -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num-badge">Exercice 15</span>
+    <span class="exo-title">Problème de synthèse — Rentabilité d'un panneau solaire</span>
+  </div>
+  <p>Un technicien en énergie installe des panneaux solaires sur le toit d'un entrepôt. Le coût d'installation est de 18 000 €. La première année, les panneaux permettent une économie de 2 400 € sur la facture d'électricité. Cependant, le rendement des panneaux diminue de 1,5 % par an.</p>
+  <p>On note \(E_n\) l'économie réalisée lors de la \(n\)-ième année (\(n \geq 1\)).</p>
+  <p>1) Justifier que \((E_n)\) est une suite géométrique. Préciser son premier terme et sa raison.</p>
+  <p>2) Exprimer \(E_n\) en fonction de \(n\).</p>
+  <p>3) Calculer l'économie totale cumulée sur les \(n\) premières années : \(S_n = E_1 + E_2 + \cdots + E_n\).</p>
+  <p>4) Déterminer le nombre d'années nécessaires pour que l'investissement soit rentabilisé (\(S_n \geq 18\,000\)).</p>
+  <p>5) Calculer l'économie totale théorique sur une durée infinie. L'investissement est-il toujours rentable ?</p>
+  <p>6) Un concurrent propose des panneaux à 15 000 € avec une économie initiale de 1 900 € et une perte de rendement de 1 % par an. Quelle offre est la plus avantageuse à long terme ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1)</strong> Chaque année, le rendement est multiplié par \(1 - 0{,}015 = 0{,}985\). Donc \(E_{n+1} = 0{,}985 \times E_n\).</p>
+    <p>\((E_n)\) est <strong>géométrique</strong> de premier terme \(E_1 = 2\,400\) et de raison \(q = 0{,}985\).</p>
+    <p><strong>2)</strong> \(E_n = 2\,400 \times 0{,}985^{n-1}\).</p>
+    <p><strong>3)</strong> \(S_n = E_1 + E_2 + \cdots + E_n = 2\,400 \times \dfrac{1 - 0{,}985^n}{1 - 0{,}985} = 2\,400 \times \dfrac{1 - 0{,}985^n}{0{,}015} = 160\,000 \times (1 - 0{,}985^n)\).</p>
+    <p><strong>4)</strong> \(S_n \geq 18\,000 \Leftrightarrow 160\,000(1 - 0{,}985^n) \geq 18\,000 \Leftrightarrow 1 - 0{,}985^n \geq 0{,}1125\).</p>
+    <p>\(0{,}985^n \leq 0{,}8875 \Rightarrow n \geq \dfrac{\ln(0{,}8875)}{\ln(0{,}985)} = \dfrac{-0{,}1193}{-0{,}01511} \approx 7{,}9\).</p>
+    <p>L'investissement est rentabilisé <strong>au bout de 8 ans</strong>.</p>
+    <p><strong>5)</strong> \(\displaystyle\lim_{n \to +\infty} S_n = 160\,000 \times (1 - 0) = 160\,000\) €.</p>
+    <p>L'économie totale théorique est de 160 000 €, très largement supérieure au coût de 18 000 €. L'investissement est <strong>très rentable</strong>.</p>
+    <p><strong>6)</strong> Offre concurrente : \(E'_n = 1\,900 \times 0{,}99^{n-1}\).</p>
+    <p>\(S'_{\infty} = \dfrac{1\,900}{1 - 0{,}99} = \dfrac{1\,900}{0{,}01} = 190\,000\) €.</p>
+    <p>Gain net offre 1 : \(160\,000 - 18\,000 = 142\,000\) €. Gain net offre 2 : \(190\,000 - 15\,000 = 175\,000\) €.</p>
+    <p>L'offre 2 est <strong>plus avantageuse à long terme</strong> avec un gain net supérieur de 33 000 €, malgré une économie annuelle initiale plus faible.</p>
+  </div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

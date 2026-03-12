@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch01 – Suites numériques – BTS</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#1e3a5f;--p-bg:#eef2f7;--p-border:#93a5c0}</style>
+<link rel="stylesheet" href="/nav.css">
+</head>
+<body>
+<div class="c">
+<a href="../../sommaire.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>Chapitre 1 – Suites numériques</h1>
+  <p class="sous-titre">BTS &nbsp;|&nbsp; Mathématiques &nbsp;|&nbsp; Groupements B1, B2, C1, D1</p>
+  <p class="maj">Dernière mise à jour : mars 2026</p>
+</header>
+
+<div class="objectifs">
+  <strong>Objectifs du chapitre :</strong>
+  <ul>
+    <li>Maîtriser les définitions et modes de génération d'une suite (explicite, par récurrence)</li>
+    <li>Reconnaître et exploiter les suites arithmétiques et géométriques</li>
+    <li>Calculer la somme des termes consécutifs d'une suite arithmétique ou géométrique</li>
+    <li>Étudier le sens de variation et la convergence d'une suite</li>
+    <li>Déterminer la limite d'une suite</li>
+    <li>Appliquer les suites à des problèmes concrets : intérêts composés, amortissements, modèles d'évolution</li>
+  </ul>
+</div>
+
+<!-- ==================== SITUATION PROFESSIONNELLE ==================== -->
+<h2>Situation professionnelle</h2>
+
+<div class="situation">
+  <h3>Investissement et amortissement dans le bâtiment</h3>
+  <p>Un chef d'entreprise du bâtiment contracte un emprunt de 120 000 € pour l'achat d'un engin de chantier. Le remboursement s'effectue par mensualités constantes sur 5 ans au taux annuel de 3,6 %. Comment calculer le montant de chaque mensualité ? Comment évolue le capital restant dû au fil des mois ?</p>
+  <p>Par ailleurs, un technicien en génie climatique observe que la température d'un local non chauffé diminue de 8 % par heure lorsque la température extérieure est de 5 °C. Comment modéliser cette évolution ?</p>
+  <p>Ces deux problèmes se résolvent grâce aux <strong>suites numériques</strong>.</p>
+</div>
+
+<!-- ==================== 1. RAPPELS ==================== -->
+<h2>1. Généralités sur les suites</h2>
+
+<div class="def">
+  <span class="label label-def">Définition — Suite numérique</span><br>
+  Une <strong>suite numérique</strong> est une application de \(\mathbb{N}\) (ou d'une partie de \(\mathbb{N}\)) dans \(\mathbb{R}\). On la note \((u_n)_{n \in \mathbb{N}}\) ou simplement \((u_n)\). Le nombre réel \(u_n\) est appelé le <strong>terme de rang \(n\)</strong> (ou terme général) de la suite.
+</div>
+
+<h3>1.1 Modes de génération</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Suite définie explicitement</span><br>
+  Une suite est définie de manière <strong>explicite</strong> lorsque \(u_n\) est exprimé directement en fonction de \(n\) :
+  \[u_n = f(n)\]
+  On peut alors calculer n'importe quel terme indépendamment des autres.
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span>
+  <p>La suite \((u_n)\) définie par \(u_n = 3n^2 - 2n + 1\) est explicite.</p>
+  <p>On calcule directement : \(u_0 = 1\), \(u_1 = 2\), \(u_5 = 3 \times 25 - 10 + 1 = 66\).</p>
+</div>
+
+<div class="def">
+  <span class="label label-def">Définition — Suite définie par récurrence</span><br>
+  Une suite est définie par <strong>récurrence</strong> lorsqu'on connaît :
+  <ul>
+    <li>un ou plusieurs termes initiaux (par exemple \(u_0\)),</li>
+    <li>une relation de récurrence qui donne \(u_{n+1}\) en fonction de \(u_n\) (et éventuellement de \(n\)).</li>
+  </ul>
+  \[u_{n+1} = g(u_n) \quad \text{avec } u_0 \text{ donné}\]
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span>
+  <p>Soit \((u_n)\) définie par \(u_0 = 5\) et \(u_{n+1} = 2u_n - 3\).</p>
+  <p>Alors : \(u_1 = 2 \times 5 - 3 = 7\), \(u_2 = 2 \times 7 - 3 = 11\), \(u_3 = 2 \times 11 - 3 = 19\).</p>
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention</span><br>
+  Avec une définition par récurrence, pour calculer \(u_{100}\), il faut d'abord calculer tous les termes de \(u_0\) à \(u_{99}\). Ce n'est pas le cas avec une définition explicite.
+</div>
+
+<div class="exo">
+  <span class="exo-num">Mini-exercice 1</span>
+  <p class="exo-titre">Calculer des termes de suites</p>
+  <p>1) Soit \((u_n)\) définie par \(u_n = \dfrac{n^2 + 1}{2n + 3}\). Calculer \(u_0\), \(u_1\), \(u_2\) et \(u_{10}\).</p>
+  <p>2) Soit \((v_n)\) définie par \(v_0 = 100\) et \(v_{n+1} = 0{,}9\,v_n + 5\). Calculer \(v_1\), \(v_2\) et \(v_3\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1)</strong> \(u_0 = \dfrac{0 + 1}{0 + 3} = \dfrac{1}{3}\), \(u_1 = \dfrac{2}{5}\), \(u_2 = \dfrac{5}{7}\), \(u_{10} = \dfrac{101}{23} \approx 4{,}39\).</p>
+    <p><strong>2)</strong> \(v_1 = 0{,}9 \times 100 + 5 = 95\), \(v_2 = 0{,}9 \times 95 + 5 = 90{,}5\), \(v_3 = 0{,}9 \times 90{,}5 + 5 = 86{,}45\).</p>
+  </div>
+</div>
+
+<!-- ==================== 2. SUITES ARITHMÉTIQUES ==================== -->
+<h2>2. Suites arithmétiques</h2>
+
+<div class="def">
+  <span class="label label-def">Définition</span><br>
+  Une suite \((u_n)\) est <strong>arithmétique</strong> s'il existe un réel \(r\) (appelé <strong>raison</strong>) tel que, pour tout \(n \in \mathbb{N}\) :
+  \[u_{n+1} = u_n + r\]
+  On passe d'un terme au suivant en <strong>ajoutant</strong> la raison \(r\).
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Terme général</span><br>
+  Si \((u_n)\) est arithmétique de raison \(r\) et de premier terme \(u_0\), alors :
+  \[\boxed{u_n = u_0 + n\,r}\]
+  Plus généralement, pour tout \(p \in \mathbb{N}\) :
+  \[u_n = u_p + (n - p)\,r\]
+</div>
+
+<div class="formula-box">
+  <div class="fb-label">Terme général d'une suite arithmétique</div>
+  <div class="fb-formula">\(u_n = u_0 + n\,r\)</div>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Amortissement linéaire</span>
+  <p>Un équipement de chantier d'une valeur de 45 000 € est amorti linéairement sur 9 ans. Chaque année, sa valeur diminue de \(\dfrac{45\,000}{9} = 5\,000\) €.</p>
+  <p>Soit \(V_n\) la valeur résiduelle après \(n\) années : \(V_0 = 45\,000\) et \(r = -5\,000\).</p>
+  <p>Alors \(V_n = 45\,000 + n \times (-5\,000) = 45\,000 - 5\,000\,n\).</p>
+  <p>Après 6 ans : \(V_6 = 45\,000 - 30\,000 = 15\,000\) €.</p>
+</div>
+
+<h3>2.1 Somme des termes consécutifs</h3>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Somme des \(n\) premiers termes</span><br>
+  La somme des \((n+1)\) premiers termes d'une suite arithmétique \((u_0, u_1, \ldots, u_n)\) est :
+  \[\boxed{S_n = u_0 + u_1 + \cdots + u_n = \frac{(n+1)(u_0 + u_n)}{2}}\]
+  <em>Autrement dit :</em> nombre de termes \(\times\) moyenne du premier et du dernier terme.
+</div>
+
+<div class="formula-box">
+  <div class="fb-label">Somme des termes consécutifs d'une suite arithmétique</div>
+  <div class="fb-formula">\(S = \dfrac{\text{nombre de termes} \times ({\text{premier terme}} + {\text{dernier terme}})}{2}\)</div>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Calculer une somme de termes d'une suite arithmétique</span><br>
+  <ol>
+    <li>Vérifier que la suite est bien arithmétique (différence constante).</li>
+    <li>Identifier le premier terme, le dernier terme et le nombre de termes.</li>
+    <li>Appliquer la formule \(S = \dfrac{\text{nb de termes} \times (\text{premier} + \text{dernier})}{2}\).</li>
+  </ol>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Somme de Gauss</span>
+  <p>Calculer \(S = 1 + 2 + 3 + \cdots + 100\).</p>
+  <p>C'est une suite arithmétique de raison 1. Premier terme : 1, dernier terme : 100, nombre de termes : 100.</p>
+  <p>\(S = \dfrac{100 \times (1 + 100)}{2} = \dfrac{100 \times 101}{2} = 5\,050\).</p>
+</div>
+
+<div class="exo">
+  <span class="exo-num">Mini-exercice 2</span>
+  <p class="exo-titre">Suite arithmétique et amortissement</p>
+  <p>Un menuisier agenceur achète une raboteuse à 12 000 €. Elle perd 1 500 € de valeur chaque année (amortissement linéaire).</p>
+  <p>1) Exprimer la valeur résiduelle \(V_n\) en fonction de \(n\).</p>
+  <p>2) Au bout de combien d'années la machine est-elle totalement amortie ?</p>
+  <p>3) Calculer la somme des valeurs résiduelles de l'année 0 à l'année 8 : \(V_0 + V_1 + \cdots + V_8\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1)</strong> \(V_n = 12\,000 - 1\,500\,n\). C'est une suite arithmétique de premier terme \(V_0 = 12\,000\) et de raison \(r = -1\,500\).</p>
+    <p><strong>2)</strong> \(V_n = 0 \Leftrightarrow 12\,000 - 1\,500\,n = 0 \Leftrightarrow n = 8\). La machine est amortie au bout de <strong>8 ans</strong>.</p>
+    <p><strong>3)</strong> 9 termes, de \(V_0 = 12\,000\) à \(V_8 = 0\) : \(S = \dfrac{9 \times (12\,000 + 0)}{2} = 54\,000\) €.</p>
+  </div>
+</div>
+
+<!-- ==================== 3. SUITES GÉOMÉTRIQUES ==================== -->
+<h2>3. Suites géométriques</h2>
+
+<div class="def">
+  <span class="label label-def">Définition</span><br>
+  Une suite \((u_n)\) est <strong>géométrique</strong> s'il existe un réel \(q \neq 0\) (appelé <strong>raison</strong>) tel que, pour tout \(n \in \mathbb{N}\) :
+  \[u_{n+1} = q \times u_n\]
+  On passe d'un terme au suivant en <strong>multipliant</strong> par la raison \(q\).
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention</span><br>
+  Pour qu'une suite géométrique soit bien définie, tous ses termes doivent être <strong>non nuls</strong>. Si un seul terme est nul, la suite ne peut pas être géométrique (on ne peut pas diviser par zéro pour retrouver \(q\)).
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Terme général</span><br>
+  Si \((u_n)\) est géométrique de raison \(q\) et de premier terme \(u_0\), alors :
+  \[\boxed{u_n = u_0 \times q^n}\]
+  Plus généralement, pour tout \(p \in \mathbb{N}\) :
+  \[u_n = u_p \times q^{n-p}\]
+</div>
+
+<div class="formula-box">
+  <div class="fb-label">Terme général d'une suite géométrique</div>
+  <div class="fb-formula">\(u_n = u_0 \times q^n\)</div>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Intérêts composés</span>
+  <p>Un artisan du bâtiment place 10 000 € à un taux annuel de 4 % (intérêts composés).</p>
+  <p>Soit \(C_n\) le capital après \(n\) années. Chaque année, le capital est multiplié par \(1{,}04\).</p>
+  <p>Donc \(C_n = 10\,000 \times 1{,}04^n\). C'est une suite géométrique de premier terme \(C_0 = 10\,000\) et de raison \(q = 1{,}04\).</p>
+  <p>Après 10 ans : \(C_{10} = 10\,000 \times 1{,}04^{10} \approx 14\,802\) €.</p>
+</div>
+
+<div class="chart-wrap">
+  <h3>Évolution d'un capital de 10 000 € à 4 % d'intérêts composés</h3>
+  <canvas id="chartInterets" height="280"></canvas>
+</div>
+
+<h3>3.1 Somme des termes consécutifs</h3>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Somme des \((n+1)\) premiers termes</span><br>
+  Si \(q \neq 1\), la somme des \((n+1)\) premiers termes d'une suite géométrique est :
+  \[\boxed{S_n = u_0 + u_1 + \cdots + u_n = u_0 \times \frac{1 - q^{n+1}}{1 - q}}\]
+</div>
+
+<div class="formula-box">
+  <div class="fb-label">Somme des termes consécutifs d'une suite géométrique (\(q \neq 1\))</div>
+  <div class="fb-formula">\(S = \text{premier terme} \times \dfrac{1 - q^{\,\text{nombre de termes}}}{1 - q}\)</div>
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention — Nombre de termes</span><br>
+  Dans la formule, l'exposant de \(q\) est le <strong>nombre de termes</strong> de la somme, pas le rang du dernier terme. Si on somme de \(u_0\) à \(u_n\), il y a \((n+1)\) termes, donc l'exposant est \((n+1)\).
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Calculer une somme de termes d'une suite géométrique</span><br>
+  <ol>
+    <li>Vérifier que la suite est géométrique (rapport constant).</li>
+    <li>Identifier le premier terme, la raison \(q\) et le nombre de termes.</li>
+    <li>Appliquer : \(S = \text{premier terme} \times \dfrac{1 - q^{\text{nb de termes}}}{1 - q}\).</li>
+  </ol>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Total des intérêts</span>
+  <p>Reprenons le placement de 10 000 € à 4 %. Calculons la somme des capitaux annuels sur 5 ans (pour un calcul fiscal par exemple) :</p>
+  <p>\(S = C_0 + C_1 + \cdots + C_4 = 10\,000 \times \dfrac{1 - 1{,}04^5}{1 - 1{,}04}\)</p>
+  <p>\(S = 10\,000 \times \dfrac{1 - 1{,}2166...}{-0{,}04} = 10\,000 \times \dfrac{-0{,}2166...}{-0{,}04} \approx 54\,163\) €.</p>
+</div>
+
+<div class="exo">
+  <span class="exo-num">Mini-exercice 3</span>
+  <p class="exo-titre">Suite géométrique et évolution de température</p>
+  <p>Un technicien en génie climatique observe que la température intérieure d'un local non chauffé passe de 20 °C à 18,4 °C en une heure lorsque la température extérieure est de 0 °C. On modélise la température intérieure par une suite géométrique \((T_n)\) où \(T_n\) est la température (en °C) après \(n\) heures.</p>
+  <p>1) Calculer la raison \(q\) de cette suite géométrique.</p>
+  <p>2) Exprimer \(T_n\) en fonction de \(n\).</p>
+  <p>3) Quelle sera la température après 5 heures ? Après 10 heures ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1)</strong> \(q = \dfrac{T_1}{T_0} = \dfrac{18{,}4}{20} = 0{,}92\).</p>
+    <p><strong>2)</strong> \(T_n = 20 \times 0{,}92^n\).</p>
+    <p><strong>3)</strong> \(T_5 = 20 \times 0{,}92^5 \approx 20 \times 0{,}6591 \approx 13{,}2\) °C.</p>
+    <p>\(T_{10} = 20 \times 0{,}92^{10} \approx 20 \times 0{,}4344 \approx 8{,}7\) °C.</p>
+  </div>
+</div>
+
+<!-- ==================== 4. SENS DE VARIATION ==================== -->
+<h2>4. Sens de variation d'une suite</h2>
+
+<div class="def">
+  <span class="label label-def">Définition</span><br>
+  Soit \((u_n)\) une suite numérique.
+  <ul>
+    <li>\((u_n)\) est <strong>croissante</strong> si, pour tout \(n \in \mathbb{N}\), \(u_{n+1} \geq u_n\).</li>
+    <li>\((u_n)\) est <strong>décroissante</strong> si, pour tout \(n \in \mathbb{N}\), \(u_{n+1} \leq u_n\).</li>
+    <li>\((u_n)\) est <strong>monotone</strong> si elle est croissante ou décroissante.</li>
+  </ul>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Étudier le sens de variation</span><br>
+  On dispose de plusieurs techniques :
+  <ol>
+    <li><strong>Étude du signe de \(u_{n+1} - u_n\)</strong> : si \(u_{n+1} - u_n \geq 0\) pour tout \(n\), la suite est croissante.</li>
+    <li><strong>Étude du rapport \(\frac{u_{n+1}}{u_n}\)</strong> (pour une suite à termes strictement positifs) :
+    si \(\dfrac{u_{n+1}}{u_n} \geq 1\), la suite est croissante.</li>
+    <li><strong>Étude de la fonction associée</strong> : si \(u_n = f(n)\) et \(f\) est croissante sur \([0\,;+\infty[\), alors \((u_n)\) est croissante.</li>
+  </ol>
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Cas des suites arithmétiques et géométriques</span><br>
+  <table>
+    <tr><th>Type de suite</th><th>Croissante si...</th><th>Décroissante si...</th></tr>
+    <tr><td>Arithmétique de raison \(r\)</td><td>\(r > 0\)</td><td>\(r < 0\)</td></tr>
+    <tr><td>Géométrique de raison \(q\), \(u_0 > 0\)</td><td>\(q > 1\)</td><td>\(0 < q < 1\)</td></tr>
+    <tr><td>Géométrique de raison \(q\), \(u_0 < 0\)</td><td>\(0 < q < 1\)</td><td>\(q > 1\)</td></tr>
+  </table>
+</div>
+
+<div class="exo">
+  <span class="exo-num">Mini-exercice 4</span>
+  <p class="exo-titre">Sens de variation</p>
+  <p>Étudier le sens de variation de la suite \((u_n)\) définie par \(u_n = \dfrac{3n + 1}{n + 2}\) pour \(n \geq 0\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p>On calcule \(u_{n+1} - u_n = \dfrac{3(n+1) + 1}{(n+1) + 2} - \dfrac{3n + 1}{n + 2} = \dfrac{3n + 4}{n + 3} - \dfrac{3n + 1}{n + 2}\).</p>
+    <p>On réduit au même dénominateur :</p>
+    <p>\(u_{n+1} - u_n = \dfrac{(3n+4)(n+2) - (3n+1)(n+3)}{(n+3)(n+2)}\)</p>
+    <p>Numérateur : \((3n^2 + 10n + 8) - (3n^2 + 10n + 3) = 5\).</p>
+    <p>Donc \(u_{n+1} - u_n = \dfrac{5}{(n+3)(n+2)} > 0\) pour tout \(n \geq 0\).</p>
+    <p>La suite \((u_n)\) est <strong>strictement croissante</strong>.</p>
+  </div>
+</div>
+
+<!-- ==================== 5. LIMITES DE SUITES ==================== -->
+<h2>5. Limites de suites</h2>
+
+<div class="def">
+  <span class="label label-def">Définition — Suite convergente</span><br>
+  On dit qu'une suite \((u_n)\) <strong>converge</strong> vers un réel \(\ell\) si, à partir d'un certain rang, les termes \(u_n\) deviennent aussi proches de \(\ell\) que l'on veut. On note :
+  \[\lim_{n \to +\infty} u_n = \ell\]
+  La suite est dite <strong>convergente</strong> et \(\ell\) est sa <strong>limite</strong>.
+</div>
+
+<div class="def">
+  <span class="label label-def">Définition — Suite divergente</span><br>
+  Une suite qui ne converge pas est dite <strong>divergente</strong>. Elle peut :
+  <ul>
+    <li>tendre vers \(+\infty\) ou \(-\infty\) (divergence vers l'infini),</li>
+    <li>osciller sans tendre vers aucune limite (ex. : \(u_n = (-1)^n\)).</li>
+  </ul>
+</div>
+
+<h3>5.1 Limites de référence</h3>
+
+<div class="retenir">
+  <h3>Limites de référence à connaître</h3>
+  <table>
+    <tr><th>Suite</th><th>Condition</th><th>Limite</th></tr>
+    <tr><td>\(q^n\)</td><td>\(-1 < q < 1\)</td><td>\(0\)</td></tr>
+    <tr><td>\(q^n\)</td><td>\(q > 1\)</td><td>\(+\infty\)</td></tr>
+    <tr><td>\(q^n\)</td><td>\(q = 1\)</td><td>\(1\) (suite constante)</td></tr>
+    <tr><td>\(q^n\)</td><td>\(q \leq -1\)</td><td>pas de limite</td></tr>
+    <tr><td>\(\dfrac{1}{n}\)</td><td></td><td>\(0\)</td></tr>
+    <tr><td>\(\dfrac{1}{n^2}\)</td><td></td><td>\(0\)</td></tr>
+    <tr><td>\(n\), \(n^2\), \(\sqrt{n}\)</td><td></td><td>\(+\infty\)</td></tr>
+  </table>
+</div>
+
+<h3>5.2 Limites des suites arithmétiques et géométriques</h3>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Limite d'une suite arithmétique</span><br>
+  Soit \((u_n)\) une suite arithmétique de raison \(r\).
+  <ul>
+    <li>Si \(r > 0\), alors \(\lim_{n \to +\infty} u_n = +\infty\).</li>
+    <li>Si \(r < 0\), alors \(\lim_{n \to +\infty} u_n = -\infty\).</li>
+    <li>Si \(r = 0\), la suite est constante : \(u_n = u_0\) pour tout \(n\).</li>
+  </ul>
+  <strong>Une suite arithmétique non constante diverge toujours.</strong>
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Limite d'une suite géométrique</span><br>
+  Soit \((u_n)\) une suite géométrique de raison \(q\) et de premier terme \(u_0 \neq 0\).
+  <ul>
+    <li>Si \(-1 < q < 1\) (ou \(|q| < 1\)), alors \(\lim_{n \to +\infty} u_n = 0\) : la suite <strong>converge vers 0</strong>.</li>
+    <li>Si \(q > 1\), la suite <strong>diverge vers \(\pm\infty\)</strong> (selon le signe de \(u_0\)).</li>
+    <li>Si \(q = 1\), la suite est constante.</li>
+    <li>Si \(q \leq -1\), la suite n'a <strong>pas de limite</strong>.</li>
+  </ul>
+</div>
+
+<div class="chart-wrap">
+  <h3>Comportement de la suite géométrique \(u_n = u_0 \times q^n\) selon la valeur de \(q\)</h3>
+  <canvas id="chartGeo" height="300"></canvas>
+  <p class="chart-label">Bleu : \(q = 0{,}8\) (convergente) — Rouge : \(q = 1{,}1\) (divergente) — Vert : \(q = -0{,}7\) (convergente en oscillant)</p>
+</div>
+
+<h3>5.3 Opérations sur les limites</h3>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Opérations</span><br>
+  Si \(\lim_{n \to +\infty} u_n = \ell\) et \(\lim_{n \to +\infty} v_n = \ell'\) (avec \(\ell, \ell' \in \mathbb{R}\)), alors :
+  <ul>
+    <li>\(\lim_{n \to +\infty}(u_n + v_n) = \ell + \ell'\)</li>
+    <li>\(\lim_{n \to +\infty}(u_n \times v_n) = \ell \times \ell'\)</li>
+    <li>\(\lim_{n \to +\infty}\dfrac{u_n}{v_n} = \dfrac{\ell}{\ell'}\) si \(\ell' \neq 0\)</li>
+  </ul>
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention — Formes indéterminées</span><br>
+  Certaines combinaisons de limites ne permettent pas de conclure directement. Les <strong>formes indéterminées</strong> sont :
+  \[+\infty - \infty, \quad 0 \times \infty, \quad \frac{\infty}{\infty}, \quad \frac{0}{0}\]
+  Dans ces cas, il faut transformer l'expression (factoriser, diviser par le terme dominant...) pour lever l'indétermination.
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Limite d'une fraction rationnelle</span><br>
+  Pour calculer \(\lim_{n \to +\infty} \dfrac{a_p n^p + \cdots}{b_q n^q + \cdots}\) :
+  <ol>
+    <li>Identifier le terme de plus haut degré au numérateur et au dénominateur.</li>
+    <li>Factoriser par \(n^p\) au numérateur et \(n^q\) au dénominateur.</li>
+    <li>Simplifier et appliquer les limites de référence.</li>
+  </ol>
+  <strong>Résultat :</strong> la limite est celle du quotient des termes de plus haut degré \(\dfrac{a_p\, n^p}{b_q\, n^q}\).
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span>
+  <p>Calculer \(\lim_{n \to +\infty} \dfrac{3n^2 + 5n - 1}{2n^2 + 7}\).</p>
+  <p>Les termes dominants sont \(3n^2\) et \(2n^2\). On factorise :</p>
+  <p>\(\dfrac{3n^2 + 5n - 1}{2n^2 + 7} = \dfrac{n^2\left(3 + \frac{5}{n} - \frac{1}{n^2}\right)}{n^2\left(2 + \frac{7}{n^2}\right)} = \dfrac{3 + \frac{5}{n} - \frac{1}{n^2}}{2 + \frac{7}{n^2}} \xrightarrow[n \to +\infty]{} \dfrac{3}{2}\)</p>
+</div>
+
+<div class="exo">
+  <span class="exo-num">Mini-exercice 5</span>
+  <p class="exo-titre">Calcul de limites</p>
+  <p>Calculer les limites suivantes :</p>
+  <p>a) \(\displaystyle\lim_{n \to +\infty} \dfrac{5n - 3}{2n + 1}\) &emsp; b) \(\displaystyle\lim_{n \to +\infty} \dfrac{n^2 + 1}{3n + 2}\) &emsp; c) \(\displaystyle\lim_{n \to +\infty} \left(3 \times 0{,}95^n + 7\right)\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Termes dominants : \(\dfrac{5n}{2n} = \dfrac{5}{2}\). Donc \(\displaystyle\lim_{n \to +\infty} \dfrac{5n - 3}{2n + 1} = \dfrac{5}{2}\).</p>
+    <p><strong>b)</strong> Degré du numérateur (2) > degré du dénominateur (1). Terme dominant : \(\dfrac{n^2}{3n} = \dfrac{n}{3} \to +\infty\). La suite <strong>diverge vers \(+\infty\)</strong>.</p>
+    <p><strong>c)</strong> \(|0{,}95| < 1\), donc \(0{,}95^n \to 0\). Alors \(3 \times 0{,}95^n + 7 \to 3 \times 0 + 7 = 7\). La suite <strong>converge vers 7</strong>.</p>
+  </div>
+</div>
+
+<h3>5.4 Théorèmes de convergence</h3>
+
+<div class="prop">
+  <span class="label label-prop">Théorème — Suite croissante majorée</span><br>
+  Toute suite <strong>croissante et majorée</strong> converge.<br>
+  Toute suite <strong>décroissante et minorée</strong> converge.
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Théorème des gendarmes (théorème d'encadrement)</span><br>
+  Si, à partir d'un certain rang, on a \(v_n \leq u_n \leq w_n\) et si \(\lim_{n \to +\infty} v_n = \lim_{n \to +\infty} w_n = \ell\), alors :
+  \[\lim_{n \to +\infty} u_n = \ell\]
+</div>
+
+<!-- ==================== 6. APPLICATIONS ==================== -->
+<h2>6. Applications professionnelles</h2>
+
+<h3>6.1 Intérêts composés</h3>
+
+<div class="def">
+  <span class="label label-def">Modèle — Intérêts composés</span><br>
+  Un capital \(C_0\) est placé à un taux d'intérêt annuel \(t\) (en décimal). Après \(n\) années, le capital acquis est :
+  \[\boxed{C_n = C_0 \times (1 + t)^n}\]
+  C'est une suite géométrique de raison \(q = 1 + t > 1\) : le capital croît indéfiniment.
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Investissement en matériaux</span>
+  <p>Un entrepreneur investit 25 000 € dans un stock de matériaux de construction. Cet investissement se valorise de 3,5 % par an en raison de la hausse des prix.</p>
+  <p>Valeur après \(n\) ans : \(V_n = 25\,000 \times 1{,}035^n\).</p>
+  <p>Après 8 ans : \(V_8 = 25\,000 \times 1{,}035^8 \approx 25\,000 \times 1{,}3168 \approx 32\,921\) €.</p>
+  <p>Le gain réalisé est de \(32\,921 - 25\,000 = 7\,921\) €.</p>
+</div>
+
+<h3>6.2 Amortissement d'un emprunt par annuités constantes</h3>
+
+<div class="def">
+  <span class="label label-def">Modèle — Annuité constante</span><br>
+  Un emprunt de montant \(C_0\) est remboursé par \(n\) annuités constantes \(a\) à un taux annuel \(t\). Le montant de l'annuité est :
+  \[\boxed{a = C_0 \times \frac{t}{1 - (1 + t)^{-n}}}\]
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Emprunt pour l'achat d'un engin de chantier</span>
+  <p>Un chef d'entreprise emprunte \(C_0 = 120\,000\) € sur 5 ans au taux annuel \(t = 3{,}6\,\% = 0{,}036\).</p>
+  <p>Annuité constante :</p>
+  <p>\(a = 120\,000 \times \dfrac{0{,}036}{1 - 1{,}036^{-5}} = 120\,000 \times \dfrac{0{,}036}{1 - 0{,}8375} = 120\,000 \times \dfrac{0{,}036}{0{,}1625} \approx 26\,585\) €.</p>
+  <p>Il remboursera environ <strong>26 585 €</strong> par an pendant 5 ans, soit un total de 132 925 €, dont 12 925 € d'intérêts.</p>
+</div>
+
+<h3>6.3 Modèle d'évolution — Refroidissement</h3>
+
+<div class="situation">
+  <h3>Modélisation du refroidissement d'un bâtiment</h3>
+  <p>Un technicien en génie climatique étudie la perte de chaleur d'un bâtiment dont le chauffage est en panne. La température intérieure \(T_n\) (en °C) après \(n\) heures peut être modélisée par :</p>
+  <p>\[T_n = T_{\text{ext}} + (T_0 - T_{\text{ext}}) \times q^n\]</p>
+  <p>avec \(T_0\) la température initiale, \(T_{\text{ext}}\) la température extérieure et \(0 < q < 1\) un coefficient dépendant de l'isolation du bâtiment.</p>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Refroidissement d'un local</span>
+  <p>Données : \(T_0 = 20\) °C, \(T_{\text{ext}} = 5\) °C, \(q = 0{,}92\) (bâtiment moyennement isolé).</p>
+  <p>\(T_n = 5 + 15 \times 0{,}92^n\)</p>
+  <table>
+    <tr><th>\(n\) (heures)</th><th>0</th><th>1</th><th>2</th><th>5</th><th>10</th><th>20</th></tr>
+    <tr><td>\(T_n\) (°C)</td><td>20,0</td><td>18,8</td><td>17,7</td><td>14,9</td><td>11,5</td><td>7,6</td></tr>
+  </table>
+  <p>Comme \(|q| = 0{,}92 < 1\), on a \(0{,}92^n \to 0\), donc \(T_n \to 5\) °C. La température intérieure <strong>converge vers la température extérieure</strong>.</p>
+</div>
+
+<div class="chart-wrap">
+  <h3>Refroidissement d'un bâtiment — \(T_n = 5 + 15 \times 0{,}92^n\)</h3>
+  <canvas id="chartRefroidissement" height="280"></canvas>
+</div>
+
+<div class="exo">
+  <span class="exo-num">Mini-exercice 6</span>
+  <p class="exo-titre">Application — Emprunt et intérêts</p>
+  <p>Un artisan emprunte 50 000 € au taux annuel de 4 % pour acheter un véhicule utilitaire. Il rembourse par annuités constantes sur 4 ans.</p>
+  <p>1) Calculer le montant de l'annuité constante.</p>
+  <p>2) Compléter le tableau d'amortissement :</p>
+  <table>
+    <tr><th>Année</th><th>Capital restant dû (début)</th><th>Intérêts</th><th>Amortissement</th><th>Annuité</th></tr>
+    <tr><td>1</td><td>50 000</td><td>?</td><td>?</td><td>?</td></tr>
+    <tr><td>2</td><td>?</td><td>?</td><td>?</td><td>?</td></tr>
+    <tr><td>3</td><td>?</td><td>?</td><td>?</td><td>?</td></tr>
+    <tr><td>4</td><td>?</td><td>?</td><td>?</td><td>?</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1)</strong> \(a = 50\,000 \times \dfrac{0{,}04}{1 - 1{,}04^{-4}} = 50\,000 \times \dfrac{0{,}04}{1 - 0{,}8548} = 50\,000 \times \dfrac{0{,}04}{0{,}1452} \approx 13\,774\) €.</p>
+    <p><strong>2)</strong></p>
+    <table>
+      <tr><th>Année</th><th>Capital début</th><th>Intérêts (4 %)</th><th>Amortissement</th><th>Annuité</th></tr>
+      <tr><td>1</td><td>50 000</td><td>2 000</td><td>11 774</td><td>13 774</td></tr>
+      <tr><td>2</td><td>38 226</td><td>1 529</td><td>12 245</td><td>13 774</td></tr>
+      <tr><td>3</td><td>25 981</td><td>1 039</td><td>12 735</td><td>13 774</td></tr>
+      <tr><td>4</td><td>13 246</td><td>530</td><td>13 244</td><td>13 774</td></tr>
+    </table>
+    <p><em>Note : le léger écart à la dernière ligne (13 244 au lieu de 13 774 - 530 = 13 244) est dû aux arrondis.</em></p>
+    <p>Coût total du crédit : \(4 \times 13\,774 - 50\,000 = 5\,096\) € d'intérêts.</p>
+  </div>
+</div>
+
+<!-- ==================== RÉSUMÉ ==================== -->
+<hr class="sep">
+
+<div class="retenir">
+  <h3>L'essentiel du chapitre</h3>
+  <div class="grid2">
+    <div>
+      <p><strong>Suite arithmétique</strong> (raison \(r\))</p>
+      <ul>
+        <li>Récurrence : \(u_{n+1} = u_n + r\)</li>
+        <li>Terme général : \(u_n = u_0 + nr\)</li>
+        <li>Somme : \(S = \dfrac{(n+1)(u_0 + u_n)}{2}\)</li>
+        <li>Diverge toujours (si \(r \neq 0\))</li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Suite géométrique</strong> (raison \(q\))</p>
+      <ul>
+        <li>Récurrence : \(u_{n+1} = q \times u_n\)</li>
+        <li>Terme général : \(u_n = u_0 \times q^n\)</li>
+        <li>Somme : \(S = u_0 \times \dfrac{1 - q^{n+1}}{1 - q}\)</li>
+        <li>Converge vers 0 si \(|q| < 1\)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+// Graphique intérêts composés
+(function(){
+  const labels = [];
+  const data = [];
+  for(let n = 0; n <= 20; n++){
+    labels.push(n);
+    data.push(Math.round(10000 * Math.pow(1.04, n)));
+  }
+  new Chart(document.getElementById('chartInterets'), {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Capital Cₙ (€)',
+        data: data,
+        borderColor: '#1e3a5f',
+        backgroundColor: 'rgba(30,58,95,0.1)',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 3,
+        pointBackgroundColor: '#1e3a5f'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: true, position: 'top' }
+      },
+      scales: {
+        x: { title: { display: true, text: 'Années (n)' } },
+        y: { title: { display: true, text: 'Capital (€)' }, beginAtZero: false }
+      }
+    }
+  });
+})();
+
+// Graphique suites géométriques comparées
+(function(){
+  const labels = [];
+  const d1 = [], d2 = [], d3 = [];
+  for(let n = 0; n <= 20; n++){
+    labels.push(n);
+    d1.push(+(10 * Math.pow(0.8, n)).toFixed(2));
+    d2.push(+(10 * Math.pow(1.1, n)).toFixed(2));
+    d3.push(+(10 * Math.pow(-0.7, n)).toFixed(2));
+  }
+  new Chart(document.getElementById('chartGeo'), {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: 'q = 0,8 (converge vers 0)', data: d1, borderColor: '#2563eb', backgroundColor: 'transparent', tension: 0.3, pointRadius: 3 },
+        { label: 'q = 1,1 (diverge)', data: d2, borderColor: '#dc2626', backgroundColor: 'transparent', tension: 0.3, pointRadius: 3 },
+        { label: 'q = −0,7 (converge en oscillant)', data: d3, borderColor: '#16a34a', backgroundColor: 'transparent', tension: 0, pointRadius: 3 }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: true, position: 'top' } },
+      scales: {
+        x: { title: { display: true, text: 'Rang n' } },
+        y: { title: { display: true, text: 'uₙ' } }
+      }
+    }
+  });
+})();
+
+// Graphique refroidissement
+(function(){
+  const labels = [];
+  const data = [];
+  for(let n = 0; n <= 30; n++){
+    labels.push(n);
+    data.push(+(5 + 15 * Math.pow(0.92, n)).toFixed(1));
+  }
+  new Chart(document.getElementById('chartRefroidissement'), {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Température Tₙ (°C)',
+        data: data,
+        borderColor: '#dc2626',
+        backgroundColor: 'rgba(220,38,38,0.08)',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 2,
+        pointBackgroundColor: '#dc2626'
+      }, {
+        label: 'Température extérieure (5 °C)',
+        data: Array(31).fill(5),
+        borderColor: '#93a5c0',
+        borderDash: [6, 4],
+        backgroundColor: 'transparent',
+        pointRadius: 0
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: true, position: 'top' } },
+      scales: {
+        x: { title: { display: true, text: 'Heures (n)' } },
+        y: { title: { display: true, text: 'Température (°C)' }, min: 0, max: 22 }
+      }
+    }
+  });
+})();
+</script>
+<script src="../../../nav.js"></script>
+</body>
+</html>

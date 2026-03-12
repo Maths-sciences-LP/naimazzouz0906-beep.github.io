@@ -64,6 +64,34 @@
       ]
     },
 
+    /* Mathématiques — BTS (tous groupements) */
+    'maths/bts': {
+      summary:      'maths-bts.html',
+      summaryLabel: 'BTS',
+      subject:      'Mathématiques',
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé' },
+      chapters: [
+        { id: '01', title: 'Suites numériques' },
+        { id: '02', title: 'Fonctions d\'une variable réelle' },
+        { id: '03', title: 'Fonctions pour le traitement du signal' },
+        { id: '04', title: 'Calcul intégral' },
+        { id: '05', title: 'Équations différentielles' },
+        { id: '06', title: 'Séries de Fourier' },
+        { id: '07', title: 'Transformée de Laplace' },
+        { id: '08', title: 'Probabilités 1' },
+        { id: '09', title: 'Probabilités 2' },
+        { id: '10', title: 'Statistique descriptive' },
+        { id: '11', title: 'Statistique inférentielle' },
+        { id: '12', title: 'Nombres complexes' },
+        { id: '13', title: 'Configurations géométriques' },
+        { id: '14', title: 'Modélisation géométrique' },
+        { id: '15', title: 'Calcul vectoriel' },
+        { id: '16', title: 'Matrices et systèmes linéaires' },
+        { id: '17', title: 'Calcul et algorithmique' },
+        { id: '18', title: 'Fiabilité' }
+      ]
+    },
+
     /* Physique-Chimie — 2nde Pro MAMA */
     'physique-chimie/seconde': {
       summary:      'pc-2nde-pro.html',
@@ -133,7 +161,8 @@
     'pc-2nde-pro.html':      { label: 'Physique-Chimie — 2nde Pro' },
     'pc-term-iccer.html':    { label: 'Physique-Chimie — Terminale ICCER' },
     'pc-term-erama.html':    { label: 'Physique-Chimie — Terminale ERA-MA' },
-    'simulations.html':      { label: 'Simulations interactives' }
+    'simulations.html':      { label: 'Simulations interactives' },
+    'maths-bts.html':        { label: 'Mathématiques — BTS' }
   };
 
   /* ── Détection du chemin courant ───────────────────────────────────── */

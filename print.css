@@ -324,6 +324,22 @@
     font-weight: 600;
   }
 
+  /* ── Filigrane auteur (répété sur chaque page) ── */
+  body::after {
+    content: "Naïm Azzouz — maths-sciences-lp.github.io";
+    position: fixed;
+    bottom: 8mm;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 7pt;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.5pt;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
   /* ── MathJax : ajustements ── */
   mjx-container {
     page-break-inside: avoid !important;

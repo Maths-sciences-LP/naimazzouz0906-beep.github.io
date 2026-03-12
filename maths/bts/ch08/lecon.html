@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch08 – Probabilités 1 – BTS</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#1e3a5f;--p-bg:#eef2f7;--p-border:#93a5c0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../sommaire.html" class="nb">&larr; Retour au sommaire</a>
+<header>
+  <h1>Chapitre 8 &ndash; Probabilit&eacute;s 1</h1>
+  <p class="sous-titre">BTS &mdash; Tous groupements</p>
+</header>
+
+<div class="objectifs">
+  <strong>Je vais apprendre &agrave; :</strong>
+  <ul>
+    <li>D&eacute;finir une exp&eacute;rience al&eacute;atoire, un univers et des &eacute;v&eacute;nements</li>
+    <li>Calculer des probabilit&eacute;s &agrave; l&rsquo;aide des axiomes de Kolmogorov</li>
+    <li>Utiliser les probabilit&eacute;s conditionnelles et la formule de Bayes</li>
+    <li>D&eacute;terminer si deux &eacute;v&eacute;nements sont ind&eacute;pendants</li>
+    <li>D&eacute;finir une variable al&eacute;atoire discr&egrave;te, calculer esp&eacute;rance, variance et &eacute;cart-type</li>
+    <li>Reconna&icirc;tre et utiliser la loi binomiale \(B(n,p)\) et la loi de Poisson \(P(\lambda)\)</li>
+    <li>Appliquer ces outils au contr&ocirc;le qualit&eacute; et &agrave; la fiabilit&eacute; industrielle</li>
+  </ul>
+</div>
+
+<!-- ==================== SITUATION PROFESSIONNELLE ==================== -->
+<h2>Situation professionnelle</h2>
+
+<div class="situation">
+  <h3>Contr&ocirc;le qualit&eacute; dans une production de panneaux</h3>
+  <p>Un technicien en agencement r&eacute;ceptionne un lot de 500 panneaux de bois m&eacute;lamin&eacute;. Le fournisseur annonce un taux de d&eacute;faut de 3&nbsp;%. Pour v&eacute;rifier cette affirmation, le technicien pr&eacute;l&egrave;ve un &eacute;chantillon de 20 panneaux et compte le nombre de panneaux d&eacute;fectueux.</p>
+  <p><strong>Probl&egrave;me :</strong> Quelle est la probabilit&eacute; de trouver au moins 2 panneaux d&eacute;fectueux dans l&rsquo;&eacute;chantillon ? &Agrave; partir de quel nombre de d&eacute;fauts le technicien doit-il rejeter le lot ? La r&eacute;ponse passe par les <em>probabilit&eacute;s</em> et la <em>loi binomiale</em>.</p>
+</div>
+
+<!-- ==================== 1. EXPÉRIENCE ALÉATOIRE ==================== -->
+<h2>1. Exp&eacute;rience al&eacute;atoire, univers, &eacute;v&eacute;nements</h2>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Exp&eacute;rience al&eacute;atoire</span><br>
+  Une <strong>exp&eacute;rience al&eacute;atoire</strong> est une exp&eacute;rience dont on ne peut pas pr&eacute;voir avec certitude le r&eacute;sultat, mais dont on peut d&eacute;crire l&rsquo;ensemble des r&eacute;sultats possibles.
+</div>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Univers</span><br>
+  L&rsquo;<strong>univers</strong> \(\Omega\) est l&rsquo;ensemble de tous les r&eacute;sultats possibles (ou <em>issues</em>) d&rsquo;une exp&eacute;rience al&eacute;atoire.
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span>
+  <p>On contr&ocirc;le un panneau de bois : il est conforme (C) ou d&eacute;fectueux (D).</p>
+  <p>\(\Omega = \{C\,,\,D\}\)</p>
+  <p>On lance un d&eacute; &agrave; six faces : \(\Omega = \{1,\,2,\,3,\,4,\,5,\,6\}\).</p>
+</div>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; &Eacute;v&eacute;nement</span><br>
+  Un <strong>&eacute;v&eacute;nement</strong> est un sous-ensemble de \(\Omega\). Un &eacute;v&eacute;nement contenant une seule issue est dit <strong>&eacute;l&eacute;mentaire</strong>. L&rsquo;&eacute;v&eacute;nement \(\Omega\) est l&rsquo;&eacute;v&eacute;nement <strong>certain</strong> ; l&rsquo;&eacute;v&eacute;nement \(\varnothing\) est l&rsquo;&eacute;v&eacute;nement <strong>impossible</strong>.
+</div>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Op&eacute;rations sur les &eacute;v&eacute;nements</span><br>
+  Soient \(A\) et \(B\) deux &eacute;v&eacute;nements de \(\Omega\) :
+  <ul>
+    <li>\(A \cup B\) : &laquo;&nbsp;\(A\) ou \(B\)&nbsp;&raquo; &mdash; au moins l&rsquo;un des deux se r&eacute;alise</li>
+    <li>\(A \cap B\) : &laquo;&nbsp;\(A\) et \(B\)&nbsp;&raquo; &mdash; les deux se r&eacute;alisent simultan&eacute;ment</li>
+    <li>\(\bar{A}\) : le <strong>compl&eacute;mentaire</strong> de \(A\) &mdash; \(A\) ne se r&eacute;alise pas</li>
+    <li>\(A\) et \(B\) sont <strong>incompatibles</strong> si \(A \cap B = \varnothing\)</li>
+  </ul>
+</div>
+
+<!-- ==================== 2. AXIOMES DE KOLMOGOROV ==================== -->
+<h2>2. Probabilit&eacute; d&rsquo;un &eacute;v&eacute;nement &mdash; Axiomes de Kolmogorov</h2>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Probabilit&eacute;</span><br>
+  Une <strong>probabilit&eacute;</strong> \(P\) sur \(\Omega\) est une application de l&rsquo;ensemble des &eacute;v&eacute;nements vers \([0\,;\,1]\) v&eacute;rifiant les <strong>axiomes de Kolmogorov</strong> :
+  <ol>
+    <li>Pour tout &eacute;v&eacute;nement \(A\) : \(0 \leqslant P(A) \leqslant 1\)</li>
+    <li>\(P(\Omega) = 1\)</li>
+    <li>Si \(A\) et \(B\) sont incompatibles : \(P(A \cup B) = P(A) + P(B)\)</li>
+  </ol>
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propri&eacute;t&eacute;s fondamentales</span><br>
+  <ul>
+    <li>\(P(\varnothing) = 0\)</li>
+    <li>\(P(\bar{A}) = 1 - P(A)\)</li>
+    <li>\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</li>
+    <li>Si \(A \subset B\) alors \(P(A) \leqslant P(B)\)</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span>
+  <p>Un lot de pi&egrave;ces m&eacute;talliques contient 5&nbsp;% de pi&egrave;ces hors tol&eacute;rance et 3&nbsp;% de pi&egrave;ces avec un d&eacute;faut d&rsquo;aspect. Parmi les pi&egrave;ces, 1&nbsp;% cumulent les deux d&eacute;fauts.</p>
+  <p>Soit \(H\) : &laquo;&nbsp;pi&egrave;ce hors tol&eacute;rance&nbsp;&raquo; et \(A\) : &laquo;&nbsp;d&eacute;faut d&rsquo;aspect&nbsp;&raquo;.</p>
+  <p>\(P(H \cup A) = P(H) + P(A) - P(H \cap A) = 0{,}05 + 0{,}03 - 0{,}01 = 0{,}07\)</p>
+  <p>La probabilit&eacute; qu&rsquo;une pi&egrave;ce pr&eacute;sente au moins un d&eacute;faut est de 7&nbsp;%.</p>
+</div>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; &Eacute;quiprobabilit&eacute;</span><br>
+  Si tous les &eacute;v&eacute;nements &eacute;l&eacute;mentaires ont la m&ecirc;me probabilit&eacute;, on dit qu&rsquo;il y a <strong>&eacute;quiprobabilit&eacute;</strong>. Dans ce cas, pour tout &eacute;v&eacute;nement \(A\) :
+  \[P(A) = \frac{\text{nombre d'issues favorables}}{\text{nombre total d'issues}} = \frac{\text{card}(A)}{\text{card}(\Omega)}\]
+</div>
+
+<!-- ==================== 3. PROBABILITÉS CONDITIONNELLES ==================== -->
+<h2>3. Probabilit&eacute;s conditionnelles</h2>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Probabilit&eacute; conditionnelle</span><br>
+  Soit \(B\) un &eacute;v&eacute;nement de probabilit&eacute; non nulle. La <strong>probabilit&eacute; conditionnelle</strong> de \(A\) sachant \(B\) est :
+  \[P(A \mid B) = \frac{P(A \cap B)}{P(B)}\]
+  Elle repr&eacute;sente la probabilit&eacute; que \(A\) se r&eacute;alise, <em>sachant que \(B\) est d&eacute;j&agrave; r&eacute;alis&eacute;</em>.
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propri&eacute;t&eacute; &mdash; Probabilit&eacute; de l&rsquo;intersection</span><br>
+  \[P(A \cap B) = P(A \mid B) \times P(B) = P(B \mid A) \times P(A)\]
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple &mdash; Contr&ocirc;le de production</span>
+  <p>Dans une usine de menuiserie, 60&nbsp;% des panneaux sont produits par la machine M1 et 40&nbsp;% par la machine M2. Le taux de d&eacute;faut de M1 est de 2&nbsp;%, celui de M2 est de 5&nbsp;%.</p>
+  <p>On note \(D\) : &laquo;&nbsp;panneau d&eacute;fectueux&nbsp;&raquo;, \(M_1\) et \(M_2\) les &eacute;v&eacute;nements &laquo;&nbsp;provient de M1&nbsp;&raquo; et &laquo;&nbsp;provient de M2&nbsp;&raquo;.</p>
+  <p>\(P(D \mid M_1) = 0{,}02\), \(P(D \mid M_2) = 0{,}05\), \(P(M_1) = 0{,}6\), \(P(M_2) = 0{,}4\).</p>
+  <p>\(P(D \cap M_1) = P(D \mid M_1) \times P(M_1) = 0{,}02 \times 0{,}6 = 0{,}012\)</p>
+</div>
+
+<!-- ==================== 4. INDÉPENDANCE ==================== -->
+<h2>4. Ind&eacute;pendance de deux &eacute;v&eacute;nements</h2>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Ind&eacute;pendance</span><br>
+  Deux &eacute;v&eacute;nements \(A\) et \(B\) sont <strong>ind&eacute;pendants</strong> si et seulement si :
+  \[P(A \cap B) = P(A) \times P(B)\]
+  De mani&egrave;re &eacute;quivalente : \(P(A \mid B) = P(A)\) (la r&eacute;alisation de \(B\) ne modifie pas la probabilit&eacute; de \(A\)).
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention</span><br>
+  <strong>Ind&eacute;pendant &ne; incompatible.</strong> Deux &eacute;v&eacute;nements incompatibles (\(A \cap B = \varnothing\)) ne sont jamais ind&eacute;pendants (sauf si l&rsquo;un a une probabilit&eacute; nulle), car \(P(A \cap B) = 0 \neq P(A) \times P(B)\) en g&eacute;n&eacute;ral.
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span>
+  <p>On contr&ocirc;le deux composants d&rsquo;un syst&egrave;me de chauffage, ind&eacute;pendamment l&rsquo;un de l&rsquo;autre. La probabilit&eacute; de d&eacute;faillance du composant A est 0,03 et celle du composant B est 0,05.</p>
+  <p>Probabilit&eacute; que les deux tombent en panne simultan&eacute;ment :</p>
+  <p>\(P(A \cap B) = 0{,}03 \times 0{,}05 = 0{,}0015 = 0{,}15\,\%\)</p>
+</div>
+
+<!-- ==================== 5. PROBABILITÉS TOTALES ==================== -->
+<h2>5. Formule des probabilit&eacute;s totales</h2>
+
+<div class="prop">
+  <span class="label label-prop">Propri&eacute;t&eacute; &mdash; Formule des probabilit&eacute;s totales</span><br>
+  Si \(B_1, B_2, \ldots, B_n\) forment un <strong>syst&egrave;me complet d&rsquo;&eacute;v&eacute;nements</strong> (partition de \(\Omega\) : ils sont deux &agrave; deux incompatibles et leur r&eacute;union est \(\Omega\)), alors pour tout &eacute;v&eacute;nement \(A\) :
+  \[P(A) = \sum_{k=1}^{n} P(A \mid B_k) \times P(B_k)\]
+</div>
+
+<div class="meth">
+  <span class="label label-meth">M&eacute;thode &mdash; Utiliser un arbre pond&eacute;r&eacute;</span><br>
+  <ol>
+    <li>Identifier le syst&egrave;me complet d&rsquo;&eacute;v&eacute;nements (\(B_1, B_2, \ldots\))</li>
+    <li>Dessiner l&rsquo;arbre : premi&egrave;re branche pour chaque \(B_k\), puis sous-branches pour \(A\) et \(\bar{A}\)</li>
+    <li>Porter les probabilit&eacute;s sur chaque branche</li>
+    <li>Multiplier le long d&rsquo;un chemin pour obtenir \(P(A \cap B_k)\)</li>
+    <li>Additionner les chemins menant &agrave; \(A\) pour obtenir \(P(A)\)</li>
+  </ol>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple &mdash; Suite de l&rsquo;usine de menuiserie</span>
+  <p>Reprenons l&rsquo;exemple pr&eacute;c&eacute;dent (M1 : 60&nbsp;%, d&eacute;faut 2&nbsp;% ; M2 : 40&nbsp;%, d&eacute;faut 5&nbsp;%).</p>
+  <p>\(\{M_1\,,\,M_2\}\) est un syst&egrave;me complet d&rsquo;&eacute;v&eacute;nements. On applique la formule des probabilit&eacute;s totales :</p>
+  <p>\(P(D) = P(D \mid M_1) \times P(M_1) + P(D \mid M_2) \times P(M_2)\)</p>
+  <p>\(P(D) = 0{,}02 \times 0{,}6 + 0{,}05 \times 0{,}4 = 0{,}012 + 0{,}020 = 0{,}032\)</p>
+  <p>La probabilit&eacute; globale qu&rsquo;un panneau soit d&eacute;fectueux est de <strong>3,2&nbsp;%</strong>.</p>
+</div>
+
+<!-- ==================== 6. FORMULE DE BAYES ==================== -->
+<h2>6. Formule de Bayes</h2>
+
+<div class="prop">
+  <span class="label label-prop">Propri&eacute;t&eacute; &mdash; Formule de Bayes</span><br>
+  Si \(B_1, B_2, \ldots, B_n\) forment un syst&egrave;me complet d&rsquo;&eacute;v&eacute;nements et \(P(A) > 0\), alors :
+  \[P(B_k \mid A) = \frac{P(A \mid B_k) \times P(B_k)}{P(A)}\]
+  Cette formule permet d&rsquo;&laquo;&nbsp;inverser le conditionnement&nbsp;&raquo; : on conna&icirc;t \(P(A \mid B_k)\), on cherche \(P(B_k \mid A)\).
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple &mdash; Identifier la machine d&rsquo;origine</span>
+  <p>Un panneau est trouv&eacute; d&eacute;fectueux. Quelle est la probabilit&eacute; qu&rsquo;il provienne de M2 ?</p>
+  <p>\(P(M_2 \mid D) = \frac{P(D \mid M_2) \times P(M_2)}{P(D)} = \frac{0{,}05 \times 0{,}4}{0{,}032} = \frac{0{,}020}{0{,}032} = 0{,}625\)</p>
+  <p>Il y a <strong>62,5&nbsp;%</strong> de chances que le panneau d&eacute;fectueux provienne de la machine M2.</p>
+</div>
+
+<div class="retenir">
+  <strong>&Agrave; retenir &mdash; Cha&icirc;ne logique des calculs</strong>
+  <ol>
+    <li><strong>Identifier</strong> le syst&egrave;me complet d&rsquo;&eacute;v&eacute;nements</li>
+    <li><strong>Probabilit&eacute;s totales</strong> : calculer \(P(A)\)</li>
+    <li><strong>Bayes</strong> : inverser le conditionnement pour trouver \(P(B_k \mid A)\)</li>
+  </ol>
+</div>
+
+<!-- ==================== 7. VARIABLES ALÉATOIRES DISCRÈTES ==================== -->
+<h2>7. Variables al&eacute;atoires discr&egrave;tes</h2>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Variable al&eacute;atoire discr&egrave;te</span><br>
+  Une <strong>variable al&eacute;atoire discr&egrave;te</strong> \(X\) est une application de \(\Omega\) vers \(\mathbb{R}\) qui associe &agrave; chaque issue un nombre r&eacute;el. Elle ne prend qu&rsquo;un nombre fini ou d&eacute;nombrable de valeurs.
+</div>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Loi de probabilit&eacute;</span><br>
+  La <strong>loi de probabilit&eacute;</strong> de \(X\) est la donn&eacute;e de toutes les valeurs prises par \(X\) et de leurs probabilit&eacute;s respectives. On la pr&eacute;sente g&eacute;n&eacute;ralement sous forme de tableau :
+</div>
+
+<table>
+  <tr><th>\(x_i\)</th><th>\(x_1\)</th><th>\(x_2\)</th><th>\(\cdots\)</th><th>\(x_n\)</th></tr>
+  <tr><td>\(P(X = x_i)\)</td><td>\(p_1\)</td><td>\(p_2\)</td><td>\(\cdots\)</td><td>\(p_n\)</td></tr>
+</table>
+<p>Avec \(\displaystyle\sum_{i=1}^{n} p_i = 1\) et \(p_i \geqslant 0\) pour tout \(i\).</p>
+
+<div class="ex">
+  <span class="label label-ex">Exemple &mdash; Nombre de panneaux d&eacute;fectueux</span>
+  <p>On pr&eacute;l&egrave;ve 3 panneaux dans un lot o&ugrave; la proportion de d&eacute;fectueux est \(p = 0{,}1\). Soit \(X\) le nombre de panneaux d&eacute;fectueux.</p>
+  <p>\(X\) prend les valeurs 0, 1, 2, 3.</p>
+</div>
+
+<!-- ==================== 8. ESPÉRANCE, VARIANCE, ÉCART-TYPE ==================== -->
+<h2>8. Esp&eacute;rance, variance, &eacute;cart-type</h2>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Esp&eacute;rance</span><br>
+  L&rsquo;<strong>esp&eacute;rance</strong> de \(X\) est la <em>valeur moyenne th&eacute;orique</em> de \(X\) :
+  \[E(X) = \sum_{i=1}^{n} x_i \, p_i\]
+</div>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Variance et &eacute;cart-type</span><br>
+  La <strong>variance</strong> mesure la dispersion de \(X\) autour de son esp&eacute;rance :
+  \[V(X) = \sum_{i=1}^{n} (x_i - E(X))^2 \, p_i = E(X^2) - [E(X)]^2\]
+  L&rsquo;<strong>&eacute;cart-type</strong> est \(\sigma(X) = \sqrt{V(X)}\).
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propri&eacute;t&eacute;s de l&rsquo;esp&eacute;rance et de la variance</span><br>
+  Pour \(a, b \in \mathbb{R}\) :
+  <ul>
+    <li>\(E(aX + b) = aE(X) + b\)</li>
+    <li>\(V(aX + b) = a^2 V(X)\)</li>
+    <li>\(\sigma(aX + b) = |a|\,\sigma(X)\)</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span>
+  <p>Un technicien chauffagiste re&ccedil;oit un nombre al&eacute;atoire \(X\) d&rsquo;appels urgents par jour :</p>
+  <table>
+    <tr><th>\(x_i\)</th><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+    <tr><th>\(P(X = x_i)\)</th><td>0,3</td><td>0,4</td><td>0,2</td><td>0,1</td></tr>
+  </table>
+  <p>\(E(X) = 0 \times 0{,}3 + 1 \times 0{,}4 + 2 \times 0{,}2 + 3 \times 0{,}1 = 0 + 0{,}4 + 0{,}4 + 0{,}3 = 1{,}1\)</p>
+  <p>En moyenne, le technicien re&ccedil;oit <strong>1,1 appel urgent par jour</strong>.</p>
+  <p>\(E(X^2) = 0 + 1 \times 0{,}4 + 4 \times 0{,}2 + 9 \times 0{,}1 = 0{,}4 + 0{,}8 + 0{,}9 = 2{,}1\)</p>
+  <p>\(V(X) = 2{,}1 - (1{,}1)^2 = 2{,}1 - 1{,}21 = 0{,}89\)</p>
+  <p>\(\sigma(X) = \sqrt{0{,}89} \approx 0{,}94\)</p>
+</div>
+
+<!-- ==================== 9. LOI BINOMIALE ==================== -->
+<h2>9. Loi binomiale \(B(n,p)\)</h2>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; &Eacute;preuve de Bernoulli</span><br>
+  Une <strong>&eacute;preuve de Bernoulli</strong> de param&egrave;tre \(p\) est une exp&eacute;rience al&eacute;atoire &agrave; deux issues :
+  <ul>
+    <li><strong>Succ&egrave;s</strong> (S), de probabilit&eacute; \(p\)</li>
+    <li><strong>&Eacute;chec</strong> (E), de probabilit&eacute; \(q = 1 - p\)</li>
+  </ul>
+</div>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Loi binomiale</span><br>
+  Soit \(X\) le nombre de succ&egrave;s lors de la r&eacute;p&eacute;tition de \(n\) &eacute;preuves de Bernoulli <strong>ind&eacute;pendantes</strong> de m&ecirc;me param&egrave;tre \(p\). On dit que \(X\) suit la <strong>loi binomiale</strong> de param&egrave;tres \(n\) et \(p\), not&eacute;e \(X \sim B(n,p)\).
+  <p>Pour \(k \in \{0, 1, \ldots, n\}\) :</p>
+  \[P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}\]
+  <p>o&ugrave; \(\displaystyle\binom{n}{k} = \frac{n!}{k!(n-k)!}\) est le coefficient binomial.</p>
+</div>
+
+<div class="formula-box">
+  <strong>Loi binomiale \(B(n,p)\) &mdash; Param&egrave;tres</strong>
+  <ul>
+    <li>Esp&eacute;rance : \(E(X) = np\)</li>
+    <li>Variance : \(V(X) = np(1-p)\)</li>
+    <li>&Eacute;cart-type : \(\sigma(X) = \sqrt{np(1-p)}\)</li>
+  </ul>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">M&eacute;thode &mdash; V&eacute;rifier les conditions d&rsquo;application</span><br>
+  On peut mod&eacute;liser par une loi binomiale si :
+  <ol>
+    <li>L&rsquo;exp&eacute;rience est r&eacute;p&eacute;t&eacute;e un nombre fixe \(n\) de fois</li>
+    <li>Chaque r&eacute;p&eacute;tition a exactement deux issues (succ&egrave;s/&eacute;chec)</li>
+    <li>La probabilit&eacute; de succ&egrave;s \(p\) est constante &agrave; chaque r&eacute;p&eacute;tition</li>
+    <li>Les r&eacute;p&eacute;titions sont ind&eacute;pendantes</li>
+  </ol>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple &mdash; Contr&ocirc;le qualit&eacute; de panneaux</span>
+  <p>Un fabricant produit des panneaux de bois avec un taux de d&eacute;faut de \(p = 0{,}03\). On pr&eacute;l&egrave;ve \(n = 20\) panneaux. Soit \(X\) le nombre de panneaux d&eacute;fectueux : \(X \sim B(20\,;\,0{,}03)\).</p>
+  <p><strong>Probabilit&eacute; d&rsquo;avoir exactement 0 d&eacute;faut :</strong></p>
+  <p>\(P(X = 0) = \binom{20}{0}(0{,}03)^0(0{,}97)^{20} = (0{,}97)^{20} \approx 0{,}5438\)</p>
+  <p><strong>Probabilit&eacute; d&rsquo;avoir au moins 2 d&eacute;fauts :</strong></p>
+  <p>\(P(X \geqslant 2) = 1 - P(X = 0) - P(X = 1)\)</p>
+  <p>\(P(X = 1) = \binom{20}{1}(0{,}03)^1(0{,}97)^{19} = 20 \times 0{,}03 \times (0{,}97)^{19} \approx 0{,}3364\)</p>
+  <p>\(P(X \geqslant 2) \approx 1 - 0{,}5438 - 0{,}3364 = 0{,}1198 \approx 12\,\%\)</p>
+  <p>\(E(X) = 20 \times 0{,}03 = 0{,}6\) ; \(\sigma(X) = \sqrt{20 \times 0{,}03 \times 0{,}97} \approx 0{,}76\)</p>
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention &mdash; Tirage sans remise</span><br>
+  La loi binomiale suppose des tirages <strong>ind&eacute;pendants</strong> (avec remise). Si l&rsquo;on tire sans remise dans un petit lot, on utilise la <strong>loi hyperg&eacute;om&eacute;trique</strong>. Cependant, si la taille du lot est grande devant la taille de l&rsquo;&eacute;chantillon (au moins 10 fois), l&rsquo;approximation binomiale reste acceptable.
+</div>
+
+<!-- ==================== 10. LOI DE POISSON ==================== -->
+<h2>10. Loi de Poisson \(\mathcal{P}(\lambda)\)</h2>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Loi de Poisson</span><br>
+  Une variable al&eacute;atoire \(X\) suit la <strong>loi de Poisson</strong> de param&egrave;tre \(\lambda > 0\), not&eacute;e \(X \sim \mathcal{P}(\lambda)\), si pour tout entier \(k \geqslant 0\) :
+  \[P(X = k) = e^{-\lambda} \frac{\lambda^k}{k!}\]
+</div>
+
+<div class="formula-box">
+  <strong>Loi de Poisson \(\mathcal{P}(\lambda)\) &mdash; Param&egrave;tres</strong>
+  <ul>
+    <li>Esp&eacute;rance : \(E(X) = \lambda\)</li>
+    <li>Variance : \(V(X) = \lambda\)</li>
+    <li>&Eacute;cart-type : \(\sigma(X) = \sqrt{\lambda}\)</li>
+  </ul>
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propri&eacute;t&eacute; &mdash; Approximation de la loi binomiale par la loi de Poisson</span><br>
+  Lorsque \(n\) est grand (\(n \geqslant 30\)) et \(p\) est petit (\(p \leqslant 0{,}1\)), avec \(\lambda = np\) mod&eacute;r&eacute; (\(\lambda \leqslant 10\)), on peut approcher :
+  \[B(n,p) \approx \mathcal{P}(\lambda = np)\]
+  On retient la r&egrave;gle pratique : \(n \geqslant 30\), \(p \leqslant 0{,}1\), \(np \leqslant 10\).
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple &mdash; Fiabilit&eacute; d&rsquo;un syst&egrave;me de chauffage</span>
+  <p>Un installateur de syst&egrave;mes de chauffage constate en moyenne \(\lambda = 2{,}5\) pannes par mois sur l&rsquo;ensemble de son parc. Soit \(X\) le nombre de pannes par mois : \(X \sim \mathcal{P}(2{,}5)\).</p>
+  <p><strong>Probabilit&eacute; d&rsquo;aucune panne :</strong></p>
+  <p>\(P(X = 0) = e^{-2{,}5} \frac{(2{,}5)^0}{0!} = e^{-2{,}5} \approx 0{,}0821\)</p>
+  <p><strong>Probabilit&eacute; d&rsquo;au plus 2 pannes :</strong></p>
+  <p>\(P(X \leqslant 2) = P(X=0) + P(X=1) + P(X=2)\)</p>
+  <p>\(P(X=1) = e^{-2{,}5} \times 2{,}5 \approx 0{,}2052\)</p>
+  <p>\(P(X=2) = e^{-2{,}5} \times \frac{(2{,}5)^2}{2} \approx 0{,}2565\)</p>
+  <p>\(P(X \leqslant 2) \approx 0{,}0821 + 0{,}2052 + 0{,}2565 = 0{,}5438\)</p>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">M&eacute;thode &mdash; Choisir entre binomiale et Poisson</span><br>
+  <table>
+    <tr><th>Crit&egrave;re</th><th>Loi binomiale \(B(n,p)\)</th><th>Loi de Poisson \(\mathcal{P}(\lambda)\)</th></tr>
+    <tr><td>Nombre d&rsquo;&eacute;preuves</td><td>Fixe (\(n\))</td><td>Pas de nombre fixe (comptage)</td></tr>
+    <tr><td>\(p\)</td><td>Quelconque</td><td>Petit (\(\leqslant 0{,}1\))</td></tr>
+    <tr><td>Contexte typique</td><td>Contr&ocirc;le d&rsquo;un &eacute;chantillon</td><td>Nombre d&rsquo;&eacute;v&eacute;nements rares</td></tr>
+    <tr><td>Param&egrave;tres</td><td>\(n\) et \(p\)</td><td>\(\lambda\) (nombre moyen)</td></tr>
+  </table>
+</div>
+
+<!-- ==================== 11. APPLICATIONS ==================== -->
+<h2>11. Applications au contr&ocirc;le qualit&eacute; et &agrave; la fiabilit&eacute;</h2>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Contr&ocirc;le par &eacute;chantillonnage</span><br>
+  Le <strong>contr&ocirc;le par &eacute;chantillonnage</strong> consiste &agrave; pr&eacute;lever al&eacute;atoirement \(n\) pi&egrave;ces dans un lot et &agrave; d&eacute;cider d&rsquo;accepter ou de refuser le lot en fonction du nombre de d&eacute;fectueux observ&eacute;s.
+</div>
+
+<div class="meth">
+  <span class="label label-meth">M&eacute;thode &mdash; Plan de contr&ocirc;le simple</span><br>
+  <ol>
+    <li>D&eacute;finir la taille d&rsquo;&eacute;chantillon \(n\) et le seuil d&rsquo;acceptation \(c\)</li>
+    <li>Pr&eacute;lever \(n\) pi&egrave;ces et compter le nombre \(X\) de d&eacute;fectueux</li>
+    <li>Si \(X \leqslant c\) : <strong>accepter</strong> le lot ; si \(X > c\) : <strong>refuser</strong></li>
+  </ol>
+  <p>En mod&eacute;lisant \(X \sim B(n,p)\), on peut calculer la probabilit&eacute; d&rsquo;accepter un lot de proportion de d&eacute;fectueux \(p\).</p>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple &mdash; Plan de contr&ocirc;le \(n = 50\), \(c = 2\)</span>
+  <p>Un fabricant de quincaillerie livre un lot de 2000 ferrures. On pr&eacute;l&egrave;ve 50 pi&egrave;ces (le lot est assez grand pour justifier le mod&egrave;le binomial). Le lot est accept&eacute; si on trouve au plus 2 d&eacute;fectueux.</p>
+  <p>Si le vrai taux de d&eacute;faut est \(p = 0{,}02\), alors \(\lambda = np = 50 \times 0{,}02 = 1\) et on approche par \(\mathcal{P}(1)\) :</p>
+  <p>\(P(X \leqslant 2) = e^{-1}\left(1 + 1 + \frac{1}{2}\right) = e^{-1} \times 2{,}5 \approx 0{,}3679 \times 2{,}5 \approx 0{,}920\)</p>
+  <p>Le lot a environ <strong>92&nbsp;%</strong> de chances d&rsquo;&ecirc;tre accept&eacute;.</p>
+</div>
+
+<div class="retenir">
+  <strong>&Agrave; retenir &mdash; Les formules essentielles</strong>
+  <table>
+    <tr><th>Formule</th><th>Expression</th></tr>
+    <tr><td>Probabilit&eacute; conditionnelle</td><td>\(P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}\)</td></tr>
+    <tr><td>Ind&eacute;pendance</td><td>\(P(A \cap B) = P(A) \times P(B)\)</td></tr>
+    <tr><td>Probabilit&eacute;s totales</td><td>\(P(A) = \displaystyle\sum P(A \mid B_k) \, P(B_k)\)</td></tr>
+    <tr><td>Bayes</td><td>\(P(B_k \mid A) = \dfrac{P(A \mid B_k) \, P(B_k)}{P(A)}\)</td></tr>
+    <tr><td>Binomiale \(B(n,p)\)</td><td>\(P(X=k) = \dbinom{n}{k} p^k (1-p)^{n-k}\)</td></tr>
+    <tr><td>Poisson \(\mathcal{P}(\lambda)\)</td><td>\(P(X=k) = e^{-\lambda}\dfrac{\lambda^k}{k!}\)</td></tr>
+  </table>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
