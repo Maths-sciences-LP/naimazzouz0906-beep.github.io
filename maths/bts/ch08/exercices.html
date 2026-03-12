@@ -189,32 +189,26 @@
 
 <!-- --- Exercice 2.3 --- -->
 <div class="exo">
-  <strong>Exercice 2.3 &mdash; Loi de Poisson et pannes</strong>
-  <p>Un technicien de maintenance de syst&egrave;mes de chauffage collectif constate en moyenne 3 pannes par semaine sur l&rsquo;ensemble des installations qu&rsquo;il g&egrave;re. On mod&eacute;lise le nombre de pannes par semaine par une variable \(X \sim \mathcal{P}(3)\).</p>
+  <strong>Exercice 2.3 &mdash; Loi uniforme &mdash; Temps d&rsquo;attente</strong>
+  <p>Un technicien chauffagiste attend la livraison d&rsquo;une pi&egrave;ce de rechange. Le livreur annonce qu&rsquo;il arrivera entre 9h00 et 11h00, sans plus de pr&eacute;cision. On mod&eacute;lise l&rsquo;heure d&rsquo;arriv&eacute;e par une loi uniforme sur \([0\,;\,120]\) (en minutes apr&egrave;s 9h00).</p>
   <ol>
-    <li>Calculer \(P(X = 0)\), \(P(X = 1)\), \(P(X = 2)\) et \(P(X = 3)\).</li>
-    <li>En d&eacute;duire \(P(X \leqslant 3)\) et \(P(X \geqslant 4)\).</li>
-    <li>Le technicien peut g&eacute;rer au maximum 5 pannes par semaine. Calculer \(P(X > 5)\).</li>
-    <li>V&eacute;rifier que \(E(X) = V(X) = 3\).</li>
+    <li>Donner la fonction de densit&eacute; de \(X\).</li>
+    <li>Calculer \(E(X)\) et \(\sigma(X)\). Interpr&eacute;ter.</li>
+    <li>Quelle est la probabilit&eacute; que le livreur arrive dans la premi&egrave;re demi-heure ?</li>
+    <li>Quelle est la probabilit&eacute; que le livreur arrive entre 10h00 et 10h30 ?</li>
+    <li>Le technicien a un autre rendez-vous &agrave; 10h45. Quelle est la probabilit&eacute; qu&rsquo;il doive annuler ce rendez-vous ?</li>
   </ol>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>On utilise \(P(X=k) = e^{-3}\dfrac{3^k}{k!}\) avec \(e^{-3} \approx 0{,}0498\).</p>
     <ol>
-      <li>
-        \(P(X=0) = e^{-3} \approx 0{,}0498\)<br>
-        \(P(X=1) = e^{-3} \times 3 \approx 0{,}1494\)<br>
-        \(P(X=2) = e^{-3} \times \frac{9}{2} \approx 0{,}2240\)<br>
-        \(P(X=3) = e^{-3} \times \frac{27}{6} \approx 0{,}2240\)
-      </li>
-      <li>\(P(X \leqslant 3) \approx 0{,}0498 + 0{,}1494 + 0{,}2240 + 0{,}2240 = 0{,}6472\)<br>
-      \(P(X \geqslant 4) = 1 - P(X \leqslant 3) \approx 0{,}3528\)</li>
-      <li>\(P(X=4) = e^{-3} \times \frac{81}{24} \approx 0{,}1680\)<br>
-      \(P(X=5) = e^{-3} \times \frac{243}{120} \approx 0{,}1008\)<br>
-      \(P(X \leqslant 5) \approx 0{,}6472 + 0{,}1680 + 0{,}1008 = 0{,}9160\)<br>
-      \(P(X > 5) \approx 1 - 0{,}9160 = 0{,}0840 \approx 8{,}4\,\%\)<br>
-      Environ 8,4&nbsp;% de risque de d&eacute;passement de capacit&eacute;.</li>
-      <li>Pour une loi de Poisson de param&egrave;tre \(\lambda\), \(E(X) = \lambda = 3\) et \(V(X) = \lambda = 3\). &check;</li>
+      <li>\(f(x) = \dfrac{1}{120 - 0} = \dfrac{1}{120}\) pour \(x \in [0\,;\,120]\), et \(f(x) = 0\) sinon.</li>
+      <li>\(E(X) = \dfrac{0 + 120}{2} = 60\) min (arriv&eacute;e moyenne &agrave; 10h00).<br>
+      \(\sigma(X) = \dfrac{120 - 0}{2\sqrt{3}} = \dfrac{120}{2\sqrt{3}} \approx 34{,}6\) min.</li>
+      <li>\(P(X \leqslant 30) = \dfrac{30 - 0}{120 - 0} = \dfrac{30}{120} = 0{,}25 = 25\,\%\)</li>
+      <li>Entre 10h00 et 10h30 correspond &agrave; \(x \in [60\,;\,90]\) :<br>
+      \(P(60 \leqslant X \leqslant 90) = \dfrac{90 - 60}{120} = \dfrac{30}{120} = 0{,}25 = 25\,\%\)</li>
+      <li>Le technicien doit annuler si le livreur arrive apr&egrave;s 10h45, soit \(x > 105\) :<br>
+      \(P(X > 105) = \dfrac{120 - 105}{120} = \dfrac{15}{120} = 0{,}125 = 12{,}5\,\%\)</li>
     </ol>
   </div>
 </div>
@@ -289,28 +283,29 @@
 
 <!-- --- Exercice 3.2 --- -->
 <div class="exo">
-  <strong>Exercice 3.2 &mdash; Approximation Poisson de la binomiale</strong>
-  <p>Un fabricant de c&acirc;bles &eacute;lectriques produit des bobines de 100 m&egrave;tres. La probabilit&eacute; d&rsquo;un d&eacute;faut d&rsquo;isolement par m&egrave;tre de c&acirc;ble est \(p = 0{,}005\). On note \(X\) le nombre de d&eacute;fauts sur une bobine de 100 m.</p>
+  <strong>Exercice 3.2 &mdash; Loi normale &mdash; Dimensions de panneaux</strong>
+  <p>Une usine de panneaux de particules produit des panneaux dont l&rsquo;&eacute;paisseur \(X\) (en mm) suit une loi normale \(\mathcal{N}(18\;;\;0{,}09)\), soit \(\mu = 18\) mm et \(\sigma = 0{,}3\) mm. Un panneau est conforme si son &eacute;paisseur est comprise entre 17,4 mm et 18,6 mm.</p>
   <ol>
-    <li>Quelle loi suit \(X\) exactement ? Justifier.</li>
-    <li>Peut-on approcher par une loi de Poisson ? Donner le param&egrave;tre \(\lambda\).</li>
-    <li>Calculer \(P(X = 0)\), \(P(X = 1)\), \(P(X = 2)\) avec la loi de Poisson.</li>
-    <li>La bobine est rejet&eacute;e si elle pr&eacute;sente au moins 2 d&eacute;fauts. Calculer le taux de rejet.</li>
-    <li>Combien de bobines rejette-t-on en moyenne sur une production de 500 bobines ?</li>
+    <li>Centrer-r&eacute;duire et calculer \(P(17{,}4 \leqslant X \leqslant 18{,}6)\). Quel pourcentage de panneaux est conforme ?</li>
+    <li>Calculer \(P(X > 18{,}9)\).</li>
+    <li>D&eacute;terminer la valeur \(x_0\) telle que \(P(X \leqslant x_0) = 0{,}95\).</li>
+    <li>L&rsquo;usine souhaite que 99&nbsp;% des panneaux soient conformes. Quel &eacute;cart-type maximal faut-il atteindre (en gardant \(\mu = 18\) et les m&ecirc;mes tol&eacute;rances) ?</li>
   </ol>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
     <ol>
-      <li>\(X \sim B(100\,;\,0{,}005)\) : on teste 100 m&egrave;tres ind&eacute;pendants, chacun a une probabilit&eacute; 0,005 de d&eacute;faut.</li>
-      <li>Oui : \(n = 100 \geqslant 30\), \(p = 0{,}005 \leqslant 0{,}1\), \(\lambda = np = 0{,}5 \leqslant 10\).<br>
-      \(X \approx \mathcal{P}(0{,}5)\).</li>
-      <li>\(e^{-0{,}5} \approx 0{,}6065\)<br>
-      \(P(X=0) = e^{-0{,}5} \approx 0{,}6065\)<br>
-      \(P(X=1) = e^{-0{,}5} \times 0{,}5 \approx 0{,}3033\)<br>
-      \(P(X=2) = e^{-0{,}5} \times \frac{0{,}25}{2} \approx 0{,}0758\)</li>
-      <li>\(P(X \geqslant 2) = 1 - P(X=0) - P(X=1) \approx 1 - 0{,}6065 - 0{,}3033 = 0{,}0902\)<br>
-      Taux de rejet : environ <strong>9&nbsp;%</strong>.</li>
-      <li>Nombre moyen de bobines rejet&eacute;es : \(500 \times 0{,}0902 \approx 45\) bobines.</li>
+      <li>\(P(17{,}4 \leqslant X \leqslant 18{,}6) = P\!\left(\dfrac{17{,}4-18}{0{,}3} \leqslant Z \leqslant \dfrac{18{,}6-18}{0{,}3}\right) = P(-2 \leqslant Z \leqslant 2)\)<br>
+      \(= 2\Phi(2) - 1 \approx 2 \times 0{,}9772 - 1 = 0{,}9544\)<br>
+      Environ <strong>95,4&nbsp;%</strong> des panneaux sont conformes.</li>
+      <li>\(P(X > 18{,}9) = P\!\left(Z > \dfrac{18{,}9-18}{0{,}3}\right) = P(Z > 3) = 1 - \Phi(3) \approx 1 - 0{,}9987 = 0{,}0013\)<br>
+      Environ <strong>0,13&nbsp;%</strong>.</li>
+      <li>On cherche \(x_0\) tel que \(P(X \leqslant x_0) = 0{,}95\).<br>
+      \(\Phi\!\left(\dfrac{x_0 - 18}{0{,}3}\right) = 0{,}95\), donc \(\dfrac{x_0 - 18}{0{,}3} = 1{,}645\) (table)<br>
+      \(x_0 = 18 + 1{,}645 \times 0{,}3 = 18 + 0{,}494 \approx 18{,}49\) mm.</li>
+      <li>On veut \(P(17{,}4 \leqslant X \leqslant 18{,}6) = 0{,}99\), soit \(P(-0{,}6/\sigma' \leqslant Z \leqslant 0{,}6/\sigma') = 0{,}99\).<br>
+      \(2\Phi(0{,}6/\sigma') - 1 = 0{,}99\), donc \(\Phi(0{,}6/\sigma') = 0{,}995\).<br>
+      Table : \(0{,}6/\sigma' = 2{,}576\), d&rsquo;o&ugrave; \(\sigma' = 0{,}6/2{,}576 \approx 0{,}233\) mm.<br>
+      Il faut r&eacute;duire l&rsquo;&eacute;cart-type &agrave; environ <strong>0,23 mm</strong>.</li>
     </ol>
   </div>
 </div>
