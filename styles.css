@@ -573,6 +573,52 @@ ul.styled li { margin-bottom: 6px; }
 .e { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; margin: 15px 0; }
 .dh { background: #eef2f7; padding: 12px 15px; border-radius: 8px; margin-bottom: 20px; font-size: .9em; }
 
+/* ── Barre d'impression (exercices / DS) ── */
+.print-bar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 24px 0 8px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+}
+.print-bar span {
+  font-size: .85em;
+  color: #64748b;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 4px;
+}
+.print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border: 1.5px solid var(--p);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--p);
+  font-size: .88em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.print-btn:hover {
+  background: var(--p);
+  color: #fff;
+}
+.print-btn-corr {
+  border-color: #16a34a;
+  color: #16a34a;
+}
+.print-btn-corr:hover {
+  background: #16a34a;
+  color: #fff;
+}
+
 /* ── Media queries ── */
 @media (max-width: 600px) {
   body { padding: 12px; }

@@ -103,12 +103,25 @@
     display: none !important;
   }
 
-  /* ── Forcer l'affichage des corrections ── */
+  /* ── Corrections : masquées par défaut (version élève) ── */
   .corr,
   .correction,
   .qcm-corr,
   .flash-corr {
+    display: none !important;
+  }
+
+  /* ── Corrections : visibles en mode corrigé (body.print-corr) ── */
+  body.print-corr .corr,
+  body.print-corr .correction,
+  body.print-corr .qcm-corr,
+  body.print-corr .flash-corr {
     display: block !important;
+  }
+
+  /* ── Barre d'impression : toujours masquée à l'impression ── */
+  .print-bar {
+    display: none !important;
   }
 
   /* ── Blocs pédagogiques : anti-coupure ── */

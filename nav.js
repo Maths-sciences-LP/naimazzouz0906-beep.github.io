@@ -341,6 +341,29 @@
   var oldBack = container.querySelector('.nb');
   if (oldBack) oldBack.style.display = 'none';
 
+  /* ── Barre d'impression (exercices & DS uniquement) ────────────────── */
+  if (pageType === 'exercices' || pageType === 'ds') {
+    var printBar = document.createElement('div');
+    printBar.className = 'print-bar';
+    printBar.innerHTML =
+      '<span>Imprimer / G\u00e9n\u00e9rer un PDF</span>' +
+      '<button class="print-btn" onclick="window.print()">' +
+        '\uD83D\uDCC4 Version \u00e9l\u00e8ve (sans correction)' +
+      '</button>' +
+      '<button class="print-btn print-btn-corr" id="sn-print-corr">' +
+        '\u2705 Version corrig\u00e9 (avec corrections)' +
+      '</button>';
+    container.appendChild(printBar);
+    document.getElementById('sn-print-corr').addEventListener('click', function () {
+      document.body.classList.add('print-corr');
+      window.addEventListener('afterprint', function cleanup() {
+        document.body.classList.remove('print-corr');
+        window.removeEventListener('afterprint', cleanup);
+      });
+      window.print();
+    });
+  }
+
   /* Bloc inférieur */
   var footerBlock = document.createElement('div');
   footerBlock.className = 'sn-footer-block';
