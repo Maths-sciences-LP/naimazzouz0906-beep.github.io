@@ -341,10 +341,11 @@
   var oldBack = container.querySelector('.nb');
   if (oldBack) oldBack.style.display = 'none';
 
-  /* ── Barre d'impression (exercices & DS uniquement) ────────────────── */
-  if (pageType === 'exercices' || pageType === 'ds') {
-    var printBar = document.createElement('div');
-    printBar.className = 'print-bar';
+  /* ── Barre d'impression ────────────────────────────────────────────── */
+  var hasCorrections = (pageType === 'exercices' || pageType === 'ds');
+  var printBar = document.createElement('div');
+  printBar.className = 'print-bar';
+  if (hasCorrections) {
     printBar.innerHTML =
       '<span>Imprimer / G\u00e9n\u00e9rer un PDF</span>' +
       '<button class="print-btn" onclick="window.print()">' +
@@ -353,7 +354,15 @@
       '<button class="print-btn print-btn-corr" id="sn-print-corr">' +
         '\u2705 Version corrig\u00e9 (avec corrections)' +
       '</button>';
-    container.appendChild(printBar);
+  } else {
+    printBar.innerHTML =
+      '<span>Imprimer / G\u00e9n\u00e9rer un PDF</span>' +
+      '<button class="print-btn" onclick="window.print()">' +
+        '\uD83D\uDCC4 Imprimer cette page' +
+      '</button>';
+  }
+  container.appendChild(printBar);
+  if (hasCorrections) {
     document.getElementById('sn-print-corr').addEventListener('click', function () {
       document.body.classList.add('print-corr');
       window.addEventListener('afterprint', function cleanup() {
