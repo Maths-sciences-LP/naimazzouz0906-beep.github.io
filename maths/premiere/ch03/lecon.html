@@ -19,7 +19,395 @@
 
 <div class="objectifs">
   <h3>Objectifs du chapitre</h3>
-  <p>Contenu à venir.</p>
+  <ul>
+    <li>Comprendre la notion de suite numérique</li>
+    <li>Reconnaître et utiliser une suite arithmétique</li>
+    <li>Calculer la somme des termes d'une suite arithmétique</li>
+    <li>Reconnaître et utiliser une suite géométrique</li>
+    <li>Représenter graphiquement une suite</li>
+    <li>Résoudre des problèmes concrets liés aux suites</li>
+  </ul>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>I – Notion de suite numérique</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="situation">
+  <h4>Situation professionnelle</h4>
+  <p>Un menuisier agenceur débute son activité avec un salaire de 1 500 &euro; net par mois. Son employeur lui garantit une augmentation de 40 &euro; par mois chaque année. Comment modéliser l'évolution de son salaire au fil des années ?</p>
+</div>
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <h4>Suite numérique</h4>
+  <p>Une <strong>suite numérique</strong> est une liste ordonnée de nombres, appelés <strong>termes</strong>, indexés par des entiers naturels.</p>
+  <p>On note \((u_n)\) la suite et \(u_n\) le terme de rang \(n\) (ou terme d'indice \(n\)).</p>
+  <ul>
+    <li>\(u_0\) est le terme initial (premier terme, de rang 0)</li>
+    <li>\(u_1\) est le terme de rang 1, \(u_2\) celui de rang 2, etc.</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <h4>Exemple 1</h4>
+  <p>Le salaire du menuisier forme la suite : \(u_0 = 1\,500\), \(u_1 = 1\,540\), \(u_2 = 1\,580\), \(u_3 = 1\,620\), ...</p>
+  <p>Chaque année, le salaire augmente de 40 &euro;.</p>
+</div>
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <h4>Modes de génération d'une suite</h4>
+  <ul>
+    <li><strong>Formule explicite :</strong> on exprime \(u_n\) directement en fonction de \(n\). Exemple : \(u_n = 3n + 5\).</li>
+    <li><strong>Formule de récurrence :</strong> on exprime \(u_{n+1}\) en fonction de \(u_n\) (et on donne \(u_0\)). Exemple : \(u_{n+1} = u_n + 40\) avec \(u_0 = 1\,500\).</li>
+  </ul>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>II – Suites arithmétiques</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <h4>Suite arithmétique</h4>
+  <p>Une suite \((u_n)\) est <strong>arithmétique</strong> de raison \(r\) si, pour tout entier \(n\) :</p>
+  \[u_{n+1} = u_n + r\]
+  <p>On passe d'un terme au suivant en <strong>ajoutant</strong> toujours le même nombre \(r\).</p>
+</div>
+
+<div class="meth">
+  <span class="label-meth">Méthode</span>
+  <h4>Reconnaître une suite arithmétique</h4>
+  <p>On calcule la différence entre deux termes consécutifs : \(u_{n+1} - u_n\).</p>
+  <ul>
+    <li>Si cette différence est <strong>constante</strong>, la suite est arithmétique et la constante est la raison \(r\).</li>
+    <li>Si \(r > 0\) : la suite est <strong>croissante</strong>.</li>
+    <li>Si \(r < 0\) : la suite est <strong>décroissante</strong>.</li>
+    <li>Si \(r = 0\) : la suite est <strong>constante</strong>.</li>
+  </ul>
+</div>
+
+<div class="formule-box">
+  <h4>Terme général d'une suite arithmétique</h4>
+  \[u_n = u_0 + n \times r\]
+  <p>Plus généralement, si on connaît \(u_p\) :</p>
+  \[u_n = u_p + (n - p) \times r\]
+</div>
+
+<div class="ex">
+  <h4>Exemple 2</h4>
+  <p>Le salaire du menuisier : \(u_0 = 1\,500\) et \(r = 40\).</p>
+  <p>Le terme général est : \(u_n = 1\,500 + 40n\)</p>
+  <ul>
+    <li>Après 5 ans : \(u_5 = 1\,500 + 40 \times 5 = 1\,700\) &euro;</li>
+    <li>Après 10 ans : \(u_{10} = 1\,500 + 40 \times 10 = 1\,900\) &euro;</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h4>Mini exercice 1</h4>
+  <p>Un artisan charpentier empile des planches. La première rangée contient 20 planches. Chaque rangée au-dessus contient 2 planches de moins que la précédente.</p>
+  <ol>
+    <li>Justifier que le nombre de planches par rangée forme une suite arithmétique. Préciser \(u_0\) et \(r\).</li>
+    <li>Exprimer \(u_n\) en fonction de \(n\).</li>
+    <li>Combien de planches contient la 8e rangée (rang 7) ?</li>
+    <li>À partir de quelle rangée n'y a-t-il plus de planches ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>On retire 2 planches à chaque rangée : \(u_{n+1} = u_n - 2\). C'est une suite arithmétique de premier terme \(u_0 = 20\) et de raison \(r = -2\).</li>
+      <li>\(u_n = u_0 + nr = 20 + n \times (-2) = 20 - 2n\)</li>
+      <li>\(u_7 = 20 - 2 \times 7 = 20 - 14 = 6\) planches.</li>
+      <li>On cherche \(n\) tel que \(u_n = 0\) : \(20 - 2n = 0 \Rightarrow n = 10\). À la rangée de rang 10 (11e rangée), il n'y a plus de planches.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>III – Somme des termes d'une suite arithmétique</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="prop">
+  <span class="label-prop">Propriété</span>
+  <h4>Somme des termes consécutifs</h4>
+  <p>La somme des \((n+1)\) premiers termes d'une suite arithmétique (de \(u_0\) à \(u_n\)) est :</p>
+  \[S = u_0 + u_1 + \cdots + u_n = \frac{(n+1)(u_0 + u_n)}{2}\]
+</div>
+
+<div class="formule-box">
+  <h4>Formule à retenir</h4>
+  \[S = \frac{\text{nombre de termes} \times (\text{premier terme} + \text{dernier terme})}{2}\]
+</div>
+
+<div class="meth">
+  <span class="label-meth">Méthode</span>
+  <h4>Appliquer la formule de la somme</h4>
+  <ol>
+    <li>Identifier le premier terme et le dernier terme.</li>
+    <li>Compter le nombre de termes (attention : de \(u_0\) à \(u_n\), il y a \(n+1\) termes).</li>
+    <li>Appliquer la formule.</li>
+  </ol>
+</div>
+
+<div class="ex">
+  <h4>Exemple 3</h4>
+  <p>Calculer \(S = 1 + 2 + 3 + \cdots + 100\).</p>
+  <p>C'est la somme des 100 premiers entiers positifs (de 1 à 100). On a 100 termes, le premier est 1 et le dernier est 100.</p>
+  \[S = \frac{100 \times (1 + 100)}{2} = \frac{100 \times 101}{2} = 5\,050\]
+</div>
+
+<div class="ex">
+  <h4>Exemple 4</h4>
+  <p>Reprenons l'exemple du salaire du menuisier : \(u_0 = 1\,500\), \(r = 40\). Quel est le total des salaires perçus sur les 10 premières années (de l'année 0 à l'année 9) ?</p>
+  <p>On somme de \(u_0\) à \(u_9\) : 10 termes.</p>
+  <p>\(u_9 = 1\,500 + 40 \times 9 = 1\,860\) &euro;.</p>
+  \[S = \frac{10 \times (1\,500 + 1\,860)}{2} = \frac{10 \times 3\,360}{2} = 16\,800 \text{ €}\]
+</div>
+
+<div class="exo">
+  <h4>Mini exercice 2</h4>
+  <p>Un installateur thermique pose des radiateurs dans un immeuble de 6 étages. Au rez-de-chaussée, il pose 8 radiateurs. À chaque étage supérieur, il en pose 2 de plus.</p>
+  <ol>
+    <li>Exprimer le nombre de radiateurs à l'étage \(n\).</li>
+    <li>Combien pose-t-il de radiateurs au 5e étage ?</li>
+    <li>Combien de radiateurs pose-t-il au total dans l'immeuble (du RDC au 5e étage) ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(u_n = 8 + 2n\) (suite arithmétique, \(u_0 = 8\), \(r = 2\)).</li>
+      <li>\(u_5 = 8 + 2 \times 5 = 18\) radiateurs.</li>
+      <li>Du RDC (\(u_0\)) au 5e étage (\(u_5\)), il y a 6 termes :
+      \[S = \frac{6 \times (8 + 18)}{2} = \frac{6 \times 26}{2} = 78 \text{ radiateurs}\]</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>IV – Suites géométriques</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="situation">
+  <h4>Situation professionnelle</h4>
+  <p>Un artisan place 5 000 &euro; sur un compte d'épargne qui rapporte 3 % d'intérêts par an. Chaque année, le capital est multiplié par \(1{,}03\). Comment modéliser l'évolution du capital ?</p>
+</div>
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <h4>Suite géométrique</h4>
+  <p>Une suite \((u_n)\) est <strong>géométrique</strong> de raison \(q\) (\(q \neq 0\)) si, pour tout entier \(n\) :</p>
+  \[u_{n+1} = u_n \times q\]
+  <p>On passe d'un terme au suivant en <strong>multipliant</strong> toujours par le même nombre \(q\).</p>
+</div>
+
+<div class="meth">
+  <span class="label-meth">Méthode</span>
+  <h4>Reconnaître une suite géométrique</h4>
+  <p>On calcule le quotient de deux termes consécutifs : \(\dfrac{u_{n+1}}{u_n}\).</p>
+  <ul>
+    <li>Si ce quotient est <strong>constant</strong>, la suite est géométrique et la constante est la raison \(q\).</li>
+    <li>Si \(q > 1\) et \(u_0 > 0\) : la suite est <strong>croissante</strong>.</li>
+    <li>Si \(0 < q < 1\) et \(u_0 > 0\) : la suite est <strong>décroissante</strong>.</li>
+  </ul>
+</div>
+
+<div class="formule-box">
+  <h4>Terme général d'une suite géométrique</h4>
+  \[u_n = u_0 \times q^n\]
+  <p>Plus généralement, si on connaît \(u_p\) :</p>
+  \[u_n = u_p \times q^{n-p}\]
+</div>
+
+<div class="ex">
+  <h4>Exemple 5</h4>
+  <p>Le capital de l'artisan : \(u_0 = 5\,000\) et \(q = 1{,}03\).</p>
+  <p>Le terme général est : \(u_n = 5\,000 \times 1{,}03^n\)</p>
+  <ul>
+    <li>Après 5 ans : \(u_5 = 5\,000 \times 1{,}03^5 \approx 5\,000 \times 1{,}1593 \approx 5\,796{,}37\) &euro;</li>
+    <li>Après 10 ans : \(u_{10} = 5\,000 \times 1{,}03^{10} \approx 5\,000 \times 1{,}3439 \approx 6\,719{,}58\) &euro;</li>
+  </ul>
+</div>
+
+<div class="att">
+  <span class="label-att">Attention</span>
+  <h4>Ne pas confondre</h4>
+  <table>
+    <thead>
+      <tr><th>Suite arithmétique</th><th>Suite géométrique</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>On <strong>ajoute</strong> la raison \(r\)</td><td>On <strong>multiplie</strong> par la raison \(q\)</td></tr>
+      <tr><td>\(u_{n+1} = u_n + r\)</td><td>\(u_{n+1} = u_n \times q\)</td></tr>
+      <tr><td>\(u_n = u_0 + nr\)</td><td>\(u_n = u_0 \times q^n\)</td></tr>
+      <tr><td>Augmentation/diminution constante</td><td>Augmentation/diminution en pourcentage</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="exo">
+  <h4>Mini exercice 3</h4>
+  <p>Un technicien chauffagiste constate qu'une chaudière perd 8 % de son rendement chaque année. Le rendement initial est de 95 %.</p>
+  <ol>
+    <li>Justifier que le rendement forme une suite géométrique. Préciser \(u_0\) et \(q\).</li>
+    <li>Exprimer \(u_n\) en fonction de \(n\).</li>
+    <li>Quel est le rendement après 5 ans ? (Arrondir à 0,1 %)</li>
+    <li>Au bout de combien d'années le rendement passe-t-il sous 50 % ? (Tester des valeurs)</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Le rendement est multiplié par \(1 - 0{,}08 = 0{,}92\) chaque année. C'est une suite géométrique avec \(u_0 = 95\) et \(q = 0{,}92\).</li>
+      <li>\(u_n = 95 \times 0{,}92^n\)</li>
+      <li>\(u_5 = 95 \times 0{,}92^5 \approx 95 \times 0{,}6591 \approx 62{,}6\,\%\)</li>
+      <li>On teste :
+        <br>\(u_7 = 95 \times 0{,}92^7 \approx 95 \times 0{,}5578 \approx 53{,}0\,\%\)
+        <br>\(u_8 = 95 \times 0{,}92^8 \approx 95 \times 0{,}5132 \approx 48{,}8\,\%\)
+        <br>Le rendement passe sous 50 % au bout de 8 ans.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>V – Représentation graphique des suites</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="prop">
+  <span class="label-prop">Propriété</span>
+  <h4>Représentation graphique</h4>
+  <p>Pour représenter graphiquement une suite \((u_n)\), on place les points de coordonnées \((n\,;\, u_n)\) dans un repère.</p>
+  <ul>
+    <li>L'axe horizontal représente les rangs \(n\) (entiers naturels).</li>
+    <li>L'axe vertical représente les valeurs \(u_n\).</li>
+  </ul>
+  <p><strong>Attention :</strong> on ne relie <strong>pas</strong> les points (une suite est définie uniquement pour des valeurs entières de \(n\)).</p>
+</div>
+
+<div class="meth">
+  <span class="label-meth">Méthode</span>
+  <h4>Reconnaître graphiquement le type de suite</h4>
+  <ul>
+    <li><strong>Suite arithmétique :</strong> les points sont alignés sur une droite (car \(u_n = u_0 + nr\) est une fonction affine de \(n\)).</li>
+    <li><strong>Suite géométrique :</strong> les points suivent une courbe exponentielle (croissance rapide si \(q > 1\), décroissance vers 0 si \(0 < q < 1\)).</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <h4>Exemple 6</h4>
+  <p>Comparons graphiquement le salaire du menuisier (suite arithmétique : \(u_n = 1\,500 + 40n\)) et le capital de l'artisan divisé par 3 (suite géométrique : \(v_n = 1\,667 \times 1{,}03^n\)) :</p>
+  <table>
+    <thead>
+      <tr><th>\(n\)</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>8</th><th>10</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>\(u_n\) (arithm.)</td><td>1 500</td><td>1 540</td><td>1 580</td><td>1 620</td><td>1 660</td><td>1 700</td><td>1 820</td><td>1 900</td></tr>
+      <tr><td>\(v_n\) (géom.)</td><td>1 667</td><td>1 717</td><td>1 768</td><td>1 821</td><td>1 876</td><td>1 932</td><td>2 112</td><td>2 241</td></tr>
+    </tbody>
+  </table>
+  <p>La suite arithmétique progresse de manière régulière (linéaire), tandis que la suite géométrique accélère progressivement.</p>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>VI – Applications</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="exo">
+  <h4>Mini exercice 4 – Amortissement linéaire</h4>
+  <p>Un artisan achète une machine-outil d'une valeur de 12 000 &euro;. Cette machine est amortie de manière linéaire sur 8 ans (elle perd la même valeur chaque année).</p>
+  <ol>
+    <li>Quelle est la perte de valeur annuelle ?</li>
+    <li>Exprimer la valeur résiduelle \(v_n\) après \(n\) années.</li>
+    <li>Quelle est la valeur résiduelle après 5 ans ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Perte annuelle : \(\dfrac{12\,000}{8} = 1\,500\) &euro; par an.</li>
+      <li>\(v_n = 12\,000 - 1\,500n\) (suite arithmétique, \(v_0 = 12\,000\), \(r = -1\,500\)).</li>
+      <li>\(v_5 = 12\,000 - 1\,500 \times 5 = 12\,000 - 7\,500 = 4\,500\) &euro;.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h4>Mini exercice 5 – Épargne avec intérêts composés</h4>
+  <p>Un menuisier place 3 000 &euro; sur un livret d'épargne à un taux annuel de 2,5 %.</p>
+  <ol>
+    <li>Exprimer le capital \(c_n\) après \(n\) années.</li>
+    <li>Calculer le capital après 3 ans (arrondir au centime).</li>
+    <li>Au bout de combien d'années le capital dépasse-t-il 3 500 &euro; ? (Tester des valeurs)</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(c_n = 3\,000 \times 1{,}025^n\) (suite géométrique, \(c_0 = 3\,000\), \(q = 1{,}025\)).</li>
+      <li>\(c_3 = 3\,000 \times 1{,}025^3 = 3\,000 \times 1{,}076891 \approx 3\,230{,}67\) &euro;.</li>
+      <li>On teste :
+        <br>\(c_6 = 3\,000 \times 1{,}025^6 \approx 3\,000 \times 1{,}1597 \approx 3\,479{,}08\) &euro;
+        <br>\(c_7 = 3\,000 \times 1{,}025^7 \approx 3\,000 \times 1{,}1887 \approx 3\,566{,}06\) &euro;
+        <br>Le capital dépasse 3 500 &euro; au bout de 7 ans.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>VII – Synthèse</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="retenir">
+  <h4>À retenir</h4>
+  <table>
+    <thead>
+      <tr><th></th><th>Suite arithmétique</th><th>Suite géométrique</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Récurrence</strong></td><td>\(u_{n+1} = u_n + r\)</td><td>\(u_{n+1} = u_n \times q\)</td></tr>
+      <tr><td><strong>Terme général</strong></td><td>\(u_n = u_0 + nr\)</td><td>\(u_n = u_0 \times q^n\)</td></tr>
+      <tr><td><strong>Somme</strong></td><td>\(S = \dfrac{(n+1)(u_0 + u_n)}{2}\)</td><td>—</td></tr>
+      <tr><td><strong>Graphique</strong></td><td>Points alignés</td><td>Courbe exponentielle</td></tr>
+      <tr><td><strong>Application</strong></td><td>Augmentation fixe, amortissement</td><td>Intérêts composés, évolution en %</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="exo">
+  <h4>Mini exercice 6 – Exercice de synthèse</h4>
+  <p>Un technicien chauffagiste hésite entre deux offres d'emploi :</p>
+  <ul>
+    <li><strong>Offre A :</strong> salaire initial de 1 600 &euro;, avec une augmentation de 50 &euro; par an.</li>
+    <li><strong>Offre B :</strong> salaire initial de 1 500 &euro;, avec une augmentation de 4 % par an.</li>
+  </ul>
+  <ol>
+    <li>Identifier le type de suite pour chaque offre. Donner les formules des termes généraux.</li>
+    <li>Calculer le salaire proposé par chaque offre après 5 ans.</li>
+    <li>Calculer le salaire proposé par chaque offre après 10 ans.</li>
+    <li>À partir de quelle année l'offre B devient-elle plus avantageuse ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong></p>
+    <ul>
+      <li>Offre A : suite arithmétique, \(a_n = 1\,600 + 50n\).</li>
+      <li>Offre B : suite géométrique, \(b_n = 1\,500 \times 1{,}04^n\).</li>
+    </ul>
+    <p><strong>2.</strong> Après 5 ans :</p>
+    <ul>
+      <li>\(a_5 = 1\,600 + 50 \times 5 = 1\,850\) &euro;</li>
+      <li>\(b_5 = 1\,500 \times 1{,}04^5 \approx 1\,500 \times 1{,}2167 \approx 1\,825\) &euro;</li>
+    </ul>
+    <p><strong>3.</strong> Après 10 ans :</p>
+    <ul>
+      <li>\(a_{10} = 1\,600 + 50 \times 10 = 2\,100\) &euro;</li>
+      <li>\(b_{10} = 1\,500 \times 1{,}04^{10} \approx 1\,500 \times 1{,}4802 \approx 2\,220\) &euro;</li>
+    </ul>
+    <p><strong>4.</strong> On teste :</p>
+    <ul>
+      <li>\(n = 7\) : \(a_7 = 1\,950\), \(b_7 \approx 1\,500 \times 1{,}3159 \approx 1\,974\) → B > A</li>
+      <li>\(n = 6\) : \(a_6 = 1\,900\), \(b_6 \approx 1\,500 \times 1{,}2653 \approx 1\,898\) → A > B</li>
+    </ul>
+    <p>L'offre B devient plus avantageuse à partir de l'année 7.</p>
+  </div>
 </div>
 
 </div>

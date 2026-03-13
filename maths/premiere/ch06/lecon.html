@@ -12,14 +12,451 @@
 <body>
 <div class="c">
 <a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
 <header>
-  <h1>Chapitre 06 – Fonction dérivée et étude des variations</h1>
+  <h1>Chapitre 6 – Fonction dérivée et étude des variations</h1>
   <p class="sous-titre">1ère Bac Pro | Algèbre – Analyse | Mathématiques</p>
 </header>
 
+<!-- ══════════════════════════════════════════════════════ -->
 <div class="objectifs">
   <h3>Objectifs du chapitre</h3>
-  <p>Contenu à venir.</p>
+  <ul class="styled">
+    <li>Calculer un taux de variation entre deux points</li>
+    <li>Déterminer le nombre dérivé d'une fonction en un point et l'interpréter graphiquement</li>
+    <li>Connaître les dérivées des fonctions usuelles</li>
+    <li>Utiliser les règles de dérivation (somme, produit par un scalaire)</li>
+    <li>Étudier le sens de variation d'une fonction à l'aide du signe de sa dérivée</li>
+    <li>Dresser un tableau de variations</li>
+    <li>Résoudre des problèmes d'optimisation</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>1. Taux de variation</h2>
+
+<div class="situation">
+  <h3>Situation professionnelle — Artisan menuisier</h3>
+  <p>
+    Un artisan menuisier fabrique des étagères sur mesure. Le coût total de production (en euros)
+    pour \(x\) étagères est modélisé par la fonction \(C(x) = 0{,}5x^2 + 20x + 150\).
+    Il souhaite savoir comment évolue le coût lorsqu'il passe de 10 à 15 étagères.
+  </p>
+</div>
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <strong>Taux de variation :</strong><br>
+  Soit \(f\) une fonction définie sur un intervalle \(I\), et \(a\) et \(b\) deux nombres de \(I\) avec \(a \neq b\).<br>
+  Le <strong>taux de variation</strong> de \(f\) entre \(a\) et \(b\) est le quotient :
+  \[\tau = \frac{f(b) - f(a)}{b - a}\]
+  Ce nombre représente la <strong>pente de la droite</strong> passant par les points \(A(a\,;\,f(a))\) et \(B(b\,;\,f(b))\).
+</div>
+
+<div class="ex">
+  <strong>Exemple :</strong> Reprenons la situation du menuisier avec \(C(x) = 0{,}5x^2 + 20x + 150\).<br><br>
+  Calculons le taux de variation entre \(x = 10\) et \(x = 15\) :
+  <ul>
+    <li>\(C(10) = 0{,}5 \times 100 + 200 + 150 = 400\) €</li>
+    <li>\(C(15) = 0{,}5 \times 225 + 300 + 150 = 562{,}5\) €</li>
+  </ul>
+  \[\tau = \frac{C(15) - C(10)}{15 - 10} = \frac{562{,}5 - 400}{5} = \frac{162{,}5}{5} = 32{,}5 \text{ €/étagère}\]
+  En moyenne, entre la 10ᵉ et la 15ᵉ étagère, chaque étagère supplémentaire coûte 32,50 €.
+</div>
+
+<div class="att">
+  <span class="label-att">Attention</span>
+  Le taux de variation donne une information <strong>moyenne</strong> entre deux points. Il ne décrit pas ce qui se passe
+  en un point précis. Pour cela, on a besoin du <strong>nombre dérivé</strong>.
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>2. Nombre dérivé en un point</h2>
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <strong>Nombre dérivé :</strong><br>
+  Soit \(f\) une fonction définie sur un intervalle \(I\) et \(a\) un nombre de \(I\).<br>
+  Le <strong>nombre dérivé</strong> de \(f\) en \(a\), noté \(f'(a)\), est la limite du taux de variation
+  lorsque \(h\) tend vers 0 :
+  \[f'(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}\]
+  Lorsque cette limite existe, on dit que \(f\) est <strong>dérivable</strong> en \(a\).
+</div>
+
+<div class="prop">
+  <span class="label-prop">Propriété — Interprétation graphique</span><br>
+  Le nombre dérivé \(f'(a)\) est la <strong>pente de la tangente</strong> à la courbe de \(f\) au point d'abscisse \(a\).<br><br>
+  L'équation de cette tangente est :
+  \[y = f'(a)(x - a) + f(a)\]
+</div>
+
+<div class="ex">
+  <strong>Exemple :</strong> Soit \(f(x) = x^2\). Calculons \(f'(3)\).<br><br>
+  \[\frac{f(3 + h) - f(3)}{h} = \frac{(3+h)^2 - 9}{h} = \frac{9 + 6h + h^2 - 9}{h} = \frac{6h + h^2}{h} = 6 + h\]
+  Quand \(h \to 0\), on obtient \(f'(3) = 6\).<br><br>
+  La tangente à la courbe au point \(A(3\,;\,9)\) a pour équation :
+  \[y = 6(x - 3) + 9 = 6x - 9\]
+</div>
+
+<div class="meth">
+  <span class="label-meth">Méthode — Calculer un nombre dérivé</span>
+  <ol>
+    <li>Écrire le taux de variation \(\dfrac{f(a+h) - f(a)}{h}\)</li>
+    <li>Développer et simplifier le numérateur</li>
+    <li>Simplifier par \(h\)</li>
+    <li>Faire tendre \(h\) vers 0 pour obtenir \(f'(a)\)</li>
+  </ol>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>3. Fonction dérivée</h2>
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <strong>Fonction dérivée :</strong><br>
+  Si \(f\) est dérivable en tout point d'un intervalle \(I\), la fonction qui à chaque \(x\) de \(I\)
+  associe \(f'(x)\) est appelée la <strong>fonction dérivée</strong> de \(f\), notée \(f'\).
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>4. Dérivées des fonctions usuelles</h2>
+
+<div class="formule-box">
+  <h3>Tableau des dérivées usuelles</h3>
+  <table class="full">
+    <tr>
+      <th>Fonction \(f(x)\)</th>
+      <th>Dérivée \(f'(x)\)</th>
+      <th>Ensemble de dérivabilité</th>
+    </tr>
+    <tr>
+      <td>\(k\) (constante)</td>
+      <td>\(0\)</td>
+      <td>\(\mathbb{R}\)</td>
+    </tr>
+    <tr>
+      <td>\(ax + b\)</td>
+      <td>\(a\)</td>
+      <td>\(\mathbb{R}\)</td>
+    </tr>
+    <tr>
+      <td>\(x^2\)</td>
+      <td>\(2x\)</td>
+      <td>\(\mathbb{R}\)</td>
+    </tr>
+    <tr>
+      <td>\(x^3\)</td>
+      <td>\(3x^2\)</td>
+      <td>\(\mathbb{R}\)</td>
+    </tr>
+    <tr>
+      <td>\(x^n\) (\(n\) entier, \(n \geq 1\))</td>
+      <td>\(nx^{n-1}\)</td>
+      <td>\(\mathbb{R}\)</td>
+    </tr>
+    <tr>
+      <td>\(\dfrac{1}{x}\)</td>
+      <td>\(-\dfrac{1}{x^2}\)</td>
+      <td>\(\mathbb{R}^*\)</td>
+    </tr>
+    <tr>
+      <td>\(\sqrt{x}\)</td>
+      <td>\(\dfrac{1}{2\sqrt{x}}\)</td>
+      <td>\(]0\,;\,+\infty[\)</td>
+    </tr>
+  </table>
+</div>
+
+<div class="ex">
+  <strong>Exemples :</strong>
+  <ul>
+    <li>Si \(f(x) = 5\), alors \(f'(x) = 0\).</li>
+    <li>Si \(f(x) = 3x + 7\), alors \(f'(x) = 3\).</li>
+    <li>Si \(f(x) = x^2\), alors \(f'(x) = 2x\).</li>
+    <li>Si \(f(x) = x^3\), alors \(f'(x) = 3x^2\).</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>5. Règles de dérivation</h2>
+
+<div class="prop">
+  <span class="label-prop">Propriété — Somme et produit par un scalaire</span><br>
+  Soient \(u\) et \(v\) deux fonctions dérivables sur un intervalle \(I\) et \(k\) un réel.
+  <table class="full">
+    <tr>
+      <th>Opération</th>
+      <th>Fonction</th>
+      <th>Dérivée</th>
+    </tr>
+    <tr>
+      <td>Somme</td>
+      <td>\(u + v\)</td>
+      <td>\(u' + v'\)</td>
+    </tr>
+    <tr>
+      <td>Produit par un réel</td>
+      <td>\(k \times u\)</td>
+      <td>\(k \times u'\)</td>
+    </tr>
+  </table>
+</div>
+
+<div class="meth">
+  <span class="label-meth">Méthode — Dériver une fonction</span>
+  <p>Pour dériver \(f(x) = 3x^2 - 5x + 2\) :</p>
+  <ol>
+    <li>On dérive chaque terme séparément :
+      <ul>
+        <li>\(3x^2\) → dérivée : \(3 \times 2x = 6x\)</li>
+        <li>\(-5x\) → dérivée : \(-5\)</li>
+        <li>\(2\) → dérivée : \(0\)</li>
+      </ul>
+    </li>
+    <li>On additionne : \(f'(x) = 6x - 5\)</li>
+  </ol>
+</div>
+
+<div class="ex">
+  <strong>Exemples de dérivation :</strong>
+  <ol>
+    <li>\(f(x) = 4x^3 + 2x^2 - 7x + 1\)<br>
+        \(f'(x) = 12x^2 + 4x - 7\)</li>
+    <li>\(g(x) = -2x^2 + 8x\)<br>
+        \(g'(x) = -4x + 8\)</li>
+    <li>\(h(x) = 5x^3 - 3x + 10\)<br>
+        \(h'(x) = 15x^2 - 3\)</li>
+  </ol>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>6. Signe de la dérivée et sens de variation</h2>
+
+<div class="retenir">
+  <h3>Théorème fondamental</h3>
+  <p>Soit \(f\) une fonction dérivable sur un intervalle \(I\) :</p>
+  <ul class="styled">
+    <li>Si \(f'(x) > 0\) sur \(I\), alors \(f\) est <strong>strictement croissante</strong> sur \(I\).</li>
+    <li>Si \(f'(x) < 0\) sur \(I\), alors \(f\) est <strong>strictement décroissante</strong> sur \(I\).</li>
+    <li>Si \(f'(x) = 0\) sur \(I\), alors \(f\) est <strong>constante</strong> sur \(I\).</li>
+  </ul>
+</div>
+
+<div class="prop">
+  <span class="label-prop">Propriété — Extremum local</span><br>
+  Si \(f'(a) = 0\) et si \(f'\) change de signe en \(a\), alors \(f\) admet un <strong>extremum local</strong> en \(a\) :
+  <ul>
+    <li>\(f'\) passe du positif au négatif → \(f(a)\) est un <strong>maximum local</strong></li>
+    <li>\(f'\) passe du négatif au positif → \(f(a)\) est un <strong>minimum local</strong></li>
+  </ul>
+</div>
+
+<div class="meth">
+  <span class="label-meth">Méthode — Étudier les variations d'une fonction</span>
+  <ol>
+    <li><strong>Dériver</strong> la fonction \(f\)</li>
+    <li><strong>Résoudre</strong> \(f'(x) = 0\) pour trouver les valeurs critiques</li>
+    <li><strong>Étudier le signe</strong> de \(f'(x)\) sur chaque intervalle</li>
+    <li><strong>Dresser le tableau de variations</strong></li>
+    <li><strong>Conclure</strong> : sens de variation et extremums</li>
+  </ol>
+</div>
+
+<div class="ex">
+  <strong>Exemple complet :</strong> Étudier les variations de \(f(x) = x^2 - 6x + 5\) sur \(\mathbb{R}\).<br><br>
+  <strong>Étape 1 :</strong> \(f'(x) = 2x - 6\)<br><br>
+  <strong>Étape 2 :</strong> \(f'(x) = 0 \Leftrightarrow 2x - 6 = 0 \Leftrightarrow x = 3\)<br><br>
+  <strong>Étape 3 :</strong> Signe de \(f'(x) = 2x - 6\) :
+  <ul>
+    <li>Si \(x < 3\) : \(f'(x) < 0\) → \(f\) décroissante</li>
+    <li>Si \(x > 3\) : \(f'(x) > 0\) → \(f\) croissante</li>
+  </ul>
+  <strong>Étape 4 :</strong> \(f(3) = 9 - 18 + 5 = -4\)<br><br>
+  <strong>Tableau de variations :</strong>
+  <table class="full">
+    <tr>
+      <th>\(x\)</th>
+      <td>\(-\infty\)</td>
+      <td></td>
+      <td>\(3\)</td>
+      <td></td>
+      <td>\(+\infty\)</td>
+    </tr>
+    <tr>
+      <th>Signe de \(f'(x)\)</th>
+      <td></td>
+      <td>\(-\)</td>
+      <td>\(0\)</td>
+      <td>\(+\)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Variations de \(f\)</th>
+      <td></td>
+      <td>↘</td>
+      <td>\(-4\) (min)</td>
+      <td>↗</td>
+      <td></td>
+    </tr>
+  </table>
+  <br>
+  <strong>Conclusion :</strong> \(f\) est décroissante sur \(]-\infty\,;\,3]\) et croissante sur \([3\,;\,+\infty[\).<br>
+  \(f\) admet un <strong>minimum</strong> égal à \(-4\) en \(x = 3\).
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>7. Applications : problèmes d'optimisation</h2>
+
+<div class="situation">
+  <h3>Situation professionnelle — Coût marginal</h3>
+  <p>
+    Un atelier de charpente fabrique des poutres en lamellé-collé. Le coût total de production
+    (en euros) pour \(x\) poutres est modélisé par :
+    \[C(x) = 0{,}2x^2 + 30x + 500 \quad \text{pour } x \in [1\,;\,50]\]
+    Le <strong>coût marginal</strong> est la dérivée \(C'(x)\). Il représente le coût approximatif
+    de la prochaine poutre produite.
+  </p>
+</div>
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <strong>Coût marginal :</strong><br>
+  Si \(C(x)\) est le coût total de production de \(x\) unités, alors le <strong>coût marginal</strong>
+  est \(C'(x)\). Il approxime le coût de fabrication d'une unité supplémentaire.
+</div>
+
+<div class="ex">
+  <strong>Exemple :</strong> Avec \(C(x) = 0{,}2x^2 + 30x + 500\) :<br><br>
+  \(C'(x) = 0{,}4x + 30\)<br><br>
+  Pour \(x = 20\) poutres : \(C'(20) = 0{,}4 \times 20 + 30 = 38\) €.<br>
+  La 21ᵉ poutre coûte environ 38 € à produire.
+</div>
+
+<div class="situation">
+  <h3>Situation professionnelle — Optimisation d'une surface</h3>
+  <p>
+    Un menuisier agenceur doit fabriquer un cadre rectangulaire avec 120 cm de baguette.
+    Il souhaite que l'aire intérieure du cadre soit <strong>maximale</strong>. Quelles dimensions doit-il choisir ?
+  </p>
+</div>
+
+<div class="ex">
+  <strong>Résolution :</strong><br><br>
+  Notons \(x\) la largeur du cadre. Le périmètre vaut \(2x + 2y = 120\), donc \(y = 60 - x\).<br><br>
+  L'aire est : \(A(x) = x(60 - x) = 60x - x^2\) avec \(x \in \,]0\,;\,60[\).<br><br>
+  <strong>Dérivation :</strong> \(A'(x) = 60 - 2x\)<br><br>
+  <strong>Résolution de \(A'(x) = 0\) :</strong> \(60 - 2x = 0 \Leftrightarrow x = 30\)<br><br>
+  <strong>Signe de \(A'(x)\) :</strong>
+  <ul>
+    <li>Si \(x < 30\) : \(A'(x) > 0\) → \(A\) croissante</li>
+    <li>Si \(x > 30\) : \(A'(x) < 0\) → \(A\) décroissante</li>
+  </ul>
+  L'aire est maximale pour \(x = 30\) cm, soit \(y = 30\) cm (un carré !).<br>
+  Aire maximale : \(A(30) = 30 \times 30 = 900\) cm².
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>8. Mini-exercices</h2>
+
+<div class="exo">
+  <strong>Exercice 1 :</strong> Calculer la dérivée de chacune des fonctions suivantes.
+  <ol>
+    <li>\(f(x) = 5x^2 - 3x + 7\)</li>
+    <li>\(g(x) = -x^3 + 4x^2 - 2\)</li>
+    <li>\(h(x) = 2x^3 - 6x + 1\)</li>
+  </ol>
+</div>
+<div class="corr">
+  <ol>
+    <li>\(f'(x) = 10x - 3\)</li>
+    <li>\(g'(x) = -3x^2 + 8x\)</li>
+    <li>\(h'(x) = 6x^2 - 6\)</li>
+  </ol>
+</div>
+<button class="bc">Voir la correction</button>
+
+<div class="exo">
+  <strong>Exercice 2 :</strong> Soit \(f(x) = x^2 - 4x + 3\).<br>
+  Déterminer l'équation de la tangente à la courbe de \(f\) au point d'abscisse \(x = 1\).
+</div>
+<div class="corr">
+  \(f(1) = 1 - 4 + 3 = 0\) et \(f'(x) = 2x - 4\) donc \(f'(1) = -2\).<br><br>
+  Équation de la tangente : \(y = f'(1)(x - 1) + f(1) = -2(x - 1) + 0 = -2x + 2\).
+</div>
+<button class="bc">Voir la correction</button>
+
+<div class="exo">
+  <strong>Exercice 3 :</strong> Étudier les variations de \(f(x) = -2x^2 + 8x - 3\) sur \(\mathbb{R}\).
+  Dresser le tableau de variations et déterminer l'extremum.
+</div>
+<div class="corr">
+  \(f'(x) = -4x + 8\)<br><br>
+  \(f'(x) = 0 \Leftrightarrow x = 2\)<br><br>
+  Signe de \(f'(x)\) :
+  <ul>
+    <li>Si \(x < 2\) : \(f'(x) > 0\) → \(f\) croissante</li>
+    <li>Si \(x > 2\) : \(f'(x) < 0\) → \(f\) décroissante</li>
+  </ul>
+  \(f(2) = -8 + 16 - 3 = 5\)<br><br>
+  \(f\) admet un <strong>maximum</strong> égal à \(5\) en \(x = 2\).
+</div>
+<button class="bc">Voir la correction</button>
+
+<div class="exo">
+  <strong>Exercice 4 :</strong> Un technicien chauffagiste modélise le rendement \(R(x)\) d'une chaudière
+  (en %) en fonction du débit d'eau \(x\) (en L/min) par :
+  \[R(x) = -0{,}5x^2 + 10x + 20 \quad \text{pour } x \in [0\,;\,20]\]
+  Déterminer le débit qui maximise le rendement.
+</div>
+<div class="corr">
+  \(R'(x) = -x + 10\)<br><br>
+  \(R'(x) = 0 \Leftrightarrow x = 10\)<br><br>
+  Signe de \(R'(x)\) :
+  <ul>
+    <li>Si \(x < 10\) : \(R'(x) > 0\) → \(R\) croissante</li>
+    <li>Si \(x > 10\) : \(R'(x) < 0\) → \(R\) décroissante</li>
+  </ul>
+  Le rendement est maximal pour un débit de <strong>10 L/min</strong>.<br>
+  \(R(10) = -50 + 100 + 20 = 70\) %.<br>
+  Le rendement maximal est de <strong>70 %</strong>.
+</div>
+<button class="bc">Voir la correction</button>
+
+<div class="exo">
+  <strong>Exercice 5 :</strong> Le bénéfice (en euros) d'un artisan fabricant de meubles est modélisé par :
+  \[B(x) = -x^2 + 40x - 300 \quad \text{pour } x \in [0\,;\,40]\]
+  où \(x\) est le nombre de meubles vendus.
+  <ol>
+    <li>Déterminer le nombre de meubles à vendre pour maximiser le bénéfice.</li>
+    <li>Quel est ce bénéfice maximal ?</li>
+    <li>Pour quelles valeurs de \(x\) le bénéfice est-il positif ?</li>
+  </ol>
+</div>
+<div class="corr">
+  <ol>
+    <li>\(B'(x) = -2x + 40\). On résout \(B'(x) = 0\) : \(x = 20\).<br>
+        \(B'(x) > 0\) si \(x < 20\) et \(B'(x) < 0\) si \(x > 20\).<br>
+        Le bénéfice est maximal pour <strong>20 meubles</strong>.</li>
+    <li>\(B(20) = -400 + 800 - 300 = 100\) €. Le bénéfice maximal est de <strong>100 €</strong>.</li>
+    <li>\(B(x) > 0 \Leftrightarrow -x^2 + 40x - 300 > 0 \Leftrightarrow x^2 - 40x + 300 < 0\).<br>
+        Discriminant : \(\Delta = 1600 - 1200 = 400\), \(\sqrt{\Delta} = 20\).<br>
+        Racines : \(x_1 = \dfrac{40-20}{2} = 10\) et \(x_2 = \dfrac{40+20}{2} = 30\).<br>
+        Le bénéfice est positif pour \(x \in \,]10\,;\,30[\), soit entre <strong>11 et 29 meubles</strong>.</li>
+  </ol>
+</div>
+<button class="bc">Voir la correction</button>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="retenir">
+  <h3>L'essentiel à retenir</h3>
+  <ul class="styled">
+    <li>Le <strong>taux de variation</strong> mesure l'évolution moyenne : \(\dfrac{f(b)-f(a)}{b-a}\).</li>
+    <li>Le <strong>nombre dérivé</strong> \(f'(a)\) est la pente de la tangente au point d'abscisse \(a\).</li>
+    <li>Les dérivées usuelles : \((x^n)' = nx^{n-1}\), \((k)' = 0\), \((ax+b)' = a\).</li>
+    <li>Règles : \((u+v)' = u' + v'\) et \((ku)' = ku'\).</li>
+    <li>\(f'(x) > 0\) → \(f\) croissante ; \(f'(x) < 0\) → \(f\) décroissante.</li>
+    <li>Pour optimiser : dériver, résoudre \(f'(x) = 0\), étudier le signe de \(f'\).</li>
+  </ul>
 </div>
 
 </div>

@@ -13,16 +13,308 @@
 <div class="c">
 <a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
 <header>
-  <h1>Exercices – Chapitre 02 – Probabilités</h1>
-  <p class="sous-titre">1ère Bac Pro | Statistique et probabilités | Mathématiques</p>
+  <h1>Chapitre 2 – Exercices – Probabilités</h1>
+  <p class="sous-titre">Statistique et probabilités | 1ère Bac Pro | Mathématiques</p>
 </header>
 
-<div class="objectifs">
-  <h3>Exercices</h3>
-  <p>Contenu à venir.</p>
+<!-- ══════════════════════════════════════════ RAPPELS ══════════════════════════════════════════ -->
+
+<div class="retenir">
+  <h3>Rappels essentiels</h3>
+  <ul>
+    <li>La probabilité d'un événement \(A\) est un nombre compris entre 0 et 1 : \(0 \leqslant P(A) \leqslant 1\).</li>
+    <li>La somme des probabilités de toutes les issues d'une expérience aléatoire vaut 1.</li>
+    <li><strong>Événement contraire :</strong> \(P(\bar{A}) = 1 - P(A)\).</li>
+    <li><strong>Événements incompatibles :</strong> si \(A \cap B = \varnothing\), alors \(P(A \cup B) = P(A) + P(B)\).</li>
+    <li><strong>Tableau à double entrée :</strong> les totaux marginaux permettent de calculer les probabilités.</li>
+    <li><strong>Arbre de probabilités :</strong> on multiplie le long des branches et on additionne les chemins menant au même événement.</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════ NIVEAU 1 ══════════════════════════════════════════ -->
+
+<div class="niveau-header niv1"><span class="badge-green">Niveau 1</span><h2>Application directe</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 1</div>
+  <div class="exo-titre">Lancer d'un dé équilibré</div>
+  <p>On lance un dé cubique équilibré à 6 faces.</p>
+  <ol>
+    <li>Quelle est la probabilité d'obtenir un 4 ?</li>
+    <li>Quelle est la probabilité d'obtenir un nombre pair ?</li>
+    <li>Quelle est la probabilité d'obtenir un nombre supérieur ou égal à 5 ?</li>
+    <li>Quelle est la probabilité de <strong>ne pas</strong> obtenir un 6 ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>L'univers est \(\Omega = \{1;2;3;4;5;6\}\) et chaque face a la probabilité \(\dfrac{1}{6}\).</p>
+    <ol>
+      <li>\(P(\{4\}) = \dfrac{1}{6} \approx 0{,}167\).</li>
+      <li>Nombres pairs : \(\{2;4;6\}\). \(P = \dfrac{3}{6} = \dfrac{1}{2} = 0{,}5\).</li>
+      <li>Nombres \(\geqslant 5\) : \(\{5;6\}\). \(P = \dfrac{2}{6} = \dfrac{1}{3} \approx 0{,}333\).</li>
+      <li>\(P(\text{pas 6}) = 1 - P(\{6\}) = 1 - \dfrac{1}{6} = \dfrac{5}{6} \approx 0{,}833\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 2</div>
+  <div class="exo-titre">Tirage d'une carte</div>
+  <p>On tire au hasard une carte dans un jeu de 32 cartes.</p>
+  <ol>
+    <li>Quelle est la probabilité de tirer un roi ?</li>
+    <li>Quelle est la probabilité de tirer une carte de cœur ?</li>
+    <li>Les événements « tirer un roi » et « tirer un cœur » sont-ils incompatibles ? Justifier.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Il y a 4 rois dans un jeu de 32 cartes. \(P(\text{roi}) = \dfrac{4}{32} = \dfrac{1}{8} = 0{,}125\).</li>
+      <li>Il y a 8 cartes de cœur. \(P(\text{cœur}) = \dfrac{8}{32} = \dfrac{1}{4} = 0{,}25\).</li>
+      <li>Non, ces événements ne sont <strong>pas</strong> incompatibles car il existe une carte qui est à la fois un roi et un cœur : le roi de cœur. \(A \cap B \neq \varnothing\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 3</div>
+  <div class="exo-titre">Événement contraire</div>
+  <p>La probabilité qu'une machine de découpe de panneaux de bois produise une pièce conforme est \(0{,}92\).</p>
+  <ol>
+    <li>Quelle est la probabilité qu'une pièce soit non conforme ?</li>
+    <li>Sur un lot de 500 pièces, combien peut-on s'attendre à trouver de pièces non conformes ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(P(\text{non conforme}) = 1 - P(\text{conforme}) = 1 - 0{,}92 = 0{,}08\).</li>
+      <li>Nombre attendu : \(500 \times 0{,}08 = 40\) pièces non conformes.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ NIVEAU 2 ══════════════════════════════════════════ -->
+
+<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 4</div>
+  <div class="exo-titre">Tableau à double entrée — Satisfaction client</div>
+  <p>Un artisan menuisier a interrogé 200 clients sur leur satisfaction et le type de prestation réalisée.</p>
+  <table>
+    <tr><th></th><th>Cuisine</th><th>Placard</th><th>Terrasse</th><th>Total</th></tr>
+    <tr><td><strong>Satisfait</strong></td><td>60</td><td>45</td><td>35</td><td>140</td></tr>
+    <tr><td><strong>Non satisfait</strong></td><td>20</td><td>15</td><td>25</td><td>60</td></tr>
+    <tr><td><strong>Total</strong></td><td>80</td><td>60</td><td>60</td><td>200</td></tr>
+  </table>
+  <p>On choisit un client au hasard.</p>
+  <ol>
+    <li>Quelle est la probabilité qu'il soit satisfait ?</li>
+    <li>Quelle est la probabilité qu'il ait commandé un placard ?</li>
+    <li>Quelle est la probabilité qu'il soit satisfait <strong>et</strong> ait commandé une cuisine ?</li>
+    <li>Quelle est la probabilité qu'il soit non satisfait <strong>ou</strong> ait commandé une terrasse ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(P(\text{satisfait}) = \dfrac{140}{200} = 0{,}70\).</li>
+      <li>\(P(\text{placard}) = \dfrac{60}{200} = 0{,}30\).</li>
+      <li>\(P(\text{satisfait et cuisine}) = \dfrac{60}{200} = 0{,}30\).</li>
+      <li>On utilise la formule : \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\).
+        <br>\(P(\text{non satisfait}) = \dfrac{60}{200} = 0{,}30\), \(P(\text{terrasse}) = \dfrac{60}{200} = 0{,}30\), \(P(\text{non satisfait et terrasse}) = \dfrac{25}{200} = 0{,}125\).
+        <br>\(P = 0{,}30 + 0{,}30 - 0{,}125 = 0{,}475\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 5</div>
+  <div class="exo-titre">Événements incompatibles</div>
+  <p>Dans un magasin de bricolage, on classe les clients selon leur achat principal : peinture (P), bois (B), outillage (O) ou quincaillerie (Q). Les probabilités sont :</p>
+  <p>\(P(\text{P}) = 0{,}25\), \(P(\text{B}) = 0{,}30\), \(P(\text{O}) = 0{,}20\), \(P(\text{Q}) = 0{,}25\).</p>
+  <ol>
+    <li>Vérifier que la somme des probabilités vaut bien 1.</li>
+    <li>Calculer la probabilité qu'un client achète de la peinture ou du bois.</li>
+    <li>Calculer la probabilité qu'un client n'achète ni peinture ni outillage.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(0{,}25 + 0{,}30 + 0{,}20 + 0{,}25 = 1{,}00\). C'est bien vérifié.</li>
+      <li>Les événements sont incompatibles (un seul achat principal) :
+        <br>\(P(\text{P} \cup \text{B}) = P(\text{P}) + P(\text{B}) = 0{,}25 + 0{,}30 = 0{,}55\).</li>
+      <li>\(P(\text{P} \cup \text{O}) = 0{,}25 + 0{,}20 = 0{,}45\).
+        <br>\(P(\overline{\text{P} \cup \text{O}}) = 1 - 0{,}45 = 0{,}55\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 6</div>
+  <div class="exo-titre">Arbre de probabilités — Contrôle qualité</div>
+  <p>Un technicien contrôle des pièces métalliques. Chaque pièce peut présenter un défaut de dimension (D) ou un défaut d'aspect (A). On sait que :</p>
+  <ul>
+    <li>\(P(D) = 0{,}10\)</li>
+    <li>Si la pièce a un défaut de dimension, la probabilité d'avoir aussi un défaut d'aspect est \(0{,}30\).</li>
+    <li>Si la pièce n'a pas de défaut de dimension, la probabilité d'avoir un défaut d'aspect est \(0{,}05\).</li>
+  </ul>
+  <ol>
+    <li>Construire l'arbre de probabilités.</li>
+    <li>Calculer la probabilité qu'une pièce ait les deux défauts.</li>
+    <li>Calculer la probabilité qu'une pièce ait un défaut d'aspect.</li>
+    <li>Calculer la probabilité qu'une pièce n'ait aucun défaut.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1. Arbre de probabilités :</strong></p>
+    <p>Première branche : \(P(D)=0{,}10\) et \(P(\bar{D})=0{,}90\).</p>
+    <p>Depuis D : \(P(A|D)=0{,}30\) et \(P(\bar{A}|D)=0{,}70\).</p>
+    <p>Depuis \(\bar{D}\) : \(P(A|\bar{D})=0{,}05\) et \(P(\bar{A}|\bar{D})=0{,}95\).</p>
+    <p><strong>2.</strong> \(P(D \cap A) = P(D) \times P(A|D) = 0{,}10 \times 0{,}30 = 0{,}03\).</p>
+    <p><strong>3.</strong> Par la loi des probabilités totales :
+    \[P(A) = P(D \cap A) + P(\bar{D} \cap A) = 0{,}03 + 0{,}90 \times 0{,}05 = 0{,}03 + 0{,}045 = 0{,}075\]</p>
+    <p><strong>4.</strong> \(P(\bar{D} \cap \bar{A}) = 0{,}90 \times 0{,}95 = 0{,}855\).</p>
+    <p>Vérification : \(0{,}03 + 0{,}07 + 0{,}045 + 0{,}855 = 1\). ✓</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 7</div>
+  <div class="exo-titre">Tableau à double entrée — Matériaux de construction</div>
+  <p>Un fournisseur de matériaux livre des commandes de bois massif (M), de panneaux agglomérés (A) et de contreplaqué (C). Le tableau donne la répartition des livraisons sur un mois (en nombre de commandes) :</p>
+  <table>
+    <tr><th></th><th>Conforme</th><th>Non conforme</th><th>Total</th></tr>
+    <tr><td><strong>Bois massif</strong></td><td>72</td><td>8</td><td>80</td></tr>
+    <tr><td><strong>Aggloméré</strong></td><td>54</td><td>6</td><td>60</td></tr>
+    <tr><td><strong>Contreplaqué</strong></td><td>51</td><td>9</td><td>60</td></tr>
+    <tr><td><strong>Total</strong></td><td>177</td><td>23</td><td>200</td></tr>
+  </table>
+  <p>On choisit une commande au hasard.</p>
+  <ol>
+    <li>Calculer \(P(\text{conforme})\).</li>
+    <li>Calculer \(P(\text{bois massif})\).</li>
+    <li>Calculer \(P(\text{non conforme et contreplaqué})\).</li>
+    <li>Parmi les commandes de bois massif, quelle proportion est conforme ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(P(\text{conforme}) = \dfrac{177}{200} = 0{,}885\).</li>
+      <li>\(P(\text{bois massif}) = \dfrac{80}{200} = 0{,}40\).</li>
+      <li>\(P(\text{non conforme et contreplaqué}) = \dfrac{9}{200} = 0{,}045\).</li>
+      <li>Proportion de conformes parmi le bois massif : \(\dfrac{72}{80} = 0{,}90 = 90\,\%\).</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ NIVEAU 3 ══════════════════════════════════════════ -->
+
+<div class="niveau-header niv3"><span class="badge-yellow">Niveau 3</span><h2>Approfondissement</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 8</div>
+  <div class="exo-titre">Arbre pondéré — Chantier de rénovation</div>
+  <p>Sur un chantier de rénovation, un artisan commande des fenêtres chez deux fournisseurs. Le fournisseur A livre 60 % des fenêtres et le fournisseur B livre les 40 % restants. Le taux de défaut est de 5 % chez A et de 8 % chez B.</p>
+  <ol>
+    <li>Construire un arbre pondéré représentant la situation.</li>
+    <li>Calculer la probabilité qu'une fenêtre choisie au hasard provienne du fournisseur A et soit défectueuse.</li>
+    <li>Calculer la probabilité qu'une fenêtre soit défectueuse.</li>
+    <li>L'artisan reçoit une fenêtre défectueuse. Quelle est la probabilité qu'elle provienne du fournisseur B ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1. Arbre pondéré :</strong></p>
+    <p>Branche 1 : \(P(A) = 0{,}60\), puis \(P(\text{Défaut}|A)=0{,}05\) et \(P(\overline{\text{Défaut}}|A)=0{,}95\).</p>
+    <p>Branche 2 : \(P(B) = 0{,}40\), puis \(P(\text{Défaut}|B)=0{,}08\) et \(P(\overline{\text{Défaut}}|B)=0{,}92\).</p>
+    <p><strong>2.</strong> \(P(A \cap \text{Défaut}) = 0{,}60 \times 0{,}05 = 0{,}030\).</p>
+    <p><strong>3.</strong> Par la loi des probabilités totales :
+    \[P(\text{Défaut}) = 0{,}030 + 0{,}40 \times 0{,}08 = 0{,}030 + 0{,}032 = 0{,}062\]</p>
+    <p><strong>4.</strong> On cherche \(P(B|\text{Défaut})\) :
+    \[P(B|\text{Défaut}) = \dfrac{P(B \cap \text{Défaut})}{P(\text{Défaut})} = \dfrac{0{,}032}{0{,}062} \approx 0{,}516\]
+    Il y a environ 51,6 % de chances que la fenêtre défectueuse provienne du fournisseur B.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 9</div>
+  <div class="exo-titre">Problème complet — Enquête transport</div>
+  <p>Une entreprise de BTP interroge ses 250 salariés sur leur mode de transport principal.</p>
+  <table>
+    <tr><th></th><th>Voiture</th><th>Transport en commun</th><th>Vélo/Marche</th><th>Total</th></tr>
+    <tr><td><strong>Ouvrier</strong></td><td>80</td><td>30</td><td>10</td><td>120</td></tr>
+    <tr><td><strong>Technicien</strong></td><td>40</td><td>25</td><td>15</td><td>80</td></tr>
+    <tr><td><strong>Cadre</strong></td><td>35</td><td>10</td><td>5</td><td>50</td></tr>
+    <tr><td><strong>Total</strong></td><td>155</td><td>65</td><td>30</td><td>250</td></tr>
+  </table>
+  <p>On choisit un salarié au hasard.</p>
+  <ol>
+    <li>Calculer la probabilité qu'il vienne en voiture.</li>
+    <li>Calculer la probabilité qu'il soit technicien.</li>
+    <li>Calculer la probabilité qu'il soit ouvrier et utilise le vélo ou la marche.</li>
+    <li>Les événements « être cadre » et « utiliser le vélo/marche » sont-ils incompatibles ? Justifier.</li>
+    <li>Sachant qu'un salarié utilise les transports en commun, quelle est la probabilité qu'il soit technicien ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(P(\text{voiture}) = \dfrac{155}{250} = 0{,}62\).</li>
+      <li>\(P(\text{technicien}) = \dfrac{80}{250} = 0{,}32\).</li>
+      <li>\(P(\text{ouvrier et vélo/marche}) = \dfrac{10}{250} = 0{,}04\).</li>
+      <li>Non : il y a 5 cadres qui utilisent le vélo/marche. L'intersection n'est pas vide, donc ces événements ne sont <strong>pas</strong> incompatibles.</li>
+      <li>On se restreint aux salariés en transport en commun (65 personnes). Parmi eux, 25 sont techniciens.
+        <br>\(P(\text{technicien}|\text{TC}) = \dfrac{25}{65} = \dfrac{5}{13} \approx 0{,}385\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 10</div>
+  <div class="exo-titre">Arbre à deux étapes — Contrôle d'un chantier</div>
+  <p>Sur un chantier, un conducteur de travaux vérifie la conformité de deux lots successifs. Pour le premier lot, la probabilité de conformité est \(0{,}85\). Si le premier lot est conforme, la probabilité que le second le soit aussi est \(0{,}90\). Si le premier lot n'est pas conforme, la probabilité que le second soit conforme est \(0{,}70\).</p>
+  <ol>
+    <li>Construire l'arbre de probabilités complet.</li>
+    <li>Calculer la probabilité que les deux lots soient conformes.</li>
+    <li>Calculer la probabilité qu'au moins un lot soit non conforme.</li>
+    <li>Calculer la probabilité que le second lot soit conforme.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Notons \(C_1\) et \(C_2\) la conformité des lots 1 et 2.</p>
+    <p>\(P(C_1) = 0{,}85\), \(P(\bar{C}_1) = 0{,}15\).</p>
+    <p>Depuis \(C_1\) : \(P(C_2|C_1)=0{,}90\), \(P(\bar{C}_2|C_1)=0{,}10\).</p>
+    <p>Depuis \(\bar{C}_1\) : \(P(C_2|\bar{C}_1)=0{,}70\), \(P(\bar{C}_2|\bar{C}_1)=0{,}30\).</p>
+    <p><strong>2.</strong> \(P(C_1 \cap C_2) = 0{,}85 \times 0{,}90 = 0{,}765\).</p>
+    <p><strong>3.</strong> « Au moins un non conforme » est le contraire de « les deux conformes » :
+    \[P(\text{au moins un non conforme}) = 1 - 0{,}765 = 0{,}235\]</p>
+    <p><strong>4.</strong> Probabilités totales :
+    \[P(C_2) = P(C_1 \cap C_2) + P(\bar{C}_1 \cap C_2) = 0{,}765 + 0{,}15 \times 0{,}70 = 0{,}765 + 0{,}105 = 0{,}870\]</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 11</div>
+  <div class="exo-titre">Situation professionnelle — Fiabilité de capteurs</div>
+  <p>Un technicien de maintenance installe deux capteurs de température indépendants dans une chaufferie. La probabilité de défaillance de chaque capteur sur un an est de \(0{,}04\).</p>
+  <ol>
+    <li>Quelle est la probabilité que les deux capteurs tombent en panne la même année ?</li>
+    <li>Quelle est la probabilité qu'au moins un capteur fonctionne ?</li>
+    <li>L'installateur affirme que le système est « fiable à plus de 99 % ». A-t-il raison ? Justifier.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Les capteurs sont indépendants. Notons \(D_1\) et \(D_2\) les défaillances.</p>
+    <ol>
+      <li>\(P(D_1 \cap D_2) = P(D_1) \times P(D_2) = 0{,}04 \times 0{,}04 = 0{,}0016\).</li>
+      <li>« Au moins un fonctionne » = contraire de « les deux en panne » :
+        <br>\(P(\text{au moins un fonctionne}) = 1 - 0{,}0016 = 0{,}9984\).</li>
+      <li>\(0{,}9984 = 99{,}84\,\% > 99\,\%\). Oui, l'installateur a raison : la fiabilité du système est bien supérieure à 99 %.</li>
+    </ol>
+  </div>
 </div>
 
 </div>
+
+<script>function toggle(btn){const c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}</script>
 <script src="../../../nav.js"></script>
 </body>
 </html>

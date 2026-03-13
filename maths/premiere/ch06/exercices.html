@@ -17,12 +17,336 @@
   <p class="sous-titre">1ère Bac Pro | Algèbre – Analyse | Mathématiques</p>
 </header>
 
-<div class="objectifs">
-  <h3>Exercices</h3>
-  <p>Contenu à venir.</p>
+<div class="retenir">
+  <h3>Rappels essentiels</h3>
+  <ul>
+    <li>Le <strong>taux de variation</strong> de \(f\) entre \(a\) et \(a+h\) est : \(\dfrac{f(a+h)-f(a)}{h}\)</li>
+    <li>Le <strong>nombre dérivé</strong> de \(f\) en \(a\), noté \(f'(a)\), est la limite du taux de variation quand \(h\) tend vers \(0\).</li>
+    <li>Dérivées usuelles : si \(f(x)=x^2\) alors \(f'(x)=2x\) ; si \(f(x)=x^3\) alors \(f'(x)=3x^2\) ; si \(f(x)=ax+b\) alors \(f'(x)=a\).</li>
+    <li>Si \(f'(x)>0\) sur un intervalle, \(f\) est <strong>croissante</strong> ; si \(f'(x)<0\), \(f\) est <strong>décroissante</strong>.</li>
+    <li>La tangente à la courbe de \(f\) au point d'abscisse \(a\) a pour équation : \(y = f'(a)(x-a)+f(a)\).</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════ NIVEAU 1 ═══════════════════ -->
+<div class="niveau-header niv1"><span class="badge-green">Niveau 1</span><h2>Application directe</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 1</div>
+  <div class="exo-titre">Taux de variation – calcul direct</div>
+  <p>Soit \(f(x) = x^2\).</p>
+  <ol>
+    <li>Calculer le taux de variation de \(f\) entre \(x = 1\) et \(x = 3\).</li>
+    <li>Calculer le taux de variation de \(f\) entre \(x = 2\) et \(x = 2{,}5\).</li>
+    <li>Calculer le taux de variation de \(f\) entre \(x = 2\) et \(x = 2+h\). Simplifier.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\dfrac{f(3)-f(1)}{3-1} = \dfrac{9-1}{2} = \dfrac{8}{2} = 4\)</li>
+      <li>\(\dfrac{f(2{,}5)-f(2)}{2{,}5-2} = \dfrac{6{,}25-4}{0{,}5} = \dfrac{2{,}25}{0{,}5} = 4{,}5\)</li>
+      <li>\(\dfrac{f(2+h)-f(2)}{h} = \dfrac{(2+h)^2 - 4}{h} = \dfrac{4+4h+h^2-4}{h} = \dfrac{4h+h^2}{h} = 4+h\)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 2</div>
+  <div class="exo-titre">Nombre dérivé par le calcul</div>
+  <p>Soit \(f(x) = x^2\).</p>
+  <ol>
+    <li>En utilisant le résultat de l'exercice 1 (question 3), déterminer le nombre dérivé de \(f\) en \(2\).</li>
+    <li>De même, calculer \(f'(5)\) en passant par le taux de variation \(\dfrac{f(5+h)-f(5)}{h}\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>On a trouvé que le taux de variation vaut \(4+h\). Quand \(h\) tend vers \(0\), on obtient \(f'(2)=4\).</li>
+      <li>\(\dfrac{f(5+h)-f(5)}{h} = \dfrac{(5+h)^2-25}{h} = \dfrac{25+10h+h^2-25}{h} = \dfrac{10h+h^2}{h} = 10+h\).
+      <br>Quand \(h\) tend vers \(0\) : \(f'(5)=10\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 3</div>
+  <div class="exo-titre">Dérivées de fonctions simples</div>
+  <p>Calculer la dérivée de chacune des fonctions suivantes :</p>
+  <ol>
+    <li>\(f(x) = 3x + 7\)</li>
+    <li>\(g(x) = x^2\)</li>
+    <li>\(h(x) = 5x^2\)</li>
+    <li>\(k(x) = x^3\)</li>
+    <li>\(m(x) = -2x + 4\)</li>
+    <li>\(p(x) = 4x^3\)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(f'(x) = 3\)</li>
+      <li>\(g'(x) = 2x\)</li>
+      <li>\(h'(x) = 10x\) (on multiplie la dérivée de \(x^2\) par \(5\))</li>
+      <li>\(k'(x) = 3x^2\)</li>
+      <li>\(m'(x) = -2\)</li>
+      <li>\(p'(x) = 12x^2\) (on multiplie la dérivée de \(x^3\) par \(4\))</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 4</div>
+  <div class="exo-titre">Dérivées de sommes</div>
+  <p>Calculer la dérivée de chacune des fonctions suivantes :</p>
+  <ol>
+    <li>\(f(x) = x^2 + 3x - 1\)</li>
+    <li>\(g(x) = 2x^3 - 5x + 8\)</li>
+    <li>\(h(x) = -x^2 + 6x + 2\)</li>
+    <li>\(k(x) = x^3 + x^2 - 4x + 7\)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>On dérive terme à terme :</p>
+    <ol>
+      <li>\(f'(x) = 2x + 3\)</li>
+      <li>\(g'(x) = 6x^2 - 5\)</li>
+      <li>\(h'(x) = -2x + 6\)</li>
+      <li>\(k'(x) = 3x^2 + 2x - 4\)</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════════ NIVEAU 2 ═══════════════════ -->
+<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 5</div>
+  <div class="exo-titre">Signe de la dérivée et sens de variation</div>
+  <p>Soit \(f(x) = x^2 - 6x + 5\).</p>
+  <ol>
+    <li>Calculer \(f'(x)\).</li>
+    <li>Résoudre \(f'(x) = 0\).</li>
+    <li>Étudier le signe de \(f'(x)\) et en déduire le sens de variation de \(f\) sur \(\mathbb{R}\).</li>
+    <li>Dresser le tableau de variations de \(f\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(f'(x) = 2x - 6\)</li>
+      <li>\(2x - 6 = 0 \iff x = 3\)</li>
+      <li>
+        <ul>
+          <li>Si \(x < 3\) : \(f'(x) < 0\) donc \(f\) est décroissante.</li>
+          <li>Si \(x > 3\) : \(f'(x) > 0\) donc \(f\) est croissante.</li>
+        </ul>
+      </li>
+      <li>\(f\) est décroissante sur \(]-\infty\,;\,3]\) et croissante sur \([3\,;\,+\infty[\).
+      <br>Le minimum est atteint en \(x=3\) : \(f(3)=9-18+5=-4\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 6</div>
+  <div class="exo-titre">Équation de la tangente</div>
+  <p>Soit \(f(x) = x^2 - 4x + 3\).</p>
+  <ol>
+    <li>Calculer \(f'(x)\).</li>
+    <li>Calculer \(f(1)\) et \(f'(1)\).</li>
+    <li>Écrire l'équation de la tangente à la courbe de \(f\) au point d'abscisse \(1\).</li>
+    <li>Calculer \(f(3)\) et \(f'(3)\), puis écrire l'équation de la tangente au point d'abscisse \(3\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(f'(x) = 2x - 4\)</li>
+      <li>\(f(1) = 1 - 4 + 3 = 0\) et \(f'(1) = 2 - 4 = -2\)</li>
+      <li>Tangente en \(x=1\) : \(y = f'(1)(x-1)+f(1) = -2(x-1)+0 = -2x+2\).</li>
+      <li>\(f(3) = 9-12+3=0\) et \(f'(3) = 6-4=2\).
+      <br>Tangente en \(x=3\) : \(y = 2(x-3)+0 = 2x-6\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 7</div>
+  <div class="exo-titre">Étude complète d'une fonction polynôme</div>
+  <p>Soit \(f(x) = -x^2 + 8x - 12\).</p>
+  <ol>
+    <li>Calculer \(f'(x)\).</li>
+    <li>Résoudre \(f'(x) = 0\) et étudier le signe de \(f'(x)\).</li>
+    <li>Dresser le tableau de variations de \(f\) sur l'intervalle \([0\,;\,8]\).</li>
+    <li>Déterminer le maximum de \(f\) et la valeur de \(x\) pour laquelle il est atteint.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(f'(x) = -2x + 8\)</li>
+      <li>\(-2x+8=0 \iff x=4\).
+        <ul>
+          <li>Si \(x < 4\) : \(f'(x)>0\), \(f\) croissante.</li>
+          <li>Si \(x > 4\) : \(f'(x)<0\), \(f\) décroissante.</li>
+        </ul>
+      </li>
+      <li>
+        Tableau de variations :
+        <ul>
+          <li>\(f(0) = -12\)</li>
+          <li>\(f\) croissante de \(x=0\) à \(x=4\)</li>
+          <li>\(f(4) = -16+32-12 = 4\)</li>
+          <li>\(f\) décroissante de \(x=4\) à \(x=8\)</li>
+          <li>\(f(8) = -64+64-12 = -12\)</li>
+        </ul>
+      </li>
+      <li>Le maximum de \(f\) est \(4\), atteint pour \(x = 4\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 8</div>
+  <div class="exo-titre">Lecture graphique de la dérivée</div>
+  <p>On donne le tableau de signes de \(f'(x)\) :</p>
+  <table>
+    <tr><th>\(x\)</th><td>\(-\infty\)</td><td></td><td>\(-1\)</td><td></td><td>\(2\)</td><td></td><td>\(+\infty\)</td></tr>
+    <tr><th>\(f'(x)\)</th><td></td><td>\(+\)</td><td>\(0\)</td><td>\(-\)</td><td>\(0\)</td><td>\(+\)</td><td></td></tr>
+  </table>
+  <p>On sait que \(f(-1)=5\) et \(f(2)=-4\).</p>
+  <ol>
+    <li>Dresser le tableau de variations de \(f\).</li>
+    <li>Combien \(f\) admet-elle d'extremums ? Lesquels ?</li>
+    <li>L'équation \(f(x)=0\) admet-elle des solutions ? Justifier graphiquement.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>
+        <ul>
+          <li>\(f\) est croissante sur \(]-\infty\,;\,-1]\) (car \(f'>0\))</li>
+          <li>\(f\) est décroissante sur \([-1\,;\,2]\) (car \(f'<0\))</li>
+          <li>\(f\) est croissante sur \([2\,;\,+\infty[\) (car \(f'>0\))</li>
+        </ul>
+      </li>
+      <li>\(f\) admet un <strong>maximum local</strong> en \(x=-1\) : \(f(-1)=5\) et un <strong>minimum local</strong> en \(x=2\) : \(f(2)=-4\).</li>
+      <li>Oui. Le maximum local vaut \(5>0\) et le minimum local vaut \(-4<0\). La fonction change de signe, donc par continuité, \(f(x)=0\) admet au moins une solution entre \(-1\) et \(2\), et au moins une autre solution.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════════ NIVEAU 3 ═══════════════════ -->
+<div class="niveau-header niv3"><span class="badge-yellow">Niveau 3</span><h2>Approfondissement</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 9</div>
+  <div class="exo-titre">Optimisation – Aire maximale</div>
+  <p>Un menuisier dispose d'une planche rectangulaire de \(60\) cm de longueur. Il souhaite découper un rectangle de périmètre \(60\) cm d'aire maximale.</p>
+  <ol>
+    <li>On note \(x\) la largeur du rectangle (en cm). Exprimer la longueur en fonction de \(x\).</li>
+    <li>Exprimer l'aire \(A(x)\) en fonction de \(x\).</li>
+    <li>Calculer \(A'(x)\) et déterminer la valeur de \(x\) qui rend l'aire maximale.</li>
+    <li>Quelle est la forme du rectangle d'aire maximale ? Calculer cette aire.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Périmètre = \(2(x + L) = 60\), donc \(L = 30 - x\).</li>
+      <li>\(A(x) = x \times (30-x) = 30x - x^2\), avec \(0 < x < 30\).</li>
+      <li>\(A'(x) = 30 - 2x\).
+      <br>\(A'(x) = 0 \iff x = 15\).
+      <br>\(A'(x) > 0\) pour \(x < 15\) (croissante) et \(A'(x) < 0\) pour \(x > 15\) (décroissante).
+      <br>L'aire est maximale pour \(x = 15\) cm.</li>
+      <li>Si \(x = 15\), alors \(L = 30 - 15 = 15\). Le rectangle est un <strong>carré</strong> de côté \(15\) cm.
+      <br>Aire maximale : \(A(15) = 15 \times 15 = 225\) cm².</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 10</div>
+  <div class="exo-titre">Optimisation – Coût de production</div>
+  <p>Un artisan fabrique des étagères sur mesure. Le coût total de production pour \(x\) étagères est modélisé par :</p>
+  \[C(x) = x^3 - 12x^2 + 60x + 50 \quad \text{(en euros, pour } 0 \leq x \leq 10\text{)}\]
+  <ol>
+    <li>Calculer le coût moyen \(CM(x) = \dfrac{C(x)}{x}\) pour \(x \geq 1\).</li>
+    <li>Le coût moyen pour \(x = 5\) étagères est-il supérieur ou inférieur à celui pour \(x = 3\) ?</li>
+    <li>Calculer \(C'(x)\).</li>
+    <li>Étudier le sens de variation de \(C\) sur \([0\,;\,10]\). Que peut-on en conclure ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(CM(x) = \dfrac{x^3-12x^2+60x+50}{x} = x^2 - 12x + 60 + \dfrac{50}{x}\)</li>
+      <li>\(CM(3) = \dfrac{27-108+180+50}{3} = \dfrac{149}{3} \approx 49{,}67\) €
+      <br>\(CM(5) = \dfrac{125-300+300+50}{5} = \dfrac{175}{5} = 35\) €
+      <br>Le coût moyen pour \(5\) étagères (\(35\) €) est inférieur à celui pour \(3\) étagères (\(\approx 49{,}67\) €).</li>
+      <li>\(C'(x) = 3x^2 - 24x + 60 = 3(x^2 - 8x + 20)\)</li>
+      <li>Le discriminant de \(x^2 - 8x + 20\) est \(\Delta = 64 - 80 = -16 < 0\).
+      <br>Donc \(x^2-8x+20 > 0\) pour tout \(x\), et \(C'(x) = 3(x^2-8x+20) > 0\) pour tout \(x\).
+      <br>La fonction \(C\) est strictement croissante sur \([0\,;\,10]\) : plus on fabrique d'étagères, plus le coût total augmente (ce qui est logique).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 11</div>
+  <div class="exo-titre">Optimisation – Volume d'une boîte</div>
+  <p>Un charpentier réalise une boîte ouverte en découpant des carrés de côté \(x\) (en cm) aux quatre coins d'une plaque rectangulaire de \(30\) cm sur \(20\) cm, puis en repliant les bords.</p>
+  <ol>
+    <li>Exprimer le volume \(V(x)\) de la boîte en fonction de \(x\).</li>
+    <li>Préciser l'ensemble de définition de \(V\).</li>
+    <li>Développer \(V(x)\) et calculer \(V'(x)\).</li>
+    <li>Résoudre \(V'(x)=0\) et en déduire la valeur de \(x\) qui donne le volume maximal. Calculer ce volume.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Après découpe, la base mesure \((30-2x)\) sur \((20-2x)\) et la hauteur est \(x\).
+      <br>\(V(x) = x(30-2x)(20-2x)\)</li>
+      <li>Il faut \(x > 0\), \(30-2x > 0\) et \(20-2x > 0\), donc \(0 < x < 10\).</li>
+      <li>\(V(x) = x(600-60x-40x+4x^2) = x(4x^2-100x+600) = 4x^3-100x^2+600x\)
+      <br>\(V'(x) = 12x^2-200x+600\)</li>
+      <li>\(V'(x)=0 \iff 12x^2-200x+600=0\)
+      <br>On divise par \(4\) : \(3x^2-50x+150=0\)
+      <br>\(\Delta = 2500 - 1800 = 700\), \(\sqrt{700} \approx 26{,}46\)
+      <br>\(x_1 = \dfrac{50-26{,}46}{6} \approx 3{,}92\) et \(x_2 = \dfrac{50+26{,}46}{6} \approx 12{,}74\)
+      <br>Seule \(x_1 \approx 3{,}92\) cm est dans \(]0\,;\,10[\).
+      <br>On vérifie que \(V\) croît puis décroît : le maximum est atteint pour \(x \approx 3{,}9\) cm.
+      <br>\(V(3{,}9) \approx 3{,}9 \times 22{,}2 \times 12{,}2 \approx 1056\) cm³.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 12</div>
+  <div class="exo-titre">Problème de synthèse – Bénéfice d'un artisan</div>
+  <p>Un technicien en agencement vend des meubles de rangement. Pour \(x\) meubles vendus par mois (\(1 \leq x \leq 15\)), le bénéfice (en euros) est modélisé par :</p>
+  \[B(x) = -2x^2 + 40x - 50\]
+  <ol>
+    <li>Calculer \(B(1)\) et \(B(15)\). L'artisan est-il rentable pour ces deux valeurs ?</li>
+    <li>Calculer \(B'(x)\) et étudier le sens de variation de \(B\).</li>
+    <li>Pour quel nombre de meubles vendus le bénéfice est-il maximal ? Calculer ce bénéfice.</li>
+    <li>Résoudre \(B(x) \geq 0\). Pour quelles quantités l'artisan est-il rentable ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(B(1) = -2+40-50 = -12 < 0\) : pas rentable.
+      <br>\(B(15) = -450+600-50 = 100 > 0\) : rentable.</li>
+      <li>\(B'(x) = -4x+40\).
+      <br>\(B'(x)=0 \iff x=10\).
+      <br>\(B'(x)>0\) si \(x<10\) : \(B\) croissante.
+      <br>\(B'(x)<0\) si \(x>10\) : \(B\) décroissante.</li>
+      <li>Le bénéfice est maximal pour \(x=10\) meubles.
+      <br>\(B(10) = -200+400-50 = 150\) €.</li>
+      <li>\(-2x^2+40x-50 \geq 0 \iff 2x^2-40x+50 \leq 0 \iff x^2-20x+25 \leq 0\).
+      <br>\(\Delta = 400-100 = 300\), \(\sqrt{300} \approx 17{,}32\).
+      <br>\(x_1 = \dfrac{20-17{,}32}{2} \approx 1{,}34\) et \(x_2 = \dfrac{20+17{,}32}{2} \approx 18{,}66\).
+      <br>Sur \([1\,;\,15]\), le bénéfice est positif pour \(x \geq 2\) meubles (en nombres entiers).</li>
+    </ol>
+  </div>
 </div>
 
 </div>
 <script src="../../../nav.js"></script>
+<script>function toggle(btn){const c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}</script>
 </body>
 </html>

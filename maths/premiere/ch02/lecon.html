@@ -19,7 +19,356 @@
 
 <div class="objectifs">
   <h3>Objectifs du chapitre</h3>
-  <p>Contenu à venir.</p>
+  <ul>
+    <li>Connaître le vocabulaire des probabilités</li>
+    <li>Calculer la probabilité d'un événement</li>
+    <li>Utiliser la probabilité de l'événement contraire</li>
+    <li>Reconnaître et exploiter des événements incompatibles</li>
+    <li>Lire et compléter un tableau à double entrée</li>
+    <li>Construire et exploiter un arbre de probabilités</li>
+  </ul>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>I – Vocabulaire des probabilités</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="situation">
+  <h4>Situation professionnelle</h4>
+  <p>Un technicien en contrôle qualité prélève une pièce au hasard dans un lot de production. Il vérifie si la pièce est conforme ou défectueuse. Cette action constitue une <strong>expérience aléatoire</strong> : on ne peut pas prévoir le résultat à l'avance.</p>
+</div>
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <h4>Expérience aléatoire</h4>
+  <p>Une <strong>expérience aléatoire</strong> est une expérience dont on ne peut pas prévoir le résultat avec certitude, mais dont on connaît tous les résultats possibles.</p>
+</div>
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <h4>Issue, univers, événement</h4>
+  <ul>
+    <li>Chaque résultat possible est appelé une <strong>issue</strong> (ou éventualité).</li>
+    <li>L'ensemble de toutes les issues est appelé l'<strong>univers</strong>, noté \(\Omega\).</li>
+    <li>Un <strong>événement</strong> est un sous-ensemble de l'univers. Il regroupe une ou plusieurs issues.</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <h4>Exemple 1</h4>
+  <p>On lance un dé à 6 faces équilibré.</p>
+  <ul>
+    <li><strong>Univers :</strong> \(\Omega = \{1\,;\, 2\,;\, 3\,;\, 4\,;\, 5\,;\, 6\}\)</li>
+    <li><strong>Événement A :</strong> « Obtenir un nombre pair » → \(A = \{2\,;\, 4\,;\, 6\}\)</li>
+    <li><strong>Événement B :</strong> « Obtenir un nombre supérieur à 4 » → \(B = \{5\,;\, 6\}\)</li>
+  </ul>
+</div>
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <h4>Événement certain, impossible, élémentaire</h4>
+  <ul>
+    <li>Un <strong>événement certain</strong> se réalise toujours : il contient toutes les issues (\(\Omega\)).</li>
+    <li>Un <strong>événement impossible</strong> ne se réalise jamais : il ne contient aucune issue (\(\emptyset\)).</li>
+    <li>Un <strong>événement élémentaire</strong> ne contient qu'une seule issue.</li>
+  </ul>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>II – Probabilité d'un événement</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <h4>Probabilité</h4>
+  <p>La <strong>probabilité</strong> d'un événement \(A\), notée \(P(A)\), est un nombre compris entre 0 et 1 qui mesure la « chance » que cet événement se réalise.</p>
+</div>
+
+<div class="prop">
+  <span class="label-prop">Propriétés fondamentales</span>
+  <h4>Propriétés</h4>
+  <ul>
+    <li>Pour tout événement \(A\) : \(0 \leqslant P(A) \leqslant 1\)</li>
+    <li>\(P(\Omega) = 1\) (événement certain)</li>
+    <li>\(P(\emptyset) = 0\) (événement impossible)</li>
+    <li>La somme des probabilités de toutes les issues vaut 1.</li>
+  </ul>
+</div>
+
+<div class="formule-box">
+  <h4>Situation d'équiprobabilité</h4>
+  <p>Lorsque toutes les issues ont la même probabilité :</p>
+  \[P(A) = \frac{\text{nombre d'issues favorables à } A}{\text{nombre total d'issues}}\]
+</div>
+
+<div class="ex">
+  <h4>Exemple 2</h4>
+  <p>On lance un dé équilibré à 6 faces. Quelle est la probabilité d'obtenir un nombre pair ?</p>
+  <p>L'événement A = « obtenir un nombre pair » = \(\{2\,;\, 4\,;\, 6\}\) contient 3 issues favorables sur 6 issues possibles.</p>
+  \[P(A) = \frac{3}{6} = \frac{1}{2} = 0{,}5\]
+  <p>La probabilité d'obtenir un nombre pair est de \(0{,}5\), soit 50 %.</p>
+</div>
+
+<div class="situation">
+  <h4>Situation professionnelle</h4>
+  <p>Un menuisier agenceur reçoit un lot de 200 panneaux de bois. Après vérification, 12 panneaux présentent un défaut. Si on prélève un panneau au hasard :</p>
+  \[P(\text{défaut}) = \frac{12}{200} = 0{,}06 = 6\,\%\]
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>III – Événement contraire</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <h4>Événement contraire</h4>
+  <p>L'événement contraire de \(A\), noté \(\bar{A}\), est l'événement qui se réalise lorsque \(A\) ne se réalise pas. Il contient toutes les issues qui ne sont pas dans \(A\).</p>
+</div>
+
+<div class="formule-box">
+  <h4>Probabilité de l'événement contraire</h4>
+  \[P(\bar{A}) = 1 - P(A)\]
+</div>
+
+<div class="meth">
+  <span class="label-meth">Méthode</span>
+  <h4>Quand utiliser l'événement contraire ?</h4>
+  <p>Lorsqu'il est plus simple de calculer la probabilité que l'événement ne se réalise <em>pas</em>, on calcule d'abord \(P(\bar{A})\) puis on en déduit \(P(A) = 1 - P(\bar{A})\).</p>
+</div>
+
+<div class="ex">
+  <h4>Exemple 3</h4>
+  <p>Dans le lot de 200 panneaux du menuisier, on a \(P(\text{défaut}) = 0{,}06\).</p>
+  <p>La probabilité qu'un panneau soit conforme est :</p>
+  \[P(\text{conforme}) = 1 - P(\text{défaut}) = 1 - 0{,}06 = 0{,}94 = 94\,\%\]
+</div>
+
+<div class="exo">
+  <h4>Mini exercice 1</h4>
+  <p>Un artisan ébéniste fabrique des pieds de table. La probabilité qu'un pied soit défectueux est \(P(D) = 0{,}03\).</p>
+  <ol>
+    <li>Quelle est la probabilité qu'un pied soit conforme ?</li>
+    <li>Sur un lot de 500 pieds, combien peut-on estimer de pieds défectueux ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(P(\bar{D}) = 1 - P(D) = 1 - 0{,}03 = 0{,}97\). La probabilité qu'un pied soit conforme est \(0{,}97\), soit 97 %.</li>
+      <li>Nombre estimé de pieds défectueux : \(500 \times 0{,}03 = 15\) pieds.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>IV – Événements incompatibles</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <h4>Événements incompatibles</h4>
+  <p>Deux événements \(A\) et \(B\) sont <strong>incompatibles</strong> (ou disjoints) s'ils ne peuvent pas se réaliser en même temps. Ils n'ont aucune issue en commun.</p>
+</div>
+
+<div class="formule-box">
+  <h4>Probabilité de la réunion d'événements incompatibles</h4>
+  <p>Si \(A\) et \(B\) sont incompatibles :</p>
+  \[P(A \cup B) = P(A) + P(B)\]
+</div>
+
+<div class="att">
+  <span class="label-att">Attention</span>
+  <h4>Événements non incompatibles</h4>
+  <p>Si \(A\) et \(B\) ne sont <strong>pas</strong> incompatibles, on ne peut pas simplement additionner leurs probabilités. Il faut retrancher l'intersection :</p>
+  \[P(A \cup B) = P(A) + P(B) - P(A \cap B)\]
+</div>
+
+<div class="ex">
+  <h4>Exemple 4</h4>
+  <p>On lance un dé équilibré. Soit \(A\) = « obtenir 1 ou 2 » et \(B\) = « obtenir 5 ou 6 ».</p>
+  <p>\(A\) et \(B\) sont incompatibles (aucune issue commune).</p>
+  \[P(A \cup B) = P(A) + P(B) = \frac{2}{6} + \frac{2}{6} = \frac{4}{6} = \frac{2}{3} \approx 0{,}667\]
+</div>
+
+<div class="exo">
+  <h4>Mini exercice 2</h4>
+  <p>Un technicien chauffagiste inspecte des chaudières. Sur 80 chaudières contrôlées :</p>
+  <ul>
+    <li>10 présentent un défaut de combustion (événement \(C\))</li>
+    <li>6 présentent un défaut d'étanchéité (événement \(E\))</li>
+    <li>Aucune chaudière ne présente les deux défauts à la fois.</li>
+  </ul>
+  <p>On choisit une chaudière au hasard. Calculer \(P(C)\), \(P(E)\) et \(P(C \cup E)\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p>\(P(C) = \dfrac{10}{80} = 0{,}125\) et \(P(E) = \dfrac{6}{80} = 0{,}075\).</p>
+    <p>Les événements \(C\) et \(E\) sont incompatibles (aucune chaudière n'a les deux défauts), donc :</p>
+    \[P(C \cup E) = P(C) + P(E) = 0{,}125 + 0{,}075 = 0{,}2\]
+    <p>La probabilité qu'une chaudière ait au moins un défaut est de 20 %.</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>V – Tableau à double entrée et probabilités</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="situation">
+  <h4>Situation professionnelle</h4>
+  <p>Un atelier de fabrication de meubles produit des étagères en deux matériaux (chêne et hêtre) sur deux lignes de production (A et B). On a relevé les données suivantes sur 200 étagères :</p>
+</div>
+
+<table>
+  <thead>
+    <tr><th></th><th>Ligne A</th><th>Ligne B</th><th>Total</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Chêne</strong></td><td>70</td><td>50</td><td>120</td></tr>
+    <tr><td><strong>Hêtre</strong></td><td>30</td><td>50</td><td>80</td></tr>
+    <tr><td><strong>Total</strong></td><td>100</td><td>100</td><td>200</td></tr>
+  </tbody>
+</table>
+
+<div class="meth">
+  <span class="label-meth">Méthode</span>
+  <h4>Lire un tableau à double entrée</h4>
+  <p>On prélève une étagère au hasard. On peut calculer :</p>
+  <ul>
+    <li>\(P(\text{Chêne}) = \dfrac{120}{200} = 0{,}6\)</li>
+    <li>\(P(\text{Ligne A}) = \dfrac{100}{200} = 0{,}5\)</li>
+    <li>\(P(\text{Chêne et Ligne A}) = \dfrac{70}{200} = 0{,}35\)</li>
+  </ul>
+</div>
+
+<h3>Introduction aux probabilités conditionnelles</h3>
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <h4>Probabilité conditionnelle (introduction)</h4>
+  <p>La probabilité de l'événement \(A\) <strong>sachant que</strong> l'événement \(B\) est réalisé, notée \(P_B(A)\), se calcule par :</p>
+  \[P_B(A) = \frac{P(A \cap B)}{P(B)}\]
+</div>
+
+<div class="ex">
+  <h4>Exemple 5</h4>
+  <p>D'après le tableau ci-dessus, quelle est la probabilité qu'une étagère soit en chêne, sachant qu'elle vient de la ligne A ?</p>
+  \[P_{\text{Ligne A}}(\text{Chêne}) = \frac{P(\text{Chêne et Ligne A})}{P(\text{Ligne A})} = \frac{70/200}{100/200} = \frac{70}{100} = 0{,}7\]
+  <p>Sachant qu'une étagère vient de la ligne A, il y a 70 % de chances qu'elle soit en chêne.</p>
+</div>
+
+<div class="exo">
+  <h4>Mini exercice 3</h4>
+  <p>D'après le même tableau, calculer la probabilité qu'une étagère vienne de la ligne B sachant qu'elle est en hêtre.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p>On cherche \(P_{\text{Hêtre}}(\text{Ligne B})\).</p>
+    \[P_{\text{Hêtre}}(\text{Ligne B}) = \frac{P(\text{Hêtre et Ligne B})}{P(\text{Hêtre})} = \frac{50/200}{80/200} = \frac{50}{80} = 0{,}625\]
+    <p>Sachant qu'une étagère est en hêtre, il y a 62,5 % de chances qu'elle vienne de la ligne B.</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>VI – Arbre de probabilités</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="def">
+  <span class="label-def">Définition</span>
+  <h4>Arbre pondéré</h4>
+  <p>Un <strong>arbre de probabilités</strong> (ou arbre pondéré) est un schéma qui représente les différentes étapes d'une expérience aléatoire. Chaque branche porte la probabilité de l'issue correspondante.</p>
+</div>
+
+<div class="prop">
+  <span class="label-prop">Propriétés</span>
+  <h4>Règles de l'arbre pondéré</h4>
+  <ul>
+    <li><strong>Règle des branches :</strong> la somme des probabilités des branches issues d'un même noeud vaut 1.</li>
+    <li><strong>Règle du chemin :</strong> la probabilité d'un chemin est le produit des probabilités de chaque branche le long du chemin.</li>
+    <li><strong>Règle de la somme :</strong> la probabilité d'un événement est la somme des probabilités des chemins qui y mènent.</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <h4>Exemple 6 – Contrôle qualité en deux étapes</h4>
+  <p>Un artisan fabrique des pièces de bois. La probabilité qu'une pièce soit conforme est \(0{,}9\). Si la pièce est conforme, elle passe un test de finition qu'elle réussit avec une probabilité de \(0{,}95\). Si la pièce est non conforme, elle réussit ce test avec une probabilité de \(0{,}3\).</p>
+
+  <p><strong>Arbre de probabilités :</strong></p>
+  <pre style="font-family:monospace;font-size:0.95rem;line-height:1.6;background:#f8f9fa;padding:1rem;border-radius:8px;overflow-x:auto">
+                    ┌── 0,95 ── Réussit (R)    → P(C ∩ R) = 0,9 × 0,95 = 0,855
+        ┌── 0,9 ── Conforme (C)
+        │           └── 0,05 ── Échoue (R̄)    → P(C ∩ R̄) = 0,9 × 0,05 = 0,045
+  Pièce─┤
+        │           ┌── 0,3 ── Réussit (R)     → P(C̄ ∩ R) = 0,1 × 0,3 = 0,03
+        └── 0,1 ── Non conforme (C̄)
+                    └── 0,7 ── Échoue (R̄)     → P(C̄ ∩ R̄) = 0,1 × 0,7 = 0,07
+  </pre>
+
+  <p><strong>Vérification :</strong> \(0{,}855 + 0{,}045 + 0{,}03 + 0{,}07 = 1\) ✓</p>
+
+  <p>La probabilité qu'une pièce réussisse le test de finition est :</p>
+  \[P(R) = P(C \cap R) + P(\bar{C} \cap R) = 0{,}855 + 0{,}03 = 0{,}885\]
+</div>
+
+<div class="exo">
+  <h4>Mini exercice 4</h4>
+  <p>Un fournisseur livre des tubes en cuivre à un installateur chauffagiste. 80 % des tubes viennent du fournisseur X et 20 % du fournisseur Y. Parmi les tubes du fournisseur X, 5 % sont défectueux. Parmi les tubes du fournisseur Y, 10 % sont défectueux.</p>
+  <ol>
+    <li>Construire l'arbre de probabilités.</li>
+    <li>Calculer la probabilité qu'un tube choisi au hasard soit défectueux.</li>
+    <li>Calculer la probabilité qu'un tube soit conforme.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Arbre :</p>
+    <ul>
+      <li>Fournisseur X (\(P = 0{,}8\)) → Défectueux (\(0{,}05\)) ou Conforme (\(0{,}95\))</li>
+      <li>Fournisseur Y (\(P = 0{,}2\)) → Défectueux (\(0{,}10\)) ou Conforme (\(0{,}90\))</li>
+    </ul>
+    <p><strong>2.</strong> Probabilité d'un tube défectueux :</p>
+    \[P(D) = P(X \cap D) + P(Y \cap D) = 0{,}8 \times 0{,}05 + 0{,}2 \times 0{,}10 = 0{,}04 + 0{,}02 = 0{,}06\]
+    <p>La probabilité qu'un tube soit défectueux est de 6 %.</p>
+    <p><strong>3.</strong> \(P(\bar{D}) = 1 - P(D) = 1 - 0{,}06 = 0{,}94 = 94\,\%\).</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>VII – Synthèse</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="retenir">
+  <h4>À retenir</h4>
+  <ul>
+    <li>La probabilité d'un événement est comprise entre 0 et 1.</li>
+    <li>La somme des probabilités de toutes les issues vaut 1.</li>
+    <li>\(P(\bar{A}) = 1 - P(A)\)</li>
+    <li>Si \(A\) et \(B\) sont incompatibles : \(P(A \cup B) = P(A) + P(B)\)</li>
+    <li>Un tableau à double entrée permet de calculer des probabilités et des probabilités conditionnelles.</li>
+    <li>Dans un arbre pondéré : la probabilité d'un chemin est le produit des probabilités des branches ; la probabilité d'un événement est la somme des chemins correspondants.</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h4>Mini exercice 5 – Exercice de synthèse</h4>
+  <p>Un magasin de bricolage vend des vis en sachets. Les sachets proviennent de deux machines :</p>
+  <ul>
+    <li>Machine 1 produit 60 % des sachets ; parmi ceux-ci, 4 % sont mal fermés.</li>
+    <li>Machine 2 produit 40 % des sachets ; parmi ceux-ci, 7 % sont mal fermés.</li>
+  </ul>
+  <p>On prélève un sachet au hasard.</p>
+  <ol>
+    <li>Construire l'arbre de probabilités.</li>
+    <li>Calculer la probabilité que le sachet soit mal fermé.</li>
+    <li>Calculer la probabilité que le sachet soit bien fermé.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Arbre :</p>
+    <ul>
+      <li>Machine 1 (\(0{,}6\)) → Mal fermé (\(0{,}04\)) ou Bien fermé (\(0{,}96\))</li>
+      <li>Machine 2 (\(0{,}4\)) → Mal fermé (\(0{,}07\)) ou Bien fermé (\(0{,}93\))</li>
+    </ul>
+    <p><strong>2.</strong></p>
+    \[P(M) = 0{,}6 \times 0{,}04 + 0{,}4 \times 0{,}07 = 0{,}024 + 0{,}028 = 0{,}052\]
+    <p>La probabilité que le sachet soit mal fermé est \(0{,}052\), soit 5,2 %.</p>
+    <p><strong>3.</strong> \(P(\bar{M}) = 1 - 0{,}052 = 0{,}948 = 94{,}8\,\%\).</p>
+  </div>
 </div>
 
 </div>
