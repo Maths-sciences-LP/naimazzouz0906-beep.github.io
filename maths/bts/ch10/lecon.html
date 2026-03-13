@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Ch10 – Statistique descriptive – BTS</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#1e3a5f;--p-bg:#eef2f7;--p-border:#93a5c0}</style>
@@ -14,13 +15,949 @@
 <a href="../../../maths-bts.html" class="nb">← Retour au sommaire</a>
 <header>
   <h1>Chapitre 10 – Statistique descriptive</h1>
-  <p class="sous-titre">BTS — Tous groupements</p>
+  <p class="sous-titre">BTS | Mathématiques | Tous groupements</p>
 </header>
 
+<!-- ==================== OBJECTIFS ==================== -->
 <div class="objectifs">
-  <strong>Ce chapitre est en cours de rédaction.</strong><br>
-  Le contenu sera disponible prochainement.
+  <strong>Je vais apprendre à :</strong>
+  <ul>
+    <li>Maîtriser le vocabulaire statistique : population, individu, caractère, effectif, fréquence</li>
+    <li>Construire et exploiter des tableaux de fréquences (données discrètes et groupées en classes)</li>
+    <li>Calculer les indicateurs de position : moyenne, médiane, mode, quartiles \(Q_1\) et \(Q_3\)</li>
+    <li>Calculer les indicateurs de dispersion : étendue, variance, écart-type, coefficient de variation</li>
+    <li>Construire et interpréter une boîte à moustaches (boxplot)</li>
+    <li>Étudier une série statistique à deux variables : nuage de points, covariance, coefficient de corrélation \(r\), droite de régression</li>
+    <li>Réaliser un ajustement linéaire d'une série chronologique et effectuer des prévisions</li>
+  </ul>
 </div>
+
+<!-- ==================== SITUATION PROFESSIONNELLE ==================== -->
+<h2>Situation professionnelle</h2>
+
+<div class="situation">
+  <h3>Contrôle qualité et suivi énergétique</h3>
+  <p><strong>Situation 1 — Contrôle qualité (B1, B2, C1) :</strong> Un ingénieur qualité dans une usine d'usinage de pièces métalliques prélève quotidiennement un échantillon de 50 pièces et mesure leur diamètre au centième de millimètre. Il doit vérifier que la production respecte les tolérances, détecter toute dérive et produire un rapport statistique mensuel.</p>
+  <p><strong>Situation 2 — Énergie et bâtiment (B3, D1, D2) :</strong> Un responsable technique suit chaque mois la consommation électrique (en kWh) de plusieurs bâtiments tertiaires. Il analyse la dispersion des consommations, identifie les bâtiments énergivores et modélise l'évolution de la consommation en fonction du temps pour anticiper les besoins futurs.</p>
+  <p><strong>Problème central :</strong> Comment résumer, analyser et communiquer efficacement une série de mesures ? Les outils de la statistique descriptive répondent à cette question.</p>
+</div>
+
+<!-- ==================== PARTIE 1 : VOCABULAIRE ==================== -->
+<h2>1. Vocabulaire statistique</h2>
+
+<div class="def">
+  <span class="label label-def">Définition — Population et individu</span><br>
+  La <strong>population</strong> est l'ensemble des éléments étudiés. Chaque élément est un <strong>individu</strong>.<br>
+  <em>Exemple :</em> La population est l'ensemble des 840 pièces usinées en janvier. Chaque pièce est un individu.
+</div>
+
+<div class="def">
+  <span class="label label-def">Définition — Caractère et série statistique</span><br>
+  Le <strong>caractère</strong> (ou variable statistique) est la grandeur observée sur chaque individu.<br>
+  — Un caractère <strong>qualitatif</strong> prend des valeurs non numériques (couleur, référence, état).<br>
+  — Un caractère <strong>quantitatif discret</strong> prend des valeurs numériques isolées (nombre de défauts, rang).<br>
+  — Un caractère <strong>quantitatif continu</strong> peut prendre toute valeur dans un intervalle (diamètre, température).<br>
+  La <strong>série statistique</strong> est la liste des valeurs observées.
+</div>
+
+<div class="def">
+  <span class="label label-def">Définition — Effectif et fréquence</span><br>
+  L'<strong>effectif</strong> \(n_i\) d'une valeur \(x_i\) est le nombre d'individus qui prennent cette valeur.<br>
+  L'<strong>effectif total</strong> est \(N = \displaystyle\sum_{i} n_i\).<br>
+  La <strong>fréquence relative</strong> de \(x_i\) est \(f_i = \dfrac{n_i}{N}\).<br>
+  La <strong>fréquence en pourcentage</strong> est \(f_i \times 100\).<br>
+  La <strong>fréquence cumulée croissante</strong> (FCC) est la somme des fréquences jusqu'à la valeur \(x_i\).
+</div>
+
+<!-- ==================== PARTIE 2 : STATISTIQUE UNE VARIABLE ==================== -->
+<h2>2. Statistique à une variable — Tableaux et représentations</h2>
+
+<h3>2.1 Série discrète — Tableau de fréquences</h3>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Nombre de défauts par lot</span>
+  <p>Un technicien qualité relève le nombre de défauts observés sur 60 lots de production :</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre de défauts \(x_i\)</th>
+        <th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Effectif \(n_i\)</td>
+        <td>18</td><td>22</td><td>12</td><td>6</td><td>2</td><td>60</td>
+      </tr>
+      <tr>
+        <td>Fréquence \(f_i\)</td>
+        <td>0,30</td><td>0,37</td><td>0,20</td><td>0,10</td><td>0,03</td><td>1,00</td>
+      </tr>
+      <tr>
+        <td>FCC</td>
+        <td>0,30</td><td>0,67</td><td>0,87</td><td>0,97</td><td>1,00</td><td>—</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Le diagramme en bâtons représente les effectifs (ou fréquences) en fonction des valeurs.</p>
+  <div class="chart-wrap" style="max-width:520px;margin:1rem auto">
+    <canvas id="chartBatons"></canvas>
+  </div>
+</div>
+
+<h3>2.2 Série continue — Tableau de classes</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Classes et amplitude</span><br>
+  Lorsque le caractère est continu (ou que les valeurs sont très nombreuses), on regroupe les données en <strong>classes</strong> \([a_i\,;\,a_{i+1}[\).<br>
+  L'<strong>amplitude</strong> de la classe est \(a_{i+1} - a_i\).<br>
+  Le <strong>centre de classe</strong> est \(c_i = \dfrac{a_i + a_{i+1}}{2}\).
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Diamètre de pièces usinées (en mm)</span>
+  <p>Un ingénieur qualité mesure le diamètre de 100 pièces. La cote nominale est 25,00 mm, tolérance ±0,15 mm.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Classe (mm)</th>
+        <th>Centre \(c_i\)</th>
+        <th>Effectif \(n_i\)</th>
+        <th>Fréquence \(f_i\)</th>
+        <th>FCC</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>[24,80 ; 24,85[</td><td>24,825</td><td>3</td><td>0,03</td><td>0,03</td></tr>
+      <tr><td>[24,85 ; 24,90[</td><td>24,875</td><td>7</td><td>0,07</td><td>0,10</td></tr>
+      <tr><td>[24,90 ; 24,95[</td><td>24,925</td><td>15</td><td>0,15</td><td>0,25</td></tr>
+      <tr><td>[24,95 ; 25,00[</td><td>24,975</td><td>28</td><td>0,28</td><td>0,53</td></tr>
+      <tr><td>[25,00 ; 25,05[</td><td>25,025</td><td>24</td><td>0,24</td><td>0,77</td></tr>
+      <tr><td>[25,05 ; 25,10[</td><td>25,075</td><td>14</td><td>0,14</td><td>0,91</td></tr>
+      <tr><td>[25,10 ; 25,15[</td><td>25,125</td><td>6</td><td>0,06</td><td>0,97</td></tr>
+      <tr><td>[25,15 ; 25,20[</td><td>25,175</td><td>3</td><td>0,03</td><td>1,00</td></tr>
+      <tr><td><strong>Total</strong></td><td>—</td><td><strong>100</strong></td><td><strong>1,00</strong></td><td>—</td></tr>
+    </tbody>
+  </table>
+  <p>L'<strong>histogramme</strong> représente les fréquences (ou densités) en fonction des classes. La surface de chaque barre est proportionnelle à la fréquence.</p>
+  <div class="chart-wrap" style="max-width:580px;margin:1rem auto">
+    <canvas id="chartHistogramme"></canvas>
+  </div>
+</div>
+
+<!-- ==================== PARTIE 3 : INDICATEURS DE POSITION ==================== -->
+<h2>3. Indicateurs de position</h2>
+
+<h3>3.1 Moyenne</h3>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Moyenne pondérée</span><br>
+  Pour une série de valeurs \(x_1, x_2, \ldots, x_k\) d'effectifs \(n_1, n_2, \ldots, n_k\) :
+  \[\bar{x} = \frac{\displaystyle\sum_{i=1}^{k} n_i \, x_i}{N}\]
+  où \(N = \displaystyle\sum_{i=1}^{k} n_i\) est l'effectif total.<br>
+  Pour des données groupées en classes, on remplace \(x_i\) par le centre de classe \(c_i\).
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Calcul de la moyenne (défauts par lot)</span>
+  <p>Avec les données du tableau 2.1 :</p>
+  \[\bar{x} = \frac{0 \times 18 + 1 \times 22 + 2 \times 12 + 3 \times 6 + 4 \times 2}{60} = \frac{0 + 22 + 24 + 18 + 8}{60} = \frac{72}{60} = 1{,}20\]
+  <p>En moyenne, un lot présente <strong>1,20 défaut</strong>.</p>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Calcul de la moyenne (classes de diamètres)</span>
+  <p>En utilisant les centres de classe :</p>
+  \[\bar{x} = \frac{24{,}825 \times 3 + 24{,}875 \times 7 + 24{,}925 \times 15 + 24{,}975 \times 28 + 25{,}025 \times 24 + 25{,}075 \times 14 + 25{,}125 \times 6 + 25{,}175 \times 3}{100}\]
+  \[\bar{x} = \frac{2498{,}75}{100} = 24{,}988 \text{ mm} \approx 24{,}99 \text{ mm}\]
+</div>
+
+<h3>3.2 Médiane</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Médiane \(Me\)</span><br>
+  La <strong>médiane</strong> est la valeur qui partage la série en deux groupes d'effectifs égaux : 50 % des valeurs sont inférieures ou égales à \(Me\) et 50 % sont supérieures ou égales à \(Me\).<br>
+  — Sur données triées : si \(N\) est pair, \(Me\) est la moyenne des deux valeurs centrales ; si \(N\) est impair, \(Me\) est la valeur centrale.<br>
+  — Sur tableau de fréquences cumulées : \(Me\) est la valeur pour laquelle FCC atteint 0,50.
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Médiane par interpolation linéaire (classes)</span><br>
+  On cherche la classe qui contient la médiane (FCC passe de moins de 0,50 à plus de 0,50).
+  Si la classe médiane est \([a\,;\,b[\) et que la FCC avant cette classe est \(F_{\text{avant}}\), l'effectif de la classe est \(n_c\) :
+  \[Me = a + \frac{0{,}50 - F_{\text{avant}}}{f_c} \times (b - a)\]
+  où \(f_c = n_c / N\) est la fréquence de la classe médiane.
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Médiane des diamètres</span>
+  <p>La FCC passe de 0,25 à 0,53 dans la classe [24,95 ; 25,00[. C'est la classe médiane.</p>
+  \[Me = 24{,}95 + \frac{0{,}50 - 0{,}25}{0{,}28} \times 0{,}05 = 24{,}95 + \frac{0{,}25}{0{,}28} \times 0{,}05 = 24{,}95 + 0{,}0446 \approx 24{,}995 \text{ mm}\]
+</div>
+
+<h3>3.3 Mode</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Mode</span><br>
+  Le <strong>mode</strong> est la valeur (ou la classe) qui présente le plus grand effectif.<br>
+  — Pour une série discrète : la valeur la plus fréquente.<br>
+  — Pour une série groupée : la <strong>classe modale</strong> est la classe d'effectif maximal ; le mode est son centre.
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple</span>
+  <p>Pour les défauts par lot : le mode est <strong>1</strong> (effectif 22, le plus élevé).</p>
+  <p>Pour les diamètres : la classe modale est [24,95 ; 25,00[ (effectif 28), donc le mode ≈ <strong>24,975 mm</strong>.</p>
+</div>
+
+<h3>3.4 Quartiles Q1 et Q3</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Quartiles</span><br>
+  Les <strong>quartiles</strong> partagent la série ordonnée en quatre groupes d'effectifs égaux (25 % chacun) :<br>
+  — \(Q_1\) (premier quartile) : 25 % des valeurs lui sont inférieures ou égales.<br>
+  — \(Q_2 = Me\) (deuxième quartile) : la médiane.<br>
+  — \(Q_3\) (troisième quartile) : 75 % des valeurs lui sont inférieures ou égales.
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Quartiles par interpolation linéaire (classes)</span><br>
+  Même méthode que pour la médiane, en remplaçant 0,50 par 0,25 (pour \(Q_1\)) ou 0,75 (pour \(Q_3\)) :
+  \[Q_1 = a + \frac{0{,}25 - F_{\text{avant}}}{f_c} \times (b-a) \qquad Q_3 = a + \frac{0{,}75 - F_{\text{avant}}}{f_c} \times (b-a)\]
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Quartiles des diamètres</span>
+  <p><strong>Q1 :</strong> La FCC passe de 0,10 à 0,25 dans [24,90 ; 24,95[.</p>
+  \[Q_1 = 24{,}90 + \frac{0{,}25 - 0{,}10}{0{,}15} \times 0{,}05 = 24{,}90 + \frac{0{,}15}{0{,}15} \times 0{,}05 = 24{,}90 + 0{,}05 = 24{,}950 \text{ mm}\]
+  <p><strong>Q3 :</strong> La FCC passe de 0,77 à 0,91 dans [25,05 ; 25,10[.</p>
+  \[Q_3 = 25{,}05 + \frac{0{,}75 - 0{,}77}{0{,}14} \times 0{,}05\]
+  <p>Attention : FCC avant la classe est 0,77 > 0,75, donc on remonte dans la classe précédente [25,00 ; 25,05[, FCC avant = 0,53.</p>
+  \[Q_3 = 25{,}00 + \frac{0{,}75 - 0{,}53}{0{,}24} \times 0{,}05 = 25{,}00 + \frac{0{,}22}{0{,}24} \times 0{,}05 = 25{,}00 + 0{,}0458 \approx 25{,}046 \text{ mm}\]
+</div>
+
+<!-- ==================== PARTIE 4 : INDICATEURS DE DISPERSION ==================== -->
+<h2>4. Indicateurs de dispersion</h2>
+
+<h3>4.1 Étendue et intervalle interquartile</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Étendue et IIQ</span><br>
+  L'<strong>étendue</strong> est la différence entre la valeur maximale et la valeur minimale :
+  \[e = x_{\max} - x_{\min}\]
+  L'<strong>intervalle interquartile</strong> (IIQ) mesure la dispersion du « cœur » de la distribution (50 % des données centrales) :
+  \[\text{IIQ} = Q_3 - Q_1\]
+  Ces indicateurs sont robustes face aux valeurs extrêmes (outliers).
+</div>
+
+<h3>4.2 Variance et écart-type</h3>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Variance et écart-type</span><br>
+  La <strong>variance</strong> mesure la dispersion quadratique moyenne des valeurs autour de la moyenne :
+  \[V = \sigma^2 = \frac{\displaystyle\sum_{i=1}^{k} n_i (x_i - \bar{x})^2}{N}\]
+  Formule équivalente (calcul simplifié) :
+  \[V = \overline{x^2} - \bar{x}^2 = \frac{\displaystyle\sum_{i=1}^{k} n_i \, x_i^2}{N} - \bar{x}^2\]
+  L'<strong>écart-type</strong> est \(\sigma = \sqrt{V}\). Il s'exprime dans la même unité que les données.
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention</span><br>
+  La variance est en unité <em>au carré</em> (mm², kWh²…), ce qui la rend difficile à interpréter directement. On lui préfère l'écart-type \(\sigma\) qui s'exprime dans la même unité que les données.
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Variance des défauts par lot</span>
+  <p>On calcule d'abord \(\overline{x^2}\) :</p>
+  \[\overline{x^2} = \frac{0^2 \times 18 + 1^2 \times 22 + 2^2 \times 12 + 3^2 \times 6 + 4^2 \times 2}{60} = \frac{0 + 22 + 48 + 54 + 32}{60} = \frac{156}{60} = 2{,}60\]
+  \[V = \overline{x^2} - \bar{x}^2 = 2{,}60 - (1{,}20)^2 = 2{,}60 - 1{,}44 = 1{,}16\]
+  \[\sigma = \sqrt{1{,}16} \approx 1{,}077 \text{ défaut}\]
+</div>
+
+<h3>4.3 Coefficient de variation</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Coefficient de variation (CV)</span><br>
+  Le <strong>coefficient de variation</strong> est un indicateur de dispersion relative, sans unité :
+  \[CV = \frac{\sigma}{\bar{x}} \times 100 \quad (\%)\]
+  Il permet de <strong>comparer la dispersion de deux séries</strong> ayant des unités ou des moyennes différentes.<br>
+  Règle pratique : \(CV < 15\%\) : faible dispersion ; \(15\% \leq CV \leq 30\%\) : dispersion modérée ; \(CV > 30\%\) : forte dispersion.
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Comparaison de deux postes de production</span>
+  <p>Poste A : \(\bar{x}_A = 50{,}2\) mm, \(\sigma_A = 0{,}8\) mm → \(CV_A = \frac{0{,}8}{50{,}2} \times 100 \approx 1{,}6\%\)</p>
+  <p>Poste B : \(\bar{x}_B = 12{,}5\) mm, \(\sigma_B = 0{,}4\) mm → \(CV_B = \frac{0{,}4}{12{,}5} \times 100 = 3{,}2\%\)</p>
+  <p>Bien que \(\sigma_A > \sigma_B\), le poste A est <strong>relativement moins dispersé</strong> que le poste B.</p>
+</div>
+
+<div class="formule-box">
+  <strong>Bilan — Indicateurs de dispersion</strong>
+  <table>
+    <thead>
+      <tr><th>Indicateur</th><th>Formule</th><th>Interprétation</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Étendue</td><td>\(e = x_{\max} - x_{\min}\)</td><td>Amplitude totale</td></tr>
+      <tr><td>IIQ</td><td>\(Q_3 - Q_1\)</td><td>Dispersion des 50 % centraux</td></tr>
+      <tr><td>Variance</td><td>\(V = \overline{x^2} - \bar{x}^2\)</td><td>Dispersion quadratique</td></tr>
+      <tr><td>Écart-type</td><td>\(\sigma = \sqrt{V}\)</td><td>Dispersion dans l'unité des données</td></tr>
+      <tr><td>Coef. de variation</td><td>\(CV = \frac{\sigma}{\bar{x}} \times 100\)</td><td>Dispersion relative (%)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ==================== PARTIE 5 : BOÎTE À MOUSTACHES ==================== -->
+<h2>5. Boîte à moustaches (Boxplot)</h2>
+
+<div class="def">
+  <span class="label label-def">Définition — Boîte à moustaches</span><br>
+  La <strong>boîte à moustaches</strong> (ou boxplot) est une représentation graphique synthétisant cinq indicateurs statistiques :
+  <ul>
+    <li>Le minimum \(x_{\min}\)</li>
+    <li>Le premier quartile \(Q_1\)</li>
+    <li>La médiane \(Me\)</li>
+    <li>Le troisième quartile \(Q_3\)</li>
+    <li>Le maximum \(x_{\max}\)</li>
+  </ul>
+  La boîte (rectangle) s'étend de \(Q_1\) à \(Q_3\). Les moustaches s'étendent jusqu'aux valeurs extrêmes (dans la limite de 1,5 × IIQ). Les points au-delà des moustaches sont des <strong>valeurs aberrantes</strong> (outliers).
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Construction d'une boîte à moustaches</span><br>
+  <ol>
+    <li>Calculer \(Q_1\), \(Me\), \(Q_3\), \(x_{\min}\), \(x_{\max}\).</li>
+    <li>Tracer un axe gradué.</li>
+    <li>Dessiner un rectangle de \(Q_1\) à \(Q_3\), avec un trait vertical à \(Me\).</li>
+    <li>Tracer les moustaches depuis \(Q_1\) jusqu'à la plus petite valeur \(\geq Q_1 - 1{,}5 \times \text{IIQ}\), et depuis \(Q_3\) jusqu'à la plus grande valeur \(\leq Q_3 + 1{,}5 \times \text{IIQ}\).</li>
+    <li>Représenter les éventuels outliers par des points isolés.</li>
+  </ol>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Consommations énergétiques mensuelles (kWh)</span>
+  <p>Un technicien relève les consommations de 12 bâtiments (valeurs triées) :</p>
+  <p style="text-align:center">1 240 — 1 380 — 1 450 — 1 510 — 1 590 — 1 640 — 1 720 — 1 800 — 1 860 — 1 950 — 2 010 — 3 200</p>
+  <p>\(N = 12\), \(x_{\min} = 1\,240\), \(x_{\max} = 3\,200\)</p>
+  <p><strong>Quartiles :</strong></p>
+  <ul>
+    <li>\(Q_1\) = moyenne des valeurs de rang 3 et 4 = \(\dfrac{1\,450 + 1\,510}{2} = 1\,480\) kWh</li>
+    <li>\(Me\) = moyenne des valeurs de rang 6 et 7 = \(\dfrac{1\,640 + 1\,720}{2} = 1\,680\) kWh</li>
+    <li>\(Q_3\) = moyenne des valeurs de rang 9 et 10 = \(\dfrac{1\,860 + 1\,950}{2} = 1\,905\) kWh</li>
+  </ul>
+  <p>\(\text{IIQ} = 1\,905 - 1\,480 = 425\) kWh</p>
+  <p>Borne supérieure moustache : \(Q_3 + 1{,}5 \times 425 = 1\,905 + 637{,}5 = 2\,542{,}5\) kWh</p>
+  <p>La valeur 3 200 kWh dépasse 2 542,5 kWh : c'est un <strong>outlier</strong>. Ce bâtiment est anormalement énergivore.</p>
+  <div class="chart-wrap" style="max-width:600px;margin:1rem auto">
+    <canvas id="chartBoxplot"></canvas>
+  </div>
+  <p><strong>Interprétation :</strong> La majorité des bâtiments consomment entre 1 480 et 1 905 kWh par mois. Le bâtiment à 3 200 kWh devra faire l'objet d'un audit énergétique.</p>
+</div>
+
+<div class="retenir">
+  <strong>À retenir — Comparaison avec la boîte à moustaches</strong><br>
+  La boîte à moustaches est particulièrement utile pour <strong>comparer plusieurs groupes</strong> (plusieurs machines, plusieurs bâtiments, plusieurs périodes). Elle visualise instantanément les différences de position, de dispersion et la présence d'outliers.
+</div>
+
+<!-- ==================== PARTIE 6 : STATISTIQUE DEUX VARIABLES ==================== -->
+<h2>6. Statistique à deux variables</h2>
+
+<h3>6.1 Nuage de points et point moyen</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Série à deux variables</span><br>
+  Une <strong>série statistique à deux variables</strong> est un ensemble de \(n\) couples \((x_i\,;\,y_i)\), où \(x_i\) et \(y_i\) sont deux caractères quantitatifs mesurés sur le même individu \(i\).<br>
+  <em>Exemples :</em> (température extérieure, consommation de chauffage) ; (section du câble, résistance électrique) ; (année, chiffre d'affaires).
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Point moyen</span><br>
+  Le <strong>point moyen</strong> \(G(\bar{x}\,;\,\bar{y})\) a pour coordonnées les moyennes des deux séries :
+  \[\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i \qquad \bar{y} = \frac{1}{n} \sum_{i=1}^{n} y_i\]
+  Toute droite de régression passe par le point moyen \(G\).
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Consommation d'énergie et surface de vitrage</span>
+  <p>Un bureau d'études thermique analyse 8 bâtiments de taille comparable. Pour chacun, on note la surface de vitrage \(x\) (en m²) et la déperdition thermique annuelle \(y\) (en MWh) :</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Bâtiment</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Surface vitrage \(x\) (m²)</td>
+        <td>20</td><td>35</td><td>45</td><td>50</td><td>60</td><td>70</td><td>80</td><td>95</td>
+      </tr>
+      <tr>
+        <td>Déperdition \(y\) (MWh)</td>
+        <td>12</td><td>18</td><td>24</td><td>27</td><td>33</td><td>38</td><td>44</td><td>54</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>Calcul du point moyen :</strong></p>
+  \[\bar{x} = \frac{20+35+45+50+60+70+80+95}{8} = \frac{455}{8} = 56{,}875 \text{ m}^2\]
+  \[\bar{y} = \frac{12+18+24+27+33+38+44+54}{8} = \frac{250}{8} = 31{,}25 \text{ MWh}\]
+  <p>Le point moyen est \(G(56{,}875\,;\,31{,}25)\).</p>
+  <div class="chart-wrap" style="max-width:580px;margin:1rem auto">
+    <canvas id="chartNuage"></canvas>
+  </div>
+</div>
+
+<h3>6.2 Covariance et coefficient de corrélation linéaire</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Covariance</span><br>
+  La <strong>covariance</strong> mesure la tendance des deux variables à varier simultanément dans le même sens ou en sens opposé :
+  \[\text{Cov}(x,y) = \frac{1}{n} \sum_{i=1}^{n} x_i y_i - \bar{x}\,\bar{y} = \overline{xy} - \bar{x}\,\bar{y}\]
+  — \(\text{Cov}(x,y) > 0\) : les deux variables tendent à croître ensemble.<br>
+  — \(\text{Cov}(x,y) < 0\) : quand l'une croît, l'autre décroît.<br>
+  — \(\text{Cov}(x,y) = 0\) : pas de relation linéaire apparente.
+</div>
+
+<div class="def">
+  <span class="label label-def">Définition — Coefficient de corrélation linéaire \(r\)</span><br>
+  Le <strong>coefficient de corrélation linéaire</strong> de Pearson est :
+  \[r = \frac{\text{Cov}(x,y)}{\sigma_x \cdot \sigma_y}\]
+  où \(\sigma_x\) et \(\sigma_y\) sont les écarts-types de chaque série.<br>
+  <strong>Propriété :</strong> \(-1 \leq r \leq 1\).<br>
+  — \(r\) proche de 1 : forte corrélation linéaire positive.<br>
+  — \(r\) proche de −1 : forte corrélation linéaire négative.<br>
+  — \(|r|\) proche de 0 : pas de corrélation linéaire.<br>
+  En pratique : \(|r| \geq 0{,}9\) est considéré comme une bonne corrélation linéaire.
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Calcul de la covariance et de r (vitrage/déperdition)</span>
+  <p>Tableau de calcul :</p>
+  <table>
+    <thead>
+      <tr><th>\(i\)</th><th>\(x_i\)</th><th>\(y_i\)</th><th>\(x_i^2\)</th><th>\(y_i^2\)</th><th>\(x_i y_i\)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>20</td><td>12</td><td>400</td><td>144</td><td>240</td></tr>
+      <tr><td>2</td><td>35</td><td>18</td><td>1 225</td><td>324</td><td>630</td></tr>
+      <tr><td>3</td><td>45</td><td>24</td><td>2 025</td><td>576</td><td>1 080</td></tr>
+      <tr><td>4</td><td>50</td><td>27</td><td>2 500</td><td>729</td><td>1 350</td></tr>
+      <tr><td>5</td><td>60</td><td>33</td><td>3 600</td><td>1 089</td><td>1 980</td></tr>
+      <tr><td>6</td><td>70</td><td>38</td><td>4 900</td><td>1 444</td><td>2 660</td></tr>
+      <tr><td>7</td><td>80</td><td>44</td><td>6 400</td><td>1 936</td><td>3 520</td></tr>
+      <tr><td>8</td><td>95</td><td>54</td><td>9 025</td><td>2 916</td><td>5 130</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>455</strong></td><td><strong>250</strong></td><td><strong>30 075</strong></td><td><strong>9 158</strong></td><td><strong>16 590</strong></td></tr>
+    </tbody>
+  </table>
+  <p>\(\overline{x^2} = \dfrac{30\,075}{8} = 3\,759{,}375\) ; \(\overline{y^2} = \dfrac{9\,158}{8} = 1\,144{,}75\) ; \(\overline{xy} = \dfrac{16\,590}{8} = 2\,073{,}75\)</p>
+  <p><strong>Covariance :</strong></p>
+  \[\text{Cov}(x,y) = \overline{xy} - \bar{x}\,\bar{y} = 2\,073{,}75 - 56{,}875 \times 31{,}25 = 2\,073{,}75 - 1\,777{,}34 = 296{,}41\]
+  <p><strong>Écarts-types :</strong></p>
+  \[\sigma_x = \sqrt{\overline{x^2} - \bar{x}^2} = \sqrt{3\,759{,}375 - (56{,}875)^2} = \sqrt{3\,759{,}375 - 3\,234{,}77} = \sqrt{524{,}61} \approx 22{,}90 \text{ m}^2\]
+  \[\sigma_y = \sqrt{\overline{y^2} - \bar{y}^2} = \sqrt{1\,144{,}75 - (31{,}25)^2} = \sqrt{1\,144{,}75 - 976{,}56} = \sqrt{168{,}19} \approx 12{,}97 \text{ MWh}\]
+  <p><strong>Coefficient de corrélation :</strong></p>
+  \[r = \frac{296{,}41}{22{,}90 \times 12{,}97} = \frac{296{,}41}{297{,}02} \approx 0{,}998\]
+  <p>Le coefficient \(r \approx 0{,}998\) est très proche de 1 : il y a une <strong>très forte corrélation linéaire positive</strong> entre la surface de vitrage et les déperditions thermiques.</p>
+</div>
+
+<h3>6.3 Droite de régression par la méthode des moindres carrés</h3>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Droite de régression de y en x</span><br>
+  La droite de régression de \(y\) en \(x\), obtenue par la méthode des <strong>moindres carrés</strong>, minimise la somme des carrés des écarts entre les valeurs observées et les valeurs prédites.<br>
+  Son équation est \(y = ax + b\) avec :
+  \[a = \frac{\text{Cov}(x,y)}{\sigma_x^2} = \frac{\text{Cov}(x,y)}{\overline{x^2} - \bar{x}^2}\]
+  \[b = \bar{y} - a\,\bar{x}\]
+  Cette droite passe obligatoirement par le point moyen \(G(\bar{x}\,;\,\bar{y})\).
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Calcul de la droite de régression</span><br>
+  <ol>
+    <li>Calculer \(\bar{x}\), \(\bar{y}\), \(\overline{xy}\), \(\overline{x^2}\).</li>
+    <li>Calculer \(\text{Cov}(x,y) = \overline{xy} - \bar{x}\,\bar{y}\) et \(\sigma_x^2 = \overline{x^2} - \bar{x}^2\).</li>
+    <li>Calculer \(a = \dfrac{\text{Cov}(x,y)}{\sigma_x^2}\).</li>
+    <li>Calculer \(b = \bar{y} - a\,\bar{x}\).</li>
+    <li>Écrire l'équation \(y = ax + b\) et l'utiliser pour faire des prévisions.</li>
+  </ol>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Droite de régression (vitrage/déperdition)</span>
+  <p>On reprend les calculs précédents :</p>
+  \[a = \frac{\text{Cov}(x,y)}{\sigma_x^2} = \frac{296{,}41}{524{,}61} \approx 0{,}565 \text{ MWh/m}^2\]
+  \[b = \bar{y} - a\,\bar{x} = 31{,}25 - 0{,}565 \times 56{,}875 = 31{,}25 - 32{,}13 = -0{,}88 \text{ MWh}\]
+  <p><strong>Équation de la droite de régression :</strong></p>
+  \[\boxed{y = 0{,}565\,x - 0{,}88}\]
+  <p>Vérification : pour \(x = \bar{x} = 56{,}875\) : \(y = 0{,}565 \times 56{,}875 - 0{,}88 = 32{,}13 - 0{,}88 = 31{,}25 = \bar{y}\) ✓</p>
+  <p><strong>Prévision :</strong> Pour un bâtiment avec 65 m² de vitrage :</p>
+  \[y = 0{,}565 \times 65 - 0{,}88 = 36{,}73 - 0{,}88 \approx 35{,}8 \text{ MWh/an}\]
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention</span><br>
+  La droite de régression de \(y\) en \(x\) est différente de la droite de régression de \(x\) en \(y\). On utilise :<br>
+  — \(y = ax + b\) pour <strong>prédire \(y\) à partir de \(x\)</strong> (connaissant \(x\)).<br>
+  — \(x = a'y + b'\) pour <strong>prédire \(x\) à partir de \(y\)</strong>, avec \(a' = \dfrac{\text{Cov}(x,y)}{\sigma_y^2}\).
+</div>
+
+<div class="retenir">
+  <strong>À retenir — Condition d'utilisation de la régression</strong><br>
+  On n'utilise le modèle de régression linéaire que si \(|r| \geq 0{,}9\) (corrélation forte). Sinon, le modèle linéaire est inapproprié et peut conduire à des prévisions très erronées.
+</div>
+
+<!-- ==================== PARTIE 7 : SÉRIE CHRONOLOGIQUE ==================== -->
+<h2>7. Série chronologique — Ajustement linéaire</h2>
+
+<div class="def">
+  <span class="label label-def">Définition — Série chronologique</span><br>
+  Une <strong>série chronologique</strong> est une série statistique à deux variables dans laquelle la variable \(x\) représente le <strong>temps</strong> (mois, trimestre, année, rang…) et \(y\) la grandeur observée à chaque instant.<br>
+  On distingue :<br>
+  — La <strong>tendance</strong> (trend) : évolution à long terme.<br>
+  — Les <strong>variations saisonnières</strong> : oscillations périodiques.<br>
+  — Les <strong>variations résiduelles</strong> : perturbations aléatoires.
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Ajustement linéaire d'une série chronologique</span><br>
+  On code le temps : on attribue le rang 1 à la première observation, 2 à la deuxième, etc. Puis on applique la méthode des moindres carrés pour trouver \(y = at + b\) (tendance linéaire).
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Chiffre d'affaires d'une entreprise de menuiserie (k€)</span>
+  <p>Un dirigeant d'entreprise spécialisée dans l'agencement intérieur relève le chiffre d'affaires annuel sur 7 ans :</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Année</th><th>2018</th><th>2019</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Rang \(t\)</td>
+        <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+      </tr>
+      <tr>
+        <td>CA \(y\) (k€)</td>
+        <td>312</td><td>338</td><td>295</td><td>371</td><td>408</td><td>445</td><td>482</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Calculs préliminaires :</strong></p>
+  <table>
+    <thead>
+      <tr><th>\(t\)</th><th>\(y\)</th><th>\(t^2\)</th><th>\(ty\)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>312</td><td>1</td><td>312</td></tr>
+      <tr><td>2</td><td>338</td><td>4</td><td>676</td></tr>
+      <tr><td>3</td><td>295</td><td>9</td><td>885</td></tr>
+      <tr><td>4</td><td>371</td><td>16</td><td>1 484</td></tr>
+      <tr><td>5</td><td>408</td><td>25</td><td>2 040</td></tr>
+      <tr><td>6</td><td>445</td><td>36</td><td>2 670</td></tr>
+      <tr><td>7</td><td>482</td><td>49</td><td>3 374</td></tr>
+      <tr><td><strong>28</strong></td><td><strong>2 651</strong></td><td><strong>140</strong></td><td><strong>11 441</strong></td></tr>
+    </tbody>
+  </table>
+
+  \[\bar{t} = \frac{28}{7} = 4 \qquad \bar{y} = \frac{2\,651}{7} = 378{,}71 \text{ k€}\]
+  \[\overline{t^2} = \frac{140}{7} = 20 \qquad \overline{ty} = \frac{11\,441}{7} = 1\,634{,}43\]
+  \[\text{Cov}(t,y) = \overline{ty} - \bar{t}\,\bar{y} = 1\,634{,}43 - 4 \times 378{,}71 = 1\,634{,}43 - 1\,514{,}84 = 119{,}59\]
+  \[\sigma_t^2 = \overline{t^2} - \bar{t}^2 = 20 - 16 = 4\]
+  \[a = \frac{119{,}59}{4} = 29{,}90 \text{ k€/an}\]
+  \[b = \bar{y} - a\,\bar{t} = 378{,}71 - 29{,}90 \times 4 = 378{,}71 - 119{,}60 = 259{,}11 \text{ k€}\]
+
+  <p><strong>Tendance linéaire :</strong></p>
+  \[\boxed{y = 29{,}90\,t + 259{,}11}\]
+
+  <p><strong>Vérification du coefficient de corrélation :</strong></p>
+  \[\sigma_y = \sqrt{\overline{y^2} - \bar{y}^2}\]
+  \[\overline{y^2} = \frac{312^2 + 338^2 + 295^2 + 371^2 + 408^2 + 445^2 + 482^2}{7} = \frac{1\,069\,837}{7} \approx 152\,833{,}86\]
+  \[\sigma_y = \sqrt{152\,833{,}86 - (378{,}71)^2} = \sqrt{152\,833{,}86 - 143\,421{,}46} = \sqrt{9\,412{,}40} \approx 97{,}02\]
+  \[r = \frac{119{,}59}{\sigma_t \times \sigma_y} = \frac{119{,}59}{2 \times 97{,}02} = \frac{119{,}59}{194{,}04} \approx 0{,}986\]
+
+  <p>\(r \approx 0{,}986 \geq 0{,}9\) : l'ajustement linéaire est <strong>très bien adapté</strong>.</p>
+
+  <p><strong>Prévision pour 2025 (rang \(t = 8\)) et 2026 (rang \(t = 9\)) :</strong></p>
+  \[y_{2025} = 29{,}90 \times 8 + 259{,}11 = 239{,}20 + 259{,}11 = 498{,}31 \text{ k€}\]
+  \[y_{2026} = 29{,}90 \times 9 + 259{,}11 = 269{,}10 + 259{,}11 = 528{,}21 \text{ k€}\]
+
+  <div class="chart-wrap" style="max-width:600px;margin:1rem auto">
+    <canvas id="chartChrono"></canvas>
+  </div>
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention — Extrapolation</span><br>
+  Toute prévision hors de la plage des données observées (extrapolation) doit être interprétée avec prudence. Le modèle linéaire suppose que la tendance observée se poursuit, ce qui peut ne pas être vérifié à long terme (retournement de conjoncture, saturation du marché, etc.).
+</div>
+
+<!-- ==================== RÉCAPITULATIF ==================== -->
+<h2>8. Récapitulatif — Formules essentielles</h2>
+
+<div class="formule-box">
+  <strong>Statistique à une variable</strong>
+  <table>
+    <thead>
+      <tr><th>Indicateur</th><th>Formule</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Moyenne</td><td>\(\bar{x} = \dfrac{\displaystyle\sum n_i x_i}{N}\)</td></tr>
+      <tr><td>Variance</td><td>\(V = \dfrac{\displaystyle\sum n_i x_i^2}{N} - \bar{x}^2\)</td></tr>
+      <tr><td>Écart-type</td><td>\(\sigma = \sqrt{V}\)</td></tr>
+      <tr><td>Coefficient de variation</td><td>\(CV = \dfrac{\sigma}{\bar{x}} \times 100\)</td></tr>
+      <tr><td>Intervalle interquartile</td><td>\(\text{IIQ} = Q_3 - Q_1\)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="formule-box">
+  <strong>Statistique à deux variables</strong>
+  <table>
+    <thead>
+      <tr><th>Indicateur</th><th>Formule</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Covariance</td><td>\(\text{Cov}(x,y) = \overline{xy} - \bar{x}\,\bar{y}\)</td></tr>
+      <tr><td>Coefficient de corrélation</td><td>\(r = \dfrac{\text{Cov}(x,y)}{\sigma_x \cdot \sigma_y}\)</td></tr>
+      <tr><td>Pente de régression</td><td>\(a = \dfrac{\text{Cov}(x,y)}{\sigma_x^2}\)</td></tr>
+      <tr><td>Ordonnée à l'origine</td><td>\(b = \bar{y} - a\,\bar{x}\)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="retenir">
+  <strong>À retenir — Démarche statistique complète</strong>
+  <ol>
+    <li><strong>Décrire la population</strong> et le caractère étudié.</li>
+    <li><strong>Construire le tableau</strong> de fréquences (et calculer les FCC).</li>
+    <li><strong>Calculer les indicateurs de position</strong> : \(\bar{x}\), \(Me\), mode, \(Q_1\), \(Q_3\).</li>
+    <li><strong>Calculer les indicateurs de dispersion</strong> : \(\sigma\), \(CV\), IIQ.</li>
+    <li><strong>Représenter graphiquement</strong> (histogramme, boîte à moustaches).</li>
+    <li><strong>Interpréter</strong> dans le contexte professionnel.</li>
+    <li>Si étude à 2 variables : calculer \(r\), et si \(|r| \geq 0{,}9\), déterminer la droite de régression.</li>
+  </ol>
+</div>
+
+<!-- ==================== SCRIPTS CHART.JS ==================== -->
+<script>
+// --- Diagramme en bâtons : défauts par lot ---
+(function() {
+  const ctx = document.getElementById('chartBatons');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['0', '1', '2', '3', '4'],
+      datasets: [{
+        label: 'Effectif',
+        data: [18, 22, 12, 6, 2],
+        backgroundColor: 'rgba(30,58,95,0.75)',
+        borderColor: '#1e3a5f',
+        borderWidth: 1,
+        borderRadius: 3
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: 'Diagramme en bâtons — Nombre de défauts par lot',
+          font: { size: 13 }
+        }
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 'Nombre de défauts' }
+        },
+        y: {
+          title: { display: true, text: 'Effectif' },
+          beginAtZero: true
+        }
+      }
+    }
+  });
+})();
+
+// --- Histogramme : diamètres de pièces usinées ---
+(function() {
+  const ctx = document.getElementById('chartHistogramme');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['24.825', '24.875', '24.925', '24.975', '25.025', '25.075', '25.125', '25.175'],
+      datasets: [{
+        label: 'Fréquence',
+        data: [0.03, 0.07, 0.15, 0.28, 0.24, 0.14, 0.06, 0.03],
+        backgroundColor: 'rgba(30,58,95,0.72)',
+        borderColor: '#1e3a5f',
+        borderWidth: 1,
+        borderRadius: 2,
+        categoryPercentage: 1.0,
+        barPercentage: 1.0
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: 'Histogramme — Diamètres de pièces usinées (mm)',
+          font: { size: 13 }
+        }
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 'Centre de classe (mm)' }
+        },
+        y: {
+          title: { display: true, text: 'Fréquence relative' },
+          beginAtZero: true,
+          max: 0.35
+        }
+      }
+    }
+  });
+})();
+
+// --- Boxplot simulé : consommations énergétiques ---
+// Chart.js v3 n'a pas de boxplot natif sans plugin ; on utilise une représentation bar + annotation
+(function() {
+  const ctx = document.getElementById('chartBoxplot');
+  if (!ctx) return;
+
+  // On représente les 5 indicateurs sur l'axe des abscisses
+  const labels = ['Min', 'Q1', 'Médiane', 'Q3', 'Max'];
+  const values = [1240, 1480, 1680, 1905, 2010]; // sans l'outlier pour la moustache
+  const outlier = 3200;
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Bâtiments — Consommation mensuelle (kWh)'],
+      datasets: [
+        {
+          label: 'Min → Q1',
+          data: [1480 - 1240],
+          backgroundColor: 'rgba(147,165,192,0.3)',
+          borderColor: '#93a5c0',
+          borderWidth: 1,
+          base: 1240,
+          stack: 'box'
+        },
+        {
+          label: 'Q1 → Médiane',
+          data: [1680 - 1480],
+          backgroundColor: 'rgba(30,58,95,0.65)',
+          borderColor: '#1e3a5f',
+          borderWidth: 1,
+          base: 1480,
+          stack: 'box'
+        },
+        {
+          label: 'Médiane → Q3',
+          data: [1905 - 1680],
+          backgroundColor: 'rgba(30,58,95,0.35)',
+          borderColor: '#1e3a5f',
+          borderWidth: 1,
+          base: 1680,
+          stack: 'box'
+        },
+        {
+          label: 'Q3 → Max moustache',
+          data: [2010 - 1905],
+          backgroundColor: 'rgba(147,165,192,0.3)',
+          borderColor: '#93a5c0',
+          borderWidth: 1,
+          base: 1905,
+          stack: 'box'
+        }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: 'Boîte à moustaches — Consommation mensuelle (kWh) — Outlier : 3 200 kWh',
+          font: { size: 12 }
+        },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const ranges = [
+                'Min–Q1 : 1 240–1 480 kWh',
+                'Q1–Médiane : 1 480–1 680 kWh',
+                'Médiane–Q3 : 1 680–1 905 kWh',
+                'Q3–Max : 1 905–2 010 kWh'
+              ];
+              return ranges[ctx.datasetIndex] || '';
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          stacked: true,
+          title: { display: true, text: 'Consommation (kWh)' },
+          min: 1100,
+          max: 2200
+        },
+        y: { stacked: true }
+      }
+    }
+  });
+})();
+
+// --- Nuage de points : vitrage / déperdition ---
+(function() {
+  const ctx = document.getElementById('chartNuage');
+  if (!ctx) return;
+
+  const data = [
+    {x: 20, y: 12}, {x: 35, y: 18}, {x: 45, y: 24}, {x: 50, y: 27},
+    {x: 60, y: 33}, {x: 70, y: 38}, {x: 80, y: 44}, {x: 95, y: 54}
+  ];
+
+  // Droite de régression : y = 0.565x - 0.88
+  const reg = [
+    {x: 15, y: 0.565*15 - 0.88},
+    {x: 100, y: 0.565*100 - 0.88}
+  ];
+
+  new Chart(ctx, {
+    type: 'scatter',
+    data: {
+      datasets: [
+        {
+          label: 'Données observées',
+          data: data,
+          backgroundColor: '#1e3a5f',
+          pointRadius: 6,
+          pointHoverRadius: 8
+        },
+        {
+          label: 'Droite de régression y = 0,565x − 0,88',
+          data: reg,
+          type: 'line',
+          borderColor: '#e05c2a',
+          borderWidth: 2,
+          pointRadius: 0,
+          fill: false,
+          tension: 0
+        },
+        {
+          label: 'Point moyen G',
+          data: [{x: 56.875, y: 31.25}],
+          backgroundColor: '#e05c2a',
+          pointRadius: 9,
+          pointStyle: 'crossRot',
+          borderColor: '#e05c2a',
+          borderWidth: 2
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Nuage de points — Surface de vitrage vs Déperdition thermique (r ≈ 0,998)',
+          font: { size: 12 }
+        },
+        legend: { position: 'bottom', labels: { font: { size: 11 } } }
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 'Surface de vitrage (m²)' },
+          min: 10, max: 105
+        },
+        y: {
+          title: { display: true, text: 'Déperdition (MWh/an)' },
+          beginAtZero: true
+        }
+      }
+    }
+  });
+})();
+
+// --- Série chronologique : CA menuiserie ---
+(function() {
+  const ctx = document.getElementById('chartChrono');
+  if (!ctx) return;
+
+  const annees = ['2018','2019','2020','2021','2022','2023','2024','2025*','2026*'];
+  const valeurs = [312, 338, 295, 371, 408, 445, 482, null, null];
+  const previsions = [null, null, null, null, null, null, null, 498, 528];
+
+  // Tendance linéaire : y = 29.90t + 259.11 pour t = 1..9
+  const tendance = annees.map((_, i) => parseFloat((29.90*(i+1) + 259.11).toFixed(1)));
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: annees,
+      datasets: [
+        {
+          label: 'CA observé (k€)',
+          data: valeurs,
+          borderColor: '#1e3a5f',
+          backgroundColor: 'rgba(30,58,95,0.15)',
+          borderWidth: 2,
+          pointRadius: 5,
+          fill: false,
+          spanGaps: false
+        },
+        {
+          label: 'Tendance : y = 29,90t + 259,11',
+          data: tendance,
+          borderColor: '#e05c2a',
+          borderWidth: 2,
+          borderDash: [6, 3],
+          pointRadius: 0,
+          fill: false
+        },
+        {
+          label: 'Prévisions (k€)',
+          data: previsions,
+          borderColor: '#2a7e5f',
+          backgroundColor: 'rgba(42,126,95,0.2)',
+          borderWidth: 2,
+          pointRadius: 6,
+          pointStyle: 'triangle',
+          fill: false,
+          spanGaps: false
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Série chronologique — Chiffre d\'affaires annuel (k€) — Entreprise de menuiserie',
+          font: { size: 12 }
+        },
+        legend: { position: 'bottom', labels: { font: { size: 11 } } }
+      },
+      scales: {
+        x: { title: { display: true, text: 'Année (* prévision)' } },
+        y: {
+          title: { display: true, text: 'CA (k€)' },
+          min: 200,
+          max: 580
+        }
+      }
+    }
+  });
+})();
+</script>
 
 </div>
 <script src="../../../nav.js"></script>

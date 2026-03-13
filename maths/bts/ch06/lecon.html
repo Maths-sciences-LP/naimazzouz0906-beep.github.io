@@ -5,24 +5,800 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Ch06 – Séries de Fourier – BTS</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#1e3a5f;--p-bg:#eef2f7;--p-border:#93a5c0}</style>
 </head>
 <body>
 <div class="c">
-<a href="../../../maths-bts.html" class="nb">← Retour au sommaire</a>
+<a href="../../../maths-bts.html" class="nb">&larr; Retour au sommaire</a>
+
 <header>
-  <h1>Chapitre 06 – Séries de Fourier</h1>
-  <p class="sous-titre">BTS — Groupement B1</p>
+  <h1>Chapitre 6 &ndash; Séries de Fourier</h1>
+  <p class="sous-titre">BTS &nbsp;|&nbsp; Mathématiques &nbsp;|&nbsp; Groupement B1</p>
+  <p class="maj">Dernière mise à jour : mars 2026</p>
 </header>
 
 <div class="objectifs">
-  <strong>Ce chapitre est en cours de rédaction.</strong><br>
-  Le contenu sera disponible prochainement.
+  <strong>Objectifs du chapitre :</strong>
+  <ul>
+    <li>Reconnaître un signal périodique et identifier sa période, sa fréquence et sa pulsation</li>
+    <li>Calculer les coefficients de Fourier \(a_0\), \(a_n\) et \(b_n\) d'un signal périodique</li>
+    <li>Écrire le développement en série de Fourier d'un signal et sa forme amplitude-phase</li>
+    <li>Exploiter les propriétés de symétrie (signal pair, impair, demi-onde) pour simplifier les calculs</li>
+    <li>Calculer l'amplitude \(C_n\) et la phase \(\varphi_n\) de chaque harmonique</li>
+    <li>Représenter et interpréter le spectre d'amplitude et le spectre de phase d'un signal</li>
+    <li>Calculer la valeur efficace d'un signal à l'aide du théorème de Parseval</li>
+    <li>Analyser les harmoniques dans un réseau électrique (application FED/Bâtiment)</li>
+  </ul>
 </div>
 
+<!-- ==================== SITUATION PROFESSIONNELLE ==================== -->
+<h2>Situation professionnelle</h2>
+
+<div class="situation">
+  <h3>Analyse d'un signal électrique perturbé</h3>
+  <p>Un technicien en électrotechnique effectue la maintenance d'une installation industrielle équipée d'un redresseur monophasé à pont de diodes. À l'oscilloscope, le signal de courant en sortie n'est pas sinusoïdal : il présente une forme en <strong>créneaux</strong> avec de fortes composantes harmoniques.</p>
+  <p>Un ingénieur en génie électrique doit analyser ce signal pour :</p>
+  <ul>
+    <li>Identifier les harmoniques responsables des perturbations du réseau</li>
+    <li>Dimensionner des filtres adaptés pour réduire les harmoniques indésirables</li>
+    <li>Calculer la <strong>valeur efficace réelle</strong> du courant (qui détermine l'échauffement des câbles)</li>
+    <li>Vérifier la conformité à la norme EN 61000-3-2 sur les émissions harmoniques</li>
+  </ul>
+  <p><strong>Outil mathématique :</strong> La décomposition en <em>série de Fourier</em> permet d'exprimer tout signal périodique comme une somme (infinie) de sinusoïdes, chacune à une fréquence multiple de la fréquence fondamentale.</p>
 </div>
+
+<!-- ==================== RAPPELS : SIGNAUX PÉRIODIQUES ==================== -->
+<h2>1. Rappels — Signaux périodiques</h2>
+
+<h3>1.1 Définition</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Fonction périodique</span><br>
+  Une fonction \(f\) est dite <strong>périodique de période \(T\)</strong> si, pour tout \(t\) :
+  \[f(t + T) = f(t)\]
+  La plus petite valeur positive \(T\) vérifiant cette relation est appelée <strong>période fondamentale</strong>.
+</div>
+
+<div class="def">
+  <span class="label label-def">Définition — Fréquence et pulsation</span><br>
+  À un signal périodique de période \(T\) sont associés :
+  <ul>
+    <li>La <strong>fréquence fondamentale</strong> : \(\displaystyle f = \frac{1}{T}\) &nbsp;&nbsp;(en Hertz, Hz)</li>
+    <li>La <strong>pulsation fondamentale</strong> : \(\displaystyle \omega = \frac{2\pi}{T} = 2\pi f\) &nbsp;&nbsp;(en rad/s)</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Réseau électrique</span>
+  <p>Le réseau électrique français a une fréquence \(f = 50\) Hz. Donc :</p>
+  <ul>
+    <li>Période : \(T = \dfrac{1}{50} = 0{,}02\) s \(= 20\) ms</li>
+    <li>Pulsation : \(\omega = 2\pi \times 50 \approx 314{,}16\) rad/s</li>
+  </ul>
+  <p>La <strong>2e harmonique</strong> a une fréquence \(2f = 100\) Hz, la <strong>3e harmonique</strong> a \(3f = 150\) Hz, etc.</p>
+</div>
+
+<h3>1.2 Conditions de Dirichlet</h3>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Conditions de Dirichlet</span><br>
+  Un signal \(f\) périodique de période \(T\) est <strong>développable en série de Fourier</strong> si, sur une période, il vérifie les conditions de Dirichlet :
+  <ol>
+    <li>\(f\) est <strong>bornée</strong> (ses valeurs restent finies)</li>
+    <li>\(f\) n'admet qu'un <strong>nombre fini de discontinuités</strong></li>
+    <li>\(f\) n'admet qu'un <strong>nombre fini d'extrema locaux</strong></li>
+  </ol>
+  <em>En pratique, tous les signaux physiques (électriques, mécaniques, acoustiques) vérifient ces conditions.</em>
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention — Points de discontinuité</span><br>
+  En un point \(t_0\) de discontinuité, la série de Fourier converge vers la <strong>demi-somme des limites à gauche et à droite</strong> :
+  \[S(t_0) = \frac{f(t_0^-) + f(t_0^+)}{2}\]
+  Ce phénomène est appelé <em>phénomène de Gibbs</em> aux discontinuités.
+</div>
+
+<!-- ==================== COEFFICIENTS DE FOURIER ==================== -->
+<h2>2. Coefficients de Fourier</h2>
+
+<h3>2.1 Définition des coefficients</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Coefficients de Fourier</span><br>
+  Soit \(f\) une fonction périodique de période \(T\), de pulsation \(\omega = 2\pi/T\). Les <strong>coefficients de Fourier</strong> de \(f\) sont définis par les formules intégrales suivantes, calculées sur une période complète :
+  <div class="formule-box">
+    \[a_0 = \frac{1}{T}\int_0^T f(t)\,\mathrm{d}t\]
+    \[a_n = \frac{2}{T}\int_0^T f(t)\cos(n\omega t)\,\mathrm{d}t \qquad (n \geq 1)\]
+    \[b_n = \frac{2}{T}\int_0^T f(t)\sin(n\omega t)\,\mathrm{d}t \qquad (n \geq 1)\]
+  </div>
+  L'intégrale peut être calculée sur n'importe quel intervalle de longueur \(T\), par exemple \([-T/2,\, T/2]\).
+</div>
+
+<h3>2.2 Interprétation physique</h3>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Signification de \(a_0\)</span><br>
+  Le coefficient \(a_0\) est la <strong>valeur moyenne</strong> du signal sur une période :
+  \[a_0 = \langle f \rangle = \frac{1}{T}\int_0^T f(t)\,\mathrm{d}t\]
+  En électricité, \(a_0\) correspond à la composante <strong>continue</strong> (DC) du signal.
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Orthogonalité des fonctions trigonométriques</span><br>
+  Les formules des coefficients reposent sur les propriétés d'orthogonalité suivantes, valables pour \(m, n \geq 1\) :
+  \[\int_0^T \cos(n\omega t)\cos(m\omega t)\,\mathrm{d}t = \begin{cases} 0 & \text{si } m \neq n \\ T/2 & \text{si } m = n \end{cases}\]
+  \[\int_0^T \sin(n\omega t)\sin(m\omega t)\,\mathrm{d}t = \begin{cases} 0 & \text{si } m \neq n \\ T/2 & \text{si } m = n \end{cases}\]
+  \[\int_0^T \cos(n\omega t)\sin(m\omega t)\,\mathrm{d}t = 0 \quad \text{pour tous } m, n\]
+</div>
+
+<!-- ==================== SÉRIE DE FOURIER ==================== -->
+<h2>3. Développement en série de Fourier</h2>
+
+<h3>3.1 Forme trigonométrique</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Série de Fourier (forme trigonométrique)</span><br>
+  Le <strong>développement en série de Fourier</strong> d'un signal \(f\) de période \(T\) et de pulsation \(\omega = 2\pi/T\) est :
+  <div class="formule-box">
+    \[f(t) = a_0 + \sum_{n=1}^{+\infty}\bigl[a_n\cos(n\omega t) + b_n\sin(n\omega t)\bigr]\]
+  </div>
+  <ul>
+    <li>\(a_0\) : composante continue (fondamental DC)</li>
+    <li>\(a_1\cos(\omega t) + b_1\sin(\omega t)\) : <strong>fondamental</strong> (1re harmonique, fréquence \(f\))</li>
+    <li>\(a_n\cos(n\omega t) + b_n\sin(n\omega t)\) : <strong>harmonique de rang \(n\)</strong> (fréquence \(nf\))</li>
+  </ul>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong> — La série de Fourier décompose un signal complexe en une somme infinie de sinusoïdes pures. Chaque sinusoïde a une fréquence multiple entier de la fréquence fondamentale. En pratique, on se limite aux premières harmoniques (les harmoniques élevées ont une amplitude faible).
+</div>
+
+<!-- ==================== CAS PARTICULIERS ==================== -->
+<h2>4. Cas particuliers — Propriétés de symétrie</h2>
+
+<h3>4.1 Signal pair</h3>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Signal pair (\(b_n = 0\))</span><br>
+  Un signal est dit <strong>pair</strong> si \(f(-t) = f(t)\) pour tout \(t\). Dans ce cas :
+  <ul>
+    <li>Tous les coefficients \(b_n = 0\) (les sinus disparaissent)</li>
+    <li>Le développement ne contient que des termes en <strong>cosinus</strong> :</li>
+  </ul>
+  \[f(t) = a_0 + \sum_{n=1}^{+\infty} a_n\cos(n\omega t)\]
+  Les coefficients se calculent sur une demi-période :
+  \[a_0 = \frac{2}{T}\int_0^{T/2} f(t)\,\mathrm{d}t \qquad a_n = \frac{4}{T}\int_0^{T/2} f(t)\cos(n\omega t)\,\mathrm{d}t\]
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Signal pair</span>
+  <p>Un signal <strong>créneau symétrique</strong> centré sur l'axe des ordonnées (\(f(t) = +E\) sur \([-T/4, T/4]\) et \(-E\) ailleurs) est <strong>impair</strong>. En revanche, un signal <strong>triangulaire</strong> centré est <strong>pair</strong> : son développement ne contient que des cosinus.</p>
+</div>
+
+<h3>4.2 Signal impair</h3>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Signal impair (\(a_n = 0\))</span><br>
+  Un signal est dit <strong>impair</strong> si \(f(-t) = -f(t)\) pour tout \(t\). Dans ce cas :
+  <ul>
+    <li>\(a_0 = 0\) (la valeur moyenne est nulle)</li>
+    <li>Tous les coefficients \(a_n = 0\)</li>
+    <li>Le développement ne contient que des termes en <strong>sinus</strong> :</li>
+  </ul>
+  \[f(t) = \sum_{n=1}^{+\infty} b_n\sin(n\omega t)\]
+  \[b_n = \frac{4}{T}\int_0^{T/2} f(t)\sin(n\omega t)\,\mathrm{d}t\]
+</div>
+
+<h3>4.3 Symétrie demi-onde</h3>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Symétrie demi-onde (harmoniques impaires seulement)</span><br>
+  Un signal possède une <strong>symétrie demi-onde</strong> (ou anti-périodicité) si :
+  \[f\!\left(t + \frac{T}{2}\right) = -f(t) \quad \text{pour tout } t\]
+  Dans ce cas, <strong>seules les harmoniques impaires</strong> (\(n = 1, 3, 5, \ldots\)) sont présentes :
+  <ul>
+    <li>\(a_n = 0\) et \(b_n = 0\) pour tout \(n\) pair</li>
+    <li>Le spectre ne contient que les fréquences \(f\), \(3f\), \(5f\), \(7f\), \(\ldots\)</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple — Signal créneau symétrique</span>
+  <p>Le signal créneau de valeur \(+E\) sur \([0, T/2[\) et \(-E\) sur \([T/2, T[\) vérifie \(f(t + T/2) = -f(t)\). Il présente donc une symétrie demi-onde. Son développement ne contient que les harmoniques impaires \(n = 1, 3, 5, \ldots\)</p>
+</div>
+
+<div class="grid2">
+  <div>
+    <strong>Récapitulatif des symétries</strong>
+    <table>
+      <thead><tr><th>Type de signal</th><th>Condition</th><th>Conséquence</th></tr></thead>
+      <tbody>
+        <tr><td>Signal pair</td><td>\(f(-t) = f(t)\)</td><td>Tous les \(b_n = 0\)</td></tr>
+        <tr><td>Signal impair</td><td>\(f(-t) = -f(t)\)</td><td>Tous les \(a_n = 0\), \(a_0 = 0\)</td></tr>
+        <tr><td>Symétrie demi-onde</td><td>\(f(t+T/2) = -f(t)\)</td><td>\(a_n = b_n = 0\) pour \(n\) pair</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <strong>Attention</strong>
+    <div class="att">
+      <span class="label label-att">Attention — Cumul des symétries</span><br>
+      Un signal peut cumuler plusieurs symétries. Par exemple, un signal créneau <em>impair</em> ET à symétrie demi-onde ne contient que des sinus aux harmoniques impaires, ce qui réduit encore le nombre de calculs.
+    </div>
+  </div>
+</div>
+
+<!-- ==================== FORME AMPLITUDE-PHASE ==================== -->
+<h2>5. Forme amplitude-phase</h2>
+
+<h3>5.1 Passage à la forme amplitude-phase</h3>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Forme amplitude-phase</span><br>
+  En utilisant la formule trigonométrique \(A\cos\theta + B\sin\theta = C\cos(\theta + \varphi)\), on peut réécrire chaque harmonique sous la forme :
+  <div class="formule-box">
+    \[f(t) = C_0 + \sum_{n=1}^{+\infty} C_n\cos(n\omega t + \varphi_n)\]
+  </div>
+  avec :
+  <ul>
+    <li>\(C_0 = a_0\) &nbsp;&nbsp; (composante continue)</li>
+    <li>\(\displaystyle C_n = \sqrt{a_n^2 + b_n^2}\) &nbsp;&nbsp; (amplitude de la \(n\)-ième harmonique)</li>
+    <li>\(\displaystyle \varphi_n = -\arctan\!\left(\frac{b_n}{a_n}\right)\) &nbsp;&nbsp; (phase initiale de la \(n\)-ième harmonique)</li>
+  </ul>
+  <em>Attention au signe et au quadrant de \(\varphi_n\) : utiliser \(\mathrm{atan2}(b_n, a_n)\) si nécessaire.</em>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Conversion trigonométrique → amplitude-phase</span>
+  <ol>
+    <li>Calculer \(C_n = \sqrt{a_n^2 + b_n^2}\)</li>
+    <li>Calculer \(\varphi_n\) :
+      <ul>
+        <li>Si \(a_n > 0\) : \(\varphi_n = -\arctan(b_n/a_n)\)</li>
+        <li>Si \(a_n = 0\) et \(b_n > 0\) : \(\varphi_n = -\pi/2\)</li>
+        <li>Si \(a_n = 0\) et \(b_n < 0\) : \(\varphi_n = +\pi/2\)</li>
+      </ul>
+    </li>
+    <li>Vérifier : \(C_n\cos(\varphi_n) = a_n\) et \(-C_n\sin(\varphi_n) = b_n\)</li>
+  </ol>
+</div>
+
+<!-- ==================== SPECTRES DE FOURIER ==================== -->
+<h2>6. Spectre de Fourier</h2>
+
+<h3>6.1 Spectre d'amplitude</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Spectre d'amplitude</span><br>
+  Le <strong>spectre d'amplitude</strong> (ou spectre en fréquence) d'un signal est la représentation graphique de l'amplitude \(C_n\) de chaque harmonique en fonction de sa fréquence \(n \cdot f\).
+  <ul>
+    <li>L'axe horizontal représente les fréquences \(0,\, f,\, 2f,\, 3f,\, \ldots\)</li>
+    <li>L'axe vertical représente l'amplitude \(C_n\) (en unités du signal : V, A, etc.)</li>
+    <li>Chaque harmonique est représentée par une <strong>raie verticale</strong> (spectre discret)</li>
+  </ul>
+</div>
+
+<div class="def">
+  <span class="label label-def">Définition — Spectre de phase</span><br>
+  Le <strong>spectre de phase</strong> est la représentation graphique de la phase \(\varphi_n\) de chaque harmonique en fonction de sa fréquence.
+</div>
+
+<div class="retenir">
+  <strong>À retenir — Lecture du spectre</strong>
+  <ul>
+    <li>La raie en \(f = 0\) correspond à la <strong>composante continue</strong> \(C_0 = a_0\)</li>
+    <li>La raie en \(f = f_1\) (fréquence fondamentale) correspond au <strong>fondamental</strong> \(C_1\)</li>
+    <li>Les raies en \(2f_1, 3f_1, \ldots\) sont les harmoniques</li>
+    <li>L'amplitude des harmoniques <strong>décroît généralement</strong> en \(1/n\) ou \(1/n^2\) selon le type de signal</li>
+  </ul>
+</div>
+
+<!-- ==================== EXEMPLES CLASSIQUES ==================== -->
+<h2>7. Exemples classiques — Calculs complets</h2>
+
+<h3>7.1 Signal créneau (carré)</h3>
+
+<div class="ex">
+  <span class="label label-ex">Exemple complet — Signal créneau symétrique</span>
+
+  <p><strong>Définition :</strong> On considère le signal créneau de période \(T\), de pulsation \(\omega = 2\pi/T\) et d'amplitude \(E\) :</p>
+  \[f(t) = \begin{cases} +E & \text{si } 0 < t < T/2 \\ -E & \text{si } T/2 < t < T \end{cases}\]
+
+  <p><strong>Symétries :</strong> Le signal est <strong>impair</strong> (si on le centre) et possède une <strong>symétrie demi-onde</strong>. Donc : \(a_0 = 0\), \(a_n = 0\) pour tout \(n\), et \(b_n = 0\) pour \(n\) pair.</p>
+
+  <p><strong>Calcul de \(a_0\) :</strong></p>
+  \[a_0 = \frac{1}{T}\int_0^T f(t)\,\mathrm{d}t = \frac{1}{T}\left[\int_0^{T/2} E\,\mathrm{d}t + \int_{T/2}^T (-E)\,\mathrm{d}t\right] = \frac{1}{T}\left[E\cdot\frac{T}{2} - E\cdot\frac{T}{2}\right] = 0\]
+
+  <p><strong>Calcul de \(b_n\) (harmoniques impaires seulement) :</strong></p>
+  \[b_n = \frac{2}{T}\int_0^T f(t)\sin(n\omega t)\,\mathrm{d}t\]
+  \[= \frac{2}{T}\left[\int_0^{T/2} E\sin(n\omega t)\,\mathrm{d}t + \int_{T/2}^{T} (-E)\sin(n\omega t)\,\mathrm{d}t\right]\]
+  \[= \frac{2E}{T}\left[\left[-\frac{\cos(n\omega t)}{n\omega}\right]_0^{T/2} + \left[\frac{\cos(n\omega t)}{n\omega}\right]_{T/2}^{T}\right]\]
+  \[= \frac{2E}{T}\cdot\frac{1}{n\omega}\left[-\cos(n\pi) + 1 + \cos(2n\pi) - \cos(n\pi)\right]\]
+
+  Comme \(\omega T = 2\pi\), on a \(\dfrac{2E}{T \cdot n\omega} = \dfrac{2E}{T \cdot n \cdot 2\pi/T} = \dfrac{E}{n\pi}\).
+
+  \[b_n = \frac{E}{n\pi}\bigl[1 - \cos(n\pi) + 1 - \cos(n\pi)\bigr] = \frac{2E}{n\pi}\bigl[1 - (-1)^n\bigr]\]
+
+  Pour \(n\) impair : \((-1)^n = -1\), donc \(b_n = \dfrac{4E}{n\pi}\).
+
+  Pour \(n\) pair : \((-1)^n = +1\), donc \(b_n = 0\). &nbsp;&#x2713; (conforme à la symétrie demi-onde)
+
+  <div class="formule-box">
+    <strong>Série de Fourier du signal créneau :</strong>
+    \[f(t) = \frac{4E}{\pi}\left[\sin(\omega t) + \frac{1}{3}\sin(3\omega t) + \frac{1}{5}\sin(5\omega t) + \frac{1}{7}\sin(7\omega t) + \cdots\right]\]
+    \[f(t) = \frac{4E}{\pi}\sum_{n=1,3,5,\ldots}^{+\infty} \frac{1}{n}\sin(n\omega t)\]
+  </div>
+</div>
+
+<h3>7.2 Signal triangulaire</h3>
+
+<div class="ex">
+  <span class="label label-ex">Exemple complet — Signal triangulaire</span>
+
+  <p><strong>Définition :</strong> Signal triangulaire de période \(T\), d'amplitude \(E\), pair :</p>
+  \[f(t) = \begin{cases} \dfrac{4E}{T}t & \text{si } 0 \leq t \leq T/4 \\[6pt] E - \dfrac{4E}{T}(t - T/4) & \text{si } T/4 \leq t \leq 3T/4 \\[6pt] -E + \dfrac{4E}{T}(t - 3T/4) & \text{si } 3T/4 \leq t \leq T \end{cases}\]
+
+  <p><strong>Symétries :</strong> Signal <strong>pair</strong> → \(b_n = 0\). Symétrie demi-onde → seules les harmoniques impaires sont présentes.</p>
+
+  <p><strong>Calcul de \(a_n\) pour \(n\) impair :</strong> En exploitant la parité :</p>
+  \[a_n = \frac{4}{T}\int_0^{T/2} f(t)\cos(n\omega t)\,\mathrm{d}t\]
+
+  Après deux intégrations par parties (on utilise \(\int t\cos(n\omega t)\,\mathrm{d}t = \dfrac{t\sin(n\omega t)}{n\omega} + \dfrac{\cos(n\omega t)}{n^2\omega^2}\)) :
+
+  \[a_n = \frac{8E}{n^2\pi^2}(-1)^{(n-1)/2} \quad \text{pour } n \text{ impair}\]
+
+  Explicitement : \(a_1 = \dfrac{8E}{\pi^2}\), \(a_3 = -\dfrac{8E}{9\pi^2}\), \(a_5 = \dfrac{8E}{25\pi^2}\), \(\ldots\)
+
+  <div class="formule-box">
+    <strong>Série de Fourier du signal triangulaire :</strong>
+    \[f(t) = \frac{8E}{\pi^2}\left[\cos(\omega t) - \frac{1}{9}\cos(3\omega t) + \frac{1}{25}\cos(5\omega t) - \cdots\right]\]
+    \[f(t) = \frac{8E}{\pi^2}\sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k+1)^2}\cos\bigl((2k+1)\omega t\bigr)\]
+  </div>
+
+  <div class="att">
+    <span class="label label-att">Remarque importante</span><br>
+    Les amplitudes décroissent en \(1/n^2\) pour le signal triangulaire (contre \(1/n\) pour le créneau). Le signal triangulaire est donc plus "proche" d'une sinusoïde et ses harmoniques élevées sont très faibles. Cela s'explique par le fait qu'un signal triangulaire est <strong>continu</strong> (mais non dérivable), alors que le créneau est <strong>discontinu</strong>.
+  </div>
+</div>
+
+<h3>7.3 Signal en dents de scie</h3>
+
+<div class="ex">
+  <span class="label label-ex">Exemple complet — Signal en dents de scie</span>
+
+  <p><strong>Définition :</strong> Signal en dents de scie de période \(T\) et d'amplitude \(E\) :</p>
+  \[f(t) = \frac{E}{T}\,t \quad \text{pour } t \in [0, T[\]
+
+  <p><strong>Symétries :</strong> Ce signal n'est ni pair ni impair en général. Il n'y a pas de symétrie demi-onde si \(E \neq 0\). On doit calculer tous les coefficients.</p>
+
+  <p><strong>Calcul de \(a_0\) :</strong></p>
+  \[a_0 = \frac{1}{T}\int_0^T \frac{E}{T}t\,\mathrm{d}t = \frac{E}{T^2}\left[\frac{t^2}{2}\right]_0^T = \frac{E}{2}\]
+
+  <p><strong>Calcul de \(a_n\) :</strong></p>
+  \[a_n = \frac{2}{T}\int_0^T \frac{E}{T}t\cos(n\omega t)\,\mathrm{d}t\]
+
+  Intégration par parties avec \(u = t\), \(v' = \cos(n\omega t)\) :
+  \[a_n = \frac{2E}{T^2}\left[\frac{t\sin(n\omega t)}{n\omega} + \frac{\cos(n\omega t)}{n^2\omega^2}\right]_0^T\]
+
+  Comme \(\sin(n\omega T) = \sin(2n\pi) = 0\) et \(\cos(n\omega T) = 1\) :
+  \[a_n = \frac{2E}{T^2}\cdot\frac{T^2}{4\pi^2 n^2}(1 - 1) = 0\]
+
+  <p><strong>Calcul de \(b_n\) :</strong></p>
+  \[b_n = \frac{2}{T}\int_0^T \frac{E}{T}t\sin(n\omega t)\,\mathrm{d}t\]
+
+  Intégration par parties avec \(u = t\), \(v' = \sin(n\omega t)\) :
+  \[b_n = \frac{2E}{T^2}\left[-\frac{t\cos(n\omega t)}{n\omega} + \frac{\sin(n\omega t)}{n^2\omega^2}\right]_0^T = \frac{2E}{T^2}\left(-\frac{T}{n\omega}\right) = -\frac{E}{n\pi}\]
+
+  <div class="formule-box">
+    <strong>Série de Fourier du signal en dents de scie :</strong>
+    \[f(t) = \frac{E}{2} - \frac{E}{\pi}\left[\sin(\omega t) + \frac{1}{2}\sin(2\omega t) + \frac{1}{3}\sin(3\omega t) + \cdots\right]\]
+    \[f(t) = \frac{E}{2} - \frac{E}{\pi}\sum_{n=1}^{+\infty}\frac{1}{n}\sin(n\omega t)\]
+  </div>
+
+  <p>Ce signal contient <strong>toutes les harmoniques</strong> (paires et impaires), avec des amplitudes décroissant en \(1/n\).</p>
+</div>
+
+<!-- ==================== VALEUR EFFICACE — PARSEVAL ==================== -->
+<h2>8. Valeur efficace et théorème de Parseval</h2>
+
+<h3>8.1 Valeur efficace d'un signal périodique</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Valeur efficace (RMS)</span><br>
+  La <strong>valeur efficace</strong> (Root Mean Square, RMS) d'un signal périodique \(f(t)\) de période \(T\) est :
+  \[F_{\text{eff}} = \sqrt{\frac{1}{T}\int_0^T [f(t)]^2\,\mathrm{d}t}\]
+  En électricité, la valeur efficace d'une tension ou d'un courant détermine la <strong>puissance dissipée</strong> dans une résistance.
+</div>
+
+<h3>8.2 Théorème de Parseval</h3>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Théorème de Parseval</span><br>
+  Si \(f(t) = a_0 + \displaystyle\sum_{n=1}^{+\infty}[a_n\cos(n\omega t) + b_n\sin(n\omega t)]\), alors :
+  <div class="formule-box">
+    \[\frac{1}{T}\int_0^T [f(t)]^2\,\mathrm{d}t = a_0^2 + \frac{1}{2}\sum_{n=1}^{+\infty}(a_n^2 + b_n^2) = C_0^2 + \frac{1}{2}\sum_{n=1}^{+\infty} C_n^2\]
+  </div>
+  La valeur efficace est donc :
+  \[F_{\text{eff}}^2 = a_0^2 + \frac{1}{2}\sum_{n=1}^{+\infty}(a_n^2 + b_n^2) = C_0^2 + \sum_{n=1}^{+\infty}\left(\frac{C_n}{\sqrt{2}}\right)^2\]
+  soit :
+  \[\boxed{F_{\text{eff}} = \sqrt{C_0^2 + \frac{C_1^2}{2} + \frac{C_2^2}{2} + \frac{C_3^2}{2} + \cdots}}\]
+</div>
+
+<div class="retenir">
+  <strong>À retenir — Interprétation de Parseval</strong><br>
+  La <em>puissance totale</em> d'un signal est égale à la <em>somme des puissances de chaque harmonique</em>. On peut donc calculer la valeur efficace sans intégrer \(f^2\), à condition de connaître tous les coefficients de Fourier.
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Application — Valeur efficace du signal créneau</span>
+  <p>Pour le signal créneau de valeur \(\pm E\) (valeur efficace directement \(E\) par définition), Parseval donne :</p>
+  \[E^2 = \frac{1}{T}\int_0^T E^2\,\mathrm{d}t = \frac{1}{2}\sum_{n \text{ impair}}\left(\frac{4E}{n\pi}\right)^2 = \frac{8E^2}{\pi^2}\sum_{k=0}^{+\infty}\frac{1}{(2k+1)^2}\]
+
+  On retrouve ainsi la célèbre identité de Leibniz-Euler :
+  \[\sum_{k=0}^{+\infty}\frac{1}{(2k+1)^2} = 1 + \frac{1}{9} + \frac{1}{25} + \frac{1}{49} + \cdots = \frac{\pi^2}{8}\]
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Application numérique — Courant non sinusoïdal</span>
+  <p>Un courant de chauffage électrique a les harmoniques suivantes :</p>
+  <table>
+    <thead>
+      <tr><th>Harmonique \(n\)</th><th>Amplitude \(C_n\) (A)</th><th>\(C_n/\sqrt{2}\) (A)</th><th>\((C_n/\sqrt{2})^2\) (A²)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>0 (DC)</td><td>\(C_0 = 0\)</td><td>—</td><td>0</td></tr>
+      <tr><td>1 (fondamental)</td><td>\(C_1 = 10\)</td><td>7,07</td><td>50</td></tr>
+      <tr><td>3</td><td>\(C_3 = 3{,}33\)</td><td>2,36</td><td>5,55</td></tr>
+      <tr><td>5</td><td>\(C_5 = 2\)</td><td>1,41</td><td>2</td></tr>
+      <tr><td>7</td><td>\(C_7 = 1{,}43\)</td><td>1,01</td><td>1,02</td></tr>
+    </tbody>
+  </table>
+  \[I_{\text{eff}}^2 = 0 + 50 + 5{,}55 + 2 + 1{,}02 + \cdots \approx 58{,}57 \text{ A}^2\]
+  \[I_{\text{eff}} \approx 7{,}65 \text{ A}\]
+  <p>La valeur efficace <strong>réelle</strong> est supérieure à la valeur efficace du seul fondamental (\(10/\sqrt{2} \approx 7{,}07\) A) à cause des harmoniques.</p>
+</div>
+
+<!-- ==================== APPLICATION BTS FED ==================== -->
+<h2>9. Application BTS — Harmoniques dans les réseaux électriques</h2>
+
+<div class="situation">
+  <h3>Perturbations harmoniques dans un bâtiment tertiaire</h3>
+  <p>Un technicien FED (Fluides, Énergie, Domotique) intervient dans un immeuble de bureaux dont le réseau BT présente des problèmes de <strong>surtensions</strong> et d'<strong>échauffements anormaux</strong> des câbles neutres. Une mesure à l'analyseur de réseau révèle un taux de distorsion harmonique (THD) de 28% sur le courant.</p>
+</div>
+
+<h3>9.1 Taux de distorsion harmonique (THD)</h3>
+
+<div class="def">
+  <span class="label label-def">Définition — Taux de distorsion harmonique (THD)</span><br>
+  Le <strong>taux de distorsion harmonique</strong> mesure la proportion des harmoniques par rapport au fondamental. Il est défini par :
+  <div class="formule-box">
+    \[\mathrm{THD} = \frac{\sqrt{C_2^2 + C_3^2 + C_4^2 + \cdots}}{C_1} = \frac{\sqrt{\displaystyle\sum_{n=2}^{+\infty} C_n^2}}{C_1}\]
+  </div>
+  Il s'exprime en pourcentage. Les normes imposent généralement \(\mathrm{THD} < 5\%\) pour le réseau de distribution.
+</div>
+
+<h3>9.2 Sources d'harmoniques dans les bâtiments</h3>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Harmoniques caractéristiques des équipements</span><br>
+  Les équipements non linéaires injectent des harmoniques spécifiques dans le réseau :
+  <table>
+    <thead>
+      <tr><th>Équipement</th><th>Harmoniques dominants</th><th>Effet</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Redresseur monophasé (PC, alimentation)</td><td>3e, 5e, 7e (impairs)</td><td>Surcharge du neutre</td></tr>
+      <tr><td>Redresseur triphasé à 6 impulsions (variateur)</td><td>5e, 7e, 11e, 13e</td><td>Échauffement moteurs</td></tr>
+      <tr><td>Onduleur (UPS, variateur)</td><td>Multiples de la fréquence de découpage</td><td>Bruit CEM</td></tr>
+      <tr><td>Éclairage fluorescent (ballast électronique)</td><td>3e, 5e, 7e</td><td>Surcharge neutre</td></tr>
+      <tr><td>Four à induction</td><td>Larges bandes</td><td>Perturbations HF</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Calcul du THD et diagnostic</span>
+  <p>Un analyseur mesure sur le réseau d'un bâtiment tertiaire les composantes du courant :</p>
+  <table>
+    <thead><tr><th>Rang \(n\)</th><th>Fréquence (Hz)</th><th>Amplitude \(C_n\) (A)</th></tr></thead>
+    <tbody>
+      <tr><td>1 (fondamental)</td><td>50</td><td>40</td></tr>
+      <tr><td>3</td><td>150</td><td>12</td></tr>
+      <tr><td>5</td><td>250</td><td>8</td></tr>
+      <tr><td>7</td><td>350</td><td>5</td></tr>
+      <tr><td>9</td><td>450</td><td>2</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Calcul du THD :</strong></p>
+  \[\mathrm{THD} = \frac{\sqrt{12^2 + 8^2 + 5^2 + 2^2}}{40} = \frac{\sqrt{144 + 64 + 25 + 4}}{40} = \frac{\sqrt{237}}{40} \approx \frac{15{,}39}{40} \approx 38{,}5\,\%\]
+
+  <p><strong>Valeur efficace réelle</strong> (par Parseval) :</p>
+  \[I_{\text{eff}} = \sqrt{\frac{40^2 + 12^2 + 8^2 + 5^2 + 2^2}{2}} = \sqrt{\frac{1600 + 144 + 64 + 25 + 4}{2}} = \sqrt{\frac{1837}{2}} \approx 30{,}3 \text{ A}\]
+
+  <p><strong>Diagnostic :</strong> THD \(\approx 38{,}5\%\) est très supérieur à la limite de 5% de la norme EN 50160. Il faut installer des <strong>filtres actifs</strong> ou des <strong>filtres passifs accordés</strong> sur les rangs 3, 5 et 7.</p>
+</div>
+
+<h3>9.3 Conséquences pratiques</h3>
+
+<div class="att">
+  <span class="label label-att">Attention — Effets des harmoniques</span><br>
+  Les harmoniques dans un réseau électrique provoquent :
+  <ul>
+    <li><strong>Surcharge du conducteur neutre</strong> : les harmoniques de rang 3 (et multiples de 3) des 3 phases s'additionnent dans le neutre au lieu de se compenser. Le courant neutre peut dépasser le courant de phase.</li>
+    <li><strong>Échauffement des câbles et transformateurs</strong> : les harmoniques augmentent la valeur efficace du courant et donc les pertes par effet Joule \(P = R \cdot I_{\text{eff}}^2\).</li>
+    <li><strong>Faux déclenchements de disjoncteurs différentiels</strong> et de protections magnétothermiques</li>
+    <li><strong>Perturbations des systèmes de mesure</strong> : un voltmètre ou ampèremètre classique ne mesure que le fondamental</li>
+    <li><strong>Résonance</strong> avec les condensateurs de compensation de puissance réactive</li>
+  </ul>
+</div>
+
+<!-- ==================== VISUALISATION CHART.JS ==================== -->
+<h2>10. Visualisation — Approximation d'un signal créneau par ses harmoniques</h2>
+
+<p>Le graphique interactif ci-dessous montre comment la somme des premières harmoniques de Fourier reconstitue progressivement le signal créneau. Sélectionnez le nombre d'harmoniques pour observer la convergence.</p>
+
+<div style="margin-bottom:1rem;">
+  <label for="nb-harm" style="font-weight:600;">Nombre d'harmoniques affichées :</label>
+  <select id="nb-harm" style="margin-left:0.5rem;padding:0.3rem 0.6rem;border:1px solid var(--p-border);border-radius:4px;font-size:1rem;">
+    <option value="1">1 (fondamental seul)</option>
+    <option value="2">2 (rang 1 + 3)</option>
+    <option value="3" selected>3 (rangs 1, 3, 5)</option>
+    <option value="4">4 (rangs 1, 3, 5, 7)</option>
+    <option value="6">6 (rangs 1 à 11)</option>
+    <option value="10">10 (rangs 1 à 19)</option>
+    <option value="20">20 (rangs 1 à 39)</option>
+  </select>
+</div>
+
+<div class="chart-wrap" style="max-width:700px;margin:0 auto 2rem;">
+  <canvas id="fourierChart" height="220"></canvas>
+</div>
+
+<div class="chart-wrap" style="max-width:700px;margin:0 auto 2rem;">
+  <canvas id="spectrumChart" height="180"></canvas>
+</div>
+
+<p><em>Graphique du haut : signal créneau idéal (pointillés) et approximation par les harmoniques (trait plein). Graphique du bas : spectre d'amplitude correspondant.</em></p>
+
+<!-- ==================== RÉCAPITULATIF ==================== -->
+<h2>11. Récapitulatif — Formulaire de synthèse</h2>
+
+<div class="retenir">
+  <strong>Formulaire complet — Séries de Fourier</strong>
+
+  <p><strong>Signal périodique</strong> de période \(T\), fréquence \(f = 1/T\), pulsation \(\omega = 2\pi f\)</p>
+
+  <p><strong>Coefficients :</strong></p>
+  \[a_0 = \frac{1}{T}\int_0^T f(t)\,\mathrm{d}t \qquad a_n = \frac{2}{T}\int_0^T f(t)\cos(n\omega t)\,\mathrm{d}t \qquad b_n = \frac{2}{T}\int_0^T f(t)\sin(n\omega t)\,\mathrm{d}t\]
+
+  <p><strong>Développement trigonométrique :</strong></p>
+  \[f(t) = a_0 + \sum_{n=1}^{+\infty}\bigl[a_n\cos(n\omega t) + b_n\sin(n\omega t)\bigr]\]
+
+  <p><strong>Forme amplitude-phase :</strong></p>
+  \[f(t) = C_0 + \sum_{n=1}^{+\infty} C_n\cos(n\omega t + \varphi_n) \quad \text{avec} \quad C_n = \sqrt{a_n^2+b_n^2}\,,\quad \varphi_n = -\arctan\!\tfrac{b_n}{a_n}\]
+
+  <p><strong>Valeur efficace (Parseval) :</strong></p>
+  \[F_{\text{eff}} = \sqrt{a_0^2 + \frac{1}{2}\sum_{n=1}^{+\infty}(a_n^2+b_n^2)} = \sqrt{C_0^2 + \frac{1}{2}\sum_{n=1}^{+\infty}C_n^2}\]
+
+  <p><strong>Taux de distorsion harmonique :</strong></p>
+  \[\mathrm{THD} = \frac{\sqrt{\sum_{n=2}^{+\infty}C_n^2}}{C_1} \times 100\,\%\]
+
+  <table>
+    <thead><tr><th>Signal</th><th>Série de Fourier</th><th>Décroissance</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Créneau \(\pm E\)</td>
+        <td>\(\dfrac{4E}{\pi}\!\displaystyle\sum_{n \text{ imp.}}\!\dfrac{\sin(n\omega t)}{n}\)</td>
+        <td>\(1/n\)</td>
+      </tr>
+      <tr>
+        <td>Triangulaire amplitude \(E\)</td>
+        <td>\(\dfrac{8E}{\pi^2}\!\displaystyle\sum_{k\geq 0}\!\dfrac{(-1)^k\cos((2k{+}1)\omega t)}{(2k+1)^2}\)</td>
+        <td>\(1/n^2\)</td>
+      </tr>
+      <tr>
+        <td>Dents de scie amplitude \(E\)</td>
+        <td>\(\dfrac{E}{2} - \dfrac{E}{\pi}\!\displaystyle\sum_{n\geq 1}\!\dfrac{\sin(n\omega t)}{n}\)</td>
+        <td>\(1/n\)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div><!-- fin .c -->
+
 <script src="../../../nav.js"></script>
+
+<script>
+/* ============================================================
+   GRAPHIQUE 1 : Approximation du signal créneau (Fourier)
+   ============================================================ */
+(function() {
+  var E = 1;
+  var N_POINTS = 400;
+  var labels = [];
+  var tValues = [];
+  for (var i = 0; i < N_POINTS; i++) {
+    var t = i / N_POINTS; // t normalisé sur [0, 1[ (= t/T)
+    tValues.push(t);
+    labels.push(t.toFixed(3));
+  }
+
+  /* Signal créneau idéal */
+  function squareWave(t) {
+    var tNorm = t - Math.floor(t);
+    return tNorm < 0.5 ? E : -E;
+  }
+
+  /* Approximation de Fourier avec N harmoniques impaires */
+  function fourierApprox(t, N) {
+    var sum = 0;
+    for (var k = 0; k < N; k++) {
+      var n = 2 * k + 1; // harmoniques impaires : 1, 3, 5, ...
+      sum += (1 / n) * Math.sin(2 * Math.PI * n * t);
+    }
+    return (4 * E / Math.PI) * sum;
+  }
+
+  var squareData = tValues.map(squareWave);
+
+  var ctx = document.getElementById('fourierChart').getContext('2d');
+  var fourierChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Signal créneau idéal',
+          data: squareData,
+          borderColor: 'rgba(30, 58, 95, 0.35)',
+          borderWidth: 1.5,
+          borderDash: [6, 3],
+          pointRadius: 0,
+          fill: false,
+          tension: 0
+        },
+        {
+          label: 'Approximation de Fourier',
+          data: tValues.map(function(t) { return fourierApprox(t, 3); }),
+          borderColor: '#c0392b',
+          borderWidth: 2,
+          pointRadius: 0,
+          fill: false,
+          tension: 0
+        }
+      ]
+    },
+    options: {
+      animation: false,
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Reconstitution du signal créneau par la série de Fourier',
+          font: { size: 14, weight: 'bold' }
+        },
+        legend: { position: 'top' }
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 't / T (période normalisée)' },
+          ticks: {
+            maxTicksLimit: 9,
+            callback: function(val, idx) {
+              var t = tValues[idx];
+              if (t === undefined) return '';
+              var fracs = [[0,'0'],[0.125,'T/8'],[0.25,'T/4'],[0.375,'3T/8'],[0.5,'T/2'],[0.625,'5T/8'],[0.75,'3T/4'],[0.875,'7T/8'],[1,'T']];
+              for (var f of fracs) {
+                if (Math.abs(t - f[0]) < 0.004) return f[1];
+              }
+              return '';
+            }
+          }
+        },
+        y: {
+          title: { display: true, text: 'Amplitude' },
+          min: -1.6,
+          max: 1.6,
+          ticks: { stepSize: 0.5 }
+        }
+      }
+    }
+  });
+
+  /* Mise à jour selon le sélecteur */
+  document.getElementById('nb-harm').addEventListener('change', function() {
+    var N = parseInt(this.value, 10);
+    fourierChart.data.datasets[1].data = tValues.map(function(t) { return fourierApprox(t, N); });
+    /* Mise à jour label */
+    var harmonics = [];
+    for (var k = 0; k < N; k++) harmonics.push(2*k+1);
+    fourierChart.data.datasets[1].label = 'Fourier (' + N + ' harmonique' + (N > 1 ? 's' : '') + ' : rang ' + harmonics.join(', ') + ')';
+    fourierChart.update();
+    updateSpectrum(N);
+  });
+
+  /* ============================================================
+     GRAPHIQUE 2 : Spectre d'amplitude
+     ============================================================ */
+  function getSpectrumData(N) {
+    var ranks = [];
+    var amps = [];
+    for (var k = 0; k < Math.max(N, 6); k++) {
+      var n = 2 * k + 1;
+      ranks.push('n=' + n + '\n(' + (n * 50) + ' Hz)');
+      if (k < N) {
+        amps.push((4 * E / (Math.PI * n)).toFixed(4));
+      } else {
+        amps.push(0);
+      }
+    }
+    return { ranks: ranks, amps: amps };
+  }
+
+  var initData = getSpectrumData(3);
+  var ctx2 = document.getElementById('spectrumChart').getContext('2d');
+  var spectrumChart = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: initData.ranks,
+      datasets: [{
+        label: 'Amplitude Cₙ (× E)',
+        data: initData.amps,
+        backgroundColor: initData.amps.map(function(v, i) {
+          return i < 3 ? 'rgba(30, 58, 95, 0.75)' : 'rgba(30, 58, 95, 0.15)';
+        }),
+        borderColor: 'rgba(30, 58, 95, 1)',
+        borderWidth: 1.5
+      }]
+    },
+    options: {
+      animation: false,
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Spectre d\'amplitude du signal créneau (harmoniques impaires)',
+          font: { size: 14, weight: 'bold' }
+        },
+        legend: { display: false }
+      },
+      scales: {
+        x: { title: { display: true, text: 'Rang de l\'harmonique' } },
+        y: {
+          title: { display: true, text: 'Amplitude Cₙ (normalisée par E)' },
+          min: 0,
+          max: 1.4
+        }
+      }
+    }
+  });
+
+  function updateSpectrum(N) {
+    var nMax = Math.max(N, 6);
+    var ranks = [];
+    var amps = [];
+    var colors = [];
+    for (var k = 0; k < nMax; k++) {
+      var n = 2 * k + 1;
+      ranks.push('n=' + n + ' (' + (n * 50) + ' Hz)');
+      if (k < N) {
+        amps.push((4 * E / (Math.PI * n)).toFixed(4));
+        colors.push('rgba(30, 58, 95, 0.75)');
+      } else {
+        amps.push(0);
+        colors.push('rgba(30, 58, 95, 0.15)');
+      }
+    }
+    spectrumChart.data.labels = ranks;
+    spectrumChart.data.datasets[0].data = amps;
+    spectrumChart.data.datasets[0].backgroundColor = colors;
+    spectrumChart.update();
+  }
+})();
+</script>
 </body>
 </html>
