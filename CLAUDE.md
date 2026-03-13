@@ -12,6 +12,7 @@ Ce fichier est lu automatiquement par Claude Code à chaque session.
 ├── styles.css                  ← Feuille de style partagée (NE PAS supprimer)
 ├── nav.js                      ← Navigation auto-générée (NE PAS modifier sans raison)
 ├── nav.css                     ← Styles de navigation
+├── diff.js                     ← Toggle différenciation pédagogique (socle/standard/appro)
 ├── index.html                  ← Page d'accueil
 ├── maths/
 │   ├── seconde/ch01..ch14/     ← lecon.html, exercices.html, ds.html
@@ -111,6 +112,78 @@ Seules les classes vraiment spécifiques à une page peuvent rester inline.
 - Pages dans `subject/level/chNN/` → `../../../styles.css`
 - Pages dans `simulations/` → `../styles.css`
 - Pages à la racine → `styles.css`
+
+---
+
+## DIFFÉRENCIATION PÉDAGOGIQUE (Terminale)
+
+### Philosophie
+
+La différenciation s'applique **uniquement aux exercices (exercices.html) et aux DS (ds.html)**.
+Les cours (lecon.html) restent **identiques pour tous** : le programme est le même, c'est le socle commun de savoir. La différenciation ne porte pas sur le savoir transmis mais sur le **niveau de pratique** :
+- On ne simplifie pas le cours pour les élèves en difficulté — on leur donne un cours identique avec des exercices plus guidés.
+- On n'ajoute pas de théorie supplémentaire pour les élèves en poursuite — on leur donne des exercices plus ouverts et formalisés.
+- Ne jamais créer de « cours au rabais » : un élève socle doit avoir accès au même savoir pour pouvoir progresser.
+
+### Les 3 niveaux
+
+| Niveau | Profil cible | Contenu (exercices & DS) |
+|---|---|---|
+| **Socle** | Élèves en difficulté | Exercices très guidés, étape par étape, calculs amorcés, tableaux pré-remplis |
+| **Standard** | Majorité de la classe | Exercices du programme, contextes pro variés, rédaction attendue |
+| **Approfondissement** | Poursuite BTS/MC | Problèmes ouverts, mise en équation autonome, questions type BTS |
+
+### Mise en place sur une page
+
+1. Ajouter `<script src="../../../diff.js"></script>` avant `</body>` (après nav.js)
+2. Tagger les blocs avec les classes CSS :
+
+```html
+<!-- Visible par tous (pas de classe diff) = tronc commun -->
+<div class="exo">Exercice commun</div>
+
+<!-- Seulement niveau Socle -->
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  Exercice très guidé, étape par étape...
+</div>
+
+<!-- Seulement niveau Standard -->
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  Exercice classique du programme...
+</div>
+
+<!-- Seulement niveau Approfondissement -->
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  Exercice ouvert type BTS...
+</div>
+```
+
+**Ne PAS utiliser diff.js ni les classes diff-* sur les pages lecon.html.**
+
+### Classes CSS disponibles
+
+| Classe | Usage |
+|---|---|
+| `.diff-socle` | Bloc visible uniquement en mode Socle |
+| `.diff-standard` | Bloc visible uniquement en mode Standard |
+| `.diff-appro` | Bloc visible uniquement en mode Approfondissement |
+| `.tag-socle` | Badge vert "Socle" |
+| `.tag-standard` | Badge bleu "Standard" |
+| `.tag-appro` | Badge violet "Approfondissement" |
+
+### Comportement
+- Le toggle apparaît automatiquement si la page contient des blocs `.diff-socle`, `.diff-standard` ou `.diff-appro`
+- Le choix est mémorisé en `localStorage` (persistant entre les pages)
+- Le bouton "Tout voir" affiche tous les blocs (mode prof)
+- Sans `diff.js`, tous les blocs restent visibles (dégradation gracieuse)
+
+### Principes de rédaction par niveau
+- **Socle** : consignes décomposées, calculs intermédiaires donnés, tableaux pré-remplis, contextes du quotidien
+- **Standard** : consignes complètes, contextes professionnels variés, rédaction attendue
+- **Approfondissement** : mise en équation autonome, problèmes à étapes, questions ouvertes, vocabulaire BTS
 
 ---
 

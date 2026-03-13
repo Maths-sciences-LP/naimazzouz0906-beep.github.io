@@ -156,6 +156,162 @@ td.tv-val{font-weight:700;background:#f0fff4}
 </div>
 
 <!-- ================================================================
+     SOCLE — EXERCICES TRÈS GUIDÉS
+     ================================================================ -->
+<div class="diff-socle">
+
+<div class="section-titre">
+  <span class="tag-socle">Socle</span>
+  <span class="niveau n1">Exercices guidés — Pas à pas</span>
+  <div class="section-ligne"></div>
+</div>
+
+<!-- SOCLE S1 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">S1</span>Calculer des images — méthode guidée</div>
+  <p>Soit \(f(x) = 2x^3 - 3x^2 + x - 5\).</p>
+
+  <div class="meth">
+    <strong>Méthode pour calculer \(f(2)\) :</strong><br>
+    On remplace chaque \(x\) par \(2\) dans la formule, puis on calcule étape par étape.
+  </div>
+
+  <div class="consigne"><strong>1.</strong> Calculer \(f(2)\) en complétant les étapes :</div>
+  <p style="font-size:.93em">
+    \(f(2) = 2 \times \boxed{\phantom{2}}^3 - 3 \times \boxed{\phantom{2}}^2 + \boxed{\phantom{2}} - 5\)<br>
+    \(f(2) = 2 \times \boxed{\phantom{8}} - 3 \times \boxed{\phantom{4}} + 2 - 5\)<br>
+    \(f(2) = \boxed{\phantom{16}} - \boxed{\phantom{12}} + 2 - 5 = \boxed{\phantom{1}}\)
+  </p>
+
+  <div class="consigne"><strong>2.</strong> Calculer \(f(0)\) (remplacer \(x\) par \(0\) — les termes avec \(x\) disparaissent) :</div>
+  <div class="reponse-box">\(f(0) =\) &hellip;&hellip;</div>
+
+  <div class="consigne"><strong>3.</strong> Calculer \(f(-1)\) en suivant la même méthode. Attention aux signes !</div>
+  <p class="att" style="font-size:.9em"><strong>Rappel :</strong> \((-1)^3 = -1\) et \((-1)^2 = +1\). Le carré d'un négatif est toujours positif.</p>
+  <div class="reponse-box">\(f(-1) =\) &hellip;&hellip;</div>
+
+  <details>
+    <summary>Voir la correction</summary>
+    <div class="corr">
+      <p><strong>1.</strong> \(f(2) = 2 \times 2^3 - 3 \times 2^2 + 2 - 5 = 2 \times 8 - 3 \times 4 + 2 - 5 = 16 - 12 + 2 - 5 = \)<span class="reponse">\(1\)</span></p>
+      <p><strong>2.</strong> \(f(0) = 2 \times 0 - 3 \times 0 + 0 - 5 = \)<span class="reponse">\(-5\)</span> (il ne reste que la constante)</p>
+      <p><strong>3.</strong> \(f(-1) = 2 \times (-1)^3 - 3 \times (-1)^2 + (-1) - 5 = 2 \times (-1) - 3 \times 1 - 1 - 5 = -2 - 3 - 1 - 5 = \)<span class="reponse">\(-11\)</span></p>
+    </div>
+  </details>
+</div>
+
+<!-- SOCLE S2 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">S2</span>Dérivée — remplir le tableau</div>
+
+  <div class="meth">
+    <strong>Formule de dérivation :</strong> Si \(f(x) = ax^3 + bx^2 + cx + d\), alors \(f'(x) = 3ax^2 + 2bx + c\).<br>
+    Le \(d\) disparaît. On multiplie chaque coefficient par l'exposant, puis on baisse l'exposant de 1.
+  </div>
+
+  <p>Compléter le tableau :</p>
+  <table>
+    <tr><th>Fonction \(f(x)\)</th><th>\(a\)</th><th>\(b\)</th><th>\(c\)</th><th>\(d\)</th><th>Dérivée \(f'(x)\)</th></tr>
+    <tr><td>\(x^3 + 2x^2 - x + 4\)</td><td class="vide">?</td><td class="vide">?</td><td class="vide">?</td><td class="vide">?</td><td class="vide">?</td></tr>
+    <tr><td>\(3x^3 - 5x + 1\)</td><td class="vide">?</td><td class="vide">?</td><td class="vide">?</td><td class="vide">?</td><td class="vide">?</td></tr>
+    <tr><td>\(-2x^3 + x^2\)</td><td class="vide">?</td><td class="vide">?</td><td class="vide">?</td><td class="vide">?</td><td class="vide">?</td></tr>
+  </table>
+
+  <details>
+    <summary>Voir la correction</summary>
+    <div class="corr">
+      <table>
+        <tr><th>Fonction</th><th>\(a\)</th><th>\(b\)</th><th>\(c\)</th><th>\(d\)</th><th>Dérivée</th></tr>
+        <tr><td>\(x^3 + 2x^2 - x + 4\)</td><td>1</td><td>2</td><td>&minus;1</td><td>4</td><td class="hl">\(3x^2 + 4x - 1\)</td></tr>
+        <tr><td>\(3x^3 - 5x + 1\)</td><td>3</td><td>0</td><td>&minus;5</td><td>1</td><td class="hl">\(9x^2 - 5\)</td></tr>
+        <tr><td>\(-2x^3 + x^2\)</td><td>&minus;2</td><td>1</td><td>0</td><td>0</td><td class="hl">\(-6x^2 + 2x\)</td></tr>
+      </table>
+    </div>
+  </details>
+</div>
+
+<!-- SOCLE S3 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">S3</span>Lire un tableau de variations — questions guidées</div>
+  <p>On donne le tableau de variations d'une fonction \(g\) :</p>
+  <table class="tv-table">
+    <tr><th>\(x\)</th><td>\(-3\)</td><td>&nbsp;</td><td>\(1\)</td><td>&nbsp;</td><td>\(4\)</td><td>&nbsp;</td><td>\(7\)</td></tr>
+    <tr><th>Signe \(g'\)</th><td></td><td class="tv-plus">+</td><td>0</td><td class="tv-minus">&minus;</td><td>0</td><td class="tv-plus">+</td><td></td></tr>
+    <tr><th>Variations \(g\)</th><td class="tv-val">&minus;5</td><td class="tv-up">&#8599;</td><td class="tv-val">10</td><td class="tv-down">&#8600;</td><td class="tv-val">2</td><td class="tv-up">&#8599;</td><td class="tv-val">15</td></tr>
+  </table>
+
+  <div class="consigne"><strong>1.</strong> Quand la flèche monte (&#8599;), la fonction est <span class="reponse-box" style="display:inline;min-height:auto;padding:2px 20px">???</span>.</div>
+
+  <div class="consigne"><strong>2.</strong> \(g\) est croissante sur quels intervalles ? (recopier les valeurs de \(x\) où la flèche monte)</div>
+  <div class="reponse-box">Sur \([\ldots\,;\,\ldots]\) et sur \([\ldots\,;\,\ldots]\)</div>
+
+  <div class="consigne"><strong>3.</strong> La plus grande valeur atteinte par \(g\) sur le tableau est &hellip;&hellip;. Elle est atteinte en \(x =\) &hellip;&hellip;.</div>
+  <div class="reponse-box"></div>
+
+  <div class="consigne"><strong>4.</strong> Le maximum <em>local</em> est le sommet d'une « bosse ». En quel point se situe-t-il ? Quelle est la valeur de \(g\) en ce point ?</div>
+  <div class="reponse-box"></div>
+
+  <div class="consigne"><strong>5.</strong> L'équation \(g(x) = 8\) a-t-elle des solutions ? (Comparer 8 avec les valeurs du tableau.)</div>
+  <div class="reponse-box"></div>
+
+  <details>
+    <summary>Voir la correction</summary>
+    <div class="corr">
+      <p><strong>1.</strong> <span class="reponse">croissante</span></p>
+      <p><strong>2.</strong> <span class="reponse">Sur \([-3\,;\,1]\) et sur \([4\,;\,7]\)</span></p>
+      <p><strong>3.</strong> La plus grande valeur est <span class="reponse">\(g(7)=15\)</span>, atteinte en \(x=7\).</p>
+      <p><strong>4.</strong> Maximum local en <span class="reponse">\(x=1\) : \(g(1)=10\)</span> (sommet de la bosse avant que ça redescende).</p>
+      <p><strong>5.</strong> \(8\) est compris entre le minimum local (\(2\)) et le maximum local (\(10\)), donc l'équation a des solutions. Plus précisément : la courbe passe par \(g=8\) en montant vers 10, en descendant vers 2, et en remontant vers 15 → <span class="reponse">3 solutions</span>.</p>
+    </div>
+  </details>
+</div>
+
+<!-- SOCLE S4 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">S4</span>Problème guidé — volume d'un bac de rangement <span class="erama-badge">ERA-MA</span></div>
+  <div class="situation">
+    <strong>Situation :</strong> Un menuisier fabrique un bac en découpant des carrés de côté \(x\) cm aux coins d'une plaque de <strong>30 cm × 20 cm</strong>.
+  </div>
+
+  <p>Le volume du bac est : \(V(x) = x(30-2x)(20-2x)\) avec \(0 < x < 10\).</p>
+
+  <div class="consigne"><strong>1.</strong> Calculer le volume pour \(x = 2\) cm. Compléter :</div>
+  <p style="font-size:.93em">
+    \(V(2) = 2 \times (30 - 2\times2) \times (20 - 2\times2)\)<br>
+    \(V(2) = 2 \times \boxed{\phantom{26}} \times \boxed{\phantom{16}} = \boxed{\phantom{832}}\) cm³
+  </p>
+
+  <div class="consigne"><strong>2.</strong> Compléter le tableau de valeurs avec la calculatrice :</div>
+  <table>
+    <tr><th>\(x\)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+    <tr><th>\(V(x)\)</th><td class="vide">?</td><td class="vide">?</td><td class="vide">?</td><td class="vide">?</td><td class="vide">?</td><td class="vide">?</td><td class="vide">?</td></tr>
+  </table>
+
+  <div class="consigne"><strong>3.</strong> D'après le tableau, pour quelle valeur de \(x\) le volume semble-t-il le plus grand ?</div>
+  <div class="reponse-box"></div>
+
+  <details>
+    <summary>Voir la correction</summary>
+    <div class="corr">
+      <p><strong>1.</strong> \(V(2) = 2 \times 26 \times 16 = \)<span class="reponse">\(832\) cm³</span></p>
+      <p><strong>2.</strong></p>
+      <table>
+        <tr><th>\(x\)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+        <tr><th>\(V(x)\)</th><td class="hl">504</td><td class="hl">832</td><td class="hl">1 008</td><td class="hl">1 056</td><td class="hl">1 000</td><td class="hl">864</td><td class="hl">672</td></tr>
+      </table>
+      <p><strong>3.</strong> Le volume semble maximal pour <span class="reponse">\(x = 4\) cm</span> (V = 1 056 cm³). La valeur exacte du maximum s'obtient avec la dérivée.</p>
+    </div>
+  </details>
+</div>
+
+</div><!-- fin diff-socle -->
+
+<!-- ================================================================
+     STANDARD — EXERCICES DU PROGRAMME (Niveaux 2 à 5)
+     ================================================================ -->
+<div class="diff-standard">
+
+<!-- ================================================================
      NIVEAU 2 — APPLICATION DIRECTE
      ================================================================ -->
 <div class="section-titre">
@@ -580,6 +736,181 @@ td.tv-val{font-weight:700;background:#f0fff4}
   </details>
 </div>
 
+</div><!-- fin diff-standard -->
+
+<!-- ================================================================
+     APPROFONDISSEMENT — PROBLÈMES OUVERTS / TYPE BTS
+     ================================================================ -->
+<div class="diff-appro">
+
+<div class="section-titre">
+  <span class="tag-appro">Approfondissement</span>
+  <span class="niveau n4">Problèmes ouverts — Préparation BTS</span>
+  <div class="section-ligne"></div>
+</div>
+
+<!-- APPRO A1 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">A1</span>Étude complète sans indication</div>
+  <p>Soit \(f(x) = -x^3 + 3x^2 + 9x - 11\).</p>
+
+  <p><strong>Mener l'étude complète de \(f\) :</strong> calculer la dérivée, trouver ses racines, dresser le tableau de variations, identifier les extremums locaux, puis tracer l'allure de la courbe.</p>
+  <div class="reponse-box" style="min-height:120px"></div>
+
+  <p><strong>Question complémentaire :</strong> Déterminer le nombre de solutions de l'équation \(f(x) = 0\) en justifiant à l'aide du tableau de variations.</p>
+  <div class="reponse-box"></div>
+
+  <details>
+    <summary>Voir la correction</summary>
+    <div class="corr">
+      <p>\(f'(x) = -3x^2 + 6x + 9 = -3(x^2 - 2x - 3) = -3(x-3)(x+1)\)</p>
+      <p>Racines de \(f'\) : \(x_1 = -1\) et \(x_2 = 3\).</p>
+      <p>Signe de \(f'\) : comme \(a = -3 < 0\), \(f'(x) > 0\) entre les racines.</p>
+      <table class="tv-table">
+        <tr><th>\(x\)</th><td>\(-\infty\)</td><td>&nbsp;</td><td>\(-1\)</td><td>&nbsp;</td><td>\(3\)</td><td>&nbsp;</td><td>\(+\infty\)</td></tr>
+        <tr><th>Signe \(f'\)</th><td></td><td class="tv-minus">&minus;</td><td>0</td><td class="tv-plus">+</td><td>0</td><td class="tv-minus">&minus;</td><td></td></tr>
+        <tr><th>Variations \(f\)</th><td class="tv-val">\(+\infty\)</td><td class="tv-down">&#8600;</td><td class="tv-val">\(-16\)</td><td class="tv-up">&#8599;</td><td class="tv-val">\(16\)</td><td class="tv-down">&#8600;</td><td class="tv-val">\(-\infty\)</td></tr>
+      </table>
+      <p>\(f(-1) = 1 + 3 - 9 - 11 = \)<span class="reponse">\(-16\)</span> → minimum local.<br>
+      \(f(3) = -27 + 27 + 27 - 11 = \)<span class="reponse">\(16\)</span> → maximum local.</p>
+      <p><strong>Nombre de solutions de \(f(x)=0\) :</strong> \(0\) est compris entre le minimum local (\(-16\)) et le maximum local (\(16\)), donc <span class="reponse">l'équation \(f(x) = 0\) a 3 solutions</span>.</p>
+    </div>
+  </details>
+</div>
+
+<!-- APPRO A2 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">A2</span>Optimisation — rendement d'une pompe à chaleur <span class="ticcer-badge">ICCER</span></div>
+
+  <div class="situation">
+    <strong>Contexte :</strong> Le COP (Coefficient de Performance) d'une pompe à chaleur varie en fonction de la température extérieure \(T\) (en °C). Un technicien modélise le COP sur l'intervalle \([{-5}\,;\,15]\) par :
+    \[C(T) = -0{,}004\,T^3 + 0{,}06\,T^2 + 0{,}3\,T + 2{,}5\]
+  </div>
+
+  <div class="consigne"><strong>1.</strong> Calculer \(C(-5)\), \(C(0)\), \(C(7)\) et \(C(15)\). Interpréter.</div>
+  <div class="reponse-box"></div>
+
+  <div class="consigne"><strong>2.</strong> Calculer \(C'(T)\) et montrer que \(C'(T) = -0{,}012\,T^2 + 0{,}12\,T + 0{,}3\).</div>
+  <div class="reponse-box"></div>
+
+  <div class="consigne"><strong>3.</strong> Résoudre \(C'(T) = 0\). Utiliser la formule du discriminant. Arrondir les racines au dixième.</div>
+  <div class="reponse-box"></div>
+
+  <div class="consigne"><strong>4.</strong> Dresser le tableau de variations de \(C\) sur \([-5\,;\,15]\). À quelle température le COP est-il maximal ? Quelle est la valeur de ce COP maximal ?</div>
+  <div class="reponse-box" style="min-height:80px"></div>
+
+  <div class="consigne"><strong>5.</strong> Un COP inférieur à 2 signifie que la PAC n'est plus rentable. D'après le tableau, cela peut-il se produire sur \([-5\,;\,15]\) ?</div>
+  <div class="reponse-box"></div>
+
+  <details>
+    <summary>Voir la correction</summary>
+    <div class="corr">
+      <p><strong>1.</strong><br>
+      \(C(-5) = -0{,}004(-125) + 0{,}06(25) + 0{,}3(-5) + 2{,}5 = 0{,}5 + 1{,}5 - 1{,}5 + 2{,}5 = \)<span class="reponse">\(3{,}0\)</span><br>
+      \(C(0) = \)<span class="reponse">\(2{,}5\)</span><br>
+      \(C(7) = -0{,}004(343) + 0{,}06(49) + 0{,}3(7) + 2{,}5 = -1{,}372 + 2{,}94 + 2{,}1 + 2{,}5 \approx \)<span class="reponse">\(6{,}2\)</span><br>
+      \(C(15) = -0{,}004(3375) + 0{,}06(225) + 0{,}3(15) + 2{,}5 = -13{,}5 + 13{,}5 + 4{,}5 + 2{,}5 = \)<span class="reponse">\(7{,}0\)</span></p>
+      <p><strong>2.</strong> \(C'(T) = 3 \times (-0{,}004)\,T^2 + 2 \times 0{,}06\,T + 0{,}3 = -0{,}012\,T^2 + 0{,}12\,T + 0{,}3\) &#10003;</p>
+      <p><strong>3.</strong> \(a = -0{,}012\), \(b = 0{,}12\), \(c = 0{,}3\)<br>
+      \(\Delta = 0{,}0144 + 4 \times 0{,}012 \times 0{,}3 = 0{,}0144 + 0{,}0144 = 0{,}0288\)<br>
+      \(\sqrt{\Delta} \approx 0{,}1697\)<br>
+      \(T_1 = \dfrac{-0{,}12 - 0{,}1697}{-0{,}024} \approx 12{,}1\) &nbsp;; &nbsp;\(T_2 = \dfrac{-0{,}12 + 0{,}1697}{-0{,}024} \approx -2{,}1\)<br>
+      Seule \(T_1 \approx 12{,}1\) est intéressante (\(T_2 \approx -2{,}1\) est dans l'intervalle aussi).</p>
+      <p><strong>4.</strong> Comme \(a = -0{,}012 < 0\), \(C'(T) > 0\) entre les racines.</p>
+      <table class="tv-table">
+        <tr><th>\(T\)</th><td>\(-5\)</td><td>&nbsp;</td><td>\(-2{,}1\)</td><td>&nbsp;</td><td>\(12{,}1\)</td><td>&nbsp;</td><td>\(15\)</td></tr>
+        <tr><th>Signe \(C'\)</th><td></td><td class="tv-minus">&minus;</td><td>0</td><td class="tv-plus">+</td><td>0</td><td class="tv-minus">&minus;</td><td></td></tr>
+        <tr><th>\(C(T)\)</th><td class="tv-val">3{,}0</td><td class="tv-down">&#8600;</td><td class="tv-val">&approx; 2{,}2</td><td class="tv-up">&#8599;</td><td class="tv-val">&approx; 7{,}6</td><td class="tv-down">&#8600;</td><td class="tv-val">7{,}0</td></tr>
+      </table>
+      <p>Le COP maximal est <span class="reponse">\(\approx 7{,}6\)</span>, atteint à <span class="reponse">\(T \approx 12\,°C\)</span>.</p>
+      <p><strong>5.</strong> Le minimum du COP sur l'intervalle est \(\approx 2{,}2 > 2\) → <span class="reponse">le COP reste supérieur à 2, la PAC est toujours rentable</span> sur cet intervalle de températures.</p>
+    </div>
+  </details>
+</div>
+
+<!-- APPRO A3 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">A3</span>Nombre de solutions — raisonnement avec paramètre</div>
+  <p>Soit \(f(x) = x^3 - 12x + 5\).</p>
+
+  <div class="consigne"><strong>1.</strong> Montrer que \(f'(x) = 3(x-2)(x+2)\). En déduire le tableau de variations de \(f\).</div>
+  <div class="reponse-box" style="min-height:70px"></div>
+
+  <div class="consigne"><strong>2.</strong> Calculer les valeurs de \(f\) aux extremums locaux.</div>
+  <div class="reponse-box"></div>
+
+  <div class="consigne"><strong>3.</strong> Pour quelles valeurs du réel \(k\), l'équation \(f(x) = k\) admet-elle :</div>
+  <ul style="font-size:.93em">
+    <li>a) exactement 3 solutions ?</li>
+    <li>b) exactement 2 solutions ?</li>
+    <li>c) exactement 1 solution ?</li>
+  </ul>
+  <div class="reponse-box" style="min-height:80px"></div>
+
+  <details>
+    <summary>Voir la correction</summary>
+    <div class="corr">
+      <p><strong>1.</strong> \(f'(x) = 3x^2 - 12 = 3(x^2 - 4) = 3(x-2)(x+2)\)</p>
+      <table class="tv-table">
+        <tr><th>\(x\)</th><td>\(-\infty\)</td><td>&nbsp;</td><td>\(-2\)</td><td>&nbsp;</td><td>\(2\)</td><td>&nbsp;</td><td>\(+\infty\)</td></tr>
+        <tr><th>Signe \(f'\)</th><td></td><td class="tv-plus">+</td><td>0</td><td class="tv-minus">&minus;</td><td>0</td><td class="tv-plus">+</td><td></td></tr>
+        <tr><th>\(f\)</th><td class="tv-val">\(-\infty\)</td><td class="tv-up">&#8599;</td><td class="tv-val">\(21\)</td><td class="tv-down">&#8600;</td><td class="tv-val">\(-11\)</td><td class="tv-up">&#8599;</td><td class="tv-val">\(+\infty\)</td></tr>
+      </table>
+      <p><strong>2.</strong> \(f(-2) = -8 + 24 + 5 = \)<span class="reponse">\(21\)</span> (max local) &nbsp;; &nbsp;\(f(2) = 8 - 24 + 5 = \)<span class="reponse">\(-11\)</span> (min local).</p>
+      <p><strong>3.</strong></p>
+      <p>a) La droite \(y = k\) coupe la courbe en 3 points si \(k\) est strictement entre le min local et le max local :<br>
+      <span class="reponse">\(-11 < k < 21\) → 3 solutions</span></p>
+      <p>b) La droite est tangente au max ou au min local :<br>
+      <span class="reponse">\(k = -11\) ou \(k = 21\) → 2 solutions</span></p>
+      <p>c) La droite ne traverse la courbe qu'une fois :<br>
+      <span class="reponse">\(k < -11\) ou \(k > 21\) → 1 solution</span></p>
+    </div>
+  </details>
+</div>
+
+<!-- APPRO A4 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">A4</span>Optimisation du coût de production — approche BTS</div>
+
+  <div class="situation">
+    <strong>Contexte :</strong> Une entreprise de fabrication de gaines de ventilation modélise son coût total de production (en euros) pour \(x\) mètres de gaine par :
+    \[C(x) = 0{,}5x^3 - 15x^2 + 200x + 500 \qquad x \in [5\,;\,25]\]
+  </div>
+
+  <div class="consigne"><strong>1.</strong> Calculer le <em>coût moyen</em> \(\overline{C}(x) = \dfrac{C(x)}{x}\) pour \(x = 10\) et \(x = 20\).</div>
+  <div class="reponse-box"></div>
+
+  <div class="consigne"><strong>2.</strong> Étudier les variations de \(C\) : calculer \(C'(x)\), trouver ses racines, et dresser le tableau de variations sur \([5\,;\,25]\).</div>
+  <div class="reponse-box" style="min-height:80px"></div>
+
+  <div class="consigne"><strong>3.</strong> Calculer le <em>coût marginal</em> \(C'(10)\). Interpréter : que représente cette valeur ?</div>
+  <div class="reponse-box"></div>
+
+  <div class="consigne"><strong>4.</strong> Le prix de vente est de <strong>80 €/m</strong>. La recette est donc \(R(x) = 80x\). Montrer que le bénéfice \(B(x) = R(x) - C(x)\) est un polynôme de degré 3 et étudier son signe.</div>
+  <div class="reponse-box" style="min-height:80px"></div>
+
+  <details>
+    <summary>Voir la correction</summary>
+    <div class="corr">
+      <p><strong>1.</strong><br>
+      \(C(10) = 500 - 1\,500 + 2\,000 + 500 = 1\,500\) → \(\overline{C}(10) = \dfrac{1\,500}{10} = \)<span class="reponse">150 €/m</span><br>
+      \(C(20) = 4\,000 - 6\,000 + 4\,000 + 500 = 2\,500\) → \(\overline{C}(20) = \dfrac{2\,500}{20} = \)<span class="reponse">125 €/m</span></p>
+      <p><strong>2.</strong> \(C'(x) = 1{,}5x^2 - 30x + 200\)<br>
+      \(\Delta = 900 - 1\,200 = -300 < 0\)<br>
+      Pas de racine réelle. Comme \(a = 1{,}5 > 0\), \(C'(x) > 0\) pour tout \(x\).<br>
+      <span class="reponse">\(C\) est strictement croissante sur \([5\,;\,25]\)</span> — le coût augmente toujours avec la production.</p>
+      <p><strong>3.</strong> \(C'(10) = 150 - 300 + 200 = \)<span class="reponse">50 €/m</span>. C'est le coût supplémentaire approximatif pour produire un mètre de gaine de plus quand on en produit déjà 10.</p>
+      <p><strong>4.</strong> \(B(x) = 80x - 0{,}5x^3 + 15x^2 - 200x - 500 = -0{,}5x^3 + 15x^2 - 120x - 500\)<br>
+      C'est bien un polynôme de degré 3. On peut calculer \(B(5)\), \(B(10)\), \(B(20)\), \(B(25)\) pour étudier le signe :<br>
+      \(B(10) = -500 + 1\,500 - 1\,200 - 500 = \)<span class="reponse">\(-700\)</span> (perte)<br>
+      \(B(20) = -4\,000 + 6\,000 - 2\,400 - 500 = \)<span class="reponse">\(-900\)</span> (perte)<br>
+      L'entreprise n'est pas rentable à ce prix sur cet intervalle.</p>
+    </div>
+  </details>
+</div>
+
+</div><!-- fin diff-appro -->
+
 <!-- NAV FOOTER -->
 <div class="nav-footer">
   <a href="lecon.html">&#128214; Cours Ch04</a>
@@ -715,5 +1046,6 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <script src="/nav.js"></script>
+<script src="/diff.js"></script>
 </body>
 </html>
