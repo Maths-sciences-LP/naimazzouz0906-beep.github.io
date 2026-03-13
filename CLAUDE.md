@@ -117,15 +117,21 @@ Seules les classes vraiment spécifiques à une page peuvent rester inline.
 
 ## DIFFÉRENCIATION PÉDAGOGIQUE (Terminale)
 
-La différenciation s'applique **uniquement aux exercices et aux DS**. Les cours (lecon.html) restent identiques pour tous — le programme est le même, seule la pratique est adaptée.
+### Philosophie
 
-Le système propose 3 niveaux d'adaptation :
+La différenciation s'applique **uniquement aux exercices (exercices.html) et aux DS (ds.html)**.
+Les cours (lecon.html) restent **identiques pour tous** : le programme est le même, c'est le socle commun de savoir. La différenciation ne porte pas sur le savoir transmis mais sur le **niveau de pratique** :
+- On ne simplifie pas le cours pour les élèves en difficulté — on leur donne un cours identique avec des exercices plus guidés.
+- On n'ajoute pas de théorie supplémentaire pour les élèves en poursuite — on leur donne des exercices plus ouverts et formalisés.
+- Ne jamais créer de « cours au rabais » : un élève socle doit avoir accès au même savoir pour pouvoir progresser.
 
-| Niveau | Profil cible | Contenu |
+### Les 3 niveaux
+
+| Niveau | Profil cible | Contenu (exercices & DS) |
 |---|---|---|
-| **Socle** | Élèves en difficulté | Exercices très guidés, étape par étape, contextes simples |
-| **Standard** | Majorité de la classe | Exercices du programme, contextes pro variés |
-| **Approfondissement** | Poursuite BTS/MC | Problèmes ouverts, formalisme, type BTS |
+| **Socle** | Élèves en difficulté | Exercices très guidés, étape par étape, calculs amorcés, tableaux pré-remplis |
+| **Standard** | Majorité de la classe | Exercices du programme, contextes pro variés, rédaction attendue |
+| **Approfondissement** | Poursuite BTS/MC | Problèmes ouverts, mise en équation autonome, questions type BTS |
 
 ### Mise en place sur une page
 
@@ -153,13 +159,9 @@ Le système propose 3 niveaux d'adaptation :
   <span class="tag-appro">Approfondissement</span>
   Exercice ouvert type BTS...
 </div>
-
-<!-- Encadré "Pour aller plus loin" dans les cours -->
-<div class="plus-loin diff-appro">
-  <strong>Pour aller plus loin</strong>
-  Contenu complémentaire pour la poursuite d'études...
-</div>
 ```
+
+**Ne PAS utiliser diff.js ni les classes diff-* sur les pages lecon.html.**
 
 ### Classes CSS disponibles
 
@@ -171,7 +173,6 @@ Le système propose 3 niveaux d'adaptation :
 | `.tag-socle` | Badge vert "Socle" |
 | `.tag-standard` | Badge bleu "Standard" |
 | `.tag-appro` | Badge violet "Approfondissement" |
-| `.plus-loin` | Encadré violet pour contenu complémentaire (cours) |
 
 ### Comportement
 - Le toggle apparaît automatiquement si la page contient des blocs `.diff-socle`, `.diff-standard` ou `.diff-appro`
