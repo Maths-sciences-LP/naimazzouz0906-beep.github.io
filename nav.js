@@ -24,7 +24,7 @@
       summary:      'maths-2nde-mama.html',
       summaryLabel: '2nde Pro MAMA',
       subject:      'Mathématiques',
-      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
       chapters: [
         { id: '01', title: 'Proportionnalité et pourcentages' },
         { id: '02', title: 'Statistiques à une variable' },
@@ -48,7 +48,7 @@
       summary:      'maths-term-iccer.html',
       summaryLabel: 'Terminale Bac Pro',
       subject:      'Mathématiques',
-      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
       chapters: [
         { id: '01', title: 'Statistiques à deux variables' },
         { id: '02', title: 'Probabilités' },
@@ -104,7 +104,7 @@
       summary:      'pc-2nde-pro.html',
       summaryLabel: '2nde Pro MAMA',
       subject:      'Physique-Chimie',
-      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
       chapters: [
         { id: '01', title: 'Sécurité en laboratoire et en atelier' },
         { id: '02', title: 'Grandeurs électriques et circuits' },
@@ -128,7 +128,7 @@
       summary:      'pc-term-iccer.html',
       summaryLabel: 'Terminale ICCER',
       subject:      'Physique-Chimie',
-      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
       chapters: [
         { id: '01', title: 'Évaluer la puissance consommée' },
         { id: '02', title: 'Obtenir un courant continu à partir d\'un courant alternatif et inversement' },
@@ -146,7 +146,7 @@
       summary:      'pc-term-erama.html',
       summaryLabel: 'Terminale ERA-MA',
       subject:      'Physique-Chimie',
-      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
       chapters: [
         { id: '01', title: 'Transporter l\'énergie sous forme électrique' },
         { id: '02', title: 'Stocker l\'énergie à l\'aide d\'un système électrochimique' },
