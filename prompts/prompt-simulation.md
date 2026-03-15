@@ -200,6 +200,31 @@ Ces classes ne sont pas dans `styles.css` — elles sont redéfinies dans chaque
 
 ---
 
+## RÈGLE FONDAMENTALE — ANCRAGE PÉDAGOGIQUE
+
+**Toute simulation doit être en lien direct avec un chapitre, une classe et le programme officiel.**
+
+### Avant de créer ou modifier une simulation
+
+1. **Analyser la page du chapitre concerné** (`lecon.html`) pour identifier les notions, formules et objectifs pédagogiques
+2. **Vérifier le programme officiel** dans `/pdf/` pour confirmer que la notion est au programme de la classe concernée
+3. **Concevoir la simulation** pour qu'elle illustre, exploite ou prolonge une notion réellement étudiée
+
+### Ce qu'une simulation doit servir à faire
+
+- Illustrer une notion du cours (visualiser un phénomène)
+- Accompagner un exercice ou un TP numérique (manipuler des grandeurs)
+- Faire manipuler un modèle mathématique ou physique du programme (relier formule et phénomène)
+- Compléter un TP numérique (remplacer ou prolonger une manipulation réelle)
+
+### Interdit
+
+- Créer une simulation déconnectée du contenu pédagogique existant
+- Introduire des notions hors-programme dans une simulation
+- Créer une simulation "pour le plaisir" sans ancrage dans un chapitre précis
+
+---
+
 ## RÈGLES PÉDAGOGIQUES
 
 1. **Lien avec le programme** : chaque simulation doit correspondre à un chapitre du programme Bac Pro. Indiquer le chapitre et le niveau dans le header.
@@ -232,6 +257,8 @@ Ces classes ne sont pas dans `styles.css` — elles sont redéfinies dans chaque
 
 ## CHECKLIST AVANT LIVRAISON
 
+- [ ] La simulation correspond à un chapitre et une classe identifiés
+- [ ] Les notions utilisées sont au programme officiel (vérifié dans `/pdf/`)
 - [ ] La page s'ouvre sans erreur dans un navigateur
 - [ ] Les sliders et contrôles réagissent immédiatement
 - [ ] Les valeurs numériques sont affichées avec les bonnes unités

@@ -247,6 +247,30 @@ Vérifier les notions avant de créer du contenu : respecter les capacités atte
 
 ---
 
+## SIMULATIONS INTERACTIVES
+
+Les simulations sont dans le dossier `simulations/`. Elles sont autonomes (styles inline, pas de `styles.css` ni `nav.js`).
+
+Consulter `prompts/prompt-simulation.md` pour les 4 types de simulations, le template HTML et les conventions.
+
+### Règle fondamentale : ancrage pédagogique
+
+**Toute simulation doit être en lien direct avec un chapitre, une classe et le programme officiel.**
+
+Avant de créer ou modifier une simulation :
+1. **Analyser la page du chapitre concerné** (lecon.html) pour identifier les notions
+2. **Vérifier le programme officiel** dans `/pdf/` pour confirmer que la notion est au programme
+3. **Concevoir la simulation** pour qu'elle illustre, exploite ou prolonge une notion réellement étudiée
+
+Une simulation doit toujours servir à :
+- illustrer une notion du cours
+- accompagner un exercice ou un TP numérique
+- faire manipuler un modèle mathématique ou physique du programme
+
+**Interdit :** créer une simulation déconnectée du contenu pédagogique existant ou hors-programme.
+
+---
+
 ## RÈGLES DE DÉVELOPPEMENT
 
 1. **Ne jamais modifier `nav.js`** sans raison explicite — il gère toute la navigation
