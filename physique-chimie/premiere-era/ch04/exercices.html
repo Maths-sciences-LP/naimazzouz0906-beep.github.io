@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Exercices – Transferts thermiques | Première ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9;--s-bg:#e0f2fe;--s-border:#7dd3fc}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-erama.html" class="nb">← RETOUR SOMMAIRE ERA-MA</a>
+
+<header>
+  <h1>Ch04 – Les trois modes de transfert thermique</h1>
+  <p class="sous-titre">Exercices | Première Bac Pro ERA-MA – Groupement 3</p>
+</header>
+
+<div class="objectifs">
+  <strong>Rappels</strong>
+  <ul>
+    <li><strong>Conduction</strong> : transfert dans les solides, sans déplacement de matière</li>
+    <li><strong>Convection</strong> : transfert dans les fluides, par déplacement de matière</li>
+    <li><strong>Rayonnement</strong> : transfert par ondes, sans support matériel</li>
+    <li>La chaleur va toujours du chaud vers le froid</li>
+    <li>Plus \(\lambda\) est petit, meilleur est l'isolant</li>
+  </ul>
+</div>
+
+<!-- ==================== SOCLE ==================== -->
+<div class="diff-socle">
+<h2><span class="tag-socle">Socle</span> Exercices guidés</h2>
+
+<div class="exo">
+  <strong>Exercice S1 – Identifier le mode de transfert (guidé)</strong><br>
+  Pour chaque situation, cocher le bon mode de transfert :<br><br>
+  <table>
+    <tr><th>Situation</th><th>Conduction</th><th>Convection</th><th>Rayonnement</th></tr>
+    <tr><td>Un mur en béton laisse passer la chaleur</td><td>☐</td><td>☐</td><td>☐</td></tr>
+    <tr><td>L'air chaud monte au plafond</td><td>☐</td><td>☐</td><td>☐</td></tr>
+    <tr><td>Le soleil réchauffe la Terre</td><td>☐</td><td>☐</td><td>☐</td></tr>
+    <tr><td>Une cuillère en métal dans un café chaud</td><td>☐</td><td>☐</td><td>☐</td></tr>
+    <tr><td>Un ventilateur souffle de l'air chaud</td><td>☐</td><td>☐</td><td>☐</td></tr>
+    <tr><td>Un four chauffant à infrarouge</td><td>☐</td><td>☐</td><td>☐</td></tr>
+  </table>
+
+  <div class="corr">
+    <strong>Correction :</strong>
+    <table>
+      <tr><th>Situation</th><th>Mode</th></tr>
+      <tr><td>Mur en béton</td><td>Conduction</td></tr>
+      <tr><td>Air chaud monte</td><td>Convection (naturelle)</td></tr>
+      <tr><td>Soleil → Terre</td><td>Rayonnement</td></tr>
+      <tr><td>Cuillère métallique</td><td>Conduction</td></tr>
+      <tr><td>Ventilateur + air chaud</td><td>Convection (forcée)</td></tr>
+      <tr><td>Four infrarouge</td><td>Rayonnement</td></tr>
+    </table>
+  </div>
+  <button class="bc" onclick="this.previousElementSibling.style.display=this.previousElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+</div>
+
+<div class="exo">
+  <strong>Exercice S2 – Classer les matériaux (guidé)</strong><br>
+  Voici des matériaux avec leur conductivité thermique \(\lambda\). Classer du meilleur isolant au meilleur conducteur.<br><br>
+  <table>
+    <tr><th>Matériau</th><th>\(\lambda\) (W/m·K)</th></tr>
+    <tr><td>Polystyrène</td><td>0,035</td></tr>
+    <tr><td>Béton</td><td>1,7</td></tr>
+    <tr><td>Bois</td><td>0,15</td></tr>
+    <tr><td>Aluminium</td><td>237</td></tr>
+  </table>
+  <strong>Rappel :</strong> Plus \(\lambda\) est petit, meilleur est l'isolant.<br>
+  Classement : 1. …… 2. …… 3. …… 4. ……
+
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. Polystyrène (0,035) → 2. Bois (0,15) → 3. Béton (1,7) → 4. Aluminium (237)<br>
+    Le polystyrène est le meilleur isolant, l'aluminium le meilleur conducteur.
+  </div>
+  <button class="bc" onclick="this.previousElementSibling.style.display=this.previousElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+</div>
+
+<div class="exo">
+  <strong>Exercice S3 – Sens du transfert (guidé)</strong><br>
+  Compléter les phrases avec « chaud → froid » ou « froid → chaud » :<br><br>
+  a) En hiver, la chaleur de la maison (20 °C) traverse les murs vers l'extérieur (5 °C).<br>
+  Sens : du …… vers le ……<br><br>
+  b) En été, la chaleur extérieure (35 °C) entre dans la maison climatisée (22 °C).<br>
+  Sens : du …… vers le ……<br><br>
+  c) Un glaçon fond dans un verre d'eau tiède.<br>
+  Sens : du …… vers le ……
+
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    a) Du chaud (maison 20 °C) vers le froid (extérieur 5 °C).<br>
+    b) Du chaud (extérieur 35 °C) vers le froid (maison 22 °C).<br>
+    c) Du chaud (eau tiède) vers le froid (glaçon). C'est l'eau tiède qui donne de la chaleur au glaçon, pas le glaçon qui « donne du froid ».
+  </div>
+  <button class="bc" onclick="this.previousElementSibling.style.display=this.previousElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+</div>
+
+<div class="exo">
+  <strong>Exercice S4 – Vrai ou faux (guidé)</strong><br>
+  Indiquer VRAI ou FAUX et corriger si nécessaire.
+  <ol>
+    <li>La conduction se fait dans les liquides et les gaz.</li>
+    <li>La convection nécessite un déplacement de matière.</li>
+    <li>Le rayonnement ne peut pas traverser le vide.</li>
+    <li>Un bon isolant thermique a une grande conductivité λ.</li>
+    <li>La chaleur peut aller spontanément du froid vers le chaud.</li>
+  </ol>
+
+  <div class="corr">
+    <strong>Correction :</strong>
+    <ol>
+      <li>FAUX – La conduction se fait principalement dans les <strong>solides</strong>.</li>
+      <li>VRAI – La convection implique un mouvement de fluide.</li>
+      <li>FAUX – Le rayonnement peut traverser le vide (c'est comme ça que le Soleil nous chauffe).</li>
+      <li>FAUX – Un bon isolant a une <strong>faible</strong> conductivité λ.</li>
+      <li>FAUX – La chaleur va spontanément du chaud vers le froid uniquement.</li>
+    </ol>
+  </div>
+  <button class="bc" onclick="this.previousElementSibling.style.display=this.previousElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+</div>
+</div>
+
+<!-- ==================== STANDARD ==================== -->
+<div class="diff-standard">
+<h2><span class="tag-standard">Standard</span> Exercices du programme</h2>
+
+<div class="exo">
+  <strong>Exercice 1 – Analyse d'une pièce</strong><br>
+  Un menuisier agenceur aménage un bureau dans une maison ancienne. En hiver, la température intérieure est de 20 °C et la température extérieure de 2 °C. Il observe :
+  <ul>
+    <li>Le mur en pierre (épaisseur 50 cm) est froid au toucher côté intérieur.</li>
+    <li>L'air chaud s'accumule au plafond (3 m de haut), les pieds sont au froid.</li>
+    <li>Devant la baie vitrée, on ressent un rayonnement froid venant du verre.</li>
+  </ul>
+  <ol>
+    <li>Pour chaque observation, identifier le mode de transfert thermique en jeu.</li>
+    <li>Pour chaque cas, proposer une solution pour améliorer le confort thermique.</li>
+    <li>Quel sens prend le transfert thermique dans chaque cas ?</li>
+  </ol>
+
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. Mur froid : <strong>conduction</strong> à travers la pierre. Air chaud au plafond : <strong>convection</strong> naturelle. Rayonnement froid de la vitre : <strong>rayonnement</strong>.<br><br>
+    2. Mur : poser un isolant intérieur (laine de verre + placo). Air : installer un destratificateur ou un ventilateur de plafond. Vitre : passer au double vitrage Low-E.<br><br>
+    3. Dans les trois cas : du chaud (intérieur 20 °C) vers le froid (extérieur 2 °C).
+  </div>
+  <button class="bc" onclick="this.previousElementSibling.style.display=this.previousElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+</div>
+
+<div class="exo">
+  <strong>Exercice 2 – Choix de matériaux pour un agencement</strong><br>
+  Un aménageur d'intérieur doit choisir un matériau pour un plan de travail de cuisine. Voici les options :
+  <table>
+    <tr><th>Matériau</th><th>\(\lambda\) (W/m·K)</th><th>Prix (€/m²)</th></tr>
+    <tr><td>Granit</td><td>2,8</td><td>250</td></tr>
+    <tr><td>Bois massif (hêtre)</td><td>0,16</td><td>120</td></tr>
+    <tr><td>Stratifié (panneau)</td><td>0,13</td><td>60</td></tr>
+    <tr><td>Inox</td><td>15</td><td>350</td></tr>
+  </table>
+  <ol>
+    <li>Classer ces matériaux du plus isolant au plus conducteur.</li>
+    <li>Quel matériau donnera la sensation la plus « froide » au toucher ? Pourquoi ?</li>
+    <li>Quel matériau donnera la sensation la plus « chaude » ? Pourquoi ?</li>
+    <li>Le client souhaite un plan de travail « agréable au toucher, naturel et abordable ». Que recommander ?</li>
+  </ol>
+
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. Stratifié (0,13) → Bois (0,16) → Granit (2,8) → Inox (15)<br><br>
+    2. L'inox (\(\lambda = 15\)) : c'est le meilleur conducteur, il évacue rapidement la chaleur de la main → sensation froide.<br><br>
+    3. Le stratifié (\(\lambda = 0{,}13\)) : c'est le meilleur isolant, il évacue lentement la chaleur → sensation chaude.<br><br>
+    4. Le bois massif de hêtre : naturel, sensation chaude (\(\lambda\) faible), prix raisonnable (120 €/m²).
+  </div>
+  <button class="bc" onclick="this.previousElementSibling.style.display=this.previousElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+</div>
+
+<div class="exo">
+  <strong>Exercice 3 – Le double vitrage</strong><br>
+  Un poseur de cuisines remplace les fenêtres d'un appartement. Le client hésite entre :
+  <ul>
+    <li>Simple vitrage : une seule vitre de 4 mm</li>
+    <li>Double vitrage : deux vitres de 4 mm séparées par 16 mm d'air</li>
+    <li>Triple vitrage : trois vitres de 4 mm séparées par deux lames de 12 mm d'argon</li>
+  </ul>
+  <em>Données : \(\lambda_{\text{verre}} = 1{,}0\), \(\lambda_{\text{air}} = 0{,}025\), \(\lambda_{\text{argon}} = 0{,}018\) W/m·K</em>
+  <ol>
+    <li>Expliquer le rôle de la lame d'air dans le double vitrage en utilisant les trois modes de transfert.</li>
+    <li>Pourquoi l'argon est-il meilleur que l'air comme gaz intercalaire ?</li>
+    <li>Le triple vitrage est-il toujours justifié ? Citer un avantage et un inconvénient.</li>
+  </ol>
+
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. <strong>Conduction :</strong> L'air (\(\lambda = 0{,}025\)) est 40 fois plus isolant que le verre (\(\lambda = 1{,}0\)), il freine le transfert. <strong>Convection :</strong> L'épaisseur de 16 mm est suffisamment fine pour limiter la circulation de l'air (pas de courant de convection significatif). <strong>Rayonnement :</strong> Un traitement Low-E sur l'une des vitres internes renvoie le rayonnement infrarouge.<br><br>
+    2. L'argon (\(\lambda = 0{,}018\)) est encore meilleur isolant que l'air (\(\lambda = 0{,}025\)), car c'est un gaz plus lourd et plus inerte, qui conduit et convecte encore moins.<br><br>
+    3. Avantage : isolation renforcée (idéal pour les régions très froides, maisons passives). Inconvénient : plus lourd (poids sur les châssis), plus cher, et réduit les apports solaires gratuits en hiver (le soleil passe moins à travers).
+  </div>
+  <button class="bc" onclick="this.previousElementSibling.style.display=this.previousElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+</div>
+
+<div class="exo">
+  <strong>Exercice 4 – Situation d'atelier</strong><br>
+  Un artisan menuisier constate que son atelier est difficile à chauffer en hiver. L'atelier a :
+  <ul>
+    <li>Un toit en tôle métallique (non isolé)</li>
+    <li>Des murs en parpaing (non isolés)</li>
+    <li>Une grande porte coulissante souvent ouverte</li>
+    <li>Un chauffage par radiateurs soufflants</li>
+  </ul>
+  <ol>
+    <li>Pour chaque élément, identifier le mode de transfert thermique principal responsable des pertes.</li>
+    <li>Proposer une solution d'isolation ou d'amélioration pour chaque élément.</li>
+    <li>Pourquoi les radiateurs soufflants ne sont-ils pas idéaux pour un grand volume ?</li>
+  </ol>
+
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. Toit en tôle : <strong>conduction</strong> (métal très conducteur) + <strong>rayonnement</strong> (la tôle rayonne vers le ciel).<br>
+    Murs en parpaing : <strong>conduction</strong> à travers le béton.<br>
+    Porte ouverte : <strong>convection</strong> (l'air chaud s'échappe, l'air froid entre).<br>
+    Radiateurs soufflants : <strong>convection forcée</strong>.<br><br>
+    2. Toit : poser un isolant sous la tôle (laine de verre, panneaux sandwich). Murs : isoler par l'intérieur ou l'extérieur. Porte : installer un rideau d'air chaud ou des bandes plastiques souples. Chauffage : compléter par un chauffage radiant (infrarouge) qui chauffe les personnes directement.<br><br>
+    3. L'air chaud soufflé monte au plafond (convection) et se perd dans un grand volume. Le sol reste froid. Un chauffage radiant (infrarouge) chauffe directement les personnes et les objets, ce qui est plus efficace dans un grand atelier.
+  </div>
+  <button class="bc" onclick="this.previousElementSibling.style.display=this.previousElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+</div>
+</div>
+
+<!-- ==================== APPROFONDISSEMENT ==================== -->
+<div class="diff-appro">
+<h2><span class="tag-appro">Approfondissement</span> Exercices type BTS</h2>
+
+<div class="exo">
+  <strong>Exercice A1 – Audit thermique d'un local</strong><br>
+  Un technicien d'agencement réalise un audit thermique simplifié d'un showroom de cuisine (100 m²). Il mesure les déperditions thermiques :
+  <table>
+    <tr><th>Élément</th><th>Surface (m²)</th><th>Mode principal</th><th>Perte (W/m²·K)</th></tr>
+    <tr><td>Murs (parpaing non isolé)</td><td>80</td><td>Conduction</td><td>2,5</td></tr>
+    <tr><td>Toit (isolé 10 cm laine)</td><td>100</td><td>Conduction</td><td>0,35</td></tr>
+    <tr><td>Fenêtres (double vitrage)</td><td>20</td><td>Cond. + Ray.</td><td>2,8</td></tr>
+    <tr><td>Sol (sur terre-plein)</td><td>100</td><td>Conduction</td><td>0,9</td></tr>
+    <tr><td>Renouvellement d'air</td><td>—</td><td>Convection</td><td>Equiv. 300 W/K</td></tr>
+  </table>
+  La différence de température intérieur/extérieur est \(\Delta T = 15\) K en hiver.
+  <ol>
+    <li>Calculer les déperditions (en W) de chaque élément : \(\Phi = \text{perte} \times S \times \Delta T\).</li>
+    <li>Calculer les déperditions totales.</li>
+    <li>Quelle est la puissance de chauffage nécessaire ?</li>
+    <li>Si on isole les murs (passage de 2,5 à 0,4 W/m²·K), quelle économie de puissance réalise-t-on ?</li>
+    <li>Quel pourcentage d'économie cela représente-t-il sur les déperditions totales ?</li>
+  </ol>
+
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. Murs : \(2{,}5 \times 80 \times 15 = 3\,000\) W<br>
+    Toit : \(0{,}35 \times 100 \times 15 = 525\) W<br>
+    Fenêtres : \(2{,}8 \times 20 \times 15 = 840\) W<br>
+    Sol : \(0{,}9 \times 100 \times 15 = 1\,350\) W<br>
+    Air : \(300 \times 15 = 4\,500\) W<br><br>
+    2. Total : \(3\,000 + 525 + 840 + 1\,350 + 4\,500 = 10\,215\) W ≈ 10,2 kW<br><br>
+    3. Puissance de chauffage : environ 10,2 kW (+ marge de sécurité : 12-13 kW).<br><br>
+    4. Nouveaux murs : \(0{,}4 \times 80 \times 15 = 480\) W. Économie : \(3\,000 - 480 = 2\,520\) W<br><br>
+    5. \(\dfrac{2\,520}{10\,215} \times 100 = 24{,}7\) % d'économie sur les déperditions totales.
+  </div>
+  <button class="bc" onclick="this.previousElementSibling.style.display=this.previousElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+</div>
+
+<div class="exo">
+  <strong>Exercice A2 – Conception d'une cloison isolante</strong><br>
+  Un installateur d'agencement doit concevoir une cloison séparant un atelier chauffé (20 °C) d'un entrepôt non chauffé (5 °C). La cloison fait 3 m × 4 m = 12 m².<br><br>
+  Il dispose de trois solutions :
+  <table>
+    <tr><th>Solution</th><th>Composition</th><th>Coefficient U (W/m²·K)</th><th>Coût (€/m²)</th></tr>
+    <tr><td>A</td><td>Placo simple</td><td>3,5</td><td>15</td></tr>
+    <tr><td>B</td><td>Placo + 5 cm laine de verre</td><td>0,6</td><td>35</td></tr>
+    <tr><td>C</td><td>Placo + 10 cm laine de verre</td><td>0,32</td><td>50</td></tr>
+  </table>
+  Le chauffage coûte 0,18 €/kWh. L'atelier est chauffé 10 h/jour, 200 jours/an.
+  <ol>
+    <li>Calculer le flux thermique \(\Phi = U \times S \times \Delta T\) pour chaque solution (en W).</li>
+    <li>Convertir en énergie annuelle perdue (en kWh).</li>
+    <li>Calculer le coût annuel des pertes pour chaque solution.</li>
+    <li>Calculer le coût total de chaque cloison.</li>
+    <li>Calculer le retour sur investissement de la solution C par rapport à la solution A.</li>
+  </ol>
+
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. \(\Delta T = 20 - 5 = 15\) K<br>
+    A : \(3{,}5 \times 12 \times 15 = 630\) W<br>
+    B : \(0{,}6 \times 12 \times 15 = 108\) W<br>
+    C : \(0{,}32 \times 12 \times 15 = 57{,}6\) W<br><br>
+    2. Heures/an : \(10 \times 200 = 2\,000\) h<br>
+    A : \(0{,}630 \times 2\,000 = 1\,260\) kWh<br>
+    B : \(0{,}108 \times 2\,000 = 216\) kWh<br>
+    C : \(0{,}0576 \times 2\,000 = 115\) kWh<br><br>
+    3. Coût annuel :<br>
+    A : \(1\,260 \times 0{,}18 = 226{,}80\) €<br>
+    B : \(216 \times 0{,}18 = 38{,}88\) €<br>
+    C : \(115 \times 0{,}18 = 20{,}74\) €<br><br>
+    4. Coût cloison :<br>
+    A : \(12 \times 15 = 180\) € | B : \(12 \times 35 = 420\) € | C : \(12 \times 50 = 600\) €<br><br>
+    5. Surcoût C vs A : \(600 - 180 = 420\) €<br>
+    Économie annuelle : \(226{,}80 - 20{,}74 = 206{,}06\) €<br>
+    Retour : \(420 / 206{,}06 = 2{,}04\) ans ≈ <strong>2 ans</strong>.
+  </div>
+  <button class="bc" onclick="this.previousElementSibling.style.display=this.previousElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+</div>
+
+<div class="exo">
+  <strong>Exercice A3 – Problème ouvert : chauffer un atelier efficacement</strong><br>
+  Un fabricant de meubles possède un atelier de 300 m³ (10 m × 10 m × 3 m) avec un toit en tôle non isolé. En hiver, la température descend à 5 °C le matin. Il veut atteindre 18 °C en 1 heure.<br><br>
+  <em>Données : chaleur volumique de l'air = 1 200 J/(m³·K). Pertes estimées = 5 kW pendant le chauffage.</em>
+  <ol>
+    <li>Calculer l'énergie nécessaire pour chauffer l'air de l'atelier de 5 °C à 18 °C.</li>
+    <li>Calculer la puissance de chauffage nécessaire (en 1 heure), sans les pertes.</li>
+    <li>En ajoutant les pertes, quelle puissance totale faut-il ?</li>
+    <li>Comparer deux solutions : radiateurs soufflants (convection forcée) vs panneaux radiants (rayonnement). Laquelle est la plus adaptée et pourquoi ?</li>
+  </ol>
+
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. \(E = 1\,200 \times 300 \times (18 - 5) = 1\,200 \times 300 \times 13 = 4\,680\,000\) J = 4 680 kJ<br>
+    En kWh : \(4\,680\,000 / 3\,600\,000 = 1{,}3\) kWh<br><br>
+    2. \(P = E / t = 4\,680\,000 / 3\,600 = 1\,300\) W = 1,3 kW<br><br>
+    3. Avec pertes : \(P = 1{,}3 + 5 = 6{,}3\) kW → il faut environ <strong>7 kW</strong> de chauffage.<br><br>
+    4. Radiateurs soufflants : chauffent l'air → l'air chaud monte au plafond → pieds froids, gaspillage dans le grand volume. Panneaux radiants (infrarouge) : chauffent directement les personnes et les objets → sensation de confort immédiate, pas besoin de chauffer tout le volume d'air. <strong>Les panneaux radiants sont plus adaptés</strong> pour un grand atelier avec un plafond haut et un toit mal isolé.
+  </div>
+  <button class="bc" onclick="this.previousElementSibling.style.display=this.previousElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+</div>
+</div>
+
+<div style="margin-top:30px;padding-top:18px;border-top:1px solid #e2e8f0;text-align:center;color:#718096;font-size:.82em">
+  Première Bac Pro ERA-MA – Groupement 3 | Physique-Chimie – Chapitre 4 | maths-sciences-lp.github.io
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>
