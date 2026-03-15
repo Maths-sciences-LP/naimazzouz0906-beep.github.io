@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitesse et Acceleration — Simulation</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f4f4f9; margin: 0; padding: 20px; color: #333; }
+  .container { max-width: 860px; margin: 0 auto; }
+  header { background: #0284c7; color: white; padding: 20px 25px; border-radius: 10px; margin-bottom: 25px; position: relative; }
+  header h1 { margin: 0 0 5px 0; font-size: 1.5em; }
+  header p { margin: 0; opacity: 0.85; font-size: 0.95em; }
+  .btn-back { position: absolute; left: 15px; top: 15px; background: rgba(255,255,255,0.2); color: white; text-decoration: none; padding: 5px 12px; border-radius: 5px; font-size: 0.85em; }
+  .btn-back:hover { background: rgba(255,255,255,0.35); }
+  .card { background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); margin-bottom: 20px; }
+  .card h2 { margin-top: 0; color: #0284c7; font-size: 1.15em; border-bottom: 2px solid #bae6fd; padding-bottom: 8px; }
+  label { font-weight: 600; display: block; margin-bottom: 5px; font-size: 0.95em; }
+  input[type=range] { width: 100%; accent-color: #0284c7; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media(max-width:600px) { .row { grid-template-columns: 1fr; } }
+  .val { color: #0284c7; font-weight: bold; }
+  .result { background: #f0f9ff; border-radius: 8px; padding: 15px; margin-top: 15px; }
+  .result p { margin: 6px 0; font-size: 0.98em; }
+  .explication { background: #f0f9ff; border-left: 4px solid #0284c7; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: 0.95em; line-height: 1.6; }
+  canvas { display: block; margin: 0 auto; border-radius: 8px; }
+  .controls { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; align-items: center; }
+  .btn { padding: 8px 20px; border: none; border-radius: 6px; font-size: 0.95em; font-weight: 600; cursor: pointer; }
+  .btn-play { background: #16a34a; color: white; }
+  .btn-play:hover { background: #15803d; }
+  .btn-pause { background: #d97706; color: white; }
+  .btn-pause:hover { background: #b45309; }
+  .btn-reset { background: #64748b; color: white; }
+  .btn-reset:hover { background: #475569; }
+  .live-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
+  .live-val { background: #f0f9ff; border: 2px solid #bae6fd; border-radius: 8px; padding: 10px; text-align: center; }
+  .live-val .num { font-size: 1.5em; font-weight: 800; color: #0284c7; }
+  .live-val .lbl { font-size: 0.8em; color: #64748b; }
+  @media(max-width:600px) { .live-values { grid-template-columns: 1fr; } }
+  .chart-container { position: relative; height: 200px; margin-top: 10px; }
+  .pro-context { background: #ecfdf5; border-left: 4px solid #16a34a; padding: 10px 14px; border-radius: 0 6px 6px 0; font-size: 0.92em; margin-top: 15px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="../simulations.html" class="btn-back">&larr; Retour</a>
+    <h1>Vitesse et Acceleration</h1>
+    <p>Terminale Bac Pro &middot; Ch04 ERA</p>
+  </header>
+
+  <div class="explication">
+    <strong>Equations du mouvement rectiligne uniformement accelere :</strong><br>
+    Vitesse : \( v(t) = v_0 + a \cdot t \) &nbsp;|&nbsp;
+    Position : \( x(t) = x_0 + v_0 \cdot t + \frac{1}{2} a \cdot t^2 \)
+  </div>
+
+  <!-- ANIMATION -->
+  <div class="card">
+    <h2>1. Animation du mouvement</h2>
+
+    <div class="row">
+      <div>
+        <label>Vitesse initiale v<sub>0</sub> : <span class="val" id="vV0">5</span> m/s</label>
+        <input type="range" id="sV0" min="0" max="30" value="5" step="0.5" oninput="resetAnim()">
+      </div>
+      <div>
+        <label>Acceleration a : <span class="val" id="vA">2</span> m/s&sup2;</label>
+        <input type="range" id="sA" min="-5" max="5" value="2" step="0.1" oninput="resetAnim()">
+      </div>
+    </div>
+
+    <canvas id="cvTrack" width="820" height="120" style="margin-top:15px;"></canvas>
+
+    <div class="controls">
+      <button class="btn btn-play" id="btnPlay" onclick="togglePlay()">Demarrer</button>
+      <button class="btn btn-reset" onclick="resetAnim()">Reinitialiser</button>
+      <span style="margin-left:auto;font-size:0.9em;color:#64748b;" id="motionType"></span>
+    </div>
+
+    <div class="live-values">
+      <div class="live-val">
+        <div class="num" id="liveT">0.0</div>
+        <div class="lbl">Temps t (s)</div>
+      </div>
+      <div class="live-val">
+        <div class="num" id="liveV">0.0</div>
+        <div class="lbl">Vitesse v (m/s)</div>
+      </div>
+      <div class="live-val">
+        <div class="num" id="liveX">0.0</div>
+        <div class="lbl">Position x (m)</div>
+      </div>
+    </div>
+
+    <div class="pro-context">
+      <strong>Contexte professionnel :</strong> Un chariot de manutention dans un entrepot de menuiserie.
+      Vitesse de securite max : 6 km/h (1,67 m/s). Distance de freinage a estimer avant un obstacle.
+    </div>
+  </div>
+
+  <!-- GRAPHS -->
+  <div class="card">
+    <h2>2. Graphiques x(t), v(t), a(t)</h2>
+    <div class="chart-container"><canvas id="chartX"></canvas></div>
+    <div class="chart-container"><canvas id="chartV"></canvas></div>
+    <div class="chart-container"><canvas id="chartA"></canvas></div>
+  </div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+
+let playing = false;
+let t = 0;
+let animId = null;
+let lastTimestamp = null;
+
+const cvTrack = $('cvTrack');
+const ctxTrack = cvTrack.getContext('2d');
+
+// Charts
+let chartX, chartV, chartA;
+
+function initCharts() {
+  const commonOpts = (label, color, yLabel) => ({
+    type: 'line',
+    data: { labels: [], datasets: [{ label, data: [], borderColor: color, backgroundColor: color + '20', fill: true, tension: 0.3, pointRadius: 0 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false, animation: false,
+      scales: { x: { title: { display: true, text: 'Temps t (s)' } }, y: { title: { display: true, text: yLabel } } },
+      plugins: { legend: { display: false } }
+    }
+  });
+
+  chartX = new Chart($('chartX'), commonOpts('x(t)', '#0284c7', 'Position x (m)'));
+  chartV = new Chart($('chartV'), commonOpts('v(t)', '#16a34a', 'Vitesse v (m/s)'));
+  chartA = new Chart($('chartA'), commonOpts('a(t)', '#dc2626', 'Acceleration a (m/s\u00B2)'));
+}
+
+function getParams() {
+  const v0 = +$('sV0').value;
+  const a = +$('sA').value;
+  $('vV0').textContent = v0.toFixed(1);
+  $('vA').textContent = a.toFixed(1);
+  return { v0, a };
+}
+
+function calcX(v0, a, t) { return v0 * t + 0.5 * a * t * t; }
+function calcV(v0, a, t) { return v0 + a * t; }
+
+function updateMotionType() {
+  const { a, v0 } = getParams();
+  let type;
+  if (Math.abs(a) < 0.05) type = 'Mouvement rectiligne uniforme (MRU)';
+  else if (a > 0) type = 'Mouvement accelere (MRUA)';
+  else type = 'Mouvement decelere (freinage)';
+  $('motionType').textContent = type;
+}
+
+function drawTrack() {
+  const W = cvTrack.width, H = cvTrack.height;
+  ctxTrack.clearRect(0, 0, W, H);
+
+  const { v0, a } = getParams();
+  const x = calcX(v0, a, t);
+  const v = calcV(v0, a, t);
+
+  // Road
+  ctxTrack.fillStyle = '#e2e8f0';
+  ctxTrack.fillRect(20, 50, W - 40, 40);
+  // Road markings
+  ctxTrack.strokeStyle = '#cbd5e1';
+  ctxTrack.lineWidth = 2;
+  ctxTrack.setLineDash([20, 15]);
+  ctxTrack.beginPath();
+  ctxTrack.moveTo(20, 70);
+  ctxTrack.lineTo(W - 20, 70);
+  ctxTrack.stroke();
+  ctxTrack.setLineDash([]);
+
+  // Scale markers
+  ctxTrack.fillStyle = '#94a3b8';
+  ctxTrack.font = '10px Segoe UI';
+  ctxTrack.textAlign = 'center';
+  for (let i = 0; i <= 10; i++) {
+    const mx = 40 + i * (W - 80) / 10;
+    ctxTrack.fillRect(mx, 90, 1, 6);
+  }
+
+  // Vehicle position (map x in meters to pixel)
+  const maxX = 500; // meters shown on track
+  let px = 40 + (x / maxX) * (W - 80);
+  px = Math.max(40, Math.min(W - 60, px));
+
+  // Vehicle body
+  ctxTrack.fillStyle = v >= 0 ? '#0284c7' : '#dc2626';
+  ctxTrack.beginPath();
+  ctxTrack.roundRect(px - 25, 52, 50, 26, 5);
+  ctxTrack.fill();
+  // Wheels
+  ctxTrack.fillStyle = '#1e293b';
+  ctxTrack.beginPath(); ctxTrack.arc(px - 12, 80, 6, 0, Math.PI * 2); ctxTrack.fill();
+  ctxTrack.beginPath(); ctxTrack.arc(px + 12, 80, 6, 0, Math.PI * 2); ctxTrack.fill();
+  // Window
+  ctxTrack.fillStyle = '#bae6fd';
+  ctxTrack.fillRect(px - 8, 55, 18, 10);
+
+  // Velocity arrow
+  if (Math.abs(v) > 0.5) {
+    const arrowLen = Math.min(Math.abs(v) * 3, 80) * Math.sign(v);
+    ctxTrack.strokeStyle = '#16a34a';
+    ctxTrack.lineWidth = 3;
+    ctxTrack.beginPath();
+    ctxTrack.moveTo(px, 45);
+    ctxTrack.lineTo(px + arrowLen, 45);
+    ctxTrack.stroke();
+    // Arrowhead
+    ctxTrack.fillStyle = '#16a34a';
+    ctxTrack.beginPath();
+    const dir = Math.sign(arrowLen);
+    ctxTrack.moveTo(px + arrowLen, 40);
+    ctxTrack.lineTo(px + arrowLen + dir * 8, 45);
+    ctxTrack.lineTo(px + arrowLen, 50);
+    ctxTrack.fill();
+    ctxTrack.font = '11px Segoe UI';
+    ctxTrack.textAlign = 'center';
+    ctxTrack.fillText('v', px + arrowLen / 2, 38);
+  }
+
+  // Position label
+  ctxTrack.fillStyle = '#333';
+  ctxTrack.font = '11px Segoe UI';
+  ctxTrack.textAlign = 'left';
+  ctxTrack.fillText('x = ' + x.toFixed(1) + ' m', 30, 115);
+
+  // Update live values
+  $('liveT').textContent = t.toFixed(1);
+  $('liveV').textContent = v.toFixed(2);
+  $('liveX').textContent = x.toFixed(2);
+}
+
+function buildCharts() {
+  const { v0, a } = getParams();
+  const tMax = 10;
+  const dt = 0.1;
+  const labels = [], dataX = [], dataV = [], dataA = [];
+
+  for (let ti = 0; ti <= tMax; ti += dt) {
+    labels.push(ti.toFixed(1));
+    dataX.push(calcX(v0, a, ti));
+    dataV.push(calcV(v0, a, ti));
+    dataA.push(a);
+  }
+
+  chartX.data.labels = labels;
+  chartX.data.datasets[0].data = dataX;
+  chartX.update();
+
+  chartV.data.labels = labels;
+  chartV.data.datasets[0].data = dataV;
+  chartV.update();
+
+  chartA.data.labels = labels;
+  chartA.data.datasets[0].data = dataA;
+  chartA.update();
+}
+
+function animate(timestamp) {
+  if (!playing) return;
+  if (!lastTimestamp) lastTimestamp = timestamp;
+  const dt = (timestamp - lastTimestamp) / 1000;
+  lastTimestamp = timestamp;
+
+  t += dt;
+  if (t > 10) { t = 10; playing = false; $('btnPlay').textContent = 'Demarrer'; }
+
+  drawTrack();
+  if (playing) animId = requestAnimationFrame(animate);
+}
+
+function togglePlay() {
+  playing = !playing;
+  $('btnPlay').textContent = playing ? 'Pause' : 'Reprendre';
+  $('btnPlay').className = playing ? 'btn btn-pause' : 'btn btn-play';
+  if (playing) {
+    lastTimestamp = null;
+    animId = requestAnimationFrame(animate);
+  }
+}
+
+function resetAnim() {
+  playing = false;
+  t = 0;
+  lastTimestamp = null;
+  $('btnPlay').textContent = 'Demarrer';
+  $('btnPlay').className = 'btn btn-play';
+  if (animId) cancelAnimationFrame(animId);
+  getParams();
+  updateMotionType();
+  drawTrack();
+  buildCharts();
+}
+
+// Init
+initCharts();
+resetAnim();
+</script>
+</body>
+</html>
