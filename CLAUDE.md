@@ -1,6 +1,6 @@
 # CLAUDE.md — Site pédagogique Maths & Sciences LP
 
-Espace pédagogique pour les classes de Bac Professionnel (Seconde et Terminale).
+Espace pédagogique pour les classes de Bac Professionnel (Seconde, Première et Terminale).
 Ce fichier est lu automatiquement par Claude Code à chaque session.
 
 ---
@@ -16,9 +16,12 @@ Ce fichier est lu automatiquement par Claude Code à chaque session.
 ├── index.html                  ← Page d'accueil
 ├── maths/
 │   ├── seconde/ch01..ch14/     ← lecon.html, exercices.html, ds.html
+│   ├── premiere/ch01..ch09/    ← lecon.html, exercices.html, ds.html
 │   └── terminale/ch01..ch11/   ← lecon.html, exercices.html, ds.html
 ├── physique-chimie/
 │   ├── seconde/ch01..ch14/
+│   ├── premiere-iccer/ch01..chXX/  ← groupement 1 (ICCER)
+│   ├── premiere-era/ch01..chXX/    ← groupement 3 (ERA-MA)
 │   ├── terminale-iccer/ch01..ch11/
 │   └── terminale-era/ch01..ch08/
 ├── simulations/                ← Pages interactives (Canvas/SVG/JS)
@@ -44,8 +47,11 @@ Chaque page de cours utilise :
 | Dossier | `--p` | `--p-bg` | `--p-border` |
 |---|---|---|---|
 | `maths/seconde` | `#0056b3` | `#ebf5ff` | `#bee3f8` |
+| `maths/premiere` | `#0969da` | `#dbeafe` | `#93c5fd` |
 | `maths/terminale` | `#0969da` | `#dbeafe` | `#93c5fd` |
 | `physique-chimie/seconde` | `#6f42c1` | `#f5f0ff` | `#c4b5fd` |
+| `physique-chimie/premiere-iccer` | `#0969da` | `#dbeafe` | `#93c5fd` |
+| `physique-chimie/premiere-era` | `#2da44e` | `#f0fff4` | `#86efac` + `--s:#0ea5e9` |
 | `physique-chimie/terminale-iccer` | `#0969da` | `#dbeafe` | `#93c5fd` |
 | `physique-chimie/terminale-era` | `#2da44e` | `#f0fff4` | `#86efac` + `--s:#0ea5e9` |
 
@@ -114,7 +120,7 @@ Seules les classes vraiment spécifiques à une page peuvent rester inline.
 
 ---
 
-## DIFFÉRENCIATION PÉDAGOGIQUE (Terminale)
+## DIFFÉRENCIATION PÉDAGOGIQUE (Première & Terminale)
 
 ### Philosophie
 
@@ -195,8 +201,8 @@ Avant de générer du contenu, consulter les fichiers dans `/prompts/` :
 | `prompts/prompt-cours.md` | Structure d'une page de cours |
 | `prompts/prompt-exercices.md` | Structure d'une page d'exercices |
 | `prompts/prompt-filiere-2mama.md` | Contextes pro Seconde MAMA (menuiserie/agencement) |
-| `prompts/prompt-filiere-era-ma.md` | Contextes pro Terminale ERA/MA (agencement/bois) |
-| `prompts/prompt-filiere-ticcer.md` | Contextes pro Terminale ICCER (chauffage/énergie) |
+| `prompts/prompt-filiere-era-ma.md` | Contextes pro Première & Terminale ERA/MA (agencement/bois) |
+| `prompts/prompt-filiere-ticcer.md` | Contextes pro Première & Terminale ICCER (chauffage/énergie) |
 
 ### Règles contextes professionnels
 
