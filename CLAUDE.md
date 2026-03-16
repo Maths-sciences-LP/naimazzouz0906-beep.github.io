@@ -288,41 +288,52 @@ Si de nouvelles classes communes sont ajoutées à plusieurs pages, les centrali
 
 ---
 
-## Audits du site
+## Audits du site — Feuille de route du développement
 
-Claude doit régulièrement proposer des audits du projet afin d'améliorer :
+Les audits dans `/audits/` sont le **tableau de bord central du projet**. Ils ne sont pas de simples documents d'analyse : ils constituent la **feuille de route** pour le développement et l'amélioration du site.
 
-- la qualité pédagogique
-- la cohérence avec les programmes scolaires
-- la structure du site
-- la qualité des exercices
-- la pertinence des simulations
-- la cohérence entre les niveaux (2nde, première, terminale)
+### Principe fondamental
 
-Les audits doivent être enregistrés dans le dossier `/audits/` sous forme de fichiers markdown.
+**Les audits pilotent le travail.** Avant de générer du nouveau contenu ou de modifier le site :
 
-Les audits doivent être mis à jour lorsque le site évolue.
+1. **Consulter les audits** dans `/audits/` pour identifier les priorités
+2. **Identifier** dans les audits :
+   - les chapitres manquants ou incomplets
+   - les pages à compléter (cours, exercices, DS)
+   - les exercices à améliorer ou à créer
+   - les simulations à créer ou à corriger
+   - les incohérences pédagogiques (progression, différenciation, contextes pro)
+   - les problèmes techniques (CSS, chemins, accessibilité)
+3. **Travailler en priorité** sur les éléments identifiés comme critiques ou hauts dans les audits
+4. **Ne pas refaire une analyse déjà présente** dans un audit existant — s'appuyer sur le travail déjà fait
 
-### Fichiers d'audit existants
+### Fichiers d'audit
 
 | Fichier | Dimension auditée |
 |---|---|
 | `audits/audit-global.md` | Vue d'ensemble, indicateurs, couverture par section |
 | `audits/audit-technique.md` | HTML, CSS, JS, chemins, accessibilité |
 | `audits/audit-programmes.md` | Conformité programmes officiels, chapitres, PDF |
-| `audits/audit-pedagogique.md` | Différenciation, contextes pro, classes pédagogiques |
+| `audits/audit-pedagogique.md` | Différenciation, contextes pro, classes pédagogiques (synthèse) |
+| `audits/audit-pedagogique-maths.md` | Détail pédagogique — cours de mathématiques |
+| `audits/audit-pedagogique-pc.md` | Détail pédagogique — cours de physique-chimie |
 | `audits/audit-exercices.md` | Corrections, DS, complétude, qualité |
 | `audits/audit-simulations.md` | Simulations interactives, ancrage pédagogique |
 
 ### Règle de mise à jour obligatoire
 
-**Quand un problème identifié dans un audit est corrigé :**
+**Après chaque modification du site liée à un audit :**
 
 1. **Ouvrir l'audit concerné** (ex: `audits/audit-technique.md`)
-2. **Déplacer l'élément** de la section `## Problemes identifies` vers `## Corrections realisees`
+2. **Déplacer l'élément corrigé** de `## Problemes identifies` vers `## Corrections realisees` avec la date
 3. **Cocher la case** correspondante dans `## Ameliorations restantes`
 4. **Mettre à jour la date** (`Dernière mise à jour`) en haut du fichier
 5. **Mettre à jour les compteurs** si applicable (ex: "61 fichiers" → "0 fichiers")
+
+**Si une amélioration est partiellement réalisée :**
+
+- Laisser l'élément dans `## Ameliorations restantes` avec une note sur ce qui a été fait et ce qui reste
+- Ajouter la correction partielle dans `## Corrections realisees`
 
 **Quand un nouveau problème est découvert :**
 
@@ -330,17 +341,36 @@ Les audits doivent être mis à jour lorsque le site évolue.
 2. Ajouter une tâche dans `## Ameliorations restantes`
 3. Mettre à jour la date
 
-### Exemple de mise à jour après correction
+### Structure standard d'un audit
 
-Avant :
+Chaque fichier d'audit doit contenir ces sections dans cet ordre :
+
 ```markdown
+# Titre de l'audit
+**Date** : AAAA-MM-JJ
+**Dernière mise à jour** : AAAA-MM-JJ
+
 ## Problemes identifies
-### 1. Chemins absolus cassés — nav.js (61 fichiers)
-61 fichiers utilisent src="/nav.js" au lieu du chemin relatif.
+### 1. Titre du problème (gravité : CRITIQUE/HAUTE/MOYENNE/BASSE)
+Description, fichiers concernés, nombre d'occurrences.
+
+## Corrections realisees
+- **AAAA-MM-JJ** : Description de la correction
+
+## Ameliorations restantes
+### Priorité critique
+- [ ] Tâche à faire
+### Priorité haute
+- [ ] Tâche à faire
+### Priorité moyenne
+- [ ] Tâche à faire
+### Priorité basse
+- [ ] Tâche à faire
 ```
 
-Après correction :
-```markdown
-## Corrections realisees
-- **2026-03-17** : Corrigé les 61 chemins absolus `/nav.js` → `../../../nav.js`
-```
+### Objectifs
+
+- **Éviter les analyses redondantes** : ne pas refaire ce qui est déjà documenté
+- **Suivre l'avancement** : chaque correction est tracée avec sa date
+- **Prioriser le travail** : les niveaux critique > haute > moyenne > basse guident l'ordre de traitement
+- **Maintenir la cohérence** : les audits reflètent toujours l'état réel du site
