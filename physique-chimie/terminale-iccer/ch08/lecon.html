@@ -11,9 +11,6 @@
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .retenir ul{margin:8px 0 0 0;padding-left:20px}
 
-.exo summary{font-weight:700;cursor:pointer;color:var(--s);margin-bottom:6px}
-.exo details[open] summary{margin-bottom:10px}
-
 .situation strong{color:#1d4ed8}
 
 .chart-wrap canvas{max-height:320px}
@@ -725,42 +722,40 @@
 <h2>13. Mini-exercices corrigés</h2>
 
 <div class="exo">
-  <details>
-    <summary>▶ Exercice 1 — Longueur d'onde d'un son émis par une CTA</summary>
-    <p>
-      Un ventilo-convecteur émet un bruit caractéristique à la fréquence <strong>f = 200 Hz</strong>
-      dans l'air à 20 °C (c_son = 340 m/s).
-    </p>
-    <ol>
-      <li>Calculer la longueur d'onde λ de ce son.</li>
-      <li>Calculer sa période T.</li>
-      <li>Ce son est-il audible ? Indiquer à quel domaine il appartient.</li>
-    </ol>
-    <hr>
-    <strong>Correction :</strong>
+  <strong>Exercice 1 — Longueur d'onde d'un son émis par une CTA</strong>
+  <p>
+    Un ventilo-convecteur émet un bruit caractéristique à la fréquence <strong>f = 200 Hz</strong>
+    dans l'air à 20 °C (c_son = 340 m/s).
+  </p>
+  <ol>
+    <li>Calculer la longueur d'onde λ de ce son.</li>
+    <li>Calculer sa période T.</li>
+    <li>Ce son est-il audible ? Indiquer à quel domaine il appartient.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
     <p>
       <em>1.</em> \(\lambda = c/f = 340/200 = \mathbf{1{,}7 \text{ m}}\)<br>
       <em>2.</em> \(T = 1/f = 1/200 = 5{,}0 \times 10^{-3} \text{ s} = \mathbf{5{,}0 \text{ ms}}\)<br>
       <em>3.</em> f = 200 Hz ∈ [20 Hz ; 20 kHz] → son <strong>audible</strong>, dans les graves.
       C'est le type de fréquence produit par les ventilateurs (basses fréquences difficiles à isoler avec des parois légères).
     </p>
-  </details>
+  </div>
 </div>
 
 <div class="exo">
-  <details>
-    <summary>▶ Exercice 2 — Niveau sonore d'un compresseur frigorifique</summary>
-    <p>
-      Un compresseur de PAC extérieur produit une intensité sonore mesurée à I = 3,16 × 10⁻⁴ W/m² à 1 mètre.
-      (I₀ = 10⁻¹² W/m²)
-    </p>
-    <ol>
-      <li>Calculer le niveau sonore L à 1 m.</li>
-      <li>Des protections auditives sont-elles obligatoires pour un technicien travaillant à 1 m pendant 30 minutes ?</li>
-      <li>À quelle distance r₂ le niveau descend-il à 85 dB (seuil de risque) ?</li>
-    </ol>
-    <hr>
-    <strong>Correction :</strong>
+  <strong>Exercice 2 — Niveau sonore d'un compresseur frigorifique</strong>
+  <p>
+    Un compresseur de PAC extérieur produit une intensité sonore mesurée à I = 3,16 × 10⁻⁴ W/m² à 1 mètre.
+    (I₀ = 10⁻¹² W/m²)
+  </p>
+  <ol>
+    <li>Calculer le niveau sonore L à 1 m.</li>
+    <li>Des protections auditives sont-elles obligatoires pour un technicien travaillant à 1 m pendant 30 minutes ?</li>
+    <li>À quelle distance r₂ le niveau descend-il à 85 dB (seuil de risque) ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
     <p>
       <em>1.</em> \(L = 10\log(3{,}16 \times 10^{-4} / 10^{-12}) = 10\log(3{,}16 \times 10^8)\)<br>
       \(\log(3{,}16 \times 10^8) = \log(3{,}16) + 8 \approx 0{,}5 + 8 = 8{,}5\)<br>
@@ -770,23 +765,22 @@
       Pour descendre sous 80 dB (action préventive) :
       \(L_2 = 85 - 20\log(r_2) = 80 \Rightarrow 20\log(r_2) = 5 \Rightarrow r_2 = 10^{0,25} \approx \mathbf{1{,}8 \text{ m}}\).
     </p>
-  </details>
+  </div>
 </div>
 
 <div class="exo">
-  <details>
-    <summary>▶ Exercice 3 — Atténuation par la distance : CTA en toiture</summary>
-    <p>
-      Une CTA installée en toiture d'un immeuble produit un niveau sonore de <strong>L₁ = 75 dB</strong>
-      à r₁ = 2 m. Un appartement est situé à <strong>r₂ = 15 m</strong> de la CTA (en ligne directe).
-    </p>
-    <ol>
-      <li>Calculer le niveau sonore L₂ à 15 m (en considérant la CTA comme une source ponctuelle).</li>
-      <li>La réglementation acoustique impose &lt; 35 dB dans un séjour. Cette limite est-elle respectée ?</li>
-      <li>De combien dB faudrait-il atténuer le niveau à la source pour respecter la norme ?</li>
-    </ol>
-    <hr>
-    <strong>Correction :</strong>
+  <strong>Exercice 3 — Atténuation par la distance : CTA en toiture</strong>
+  <p>
+    Une CTA installée en toiture d'un immeuble produit un niveau sonore de <strong>L₁ = 75 dB</strong>
+    à r₁ = 2 m. Un appartement est situé à <strong>r₂ = 15 m</strong> de la CTA (en ligne directe).
+  </p>
+  <ol>
+    <li>Calculer le niveau sonore L₂ à 15 m (en considérant la CTA comme une source ponctuelle).</li>
+    <li>La réglementation acoustique impose &lt; 35 dB dans un séjour. Cette limite est-elle respectée ?</li>
+    <li>De combien dB faudrait-il atténuer le niveau à la source pour respecter la norme ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
     <p>
       <em>1.</em> \(L_2 = L_1 - 20\log(r_2/r_1) = 75 - 20\log(15/2) = 75 - 20\log(7{,}5)\)<br>
       \(\log(7{,}5) \approx 0{,}875\)<br>
@@ -795,24 +789,23 @@
       <em>3.</em> Il faut descendre à 35 dB à 15 m. Atténuation nécessaire = 57,5 − 35 = <strong>22,5 dB</strong>.
       Solutions : encoffrement acoustique de la CTA, écran acoustique, silent-blocs, implantation plus éloignée.
     </p>
-  </details>
+  </div>
 </div>
 
 <div class="exo">
-  <details>
-    <summary>▶ Exercice 4 — Calcul de I et comparaison de deux sources</summary>
-    <p>
-      Deux équipements sont installés dans le même local technique :
-      une pompe à chaleur (L_PAC = 72 dB) et un compresseur frigorifique (L_comp = 90 dB).
-      (I₀ = 10⁻¹² W/m²)
-    </p>
-    <ol>
-      <li>Calculer l'intensité I_PAC et l'intensité I_comp.</li>
-      <li>Combien de fois le compresseur est-il plus intense que la PAC ?</li>
-      <li>Un technicien doit intervenir 2 heures dans ce local avec un seul EPI auditif offrant une atténuation de 15 dB. Le niveau reçu est-il acceptable (< 85 dB) ?</li>
-    </ol>
-    <hr>
-    <strong>Correction :</strong>
+  <strong>Exercice 4 — Calcul de I et comparaison de deux sources</strong>
+  <p>
+    Deux équipements sont installés dans le même local technique :
+    une pompe à chaleur (L_PAC = 72 dB) et un compresseur frigorifique (L_comp = 90 dB).
+    (I₀ = 10⁻¹² W/m²)
+  </p>
+  <ol>
+    <li>Calculer l'intensité I_PAC et l'intensité I_comp.</li>
+    <li>Combien de fois le compresseur est-il plus intense que la PAC ?</li>
+    <li>Un technicien doit intervenir 2 heures dans ce local avec un seul EPI auditif offrant une atténuation de 15 dB. Le niveau reçu est-il acceptable (< 85 dB) ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
     <p>
       <em>1.</em> \(I_{PAC} = 10^{-12} \times 10^{72/10} = 10^{-12} \times 10^{7{,}2} \approx 10^{-12} \times 1{,}585 \times 10^7 \approx \mathbf{1{,}59 \times 10^{-5} \text{ W/m}^2}\)<br>
       \(I_{comp} = 10^{-12} \times 10^{90/10} = 10^{-12} \times 10^9 = \mathbf{10^{-3} \text{ W/m}^2}\)<br>
@@ -822,33 +815,32 @@
       Avec EPI atténuant 15 dB : niveau reçu = 90 − 15 = <strong>75 dB < 85 dB</strong> → <strong>acceptable</strong>.
       Mais une intervention de 2 h à 75 dB reste longue ; vérifier que le niveau moyen (LEX,8h) reste sous 80 dB.
     </p>
-  </details>
+  </div>
 </div>
 
 <!-- ====================================================
      EXERCICE 5 — CHOIX DES EPI AUDITIFS
      ==================================================== -->
 <div class="exo">
-  <details>
-    <summary>▶ Exercice 5 — Choix des EPI auditifs pour un chantier d'installation thermique</summary>
-    <p>
-      Un installateur thermique installe une PAC en toiture. Il est exposé à trois sources sonores simultanées :
-      <ul>
-        <li>Foreuse percussion : L₁ = 105 dB</li>
-        <li>Compresseur de service : L₂ = 88 dB</li>
-        <li>Bruit de fond (vent, circulation) : L₃ = 72 dB</li>
-      </ul>
-      La réglementation impose une exposition ≤ 80 dB sur 8 heures (valeur d'action inférieure) et interdit toute exposition > 87 dB sans EPI.
-    </p>
-    <ol>
-      <li>Quelle source domine le niveau sonore global ? (Justifier sans calcul détaillé.)</li>
-      <li>Pour protéger le technicien lors de l'utilisation de la foreuse (105 dB, durée 2h), un casque anti-bruit offrant 32 dB d'atténuation est disponible. Quel niveau reçoit-il avec ce casque ?</li>
-      <li>Ce casque est-il suffisant pour rester sous 80 dB ? Sous 87 dB ?</li>
-      <li>Des bouchons d'oreille offrent 24 dB d'atténuation. Peut-on les combiner avec le casque ? (L'atténuation combinée n'est pas la somme, mais ≈ atténuation la plus forte + 5 dB.)</li>
-      <li>Donner deux autres mesures de prévention collective pour réduire le bruit à la source.</li>
-    </ol>
-    <hr>
-    <strong>Correction :</strong>
+  <strong>Exercice 5 — Choix des EPI auditifs pour un chantier d'installation thermique</strong>
+  <p>
+    Un installateur thermique installe une PAC en toiture. Il est exposé à trois sources sonores simultanées :
+    <ul>
+      <li>Foreuse percussion : L₁ = 105 dB</li>
+      <li>Compresseur de service : L₂ = 88 dB</li>
+      <li>Bruit de fond (vent, circulation) : L₃ = 72 dB</li>
+    </ul>
+    La réglementation impose une exposition ≤ 80 dB sur 8 heures (valeur d'action inférieure) et interdit toute exposition > 87 dB sans EPI.
+  </p>
+  <ol>
+    <li>Quelle source domine le niveau sonore global ? (Justifier sans calcul détaillé.)</li>
+    <li>Pour protéger le technicien lors de l'utilisation de la foreuse (105 dB, durée 2h), un casque anti-bruit offrant 32 dB d'atténuation est disponible. Quel niveau reçoit-il avec ce casque ?</li>
+    <li>Ce casque est-il suffisant pour rester sous 80 dB ? Sous 87 dB ?</li>
+    <li>Des bouchons d'oreille offrent 24 dB d'atténuation. Peut-on les combiner avec le casque ? (L'atténuation combinée n'est pas la somme, mais ≈ atténuation la plus forte + 5 dB.)</li>
+    <li>Donner deux autres mesures de prévention collective pour réduire le bruit à la source.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
     <p>
       <em>1. Source dominante :</em> La foreuse à 105 dB domine largement (écart de 17 dB avec le compresseur). En cumul de sources, la source la plus forte détermine presque à elle seule le niveau global (+ quelques dixièmes de dB).<br><br>
       <em>2. Niveau avec casque (−32 dB) :</em><br>
@@ -858,7 +850,7 @@
       Atténuation combinée ≈ 32 + 5 = 37 dB → niveau reçu = 105 − 37 = 68 dB. Utile si la durée d'exposition est très longue ou si le niveau dépasse 105 dB. En pratique, la combinaison est recommandée au-delà de 105 dB.<br><br>
       <em>5. Mesures collectives :</em> Encoffrement acoustique de la foreuse, utilisation d'une foreuse avec marteau intégré moins bruyant (technologie SDS+), organisation des plannings pour limiter l'exposition cumulée (rotation des travailleurs), choix d'équipements labellisés « faible bruit ».
     </p>
-  </details>
+  </div>
 </div>
 
 <!-- ====================================================
@@ -923,6 +915,7 @@
 </div>
 
 </div>
-<script src="/nav.js"></script>
+<script>function toggle(b){var d=b.nextElementSibling;if(d.style.display==='block'){d.style.display='none';b.textContent='Voir la correction'}else{d.style.display='block';b.textContent='Masquer la correction'}}</script>
+<script src="../../../nav.js"></script>
 </body>
 </html>
