@@ -17,12 +17,229 @@
   <p class="sous-titre">1ère Bac Pro | Géométrie | Mathématiques</p>
 </header>
 
-<div class="objectifs">
-  <h3>Exercices</h3>
-  <p>Contenu à venir.</p>
+<!-- ══════════════════════════════════════════ RAPPELS ══════════════════════════════════════════ -->
+
+<div class="retenir">
+  <h3>Rappels essentiels</h3>
+  <ul>
+    <li><strong>Coordonnées d'un vecteur :</strong> \(\overrightarrow{AB} = \begin{pmatrix} x_B - x_A \\ y_B - y_A \end{pmatrix}\)</li>
+    <li><strong>Somme :</strong> \(\vec{u} + \vec{v} = \begin{pmatrix} x + x' \\ y + y' \end{pmatrix}\) &nbsp; — &nbsp; <strong>Produit :</strong> \(k\vec{u} = \begin{pmatrix} kx \\ ky \end{pmatrix}\)</li>
+    <li><strong>Norme :</strong> \(\|\vec{u}\| = \sqrt{x^2 + y^2}\)</li>
+    <li><strong>Milieu :</strong> \(M\left(\dfrac{x_A + x_B}{2}\;;\;\dfrac{y_A + y_B}{2}\right)\)</li>
+    <li><strong>Colinéarité :</strong> \(\vec{u}\) et \(\vec{v}\) sont colinéaires si \(xy' - x'y = 0\).</li>
+    <li><strong>Relation de Chasles :</strong> \(\overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC}\)</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════ NIVEAU 1 ══════════════════════════════════════════ -->
+
+<div class="niveau-header niv1"><span class="badge-green">Niveau 1</span><h2>Application directe</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 1</div>
+  <div class="exo-titre">Coordonnées de vecteurs</div>
+  <p>On donne les points \(A(1\;;\;4)\), \(B(5\;;\;2)\), \(C(-3\;;\;0)\) et \(D(4\;;\;-1)\).</p>
+  <ol>
+    <li>Calculer les coordonnées de \(\overrightarrow{AB}\).</li>
+    <li>Calculer les coordonnées de \(\overrightarrow{CD}\).</li>
+    <li>Calculer les coordonnées de \(\overrightarrow{BA}\).</li>
+    <li>Que remarque-t-on entre \(\overrightarrow{AB}\) et \(\overrightarrow{BA}\) ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\overrightarrow{AB} = \begin{pmatrix} 5-1 \\ 2-4 \end{pmatrix} = \begin{pmatrix} 4 \\ -2 \end{pmatrix}\)</li>
+      <li>\(\overrightarrow{CD} = \begin{pmatrix} 4-(-3) \\ -1-0 \end{pmatrix} = \begin{pmatrix} 7 \\ -1 \end{pmatrix}\)</li>
+      <li>\(\overrightarrow{BA} = \begin{pmatrix} 1-5 \\ 4-2 \end{pmatrix} = \begin{pmatrix} -4 \\ 2 \end{pmatrix}\)</li>
+      <li>\(\overrightarrow{BA} = -\overrightarrow{AB}\). Les coordonnées sont opposées : un vecteur et son opposé ont des coordonnées de signes contraires.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 2</div>
+  <div class="exo-titre">Somme, différence et produit par un scalaire</div>
+  <p>On donne \(\vec{u}\begin{pmatrix} 3 \\ -2 \end{pmatrix}\) et \(\vec{v}\begin{pmatrix} -1 \\ 5 \end{pmatrix}\).</p>
+  <ol>
+    <li>Calculer \(\vec{u} + \vec{v}\).</li>
+    <li>Calculer \(\vec{u} - \vec{v}\).</li>
+    <li>Calculer \(3\vec{u}\).</li>
+    <li>Calculer \(2\vec{u} + 3\vec{v}\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\vec{u} + \vec{v} = \begin{pmatrix} 3+(-1) \\ -2+5 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</li>
+      <li>\(\vec{u} - \vec{v} = \begin{pmatrix} 3-(-1) \\ -2-5 \end{pmatrix} = \begin{pmatrix} 4 \\ -7 \end{pmatrix}\)</li>
+      <li>\(3\vec{u} = \begin{pmatrix} 9 \\ -6 \end{pmatrix}\)</li>
+      <li>\(2\vec{u} + 3\vec{v} = \begin{pmatrix} 6+(-3) \\ -4+15 \end{pmatrix} = \begin{pmatrix} 3 \\ 11 \end{pmatrix}\)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 3</div>
+  <div class="exo-titre">Norme et distance</div>
+  <p>On donne \(A(2\;;\;1)\) et \(B(5\;;\;5)\).</p>
+  <ol>
+    <li>Calculer les coordonnées de \(\overrightarrow{AB}\).</li>
+    <li>Calculer \(\|\overrightarrow{AB}\|\). Donner la valeur exacte puis l'arrondi au dixième.</li>
+    <li>Que représente \(\|\overrightarrow{AB}\|\) géométriquement ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\overrightarrow{AB} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}\)</li>
+      <li>\(\|\overrightarrow{AB}\| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5\).</li>
+      <li>\(\|\overrightarrow{AB}\|\) représente la <strong>distance</strong> entre les points \(A\) et \(B\), soit \(AB = 5\).</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ NIVEAU 2 ══════════════════════════════════════════ -->
+
+<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 4</div>
+  <div class="exo-titre">Parallélogramme — Plan d'agencement</div>
+  <p>Un menuisier agenceur dessine le plan d'un bureau. Il place trois sommets d'un meuble rectangulaire dans un repère : \(A(1\;;\;2)\), \(B(4\;;\;6)\) et \(C(7\;;\;2)\).</p>
+  <ol>
+    <li>Calculer \(\overrightarrow{AB}\) et \(\overrightarrow{DC}\).</li>
+    <li>Déterminer les coordonnées du point \(D\) tel que \(ABCD\) soit un parallélogramme.</li>
+    <li>Vérifier en calculant les milieux des diagonales \([AC]\) et \([BD]\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\overrightarrow{AB} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}\). Pour que \(ABCD\) soit un parallélogramme, il faut \(\overrightarrow{DC} = \overrightarrow{AB}\).</li>
+      <li>\(\overrightarrow{DC} = \begin{pmatrix} 7 - x_D \\ 2 - y_D \end{pmatrix} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}\).
+        <br>\(7 - x_D = 3 \Rightarrow x_D = 4\) et \(2 - y_D = 4 \Rightarrow y_D = -2\).
+        <br>Donc \(D(4\;;\;-2)\).</li>
+      <li>Milieu de \([AC]\) : \(\left(\dfrac{1+7}{2}\;;\;\dfrac{2+2}{2}\right) = (4\;;\;2)\).
+        <br>Milieu de \([BD]\) : \(\left(\dfrac{4+4}{2}\;;\;\dfrac{6+(-2)}{2}\right) = (4\;;\;2)\).
+        <br>Les milieux sont identiques : les diagonales se coupent en leur milieu, ce qui confirme le parallélogramme.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 5</div>
+  <div class="exo-titre">Relation de Chasles</div>
+  <p>On donne les points \(A(0\;;\;3)\), \(B(2\;;\;7)\) et \(C(5\;;\;1)\).</p>
+  <ol>
+    <li>Calculer \(\overrightarrow{AB}\), \(\overrightarrow{BC}\) et \(\overrightarrow{AC}\).</li>
+    <li>Vérifier la relation de Chasles : \(\overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC}\).</li>
+    <li>Calculer \(\|\overrightarrow{AC}\|\). Le triangle \(ABC\) est-il quelconque, isocèle ou équilatéral ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\overrightarrow{AB} = \begin{pmatrix} 2 \\ 4 \end{pmatrix}\), \(\overrightarrow{BC} = \begin{pmatrix} 3 \\ -6 \end{pmatrix}\), \(\overrightarrow{AC} = \begin{pmatrix} 5 \\ -2 \end{pmatrix}\).</li>
+      <li>\(\overrightarrow{AB} + \overrightarrow{BC} = \begin{pmatrix} 2+3 \\ 4+(-6) \end{pmatrix} = \begin{pmatrix} 5 \\ -2 \end{pmatrix} = \overrightarrow{AC}\). La relation est vérifiée.</li>
+      <li>\(AB = \sqrt{4+16} = \sqrt{20} \approx 4{,}5\), \(BC = \sqrt{9+36} = \sqrt{45} \approx 6{,}7\), \(AC = \sqrt{25+4} = \sqrt{29} \approx 5{,}4\).
+        <br>Les trois longueurs sont différentes : le triangle est <strong>quelconque</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 6</div>
+  <div class="exo-titre">Milieu et symétrie</div>
+  <p>On donne \(A(-2\;;\;3)\) et \(M(1\;;\;5)\) est le milieu du segment \([AB]\).</p>
+  <ol>
+    <li>Rappeler la formule du milieu.</li>
+    <li>Déterminer les coordonnées du point \(B\).</li>
+    <li>Vérifier que \(\overrightarrow{AM} = \overrightarrow{MB}\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(M\left(\dfrac{x_A + x_B}{2}\;;\;\dfrac{y_A + y_B}{2}\right)\).</li>
+      <li>\(\dfrac{-2 + x_B}{2} = 1 \Rightarrow x_B = 4\) et \(\dfrac{3 + y_B}{2} = 5 \Rightarrow y_B = 7\). Donc \(B(4\;;\;7)\).</li>
+      <li>\(\overrightarrow{AM} = \begin{pmatrix} 3 \\ 2 \end{pmatrix}\) et \(\overrightarrow{MB} = \begin{pmatrix} 3 \\ 2 \end{pmatrix}\). On a bien \(\overrightarrow{AM} = \overrightarrow{MB}\).</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ NIVEAU 3 ══════════════════════════════════════════ -->
+
+<div class="niveau-header niv3"><span class="badge-yellow">Niveau 3</span><h2>Approfondissement</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 7</div>
+  <div class="exo-titre">Colinéarité et alignement</div>
+  <p>On donne les points \(A(1\;;\;2)\), \(B(4\;;\;8)\) et \(C(3\;;\;6)\).</p>
+  <ol>
+    <li>Calculer les coordonnées de \(\overrightarrow{AB}\) et \(\overrightarrow{AC}\).</li>
+    <li>Montrer que \(\overrightarrow{AB}\) et \(\overrightarrow{AC}\) sont colinéaires (critère du déterminant).</li>
+    <li>Que peut-on en déduire pour les points \(A\), \(B\) et \(C\) ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\overrightarrow{AB} = \begin{pmatrix} 3 \\ 6 \end{pmatrix}\) et \(\overrightarrow{AC} = \begin{pmatrix} 2 \\ 4 \end{pmatrix}\).</li>
+      <li>Déterminant : \(3 \times 4 - 6 \times 2 = 12 - 12 = 0\). Les vecteurs sont <strong>colinéaires</strong>.</li>
+      <li>Puisque \(\overrightarrow{AB}\) et \(\overrightarrow{AC}\) sont colinéaires, les points \(A\), \(B\) et \(C\) sont <strong>alignés</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 8</div>
+  <div class="exo-titre">Déplacement de meuble — Menuisier agenceur</div>
+  <p>Un menuisier agenceur doit déplacer un meuble dans un atelier. Il effectue successivement deux déplacements :</p>
+  <ul>
+    <li>Premier déplacement : \(\vec{u}\begin{pmatrix} 3 \\ 2 \end{pmatrix}\) (en mètres)</li>
+    <li>Deuxième déplacement : \(\vec{v}\begin{pmatrix} -1 \\ 4 \end{pmatrix}\) (en mètres)</li>
+  </ul>
+  <p>Le meuble était initialement en position \(P(1\;;\;1)\).</p>
+  <ol>
+    <li>Calculer le déplacement total \(\vec{w} = \vec{u} + \vec{v}\).</li>
+    <li>Quelle est la position finale du meuble ?</li>
+    <li>Quelle est la distance totale parcourue (somme des deux déplacements) ?</li>
+    <li>Quelle est la distance « à vol d'oiseau » entre la position initiale et la position finale ?</li>
+    <li>Pourquoi ces deux distances sont-elles différentes ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\vec{w} = \begin{pmatrix} 3+(-1) \\ 2+4 \end{pmatrix} = \begin{pmatrix} 2 \\ 6 \end{pmatrix}\).</li>
+      <li>Position finale : \(P' = P + \vec{w} = (1+2\;;\;1+6) = (3\;;\;7)\).</li>
+      <li>Distance parcourue : \(\|\vec{u}\| + \|\vec{v}\| = \sqrt{9+4} + \sqrt{1+16} = \sqrt{13} + \sqrt{17} \approx 3{,}6 + 4{,}1 = 7{,}7\) m.</li>
+      <li>Distance à vol d'oiseau : \(\|\vec{w}\| = \sqrt{4+36} = \sqrt{40} \approx 6{,}3\) m.</li>
+      <li>La distance parcourue est plus grande car le trajet n'est pas en ligne droite (les deux déplacements ne sont pas dans la même direction). L'inégalité triangulaire garantit que \(\|\vec{u} + \vec{v}\| \leq \|\vec{u}\| + \|\vec{v}\|\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 9</div>
+  <div class="exo-titre">Équilibre de forces — Technicien de maintenance</div>
+  <p>Un technicien de maintenance étudie l'équilibre d'un panneau suspendu à deux câbles. Les forces exercées par les câbles sont modélisées par :</p>
+  <ul>
+    <li>\(\vec{F_1}\begin{pmatrix} -3 \\ 5 \end{pmatrix}\) (en newtons)</li>
+    <li>\(\vec{F_2}\begin{pmatrix} 3 \\ 4 \end{pmatrix}\) (en newtons)</li>
+  </ul>
+  <p>Le poids du panneau est \(\vec{P}\begin{pmatrix} 0 \\ -9 \end{pmatrix}\).</p>
+  <ol>
+    <li>Calculer la résultante des forces des câbles : \(\vec{R} = \vec{F_1} + \vec{F_2}\).</li>
+    <li>Le panneau est en équilibre si \(\vec{R} + \vec{P} = \vec{0}\). Est-ce le cas ?</li>
+    <li>Si l'équilibre n'est pas atteint, quelle force supplémentaire \(\vec{F_3}\) faudrait-il ajouter pour l'obtenir ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\vec{R} = \begin{pmatrix} -3+3 \\ 5+4 \end{pmatrix} = \begin{pmatrix} 0 \\ 9 \end{pmatrix}\).</li>
+      <li>\(\vec{R} + \vec{P} = \begin{pmatrix} 0+0 \\ 9+(-9) \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} = \vec{0}\). <strong>Oui</strong>, le panneau est en équilibre.</li>
+      <li>L'équilibre est déjà atteint, aucune force supplémentaire n'est nécessaire.</li>
+    </ol>
+  </div>
 </div>
 
 </div>
+
+<script>function toggle(btn){const c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}</script>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
 </body>

@@ -17,12 +17,382 @@
   <p class="sous-titre">1ère Bac Pro | Algèbre – Analyse | Mathématiques</p>
 </header>
 
-<div class="objectifs">
-  <h3>Exercices</h3>
-  <p>Contenu à venir.</p>
+<!-- ══════════════════════════════════════════ RAPPELS ══════════════════════════════════════════ -->
+
+<div class="retenir">
+  <h3>Rappels essentiels</h3>
+  <ul>
+    <li><strong>Équation \(f(x) = g(x)\) :</strong> les solutions sont les abscisses des points d'intersection des courbes \(\mathcal{C}_f\) et \(\mathcal{C}_g\).</li>
+    <li><strong>Inéquation \(f(x) \geq g(x)\) :</strong> les solutions correspondent aux valeurs de \(x\) pour lesquelles \(\mathcal{C}_f\) est au-dessus de \(\mathcal{C}_g\).</li>
+    <li><strong>Cas particulier \(f(x) = k\) :</strong> on trace la droite horizontale \(y = k\) et on lit les abscisses des intersections.</li>
+    <li><strong>Algorithme de balayage :</strong> on calcule \(h(x) = f(x) - g(x)\) pour des valeurs successives de \(x\) et on repère le changement de signe.</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════ NIVEAU 1 ══════════════════════════════════════════ -->
+
+<div class="niveau-header niv1"><span class="badge-green">Niveau 1</span><h2>Application directe</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 1</div>
+  <div class="exo-titre">Lecture graphique — Images et antécédents</div>
+  <p>On considère la fonction \(f\) dont la courbe est donnée ci-dessous.</p>
+  <div class="svg-wrap">
+  <svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" style="max-width:440px;background:#fafbfc;border:1px solid #e2e8f0;border-radius:10px">
+    <defs><marker id="ar1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#333"/></marker></defs>
+    <line x1="40" y1="250" x2="420" y2="250" stroke="#333" stroke-width="1.5" marker-end="url(#ar1)"/>
+    <line x1="40" y1="250" x2="40" y2="20" stroke="#333" stroke-width="1.5" marker-end="url(#ar1)"/>
+    <text x="415" y="268" font-size="12" fill="#333" font-family="serif" font-style="italic">x</text>
+    <text x="22" y="28" font-size="12" fill="#333" font-family="serif" font-style="italic">y</text>
+    <text x="28" y="264" font-size="11" fill="#333">O</text>
+    <g stroke="#e2e8f0" stroke-width="0.5">
+      <line x1="100" y1="250" x2="100" y2="30"/><line x1="160" y1="250" x2="160" y2="30"/>
+      <line x1="220" y1="250" x2="220" y2="30"/><line x1="280" y1="250" x2="280" y2="30"/>
+      <line x1="340" y1="250" x2="340" y2="30"/><line x1="400" y1="250" x2="400" y2="30"/>
+      <line x1="40" y1="210" x2="410" y2="210"/><line x1="40" y1="170" x2="410" y2="170"/>
+      <line x1="40" y1="130" x2="410" y2="130"/><line x1="40" y1="90" x2="410" y2="90"/>
+      <line x1="40" y1="50" x2="410" y2="50"/>
+    </g>
+    <line x1="100" y1="246" x2="100" y2="254" stroke="#333"/><text x="95" y="268" font-size="11" fill="#333">1</text>
+    <line x1="160" y1="246" x2="160" y2="254" stroke="#333"/><text x="155" y="268" font-size="11" fill="#333">2</text>
+    <line x1="220" y1="246" x2="220" y2="254" stroke="#333"/><text x="215" y="268" font-size="11" fill="#333">3</text>
+    <line x1="280" y1="246" x2="280" y2="254" stroke="#333"/><text x="275" y="268" font-size="11" fill="#333">4</text>
+    <line x1="340" y1="246" x2="340" y2="254" stroke="#333"/><text x="335" y="268" font-size="11" fill="#333">5</text>
+    <line x1="400" y1="246" x2="400" y2="254" stroke="#333"/><text x="395" y="268" font-size="11" fill="#333">6</text>
+    <line x1="36" y1="210" x2="44" y2="210" stroke="#333"/><text x="22" y="214" font-size="11" fill="#333">1</text>
+    <line x1="36" y1="170" x2="44" y2="170" stroke="#333"/><text x="22" y="174" font-size="11" fill="#333">2</text>
+    <line x1="36" y1="130" x2="44" y2="130" stroke="#333"/><text x="22" y="134" font-size="11" fill="#333">3</text>
+    <line x1="36" y1="90" x2="44" y2="90" stroke="#333"/><text x="22" y="94" font-size="11" fill="#333">4</text>
+    <line x1="36" y1="50" x2="44" y2="50" stroke="#333"/><text x="22" y="54" font-size="11" fill="#333">5</text>
+    <!-- Courbe f : parabole passant par (0,1) (2,5) (4,1) (5,0) avec sommet en (2,5) -->
+    <path d="M40,210 Q100,130 160,50 Q220,130 280,210 Q310,240 340,250 Q370,248 400,230" fill="none" stroke="#0969da" stroke-width="2.5"/>
+    <text x="395" y="222" font-size="13" fill="#0969da" font-weight="bold" font-family="serif" font-style="italic">𝒞f</text>
+  </svg>
+  </div>
+  <ol>
+    <li>Lire graphiquement \(f(0)\), \(f(2)\) et \(f(5)\).</li>
+    <li>Résoudre graphiquement \(f(x) = 3\).</li>
+    <li>Résoudre graphiquement \(f(x) = 0\).</li>
+    <li>Pour quelles valeurs de \(x\) a-t-on \(f(x) \geq 3\) ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(f(0) = 1\), \(f(2) = 5\), \(f(5) = 0\).</li>
+      <li>On trace la droite \(y = 3\). Elle coupe la courbe en deux points d'abscisses \(x \approx 1\) et \(x \approx 3\). Les solutions sont \(x \approx 1\) et \(x \approx 3\).</li>
+      <li>\(f(x) = 0\) lorsque la courbe coupe l'axe des abscisses. On lit \(x = 5\).</li>
+      <li>\(f(x) \geq 3\) lorsque la courbe est au-dessus de la droite \(y = 3\), soit pour \(x \in [1\;;\;3]\) environ.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 2</div>
+  <div class="exo-titre">Résolution graphique de \(f(x) = g(x)\)</div>
+  <p>On considère les fonctions \(f\) et \(g\) définies sur \([0\;;\;6]\). Voici leurs représentations graphiques.</p>
+  <div class="svg-wrap">
+  <svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" style="max-width:440px;background:#fafbfc;border:1px solid #e2e8f0;border-radius:10px">
+    <defs><marker id="ar2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#333"/></marker></defs>
+    <line x1="40" y1="250" x2="420" y2="250" stroke="#333" stroke-width="1.5" marker-end="url(#ar2)"/>
+    <line x1="40" y1="250" x2="40" y2="20" stroke="#333" stroke-width="1.5" marker-end="url(#ar2)"/>
+    <text x="415" y="268" font-size="12" fill="#333" font-family="serif" font-style="italic">x</text>
+    <text x="22" y="28" font-size="12" fill="#333" font-family="serif" font-style="italic">y</text>
+    <text x="28" y="264" font-size="11" fill="#333">O</text>
+    <g stroke="#e2e8f0" stroke-width="0.5">
+      <line x1="100" y1="250" x2="100" y2="30"/><line x1="160" y1="250" x2="160" y2="30"/>
+      <line x1="220" y1="250" x2="220" y2="30"/><line x1="280" y1="250" x2="280" y2="30"/>
+      <line x1="340" y1="250" x2="340" y2="30"/><line x1="400" y1="250" x2="400" y2="30"/>
+      <line x1="40" y1="210" x2="410" y2="210"/><line x1="40" y1="170" x2="410" y2="170"/>
+      <line x1="40" y1="130" x2="410" y2="130"/><line x1="40" y1="90" x2="410" y2="90"/>
+      <line x1="40" y1="50" x2="410" y2="50"/>
+    </g>
+    <line x1="100" y1="246" x2="100" y2="254" stroke="#333"/><text x="95" y="268" font-size="11" fill="#333">1</text>
+    <line x1="160" y1="246" x2="160" y2="254" stroke="#333"/><text x="155" y="268" font-size="11" fill="#333">2</text>
+    <line x1="220" y1="246" x2="220" y2="254" stroke="#333"/><text x="215" y="268" font-size="11" fill="#333">3</text>
+    <line x1="280" y1="246" x2="280" y2="254" stroke="#333"/><text x="275" y="268" font-size="11" fill="#333">4</text>
+    <line x1="340" y1="246" x2="340" y2="254" stroke="#333"/><text x="335" y="268" font-size="11" fill="#333">5</text>
+    <line x1="400" y1="246" x2="400" y2="254" stroke="#333"/><text x="395" y="268" font-size="11" fill="#333">6</text>
+    <line x1="36" y1="210" x2="44" y2="210" stroke="#333"/><text x="22" y="214" font-size="11" fill="#333">1</text>
+    <line x1="36" y1="170" x2="44" y2="170" stroke="#333"/><text x="22" y="174" font-size="11" fill="#333">2</text>
+    <line x1="36" y1="130" x2="44" y2="130" stroke="#333"/><text x="22" y="134" font-size="11" fill="#333">3</text>
+    <line x1="36" y1="90" x2="44" y2="90" stroke="#333"/><text x="22" y="94" font-size="11" fill="#333">4</text>
+    <line x1="36" y1="50" x2="44" y2="50" stroke="#333"/><text x="22" y="54" font-size="11" fill="#333">5</text>
+    <!-- Courbe f (parabole) : f(x) passe par (0,1) (1,3) (2,4) (3,4) (4,3) (5,1) -->
+    <path d="M40,210 Q130,80 220,90 Q310,80 400,210" fill="none" stroke="#0969da" stroke-width="2.5"/>
+    <text x="395" y="200" font-size="13" fill="#0969da" font-weight="bold" font-family="serif" font-style="italic">𝒞f</text>
+    <!-- Droite g : g(x) = 0.5x + 1 passant par (0,1) et (6,4) -->
+    <line x1="40" y1="210" x2="400" y2="90" stroke="#d97706" stroke-width="2.5"/>
+    <text x="402" y="84" font-size="13" fill="#d97706" font-weight="bold" font-family="serif" font-style="italic">𝒞g</text>
+    <!-- Points d'intersection -->
+    <circle cx="40" cy="210" r="5" fill="#e53e3e" stroke="white" stroke-width="1.5"/>
+    <circle cx="340" cy="130" r="5" fill="#e53e3e" stroke="white" stroke-width="1.5"/>
+  </svg>
+  </div>
+  <ol>
+    <li>Résoudre graphiquement l'équation \(f(x) = g(x)\).</li>
+    <li>Résoudre graphiquement l'inéquation \(f(x) \geq g(x)\).</li>
+    <li>Résoudre graphiquement l'inéquation \(f(x) < g(x)\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Les courbes se coupent en deux points : \(x = 0\) et \(x = 5\). Les solutions sont \(x = 0\) et \(x = 5\).</li>
+      <li>\(f(x) \geq g(x)\) lorsque la courbe \(\mathcal{C}_f\) est au-dessus de \(\mathcal{C}_g\). D'après le graphique : \(x \in [0\;;\;5]\).</li>
+      <li>\(f(x) < g(x)\) lorsque \(\mathcal{C}_f\) est strictement en-dessous de \(\mathcal{C}_g\). D'après le graphique : \(x \in\;]5\;;\;6]\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 3</div>
+  <div class="exo-titre">Tableau de valeurs et balayage simple</div>
+  <p>On considère les fonctions \(f(x) = x^2\) et \(g(x) = 2x + 3\) sur l'intervalle \([0\;;\;5]\).</p>
+  <ol>
+    <li>Compléter le tableau de valeurs suivant :
+      <table class="full" style="margin:10px 0">
+        <tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+        <tr><th>\(f(x) = x^2\)</th><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><th>\(g(x) = 2x+3\)</th><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </li>
+    <li>D'après le tableau, entre quelles valeurs entières se trouvent les solutions de \(f(x) = g(x)\) ?</li>
+    <li>Utiliser l'algorithme de balayage avec un pas de \(0{,}1\) pour approcher la solution dans l'intervalle \([2\;;\;4]\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Tableau complété :
+        <table class="full" style="margin:10px 0">
+          <tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+          <tr><th>\(f(x)\)</th><td>0</td><td>1</td><td>4</td><td>9</td><td>16</td><td>25</td></tr>
+          <tr><th>\(g(x)\)</th><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td><td>13</td></tr>
+        </table>
+      </li>
+      <li>On pose \(h(x) = f(x) - g(x) = x^2 - 2x - 3\).
+        <br>\(h(2) = 4 - 7 = -3 < 0\) et \(h(3) = 9 - 9 = 0\).
+        <br>Donc \(x = 3\) est une solution exacte. Par ailleurs, \(h(0) = -3\), \(h(-1) = 1 + 2 - 3 = 0\) donc l'autre solution est \(x = -1\) (hors intervalle).
+      </li>
+      <li>Le balayage confirme la solution en \(x = 3\) car \(h(3) = 0\) exactement. Aucune approximation n'est nécessaire ici.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ NIVEAU 2 ══════════════════════════════════════════ -->
+
+<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 4</div>
+  <div class="exo-titre">Comparaison de tarifs — Installateur thermique</div>
+  <p>Un installateur thermique compare deux types de chaudières pour un client. Le coût annuel total (achat + entretien cumulé) de chaque système est modélisé par :</p>
+  <ul>
+    <li><strong>Chaudière gaz :</strong> \(f(x) = 200x + 2\,500\) (en euros), où \(x\) est le nombre d'années.</li>
+    <li><strong>Pompe à chaleur :</strong> \(g(x) = 80x + 5\,000\) (en euros).</li>
+  </ul>
+  <ol>
+    <li>Compléter le tableau de valeurs pour \(x\) allant de 0 à 25 (par pas de 5).
+      <table class="full" style="margin:10px 0">
+        <tr><th>\(x\)</th><td>0</td><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td></tr>
+        <tr><th>\(f(x)\)</th><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><th>\(g(x)\)</th><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </li>
+    <li>Résoudre par le calcul l'équation \(f(x) = g(x)\). Interpréter le résultat.</li>
+    <li>Résoudre l'inéquation \(g(x) \leq f(x)\). Interpréter pour le client.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Tableau complété :
+        <table class="full" style="margin:10px 0">
+          <tr><th>\(x\)</th><td>0</td><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td></tr>
+          <tr><th>\(f(x)\)</th><td>2 500</td><td>3 500</td><td>4 500</td><td>5 500</td><td>6 500</td><td>7 500</td></tr>
+          <tr><th>\(g(x)\)</th><td>5 000</td><td>5 400</td><td>5 800</td><td>6 200</td><td>6 600</td><td>7 000</td></tr>
+        </table>
+      </li>
+      <li>\(f(x) = g(x) \iff 200x + 2\,500 = 80x + 5\,000 \iff 120x = 2\,500 \iff x \approx 20{,}8\) ans.
+        <br>Les deux systèmes reviennent au même prix au bout d'environ <strong>21 ans</strong>.</li>
+      <li>\(g(x) \leq f(x) \iff 80x + 5\,000 \leq 200x + 2\,500 \iff 2\,500 \leq 120x \iff x \geq 20{,}8\).
+        <br>La pompe à chaleur devient plus économique à partir de la <strong>21<sup>e</sup> année</strong>. Si le client prévoit de rester longtemps dans son logement, la pompe à chaleur est le meilleur choix.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 5</div>
+  <div class="exo-titre">Seuil de rentabilité — Atelier de menuiserie</div>
+  <p>Un menuisier agenceur fabrique des étagères sur-mesure. Le coût de production de \(x\) étagères est modélisé par \(C(x) = 0{,}5x^2 + 20\) (en euros) et la recette est \(R(x) = 12x\) (en euros), pour \(x \in [0\;;\;25]\).</p>
+  <ol>
+    <li>Compléter le tableau de valeurs :
+      <table class="full" style="margin:10px 0">
+        <tr><th>\(x\)</th><td>0</td><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>14</td><td>20</td></tr>
+        <tr><th>\(C(x)\)</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><th>\(R(x)\)</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </li>
+    <li>Entre quelles valeurs de \(x\) l'artisan fait-il un bénéfice, c'est-à-dire \(R(x) > C(x)\) ?</li>
+    <li>Utiliser le balayage (pas de 1) pour encadrer précisément les deux seuils de rentabilité.</li>
+    <li>Vérifier en résolvant \(0{,}5x^2 + 20 = 12x\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Tableau complété :
+        <table class="full" style="margin:10px 0">
+          <tr><th>\(x\)</th><td>0</td><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>14</td><td>20</td></tr>
+          <tr><th>\(C(x)\)</th><td>20</td><td>22</td><td>28</td><td>38</td><td>52</td><td>70</td><td>118</td><td>220</td></tr>
+          <tr><th>\(R(x)\)</th><td>0</td><td>24</td><td>48</td><td>72</td><td>96</td><td>120</td><td>168</td><td>240</td></tr>
+        </table>
+      </li>
+      <li>D'après le tableau, \(R(x) > C(x)\) pour \(x\) entre environ 2 et 20. L'artisan fait un bénéfice dans cette zone.</li>
+      <li>On pose \(h(x) = R(x) - C(x) = 12x - 0{,}5x^2 - 20 = -0{,}5x^2 + 12x - 20\).
+        <br>\(h(1) = -0{,}5 + 12 - 20 = -8{,}5 < 0\) et \(h(2) = -2 + 24 - 20 = 2 > 0\) : premier seuil entre 1 et 2.
+        <br>\(h(21) = -220{,}5 + 252 - 20 = 11{,}5 > 0\) et \(h(22) = -242 + 264 - 20 = 2 > 0\), \(h(23) = -264{,}5 + 276 - 20 = -8{,}5 < 0\) : second seuil entre 22 et 23.</li>
+      <li>\(0{,}5x^2 - 12x + 20 = 0\), soit \(x^2 - 24x + 40 = 0\).
+        <br>\(\Delta = 576 - 160 = 416\), \(\sqrt{\Delta} \approx 20{,}4\).
+        <br>\(x_1 = \dfrac{24 - 20{,}4}{2} \approx 1{,}8\) et \(x_2 = \dfrac{24 + 20{,}4}{2} \approx 22{,}2\).
+        <br>L'artisan est rentable pour \(x \in\;]1{,}8\;;\;22{,}2[\), soit en fabriquant entre <strong>2 et 22 étagères</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 6</div>
+  <div class="exo-titre">Algorithme de balayage</div>
+  <p>On cherche une solution de l'équation \(x^2 = 5x - 3\) dans l'intervalle \([0\;;\;5]\).</p>
+  <ol>
+    <li>Poser \(h(x) = x^2 - 5x + 3\). Calculer \(h(0)\), \(h(1)\), \(h(2)\), \(h(3)\), \(h(4)\), \(h(5)\).</li>
+    <li>Repérer les intervalles où \(h\) change de signe. Combien de solutions l'équation admet-elle dans \([0\;;\;5]\) ?</li>
+    <li>Affiner le balayage dans l'intervalle \([0\;;\;1]\) avec un pas de \(0{,}1\) pour approcher la première solution à \(0{,}1\) près.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>
+        <table class="full" style="margin:10px 0">
+          <tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+          <tr><th>\(h(x)\)</th><td>3</td><td>−1</td><td>−3</td><td>−3</td><td>−1</td><td>3</td></tr>
+        </table>
+      </li>
+      <li>\(h\) change de signe entre \(x = 0\) et \(x = 1\) (de + à −) et entre \(x = 4\) et \(x = 5\) (de − à +). L'équation admet <strong>deux solutions</strong>.</li>
+      <li>Balayage dans \([0\;;\;1]\) avec pas \(0{,}1\) :
+        <table class="full" style="margin:10px 0;font-size:.9em">
+          <tr><th>\(x\)</th><td>0,5</td><td>0,6</td><td>0,7</td><td>0,8</td></tr>
+          <tr><th>\(h(x)\)</th><td>0,75</td><td>0,36</td><td>−0,01</td><td>−0,36</td></tr>
+        </table>
+        \(h\) change de signe entre \(0{,}6\) et \(0{,}7\). La première solution est \(x \approx 0{,}7\) à \(0{,}1\) près.
+        <br><em>(La valeur exacte est \(x = \frac{5 - \sqrt{13}}{2} \approx 0{,}697\).)</em></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ NIVEAU 3 ══════════════════════════════════════════ -->
+
+<div class="niveau-header niv3"><span class="badge-yellow">Niveau 3</span><h2>Approfondissement</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 7</div>
+  <div class="exo-titre">Problème complet — Coût de chauffage</div>
+  <p>Un technicien chauffagiste modélise le coût mensuel de deux systèmes de chauffage en fonction de la température extérieure \(t\) (en °C) :</p>
+  <ul>
+    <li><strong>Chaudière gaz :</strong> \(f(t) = -3t + 120\) (en euros)</li>
+    <li><strong>Pompe à chaleur :</strong> \(g(t) = 0{,}2t^2 - 8t + 110\) (en euros)</li>
+  </ul>
+  <p>Les fonctions sont définies pour \(t \in [-5\;;\;25]\).</p>
+  <ol>
+    <li>Compléter le tableau de valeurs :
+      <table class="full" style="margin:10px 0">
+        <tr><th>\(t\)</th><td>−5</td><td>0</td><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td></tr>
+        <tr><th>\(f(t)\)</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><th>\(g(t)\)</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </li>
+    <li>Pour quelle(s) température(s) les deux systèmes coûtent-ils le même prix ?</li>
+    <li>Pour quelles températures la pompe à chaleur est-elle moins coûteuse que la chaudière gaz ?</li>
+    <li>Vérifier par le calcul en résolvant \(f(t) = g(t)\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Tableau complété :
+        <table class="full" style="margin:10px 0">
+          <tr><th>\(t\)</th><td>−5</td><td>0</td><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td></tr>
+          <tr><th>\(f(t)\)</th><td>135</td><td>120</td><td>105</td><td>90</td><td>75</td><td>60</td><td>45</td></tr>
+          <tr><th>\(g(t)\)</th><td>155</td><td>110</td><td>75</td><td>50</td><td>35</td><td>30</td><td>35</td></tr>
+        </table>
+      </li>
+      <li>D'après le tableau, \(f(t)\) et \(g(t)\) sont proches pour \(t\) entre −5 et 0. On utilise le balayage :
+        <br>\(h(-3) = f(-3) - g(-3) = 129 - 131{,}8 = -2{,}8\) et \(h(-2) = 126 - 126{,}8 = -0{,}8\) et \(h(-1) = 123 - 118{,}2 = 4{,}8\).
+        <br>Changement de signe entre \(t = -2\) et \(t = -1\) : les coûts sont égaux pour \(t \approx -2\) °C.
+        <br>Deuxième intersection : \(h(1) = 117 - 102{,}2 = 14{,}8 > 0\). On cherche plus loin… On constate que \(g\) reste en-dessous de \(f\) pour \(t \geq 0\). Vérifions par le calcul.</li>
+      <li>D'après le tableau, \(g(t) < f(t)\) pour \(t \geq 0\) environ (la pompe à chaleur est moins chère quand il ne fait pas trop froid).</li>
+      <li>\(f(t) = g(t) \iff -3t + 120 = 0{,}2t^2 - 8t + 110 \iff 0{,}2t^2 - 5t - 10 = 0 \iff t^2 - 25t - 50 = 0\).
+        <br>\(\Delta = 625 + 200 = 825\), \(\sqrt{\Delta} \approx 28{,}7\).
+        <br>\(t_1 = \dfrac{25 - 28{,}7}{2} \approx -1{,}9\) °C et \(t_2 = \dfrac{25 + 28{,}7}{2} \approx 26{,}8\) °C (hors domaine).
+        <br>Les coûts sont égaux pour \(t \approx -1{,}9\) °C. Au-dessus de cette température, la pompe à chaleur est <strong>toujours moins chère</strong> (sur le domaine \([-5\;;\;25]\)).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 8</div>
+  <div class="exo-titre">Balayage et précision</div>
+  <p>On considère l'équation \(x^3 = 10\) sur l'intervalle \([1\;;\;3]\).</p>
+  <ol>
+    <li>Justifier qu'il existe une solution dans \([1\;;\;3]\) (calculer les valeurs aux bornes).</li>
+    <li>Par un premier balayage (pas de 1), localiser la solution entre deux entiers consécutifs.</li>
+    <li>Affiner avec un pas de \(0{,}1\) pour encadrer la solution entre deux décimaux consécutifs.</li>
+    <li>Affiner encore avec un pas de \(0{,}01\) pour donner une approximation à \(0{,}01\) près.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>On pose \(h(x) = x^3 - 10\). \(h(1) = 1 - 10 = -9 < 0\) et \(h(3) = 27 - 10 = 17 > 0\). Comme \(h\) change de signe et que \(x \mapsto x^3\) est continue, il existe une solution dans \([1\;;\;3]\).</li>
+      <li>\(h(2) = 8 - 10 = -2 < 0\) et \(h(3) = 17 > 0\). La solution est dans \([2\;;\;3]\).</li>
+      <li>Balayage dans \([2\;;\;3]\) :
+        <br>\(h(2{,}1) = 9{,}261 - 10 = -0{,}739\) et \(h(2{,}2) = 10{,}648 - 10 = 0{,}648\).
+        <br>Changement de signe : la solution est dans \([2{,}1\;;\;2{,}2]\).</li>
+      <li>Balayage dans \([2{,}1\;;\;2{,}2]\) :
+        <br>\(h(2{,}15) = 9{,}938... - 10 = -0{,}061\) et \(h(2{,}16) = 10{,}078 - 10 = 0{,}078\).
+        <br>La solution est dans \([2{,}15\;;\;2{,}16]\). Donc \(\sqrt[3]{10} \approx 2{,}15\) à \(0{,}01\) près.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 9</div>
+  <div class="exo-titre">Situation professionnelle — Optimisation d'un devis</div>
+  <p>Un artisan menuisier propose deux formules de tarification pour la pose de parquet :</p>
+  <ul>
+    <li><strong>Formule A (forfait) :</strong> 500 € de déplacement + 15 € par m².</li>
+    <li><strong>Formule B (progressive) :</strong> 200 € de déplacement + 0,1 × (surface)² + 8 € par m².</li>
+  </ul>
+  <p>Soit \(x\) la surface en m². On a \(A(x) = 15x + 500\) et \(B(x) = 0{,}1x^2 + 8x + 200\).</p>
+  <ol>
+    <li>Calculer \(A(20)\), \(A(50)\), \(B(20)\) et \(B(50)\).</li>
+    <li>Résoudre \(A(x) = B(x)\). Interpréter le résultat pour le client.</li>
+    <li>Quelle formule est la plus avantageuse pour une surface de 40 m² ? Et pour 80 m² ?</li>
+    <li>Pour quelles surfaces la formule B est-elle moins chère que la formule A ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(A(20) = 300 + 500 = 800\) €, \(A(50) = 750 + 500 = 1\,250\) €.
+        <br>\(B(20) = 40 + 160 + 200 = 400\) €, \(B(50) = 250 + 400 + 200 = 850\) €.</li>
+      <li>\(15x + 500 = 0{,}1x^2 + 8x + 200 \iff 0{,}1x^2 - 7x - 300 = 0 \iff x^2 - 70x - 3\,000 = 0\).
+        <br>\(\Delta = 4\,900 + 12\,000 = 16\,900\), \(\sqrt{\Delta} = 130\).
+        <br>\(x = \dfrac{70 + 130}{2} = 100\) (on écarte la solution négative \(x = -30\)).
+        <br>Les deux formules coûtent le même prix pour une surface de <strong>100 m²</strong>.</li>
+      <li>\(A(40) = 1\,100\) € et \(B(40) = 160 + 320 + 200 = 680\) €. La formule B est moins chère.
+        <br>\(A(80) = 1\,700\) € et \(B(80) = 640 + 640 + 200 = 1\,480\) €. La formule B est encore moins chère.</li>
+      <li>La formule B est moins chère pour \(x < 100\) m², c'est-à-dire pour toute surface inférieure à 100 m². Au-delà, la formule A est plus avantageuse (le terme en \(x^2\) de B fait exploser le prix).</li>
+    </ol>
+  </div>
 </div>
 
 </div>
+
+<script>function toggle(btn){const c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}</script>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
 </body>
