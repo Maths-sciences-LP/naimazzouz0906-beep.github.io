@@ -11,7 +11,7 @@
 | Indicateur | Valeur |
 |---|---|
 | Pages HTML totales | 477 |
-| Sections (matière/niveau) | 8 |
+| Sections (matière/niveau) | 8 (+1 BTS) |
 | Chapitres couverts | 89 |
 | Simulations interactives | 63 |
 | Pages de cours (lecon.html) | 89 |
@@ -48,6 +48,8 @@ Chaque chapitre existant possède les 3 types de pages (lecon, exercices, ds).
 
 5. **Corrections incomplètes** : certaines pages d'exercices ont un déséquilibre entre le nombre d'exercices (.exo) et de corrections (.corr), ce qui suggère des corrections manquantes.
 
+6. **29 pages BTS stub** : dans `maths/bts/`, 29 fichiers (exercices.html et ds.html) ne contiennent qu'un placeholder "Ce devoir surveillé est en cours de rédaction". Les chapitres ch03-ch18 sont partiellement ou totalement incomplets.
+
 ---
 
 ## Corrections realisees
@@ -71,5 +73,6 @@ _(Section à compléter au fil des corrections)_
 - [ ] Compléter les corrections manquantes dans les pages d'exercices
 
 ### Priorité basse
+- [ ] Compléter les 29 pages BTS stub (exercices et DS)
 - [ ] Harmoniser les conventions de nommage entre sections
 - [ ] Mettre en place un script de vérification automatique (CI)

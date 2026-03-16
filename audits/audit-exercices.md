@@ -25,7 +25,23 @@ _(Détaillé dans audit-pedagogique.md)_
 
 Les 9 pages exercices.html et 9 pages ds.html de `maths/premiere` n'ont pas de niveaux de difficulté (socle/standard/appro). Tous les exercices sont indifférenciés.
 
-### 3. Boutons "Voir la correction" (.bc)
+### 3. 29 pages BTS stub (contenu placeholder)
+
+**Gravité : MOYENNE**
+
+Dans `maths/bts/`, 29 fichiers (exercices.html et ds.html) ne contiennent qu'un message placeholder : *"Ce devoir surveillé est en cours de rédaction. Le contenu sera disponible prochainement."*
+
+Chapitres concernés : ch01 (ds), ch02 (ds), ch03 (ds + exo), ch04 (ds), ch05 (ds), ch06 (ds + exo), ch07 (ds + exo), ch08 (ds), ch09 (ds + exo), ch10 (ds + exo), ch11 (ds + exo), ch12 (ds), ch13 (ds), ch14 (ds + exo), ch15 (ds + exo), ch16 (ds + exo), ch17 (ds + exo), ch18 (ds + exo).
+
+### 4. Deux mécanismes de correction coexistent
+
+Les corrections utilisent deux patterns différents selon les sections :
+- **maths/premiere** : `<details class="corr-wrap"><summary class="corr-btn">` (HTML5 sémantique, sans JS)
+- **physique-chimie** : boutons `.bc` avec `onclick` (nécessite JS)
+
+Les deux fonctionnent, mais l'incohérence peut créer de la confusion lors de la maintenance.
+
+### 5. Boutons "Voir la correction" (.bc)
 
 À vérifier : chaque bloc `.corr` doit être précédé d'un bouton `.bc` pour que l'élève puisse afficher la correction. Des corrections sans bouton resteraient invisibles.
 
@@ -58,6 +74,8 @@ Points à auditer systématiquement :
 - [ ] Vérifier la cohérence des numérotations d'exercices
 
 ### Priorité basse
+- [ ] Compléter les 29 pages BTS stub avec du contenu réel
+- [ ] Harmoniser le mécanisme de correction (choisir entre `<details>` et `.bc`)
 - [ ] Harmoniser le format des corrections (rédaction type, niveau de détail)
 - [ ] Ajouter des exercices de synthèse (multi-chapitres) en fin de progression
 - [ ] Créer un script de comptage automatique `.exo` vs `.corr` pour le suivi
