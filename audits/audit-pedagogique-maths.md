@@ -356,7 +356,7 @@ La section V "Representation graphique des suites" (ligne 273-309) explique comm
 
 ## Ameliorations restantes
 
-- [ ] Rediger premiere/ch05 (polynomes degre 2)
+- [x] Rediger premiere/ch05 (polynomes degre 2) (2026-03-16, 1037 lignes, conforme BO)
 - [ ] Rediger premiere/ch09 (trigonometrie)
 - [x] Harmoniser CSS de seconde/ch02 (def-box → def, exemple → ex, etc.) (2026-03-16)
 - [x] Harmoniser CSS de seconde/ch03 (container → c, exemple → ex) (2026-03-16)
