@@ -1,7 +1,7 @@
 # Audit Simulations Interactives
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-03-16
+**Dernière mise à jour** : 2026-03-16 (session 3)
 **Périmètre** : dossier `simulations/` — 63 fichiers HTML
 **Méthode** : Lecture et analyse de l'ensemble des 63 simulations, vérification du référencement depuis les pages de cours, analyse de la couverture par chapitre.
 
@@ -142,11 +142,13 @@ Répartition des orphelines :
 - Physique-chimie terminale ERA : 5 (Ch01, Ch02, Ch04, Ch06, Ch07)
 - Non attribuées : 5 + 5 sans niveau/chapitre
 
-### 2. 26 simulations incluent nav.js (non-conformité CLAUDE.md)
+### ~~2. 26 simulations incluent nav.js (non-conformité CLAUDE.md)~~ — CORRIGÉ
 
-**Gravité : MOYENNE**
+~~**Gravité : MOYENNE**~~
 
-CLAUDE.md spécifie que les simulations doivent être autonomes (pas de dépendance à styles.css ou nav.js). Or 26 simulations incluent `nav.js` :
+**Corrigé le 2026-03-16** : nav.js retiré des 26 simulations. 0 simulation non-conforme restante.
+
+~~CLAUDE.md spécifie que les simulations doivent être autonomes (pas de dépendance à styles.css ou nav.js). Or 26 simulations incluent `nav.js` :~~
 
 `atome-couches.html`, `atome.html`, `balance.html`, `chaleur.html`, `changement-etat.html`, `debit.html`, `dephasage.html`, `effet-joule.html`, `entrainement-ineq.html`, `entrainement.html`, `equations.html`, `gaz.html`, `graphe-equation.html`, `inegalite.html`, `melangeur.html`, `modeles-atome.html`, `moteur.html`, `ohm.html`, `oxydoreduction.html`, `pression.html`, `puissance.html`, `rayonnement.html`, `redressement.html`, `serre.html`, `son.html`, `traceur.html`
 
@@ -214,7 +216,7 @@ Simulations mentionnant un chapitre sans niveau ou un niveau sans chapitre :
 
 ## Corrections realisees
 
-- Aucune à ce stade.
+- **2026-03-16** : Retiré nav.js des 26 simulations non autonomes (atome-couches, atome, balance, chaleur, changement-etat, debit, dephasage, effet-joule, entrainement-ineq, entrainement, equations, gaz, graphe-equation, inegalite, melangeur, modeles-atome, moteur, ohm, oxydoreduction, pression, puissance, rayonnement, redressement, serre, son, traceur)
 
 ---
 
@@ -226,7 +228,7 @@ Simulations mentionnant un chapitre sans niveau ou un niveau sans chapitre :
 - [ ] Rattacher les 7 simulations sans niveau/chapitre à leur chapitre
 
 ### Priorité moyenne
-- [ ] Retirer `nav.js` des 26 simulations non conformes
+- [x] Retirer `nav.js` des 26 simulations non conformes (2026-03-16)
 - [ ] Ajouter des media queries aux 8 simulations non responsives
 - [ ] Créer des simulations pour maths/première (1 seule pour 9 chapitres)
 - [ ] Créer des simulations pour PC/première-ERA (1 seule pour 10 chapitres)
@@ -250,7 +252,7 @@ Simulations mentionnant un chapitre sans niveau ou un niveau sans chapitre :
 | Listées dans `simulations.html` | **63** (100 %) |
 | Sans niveau/chapitre | **7** (11 %) |
 | Avec métadonnées incomplètes | **12** (19 %) |
-| Incluant `nav.js` (non-conforme) | **26** (41 %) |
+| ~~Incluant `nav.js` (non-conforme)~~ | **0** (corrigé 2026-03-16) |
 | Sans media query | **8** (13 %) |
 | Avec template visuel ancien | **30** (48 %) |
 
