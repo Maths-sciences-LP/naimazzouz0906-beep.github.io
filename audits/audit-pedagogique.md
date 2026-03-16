@@ -1,68 +1,253 @@
-# Audit Pédagogique
+# Audit Pedagogique Global
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-03-16
-**Périmètre** : qualité pédagogique des cours, structure, différenciation, contextes professionnels
+**Derniere mise a jour** : 2026-03-16
+**Perimetre** : qualite des cours, clarte pedagogique, coherence inter-niveaux, progression 2nde-1ere-Tle, exemples, contextes professionnels
+**Methode** : lecture integrale ou partielle de 50+ fichiers lecon.html, analyses statistiques CSS, comparaison inter-sections
+**Rapports detailles** : `audit-pedagogique-maths.md`, `audit-pedagogique-pc.md`
 
 ---
 
-## Problemes identifies
+## Resume executif
 
-### 1. Différenciation absente en maths/premiere (18 fichiers)
+Le site presente une **qualite pedagogique globalement bonne** (note moyenne 4/5) avec des points d'excellence (maths Seconde, PC 1ere ICCER, PC Tle ICCER) et des zones a ameliorer (maths Premiere avec 2 chapitres stubs, PC Tle ERA avec peu de guidage methodologique). La progression inter-niveaux est coherente et bien calibree dans toutes les disciplines. Les contextes professionnels respectent parfaitement la regle d'interdiction des sigles de filiere.
 
-**Gravité : HAUTE**
+### Notes par section
 
-Toute la section `maths/premiere` (9 exercices.html + 9 ds.html) ne contient **aucune différenciation pédagogique** :
-- Pas d'inclusion de `diff.js`
-- Pas de classes `diff-socle`, `diff-standard`, `diff-appro`
-- Pas de tags de niveau
+| Section | Note | Cours complets | Points cles |
+|---|---|---|---|
+| **Maths Seconde** | 4/5 | 14/14 (100%) | Excellentes animations, CSS ancien dans ch02-ch05 |
+| **Maths Premiere** | 3.5/5 | 7/9 (78%) | 2 chapitres stubs (ch05, ch09) — critique |
+| **Maths Terminale** | 4/5 | 11/11 (100%) | Programme complementaire complet, double contexte ICCER/ERA |
+| **PC Seconde** | 4/5 | 14/14 (100%) | SVG de qualite, redefinitions CSS inline |
+| **PC 1ere ICCER** | 4.5/5 | 10/10 (100%) | Situations pro exemplaires, labels inconsistants |
+| **PC 1ere ERA** | 4/5 | 10/10 (100%) | Contextes menuiserie parfaits, moins de `.meth` |
+| **PC Tle ICCER** | 4.5/5 | 8/8 (100%) | Niveau scientifique eleve, interactivite |
+| **PC Tle ERA** | 3.5/5 | 8/8 (100%) | Peu de `.meth`, `.appli` au lieu de `.situation` |
+| **Moyenne** | **4.0/5** | **82/84 (98%)** | |
 
-**Sections avec différenciation fonctionnelle** :
-- maths/terminale (22 fichiers)
-- physique-chimie/premiere-iccer (20 fichiers)
-- physique-chimie/premiere-era (20 fichiers)
-- physique-chimie/terminale-iccer (16 fichiers)
-- physique-chimie/terminale-era (16 fichiers)
+---
 
-**Section manquante** : `maths/premiere` — 18 fichiers à traiter.
+## 1. Qualite des cours
 
-### 2. Sigles de filière dans le contenu pédagogique
+### Points forts globaux
 
-Aucune occurrence des patterns interdits (`technicien ICCER`, `technicien ERA`, `technicien MAMA`, `technicien ERA-MA`) détectée dans le contenu. Bonne pratique respectée.
+1. **Structure pedagogique coherente** : la majorite des cours suivent le schema situation pro → objectifs → definitions → proprietes → methodes → exemples → a retenir. Les classes CSS `.def`, `.prop`, `.att`, `.meth`, `.retenir`, `.ex`, `.situation` sont utilisees de maniere cohérente.
 
-**Vigilance** : vérifier aussi les formulations plus subtiles (`contexte ERA-MA`, `application ICCER`, etc.) lors d'audits futurs.
+2. **Richesse des illustrations** : SVG inline pour les schemas (circuits, forces, spectres), Chart.js pour les graphiques interactifs, Canvas pour les animations. Les cours de Seconde (maths et PC) sont particulierement riches.
 
-### 3. Différenciation non applicable en Seconde
+3. **Exercices de verification integres** : la plupart des cours incluent des mini-exercices corriges avec `<details>` et le bouton `.bc`. Exceptions : PC 1ere ICCER (0 exercices dans les lecons) et maths Terminale (exercices principalement dans exercices.html).
 
-Conformément à la philosophie du site, la Seconde ne nécessite pas de différenciation. Les sections `maths/seconde` et `physique-chimie/seconde` sont correctement sans diff.js.
+4. **Erreurs frequentes bien anticipees** : les blocs `.att` identifient les confusions courantes (ex : pourcentages qui ne s'additionnent pas, f(a+b) != f(a)+f(b), confusion masse/poids).
 
-### 4. Qualité des contextes professionnels
+### Chapitres a ameliorer en priorite
 
-À vérifier systématiquement :
-- Les exercices utilisent-ils des contextes variés (professionnel, sport, science, quotidien) ?
-- Les situations professionnelles sont-elles réalistes et ancrées dans les métiers cibles ?
-- Les classes `.situation` sont-elles utilisées pour identifier les contextes pro ?
+| Chapitre | Probleme | Priorite |
+|---|---|---|
+| `maths/premiere/ch05` | **Stub vide** — Polynomes degre 2 (discriminant, forme canonique) | CRITIQUE |
+| `maths/premiere/ch09` | **Stub vide** — Trigonometrie (cos, sin, tan) | CRITIQUE |
+| `maths/seconde/ch02` | Incomplet (renvoie vers ch03), classes CSS non-standard | HAUTE |
+| `maths/seconde/ch03` | Container non-standard, classes CSS non-standard | HAUTE |
+| Tous les chapitres `PC Tle ERA` | Seulement 4 blocs `.meth` sur 8 chapitres | MOYENNE |
+
+---
+
+## 2. Clarte pedagogique
+
+### Notions bien expliquees
+
+- **Statistiques** (toute la filiere) : progression exemplaire de la stat 1 variable (2nde) a la regression non lineaire (Tle)
+- **Suites** (maths 1ere → Tle) : introduction claire, exemples concrets, progression naturelle
+- **Derivation** (maths 1ere ch06) : bien structure malgre l'absence de graphique de tangente
+- **Combustion** (PC 1ere) : ancrage parfait pour les deux filieres
+- **Oxydoreduction** (PC Tle) : schema SVG du transfert d'electrons, methode pas-a-pas
+
+### Notions a ameliorer
+
+| Notion | Chapitre | Probleme |
+|---|---|---|
+| Polynomes degre 2 | maths/premiere/ch05 | **Absent** — chapitre stub |
+| Trigonometrie | maths/premiere/ch09 | **Absent** — chapitre stub |
+| Resolution graphique | maths/premiere/ch04 | Pas de graphique interactif (paradoxal pour ce sujet) |
+| Geometrie dans l'espace | maths/premiere/ch07 | Pas de visualisation 3D |
+| Derivee (tangente) | maths/premiere/ch06 | Pas d'animation tangente glissante |
+| Suites (representation) | maths/premiere/ch03 | Pas de graphique Chart.js pour les termes (n, u_n) |
+
+---
+
+## 3. Coherence entre les niveaux
+
+### Mathematiques
+
+| Theme | 2nde | 1ere | Tle | Verdict |
+|---|---|---|---|---|
+| Statistiques | ch02-03 (1 var) | ch01 (2 var, regression) | ch01 (ajust. non lineaire) | Excellent |
+| Fonctions | ch07-10 (notion, lineaire, affine, carree) | ch04-06 (graphique, **deg 2 ABSENT**, derivee) | ch04-05, ch08-09 (deg 3, expo/log, integrale) | **Trou en 1ere** (ch05 stub) |
+| Geometrie | ch11-14 (Pythagore, Thales, solides) | ch07-09 (espace, vecteurs, **trigo ABSENT**) | ch06-07, ch11 (vecteurs, trigo, scalaire) | **Trou en 1ere** (ch09 stub) |
+| Suites | — | ch03 (arithmetiques, geometriques) | ch03 (geometriques approfondies) | Excellent |
+| Probabilites | ch04 | ch02 (conditionnelles) | ch02 (arbres, independance) | Bon |
+
+### Physique-Chimie
+
+| Theme | 2nde | 1ere | Tle | Verdict |
+|---|---|---|---|---|
+| Electricite | ch02-04 (U, I, Ohm, alternatif) | ch01-02 (P, E, transport HT) | ICCER: cos phi, moteur / ERA: transport, stockage | Excellent |
+| Thermique | ch10-12 (T, transferts, changements d'etat) | ch04 (3 modes) + ERA ch05 (minimiser) | ch04/03 (rayonnement, Wien, GES) | Excellent |
+| Mecanique | ch05-06 (mouvement, forces) | ch05-08 (v, a, moments, pression, Archimede) | ICCER: fluides (Pascal, debit) | Bon |
+| Chimie | ch07-08 (atome, solutions) | ch03 (combustion) + ch08/09 (titrage) | ch07/05 (oxydoreduction) | Bon |
+| Signaux | ch09, ch13-14 (son, lumiere) | ch09/10 (ondes EM, son) | ICCER: son / ERA: lumiere, info, attenuation | Bon |
+
+**Bilan** : la progression est logique et bien calibree en physique-chimie. En mathematiques, les 2 chapitres stubs de Premiere creent des trous dans la progression fonctions et geometrie.
+
+---
+
+## 4. Qualite des exemples
+
+### Points forts
+- **Variete** : les exemples couvrent des contextes professionnels, quotidiens et scientifiques
+- **Pertinence** : les exemples numeriques sont realistes et verifies
+- **Progressivite** : dans un meme chapitre, les exemples vont du simple au complexe
+
+### Points faibles
+- **Premiere maths** : moins d'exemples interactifs que la Seconde (pas de Chart.js dans 7 chapitres sur 9)
+- **Terminale ERA** : exemples corrects mais moins detailles que ICCER
+- **Seconde PC** : les contextes sont essentiellement menuiserie — pourrait beneficier de plus de diversite (sport, sante, environnement)
+
+---
+
+## 5. Contextes professionnels
+
+### Respect de la regle "pas de sigles dans le contenu"
+
+**CONFORME** — Aucune occurrence de :
+- "technicien ICCER", "technicien ERA", "technicien ERA-MA", "technicien MAMA"
+- "Contexte ERA-MA", "Application ICCER", "Exemple ERA-MA"
+
+Les sigles sont correctement limites aux `<title>`, `<h1>`, `<p class="sous-titre">`, liens de retour et badges.
+
+### Metiers reels utilises
+
+| Filiere | Metiers trouves | Conforme |
+|---|---|---|
+| ICCER | technicien chauffagiste, technicienne chauffagiste, installateur thermique, plombier chauffagiste, technicienne de maintenance energetique | OUI |
+| ERA | menuisier agenceur, ebeniste, menuisier metallier, charpentier-menuisier, fabricant de meubles, installateur d'agencement | OUI |
+| Seconde | menuisier, metreur, artisan menuisier | OUI |
+
+### Coherence ICCER / ERA
+
+Les modules communs (combustion, transferts thermiques, moments, pression, solutions, oxydoreduction) sont traites avec un **contenu scientifique identique** mais des **exemples adaptes a chaque filiere** :
+- ICCER : chaudiere, climatiseur, ballon ECS, circuit hydraulique, anode sacrificielle
+- ERA : defonceuse, scie, presse hydraulique, double vitrage, isolation phonique, garde-corps
+
+**Bilan** : differenciation des contextes pro reussie.
+
+---
+
+## 6. Coherence CSS des classes pedagogiques
+
+### Utilisation des classes standards
+
+| Section | .def | .prop | .att | .meth | .retenir | .ex | .exo | .situation |
+|---|---|---|---|---|---|---|---|---|
+| Maths 2nde | Oui (sauf ch02-05) | Oui | Oui | Oui | Oui | Oui | Oui | Oui |
+| Maths 1ere | Oui | Oui | Partiel | Oui | Oui | Oui | Oui | Oui |
+| Maths Tle | Oui | Oui | Oui | Oui | Oui | Oui | Oui | Oui |
+| PC 2nde | Oui | Oui | Oui | Oui | Oui | Oui | Oui (inline) | Non (0) |
+| PC 1ere ICCER | Oui | Oui | Oui | Oui | Oui | Oui | Non (0) | Partiel (situation-pro) |
+| PC 1ere ERA | Oui | Oui | Oui | Partiel (10) | Oui | Oui | Oui (20) | Oui (14) |
+| PC Tle ICCER | Oui | Oui | Oui | Oui (23) | Oui | Oui | Oui (36) | Oui |
+| PC Tle ERA | Oui | Oui | Oui | **Faible (4)** | Oui | Oui | Oui | **Non (.appli)** |
+
+### Problemes CSS identifies
+
+1. **maths/seconde ch02-ch05** : classes non-standard (`def-box`, `exemple`, `methode`, `attention`, `container`)
+2. **PC seconde (14 fichiers)** : redefinition inline de `.exo .exo-num` et `details.corr`
+3. **PC 1ere ICCER (10 fichiers)** : `label-def` au lieu de `label label-def`
+4. **PC 1ere ERA (5 fichiers)** : format de labels mixte
+5. **PC Tle ERA (8 fichiers)** : `class="appli"` au lieu de `class="situation"`
+6. **PC 1ere ICCER (7 fichiers)** : `class="situation-pro"` au lieu de `class="situation"`
+
+---
+
+## Problemes identifies (synthese hierarchisee)
+
+### Priorite CRITIQUE
+
+1. **Chapitres stubs en maths/premiere** : ch05 (Polynomes degre 2) et ch09 (Trigonometrie) sont vides. Ce sont des chapitres fondamentaux qui creent des trous dans la progression vers la Terminale.
+
+### Priorite HAUTE
+
+2. **Differenciation absente en maths/premiere** : 18 fichiers (exercices.html + ds.html) sans diff.js ni classes de differenciation.
+
+3. **Classes CSS non-standard en maths/seconde ch02-ch05** : `def-box` au lieu de `def`, `exemple` au lieu de `ex`, `container` au lieu de `c`.
+
+4. **Redefinitions CSS inline en PC seconde** : 14 fichiers redefinissent des classes de `styles.css`.
+
+5. **Labels inconsistants en PC 1ere ICCER** : `label-def` (classe unique) au lieu de `label label-def` (10 fichiers).
+
+6. **Classe `.appli` en PC Tle ERA** : 8 fichiers utilisent `.appli` au lieu de `.situation` (28 occurrences).
+
+### Priorite MOYENNE
+
+7. **PC Tle ERA : faible guidage methodologique** : seulement 4 blocs `.meth` sur 8 chapitres (vs 23 pour Tle ICCER).
+
+8. **Maths 1ere : pas de visualisations interactives** : contrairement a la Seconde, les chapitres 1ere n'ont quasiment pas de Chart.js, SVG ou Canvas.
+
+9. **Maths 1ere ch06** : pas d'animation tangente glissante pour la derivation.
+
+10. **PC 1ere ICCER** : `class="situation-pro"` au lieu de `class="situation"` dans 7 fichiers.
+
+11. **PC seconde ch12** : lien retour incorrect vers `index.html` au lieu de `pc-2nde-pro.html`.
+
+12. **PC seconde ch04-ch05** : labels places hors des blocs `.def`.
+
+### Priorite BASSE
+
+13. **Titres `<title>` inconsistants** dans toutes les sections (format variable).
+
+14. **Maths seconde** : badges de niveaux heterogenes (`badge-niv badge-1` vs `badge badge-green`).
+
+15. **Maths terminale** : entites HTML (`&ndash;`, `&eacute;`) au lieu de caracteres UTF-8 dans certains titres.
+
+16. **PC seconde** : pas de classe `.situation` (0 occurrences) — contextes pro non balises.
+
+17. **PC 1ere ICCER** : pas de mini-exercices dans les lecons (0 `.exo`).
 
 ---
 
 ## Corrections realisees
 
-- Aucune à ce stade.
+- Aucune a ce stade (audit initial).
 
 ---
 
 ## Ameliorations restantes
 
-### Priorité haute
-- [ ] Ajouter diff.js et les 3 niveaux de différenciation dans `maths/premiere/ch01` à `ch09` (exercices.html)
-- [ ] Ajouter diff.js et les 3 niveaux de différenciation dans `maths/premiere/ch01` à `ch09` (ds.html)
+### Priorite critique
+- [ ] Rediger `maths/premiere/ch05/lecon.html` (Polynomes degre 2)
+- [ ] Rediger `maths/premiere/ch09/lecon.html` (Trigonometrie)
 
-### Priorité moyenne
-- [ ] Auditer la variété des contextes professionnels dans chaque section
-- [ ] Vérifier que les métiers utilisés correspondent aux filières cibles (cf. tableau CLAUDE.md)
-- [ ] Vérifier l'utilisation des classes pédagogiques (.def, .prop, .meth, .att, .retenir) dans tous les cours
+### Priorite haute
+- [ ] Ajouter diff.js et differenciation dans `maths/premiere` (18 fichiers exercices + ds)
+- [ ] Harmoniser CSS de `maths/seconde/ch02-ch05` (def-box → def, exemple → ex, etc.)
+- [ ] Supprimer redefinitions CSS inline dans les 14 fichiers `physique-chimie/seconde`
+- [ ] Uniformiser labels en `label label-def` dans les 10 fichiers `premiere-iccer`
+- [ ] Remplacer `class="appli"` par `class="situation"` dans les 8 fichiers `terminale-era`
 
-### Priorité basse
-- [ ] Vérifier la progressivité pédagogique entre les 3 niveaux (socle → standard → appro)
-- [ ] Auditer la qualité des corrections : sont-elles détaillées et formatées correctement ?
-- [ ] Vérifier que les lecon.html ne contiennent PAS de diff.js (conformité CLAUDE.md)
+### Priorite moyenne
+- [ ] Ajouter des blocs `.meth` dans les chapitres `terminale-era` (objectif : 2+ par chapitre)
+- [ ] Ajouter visualisations interactives en `maths/premiere` (Chart.js pour ch03 suites, ch04 graphique, ch06 tangente)
+- [ ] Remplacer `class="situation-pro"` par `class="situation"` dans les 7 fichiers `premiere-iccer`
+- [ ] Corriger lien retour de `physique-chimie/seconde/ch12/lecon.html`
+- [ ] Corriger placement des labels dans `seconde/ch04` et `seconde/ch05`
+- [ ] Uniformiser les labels dans les 5 fichiers `premiere-era` concernes
+
+### Priorite basse
+- [ ] Uniformiser le format des `<title>` dans toutes les sections
+- [ ] Harmoniser badges de niveaux dans mini-exercices `maths/seconde`
+- [ ] Convertir entites HTML en UTF-8 (maths terminale ch04, ch05, ch08)
+- [ ] Ajouter `.situation` aux contextes pro existants en `physique-chimie/seconde`
+- [ ] Ajouter mini-exercices dans les lecons de `premiere-iccer`
+- [ ] Enrichir situations pro de `terminale-era` (personnages, scenarios)
+- [ ] Diversifier les contextes en Seconde (sport, sante, environnement)
+- [ ] Ajouter sections "Erreurs frequentes" dans cours `maths/premiere`
