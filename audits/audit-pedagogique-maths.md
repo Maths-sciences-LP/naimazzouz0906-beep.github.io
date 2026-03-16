@@ -361,7 +361,7 @@ La section V "Representation graphique des suites" (ligne 273-309) explique comm
 - [x] Harmoniser CSS de seconde/ch02 (def-box → def, exemple → ex, etc.) (2026-03-16)
 - [x] Harmoniser CSS de seconde/ch03 (container → c, exemple → ex) (2026-03-16)
 - [x] Harmoniser CSS inline de seconde/ch04, ch05 (methode→meth) (2026-03-16)
-- [ ] Corriger chemins `/nav.css` dans 9 fichiers terminale
+- [x] Corriger chemins `/nav.css` dans 9 fichiers terminale (deja corrige lors de la session 1)
 - [ ] Ajouter graphiques Chart.js dans premiere/ch03 (suites)
 - [ ] Ajouter animation tangente dans premiere/ch06
 - [ ] Ajouter graphique interactif dans premiere/ch04
