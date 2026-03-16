@@ -1,6 +1,7 @@
 # Audit Exercices et DS
 
 **Date** : 2026-03-16
+**Dernière mise à jour** : 2026-03-16
 **Périmètre** : pages exercices.html et ds.html — corrections, qualité, complétude
 
 ---

@@ -1,6 +1,7 @@
 # Audit Global du Site Pédagogique
 
 **Date** : 2026-03-16
+**Dernière mise à jour** : 2026-03-16
 **Périmètre** : ensemble du site maths-sciences-lp.github.io
 
 ---

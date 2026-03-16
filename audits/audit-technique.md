@@ -1,6 +1,7 @@
 # Audit Technique
 
 **Date** : 2026-03-16
+**Dernière mise à jour** : 2026-03-16
 **Périmètre** : HTML, CSS, JavaScript, chemins, accessibilité
 
 ---

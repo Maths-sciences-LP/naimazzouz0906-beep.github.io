@@ -2,6 +2,7 @@
 
 **Date** : 2026-03-16
 **Périmètre** : dossier `simulations/` — 63 fichiers HTML
+**Dernière mise à jour** : 2026-03-16
 
 ---
 
@@ -44,13 +45,19 @@ Ces simulations ne sont référencées dans **aucune page de cours**. Elles sont
 - Leur ancrage pédagogique n'est pas visible
 - Elles risquent de ne jamais être utilisées
 
-### 2. Pas d'index de simulations centralisé
+### 2. Page hub `simulations.html` existante mais intégration limitée
 
-Il n'existe pas de page listant toutes les simulations disponibles avec leur description et le chapitre associé. Seul un accès par URL directe est possible.
+Un fichier `simulations.html` à la racine catalogue les 63 simulations. Cependant, seuls 3 cours (maths/seconde ch04, ch05, ch06) font un lien direct vers des simulations. L'intégration cours → simulation reste très faible.
 
-### 3. Autonomie des simulations
+### 3. 26 simulations incluent nav.js (non-conformité CLAUDE.md)
 
-Les simulations doivent être autonomes (styles inline, pas de dépendance à styles.css ou nav.js). À vérifier fichier par fichier.
+**Gravité : MOYENNE**
+
+CLAUDE.md spécifie que les simulations doivent être autonomes (pas de dépendance à styles.css ou nav.js). Or 26 simulations incluent `<script src="../nav.js"></script>` :
+
+`atome-couches.html`, `atome.html`, `balance.html`, `chaleur.html`, `changement-etat.html`, `debit.html`, `dephasage.html`, `effet-joule.html`, `entrainement-ineq.html`, `entrainement.html`, `equations.html`, `gaz.html`, `graphe-equation.html`, `inegalite.html`, `melangeur.html`, `modeles-atome.html`, `moteur.html`, `ohm.html`, `oxydoreduction.html`, `pression.html`, `puissance.html`, `rayonnement.html`, `redressement.html`, `serre.html`, `son.html`, `traceur.html`
+
+Les 37 autres simulations sont correctement autonomes.
 
 ### 4. Correspondance programme non vérifiée
 
@@ -68,10 +75,11 @@ Chaque simulation devrait correspondre à une notion du programme officiel. Pour
 
 ### Priorité haute
 - [ ] Lier chaque simulation orpheline à la page de cours correspondante (lien dans lecon.html ou exercices.html)
-- [ ] Créer un index des simulations (`simulations/index.html`) classé par matière et chapitre
+- [ ] Compléter la page hub `simulations.html` avec les chapitres associés à chaque simulation
 - [ ] Vérifier l'ancrage pédagogique de chaque simulation (quelle notion du programme illustre-t-elle ?)
 
 ### Priorité moyenne
+- [ ] Retirer `nav.js` des 26 simulations non conformes (ou décider de garder la navigation)
 - [ ] Vérifier l'autonomie technique de chaque simulation (pas de dépendance externe cassée)
 - [ ] Tester les simulations sur mobile (responsive)
 - [ ] Ajouter une description pédagogique en en-tête de chaque simulation

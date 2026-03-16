@@ -27,6 +27,7 @@ Ce fichier est lu automatiquement par Claude Code à chaque session.
 ├── simulations/                ← Pages interactives (Canvas/SVG/JS)
 ├── prompts/                    ← Prompts pédagogiques de référence
 ├── pdf/                        ← Programmes officiels Bac Pro
+├── audits/                     ← Audits qualité (documents vivants)
 └── scripts/extract_css.py      ← Outil de maintenance CSS
 ```
 
@@ -282,3 +283,59 @@ Une simulation doit toujours servir à :
 
 ### Maintenance CSS
 Si de nouvelles classes communes sont ajoutées à plusieurs pages, les centraliser dans `styles.css` et lancer `python3 scripts/extract_css.py` pour nettoyer les doublons.
+
+---
+
+## SYSTÈME D'AUDITS — DOCUMENTS VIVANTS
+
+### Principe
+
+Les fichiers dans `/audits/` sont des **documents vivants** qui suivent l'évolution du site. Ils constituent le tableau de bord du projet.
+
+### Fichiers d'audit
+
+| Fichier | Dimension auditée |
+|---|---|
+| `audits/audit-global.md` | Vue d'ensemble, indicateurs, couverture par section |
+| `audits/audit-technique.md` | HTML, CSS, JS, chemins, accessibilité |
+| `audits/audit-programmes.md` | Conformité programmes officiels, chapitres, PDF |
+| `audits/audit-pedagogique.md` | Différenciation, contextes pro, classes pédagogiques |
+| `audits/audit-exercices.md` | Corrections, DS, complétude, qualité |
+| `audits/audit-simulations.md` | Simulations interactives, ancrage pédagogique |
+
+### Règle de mise à jour obligatoire
+
+**Quand un problème identifié dans un audit est corrigé :**
+
+1. **Ouvrir l'audit concerné** (ex: `audits/audit-technique.md`)
+2. **Déplacer l'élément** de la section `## Problemes identifies` vers `## Corrections realisees`
+3. **Cocher la case** correspondante dans `## Ameliorations restantes`
+4. **Mettre à jour la date** (`Dernière mise à jour`) en haut du fichier
+5. **Mettre à jour les compteurs** si applicable (ex: "61 fichiers" → "0 fichiers")
+
+**Quand un nouveau problème est découvert :**
+
+1. L'ajouter dans `## Problemes identifies` de l'audit approprié
+2. Ajouter une tâche dans `## Ameliorations restantes`
+3. Mettre à jour la date
+
+### Exemple de mise à jour après correction
+
+Avant :
+```markdown
+## Problemes identifies
+### 1. Chemins absolus cassés — nav.js (61 fichiers)
+61 fichiers utilisent src="/nav.js" au lieu du chemin relatif.
+```
+
+Après correction :
+```markdown
+## Corrections realisees
+- **2026-03-17** : Corrigé les 61 chemins absolus `/nav.js` → `../../../nav.js`
+```
+
+### Objectifs du système
+- Éviter de refaire les mêmes analyses à chaque session
+- Suivre l'avancement du projet en temps réel
+- Identifier rapidement les priorités restantes
+- Garder une trace historique des corrections

@@ -2,6 +2,7 @@
 
 **Date** : 2026-03-16
 **Périmètre** : conformité du contenu avec les programmes Bac Pro, couverture des chapitres
+**Dernière mise à jour** : 2026-03-16
 
 ---
 
@@ -45,7 +46,18 @@ Deux fichiers semblent être des copies du même programme :
 
 Aucun audit systématique n'a été réalisé pour vérifier que chaque chapitre couvre bien les **capacités attendues** listées dans le programme officiel. Un tel audit nécessiterait une comparaison chapitre par chapitre.
 
-### 4. Nommage des fichiers PDF
+### 4. Pages fiche.html incomplètes en maths/premiere
+
+`maths/premiere` ne contient qu'une seule `fiche.html` (ch01). Les chapitres ch02 à ch09 n'en ont pas, alors que `maths/seconde` et `maths/terminale` en ont pour tous les chapitres. Les sections physique-chimie n'ont aucune fiche.html (peut-être intentionnel).
+
+| Section | fiche.html | Statut |
+|---|---|---|
+| maths/seconde | 14/14 | Complet |
+| maths/premiere | 1/9 | **Incomplet** (ch02-ch09 manquants) |
+| maths/terminale | 11/11 | Complet |
+| physique-chimie/* | 0 | À clarifier (intentionnel ?) |
+
+### 5. Nommage des fichiers PDF
 
 Les noms de fichiers PDF contiennent des espaces, des parenthèses et des suffixes incohérents (`-2`, `(1)`). Cela complique les références et l'automatisation.
 
@@ -64,6 +76,8 @@ Les noms de fichiers PDF contiennent des espaces, des parenthèses et des suffix
 - [ ] Mettre à jour CLAUDE.md si le nombre de chapitres terminale-iccer est bien 8
 
 ### Priorité moyenne
+- [ ] Créer les fiche.html manquantes pour maths/premiere ch02-ch09
+- [ ] Clarifier si les sections physique-chimie doivent avoir des fiche.html
 - [ ] Réaliser un audit capacités attendues vs contenu des cours, chapitre par chapitre
 - [ ] Supprimer les doublons PDF
 - [ ] Renommer les fichiers PDF avec une convention cohérente (sans espaces, sans parenthèses)
