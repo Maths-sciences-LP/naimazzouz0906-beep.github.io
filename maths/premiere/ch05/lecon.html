@@ -13,13 +13,870 @@
 <div class="c">
 <a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
 <header>
-  <h1>Chapitre 05 – Fonctions polynômes de degré 2</h1>
+  <h1>Chapitre 5 – Fonctions polynômes de degré 2</h1>
   <p class="sous-titre">1ère Bac Pro | Algèbre – Analyse | Mathématiques</p>
 </header>
 
+<!-- ══════════════════════════════════════════════════════ -->
 <div class="objectifs">
   <h3>Objectifs du chapitre</h3>
-  <p>Contenu à venir.</p>
+  <ul class="styled">
+    <li>Reconnaître et définir une fonction polynôme de degré 2 de la forme \(ax^2 + bx + c\)</li>
+    <li>Représenter graphiquement une parabole et identifier ses caractéristiques (signe de \(a\), sommet, axe de symétrie)</li>
+    <li>Définir une racine et tester si un nombre réel est racine d'un polynôme de degré 2</li>
+    <li>Visualiser graphiquement le nombre de solutions de \(f(x) = 0\) (0, 1 ou 2 racines)</li>
+    <li>Utiliser la forme factorisée \(a(x - x_1)(x - x_2)\) et factoriser quand les racines sont connues</li>
+    <li>Déterminer la seconde racine quand une première est connue</li>
+    <li>Étudier le signe d'un polynôme de degré 2 donné sous forme factorisée</li>
+    <li>Encadrer une racine par un algorithme de balayage</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>1. Introduction — Situation professionnelle</h2>
+
+<div class="situation">
+  <h3>Situation professionnelle — Menuisier agenceur</h3>
+  <p>
+    <strong>Contexte :</strong> Un menuisier agenceur fabrique des panneaux rectangulaires pour habiller un mur.
+    Chaque panneau a une largeur de \((x + 2)\) mètres et une hauteur de \((x - 1)\) mètres, où \(x\) est un paramètre de conception.
+  </p>
+  <p>
+    L'aire de chaque panneau est : \(A(x) = (x + 2)(x - 1) = x^2 + x - 2\) m².
+  </p>
+  <p>
+    Le menuisier doit résoudre plusieurs questions :
+  </p>
+  <ul class="styled">
+    <li>Pour quelle(s) valeur(s) de \(x\) l'aire est-elle nulle ? (les racines du polynôme)</li>
+    <li>Pour quelle(s) valeur(s) l'aire est-elle positive ? (étude du signe)</li>
+    <li>Comment encadrer une solution par calcul pas à pas ? (balayage)</li>
+  </ul>
+  <p>
+    Ces questions nous amènent à étudier les <strong>fonctions polynômes de degré 2</strong>, appelées aussi <em>fonctions du second degré</em>.
+  </p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>2. Fonction polynôme de degré 2 — Définition et forme générale</h2>
+
+<div class="def">
+  <strong>Définition — Fonction polynôme de degré 2 :</strong><br>
+  Une <strong>fonction polynôme de degré 2</strong> est une fonction \(f\) définie sur \(\mathbb{R}\) par :
+  \[f(x) = ax^2 + bx + c\]
+  où \(a\), \(b\), \(c\) sont des réels avec \(a \neq 0\).<br><br>
+  On dit aussi que \(f(x) = ax^2 + bx + c\) est un <strong>polynôme de degré 2</strong> (ou du second degré).
+</div>
+
+<div class="prop">
+  <strong>Propriété — Identification des coefficients :</strong><br>
+  Dans \(f(x) = ax^2 + bx + c\) :
+  <ul class="styled">
+    <li>\(a\) est le <strong>coefficient dominant</strong> (coefficient de \(x^2\)) — il ne peut pas être nul</li>
+    <li>\(b\) est le coefficient de \(x\) — il peut être nul</li>
+    <li>\(c\) est le <strong>terme constant</strong> — c'est la valeur \(f(0)\) (ordonnée à l'origine)</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemples — Identifier les coefficients</div>
+  <table class="full">
+    <tr>
+      <th>Expression</th>
+      <th>\(a\)</th>
+      <th>\(b\)</th>
+      <th>\(c\)</th>
+    </tr>
+    <tr>
+      <td>\(f(x) = 3x^2 - 5x + 2\)</td>
+      <td class="ok">3</td>
+      <td>−5</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>\(g(x) = -2x^2 + 4\)</td>
+      <td class="ok">−2</td>
+      <td>0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>\(h(x) = x^2 + x - 6\)</td>
+      <td class="ok">1</td>
+      <td>1</td>
+      <td>−6</td>
+    </tr>
+    <tr>
+      <td>\(p(x) = -x^2\)</td>
+      <td class="ok">−1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </table>
+</div>
+
+<div class="att">
+  <strong>Attention — Ce qui n'est pas un polynôme de degré 2 :</strong>
+  <ul class="styled">
+    <li>\(f(x) = 2x + 3\) : c'est un polynôme de degré 1 (pas de terme en \(x^2\))</li>
+    <li>\(f(x) = 0 \cdot x^2 + 3x - 1\) : si \(a = 0\), ce n'est plus de degré 2</li>
+    <li>\(f(x) = \dfrac{1}{x^2}\) : ce n'est pas un polynôme (puissance négative)</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>3. Représentation graphique — La parabole</h2>
+
+<div class="prop">
+  <strong>Propriété — Courbe représentative (admise) :</strong><br>
+  La courbe représentative d'une fonction polynôme de degré 2 est une <strong>parabole</strong>.<br><br>
+  Cette parabole possède :
+  <ul class="styled">
+    <li>Un <strong>axe de symétrie</strong> vertical, d'équation \(x = -\dfrac{b}{2a}\)</li>
+    <li>Un <strong>sommet</strong> (point le plus haut ou le plus bas) situé sur cet axe</li>
+    <li>Une <strong>ouverture</strong> vers le haut si \(a > 0\), vers le bas si \(a < 0\)</li>
+    <li>Une intersection avec l'axe des ordonnées au point de coordonnées \((0\,;\,c)\)</li>
+  </ul>
+</div>
+
+<div class="svg-wrap">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" style="max-width:560px;background:#fafbfc;border:1px solid #e2e8f0;border-radius:10px">
+  <defs>
+    <marker id="arr5a" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#333"/></marker>
+  </defs>
+
+  <!-- === Parabole gauche : a > 0 === -->
+  <!-- Axes gauche -->
+  <line x1="40" y1="280" x2="240" y2="280" stroke="#333" stroke-width="1.5" marker-end="url(#arr5a)"/>
+  <line x1="140" y1="290" x2="140" y2="30" stroke="#333" stroke-width="1.5" marker-end="url(#arr5a)"/>
+  <text x="235" y="297" font-size="12" fill="#333" font-family="serif" font-style="italic">x</text>
+  <text x="125" y="28" font-size="12" fill="#333" font-family="serif" font-style="italic">y</text>
+  <text x="127" y="294" font-size="11" fill="#333">O</text>
+
+  <!-- Parabole a > 0 : f(x) = 0.04(x-140)² + 40 en coords SVG -->
+  <!-- Points calculés : sommet en (140, 260), ouverture vers le haut -->
+  <path d="M55,248 Q95,310 140,260 Q185,210 225,248" fill="none" stroke="#0969da" stroke-width="2.5"/>
+
+  <!-- Sommet -->
+  <circle cx="140" cy="260" r="4" fill="#0969da"/>
+  <text x="145" y="258" font-size="11" fill="#0969da" font-weight="bold">S</text>
+
+  <!-- Axe de symétrie -->
+  <line x1="140" y1="250" x2="140" y2="285" stroke="#0969da" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Ordonnée à l'origine -->
+  <circle cx="97" cy="280" r="3" fill="#e53e3e"/>
+  <text x="87" y="295" font-size="10" fill="#e53e3e">c</text>
+
+  <!-- Label -->
+  <text x="195" y="240" font-size="12" fill="#0969da" font-weight="bold" font-family="serif" font-style="italic">𝒞f</text>
+  <rect x="50" y="35" width="175" height="28" rx="5" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="137" y="54" text-anchor="middle" font-size="12" fill="#1d4ed8" font-weight="bold">a &gt; 0 : parabole tournée vers le haut</text>
+
+  <!-- Flèche ouverture -->
+  <text x="68" y="225" font-size="18" fill="#0969da">↑</text>
+  <text x="195" y="225" font-size="18" fill="#0969da">↑</text>
+
+  <!-- === Parabole droite : a < 0 === -->
+  <!-- Axes droite -->
+  <line x1="310" y1="280" x2="540" y2="280" stroke="#333" stroke-width="1.5" marker-end="url(#arr5a)"/>
+  <line x1="420" y1="290" x2="420" y2="30" stroke="#333" stroke-width="1.5" marker-end="url(#arr5a)"/>
+  <text x="535" y="297" font-size="12" fill="#333" font-family="serif" font-style="italic">x</text>
+  <text x="405" y="28" font-size="12" fill="#333" font-family="serif" font-style="italic">y</text>
+  <text x="407" y="294" font-size="11" fill="#333">O</text>
+
+  <!-- Parabole a < 0 : sommet en (420, 80), ouverture vers le bas -->
+  <path d="M330,240 Q375,50 420,80 Q465,110 510,240" fill="none" stroke="#d97706" stroke-width="2.5"/>
+
+  <!-- Sommet -->
+  <circle cx="420" cy="80" r="4" fill="#d97706"/>
+  <text x="425" y="78" font-size="11" fill="#d97706" font-weight="bold">S</text>
+
+  <!-- Axe de symétrie -->
+  <line x1="420" y1="90" x2="420" y2="285" stroke="#d97706" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Ordonnée à l'origine -->
+  <circle cx="380" cy="280" r="3" fill="#e53e3e"/>
+  <text x="370" y="295" font-size="10" fill="#e53e3e">c</text>
+
+  <!-- Label -->
+  <text x="490" y="210" font-size="12" fill="#d97706" font-weight="bold" font-family="serif" font-style="italic">𝒞g</text>
+  <rect x="318" y="35" width="175" height="28" rx="5" fill="#fef3c7" stroke="#fbbf24"/>
+  <text x="405" y="54" text-anchor="middle" font-size="12" fill="#92400e" font-weight="bold">a &lt; 0 : parabole tournée vers le bas</text>
+
+  <!-- Flèche ouverture -->
+  <text x="338" y="255" font-size="18" fill="#d97706">↓</text>
+  <text x="492" y="255" font-size="18" fill="#d97706">↓</text>
+</svg>
+</div>
+<p style="text-align:center;font-size:.9em;color:#718096">Quand \(a > 0\) la parabole s'ouvre vers le haut ; quand \(a < 0\) elle s'ouvre vers le bas.</p>
+
+<div class="prop">
+  <strong>Propriété — Axe de symétrie et sommet (admise) :</strong><br>
+  Pour \(f(x) = ax^2 + bx + c\), l'axe de symétrie a pour équation :
+  \[x_S = -\frac{b}{2a}\]
+  Le sommet \(S\) a pour coordonnées \(\Bigl(x_S\,;\,f(x_S)\Bigr)\).
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Axe de symétrie et sommet</div>
+  <p>Soit \(f(x) = 2x^2 - 8x + 3\). Ici \(a = 2\), \(b = -8\), \(c = 3\).</p>
+  <p><strong>Axe de symétrie :</strong> \(x_S = -\dfrac{-8}{2 \times 2} = \dfrac{8}{4} = 2\)</p>
+  <p><strong>Ordonnée du sommet :</strong> \(f(2) = 2 \times 4 - 8 \times 2 + 3 = 8 - 16 + 3 = -5\)</p>
+  <p>Le sommet est donc \(S(2\,;\,-5)\) et l'axe de symétrie a pour équation \(x = 2\).</p>
+  <p>Comme \(a = 2 > 0\), la parabole est <strong>tournée vers le haut</strong> et \(S\) est le point le plus bas.</p>
+</div>
+
+<div class="prop">
+  <strong>Propriété — Ordonnée à l'origine (admise) :</strong><br>
+  La courbe coupe l'axe des ordonnées au point de coordonnées \((0\,;\,c)\).<br>
+  En effet, \(f(0) = a \times 0^2 + b \times 0 + c = c\).
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>4. Racines d'un polynôme de degré 2</h2>
+
+<div class="def">
+  <strong>Définition — Racine d'un polynôme de degré 2 :</strong><br>
+  Un réel \(x_0\) est une <strong>racine</strong> (ou <em>zéro</em>) du polynôme \(f(x) = ax^2 + bx + c\) si \(f(x_0) = 0\).<br><br>
+  Graphiquement, les racines sont les <strong>abscisses des points d'intersection</strong> de la parabole avec l'axe des abscisses.
+</div>
+
+<div class="meth">
+  <strong>Méthode — Tester si un nombre est racine :</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Remplacer \(x\) par la valeur à tester dans l'expression \(f(x)\).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Calculer le résultat.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>Si le résultat est <strong>égal à 0</strong>, le nombre est une racine. Sinon, il ne l'est pas.</div>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Tester si un nombre est racine</div>
+  <p>Soit \(f(x) = x^2 - x - 6\). Teste si \(x = 3\) et \(x = -2\) sont des racines.</p>
+
+  <p><strong>Test de \(x = 3\) :</strong></p>
+  <p>\(f(3) = 3^2 - 3 - 6 = 9 - 3 - 6 = 0\)</p>
+  <p>Comme \(f(3) = 0\), \(x = 3\) est bien une racine de \(f\).</p>
+
+  <p><strong>Test de \(x = -2\) :</strong></p>
+  <p>\(f(-2) = (-2)^2 - (-2) - 6 = 4 + 2 - 6 = 0\)</p>
+  <p>Comme \(f(-2) = 0\), \(x = -2\) est aussi une racine de \(f\).</p>
+
+  <p><strong>Test de \(x = 1\) :</strong></p>
+  <p>\(f(1) = 1^2 - 1 - 6 = 1 - 1 - 6 = -6 \neq 0\)</p>
+  <p>Comme \(f(1) \neq 0\), \(x = 1\) n'est pas une racine.</p>
+</div>
+
+<h3>Nombre de racines réelles — Visualisation graphique</h3>
+
+<div class="prop">
+  <strong>Propriété — Nombre de racines (admise, observée graphiquement) :</strong><br>
+  Un polynôme de degré 2 peut avoir :
+  <ul class="styled">
+    <li><strong>Deux racines réelles distinctes</strong> \(x_1\) et \(x_2\) : la parabole coupe l'axe des abscisses en deux points</li>
+    <li><strong>Une racine réelle double</strong> \(x_0\) : la parabole est tangente à l'axe des abscisses (la touche en un seul point)</li>
+    <li><strong>Aucune racine réelle</strong> : la parabole ne coupe pas l'axe des abscisses</li>
+  </ul>
+</div>
+
+<div class="svg-wrap">
+<svg viewBox="0 0 580 280" xmlns="http://www.w3.org/2000/svg" style="max-width:580px;background:#fafbfc;border:1px solid #e2e8f0;border-radius:10px">
+  <defs>
+    <marker id="arr5b" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#555"/></marker>
+  </defs>
+
+  <!-- === CAS 1 : deux racines === -->
+  <line x1="20" y1="200" x2="175" y2="200" stroke="#555" stroke-width="1.3" marker-end="url(#arr5b)"/>
+  <line x1="97" y1="210" x2="97" y2="40" stroke="#555" stroke-width="1.3" marker-end="url(#arr5b)"/>
+  <!-- parabole coupant l'axe en deux points : x1=47, x2=147 -->
+  <path d="M35,165 Q97,260 159,165" fill="none" stroke="#0969da" stroke-width="2.2"/>
+  <circle cx="47" cy="200" r="4" fill="#e53e3e" stroke="white" stroke-width="1.5"/>
+  <circle cx="147" cy="200" r="4" fill="#e53e3e" stroke="white" stroke-width="1.5"/>
+  <text x="43" y="216" font-size="10" fill="#e53e3e" font-weight="bold">x₁</text>
+  <text x="143" y="216" font-size="10" fill="#e53e3e" font-weight="bold">x₂</text>
+  <rect x="20" y="42" width="152" height="22" rx="4" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="96" y="57" text-anchor="middle" font-size="11" fill="#1d4ed8" font-weight="bold">2 racines distinctes</text>
+
+  <!-- === CAS 2 : une racine double === -->
+  <line x1="210" y1="200" x2="365" y2="200" stroke="#555" stroke-width="1.3" marker-end="url(#arr5b)"/>
+  <line x1="287" y1="210" x2="287" y2="40" stroke="#555" stroke-width="1.3" marker-end="url(#arr5b)"/>
+  <!-- parabole tangente à l'axe en x=287 -->
+  <path d="M225,155 Q287,210 349,155" fill="none" stroke="#16a34a" stroke-width="2.2"/>
+  <circle cx="287" cy="200" r="4" fill="#e53e3e" stroke="white" stroke-width="1.5"/>
+  <text x="280" y="216" font-size="10" fill="#e53e3e" font-weight="bold">x₀</text>
+  <rect x="210" y="42" width="152" height="22" rx="4" fill="#dcfce7" stroke="#86efac"/>
+  <text x="286" y="57" text-anchor="middle" font-size="11" fill="#15803d" font-weight="bold">1 racine double</text>
+
+  <!-- === CAS 3 : aucune racine === -->
+  <line x1="400" y1="200" x2="560" y2="200" stroke="#555" stroke-width="1.3" marker-end="url(#arr5b)"/>
+  <line x1="480" y1="210" x2="480" y2="40" stroke="#555" stroke-width="1.3" marker-end="url(#arr5b)"/>
+  <!-- parabole ne coupant pas l'axe (au-dessus) -->
+  <path d="M415,175 Q480,100 545,175" fill="none" stroke="#e53e3e" stroke-width="2.2"/>
+  <rect x="400" y="42" width="152" height="22" rx="4" fill="#fee2e2" stroke="#fca5a5"/>
+  <text x="476" y="57" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="bold">Aucune racine réelle</text>
+  <text x="480" y="230" text-anchor="middle" font-size="10" fill="#dc2626">(parabole ne coupe pas Ox)</text>
+</svg>
+</div>
+<p style="text-align:center;font-size:.9em;color:#718096">Les trois situations possibles pour le nombre de racines réelles d'un polynôme de degré 2</p>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>5. Forme factorisée \(a(x - x_1)(x - x_2)\)</h2>
+
+<div class="def">
+  <strong>Définition — Forme factorisée :</strong><br>
+  Si \(x_1\) et \(x_2\) sont les deux racines réelles de \(f(x) = ax^2 + bx + c\), alors on peut écrire :
+  \[f(x) = a(x - x_1)(x - x_2)\]
+  Cette écriture s'appelle la <strong>forme factorisée</strong> du polynôme.
+</div>
+
+<div class="prop">
+  <strong>Propriété — Vérification de la forme factorisée (admise) :</strong><br>
+  Si \(f(x) = a(x - x_1)(x - x_2)\), alors :
+  <ul class="styled">
+    <li>\(f(x_1) = a(x_1 - x_1)(x_1 - x_2) = a \times 0 \times (\ldots) = 0\) ✓</li>
+    <li>\(f(x_2) = a(x_2 - x_1)(x_2 - x_2) = a \times (\ldots) \times 0 = 0\) ✓</li>
+  </ul>
+  On retrouve bien que \(x_1\) et \(x_2\) sont des racines.
+</div>
+
+<h3>Factoriser un polynôme dont les racines sont connues</h3>
+
+<div class="meth">
+  <strong>Méthode — Passer à la forme factorisée :</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Identifier le coefficient \(a\) (coefficient de \(x^2\)).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Identifier les deux racines \(x_1\) et \(x_2\) (données ou trouvées).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>Écrire : \(f(x) = a(x - x_1)(x - x_2)\)</div>
+  </div>
+  <div class="etape">
+    <div class="nc">4</div>
+    <div><em>Vérification (facultative) :</em> développer pour retrouver la forme \(ax^2 + bx + c\).</div>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Factoriser un polynôme</div>
+  <p>Soit \(f(x) = 2x^2 - 10x + 12\). On nous dit que \(x_1 = 2\) et \(x_2 = 3\) sont ses racines.</p>
+  <p>Ici \(a = 2\).</p>
+  <p><strong>Forme factorisée :</strong> \(f(x) = 2(x - 2)(x - 3)\)</p>
+  <p><strong>Vérification :</strong> \(2(x-2)(x-3) = 2(x^2 - 5x + 6) = 2x^2 - 10x + 12\) ✓</p>
+
+  <p><em>Vérification des racines :</em></p>
+  <p>\(f(2) = 2(2-2)(2-3) = 2 \times 0 \times (-1) = 0\) ✓</p>
+  <p>\(f(3) = 2(3-2)(3-3) = 2 \times 1 \times 0 = 0\) ✓</p>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Contexte menuiserie</div>
+  <p>
+    Un métreur modélise la surface perdue lors de la découpe d'un panneau par la fonction
+    \(S(x) = x^2 - 7x + 10\) (en dm²), où \(x\) est la largeur de découpe en décimètres.
+  </p>
+  <p>On lui indique que les racines sont \(x_1 = 2\) et \(x_2 = 5\). Ici \(a = 1\).</p>
+  <p><strong>Forme factorisée :</strong> \(S(x) = (x - 2)(x - 5)\)</p>
+  <p>
+    <strong>Interprétation :</strong> La surface perdue est nulle quand \(x = 2\) dm ou \(x = 5\) dm :
+    à ces largeurs de découpe, il n'y a pas de chute.
+  </p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>6. Trouver la seconde racine quand on en connaît une</h2>
+
+<div class="prop">
+  <strong>Propriété — Relation entre les racines et les coefficients (admise) :</strong><br>
+  Si \(x_1\) et \(x_2\) sont les deux racines de \(f(x) = ax^2 + bx + c\), alors en développant la forme factorisée :
+  \[a(x - x_1)(x - x_2) = ax^2 - a(x_1 + x_2)x + ax_1 x_2\]
+  En identifiant avec \(ax^2 + bx + c\), on obtient :
+  <ul class="styled">
+    <li><strong>Somme des racines :</strong> \(x_1 + x_2 = -\dfrac{b}{a}\)</li>
+    <li><strong>Produit des racines :</strong> \(x_1 \cdot x_2 = \dfrac{c}{a}\)</li>
+  </ul>
+</div>
+
+<div class="meth">
+  <strong>Méthode — Trouver la seconde racine :</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>On connaît une racine \(x_1\) et le polynôme \(f(x) = ax^2 + bx + c\).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Calculer la somme des racines : \(x_1 + x_2 = -\dfrac{b}{a}\), donc \(x_2 = -\dfrac{b}{a} - x_1\).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div><em>Alternative avec le produit :</em> \(x_1 \cdot x_2 = \dfrac{c}{a}\), donc \(x_2 = \dfrac{c}{a \cdot x_1}\) (si \(x_1 \neq 0\)).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">4</div>
+    <div>Vérifier en calculant \(f(x_2)\) : le résultat doit être 0.</div>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Trouver la seconde racine</div>
+  <p>Soit \(f(x) = x^2 - 5x + 4\). On sait que \(x_1 = 1\) est une racine.</p>
+  <p>Ici \(a = 1\), \(b = -5\), \(c = 4\).</p>
+
+  <p><strong>Méthode 1 — par la somme :</strong></p>
+  <p>\(x_1 + x_2 = -\dfrac{b}{a} = -\dfrac{-5}{1} = 5\)</p>
+  <p>\(x_2 = 5 - x_1 = 5 - 1 = 4\)</p>
+
+  <p><strong>Méthode 2 — par le produit :</strong></p>
+  <p>\(x_1 \cdot x_2 = \dfrac{c}{a} = \dfrac{4}{1} = 4\)</p>
+  <p>\(x_2 = \dfrac{4}{x_1} = \dfrac{4}{1} = 4\)</p>
+
+  <p><strong>Vérification :</strong> \(f(4) = 16 - 20 + 4 = 0\) ✓</p>
+  <p><strong>Forme factorisée :</strong> \(f(x) = (x - 1)(x - 4)\)</p>
+</div>
+
+<div class="att">
+  <strong>Attention — Cas particulier : racine double :</strong><br>
+  Si la parabole est tangente à l'axe des abscisses, les deux racines sont égales : \(x_1 = x_2 = x_0\).<br>
+  La forme factorisée est alors : \(f(x) = a(x - x_0)^2\).<br>
+  Dans ce cas, la somme donne \(x_1 + x_2 = 2x_0\) et le produit donne \(x_1 \cdot x_2 = x_0^2\).
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>7. Signe d'un polynôme de degré 2 sous forme factorisée</h2>
+
+<div class="prop">
+  <strong>Propriété — Signe sous forme factorisée (admise) :</strong><br>
+  Soit \(f(x) = a(x - x_1)(x - x_2)\) avec \(x_1 < x_2\).<br><br>
+  Le signe de \(f(x)\) s'étudie à l'aide d'un <strong>tableau de signes</strong> :
+  <ul class="styled">
+    <li>Si \(a > 0\) : \(f(x) \leq 0\) entre les racines, \(f(x) \geq 0\) en dehors des racines</li>
+    <li>Si \(a < 0\) : \(f(x) \geq 0\) entre les racines, \(f(x) \leq 0\) en dehors des racines</li>
+  </ul>
+  <em>Règle mnémotechnique : le signe de \(f(x)\) suit le signe de \(a\) en dehors des racines.</em>
+</div>
+
+<h3>Tableau de signes — Méthode</h3>
+
+<div class="meth">
+  <strong>Méthode — Construire un tableau de signes :</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Identifier \(a\), \(x_1\) et \(x_2\) (avec \(x_1 < x_2\)).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Placer \(x_1\) et \(x_2\) dans le tableau. Faire le signe de chaque facteur \((x - x_1)\), \((x - x_2)\) et de \(a\) dans chaque intervalle.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>Multiplier les signes (règle des signes) : \(+ \times + = +\), \(+ \times - = -\), \(- \times - = +\).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">4</div>
+    <div>Le signe de \(f(x)\) est le signe du produit des trois facteurs.</div>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Tableau de signes de \(f(x) = 2(x - 1)(x - 4)\)</div>
+  <p>On a \(a = 2 > 0\), \(x_1 = 1\), \(x_2 = 4\).</p>
+
+  <table class="full">
+    <tr>
+      <th>\(x\)</th>
+      <td>\(-\infty\)</td>
+      <td></td>
+      <td class="hi">1</td>
+      <td></td>
+      <td class="hi">4</td>
+      <td></td>
+      <td>\(+\infty\)</td>
+    </tr>
+    <tr>
+      <th>\(a = 2\)</th>
+      <td colspan="7" style="text-align:center;color:#16a34a;font-weight:bold">+ + + + + + + + + + + +</td>
+    </tr>
+    <tr>
+      <th>\((x - 1)\)</th>
+      <td colspan="2" style="text-align:center;color:#dc2626">− −</td>
+      <td class="hi">0</td>
+      <td colspan="2" style="text-align:center;color:#16a34a">+ + + + +</td>
+      <td colspan="2" style="text-align:center;color:#16a34a">+ +</td>
+    </tr>
+    <tr>
+      <th>\((x - 4)\)</th>
+      <td colspan="2" style="text-align:center;color:#dc2626">− − −</td>
+      <td></td>
+      <td colspan="2" style="text-align:center;color:#dc2626">− − −</td>
+      <td class="hi">0</td>
+      <td style="text-align:center;color:#16a34a">+ +</td>
+    </tr>
+    <tr>
+      <th>\(f(x)\)</th>
+      <td colspan="2" style="text-align:center;color:#16a34a;font-weight:bold">+</td>
+      <td class="hi">0</td>
+      <td colspan="2" style="text-align:center;color:#dc2626;font-weight:bold">−</td>
+      <td class="hi">0</td>
+      <td style="text-align:center;color:#16a34a;font-weight:bold">+</td>
+    </tr>
+  </table>
+
+  <p><strong>Conclusion :</strong></p>
+  <ul class="styled">
+    <li>\(f(x) > 0\) pour \(x \in ]-\infty\,;\,1[\) et pour \(x \in ]4\,;\,+\infty[\)</li>
+    <li>\(f(x) = 0\) pour \(x = 1\) et \(x = 4\)</li>
+    <li>\(f(x) < 0\) pour \(x \in ]1\,;\,4[\)</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Signe avec \(a < 0\) : \(g(x) = -3(x + 2)(x - 5)\)</div>
+  <p>On a \(a = -3 < 0\), \(x_1 = -2\), \(x_2 = 5\).</p>
+
+  <table class="full">
+    <tr>
+      <th>\(x\)</th>
+      <td>\(-\infty\)</td>
+      <td></td>
+      <td class="hi">−2</td>
+      <td></td>
+      <td class="hi">5</td>
+      <td></td>
+      <td>\(+\infty\)</td>
+    </tr>
+    <tr>
+      <th>\(a = -3\)</th>
+      <td colspan="7" style="text-align:center;color:#dc2626;font-weight:bold">− − − − − − − − − − −</td>
+    </tr>
+    <tr>
+      <th>\((x + 2)\)</th>
+      <td colspan="2" style="text-align:center;color:#dc2626">−</td>
+      <td class="hi">0</td>
+      <td colspan="2" style="text-align:center;color:#16a34a">+ + +</td>
+      <td colspan="2" style="text-align:center;color:#16a34a">+ +</td>
+    </tr>
+    <tr>
+      <th>\((x - 5)\)</th>
+      <td colspan="2" style="text-align:center;color:#dc2626">−</td>
+      <td></td>
+      <td colspan="2" style="text-align:center;color:#dc2626">− −</td>
+      <td class="hi">0</td>
+      <td style="text-align:center;color:#16a34a">+</td>
+    </tr>
+    <tr>
+      <th>\(g(x)\)</th>
+      <td colspan="2" style="text-align:center;color:#dc2626;font-weight:bold">−</td>
+      <td class="hi">0</td>
+      <td colspan="2" style="text-align:center;color:#16a34a;font-weight:bold">+</td>
+      <td class="hi">0</td>
+      <td style="text-align:center;color:#dc2626;font-weight:bold">−</td>
+    </tr>
+  </table>
+
+  <p>Quand \(a < 0\), le polynôme est <strong>positif entre les racines</strong> et <strong>négatif en dehors</strong>.</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>8. Algorithme de balayage — Encadrer une racine</h2>
+
+<div class="def">
+  <strong>Définition — Algorithme de balayage :</strong><br>
+  L'<strong>algorithme de balayage</strong> est une méthode numérique qui permet d'encadrer une racine d'un polynôme avec la précision souhaitée.<br><br>
+  On teste des valeurs successives de \(x\) et on repère un <strong>changement de signe</strong> de \(f(x)\) : quand \(f\) change de signe entre deux valeurs consécutives, il y a une racine entre ces deux valeurs.
+</div>
+
+<div class="prop">
+  <strong>Propriété — Changement de signe (admise) :</strong><br>
+  Si \(f(a)\) et \(f(b)\) sont de <strong>signes contraires</strong> (l'un positif, l'autre négatif), alors il existe au moins une racine de \(f\) dans l'intervalle \(]a\,;\,b[\).
+</div>
+
+<div class="meth">
+  <strong>Méthode — Balayage pour encadrer une racine :</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Choisir un intervalle \([a\,;\,b]\) où on pense qu'il y a une racine (vérifier que \(f(a)\) et \(f(b)\) ont des signes opposés).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Choisir un pas \(p\) (par exemple \(p = 0{,}1\) pour une précision au dixième).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>Calculer \(f(a)\), \(f(a+p)\), \(f(a+2p)\), … jusqu'à trouver un changement de signe.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">4</div>
+    <div>La racine est encadrée par les deux valeurs où le changement de signe se produit.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">5</div>
+    <div>Pour plus de précision, recommencer avec un pas plus petit sur le nouvel intervalle.</div>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Balayage sur \(f(x) = x^2 - 3\)</div>
+  <p>On cherche la racine positive de \(f(x) = x^2 - 3\), c'est-à-dire une valeur approchée de \(\sqrt{3}\).</p>
+  <p>On sait que \(f(1) = 1 - 3 = -2 < 0\) et \(f(2) = 4 - 3 = 1 > 0\), donc la racine est dans \([1\,;\,2]\).</p>
+
+  <p><strong>Balayage avec un pas de 0,1 :</strong></p>
+  <table class="full">
+    <tr>
+      <th>\(x\)</th>
+      <td>1,0</td><td>1,1</td><td>1,2</td><td>1,3</td><td>1,4</td><td class="hi">1,7</td><td class="hi">1,8</td>
+    </tr>
+    <tr>
+      <th>\(f(x) = x^2 - 3\)</th>
+      <td style="color:#dc2626">−2</td>
+      <td style="color:#dc2626">−1,79</td>
+      <td style="color:#dc2626">−1,56</td>
+      <td style="color:#dc2626">−1,31</td>
+      <td style="color:#dc2626">−1,04</td>
+      <td class="hi" style="color:#dc2626">−0,11</td>
+      <td class="hi" style="color:#16a34a">+0,24</td>
+    </tr>
+  </table>
+
+  <p>\(f(1{,}7) < 0\) et \(f(1{,}8) > 0\) : la racine est dans \([1{,}7\,;\,1{,}8]\), soit \(\sqrt{3} \approx 1{,}7\) à \(0{,}1\) près.</p>
+
+  <p><strong>Balayage avec un pas de 0,01 (sur \([1{,}7\,;\,1{,}8]\)) :</strong></p>
+  <table class="full">
+    <tr>
+      <th>\(x\)</th>
+      <td>1,70</td><td>1,71</td><td>1,72</td><td class="hi">1,73</td><td class="hi">1,74</td>
+    </tr>
+    <tr>
+      <th>\(f(x)\)</th>
+      <td style="color:#dc2626">−0,11</td>
+      <td style="color:#dc2626">−0,0759</td>
+      <td style="color:#dc2626">−0,0416</td>
+      <td class="hi" style="color:#dc2626">−0,0071</td>
+      <td class="hi" style="color:#16a34a">+0,0276</td>
+    </tr>
+  </table>
+
+  <p>La racine est dans \([1{,}73\,;\,1{,}74]\), soit \(\sqrt{3} \approx 1{,}73\) à \(0{,}01\) près.</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>9. Exemples résolus complets</h2>
+
+<div class="ex">
+  <div class="ex-titre">Exemple 1 — Encadrement d'une racine et contexte professionnel</div>
+
+  <p>
+    <strong>Situation :</strong> Un artisan menuisier réalise un cadre rectangulaire dont les dimensions sont
+    \((x + 1)\) cm et \((x - 3)\) cm. Il veut savoir pour quelle valeur de \(x\) le périmètre vaut 20 cm.
+  </p>
+  <p>Le périmètre vaut : \(P(x) = 2(x+1) + 2(x-3) = 2x + 2 + 2x - 6 = 4x - 4\)</p>
+  <p>On résout \(4x - 4 = 20\), soit \(4x = 24\), donc \(x = 6\).</p>
+  <p>
+    Maintenant l'artisan veut que l'<strong>aire</strong> vaille 40 cm².
+    \(A(x) = (x+1)(x-3) = x^2 - 2x - 3\).
+  </p>
+  <p>On résout \(x^2 - 2x - 3 = 40\), soit \(f(x) = x^2 - 2x - 43 = 0\).</p>
+
+  <p><strong>Recherche d'une racine positive par balayage :</strong></p>
+  <p>\(f(7) = 49 - 14 - 43 = -8 < 0\) et \(f(8) = 64 - 16 - 43 = 5 > 0\).</p>
+  <p>La racine positive est dans \([7\,;\,8]\).</p>
+
+  <table class="full">
+    <tr>
+      <th>\(x\)</th>
+      <td>7,0</td><td>7,5</td><td class="hi">7,8</td><td class="hi">7,9</td><td>8,0</td>
+    </tr>
+    <tr>
+      <th>\(f(x)\)</th>
+      <td style="color:#dc2626">−8</td>
+      <td style="color:#dc2626">−2,25</td>
+      <td class="hi" style="color:#dc2626">−0,76</td>
+      <td class="hi" style="color:#16a34a">+0,41</td>
+      <td style="color:#16a34a">+5</td>
+    </tr>
+  </table>
+
+  <p>La racine est entre 7,8 et 7,9 cm, soit \(x \approx 7{,}8\) cm à 0,1 près.</p>
+  <p><strong>Conclusion :</strong> le cadre a des dimensions d'environ \(8{,}8\) cm et \(4{,}8\) cm pour une aire de 40 cm².</p>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple 2 — Étude complète d'un polynôme de degré 2</div>
+
+  <p>
+    <strong>Situation :</strong> Un installateur d'agencement coupe une bande de bois de longueur variable.
+    Le coût de découpe (en euros) est modélisé par \(C(x) = x^2 - 6x + 8\) où \(x\) est la longueur en mètres.
+  </p>
+
+  <p><strong>Étape 1 — Identifier les éléments :</strong> \(a = 1\), \(b = -6\), \(c = 8\).</p>
+
+  <p><strong>Étape 2 — Tester si \(x_1 = 2\) est une racine :</strong></p>
+  <p>\(C(2) = 4 - 12 + 8 = 0\) ✓ — donc \(x_1 = 2\) est bien une racine.</p>
+
+  <p><strong>Étape 3 — Trouver la seconde racine :</strong></p>
+  <p>Somme des racines : \(x_1 + x_2 = -\dfrac{b}{a} = -\dfrac{-6}{1} = 6\)</p>
+  <p>Donc \(x_2 = 6 - 2 = 4\).</p>
+  <p>Vérification : \(C(4) = 16 - 24 + 8 = 0\) ✓</p>
+
+  <p><strong>Étape 4 — Forme factorisée :</strong> \(C(x) = (x - 2)(x - 4)\)</p>
+
+  <p><strong>Étape 5 — Tableau de signes :</strong></p>
+  <table class="full">
+    <tr>
+      <th>\(x\)</th>
+      <td>\(-\infty\)</td><td></td><td class="hi">2</td><td></td><td class="hi">4</td><td></td><td>\(+\infty\)</td>
+    </tr>
+    <tr>
+      <th>\((x-2)\)</th>
+      <td colspan="2" style="color:#dc2626;text-align:center">−</td>
+      <td class="hi">0</td>
+      <td colspan="2" style="color:#16a34a;text-align:center">+</td>
+      <td colspan="2" style="color:#16a34a;text-align:center">+</td>
+    </tr>
+    <tr>
+      <th>\((x-4)\)</th>
+      <td colspan="2" style="color:#dc2626;text-align:center">−</td>
+      <td></td>
+      <td colspan="2" style="color:#dc2626;text-align:center">−</td>
+      <td class="hi">0</td>
+      <td style="color:#16a34a;text-align:center">+</td>
+    </tr>
+    <tr>
+      <th>\(C(x)\)</th>
+      <td colspan="2" style="color:#16a34a;font-weight:bold;text-align:center">+</td>
+      <td class="hi">0</td>
+      <td colspan="2" style="color:#dc2626;font-weight:bold;text-align:center">−</td>
+      <td class="hi">0</td>
+      <td style="color:#16a34a;font-weight:bold;text-align:center">+</td>
+    </tr>
+  </table>
+
+  <p><strong>Interprétation :</strong> Le coût est négatif pour \(x \in ]2\,;\,4[\), ce qui n'a pas de sens physique (un coût ne peut pas être négatif). Cela signifie que le modèle \(C(x)\) n'est valide qu'en dehors de \([2\,;\,4]\) mètres.</p>
+
+  <p><strong>Étape 6 — Axe de symétrie et sommet :</strong></p>
+  <p>\(x_S = -\dfrac{b}{2a} = -\dfrac{-6}{2} = 3\)</p>
+  <p>\(C(3) = 9 - 18 + 8 = -1\)</p>
+  <p>Le sommet est \(S(3\,;\,-1)\) : le minimum du coût modélisé est atteint pour \(x = 3\) m.</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>10. Synthèse</h2>
+
+<div class="retenir">
+  <h3>À retenir</h3>
+  <div class="card-grid">
+    <div class="formule-box">
+      <div class="fb-label">Forme générale</div>
+      <div class="fb-formula">\(f(x) = ax^2 + bx + c\)<br><small>\(a \neq 0\), parabole</small></div>
+    </div>
+    <div class="formule-box green">
+      <div class="fb-label">Forme factorisée</div>
+      <div class="fb-formula">\(f(x) = a(x - x_1)(x - x_2)\)<br><small>si \(x_1\) et \(x_2\) sont les racines</small></div>
+    </div>
+    <div class="formule-box orange">
+      <div class="fb-label">Axe de symétrie</div>
+      <div class="fb-formula">\(x_S = -\dfrac{b}{2a}\)<br><small>Sommet : \(\bigl(x_S\,;\,f(x_S)\bigr)\)</small></div>
+    </div>
+    <div class="formule-box red">
+      <div class="fb-label">Relations racines</div>
+      <div class="fb-formula">\(x_1 + x_2 = -\dfrac{b}{a}\)<br>\(x_1 \cdot x_2 = \dfrac{c}{a}\)</div>
+    </div>
+  </div>
+</div>
+
+<div class="svg-wrap">
+<svg viewBox="0 0 540 260" xmlns="http://www.w3.org/2000/svg" style="max-width:540px;background:#fafbfc;border:1px solid #e2e8f0;border-radius:10px">
+  <defs>
+    <marker id="arr5c" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#555"/></marker>
+  </defs>
+
+  <!-- Axes -->
+  <line x1="30" y1="180" x2="510" y2="180" stroke="#555" stroke-width="1.5" marker-end="url(#arr5c)"/>
+  <line x1="270" y1="240" x2="270" y2="20" stroke="#555" stroke-width="1.5" marker-end="url(#arr5c)"/>
+  <text x="505" y="196" font-size="12" fill="#555" font-family="serif" font-style="italic">x</text>
+  <text x="255" y="22" font-size="12" fill="#555" font-family="serif" font-style="italic">y</text>
+
+  <!-- Parabole a > 0 : sommet en (270, 230), deux racines en (180,180) et (360,180) -->
+  <path d="M140,120 Q270,250 400,120" fill="none" stroke="#0969da" stroke-width="2.5"/>
+
+  <!-- Racines -->
+  <circle cx="180" cy="180" r="5" fill="#e53e3e" stroke="white" stroke-width="1.5"/>
+  <circle cx="360" cy="180" r="5" fill="#e53e3e" stroke="white" stroke-width="1.5"/>
+  <text x="168" y="200" font-size="12" fill="#e53e3e" font-weight="bold">x₁</text>
+  <text x="354" y="200" font-size="12" fill="#e53e3e" font-weight="bold">x₂</text>
+
+  <!-- Sommet -->
+  <circle cx="270" cy="232" r="5" fill="#0969da" stroke="white" stroke-width="1.5"/>
+  <text x="278" y="245" font-size="11" fill="#0969da" font-weight="bold">S</text>
+
+  <!-- Axe de symétrie -->
+  <line x1="270" y1="180" x2="270" y2="245" stroke="#0969da" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="272" y="178" font-size="10" fill="#0969da">axe: x = xₛ</text>
+
+  <!-- Ordonnée à l'origine c -->
+  <circle cx="270" cy="140" r="4" fill="#16a34a" stroke="white" stroke-width="1.5"/>
+  <text x="278" y="138" font-size="11" fill="#16a34a">c = f(0)</text>
+
+  <!-- Zones de signe -->
+  <rect x="180" y="182" width="180" height="14" fill="#fee2e2" opacity="0.7" rx="2"/>
+  <text x="270" y="193" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">f(x) &lt; 0</text>
+  <text x="100" y="195" font-size="10" fill="#16a34a" font-weight="bold">f(x) &gt; 0</text>
+  <text x="395" y="195" font-size="10" fill="#16a34a" font-weight="bold">f(x) &gt; 0</text>
+
+  <!-- Annotations a > 0 -->
+  <rect x="35" y="28" width="210" height="22" rx="4" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="140" y="43" text-anchor="middle" font-size="11" fill="#1d4ed8">a &gt; 0 : parabole ouverte vers le haut</text>
+  <text x="430" y="75" font-size="12" fill="#0969da" font-weight="bold" font-family="serif" font-style="italic">𝒞f</text>
+</svg>
+</div>
+<p style="text-align:center;font-size:.9em;color:#718096">Récapitulatif des éléments caractéristiques d'une parabole (\(a > 0\), deux racines réelles)</p>
+
+<table class="full">
+  <tr>
+    <th>Notion</th>
+    <th>Ce qu'on fait</th>
+    <th>Ce qu'on obtient</th>
+  </tr>
+  <tr>
+    <td><strong>Tester une racine</strong></td>
+    <td>Calculer \(f(x_0)\)</td>
+    <td>Si \(f(x_0) = 0\) : oui, sinon non</td>
+  </tr>
+  <tr>
+    <td><strong>Trouver la 2e racine</strong></td>
+    <td>\(x_2 = -\dfrac{b}{a} - x_1\)</td>
+    <td>La seconde racine</td>
+  </tr>
+  <tr>
+    <td><strong>Factoriser</strong></td>
+    <td>Écrire \(a(x - x_1)(x - x_2)\)</td>
+    <td>Forme factorisée</td>
+  </tr>
+  <tr>
+    <td><strong>Étudier le signe</strong></td>
+    <td>Tableau de signes (forme factorisée)</td>
+    <td>Intervalles positifs/négatifs</td>
+  </tr>
+  <tr>
+    <td><strong>Encadrer une racine</strong></td>
+    <td>Balayage (chercher un changement de signe)</td>
+    <td>Encadrement à la précision voulue</td>
+  </tr>
+</table>
+
+<div class="nav-footer">
+  <a href="exercices.html" class="nav-btn">Exercices du chapitre 5 →</a>
+  <a href="ds.html" class="nav-btn">DS du chapitre 5 →</a>
 </div>
 
 </div>

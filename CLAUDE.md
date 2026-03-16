@@ -27,6 +27,7 @@ Ce fichier est lu automatiquement par Claude Code à chaque session.
 ├── simulations/                ← Pages interactives (Canvas/SVG/JS)
 ├── prompts/                    ← Prompts pédagogiques de référence
 ├── pdf/                        ← Programmes officiels Bac Pro
+├── audits/                     ← Audits qualité (documents vivants)
 └── scripts/extract_css.py      ← Outil de maintenance CSS
 ```
 
@@ -120,12 +121,14 @@ Seules les classes vraiment spécifiques à une page peuvent rester inline.
 
 ---
 
-## DIFFÉRENCIATION PÉDAGOGIQUE (Première & Terminale)
+## DIFFÉRENCIATION PÉDAGOGIQUE (Seconde, Première & Terminale)
 
 ### Philosophie
 
-La différenciation s'applique **uniquement aux exercices (exercices.html) et aux DS (ds.html)**.
-Les cours (lecon.html) restent **identiques pour tous** : le programme est le même, c'est le socle commun de savoir. La différenciation ne porte pas sur le savoir transmis mais sur le **niveau de pratique** :
+La différenciation s'applique aux **trois niveaux du lycée professionnel** : Seconde, Première et Terminale.
+
+Elle apparaît principalement dans les **exercices (exercices.html)**, les **DS (ds.html)** et les **activités**.
+Les cours (lecon.html) restent **identiques pour tous** : le programme est le même, c'est le socle commun de savoir. Le cours doit rester clair et accessible à tous les élèves. La différenciation ne porte pas sur le savoir transmis mais sur le **niveau de pratique** :
 - On ne simplifie pas le cours pour les élèves en difficulté — on leur donne un cours identique avec des exercices plus guidés.
 - On n'ajoute pas de théorie supplémentaire pour les élèves en poursuite — on leur donne des exercices plus ouverts et formalisés.
 - Ne jamais créer de « cours au rabais » : un élève socle doit avoir accès au même savoir pour pouvoir progresser.
@@ -282,3 +285,92 @@ Une simulation doit toujours servir à :
 
 ### Maintenance CSS
 Si de nouvelles classes communes sont ajoutées à plusieurs pages, les centraliser dans `styles.css` et lancer `python3 scripts/extract_css.py` pour nettoyer les doublons.
+
+---
+
+## Audits du site — Feuille de route du développement
+
+Les audits dans `/audits/` sont le **tableau de bord central du projet**. Ils ne sont pas de simples documents d'analyse : ils constituent la **feuille de route** pour le développement et l'amélioration du site.
+
+### Principe fondamental
+
+**Les audits pilotent le travail.** Avant de générer du nouveau contenu ou de modifier le site :
+
+1. **Consulter les audits** dans `/audits/` pour identifier les priorités
+2. **Identifier** dans les audits :
+   - les chapitres manquants ou incomplets
+   - les pages à compléter (cours, exercices, DS)
+   - les exercices à améliorer ou à créer
+   - les simulations à créer ou à corriger
+   - les incohérences pédagogiques (progression, différenciation, contextes pro)
+   - les problèmes techniques (CSS, chemins, accessibilité)
+3. **Travailler en priorité** sur les éléments identifiés comme critiques ou hauts dans les audits
+4. **Ne pas refaire une analyse déjà présente** dans un audit existant — s'appuyer sur le travail déjà fait
+
+### Fichiers d'audit
+
+| Fichier | Dimension auditée |
+|---|---|
+| `audits/audit-global.md` | Vue d'ensemble, indicateurs, couverture par section |
+| `audits/audit-technique.md` | HTML, CSS, JS, chemins, accessibilité |
+| `audits/audit-programmes.md` | Conformité programmes officiels, chapitres, PDF |
+| `audits/audit-pedagogique.md` | Différenciation, contextes pro, classes pédagogiques (synthèse) |
+| `audits/audit-pedagogique-maths.md` | Détail pédagogique — cours de mathématiques |
+| `audits/audit-pedagogique-pc.md` | Détail pédagogique — cours de physique-chimie |
+| `audits/audit-exercices.md` | Corrections, DS, complétude, qualité |
+| `audits/audit-simulations.md` | Simulations interactives, ancrage pédagogique |
+
+### Règle de mise à jour obligatoire
+
+**Après chaque modification du site liée à un audit :**
+
+1. **Ouvrir l'audit concerné** (ex: `audits/audit-technique.md`)
+2. **Déplacer l'élément corrigé** de `## Problemes identifies` vers `## Corrections realisees` avec la date
+3. **Cocher la case** correspondante dans `## Ameliorations restantes`
+4. **Mettre à jour la date** (`Dernière mise à jour`) en haut du fichier
+5. **Mettre à jour les compteurs** si applicable (ex: "61 fichiers" → "0 fichiers")
+
+**Si une amélioration est partiellement réalisée :**
+
+- Laisser l'élément dans `## Ameliorations restantes` avec une note sur ce qui a été fait et ce qui reste
+- Ajouter la correction partielle dans `## Corrections realisees`
+
+**Quand un nouveau problème est découvert :**
+
+1. L'ajouter dans `## Problemes identifies` de l'audit approprié
+2. Ajouter une tâche dans `## Ameliorations restantes`
+3. Mettre à jour la date
+
+### Structure standard d'un audit
+
+Chaque fichier d'audit doit contenir ces sections dans cet ordre :
+
+```markdown
+# Titre de l'audit
+**Date** : AAAA-MM-JJ
+**Dernière mise à jour** : AAAA-MM-JJ
+
+## Problemes identifies
+### 1. Titre du problème (gravité : CRITIQUE/HAUTE/MOYENNE/BASSE)
+Description, fichiers concernés, nombre d'occurrences.
+
+## Corrections realisees
+- **AAAA-MM-JJ** : Description de la correction
+
+## Ameliorations restantes
+### Priorité critique
+- [ ] Tâche à faire
+### Priorité haute
+- [ ] Tâche à faire
+### Priorité moyenne
+- [ ] Tâche à faire
+### Priorité basse
+- [ ] Tâche à faire
+```
+
+### Objectifs
+
+- **Éviter les analyses redondantes** : ne pas refaire ce qui est déjà documenté
+- **Suivre l'avancement** : chaque correction est tracée avec sa date
+- **Prioriser le travail** : les niveaux critique > haute > moyenne > basse guident l'ordre de traitement
+- **Maintenir la cohérence** : les audits reflètent toujours l'état réel du site

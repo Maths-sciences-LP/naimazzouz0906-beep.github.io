@@ -222,6 +222,7 @@ h3 { font-size: 1em; color: var(--t); margin-top: 20px; margin-bottom: 8px; font
   margin: 14px 0;
 }
 .exo-num { font-size: .78em; font-weight: 700; text-transform: uppercase; color: #718096; letter-spacing: .05em; margin-bottom: 6px; }
+.exo .exo-num { font-weight: 700; color: var(--p); font-size: .85em; text-transform: uppercase; margin-bottom: 4px; }
 .exo-titre { font-weight: 700; font-size: 1em; color: var(--t); margin-bottom: 10px; }
 .exo-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
 .exo-num-badge { background: var(--p); color: #fff; font-weight: 700; font-size: .88em; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
@@ -339,6 +340,9 @@ details summary {
   user-select: none;
 }
 details summary:hover { filter: brightness(.95); }
+details.corr summary { cursor: pointer; font-weight: 600; color: var(--s); font-size: .88em; margin-top: 10px; padding: 4px 0; }
+details.corr summary:hover { text-decoration: underline; }
+details.corr .corr-body { background: #f0fff4; border-left: 4px solid var(--s); padding: 10px 14px; margin-top: 6px; border-radius: 0 6px 6px 0; font-size: .9em; }
 details p { margin: 6px 0 0 0; color: #4a5568; }
 
 /* ── Boutons de correction ── */
@@ -571,7 +575,7 @@ ul.styled li { margin-bottom: 6px; }
 .r { background: var(--d-bg); border-left: 5px solid var(--d); }
 .m { background: var(--p-bg); border-left: 5px solid var(--p); }
 .e { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; margin: 15px 0; }
-.dh { background: #eef2f7; padding: 12px 15px; border-radius: 8px; margin-bottom: 20px; font-size: .9em; }
+.dh { display: flex; flex-wrap: wrap; gap: 10px; background: #eef2f7; padding: 14px 18px; border-radius: 8px; margin-bottom: 28px; font-size: .9em; }
 
 /* ── Barre d'impression (exercices / DS) ── */
 .print-bar {
