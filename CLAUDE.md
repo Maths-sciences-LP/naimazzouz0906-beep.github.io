@@ -121,12 +121,14 @@ Seules les classes vraiment spécifiques à une page peuvent rester inline.
 
 ---
 
-## DIFFÉRENCIATION PÉDAGOGIQUE (Première & Terminale)
+## DIFFÉRENCIATION PÉDAGOGIQUE (Seconde, Première & Terminale)
 
 ### Philosophie
 
-La différenciation s'applique **uniquement aux exercices (exercices.html) et aux DS (ds.html)**.
-Les cours (lecon.html) restent **identiques pour tous** : le programme est le même, c'est le socle commun de savoir. La différenciation ne porte pas sur le savoir transmis mais sur le **niveau de pratique** :
+La différenciation s'applique aux **trois niveaux du lycée professionnel** : Seconde, Première et Terminale.
+
+Elle apparaît principalement dans les **exercices (exercices.html)**, les **DS (ds.html)** et les **activités**.
+Les cours (lecon.html) restent **identiques pour tous** : le programme est le même, c'est le socle commun de savoir. Le cours doit rester clair et accessible à tous les élèves. La différenciation ne porte pas sur le savoir transmis mais sur le **niveau de pratique** :
 - On ne simplifie pas le cours pour les élèves en difficulté — on leur donne un cours identique avec des exercices plus guidés.
 - On n'ajoute pas de théorie supplémentaire pour les élèves en poursuite — on leur donne des exercices plus ouverts et formalisés.
 - Ne jamais créer de « cours au rabais » : un élève socle doit avoir accès au même savoir pour pouvoir progresser.
