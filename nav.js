@@ -43,6 +43,25 @@
       ]
     },
 
+    /* Mathématiques — 1ère Bac Pro */
+    'maths/premiere': {
+      summary:      'maths-1ere-pro.html',
+      summaryLabel: '1ère Bac Pro',
+      subject:      'Mathématiques',
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
+      chapters: [
+        { id: '01', title: 'Statistique à deux variables' },
+        { id: '02', title: 'Probabilités' },
+        { id: '03', title: 'Suites numériques' },
+        { id: '04', title: 'Résolution graphique d\'équations et d\'inéquations' },
+        { id: '05', title: 'Fonctions polynômes de degré 2' },
+        { id: '06', title: 'Fonction dérivée et étude des variations' },
+        { id: '07', title: 'Géométrie dans l\'espace' },
+        { id: '08', title: 'Vecteurs du plan' },
+        { id: '09', title: 'Trigonométrie' }
+      ]
+    },
+
     /* Mathématiques — Terminale Bac Pro (TICCER & TERA-TMA) */
     'maths/terminale': {
       summary:      'maths-term-iccer.html',
@@ -123,6 +142,46 @@
       ]
     },
 
+    /* Physique-Chimie — 1ère ICCER */
+    'physique-chimie/premiere-iccer': {
+      summary:      'pc-1ere-iccer.html',
+      summaryLabel: '1ère ICCER',
+      subject:      'Physique-Chimie',
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
+      chapters: [
+        { id: '01', title: 'Distinguer énergie et puissance électrique' },
+        { id: '02', title: 'Transporter l\'énergie sous forme électrique' },
+        { id: '03', title: 'Combustion du carbone et des hydrocarbures' },
+        { id: '04', title: 'Les trois modes de transfert thermique' },
+        { id: '05', title: 'Vitesse et accélération en mouvement rectiligne' },
+        { id: '06', title: 'Équilibre d\'un solide en rotation autour d\'un axe fixe' },
+        { id: '07', title: 'Pression et force pressante' },
+        { id: '08', title: 'La force d\'Archimède' },
+        { id: '09', title: 'Solutions aqueuses et concentration' },
+        { id: '10', title: 'Ondes électromagnétiques' }
+      ]
+    },
+
+    /* Physique-Chimie — 1ère ERA-MA */
+    'physique-chimie/premiere-era': {
+      summary:      'pc-1ere-erama.html',
+      summaryLabel: '1ère ERA-MA',
+      subject:      'Physique-Chimie',
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
+      chapters: [
+        { id: '01', title: 'Distinguer énergie et puissance électrique' },
+        { id: '02', title: 'Évaluer la puissance consommée par un appareil électrique' },
+        { id: '03', title: 'Combustion du carbone et des hydrocarbures' },
+        { id: '04', title: 'Les trois modes de transfert thermique' },
+        { id: '05', title: 'Minimiser les transferts thermiques pour économiser l\'énergie' },
+        { id: '06', title: 'Équilibre d\'un solide en rotation autour d\'un axe fixe' },
+        { id: '07', title: 'Pression et force pressante' },
+        { id: '08', title: 'Solutions aqueuses et concentration' },
+        { id: '09', title: 'Ondes électromagnétiques' },
+        { id: '10', title: 'Propagation d\'un signal sonore' }
+      ]
+    },
+
     /* Physique-Chimie — Terminale ICCER */
     'physique-chimie/terminale-iccer': {
       summary:      'pc-term-iccer.html',
@@ -163,9 +222,12 @@
   /* ── Pages sommaires (affichage simple ← Accueil) ──────────────────── */
   var SUMMARY_PAGES = {
     'maths-2nde-mama.html':  { label: 'Mathématiques — 2nde Pro MAMA' },
+    'maths-1ere-pro.html':   { label: 'Mathématiques — 1ère Bac Pro' },
     'maths-term-iccer.html': { label: 'Mathématiques — Terminale ICCER' },
     'maths-term-erama.html': { label: 'Mathématiques — Terminale ERA-MA' },
     'pc-2nde-pro.html':      { label: 'Physique-Chimie — 2nde Pro' },
+    'pc-1ere-iccer.html':    { label: 'Physique-Chimie — 1ère ICCER' },
+    'pc-1ere-erama.html':    { label: 'Physique-Chimie — 1ère ERA-MA' },
     'pc-term-iccer.html':    { label: 'Physique-Chimie — Terminale ICCER' },
     'pc-term-erama.html':    { label: 'Physique-Chimie — Terminale ERA-MA' },
     'simulations.html':      { label: 'Simulations interactives' },
