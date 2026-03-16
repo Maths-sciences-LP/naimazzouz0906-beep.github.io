@@ -1,7 +1,7 @@
 # Audit Pedagogique Global
 
 **Date** : 2026-03-16
-**Derniere mise a jour** : 2026-03-16
+**Derniere mise a jour** : 2026-03-16 (session 2)
 **Perimetre** : qualite des cours, clarte pedagogique, coherence inter-niveaux, progression 2nde-1ere-Tle, exemples, contextes professionnels
 **Methode** : lecture integrale ou partielle de 50+ fichiers lecon.html, analyses statistiques CSS, comparaison inter-sections
 **Rapports detailles** : `audit-pedagogique-maths.md`, `audit-pedagogique-pc.md`
@@ -221,6 +221,10 @@ Les modules communs (combustion, transferts thermiques, moments, pression, solut
 - **2026-03-16** : Remplace `class="situation-pro"` par `class="situation"` dans les 7 fichiers `physique-chimie/premiere-iccer`
 - **2026-03-16** : Uniformise `label-def/prop/att/meth` en `label label-def/prop/att/meth` dans 17 fichiers `physique-chimie/premiere-iccer` (119 occurrences)
 - **2026-03-16** : Corrige le lien retour de `physique-chimie/seconde/ch12/lecon.html` et `fiche.html` (index.html → pc-2nde-pro.html)
+- **2026-03-16** : Harmonise CSS maths/seconde/ch02-ch05 (def-box→def, exemple→ex, container→c, methode→meth)
+- **2026-03-16** : Supprime redefinitions CSS inline dans 28 fichiers physique-chimie/seconde (centralise dans styles.css)
+- **2026-03-16** : Ajoute diff.js dans 18 fichiers maths/premiere (exercices.html + ds.html)
+- **2026-03-16** : Corrige le lien retour de physique-chimie/seconde/ch13/lecon.html (index.html → pc-2nde-pro.html)
 
 ---
 
@@ -231,9 +235,9 @@ Les modules communs (combustion, transferts thermiques, moments, pression, solut
 - [ ] Rediger `maths/premiere/ch09/lecon.html` (Trigonometrie)
 
 ### Priorite haute
-- [ ] Ajouter diff.js et differenciation dans `maths/premiere` (18 fichiers exercices + ds)
-- [ ] Harmoniser CSS de `maths/seconde/ch02-ch05` (def-box → def, exemple → ex, etc.)
-- [ ] Supprimer redefinitions CSS inline dans les 14 fichiers `physique-chimie/seconde`
+- [x] Ajouter diff.js et differenciation dans `maths/premiere` (18 fichiers exercices + ds) (2026-03-16)
+- [x] Harmoniser CSS de `maths/seconde/ch02-ch05` (def-box → def, exemple → ex, etc.) (2026-03-16)
+- [x] Supprimer redefinitions CSS inline dans les 14 fichiers `physique-chimie/seconde` (2026-03-16)
 - [x] Uniformiser labels en `label label-def` dans les 17 fichiers `premiere-iccer` (2026-03-16)
 - [x] Remplacer `class="appli"` par `class="situation"` dans les 8 fichiers `terminale-era` (2026-03-16)
 

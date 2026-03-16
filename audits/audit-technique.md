@@ -1,7 +1,7 @@
 # Audit Technique
 
 **Date** : 2026-03-16
-**Derniere mise a jour** : 2026-03-16
+**Derniere mise a jour** : 2026-03-16 (session 2)
 **Perimetre** : HTML, CSS, JavaScript, chemins, accessibilite, simulations, performances
 **Nombre total de fichiers HTML audites** : 477 (191 maths, 180 physique-chimie, 63 simulations, 43 autres)
 
@@ -159,7 +159,7 @@ Depuis la mise a jour du 2026-03-16, CLAUDE.md precise que la differenciation s'
 
 - **28 fichiers en `maths/seconde/`** contiennent `diff.js` — conforme
 - **28 fichiers en `physique-chimie/seconde/`** contiennent `diff.js` — conforme
-- **0 fichier en `maths/premiere/`** contient diff.js — **NON CONFORME** (18 fichiers a traiter)
+- **18 fichiers en `maths/premiere/`** contiennent diff.js — **CONFORME** (corrige 2026-03-16)
 
 **Note** : aucun fichier `lecon.html` ne contient diff.js ou des classes de differenciation — conforme.
 
@@ -206,7 +206,7 @@ Le site repose sur des liens `<a>` et boutons `<button>` standards, naturellemen
 | ~~4~~ | ~~Liens vers `sommaire.html` inexistant~~ | ~~HAUTE~~ | ~~5~~ | **CORRIGE 2026-03-16** |
 | ~~5~~ | ~~Lien `ch01_exos.html` inexistant~~ | ~~HAUTE~~ | ~~1~~ | **CORRIGE 2026-03-16** |
 | 6 | ~~diff.js en Seconde (hors perimetre)~~ | ~~MOYENNE~~ | ~~56~~ | **RESOLU** — CLAUDE.md mis a jour, Seconde incluse |
-| 7 | diff.js absent en Premiere maths | MOYENNE | ~18 | Differenciation manquante |
+| ~~7~~ | ~~diff.js absent en Premiere maths~~ | ~~MOYENNE~~ | ~~18~~ | **CORRIGE 2026-03-16** |
 | 8 | Simulations non autonomes (nav.js) | MOYENNE | 26 | Non-conformite CLAUDE.md |
 | 9 | Tableaux sans `scope`/`caption` | BASSE | Generalise | Accessibilite reduite |
 | 10 | Boutons interactifs sans ARIA | BASSE | Generalise | Accessibilite reduite |
@@ -220,6 +220,9 @@ Le site repose sur des liens `<a>` et boutons `<button>` standards, naturellemen
 - **2026-03-16** : Corrige les 6 chemins absolus `src="/diff.js"` → `src="../../../diff.js"` dans maths/terminale/ch04, ch06, ch11
 - **2026-03-16** : Corrige les 5 liens casses `../../sommaire.html` → `../../../maths-term-iccer.html` dans maths/terminale/ch07, ch08, ch10, ch11
 - **2026-03-16** : Corrige le lien `ch01_exos.html` → `exercices.html` dans maths/seconde/ch01/lecon.html
+- **2026-03-16** : Ajoute diff.js dans les 18 fichiers exercices.html et ds.html de maths/premiere (ch01-ch09)
+- **2026-03-16** : Supprime les redefinitions CSS inline (.exo .exo-num, details.corr) dans 28 fichiers physique-chimie/seconde et centralise dans styles.css
+- **2026-03-16** : Corrige le lien retour de physique-chimie/seconde/ch13/lecon.html (index.html → pc-2nde-pro.html)
 
 ---
 
@@ -236,7 +239,7 @@ Le site repose sur des liens `<a>` et boutons `<button>` standards, naturellemen
 
 ### Priorite MOYENNE
 - [x] Decider si la differenciation en Seconde est intentionnelle — OUI, CLAUDE.md mis a jour (2026-03-16)
-- [ ] Ajouter diff.js dans les exercices.html et ds.html de `maths/premiere/` si la differenciation est souhaitee
+- [x] Ajouter diff.js dans les exercices.html et ds.html de `maths/premiere/` (2026-03-16)
 - [ ] Retirer nav.js des 26 simulations pour les rendre autonomes conformement a CLAUDE.md
 
 ### Priorite BASSE

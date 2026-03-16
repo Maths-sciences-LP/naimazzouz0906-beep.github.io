@@ -1,7 +1,7 @@
 # Audit Pedagogique Approfondi — Physique-Chimie
 
 **Date** : 2026-03-16
-**Derniere mise a jour** : 2026-03-16
+**Derniere mise a jour** : 2026-03-16 (session 2)
 **Perimetre** : Toutes les pages lecon.html de physique-chimie (seconde, 1ere ICCER, 1ere ERA, Tle ICCER, Tle ERA)
 **Methode** : Lecture integrale ou partielle de 25+ fichiers, analyses statistiques CSS sur 50 fichiers
 
@@ -420,11 +420,11 @@
 ## Ameliorations restantes
 
 ### Priorite haute
-- [ ] Supprimer les redefinitions CSS inline (`.exo .exo-num`, `details.corr`) dans les 14 fichiers seconde
+- [x] Supprimer les redefinitions CSS inline (`.exo .exo-num`, `details.corr`) dans les 14 fichiers seconde (2026-03-16)
 - [ ] Uniformiser les labels en `label label-def` dans les 10 fichiers premiere-iccer
 - [ ] Uniformiser les labels dans les 5 fichiers premiere-era concernes
 - [ ] Remplacer `class="appli"` par `class="situation"` dans les 8 fichiers terminale-era
-- [ ] Corriger le lien retour de `physique-chimie/seconde/ch12/lecon.html`
+- [x] Corriger le lien retour de `physique-chimie/seconde/ch12/lecon.html` (2026-03-16, aussi ch13)
 
 ### Priorite moyenne
 - [ ] Ajouter des blocs `.meth` dans les chapitres terminale-era (objectif : au moins 2 par chapitre)

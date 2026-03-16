@@ -347,7 +347,10 @@ La section V "Representation graphique des suites" (ligne 273-309) explique comm
 
 ## Corrections realisees
 
-*(Aucune correction effectuee a cette date — cet audit est un diagnostic initial.)*
+- **2026-03-16** : Harmonise CSS maths/seconde/ch02 (def-box→def, exemple→ex, suppression inline)
+- **2026-03-16** : Harmonise CSS maths/seconde/ch03 (container→c, exemple→ex, nav-btn→nb, sub→sous-titre)
+- **2026-03-16** : Harmonise CSS maths/seconde/ch04 exercices (methode style inline→meth)
+- **2026-03-16** : Harmonise CSS maths/seconde/ch05 exercices (methode style inline→meth)
 
 ---
 
@@ -355,9 +358,9 @@ La section V "Representation graphique des suites" (ligne 273-309) explique comm
 
 - [ ] Rediger premiere/ch05 (polynomes degre 2)
 - [ ] Rediger premiere/ch09 (trigonometrie)
-- [ ] Harmoniser CSS de seconde/ch02 (def-box → def, exemple → ex, etc.)
-- [ ] Harmoniser CSS de seconde/ch03 (container → c, exemple → ex)
-- [ ] Harmoniser CSS inline de seconde/ch04, ch05, ch06
+- [x] Harmoniser CSS de seconde/ch02 (def-box → def, exemple → ex, etc.) (2026-03-16)
+- [x] Harmoniser CSS de seconde/ch03 (container → c, exemple → ex) (2026-03-16)
+- [x] Harmoniser CSS inline de seconde/ch04, ch05 (methode→meth) (2026-03-16)
 - [ ] Corriger chemins `/nav.css` dans 9 fichiers terminale
 - [ ] Ajouter graphiques Chart.js dans premiere/ch03 (suites)
 - [ ] Ajouter animation tangente dans premiere/ch06

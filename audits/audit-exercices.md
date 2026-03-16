@@ -1,7 +1,7 @@
 # Audit Pédagogique des Exercices
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-03-16
+**Dernière mise à jour** : 2026-03-16 (session 2)
 **Périmètre** : exercices.html et ds.html — 8 sections (maths seconde/première/terminale, physique-chimie seconde/première-iccer/première-era/terminale-iccer/terminale-era)
 **Méthode** : échantillonnage de 2-3 fichiers exercices.html et 2-3 fichiers ds.html par section, lecture et analyse qualitative.
 
@@ -225,7 +225,7 @@ Un audit complet de toutes les pages d'exercices est nécessaire pour quantifier
 
 ## Corrections realisees
 
-- Aucune à ce stade.
+- **2026-03-16** : Ajout de diff.js dans les 18 fichiers exercices.html et ds.html de maths/premiere (ch01-ch09)
 
 ---
 
@@ -234,7 +234,7 @@ Un audit complet de toutes les pages d'exercices est nécessaire pour quantifier
 ### Priorité haute
 - [ ] Compléter maths/premiere/ch05/exercices.html (polynômes degré 2)
 - [ ] Compléter maths/premiere/ch09/exercices.html (trigonométrie)
-- [ ] Ajouter la différenciation dans les 18 fichiers de maths/premiere
+- [x] Ajouter la différenciation (diff.js) dans les 18 fichiers de maths/premiere (2026-03-16)
 - [ ] Réaliser un inventaire complet : nombre de `.exo` vs `.corr` sur chaque page
 
 ### Priorité moyenne
