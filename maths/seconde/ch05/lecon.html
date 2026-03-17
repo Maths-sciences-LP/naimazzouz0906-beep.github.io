@@ -143,6 +143,7 @@ td.tl{text-align:left}
   <br><br>
   On pose \(x\) = prix d'une vis (en €). L'équation est : \(8x = 4{,}80\)
   \[ x = \frac{4{,}80}{8} = 0{,}60 \text{ €} \]
+  <strong>Vérification :</strong> \(8 \times 0{,}60 = 4{,}80\) ✔<br>
   <strong>Réponse :</strong> une vis coûte 0,60 €.
 </div>
 
@@ -165,20 +166,20 @@ td.tl{text-align:left}
 
 <div class="ex">
   <span class="label label-ex">Exemple 3 – Planches de bois</span><br>
-  Un artisan achète plusieurs planches identiques à 8,50 € pièce. Les frais de livraison sont de 12 €.
-  Il a payé en tout 63,50 €. Combien a-t-il acheté de planches ?
+  Un artisan achète plusieurs planches identiques à 8,50 € pièce. Les frais de livraison sont de 15 €.
+  Il a payé en tout 66 €. Combien a-t-il acheté de planches ?
   <br><br>
   <strong>Étape 1 – Inconnue :</strong> on pose \(x\) = nombre de planches achetées.
   <br><br>
   <strong>Étape 2 – Équation :</strong>
-  \[ 8{,}50x + 12 = 63{,}50 \]
+  \[ 8{,}50x + 15 = 66 \]
   <br>
   <strong>Étape 3 – Résolution :</strong>
-  \[ 8{,}50x = 63{,}50 - 12 = 51{,}50 \]
-  \[ x = \frac{51{,}50}{8{,}50} = 6{,}06\ldots \approx 6 \]
+  \[ 8{,}50x = 66 - 15 = 51 \]
+  \[ x = \frac{51}{8{,}50} = 6 \]
   <br>
   <strong>Étape 4 – Vérification :</strong>
-  \[ 8{,}50 \times 6 + 12 = 51 + 12 = 63 \approx 63{,}50 \text{ ✔ (légère différence due à l'arrondi)} \]
+  \[ 8{,}50 \times 6 + 15 = 51 + 15 = 66 \text{ ✔} \]
   <br>
   <strong>Étape 5 – Conclusion :</strong> L'artisan a acheté <strong>6 planches</strong>.
 </div>
@@ -480,31 +481,26 @@ td.tl{text-align:left}
 <h2>Simulations interactives</h2>
 <p>Entraîne-toi avec les outils interactifs de ce chapitre :</p>
 <div>
-  <a href="simu-balance.html" class="simu-link">⚖️ Balance d'équation</a>
-  <a href="simu-graphe-equation.html" class="simu-link">📈 Résolution graphique</a>
-  <a href="simu-entrainement.html" class="simu-link">🎯 Générateur d'équations</a>
-  <a href="ch05_simulation.html" class="simu-link">🔗 Toutes les simulations Ch05</a>
+  <a href="../../../simulations/equations.html" class="simu-link">🔢 Résolveur d'équations</a>
+  <a href="../../../simulations/entrainement.html" class="simu-link">🎯 Entraînement équations</a>
+  <a href="simulation.html" class="simu-link">🔗 Toutes les simulations Ch05</a>
 </div>
 
 <!-- NAV -->
 <div class="nav-footer">
-  <a href="ch04_lecon.html" class="nav-btn">← Ch04 – Cours précédent</a>
+  <a href="../ch04/lecon.html" class="nav-btn">← Ch04 – Cours précédent</a>
   <a href="../../../maths-2nde-mama.html" class="nav-btn">Sommaire</a>
-  <a href="ch05_exos.html" class="nav-btn">Exercices Ch05 →</a>
+  <a href="exercices.html" class="nav-btn">Exercices Ch05 →</a>
 </div>
 
 </div><!-- fin .c -->
 <script src="../../../nav.js"></script>
-
-
-<!-- Simulations interactives -->
-<div class="retenir" style="border-color:var(--p);background:var(--p-bg)">
-  <h3>Simulations interactives</h3>
-  <ul style="list-style:none;padding:0;margin:0">
-    <li style="margin:.4em 0"><a href="../../../simulations/entrainement.html" target="_blank" style="color:var(--p);font-weight:600;text-decoration:underline">Entraînement — Équations du premier degré</a></li>
-    <li style="margin:.4em 0"><a href="../../../simulations/equations.html" target="_blank" style="color:var(--p);font-weight:600;text-decoration:underline">Résolveur d'équations</a></li>
-  </ul>
-</div>
-
+<script>
+function toggle(btn){
+  var corr=btn.nextElementSibling;
+  if(corr.style.display==='block'){corr.style.display='none';btn.textContent='Voir la correction';}
+  else{corr.style.display='block';btn.textContent='Masquer la correction';}
+}
+</script>
 </body>
 </html>

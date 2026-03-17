@@ -1,7 +1,7 @@
 # Audit Pedagogique — Mathematiques (Seconde, Premiere, Terminale)
 
 **Date** : 2026-03-16
-**Derniere mise a jour** : 2026-03-16
+**Derniere mise a jour** : 2026-03-17
 **Perimetre** : Qualite pedagogique des cours (lecon.html) de mathematiques
 **Methode** : Lecture integrale de 5 chapitres par niveau + lecture structurelle de tous les autres
 
@@ -348,6 +348,7 @@ La section V "Representation graphique des suites" (ligne 273-309) explique comm
 - **2026-03-16** : Harmonise CSS maths/seconde/ch04 exercices (methode style inline→meth)
 - **2026-03-16** : Harmonise CSS maths/seconde/ch05 exercices (methode style inline→meth)
 - **2026-03-16** : Converti 6 041 entites HTML en UTF-8 dans les 44 fichiers de maths/terminale
+- **2026-03-17** : Corrige l'exemple 3 du cours seconde/ch05 (valeurs qui ne tombaient pas juste : 63,50€/8,50€ remplace par 66€/8,50€ → x=6 exact)
 
 ---
 
