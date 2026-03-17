@@ -768,29 +768,6 @@ body.mode-appro .diff-standard { display: none !important; }
 }
 .simu-link:hover { background: var(--p); color: #fff; }
 
-/* ── DS interactif : tableaux croisés + formules à trous ── */
-.cell-input {
-  width: 60px; font-size: .9em; text-align: center;
-  border: 1.5px solid var(--p-border); border-radius: 4px;
-  padding: 3px 4px; background: #fff; color: var(--t);
-}
-.cell-input:focus { border-color: var(--p); outline: none; box-shadow: 0 0 0 2px var(--p-bg); }
-td.filled, th.filled { background: var(--p-bg); font-weight: 600; }
-.formula { font-size: .93em; display: inline-flex; align-items: center; flex-wrap: wrap; gap: 3px; }
-.bi {
-  width: 52px; font-size: .9em; text-align: center;
-  border: 1.5px solid var(--p-border); border-radius: 4px;
-  padding: 2px 4px; background: #fff; color: var(--t);
-  display: inline-block; vertical-align: middle;
-}
-.bi:focus { border-color: var(--p); outline: none; box-shadow: 0 0 0 2px var(--p-bg); }
-.bi.wide { width: 80px; }
-.reponse-box { background: var(--p-bg); border: 1.5px solid var(--p-border); border-radius: 8px; padding: 10px 14px; margin: 8px 0; font-size: .93em; }
-@media print {
-  .cell-input, .bi { border: 1px solid #999; -webkit-print-color-adjust: exact; }
-  .bc, .corr { display: none !important; }
-}
-
 /* ── Media queries ── */
 @media (max-width: 600px) {
   body { padding: 12px; }

@@ -278,37 +278,15 @@ td.total,th.total{background:#e8f4fd;font-weight:700;color:var(--p)}
   <div class="exo-titre"><span class="num">S3</span>Lire un arbre de probabilités — questions guidées</div>
 
   <p>Une entreprise de chauffage achète des vannes chez deux fournisseurs. Voici l'arbre :</p>
-  <svg viewBox="0 0 560 240" width="100%" style="max-width:560px;display:block;margin:12px auto;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px" font-family="'Segoe UI',sans-serif" font-size="13">
-    <circle cx="50" cy="120" r="8" fill="#0969da"/>
-    <text x="50" y="142" text-anchor="middle" fill="#2d3748" font-size="10" font-weight="bold">Départ</text>
-    <!-- Branche F1 -->
-    <line x1="58" y1="114" x2="190" y2="65" stroke="#0969da" stroke-width="2"/>
-    <text x="118" y="76" fill="#0969da" font-weight="bold" text-anchor="middle">F1</text>
-    <text x="118" y="90" fill="#0969da" text-anchor="middle" font-size="11">0,7</text>
-    <circle cx="198" cy="63" r="7" fill="#0969da"/>
-    <!-- F1 → C -->
-    <line x1="205" y1="58" x2="340" y2="35" stroke="#2f855a" stroke-width="1.8"/>
-    <text x="270" y="36" fill="#2f855a" text-anchor="middle" font-size="12">C  0,95</text>
-    <circle cx="348" cy="33" r="5" fill="#2f855a"/>
-    <!-- F1 → D -->
-    <line x1="205" y1="68" x2="340" y2="93" stroke="#c53030" stroke-width="1.8"/>
-    <text x="270" y="89" fill="#c53030" text-anchor="middle" font-size="12">D  0,05</text>
-    <circle cx="348" cy="91" r="5" fill="#c53030"/>
-    <!-- Branche F2 -->
-    <line x1="58" y1="126" x2="190" y2="175" stroke="#7c3aed" stroke-width="2"/>
-    <text x="118" y="166" fill="#7c3aed" font-weight="bold" text-anchor="middle">F2</text>
-    <text x="118" y="180" fill="#7c3aed" text-anchor="middle" font-size="11">0,3</text>
-    <circle cx="198" cy="177" r="7" fill="#7c3aed"/>
-    <!-- F2 → C -->
-    <line x1="205" y1="172" x2="340" y2="149" stroke="#2f855a" stroke-width="1.8"/>
-    <text x="270" y="150" fill="#2f855a" text-anchor="middle" font-size="12">C  0,90</text>
-    <circle cx="348" cy="147" r="5" fill="#2f855a"/>
-    <!-- F2 → D -->
-    <line x1="205" y1="182" x2="340" y2="207" stroke="#c53030" stroke-width="1.8"/>
-    <text x="270" y="204" fill="#c53030" text-anchor="middle" font-size="12">D  0,10</text>
-    <circle cx="348" cy="205" r="5" fill="#c53030"/>
-    <text x="280" y="234" text-anchor="middle" fill="#718096" font-size="10" font-style="italic">Arbre à 2 niveaux : fournisseur puis qualité</text>
-  </svg>
+  <div class="chemin">
+    <strong>Arbre :</strong><br>
+    ├── Fournisseur F1 (0,7)<br>
+    │    ├── Conforme (0,95)<br>
+    │    └── Défectueuse (0,05)<br>
+    └── Fournisseur F2 (0,3)<br>
+    &emsp;&emsp;&emsp;├── Conforme (0,90)<br>
+    &emsp;&emsp;&emsp;└── Défectueuse (0,10)
+  </div>
 
   <div class="consigne"><strong>1.</strong> Quelle proportion des vannes vient du fournisseur F1 ?</div>
   <div class="reponse-box">\(P(\text{F1}) = \) ……… (lire la 1ère branche)</div>
@@ -906,46 +884,15 @@ td.total,th.total{background:#e8f4fd;font-weight:700;color:var(--p)}
   <div class="reponse-box">\(P_{\bar{\text{E}}}(\text{C}) = \dfrac{\phantom{5}}{\phantom{500}} = \) ……… → Interprétation : ………………</div>
 
   <div class="consigne"><strong>4.</strong> Compléter l'arbre de probabilités à deux niveaux :</div>
-  <svg viewBox="0 0 640 250" width="100%" style="max-width:640px;display:block;margin:12px auto;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px" font-family="'Segoe UI',sans-serif" font-size="12">
-    <circle cx="45" cy="125" r="8" fill="#0969da"/>
-    <text x="45" y="147" text-anchor="middle" fill="#2d3748" font-size="10" font-weight="bold">Départ</text>
-    <!-- Branche E -->
-    <line x1="53" y1="119" x2="180" y2="65" stroke="#c53030" stroke-width="2"/>
-    <text x="110" y="77" fill="#c53030" font-weight="bold" text-anchor="middle">E</text>
-    <rect x="120" y="58" width="46" height="16" rx="4" fill="#fff" stroke="#c53030" stroke-width="1.2"/>
-    <circle cx="188" cy="63" r="7" fill="#c53030"/>
-    <!-- E → C -->
-    <line x1="195" y1="58" x2="330" y2="32" stroke="#c53030" stroke-width="1.8"/>
-    <text x="260" y="34" fill="#c53030" text-anchor="middle" font-size="11">C</text>
-    <rect x="272" y="22" width="42" height="16" rx="4" fill="#fff" stroke="#c53030" stroke-width="1.2"/>
-    <circle cx="338" cy="30" r="5" fill="#c53030"/>
-    <text x="352" y="26" fill="#2d3748" font-size="11" font-weight="bold">E ∩ C</text>
-    <text x="352" y="40" fill="#718096" font-size="10">= ........</text>
-    <!-- E → C̄ -->
-    <line x1="195" y1="68" x2="330" y2="94" stroke="#2f855a" stroke-width="1.8"/>
-    <text x="260" y="90" fill="#2f855a" text-anchor="middle" font-size="11">C̄</text>
-    <rect x="272" y="82" width="42" height="16" rx="4" fill="#fff" stroke="#2f855a" stroke-width="1.2"/>
-    <circle cx="338" cy="92" r="5" fill="#2f855a"/>
-    <text x="352" y="92" fill="#718096" font-size="10">E ∩ C̄ = ........</text>
-    <!-- Branche Ē -->
-    <line x1="53" y1="131" x2="180" y2="185" stroke="#2f855a" stroke-width="2"/>
-    <text x="110" y="172" fill="#2f855a" font-weight="bold" text-anchor="middle">Ē</text>
-    <rect x="120" y="178" width="46" height="16" rx="4" fill="#fff" stroke="#2f855a" stroke-width="1.2"/>
-    <circle cx="188" cy="187" r="7" fill="#2f855a"/>
-    <!-- Ē → C -->
-    <line x1="195" y1="182" x2="330" y2="158" stroke="#c53030" stroke-width="1.8"/>
-    <text x="260" y="160" fill="#c53030" text-anchor="middle" font-size="11">C</text>
-    <rect x="272" y="148" width="42" height="16" rx="4" fill="#fff" stroke="#c53030" stroke-width="1.2"/>
-    <circle cx="338" cy="156" r="5" fill="#c53030"/>
-    <text x="352" y="156" fill="#718096" font-size="10">Ē ∩ C = ........</text>
-    <!-- Ē → C̄ -->
-    <line x1="195" y1="192" x2="330" y2="218" stroke="#2f855a" stroke-width="1.8"/>
-    <text x="260" y="216" fill="#2f855a" text-anchor="middle" font-size="11">C̄</text>
-    <rect x="272" y="206" width="42" height="16" rx="4" fill="#fff" stroke="#2f855a" stroke-width="1.2"/>
-    <circle cx="338" cy="216" r="5" fill="#2f855a"/>
-    <text x="352" y="216" fill="#718096" font-size="10">Ē ∩ C̄ = ........</text>
-    <text x="320" y="246" text-anchor="middle" fill="#718096" font-size="10" font-style="italic">Compléter les probabilités et les produits des chemins</text>
-  </svg>
+  <div class="chemin">
+    <strong>Arbre :</strong><br>
+    ├── Exposé E (\(\boxed{\phantom{0,375}}\))<br>
+    │    ├── Cancer C (\(\boxed{\phantom{0,15}}\)) → \(P(\text{E} \cap \text{C}) = \boxed{\phantom{0,375}} \times \boxed{\phantom{0,15}} = \boxed{\phantom{0,05625}}\)<br>
+    │    └── Pas de cancer C̄ (\(\boxed{\phantom{0,85}}\)) → \(P(\text{E} \cap \bar{\text{C}}) = \) ………<br>
+    └── Non-exposé Ē (\(\boxed{\phantom{0,625}}\))<br>
+    &emsp;&emsp;&emsp;├── Cancer C (\(\boxed{\phantom{0,01}}\)) → \(P(\bar{\text{E}} \cap \text{C}) = \) ………<br>
+    &emsp;&emsp;&emsp;└── Pas de cancer C̄ (\(\boxed{\phantom{0,99}}\)) → \(P(\bar{\text{E}} \cap \bar{\text{C}}) = \) ………
+  </div>
 
   <div class="consigne"><strong>5.</strong> Vérifier \(P(\text{C})\) à l'aide de la formule des probabilités totales :</div>
   <p style="font-size:.93em">\(P(\text{C}) = P(\text{E} \cap \text{C}) + P(\bar{\text{E}} \cap \text{C}) = \boxed{\phantom{0,05625}} + \boxed{\phantom{0,00625}} = \boxed{\phantom{0,0625}}\)</p>

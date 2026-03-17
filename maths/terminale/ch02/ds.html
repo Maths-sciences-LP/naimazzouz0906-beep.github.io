@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Ch02 – DS – Probabilités – Terminale Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
@@ -16,9 +15,9 @@
 .partie-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--p)}
 .partie-title{font-weight:700;font-size:1.1em;color:var(--p)}
 .pts{background:var(--p);color:#fff;font-weight:700;font-size:.85em;padding:3px 10px;border-radius:12px}
-.q{margin-top:14px}
 .q strong{color:var(--t)}
-.answer-line{border-bottom:1px solid #aaa;margin:6px 0;height:28px;display:block}</style>
+.answer-line{border-bottom:1px solid #aaa;margin:6px 0;height:28px;display:block}
+.bareme{font-style:italic;color:#718096;font-size:.85em}</style>
 </head>
 <body>
 <div class="c">
@@ -26,27 +25,25 @@
 
 <header>
   <h1>Devoir Surveillé – Chapitre 2</h1>
-  <p class="sous-titre">Probabilités  |  T<sup>le</sup> Pro</p>
+  <p class="sous-titre">Probabilités  |  T<sup>le</sup> Pro</p>
 </header>
 
 <div class="dh">
-  <div class="dh-item"><strong>Durée :</strong> 1 heure</div>
-  <div class="dh-item"><strong>Calculatrice :</strong> autorisée</div>
-  <div class="dh-item"><strong>Barème :</strong> 20 points</div>
-  <div class="dh-item"><strong>Documents :</strong> non autorisés</div>
+  <div class="dh-item">🕑 <strong>Durée :</strong> 1 heure</div>
+  <div class="dh-item">🧮 <strong>Calculatrice :</strong> autorisée</div>
+  <div class="dh-item">✍ <strong>Barème :</strong> 20 points</div>
+  <div class="dh-item">📄 <strong>Documents :</strong> non autorisés</div>
 </div>
 
 <!-- ================================================================
-     SOCLE — DS 1
-     Ex1 : tableau croisé guidé (vannes thermostatiques)
-     Ex2 : arbre guidé (vaccination sur chantier)
+     DS SOCLE — très guidé, mêmes compétences
      ================================================================ -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
 
 <div class="partie">
   <div class="partie-header">
-    <span class="partie-title">Exercice 1 – Contrôle de vannes thermostatiques</span>
+    <span class="partie-title">Exercice 1 – Tableau croisé (guidé)</span>
     <span class="pts">10 points</span>
   </div>
 
@@ -60,21 +57,21 @@
   <table>
     <thead><tr><th></th><th>Défectueuse (D)</th><th>Conforme (C)</th><th class="total">Total</th></tr></thead>
     <tbody>
-      <tr><th>F1</th><td class="filled">3</td><td>← 60 − 3 = <input class="cell-input" style="width:40px"></td><td class="total filled">60</td></tr>
-      <tr><th>F2</th><td class="filled">6</td><td>← 40 − 6 = <input class="cell-input" style="width:40px"></td><td class="total filled">40</td></tr>
-      <tr><th class="total">Total</th><td>← 3 + 6 = <input class="cell-input" style="width:40px"></td><td><input class="cell-input" style="width:40px"></td><td class="total filled">100</td></tr>
+      <tr><th>F1</th><td>3 ✓</td><td class="vide">← 60 − 3 = ?</td><td class="total">60</td></tr>
+      <tr><th>F2</th><td>6 ✓</td><td class="vide">← 40 − 6 = ?</td><td class="total">40</td></tr>
+      <tr><th class="total">Total</th><td class="vide">← 3 + 6 = ?</td><td class="vide">?</td><td class="total">100</td></tr>
     </tbody>
   </table>
 
-  <div class="q"><strong>2. (2 pts)</strong> On tire une vanne au hasard. Calculer \(P(\text{D})\) (vanne défectueuse) :</div>
-  <p><span class="formula">\(P(\text{D}) = \dfrac{\text{nombre de D}}{\text{total}} = \dfrac{\,\)<input class="bi" style="width:36px">\(\,}{\,\)<input class="bi" style="width:36px">\(\,} = \)<input class="bi"></span></p>
+  <div class="q"><strong>2. (2 pts)</strong> On tire une vanne au hasard. Calculer \(P(\text{D})\) (vanne défectueuse). Compléter :</div>
+  <p style="font-size:.93em">\(P(\text{D}) = \dfrac{\boxed{\phantom{9}}}{\boxed{\phantom{100}}} = \boxed{\phantom{0,09}}\)</p>
 
   <div class="q"><strong>3. (2 pts)</strong> Calculer \(P(\text{F1})\) et \(P(\text{F1} \cap \text{D})\) :</div>
-  <p><span class="formula">\(P(\text{F1}) = \dfrac{\,\)<input class="bi" style="width:36px">\(\,}{\,\)<input class="bi" style="width:36px">\(\,} = \)<input class="bi"></span></p>
-  <p><span class="formula">\(P(\text{F1} \cap \text{D}) = \dfrac{\,\)<input class="bi" style="width:36px">\(\,}{\,\)<input class="bi" style="width:36px">\(\,} = \)<input class="bi"></span></p>
+  <p style="font-size:.93em">\(P(\text{F1}) = \dfrac{\phantom{60}}{\phantom{100}} = \) ………     \(P(\text{F1} \cap \text{D}) = \dfrac{\phantom{3}}{\phantom{100}} = \) ………</p>
 
-  <div class="q"><strong>4. (2 pts)</strong> Sachant que la vanne vient de F1, calculer la probabilité qu'elle soit défectueuse :</div>
-  <p><span class="formula">\(P_{\text{F1}}(\text{D}) = \dfrac{P(\text{F1} \cap \text{D})}{P(\text{F1})} = \dfrac{\,\)<input class="bi">\(\,}{\,\)<input class="bi">\(\,} = \)<input class="bi"></span></p>
+  <div class="q"><strong>4. (2 pts)</strong> Sachant que la vanne vient de F1, quelle est la probabilité qu'elle soit défectueuse ?</div>
+  <p class="consigne" style="font-size:.9em"><strong>Rappel :</strong> \(P_{\text{F1}}(\text{D}) = \dfrac{P(\text{F1} \cap \text{D})}{P(\text{F1})}\)</p>
+  <p style="font-size:.93em">\(P_{\text{F1}}(\text{D}) = \dfrac{\boxed{\phantom{0,03}}}{\boxed{\phantom{0,60}}} = \boxed{\phantom{0,05}}\)</p>
 
   <div class="q"><strong>5. (2 pts)</strong> Quel fournisseur a le plus fort taux de défaut ? Justifier par un calcul.</div>
   <span class="answer-line"></span>
@@ -91,7 +88,104 @@
 
 <div class="partie">
   <div class="partie-header">
-    <span class="partie-title">Exercice 2 – Vaccination sur un chantier</span>
+    <span class="partie-title">Exercice 2 – Arbre de probabilités (guidé)</span>
+    <span class="pts">10 points</span>
+  </div>
+
+  <p>Un magasin de bricolage vend des ampoules LED. On sait que :</p>
+  <ul>
+    <li>\(70\,\%\) des clients achètent la marque A, le reste achète la marque B ;</li>
+    <li>parmi la marque A, \(95\,\%\) durent plus de 3 ans ;</li>
+    <li>parmi la marque B, \(80\,\%\) durent plus de 3 ans.</li>
+  </ul>
+  <p>On note \(L\) : « l'ampoule dure plus de 3 ans ».</p>
+
+  <div class="q"><strong>1. (2 pts)</strong> Compléter les probabilités sur l'arbre :</div>
+  <div class="chemin" style="font-size:.93em">
+    ├── Marque A (\(\boxed{\phantom{0,7}}\))<br>
+    │    ├── L (\(\boxed{\phantom{0,95}}\))<br>
+    │    └── \(\overline{L}\) (\(\boxed{\phantom{0,05}}\))<br>
+    └── Marque B (\(\boxed{\phantom{0,3}}\))<br>
+    &emsp;&emsp;&emsp;├── L (\(\boxed{\phantom{0,80}}\))<br>
+    &emsp;&emsp;&emsp;└── \(\overline{L}\) (\(\boxed{\phantom{0,20}}\))
+  </div>
+
+  <div class="q"><strong>2. (2 pts)</strong> Calculer \(P(\text{A} \cap L)\) en multipliant le long du chemin :</div>
+  <p style="font-size:.93em">\(P(\text{A} \cap L) = P(\text{A}) \times P_{\text{A}}(L) = \boxed{\phantom{0,7}} \times \boxed{\phantom{0,95}} = \boxed{\phantom{0,665}}\)</p>
+
+  <div class="q"><strong>3. (2 pts)</strong> Calculer \(P(\text{B} \cap L)\) de la même façon :</div>
+  <span class="answer-line"></span>
+
+  <div class="q"><strong>4. (2 pts)</strong> Calculer \(P(L)\) (probabilité totale) :</div>
+  <p style="font-size:.93em">\(P(L) = P(\text{A} \cap L) + P(\text{B} \cap L) = \) ……… + ……… = ………</p>
+
+  <div class="q"><strong>5. (2 pts)</strong> Le magasin garantit les ampoules 3 ans. Sur 1 000 ampoules vendues, combien seront retournées en moyenne ?</div>
+  <span class="answer-line"></span>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> A : 0,7 ; L sachant A : 0,95 ; \(\overline{L}\) sachant A : 0,05. B : 0,3 ; L sachant B : 0,80 ; \(\overline{L}\) sachant B : 0,20.</p>
+    <p><strong>2.</strong> \(P(\text{A} \cap L) = 0{,}7 \times 0{,}95 = 0{,}665\).</p>
+    <p><strong>3.</strong> \(P(\text{B} \cap L) = 0{,}3 \times 0{,}80 = 0{,}240\).</p>
+    <p><strong>4.</strong> \(P(L) = 0{,}665 + 0{,}240 = 0{,}905\) soit 90,5 %.</p>
+    <p><strong>5.</strong> \(P(\overline{L}) = 1 - 0{,}905 = 0{,}095\). Sur 1 000 : \(1000 \times 0{,}095 = \mathbf{95}\) ampoules retournées en moyenne.</p>
+  </div>
+</div>
+
+<!-- ================================================================
+     DS 2 SOCLE — dépistage en entreprise + vaccination sur chantier
+     ================================================================ -->
+<h2 style="margin-top:40px;padding-top:20px;border-top:2px dashed var(--p-border);color:var(--p)">DS 2 — Variante</h2>
+
+<div class="partie">
+  <div class="partie-header">
+    <span class="partie-title">Exercice 1 – Dépistage en entreprise du bâtiment</span>
+    <span class="pts">10 points</span>
+  </div>
+
+  <p>Un médecin du travail mène une campagne de dépistage de la grippe dans deux entreprises du bâtiment. Il teste <strong>200 salariés</strong> au total.</p>
+  <ul>
+    <li>Entreprise A (menuiserie) : <strong>120 salariés</strong>, dont <strong>15 positifs</strong>.</li>
+    <li>Entreprise B (plomberie-chauffage) : <strong>80 salariés</strong>, dont <strong>12 positifs</strong>.</li>
+  </ul>
+  <p>On note \(P\) l'événement « le salarié est positif au test ».</p>
+
+  <div class="q"><strong>1. (2 pts)</strong> Compléter le tableau croisé :</div>
+  <table>
+    <thead><tr><th></th><th>Positif (P)</th><th>Négatif (N)</th><th class="total">Total</th></tr></thead>
+    <tbody>
+      <tr><th>Entreprise A</th><td>15 ✓</td><td class="vide">← 120 − 15 = ?</td><td class="total">120</td></tr>
+      <tr><th>Entreprise B</th><td>12 ✓</td><td class="vide">← 80 − 12 = ?</td><td class="total">80</td></tr>
+      <tr><th class="total">Total</th><td class="vide">← 15 + 12 = ?</td><td class="vide">?</td><td class="total">200</td></tr>
+    </tbody>
+  </table>
+
+  <div class="q"><strong>2. (2 pts)</strong> On choisit un salarié au hasard. Calculer \(P(\text{P})\) :</div>
+  <p style="font-size:.93em">\(P(\text{P}) = \dfrac{\boxed{\phantom{27}}}{\boxed{\phantom{200}}} = \boxed{\phantom{0,135}}\)</p>
+
+  <div class="q"><strong>3. (2 pts)</strong> Calculer \(P(\text{A})\) et \(P(\text{A} \cap \text{P})\) :</div>
+  <p style="font-size:.93em">\(P(\text{A}) = \dfrac{\phantom{120}}{\phantom{200}} = \) ………     \(P(\text{A} \cap \text{P}) = \dfrac{\phantom{15}}{\phantom{200}} = \) ………</p>
+
+  <div class="q"><strong>4. (2 pts)</strong> Sachant que le salarié vient de l'entreprise A, quelle est la probabilité qu'il soit positif ?</div>
+  <p class="consigne" style="font-size:.9em"><strong>Rappel :</strong> \(P_{\text{A}}(\text{P}) = \dfrac{P(\text{A} \cap \text{P})}{P(\text{A})}\)</p>
+  <p style="font-size:.93em">\(P_{\text{A}}(\text{P}) = \dfrac{\boxed{\phantom{0,075}}}{\boxed{\phantom{0,60}}} = \boxed{\phantom{0,125}}\)</p>
+
+  <div class="q"><strong>5. (2 pts)</strong> Quelle entreprise a le taux de positivité le plus élevé ? Justifier par un calcul.</div>
+  <span class="answer-line"></span>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> A : 15 | 105 | 120. B : 12 | 68 | 80. Total : 27 | 173 | 200.</p>
+    <p><strong>2.</strong> \(P(\text{P}) = 27/200 = 0{,}135\) soit 13,5 %.</p>
+    <p><strong>3.</strong> \(P(\text{A}) = 120/200 = 0{,}60\) ; \(P(\text{A} \cap \text{P}) = 15/200 = 0{,}075\).</p>
+    <p><strong>4.</strong> \(P_{\text{A}}(\text{P}) = 0{,}075 / 0{,}60 = 0{,}125\) soit 12,5 %.</p>
+    <p><strong>5.</strong> \(P_{\text{B}}(\text{P}) = 12/80 = 0{,}15\) soit 15 %. <strong>L'entreprise B a le taux de positivité le plus élevé</strong> (15 % contre 12,5 %).</p>
+  </div>
+</div>
+
+<div class="partie">
+  <div class="partie-header">
+    <span class="partie-title">Exercice 2 – Vaccination sur chantier</span>
     <span class="pts">10 points</span>
   </div>
 
@@ -101,133 +195,184 @@
     <li>parmi les vaccinés, \(5\,\%\) attrapent quand même la grippe ;</li>
     <li>parmi les non-vaccinés, \(30\,\%\) attrapent la grippe.</li>
   </ul>
-  <p>On note \(V\) : « vacciné » et \(G\) : « attrape la grippe ».</p>
+  <p>On note \(G\) l'événement « l'ouvrier attrape la grippe ».</p>
 
-  <div class="q"><strong>1. (2 pts)</strong> Compléter les probabilités sur chaque branche de l'arbre :</div>
-  <div id="arbre-socle1-2"></div>
+  <div class="q"><strong>1. (2 pts)</strong> Compléter les probabilités sur l'arbre :</div>
+  <svg viewBox="0 0 560 240" width="100%" style="max-width:560px;display:block;margin:12px auto;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px">
+    <line x1="50" y1="120" x2="140" y2="60" stroke="#333" stroke-width="1.5"/>
+    <line x1="50" y1="120" x2="140" y2="180" stroke="#333" stroke-width="1.5"/>
+    <line x1="190" y1="60" x2="290" y2="30" stroke="#333" stroke-width="1.5"/>
+    <line x1="190" y1="60" x2="290" y2="90" stroke="#333" stroke-width="1.5"/>
+    <line x1="190" y1="180" x2="290" y2="150" stroke="#333" stroke-width="1.5"/>
+    <line x1="190" y1="180" x2="290" y2="210" stroke="#333" stroke-width="1.5"/>
+    <circle cx="50" cy="120" r="4" fill="#333"/>
+    <circle cx="190" cy="60" r="4" fill="var(--p)"/>
+    <circle cx="190" cy="180" r="4" fill="var(--p)"/>
+    <text x="196" y="56" font-size="13" fill="#333" font-weight="600">V</text>
+    <text x="196" y="184" font-size="13" fill="#333" font-weight="600">V̄</text>
+    <text x="298" y="34" font-size="12" fill="#c53030" font-weight="600">G</text>
+    <text x="298" y="94" font-size="12" fill="#2f855a" font-weight="600">Ḡ</text>
+    <text x="298" y="154" font-size="12" fill="#c53030" font-weight="600">G</text>
+    <text x="298" y="214" font-size="12" fill="#2f855a" font-weight="600">Ḡ</text>
+    <text x="62" y="82" font-size="11" fill="#555">P(V) = ☐</text>
+    <text x="62" y="166" font-size="11" fill="#555">P(V̄) = ☐</text>
+    <text x="200" y="40" font-size="10" fill="#555">Pᵥ(G) = ☐</text>
+    <text x="200" y="82" font-size="10" fill="#555">Pᵥ(Ḡ) = ☐</text>
+    <text x="200" y="160" font-size="10" fill="#555">Pᵥ̄(G) = ☐</text>
+    <text x="200" y="204" font-size="10" fill="#555">Pᵥ̄(Ḡ) = ☐</text>
+    <text x="322" y="34" font-size="10" fill="#888">→ P(V∩G) = ☐</text>
+    <text x="322" y="94" font-size="10" fill="#888">→ P(V∩Ḡ) = ☐</text>
+    <text x="322" y="154" font-size="10" fill="#888">→ P(V̄∩G) = ☐</text>
+    <text x="322" y="214" font-size="10" fill="#888">→ P(V̄∩Ḡ) = ☐</text>
+  </svg>
 
-  <div class="q"><strong>2. (2 pts)</strong> Calculer \(P(\text{V} \cap \text{G})\) en multipliant le long du chemin V puis G :</div>
-  <p><span class="formula">\(P(\text{V} \cap \text{G}) =\) <input class="bi"> \(\times\) <input class="bi"> \(=\) <input class="bi"></span></p>
+  <div class="q"><strong>2. (2 pts)</strong> Calculer \(P(\text{V} \cap \text{G})\) en multipliant le long du chemin :</div>
+  <p style="font-size:.93em">\(P(\text{V} \cap \text{G}) = P(\text{V}) \times P_{\text{V}}(\text{G}) = \boxed{\phantom{0,6}} \times \boxed{\phantom{0,05}} = \boxed{\phantom{0,03}}\)</p>
 
   <div class="q"><strong>3. (2 pts)</strong> Calculer \(P(\overline{\text{V}} \cap \text{G})\) de la même façon :</div>
-  <p><span class="formula">\(P(\overline{\text{V}} \cap \text{G}) =\) <input class="bi"> \(\times\) <input class="bi"> \(=\) <input class="bi"></span></p>
+  <p style="font-size:.93em">\(P(\overline{\text{V}} \cap \text{G}) = \boxed{\phantom{0,4}} \times \boxed{\phantom{0,30}} = \boxed{\phantom{0,12}}\)</p>
 
-  <div class="q"><strong>4. (2 pts)</strong> Calculer la probabilité totale \(P(\text{G})\) :</div>
-  <p><span class="formula">\(P(\text{G}) = P(\text{V} \cap \text{G}) + P(\overline{\text{V}} \cap \text{G}) =\) <input class="bi"> \(+\) <input class="bi"> \(=\) <input class="bi"></span></p>
+  <div class="q"><strong>4. (2 pts)</strong> Calculer \(P(\text{G})\), probabilité qu'un ouvrier choisi au hasard attrape la grippe :</div>
+  <p style="font-size:.93em">\(P(\text{G}) = P(\text{V} \cap \text{G}) + P(\overline{\text{V}} \cap \text{G}) = \) ……… + ……… = ………</p>
 
   <div class="q"><strong>5. (2 pts)</strong> Sur un chantier de 500 ouvriers, combien attraperont la grippe en moyenne ?</div>
-  <p><span class="formula">\(500 \times\) <input class="bi"> \(=\) <input class="bi"> ouvriers</span></p>
-
-  <button class="bc" onclick="toggle(this)">Voir la correction</button>
-  <div class="corr">
-    <p><strong>1.</strong> P(V) = 0,6 ; P(V̄) = 0,4 ; P_V(G) = 0,05 ; P_V(Ḡ) = 0,95 ; P_V̄(G) = 0,30 ; P_V̄(Ḡ) = 0,70.</p>
-    <p><strong>2.</strong> \(P(\text{V} \cap \text{G}) = 0{,}6 \times 0{,}05 = 0{,}03\).</p>
-    <p><strong>3.</strong> \(P(\overline{\text{V}} \cap \text{G}) = 0{,}4 \times 0{,}30 = 0{,}12\).</p>
-    <p><strong>4.</strong> \(P(\text{G}) = 0{,}03 + 0{,}12 = 0{,}15\) soit 15 %.</p>
-    <p><strong>5.</strong> \(500 \times 0{,}15 = \mathbf{75}\) ouvriers.</p>
-  </div>
-</div>
-
-<!-- ================================================================
-     SOCLE — DS 2 (variante)
-     Ex1 : tableau croisé guidé (dépistage grippe en entreprise)
-     Ex2 : arbre guidé (masques EPI)
-     ================================================================ -->
-<h2 style="margin-top:40px;padding-top:20px;border-top:2px dashed var(--p-border);color:var(--p)">DS 2 — Variante</h2>
-
-<div class="partie">
-  <div class="partie-header">
-    <span class="partie-title">Exercice 1 – Dépistage grippe en entreprise</span>
-    <span class="pts">10 points</span>
-  </div>
-
-  <p>Un médecin du travail mène une campagne de dépistage de la grippe dans deux entreprises du bâtiment. Il teste <strong>200 salariés</strong> au total.</p>
-  <ul>
-    <li>Entreprise A (menuiserie) : <strong>120 salariés</strong>, dont <strong>15 positifs</strong>.</li>
-    <li>Entreprise B (plomberie-chauffage) : <strong>80 salariés</strong>, dont <strong>12 positifs</strong>.</li>
-  </ul>
-
-  <div class="q"><strong>1. (2 pts)</strong> Compléter le tableau croisé :</div>
-  <table>
-    <thead><tr><th></th><th>Positif (P)</th><th>Négatif (N)</th><th class="total">Total</th></tr></thead>
-    <tbody>
-      <tr><th>Entreprise A</th><td class="filled">15</td><td>← 120 − 15 = <input class="cell-input" style="width:40px"></td><td class="total filled">120</td></tr>
-      <tr><th>Entreprise B</th><td class="filled">12</td><td>← 80 − 12 = <input class="cell-input" style="width:40px"></td><td class="total filled">80</td></tr>
-      <tr><th class="total">Total</th><td>← 15 + 12 = <input class="cell-input" style="width:40px"></td><td><input class="cell-input" style="width:40px"></td><td class="total filled">200</td></tr>
-    </tbody>
-  </table>
-
-  <div class="q"><strong>2. (2 pts)</strong> On choisit un salarié au hasard. Calculer \(P(\text{P})\) :</div>
-  <p><span class="formula">\(P(\text{P}) = \dfrac{\,\)<input class="bi" style="width:36px">\(\,}{\,\)<input class="bi" style="width:36px">\(\,} = \)<input class="bi"></span></p>
-
-  <div class="q"><strong>3. (2 pts)</strong> Calculer \(P(\text{A})\) et \(P(\text{A} \cap \text{P})\) :</div>
-  <p><span class="formula">\(P(\text{A}) = \dfrac{\,\)<input class="bi" style="width:36px">\(\,}{\,\)<input class="bi" style="width:36px">\(\,} = \)<input class="bi"></span></p>
-  <p><span class="formula">\(P(\text{A} \cap \text{P}) = \dfrac{\,\)<input class="bi" style="width:36px">\(\,}{\,\)<input class="bi" style="width:36px">\(\,} = \)<input class="bi"></span></p>
-
-  <div class="q"><strong>4. (2 pts)</strong> Sachant que le salarié vient de A, calculer la probabilité qu'il soit positif :</div>
-  <p><span class="formula">\(P_{\text{A}}(\text{P}) = \dfrac{P(\text{A} \cap \text{P})}{P(\text{A})} = \dfrac{\,\)<input class="bi">\(\,}{\,\)<input class="bi">\(\,} = \)<input class="bi"></span></p>
-
-  <div class="q"><strong>5. (2 pts)</strong> Quelle entreprise a le taux de positivité le plus élevé ? Justifier.</div>
   <span class="answer-line"></span>
 
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>1.</strong> A : 15 | 105 | 120. B : 12 | 68 | 80. Total : 27 | 173 | 200.</p>
-    <p><strong>2.</strong> \(P(\text{P}) = 27/200 = 0{,}135\) soit 13,5 %.</p>
-    <p><strong>3.</strong> \(P(\text{A}) = 120/200 = 0{,}60\) ; \(P(\text{A} \cap \text{P}) = 15/200 = 0{,}075\).</p>
-    <p><strong>4.</strong> \(P_{\text{A}}(\text{P}) = 0{,}075 / 0{,}60 = 0{,}125\) soit 12,5 %.</p>
-    <p><strong>5.</strong> \(P_{\text{B}}(\text{P}) = 12/80 = 0{,}15\) soit 15 %. <strong>L'entreprise B</strong> a le taux le plus élevé (15 % contre 12,5 %).</p>
-  </div>
-</div>
-
-<div class="partie">
-  <div class="partie-header">
-    <span class="partie-title">Exercice 2 – Masques EPI sur chantier</span>
-    <span class="pts">10 points</span>
-  </div>
-
-  <p>Sur un chantier de rénovation, les ouvriers portent des masques EPI de deux marques :</p>
-  <ul>
-    <li>\(70\,\%\) portent la marque M1 ;</li>
-    <li>parmi les porteurs de M1, \(4\,\%\) déclarent une gêne respiratoire ;</li>
-    <li>parmi les porteurs de M2, \(15\,\%\) déclarent une gêne respiratoire.</li>
-  </ul>
-  <p>On note \(G\) : « l'ouvrier déclare une gêne respiratoire ».</p>
-
-  <div class="q"><strong>1. (2 pts)</strong> Compléter les probabilités sur chaque branche de l'arbre :</div>
-  <div id="arbre-socle2-2"></div>
-
-  <div class="q"><strong>2. (2 pts)</strong> Calculer \(P(\text{M1} \cap \text{G})\) en multipliant le long du chemin :</div>
-  <p><span class="formula">\(P(\text{M1} \cap \text{G}) =\) <input class="bi"> \(\times\) <input class="bi"> \(=\) <input class="bi"></span></p>
-
-  <div class="q"><strong>3. (2 pts)</strong> Calculer \(P(\text{M2} \cap \text{G})\) de la même façon :</div>
-  <p><span class="formula">\(P(\text{M2} \cap \text{G}) =\) <input class="bi"> \(\times\) <input class="bi"> \(=\) <input class="bi"></span></p>
-
-  <div class="q"><strong>4. (2 pts)</strong> Calculer la probabilité totale \(P(\text{G})\) :</div>
-  <p><span class="formula">\(P(\text{G}) =\) <input class="bi"> \(+\) <input class="bi"> \(=\) <input class="bi"></span></p>
-
-  <div class="q"><strong>5. (2 pts)</strong> Sur 200 ouvriers, combien auront une gêne respiratoire en moyenne ?</div>
-  <p><span class="formula">\(200 \times\) <input class="bi"> \(=\) <input class="bi"> ouvriers</span></p>
-
-  <button class="bc" onclick="toggle(this)">Voir la correction</button>
-  <div class="corr">
-    <p><strong>1.</strong> P(M1) = 0,70 ; P(M2) = 0,30 ; P_M1(G) = 0,04 ; P_M1(Ḡ) = 0,96 ; P_M2(G) = 0,15 ; P_M2(Ḡ) = 0,85.</p>
-    <p><strong>2.</strong> \(P(\text{M1} \cap \text{G}) = 0{,}70 \times 0{,}04 = 0{,}028\).</p>
-    <p><strong>3.</strong> \(P(\text{M2} \cap \text{G}) = 0{,}30 \times 0{,}15 = 0{,}045\).</p>
-    <p><strong>4.</strong> \(P(\text{G}) = 0{,}028 + 0{,}045 = 0{,}073\) soit 7,3 %.</p>
-    <p><strong>5.</strong> \(200 \times 0{,}073 \approx \mathbf{15}\) ouvriers.</p>
+    <p><strong>1.</strong> P(V) = 0,6 ; P(V̄) = 0,4 ; Pᵥ(G) = 0,05 ; Pᵥ(Ḡ) = 0,95 ; Pᵥ̄(G) = 0,30 ; Pᵥ̄(Ḡ) = 0,70.</p>
+    <p><strong>2.</strong> \(P(\text{V} \cap \text{G}) = 0{,}6 \times 0{,}05 = 0{,}03\).</p>
+    <p><strong>3.</strong> \(P(\overline{\text{V}} \cap \text{G}) = 0{,}4 \times 0{,}30 = 0{,}12\).</p>
+    <p><strong>4.</strong> \(P(\text{G}) = 0{,}03 + 0{,}12 = 0{,}15\) soit 15 %.</p>
+    <p><strong>5.</strong> \(500 \times 0{,}15 = \mathbf{75}\) ouvriers attraperont la grippe en moyenne.</p>
   </div>
 </div>
 
 </div><!-- fin diff-socle -->
 
 <!-- ================================================================
-     STANDARD — DS 1
-     Ex1 : arbre — répétition indépendante (faux négatifs test)
-     Ex2 : arbre — probabilités totales (épidémie 2 sites)
+     DS STANDARD — le DS existant
      ================================================================ -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+
+<!-- ===== EXERCICE 1 ===== -->
+<div class="partie">
+  <div class="partie-header">
+    <span class="partie-title">Exercice 1 – Contrôle qualité</span>
+    <span class="pts">10 points</span>
+  </div>
+
+  <p>Une entreprise fabrique des pièces métalliques pour des systèmes de chauffage. Le contrôle qualité révèle que \(4\,\%\) des pièces produites présentent un défaut.</p>
+  <p>On note \(D\) l'événement « la pièce présente un défaut ».</p>
+
+  <div class="q"><strong>1. (1 pt)</strong> Donner la probabilité \(P(D)\).</div>
+  <span class="answer-line"></span>
+
+  <div class="q"><strong>2. (2 pts)</strong> Définir l'événement contraire \(\overline{D}\) par une phrase, puis calculer \(P(\overline{D})\).</div>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+
+  <div class="q"><strong>3. (3 pts)</strong> On prélève au hasard \(3\) pièces successivement (avec remise). On suppose les tirages indépendants. Calculer la probabilité que les \(3\) pièces soient sans défaut. Arrondir au millième.</div>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+
+  <div class="q"><strong>4. (2 pts)</strong> En déduire la probabilité qu'au moins une pièce sur les \(3\) présente un défaut. Arrondir au millième.</div>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+
+  <div class="q"><strong>5. (2 pts)</strong> L'entreprise considère qu'un lot est acceptable si la probabilité d'avoir au moins une pièce défectueuse sur \(3\) est inférieure à \(15\,\%\). Le lot est-il acceptable ? Justifier.</div>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(P(D) = 0{,}04\).</p>
+    <p><strong>2.</strong> \(\overline{D}\) : « la pièce ne présente pas de défaut ».<br>
+    \(P(\overline{D}) = 1 - P(D) = 1 - 0{,}04 = 0{,}96\).</p>
+    <p><strong>3.</strong> Les tirages sont indépendants, donc :<br>
+    \(P(\text{3 pièces sans défaut}) = P(\overline{D})^3 = 0{,}96^3 = 0{,}884736 \approx 0{,}885\).</p>
+    <p><strong>4.</strong> « Au moins une pièce défectueuse » est l'événement contraire de « les 3 pièces sont sans défaut » :<br>
+    \(P(\text{au moins 1 défaut}) = 1 - 0{,}96^3 = 1 - 0{,}884736 \approx 0{,}115\).</p>
+    <p><strong>5.</strong> On a \(P(\text{au moins 1 défaut}) \approx 0{,}115 = 11{,}5\,\%\).<br>
+    Comme \(11{,}5\,\% < 15\,\%\), le lot est acceptable.</p>
+  </div>
+</div>
+
+<!-- ===== EXERCICE 2 ===== -->
+<div class="partie">
+  <div class="partie-header">
+    <span class="partie-title">Exercice 2 – Enquête de satisfaction</span>
+    <span class="pts">10 points</span>
+  </div>
+
+  <p>Une entreprise de menuiserie réalise une enquête de satisfaction auprès de ses clients. Elle distingue deux catégories : les clients « particuliers » (P) et les clients « professionnels » (R). On sait que :</p>
+  <ul>
+    <li>\(60\,\%\) des clients sont des particuliers ;</li>
+    <li>parmi les particuliers, \(85\,\%\) se déclarent satisfaits ;</li>
+    <li>parmi les professionnels, \(72\,\%\) se déclarent satisfaits.</li>
+  </ul>
+  <p>On note \(S\) l'événement « le client est satisfait ».</p>
+
+  <div class="q"><strong>1. (2 pts)</strong> Compléter l'arbre pondéré suivant :</div>
+  <div class="chemin" style="font-size:.93em">
+    ├── Particulier P (\(\boxed{\phantom{0,6}}\))<br>
+    │    ├── Satisfait S (\(\boxed{\phantom{0,85}}\))<br>
+    │    └── \(\overline{S}\) (\(\boxed{\phantom{0,15}}\))<br>
+    └── Professionnel R (\(\boxed{\phantom{0,4}}\))<br>
+    &emsp;&emsp;&emsp;├── Satisfait S (\(\boxed{\phantom{0,72}}\))<br>
+    &emsp;&emsp;&emsp;└── \(\overline{S}\) (\(\boxed{\phantom{0,28}}\))
+  </div>
+
+  <div class="q"><strong>2. (2 pts)</strong> Calculer \(P(P \cap S)\), la probabilité qu'un client choisi au hasard soit un particulier satisfait.</div>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+
+  <div class="q"><strong>3. (2 pts)</strong> Calculer \(P(R \cap S)\), la probabilité qu'un client choisi au hasard soit un professionnel satisfait.</div>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+
+  <div class="q"><strong>4. (2 pts)</strong> En déduire la probabilité totale \(P(S)\) qu'un client choisi au hasard soit satisfait.</div>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+
+  <div class="q"><strong>5. (2 pts)</strong> L'entreprise souhaite atteindre un taux de satisfaction global de \(82\,\%\). L'objectif est-il atteint ? Justifier. Proposer une piste d'amélioration.</div>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Arbre pondéré :</p>
+    <ul>
+      <li>\(P(P) = 0{,}6\)
+        <ul>
+          <li>\(P_P(S) = 0{,}85\)</li>
+          <li>\(P_P(\overline{S}) = 0{,}15\)</li>
+        </ul>
+      </li>
+      <li>\(P(R) = 0{,}4\)
+        <ul>
+          <li>\(P_R(S) = 0{,}72\)</li>
+          <li>\(P_R(\overline{S}) = 0{,}28\)</li>
+        </ul>
+      </li>
+    </ul>
+    <p><strong>2.</strong> \(P(P \cap S) = P(P) \times P_P(S) = 0{,}6 \times 0{,}85 = 0{,}51\).</p>
+    <p><strong>3.</strong> \(P(R \cap S) = P(R) \times P_R(S) = 0{,}4 \times 0{,}72 = 0{,}288\).</p>
+    <p><strong>4.</strong> D'après la formule des probabilités totales :<br>
+    \(P(S) = P(P \cap S) + P(R \cap S) = 0{,}51 + 0{,}288 = 0{,}798\).<br>
+    La probabilité qu'un client soit satisfait est de \(79{,}8\,\%\).</p>
+    <p><strong>5.</strong> \(79{,}8\,\% < 82\,\%\) : l'objectif n'est pas atteint.<br>
+    Piste d'amélioration : augmenter la satisfaction des clients professionnels (actuellement \(72\,\%\)) par un meilleur suivi de chantier ou un service après-vente dédié.</p>
+  </div>
+</div>
+
+<!-- ================================================================
+     DS 2 STANDARD — fiabilité test + épidémie 2 sites
+     ================================================================ -->
+<h2 style="margin-top:40px;padding-top:20px;border-top:2px dashed var(--p-border);color:var(--p)">DS 2 — Variante</h2>
 
 <div class="partie">
   <div class="partie-header">
@@ -255,13 +400,16 @@
 
   <div class="q"><strong>5. (2 pts)</strong> Le laboratoire considère le protocole fiable si cette probabilité est inférieure à \(12\,\%\). Le protocole est-il fiable ? Justifier.</div>
   <span class="answer-line"></span>
+  <span class="answer-line"></span>
 
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1.</strong> \(P(\text{FN}) = 0{,}03\).</p>
-    <p><strong>2.</strong> \(\overline{\text{FN}}\) : « le test n'est pas un faux négatif » (le résultat est correct). \(P(\overline{\text{FN}}) = 1 - 0{,}03 = 0{,}97\).</p>
-    <p><strong>3.</strong> \(P(\text{4 corrects}) = 0{,}97^4 \approx 0{,}885\).</p>
-    <p><strong>4.</strong> \(P(\text{au moins 1 FN}) = 1 - 0{,}97^4 \approx 0{,}115\) soit 11,5 %.</p>
+    <p><strong>2.</strong> \(\overline{\text{FN}}\) : « le test n'est pas un faux négatif » (le résultat est correct).<br>
+    \(P(\overline{\text{FN}}) = 1 - 0{,}03 = 0{,}97\).</p>
+    <p><strong>3.</strong> Les tests sont indépendants :<br>
+    \(P(\text{4 tests corrects}) = 0{,}97^4 = 0{,}88529281 \approx 0{,}885\).</p>
+    <p><strong>4.</strong> \(P(\text{au moins 1 FN}) = 1 - 0{,}97^4 = 1 - 0{,}885 = 0{,}115\) soit 11,5 %.</p>
     <p><strong>5.</strong> \(11{,}5\,\% < 12\,\%\) : le protocole est fiable (de justesse).</p>
   </div>
 </div>
@@ -278,10 +426,36 @@
     <li>sur S1 : \(20\,\%\) des ouvriers sont touchés ;</li>
     <li>sur S2 : \(8\,\%\) des ouvriers sont touchés.</li>
   </ul>
-  <p>On note \(T\) : « l'ouvrier est touché par l'épidémie ».</p>
+  <p>On note \(T\) l'événement « l'ouvrier est touché par l'épidémie ».</p>
 
-  <div class="q"><strong>1. (2 pts)</strong> Construire l'arbre pondéré complet :</div>
-  <div id="arbre-std1-2"></div>
+  <div class="q"><strong>1. (2 pts)</strong> Traduire la situation par un arbre pondéré complet :</div>
+  <svg viewBox="0 0 560 240" width="100%" style="max-width:560px;display:block;margin:12px auto;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px">
+    <line x1="50" y1="120" x2="140" y2="60" stroke="#333" stroke-width="1.5"/>
+    <line x1="50" y1="120" x2="140" y2="180" stroke="#333" stroke-width="1.5"/>
+    <line x1="190" y1="60" x2="290" y2="30" stroke="#333" stroke-width="1.5"/>
+    <line x1="190" y1="60" x2="290" y2="90" stroke="#333" stroke-width="1.5"/>
+    <line x1="190" y1="180" x2="290" y2="150" stroke="#333" stroke-width="1.5"/>
+    <line x1="190" y1="180" x2="290" y2="210" stroke="#333" stroke-width="1.5"/>
+    <circle cx="50" cy="120" r="4" fill="#333"/>
+    <circle cx="190" cy="60" r="4" fill="var(--p)"/>
+    <circle cx="190" cy="180" r="4" fill="var(--p)"/>
+    <text x="196" y="56" font-size="13" fill="#333" font-weight="600">S1</text>
+    <text x="196" y="184" font-size="13" fill="#333" font-weight="600">S2</text>
+    <text x="298" y="34" font-size="12" fill="#c53030" font-weight="600">T</text>
+    <text x="298" y="94" font-size="12" fill="#2f855a" font-weight="600">T̄</text>
+    <text x="298" y="154" font-size="12" fill="#c53030" font-weight="600">T</text>
+    <text x="298" y="214" font-size="12" fill="#2f855a" font-weight="600">T̄</text>
+    <text x="62" y="82" font-size="11" fill="#555">P(S1) = ☐</text>
+    <text x="62" y="166" font-size="11" fill="#555">P(S2) = ☐</text>
+    <text x="200" y="40" font-size="10" fill="#555">P_S1(T) = ☐</text>
+    <text x="200" y="82" font-size="10" fill="#555">P_S1(T̄) = ☐</text>
+    <text x="200" y="160" font-size="10" fill="#555">P_S2(T) = ☐</text>
+    <text x="200" y="204" font-size="10" fill="#555">P_S2(T̄) = ☐</text>
+    <text x="322" y="34" font-size="10" fill="#888">→ P(S1∩T) = ☐</text>
+    <text x="322" y="94" font-size="10" fill="#888">→ P(S1∩T̄) = ☐</text>
+    <text x="322" y="154" font-size="10" fill="#888">→ P(S2∩T) = ☐</text>
+    <text x="322" y="214" font-size="10" fill="#888">→ P(S2∩T̄) = ☐</text>
+  </svg>
 
   <div class="q"><strong>2. (2 pts)</strong> Calculer \(P(\text{S1} \cap \text{T})\).</div>
   <span class="answer-line"></span>
@@ -289,374 +463,296 @@
   <div class="q"><strong>3. (2 pts)</strong> Calculer \(P(\text{S2} \cap \text{T})\).</div>
   <span class="answer-line"></span>
 
-  <div class="q"><strong>4. (2 pts)</strong> En déduire \(P(\text{T})\) par la formule des probabilités totales.</div>
+  <div class="q"><strong>4. (2 pts)</strong> Calculer \(P(\text{T})\), probabilité qu'un ouvrier choisi au hasard soit touché.</div>
   <span class="answer-line"></span>
 
   <div class="q"><strong>5. (2 pts)</strong> L'infirmière déclenche un plan de prévention si le taux d'infection global dépasse \(15\,\%\). Doit-elle le déclencher ? Justifier.</div>
   <span class="answer-line"></span>
+  <span class="answer-line"></span>
 
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>1.</strong> S1 (0,55) → T (0,20) / T̄ (0,80). S2 (0,45) → T (0,08) / T̄ (0,92).</p>
+    <p><strong>1.</strong> P(S1) = 0,55 ; P(S2) = 0,45 ; P_S1(T) = 0,20 ; P_S1(T̄) = 0,80 ; P_S2(T) = 0,08 ; P_S2(T̄) = 0,92.</p>
     <p><strong>2.</strong> \(P(\text{S1} \cap \text{T}) = 0{,}55 \times 0{,}20 = 0{,}110\).</p>
     <p><strong>3.</strong> \(P(\text{S2} \cap \text{T}) = 0{,}45 \times 0{,}08 = 0{,}036\).</p>
     <p><strong>4.</strong> \(P(\text{T}) = 0{,}110 + 0{,}036 = 0{,}146\) soit 14,6 %.</p>
-    <p><strong>5.</strong> \(14{,}6\,\% < 15\,\%\) : le seuil n'est pas atteint, le plan n'est <strong>pas déclenché</strong> (de justesse).</p>
-  </div>
-</div>
-
-<!-- ================================================================
-     STANDARD — DS 2 (variante)
-     Ex1 : arbre — répétition indépendante (EPI défaillants)
-     Ex2 : arbre — probabilités totales (enquête satisfaction)
-     ================================================================ -->
-<h2 style="margin-top:40px;padding-top:20px;border-top:2px dashed var(--p-border);color:var(--p)">DS 2 — Variante</h2>
-
-<div class="partie">
-  <div class="partie-header">
-    <span class="partie-title">Exercice 1 – Fiabilité des EPI respiratoires</span>
-    <span class="pts">10 points</span>
-  </div>
-
-  <p>Lors d'un contrôle sur chantier, un responsable sécurité constate que \(4\,\%\) des masques respiratoires présentent un défaut d'étanchéité.</p>
-  <p>On note \(D\) l'événement « le masque est défectueux ».</p>
-
-  <div class="q"><strong>1. (1 pt)</strong> Donner \(P(D)\).</div>
-  <span class="answer-line"></span>
-
-  <div class="q"><strong>2. (2 pts)</strong> Définir \(\overline{D}\) par une phrase, puis calculer \(P(\overline{D})\).</div>
-  <span class="answer-line"></span>
-  <span class="answer-line"></span>
-
-  <div class="q"><strong>3. (3 pts)</strong> On contrôle \(3\) masques au hasard (indépendamment). Calculer la probabilité que les \(3\) soient sans défaut. Arrondir au millième.</div>
-  <span class="answer-line"></span>
-  <span class="answer-line"></span>
-
-  <div class="q"><strong>4. (2 pts)</strong> En déduire la probabilité qu'au moins un masque sur les \(3\) présente un défaut.</div>
-  <span class="answer-line"></span>
-
-  <div class="q"><strong>5. (2 pts)</strong> L'entreprise considère un lot acceptable si cette probabilité est inférieure à \(15\,\%\). Le lot est-il acceptable ? Justifier.</div>
-  <span class="answer-line"></span>
-
-  <button class="bc" onclick="toggle(this)">Voir la correction</button>
-  <div class="corr">
-    <p><strong>1.</strong> \(P(D) = 0{,}04\).</p>
-    <p><strong>2.</strong> \(\overline{D}\) : « le masque n'est pas défectueux ». \(P(\overline{D}) = 0{,}96\).</p>
-    <p><strong>3.</strong> \(P(\text{3 sans défaut}) = 0{,}96^3 \approx 0{,}885\).</p>
-    <p><strong>4.</strong> \(P(\text{au moins 1 défaut}) = 1 - 0{,}96^3 \approx 0{,}115\).</p>
-    <p><strong>5.</strong> \(11{,}5\,\% < 15\,\%\) : le lot est acceptable.</p>
-  </div>
-</div>
-
-<div class="partie">
-  <div class="partie-header">
-    <span class="partie-title">Exercice 2 – Enquête de satisfaction</span>
-    <span class="pts">10 points</span>
-  </div>
-
-  <p>Une entreprise de menuiserie réalise une enquête de satisfaction auprès de ses clients :</p>
-  <ul>
-    <li>\(60\,\%\) des clients sont des <strong>particuliers</strong> (P), le reste sont des <strong>professionnels</strong> (R) ;</li>
-    <li>parmi les particuliers, \(85\,\%\) se déclarent satisfaits ;</li>
-    <li>parmi les professionnels, \(72\,\%\) se déclarent satisfaits.</li>
-  </ul>
-  <p>On note \(S\) : « le client est satisfait ».</p>
-
-  <div class="q"><strong>1. (2 pts)</strong> Construire l'arbre pondéré complet :</div>
-  <div id="arbre-std2-2"></div>
-
-  <div class="q"><strong>2. (2 pts)</strong> Calculer \(P(P \cap S)\).</div>
-  <span class="answer-line"></span>
-
-  <div class="q"><strong>3. (2 pts)</strong> Calculer \(P(R \cap S)\).</div>
-  <span class="answer-line"></span>
-
-  <div class="q"><strong>4. (2 pts)</strong> En déduire \(P(S)\) par la formule des probabilités totales.</div>
-  <span class="answer-line"></span>
-
-  <div class="q"><strong>5. (2 pts)</strong> L'entreprise vise un taux de satisfaction global de \(82\,\%\). L'objectif est-il atteint ? Justifier et proposer une piste d'amélioration.</div>
-  <span class="answer-line"></span>
-  <span class="answer-line"></span>
-
-  <button class="bc" onclick="toggle(this)">Voir la correction</button>
-  <div class="corr">
-    <p><strong>1.</strong> P (0,6) → S (0,85) / S̄ (0,15). R (0,4) → S (0,72) / S̄ (0,28).</p>
-    <p><strong>2.</strong> \(P(P \cap S) = 0{,}6 \times 0{,}85 = 0{,}51\).</p>
-    <p><strong>3.</strong> \(P(R \cap S) = 0{,}4 \times 0{,}72 = 0{,}288\).</p>
-    <p><strong>4.</strong> \(P(S) = 0{,}51 + 0{,}288 = 0{,}798\) soit 79,8 %.</p>
-    <p><strong>5.</strong> \(79{,}8\,\% < 82\,\%\) : l'objectif n'est <strong>pas atteint</strong>. Piste : améliorer la satisfaction des professionnels (72 %) par un meilleur suivi de chantier.</p>
+    <p><strong>5.</strong> \(14{,}6\,\% < 15\,\%\) : le seuil n'est pas atteint, le plan de prévention n'est <strong>pas déclenché</strong> (de justesse).</p>
   </div>
 </div>
 
 </div><!-- fin diff-standard -->
 
 <!-- ================================================================
-     APPROFONDISSEMENT — DS 1
-     Ex1 : tableau croisé — dépistage en entreprise, conditionnelles
-     Ex2 : arbre — Bayes (infection pulmonaire)
+     DS APPROFONDISSEMENT — problèmes ouverts, type BTS
      ================================================================ -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
 
 <div class="partie">
   <div class="partie-header">
-    <span class="partie-title">Exercice 1 – Dépistage en entreprise du bâtiment</span>
+    <span class="partie-title">Exercice 1 – Fiabilité d'un système de chauffage</span>
     <span class="pts">10 points</span>
   </div>
 
-  <p>Un médecin du travail réalise un dépistage de la silicose (maladie pulmonaire liée à la poussière) sur <strong>500 ouvriers</strong> de deux entreprises du bâtiment.</p>
-  <table>
-    <thead><tr><th></th><th>Positif (P)</th><th>Négatif (N)</th><th class="total">Total</th></tr></thead>
-    <tbody>
-      <tr><th>Entreprise A (agencement)</th><td class="filled">18</td><td class="filled">282</td><td class="total filled">300</td></tr>
-      <tr><th>Entreprise B (installations thermiques)</th><td class="filled">32</td><td class="filled">168</td><td class="total filled">200</td></tr>
-      <tr><th class="total">Total</th><td class="total filled">50</td><td class="total filled">450</td><td class="total filled">500</td></tr>
-    </tbody>
-  </table>
+  <p>Un système de chauffage comporte deux composants indépendants : une chaudière (C) et un thermostat (T). On sait que :</p>
+  <ul>
+    <li>La chaudière tombe en panne dans l'année avec une probabilité de \(0{,}08\).</li>
+    <li>Le thermostat tombe en panne dans l'année avec une probabilité de \(0{,}12\).</li>
+  </ul>
 
-  <div class="q"><strong>1. (2 pts)</strong> On choisit un ouvrier au hasard. Calculer \(P(\text{P})\), \(P(\text{A})\) et \(P(\text{A} \cap \text{P})\).</div>
+  <div class="q"><strong>1. (2 pts)</strong> Les pannes étant indépendantes, calculer la probabilité que les deux composants tombent en panne la même année.</div>
   <span class="answer-line"></span>
   <span class="answer-line"></span>
 
-  <div class="q"><strong>2. (2 pts)</strong> Calculer \(P_{\text{A}}(\text{P})\) et \(P_{\text{B}}(\text{P})\). Comparer les taux de positivité des deux entreprises.</div>
+  <div class="q"><strong>2. (2 pts)</strong> Calculer la probabilité qu'aucun des deux ne tombe en panne.</div>
   <span class="answer-line"></span>
   <span class="answer-line"></span>
 
-  <div class="q"><strong>3. (3 pts)</strong> On sait qu'un ouvrier est positif au test. Calculer la probabilité qu'il vienne de l'entreprise B. Interpréter le résultat.</div>
-  <span class="answer-line"></span>
-  <span class="answer-line"></span>
-  <span class="answer-line"></span>
+  <div class="q"><strong>3. (3 pts)</strong> En déduire la probabilité qu'au moins un composant tombe en panne. Compléter l'arbre pondéré :</div>
+  <div class="chemin" style="font-size:.93em">
+    ├── Chaudière en panne C (\(\boxed{\phantom{0,08}}\))<br>
+    │    ├── Thermostat en panne T (\(\boxed{\phantom{0,12}}\)) → \(P(C \cap T) = \boxed{\phantom{0,0096}}\)<br>
+    │    └── \(\overline{T}\) (\(\boxed{\phantom{0,88}}\)) → \(P(C \cap \overline{T}) = \) ………<br>
+    └── \(\overline{C}\) (\(\boxed{\phantom{0,92}}\))<br>
+    &emsp;&emsp;&emsp;├── T (\(\boxed{\phantom{0,12}}\)) → \(P(\overline{C} \cap T) = \) ………<br>
+    &emsp;&emsp;&emsp;└── \(\overline{T}\) (\(\boxed{\phantom{0,88}}\)) → \(P(\overline{C} \cap \overline{T}) = \) ………
+  </div>
+  <div class="reponse-box">\(P(\text{au moins 1 panne}) = 1 - P(\overline{C} \cap \overline{T}) = \) ………</div>
 
-  <div class="q"><strong>4. (3 pts)</strong> Le médecin considère qu'un plan de prévention renforcé est nécessaire pour toute entreprise dont le taux de positivité dépasse \(12\,\%\). Quelles sont ses recommandations ? L'entreprise A doit-elle modifier ses pratiques si elle veut rester en dessous de ce seuil ?</div>
+  <div class="q"><strong>4. (3 pts)</strong> Un contrat de maintenance coûte 200 € par an. Une réparation coûte 1 500 € en moyenne. À l'aide du calcul de probabilité, le contrat est-il rentable pour le client ? Justifier par le calcul de l'espérance du coût sans contrat.</div>
   <span class="answer-line"></span>
   <span class="answer-line"></span>
   <span class="answer-line"></span>
 
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>1.</strong> \(P(\text{P}) = 50/500 = 0{,}10\) ; \(P(\text{A}) = 300/500 = 0{,}60\) ; \(P(\text{A} \cap \text{P}) = 18/500 = 0{,}036\).</p>
-    <p><strong>2.</strong> \(P_{\text{A}}(\text{P}) = 18/300 = 0{,}06\) soit 6 %. \(P_{\text{B}}(\text{P}) = 32/200 = 0{,}16\) soit 16 %. <strong>B a un taux 2,7 fois plus élevé que A</strong>.</p>
-    <p><strong>3.</strong> \(P_{\text{P}}(\text{B}) = \dfrac{P(\text{B} \cap \text{P})}{P(\text{P})} = \dfrac{32/500}{50/500} = \dfrac{32}{50} = 0{,}64\). 64 % des positifs viennent de l'entreprise B.</p>
-    <p><strong>4.</strong> L'entreprise B (16 % > 12 %) nécessite un plan renforcé. L'entreprise A (6 %) est largement en dessous du seuil. B doit améliorer la ventilation et le port d'EPI respiratoires.</p>
+    <p><strong>1.</strong> \(P(C \cap T) = P(C) \times P(T) = 0{,}08 \times 0{,}12 = 0{,}0096\).</p>
+    <p><strong>2.</strong> \(P(\overline{C} \cap \overline{T}) = (1-0{,}08)(1-0{,}12) = 0{,}92 \times 0{,}88 = 0{,}8096\).</p>
+    <p><strong>3.</strong> \(P(\text{au moins 1 panne}) = 1 - P(\overline{C} \cap \overline{T}) = 1 - 0{,}8096 = 0{,}1904\) soit environ 19 %.</p>
+    <p><strong>4.</strong> Espérance du coût sans contrat : \(E = 0{,}1904 \times 1500 \approx 285{,}60\) €. Comme \(285{,}60 > 200\), le contrat de maintenance est <strong>rentable</strong> en moyenne.</p>
   </div>
 </div>
 
 <div class="partie">
   <div class="partie-header">
-    <span class="partie-title">Exercice 2 – Dépistage d'une infection pulmonaire</span>
+    <span class="partie-title">Exercice 2 – Diagnostic et probabilités conditionnelles</span>
     <span class="pts">10 points</span>
   </div>
 
-  <p>Un médecin du travail utilise un test rapide pour dépister une infection pulmonaire sur les ouvriers d'un chantier d'installation de climatisation. On sait que :</p>
+  <p>Un bureau de contrôle vérifie les installations électriques de logements neufs. Les installations sont réalisées par deux entreprises :</p>
   <ul>
-    <li>\(10\,\%\) des ouvriers sont réellement infectés ;</li>
-    <li>si l'ouvrier est infecté, le test est positif dans \(95\,\%\) des cas (sensibilité) ;</li>
-    <li>si l'ouvrier n'est pas infecté, le test est positif dans \(4\,\%\) des cas (faux positif).</li>
+    <li>L'entreprise A réalise \(65\,\%\) des installations, dont \(92\,\%\) conformes.</li>
+    <li>L'entreprise B réalise le reste, dont \(78\,\%\) conformes.</li>
   </ul>
-  <p>On note \(I\) : « infecté » et \(T^+\) : « test positif ».</p>
 
-  <div class="q"><strong>1. (2 pts)</strong> Construire l'arbre pondéré complet :</div>
-  <div id="arbre-appro1-2"></div>
+  <div class="q"><strong>1. (2 pts)</strong> Compléter l'arbre pondéré :</div>
+  <div class="chemin" style="font-size:.93em">
+    ├── Entreprise A (\(\boxed{\phantom{0,65}}\))<br>
+    │    ├── Conforme (\(\boxed{\phantom{0,92}}\))<br>
+    │    └── Non conforme (\(\boxed{\phantom{0,08}}\))<br>
+    └── Entreprise B (\(\boxed{\phantom{0,35}}\))<br>
+    &emsp;&emsp;&emsp;├── Conforme (\(\boxed{\phantom{0,78}}\))<br>
+    &emsp;&emsp;&emsp;└── Non conforme (\(\boxed{\phantom{0,22}}\))
+  </div>
 
-  <div class="q"><strong>2. (2 pts)</strong> Calculer \(P(T^+)\) par la formule des probabilités totales.</div>
+  <div class="q"><strong>2. (2 pts)</strong> Calculer la probabilité qu'une installation choisie au hasard soit conforme (formule des probabilités totales).</div>
   <span class="answer-line"></span>
   <span class="answer-line"></span>
 
-  <div class="q"><strong>3. (3 pts)</strong> Un ouvrier a un test positif. Calculer la probabilité qu'il soit réellement infecté (formule de Bayes). Interpréter.</div>
+  <div class="q"><strong>3. (3 pts)</strong> Une installation est déclarée non conforme. Quelle est la probabilité qu'elle ait été réalisée par l'entreprise B ? (Utiliser la formule de Bayes ou le tableau.)</div>
   <span class="answer-line"></span>
   <span class="answer-line"></span>
   <span class="answer-line"></span>
 
-  <div class="q"><strong>4. (3 pts)</strong> Le médecin souhaite que \(P_{T^+}(I) \geq 0{,}80\). Le taux de faux positifs reste à \(4\,\%\). Est-ce réalisable en améliorant uniquement la sensibilité ? Poser l'inéquation et conclure.</div>
-  <span class="answer-line"></span>
+  <div class="q"><strong>4. (3 pts)</strong> Le bureau de contrôle souhaite que le taux global de conformité atteigne 90 %. Si l'entreprise A maintient son taux à 92 %, quel taux minimum l'entreprise B doit-elle atteindre ? Poser et résoudre l'équation.</div>
   <span class="answer-line"></span>
   <span class="answer-line"></span>
   <span class="answer-line"></span>
 
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>1.</strong> I (0,10) → T⁺ (0,95) : 0,095 ; T⁻ (0,05) : 0,005. Ī (0,90) → T⁺ (0,04) : 0,036 ; T⁻ (0,96) : 0,864. Vérif. : 0,095 + 0,005 + 0,036 + 0,864 = 1 ✓</p>
-    <p><strong>2.</strong> \(P(T^+) = 0{,}095 + 0{,}036 = 0{,}131\) soit 13,1 %.</p>
-    <p><strong>3.</strong> \(P_{T^+}(I) = \dfrac{0{,}095}{0{,}131} \approx 0{,}725\). Seulement 72,5 % des tests positifs correspondent à un vrai infecté. Les faux positifs « diluent » le résultat car la maladie est peu fréquente.</p>
-    <p><strong>4.</strong> On cherche \(s = P_I(T^+)\) tel que \(\dfrac{0{,}10s}{0{,}10s + 0{,}036} \geq 0{,}80\). On obtient \(0{,}10s \geq 0{,}08s + 0{,}0288\) soit \(0{,}02s \geq 0{,}0288\), donc \(s \geq 1{,}44\). Comme \(s \leq 1\), c'est <strong>impossible</strong>. Il faut aussi réduire le taux de faux positifs.</p>
+    <p><strong>1.</strong> A (0,65) → C (0,92) / NC (0,08). B (0,35) → C (0,78) / NC (0,22).</p>
+    <p><strong>2.</strong> \(P(C) = 0{,}65 \times 0{,}92 + 0{,}35 \times 0{,}78 = 0{,}598 + 0{,}273 = 0{,}871\) soit 87,1 %.</p>
+    <p><strong>3.</strong> \(P(\text{NC}) = 1 - 0{,}871 = 0{,}129\). \(P(\text{B} \cap \text{NC}) = 0{,}35 \times 0{,}22 = 0{,}077\).<br>
+    \(P_{\text{NC}}(\text{B}) = \dfrac{P(\text{B} \cap \text{NC})}{P(\text{NC})} = \dfrac{0{,}077}{0{,}129} \approx 0{,}597\) soit environ 60 %.</p>
+    <p><strong>4.</strong> Soit \(p\) le taux de conformité de B. On veut : \(0{,}65 \times 0{,}92 + 0{,}35 \times p \geq 0{,}90\).<br>
+    \(0{,}598 + 0{,}35p \geq 0{,}90\) → \(0{,}35p \geq 0{,}302\) → \(p \geq 0{,}863\). B doit atteindre au moins <strong>86,3 %</strong> de conformité.</p>
   </div>
 </div>
 
 <!-- ================================================================
-     APPROFONDISSEMENT — DS 2 (variante)
-     Ex1 : tableau croisé — détecteurs CO, conditionnelles
-     Ex2 : arbre — Bayes (vaccination + grippe)
+     DS 2 APPROFONDISSEMENT — détecteurs CO + dépistage Bayes
      ================================================================ -->
 <h2 style="margin-top:40px;padding-top:20px;border-top:2px dashed var(--p-border);color:var(--p)">DS 2 — Variante</h2>
 
 <div class="partie">
   <div class="partie-header">
-    <span class="partie-title">Exercice 1 – Contrôle de détecteurs de CO</span>
+    <span class="partie-title">Exercice 1 – Détecteurs de CO : fiabilité et coût</span>
     <span class="pts">10 points</span>
   </div>
 
-  <p>Un installateur de chauffage contrôle <strong>400 détecteurs de monoxyde de carbone</strong> de deux fournisseurs lors d'une campagne de sécurité.</p>
+  <p>Un installateur de chauffage pose un système anti-intoxication au monoxyde de carbone comportant deux détecteurs indépendants : un détecteur principal \(\text{D1}\) et un détecteur de secours \(\text{D2}\).</p>
+  <ul>
+    <li>\(\text{D1}\) est défaillant dans l'année avec une probabilité de \(0{,}05\).</li>
+    <li>\(\text{D2}\) est défaillant dans l'année avec une probabilité de \(0{,}10\).</li>
+  </ul>
+
+  <div class="q"><strong>1. (2 pts)</strong> Calculer la probabilité que les deux détecteurs soient défaillants la même année.</div>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+
+  <div class="q"><strong>2. (2 pts)</strong> Calculer la probabilité qu'aucun des deux ne soit défaillant.</div>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+
+  <div class="q"><strong>3. (3 pts)</strong> En déduire la probabilité qu'au moins un détecteur soit défaillant. Construire l'arbre pondéré :</div>
+  <svg viewBox="0 0 560 220" width="100%" style="max-width:560px;display:block;margin:12px auto;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px">
+    <line x1="50" y1="110" x2="140" y2="55" stroke="#333" stroke-width="1.5"/>
+    <line x1="50" y1="110" x2="140" y2="165" stroke="#333" stroke-width="1.5"/>
+    <line x1="190" y1="55" x2="290" y2="25" stroke="#333" stroke-width="1.5"/>
+    <line x1="190" y1="55" x2="290" y2="85" stroke="#333" stroke-width="1.5"/>
+    <line x1="190" y1="165" x2="290" y2="135" stroke="#333" stroke-width="1.5"/>
+    <line x1="190" y1="165" x2="290" y2="195" stroke="#333" stroke-width="1.5"/>
+    <circle cx="50" cy="110" r="4" fill="#333"/>
+    <circle cx="190" cy="55" r="4" fill="var(--p)"/>
+    <circle cx="190" cy="165" r="4" fill="var(--p)"/>
+    <text x="196" y="51" font-size="12" fill="#c53030" font-weight="600">D1</text>
+    <text x="196" y="169" font-size="12" fill="#2f855a" font-weight="600">D̄1</text>
+    <text x="298" y="29" font-size="12" fill="#c53030" font-weight="600">D2</text>
+    <text x="298" y="89" font-size="12" fill="#2f855a" font-weight="600">D̄2</text>
+    <text x="298" y="139" font-size="12" fill="#c53030" font-weight="600">D2</text>
+    <text x="298" y="199" font-size="12" fill="#2f855a" font-weight="600">D̄2</text>
+    <text x="60" y="76" font-size="10" fill="#555">P(D1) = ☐</text>
+    <text x="60" y="152" font-size="10" fill="#555">P(D̄1) = ☐</text>
+    <text x="200" y="36" font-size="10" fill="#555">P(D2) = ☐</text>
+    <text x="200" y="78" font-size="10" fill="#555">P(D̄2) = ☐</text>
+    <text x="200" y="146" font-size="10" fill="#555">P(D2) = ☐</text>
+    <text x="200" y="192" font-size="10" fill="#555">P(D̄2) = ☐</text>
+    <text x="322" y="29" font-size="10" fill="#888">→ D1∩D2 = ☐</text>
+    <text x="322" y="89" font-size="10" fill="#888">→ D1∩D̄2 = ☐</text>
+    <text x="322" y="139" font-size="10" fill="#888">→ D̄1∩D2 = ☐</text>
+    <text x="322" y="199" font-size="10" fill="#888">→ D̄1∩D̄2 = ☐</text>
+  </svg>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+
+  <div class="q"><strong>4. (3 pts)</strong> Un contrat de maintenance annuel coûte 150 €. Le remplacement d'un détecteur défaillant coûte en moyenne 800 €. Calculer l'espérance du coût sans contrat. Le contrat est-il intéressant ?</div>
   <table>
-    <thead><tr><th></th><th>Défaillant (D)</th><th>Fonctionnel (F)</th><th class="total">Total</th></tr></thead>
+    <thead><tr><th>Situation</th><th>Coût (€)</th><th>Probabilité</th><th>Coût × Probabilité</th></tr></thead>
     <tbody>
-      <tr><th>Fournisseur X</th><td class="filled">12</td><td class="filled">228</td><td class="total filled">240</td></tr>
-      <tr><th>Fournisseur Y</th><td class="filled">24</td><td class="filled">136</td><td class="total filled">160</td></tr>
-      <tr><th class="total">Total</th><td class="total filled">36</td><td class="total filled">364</td><td class="total filled">400</td></tr>
+      <tr><td>Aucune défaillance</td><td>0</td><td class="vide">?</td><td class="vide">?</td></tr>
+      <tr><td>Au moins une défaillance</td><td>800</td><td class="vide">?</td><td class="vide">?</td></tr>
+      <tr><th colspan="3" style="text-align:right">Espérance E(coût)</th><td class="vide">?</td></tr>
     </tbody>
   </table>
-
-  <div class="q"><strong>1. (2 pts)</strong> Calculer \(P(\text{D})\), \(P(\text{X})\) et \(P(\text{X} \cap \text{D})\).</div>
-  <span class="answer-line"></span>
-  <span class="answer-line"></span>
-
-  <div class="q"><strong>2. (2 pts)</strong> Calculer \(P_{\text{X}}(\text{D})\) et \(P_{\text{Y}}(\text{D})\). Comparer les taux de défaillance.</div>
-  <span class="answer-line"></span>
-  <span class="answer-line"></span>
-
-  <div class="q"><strong>3. (3 pts)</strong> Un détecteur est défaillant. Calculer la probabilité qu'il provienne du fournisseur Y. Interpréter.</div>
-  <span class="answer-line"></span>
-  <span class="answer-line"></span>
-  <span class="answer-line"></span>
-
-  <div class="q"><strong>4. (3 pts)</strong> L'installateur souhaite que le taux de défaillance global ne dépasse pas \(7\,\%\). Si le fournisseur X maintient son taux, quel taux maximum le fournisseur Y peut-il atteindre ? Poser et résoudre l'inéquation.</div>
-  <span class="answer-line"></span>
   <span class="answer-line"></span>
   <span class="answer-line"></span>
 
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>1.</strong> \(P(\text{D}) = 36/400 = 0{,}09\) ; \(P(\text{X}) = 240/400 = 0{,}60\) ; \(P(\text{X} \cap \text{D}) = 12/400 = 0{,}03\).</p>
-    <p><strong>2.</strong> \(P_{\text{X}}(\text{D}) = 12/240 = 0{,}05\) soit 5 %. \(P_{\text{Y}}(\text{D}) = 24/160 = 0{,}15\) soit 15 %. <strong>Y a 3 fois plus de défaillances que X</strong>.</p>
-    <p><strong>3.</strong> \(P_{\text{D}}(\text{Y}) = \dfrac{24/400}{36/400} = \dfrac{24}{36} = 0{,}\overline{6} \approx 0{,}667\). 66,7 % des défaillants viennent du fournisseur Y.</p>
-    <p><strong>4.</strong> \(P(\text{D}) = 0{,}60 \times 0{,}05 + 0{,}40 \times p \leq 0{,}07\). \(0{,}03 + 0{,}40p \leq 0{,}07\). \(p \leq 0{,}10\). Le fournisseur Y doit atteindre un taux \(\leq \mathbf{10\,\%}\) (contre 15 % actuellement).</p>
+    <p><strong>1.</strong> \(P(\text{D1} \cap \text{D2}) = 0{,}05 \times 0{,}10 = 0{,}005\).</p>
+    <p><strong>2.</strong> \(P(\overline{\text{D1}} \cap \overline{\text{D2}}) = 0{,}95 \times 0{,}90 = 0{,}855\).</p>
+    <p><strong>3.</strong> Arbre :<br>
+    D1 (0,05) → D2 (0,10) : 0,005 ; D̄2 (0,90) : 0,045.<br>
+    D̄1 (0,95) → D2 (0,10) : 0,095 ; D̄2 (0,90) : 0,855.<br>
+    Vérification : 0,005 + 0,045 + 0,095 + 0,855 = 1 ✓<br>
+    \(P(\text{au moins 1 défaillance}) = 1 - 0{,}855 = 0{,}145\) soit 14,5 %.</p>
+    <p><strong>4.</strong> Tableau d'espérance :</p>
+    <table>
+      <tr><td>Aucune défaillance</td><td>0 €</td><td>0,855</td><td>0 €</td></tr>
+      <tr><td>Au moins une défaillance</td><td>800 €</td><td>0,145</td><td>116 €</td></tr>
+      <tr><th colspan="3" style="text-align:right">E(coût)</th><td><strong>116 €</strong></td></tr>
+    </table>
+    <p>Comme \(116 < 150\), le contrat de maintenance n'est <strong>pas intéressant</strong> dans cette configuration. Le coût moyen des pannes est inférieur au contrat.</p>
   </div>
 </div>
 
 <div class="partie">
   <div class="partie-header">
-    <span class="partie-title">Exercice 2 – Grippe et vaccination sur chantier</span>
+    <span class="partie-title">Exercice 2 – Dépistage et probabilités conditionnelles</span>
     <span class="pts">10 points</span>
   </div>
 
-  <p>Un médecin du travail étudie l'efficacité de la vaccination antigrippale sur un grand chantier de construction. On sait que :</p>
+  <p>Un médecin du travail utilise un test de dépistage d'une infection pulmonaire sur les ouvriers d'un chantier d'installation de climatisation. On sait que :</p>
   <ul>
-    <li>\(40\,\%\) des ouvriers sont vaccinés ;</li>
-    <li>un ouvrier vacciné attrape la grippe avec une probabilité de \(0{,}08\) ;</li>
-    <li>un ouvrier non vacciné attrape la grippe avec une probabilité de \(0{,}25\).</li>
+    <li>\(10\,\%\) des ouvriers sont réellement infectés ;</li>
+    <li>si l'ouvrier est infecté, le test est positif avec une probabilité de \(0{,}95\) (sensibilité) ;</li>
+    <li>si l'ouvrier n'est pas infecté, le test est positif avec une probabilité de \(0{,}04\) (faux positif).</li>
   </ul>
-  <p>On note \(V\) : « vacciné » et \(G\) : « attrape la grippe ».</p>
+  <p>On note \(I\) : « l'ouvrier est infecté » et \(T^+\) : « le test est positif ».</p>
 
   <div class="q"><strong>1. (2 pts)</strong> Construire l'arbre pondéré complet :</div>
-  <div id="arbre-appro2-2"></div>
+  <svg viewBox="0 0 580 240" width="100%" style="max-width:580px;display:block;margin:12px auto;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px">
+    <line x1="50" y1="120" x2="140" y2="60" stroke="#333" stroke-width="1.5"/>
+    <line x1="50" y1="120" x2="140" y2="180" stroke="#333" stroke-width="1.5"/>
+    <line x1="195" y1="60" x2="295" y2="30" stroke="#333" stroke-width="1.5"/>
+    <line x1="195" y1="60" x2="295" y2="90" stroke="#333" stroke-width="1.5"/>
+    <line x1="195" y1="180" x2="295" y2="150" stroke="#333" stroke-width="1.5"/>
+    <line x1="195" y1="180" x2="295" y2="210" stroke="#333" stroke-width="1.5"/>
+    <circle cx="50" cy="120" r="4" fill="#333"/>
+    <circle cx="195" cy="60" r="4" fill="var(--p)"/>
+    <circle cx="195" cy="180" r="4" fill="var(--p)"/>
+    <text x="201" y="56" font-size="13" fill="#c53030" font-weight="600">I</text>
+    <text x="201" y="184" font-size="13" fill="#2f855a" font-weight="600">Ī</text>
+    <text x="303" y="34" font-size="12" fill="#c53030" font-weight="600">T⁺</text>
+    <text x="303" y="94" font-size="12" fill="#2f855a" font-weight="600">T⁻</text>
+    <text x="303" y="154" font-size="12" fill="#c53030" font-weight="600">T⁺</text>
+    <text x="303" y="214" font-size="12" fill="#2f855a" font-weight="600">T⁻</text>
+    <text x="62" y="82" font-size="11" fill="#555">P(I) = ☐</text>
+    <text x="62" y="166" font-size="11" fill="#555">P(Ī) = ☐</text>
+    <text x="205" y="40" font-size="10" fill="#555">Pᵢ(T⁺) = ☐</text>
+    <text x="205" y="82" font-size="10" fill="#555">Pᵢ(T⁻) = ☐</text>
+    <text x="205" y="160" font-size="10" fill="#555">Pī(T⁺) = ☐</text>
+    <text x="205" y="204" font-size="10" fill="#555">Pī(T⁻) = ☐</text>
+    <text x="335" y="34" font-size="10" fill="#888">→ P(I∩T⁺) = ☐</text>
+    <text x="335" y="94" font-size="10" fill="#888">→ P(I∩T⁻) = ☐</text>
+    <text x="335" y="154" font-size="10" fill="#888">→ P(Ī∩T⁺) = ☐</text>
+    <text x="335" y="214" font-size="10" fill="#888">→ P(Ī∩T⁻) = ☐</text>
+  </svg>
 
-  <div class="q"><strong>2. (2 pts)</strong> Calculer \(P(G)\) par la formule des probabilités totales.</div>
+  <div class="q"><strong>2. (2 pts)</strong> Calculer \(P(T^+)\), probabilité qu'un test soit positif.</div>
   <span class="answer-line"></span>
   <span class="answer-line"></span>
 
-  <div class="q"><strong>3. (3 pts)</strong> Un ouvrier est malade. Calculer la probabilité qu'il soit vacciné (formule de Bayes). Interpréter ce résultat.</div>
+  <div class="q"><strong>3. (3 pts)</strong> Un ouvrier a un test <strong>positif</strong>. Quelle est la probabilité qu'il soit réellement infecté ? (Formule de Bayes.)</div>
   <span class="answer-line"></span>
   <span class="answer-line"></span>
   <span class="answer-line"></span>
 
-  <div class="q"><strong>4. (3 pts)</strong> Le médecin veut que le taux global d'infection ne dépasse pas \(12\,\%\). Le taux de grippe chez les non-vaccinés reste à \(25\,\%\). Quel pourcentage minimum d'ouvriers doit être vacciné ? Poser et résoudre l'inéquation.</div>
+  <div class="q"><strong>4. (3 pts)</strong> Le médecin souhaite que la probabilité qu'un test positif corresponde réellement à un infecté atteigne \(98\,\%\). Si le taux de faux positifs reste à \(4\,\%\), quelle sensibilité minimale \(P_I(T^+)\) le test doit-il avoir ? Poser et résoudre l'équation.</div>
+  <span class="answer-line"></span>
   <span class="answer-line"></span>
   <span class="answer-line"></span>
   <span class="answer-line"></span>
 
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>1.</strong> V (0,40) → G (0,08) : 0,032 ; Ḡ (0,92) : 0,368. V̄ (0,60) → G (0,25) : 0,150 ; Ḡ (0,75) : 0,450. Vérif. : 0,032 + 0,368 + 0,150 + 0,450 = 1 ✓</p>
-    <p><strong>2.</strong> \(P(G) = 0{,}032 + 0{,}150 = 0{,}182\) soit 18,2 %.</p>
-    <p><strong>3.</strong> \(P_G(V) = \dfrac{0{,}032}{0{,}182} \approx 0{,}176\). Seulement 17,6 % des malades sont vaccinés. Le vaccin réduit fortement le risque.</p>
-    <p><strong>4.</strong> Soit \(v\) le taux de vaccination. \(P(G) = v \times 0{,}08 + (1-v) \times 0{,}25 \leq 0{,}12\). \(0{,}08v + 0{,}25 - 0{,}25v \leq 0{,}12\). \(-0{,}17v \leq -0{,}13\). \(v \geq 0{,}13/0{,}17 \approx 0{,}765\). Il faut vacciner au moins <strong>76,5 %</strong> des ouvriers.</p>
+    <p><strong>1.</strong> Arbre :<br>
+    I (0,10) → T⁺ (0,95) : 0,095 ; T⁻ (0,05) : 0,005.<br>
+    Ī (0,90) → T⁺ (0,04) : 0,036 ; T⁻ (0,96) : 0,864.<br>
+    Vérification : 0,095 + 0,005 + 0,036 + 0,864 = 1 ✓</p>
+    <p><strong>2.</strong> \(P(T^+) = P(I \cap T^+) + P(\overline{I} \cap T^+) = 0{,}095 + 0{,}036 = 0{,}131\) soit 13,1 %.</p>
+    <p><strong>3.</strong> Formule de Bayes :<br>
+    \(P_{T^+}(I) = \dfrac{P(I \cap T^+)}{P(T^+)} = \dfrac{0{,}095}{0{,}131} \approx 0{,}725\).<br>
+    Seulement 72,5 % des tests positifs correspondent à un vrai infecté. Les faux positifs « diluent » le résultat car la maladie est peu fréquente.</p>
+    <p><strong>4.</strong> On cherche \(x = P_I(T^+)\) tel que :<br>
+    \(\dfrac{0{,}10 \times x}{0{,}10 \times x + 0{,}90 \times 0{,}04} = 0{,}98\)<br>
+    \(0{,}10x = 0{,}98 \times (0{,}10x + 0{,}036)\)<br>
+    \(0{,}10x = 0{,}098x + 0{,}03528\)<br>
+    \(0{,}002x = 0{,}03528\)<br>
+    \(x = 17{,}64\).<br>
+    On trouve \(x > 1\), ce qui est <strong>impossible</strong> (une probabilité ne dépasse pas 1). Cela signifie qu'avec seulement 10 % de malades et 4 % de faux positifs, <strong>aucune sensibilité</strong> ne permet d'atteindre 98 % de valeur prédictive positive. Il faudrait réduire le taux de faux positifs.</p>
   </div>
 </div>
 
 </div><!-- fin diff-appro -->
 
-<!-- ================================================================
-     SCRIPTS
-     ================================================================ -->
 <script>
 function toggle(btn){
-  var corr=btn.nextElementSibling;
+  const corr=btn.nextElementSibling;
   if(corr.style.display==='block'){corr.style.display='none';btn.textContent='Voir la correction';}
   else{corr.style.display='block';btn.textContent='Masquer la correction';}
 }
-</script>
-<script src="../../../drawTree.js"></script>
-<script>
-/* ===== SOCLE DS1 — Ex2 : Vaccination V/V̄ → G/Ḡ ===== */
-drawTree("arbre-socle1-2", [
-  { name: "V", color: "#0969da", p: null, children: [
-    { name: "G", color: "#c53030", p: null, leaf: "V∩G", leafP: null },
-    { name: "Ḡ", color: "#2f855a", p: null, leaf: "V∩Ḡ", leafP: null }
-  ]},
-  { name: "V̄", color: "#7c3aed", p: null, children: [
-    { name: "G", color: "#c53030", p: null, leaf: "V̄∩G", leafP: null },
-    { name: "Ḡ", color: "#2f855a", p: null, leaf: "V̄∩Ḡ", leafP: null }
-  ]}
-]);
-
-/* ===== SOCLE DS2 — Ex2 : Masques M1/M2 → G/Ḡ ===== */
-drawTree("arbre-socle2-2", [
-  { name: "M1", color: "#0969da", p: null, children: [
-    { name: "G", color: "#c53030", p: null, leaf: "M1∩G", leafP: null },
-    { name: "Ḡ", color: "#2f855a", p: null, leaf: "M1∩Ḡ", leafP: null }
-  ]},
-  { name: "M2", color: "#7c3aed", p: null, children: [
-    { name: "G", color: "#c53030", p: null, leaf: "M2∩G", leafP: null },
-    { name: "Ḡ", color: "#2f855a", p: null, leaf: "M2∩Ḡ", leafP: null }
-  ]}
-]);
-
-/* ===== STANDARD DS1 — Ex2 : Sites S1/S2 → T/T̄ ===== */
-drawTree("arbre-std1-2", [
-  { name: "S1", color: "#0969da", p: null, children: [
-    { name: "T", color: "#c53030", p: null, leaf: "S1∩T", leafP: null },
-    { name: "T̄", color: "#2f855a", p: null, leaf: "S1∩T̄", leafP: null }
-  ]},
-  { name: "S2", color: "#7c3aed", p: null, children: [
-    { name: "T", color: "#c53030", p: null, leaf: "S2∩T", leafP: null },
-    { name: "T̄", color: "#2f855a", p: null, leaf: "S2∩T̄", leafP: null }
-  ]}
-]);
-
-/* ===== STANDARD DS2 — Ex2 : Clients P/R → S/S̄ ===== */
-drawTree("arbre-std2-2", [
-  { name: "P", color: "#0969da", p: null, children: [
-    { name: "S", color: "#2f855a", p: null, leaf: "P∩S", leafP: null },
-    { name: "S̄", color: "#c53030", p: null, leaf: "P∩S̄", leafP: null }
-  ]},
-  { name: "R", color: "#7c3aed", p: null, children: [
-    { name: "S", color: "#2f855a", p: null, leaf: "R∩S", leafP: null },
-    { name: "S̄", color: "#c53030", p: null, leaf: "R∩S̄", leafP: null }
-  ]}
-]);
-
-/* ===== APPRO DS1 — Ex2 : Infection I/Ī → T⁺/T⁻ ===== */
-drawTree("arbre-appro1-2", [
-  { name: "I", color: "#c53030", p: null, children: [
-    { name: "T⁺", color: "#c53030", p: null, leaf: "I∩T⁺", leafP: null },
-    { name: "T⁻", color: "#2f855a", p: null, leaf: "I∩T⁻", leafP: null }
-  ]},
-  { name: "Ī", color: "#2f855a", p: null, children: [
-    { name: "T⁺", color: "#c53030", p: null, leaf: "Ī∩T⁺", leafP: null },
-    { name: "T⁻", color: "#2f855a", p: null, leaf: "Ī∩T⁻", leafP: null }
-  ]}
-]);
-
-/* ===== APPRO DS2 — Ex2 : Vaccination V/V̄ → G/Ḡ ===== */
-drawTree("arbre-appro2-2", [
-  { name: "V", color: "#0969da", p: null, children: [
-    { name: "G", color: "#c53030", p: null, leaf: "V∩G", leafP: null },
-    { name: "Ḡ", color: "#2f855a", p: null, leaf: "V∩Ḡ", leafP: null }
-  ]},
-  { name: "V̄", color: "#7c3aed", p: null, children: [
-    { name: "G", color: "#c53030", p: null, leaf: "V̄∩G", leafP: null },
-    { name: "Ḡ", color: "#2f855a", p: null, leaf: "V̄∩Ḡ", leafP: null }
-  ]}
-]);
 </script>
 
 </div>
