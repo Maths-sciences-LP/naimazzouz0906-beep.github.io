@@ -290,15 +290,43 @@
   <p>Un artisan fabrique des pièces de bois. La probabilité qu'une pièce soit conforme est \(0{,}9\). Si la pièce est conforme, elle passe un test de finition qu'elle réussit avec une probabilité de \(0{,}95\). Si la pièce est non conforme, elle réussit ce test avec une probabilité de \(0{,}3\).</p>
 
   <p><strong>Arbre de probabilités :</strong></p>
-  <pre style="font-family:monospace;font-size:0.95rem;line-height:1.6;background:#f8f9fa;padding:1rem;border-radius:8px;overflow-x:auto">
-                    ┌── 0,95 ── Réussit (R)    → P(C ∩ R) = 0,9 × 0,95 = 0,855
-        ┌── 0,9 ── Conforme (C)
-        │           └── 0,05 ── Échoue (R̄)    → P(C ∩ R̄) = 0,9 × 0,05 = 0,045
-  Pièce─┤
-        │           ┌── 0,3 ── Réussit (R)     → P(C̄ ∩ R) = 0,1 × 0,3 = 0,03
-        └── 0,1 ── Non conforme (C̄)
-                    └── 0,7 ── Échoue (R̄)     → P(C̄ ∩ R̄) = 0,1 × 0,7 = 0,07
-  </pre>
+  <svg viewBox="0 0 720 320" width="100%" style="max-width:720px;display:block;margin:12px auto;background:#f8f9fa;border:1px solid #e2e8f0;border-radius:8px;padding:12px" aria-label="Arbre pondéré Conforme / Non conforme → Réussit / Échoue">
+    <!-- Branches niveau 1 -->
+    <line x1="60" y1="160" x2="200" y2="80" stroke="#0969da" stroke-width="2"/>
+    <line x1="60" y1="160" x2="200" y2="240" stroke="#7c3aed" stroke-width="2"/>
+    <!-- Branches niveau 2 depuis C -->
+    <line x1="260" y1="80" x2="400" y2="40" stroke="#2f855a" stroke-width="1.5"/>
+    <line x1="260" y1="80" x2="400" y2="120" stroke="#c53030" stroke-width="1.5"/>
+    <!-- Branches niveau 2 depuis C̄ -->
+    <line x1="260" y1="240" x2="400" y2="200" stroke="#2f855a" stroke-width="1.5"/>
+    <line x1="260" y1="240" x2="400" y2="280" stroke="#c53030" stroke-width="1.5"/>
+    <!-- Nœuds -->
+    <circle cx="60" cy="160" r="5" fill="#333"/>
+    <text x="20" y="164" font-size="12" fill="#333" font-weight="700" font-family="Segoe UI,sans-serif">Pièce</text>
+    <circle cx="260" cy="80" r="4" fill="#0969da"/>
+    <circle cx="260" cy="240" r="4" fill="#7c3aed"/>
+    <!-- Labels nœuds niveau 1 -->
+    <text x="266" y="76" font-size="13" fill="#0969da" font-weight="700" font-family="Segoe UI,sans-serif">Conforme (C)</text>
+    <text x="266" y="236" font-size="13" fill="#7c3aed" font-weight="700" font-family="Segoe UI,sans-serif">Non conforme (C̄)</text>
+    <!-- Labels feuilles -->
+    <text x="408" y="44" font-size="12" fill="#2f855a" font-weight="600" font-family="Segoe UI,sans-serif">Réussit (R)</text>
+    <text x="408" y="124" font-size="12" fill="#c53030" font-weight="600" font-family="Segoe UI,sans-serif">Échoue (R̄)</text>
+    <text x="408" y="204" font-size="12" fill="#2f855a" font-weight="600" font-family="Segoe UI,sans-serif">Réussit (R)</text>
+    <text x="408" y="284" font-size="12" fill="#c53030" font-weight="600" font-family="Segoe UI,sans-serif">Échoue (R̄)</text>
+    <!-- Probabilités branches niveau 1 -->
+    <text x="105" y="108" font-size="11" fill="#0969da" font-weight="600" font-family="Segoe UI,sans-serif">0,9</text>
+    <text x="105" y="218" font-size="11" fill="#7c3aed" font-weight="600" font-family="Segoe UI,sans-serif">0,1</text>
+    <!-- Probabilités branches niveau 2 -->
+    <text x="310" y="52" font-size="10" fill="#2f855a" font-family="Segoe UI,sans-serif">0,95</text>
+    <text x="310" y="108" font-size="10" fill="#c53030" font-family="Segoe UI,sans-serif">0,05</text>
+    <text x="310" y="212" font-size="10" fill="#2f855a" font-family="Segoe UI,sans-serif">0,3</text>
+    <text x="310" y="268" font-size="10" fill="#c53030" font-family="Segoe UI,sans-serif">0,7</text>
+    <!-- Probabilités intersection -->
+    <text x="540" y="44" font-size="10" fill="#888" font-family="Segoe UI,sans-serif">→ P(C∩R) = 0,9 × 0,95 = 0,855</text>
+    <text x="540" y="124" font-size="10" fill="#888" font-family="Segoe UI,sans-serif">→ P(C∩R̄) = 0,9 × 0,05 = 0,045</text>
+    <text x="540" y="204" font-size="10" fill="#888" font-family="Segoe UI,sans-serif">→ P(C̄∩R) = 0,1 × 0,3 = 0,03</text>
+    <text x="540" y="284" font-size="10" fill="#888" font-family="Segoe UI,sans-serif">→ P(C̄∩R̄) = 0,1 × 0,7 = 0,07</text>
+  </svg>
 
   <p><strong>Vérification :</strong> \(0{,}855 + 0{,}045 + 0{,}03 + 0{,}07 = 1\) ✓</p>
 

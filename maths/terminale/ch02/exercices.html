@@ -278,15 +278,29 @@ td.total,th.total{background:#e8f4fd;font-weight:700;color:var(--p)}
   <div class="exo-titre"><span class="num">S3</span>Lire un arbre de probabilités — questions guidées</div>
 
   <p>Une entreprise de chauffage achète des vannes chez deux fournisseurs. Voici l'arbre :</p>
-  <div class="chemin">
-    <strong>Arbre :</strong><br>
-    ├── Fournisseur F1 (0,7)<br>
-    │    ├── Conforme (0,95)<br>
-    │    └── Défectueuse (0,05)<br>
-    └── Fournisseur F2 (0,3)<br>
-    &emsp;&emsp;&emsp;├── Conforme (0,90)<br>
-    &emsp;&emsp;&emsp;└── Défectueuse (0,10)
-  </div>
+  <svg viewBox="0 0 600 240" width="100%" style="max-width:600px;display:block;margin:12px auto;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px" aria-label="Arbre pondéré Fournisseur F1 / F2 → Conforme / Défectueuse">
+    <line x1="50" y1="120" x2="180" y2="55" stroke="#0969da" stroke-width="1.8"/>
+    <line x1="50" y1="120" x2="180" y2="185" stroke="#7c3aed" stroke-width="1.8"/>
+    <line x1="250" y1="55" x2="400" y2="25" stroke="#0969da" stroke-width="1.5"/>
+    <line x1="250" y1="55" x2="400" y2="85" stroke="#0969da" stroke-width="1.5"/>
+    <line x1="250" y1="185" x2="400" y2="155" stroke="#7c3aed" stroke-width="1.5"/>
+    <line x1="250" y1="185" x2="400" y2="215" stroke="#7c3aed" stroke-width="1.5"/>
+    <circle cx="50" cy="120" r="5" fill="#333"/>
+    <circle cx="250" cy="55" r="4" fill="#0969da"/>
+    <circle cx="250" cy="185" r="4" fill="#7c3aed"/>
+    <text x="256" y="51" font-size="13" fill="#0969da" font-weight="700" font-family="Segoe UI,sans-serif">Fournisseur F1</text>
+    <text x="256" y="181" font-size="13" fill="#7c3aed" font-weight="700" font-family="Segoe UI,sans-serif">Fournisseur F2</text>
+    <text x="406" y="29" font-size="12" fill="#2f855a" font-weight="600" font-family="Segoe UI,sans-serif">Conforme</text>
+    <text x="406" y="89" font-size="12" fill="#c53030" font-weight="600" font-family="Segoe UI,sans-serif">Défectueuse</text>
+    <text x="406" y="159" font-size="12" fill="#2f855a" font-weight="600" font-family="Segoe UI,sans-serif">Conforme</text>
+    <text x="406" y="219" font-size="12" fill="#c53030" font-weight="600" font-family="Segoe UI,sans-serif">Défectueuse</text>
+    <text x="90" y="78" font-size="11" fill="#555" font-family="Segoe UI,sans-serif">0,7</text>
+    <text x="90" y="168" font-size="11" fill="#555" font-family="Segoe UI,sans-serif">0,3</text>
+    <text x="300" y="34" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">0,95</text>
+    <text x="300" y="78" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">0,05</text>
+    <text x="300" y="164" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">0,90</text>
+    <text x="300" y="208" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">0,10</text>
+  </svg>
 
   <div class="consigne"><strong>1.</strong> Quelle proportion des vannes vient du fournisseur F1 ?</div>
   <div class="reponse-box">\(P(\text{F1}) = \) ……… (lire la 1ère branche)</div>
@@ -884,15 +898,33 @@ td.total,th.total{background:#e8f4fd;font-weight:700;color:var(--p)}
   <div class="reponse-box">\(P_{\bar{\text{E}}}(\text{C}) = \dfrac{\phantom{5}}{\phantom{500}} = \) ……… → Interprétation : ………………</div>
 
   <div class="consigne"><strong>4.</strong> Compléter l'arbre de probabilités à deux niveaux :</div>
-  <div class="chemin">
-    <strong>Arbre :</strong><br>
-    ├── Exposé E (\(\boxed{\phantom{0,375}}\))<br>
-    │    ├── Cancer C (\(\boxed{\phantom{0,15}}\)) → \(P(\text{E} \cap \text{C}) = \boxed{\phantom{0,375}} \times \boxed{\phantom{0,15}} = \boxed{\phantom{0,05625}}\)<br>
-    │    └── Pas de cancer C̄ (\(\boxed{\phantom{0,85}}\)) → \(P(\text{E} \cap \bar{\text{C}}) = \) ………<br>
-    └── Non-exposé Ē (\(\boxed{\phantom{0,625}}\))<br>
-    &emsp;&emsp;&emsp;├── Cancer C (\(\boxed{\phantom{0,01}}\)) → \(P(\bar{\text{E}} \cap \text{C}) = \) ………<br>
-    &emsp;&emsp;&emsp;└── Pas de cancer C̄ (\(\boxed{\phantom{0,99}}\)) → \(P(\bar{\text{E}} \cap \bar{\text{C}}) = \) ………
-  </div>
+  <svg viewBox="0 0 700 270" width="100%" style="max-width:700px;display:block;margin:12px auto;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px" aria-label="Arbre pondéré Exposé / Non-exposé → Cancer / Pas de cancer">
+    <line x1="40" y1="135" x2="160" y2="60" stroke="#0969da" stroke-width="1.8"/>
+    <line x1="40" y1="135" x2="160" y2="210" stroke="#7c3aed" stroke-width="1.8"/>
+    <line x1="230" y1="60" x2="350" y2="30" stroke="#0969da" stroke-width="1.5"/>
+    <line x1="230" y1="60" x2="350" y2="90" stroke="#0969da" stroke-width="1.5"/>
+    <line x1="230" y1="210" x2="350" y2="180" stroke="#7c3aed" stroke-width="1.5"/>
+    <line x1="230" y1="210" x2="350" y2="240" stroke="#7c3aed" stroke-width="1.5"/>
+    <circle cx="40" cy="135" r="5" fill="#333"/>
+    <circle cx="230" cy="60" r="4" fill="#0969da"/>
+    <circle cx="230" cy="210" r="4" fill="#7c3aed"/>
+    <text x="236" y="56" font-size="12" fill="#0969da" font-weight="700" font-family="Segoe UI,sans-serif">Exposé E</text>
+    <text x="236" y="206" font-size="12" fill="#7c3aed" font-weight="700" font-family="Segoe UI,sans-serif">Non-exposé Ē</text>
+    <text x="356" y="34" font-size="11" fill="#c53030" font-weight="600" font-family="Segoe UI,sans-serif">Cancer C</text>
+    <text x="356" y="94" font-size="11" fill="#2f855a" font-weight="600" font-family="Segoe UI,sans-serif">Pas de cancer C̄</text>
+    <text x="356" y="184" font-size="11" fill="#c53030" font-weight="600" font-family="Segoe UI,sans-serif">Cancer C</text>
+    <text x="356" y="244" font-size="11" fill="#2f855a" font-weight="600" font-family="Segoe UI,sans-serif">Pas de cancer C̄</text>
+    <text x="75" y="88" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
+    <text x="75" y="188" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
+    <text x="268" y="39" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
+    <text x="268" y="83" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
+    <text x="268" y="189" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
+    <text x="268" y="233" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
+    <text x="510" y="34" font-size="10" fill="#888" font-family="Segoe UI,sans-serif">→ P(E∩C) = ☐</text>
+    <text x="510" y="94" font-size="10" fill="#888" font-family="Segoe UI,sans-serif">→ P(E∩C̄) = ………</text>
+    <text x="510" y="184" font-size="10" fill="#888" font-family="Segoe UI,sans-serif">→ P(Ē∩C) = ………</text>
+    <text x="510" y="244" font-size="10" fill="#888" font-family="Segoe UI,sans-serif">→ P(Ē∩C̄) = ………</text>
+  </svg>
 
   <div class="consigne"><strong>5.</strong> Vérifier \(P(\text{C})\) à l'aide de la formule des probabilités totales :</div>
   <p style="font-size:.93em">\(P(\text{C}) = P(\text{E} \cap \text{C}) + P(\bar{\text{E}} \cap \text{C}) = \boxed{\phantom{0,05625}} + \boxed{\phantom{0,00625}} = \boxed{\phantom{0,0625}}\)</p>
