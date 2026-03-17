@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fiche méthode – Calculer les racines d'un polynôme du 2nd degré – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>
+:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.fiche{max-width:780px;margin:0 auto}
+.fiche h1{font-size:1.3rem;text-align:center;margin-bottom:4px}
+.fiche .sous-titre{text-align:center;margin-bottom:16px}
+.fiche-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:600px){.fiche-grid{grid-template-columns:1fr}}
+.fiche-card{background:#fff;border:1px solid var(--p-border);border-radius:8px;padding:12px 14px}
+.fiche-card h3{font-size:.82rem;color:var(--p);margin:0 0 6px;text-transform:uppercase;letter-spacing:.5px}
+.fiche-card p,.fiche-card li{font-size:.84rem;line-height:1.5}
+.fiche-card ul,.fiche-card ol{padding-left:16px;margin:0}
+.fiche-card li{margin-bottom:3px}
+.fiche-card.full{grid-column:1/-1}
+.fiche-formula{background:var(--p-bg);border-radius:6px;padding:8px 12px;margin:6px 0;text-align:center;font-size:.92rem}
+.piege{border-left:3px solid #e53e3e;background:#fff5f5;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.piege strong{color:#e53e3e}
+.astuce{border-left:3px solid #16a34a;background:#f0fff4;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.astuce strong{color:#16a34a}
+@media print{
+  body{font-size:11pt}
+  .fiche{max-width:100%}
+  .fiche-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .fiche-card{break-inside:avoid;page-break-inside:avoid;border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<div class="fiche">
+  <h1>Calculer les racines d'un polynôme du 2nd degré</h1>
+  <p class="sous-titre">Fiche méthode — 1ère Bac Pro</p>
+
+  <!-- 1. Définition -->
+  <div class="fiche-grid">
+    <div class="fiche-card">
+      <h3>1. Définition</h3>
+      <p>Un polynôme du second degré s'écrit :</p>
+      <div class="fiche-formula">\( ax^2 + bx + c \)</div>
+      <p>avec \( a \neq 0 \).</p>
+    </div>
+
+    <div class="fiche-card">
+      <h3>2. Objectif</h3>
+      <p>On cherche les <strong>racines</strong> du polynôme, c'est-à-dire les solutions de :</p>
+      <div class="fiche-formula">\( ax^2 + bx + c = 0 \)</div>
+    </div>
+  </div>
+
+  <!-- 3. Discriminant -->
+  <div class="fiche-grid">
+    <div class="fiche-card full">
+      <h3>3. Étape clé : calculer le discriminant</h3>
+      <p>On calcule :</p>
+      <div class="fiche-formula">\( \Delta = b^2 - 4ac \)</div>
+    </div>
+  </div>
+
+  <!-- 4. Les 3 cas -->
+  <div class="fiche-grid">
+    <div class="fiche-card full">
+      <h3>4. Selon la valeur de \(\Delta\)</h3>
+    </div>
+  </div>
+
+  <div class="fiche-grid">
+    <div class="fiche-card">
+      <h3>Cas 1 : \(\Delta > 0\)</h3>
+      <p>Il y a <strong>2 solutions</strong> :</p>
+      <div class="fiche-formula">
+        \(\displaystyle x_1 = \frac{-b - \sqrt{\Delta}}{2a} \quad;\quad x_2 = \frac{-b + \sqrt{\Delta}}{2a}\)
+      </div>
+    </div>
+
+    <div class="fiche-card">
+      <h3>Cas 2 : \(\Delta = 0\)</h3>
+      <p>Il y a <strong>une seule solution</strong> (racine double) :</p>
+      <div class="fiche-formula">
+        \(\displaystyle x = \frac{-b}{2a}\)
+      </div>
+    </div>
+  </div>
+
+  <div class="fiche-grid">
+    <div class="fiche-card full">
+      <h3>Cas 3 : \(\Delta < 0\)</h3>
+      <p>Il n'y a <strong>pas de solution réelle</strong>.</p>
+    </div>
+  </div>
+
+  <!-- 5. Exemple -->
+  <div class="fiche-grid">
+    <div class="fiche-card full">
+      <h3>5. Exemple</h3>
+      <p>Résoudre \( x^2 - 3x + 2 = 0 \)</p>
+      <p>On identifie : \( a = 1 \), \( b = -3 \), \( c = 2 \).</p>
+      <p>On calcule le discriminant :</p>
+      <div class="fiche-formula">\( \Delta = (-3)^2 - 4 \times 1 \times 2 = 9 - 8 = 1 \)</div>
+      <p>Comme \( \Delta = 1 > 0 \), il y a deux solutions :</p>
+      <div class="fiche-formula">
+        \(\displaystyle x_1 = \frac{-(-3) - \sqrt{1}}{2 \times 1} = \frac{3 - 1}{2} = 1
+        \quad;\quad
+        x_2 = \frac{-(-3) + \sqrt{1}}{2 \times 1} = \frac{3 + 1}{2} = 2\)
+      </div>
+      <p><strong>Les racines sont 1 et 2.</strong></p>
+    </div>
+  </div>
+
+  <!-- 6. À retenir -->
+  <div class="fiche-grid">
+    <div class="fiche-card">
+      <h3>6. À retenir</h3>
+      <ul>
+        <li>Toujours commencer par calculer \( \Delta \).</li>
+        <li>Le signe de \( \Delta \) donne le nombre de solutions.</li>
+        <li>Bien identifier les valeurs de \( a \), \( b \) et \( c \).</li>
+      </ul>
+    </div>
+
+    <!-- 7. Erreurs fréquentes -->
+    <div class="fiche-card">
+      <h3>7. Erreurs fréquentes</h3>
+      <div class="piege">
+        <ul>
+          <li><strong>Oublier le carré</strong> sur \( b \).</li>
+          <li><strong>Se tromper de signe</strong> dans \(-b\).</li>
+          <li><strong>Oublier le \( 2a \)</strong> au dénominateur (et non \( 2 \) seul).</li>
+          <li><strong>Mal calculer</strong> \( \sqrt{\Delta} \).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Mini-exercice -->
+  <div class="fiche-grid">
+    <div class="fiche-card full">
+      <h3>8. Mini-exercice</h3>
+      <p>Résoudre : \( 2x^2 - 4x - 6 = 0 \)</p>
+
+      <details style="margin-top:8px">
+        <summary style="cursor:pointer;color:var(--p);font-weight:600">Voir la correction</summary>
+        <div style="margin-top:6px">
+          <p>On identifie : \( a = 2 \), \( b = -4 \), \( c = -6 \).</p>
+          <div class="fiche-formula">\( \Delta = (-4)^2 - 4 \times 2 \times (-6) = 16 + 48 = 64 \)</div>
+          <p>\( \Delta = 64 > 0 \) donc deux solutions :</p>
+          <div class="fiche-formula">
+            \(\displaystyle x_1 = \frac{-(-4) - \sqrt{64}}{2 \times 2} = \frac{4 - 8}{4} = -1
+            \quad;\quad
+            x_2 = \frac{-(-4) + \sqrt{64}}{2 \times 2} = \frac{4 + 8}{4} = 3\)
+          </div>
+          <p><strong>Les racines sont \(-1\) et \(3\).</strong></p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+</div><!-- .fiche -->
+</div><!-- .c -->
+<script src="../../../nav.js"></script>
+</body>
+</html>
