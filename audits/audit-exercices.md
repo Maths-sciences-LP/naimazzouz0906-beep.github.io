@@ -215,7 +215,7 @@ L'inventaire complet (2026-03-16) révèle un taux de couverture global de **41.
 
 **Pires fichiers individuels (écart > 50) :**
 - `physique-chimie/terminale-iccer/ch03/exercices.html` : 84 exo / 21 corr (écart 63)
-- `physique-chimie/seconde/ch07/exercices.html` : 76 exo / 15 corr (écart 61)
+- `physique-chimie/seconde/ch07/exercices.html` : 19 exo / 15 corr (écart 4) — **corrigé 2026-03-17** (comptage initial erroné, incluait les simulations et sous-questions)
 - `physique-chimie/seconde/ch05/exercices.html` : 80 exo / 20 corr (écart 60)
 - `physique-chimie/terminale-iccer/ch07/exercices.html` : 72 exo / 18 corr (écart 54)
 - `maths/bts/ch01/exercices.html` : 68 exo / 17 corr (écart 51)
