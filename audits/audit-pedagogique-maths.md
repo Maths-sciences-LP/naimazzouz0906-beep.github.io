@@ -349,6 +349,8 @@ La section V "Representation graphique des suites" (ligne 273-309) explique comm
 - **2026-03-16** : Harmonise CSS maths/seconde/ch05 exercices (methode style inline→meth)
 - **2026-03-16** : Converti 6 041 entites HTML en UTF-8 dans les 44 fichiers de maths/terminale
 - **2026-03-17** : Corrige l'exemple 3 du cours seconde/ch05 (valeurs qui ne tombaient pas juste : 63,50€/8,50€ remplace par 66€/8,50€ → x=6 exact)
+- **2026-03-17** : Renumérotation séquentielle des exercices ch05 (socle 3-5, standard 6-10, appro 11-12) pour éviter les collisions entre niveaux diff
+- **2026-03-17** : Correction vérification erronée exo 6d standard ch05 (7(6-2) explicité)
 
 ---
 

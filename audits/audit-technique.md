@@ -227,6 +227,9 @@ Le site repose sur des liens `<a>` et boutons `<button>` standards, naturellemen
 - **2026-03-17** : Ajoute la fonction toggle() manquante dans maths/seconde/ch05/lecon.html (boutons correction inoperants)
 - **2026-03-17** : Supprime le bloc HTML hors-conteneur (apres `</div><!-- fin .c -->`) dans maths/seconde/ch05/lecon.html
 - **2026-03-17** : Corrige l'exemple 3 du cours ch05 (valeurs qui ne tombaient pas juste : 63,50/8,50 → 66/8,50)
+- **2026-03-17** : Convertit 396 entités HTML en UTF-8 dans maths/seconde/ch05/ds.html (185) et exercices.html (211)
+- **2026-03-17** : Centralise dans styles.css les classes .situation-pro, .sp-grid, .sp-label, .erreur-item, .hors-prog, .simu-link (utilisées dans 11+ fichiers)
+- **2026-03-17** : Nettoie le CSS inline de maths/seconde/ch05/lecon.html (28→4 lignes), ch04/lecon.html et ch06/lecon.html (suppression des doublons)
 
 ---
 
