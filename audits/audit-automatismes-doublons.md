@@ -1,8 +1,8 @@
-# Audit Automatismes — Doublon de pages
+# Audit Doublons de pages
 
 **Date** : 2026-03-18
 **Derniere mise a jour** : 2026-03-18 (corrections appliquees)
-**Perimetre** : Pages d'automatismes mathematiques (exercices flash, hub thematique)
+**Perimetre** : Pages en doublon ou hors schema standard (automatismes, QCM, interrogations)
 
 ---
 
@@ -97,6 +97,51 @@ Pages thematiques existantes dans `/automatismes/` :
 
 La page racine contient environ 200 lignes de CSS inline qui definissent des classes specifiques (`.level-tab`, `.auto-domain`, `.flash-series`, `.flash-corr`, etc.) non presentes dans `styles.css`. Certaines de ces classes pourraient etre utiles si elles etaient centralisees.
 
+### 5. `physique-chimie/seconde/ch07/qcm.html` — page orpheline (gravite : HAUTE)
+
+Page QCM interactive sur "Structure de la matiere" (15 questions, auto-correction JS).
+
+| Dimension | Detail |
+|---|---|
+| **Format** | QCM interactif avec feedback instantane et score |
+| **Contenu** | 15 questions : atomes, Z, neutrons, couches electroniques, ions, molecules, etats |
+| **Duree** | 15-20 min, sans calculatrice |
+| **Doublon avec `exercices.html` ?** | **Non** — format different (QCM interactif vs exercices rediges) |
+| **Liee depuis le sommaire ?** | **Non** — page orpheline, introuvable par navigation |
+| **CSS** | 25 classes inline (`.qcm-header`, `.q-block`, `.options`, `.q-feedback`, `.score-box`, etc.) |
+| **nav.js** | Oui |
+| **print.css** | Oui |
+
+**Probleme :** la page existe mais aucun lien ne permet d'y acceder. Le sommaire `pc-2nde-pro.html` ne liste que lecon.html, exercices.html, ds.html pour le ch07.
+
+**Actions possibles :**
+- A. Ajouter un lien vers qcm.html dans le sommaire du ch07 (conserver la page)
+- B. Fusionner le contenu QCM dans exercices.html (supprimer la page)
+- C. Centraliser les classes CSS QCM dans styles.css si d'autres QCM sont prevus
+
+### 6. `maths/terminale/ch04/interro.html` — doublon avec `ds.html` (gravite : HAUTE)
+
+Interrogation ecrite sur "Polynomes de degre 3" (40 min, 20 pts, differenciation socle/standard/appro).
+
+| Dimension | `interro.html` | `ds.html` |
+|---|---|---|
+| **Titre** | Interrogation ecrite (40 min) | Devoir Surveille (1h) |
+| **Format** | Differencie socle/standard/appro | Differencie socle/standard/appro |
+| **Bareme** | 20 points (4 exos par niveau) | 20 points (4 exos par niveau) |
+| **Contenu** | Reconnaissance, coefficients, images, derivees | Reconnaissance, coefficients, images, derivees |
+| **Chevauchement** | ~85% identique a ds.html | ~85% identique a interro.html |
+| **Corrections** | Oui (bouton "Voir la correction") | Oui (bouton "Voir la correction") |
+| **Liee ?** | Oui — depuis `maths-term-iccer.html` et `maths-term-erama.html` | Oui — depuis les memes sommaires |
+| **print.css** | Non | Oui |
+| **diff.js** | Oui | Oui |
+
+**Probleme :** les deux pages evaluent exactement les memes competences avec la meme structure differenciation. La seule difference est la duree (40 min vs 1h) et quelques variations mineures de formulation. Un eleve qui fait les deux n'apprend rien de nouveau.
+
+**Actions possibles :**
+- A. Supprimer interro.html et ne garder que ds.html (recommande — evite la maintenance double)
+- B. Differencier reellement le contenu : interro = evaluation rapide/diagnostique, ds = evaluation sommative complete
+- C. Fusionner les exercices uniques de interro.html dans ds.html avant suppression
+
 ---
 
 ## Analyse et recommandation
@@ -155,8 +200,13 @@ La page racine contient environ 200 lignes de CSS inline qui definissent des cla
 - [x] Verifier que les 22 pages thematiques contiennent bien les exercices flash (sinon migrer depuis la racine)
 - [x] Supprimer ou archiver la page non retenue
 
+### Priorite haute (nouvelles pages)
+- [ ] `physique-chimie/seconde/ch07/qcm.html` : ajouter un lien dans le sommaire OU fusionner dans exercices.html (page orpheline)
+- [ ] `maths/terminale/ch04/interro.html` : supprimer OU differencier reellement de ds.html (~85% doublon)
+- [ ] Centraliser les 25 classes CSS inline de qcm.html dans `styles.css` si d'autres QCM sont prevus
+
 ### Priorite moyenne
-- [ ] Ajouter l'optimisation impression aux pages thematiques si necessaire
+- [ ] Ajouter l'optimisation impression aux pages thematiques automatismes si necessaire
 - [ ] Centraliser les classes CSS utiles (`.flash-series`, etc.) dans `styles.css` si reutilisees
 
 ### Priorite basse
