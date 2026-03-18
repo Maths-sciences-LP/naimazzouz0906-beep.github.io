@@ -101,14 +101,19 @@ subject/level/chNN/
 | Dimension | Specification |
 |---|---|
 | **Format** | QCM interactif avec auto-correction JS |
-| **Nombre de questions** | 15 (fixe, couvrant tout le chapitre) |
-| **Duree** | 15-20 min |
+| **Nombre de questions** | 15 par niveau (3 x 15 = 45 questions par chapitre) |
+| **Duree** | 15-20 min par niveau |
 | **Contenu** | Mix connaissances (definitions, vocabulaire, reconnaissance) + calculs rapides |
 | **Feedback** | Immediat (correct/incorrect + explication) |
 | **Score** | Calcule et affiche automatiquement |
-| **Differenciation** | Non (meme QCM pour tous) |
+| **Differenciation** | **Oui** — 3 series avec `diff.js` (socle/standard/appro) |
 | **Impression** | Supportee (print.css) |
-| **Modele existant** | `physique-chimie/seconde/ch07/qcm.html` |
+| **Modele existant** | `physique-chimie/seconde/ch07/qcm.html` (a adapter pour differenciation) |
+
+**Differenciation QCM :**
+- **Socle** : questions directes, vocabulaire simple, reconnaissance immediate, calculs elementaires
+- **Standard** : questions classiques du programme, application de formules, interpretation de resultats
+- **Approfondissement** : questions a raisonnement, croisement de notions, problemes ouverts, vocabulaire BTS
 
 **Adaptation par matiere :**
 - **Maths** : plus de calcul mental, reconnaissance de formules, lecture graphique, vrai/faux sur proprietes
@@ -119,17 +124,23 @@ subject/level/chNN/
 | Dimension | Specification |
 |---|---|
 | **Format** | Interrogation ecrite courte, imprimable |
-| **Nombre de questions** | 5-8 |
+| **Nombre de questions** | 5-8 par niveau (3 sujets differencies) |
 | **Duree** | 10-15 min |
-| **Objectif** | Diagnostic rapide des acquis de base |
-| **Differenciation** | Non (evaluation commune, pas de niveaux) |
+| **Objectif** | Diagnostic rapide des acquis |
+| **Differenciation** | **Oui** — 3 sujets avec `diff.js` (socle/standard/appro) |
 | **Corrections** | Oui (bouton "Voir la correction") |
 | **Bareme** | 10-20 pts selon le chapitre |
 | **Modele existant** | `maths/terminale/ch04/interro.html` |
 
+**Differenciation interro :**
+- **Socle** : exercices tres guides, calculs amorces, tableaux pre-remplis, questions de reconnaissance
+- **Standard** : exercices du programme, consignes completes, redaction attendue
+- **Approfondissement** : problemes plus ouverts, mise en equation autonome, questions type BTS
+
 **Difference cle avec `ds.html` :**
-- L'interro est **courte et non differenciee** : tous les eleves font le meme sujet
-- Le DS est **long et differencie** : 3 sujets (socle/standard/appro) avec diff.js
+- L'interro est **courte** (10-15 min, 5-8 questions) : verification rapide des acquis
+- Le DS est **long** (1h, 4+ exercices) : evaluation sommative complete
+- Les deux sont differencies socle/standard/appro avec diff.js
 
 ---
 
