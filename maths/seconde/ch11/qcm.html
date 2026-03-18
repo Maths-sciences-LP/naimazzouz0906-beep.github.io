@@ -235,7 +235,7 @@
     <label><input type="radio" name="s14" value="a"> le plus grand côté du triangle</label>
     <label><input type="radio" name="s14" value="b"> le côté oblique du triangle</label>
     <label><input type="radio" name="s14" value="c"> la moitié de la base</label>
-    <label><input type="radio" name="s14" value="d"> la perpendiculaire abaissée de un sommet sur la base</label>
+    <label><input type="radio" name="s14" value="d"> la perpendiculaire abaissée d'un sommet sur la base</label>
   </div>
   <div class="q-feedback"></div>
 </div>
@@ -460,29 +460,333 @@
   <div class="q-feedback"></div>
 </div>
 
-<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
-<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
-<div class="score-box" id="score-socle"></div>
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
 </form>
 </div>
 
-<!-- ========================= STANDARD ========================= -->
-<div class="diff-standard">
-<span class="tag-standard">Standard</span>
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
 
-<form id="qcm-standard">
+<form id="qcm-appro">
 
-<div class="q-block" data-correct="c">
+<div class="q-block" data-correct="b">
   <h3>Question 1</h3>
-  <p class="theme">Calcul – Périmètre du rectangle</p>
-  <p>Un poseur de parquet doit acheter des plinthes pour une pièce de 4,5 m × 3,2 m. Le périmètre vaut :</p>
+  <p class="theme">Figure composée – Fenêtre arrondie</p>
+  <p>Une fenêtre est formée d'un rectangle de 80 cm × 120 cm surmonté d'un demi-cercle de diamètre 80 cm. L'aire totale (arrondie au cm²) est environ :</p>
   <div class="options">
-    <label><input type="radio" name="n1" value="a"> 7,7 m</label>
-    <label><input type="radio" name="n1" value="b"> 14,4 m</label>
-    <label><input type="radio" name="n1" value="c"> 15,4 m</label>
-    <label><input type="radio" name="n1" value="d"> 14,4 m²</label>
+    <label><input type="radio" name="a1" value="a"> 9 600 cm²</label>
+    <label><input type="radio" name="a1" value="b"> 12 113 cm²</label>
+    <label><input type="radio" name="a1" value="c"> 14 628 cm²</label>
+    <label><input type="radio" name="a1" value="d"> 11 200 cm²</label>
   </div>
   <div class="q-feedback"></div>
 </div>
 
-Oops, I realize I'm duplicating the standard section. Let me fix this.
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Secteur angulaire – Aire</p>
+  <p>L'aire d'un secteur angulaire de rayon 10 cm et d'angle 90° est :</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> \(100\pi\) cm²</label>
+    <label><input type="radio" name="a2" value="b"> \(10\pi\) cm²</label>
+    <label><input type="radio" name="a2" value="c"> \(25\pi\) cm²</label>
+    <label><input type="radio" name="a2" value="d"> \(50\pi\) cm²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Arc de cercle – Longueur</p>
+  <p>La longueur d'un arc de cercle de rayon 12 cm et d'angle 60° est :</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> \(4\pi\) cm</label>
+    <label><input type="radio" name="a3" value="b"> \(12\pi\) cm</label>
+    <label><input type="radio" name="a3" value="c"> \(2\pi\) cm</label>
+    <label><input type="radio" name="a3" value="d"> \(24\pi\) cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Contexte professionnel – Panneau trapézoïdal</p>
+  <p>Un menuisier agenceur découpe un panneau en forme de trapèze : grande base 1,20 m, petite base 0,80 m, hauteur 0,60 m. L'aire du panneau est :</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> 0,72 m²</label>
+    <label><input type="radio" name="a4" value="b"> 1,20 m²</label>
+    <label><input type="radio" name="a4" value="c"> 0,48 m²</label>
+    <label><input type="radio" name="a4" value="d"> 0,60 m²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Conversion – Chaîne d'unités</p>
+  <p>Convertir 2,4 m² en mm² :</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> 24 000 mm²</label>
+    <label><input type="radio" name="a5" value="b"> 2 400 000 mm²</label>
+    <label><input type="radio" name="a5" value="c"> 240 000 mm²</label>
+    <label><input type="radio" name="a5" value="d"> 24 000 000 mm²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 6</h3>
+  <p class="theme">Contexte professionnel – Chute de bois</p>
+  <p>Un artisan menuisier découpe un disque de rayon 30 cm dans une planche carrée de côté 60 cm. L'aire de la chute (bois perdu) est environ :</p>
+  <div class="options">
+    <label><input type="radio" name="a6" value="a"> 773 cm²</label>
+    <label><input type="radio" name="a6" value="b"> 2 827 cm²</label>
+    <label><input type="radio" name="a6" value="c"> 600 cm²</label>
+    <label><input type="radio" name="a6" value="d"> 1 200 cm²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 7</h3>
+  <p class="theme">Figure composée – Soustraction d'aires</p>
+  <p>Une plaque rectangulaire de 40 cm × 30 cm comporte un trou circulaire de diamètre 10 cm. L'aire restante (arrondie au cm²) est environ :</p>
+  <div class="options">
+    <label><input type="radio" name="a7" value="a"> 1 200 cm²</label>
+    <label><input type="radio" name="a7" value="b"> 886 cm²</label>
+    <label><input type="radio" name="a7" value="c"> 1 121 cm²</label>
+    <label><input type="radio" name="a7" value="d"> 1 043 cm²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Problème inverse – Trouver une dimension</p>
+  <p>L'aire d'un rectangle vaut 36 m² et sa longueur est 9 m. Sa largeur est :</p>
+  <div class="options">
+    <label><input type="radio" name="a8" value="a"> 27 m</label>
+    <label><input type="radio" name="a8" value="b"> 324 m</label>
+    <label><input type="radio" name="a8" value="c"> 3 m</label>
+    <label><input type="radio" name="a8" value="d"> 4 m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Problème inverse – Rayon d'un disque</p>
+  <p>L'aire d'un disque vaut \(144\pi\) cm². Son rayon est :</p>
+  <div class="options">
+    <label><input type="radio" name="a9" value="a"> 144 cm</label>
+    <label><input type="radio" name="a9" value="b"> 12 cm</label>
+    <label><input type="radio" name="a9" value="c"> 72 cm</label>
+    <label><input type="radio" name="a9" value="d"> 24 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Contexte professionnel – Devis peinture</p>
+  <p>Un peintre doit peindre un mur rectangulaire de 5 m × 2,5 m comportant une porte rectangulaire de 0,9 m × 2,1 m. La surface à peindre est :</p>
+  <div class="options">
+    <label><input type="radio" name="a10" value="a"> 10,61 m²</label>
+    <label><input type="radio" name="a10" value="b"> 12,5 m²</label>
+    <label><input type="radio" name="a10" value="c"> 1,89 m²</label>
+    <label><input type="radio" name="a10" value="d"> 14,39 m²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Contexte professionnel – Périmètre composé</p>
+  <p>Une fenêtre est formée d'un rectangle de 80 cm × 120 cm surmonté d'un demi-cercle de diamètre 80 cm. Le périmètre total de cette fenêtre (arrondi au cm) est environ :</p>
+  <div class="options">
+    <label><input type="radio" name="a11" value="a"> 400 cm</label>
+    <label><input type="radio" name="a11" value="b"> 526 cm</label>
+    <label><input type="radio" name="a11" value="c"> 446 cm</label>
+    <label><input type="radio" name="a11" value="d"> 320 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Proportionnalité – Effet d'un agrandissement</p>
+  <p>Si on double le rayon d'un disque, son aire est multipliée par :</p>
+  <div class="options">
+    <label><input type="radio" name="a12" value="a"> 2</label>
+    <label><input type="radio" name="a12" value="b"> \(\pi\)</label>
+    <label><input type="radio" name="a12" value="c"> 8</label>
+    <label><input type="radio" name="a12" value="d"> 4</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Contexte professionnel – Optimisation</p>
+  <p>Un fabricant de mobilier dispose d'une planche de 2 m². Il découpe 8 étagères rectangulaires de 50 cm × 30 cm. L'aire totale de bois utilisé est :</p>
+  <div class="options">
+    <label><input type="radio" name="a13" value="a"> 1 500 cm²</label>
+    <label><input type="radio" name="a13" value="b"> 1,2 m²</label>
+    <label><input type="radio" name="a13" value="c"> 0,15 m²</label>
+    <label><input type="radio" name="a13" value="d"> 2 m²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 14</h3>
+  <p class="theme">Problème ouvert – Comparaison d'aires</p>
+  <p>Un carré de côté 10 cm et un disque de rayon 10 cm : lequel a la plus grande aire ?</p>
+  <div class="options">
+    <label><input type="radio" name="a14" value="a"> le disque, car \(\pi \times 10^2 \approx 314 > 100\)</label>
+    <label><input type="radio" name="a14" value="b"> le carré, car \(10^2 = 100 > \pi \times 10\)</label>
+    <label><input type="radio" name="a14" value="c"> ils ont la même aire</label>
+    <label><input type="radio" name="a14" value="d"> on ne peut pas comparer</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Problème type BTS – Coût au m²</p>
+  <p>Un installateur d'agencement doit recouvrir un plan de travail en forme de trapèze (grande base 2,4 m, petite base 1,8 m, hauteur 0,65 m) avec un stratifié à 45 €/m². Le coût du stratifié est environ :</p>
+  <div class="options">
+    <label><input type="radio" name="a15" value="a"> 70,20 €</label>
+    <label><input type="radio" name="a15" value="b"> 50,70 €</label>
+    <label><input type="radio" name="a15" value="c"> 61,43 €</label>
+    <label><input type="radio" name="a15" value="d"> 43,88 €</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "Le périmètre est la longueur totale du contour d'une figure, exprimée en unités de longueur (cm, m…).",
+  "s2": "L'aire mesure la superficie d'une figure, c'est-à-dire la place qu'elle occupe, exprimée en unités d'aire (cm², m²…).",
+  "s3": "Le périmètre du rectangle est P = 2(L + l), c'est-à-dire deux fois la somme de la longueur et de la largeur.",
+  "s4": "P = 2(6 + 4) = 2 × 10 = 20 m. Attention : le périmètre s'exprime en mètres (m), pas en m².",
+  "s5": "A = L × l = 6 × 4 = 24 m². L'aire s'exprime en m² (unité d'aire).",
+  "s6": "Le carré a 4 côtés égaux, donc P = 4 × a = 4a.",
+  "s7": "A = a² = 5² = 25 cm². L'aire du carré est le côté au carré.",
+  "s8": "L'aire du triangle est A = (b × h) / 2. On multiplie la base par la hauteur puis on divise par 2.",
+  "s9": "A = (10 × 6) / 2 = 60 / 2 = 30 cm².",
+  "s10": "Le périmètre (circonférence) du cercle est P = 2πr. Ne pas confondre avec l'aire πr².",
+  "s11": "L'aire du disque est A = πr². Ne pas confondre avec le périmètre 2πr.",
+  "s12": "1 m = 100 cm, donc 1 m² = (100)² cm² = 10 000 cm². Le coefficient est au carré pour les aires.",
+  "s13": "Dans tout triangle, la somme des trois angles vaut toujours 180°.",
+  "s14": "La hauteur d'un triangle est la perpendiculaire abaissée d'un sommet sur le côté opposé (la base). Ce n'est pas un côté de la figure.",
+  "s15": "P = 2(5 + 3) = 2 × 8 = 16 m. C'est un périmètre, donc l'unité est le mètre (pas m²).",
+  /* === STANDARD === */
+  "n1": "P = 2(4,5 + 3,2) = 2 × 7,7 = 15,4 m.",
+  "n2": "A = 1,2 × 0,8 = 0,96 m². L'aire s'exprime en m².",
+  "n3": "A = (80 × 55) / 2 = 4 400 / 2 = 2 200 cm².",
+  "n4": "Diamètre = 60 cm, donc rayon = 30 cm. P = 2π × 30 ≈ 188,5 ≈ 189 cm.",
+  "n5": "A = π × 10² = 100π ≈ 314 cm².",
+  "n6": "L'aire du trapèze est A = (B + b) × h / 2. On additionne les deux bases, on multiplie par la hauteur et on divise par 2.",
+  "n7": "A = (12 + 8) × 5 / 2 = 20 × 5 / 2 = 100 / 2 = 50 cm².",
+  "n8": "A = base × hauteur = 9 × 6 = 54 cm². On utilise la hauteur perpendiculaire, pas le côté oblique.",
+  "n9": "3,5 m² = 3,5 × 10 000 = 35 000 cm². On multiplie par 10 000 (le coefficient au carré).",
+  "n10": "48 + 65 = 113. Le troisième angle = 180 − 113 = 67°.",
+  "n11": "Aire nette = 4,5 × 3,2 = 14,4 m². Avec 10 % de chutes : 14,4 × 1,10 = 15,84 m².",
+  "n12": "A = base × hauteur = 10 × 5 = 50 cm². On utilise la hauteur (5 cm), pas le côté oblique (7 cm).",
+  "n13": "A = (d₁ × d₂) / 2 = (8 × 6) / 2 = 48 / 2 = 24 cm².",
+  "n14": "P = 2π × 25 ≈ 157 cm. La baguette suit le périmètre du cercle.",
+  "n15": "1 m = 100 cm, donc 1 m² = 100² = 10 000 cm². Le coefficient est au carré pour les unités d'aire.",
+  /* === APPROFONDISSEMENT === */
+  "a1": "Aire rectangle = 80 × 120 = 9 600 cm². Aire demi-disque = π × 40² / 2 ≈ 2 513 cm². Total ≈ 12 113 cm².",
+  "a2": "Aire secteur = (α/360) × πr² = (90/360) × π × 10² = π × 100 / 4 = 25π cm².",
+  "a3": "Longueur arc = (α/360) × 2πr = (60/360) × 2π × 12 = (1/6) × 24π = 4π cm.",
+  "a4": "A = (1,20 + 0,80) × 0,60 / 2 = 2,00 × 0,60 / 2 = 1,20 / 2 = 0,60 m².",
+  "a5": "2,4 m² = 2,4 × 10 000 cm² = 24 000 cm² = 24 000 × 100 mm² = 2 400 000 mm². Ou directement : 2,4 × 1 000 000 = 2 400 000 mm².",
+  "a6": "Aire carré = 60² = 3 600 cm². Aire disque = π × 30² ≈ 2 827 cm². Chute = 3 600 − 2 827 ≈ 773 cm².",
+  "a7": "Aire rectangle = 40 × 30 = 1 200 cm². Aire trou = π × 5² ≈ 78,5 cm². Aire restante ≈ 1 200 − 78,5 ≈ 1 121 cm².",
+  "a8": "A = L × l → l = A / L = 36 / 9 = 4 m.",
+  "a9": "A = πr² = 144π → r² = 144 → r = 12 cm.",
+  "a10": "Aire mur = 5 × 2,5 = 12,5 m². Aire porte = 0,9 × 2,1 = 1,89 m². Surface à peindre = 12,5 − 1,89 = 10,61 m².",
+  "a11": "Périmètre = 2 × 120 + 80 + demi-cercle. Demi-cercle = π × 80 / 2 ≈ 125,7 cm. Total = 240 + 80 + 125,7 ≈ 446 cm.",
+  "a12": "Si r devient 2r, l'aire = π(2r)² = 4πr². L'aire est multipliée par 4 (le carré du facteur d'agrandissement).",
+  "a13": "Aire d'une étagère = 50 × 30 = 1 500 cm² = 0,15 m². Pour 8 étagères : 8 × 0,15 = 1,2 m².",
+  "a14": "Aire carré = 10² = 100 cm². Aire disque = π × 10² ≈ 314 cm². Le disque a une aire plus grande.",
+  "a15": "Aire trapèze = (2,4 + 1,8) × 0,65 / 2 = 4,2 × 0,65 / 2 = 2,73 / 2 = 1,365 m². Coût = 1,365 × 45 ≈ 61,43 €."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '✅ Bonne réponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '❌ Mauvaise réponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '⚠️ Pas de réponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>
