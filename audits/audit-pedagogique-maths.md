@@ -1,7 +1,7 @@
 # Audit Pedagogique — Mathematiques (Seconde, Premiere, Terminale)
 
 **Date** : 2026-03-16
-**Derniere mise a jour** : 2026-03-17
+**Derniere mise a jour** : 2026-03-18
 **Perimetre** : Qualite pedagogique des cours (lecon.html) de mathematiques
 **Methode** : Lecture integrale de 5 chapitres par niveau + lecture structurelle de tous les autres
 
@@ -370,3 +370,10 @@ La section V "Representation graphique des suites" (ligne 273-309) explique comm
 - [ ] Harmoniser badges de niveaux dans mini-exercices seconde
 - [x] Convertir entites HTML en UTF-8 dans maths/terminale (44 fichiers, 6 041 entites) (2026-03-16)
 - [ ] Ajouter blocs "Erreurs frequentes" dans premiere ch02, ch03, ch04, ch07, ch08
+
+### Uniformisation QCM et interro (2026-03-18)
+- [ ] Creer `qcm.html` pour les 34 chapitres maths (14 seconde + 9 premiere + 11 terminale) — QCM differencies 3×15 questions
+- [ ] Creer `interro.html` pour les 34 chapitres maths (14 seconde + 9 premiere + 11 terminale) — interros differenciees 3×5-8 questions
+- [ ] QCM maths : privilegier calcul mental, reconnaissance de formules, lecture graphique, vrai/faux sur proprietes
+- [ ] Interro maths : privilegier calculs directs, tableaux a completer, exercices de reconnaissance
+- [ ] Specs detaillees : voir `prompts/prompt-qcm-interro.md`

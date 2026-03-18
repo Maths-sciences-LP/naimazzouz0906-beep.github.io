@@ -1,7 +1,7 @@
 # Audit Technique
 
 **Date** : 2026-03-16
-**Derniere mise a jour** : 2026-03-17
+**Derniere mise a jour** : 2026-03-18
 **Perimetre** : HTML, CSS, JavaScript, chemins, accessibilite, simulations, performances
 **Nombre total de fichiers HTML audites** : 477 (191 maths, 180 physique-chimie, 63 simulations, 43 autres)
 
@@ -54,7 +54,9 @@ Les pages de cours suivent le template defini dans CLAUDE.md :
 | nav.js | Present dans toutes les pages de cours (mais 61 en chemin absolu) |
 | diff.js | Present dans 150 fichiers (exercices + DS) |
 
-**Probleme** : MathJax est inclus dans `automatismes/index.html` qui sert de page d'index — a verifier si necessaire.
+**Note** : `automatismes.html` (racine) a ete supprime le 2026-03-18 (doublon de `automatismes/index.html`). Tous les liens ont ete unifies vers `automatismes/index.html`.
+
+**A faire** : centraliser les 25 classes CSS inline de `physique-chimie/seconde/ch07/qcm.html` (`.qcm-header`, `.q-block`, `.options`, `.q-feedback`, `.score-box`, etc.) dans `styles.css` avant la creation en masse des `qcm.html` (83 chapitres).
 
 ---
 
@@ -253,6 +255,11 @@ Le site repose sur des liens `<a>` et boutons `<button>` standards, naturellemen
 - [x] Ajouter toggle() dans maths/seconde/ch05/lecon.html (2026-03-17)
 - [x] Supprimer le bloc HTML hors-conteneur dans maths/seconde/ch05/lecon.html (2026-03-17)
 - [ ] Retirer nav.js des 26 simulations pour les rendre autonomes conformement a CLAUDE.md
+
+### Priorite HAUTE (uniformisation 2026-03-18)
+- [ ] Centraliser les classes CSS QCM (`.qcm-header`, `.q-block`, `.options`, `.q-feedback`, `.score-box`, etc.) dans `styles.css`
+- [ ] Valider le template QCM/interro (chemins, nav.js, diff.js, print.css) avant deploiement en masse
+- [ ] Mettre a jour les sommaires pour lister `qcm.html` et `interro.html`
 
 ### Priorite BASSE
 - [ ] Ajouter `scope="col"` aux `<th>` des tableaux pour l'accessibilite

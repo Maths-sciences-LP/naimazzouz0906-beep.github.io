@@ -1,7 +1,7 @@
 # Audit Global du Site Pédagogique
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-03-16 (session 4)
+**Dernière mise à jour** : 2026-03-18
 **Périmètre** : ensemble du site maths-sciences-lp.github.io
 
 ---
@@ -32,7 +32,20 @@
 | physique-chimie/terminale-iccer | 11 (CLAUDE.md) | 8 | 73 % |
 | physique-chimie/terminale-era | 8 | 8 | 100 % |
 
-Chaque chapitre existant possède les 3 types de pages (lecon, exercices, ds).
+Chaque chapitre doit proposer **6 types de pages** : lecon, exercices, ds, qcm, interro, fiche (voir `audits/audit-automatismes-doublons.md` pour les specs).
+
+### Couverture par type de page
+
+| Type de page | Existant | Cible (84 ch.) | Couverture |
+|---|---|---|---|
+| `lecon.html` | 84 | 84 | 100 % |
+| `exercices.html` | 77 | 84 | 92 % |
+| `ds.html` | 77 | 84 | 92 % |
+| `fiche.html` | 57 | 84 | 68 % |
+| `qcm.html` | 1 | 84 | 1 % |
+| `interro.html` | 1 | 84 | 1 % |
+
+**Référence specs :** `prompts/prompt-qcm-interro.md` — philosophie, différenciation et templates.
 
 ---
 
@@ -56,6 +69,7 @@ Chaque chapitre existant possède les 3 types de pages (lecon, exercices, ds).
 
 - **2026-03-16 (sessions 1-3)** : Corrigé 104 chemins absolus (nav.js, nav.css, diff.js), ajouté diff.js à maths/premiere (18 fichiers), harmonisé CSS maths seconde + PC seconde, standardisé labels PC premiere, remplacé .appli→.situation PC terminale ERA, retiré nav.js de 26 simulations, rédigé maths premiere ch05 et ch09.
 - **2026-03-16 (session 4)** : Lié 63 simulations à 79 pages de cours (0 orpheline restante). Ajouté blocs .meth à PC terminale ERA ch01-ch06. Ajouté visualisations interactives à maths premiere ch03 et ch04.
+- **2026-03-18** : Supprimé le doublon `automatismes.html` (racine), unifié les liens vers `automatismes/index.html`. Plan d'uniformisation : 6 types de pages par chapitre (ajout qcm.html et interro.html différenciés). Créé `prompts/prompt-qcm-interro.md`.
 
 ---
 
@@ -66,10 +80,18 @@ Chaque chapitre existant possède les 3 types de pages (lecon, exercices, ds).
 - [x] Corriger les 37 chemins absolus `/nav.css` → `../../../nav.css` (2026-03-16)
 - [ ] Clarifier le nombre de chapitres attendus en physique-chimie/terminale-iccer (mettre à jour CLAUDE.md : ch01-ch08)
 
+### Priorité haute (uniformisation 2026-03-18)
+- [ ] Créer les 83 `qcm.html` manquants (QCM interactifs différenciés, 3×15 questions)
+- [ ] Créer les 83 `interro.html` manquants (interrogations diagnostiques différenciées, 3×5-8 questions)
+- [ ] Créer les 7 `exercices.html` et 7 `ds.html` manquants (PC terminale)
+- [ ] Centraliser les classes CSS QCM dans `styles.css` avant création en masse
+- [ ] Mettre à jour les sommaires pour lister qcm.html et interro.html
+
 ### Priorité moyenne
 - [x] Ajouter diff.js et la différenciation dans maths/premiere (2026-03-16)
 - [x] Lier les 63 simulations aux pages de cours correspondantes (2026-03-16, 79 pages modifiées)
 - [ ] Compléter les corrections manquantes dans les pages d'exercices
+- [ ] Créer les 27 `fiche.html` manquants
 
 ### Priorité basse
 - [ ] Compléter les 29 pages BTS stub (exercices et DS)

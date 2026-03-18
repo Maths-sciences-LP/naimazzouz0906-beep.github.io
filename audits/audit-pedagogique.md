@@ -1,7 +1,7 @@
 # Audit Pedagogique Global
 
 **Date** : 2026-03-16
-**Derniere mise a jour** : 2026-03-16 (session 5)
+**Derniere mise a jour** : 2026-03-18
 **Perimetre** : qualite des cours, clarte pedagogique, coherence inter-niveaux, progression 2nde-1ere-Tle, exemples, contextes professionnels
 **Methode** : lecture integrale ou partielle de 50+ fichiers lecon.html, analyses statistiques CSS, comparaison inter-sections
 **Rapports detailles** : `audit-pedagogique-maths.md`, `audit-pedagogique-pc.md`
@@ -49,6 +49,33 @@ Le site presente une **qualite pedagogique globalement bonne** (note moyenne 4/5
 | `maths/seconde/ch02` | Incomplet (renvoie vers ch03), classes CSS non-standard | HAUTE |
 | `maths/seconde/ch03` | Container non-standard, classes CSS non-standard | HAUTE |
 | ~~Tous les chapitres `PC Tle ERA`~~ | ~~Seulement 4 blocs `.meth` sur 8 chapitres~~ — **CORRIGE** (2+ par chapitre) | ~~MOYENNE~~ |
+
+---
+
+## 1b. Nouvelles ressources : QCM et interrogations (2026-03-18)
+
+**Decision prise** : chaque chapitre proposera 6 types de pages (au lieu de 3). Deux nouveaux types differencies :
+
+| Ressource | Role | Differenciation | Specs |
+|---|---|---|---|
+| `qcm.html` | Auto-evaluation interactive | Oui — 3 series de 15 questions (socle/standard/appro) via diff.js | `prompts/prompt-qcm-interro.md` |
+| `interro.html` | Diagnostic rapide (10-15 min) | Oui — 3 sujets de 5-8 questions (socle/standard/appro) via diff.js | `prompts/prompt-qcm-interro.md` |
+
+**Strategie de differenciation QCM :**
+- **Socle** : questions directes, vocabulaire simple, reconnaissance, calculs elementaires
+- **Standard** : questions programme, application de formules, contextes pro
+- **Appro** : raisonnement, croisement de notions, vocabulaire BTS
+
+**Strategie de differenciation interro :**
+- **Socle** : exercices guides, calculs amorces, tableaux pre-remplis, rappels methode
+- **Standard** : consignes completes, redaction attendue, contextes pro
+- **Appro** : problemes ouverts, mise en equation autonome, questions type BTS
+
+**Adaptation par matiere :**
+- Maths : calcul mental, lecture graphique, reconnaissance de formules
+- PC : unites, schemas, protocoles, vocabulaire scientifique, conversions
+
+**Couverture actuelle** : 1 QCM (PC seconde ch07) + 1 interro (maths terminale ch04) sur 84 chapitres.
 
 ---
 
@@ -253,6 +280,11 @@ Les modules communs (combustion, transferts thermiques, moments, pression, solut
 - [x] Corriger lien retour de `physique-chimie/seconde/ch12/lecon.html` (2026-03-16)
 - [x] Corriger placement des labels dans `seconde/ch04` et `seconde/ch05` (2026-03-16)
 - [x] Uniformiser les labels dans les 5 fichiers `premiere-era` concernes (2026-03-16)
+
+### Priorite haute (uniformisation 2026-03-18)
+- [ ] Creer les 83 `qcm.html` differencies (3×15 questions socle/standard/appro)
+- [ ] Creer les 83 `interro.html` differencies (3×5-8 questions socle/standard/appro)
+- [ ] Centraliser les classes CSS QCM dans `styles.css` (prerequis)
 
 ### Priorite basse
 - [ ] Uniformiser le format des `<title>` dans toutes les sections

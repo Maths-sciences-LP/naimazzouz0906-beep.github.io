@@ -1,7 +1,7 @@
 # Audit Pedagogique Approfondi — Physique-Chimie
 
 **Date** : 2026-03-16
-**Derniere mise a jour** : 2026-03-16 (session 2)
+**Derniere mise a jour** : 2026-03-18
 **Perimetre** : Toutes les pages lecon.html de physique-chimie (seconde, 1ere ICCER, 1ere ERA, Tle ICCER, Tle ERA)
 **Methode** : Lecture integrale ou partielle de 25+ fichiers, analyses statistiques CSS sur 50 fichiers
 
@@ -437,3 +437,11 @@
 - [ ] Enrichir les situations professionnelles de terminale-era (personnages, scenarios)
 - [ ] Diversifier les contextes en Seconde (ajouter sport, sante, environnement)
 - [ ] Ajouter la classe `.situation` aux contextes pro existants en Seconde
+
+### Uniformisation QCM et interro (2026-03-18)
+- [ ] Creer `qcm.html` pour les 50 chapitres PC (14 seconde + 10 1ere-ICCER + 10 1ere-ERA + 8 Tle-ICCER + 8 Tle-ERA) — QCM differencies 3×15 questions
+- [ ] Creer `interro.html` pour les 50 chapitres PC — interros differenciees 3×5-8 questions
+- [ ] Ajouter le lien `qcm.html` du ch07 seconde dans le sommaire `pc-2nde-pro.html` (page orpheline existante)
+- [ ] QCM PC : privilegier unites/conversions, schemas, protocoles, vocabulaire scientifique, securite
+- [ ] Interro PC : privilegier applications numeriques, schemas a legender, questions de cours, analyse de documents
+- [ ] Specs detaillees : voir `prompts/prompt-qcm-interro.md`

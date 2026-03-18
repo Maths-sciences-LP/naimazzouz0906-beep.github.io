@@ -1,8 +1,8 @@
 # Audit Pédagogique des Exercices
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-03-17
-**Périmètre** : exercices.html et ds.html — 8 sections (maths seconde/première/terminale, physique-chimie seconde/première-iccer/première-era/terminale-iccer/terminale-era)
+**Dernière mise à jour** : 2026-03-18
+**Périmètre** : exercices.html, ds.html, qcm.html et interro.html — 8 sections (maths seconde/première/terminale, physique-chimie seconde/première-iccer/première-era/terminale-iccer/terminale-era)
 **Méthode** : échantillonnage de 2-3 fichiers exercices.html et 2-3 fichiers ds.html par section, lecture et analyse qualitative.
 
 ---
@@ -259,6 +259,12 @@ L'inventaire complet (2026-03-16) révèle un taux de couverture global de **41.
 - [x] Ajouter la différenciation (diff.js) dans les 18 fichiers de maths/premiere (2026-03-16)
 - [x] Réaliser un inventaire complet : nombre de `.exo` vs `.corr` sur chaque page (2026-03-16 — 41.2% couverture)
 
+### Priorité haute (uniformisation 2026-03-18)
+- [ ] Créer les 83 `qcm.html` différenciés (3×15 questions socle/standard/appro par chapitre)
+- [ ] Créer les 83 `interro.html` différenciés (3×5-8 questions socle/standard/appro par chapitre)
+- [ ] Créer les 7 `exercices.html` manquants (PC terminale)
+- [ ] Créer les 7 `ds.html` manquants (PC terminale)
+
 ### Priorité moyenne
 - [ ] Vérifier la conformité au programme de maths/terminale/ch11 (produit scalaire)
 - [ ] Systématiser la différenciation en maths/terminale (tags diff-*)
@@ -299,3 +305,21 @@ L'inventaire complet (2026-03-16) révèle un taux de couverture global de **41.
 1. **Urgence** : compléter les exercices de maths première (ch05 et ch09).
 2. **Important** : généraliser la différenciation formelle à toutes les sections de première et terminale, en prenant maths seconde comme modèle.
 3. **Souhaitable** : vérifier la conformité au programme de maths terminale ch11 et ajuster si nécessaire.
+
+---
+
+## Nouvelles ressources d'évaluation (2026-03-18)
+
+**Plan d'uniformisation** : chaque chapitre proposera 4 types de ressources d'évaluation (au lieu de 2) :
+
+| Ressource | Existant | Cible | À créer | Différenciation |
+|---|---|---|---|---|
+| `exercices.html` | 77 | 84 | 7 | Oui (socle/standard/appro) |
+| `ds.html` | 77 | 84 | 7 | Oui (socle/standard/appro) |
+| `qcm.html` | 1 | 84 | 83 | Oui (3×15 questions) |
+| `interro.html` | 1 | 84 | 83 | Oui (3×5-8 questions) |
+
+**Modèle existant QCM** : `physique-chimie/seconde/ch07/qcm.html` — QCM interactif auto-corrigé, feedback instantané, score.
+**Modèle existant interro** : `maths/terminale/ch04/interro.html` — interrogation écrite, corrections, différenciée.
+
+**Specs détaillées** : voir `prompts/prompt-qcm-interro.md`.
