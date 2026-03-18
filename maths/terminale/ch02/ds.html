@@ -101,29 +101,42 @@
   <p>On note \(L\) : « l'ampoule dure plus de 3 ans ».</p>
 
   <div class="q"><strong>1. (2 pts)</strong> Compléter les probabilités sur l'arbre :</div>
-  <svg viewBox="0 0 560 240" width="100%" style="max-width:560px;display:block;margin:12px auto;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px" aria-label="Arbre pondéré Marque A / Marque B → L / L barre">
-    <line x1="50" y1="120" x2="180" y2="55" stroke="#0969da" stroke-width="1.8"/>
-    <line x1="50" y1="120" x2="180" y2="185" stroke="#7c3aed" stroke-width="1.8"/>
-    <line x1="230" y1="55" x2="360" y2="25" stroke="#0969da" stroke-width="1.5"/>
-    <line x1="230" y1="55" x2="360" y2="85" stroke="#0969da" stroke-width="1.5"/>
-    <line x1="230" y1="185" x2="360" y2="155" stroke="#7c3aed" stroke-width="1.5"/>
-    <line x1="230" y1="185" x2="360" y2="215" stroke="#7c3aed" stroke-width="1.5"/>
-    <circle cx="50" cy="120" r="5" fill="#333"/>
-    <circle cx="230" cy="55" r="4" fill="#0969da"/>
-    <circle cx="230" cy="185" r="4" fill="#7c3aed"/>
-    <text x="236" y="51" font-size="13" fill="#0969da" font-weight="700" font-family="Segoe UI,sans-serif">Marque A</text>
-    <text x="236" y="181" font-size="13" fill="#7c3aed" font-weight="700" font-family="Segoe UI,sans-serif">Marque B</text>
-    <text x="366" y="29" font-size="12" fill="#2f855a" font-weight="600" font-family="Segoe UI,sans-serif">L</text>
-    <text x="366" y="89" font-size="12" fill="#c53030" font-weight="600" font-family="Segoe UI,sans-serif">L̄</text>
-    <text x="366" y="159" font-size="12" fill="#2f855a" font-weight="600" font-family="Segoe UI,sans-serif">L</text>
-    <text x="366" y="219" font-size="12" fill="#c53030" font-weight="600" font-family="Segoe UI,sans-serif">L̄</text>
-    <text x="90" y="78" font-size="11" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="90" y="168" font-size="11" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="272" y="34" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="272" y="78" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="272" y="164" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="272" y="208" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
+  <div class="svg-wrap">
+  <svg viewBox="0 0 620 280" width="100%" style="max-width:620px;display:block;margin:12px auto" font-family="'Segoe UI',sans-serif" font-size="13" aria-label="Arbre pondéré Marque A / Marque B puis L / L barre, à compléter">
+    <!-- Racine -->
+    <circle cx="50" cy="140" r="8" fill="#333"/>
+    <!-- Branche A -->
+    <line x1="58" y1="134" x2="200" y2="70" stroke="#0969da" stroke-width="2"/>
+    <text x="120" y="85" fill="#0969da" font-weight="bold" text-anchor="middle">Marque A</text>
+    <text x="120" y="101" fill="#0969da" text-anchor="middle">☐</text>
+    <circle cx="208" cy="68" r="8" fill="#0969da"/>
+    <!-- Branche B -->
+    <line x1="58" y1="146" x2="200" y2="210" stroke="#7c3aed" stroke-width="2"/>
+    <text x="120" y="205" fill="#7c3aed" font-weight="bold" text-anchor="middle">Marque B</text>
+    <text x="120" y="221" fill="#7c3aed" text-anchor="middle">☐</text>
+    <circle cx="208" cy="212" r="8" fill="#7c3aed"/>
+    <!-- A → L -->
+    <line x1="216" y1="62" x2="370" y2="30" stroke="#2f855a" stroke-width="1.8"/>
+    <text x="290" y="33" fill="#2f855a" text-anchor="middle">L</text>
+    <text x="290" y="49" fill="#2f855a" text-anchor="middle">☐</text>
+    <circle cx="378" cy="28" r="6" fill="#2f855a"/>
+    <!-- A → L̄ -->
+    <line x1="216" y1="74" x2="370" y2="108" stroke="#c53030" stroke-width="1.8"/>
+    <text x="290" y="103" fill="#c53030" text-anchor="middle">L̄</text>
+    <text x="290" y="119" fill="#c53030" text-anchor="middle">☐</text>
+    <circle cx="378" cy="110" r="6" fill="#c53030"/>
+    <!-- B → L -->
+    <line x1="216" y1="206" x2="370" y2="172" stroke="#2f855a" stroke-width="1.8"/>
+    <text x="290" y="177" fill="#2f855a" text-anchor="middle">L</text>
+    <text x="290" y="193" fill="#2f855a" text-anchor="middle">☐</text>
+    <circle cx="378" cy="170" r="6" fill="#2f855a"/>
+    <!-- B → L̄ -->
+    <line x1="216" y1="218" x2="370" y2="252" stroke="#c53030" stroke-width="1.8"/>
+    <text x="290" y="247" fill="#c53030" text-anchor="middle">L̄</text>
+    <text x="290" y="263" fill="#c53030" text-anchor="middle">☐</text>
+    <circle cx="378" cy="254" r="6" fill="#c53030"/>
   </svg>
+  </div>
 
   <div class="q"><strong>2. (2 pts)</strong> Calculer \(P(\text{A} \cap L)\) en multipliant le long du chemin :</div>
   <p style="font-size:.93em">\(P(\text{A} \cap L) = P(\text{A}) \times P_{\text{A}}(L) = \boxed{\phantom{0,7}} \times \boxed{\phantom{0,95}} = \boxed{\phantom{0,665}}\)</p>
@@ -331,29 +344,35 @@
   <p>On note \(S\) l'événement « le client est satisfait ».</p>
 
   <div class="q"><strong>1. (2 pts)</strong> Compléter l'arbre pondéré suivant :</div>
-  <svg viewBox="0 0 560 240" width="100%" style="max-width:560px;display:block;margin:12px auto;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px" aria-label="Arbre pondéré Particulier / Professionnel → Satisfait / Non satisfait">
-    <line x1="50" y1="120" x2="180" y2="55" stroke="#0969da" stroke-width="1.8"/>
-    <line x1="50" y1="120" x2="180" y2="185" stroke="#7c3aed" stroke-width="1.8"/>
-    <line x1="230" y1="55" x2="380" y2="25" stroke="#0969da" stroke-width="1.5"/>
-    <line x1="230" y1="55" x2="380" y2="85" stroke="#0969da" stroke-width="1.5"/>
-    <line x1="230" y1="185" x2="380" y2="155" stroke="#7c3aed" stroke-width="1.5"/>
-    <line x1="230" y1="185" x2="380" y2="215" stroke="#7c3aed" stroke-width="1.5"/>
-    <circle cx="50" cy="120" r="5" fill="#333"/>
-    <circle cx="230" cy="55" r="4" fill="#0969da"/>
-    <circle cx="230" cy="185" r="4" fill="#7c3aed"/>
-    <text x="236" y="51" font-size="13" fill="#0969da" font-weight="700" font-family="Segoe UI,sans-serif">Particulier P</text>
-    <text x="236" y="181" font-size="13" fill="#7c3aed" font-weight="700" font-family="Segoe UI,sans-serif">Professionnel R</text>
-    <text x="386" y="29" font-size="12" fill="#2f855a" font-weight="600" font-family="Segoe UI,sans-serif">S</text>
-    <text x="386" y="89" font-size="12" fill="#c53030" font-weight="600" font-family="Segoe UI,sans-serif">S̄</text>
-    <text x="386" y="159" font-size="12" fill="#2f855a" font-weight="600" font-family="Segoe UI,sans-serif">S</text>
-    <text x="386" y="219" font-size="12" fill="#c53030" font-weight="600" font-family="Segoe UI,sans-serif">S̄</text>
-    <text x="90" y="78" font-size="11" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="90" y="168" font-size="11" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="282" y="34" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="282" y="78" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="282" y="164" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="282" y="208" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
+  <div class="svg-wrap">
+  <svg viewBox="0 0 640 280" width="100%" style="max-width:640px;display:block;margin:12px auto" font-family="'Segoe UI',sans-serif" font-size="13" aria-label="Arbre pondéré Particulier / Professionnel puis Satisfait / Non satisfait, à compléter">
+    <circle cx="50" cy="140" r="8" fill="#333"/>
+    <line x1="58" y1="134" x2="210" y2="70" stroke="#0969da" stroke-width="2"/>
+    <text x="126" y="85" fill="#0969da" font-weight="bold" text-anchor="middle">Particulier P</text>
+    <text x="126" y="101" fill="#0969da" text-anchor="middle">☐</text>
+    <circle cx="218" cy="68" r="8" fill="#0969da"/>
+    <line x1="58" y1="146" x2="210" y2="210" stroke="#7c3aed" stroke-width="2"/>
+    <text x="126" y="205" fill="#7c3aed" font-weight="bold" text-anchor="middle">Professionnel R</text>
+    <text x="126" y="221" fill="#7c3aed" text-anchor="middle">☐</text>
+    <circle cx="218" cy="212" r="8" fill="#7c3aed"/>
+    <line x1="226" y1="62" x2="390" y2="30" stroke="#2f855a" stroke-width="1.8"/>
+    <text x="305" y="33" fill="#2f855a" text-anchor="middle">S</text>
+    <text x="305" y="49" fill="#2f855a" text-anchor="middle">☐</text>
+    <circle cx="398" cy="28" r="6" fill="#2f855a"/>
+    <line x1="226" y1="74" x2="390" y2="108" stroke="#c53030" stroke-width="1.8"/>
+    <text x="305" y="103" fill="#c53030" text-anchor="middle">S̄</text>
+    <text x="305" y="119" fill="#c53030" text-anchor="middle">☐</text>
+    <circle cx="398" cy="110" r="6" fill="#c53030"/>
+    <line x1="226" y1="206" x2="390" y2="172" stroke="#2f855a" stroke-width="1.8"/>
+    <text x="305" y="177" fill="#2f855a" text-anchor="middle">S</text>
+    <text x="305" y="193" fill="#2f855a" text-anchor="middle">☐</text>
+    <circle cx="398" cy="170" r="6" fill="#2f855a"/>
+    <line x1="226" y1="218" x2="390" y2="252" stroke="#c53030" stroke-width="1.8"/>
+    <text x="305" y="247" fill="#c53030" text-anchor="middle">S̄</text>
+    <text x="305" y="263" fill="#c53030" text-anchor="middle">☐</text>
+    <circle cx="398" cy="254" r="6" fill="#c53030"/>
   </svg>
+  </div>
 
   <div class="q"><strong>2. (2 pts)</strong> Calculer \(P(P \cap S)\), la probabilité qu'un client choisi au hasard soit un particulier satisfait.</div>
   <span class="answer-line"></span>
@@ -539,33 +558,43 @@
   <span class="answer-line"></span>
 
   <div class="q"><strong>3. (3 pts)</strong> En déduire la probabilité qu'au moins un composant tombe en panne. Compléter l'arbre pondéré :</div>
-  <svg viewBox="0 0 700 270" width="100%" style="max-width:700px;display:block;margin:12px auto;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px" aria-label="Arbre pondéré Chaudière en panne / pas en panne → Thermostat en panne / pas en panne">
-    <line x1="40" y1="135" x2="160" y2="60" stroke="#0969da" stroke-width="1.8"/>
-    <line x1="40" y1="135" x2="160" y2="210" stroke="#7c3aed" stroke-width="1.8"/>
-    <line x1="220" y1="60" x2="340" y2="30" stroke="#0969da" stroke-width="1.5"/>
-    <line x1="220" y1="60" x2="340" y2="90" stroke="#0969da" stroke-width="1.5"/>
-    <line x1="220" y1="210" x2="340" y2="180" stroke="#7c3aed" stroke-width="1.5"/>
-    <line x1="220" y1="210" x2="340" y2="240" stroke="#7c3aed" stroke-width="1.5"/>
-    <circle cx="40" cy="135" r="5" fill="#333"/>
-    <circle cx="220" cy="60" r="4" fill="#0969da"/>
-    <circle cx="220" cy="210" r="4" fill="#7c3aed"/>
-    <text x="226" y="56" font-size="12" fill="#0969da" font-weight="700" font-family="Segoe UI,sans-serif">C (panne)</text>
-    <text x="226" y="206" font-size="12" fill="#7c3aed" font-weight="700" font-family="Segoe UI,sans-serif">C̄</text>
-    <text x="346" y="34" font-size="11" fill="#c53030" font-weight="600" font-family="Segoe UI,sans-serif">T (panne)</text>
-    <text x="346" y="94" font-size="11" fill="#2f855a" font-weight="600" font-family="Segoe UI,sans-serif">T̄</text>
-    <text x="346" y="184" font-size="11" fill="#c53030" font-weight="600" font-family="Segoe UI,sans-serif">T</text>
-    <text x="346" y="244" font-size="11" fill="#2f855a" font-weight="600" font-family="Segoe UI,sans-serif">T̄</text>
-    <text x="75" y="88" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="75" y="188" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="260" y="39" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="260" y="83" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="260" y="189" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="260" y="233" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="460" y="34" font-size="10" fill="#888" font-family="Segoe UI,sans-serif">→ P(C∩T) = ☐</text>
-    <text x="460" y="94" font-size="10" fill="#888" font-family="Segoe UI,sans-serif">→ P(C∩T̄) = ………</text>
-    <text x="460" y="184" font-size="10" fill="#888" font-family="Segoe UI,sans-serif">→ P(C̄∩T) = ………</text>
-    <text x="460" y="244" font-size="10" fill="#888" font-family="Segoe UI,sans-serif">→ P(C̄∩T̄) = ………</text>
+  <div class="svg-wrap">
+  <svg viewBox="0 0 720 320" width="100%" style="max-width:720px;display:block;margin:12px auto" font-family="'Segoe UI',sans-serif" font-size="13" aria-label="Arbre pondéré Chaudière en panne / pas en panne puis Thermostat en panne / pas en panne">
+    <circle cx="50" cy="160" r="8" fill="#333"/>
+    <line x1="58" y1="154" x2="200" y2="80" stroke="#0969da" stroke-width="2"/>
+    <text x="122" y="100" fill="#0969da" font-weight="bold" text-anchor="middle">C (panne)</text>
+    <text x="122" y="116" fill="#0969da" text-anchor="middle">☐</text>
+    <circle cx="208" cy="78" r="8" fill="#0969da"/>
+    <line x1="58" y1="166" x2="200" y2="240" stroke="#7c3aed" stroke-width="2"/>
+    <text x="122" y="228" fill="#7c3aed" font-weight="bold" text-anchor="middle">C̄</text>
+    <text x="122" y="244" fill="#7c3aed" text-anchor="middle">☐</text>
+    <circle cx="208" cy="242" r="8" fill="#7c3aed"/>
+    <!-- C → T -->
+    <line x1="216" y1="72" x2="380" y2="38" stroke="#c53030" stroke-width="1.8"/>
+    <text x="296" y="42" fill="#c53030" text-anchor="middle">T (panne)  ☐</text>
+    <circle cx="388" cy="36" r="6" fill="#c53030"/>
+    <text x="403" y="30" fill="#2d3748" font-size="12">C ∩ T</text>
+    <text x="403" y="46" fill="#718096" font-size="11">→ P(C∩T) = ☐</text>
+    <!-- C → T̄ -->
+    <line x1="216" y1="84" x2="380" y2="120" stroke="#2f855a" stroke-width="1.8"/>
+    <text x="296" y="115" fill="#2f855a" text-anchor="middle">T̄  ☐</text>
+    <circle cx="388" cy="122" r="6" fill="#2f855a"/>
+    <text x="403" y="116" fill="#2d3748" font-size="12">C ∩ T̄</text>
+    <text x="403" y="131" fill="#718096" font-size="11">→ ………</text>
+    <!-- C̄ → T -->
+    <line x1="216" y1="236" x2="380" y2="200" stroke="#c53030" stroke-width="1.8"/>
+    <text x="296" y="209" fill="#c53030" text-anchor="middle">T  ☐</text>
+    <circle cx="388" cy="198" r="6" fill="#c53030"/>
+    <text x="403" y="192" fill="#2d3748" font-size="12">C̄ ∩ T</text>
+    <text x="403" y="207" fill="#718096" font-size="11">→ ………</text>
+    <!-- C̄ → T̄ -->
+    <line x1="216" y1="248" x2="380" y2="284" stroke="#2f855a" stroke-width="1.8"/>
+    <text x="296" y="279" fill="#2f855a" text-anchor="middle">T̄  ☐</text>
+    <circle cx="388" cy="285" r="6" fill="#2f855a"/>
+    <text x="403" y="279" fill="#2d3748" font-size="12">C̄ ∩ T̄</text>
+    <text x="403" y="294" fill="#718096" font-size="11">→ ………</text>
   </svg>
+  </div>
   <div class="reponse-box">\(P(\text{au moins 1 panne}) = 1 - P(\overline{C} \cap \overline{T}) = \) ………</div>
 
   <div class="q"><strong>4. (3 pts)</strong> Un contrat de maintenance coûte 200 € par an. Une réparation coûte 1 500 € en moyenne. À l'aide du calcul de probabilité, le contrat est-il rentable pour le client ? Justifier par le calcul de l'espérance du coût sans contrat.</div>
@@ -595,29 +624,31 @@
   </ul>
 
   <div class="q"><strong>1. (2 pts)</strong> Compléter l'arbre pondéré :</div>
-  <svg viewBox="0 0 620 240" width="100%" style="max-width:620px;display:block;margin:12px auto;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px" aria-label="Arbre pondéré Entreprise A / Entreprise B → Conforme / Non conforme">
-    <line x1="50" y1="120" x2="180" y2="55" stroke="#0969da" stroke-width="1.8"/>
-    <line x1="50" y1="120" x2="180" y2="185" stroke="#7c3aed" stroke-width="1.8"/>
-    <line x1="250" y1="55" x2="400" y2="25" stroke="#0969da" stroke-width="1.5"/>
-    <line x1="250" y1="55" x2="400" y2="85" stroke="#0969da" stroke-width="1.5"/>
-    <line x1="250" y1="185" x2="400" y2="155" stroke="#7c3aed" stroke-width="1.5"/>
-    <line x1="250" y1="185" x2="400" y2="215" stroke="#7c3aed" stroke-width="1.5"/>
-    <circle cx="50" cy="120" r="5" fill="#333"/>
-    <circle cx="250" cy="55" r="4" fill="#0969da"/>
-    <circle cx="250" cy="185" r="4" fill="#7c3aed"/>
-    <text x="256" y="51" font-size="13" fill="#0969da" font-weight="700" font-family="Segoe UI,sans-serif">Entreprise A</text>
-    <text x="256" y="181" font-size="13" fill="#7c3aed" font-weight="700" font-family="Segoe UI,sans-serif">Entreprise B</text>
-    <text x="406" y="29" font-size="12" fill="#2f855a" font-weight="600" font-family="Segoe UI,sans-serif">Conforme</text>
-    <text x="406" y="89" font-size="12" fill="#c53030" font-weight="600" font-family="Segoe UI,sans-serif">Non conforme</text>
-    <text x="406" y="159" font-size="12" fill="#2f855a" font-weight="600" font-family="Segoe UI,sans-serif">Conforme</text>
-    <text x="406" y="219" font-size="12" fill="#c53030" font-weight="600" font-family="Segoe UI,sans-serif">Non conforme</text>
-    <text x="90" y="78" font-size="11" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="90" y="168" font-size="11" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="300" y="34" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="300" y="78" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="300" y="164" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
-    <text x="300" y="208" font-size="10" fill="#555" font-family="Segoe UI,sans-serif">☐</text>
+  <div class="svg-wrap">
+  <svg viewBox="0 0 640 280" width="100%" style="max-width:640px;display:block;margin:12px auto" font-family="'Segoe UI',sans-serif" font-size="13" aria-label="Arbre pondéré Entreprise A / B puis Conforme / Non conforme">
+    <circle cx="50" cy="140" r="8" fill="#333"/>
+    <line x1="58" y1="134" x2="210" y2="70" stroke="#0969da" stroke-width="2"/>
+    <text x="126" y="85" fill="#0969da" font-weight="bold" text-anchor="middle">Entreprise A</text>
+    <text x="126" y="101" fill="#0969da" text-anchor="middle">☐</text>
+    <circle cx="218" cy="68" r="8" fill="#0969da"/>
+    <line x1="58" y1="146" x2="210" y2="210" stroke="#7c3aed" stroke-width="2"/>
+    <text x="126" y="205" fill="#7c3aed" font-weight="bold" text-anchor="middle">Entreprise B</text>
+    <text x="126" y="221" fill="#7c3aed" text-anchor="middle">☐</text>
+    <circle cx="218" cy="212" r="8" fill="#7c3aed"/>
+    <line x1="226" y1="62" x2="400" y2="30" stroke="#2f855a" stroke-width="1.8"/>
+    <text x="310" y="33" fill="#2f855a" text-anchor="middle">Conforme  ☐</text>
+    <circle cx="408" cy="28" r="6" fill="#2f855a"/>
+    <line x1="226" y1="74" x2="400" y2="108" stroke="#c53030" stroke-width="1.8"/>
+    <text x="310" y="103" fill="#c53030" text-anchor="middle">Non conforme  ☐</text>
+    <circle cx="408" cy="110" r="6" fill="#c53030"/>
+    <line x1="226" y1="206" x2="400" y2="172" stroke="#2f855a" stroke-width="1.8"/>
+    <text x="310" y="177" fill="#2f855a" text-anchor="middle">Conforme  ☐</text>
+    <circle cx="408" cy="170" r="6" fill="#2f855a"/>
+    <line x1="226" y1="218" x2="400" y2="252" stroke="#c53030" stroke-width="1.8"/>
+    <text x="310" y="247" fill="#c53030" text-anchor="middle">Non conforme  ☐</text>
+    <circle cx="408" cy="254" r="6" fill="#c53030"/>
   </svg>
+  </div>
 
   <div class="q"><strong>2. (2 pts)</strong> Calculer la probabilité qu'une installation choisie au hasard soit conforme (formule des probabilités totales).</div>
   <span class="answer-line"></span>
