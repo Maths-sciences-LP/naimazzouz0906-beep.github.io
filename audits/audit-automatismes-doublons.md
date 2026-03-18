@@ -1,7 +1,7 @@
 # Audit Automatismes — Doublon de pages
 
 **Date** : 2026-03-18
-**Derniere mise a jour** : 2026-03-18
+**Derniere mise a jour** : 2026-03-18 (corrections appliquees)
 **Perimetre** : Pages d'automatismes mathematiques (exercices flash, hub thematique)
 
 ---
@@ -136,20 +136,24 @@ La page racine contient environ 200 lignes de CSS inline qui definissent des cla
 
 ## Corrections realisees
 
-_(Aucune correction realisee pour l'instant)_
+- **2026-03-18** : Option A retenue — `automatismes/index.html` conserve comme page unique
+- **2026-03-18** : Liens mis a jour dans 5 fichiers (`index.html`, `maths-2nde-mama.html`, `maths-1ere-pro.html`, `maths-term-erama.html`, `maths-term-iccer.html`) pour pointer vers `automatismes/index.html`
+- **2026-03-18** : Fusion des 2 liens distincts (Automatismes 2nde + Automatismes Terminale) en un seul dans `maths-term-erama.html` et `maths-term-iccer.html`
+- **2026-03-18** : Verification du contenu — les 22 pages thematiques sont plus completes que la page racine (QCM, 3 niveaux, feedbacks vs simples reponses flash). Aucune migration necessaire.
+- **2026-03-18** : Suppression de `automatismes.html` (racine) — doublon elimine
 
 ---
 
 ## Ameliorations restantes
 
 ### Priorite critique
-- [ ] Unifier les liens : toutes les pages du site doivent pointer vers la meme page d'automatismes
-- [ ] Corriger `maths-term-erama.html` et `maths-term-iccer.html` qui pointent vers les deux pages
+- [x] Unifier les liens : toutes les pages du site doivent pointer vers la meme page d'automatismes
+- [x] Corriger `maths-term-erama.html` et `maths-term-iccer.html` qui pointent vers les deux pages
 
 ### Priorite haute
-- [ ] Choisir la page a conserver (recommandation : `automatismes/index.html`)
-- [ ] Verifier que les 22 pages thematiques contiennent bien les exercices flash (sinon migrer depuis la racine)
-- [ ] Supprimer ou archiver la page non retenue
+- [x] Choisir la page a conserver (recommandation : `automatismes/index.html`)
+- [x] Verifier que les 22 pages thematiques contiennent bien les exercices flash (sinon migrer depuis la racine)
+- [x] Supprimer ou archiver la page non retenue
 
 ### Priorite moyenne
 - [ ] Ajouter l'optimisation impression aux pages thematiques si necessaire
