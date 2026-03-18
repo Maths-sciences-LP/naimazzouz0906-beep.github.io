@@ -101,13 +101,18 @@ subject/level/chNN/
 | Dimension | Specification |
 |---|---|
 | **Format** | QCM interactif avec auto-correction JS |
-| **Nombre de questions** | 10-15 |
+| **Nombre de questions** | 15 (fixe, couvrant tout le chapitre) |
 | **Duree** | 15-20 min |
+| **Contenu** | Mix connaissances (definitions, vocabulaire, reconnaissance) + calculs rapides |
 | **Feedback** | Immediat (correct/incorrect + explication) |
 | **Score** | Calcule et affiche automatiquement |
 | **Differenciation** | Non (meme QCM pour tous) |
 | **Impression** | Supportee (print.css) |
 | **Modele existant** | `physique-chimie/seconde/ch07/qcm.html` |
+
+**Adaptation par matiere :**
+- **Maths** : plus de calcul mental, reconnaissance de formules, lecture graphique, vrai/faux sur proprietes
+- **Physique-Chimie** : plus de questions sur les unites, schemas, protocoles, vocabulaire scientifique, conversions
 
 ### Specifications `interro.html`
 
