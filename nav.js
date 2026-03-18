@@ -24,7 +24,7 @@
       summary:      'maths-2nde-mama.html',
       summaryLabel: '2nde Pro MAMA',
       subject:      'Mathématiques',
-      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé', qcm: 'QCM' },
       chapters: [
         { id: '01', title: 'Proportionnalité et pourcentages' },
         { id: '02', title: 'Statistiques à une variable' },
@@ -48,7 +48,7 @@
       summary:      'maths-1ere-pro.html',
       summaryLabel: '1ère Bac Pro',
       subject:      'Mathématiques',
-      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé', qcm: 'QCM' },
       chapters: [
         { id: '01', title: 'Statistique à deux variables' },
         { id: '02', title: 'Probabilités' },
@@ -67,7 +67,7 @@
       summary:      'maths-term-iccer.html',
       summaryLabel: 'Terminale Bac Pro',
       subject:      'Mathématiques',
-      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé', qcm: 'QCM' },
       chapters: [
         { id: '01', title: 'Statistiques à deux variables' },
         { id: '02', title: 'Probabilités' },
@@ -88,7 +88,7 @@
       summary:      'maths-bts.html',
       summaryLabel: 'BTS',
       subject:      'Mathématiques',
-      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', qcm: 'QCM' },
       chapters: [
         { id: '01', title: 'Suites numériques' },
         { id: '02', title: 'Fonctions d\'une variable réelle' },
@@ -123,7 +123,7 @@
       summary:      'pc-2nde-pro.html',
       summaryLabel: '2nde Pro MAMA',
       subject:      'Physique-Chimie',
-      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé', qcm: 'QCM' },
       chapters: [
         { id: '01', title: 'Sécurité en laboratoire et en atelier' },
         { id: '02', title: 'Grandeurs électriques et circuits' },
@@ -147,7 +147,7 @@
       summary:      'pc-1ere-iccer.html',
       summaryLabel: '1ère ICCER',
       subject:      'Physique-Chimie',
-      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé', qcm: 'QCM' },
       chapters: [
         { id: '01', title: 'Distinguer énergie et puissance électrique' },
         { id: '02', title: 'Transporter l\'énergie sous forme électrique' },
@@ -167,7 +167,7 @@
       summary:      'pc-1ere-erama.html',
       summaryLabel: '1ère ERA-MA',
       subject:      'Physique-Chimie',
-      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé', qcm: 'QCM' },
       chapters: [
         { id: '01', title: 'Distinguer énergie et puissance électrique' },
         { id: '02', title: 'Évaluer la puissance consommée par un appareil électrique' },
@@ -187,7 +187,7 @@
       summary:      'pc-term-iccer.html',
       summaryLabel: 'Terminale ICCER',
       subject:      'Physique-Chimie',
-      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé', qcm: 'QCM' },
       chapters: [
         { id: '01', title: 'Évaluer la puissance consommée' },
         { id: '02', title: 'Obtenir un courant continu à partir d\'un courant alternatif et inversement' },
@@ -205,7 +205,7 @@
       summary:      'pc-term-erama.html',
       summaryLabel: 'Terminale ERA-MA',
       subject:      'Physique-Chimie',
-      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', ds: 'Devoir surveillé', fiche: 'Fiche résumé', qcm: 'QCM' },
       chapters: [
         { id: '01', title: 'Transporter l\'énergie sous forme électrique' },
         { id: '02', title: 'Stocker l\'énergie à l\'aide d\'un système électrochimique' },
@@ -329,14 +329,41 @@
     ].join('');
   }
 
-  /* ── Menu du chapitre (onglets Cours / Exercices / DS) ─────────────── */
+  /* ── Menu du chapitre (onglets Cours / Exercices / DS / QCM…) ──────── */
+  /* Types « optionnels » : l'onglet n'apparaît que si le fichier existe */
+  var OPTIONAL_TYPES = { qcm: true };
+
   function buildChMenu() {
-    var tabs = Object.keys(serie.types).map(function (t) {
+    var menuEl = document.createElement('div');
+    menuEl.className = 'sn-ch-menu';
+
+    Object.keys(serie.types).forEach(function (t) {
+      if (OPTIONAL_TYPES[t]) return; /* traité plus bas en async */
       var active = (t === pageType) ? ' sn-tab-active' : '';
-      return '<a href="' + t + '.html" class="sn-tab' + active + '">' +
-             esc(typeLabel(t)) + '</a>';
-    }).join('');
-    return '<div class="sn-ch-menu">' + tabs + '</div>';
+      var a = document.createElement('a');
+      a.href = t + '.html';
+      a.className = 'sn-tab' + active;
+      a.textContent = typeLabel(t);
+      menuEl.appendChild(a);
+    });
+
+    /* Vérifier l'existence des fichiers optionnels (QCM…) */
+    Object.keys(serie.types).forEach(function (t) {
+      if (!OPTIONAL_TYPES[t]) return;
+      var url = t + '.html';
+      fetch(url, { method: 'HEAD' }).then(function (r) {
+        if (r.ok) {
+          var active = (t === pageType) ? ' sn-tab-active' : '';
+          var a = document.createElement('a');
+          a.href = url;
+          a.className = 'sn-tab' + active;
+          a.textContent = typeLabel(t);
+          menuEl.appendChild(a);
+        }
+      }).catch(function () { /* fichier absent → pas d'onglet */ });
+    });
+
+    return menuEl;
   }
 
   /* ── Boutons Précédent / Sommaire / Suivant ─────────────────────────── */
@@ -376,7 +403,12 @@
   /* Bloc supérieur */
   var topBlock = document.createElement('div');
   topBlock.className = 'sn-top-block';
-  topBlock.innerHTML = buildBreadcrumb() + buildChMenu() + buildChNav();
+  topBlock.innerHTML = buildBreadcrumb() + buildChNav();
+  /* Le menu chapitre est un élément DOM (onglets optionnels chargés en async) */
+  var chMenuEl = buildChMenu();
+  /* Insérer le menu après le breadcrumb, avant la nav ch. précédent/suivant */
+  var chNavEl = topBlock.querySelector('.sn-ch-nav');
+  topBlock.insertBefore(chMenuEl, chNavEl);
   container.insertBefore(topBlock, container.firstChild);
 
   /* ── Sommaire automatique (pages Cours uniquement) ─────────────────── */
