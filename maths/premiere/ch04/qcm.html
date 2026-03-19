@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Résolution graphique – QCM – 1ère Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+
+.qcm-header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.qcm-header .dh-item{display:flex;align-items:center;gap:6px}
+.qcm-header strong{color:var(--p)}
+.q-block{border:1px solid #e2e8f0;border-radius:10px;padding:18px 20px;margin:16px 0;background:#fff}
+.q-block h3{margin:0 0 10px;font-size:1em;color:var(--p)}
+.q-block .theme{font-size:.78em;color:#718096;margin-bottom:8px;font-style:italic}
+.options label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:1.5px solid #e2e8f0;transition:background .15s,border-color .15s;font-size:.95em}
+.options label:hover{background:var(--p-bg);border-color:var(--p-border)}
+.options input[type="radio"]{margin-right:8px;accent-color:var(--p)}
+.options label.correct{background:#d1fae5;border-color:#34d399}
+.options label.incorrect{background:#fee2e2;border-color:#f87171}
+.q-feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:.88em;display:none}
+.q-feedback.ok{background:#d1fae5;color:#065f46;display:block}
+.q-feedback.ko{background:#fee2e2;color:#991b1b;display:block}
+.btn-valider{background:var(--p);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;margin-top:20px;display:block}
+.btn-valider:hover{opacity:.85}
+.btn-reset{background:#e2e8f0;color:#374151;border:none;padding:8px 20px;border-radius:8px;font-size:.9em;cursor:pointer;margin-top:8px}
+.btn-reset:hover{background:#cbd5e1}
+.score-box{margin-top:24px;padding:18px 24px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:700;display:none}
+.score-box.show{display:block}
+.score-good{background:#d1fae5;color:#065f46;border:2px solid #34d399}
+.score-avg{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}
+.score-low{background:#fee2e2;color:#991b1b;border:2px solid #f87171}
+@media print{.nb,.btn-valider,.btn-reset,.diff-toggle-wrap{display:none}.options label{border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>QCM – Résolution graphique d'équations et d'inéquations</h1>
+  <p class="sous-titre">Chapitre 4 | 1ère Bac Pro | Mathématiques</p>
+</header>
+
+<div class="qcm-header">
+  <div class="dh-item">⏱ <strong>Durée :</strong> 15–20 min</div>
+  <div class="dh-item">📄 <strong>15 questions</strong></div>
+  <div class="dh-item">🧮 <strong>Calculatrice autorisée</strong></div>
+</div>
+
+<p style="font-size:.9em;color:#4a5568">Pour chaque question, cochez la <strong>seule bonne réponse</strong> puis cliquez sur « Valider le QCM » en bas de page.</p>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<form id="qcm-socle">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Vocabulaire – Solution d'une équation</p>
+  <p>Résoudre graphiquement \(f(x) = k\), c'est trouver :</p>
+  <div class="options">
+    <label><input type="radio" name="s1" value="a"> les ordonnées des points de la courbe</label>
+    <label><input type="radio" name="s1" value="b"> les abscisses des points d'intersection de la courbe avec la droite \(y = k\)</label>
+    <label><input type="radio" name="s1" value="c"> la valeur de \(k\)</label>
+    <label><input type="radio" name="s1" value="d"> le nombre de points de la courbe</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 2</h3>
+  <p class="theme">Lecture graphique – Image</p>
+  <p>Sur une courbe, le point \(A(3\,;\,5)\) appartient à \(\mathcal{C}_f\). Quelle est la valeur de \(f(3)\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="s2" value="a"> 5</label>
+    <label><input type="radio" name="s2" value="b"> 3</label>
+    <label><input type="radio" name="s2" value="c"> 8</label>
+    <label><input type="radio" name="s2" value="d"> −2</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 3</h3>
+  <p class="theme">Lecture graphique – Nombre de solutions</p>
+  <p>La droite \(y = 2\) ne coupe pas la courbe \(\mathcal{C}_f\). Combien \(f(x) = 2\) a-t-elle de solutions ?</p>
+  <div class="options">
+    <label><input type="radio" name="s3" value="a"> 1</label>
+    <label><input type="radio" name="s3" value="b"> 2</label>
+    <label><input type="radio" name="s3" value="c"> 0</label>
+    <label><input type="radio" name="s3" value="d"> 3</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 4</h3>
+  <p class="theme">Équation – Lire les solutions</p>
+  <p>La droite \(y = 4\) coupe la courbe \(\mathcal{C}_f\) aux points d'abscisses \(x = 1\) et \(x = 3\). Les solutions de \(f(x) = 4\) sont :</p>
+  <div class="options">
+    <label><input type="radio" name="s4" value="a"> \(x = 4\) seulement</label>
+    <label><input type="radio" name="s4" value="b"> \(x = 1\) et \(x = 3\)</label>
+    <label><input type="radio" name="s4" value="c"> \(x = 1\) seulement</label>
+    <label><input type="radio" name="s4" value="d"> \(x = 0\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 5</h3>
+  <p class="theme">Inéquation – Sens du signe</p>
+  <p>\(f(x) > k\) signifie que la courbe \(\mathcal{C}_f\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s5" value="a"> en-dessous de la droite \(y = k\)</label>
+    <label><input type="radio" name="s5" value="b"> confondue avec la droite \(y = k\)</label>
+    <label><input type="radio" name="s5" value="c"> à gauche de la droite \(y = k\)</label>
+    <label><input type="radio" name="s5" value="d"> au-dessus de la droite \(y = k\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 6</h3>
+  <p class="theme">Inéquation – Lecture graphique</p>
+  <p>La courbe \(\mathcal{C}_f\) est au-dessus de la droite \(y = 1\) pour \(x \in [2\,;\,6]\). L'ensemble solution de \(f(x) \geq 1\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s6" value="a"> \([2\,;\,6]\)</label>
+    <label><input type="radio" name="s6" value="b"> \(]-\infty\,;\,2]\cup[6\,;\,+\infty[\)</label>
+    <label><input type="radio" name="s6" value="c"> \(\{2\,;\,6\}\)</label>
+    <label><input type="radio" name="s6" value="d"> \([1\,;\,1]\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 7</h3>
+  <p class="theme">Intersection de courbes – Vocabulaire</p>
+  <p>Les solutions de l'équation \(f(x) = g(x)\) sont les abscisses des :</p>
+  <div class="options">
+    <label><input type="radio" name="s7" value="a"> points les plus hauts des courbes</label>
+    <label><input type="radio" name="s7" value="b"> origines des courbes</label>
+    <label><input type="radio" name="s7" value="c"> points d'intersection des courbes \(\mathcal{C}_f\) et \(\mathcal{C}_g\)</label>
+    <label><input type="radio" name="s7" value="d"> points où les courbes coupent l'axe des ordonnées</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 8</h3>
+  <p class="theme">Inéquation – Signe de la comparaison</p>
+  <p>\(f(x) \leq g(x)\) signifie que la courbe \(\mathcal{C}_f\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s8" value="a"> au-dessus de \(\mathcal{C}_g\)</label>
+    <label><input type="radio" name="s8" value="b"> en-dessous ou confondue avec \(\mathcal{C}_g\)</label>
+    <label><input type="radio" name="s8" value="c"> perpendiculaire à \(\mathcal{C}_g\)</label>
+    <label><input type="radio" name="s8" value="d"> parallèle à \(\mathcal{C}_g\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 9</h3>
+  <p class="theme">Courbe représentative – Définition</p>
+  <p>La courbe \(\mathcal{C}_f\) est l'ensemble des points de coordonnées :</p>
+  <div class="options">
+    <label><input type="radio" name="s9" value="a"> \(\bigl(x\,;\,f(x)\bigr)\)</label>
+    <label><input type="radio" name="s9" value="b"> \(\bigl(f(x)\,;\,x\bigr)\)</label>
+    <label><input type="radio" name="s9" value="c"> \(\bigl(x\,;\,x\bigr)\)</label>
+    <label><input type="radio" name="s9" value="d"> \(\bigl(0\,;\,f(x)\bigr)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 10</h3>
+  <p class="theme">Lecture graphique – Antécédent</p>
+  <p>Pour résoudre \(f(x) = 3\) graphiquement, on trace :</p>
+  <div class="options">
+    <label><input type="radio" name="s10" value="a"> la droite verticale \(x = 3\)</label>
+    <label><input type="radio" name="s10" value="b"> la droite oblique \(y = x + 3\)</label>
+    <label><input type="radio" name="s10" value="c"> la droite \(y = f(x)\)</label>
+    <label><input type="radio" name="s10" value="d"> la droite horizontale \(y = 3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Inéquation – Bornes incluses</p>
+  <p>L'ensemble solution de \(f(x) \geq k\) est noté avec des crochets :</p>
+  <div class="options">
+    <label><input type="radio" name="s11" value="a"> ouverts \(]\,[\) car les bornes sont exclues</label>
+    <label><input type="radio" name="s11" value="b"> il n'y a pas de bornes</label>
+    <label><input type="radio" name="s11" value="c"> fermés \([\,]\) car les bornes sont incluses</label>
+    <label><input type="radio" name="s11" value="d"> ouverts à gauche et fermés à droite \(]\,]\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Algorithme de balayage – Principe</p>
+  <p>L'algorithme de balayage permet d'approcher une solution en :</p>
+  <div class="options">
+    <label><input type="radio" name="s12" value="a"> traçant la courbe très précisément</label>
+    <label><input type="radio" name="s12" value="b"> testant des valeurs successives et repérant un changement de signe</label>
+    <label><input type="radio" name="s12" value="c"> calculant la dérivée de la fonction</label>
+    <label><input type="radio" name="s12" value="d"> utilisant une calculatrice graphique uniquement</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 13</h3>
+  <p class="theme">Balayage – Changement de signe</p>
+  <p>Pour \(h(x) = f(x) - g(x)\), on trouve \(h(1) = 0{,}5\) et \(h(2) = -0{,}3\). Une solution de \(f(x) = g(x)\) se trouve :</p>
+  <div class="options">
+    <label><input type="radio" name="s13" value="a"> entre \(x = 1\) et \(x = 2\)</label>
+    <label><input type="radio" name="s13" value="b"> avant \(x = 1\)</label>
+    <label><input type="radio" name="s13" value="c"> après \(x = 2\)</label>
+    <label><input type="radio" name="s13" value="d"> exactement en \(x = 1{,}5\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 14</h3>
+  <p class="theme">Position relative – Tableau</p>
+  <p>Quand \(\mathcal{C}_f\) est au-dessus de \(\mathcal{C}_g\), cela se traduit par :</p>
+  <div class="options">
+    <label><input type="radio" name="s14" value="a"> \(f(x) = g(x)\)</label>
+    <label><input type="radio" name="s14" value="b"> \(f(x) \leq g(x)\)</label>
+    <label><input type="radio" name="s14" value="c"> \(f(x) < g(x)\)</label>
+    <label><input type="radio" name="s14" value="d"> \(f(x) \geq g(x)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Solutions – Valeurs approchées</p>
+  <p>Quand on lit une solution graphiquement, le résultat est :</p>
+  <div class="options">
+    <label><input type="radio" name="s15" value="a"> toujours exact</label>
+    <label><input type="radio" name="s15" value="b"> faux si on utilise une règle</label>
+    <label><input type="radio" name="s15" value="c"> une valeur approchée, on note « \(\approx\) »</label>
+    <label><input type="radio" name="s15" value="d"> inutilisable en mathématiques</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
+<div class="score-box" id="score-socle"></div>
+</form>
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<form id="qcm-standard">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Équation – Résolution graphique</p>
+  <p>Les courbes \(\mathcal{C}_f\) et \(\mathcal{C}_g\) se coupent en \(x = -1\) et \(x = 4\). L'ensemble solution de \(f(x) = g(x)\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="t1" value="a"> \([-1\,;\,4]\)</label>
+    <label><input type="radio" name="t1" value="b"> \(\{-1\,;\,4\}\)</label>
+    <label><input type="radio" name="t1" value="c"> \(]-\infty\,;\,-1[\,\cup\,]4\,;\,+\infty[\)</label>
+    <label><input type="radio" name="t1" value="d"> \([-4\,;\,1]\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Inéquation – Lecture graphique</p>
+  <p>Les courbes \(\mathcal{C}_f\) et \(\mathcal{C}_g\) se coupent en \(x = 2\) et \(x = 7\). Entre ces valeurs, \(\mathcal{C}_f\) est au-dessus de \(\mathcal{C}_g\). L'ensemble solution de \(f(x) \geq g(x)\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="t2" value="a"> \(\{2\,;\,7\}\)</label>
+    <label><input type="radio" name="t2" value="b"> \(]-\infty\,;\,2]\cup[7\,;\,+\infty[\)</label>
+    <label><input type="radio" name="t2" value="c"> \([2\,;\,7]\)</label>
+    <label><input type="radio" name="t2" value="d"> \([0\,;\,2]\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Contexte pro – Seuil de rentabilité</p>
+  <p>Un menuisier agenceur a un coût \(C(x) = 0{,}5x^2 + 10\) et un revenu \(R(x) = 8x\). Les courbes se coupent en \(x \approx 1{,}4\) et \(x \approx 14{,}6\). Il fait des bénéfices (\(R(x) > C(x)\)) quand :</p>
+  <div class="options">
+    <label><input type="radio" name="t3" value="a"> \(x \in ]1{,}4\,;\,14{,}6[\)</label>
+    <label><input type="radio" name="t3" value="b"> \(x \in [0\,;\,1{,}4]\)</label>
+    <label><input type="radio" name="t3" value="c"> \(x \in [14{,}6\,;\,+\infty[\)</label>
+    <label><input type="radio" name="t3" value="d"> toujours</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Inéquation stricte – Bornes</p>
+  <p>L'ensemble solution de l'inéquation \(f(x) > g(x)\) (inéquation stricte) sur \([x_1\,;\,x_2]\) est noté :</p>
+  <div class="options">
+    <label><input type="radio" name="t4" value="a"> \([x_1\,;\,x_2]\) (bornes incluses)</label>
+    <label><input type="radio" name="t4" value="b"> \(\{x_1\,;\,x_2\}\)</label>
+    <label><input type="radio" name="t4" value="c"> \(]-\infty\,;\,x_1]\cup[x_2\,;\,+\infty[\)</label>
+    <label><input type="radio" name="t4" value="d"> \(]x_1\,;\,x_2[\) (bornes exclues)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Équation – Point d'appartenance</p>
+  <p>Si le point \(B(2\,;\,7)\) appartient à la fois à \(\mathcal{C}_f\) et à \(\mathcal{C}_g\), alors :</p>
+  <div class="options">
+    <label><input type="radio" name="t5" value="a"> \(f(7) = g(7) = 2\)</label>
+    <label><input type="radio" name="t5" value="b"> \(f(2) = g(2) = 7\)</label>
+    <label><input type="radio" name="t5" value="c"> \(f(2) = 2\) et \(g(2) = 7\)</label>
+    <label><input type="radio" name="t5" value="d"> \(f(7) = 2\) et \(g(2) = 7\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Inéquation – Contexte thermique</p>
+  <p>La température d'un local est modélisée par \(T(t)\). La droite \(y = 20\) coupe la courbe en \(t = 8\) et \(t = 18\). La période de confort (\(T(t) \geq 20\)) est :</p>
+  <div class="options">
+    <label><input type="radio" name="t6" value="a"> \([0\,;\,8]\cup[18\,;\,24]\)</label>
+    <label><input type="radio" name="t6" value="b"> \(\{8\,;\,18\}\)</label>
+    <label><input type="radio" name="t6" value="c"> \([8\,;\,18]\), soit 10 heures</label>
+    <label><input type="radio" name="t6" value="d"> \([0\,;\,20]\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Position relative – Inéquation</p>
+  <p>Pour \(x \in [-3\,;\,0]\), la courbe \(\mathcal{C}_f\) est en-dessous de \(\mathcal{C}_g\). Cela signifie que sur \([-3\,;\,0]\) :</p>
+  <div class="options">
+    <label><input type="radio" name="t7" value="a"> \(f(x) \leq g(x)\)</label>
+    <label><input type="radio" name="t7" value="b"> \(f(x) \geq g(x)\)</label>
+    <label><input type="radio" name="t7" value="c"> \(f(x) = g(x)\)</label>
+    <label><input type="radio" name="t7" value="d"> \(f(x) > g(x)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Balayage – Précision</p>
+  <p>Un balayage au pas \(0{,}1\) localise une solution entre \(x = 1{,}3\) et \(x = 1{,}4\). Pour affiner, on recommence avec un pas de :</p>
+  <div class="options">
+    <label><input type="radio" name="t8" value="a"> \(1\)</label>
+    <label><input type="radio" name="t8" value="b"> \(0{,}1\) (même pas)</label>
+    <label><input type="radio" name="t8" value="c"> \(0{,}5\)</label>
+    <label><input type="radio" name="t8" value="d"> \(0{,}01\) (plus petit)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Équation – Nombre de solutions</p>
+  <p>La droite \(y = 5\) est tangente à la courbe \(\mathcal{C}_f\). L'équation \(f(x) = 5\) admet :</p>
+  <div class="options">
+    <label><input type="radio" name="t9" value="a"> aucune solution</label>
+    <label><input type="radio" name="t9" value="b"> exactement une solution</label>
+    <label><input type="radio" name="t9" value="c"> exactement deux solutions</label>
+    <label><input type="radio" name="t9" value="d"> une infinité de solutions</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Inéquation – Ensemble solution complémentaire</p>
+  <p>Les courbes se coupent en \(x_1 = 1\) et \(x_2 = 5\). Pour \(x < 1\) et \(x > 5\), \(\mathcal{C}_f\) est en-dessous de \(\mathcal{C}_g\). L'ensemble solution de \(f(x) > g(x)\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="t10" value="a"> \(]1\,;\,5[\)</label>
+    <label><input type="radio" name="t10" value="b"> \(\{1\,;\,5\}\)</label>
+    <label><input type="radio" name="t10" value="c"> \(]-\infty\,;\,1[\,\cup\,]5\,;\,+\infty[\)</label>
+    <label><input type="radio" name="t10" value="d"> \([1\,;\,5]\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Contexte pro – Coût et seuil</p>
+  <p>Un installateur thermique modélise le coût d'une pompe à chaleur par \(f(x)\) et d'une chaudière gaz par \(g(x)\). Les courbes se croisent en \(x \approx 3\) ans. Avant \(x = 3\), \(f(x) > g(x)\). La pompe à chaleur est plus économique :</p>
+  <div class="options">
+    <label><input type="radio" name="t11" value="a"> à partir de 3 ans d'utilisation</label>
+    <label><input type="radio" name="t11" value="b"> pendant les 3 premières années</label>
+    <label><input type="radio" name="t11" value="c"> jamais</label>
+    <label><input type="radio" name="t11" value="d"> toujours</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Résolution graphique – Méthode</p>
+  <p>Pour résoudre \(f(x) = g(x)\) graphiquement, la 3e étape consiste à :</p>
+  <div class="options">
+    <label><input type="radio" name="t12" value="a"> tracer la droite \(y = 0\)</label>
+    <label><input type="radio" name="t12" value="b"> calculer \(f(0)\) et \(g(0)\)</label>
+    <label><input type="radio" name="t12" value="c"> tracer les courbes séparément</label>
+    <label><input type="radio" name="t12" value="d"> lire les abscisses des points d'intersection</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Balayage – Interprétation du changement de signe</p>
+  <p>Pour \(h(x) = f(x) - g(x)\) : \(h(2) = 0{,}8\) et \(h(3) = -0{,}4\). Que peut-on conclure ?</p>
+  <div class="options">
+    <label><input type="radio" name="t13" value="a"> \(f(x) = g(x)\) en \(x = 2{,}5\) exactement</label>
+    <label><input type="radio" name="t13" value="b"> il existe une solution de \(f(x) = g(x)\) dans \([2\,;\,3]\)</label>
+    <label><input type="radio" name="t13" value="c"> \(f(x) = g(x)\) n'a pas de solution</label>
+    <label><input type="radio" name="t13" value="d"> \(h(x) = 0\) pour tout \(x\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Contexte – Bénéfice et perte</p>
+  <p>Un artisan menuisier vend \(x\) meubles. Le revenu est \(R(x) = 150x\) et le coût est \(C(x) = 0{,}8x^2 + 50\). D'après le graphique, les courbes se coupent en \(x \approx 2\) et \(x \approx 185\). Il réalise un bénéfice (\(R(x) > C(x)\)) pour :</p>
+  <div class="options">
+    <label><input type="radio" name="t14" value="a"> \(x < 2\) ou \(x > 185\)</label>
+    <label><input type="radio" name="t14" value="b"> \(x = 2\) ou \(x = 185\)</label>
+    <label><input type="radio" name="t14" value="c"> \(2 < x < 185\)</label>
+    <label><input type="radio" name="t14" value="d"> toujours</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Équation – Point d'intersection et valeur commune</p>
+  <p>Les courbes \(\mathcal{C}_f\) et \(\mathcal{C}_g\) se coupent au point \(P(3\,;\,6)\). Quelle affirmation est correcte ?</p>
+  <div class="options">
+    <label><input type="radio" name="t15" value="a"> \(f(3) = g(3) = 6\), donc \(x = 3\) est solution de \(f(x) = g(x)\)</label>
+    <label><input type="radio" name="t15" value="b"> \(f(6) = g(6) = 3\), donc \(x = 6\) est solution</label>
+    <label><input type="radio" name="t15" value="c"> la solution de \(f(x) = g(x)\) est \(x = 6\)</label>
+    <label><input type="radio" name="t15" value="d"> \(f(3) = 3\) et \(g(6) = 6\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
+</form>
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<form id="qcm-appro">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Équation – Résolution algébrique et graphique</p>
+  <p>On cherche les solutions de \(f(x) = g(x)\) avec \(f(x) = x^2 - 2\) et \(g(x) = x\). Cela revient à résoudre :</p>
+  <div class="options">
+    <label><input type="radio" name="a1" value="a"> \(x^2 = 0\)</label>
+    <label><input type="radio" name="a1" value="b"> \(x^2 + x - 2 = 0\)</label>
+    <label><input type="radio" name="a1" value="c"> \(x^2 - x - 2 = 0\)</label>
+    <label><input type="radio" name="a1" value="d"> \(x - 2 = 0\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Inéquation – Système graphique</p>
+  <p>On considère trois fonctions : \(\mathcal{C}_f\) est au-dessus de \(\mathcal{C}_g\) sur \([1\,;\,5]\) et au-dessus de \(\mathcal{C}_h\) sur \([2\,;\,6]\). Sur quel intervalle \(f(x)\) est-elle simultanément supérieure aux deux autres ?</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> \([1\,;\,6]\)</label>
+    <label><input type="radio" name="a2" value="b"> \([2\,;\,5]\)</label>
+    <label><input type="radio" name="a2" value="c"> \([1\,;\,5]\)</label>
+    <label><input type="radio" name="a2" value="d"> \([2\,;\,6]\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Balayage – Encadrement à 0,01 près</p>
+  <p>Un balayage au pas \(0{,}01\) sur \([1{,}3\,;\,1{,}4]\) donne : \(h(1{,}36) = 0{,}02\) et \(h(1{,}37) = -0{,}01\). La solution est approchée à \(0{,}01\) près par :</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> \(x \approx 1{,}36\) ou \(x \approx 1{,}37\)</label>
+    <label><input type="radio" name="a3" value="b"> \(x = 1{,}365\) exactement</label>
+    <label><input type="radio" name="a3" value="c"> \(x \approx 1{,}3\)</label>
+    <label><input type="radio" name="a3" value="d"> il n'y a pas de solution</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Optimisation – Maximum graphique</p>
+  <p>La courbe \(\mathcal{C}_f\) atteint son maximum en \(x = 4\) avec \(f(4) = 9\). L'inéquation \(f(x) \geq 9\) admet :</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> l'ensemble \([0\,;\,4]\) comme ensemble solution</label>
+    <label><input type="radio" name="a4" value="b"> une infinité de solutions</label>
+    <label><input type="radio" name="a4" value="c"> aucune solution</label>
+    <label><input type="radio" name="a4" value="d"> \(x = 4\) comme unique solution</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 5</h3>
+  <p class="theme">Inéquation – Deux intersections, deux zones</p>
+  <p>Les courbes \(\mathcal{C}_f\) et \(\mathcal{C}_g\) se coupent en \(x_1 = -2\) et \(x_2 = 3\). Pour \(x < -2\) et \(x > 3\), \(\mathcal{C}_f\) est au-dessus. L'ensemble solution de \(f(x) \geq g(x)\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> \([-2\,;\,3]\)</label>
+    <label><input type="radio" name="a5" value="b"> \(]-2\,;\,3[\)</label>
+    <label><input type="radio" name="a5" value="c"> \(]-\infty\,;\,-2]\cup[3\,;\,+\infty[\)</label>
+    <label><input type="radio" name="a5" value="d"> \(]-\infty\,;\,-2[\,\cup\,]3\,;\,+\infty[\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 6</h3>
+  <p class="theme">Paramètre – Nombre de solutions selon k</p>
+  <p>Pour \(f(x) = x^2 - 4\) (parabole), combien l'équation \(f(x) = k\) a-t-elle de solutions si \(k > -4\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="a6" value="a"> 0</label>
+    <label><input type="radio" name="a6" value="b"> 2</label>
+    <label><input type="radio" name="a6" value="c"> 1</label>
+    <label><input type="radio" name="a6" value="d"> 3</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Problème à plusieurs étapes – Contexte pro</p>
+  <p>Un technicien chauffagiste compare deux offres : offre A à \(f(x) = 200x + 3\,000\) (euros sur \(x\) ans) et offre B à \(g(x) = 300x + 1\,500\). Les courbes se coupent en \(x = 15\). Pour faire des économies avec l'offre A (\(f(x) < g(x)\)), il faut :</p>
+  <div class="options">
+    <label><input type="radio" name="a7" value="a"> garder le système plus de 15 ans</label>
+    <label><input type="radio" name="a7" value="b"> garder le système moins de 15 ans</label>
+    <label><input type="radio" name="a7" value="c"> changer de système tous les 15 ans</label>
+    <label><input type="radio" name="a7" value="d"> l'offre A est toujours plus chère</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Paramètre – Tangence</p>
+  <p>La droite \(y = k\) est tangente à la parabole \(f(x) = -x^2 + 6x - 5\) en son sommet. Le maximum de \(f\) est en \(x = 3\) avec \(f(3) = 4\). Pour quelle valeur de \(k\) l'équation \(f(x) = k\) a-t-elle une unique solution ?</p>
+  <div class="options">
+    <label><input type="radio" name="a8" value="a"> \(k = -5\)</label>
+    <label><input type="radio" name="a8" value="b"> \(k = 3\)</label>
+    <label><input type="radio" name="a8" value="c"> \(k = 0\)</label>
+    <label><input type="radio" name="a8" value="d"> \(k = 4\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 9</h3>
+  <p class="theme">Balayage – Théorème des valeurs intermédiaires</p>
+  <p>On pose \(h(x) = f(x) - g(x)\). On sait que \(h\) est continue, \(h(0) = 3 > 0\) et \(h(4) = -1 < 0\). On peut conclure :</p>
+  <div class="options">
+    <label><input type="radio" name="a9" value="a"> \(f(x) = g(x)\) n'a pas de solution</label>
+    <label><input type="radio" name="a9" value="b"> \(h(2) = 0\) exactement</label>
+    <label><input type="radio" name="a9" value="c"> il existe \(c \in ]0\,;\,4[\) tel que \(h(c) = 0\), soit \(f(c) = g(c)\)</label>
+    <label><input type="radio" name="a9" value="d"> \(f(x) > g(x)\) pour tout \(x\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 10</h3>
+  <p class="theme">Optimisation – Seuil de rentabilité exact</p>
+  <p>Le bénéfice d'un artisan est \(B(x) = R(x) - C(x) = -0{,}5x^2 + 6x - 4\). Graphiquement, \(B(x) = 0\) pour \(x \approx 0{,}8\) et \(x \approx 9{,}2\). Le bénéfice est positif (\(B(x) > 0\)) pour :</p>
+  <div class="options">
+    <label><input type="radio" name="a10" value="a"> \(x < 0{,}8\) ou \(x > 9{,}2\)</label>
+    <label><input type="radio" name="a10" value="b"> \(0{,}8 < x < 9{,}2\)</label>
+    <label><input type="radio" name="a10" value="c"> \(x = 5\) uniquement (sommet)</label>
+    <label><input type="radio" name="a10" value="d"> \(x > 0\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Résolution – Équation avec paramètre</p>
+  <p>On considère \(f(x) = x^2\) et \(g(x) = k\). Pour \(k = 0\), l'équation \(f(x) = g(x)\) admet :</p>
+  <div class="options">
+    <label><input type="radio" name="a11" value="a"> une unique solution \(x = 0\)</label>
+    <label><input type="radio" name="a11" value="b"> deux solutions \(x = 0\) et \(x = 1\)</label>
+    <label><input type="radio" name="a11" value="c"> aucune solution</label>
+    <label><input type="radio" name="a11" value="d"> une infinité de solutions</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Problème – Interprétation d'une inéquation</p>
+  <p>Pour un projet d'agencement, le budget alloué est \(B = 5\,000\) € et le coût estimé est \(C(x) = 200x + 1\,500\), où \(x\) est le nombre de meubles. L'inéquation \(C(x) \leq 5\,000\) donne la contrainte :</p>
+  <div class="options">
+    <label><input type="radio" name="a12" value="a"> \(x \leq 200\)</label>
+    <label><input type="radio" name="a12" value="b"> \(x \leq 32{,}5\)</label>
+    <label><input type="radio" name="a12" value="c"> \(x \geq 17{,}5\)</label>
+    <label><input type="radio" name="a12" value="d"> \(x \leq 17{,}5\), soit au maximum 17 meubles</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 13</h3>
+  <p class="theme">Raisonnement – Intersection de deux inéquations</p>
+  <p>On sait que \(f(x) \geq 0\) pour \(x \in [-1\,;\,4]\) et \(g(x) \geq 0\) pour \(x \in [0\,;\,6]\). Les valeurs de \(x\) pour lesquelles \(f(x) \geq 0\) ET \(g(x) \geq 0\) simultanément sont :</p>
+  <div class="options">
+    <label><input type="radio" name="a13" value="a"> \([-1\,;\,6]\)</label>
+    <label><input type="radio" name="a13" value="b"> \([-1\,;\,4]\)</label>
+    <label><input type="radio" name="a13" value="c"> \([0\,;\,4]\)</label>
+    <label><input type="radio" name="a13" value="d"> \([0\,;\,6]\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 14</h3>
+  <p class="theme">Problème type BTS – Analyse graphique complète</p>
+  <p>Une entreprise de pose de cuisines modélise son chiffre d'affaires mensuel par \(R(x) = 1\,200x\) et ses charges par \(C(x) = 2x^2 + 400x + 3\,600\) (en €, \(x\) = nb de cuisines posées). L'équation \(R(x) = C(x)\) donne \(x \approx 4{,}5\) et \(x \approx 395{,}5\). L'entreprise est rentable pour :</p>
+  <div class="options">
+    <label><input type="radio" name="a14" value="a"> \(x < 4{,}5\)</label>
+    <label><input type="radio" name="a14" value="b"> \(4{,}5 < x < 395{,}5\), soit entre 5 et 395 cuisines</label>
+    <label><input type="radio" name="a14" value="c"> \(x > 395{,}5\)</label>
+    <label><input type="radio" name="a14" value="d"> \(x = 200\) uniquement (maximum)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Théorème des valeurs intermédiaires – Application</p>
+  <p>Une fonction continue \(h\) vérifie \(h(0) = -2\), \(h(1) = 1\), \(h(2) = -0{,}5\), \(h(3) = 2\). Sur quels intervalles peut-on garantir l'existence d'une solution de \(h(x) = 0\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="a15" value="a"> \([0\,;\,1]\) et \([1\,;\,2]\) et \([2\,;\,3]\)</label>
+    <label><input type="radio" name="a15" value="b"> \([0\,;\,1]\) seulement</label>
+    <label><input type="radio" name="a15" value="c"> \([1\,;\,2]\) seulement</label>
+    <label><input type="radio" name="a15" value="d"> \([2\,;\,3]\) seulement</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "On résout f(x) = k en lisant les abscisses des points d'intersection de la courbe avec la droite horizontale y = k.",
+  "s2": "Le point A(3 ; 5) appartient à la courbe : l'abscisse est 3, l'ordonnée est f(3) = 5.",
+  "s3": "Si la droite y = 2 ne coupe pas la courbe, l'équation f(x) = 2 n'a aucune solution.",
+  "s4": "Les solutions sont les abscisses des points d'intersection : x = 1 et x = 3. La valeur 4 est l'ordonnée, pas la solution.",
+  "s5": "f(x) > k signifie que f(x) est plus grand que k : la courbe est au-dessus de la droite y = k.",
+  "s6": "La courbe est au-dessus de y = 1 sur [2 ; 6] : c'est exactement l'ensemble solution de f(x) ≥ 1.",
+  "s7": "f(x) = g(x) est vrai aux points où les deux courbes se coupent. On lit les abscisses de ces points.",
+  "s8": "f(x) ≤ g(x) : f est plus petite ou égale à g, donc la courbe de f est en-dessous (ou confondue avec) celle de g.",
+  "s9": "La courbe représentative regroupe tous les points (x ; f(x)) pour x dans le domaine de définition.",
+  "s10": "Pour résoudre f(x) = 3, on cherche l'intersection avec la droite horizontale y = 3.",
+  "s11": "Le signe ≥ inclut l'égalité : les bornes sont incluses, d'où les crochets fermés.",
+  "s12": "Le balayage consiste à tester des valeurs successives et à repérer où h(x) = f(x) − g(x) change de signe.",
+  "s13": "h(1) = 0,5 > 0 et h(2) = −0,3 < 0 : changement de signe entre 1 et 2, donc une solution s'y trouve.",
+  "s14": "Cf au-dessus de Cg se traduit par f(x) ≥ g(x).",
+  "s15": "Une lecture graphique donne une valeur approchée. On écrit ≈ pour le signaler.",
+  /* === STANDARD === */
+  "t1": "Les solutions d'une équation sont des valeurs isolées : {−1 ; 4}. L'intervalle [−1 ; 4] serait la solution d'une inéquation.",
+  "t2": "Entre x = 2 et x = 7, Cf est au-dessus de Cg, donc f(x) ≥ g(x) sur [2 ; 7].",
+  "t3": "R(x) > C(x) quand la droite de revenu est au-dessus de la courbe de coût, c'est-à-dire entre les deux points d'intersection.",
+  "t4": "L'inéquation stricte f(x) > g(x) exclut les bornes (là où f = g), d'où les crochets ouverts ]x1 ; x2[.",
+  "t5": "Si B(2 ; 7) est sur les deux courbes, alors f(2) = 7 et g(2) = 7. x = 2 est solution de f(x) = g(x).",
+  "t6": "T(t) ≥ 20 quand la courbe est au-dessus de y = 20, c'est-à-dire sur [8 ; 18], soit 10 heures.",
+  "t7": "Cf en-dessous de Cg signifie que f(x) prend des valeurs plus petites, donc f(x) ≤ g(x).",
+  "t8": "Pour affiner l'approximation, on recommence dans l'intervalle trouvé avec un pas 10 fois plus petit : 0,01.",
+  "t9": "La droite est tangente à la courbe : elle ne la coupe qu'en un seul point, donc f(x) = 5 a une unique solution.",
+  "t10": "Pour x < 1 et x > 5, Cf est en-dessous de Cg, donc f(x) < g(x). Par conséquent f(x) > g(x) sur l'intervalle ]1 ; 5[.",
+  "t11": "Après x = 3 ans, f(x) < g(x) : la pompe à chaleur devient plus économique à partir de 3 ans d'utilisation.",
+  "t12": "La méthode graphique : 1) tracer les courbes, 2) repérer les intersections, 3) lire les abscisses.",
+  "t13": "h(2) > 0 et h(3) < 0 : changement de signe, donc par le TVI, il existe une solution dans [2 ; 3].",
+  "t14": "R(x) > C(x) entre les deux intersections : ]2 ; 185[, soit pour 2 < x < 185.",
+  "t15": "P(3 ; 6) ∈ Cf et ∈ Cg signifie f(3) = 6 et g(3) = 6, donc x = 3 est solution de f(x) = g(x).",
+  /* === APPROFONDISSEMENT === */
+  "a1": "f(x) = g(x) ⟺ x² − 2 = x ⟺ x² − x − 2 = 0. On passe tout à gauche.",
+  "a2": "Il faut que les deux conditions soient vérifiées simultanément : intersection de [1 ; 5] et [2 ; 6] = [2 ; 5].",
+  "a3": "La solution est dans [1,36 ; 1,37]. On peut la donner à 0,01 près par l'une ou l'autre borne.",
+  "a4": "f(4) = 9 est le maximum. La courbe n'est jamais strictement supérieure à 9, donc f(x) ≥ 9 uniquement en x = 4.",
+  "a5": "Cf est au-dessus pour x ≤ −2 et x ≥ 3 : bornes incluses car l'inéquation est large (≥).",
+  "a6": "La parabole f(x) = x² − 4 a son minimum en x = 0 avec f(0) = −4. Pour k > −4, la droite coupe la parabole en 2 points.",
+  "a7": "Avant x = 15 : f(x) > g(x), offre A plus chère. Après x = 15 : f(x) < g(x), offre A moins chère. Il faut garder le système plus de 15 ans.",
+  "a8": "Le maximum de f est 4, atteint en x = 3. La tangente y = 4 ne touche la parabole qu'en ce point unique.",
+  "a9": "h continue, h(0) > 0 et h(4) < 0 : par le théorème des valeurs intermédiaires, il existe c ∈ ]0 ; 4[ tel que h(c) = 0.",
+  "a10": "B(x) est une parabole tournée vers le bas. Elle est positive entre ses racines : ]0,8 ; 9,2[.",
+  "a11": "f(x) = x² = 0 ⟺ x = 0. La parabole est tangente à l'axe des x en x = 0 : solution unique.",
+  "a12": "C(x) ≤ 5 000 ⟺ 200x + 1 500 ≤ 5 000 ⟺ 200x ≤ 3 500 ⟺ x ≤ 17,5. Entier : au maximum 17 meubles.",
+  "a13": "On cherche l'intersection des deux intervalles : [−1 ; 4] ∩ [0 ; 6] = [0 ; 4].",
+  "a14": "R(x) > C(x) entre les deux valeurs d'équilibre : pour 4,5 < x < 395,5, soit en pratique entre 5 et 395 cuisines.",
+  "a15": "Changements de signe : h(0)·h(1) < 0 → solution dans [0;1] ; h(1)·h(2) < 0 → solution dans [1;2] ; h(2)·h(3) < 0 → solution dans [2;3]."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '✅ Bonne réponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '❌ Mauvaise réponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '⚠️ Pas de réponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

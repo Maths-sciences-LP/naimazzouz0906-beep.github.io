@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch03 – QCM – Indicateurs statistiques – 2nde MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}
+
+.qcm-header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.qcm-header .dh-item{display:flex;align-items:center;gap:6px}
+.qcm-header strong{color:var(--p)}
+.q-block{border:1px solid #e2e8f0;border-radius:10px;padding:18px 20px;margin:16px 0;background:#fff}
+.q-block h3{margin:0 0 10px;font-size:1em;color:var(--p)}
+.q-block .theme{font-size:.78em;color:#718096;margin-bottom:8px;font-style:italic}
+.options label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:1.5px solid #e2e8f0;transition:background .15s,border-color .15s;font-size:.95em}
+.options label:hover{background:var(--p-bg);border-color:var(--p-border)}
+.options input[type="radio"]{margin-right:8px;accent-color:var(--p)}
+.options label.correct{background:#d1fae5;border-color:#34d399}
+.options label.incorrect{background:#fee2e2;border-color:#f87171}
+.q-feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:.88em;display:none}
+.q-feedback.ok{background:#d1fae5;color:#065f46;display:block}
+.q-feedback.ko{background:#fee2e2;color:#991b1b;display:block}
+.btn-valider{background:var(--p);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;margin-top:20px;display:block}
+.btn-valider:hover{opacity:.85}
+.btn-reset{background:#e2e8f0;color:#374151;border:none;padding:8px 20px;border-radius:8px;font-size:.9em;cursor:pointer;margin-top:8px}
+.btn-reset:hover{background:#cbd5e1}
+.score-box{margin-top:24px;padding:18px 24px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:700;display:none}
+.score-box.show{display:block}
+.score-good{background:#d1fae5;color:#065f46;border:2px solid #34d399}
+.score-avg{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}
+.score-low{background:#fee2e2;color:#991b1b;border:2px solid #f87171}
+@media print{.nb,.btn-valider,.btn-reset,.diff-toggle-wrap{display:none}.options label{border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>QCM – Indicateurs statistiques</h1>
+  <p class="sous-titre">Chapitre 3 | Seconde Bac Pro MAMA | Mathématiques</p>
+</header>
+
+<div class="qcm-header">
+  <div class="dh-item">⏱ <strong>Durée :</strong> 15–20 min</div>
+  <div class="dh-item">📄 <strong>15 questions</strong></div>
+  <div class="dh-item">🧮 <strong>Calculatrice autorisée</strong></div>
+</div>
+
+<p style="font-size:.9em;color:#4a5568">Pour chaque question, cochez la <strong>seule bonne réponse</strong> puis cliquez sur « Valider le QCM » en bas de page.</p>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<form id="qcm-socle">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Vocabulaire – Moyenne</p>
+  <p>La moyenne d'une série statistique, c'est :</p>
+  <div class="options">
+    <label><input type="radio" name="s1" value="a"> la valeur la plus fréquente</label>
+    <label><input type="radio" name="s1" value="b"> la somme des valeurs divisée par le nombre de valeurs</label>
+    <label><input type="radio" name="s1" value="c"> la valeur du milieu quand on trie les données</label>
+    <label><input type="radio" name="s1" value="d"> la différence entre la plus grande et la plus petite valeur</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Vocabulaire – Médiane</p>
+  <p>La médiane d'une série statistique est :</p>
+  <div class="options">
+    <label><input type="radio" name="s2" value="a"> la somme des valeurs divisée par l'effectif total</label>
+    <label><input type="radio" name="s2" value="b"> la valeur la plus grande de la série</label>
+    <label><input type="radio" name="s2" value="c"> la valeur qui partage la série triée en deux moitiés égales</label>
+    <label><input type="radio" name="s2" value="d"> la valeur la plus fréquente</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Vocabulaire – Étendue</p>
+  <p>L'étendue d'une série statistique se calcule par :</p>
+  <div class="options">
+    <label><input type="radio" name="s3" value="a"> valeur maximale − valeur minimale</label>
+    <label><input type="radio" name="s3" value="b"> somme de toutes les valeurs</label>
+    <label><input type="radio" name="s3" value="c"> valeur maximale + valeur minimale</label>
+    <label><input type="radio" name="s3" value="d"> valeur maximale ÷ valeur minimale</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Calcul – Moyenne simple</p>
+  <p>On relève les notes suivantes : 8, 12, 10, 14, 6. La moyenne est :</p>
+  <div class="options">
+    <label><input type="radio" name="s4" value="a"> 12</label>
+    <label><input type="radio" name="s4" value="b"> 8</label>
+    <label><input type="radio" name="s4" value="c"> 11</label>
+    <label><input type="radio" name="s4" value="d"> 10</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Calcul – Médiane (N impair)</p>
+  <p>Série triée : 3, 5, 7, 9, 11. La médiane est :</p>
+  <div class="options">
+    <label><input type="radio" name="s5" value="a"> 5</label>
+    <label><input type="radio" name="s5" value="b"> 7</label>
+    <label><input type="radio" name="s5" value="c"> 9</label>
+    <label><input type="radio" name="s5" value="d"> 8</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Calcul – Étendue</p>
+  <p>Les températures relevées dans un atelier sur une semaine sont : 18, 20, 22, 19, 25 °C. L'étendue est :</p>
+  <div class="options">
+    <label><input type="radio" name="s6" value="a"> 25 °C</label>
+    <label><input type="radio" name="s6" value="b"> 18 °C</label>
+    <label><input type="radio" name="s6" value="c"> 7 °C</label>
+    <label><input type="radio" name="s6" value="d"> 20,8 °C</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Calcul – Médiane (N pair)</p>
+  <p>Série triée : 10, 14, 18, 22. La médiane est :</p>
+  <div class="options">
+    <label><input type="radio" name="s7" value="a"> 16</label>
+    <label><input type="radio" name="s7" value="b"> 14</label>
+    <label><input type="radio" name="s7" value="c"> 18</label>
+    <label><input type="radio" name="s7" value="d"> 15</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Vocabulaire – Mode</p>
+  <p>Le mode d'une série statistique est :</p>
+  <div class="options">
+    <label><input type="radio" name="s8" value="a"> la valeur centrale de la série triée</label>
+    <label><input type="radio" name="s8" value="b"> la moyenne des valeurs extrêmes</label>
+    <label><input type="radio" name="s8" value="c"> la plus petite valeur</label>
+    <label><input type="radio" name="s8" value="d"> la valeur qui apparaît le plus souvent</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Calcul – Mode</p>
+  <p>Série : 5, 8, 5, 12, 8, 5, 10. Le mode est :</p>
+  <div class="options">
+    <label><input type="radio" name="s9" value="a"> 8</label>
+    <label><input type="radio" name="s9" value="b"> 5</label>
+    <label><input type="radio" name="s9" value="c"> 10</label>
+    <label><input type="radio" name="s9" value="d"> 12</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Propriété – Moyenne et valeurs extrêmes</p>
+  <p>La moyenne est sensible aux valeurs extrêmes. Cela signifie que :</p>
+  <div class="options">
+    <label><input type="radio" name="s10" value="a"> la moyenne est toujours égale à la médiane</label>
+    <label><input type="radio" name="s10" value="b"> la moyenne ne change jamais</label>
+    <label><input type="radio" name="s10" value="c"> une seule valeur très grande ou très petite peut beaucoup modifier la moyenne</label>
+    <label><input type="radio" name="s10" value="d"> la moyenne est toujours un nombre entier</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Calcul – Moyenne en contexte</p>
+  <p>Un menuisier découpe 4 planches de longueurs : 120 cm, 130 cm, 110 cm, 140 cm. La longueur moyenne est :</p>
+  <div class="options">
+    <label><input type="radio" name="s11" value="a"> 125 cm</label>
+    <label><input type="radio" name="s11" value="b"> 130 cm</label>
+    <label><input type="radio" name="s11" value="c"> 120 cm</label>
+    <label><input type="radio" name="s11" value="d"> 135 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Vocabulaire – Quartile Q₁</p>
+  <p>Le premier quartile Q₁ sépare la série triée de sorte que :</p>
+  <div class="options">
+    <label><input type="radio" name="s12" value="a"> 50 % des valeurs lui sont inférieures</label>
+    <label><input type="radio" name="s12" value="b"> 75 % des valeurs lui sont inférieures</label>
+    <label><input type="radio" name="s12" value="c"> 10 % des valeurs lui sont inférieures</label>
+    <label><input type="radio" name="s12" value="d"> 25 % des valeurs lui sont inférieures ou égales</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Méthode – Médiane, première étape</p>
+  <p>Pour trouver la médiane d'une série, la première étape est :</p>
+  <div class="options">
+    <label><input type="radio" name="s13" value="a"> calculer la moyenne</label>
+    <label><input type="radio" name="s13" value="b"> trier les valeurs dans l'ordre croissant</label>
+    <label><input type="radio" name="s13" value="c"> compter le nombre de valeurs paires</label>
+    <label><input type="radio" name="s13" value="d"> calculer l'étendue</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Calcul – Étendue en contexte</p>
+  <p>Les temps d'intervention d'un artisan menuisier sont : 25, 30, 18, 45, 22 minutes. L'étendue est :</p>
+  <div class="options">
+    <label><input type="radio" name="s14" value="a"> 45 min</label>
+    <label><input type="radio" name="s14" value="b"> 18 min</label>
+    <label><input type="radio" name="s14" value="c"> 27 min</label>
+    <label><input type="radio" name="s14" value="d"> 28 min</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Lecture – Boîte à moustaches</p>
+  <p>Sur une boîte à moustaches, la boîte s'étend de :</p>
+  <div class="options">
+    <label><input type="radio" name="s15" value="a"> Q₁ à Q₃</label>
+    <label><input type="radio" name="s15" value="b"> Min à Max</label>
+    <label><input type="radio" name="s15" value="c"> Min à Q₁</label>
+    <label><input type="radio" name="s15" value="d"> la moyenne à la médiane</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
+<div class="score-box" id="score-socle"></div>
+</form>
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<form id="qcm-standard">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Calcul – Moyenne avec effectifs</p>
+  <p>Dans un atelier de menuiserie, on relève le nombre de pièces produites par jour sur 5 jours : 12 (2 jours), 15 (2 jours), 20 (1 jour). La moyenne journalière est :</p>
+  <div class="options">
+    <label><input type="radio" name="t1" value="a"> 15,7</label>
+    <label><input type="radio" name="t1" value="b"> 15</label>
+    <label><input type="radio" name="t1" value="c"> 14,8</label>
+    <label><input type="radio" name="t1" value="d"> 12,5</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Calcul – Médiane (N pair)</p>
+  <p>Série triée de 8 valeurs : 10, 12, 15, 18, 20, 22, 25, 30. La médiane est :</p>
+  <div class="options">
+    <label><input type="radio" name="t2" value="a"> 18</label>
+    <label><input type="radio" name="t2" value="b"> 19</label>
+    <label><input type="radio" name="t2" value="c"> 20</label>
+    <label><input type="radio" name="t2" value="d"> 17,5</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Calcul – Quartiles</p>
+  <p>Série triée de 12 valeurs : 18, 20, 22, 25, 27, 28, 30, 32, 35, 40, 45, 55. Le premier quartile Q₁ vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="t3" value="a"> 23,5</label>
+    <label><input type="radio" name="t3" value="b"> 22</label>
+    <label><input type="radio" name="t3" value="c"> 25</label>
+    <label><input type="radio" name="t3" value="d"> 20</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Calcul – Écart interquartile</p>
+  <p>Si Q₁ = 23,5 et Q₃ = 37,5, l'écart interquartile (IQR) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="t4" value="a"> 61</label>
+    <label><input type="radio" name="t4" value="b"> 30,5</label>
+    <label><input type="radio" name="t4" value="c"> 7</label>
+    <label><input type="radio" name="t4" value="d"> 14</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Interprétation – IQR</p>
+  <p>L'écart interquartile représente :</p>
+  <div class="options">
+    <label><input type="radio" name="t5" value="a"> l'étendue de toutes les données</label>
+    <label><input type="radio" name="t5" value="b"> l'étendue des 50 % centraux des données</label>
+    <label><input type="radio" name="t5" value="c"> la distance entre la moyenne et la médiane</label>
+    <label><input type="radio" name="t5" value="d"> le double de l'écart-type</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Calcul – Moyenne par classes</p>
+  <p>Des durées d'intervention sont regroupées par classes :<br>[10;20[ : 3 interventions, [20;30[ : 7 interventions, [30;40[ : 6 interventions, [40;50[ : 4 interventions. La moyenne est :</p>
+  <div class="options">
+    <label><input type="radio" name="t6" value="a"> 25 min</label>
+    <label><input type="radio" name="t6" value="b"> 32 min</label>
+    <label><input type="radio" name="t6" value="c"> 30,5 min</label>
+    <label><input type="radio" name="t6" value="d"> 27 min</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Vocabulaire – Classe modale</p>
+  <p>Dans le tableau de la question 6, la classe modale est :</p>
+  <div class="options">
+    <label><input type="radio" name="t7" value="a"> [20;30[</label>
+    <label><input type="radio" name="t7" value="b"> [30;40[</label>
+    <label><input type="radio" name="t7" value="c"> [10;20[</label>
+    <label><input type="radio" name="t7" value="d"> [40;50[</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Calcul – Centre de classe</p>
+  <p>Le centre de la classe [30;40[ est :</p>
+  <div class="options">
+    <label><input type="radio" name="t8" value="a"> 30</label>
+    <label><input type="radio" name="t8" value="b"> 40</label>
+    <label><input type="radio" name="t8" value="c"> 10</label>
+    <label><input type="radio" name="t8" value="d"> 35</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Interprétation – Écart-type</p>
+  <p>Un menuisier agenceur mesure les temps de pose de 10 cuisines. L'écart-type est \(\sigma = 2\) min. Cela signifie que :</p>
+  <div class="options">
+    <label><input type="radio" name="t9" value="a"> les temps de pose varient entre 0 et 2 min</label>
+    <label><input type="radio" name="t9" value="b"> en moyenne, les temps de pose s'écartent de ±2 min de la moyenne</label>
+    <label><input type="radio" name="t9" value="c"> la médiane vaut 2 min</label>
+    <label><input type="radio" name="t9" value="d"> la moyenne vaut 2 min</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Comparaison – Régularité</p>
+  <p>Deux équipes de pose ont la même moyenne (30 min). L'équipe A a un écart-type de 2 min et l'équipe B de 12 min. L'équipe la plus régulière est :</p>
+  <div class="options">
+    <label><input type="radio" name="t10" value="a"> l'équipe B car son écart-type est plus grand</label>
+    <label><input type="radio" name="t10" value="b"> impossible à dire sans la médiane</label>
+    <label><input type="radio" name="t10" value="c"> l'équipe A car son écart-type est plus petit</label>
+    <label><input type="radio" name="t10" value="d"> les deux équipes sont aussi régulières</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Lecture – Boîte à moustaches</p>
+  <p>Sur une boîte à moustaches, le trait vertical à l'intérieur de la boîte représente :</p>
+  <div class="options">
+    <label><input type="radio" name="t11" value="a"> la médiane</label>
+    <label><input type="radio" name="t11" value="b"> la moyenne</label>
+    <label><input type="radio" name="t11" value="c"> le mode</label>
+    <label><input type="radio" name="t11" value="d"> l'écart-type</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Lecture – Boîte à moustaches (5 valeurs)</p>
+  <p>Une boîte à moustaches indique : Min = 12, Q₁ = 20, Me = 28, Q₃ = 35, Max = 70. L'étendue vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="t12" value="a"> 15</label>
+    <label><input type="radio" name="t12" value="b"> 28</label>
+    <label><input type="radio" name="t12" value="c"> 35</label>
+    <label><input type="radio" name="t12" value="d"> 58</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 13</h3>
+  <p class="theme">Interprétation – Asymétrie</p>
+  <p>Sur une boîte à moustaches, la moustache droite est beaucoup plus longue que la moustache gauche. Cela signifie que :</p>
+  <div class="options">
+    <label><input type="radio" name="t13" value="a"> la série est parfaitement symétrique</label>
+    <label><input type="radio" name="t13" value="b"> la moyenne est égale à la médiane</label>
+    <label><input type="radio" name="t13" value="c"> il y a des valeurs élevées éloignées du reste, la distribution est asymétrique vers la droite</label>
+    <label><input type="radio" name="t13" value="d"> l'écart-type est nul</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 14</h3>
+  <p class="theme">Comparaison – Moyenne vs médiane</p>
+  <p>Un chef d'atelier note les temps d'intervention (min) : 20, 22, 25, 28, 30, 90. La moyenne vaut 35,8 min et la médiane vaut 26,5 min. Quel indicateur est le plus représentatif ?</p>
+  <div class="options">
+    <label><input type="radio" name="t14" value="a"> la moyenne, car elle utilise toutes les valeurs</label>
+    <label><input type="radio" name="t14" value="b"> la médiane, car elle n'est pas influencée par la valeur extrême 90</label>
+    <label><input type="radio" name="t14" value="c"> l'étendue, car elle mesure la dispersion</label>
+    <label><input type="radio" name="t14" value="d"> le mode, car il donne la valeur la plus fréquente</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Calcul – Fréquence</p>
+  <p>Sur 20 interventions, 7 ont une durée comprise dans la classe [20;30[. La fréquence de cette classe est :</p>
+  <div class="options">
+    <label><input type="radio" name="t15" value="a"> 35 %</label>
+    <label><input type="radio" name="t15" value="b"> 7 %</label>
+    <label><input type="radio" name="t15" value="c"> 70 %</label>
+    <label><input type="radio" name="t15" value="d"> 20 %</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
+</form>
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<form id="qcm-appro">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Calcul – Moyenne pondérée</p>
+  <p>Un fabricant de mobilier produit des étagères. Sur un mois, les durées de fabrication sont :<br>2 h (4 fois), 2,5 h (8 fois), 3 h (5 fois), 4 h (3 fois). La durée moyenne de fabrication est :</p>
+  <div class="options">
+    <label><input type="radio" name="a1" value="a"> 2,5 h</label>
+    <label><input type="radio" name="a1" value="b"> 2,75 h</label>
+    <label><input type="radio" name="a1" value="c"> 3 h</label>
+    <label><input type="radio" name="a1" value="d"> 2,88 h</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Calcul – Quartiles et IQR</p>
+  <p>Série triée de 10 valeurs : 8, 12, 15, 18, 20, 22, 25, 28, 32, 40. L'écart interquartile (IQR) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> 10</label>
+    <label><input type="radio" name="a2" value="b"> 21</label>
+    <label><input type="radio" name="a2" value="c"> 13</label>
+    <label><input type="radio" name="a2" value="d"> 17</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Formule – Variance</p>
+  <p>La variance d'une série statistique se calcule par :</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> \(\sigma^2 = \dfrac{\sum (x_i - \bar{x})^2}{N}\)</label>
+    <label><input type="radio" name="a3" value="b"> \(\sigma^2 = \dfrac{\sum x_i}{N}\)</label>
+    <label><input type="radio" name="a3" value="c"> \(\sigma^2 = x_{\max} - x_{\min}\)</label>
+    <label><input type="radio" name="a3" value="d"> \(\sigma^2 = Q_3 - Q_1\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Interprétation – Écart-type et homogénéité</p>
+  <p>Plus l'écart-type \(\sigma\) est petit, plus la série est :</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> dispersée</label>
+    <label><input type="radio" name="a4" value="b"> asymétrique</label>
+    <label><input type="radio" name="a4" value="c"> grande</label>
+    <label><input type="radio" name="a4" value="d"> homogène</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Calcul – Moyenne par classes</p>
+  <p>Consommations (kWh) de 20 machines :<br>[100;120[ : 4 machines, [120;140[ : 9 machines, [140;160[ : 5 machines, [160;180[ : 2 machines. La moyenne est :</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> 130 kWh</label>
+    <label><input type="radio" name="a5" value="b"> 135 kWh</label>
+    <label><input type="radio" name="a5" value="c"> 140 kWh</label>
+    <label><input type="radio" name="a5" value="d"> 132,5 kWh</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Comparaison – Deux séries</p>
+  <p>Équipe A : \(\bar{x}_A = 30\) min, \(\sigma_A = 1{,}6\) min. Équipe B : \(\bar{x}_B = 34\) min, \(\sigma_B = 15\) min. Quelle affirmation est correcte ?</p>
+  <div class="options">
+    <label><input type="radio" name="a6" value="a"> L'équipe B est plus rapide et plus régulière</label>
+    <label><input type="radio" name="a6" value="b"> Les deux équipes sont aussi régulières</label>
+    <label><input type="radio" name="a6" value="c"> L'équipe A est plus rapide et plus régulière</label>
+    <label><input type="radio" name="a6" value="d"> L'équipe A est plus lente mais plus régulière</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Analyse – Valeur aberrante</p>
+  <p>On a Min = 18, Q₁ = 23,5, Me = 29, Q₃ = 37,5, Max = 55. La moustache droite (Q₃ → Max) mesure 17,5, tandis que la moustache gauche (Min → Q₁) mesure 5,5. On peut dire que :</p>
+  <div class="options">
+    <label><input type="radio" name="a7" value="a"> la valeur 55 est possiblement aberrante, la distribution est asymétrique vers la droite</label>
+    <label><input type="radio" name="a7" value="b"> la série est parfaitement symétrique</label>
+    <label><input type="radio" name="a7" value="c"> la valeur 18 est aberrante</label>
+    <label><input type="radio" name="a7" value="d"> toutes les valeurs sont également réparties</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Calcul – Effet d'une valeur extrême</p>
+  <p>Série : 20, 22, 25, 28, 30 (moyenne = 25). On ajoute une valeur extrême de 85. La nouvelle moyenne est :</p>
+  <div class="options">
+    <label><input type="radio" name="a8" value="a"> 25</label>
+    <label><input type="radio" name="a8" value="b"> 30</label>
+    <label><input type="radio" name="a8" value="c"> 42,5</label>
+    <label><input type="radio" name="a8" value="d"> 35</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Calcul – Effet sur la médiane</p>
+  <p>En reprenant la question 8, la médiane de la série {20, 22, 25, 28, 30, 85} vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="a9" value="a"> 25</label>
+    <label><input type="radio" name="a9" value="b"> 26,5</label>
+    <label><input type="radio" name="a9" value="c"> 28</label>
+    <label><input type="radio" name="a9" value="d"> 35</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Analyse – Robustesse</p>
+  <p>En comparant les questions 8 et 9, la moyenne est passée de 25 à 35 (+10) tandis que la médiane est passée de 25 à 26,5 (+1,5). Cela illustre que :</p>
+  <div class="options">
+    <label><input type="radio" name="a10" value="a"> la moyenne et la médiane réagissent de la même façon</label>
+    <label><input type="radio" name="a10" value="b"> la moyenne est plus robuste que la médiane</label>
+    <label><input type="radio" name="a10" value="c"> la médiane est plus robuste que la moyenne face aux valeurs extrêmes</label>
+    <label><input type="radio" name="a10" value="d"> ni la moyenne ni la médiane ne sont utiles</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Contexte professionnel – Contrôle qualité</p>
+  <p>Un métreur analyse les épaisseurs (mm) de 6 panneaux : 18,2 ; 18,0 ; 18,1 ; 18,3 ; 18,0 ; 18,2. La moyenne vaut \(\bar{x} \approx 18{,}13\) mm. L'étendue vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="a11" value="a"> 0,3 mm</label>
+    <label><input type="radio" name="a11" value="b"> 18,15 mm</label>
+    <label><input type="radio" name="a11" value="c"> 0,2 mm</label>
+    <label><input type="radio" name="a11" value="d"> 36 mm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Lecture – Comparer deux boîtes à moustaches</p>
+  <p>Équipe A : Min=10, Q₁=18, Me=22, Q₃=28, Max=35.<br>Équipe B : Min=5, Q₁=15, Me=25, Q₃=42, Max=80.<br>L'IQR de l'équipe B vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="a12" value="a"> 10</label>
+    <label><input type="radio" name="a12" value="b"> 75</label>
+    <label><input type="radio" name="a12" value="c"> 20</label>
+    <label><input type="radio" name="a12" value="d"> 27</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Analyse – Comparaison de régularité</p>
+  <p>En reprenant la question 12, quelle équipe est la plus régulière ?</p>
+  <div class="options">
+    <label><input type="radio" name="a13" value="a"> l'équipe B car son Max est plus grand</label>
+    <label><input type="radio" name="a13" value="b"> l'équipe A car son IQR est 10 contre 27 pour B</label>
+    <label><input type="radio" name="a13" value="c"> les deux équipes sont aussi régulières</label>
+    <label><input type="radio" name="a13" value="d"> impossible à déterminer sans l'écart-type</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Calcul – Écart-type à la calculatrice</p>
+  <p>Un installateur d'agencement relève les temps d'installation (min) : 28, 30, 29, 31, 28, 30, 29, 32, 27, 30. La calculatrice donne \(\sigma \approx 1{,}4\) min. Cela signifie :</p>
+  <div class="options">
+    <label><input type="radio" name="a14" value="a"> les installations durent toutes exactement 1,4 min</label>
+    <label><input type="radio" name="a14" value="b"> les installations varient entre 1 et 4 min</label>
+    <label><input type="radio" name="a14" value="c"> les durées s'écartent en moyenne de ±1,4 min de la moyenne ; la série est très homogène</label>
+    <label><input type="radio" name="a14" value="d"> 1,4 min est la médiane de la série</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Problème ouvert – Choix d'indicateur</p>
+  <p>Un chef de chantier veut comparer la rapidité de deux artisans menuisiers. L'artisan X a une médiane de 25 min et un IQR de 4 min. L'artisan Y a une médiane de 23 min et un IQR de 20 min. Quel choix est le plus pertinent pour un chantier nécessitant de la régularité ?</p>
+  <div class="options">
+    <label><input type="radio" name="a15" value="a"> l'artisan X, car malgré une médiane légèrement plus haute, sa régularité (IQR = 4) garantit des délais fiables</label>
+    <label><input type="radio" name="a15" value="b"> l'artisan Y, car sa médiane est plus basse</label>
+    <label><input type="radio" name="a15" value="c"> les deux artisans se valent</label>
+    <label><input type="radio" name="a15" value="d"> impossible à déterminer sans connaître l'écart-type</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "La moyenne est la somme de toutes les valeurs divisée par le nombre total de valeurs : x̄ = Σxᵢ / N.",
+  "s2": "La médiane partage la série triée en deux moitiés égales : 50 % des valeurs sont ≤ Me et 50 % sont ≥ Me.",
+  "s3": "L'étendue = valeur maximale − valeur minimale. Elle mesure la dispersion totale de la série.",
+  "s4": "Moyenne = (8 + 12 + 10 + 14 + 6) / 5 = 50 / 5 = 10.",
+  "s5": "N = 5 (impair). Le rang de la médiane est (5+1)/2 = 3. La 3ᵉ valeur est 7.",
+  "s6": "Étendue = 25 − 18 = 7 °C.",
+  "s7": "N = 4 (pair). Médiane = moyenne des rangs 2 et 3 : (14 + 18) / 2 = 16.",
+  "s8": "Le mode est la valeur dont l'effectif est le plus élevé, c'est-à-dire celle qui apparaît le plus souvent.",
+  "s9": "5 apparaît 3 fois, 8 apparaît 2 fois. Le mode est 5 (effectif le plus élevé).",
+  "s10": "La moyenne prend en compte toutes les valeurs. Une seule valeur très grande ou très petite peut beaucoup la modifier.",
+  "s11": "Moyenne = (120 + 130 + 110 + 140) / 4 = 500 / 4 = 125 cm.",
+  "s12": "Q₁ est la valeur telle que 25 % des données lui sont inférieures ou égales.",
+  "s13": "Pour trouver la médiane, il faut d'abord trier les valeurs dans l'ordre croissant, puis repérer la valeur centrale.",
+  "s14": "Étendue = 45 − 18 = 27 min.",
+  "s15": "La boîte s'étend de Q₁ à Q₃ et représente les 50 % centraux des données. Les moustaches vont de Min à Q₁ et de Q₃ à Max.",
+  /* === STANDARD === */
+  "t1": "Moyenne = (12×2 + 15×2 + 20×1) / 5 = (24 + 30 + 20) / 5 = 74 / 5 = 14,8.",
+  "t2": "N = 8 (pair). Médiane = moyenne des rangs 4 et 5 : (18 + 20) / 2 = 19.",
+  "t3": "1ʳᵉ moitié : 18, 20, 22, 25, 27, 28 → Q₁ = (22 + 25) / 2 = 23,5.",
+  "t4": "IQR = Q₃ − Q₁ = 37,5 − 23,5 = 14.",
+  "t5": "L'IQR = Q₃ − Q₁ représente l'étendue des 50 % centraux des données.",
+  "t6": "Centres : 15, 25, 35, 45. Moyenne = (3×15 + 7×25 + 6×35 + 4×45) / 20 = (45 + 175 + 210 + 180) / 20 = 610 / 20 = 30,5 min.",
+  "t7": "La classe modale est celle ayant le plus grand effectif : [20;30[ avec 7 interventions.",
+  "t8": "Le centre de classe = (30 + 40) / 2 = 35.",
+  "t9": "L'écart-type mesure la dispersion moyenne autour de la moyenne. σ = 2 min signifie que les temps s'écartent en moyenne de ±2 min de x̄.",
+  "t10": "Plus l'écart-type est petit, plus la série est homogène. σ_A = 2 < σ_B = 12, donc l'équipe A est plus régulière.",
+  "t11": "Le trait vertical dans la boîte représente la médiane (Me).",
+  "t12": "Étendue = Max − Min = 70 − 12 = 58.",
+  "t13": "Une moustache droite beaucoup plus longue indique des valeurs élevées éloignées : distribution asymétrique vers la droite.",
+  "t14": "La valeur 90 tire la moyenne vers le haut (35,8). La médiane (26,5) est plus représentative car elle n'est pas influencée par cette valeur extrême.",
+  "t15": "Fréquence = effectif / effectif total = 7 / 20 = 0,35 = 35 %.",
+  /* === APPROFONDISSEMENT === */
+  "a1": "Moyenne = (4×2 + 8×2,5 + 5×3 + 3×4) / 20 = (8 + 20 + 15 + 12) / 20 = 55 / 20 = 2,75 h.",
+  "a2": "1ʳᵉ moitié : 8, 12, 15, 18, 20 → Q₁ = 15. 2ᵉ moitié : 22, 25, 28, 32, 40 → Q₃ = 28. IQR = 28 − 15 = 13.",
+  "a3": "La variance σ² = Σ(xᵢ − x̄)² / N mesure la moyenne des carrés des écarts à la moyenne.",
+  "a4": "Un écart-type petit signifie que les valeurs sont proches de la moyenne : la série est homogène.",
+  "a5": "Centres : 110, 130, 150, 170. Moyenne = (4×110 + 9×130 + 5×150 + 2×170) / 20 = (440 + 1170 + 750 + 340) / 20 = 2700 / 20 = 135 kWh.",
+  "a6": "x̄_A = 30 < x̄_B = 34 (A plus rapide) et σ_A = 1,6 < σ_B = 15 (A plus régulière). L'équipe A est plus rapide ET plus régulière.",
+  "a7": "La moustache droite (17,5) est 3 fois plus longue que la gauche (5,5) : distribution asymétrique vers la droite, 55 min est possiblement aberrante.",
+  "a8": "Nouvelle somme = 20 + 22 + 25 + 28 + 30 + 85 = 210. Nouvelle moyenne = 210 / 6 = 35.",
+  "a9": "N = 6 (pair). Médiane = moyenne des rangs 3 et 4 : (25 + 28) / 2 = 26,5. La valeur 85 n'a presque pas changé la médiane.",
+  "a10": "La moyenne a augmenté de 10 (de 25 à 35) tandis que la médiane n'a bougé que de 1,5 (de 25 à 26,5). La médiane est bien plus robuste face aux valeurs extrêmes.",
+  "a11": "Étendue = 18,3 − 18,0 = 0,3 mm.",
+  "a12": "IQR de B = Q₃ − Q₁ = 42 − 15 = 27.",
+  "a13": "IQR_A = 28 − 18 = 10. IQR_B = 42 − 15 = 27. L'équipe A (IQR = 10) est 2,7 fois plus régulière que B.",
+  "a14": "σ ≈ 1,4 min signifie que les durées s'écartent en moyenne de ±1,4 min de la moyenne. C'est très faible, la série est homogène.",
+  "a15": "L'artisan X a un IQR de 4 min (très régulier) contre 20 min pour Y. Pour un chantier nécessitant des délais fiables, la régularité prime : X est le meilleur choix."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '✅ Bonne réponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '❌ Mauvaise réponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '⚠️ Pas de réponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

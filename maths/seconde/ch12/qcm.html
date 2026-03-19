@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch12 – QCM – Théorème de Pythagore et réciproque – 2nde MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}
+
+.qcm-header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.qcm-header .dh-item{display:flex;align-items:center;gap:6px}
+.qcm-header strong{color:var(--p)}
+.q-block{border:1px solid #e2e8f0;border-radius:10px;padding:18px 20px;margin:16px 0;background:#fff}
+.q-block h3{margin:0 0 10px;font-size:1em;color:var(--p)}
+.q-block .theme{font-size:.78em;color:#718096;margin-bottom:8px;font-style:italic}
+.options label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:1.5px solid #e2e8f0;transition:background .15s,border-color .15s;font-size:.95em}
+.options label:hover{background:var(--p-bg);border-color:var(--p-border)}
+.options input[type="radio"]{margin-right:8px;accent-color:var(--p)}
+.options label.correct{background:#d1fae5;border-color:#34d399}
+.options label.incorrect{background:#fee2e2;border-color:#f87171}
+.q-feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:.88em;display:none}
+.q-feedback.ok{background:#d1fae5;color:#065f46;display:block}
+.q-feedback.ko{background:#fee2e2;color:#991b1b;display:block}
+.btn-valider{background:var(--p);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;margin-top:20px;display:block}
+.btn-valider:hover{opacity:.85}
+.btn-reset{background:#e2e8f0;color:#374151;border:none;padding:8px 20px;border-radius:8px;font-size:.9em;cursor:pointer;margin-top:8px}
+.btn-reset:hover{background:#cbd5e1}
+.score-box{margin-top:24px;padding:18px 24px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:700;display:none}
+.score-box.show{display:block}
+.score-good{background:#d1fae5;color:#065f46;border:2px solid #34d399}
+.score-avg{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}
+.score-low{background:#fee2e2;color:#991b1b;border:2px solid #f87171}
+@media print{.nb,.btn-valider,.btn-reset,.diff-toggle-wrap{display:none}.options label{border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>QCM – Théorème de Pythagore et réciproque</h1>
+  <p class="sous-titre">Chapitre 12 | Seconde Bac Pro MAMA | Mathématiques</p>
+</header>
+
+<div class="qcm-header">
+  <div class="dh-item">⏱ <strong>Durée :</strong> 15–20 min</div>
+  <div class="dh-item">📄 <strong>15 questions</strong></div>
+  <div class="dh-item">🧮 <strong>Calculatrice autorisée</strong></div>
+</div>
+
+<p style="font-size:.9em;color:#4a5568">Pour chaque question, cochez la <strong>seule bonne réponse</strong> puis cliquez sur « Valider le QCM » en bas de page.</p>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<form id="qcm-socle">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Vocabulaire – Triangle rectangle</p>
+  <p>Dans un triangle rectangle, comment s'appelle le côté opposé à l'angle droit ?</p>
+  <div class="options">
+    <label><input type="radio" name="s1" value="a"> La médiane</label>
+    <label><input type="radio" name="s1" value="b"> La diagonale</label>
+    <label><input type="radio" name="s1" value="c"> L'hypoténuse</label>
+    <label><input type="radio" name="s1" value="d"> La hauteur</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Vocabulaire – Hypoténuse</p>
+  <p>L'hypoténuse d'un triangle rectangle est :</p>
+  <div class="options">
+    <label><input type="radio" name="s2" value="a"> le plus petit côté</label>
+    <label><input type="radio" name="s2" value="b"> le plus grand côté</label>
+    <label><input type="radio" name="s2" value="c"> un des côtés de l'angle droit</label>
+    <label><input type="radio" name="s2" value="d"> la somme des deux autres côtés</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Formule – Théorème de Pythagore</p>
+  <p>Dans un triangle rectangle en A, le théorème de Pythagore s'écrit :</p>
+  <div class="options">
+    <label><input type="radio" name="s3" value="a"> \(BC^2 = AB^2 + AC^2\)</label>
+    <label><input type="radio" name="s3" value="b"> \(BC = AB + AC\)</label>
+    <label><input type="radio" name="s3" value="c"> \(AB^2 = BC^2 + AC^2\)</label>
+    <label><input type="radio" name="s3" value="d"> \(BC^2 = AB^2 - AC^2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Calcul – Carrés</p>
+  <p>Calculer \(6^2 + 8^2\).</p>
+  <div class="options">
+    <label><input type="radio" name="s4" value="a"> 14</label>
+    <label><input type="radio" name="s4" value="b"> 48</label>
+    <label><input type="radio" name="s4" value="c"> 96</label>
+    <label><input type="radio" name="s4" value="d"> 100</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Calcul – Hypoténuse</p>
+  <p>Triangle rectangle en A avec AB = 6 cm et AC = 8 cm. Combien vaut BC ?</p>
+  <div class="options">
+    <label><input type="radio" name="s5" value="a"> 14 cm</label>
+    <label><input type="radio" name="s5" value="b"> 10 cm</label>
+    <label><input type="radio" name="s5" value="c"> 48 cm</label>
+    <label><input type="radio" name="s5" value="d"> 100 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Calcul – Racine carrée</p>
+  <p>Combien vaut \(\sqrt{144}\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="s6" value="a"> 72</label>
+    <label><input type="radio" name="s6" value="b"> 14</label>
+    <label><input type="radio" name="s6" value="c"> 12</label>
+    <label><input type="radio" name="s6" value="d"> 11</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Calcul – Côté de l'angle droit</p>
+  <p>Triangle rectangle en A avec BC = 13 cm (hypoténuse) et AC = 5 cm. Calculer AB.</p>
+  <div class="options">
+    <label><input type="radio" name="s7" value="a"> 12 cm</label>
+    <label><input type="radio" name="s7" value="b"> 8 cm</label>
+    <label><input type="radio" name="s7" value="c"> 18 cm</label>
+    <label><input type="radio" name="s7" value="d"> 9 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Méthode – Calculer un côté</p>
+  <p>Pour calculer un côté de l'angle droit quand on connaît l'hypoténuse et l'autre côté, on utilise :</p>
+  <div class="options">
+    <label><input type="radio" name="s8" value="a"> la somme des trois côtés</label>
+    <label><input type="radio" name="s8" value="b"> l'addition des carrés des trois côtés</label>
+    <label><input type="radio" name="s8" value="c"> la multiplication des deux côtés connus</label>
+    <label><input type="radio" name="s8" value="d"> la différence des carrés : hypoténuse² − autre côté²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Triplet pythagoricien</p>
+  <p>Lequel de ces triplets est un triplet pythagoricien ?</p>
+  <div class="options">
+    <label><input type="radio" name="s9" value="a"> 2 – 3 – 4</label>
+    <label><input type="radio" name="s9" value="b"> 3 – 4 – 5</label>
+    <label><input type="radio" name="s9" value="c"> 4 – 5 – 6</label>
+    <label><input type="radio" name="s9" value="d"> 5 – 6 – 7</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Réciproque – Principe</p>
+  <p>Pour vérifier si un triangle est rectangle, on commence par :</p>
+  <div class="options">
+    <label><input type="radio" name="s10" value="a"> calculer le périmètre</label>
+    <label><input type="radio" name="s10" value="b"> mesurer les angles</label>
+    <label><input type="radio" name="s10" value="c"> identifier le plus grand côté</label>
+    <label><input type="radio" name="s10" value="d"> calculer l'aire</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Réciproque – Application simple</p>
+  <p>Un triangle a des côtés de 3 cm, 4 cm et 5 cm. Est-il rectangle ?</p>
+  <div class="options">
+    <label><input type="radio" name="s11" value="a"> Oui, car \(3^2 + 4^2 = 5^2\)</label>
+    <label><input type="radio" name="s11" value="b"> Non, car \(3 + 4 \neq 5\)</label>
+    <label><input type="radio" name="s11" value="c"> Oui, car \(3 + 4 + 5 = 12\)</label>
+    <label><input type="radio" name="s11" value="d"> Non, car \(3^2 + 4^2 = 25\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Contexte quotidien – Échelle</p>
+  <p>Une échelle de 5 m est posée contre un mur. Le pied de l'échelle est à 3 m du mur. À quelle hauteur arrive l'échelle ?</p>
+  <div class="options">
+    <label><input type="radio" name="s12" value="a"> 2 m</label>
+    <label><input type="radio" name="s12" value="b"> 4 m</label>
+    <label><input type="radio" name="s12" value="c"> 8 m</label>
+    <label><input type="radio" name="s12" value="d"> 6 m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 13</h3>
+  <p class="theme">Vocabulaire – Identifier l'hypoténuse</p>
+  <p>Dans un triangle rectangle en B, l'hypoténuse est :</p>
+  <div class="options">
+    <label><input type="radio" name="s13" value="a"> le côté AB</label>
+    <label><input type="radio" name="s13" value="b"> le côté BC</label>
+    <label><input type="radio" name="s13" value="c"> le côté le plus court</label>
+    <label><input type="radio" name="s13" value="d"> le côté AC</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Calcul – Carré d'un nombre</p>
+  <p>Combien vaut \(15^2\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="s14" value="a"> 30</label>
+    <label><input type="radio" name="s14" value="b"> 150</label>
+    <label><input type="radio" name="s14" value="c"> 225</label>
+    <label><input type="radio" name="s14" value="d"> 215</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Règle des 3-4-5</p>
+  <p>Sur un chantier, un artisan mesure 3 m et 4 m le long de deux murs. Si la diagonale mesure 5 m, que peut-il conclure ?</p>
+  <div class="options">
+    <label><input type="radio" name="s15" value="a"> L'angle entre les deux murs est droit</label>
+    <label><input type="radio" name="s15" value="b"> Les deux murs sont parallèles</label>
+    <label><input type="radio" name="s15" value="c"> Les deux murs ont la même longueur</label>
+    <label><input type="radio" name="s15" value="d"> L'angle est de 60°</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
+<div class="score-box" id="score-socle"></div>
+</form>
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<form id="qcm-standard">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Calcul – Hypoténuse</p>
+  <p>Triangle rectangle en A avec AB = 5 cm et AC = 12 cm. Calculer BC.</p>
+  <div class="options">
+    <label><input type="radio" name="t1" value="a"> 17 cm</label>
+    <label><input type="radio" name="t1" value="b"> 13 cm</label>
+    <label><input type="radio" name="t1" value="c"> \(\sqrt{119}\) cm</label>
+    <label><input type="radio" name="t1" value="d"> 15 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Calcul – Côté de l'angle droit</p>
+  <p>Triangle rectangle en A avec BC = 17 cm et AB = 8 cm. Calculer AC.</p>
+  <div class="options">
+    <label><input type="radio" name="t2" value="a"> 9 cm</label>
+    <label><input type="radio" name="t2" value="b"> 25 cm</label>
+    <label><input type="radio" name="t2" value="c"> 15 cm</label>
+    <label><input type="radio" name="t2" value="d"> \(\sqrt{353}\) cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Réciproque – Triangle rectangle ?</p>
+  <p>Un triangle a des côtés de 9 cm, 12 cm et 15 cm. Est-il rectangle ?</p>
+  <div class="options">
+    <label><input type="radio" name="t3" value="a"> Oui, car \(9^2 + 12^2 = 15^2\)</label>
+    <label><input type="radio" name="t3" value="b"> Non, car \(9^2 + 12^2 \neq 15^2\)</label>
+    <label><input type="radio" name="t3" value="c"> Oui, car \(9 + 12 = 21 \neq 15\)</label>
+    <label><input type="radio" name="t3" value="d"> On ne peut pas savoir</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Réciproque – Triangle non rectangle</p>
+  <p>Un triangle a des côtés de 5 cm, 7 cm et 10 cm. Est-il rectangle ?</p>
+  <div class="options">
+    <label><input type="radio" name="t4" value="a"> Oui, car \(5^2 + 7^2 = 10^2\)</label>
+    <label><input type="radio" name="t4" value="b"> Oui, car 5 + 7 > 10</label>
+    <label><input type="radio" name="t4" value="c"> Non, car \(5^2 + 7^2 = 72\) et \(10^2 = 100\), mais il faut vérifier autrement</label>
+    <label><input type="radio" name="t4" value="d"> Non, car \(5^2 + 7^2 = 74 \neq 100 = 10^2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Contexte professionnel – Équerrage</p>
+  <p>Un menuisier vérifie l'équerrage d'un cadre rectangulaire de 90 cm sur 120 cm. La diagonale théorique vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="t5" value="a"> 210 cm</label>
+    <label><input type="radio" name="t5" value="b"> 150 cm</label>
+    <label><input type="radio" name="t5" value="c"> \(\sqrt{210}\) cm</label>
+    <label><input type="radio" name="t5" value="d"> 130 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 6</h3>
+  <p class="theme">Calcul – Valeur approchée</p>
+  <p>Triangle rectangle en B avec AB = 5 cm et BC = 7 cm. Calculer AC (arrondi au centième).</p>
+  <div class="options">
+    <label><input type="radio" name="t6" value="a"> \(\approx 8{,}60\) cm</label>
+    <label><input type="radio" name="t6" value="b"> \(\approx 4{,}90\) cm</label>
+    <label><input type="radio" name="t6" value="c"> 12 cm</label>
+    <label><input type="radio" name="t6" value="d"> \(\approx 7{,}42\) cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 7</h3>
+  <p class="theme">Triplet pythagoricien – Multiple</p>
+  <p>Le triplet 6 – 8 – 10 est un triplet pythagoricien car :</p>
+  <div class="options">
+    <label><input type="radio" name="t7" value="a"> \(6 + 8 = 14\)</label>
+    <label><input type="radio" name="t7" value="b"> ces trois nombres sont pairs</label>
+    <label><input type="radio" name="t7" value="c"> c'est un multiple du triplet 3 – 4 – 5 (facteur 2)</label>
+    <label><input type="radio" name="t7" value="d"> \(6 \times 8 = 48\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Contexte professionnel – Diagonale d'un panneau</p>
+  <p>Un panneau de bois rectangulaire mesure 60 cm sur 80 cm. La diagonale vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="t8" value="a"> 140 cm</label>
+    <label><input type="radio" name="t8" value="b"> 70 cm</label>
+    <label><input type="radio" name="t8" value="c"> \(\sqrt{10\,000}\) cm</label>
+    <label><input type="radio" name="t8" value="d"> 100 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Méthode – Réciproque</p>
+  <p>Pour utiliser la réciproque du théorème de Pythagore, il faut comparer :</p>
+  <div class="options">
+    <label><input type="radio" name="t9" value="a"> les trois côtés directement</label>
+    <label><input type="radio" name="t9" value="b"> le carré du plus grand côté et la somme des carrés des deux autres</label>
+    <label><input type="radio" name="t9" value="c"> la somme des trois côtés avec leur produit</label>
+    <label><input type="radio" name="t9" value="d"> le plus grand côté avec la somme des deux autres</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Contexte professionnel – Toiture</p>
+  <p>Un charpentier doit calculer la longueur d'un chevron. La portée horizontale est de 4 m et la hauteur du pignon est de 3 m. Le chevron (hypoténuse) mesure :</p>
+  <div class="options">
+    <label><input type="radio" name="t10" value="a"> 5 m</label>
+    <label><input type="radio" name="t10" value="b"> 7 m</label>
+    <label><input type="radio" name="t10" value="c"> \(\sqrt{7}\) m</label>
+    <label><input type="radio" name="t10" value="d"> 3,5 m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Calcul – Hypoténuse non entière</p>
+  <p>Triangle rectangle en C avec AC = 4 cm et BC = 6 cm. La valeur exacte de AB est :</p>
+  <div class="options">
+    <label><input type="radio" name="t11" value="a"> 10 cm</label>
+    <label><input type="radio" name="t11" value="b"> \(\sqrt{20}\) cm</label>
+    <label><input type="radio" name="t11" value="c"> \(\sqrt{52}\) cm</label>
+    <label><input type="radio" name="t11" value="d"> \(\sqrt{36}\) cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Contexte professionnel – Escalier</p>
+  <p>Un menuisier construit un escalier droit. La hauteur est de 2,5 m et le recul horizontal est de 3,5 m. La longueur du limon (hypoténuse) vaut environ :</p>
+  <div class="options">
+    <label><input type="radio" name="t12" value="a"> 6 m</label>
+    <label><input type="radio" name="t12" value="b"> 4,30 m</label>
+    <label><input type="radio" name="t12" value="c"> 3,04 m</label>
+    <label><input type="radio" name="t12" value="d"> 5,50 m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 13</h3>
+  <p class="theme">Erreur fréquente</p>
+  <p>Un élève écrit : « \(BC = \sqrt{AB^2 + AC^2}\) donc \(BC = AB + AC\). » Cette affirmation est :</p>
+  <div class="options">
+    <label><input type="radio" name="t13" value="a"> toujours vraie</label>
+    <label><input type="radio" name="t13" value="b"> vraie si AB = AC</label>
+    <label><input type="radio" name="t13" value="c"> vraie pour le triplet 3-4-5</label>
+    <label><input type="radio" name="t13" value="d"> fausse : \(\sqrt{a^2 + b^2} \neq a + b\) en général</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 14</h3>
+  <p class="theme">Réciproque – Identification de l'angle droit</p>
+  <p>Un triangle a des côtés de 5 cm, 12 cm et 13 cm. S'il est rectangle, où se trouve l'angle droit ?</p>
+  <div class="options">
+    <label><input type="radio" name="t14" value="a"> Opposé au côté de 13 cm</label>
+    <label><input type="radio" name="t14" value="b"> Opposé au côté de 5 cm</label>
+    <label><input type="radio" name="t14" value="c"> Opposé au côté de 12 cm</label>
+    <label><input type="radio" name="t14" value="d"> Au milieu du triangle</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Contexte professionnel – Règle des 3-4-5</p>
+  <p>Un artisan menuisier utilise la règle des 3-4-5 avec des mesures en centimètres : 30 cm, 40 cm et 50 cm. Cela fonctionne car :</p>
+  <div class="options">
+    <label><input type="radio" name="t15" value="a"> \(30 + 40 = 70\)</label>
+    <label><input type="radio" name="t15" value="b"> \(30 \times 40 = 1\,200\)</label>
+    <label><input type="radio" name="t15" value="c"> \(30^2 + 40^2 = 900 + 1\,600 = 2\,500 = 50^2\)</label>
+    <label><input type="radio" name="t15" value="d"> \(30 + 40 + 50 = 120\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
+</form>
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<form id="qcm-appro">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Calcul – Côté manquant</p>
+  <p>Triangle rectangle en A avec BC = 25 cm et AB = 7 cm. Calculer AC.</p>
+  <div class="options">
+    <label><input type="radio" name="a1" value="a"> 18 cm</label>
+    <label><input type="radio" name="a1" value="b"> \(\sqrt{576}\) cm</label>
+    <label><input type="radio" name="a1" value="c"> 24 cm</label>
+    <label><input type="radio" name="a1" value="d"> 32 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Réciproque – Justification complète</p>
+  <p>Un triangle a des côtés de 8 cm, 15 cm et 17 cm. Choisir la justification correcte :</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> \(8^2 + 17^2 = 353 = 15^2\), le triangle est rectangle</label>
+    <label><input type="radio" name="a2" value="b"> \(8^2 + 15^2 = 64 + 225 = 289 = 17^2\), le triangle est rectangle</label>
+    <label><input type="radio" name="a2" value="c"> \(8 + 15 = 23 \neq 17\), le triangle n'est pas rectangle</label>
+    <label><input type="radio" name="a2" value="d"> \(8^2 + 15^2 = 289 \neq 17^2\), le triangle n'est pas rectangle</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Calcul – Valeur exacte et approchée</p>
+  <p>Triangle rectangle en A avec AB = 3 cm et AC = 7 cm. La valeur exacte de BC est :</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> \(\sqrt{58}\) cm</label>
+    <label><input type="radio" name="a3" value="b"> \(\sqrt{40}\) cm</label>
+    <label><input type="radio" name="a3" value="c"> 10 cm</label>
+    <label><input type="radio" name="a3" value="d"> \(\sqrt{52}\) cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Contexte professionnel – Diagonale d'un meuble</p>
+  <p>Un fabricant de meubles vérifie qu'une armoire de 80 cm de large et 200 cm de haut passe dans un couloir de 220 cm de diagonale. La diagonale de l'armoire vaut environ :</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> 280 cm</label>
+    <label><input type="radio" name="a4" value="b"> 200 cm</label>
+    <label><input type="radio" name="a4" value="c"> 240 cm</label>
+    <label><input type="radio" name="a4" value="d"> 215,4 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Deux applications successives</p>
+  <p>Dans un rectangle ABCD avec AB = 6 cm et BC = 8 cm, calculer la diagonale AC puis vérifier que le triangle ABC est rectangle en B.</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> AC = 14 cm, le triangle n'est pas rectangle</label>
+    <label><input type="radio" name="a5" value="b"> AC = 10 cm, le triangle est rectangle en B car \(6^2 + 8^2 = 10^2\)</label>
+    <label><input type="radio" name="a5" value="c"> AC = 10 cm, mais le triangle n'est pas rectangle</label>
+    <label><input type="radio" name="a5" value="d"> AC = \(\sqrt{28}\) cm, le triangle est rectangle</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Contexte professionnel – Implantation</p>
+  <p>Un installateur d'agencement trace un angle droit au sol. Il mesure 1,5 m sur un axe et 2 m sur l'autre. La diagonale doit mesurer :</p>
+  <div class="options">
+    <label><input type="radio" name="a6" value="a"> 3,5 m</label>
+    <label><input type="radio" name="a6" value="b"> 2,25 m</label>
+    <label><input type="radio" name="a6" value="c"> 2,5 m</label>
+    <label><input type="radio" name="a6" value="d"> 3 m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Problème inverse – Trouver un côté</p>
+  <p>Un triangle rectangle a une hypoténuse de 20 cm et un côté de 16 cm. L'autre côté vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="a7" value="a"> 12 cm</label>
+    <label><input type="radio" name="a7" value="b"> 4 cm</label>
+    <label><input type="radio" name="a7" value="c"> \(\sqrt{656}\) cm</label>
+    <label><input type="radio" name="a7" value="d"> 14 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Contexte professionnel – Contreventement</p>
+  <p>Un menuisier agenceur pose une écharpe de contreventement sur un panneau rectangulaire de 1,2 m sur 1,6 m. La longueur de l'écharpe (diagonale) est :</p>
+  <div class="options">
+    <label><input type="radio" name="a8" value="a"> 2,8 m</label>
+    <label><input type="radio" name="a8" value="b"> 1,4 m</label>
+    <label><input type="radio" name="a8" value="c"> \(\sqrt{4}\) m</label>
+    <label><input type="radio" name="a8" value="d"> 2 m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Triplet pythagoricien – Vérification</p>
+  <p>Lequel de ces triplets n'est PAS un triplet pythagoricien ?</p>
+  <div class="options">
+    <label><input type="radio" name="a9" value="a"> 5 – 12 – 13</label>
+    <label><input type="radio" name="a9" value="b"> 6 – 10 – 14</label>
+    <label><input type="radio" name="a9" value="c"> 7 – 24 – 25</label>
+    <label><input type="radio" name="a9" value="d"> 8 – 15 – 17</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Problème ouvert – Distance</p>
+  <p>Un point A est situé à 6 km à l'est d'un point O et un point B à 8 km au nord de O. Quelle est la distance AB ?</p>
+  <div class="options">
+    <label><input type="radio" name="a10" value="a"> 14 km</label>
+    <label><input type="radio" name="a10" value="b"> \(\sqrt{28}\) km</label>
+    <label><input type="radio" name="a10" value="c"> 10 km</label>
+    <label><input type="radio" name="a10" value="d"> 7 km</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Contexte professionnel – Découpe en diagonale</p>
+  <p>Un ébéniste découpe un panneau carré de côté 1 m en deux triangles le long de la diagonale. La longueur de la coupe est :</p>
+  <div class="options">
+    <label><input type="radio" name="a11" value="a"> \(\sqrt{2} \approx 1{,}41\) m</label>
+    <label><input type="radio" name="a11" value="b"> 2 m</label>
+    <label><input type="radio" name="a11" value="c"> 1,5 m</label>
+    <label><input type="radio" name="a11" value="d"> \(\sqrt{3} \approx 1{,}73\) m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Problème – Périmètre et Pythagore</p>
+  <p>Un triangle rectangle a des côtés de l'angle droit mesurant 9 cm et 12 cm. Son périmètre est :</p>
+  <div class="options">
+    <label><input type="radio" name="a12" value="a"> 21 cm</label>
+    <label><input type="radio" name="a12" value="b"> 30 cm</label>
+    <label><input type="radio" name="a12" value="c"> 42 cm</label>
+    <label><input type="radio" name="a12" value="d"> 36 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Contexte BTS – Tolérance dimensionnelle</p>
+  <p>Un technicien d'agencement vérifie un cadre de 120 cm × 160 cm. La diagonale théorique est 200 cm. Il mesure 198 cm. L'écart est :</p>
+  <div class="options">
+    <label><input type="radio" name="a13" value="a"> 0 cm</label>
+    <label><input type="radio" name="a13" value="b"> 2 cm</label>
+    <label><input type="radio" name="a13" value="c"> 4 cm</label>
+    <label><input type="radio" name="a13" value="d"> 1 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Problème ouvert – Double application</p>
+  <p>Un triangle ABC est rectangle en A avec AB = 3 cm et AC = 4 cm. On place un point D tel que le triangle ACD est rectangle en C avec CD = 6 cm. Calculer AD.</p>
+  <div class="options">
+    <label><input type="radio" name="a14" value="a"> 10 cm</label>
+    <label><input type="radio" name="a14" value="b"> \(\sqrt{36}\) cm</label>
+    <label><input type="radio" name="a14" value="c"> \(\sqrt{52}\) cm</label>
+    <label><input type="radio" name="a14" value="d"> 8 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Contexte BTS – Calcul de cote</p>
+  <p>Un architecte d'intérieur dessine un plan avec un mur de 2,4 m et un retour de 1,8 m formant un angle droit. Il doit poser un panneau en diagonale. Quelle longueur commander ?</p>
+  <div class="options">
+    <label><input type="radio" name="a15" value="a"> 3 m</label>
+    <label><input type="radio" name="a15" value="b"> 4,2 m</label>
+    <label><input type="radio" name="a15" value="c"> 2,1 m</label>
+    <label><input type="radio" name="a15" value="d"> 3,6 m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "Le côté opposé à l'angle droit dans un triangle rectangle s'appelle l'hypoténuse.",
+  "s2": "L'hypoténuse est toujours le plus grand côté du triangle rectangle, opposé à l'angle droit.",
+  "s3": "Dans un triangle rectangle en A, BC est l'hypoténuse. Le théorème s'écrit BC² = AB² + AC².",
+  "s4": "6² + 8² = 36 + 64 = 100.",
+  "s5": "BC² = AB² + AC² = 36 + 64 = 100, donc BC = √100 = 10 cm.",
+  "s6": "√144 = 12, car 12 × 12 = 144.",
+  "s7": "AB² = BC² − AC² = 169 − 25 = 144, donc AB = √144 = 12 cm.",
+  "s8": "On calcule : côté² = hypoténuse² − autre côté², puis on prend la racine carrée.",
+  "s9": "3² + 4² = 9 + 16 = 25 = 5². C'est le triplet pythagoricien de base.",
+  "s10": "Pour la réciproque, on identifie d'abord le plus grand côté (candidat hypoténuse), puis on compare les carrés.",
+  "s11": "3² + 4² = 9 + 16 = 25 et 5² = 25. L'égalité est vérifiée, le triangle est rectangle.",
+  "s12": "Hauteur² = échelle² − distance² = 25 − 9 = 16, donc hauteur = 4 m.",
+  "s13": "L'angle droit est en B, donc l'hypoténuse est le côté opposé à B, c'est-à-dire AC.",
+  "s14": "15² = 15 × 15 = 225.",
+  "s15": "3² + 4² = 9 + 16 = 25 = 5². Par la réciproque de Pythagore, l'angle est droit.",
+  /* === STANDARD === */
+  "t1": "BC² = 5² + 12² = 25 + 144 = 169, donc BC = √169 = 13 cm.",
+  "t2": "AC² = BC² − AB² = 289 − 64 = 225, donc AC = √225 = 15 cm.",
+  "t3": "9² + 12² = 81 + 144 = 225 et 15² = 225. L'égalité est vérifiée : le triangle est rectangle.",
+  "t4": "5² + 7² = 25 + 49 = 74 et 10² = 100. Comme 74 ≠ 100, le triangle n'est pas rectangle.",
+  "t5": "Diagonale² = 90² + 120² = 8 100 + 14 400 = 22 500, donc diagonale = √22 500 = 150 cm.",
+  "t6": "AC² = AB² + BC² = 25 + 49 = 74, donc AC = √74 ≈ 8,60 cm.",
+  "t7": "6 = 2×3, 8 = 2×4, 10 = 2×5. C'est le triplet 3-4-5 multiplié par 2.",
+  "t8": "Diagonale² = 60² + 80² = 3 600 + 6 400 = 10 000, donc diagonale = √10 000 = 100 cm.",
+  "t9": "La réciproque compare le carré du plus grand côté à la somme des carrés des deux autres.",
+  "t10": "Chevron² = 4² + 3² = 16 + 9 = 25, donc chevron = 5 m (triplet 3-4-5).",
+  "t11": "AB² = AC² + BC² = 16 + 36 = 52, donc AB = √52 cm.",
+  "t12": "Limon² = 2,5² + 3,5² = 6,25 + 12,25 = 18,5, donc limon = √18,5 ≈ 4,30 m.",
+  "t13": "En général, √(a² + b²) ≠ a + b. Par exemple, √(3² + 4²) = √25 = 5 ≠ 3 + 4 = 7.",
+  "t14": "L'angle droit est opposé à l'hypoténuse (le plus grand côté, 13 cm). Vérif : 5² + 12² = 25 + 144 = 169 = 13².",
+  "t15": "30² + 40² = 900 + 1 600 = 2 500 = 50². C'est le triplet 3-4-5 multiplié par 10.",
+  /* === APPROFONDISSEMENT === */
+  "a1": "AC² = BC² − AB² = 625 − 49 = 576, donc AC = √576 = 24 cm. Triplet 7-24-25.",
+  "a2": "Le plus grand côté est 17. On vérifie : 8² + 15² = 64 + 225 = 289 = 17². Le triangle est rectangle.",
+  "a3": "BC² = AB² + AC² = 9 + 49 = 58, donc BC = √58 cm (valeur exacte).",
+  "a4": "Diagonale² = 80² + 200² = 6 400 + 40 000 = 46 400, donc diagonale = √46 400 ≈ 215,4 cm.",
+  "a5": "AC² = AB² + BC² = 36 + 64 = 100, donc AC = 10 cm. Le triangle ABC est rectangle en B (6² + 8² = 10²).",
+  "a6": "Diagonale² = 1,5² + 2² = 2,25 + 4 = 6,25, donc diagonale = √6,25 = 2,5 m.",
+  "a7": "Côté² = 20² − 16² = 400 − 256 = 144, donc côté = √144 = 12 cm.",
+  "a8": "Diagonale² = 1,2² + 1,6² = 1,44 + 2,56 = 4, donc diagonale = √4 = 2 m.",
+  "a9": "6² + 10² = 36 + 100 = 136 et 14² = 196. Comme 136 ≠ 196, ce n'est pas un triplet pythagoricien.",
+  "a10": "OA = 6, OB = 8, angle droit en O. AB² = 6² + 8² = 100, donc AB = 10 km.",
+  "a11": "Diagonale d'un carré de côté 1 : d² = 1² + 1² = 2, donc d = √2 ≈ 1,41 m.",
+  "a12": "Hypoténuse = √(9² + 12²) = √(81 + 144) = √225 = 15 cm. Périmètre = 9 + 12 + 15 = 36 cm.",
+  "a13": "Diagonale théorique : √(120² + 160²) = √(14 400 + 25 600) = √40 000 = 200 cm. Écart = 200 − 198 = 2 cm.",
+  "a14": "Triangle ACD rectangle en C : AD² = AC² + CD² = 16 + 36 = 52, donc AD = √52 cm.",
+  "a15": "Diagonale² = 2,4² + 1,8² = 5,76 + 3,24 = 9, donc diagonale = √9 = 3 m."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '✅ Bonne réponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '❌ Mauvaise réponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '⚠️ Pas de réponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch09 – Trigonométrie – QCM – 1ère Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+
+.qcm-header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.qcm-header .dh-item{display:flex;align-items:center;gap:6px}
+.qcm-header strong{color:var(--p)}
+.q-block{border:1px solid #e2e8f0;border-radius:10px;padding:18px 20px;margin:16px 0;background:#fff}
+.q-block h3{margin:0 0 10px;font-size:1em;color:var(--p)}
+.q-block .theme{font-size:.78em;color:#718096;margin-bottom:8px;font-style:italic}
+.options label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:1.5px solid #e2e8f0;transition:background .15s,border-color .15s;font-size:.95em}
+.options label:hover{background:var(--p-bg);border-color:var(--p-border)}
+.options input[type="radio"]{margin-right:8px;accent-color:var(--p)}
+.options label.correct{background:#d1fae5;border-color:#34d399}
+.options label.incorrect{background:#fee2e2;border-color:#f87171}
+.q-feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:.88em;display:none}
+.q-feedback.ok{background:#d1fae5;color:#065f46;display:block}
+.q-feedback.ko{background:#fee2e2;color:#991b1b;display:block}
+.btn-valider{background:var(--p);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;margin-top:20px;display:block}
+.btn-valider:hover{opacity:.85}
+.btn-reset{background:#e2e8f0;color:#374151;border:none;padding:8px 20px;border-radius:8px;font-size:.9em;cursor:pointer;margin-top:8px}
+.btn-reset:hover{background:#cbd5e1}
+.score-box{margin-top:24px;padding:18px 24px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:700;display:none}
+.score-box.show{display:block}
+.score-good{background:#d1fae5;color:#065f46;border:2px solid #34d399}
+.score-avg{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}
+.score-low{background:#fee2e2;color:#991b1b;border:2px solid #f87171}
+@media print{.nb,.btn-valider,.btn-reset,.diff-toggle-wrap{display:none}.options label{border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>QCM – Trigonométrie</h1>
+  <p class="sous-titre">Chapitre 9 | Première Bac Pro | Mathématiques</p>
+</header>
+
+<div class="qcm-header">
+  <div class="dh-item">⏱ <strong>Durée :</strong> 15–20 min</div>
+  <div class="dh-item">📄 <strong>15 questions</strong></div>
+  <div class="dh-item">🧮 <strong>Calculatrice autorisée</strong></div>
+</div>
+
+<p style="font-size:.9em;color:#4a5568">Pour chaque question, cochez la <strong>seule bonne réponse</strong> puis cliquez sur « Valider le QCM » en bas de page.</p>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<form id="qcm-socle">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Triangle rectangle – Identification de l'hypoténuse</p>
+  <p>Dans un triangle rectangle, l'hypoténuse est :</p>
+  <div class="options">
+    <label><input type="radio" name="s1" value="a"> le côté opposé à l'angle droit</label>
+    <label><input type="radio" name="s1" value="b"> le côté le plus long, en face de l'angle droit</label>
+    <label><input type="radio" name="s1" value="c"> le côté adjacent à l'angle considéré</label>
+    <label><input type="radio" name="s1" value="d"> le côté le plus court du triangle</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Définition – Cosinus</p>
+  <p>Dans un triangle rectangle, pour un angle aigu \(\alpha\), le cosinus de \(\alpha\) est égal à :</p>
+  <div class="options">
+    <label><input type="radio" name="s2" value="a"> \(\dfrac{\text{côté opposé}}{\text{hypoténuse}}\)</label>
+    <label><input type="radio" name="s2" value="b"> \(\dfrac{\text{côté opposé}}{\text{côté adjacent}}\)</label>
+    <label><input type="radio" name="s2" value="c"> \(\dfrac{\text{côté adjacent}}{\text{hypoténuse}}\)</label>
+    <label><input type="radio" name="s2" value="d"> \(\dfrac{\text{hypoténuse}}{\text{côté adjacent}}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Définition – Sinus</p>
+  <p>Dans un triangle rectangle, pour un angle aigu \(\alpha\), le sinus de \(\alpha\) est égal à :</p>
+  <div class="options">
+    <label><input type="radio" name="s3" value="a"> \(\dfrac{\text{côté opposé}}{\text{hypoténuse}}\)</label>
+    <label><input type="radio" name="s3" value="b"> \(\dfrac{\text{côté adjacent}}{\text{hypoténuse}}\)</label>
+    <label><input type="radio" name="s3" value="c"> \(\dfrac{\text{côté opposé}}{\text{côté adjacent}}\)</label>
+    <label><input type="radio" name="s3" value="d"> \(\dfrac{\text{hypoténuse}}{\text{côté opposé}}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Définition – Tangente</p>
+  <p>Dans un triangle rectangle, pour un angle aigu \(\alpha\), la tangente de \(\alpha\) est égale à :</p>
+  <div class="options">
+    <label><input type="radio" name="s4" value="a"> \(\dfrac{\text{côté adjacent}}{\text{côté opposé}}\)</label>
+    <label><input type="radio" name="s4" value="b"> \(\dfrac{\text{côté adjacent}}{\text{hypoténuse}}\)</label>
+    <label><input type="radio" name="s4" value="c"> \(\dfrac{\text{hypoténuse}}{\text{côté opposé}}\)</label>
+    <label><input type="radio" name="s4" value="d"> \(\dfrac{\text{côté opposé}}{\text{côté adjacent}}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Valeurs remarquables – cos(60°)</p>
+  <p>\(\cos(60°)\) est égal à :</p>
+  <div class="options">
+    <label><input type="radio" name="s5" value="a"> \(\dfrac{\sqrt{3}}{2}\)</label>
+    <label><input type="radio" name="s5" value="b"> \(\dfrac{1}{2}\)</label>
+    <label><input type="radio" name="s5" value="c"> \(\dfrac{\sqrt{2}}{2}\)</label>
+    <label><input type="radio" name="s5" value="d"> \(0\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Valeurs remarquables – sin(30°)</p>
+  <p>\(\sin(30°)\) est égal à :</p>
+  <div class="options">
+    <label><input type="radio" name="s6" value="a"> \(\dfrac{\sqrt{3}}{2}\)</label>
+    <label><input type="radio" name="s6" value="b"> \(\dfrac{\sqrt{2}}{2}\)</label>
+    <label><input type="radio" name="s6" value="c"> \(\dfrac{1}{2}\)</label>
+    <label><input type="radio" name="s6" value="d"> \(1\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Valeurs remarquables – cos(0°) et sin(90°)</p>
+  <p>Parmi les affirmations suivantes, laquelle est vraie ?</p>
+  <div class="options">
+    <label><input type="radio" name="s7" value="a"> \(\cos(0°) = 1\) et \(\sin(90°) = 1\)</label>
+    <label><input type="radio" name="s7" value="b"> \(\cos(0°) = 0\) et \(\sin(90°) = 0\)</label>
+    <label><input type="radio" name="s7" value="c"> \(\cos(0°) = 1\) et \(\sin(90°) = 0\)</label>
+    <label><input type="radio" name="s7" value="d"> \(\cos(0°) = 0\) et \(\sin(90°) = 1\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Valeurs remarquables – tan(45°)</p>
+  <p>\(\tan(45°)\) est égal à :</p>
+  <div class="options">
+    <label><input type="radio" name="s8" value="a"> \(\dfrac{\sqrt{3}}{3}\)</label>
+    <label><input type="radio" name="s8" value="b"> \(\dfrac{\sqrt{2}}{2}\)</label>
+    <label><input type="radio" name="s8" value="c"> \(\sqrt{3}\)</label>
+    <label><input type="radio" name="s8" value="d"> \(1\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Calculer un côté – Cosinus</p>
+  <p>Dans un triangle rectangle, l'hypoténuse mesure 10 cm et l'angle \(\alpha = 30°\). Le côté adjacent à \(\alpha\) mesure :</p>
+  <div class="options">
+    <label><input type="radio" name="s9" value="a"> 5 cm</label>
+    <label><input type="radio" name="s9" value="b"> \(10 \times \cos(30°) \approx 8{,}66\) cm</label>
+    <label><input type="radio" name="s9" value="c"> \(\dfrac{10}{\cos(30°)} \approx 11{,}55\) cm</label>
+    <label><input type="radio" name="s9" value="d"> \(10 \times \sin(30°) = 5\) cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Calculer un côté – Sinus</p>
+  <p>Dans un triangle rectangle, l'hypoténuse mesure 20 cm et l'angle \(\alpha = 45°\). Le côté opposé à \(\alpha\) mesure :</p>
+  <div class="options">
+    <label><input type="radio" name="s10" value="a"> \(20 \times \sin(45°) \approx 14{,}14\) cm</label>
+    <label><input type="radio" name="s10" value="b"> \(\dfrac{20}{\sin(45°)} \approx 28{,}28\) cm</label>
+    <label><input type="radio" name="s10" value="c"> \(20 \times \cos(45°) \approx 14{,}14\) cm (mais c'est le côté adjacent)</label>
+    <label><input type="radio" name="s10" value="d"> 10 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Relation fondamentale</p>
+  <p>Pour tout angle \(\alpha\), la relation fondamentale de la trigonométrie est :</p>
+  <div class="options">
+    <label><input type="radio" name="s11" value="a"> \(\cos \alpha + \sin \alpha = 1\)</label>
+    <label><input type="radio" name="s11" value="b"> \(\cos^2 \alpha - \sin^2 \alpha = 1\)</label>
+    <label><input type="radio" name="s11" value="c"> \(\cos^2 \alpha + \sin^2 \alpha = 1\)</label>
+    <label><input type="radio" name="s11" value="d"> \(\cos \alpha \times \sin \alpha = 1\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Radian – Conversion</p>
+  <p>Un angle de 180° correspond à :</p>
+  <div class="options">
+    <label><input type="radio" name="s12" value="a"> \(\dfrac{\pi}{2}\) radians</label>
+    <label><input type="radio" name="s12" value="b"> \(\pi\) radians</label>
+    <label><input type="radio" name="s12" value="c"> \(2\pi\) radians</label>
+    <label><input type="radio" name="s12" value="d"> \(\dfrac{\pi}{4}\) radians</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 13</h3>
+  <p class="theme">Radian – Conversion de degrés</p>
+  <p>Quel est l'angle en radians correspondant à 90° ?</p>
+  <div class="options">
+    <label><input type="radio" name="s13" value="a"> \(\pi\)</label>
+    <label><input type="radio" name="s13" value="b"> \(\dfrac{\pi}{3}\)</label>
+    <label><input type="radio" name="s13" value="c"> \(\dfrac{\pi}{4}\)</label>
+    <label><input type="radio" name="s13" value="d"> \(\dfrac{\pi}{2}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 14</h3>
+  <p class="theme">Cercle trigonométrique – Coordonnées</p>
+  <p>Sur le cercle trigonométrique, le point image d'un angle \(x\) a pour coordonnées :</p>
+  <div class="options">
+    <label><input type="radio" name="s14" value="a"> \((\cos x\,;\,\sin x)\)</label>
+    <label><input type="radio" name="s14" value="b"> \((\sin x\,;\,\cos x)\)</label>
+    <label><input type="radio" name="s14" value="c"> \((\tan x\,;\,\cos x)\)</label>
+    <label><input type="radio" name="s14" value="d"> \((\cos x\,;\,\tan x)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Fonctions périodiques</p>
+  <p>Les fonctions sinus et cosinus sont périodiques de période :</p>
+  <div class="options">
+    <label><input type="radio" name="s15" value="a"> \(\pi\)</label>
+    <label><input type="radio" name="s15" value="b"> \(\dfrac{\pi}{2}\)</label>
+    <label><input type="radio" name="s15" value="c"> \(2\pi\)</label>
+    <label><input type="radio" name="s15" value="d"> \(360\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
+<div class="score-box" id="score-socle"></div>
+</form>
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<form id="qcm-standard">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Calcul d'un côté – Contexte professionnel</p>
+  <p>Un menuisier agenceur installe une étagère faisant un angle de 35° avec l'horizontale dans un placard de 80 cm de large. La longueur de l'étagère (hypoténuse) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="t1" value="a"> \(80 \times \cos(35°) \approx 65{,}5\) cm</label>
+    <label><input type="radio" name="t1" value="b"> \(\dfrac{80}{\cos(35°)} \approx 97{,}7\) cm</label>
+    <label><input type="radio" name="t1" value="c"> \(80 \times \sin(35°) \approx 45{,}9\) cm</label>
+    <label><input type="radio" name="t1" value="d"> \(\dfrac{80}{\sin(35°)} \approx 139{,}4\) cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Calcul d'un angle – Pente d'un toit</p>
+  <p>La charpente d'un toit mesure 5 m (hypoténuse) et s'élève de 2 m (côté opposé). L'angle d'inclinaison est donné par :</p>
+  <div class="options">
+    <label><input type="radio" name="t2" value="a"> \(\cos^{-1}\!\left(\dfrac{2}{5}\right) \approx 66{,}4°\)</label>
+    <label><input type="radio" name="t2" value="b"> \(\tan^{-1}\!\left(\dfrac{2}{5}\right) \approx 21{,}8°\)</label>
+    <label><input type="radio" name="t2" value="c"> \(\sin^{-1}\!\left(\dfrac{2}{5}\right) \approx 23{,}6°\)</label>
+    <label><input type="radio" name="t2" value="d"> \(\sin^{-1}\!\left(\dfrac{5}{2}\right)\) (non défini)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Calcul d'un angle – Tangente</p>
+  <p>Un artisan menuisier conçoit un escalier qui monte de 2,80 m de hauteur (côté opposé) sur un reculement horizontal de 3,58 m (côté adjacent). L'angle d'inclinaison est :</p>
+  <div class="options">
+    <label><input type="radio" name="t3" value="a"> \(\tan^{-1}\!\left(\dfrac{2{,}80}{3{,}58}\right) \approx 38°\)</label>
+    <label><input type="radio" name="t3" value="b"> \(\sin^{-1}\!\left(\dfrac{2{,}80}{3{,}58}\right) \approx 51{,}4°\)</label>
+    <label><input type="radio" name="t3" value="c"> \(\cos^{-1}\!\left(\dfrac{2{,}80}{3{,}58}\right) \approx 38{,}6°\)</label>
+    <label><input type="radio" name="t3" value="d"> \(\tan^{-1}\!\left(\dfrac{3{,}58}{2{,}80}\right) \approx 52°\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Pythagore + trigonométrie</p>
+  <p>Dans un triangle rectangle ABC (angle droit en C), AB = 13 cm et AC = 5 cm. Quel est l'angle \(\alpha\) en A ?</p>
+  <div class="options">
+    <label><input type="radio" name="t4" value="a"> \(\sin^{-1}\!\left(\dfrac{5}{13}\right) \approx 22{,}6°\)</label>
+    <label><input type="radio" name="t4" value="b"> \(\tan^{-1}\!\left(\dfrac{5}{13}\right) \approx 21{,}0°\)</label>
+    <label><input type="radio" name="t4" value="c"> \(\sin^{-1}\!\left(\dfrac{13}{5}\right)\) (non défini)</label>
+    <label><input type="radio" name="t4" value="d"> \(\cos^{-1}\!\left(\dfrac{5}{13}\right) \approx 67{,}4°\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Angles associés – Angle supplémentaire</p>
+  <p>\(\cos(120°)\) est égal à :</p>
+  <div class="options">
+    <label><input type="radio" name="t5" value="a"> \(\dfrac{1}{2}\)</label>
+    <label><input type="radio" name="t5" value="b"> \(-\dfrac{1}{2}\)</label>
+    <label><input type="radio" name="t5" value="c"> \(\dfrac{\sqrt{3}}{2}\)</label>
+    <label><input type="radio" name="t5" value="d"> \(-\dfrac{\sqrt{3}}{2}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Angles associés – Angle opposé</p>
+  <p>\(\sin(-30°)\) est égal à :</p>
+  <div class="options">
+    <label><input type="radio" name="t6" value="a"> \(\dfrac{1}{2}\)</label>
+    <label><input type="radio" name="t6" value="b"> \(\dfrac{\sqrt{3}}{2}\)</label>
+    <label><input type="radio" name="t6" value="c"> \(-\dfrac{1}{2}\)</label>
+    <label><input type="radio" name="t6" value="d"> \(-\dfrac{\sqrt{3}}{2}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Relation fondamentale – Calcul</p>
+  <p>On sait que \(\cos x = 0{,}6\) et que \(x \in \left[0\,;\,\dfrac{\pi}{2}\right]\). Alors \(\sin x\) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="t7" value="a"> \(0{,}8\)</label>
+    <label><input type="radio" name="t7" value="b"> \(0{,}6\)</label>
+    <label><input type="radio" name="t7" value="c"> \(0{,}64\)</label>
+    <label><input type="radio" name="t7" value="d"> \(\sqrt{0{,}36}\) (négatif)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Panneau solaire – Angle d'inclinaison</p>
+  <p>Un installateur thermique pose un panneau solaire de 1,60 m (hypoténuse) avec un support arrière de 40 cm (côté opposé). L'angle d'inclinaison est :</p>
+  <div class="options">
+    <label><input type="radio" name="t8" value="a"> \(\tan^{-1}(0{,}25) \approx 14{,}0°\)</label>
+    <label><input type="radio" name="t8" value="b"> \(\cos^{-1}(0{,}25) \approx 75{,}5°\)</label>
+    <label><input type="radio" name="t8" value="c"> \(\sin^{-1}(4) \) (non défini)</label>
+    <label><input type="radio" name="t8" value="d"> \(\sin^{-1}(0{,}25) \approx 14{,}5°\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Conversion radians – degrés</p>
+  <p>Un angle de \(\dfrac{\pi}{3}\) radians correspond à :</p>
+  <div class="options">
+    <label><input type="radio" name="t9" value="a"> 45°</label>
+    <label><input type="radio" name="t9" value="b"> 60°</label>
+    <label><input type="radio" name="t9" value="c"> 30°</label>
+    <label><input type="radio" name="t9" value="d"> 90°</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Fonction sinus – Périodicité</p>
+  <p>\(\sin\!\left(x + 2\pi\right)\) est égal à :</p>
+  <div class="options">
+    <label><input type="radio" name="t10" value="a"> \(\sin x\)</label>
+    <label><input type="radio" name="t10" value="b"> \(-\sin x\)</label>
+    <label><input type="radio" name="t10" value="c"> \(\cos x\)</label>
+    <label><input type="radio" name="t10" value="d"> \(\sin x + 2\pi\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Fonction cosinus – Parité</p>
+  <p>La fonction cosinus est paire, cela signifie que pour tout \(x\) :</p>
+  <div class="options">
+    <label><input type="radio" name="t11" value="a"> \(\cos(-x) = -\cos x\)</label>
+    <label><input type="radio" name="t11" value="b"> \(\cos(-x) = \sin x\)</label>
+    <label><input type="radio" name="t11" value="c"> \(\cos(-x) = \cos x\)</label>
+    <label><input type="radio" name="t11" value="d"> \(\cos(-x) = 0\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Lien tangente – sinus/cosinus</p>
+  <p>Pour tout angle \(\alpha\) où \(\cos \alpha \neq 0\), on a :</p>
+  <div class="options">
+    <label><input type="radio" name="t12" value="a"> \(\tan \alpha = \sin \alpha \times \cos \alpha\)</label>
+    <label><input type="radio" name="t12" value="b"> \(\tan \alpha = \cos \alpha - \sin \alpha\)</label>
+    <label><input type="radio" name="t12" value="c"> \(\tan \alpha = \dfrac{\cos \alpha}{\sin \alpha}\)</label>
+    <label><input type="radio" name="t12" value="d"> \(\tan \alpha = \dfrac{\sin \alpha}{\cos \alpha}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Piste de ski – Application tangente</p>
+  <p>Une piste de ski descend de 200 m de dénivelé sur 800 m horizontaux. L'angle de la pente est :</p>
+  <div class="options">
+    <label><input type="radio" name="t13" value="a"> \(\sin^{-1}\!\left(\dfrac{200}{800}\right) \approx 14{,}5°\)</label>
+    <label><input type="radio" name="t13" value="b"> \(\tan^{-1}\!\left(\dfrac{200}{800}\right) \approx 14{,}0°\)</label>
+    <label><input type="radio" name="t13" value="c"> \(\cos^{-1}\!\left(\dfrac{200}{800}\right) \approx 75{,}5°\)</label>
+    <label><input type="radio" name="t13" value="d"> \(\tan^{-1}\!\left(\dfrac{800}{200}\right) \approx 76{,}0°\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 14</h3>
+  <p class="theme">Meuble d'angle – Calcul des côtés</p>
+  <p>Un menuisier agenceur fabrique un meuble d'angle avec une façade de 60 cm faisant un angle de 55° avec le mur de droite. La profondeur le long du mur de droite (côté adjacent) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="t14" value="a"> \(60 \times \cos(55°) \approx 34{,}4\) cm</label>
+    <label><input type="radio" name="t14" value="b"> \(60 \times \sin(55°) \approx 49{,}1\) cm</label>
+    <label><input type="radio" name="t14" value="c"> \(\dfrac{60}{\cos(55°)} \approx 104{,}5\) cm</label>
+    <label><input type="radio" name="t14" value="d"> \(60 \times \tan(55°) \approx 85{,}7\) cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Valeurs encadrement</p>
+  <p>Pour tout réel \(x\), les valeurs de \(\cos x\) et \(\sin x\) sont :</p>
+  <div class="options">
+    <label><input type="radio" name="t15" value="a"> toujours comprises entre 0 et 1</label>
+    <label><input type="radio" name="t15" value="b"> toujours strictement positives</label>
+    <label><input type="radio" name="t15" value="c"> toujours comprises entre \(-1\) et \(1\)</label>
+    <label><input type="radio" name="t15" value="d"> comprises entre \(-\pi\) et \(\pi\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
+</form>
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<form id="qcm-appro">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Relation fondamentale – Déduction avancée</p>
+  <p>On sait que \(\sin x = \dfrac{\sqrt{3}}{2}\) et que \(x \in \left[\dfrac{\pi}{2}\,;\,\pi\right]\) (deuxième quadrant). Alors \(\cos x\) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="a1" value="a"> \(\dfrac{1}{2}\)</label>
+    <label><input type="radio" name="a1" value="b"> \(-\dfrac{1}{2}\)</label>
+    <label><input type="radio" name="a1" value="c"> \(\dfrac{\sqrt{3}}{2}\)</label>
+    <label><input type="radio" name="a1" value="d"> \(-\dfrac{\sqrt{3}}{2}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 2</h3>
+  <p class="theme">Angles complémentaires</p>
+  <p>La propriété \(\cos\!\left(\dfrac{\pi}{2} - x\right) = \sin x\) permet de calculer \(\cos(30°)\) comme :</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> \(\sin(30°) = \dfrac{1}{2}\)</label>
+    <label><input type="radio" name="a2" value="b"> \(\cos(60°) = \dfrac{\sqrt{3}}{2}\) (faux, c'est \(\dfrac{1}{2}\))</label>
+    <label><input type="radio" name="a2" value="c"> \(\sin(90°) = 1\) (faux)</label>
+    <label><input type="radio" name="a2" value="d"> \(\sin(60°) = \dfrac{\sqrt{3}}{2}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Triangle rectangle – Résolution complète</p>
+  <p>Dans un triangle rectangle ABC (angle droit en C), on connaît AB = 25 cm et l'angle en A est 37°. Quelle est la longueur BC (côté opposé à l'angle A) ?</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> \(25 \times \sin(37°) \approx 15{,}05\) cm</label>
+    <label><input type="radio" name="a3" value="b"> \(25 \times \cos(37°) \approx 19{,}97\) cm</label>
+    <label><input type="radio" name="a3" value="c"> \(\dfrac{25}{\sin(37°)} \approx 41{,}5\) cm</label>
+    <label><input type="radio" name="a3" value="d"> \(25 \times \tan(37°) \approx 18{,}84\) cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 4</h3>
+  <p class="theme">Application – Angle de coupe en menuiserie</p>
+  <p>Un menuisier doit couper une plinthe en biais pour un angle de coin de 50°. Le côté adjacent mesure 12 cm et le côté opposé mesure environ \(12 \times \tan(50°) \approx 14{,}3\) cm. Quelle relation a-t-il utilisée ?</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> \(\cos(50°) = \dfrac{\text{opp}}{\text{adj}}\)</label>
+    <label><input type="radio" name="a4" value="b"> \(\sin(50°) = \dfrac{\text{adj}}{\text{hyp}}\)</label>
+    <label><input type="radio" name="a4" value="c"> \(\tan(50°) = \dfrac{\text{opp}}{\text{adj}}\)</label>
+    <label><input type="radio" name="a4" value="d"> \(\cos(50°) = \dfrac{\text{adj}}{\text{opp}}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Fonction sinus – Impaire</p>
+  <p>La fonction sinus est impaire. Si \(\sin(x) = 0{,}7\), alors \(\sin(-x)\) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> \(0{,}7\)</label>
+    <label><input type="radio" name="a5" value="b"> \(-0{,}7\)</label>
+    <label><input type="radio" name="a5" value="c"> \(\sqrt{1 - 0{,}49} \approx 0{,}714\)</label>
+    <label><input type="radio" name="a5" value="d"> \(1 - 0{,}7 = 0{,}3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 6</h3>
+  <p class="theme">Vérification par Pythagore</p>
+  <p>Dans un triangle rectangle, on a calculé deux côtés : 34,4 cm et 49,1 cm. L'hypoténuse théorique serait :</p>
+  <div class="options">
+    <label><input type="radio" name="a6" value="a"> \(34{,}4 + 49{,}1 = 83{,}5\) cm</label>
+    <label><input type="radio" name="a6" value="b"> \(\sqrt{34{,}4 - 49{,}1} \) (non défini)</label>
+    <label><input type="radio" name="a6" value="c"> \(34{,}4 \times 49{,}1 \approx 1688{,}5\) cm</label>
+    <label><input type="radio" name="a6" value="d"> \(\sqrt{34{,}4^2 + 49{,}1^2} \approx 60\) cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Angles associés – Calcul de sin(120°)</p>
+  <p>\(\sin(120°)\) vaut (en utilisant la relation \(\sin(\pi - x) = \sin x\)) :</p>
+  <div class="options">
+    <label><input type="radio" name="a7" value="a"> \(\dfrac{\sqrt{3}}{2}\)</label>
+    <label><input type="radio" name="a7" value="b"> \(-\dfrac{\sqrt{3}}{2}\)</label>
+    <label><input type="radio" name="a7" value="c"> \(\dfrac{1}{2}\)</label>
+    <label><input type="radio" name="a7" value="d"> \(-\dfrac{1}{2}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 8</h3>
+  <p class="theme">Application – Longueur d'un câble incliné</p>
+  <p>Un technicien en énergies renouvelables fixe un câble du sol jusqu'à un toit à 8 m de hauteur. Le câble fait un angle de 60° avec le sol. La longueur du câble est :</p>
+  <div class="options">
+    <label><input type="radio" name="a8" value="a"> \(8 \times \sin(60°) \approx 6{,}93\) m</label>
+    <label><input type="radio" name="a8" value="b"> \(8 \times \cos(60°) = 4\) m</label>
+    <label><input type="radio" name="a8" value="c"> \(\dfrac{8}{\sin(60°)} \approx 9{,}24\) m</label>
+    <label><input type="radio" name="a8" value="d"> \(\dfrac{8}{\cos(60°)} = 16\) m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Relation fondamentale – Calcul de tan</p>
+  <p>On sait que \(\cos x = \dfrac{3}{5}\) et \(x \in \left[0\,;\,\dfrac{\pi}{2}\right]\). La valeur de \(\tan x\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="a9" value="a"> \(\dfrac{3}{4}\)</label>
+    <label><input type="radio" name="a9" value="b"> \(\dfrac{4}{3}\)</label>
+    <label><input type="radio" name="a9" value="c"> \(\dfrac{3}{5}\)</label>
+    <label><input type="radio" name="a9" value="d"> \(\dfrac{5}{3}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 10</h3>
+  <p class="theme">Lien sinus – cosinus (décalage de phase)</p>
+  <p>La courbe du cosinus est obtenue à partir de celle du sinus par :</p>
+  <div class="options">
+    <label><input type="radio" name="a10" value="a"> une translation de \(\pi\) vers la gauche</label>
+    <label><input type="radio" name="a10" value="b"> une symétrie par rapport à l'axe des abscisses</label>
+    <label><input type="radio" name="a10" value="c"> une translation de \(\pi\) vers la droite</label>
+    <label><input type="radio" name="a10" value="d"> une translation de \(\dfrac{\pi}{2}\) vers la gauche</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Application – Ossature d'un toit type BTS</p>
+  <p>Une ferme de charpente a une base de 6 m et une hauteur au faîte de 2,5 m. Un charpentier cherche l'angle au pied de la charpente (angle entre la base et le côté incliné). Il sait que la demi-base est 3 m. L'angle vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="a11" value="a"> \(\tan^{-1}\!\left(\dfrac{2{,}5}{3}\right) \approx 39{,}8°\)</label>
+    <label><input type="radio" name="a11" value="b"> \(\sin^{-1}\!\left(\dfrac{2{,}5}{3}\right) \approx 56{,}4°\)</label>
+    <label><input type="radio" name="a11" value="c"> \(\tan^{-1}\!\left(\dfrac{3}{2{,}5}\right) \approx 50{,}2°\)</label>
+    <label><input type="radio" name="a11" value="d"> \(\cos^{-1}\!\left(\dfrac{2{,}5}{3}\right) \approx 33{,}6°\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 12</h3>
+  <p class="theme">Déduction – Valeur de cos à partir de sin</p>
+  <p>On sait que \(\sin x = \dfrac{5}{13}\) et que \(x \in \left[0\,;\,\dfrac{\pi}{2}\right]\). Quelle est la valeur de \(\cos x\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="a12" value="a"> \(\dfrac{8}{13}\)</label>
+    <label><input type="radio" name="a12" value="b"> \(\dfrac{5}{13}\)</label>
+    <label><input type="radio" name="a12" value="c"> \(\dfrac{12}{13}\)</label>
+    <label><input type="radio" name="a12" value="d"> \(\dfrac{13}{12}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Amplitude et période – Modélisation</p>
+  <p>Un courant électrique alternatif est modélisé par \(i(t) = 220\sin(100\pi t)\). L'amplitude de ce signal est :</p>
+  <div class="options">
+    <label><input type="radio" name="a13" value="a"> \(100\pi\)</label>
+    <label><input type="radio" name="a13" value="b"> \(220\)</label>
+    <label><input type="radio" name="a13" value="c"> \(2\pi\)</label>
+    <label><input type="radio" name="a13" value="d"> \(\dfrac{1}{100\pi}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 14</h3>
+  <p class="theme">Résolution – Type BTS – Distance inaccessible</p>
+  <p>Un technicien d'agencement veut mesurer la hauteur d'un mur inaccessible. À 20 m de distance, il mesure un angle de visée de 35° par rapport à l'horizontale. La hauteur du mur est :</p>
+  <div class="options">
+    <label><input type="radio" name="a14" value="a"> \(\dfrac{20}{\tan(35°)} \approx 28{,}6\) m</label>
+    <label><input type="radio" name="a14" value="b"> \(20 \times \cos(35°) \approx 16{,}4\) m</label>
+    <label><input type="radio" name="a14" value="c"> \(\dfrac{20}{\sin(35°)} \approx 34{,}9\) m</label>
+    <label><input type="radio" name="a14" value="d"> \(20 \times \tan(35°) \approx 14{,}0\) m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Raisonnement – Cohérence trigonométrique</p>
+  <p>Un élève calcule \(\cos x = 1{,}2\) pour un angle \(x\). Sa réponse est :</p>
+  <div class="options">
+    <label><input type="radio" name="a15" value="a"> impossible, car \(-1 \leqslant \cos x \leqslant 1\) pour tout réel \(x\)</label>
+    <label><input type="radio" name="a15" value="b"> possible, car le cosinus peut dépasser 1 pour certains angles</label>
+    <label><input type="radio" name="a15" value="c"> possible uniquement en radians</label>
+    <label><input type="radio" name="a15" value="d"> correcte pour \(x = 2\pi\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "L'hypoténuse est le côté situé en face de l'angle droit. C'est toujours le côté le plus long du triangle rectangle.",
+  "s2": "cos α = adjacent / hypoténuse. Moyen mnémotechnique : CAH (Cosinus = Adjacent / Hypoténuse).",
+  "s3": "sin α = opposé / hypoténuse. Moyen mnémotechnique : SOH (Sinus = Opposé / Hypoténuse).",
+  "s4": "tan α = opposé / adjacent. Moyen mnémotechnique : TOA (Tangente = Opposé / Adjacent).",
+  "s5": "cos(60°) = 1/2 = 0,5. Dans le tableau des valeurs remarquables, les cosinus et sinus sont dans l'ordre inverse : cos va de 1 à 0 et sin de 0 à 1.",
+  "s6": "sin(30°) = 1/2 = 0,5. Les valeurs de sinus pour 0°, 30°, 45°, 60°, 90° suivent √0/2, √1/2, √2/2, √3/2, √4/2.",
+  "s7": "cos(0°) = 1 car le point I(1 ; 0) est sur le cercle trigonométrique à l'angle 0. sin(90°) = 1 car le point (0 ; 1) se trouve à π/2.",
+  "s8": "tan(45°) = 1. En effet, sin(45°) = cos(45°) = √2/2, donc tan(45°) = sin/cos = 1.",
+  "s9": "On cherche le côté adjacent connaissant l'hypoténuse : adj = hyp × cos(α) = 10 × cos(30°) ≈ 8,66 cm.",
+  "s10": "On cherche le côté opposé connaissant l'hypoténuse : opp = hyp × sin(α) = 20 × sin(45°) ≈ 14,14 cm.",
+  "s11": "La relation fondamentale est cos²α + sin²α = 1. Elle découle du théorème de Pythagore appliqué au cercle trigonométrique de rayon 1.",
+  "s12": "180° = π radians. C'est la définition de base de la correspondance degrés-radians.",
+  "s13": "90° = 90 × (π/180) = π/2 radians.",
+  "s14": "Sur le cercle trigonométrique de rayon 1, le point M image de l'angle x a pour coordonnées (cos x ; sin x) : l'abscisse est le cosinus et l'ordonnée est le sinus.",
+  "s15": "Les fonctions sinus et cosinus ont une période de 2π (soit 360°). Leur courbe se répète à l'identique tous les 2π.",
+  /* === STANDARD === */
+  "t1": "On cherche l'hypoténuse connaissant le côté adjacent et l'angle : hyp = adj / cos(α) = 80 / cos(35°) ≈ 97,7 cm.",
+  "t2": "On connaît l'opposé (2 m) et l'hypoténuse (5 m) : sin(α) = 2/5 = 0,4 → α = sin⁻¹(0,4) ≈ 23,6°.",
+  "t3": "On connaît l'opposé (2,80 m) et l'adjacent (3,58 m) : tan(α) = 2,80/3,58 ≈ 0,782 → α = tan⁻¹(0,782) ≈ 38°.",
+  "t4": "Dans le triangle ABC rectangle en C, l'angle en A a pour côté adjacent AC = 5 cm et pour hypoténuse AB = 13 cm : cos(α) = 5/13 → α = cos⁻¹(5/13) ≈ 67,4°.",
+  "t5": "120° = 180° − 60°. Propriété des angles supplémentaires : cos(π − x) = −cos(x), donc cos(120°) = −cos(60°) = −1/2.",
+  "t6": "Propriété des angles opposés : sin(−x) = −sin(x). Donc sin(−30°) = −sin(30°) = −1/2.",
+  "t7": "cos²x + sin²x = 1 → (0,6)² + sin²x = 1 → 0,36 + sin²x = 1 → sin²x = 0,64 → sin x = 0,8 (positif car x est dans [0 ; π/2]).",
+  "t8": "On connaît l'opposé (0,40 m) et l'hypoténuse (1,60 m) : sin(α) = 0,40/1,60 = 0,25 → α = sin⁻¹(0,25) ≈ 14,5°.",
+  "t9": "π/3 × (180/π) = 180/3 = 60°.",
+  "t10": "La fonction sinus est périodique de période 2π : sin(x + 2π) = sin(x) pour tout réel x.",
+  "t11": "La fonction cosinus est paire : cos(−x) = cos(x). Sa courbe est symétrique par rapport à l'axe des ordonnées.",
+  "t12": "tan α = sin α / cos α. Cette relation découle de la définition dans le triangle rectangle : (opp/hyp) ÷ (adj/hyp) = opp/adj = tan.",
+  "t13": "On connaît l'opposé (200 m) et l'adjacent (800 m) : tan(α) = 200/800 = 0,25 → α = tan⁻¹(0,25) ≈ 14,0°.",
+  "t14": "Par rapport à l'angle de 55°, le mur de droite est le côté adjacent et la façade est l'hypoténuse : adj = hyp × cos(55°) = 60 × 0,5736 ≈ 34,4 cm.",
+  "t15": "Pour tout réel x, −1 ≤ cos x ≤ 1 et −1 ≤ sin x ≤ 1. Cela vient du fait que le cercle trigonométrique a un rayon de 1.",
+  /* === APPROFONDISSEMENT === */
+  "a1": "cos²x + sin²x = 1 → cos²x = 1 − (√3/2)² = 1 − 3/4 = 1/4 → cos x = ±1/2. Dans le deuxième quadrant (π/2 ; π), le cosinus est négatif, donc cos x = −1/2.",
+  "a2": "cos(30°) = cos(90° − 60°) = sin(60°) = √3/2. La propriété des angles complémentaires permet de permuter cosinus et sinus.",
+  "a3": "BC est le côté opposé à l'angle A dans un triangle rectangle ABC. opp = hyp × sin(A) = 25 × sin(37°) ≈ 25 × 0,602 ≈ 15,05 cm.",
+  "a4": "La tangente relie le côté opposé au côté adjacent : tan(α) = opp/adj, donc opp = adj × tan(50°) ≈ 12 × 1,192 ≈ 14,3 cm.",
+  "a5": "La fonction sinus est impaire : sin(−x) = −sin(x). Donc sin(−x) = −0,7.",
+  "a6": "Par le théorème de Pythagore : hyp = √(34,4² + 49,1²) = √(1183,4 + 2410,8) = √3594,2 ≈ 60 cm. Cela confirme la cohérence des calculs.",
+  "a7": "sin(120°) = sin(180° − 60°) = sin(60°) = √3/2. La propriété des angles supplémentaires préserve le sinus : sin(π − x) = sin(x).",
+  "a8": "Le câble est l'hypoténuse, la hauteur (8 m) est le côté opposé à l'angle de 60° : hyp = opp/sin(60°) = 8/(√3/2) = 16/√3 ≈ 9,24 m.",
+  "a9": "cos x = 3/5, donc sin²x = 1 − (3/5)² = 1 − 9/25 = 16/25, d'où sin x = 4/5. Ainsi tan x = sin x / cos x = (4/5)/(3/5) = 4/3.",
+  "a10": "cos x = sin(x + π/2). La courbe du cosinus est celle du sinus décalée de π/2 vers la gauche (translation de π/2 à gauche).",
+  "a11": "La demi-base est 3 m (adjacent) et la hauteur est 2,5 m (opposé) : tan(α) = 2,5/3 → α = tan⁻¹(2,5/3) ≈ 39,8°.",
+  "a12": "sin²x + cos²x = 1 → (5/13)² + cos²x = 1 → 25/169 + cos²x = 1 → cos²x = 144/169 → cos x = 12/13 (positif car x ∈ [0 ; π/2]).",
+  "a13": "Dans i(t) = 220 sin(100πt), l'amplitude est le coefficient devant le sinus, soit 220 (en ampères ou volts selon l'unité).",
+  "a14": "La hauteur est le côté opposé et la distance horizontale (20 m) est le côté adjacent : tan(35°) = hauteur/20 → hauteur = 20 × tan(35°) ≈ 14,0 m.",
+  "a15": "Pour tout réel x, le cosinus est toujours compris entre −1 et 1. Un résultat cos x = 1,2 est impossible : il y a une erreur dans le calcul."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block, i) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '✅ Bonne réponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '❌ Mauvaise réponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '⚠️ Pas de réponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

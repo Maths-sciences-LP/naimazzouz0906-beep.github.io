@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch03 – Suites numériques – QCM – 1ère Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+
+.qcm-header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.qcm-header .dh-item{display:flex;align-items:center;gap:6px}
+.qcm-header strong{color:var(--p)}
+.q-block{border:1px solid #e2e8f0;border-radius:10px;padding:18px 20px;margin:16px 0;background:#fff}
+.q-block h3{margin:0 0 10px;font-size:1em;color:var(--p)}
+.q-block .theme{font-size:.78em;color:#718096;margin-bottom:8px;font-style:italic}
+.options label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:1.5px solid #e2e8f0;transition:background .15s,border-color .15s;font-size:.95em}
+.options label:hover{background:var(--p-bg);border-color:var(--p-border)}
+.options input[type="radio"]{margin-right:8px;accent-color:var(--p)}
+.options label.correct{background:#d1fae5;border-color:#34d399}
+.options label.incorrect{background:#fee2e2;border-color:#f87171}
+.q-feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:.88em;display:none}
+.q-feedback.ok{background:#d1fae5;color:#065f46;display:block}
+.q-feedback.ko{background:#fee2e2;color:#991b1b;display:block}
+.btn-valider{background:var(--p);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;margin-top:20px;display:block}
+.btn-valider:hover{opacity:.85}
+.btn-reset{background:#e2e8f0;color:#374151;border:none;padding:8px 20px;border-radius:8px;font-size:.9em;cursor:pointer;margin-top:8px}
+.btn-reset:hover{background:#cbd5e1}
+.score-box{margin-top:24px;padding:18px 24px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:700;display:none}
+.score-box.show{display:block}
+.score-good{background:#d1fae5;color:#065f46;border:2px solid #34d399}
+.score-avg{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}
+.score-low{background:#fee2e2;color:#991b1b;border:2px solid #f87171}
+@media print{.nb,.btn-valider,.btn-reset,.diff-toggle-wrap{display:none}.options label{border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>QCM – Suites numériques</h1>
+  <p class="sous-titre">Chapitre 3 | 1ère Bac Pro | Mathématiques</p>
+</header>
+
+<div class="qcm-header">
+  <div class="dh-item">⏱ <strong>Durée :</strong> 15–20 min</div>
+  <div class="dh-item">📄 <strong>15 questions</strong></div>
+  <div class="dh-item">🧮 <strong>Calculatrice autorisée</strong></div>
+</div>
+
+<p style="font-size:.9em;color:#4a5568">Pour chaque question, cochez la <strong>seule bonne réponse</strong> puis cliquez sur « Valider le QCM » en bas de page.</p>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<form id="qcm-socle">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Définition – Suite numérique</p>
+  <p>Une suite numérique est :</p>
+  <div class="options">
+    <label><input type="radio" name="s1" value="a"> un tableau de valeurs aléatoires</label>
+    <label><input type="radio" name="s1" value="b"> une liste ordonnée de nombres indexés par des entiers naturels</label>
+    <label><input type="radio" name="s1" value="c"> une fonction définie sur les réels</label>
+    <label><input type="radio" name="s1" value="d"> une suite de lettres</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 2</h3>
+  <p class="theme">Définition – Suite arithmétique</p>
+  <p>Dans une suite arithmétique de raison \(r\), on passe d'un terme au suivant en :</p>
+  <div class="options">
+    <label><input type="radio" name="s2" value="a"> ajoutant toujours \(r\)</label>
+    <label><input type="radio" name="s2" value="b"> multipliant toujours par \(r\)</label>
+    <label><input type="radio" name="s2" value="c"> soustrayant \(r^2\)</label>
+    <label><input type="radio" name="s2" value="d"> divisant par \(r\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 3</h3>
+  <p class="theme">Définition – Suite géométrique</p>
+  <p>Dans une suite géométrique de raison \(q\), on passe d'un terme au suivant en :</p>
+  <div class="options">
+    <label><input type="radio" name="s3" value="a"> ajoutant toujours \(q\)</label>
+    <label><input type="radio" name="s3" value="b"> soustrayant toujours \(q\)</label>
+    <label><input type="radio" name="s3" value="c"> multipliant toujours par \(q\)</label>
+    <label><input type="radio" name="s3" value="d"> divisant toujours par \(q^2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Reconnaître – Suite arithmétique</p>
+  <p>La suite 5, 8, 11, 14, ... est :</p>
+  <div class="options">
+    <label><input type="radio" name="s4" value="a"> géométrique de raison 3</label>
+    <label><input type="radio" name="s4" value="b"> géométrique de raison 5</label>
+    <label><input type="radio" name="s4" value="c"> arithmétique de raison 5</label>
+    <label><input type="radio" name="s4" value="d"> arithmétique de raison 3</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Reconnaître – Suite géométrique</p>
+  <p>La suite 2, 6, 18, 54, ... est :</p>
+  <div class="options">
+    <label><input type="radio" name="s5" value="a"> arithmétique de raison 4</label>
+    <label><input type="radio" name="s5" value="b"> géométrique de raison 3</label>
+    <label><input type="radio" name="s5" value="c"> géométrique de raison 2</label>
+    <label><input type="radio" name="s5" value="d"> arithmétique de raison 3</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 6</h3>
+  <p class="theme">Calcul – Terme suivant (arithmétique)</p>
+  <p>Une suite arithmétique a \(u_3 = 10\) et \(r = 4\). Alors \(u_4 =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="s6" value="a"> 14</label>
+    <label><input type="radio" name="s6" value="b"> 40</label>
+    <label><input type="radio" name="s6" value="c"> 6</label>
+    <label><input type="radio" name="s6" value="d"> 10</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 7</h3>
+  <p class="theme">Calcul – Terme suivant (géométrique)</p>
+  <p>Une suite géométrique a \(u_2 = 12\) et \(q = 2\). Alors \(u_3 =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="s7" value="a"> 14</label>
+    <label><input type="radio" name="s7" value="b"> 6</label>
+    <label><input type="radio" name="s7" value="c"> 24</label>
+    <label><input type="radio" name="s7" value="d"> 10</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 8</h3>
+  <p class="theme">Formule – Terme général arithmétique</p>
+  <p>Pour une suite arithmétique de premier terme \(u_0\) et de raison \(r\), le terme général est :</p>
+  <div class="options">
+    <label><input type="radio" name="s8" value="a"> \(u_n = u_0 \times r^n\)</label>
+    <label><input type="radio" name="s8" value="b"> \(u_n = u_0 + n \times r\)</label>
+    <label><input type="radio" name="s8" value="c"> \(u_n = u_0 + r^n\)</label>
+    <label><input type="radio" name="s8" value="d"> \(u_n = n \times u_0\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 9</h3>
+  <p class="theme">Formule – Terme général géométrique</p>
+  <p>Pour une suite géométrique de premier terme \(u_0\) et de raison \(q\), le terme général est :</p>
+  <div class="options">
+    <label><input type="radio" name="s9" value="a"> \(u_n = u_0 + n \times q\)</label>
+    <label><input type="radio" name="s9" value="b"> \(u_n = u_0 + q^n\)</label>
+    <label><input type="radio" name="s9" value="c"> \(u_n = n \times q\)</label>
+    <label><input type="radio" name="s9" value="d"> \(u_n = u_0 \times q^n\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Application – Salaire (arithmétique)</p>
+  <p>Un menuisier gagne \(u_0 = 1\,500\) € et reçoit \(r = 40\) € d'augmentation chaque année. Son salaire après 3 ans (\(u_3\)) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s10" value="a"> 1 620 €</label>
+    <label><input type="radio" name="s10" value="b"> 1 540 €</label>
+    <label><input type="radio" name="s10" value="c"> 4 500 €</label>
+    <label><input type="radio" name="s10" value="d"> 1 500 €</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Sens de variation – Suite arithmétique</p>
+  <p>Une suite arithmétique de raison \(r = -3\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s11" value="a"> croissante</label>
+    <label><input type="radio" name="s11" value="b"> constante</label>
+    <label><input type="radio" name="s11" value="c"> décroissante</label>
+    <label><input type="radio" name="s11" value="d"> géométrique</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Suite constante</p>
+  <p>Une suite arithmétique de raison \(r = 0\) est dite :</p>
+  <div class="options">
+    <label><input type="radio" name="s12" value="a"> croissante</label>
+    <label><input type="radio" name="s12" value="b"> constante</label>
+    <label><input type="radio" name="s12" value="c"> décroissante</label>
+    <label><input type="radio" name="s12" value="d"> infinie</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 13</h3>
+  <p class="theme">Premiers termes – Arithmétique</p>
+  <p>La suite arithmétique avec \(u_0 = 3\) et \(r = 5\) a pour trois premiers termes :</p>
+  <div class="options">
+    <label><input type="radio" name="s13" value="a"> 3, 15, 75</label>
+    <label><input type="radio" name="s13" value="b"> 5, 8, 11</label>
+    <label><input type="radio" name="s13" value="c"> 3, 5, 7</label>
+    <label><input type="radio" name="s13" value="d"> 3, 8, 13</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 14</h3>
+  <p class="theme">Premiers termes – Géométrique</p>
+  <p>La suite géométrique avec \(u_0 = 4\) et \(q = 3\) a pour trois premiers termes :</p>
+  <div class="options">
+    <label><input type="radio" name="s14" value="a"> 4, 12, 36</label>
+    <label><input type="radio" name="s14" value="b"> 4, 7, 10</label>
+    <label><input type="radio" name="s14" value="c"> 3, 7, 11</label>
+    <label><input type="radio" name="s14" value="d"> 4, 16, 64</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Graphique – Type de suite</p>
+  <p>Sur un graphique représentant une suite, si les points sont alignés sur une droite, la suite est :</p>
+  <div class="options">
+    <label><input type="radio" name="s15" value="a"> géométrique</label>
+    <label><input type="radio" name="s15" value="b"> aléatoire</label>
+    <label><input type="radio" name="s15" value="c"> arithmétique</label>
+    <label><input type="radio" name="s15" value="d"> exponentielle</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
+<div class="score-box" id="score-socle"></div>
+</form>
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<form id="qcm-standard">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Terme général – Calcul</p>
+  <p>La suite arithmétique a \(u_0 = 7\) et \(r = -3\). Calculer \(u_5\) :</p>
+  <div class="options">
+    <label><input type="radio" name="t1" value="a"> 22</label>
+    <label><input type="radio" name="t1" value="b"> -8</label>
+    <label><input type="radio" name="t1" value="c"> 10</label>
+    <label><input type="radio" name="t1" value="d"> 4</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Terme général – Géométrique</p>
+  <p>La suite géométrique a \(u_0 = 5\,000\) et \(q = 1{,}03\). Lequel correspond à \(u_n = 5\,000 \times 1{,}03^n\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="t2" value="a"> \(u_n = 5\,000 + 1{,}03n\)</label>
+    <label><input type="radio" name="t2" value="b"> \(u_n = 5\,000 \times n^{1{,}03}\)</label>
+    <label><input type="radio" name="t2" value="c"> \(u_n = 5\,000 \times 1{,}03^n\)</label>
+    <label><input type="radio" name="t2" value="d"> \(u_n = 1{,}03^n\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Identifier le type – Différences</p>
+  <p>Pour une suite, on calcule \(u_{n+1} - u_n\) et on trouve toujours 6. La suite est :</p>
+  <div class="options">
+    <label><input type="radio" name="t3" value="a"> arithmétique de raison 6</label>
+    <label><input type="radio" name="t3" value="b"> géométrique de raison 6</label>
+    <label><input type="radio" name="t3" value="c"> arithmétique de raison \(\frac{1}{6}\)</label>
+    <label><input type="radio" name="t3" value="d"> géométrique de raison \(\frac{1}{6}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Identifier le type – Quotients</p>
+  <p>Pour une suite, on calcule \(\dfrac{u_{n+1}}{u_n}\) et on trouve toujours 0,92. La suite est :</p>
+  <div class="options">
+    <label><input type="radio" name="t4" value="a"> arithmétique de raison 0,92</label>
+    <label><input type="radio" name="t4" value="b"> arithmétique de raison \(-0{,}08\)</label>
+    <label><input type="radio" name="t4" value="c"> constante</label>
+    <label><input type="radio" name="t4" value="d"> géométrique de raison 0,92</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Contexte pro – Amortissement</p>
+  <p>Une machine vaut 12 000 € et perd 1 500 € par an. La valeur après \(n\) années est :</p>
+  <div class="options">
+    <label><input type="radio" name="t5" value="a"> \(v_n = 12\,000 \times 1\,500^n\)</label>
+    <label><input type="radio" name="t5" value="b"> \(v_n = 12\,000 - 1\,500n\)</label>
+    <label><input type="radio" name="t5" value="c"> \(v_n = 12\,000 + 1\,500n\)</label>
+    <label><input type="radio" name="t5" value="d"> \(v_n = 1\,500n\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Contexte pro – Épargne</p>
+  <p>Un artisan place 3 000 € à 2,5 % par an. Le capital après \(n\) années est :</p>
+  <div class="options">
+    <label><input type="radio" name="t6" value="a"> \(c_n = 3\,000 + 2{,}5n\)</label>
+    <label><input type="radio" name="t6" value="b"> \(c_n = 3\,000 \times 2{,}5^n\)</label>
+    <label><input type="radio" name="t6" value="c"> \(c_n = 3\,000 \times 1{,}025^n\)</label>
+    <label><input type="radio" name="t6" value="d"> \(c_n = 3\,000 \times 0{,}975^n\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Calcul – Terme général géométrique</p>
+  <p>Un technicien chauffagiste constate que le rendement d'une chaudière suit \(u_n = 95 \times 0{,}92^n\). Après 5 ans, ce rendement vaut environ :</p>
+  <div class="options">
+    <label><input type="radio" name="t7" value="a"> 62,6 %</label>
+    <label><input type="radio" name="t7" value="b"> 87,4 %</label>
+    <label><input type="radio" name="t7" value="c"> 47,5 %</label>
+    <label><input type="radio" name="t7" value="d"> 91,0 %</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Somme – Formule</p>
+  <p>La somme des \((n+1)\) premiers termes d'une suite arithmétique (de \(u_0\) à \(u_n\)) est :</p>
+  <div class="options">
+    <label><input type="radio" name="t8" value="a"> \(S = (n+1) \times u_0\)</label>
+    <label><input type="radio" name="t8" value="b"> \(S = \dfrac{u_0 + u_n}{2}\)</label>
+    <label><input type="radio" name="t8" value="c"> \(S = n \times (u_0 + u_n)\)</label>
+    <label><input type="radio" name="t8" value="d"> \(S = \dfrac{(n+1)(u_0 + u_n)}{2}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Somme – Application</p>
+  <p>Calculer \(S = 1 + 2 + 3 + \cdots + 100\) :</p>
+  <div class="options">
+    <label><input type="radio" name="t9" value="a"> 500</label>
+    <label><input type="radio" name="t9" value="b"> 5 050</label>
+    <label><input type="radio" name="t9" value="c"> 10 100</label>
+    <label><input type="radio" name="t9" value="d"> 4 950</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Contexte pro – Radiateurs</p>
+  <p>Un installateur pose \(u_n = 8 + 2n\) radiateurs à l'étage \(n\). Combien en pose-t-il au total du RDC (\(n=0\)) au 5e étage (\(n=5\)) ? Il y a 6 termes.</p>
+  <div class="options">
+    <label><input type="radio" name="t10" value="a"> 26</label>
+    <label><input type="radio" name="t10" value="b"> 52</label>
+    <label><input type="radio" name="t10" value="c"> 78</label>
+    <label><input type="radio" name="t10" value="d"> 48</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Sens de variation – Géométrique</p>
+  <p>Une suite géométrique avec \(u_0 > 0\) et \(0 < q < 1\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="t11" value="a"> décroissante</label>
+    <label><input type="radio" name="t11" value="b"> croissante</label>
+    <label><input type="radio" name="t11" value="c"> constante</label>
+    <label><input type="radio" name="t11" value="d"> de signe alternant</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Contexte pro – Dépréciation</p>
+  <p>Un véhicule utilitaire perd 15 % de sa valeur chaque année. Sachant qu'il vaut 20 000 € à l'achat, sa valeur après \(n\) années est :</p>
+  <div class="options">
+    <label><input type="radio" name="t12" value="a"> \(v_n = 20\,000 - 15n\)</label>
+    <label><input type="radio" name="t12" value="b"> \(v_n = 20\,000 \times 1{,}15^n\)</label>
+    <label><input type="radio" name="t12" value="c"> \(v_n = 20\,000 \times 15^n\)</label>
+    <label><input type="radio" name="t12" value="d"> \(v_n = 20\,000 \times 0{,}85^n\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Formule générale – Depuis un terme quelconque</p>
+  <p>Pour une suite arithmétique, si l'on connaît \(u_2 = 10\) et \(r = 3\), alors \(u_5 =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="t13" value="a"> 15</label>
+    <label><input type="radio" name="t13" value="b"> 19</label>
+    <label><input type="radio" name="t13" value="c"> 25</label>
+    <label><input type="radio" name="t13" value="d"> 30</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Comparaison – Offres salariales</p>
+  <p>Offre A : salaire 1 600 € + 50 € /an. Offre B : salaire 1 500 € + 4 % /an. Après 5 ans, quel est le salaire de l'Offre A ?</p>
+  <div class="options">
+    <label><input type="radio" name="t14" value="a"> 1 750 €</label>
+    <label><input type="radio" name="t14" value="b"> 1 800 €</label>
+    <label><input type="radio" name="t14" value="c"> 1 850 €</label>
+    <label><input type="radio" name="t14" value="d"> 1 900 €</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Représentation graphique</p>
+  <p>Sur le graphique d'une suite géométrique de raison \(q > 1\), les points forment :</p>
+  <div class="options">
+    <label><input type="radio" name="t15" value="a"> une courbe exponentielle croissante</label>
+    <label><input type="radio" name="t15" value="b"> une droite croissante</label>
+    <label><input type="radio" name="t15" value="c"> une droite horizontale</label>
+    <label><input type="radio" name="t15" value="d"> une courbe décroissante</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
+</form>
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<form id="qcm-appro">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Récurrence – Terme général</p>
+  <p>Une suite est définie par \(u_0 = 2\) et \(u_{n+1} = 2u_n + 1\). Calculer \(u_2\) :</p>
+  <div class="options">
+    <label><input type="radio" name="a1" value="a"> 5</label>
+    <label><input type="radio" name="a1" value="b"> 7</label>
+    <label><input type="radio" name="a1" value="c"> 11</label>
+    <label><input type="radio" name="a1" value="d"> 9</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Récurrence – Identification</p>
+  <p>La relation \(u_{n+1} = u_n \times 1{,}04\) avec \(u_0 = 1\,500\) définit une suite :</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> arithmétique de raison 1,04</label>
+    <label><input type="radio" name="a2" value="b"> géométrique de raison 1,04</label>
+    <label><input type="radio" name="a2" value="c"> ni arithmétique ni géométrique</label>
+    <label><input type="radio" name="a2" value="d"> arithmétique de raison 0,04</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Capital – Remboursement</p>
+  <p>Un artisan emprunte 10 000 €. Il rembourse 800 € par an. La suite de capital restant est arithmétique de raison :</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> \(-800\)</label>
+    <label><input type="radio" name="a3" value="b"> \(800\)</label>
+    <label><input type="radio" name="a3" value="c"> \(10\,000\)</label>
+    <label><input type="radio" name="a3" value="d"> \(0{,}08\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Modélisation – Intérêts composés</p>
+  <p>Un capital de 5 000 € est placé à 3 % par an. Après combien d'années dépasse-t-il 5 796 € ? (Tester : \(5\,000 \times 1{,}03^5 \approx 5\,796\))</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> 3 ans</label>
+    <label><input type="radio" name="a4" value="b"> 4 ans</label>
+    <label><input type="radio" name="a4" value="c"> 7 ans</label>
+    <label><input type="radio" name="a4" value="d"> 5 ans</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Suite combinée – Identifier</p>
+  <p>La suite \(u_n = 3 \times 2^n + 5n\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> arithmétique</label>
+    <label><input type="radio" name="a5" value="b"> ni arithmétique ni géométrique</label>
+    <label><input type="radio" name="a5" value="c"> géométrique</label>
+    <label><input type="radio" name="a5" value="d"> constante</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Somme – Application professionnelle</p>
+  <p>Un menuisier agenceur reçoit un salaire sur 10 ans (de \(u_0 = 1\,500\) à \(u_9 = 1\,860\) € avec \(r = 40\)). Le total perçu est :</p>
+  <div class="options">
+    <label><input type="radio" name="a6" value="a"> 16 000 €</label>
+    <label><input type="radio" name="a6" value="b"> 18 000 €</label>
+    <label><input type="radio" name="a6" value="c"> 16 800 €</label>
+    <label><input type="radio" name="a6" value="d"> 15 000 €</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Modélisation – Choisir le bon modèle</p>
+  <p>Un charpentier empile des planches : 20 en bas, 2 de moins à chaque rangée au-dessus. Quel rang \(n\) donne la rangée vide (\(u_n = 0\)) ?</p>
+  <div class="options">
+    <label><input type="radio" name="a7" value="a"> \(n = 10\)</label>
+    <label><input type="radio" name="a7" value="b"> \(n = 5\)</label>
+    <label><input type="radio" name="a7" value="c"> \(n = 20\)</label>
+    <label><input type="radio" name="a7" value="d"> \(n = 2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Sens de variation – Géométrique complexe</p>
+  <p>Une suite géométrique a \(u_0 = 100\) et \(q = 0{,}92\). Au bout de combien d'années le terme passe-t-il sous 50 ?</p>
+  <div class="options">
+    <label><input type="radio" name="a8" value="a"> 7 ans</label>
+    <label><input type="radio" name="a8" value="b"> 8 ans</label>
+    <label><input type="radio" name="a8" value="c"> 10 ans</label>
+    <label><input type="radio" name="a8" value="d"> 9 ans</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Comparaison – Arithmétique vs Géométrique</p>
+  <p>Offre A : \(a_n = 1\,600 + 50n\). Offre B : \(b_n = 1\,500 \times 1{,}04^n\). À partir de quelle année B devient-elle plus avantageuse que A ?</p>
+  <div class="options">
+    <label><input type="radio" name="a9" value="a"> Année 5</label>
+    <label><input type="radio" name="a9" value="b"> Année 7</label>
+    <label><input type="radio" name="a9" value="c"> Année 10</label>
+    <label><input type="radio" name="a9" value="d"> Année 3</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Récurrence – Formule explicite</p>
+  <p>Une suite géométrique de raison \(q = 2\) et de premier terme \(u_0 = 3\). Quelle est la valeur de \(u_4\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="a10" value="a"> 12</label>
+    <label><input type="radio" name="a10" value="b"> 24</label>
+    <label><input type="radio" name="a10" value="c"> 48</label>
+    <label><input type="radio" name="a10" value="d"> 96</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Modélisation – Capital avec versements</p>
+  <p>Un ébéniste verse 200 € chaque année sur un compte à 0 % d'intérêt. Après 5 ans (de l'année 1 à l'année 5), la somme totale est :</p>
+  <div class="options">
+    <label><input type="radio" name="a11" value="a"> 1 000 €</label>
+    <label><input type="radio" name="a11" value="b"> 200 €</label>
+    <label><input type="radio" name="a11" value="c"> 5 €</label>
+    <label><input type="radio" name="a11" value="d"> 800 €</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Convergence – Suite géométrique</p>
+  <p>Si \(0 < q < 1\) et \(u_0 > 0\), la suite géométrique \(u_n = u_0 \times q^n\) :</p>
+  <div class="options">
+    <label><input type="radio" name="a12" value="a"> diverge vers l'infini</label>
+    <label><input type="radio" name="a12" value="b"> reste constante</label>
+    <label><input type="radio" name="a12" value="c"> devient négative</label>
+    <label><input type="radio" name="a12" value="d"> tend vers 0</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Récurrence – Suite non classique</p>
+  <p>Une suite est définie par \(u_0 = 1\,000\) et \(u_{n+1} = 0{,}9 \times u_n + 50\). Calculer \(u_1\) :</p>
+  <div class="options">
+    <label><input type="radio" name="a13" value="a"> 900</label>
+    <label><input type="radio" name="a13" value="b"> 950</label>
+    <label><input type="radio" name="a13" value="c"> 1 050</label>
+    <label><input type="radio" name="a13" value="d"> 1 000</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Modélisation – Durée de vie</p>
+  <p>Un équipement vaut 8 000 € et perd 20 % de sa valeur chaque année. Sa valeur après \(n\) années est :</p>
+  <div class="options">
+    <label><input type="radio" name="a14" value="a"> \(v_n = 8\,000 - 1\,600n\)</label>
+    <label><input type="radio" name="a14" value="b"> \(v_n = 8\,000 \times 1{,}20^n\)</label>
+    <label><input type="radio" name="a14" value="c"> \(v_n = 8\,000 \times 0{,}80^n\)</label>
+    <label><input type="radio" name="a14" value="d"> \(v_n = 8\,000 \times 0{,}20^n\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Raisonnement – Rang de dépassement</p>
+  <p>Un capital de 3 000 € est placé à 2,5 % par an (\(c_n = 3\,000 \times 1{,}025^n\)). À partir de quelle année dépasse-t-il 3 500 € ? (\(1{,}025^6 \approx 1{,}160\), \(1{,}025^7 \approx 1{,}189\))</p>
+  <div class="options">
+    <label><input type="radio" name="a15" value="a"> Année 7</label>
+    <label><input type="radio" name="a15" value="b"> Année 5</label>
+    <label><input type="radio" name="a15" value="c"> Année 6</label>
+    <label><input type="radio" name="a15" value="d"> Année 10</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "Une suite est une liste ordonnée de nombres indexés par des entiers naturels, notés u₀, u₁, u₂, ...",
+  "s2": "Dans une suite arithmétique, on passe d'un terme au suivant en ajoutant toujours la même valeur r, appelée la raison.",
+  "s3": "Dans une suite géométrique, on passe d'un terme au suivant en multipliant toujours par la même valeur q, appelée la raison.",
+  "s4": "Différence : 8−5 = 3, 11−8 = 3, 14−11 = 3. La différence est constante = 3, donc suite arithmétique de raison 3.",
+  "s5": "Quotient : 6/2 = 3, 18/6 = 3, 54/18 = 3. Le quotient est constant = 3, donc suite géométrique de raison 3.",
+  "s6": "u₄ = u₃ + r = 10 + 4 = 14. Dans une suite arithmétique, on ajoute la raison.",
+  "s7": "u₃ = u₂ × q = 12 × 2 = 24. Dans une suite géométrique, on multiplie par la raison.",
+  "s8": "La formule du terme général d'une suite arithmétique est uₙ = u₀ + n × r.",
+  "s9": "La formule du terme général d'une suite géométrique est uₙ = u₀ × qⁿ.",
+  "s10": "u₃ = 1 500 + 40 × 3 = 1 500 + 120 = 1 620 €.",
+  "s11": "Si r < 0, la suite décroît : chaque terme est plus petit que le précédent.",
+  "s12": "Si r = 0, chaque terme est égal au précédent : la suite est constante.",
+  "s13": "u₀ = 3, u₁ = 3+5 = 8, u₂ = 8+5 = 13. On ajoute 5 à chaque étape.",
+  "s14": "u₀ = 4, u₁ = 4×3 = 12, u₂ = 12×3 = 36. On multiplie par 3 à chaque étape.",
+  "s15": "Une suite arithmétique a pour terme général uₙ = u₀ + nr, qui est une fonction affine de n : les points sont alignés.",
+  /* === STANDARD === */
+  "t1": "u₅ = 7 + (−3) × 5 = 7 − 15 = −8. On applique la formule uₙ = u₀ + n × r.",
+  "t2": "Le terme général d'une suite géométrique est uₙ = u₀ × qⁿ = 5 000 × 1,03ⁿ.",
+  "t3": "Si uₙ₊₁ − uₙ est constant, la suite est arithmétique. Cette constante est la raison r = 6.",
+  "t4": "Si uₙ₊₁/uₙ est constant, la suite est géométrique. Cette constante est la raison q = 0,92.",
+  "t5": "Perte constante de 1 500 € par an : c'est une suite arithmétique vₙ = 12 000 − 1 500n.",
+  "t6": "Taux de 2,5 % par an : le capital est multiplié par 1,025 chaque année. cₙ = 3 000 × 1,025ⁿ.",
+  "t7": "u₅ = 95 × 0,92⁵ ≈ 95 × 0,6591 ≈ 62,6 %. On calcule 0,92 à la puissance 5.",
+  "t8": "La formule est S = (nombre de termes × (premier terme + dernier terme)) / 2.",
+  "t9": "S = 100 × (1 + 100) / 2 = 100 × 101 / 2 = 5 050.",
+  "t10": "6 termes de u₀ = 8 à u₅ = 18. S = 6 × (8+18) / 2 = 6 × 26 / 2 = 78 radiateurs.",
+  "t11": "Avec 0 < q < 1 et u₀ > 0, chaque terme est multiplié par un nombre < 1 : la suite décroît.",
+  "t12": "Perte de 15 % par an : on multiplie par (1 − 0,15) = 0,85. vₙ = 20 000 × 0,85ⁿ.",
+  "t13": "u₅ = u₂ + (5−2) × r = 10 + 3 × 3 = 10 + 9 = 19. On utilise uₙ = u_p + (n−p) × r.",
+  "t14": "a₅ = 1 600 + 50 × 5 = 1 600 + 250 = 1 850 €.",
+  "t15": "Pour q > 1 et u₀ > 0, chaque terme est plus grand : la suite croît de façon exponentielle (courbe, pas droite).",
+  /* === APPROFONDISSEMENT === */
+  "a1": "u₁ = 2×2 + 1 = 5. u₂ = 2×5 + 1 = 11. On applique la relation deux fois.",
+  "a2": "La relation uₙ₊₁ = uₙ × 1,04 correspond à uₙ = u₀ × 1,04ⁿ : c'est une suite géométrique de raison 1,04.",
+  "a3": "On retranche 800 € chaque année : la raison est r = −800.",
+  "a4": "5 000 × 1,03⁵ ≈ 5 796. Le capital dépasse 5 796 € à partir de l'année 5.",
+  "a5": "La suite uₙ = 3 × 2ⁿ + 5n est la somme d'une suite géométrique et d'une suite arithmétique, ce qui n'est ni arithmétique ni géométrique.",
+  "a6": "S = 10 × (1 500 + 1 860) / 2 = 10 × 3 360 / 2 = 16 800 €. Il y a 10 termes.",
+  "a7": "uₙ = 20 − 2n. Pour uₙ = 0 : 20 − 2n = 0, donc n = 10.",
+  "a8": "u₇ = 100 × 0,92⁷ ≈ 55,8 > 50 ; u₈ = 100 × 0,92⁸ ≈ 51,3 > 50 ; u₉ = 100 × 0,92⁹ ≈ 47,2 < 50. Le terme passe sous 50 à partir de n = 9.",
+  "a9": "n=6 : a₆ = 1 900, b₆ ≈ 1 898 (A > B). n=7 : a₇ = 1 950, b₇ ≈ 1 974 (B > A). L'offre B devient meilleure à partir de l'année 7.",
+  "a10": "u₄ = 3 × 2⁴ = 3 × 16 = 48.",
+  "a11": "200 € × 5 années = 1 000 €. C'est une suite arithmétique de raison 0, totalisant 5 versements.",
+  "a12": "Quand 0 < q < 1, qⁿ tend vers 0 quand n augmente. Donc uₙ = u₀ × qⁿ tend vers 0.",
+  "a13": "u₁ = 0,9 × 1 000 + 50 = 900 + 50 = 950.",
+  "a14": "Perte de 20 % par an : on multiplie par (1 − 0,20) = 0,80. vₙ = 8 000 × 0,80ⁿ.",
+  "a15": "c₆ = 3 000 × 1,025⁶ ≈ 3 000 × 1,160 = 3 479 < 3 500. c₇ = 3 000 × 1,025⁷ ≈ 3 000 × 1,189 = 3 566 > 3 500. Le capital dépasse 3 500 € à partir de l'année 7."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '✅ Bonne réponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '❌ Mauvaise réponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '⚠️ Pas de réponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

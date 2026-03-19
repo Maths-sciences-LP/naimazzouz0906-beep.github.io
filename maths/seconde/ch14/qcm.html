@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch14 – QCM – Solides, volumes et agrandissement – 2nde MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}
+
+.qcm-header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.qcm-header .dh-item{display:flex;align-items:center;gap:6px}
+.qcm-header strong{color:var(--p)}
+.q-block{border:1px solid #e2e8f0;border-radius:10px;padding:18px 20px;margin:16px 0;background:#fff}
+.q-block h3{margin:0 0 10px;font-size:1em;color:var(--p)}
+.q-block .theme{font-size:.78em;color:#718096;margin-bottom:8px;font-style:italic}
+.options label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:1.5px solid #e2e8f0;transition:background .15s,border-color .15s;font-size:.95em}
+.options label:hover{background:var(--p-bg);border-color:var(--p-border)}
+.options input[type="radio"]{margin-right:8px;accent-color:var(--p)}
+.options label.correct{background:#d1fae5;border-color:#34d399}
+.options label.incorrect{background:#fee2e2;border-color:#f87171}
+.q-feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:.88em;display:none}
+.q-feedback.ok{background:#d1fae5;color:#065f46;display:block}
+.q-feedback.ko{background:#fee2e2;color:#991b1b;display:block}
+.btn-valider{background:var(--p);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;margin-top:20px;display:block}
+.btn-valider:hover{opacity:.85}
+.btn-reset{background:#e2e8f0;color:#374151;border:none;padding:8px 20px;border-radius:8px;font-size:.9em;cursor:pointer;margin-top:8px}
+.btn-reset:hover{background:#cbd5e1}
+.score-box{margin-top:24px;padding:18px 24px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:700;display:none}
+.score-box.show{display:block}
+.score-good{background:#d1fae5;color:#065f46;border:2px solid #34d399}
+.score-avg{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}
+.score-low{background:#fee2e2;color:#991b1b;border:2px solid #f87171}
+@media print{.nb,.btn-valider,.btn-reset,.diff-toggle-wrap{display:none}.options label{border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>QCM – Solides, volumes et agrandissement</h1>
+  <p class="sous-titre">Chapitre 14 | Seconde Bac Pro MAMA | Mathématiques</p>
+</header>
+
+<div class="qcm-header">
+  <div class="dh-item">⏱ <strong>Durée :</strong> 15–20 min</div>
+  <div class="dh-item">📄 <strong>15 questions</strong></div>
+  <div class="dh-item">🧮 <strong>Calculatrice autorisée</strong></div>
+</div>
+
+<p style="font-size:.9em;color:#4a5568">Pour chaque question, cochez la <strong>seule bonne réponse</strong> puis cliquez sur « Valider le QCM » en bas de page.</p>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<form id="qcm-socle">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Vocabulaire – Reconnaître un solide</p>
+  <p>Parmi les objets suivants, lequel a la forme d'un pavé droit ?</p>
+  <div class="options">
+    <label><input type="radio" name="s1" value="a"> Un ballon de football</label>
+    <label><input type="radio" name="s1" value="b"> Un chapeau pointu</label>
+    <label><input type="radio" name="s1" value="c"> Une caisse de rangement rectangulaire</label>
+    <label><input type="radio" name="s1" value="d"> Un rouleau de papier</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Formule – Volume du pavé droit</p>
+  <p>La formule du volume d'un pavé droit de longueur \(L\), largeur \(l\) et hauteur \(h\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s2" value="a"> \(V = L + l + h\)</label>
+    <label><input type="radio" name="s2" value="b"> \(V = L \times l \times h\)</label>
+    <label><input type="radio" name="s2" value="c"> \(V = 2(L + l + h)\)</label>
+    <label><input type="radio" name="s2" value="d"> \(V = L \times l\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Calcul – Volume d'un cube</p>
+  <p>Un cube a une arête de 5 cm. Son volume est :</p>
+  <div class="options">
+    <label><input type="radio" name="s3" value="a"> 125 cm³</label>
+    <label><input type="radio" name="s3" value="b"> 25 cm³</label>
+    <label><input type="radio" name="s3" value="c"> 15 cm³</label>
+    <label><input type="radio" name="s3" value="d"> 150 cm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Calcul – Volume d'un pavé droit</p>
+  <p>Un tiroir mesure 60 cm × 40 cm × 20 cm. Son volume est :</p>
+  <div class="options">
+    <label><input type="radio" name="s4" value="a"> 120 cm³</label>
+    <label><input type="radio" name="s4" value="b"> 4 800 cm³</label>
+    <label><input type="radio" name="s4" value="c"> 24 000 cm³</label>
+    <label><input type="radio" name="s4" value="d"> 48 000 cm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Formule – Volume du cylindre</p>
+  <p>La formule du volume d'un cylindre de rayon \(r\) et de hauteur \(h\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s5" value="a"> \(V = 2\pi r h\)</label>
+    <label><input type="radio" name="s5" value="b"> \(V = \pi r^2 h\)</label>
+    <label><input type="radio" name="s5" value="c"> \(V = \pi r h^2\)</label>
+    <label><input type="radio" name="s5" value="d"> \(V = \pi r^2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Conversion – Unités de volume</p>
+  <p>1 litre est égal à :</p>
+  <div class="options">
+    <label><input type="radio" name="s6" value="a"> 1 m³</label>
+    <label><input type="radio" name="s6" value="b"> 1 cm³</label>
+    <label><input type="radio" name="s6" value="c"> 1 dm³</label>
+    <label><input type="radio" name="s6" value="d"> 1 mm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Conversion – cm³ en litres</p>
+  <p>Un aquarium a un volume de 30 000 cm³. En litres, cela fait :</p>
+  <div class="options">
+    <label><input type="radio" name="s7" value="a"> 30 L</label>
+    <label><input type="radio" name="s7" value="b"> 300 L</label>
+    <label><input type="radio" name="s7" value="c"> 3 L</label>
+    <label><input type="radio" name="s7" value="d"> 3 000 L</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Vocabulaire – Solide pointu</p>
+  <p>Quel solide possède une base circulaire et un sommet pointu ?</p>
+  <div class="options">
+    <label><input type="radio" name="s8" value="a"> Le cylindre</label>
+    <label><input type="radio" name="s8" value="b"> Le pavé droit</label>
+    <label><input type="radio" name="s8" value="c"> La pyramide</label>
+    <label><input type="radio" name="s8" value="d"> Le cône</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Formule – Pyramide et cône</p>
+  <p>Quel coefficient apparaît dans la formule du volume d'une pyramide et d'un cône ?</p>
+  <div class="options">
+    <label><input type="radio" name="s9" value="a"> \(\dfrac{1}{2}\)</label>
+    <label><input type="radio" name="s9" value="b"> \(\dfrac{1}{3}\)</label>
+    <label><input type="radio" name="s9" value="c"> \(\dfrac{1}{4}\)</label>
+    <label><input type="radio" name="s9" value="d"> \(\dfrac{2}{3}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Agrandissement – Longueurs</p>
+  <p>On multiplie toutes les longueurs d'un solide par 2. Les longueurs sont :</p>
+  <div class="options">
+    <label><input type="radio" name="s10" value="a"> inchangées</label>
+    <label><input type="radio" name="s10" value="b"> multipliées par 4</label>
+    <label><input type="radio" name="s10" value="c"> multipliées par 2</label>
+    <label><input type="radio" name="s10" value="d"> multipliées par 8</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 11</h3>
+  <p class="theme">Agrandissement – Aires</p>
+  <p>On multiplie toutes les longueurs d'un solide par 2. Les aires sont :</p>
+  <div class="options">
+    <label><input type="radio" name="s11" value="a"> multipliées par 2</label>
+    <label><input type="radio" name="s11" value="b"> multipliées par 4</label>
+    <label><input type="radio" name="s11" value="c"> multipliées par 8</label>
+    <label><input type="radio" name="s11" value="d"> inchangées</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Agrandissement – Volumes</p>
+  <p>On multiplie toutes les longueurs d'un solide par 2. Les volumes sont :</p>
+  <div class="options">
+    <label><input type="radio" name="s12" value="a"> multipliés par 2</label>
+    <label><input type="radio" name="s12" value="b"> multipliés par 4</label>
+    <label><input type="radio" name="s12" value="c"> multipliés par 6</label>
+    <label><input type="radio" name="s12" value="d"> multipliés par 8</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 13</h3>
+  <p class="theme">Conversion – m³ en litres</p>
+  <p>Combien de litres contient 1 m³ ?</p>
+  <div class="options">
+    <label><input type="radio" name="s13" value="a"> 1 000 L</label>
+    <label><input type="radio" name="s13" value="b"> 100 L</label>
+    <label><input type="radio" name="s13" value="c"> 10 L</label>
+    <label><input type="radio" name="s13" value="d"> 10 000 L</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Vocabulaire – Boule</p>
+  <p>La formule du volume d'une boule de rayon \(r\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s14" value="a"> \(V = \pi r^2\)</label>
+    <label><input type="radio" name="s14" value="b"> \(V = \pi r^3\)</label>
+    <label><input type="radio" name="s14" value="c"> \(V = \dfrac{4}{3}\pi r^3\)</label>
+    <label><input type="radio" name="s14" value="d"> \(V = \dfrac{4}{3}\pi r^2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 15</h3>
+  <p class="theme">Calcul – Contexte quotidien</p>
+  <p>Un coffre de rangement mesure 1 m × 0,5 m × 0,4 m. Son volume en litres est :</p>
+  <div class="options">
+    <label><input type="radio" name="s15" value="a"> 20 L</label>
+    <label><input type="radio" name="s15" value="b"> 200 L</label>
+    <label><input type="radio" name="s15" value="c"> 2 000 L</label>
+    <label><input type="radio" name="s15" value="d"> 0,2 L</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
+<div class="score-box" id="score-socle"></div>
+</form>
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<form id="qcm-standard">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Calcul – Volume d'un cylindre</p>
+  <p>Un poteau cylindrique a un rayon de 10 cm et une hauteur de 2 m. Son volume, arrondi à l'unité, est :</p>
+  <div class="options">
+    <label><input type="radio" name="t1" value="a"> 6 283 cm³</label>
+    <label><input type="radio" name="t1" value="b"> 628 cm³</label>
+    <label><input type="radio" name="t1" value="c"> 62 832 cm³</label>
+    <label><input type="radio" name="t1" value="d"> 31 416 cm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 2</h3>
+  <p class="theme">Calcul – Volume d'une pyramide</p>
+  <p>Une pyramide a une base carrée de côté 6 cm et une hauteur de 10 cm. Son volume est :</p>
+  <div class="options">
+    <label><input type="radio" name="t2" value="a"> 120 cm³</label>
+    <label><input type="radio" name="t2" value="b"> 360 cm³</label>
+    <label><input type="radio" name="t2" value="c"> 60 cm³</label>
+    <label><input type="radio" name="t2" value="d"> 180 cm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 3</h3>
+  <p class="theme">Conversion – Litres en m³</p>
+  <p>Un réservoir contient 750 litres. En m³, cela représente :</p>
+  <div class="options">
+    <label><input type="radio" name="t3" value="a"> 7,5 m³</label>
+    <label><input type="radio" name="t3" value="b"> 75 m³</label>
+    <label><input type="radio" name="t3" value="c"> 0,075 m³</label>
+    <label><input type="radio" name="t3" value="d"> 0,75 m³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 4</h3>
+  <p class="theme">Contexte professionnel – Pavé droit</p>
+  <p>Un menuisier fabrique un meuble de rangement de 1,20 m × 0,60 m × 0,80 m. Le volume intérieur en litres est :</p>
+  <div class="options">
+    <label><input type="radio" name="t4" value="a"> 57,6 L</label>
+    <label><input type="radio" name="t4" value="b"> 576 L</label>
+    <label><input type="radio" name="t4" value="c"> 5 760 L</label>
+    <label><input type="radio" name="t4" value="d"> 0,576 L</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 5</h3>
+  <p class="theme">Calcul – Volume d'un cône</p>
+  <p>Un cône a un rayon de 3 cm et une hauteur de 7 cm. On donne \(V = \frac{1}{3}\pi r^2 h\). Son volume arrondi au dixième est :</p>
+  <div class="options">
+    <label><input type="radio" name="t5" value="a"> 65,97 cm³</label>
+    <label><input type="radio" name="t5" value="b"> 197,9 cm³</label>
+    <label><input type="radio" name="t5" value="c"> 21 cm³</label>
+    <label><input type="radio" name="t5" value="d"> 44 cm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Agrandissement – Rapport k = 3</p>
+  <p>On agrandit un solide avec un rapport \(k = 3\). Son volume est multiplié par :</p>
+  <div class="options">
+    <label><input type="radio" name="t6" value="a"> 3</label>
+    <label><input type="radio" name="t6" value="b"> 9</label>
+    <label><input type="radio" name="t6" value="c"> 27</label>
+    <label><input type="radio" name="t6" value="d"> 6</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 7</h3>
+  <p class="theme">Agrandissement – Rapport k = 3 sur les aires</p>
+  <p>On agrandit un solide avec un rapport \(k = 3\). Ses aires sont multipliées par :</p>
+  <div class="options">
+    <label><input type="radio" name="t7" value="a"> 3</label>
+    <label><input type="radio" name="t7" value="b"> 9</label>
+    <label><input type="radio" name="t7" value="c"> 27</label>
+    <label><input type="radio" name="t7" value="d"> 6</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Contexte professionnel – Cylindre</p>
+  <p>Un artisan menuisier doit remplir de colle un pot cylindrique de diamètre 8 cm et de hauteur 12 cm. Le volume de colle nécessaire, arrondi à l'unité, est :</p>
+  <div class="options">
+    <label><input type="radio" name="t8" value="a"> 301 cm³</label>
+    <label><input type="radio" name="t8" value="b"> 2 413 cm³</label>
+    <label><input type="radio" name="t8" value="c"> 241 cm³</label>
+    <label><input type="radio" name="t8" value="d"> 603 cm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 9</h3>
+  <p class="theme">Réduction – Modèle au 1/10</p>
+  <p>Un modèle réduit est à l'échelle 1/10 (rapport \(k = 0{,}1\)). Si le volume réel est de 2 m³, le volume du modèle est :</p>
+  <div class="options">
+    <label><input type="radio" name="t9" value="a"> 0,002 m³ soit 2 L</label>
+    <label><input type="radio" name="t9" value="b"> 0,2 m³ soit 200 L</label>
+    <label><input type="radio" name="t9" value="c"> 0,02 m³ soit 20 L</label>
+    <label><input type="radio" name="t9" value="d"> 2 m³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Calcul – Volume d'une boule</p>
+  <p>Une boule a un rayon de 6 cm. On donne \(V = \frac{4}{3}\pi r^3\). Son volume arrondi à l'unité est :</p>
+  <div class="options">
+    <label><input type="radio" name="t10" value="a"> 452 cm³</label>
+    <label><input type="radio" name="t10" value="b"> 678 cm³</label>
+    <label><input type="radio" name="t10" value="c"> 905 cm³</label>
+    <label><input type="radio" name="t10" value="d"> 1 357 cm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 11</h3>
+  <p class="theme">Conversion – Cascade d'unités</p>
+  <p>\(0{,}5\,\text{m}^3\) est égal à :</p>
+  <div class="options">
+    <label><input type="radio" name="t11" value="a"> 50 L</label>
+    <label><input type="radio" name="t11" value="b"> 500 L</label>
+    <label><input type="radio" name="t11" value="c"> 5 000 L</label>
+    <label><input type="radio" name="t11" value="d"> 5 L</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Comparaison – Cylindre et cône</p>
+  <p>Un cylindre et un cône ont le même rayon et la même hauteur. Le volume du cône est égal à :</p>
+  <div class="options">
+    <label><input type="radio" name="t12" value="a"> la moitié du volume du cylindre</label>
+    <label><input type="radio" name="t12" value="b"> le double du volume du cylindre</label>
+    <label><input type="radio" name="t12" value="c"> le quart du volume du cylindre</label>
+    <label><input type="radio" name="t12" value="d"> le tiers du volume du cylindre</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 13</h3>
+  <p class="theme">Contexte professionnel – Commande de matériau</p>
+  <p>Un menuisier agenceur coule du béton dans un coffrage en forme de pavé droit de 2 m × 0,5 m × 0,3 m. Combien de litres de béton lui faut-il ?</p>
+  <div class="options">
+    <label><input type="radio" name="t13" value="a"> 300 L</label>
+    <label><input type="radio" name="t13" value="b"> 30 L</label>
+    <label><input type="radio" name="t13" value="c"> 3 000 L</label>
+    <label><input type="radio" name="t13" value="d"> 3 L</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Agrandissement – Distinguer les effets</p>
+  <p>On triple les dimensions d'un cube. Son volume initial est de 8 cm³. Le nouveau volume est :</p>
+  <div class="options">
+    <label><input type="radio" name="t14" value="a"> 24 cm³</label>
+    <label><input type="radio" name="t14" value="b"> 72 cm³</label>
+    <label><input type="radio" name="t14" value="c"> 216 cm³</label>
+    <label><input type="radio" name="t14" value="d"> 64 cm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 15</h3>
+  <p class="theme">Contexte professionnel – Diamètre et rayon</p>
+  <p>Un tube cylindrique a un diamètre de 14 cm et une longueur de 1 m. Son volume arrondi à l'unité est :</p>
+  <div class="options">
+    <label><input type="radio" name="t15" value="a"> 61 575 cm³</label>
+    <label><input type="radio" name="t15" value="b"> 15 394 cm³</label>
+    <label><input type="radio" name="t15" value="c"> 43 982 cm³</label>
+    <label><input type="radio" name="t15" value="d"> 6 158 cm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
+</form>
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<form id="qcm-appro">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Calcul – Cylindre et conversion</p>
+  <p>Une colonne cylindrique a un diamètre de 20 cm et une hauteur de 2,40 m. Son volume en litres, arrondi au dixième, est :</p>
+  <div class="options">
+    <label><input type="radio" name="a1" value="a"> 150,8 L</label>
+    <label><input type="radio" name="a1" value="b"> 75,4 L</label>
+    <label><input type="radio" name="a1" value="c"> 301,6 L</label>
+    <label><input type="radio" name="a1" value="d"> 37,7 L</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Agrandissement – Retrouver le coefficient</p>
+  <p>Un solide est agrandi et son volume est multiplié par 64. Le rapport d'agrandissement \(k\) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> 8</label>
+    <label><input type="radio" name="a2" value="b"> 64</label>
+    <label><input type="radio" name="a2" value="c"> 4</label>
+    <label><input type="radio" name="a2" value="d"> 16</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Contexte professionnel – Pyramide</p>
+  <p>Un installateur d'agencement construit une vitrine pyramidale à base carrée de 30 cm de côté et de 45 cm de hauteur. On donne \(V = \frac{1}{3} \times \mathcal{A}_{\text{base}} \times h\). Le volume est :</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> 13 500 cm³</label>
+    <label><input type="radio" name="a3" value="b"> 40 500 cm³</label>
+    <label><input type="radio" name="a3" value="c"> 4 500 cm³</label>
+    <label><input type="radio" name="a3" value="d"> 27 000 cm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Agrandissement – Effet sur surface et volume</p>
+  <p>Un carrelage carré de 20 cm de côté est remplacé par un carrelage de 40 cm de côté (\(k = 2\)). L'aire d'un carreau est :</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> doublée (× 2)</label>
+    <label><input type="radio" name="a4" value="b"> triplée (× 3)</label>
+    <label><input type="radio" name="a4" value="c"> multipliée par 8</label>
+    <label><input type="radio" name="a4" value="d"> multipliée par 4</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Réduction – Modèle réduit au 1/5</p>
+  <p>Une salle de bain réelle a un volume de 15 m³. On fabrique un modèle réduit à l'échelle 1/5. Le volume du modèle est :</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> 3 m³</label>
+    <label><input type="radio" name="a5" value="b"> 0,12 m³</label>
+    <label><input type="radio" name="a5" value="c"> 0,6 m³</label>
+    <label><input type="radio" name="a5" value="d"> 0,024 m³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Calcul inverse – Trouver une dimension</p>
+  <p>Un pavé droit a un volume de 960 cm³. Sa longueur est 16 cm et sa largeur 10 cm. Sa hauteur est :</p>
+  <div class="options">
+    <label><input type="radio" name="a6" value="a"> 8 cm</label>
+    <label><input type="radio" name="a6" value="b"> 5 cm</label>
+    <label><input type="radio" name="a6" value="c"> 6 cm</label>
+    <label><input type="radio" name="a6" value="d"> 12 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Contexte professionnel – Comparaison de volumes</p>
+  <p>Un fabricant de mobilier propose deux boîtes de rangement : la boîte A (30 cm × 20 cm × 15 cm) et la boîte B (cube de 22 cm). La boîte qui a le plus grand volume est :</p>
+  <div class="options">
+    <label><input type="radio" name="a7" value="a"> la boîte B (10 648 cm³)</label>
+    <label><input type="radio" name="a7" value="b"> la boîte A (9 000 cm³)</label>
+    <label><input type="radio" name="a7" value="c"> elles ont le même volume</label>
+    <label><input type="radio" name="a7" value="d"> la boîte A (10 000 cm³)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Agrandissement – Mini-baignoire</p>
+  <p>Une mini-baignoire (modèle) a un volume de 50 L. On la fabrique en version ×2 sur chaque dimension. Le nouveau volume est :</p>
+  <div class="options">
+    <label><input type="radio" name="a8" value="a"> 100 L</label>
+    <label><input type="radio" name="a8" value="b"> 200 L</label>
+    <label><input type="radio" name="a8" value="c"> 150 L</label>
+    <label><input type="radio" name="a8" value="d"> 400 L</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Calcul – Volume d'une boule</p>
+  <p>Un pommeau de meuble sphérique a un diamètre de 4 cm. On donne \(V = \frac{4}{3}\pi r^3\). Son volume arrondi au dixième est :</p>
+  <div class="options">
+    <label><input type="radio" name="a9" value="a"> 268,1 cm³</label>
+    <label><input type="radio" name="a9" value="b"> 33,5 cm³</label>
+    <label><input type="radio" name="a9" value="c"> 67,0 cm³</label>
+    <label><input type="radio" name="a9" value="d"> 16,8 cm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Calcul inverse – Trouver le rayon d'un cylindre</p>
+  <p>Un pot cylindrique a un volume de 500 cm³ et une hauteur de 10 cm. On utilise \(V = \pi r^2 h\). Le rayon arrondi au dixième est :</p>
+  <div class="options">
+    <label><input type="radio" name="a10" value="a"> 2,5 cm</label>
+    <label><input type="radio" name="a10" value="b"> 5,0 cm</label>
+    <label><input type="radio" name="a10" value="c"> 4,0 cm</label>
+    <label><input type="radio" name="a10" value="d"> 3,2 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Agrandissement – Retrouver le rapport à partir des aires</p>
+  <p>Après agrandissement, les aires d'un solide sont multipliées par 25. Le rapport d'agrandissement \(k\) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="a11" value="a"> 5</label>
+    <label><input type="radio" name="a11" value="b"> 12,5</label>
+    <label><input type="radio" name="a11" value="c"> 25</label>
+    <label><input type="radio" name="a11" value="d"> \(\sqrt[3]{25}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Contexte professionnel – Volume composite</p>
+  <p>Un meuble a la forme d'un pavé droit de 80 cm × 50 cm × 120 cm, mais on y a creusé un cylindre vertical de rayon 15 cm et de hauteur 120 cm. Le volume restant arrondi à l'unité est :</p>
+  <div class="options">
+    <label><input type="radio" name="a12" value="a"> 480 000 cm³</label>
+    <label><input type="radio" name="a12" value="b"> 395 177 cm³</label>
+    <label><input type="radio" name="a12" value="c"> 84 823 cm³</label>
+    <label><input type="radio" name="a12" value="d"> 564 823 cm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Problème ouvert – Remplissage</p>
+  <p>On remplit un aquarium (pavé droit 60 cm × 30 cm × 40 cm) avec un seau cylindrique de rayon 10 cm et de hauteur 25 cm. Combien de seaux entiers faut-il au minimum ?</p>
+  <div class="options">
+    <label><input type="radio" name="a13" value="a"> 8 seaux</label>
+    <label><input type="radio" name="a13" value="b"> 10 seaux</label>
+    <label><input type="radio" name="a13" value="c"> 9 seaux</label>
+    <label><input type="radio" name="a13" value="d"> 12 seaux</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Problème BTS – Agrandissement et coût</p>
+  <p>Un prototype de meuble coûte 80 € de matériaux (proportionnel au volume). On fabrique la version finale avec \(k = 1{,}5\) sur chaque dimension. Le coût matériaux de la version finale est :</p>
+  <div class="options">
+    <label><input type="radio" name="a14" value="a"> 120 €</label>
+    <label><input type="radio" name="a14" value="b"> 180 €</label>
+    <label><input type="radio" name="a14" value="c"> 270 €</label>
+    <label><input type="radio" name="a14" value="d"> 320 €</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Problème ouvert – Cône et cylindre</p>
+  <p>Un cône et un cylindre ont le même rayon de 5 cm. Le cône a une hauteur de 12 cm et le cylindre une hauteur de 4 cm. Quel solide a le plus grand volume ?</p>
+  <div class="options">
+    <label><input type="radio" name="a15" value="a"> Les deux volumes sont égaux (\(\approx 314\) cm³ chacun)</label>
+    <label><input type="radio" name="a15" value="b"> Le cône (\(\approx 628\) cm³)</label>
+    <label><input type="radio" name="a15" value="c"> Le cylindre (\(\approx 628\) cm³)</label>
+    <label><input type="radio" name="a15" value="d"> Impossible de comparer sans formule</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "Une caisse de rangement rectangulaire a la forme d'un pavé droit (6 faces rectangulaires).",
+  "s2": "Le volume d'un pavé droit se calcule en multipliant les trois dimensions : V = L × l × h.",
+  "s3": "V = a³ = 5³ = 5 × 5 × 5 = 125 cm³.",
+  "s4": "V = 60 × 40 × 20 = 48 000 cm³.",
+  "s5": "Le volume du cylindre est V = π r² h (aire de la base circulaire × hauteur).",
+  "s6": "1 litre = 1 dm³. C'est la relation fondamentale entre litres et dm³.",
+  "s7": "1 L = 1 000 cm³. Donc 30 000 cm³ = 30 000 ÷ 1 000 = 30 L.",
+  "s8": "Le cône a une base circulaire et un sommet pointu. La pyramide a une base polygonale.",
+  "s9": "Les formules de la pyramide (V = 1/3 × A_base × h) et du cône (V = 1/3 × π r² h) contiennent toutes les deux le coefficient 1/3.",
+  "s10": "Quand on multiplie les longueurs par k, les longueurs sont multipliées par k. Ici k = 2, donc × 2.",
+  "s11": "Quand on multiplie les longueurs par k = 2, les aires sont multipliées par k² = 2² = 4.",
+  "s12": "Quand on multiplie les longueurs par k = 2, les volumes sont multipliés par k³ = 2³ = 8.",
+  "s13": "1 m³ = 1 000 dm³ = 1 000 L.",
+  "s14": "La formule du volume de la boule est V = 4/3 × π × r³.",
+  "s15": "V = 1 × 0,5 × 0,4 = 0,2 m³. Or 1 m³ = 1 000 L, donc 0,2 m³ = 200 L.",
+  /* === STANDARD === */
+  "t1": "r = 10 cm, h = 200 cm. V = π × 10² × 200 = π × 20 000 ≈ 62 832 cm³.",
+  "t2": "A_base = 6² = 36 cm². V = 1/3 × 36 × 10 = 120 cm³.",
+  "t3": "750 L = 750 dm³. Or 1 m³ = 1 000 dm³, donc 750 ÷ 1 000 = 0,75 m³.",
+  "t4": "V = 1,20 × 0,60 × 0,80 = 0,576 m³ = 576 L.",
+  "t5": "V = 1/3 × π × 3² × 7 = 1/3 × π × 63 = 21π ≈ 65,97 cm³.",
+  "t6": "Volumes multipliés par k³ = 3³ = 27.",
+  "t7": "Aires multipliées par k² = 3² = 9.",
+  "t8": "Diamètre 8 cm → rayon 4 cm. V = π × 4² × 12 = 192π ≈ 603 cm³.",
+  "t9": "k = 0,1. Volume × k³ = 2 × 0,001 = 0,002 m³ = 2 L.",
+  "t10": "V = 4/3 × π × 6³ = 4/3 × π × 216 = 288π ≈ 905 cm³.",
+  "t11": "0,5 m³ = 0,5 × 1 000 = 500 L.",
+  "t12": "V_cône = 1/3 × π r² h et V_cylindre = π r² h. Donc V_cône = 1/3 × V_cylindre.",
+  "t13": "V = 2 × 0,5 × 0,3 = 0,3 m³ = 300 L.",
+  "t14": "k = 3, donc V × k³ = 8 × 27 = 216 cm³.",
+  "t15": "Diamètre 14 cm → rayon 7 cm. h = 100 cm. V = π × 49 × 100 = 4 900π ≈ 15 394 cm³.",
+  /* === APPROFONDISSEMENT === */
+  "a1": "r = 10 cm = 0,1 m, h = 2,40 m. V = π × 0,01 × 2,40 ≈ 0,0754 m³ = 75,4 L.",
+  "a2": "k³ = 64, donc k = ∛64 = 4.",
+  "a3": "A_base = 30² = 900 cm². V = 1/3 × 900 × 45 = 13 500 cm³.",
+  "a4": "k = 2. Les aires sont multipliées par k² = 4. Aire 20×20 = 400, aire 40×40 = 1 600 = 4 × 400.",
+  "a5": "k = 1/5. Volume × k³ = 15 × (1/5)³ = 15 × 1/125 = 0,12 m³.",
+  "a6": "V = L × l × h → h = V/(L×l) = 960/(16×10) = 960/160 = 6 cm.",
+  "a7": "Boîte A : 30 × 20 × 15 = 9 000 cm³. Boîte B : 22³ = 10 648 cm³. La boîte B est plus grande.",
+  "a8": "k = 2. Volume × k³ = 50 × 8 = 400 L.",
+  "a9": "Diamètre 4 cm → rayon 2 cm. V = 4/3 × π × 2³ = 4/3 × 8π = 32π/3 ≈ 33,5 cm³.",
+  "a10": "r² = V/(πh) = 500/(10π) ≈ 15,92. r = √15,92 ≈ 4,0 cm.",
+  "a11": "Aires × k² = 25, donc k = √25 = 5.",
+  "a12": "V_pavé = 80 × 50 × 120 = 480 000 cm³. V_cylindre = π × 15² × 120 = 27 000π ≈ 84 823 cm³. Reste : 480 000 − 84 823 ≈ 395 177 cm³.",
+  "a13": "V_aquarium = 60 × 30 × 40 = 72 000 cm³. V_seau = π × 10² × 25 = 2 500π ≈ 7 854 cm³. 72 000 ÷ 7 854 ≈ 9,17. Il faut 10 seaux entiers.",
+  "a14": "k = 1,5. Coût × k³ = 80 × 1,5³ = 80 × 3,375 = 270 €.",
+  "a15": "V_cône = 1/3 × π × 25 × 12 = 100π ≈ 314 cm³. V_cylindre = π × 25 × 4 = 100π ≈ 314 cm³. Ils sont quasi égaux."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '✅ Bonne réponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '❌ Mauvaise réponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '⚠️ Pas de réponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch07 – Géométrie dans l'espace – QCM – 1ère Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+
+.qcm-header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.qcm-header .dh-item{display:flex;align-items:center;gap:6px}
+.qcm-header strong{color:var(--p)}
+.q-block{border:1px solid #e2e8f0;border-radius:10px;padding:18px 20px;margin:16px 0;background:#fff}
+.q-block h3{margin:0 0 10px;font-size:1em;color:var(--p)}
+.q-block .theme{font-size:.78em;color:#718096;margin-bottom:8px;font-style:italic}
+.options label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:1.5px solid #e2e8f0;transition:background .15s,border-color .15s;font-size:.95em}
+.options label:hover{background:var(--p-bg);border-color:var(--p-border)}
+.options input[type="radio"]{margin-right:8px;accent-color:var(--p)}
+.options label.correct{background:#d1fae5;border-color:#34d399}
+.options label.incorrect{background:#fee2e2;border-color:#f87171}
+.q-feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:.88em;display:none}
+.q-feedback.ok{background:#d1fae5;color:#065f46;display:block}
+.q-feedback.ko{background:#fee2e2;color:#991b1b;display:block}
+.btn-valider{background:var(--p);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;margin-top:20px;display:block}
+.btn-valider:hover{opacity:.85}
+.btn-reset{background:#e2e8f0;color:#374151;border:none;padding:8px 20px;border-radius:8px;font-size:.9em;cursor:pointer;margin-top:8px}
+.btn-reset:hover{background:#cbd5e1}
+.score-box{margin-top:24px;padding:18px 24px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:700;display:none}
+.score-box.show{display:block}
+.score-good{background:#d1fae5;color:#065f46;border:2px solid #34d399}
+.score-avg{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}
+.score-low{background:#fee2e2;color:#991b1b;border:2px solid #f87171}
+@media print{.nb,.btn-valider,.btn-reset,.diff-toggle-wrap{display:none}.options label{border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>QCM – Géométrie dans l'espace</h1>
+  <p class="sous-titre">Chapitre 7 | 1ère Bac Pro | Mathématiques</p>
+</header>
+
+<div class="qcm-header">
+  <div class="dh-item">⏱ <strong>Durée :</strong> 15–20 min</div>
+  <div class="dh-item">📄 <strong>15 questions</strong></div>
+  <div class="dh-item">🧮 <strong>Calculatrice autorisée</strong></div>
+</div>
+
+<p style="font-size:.9em;color:#4a5568">Pour chaque question, cochez la <strong>seule bonne réponse</strong> puis cliquez sur « Valider le QCM » en bas de page.</p>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<form id="qcm-socle">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Vocabulaire – Cube</p>
+  <p>Un cube possède :</p>
+  <div class="options">
+    <label><input type="radio" name="s1" value="a"> 6 sommets, 8 arêtes et 12 faces</label>
+    <label><input type="radio" name="s1" value="b"> 8 sommets, 12 arêtes et 6 faces</label>
+    <label><input type="radio" name="s1" value="c"> 4 sommets, 6 arêtes et 4 faces</label>
+    <label><input type="radio" name="s1" value="d"> 12 sommets, 8 arêtes et 6 faces</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 2</h3>
+  <p class="theme">Vocabulaire – Solides</p>
+  <p>Parmi les solides suivants, lequel est un solide de révolution ?</p>
+  <div class="options">
+    <label><input type="radio" name="s2" value="a"> Le cylindre</label>
+    <label><input type="radio" name="s2" value="b"> Le cube</label>
+    <label><input type="radio" name="s2" value="c"> Le pavé droit</label>
+    <label><input type="radio" name="s2" value="d"> La pyramide</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 3</h3>
+  <p class="theme">Formule – Volume du cube</p>
+  <p>Le volume d'un cube d'arête \(a\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s3" value="a"> \(4a^2\)</label>
+    <label><input type="radio" name="s3" value="b"> \(6a^2\)</label>
+    <label><input type="radio" name="s3" value="c"> \(a^3\)</label>
+    <label><input type="radio" name="s3" value="d"> \(3a^2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Calcul – Volume d'un cube</p>
+  <p>Un cube a une arête de 4 cm. Son volume est :</p>
+  <div class="options">
+    <label><input type="radio" name="s4" value="a"> 16 cm³</label>
+    <label><input type="radio" name="s4" value="b"> 24 cm³</label>
+    <label><input type="radio" name="s4" value="c"> 96 cm³</label>
+    <label><input type="radio" name="s4" value="d"> 64 cm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Formule – Volume du pavé droit</p>
+  <p>Le volume d'un pavé droit de longueur \(L\), largeur \(\ell\) et hauteur \(h\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s5" value="a"> \(2(L\ell + Lh + \ell h)\)</label>
+    <label><input type="radio" name="s5" value="b"> \(L \times \ell \times h\)</label>
+    <label><input type="radio" name="s5" value="c"> \(L + \ell + h\)</label>
+    <label><input type="radio" name="s5" value="d"> \(\dfrac{1}{3}L\ell h\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 6</h3>
+  <p class="theme">Calcul – Volume d'un pavé droit</p>
+  <p>Un caisson mesure 50 cm × 30 cm × 20 cm. Son volume est :</p>
+  <div class="options">
+    <label><input type="radio" name="s6" value="a"> 30 000 cm³</label>
+    <label><input type="radio" name="s6" value="b"> 6 200 cm³</label>
+    <label><input type="radio" name="s6" value="c"> 300 cm³</label>
+    <label><input type="radio" name="s6" value="d"> 3 000 cm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 7</h3>
+  <p class="theme">Formule – Volume du cylindre</p>
+  <p>Le volume d'un cylindre de rayon \(r\) et de hauteur \(h\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s7" value="a"> \(2\pi r h\)</label>
+    <label><input type="radio" name="s7" value="b"> \(\pi r h\)</label>
+    <label><input type="radio" name="s7" value="c"> \(\pi r^2 h\)</label>
+    <label><input type="radio" name="s7" value="d"> \(2\pi r(r+h)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 8</h3>
+  <p class="theme">Vocabulaire – Cône</p>
+  <p>Dans un cône, la génératrice \(g\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s8" value="a"> la distance du centre à la base</label>
+    <label><input type="radio" name="s8" value="b"> le segment joignant le sommet à un point du cercle de base</label>
+    <label><input type="radio" name="s8" value="c"> le diamètre de la base</label>
+    <label><input type="radio" name="s8" value="d"> la hauteur du cône</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 9</h3>
+  <p class="theme">Formule – Volume du cône</p>
+  <p>Le volume d'un cône de rayon \(r\) et de hauteur \(h\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s9" value="a"> \(\pi r^2 h\)</label>
+    <label><input type="radio" name="s9" value="b"> \(\pi r h\)</label>
+    <label><input type="radio" name="s9" value="c"> \(\dfrac{1}{2}\pi r^2 h\)</label>
+    <label><input type="radio" name="s9" value="d"> \(\dfrac{1}{3}\pi r^2 h\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Formule – Volume de la boule</p>
+  <p>Le volume d'une boule de rayon \(R\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s10" value="a"> \(\dfrac{4}{3}\pi R^3\)</label>
+    <label><input type="radio" name="s10" value="b"> \(4\pi R^2\)</label>
+    <label><input type="radio" name="s10" value="c"> \(\dfrac{1}{3}\pi R^3\)</label>
+    <label><input type="radio" name="s10" value="d"> \(\pi R^3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Vocabulaire – Pyramide</p>
+  <p>Dans une pyramide, l'apex est :</p>
+  <div class="options">
+    <label><input type="radio" name="s11" value="a"> la base de la pyramide</label>
+    <label><input type="radio" name="s11" value="b"> l'arête principale</label>
+    <label><input type="radio" name="s11" value="c"> le sommet commun à toutes les faces latérales</label>
+    <label><input type="radio" name="s11" value="d"> la hauteur de la pyramide</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Perspective cavalière – Arêtes cachées</p>
+  <p>En perspective cavalière, les arêtes cachées sont représentées par :</p>
+  <div class="options">
+    <label><input type="radio" name="s12" value="a"> des traits pleins</label>
+    <label><input type="radio" name="s12" value="b"> des pointillés</label>
+    <label><input type="radio" name="s12" value="c"> des traits doubles</label>
+    <label><input type="radio" name="s12" value="d"> des croix</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 13</h3>
+  <p class="theme">Conversion – Volumes</p>
+  <p>1 m³ est égal à :</p>
+  <div class="options">
+    <label><input type="radio" name="s13" value="a"> 1 000 L</label>
+    <label><input type="radio" name="s13" value="b"> 100 L</label>
+    <label><input type="radio" name="s13" value="c"> 10 L</label>
+    <label><input type="radio" name="s13" value="d"> 1 000 000 L</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 14</h3>
+  <p class="theme">Identification – Solide</p>
+  <p>Un objet obtenu par la rotation d'un rectangle autour d'un de ses côtés est :</p>
+  <div class="options">
+    <label><input type="radio" name="s14" value="a"> un cône</label>
+    <label><input type="radio" name="s14" value="b"> une pyramide</label>
+    <label><input type="radio" name="s14" value="c"> une boule</label>
+    <label><input type="radio" name="s14" value="d"> un cylindre</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Section plane – Vocabulaire</p>
+  <p>La section d'un cube par un plan parallèle à une de ses faces est :</p>
+  <div class="options">
+    <label><input type="radio" name="s15" value="a"> un triangle</label>
+    <label><input type="radio" name="s15" value="b"> un cercle</label>
+    <label><input type="radio" name="s15" value="c"> un carré</label>
+    <label><input type="radio" name="s15" value="d"> un hexagone</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
+<div class="score-box" id="score-socle"></div>
+</form>
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<form id="qcm-standard">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Volume – Cylindre (application pro)</p>
+  <p>Un ballon d'eau chaude cylindrique a un rayon de 25 cm et une hauteur de 1,20 m. Son volume en m³ est :</p>
+  <div class="options">
+    <label><input type="radio" name="t1" value="a"> \(0{,}942 \text{ m}^3\)</label>
+    <label><input type="radio" name="t1" value="b"> \(0{,}2356 \text{ m}^3\)</label>
+    <label><input type="radio" name="t1" value="c"> \(2{,}356 \text{ m}^3\)</label>
+    <label><input type="radio" name="t1" value="d"> \(0{,}0236 \text{ m}^3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 2</h3>
+  <p class="theme">Conversion – Volume en litres</p>
+  <p>Un réservoir cylindrique a un volume de \(0{,}2356 \text{ m}^3\). Sa contenance en litres est :</p>
+  <div class="options">
+    <label><input type="radio" name="t2" value="a"> environ 235,6 L</label>
+    <label><input type="radio" name="t2" value="b"> environ 23,56 L</label>
+    <label><input type="radio" name="t2" value="c"> environ 2 356 L</label>
+    <label><input type="radio" name="t2" value="d"> environ 0,2356 L</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 3</h3>
+  <p class="theme">Aire totale – Pavé droit</p>
+  <p>Un caisson de menuiserie mesure \(L = 80\) cm, \(\ell = 40\) cm, \(h = 60\) cm. Son aire totale est :</p>
+  <div class="options">
+    <label><input type="radio" name="t3" value="a"> 19 200 cm²</label>
+    <label><input type="radio" name="t3" value="b"> 9 600 cm²</label>
+    <label><input type="radio" name="t3" value="c"> 20 800 cm²</label>
+    <label><input type="radio" name="t3" value="d"> 192 000 cm²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Volume – Cône</p>
+  <p>Un tas de sable a la forme d'un cône de rayon 1,50 m et de hauteur 0,80 m. Son volume est :</p>
+  <div class="options">
+    <label><input type="radio" name="t4" value="a"> \(5{,}655 \text{ m}^3\)</label>
+    <label><input type="radio" name="t4" value="b"> \(0{,}628 \text{ m}^3\)</label>
+    <label><input type="radio" name="t4" value="c"> \(3{,}770 \text{ m}^3\)</label>
+    <label><input type="radio" name="t4" value="d"> \(1{,}885 \text{ m}^3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Volume – Pyramide</p>
+  <p>Un bac à base carrée de côté 30 cm et de hauteur 20 cm a un volume de :</p>
+  <div class="options">
+    <label><input type="radio" name="t5" value="a"> 18 000 cm³</label>
+    <label><input type="radio" name="t5" value="b"> 6 000 cm³</label>
+    <label><input type="radio" name="t5" value="c"> 2 000 cm³</label>
+    <label><input type="radio" name="t5" value="d"> 54 000 cm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 6</h3>
+  <p class="theme">Aire latérale – Cylindre</p>
+  <p>Un conduit cylindrique a un rayon de 10 cm et une hauteur de 3 m. Son aire latérale en m² est :</p>
+  <div class="options">
+    <label><input type="radio" name="t6" value="a"> \(0{,}6\pi \approx 1{,}88 \text{ m}^2\)</label>
+    <label><input type="radio" name="t6" value="b"> \(0{,}06\pi \approx 0{,}188 \text{ m}^2\)</label>
+    <label><input type="radio" name="t6" value="c"> \(6\pi \approx 18{,}85 \text{ m}^2\)</label>
+    <label><input type="radio" name="t6" value="d"> \(0{,}3\pi \approx 0{,}94 \text{ m}^2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 7</h3>
+  <p class="theme">Volume – Boule</p>
+  <p>Un ballon de sport a un diamètre de 22 cm. Son volume est :</p>
+  <div class="options">
+    <label><input type="radio" name="t7" value="a"> \(2 787{,}6 \text{ cm}^3\)</label>
+    <label><input type="radio" name="t7" value="b"> \(11 150{,}6 \text{ cm}^3\)</label>
+    <label><input type="radio" name="t7" value="c"> \(5 575{,}3 \text{ cm}^3\)</label>
+    <label><input type="radio" name="t7" value="d"> \(1 520{,}5 \text{ cm}^3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 8</h3>
+  <p class="theme">Conversion – cm³ et L</p>
+  <p>Un volume de 5 000 cm³ est égal à :</p>
+  <div class="options">
+    <label><input type="radio" name="t8" value="a"> 50 L</label>
+    <label><input type="radio" name="t8" value="b"> 5 L</label>
+    <label><input type="radio" name="t8" value="c"> 0,5 L</label>
+    <label><input type="radio" name="t8" value="d"> 500 L</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 9</h3>
+  <p class="theme">Aire totale – Cube</p>
+  <p>Un cube d'arête 5 cm a une aire totale de :</p>
+  <div class="options">
+    <label><input type="radio" name="t9" value="a"> 25 cm²</label>
+    <label><input type="radio" name="t9" value="b"> 50 cm²</label>
+    <label><input type="radio" name="t9" value="c"> 100 cm²</label>
+    <label><input type="radio" name="t9" value="d"> 150 cm²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Section plane – Cylindre</p>
+  <p>La section d'un cylindre par un plan parallèle à ses bases est :</p>
+  <div class="options">
+    <label><input type="radio" name="t10" value="a"> un cercle</label>
+    <label><input type="radio" name="t10" value="b"> un rectangle</label>
+    <label><input type="radio" name="t10" value="c"> un triangle</label>
+    <label><input type="radio" name="t10" value="d"> une ellipse</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Section plane – Cône</p>
+  <p>Un cône de hauteur \(H = 12\) cm et de rayon \(R = 5\) cm est coupé à \(h = 8\) cm du sommet par un plan parallèle à la base. Le rayon de la section est :</p>
+  <div class="options">
+    <label><input type="radio" name="t11" value="a"> 5 cm</label>
+    <label><input type="radio" name="t11" value="b"> 2 cm</label>
+    <label><input type="radio" name="t11" value="c"> \(\approx 3{,}33\) cm</label>
+    <label><input type="radio" name="t11" value="d"> 4 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Perspective cavalière – Propriété</p>
+  <p>En perspective cavalière, les arêtes parallèles dans l'espace sont dessinées :</p>
+  <div class="options">
+    <label><input type="radio" name="t12" value="a"> convergentes vers un point de fuite</label>
+    <label><input type="radio" name="t12" value="b"> parallèles sur le dessin</label>
+    <label><input type="radio" name="t12" value="c"> perpendiculaires entre elles</label>
+    <label><input type="radio" name="t12" value="d"> de longueur inégale</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 13</h3>
+  <p class="theme">Patron – Définition</p>
+  <p>Le patron d'un solide est :</p>
+  <div class="options">
+    <label><input type="radio" name="t13" value="a"> le dessin en perspective du solide</label>
+    <label><input type="radio" name="t13" value="b"> la liste des arêtes du solide</label>
+    <label><input type="radio" name="t13" value="c"> le dessin de la section plane du solide</label>
+    <label><input type="radio" name="t13" value="d"> un dessin à plat qui reconstitue le solide une fois plié</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 14</h3>
+  <p class="theme">Conversion – m³ et dm³</p>
+  <p>Un volume de 2,5 m³ est égal à :</p>
+  <div class="options">
+    <label><input type="radio" name="t14" value="a"> 2 500 dm³</label>
+    <label><input type="radio" name="t14" value="b"> 250 dm³</label>
+    <label><input type="radio" name="t14" value="c"> 25 dm³</label>
+    <label><input type="radio" name="t14" value="d"> 25 000 dm³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Volume – Application pro</p>
+  <p>Un menuisier agenceur fabrique un meuble de rangement de 2,40 m × 0,60 m × 1,80 m. Son volume est :</p>
+  <div class="options">
+    <label><input type="radio" name="t15" value="a"> 4,32 m³</label>
+    <label><input type="radio" name="t15" value="b"> 8,64 m³</label>
+    <label><input type="radio" name="t15" value="c"> 2,592 m³</label>
+    <label><input type="radio" name="t15" value="d"> 1,296 m³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
+</form>
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<form id="qcm-appro">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Solide composé – Silo (cylindre + cône)</p>
+  <p>Un silo est constitué d'un cylindre de rayon 3 m et hauteur 8 m, surmonté d'un cône de même rayon et hauteur 2 m. Le volume total est :</p>
+  <div class="options">
+    <label><input type="radio" name="a1" value="a"> \(72\pi \approx 226{,}2 \text{ m}^3\)</label>
+    <label><input type="radio" name="a1" value="b"> \(78\pi \approx 245{,}0 \text{ m}^3\)</label>
+    <label><input type="radio" name="a1" value="c"> \(80\pi \approx 251{,}3 \text{ m}^3\)</label>
+    <label><input type="radio" name="a1" value="d"> \(84\pi \approx 263{,}9 \text{ m}^3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 2</h3>
+  <p class="theme">Aire totale – Cylindre</p>
+  <p>Un ballon d'eau chaude cylindrique a un rayon de 0,25 m et une hauteur de 1,20 m. Son aire totale (2 bases + latérale) est :</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> \(0{,}6\pi \approx 1{,}88 \text{ m}^2\)</label>
+    <label><input type="radio" name="a2" value="b"> \(0{,}850\pi \approx 2{,}67 \text{ m}^2\)</label>
+    <label><input type="radio" name="a2" value="c"> \(0{,}650\pi \approx 2{,}04 \text{ m}^2\)</label>
+    <label><input type="radio" name="a2" value="d"> \(0{,}725\pi \approx 2{,}28 \text{ m}^2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Section plane – Boule</p>
+  <p>Une boule de rayon \(R = 10\) cm est coupée par un plan situé à \(d = 6\) cm du centre. Le rayon de la section est :</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> 8 cm</label>
+    <label><input type="radio" name="a3" value="b"> 4 cm</label>
+    <label><input type="radio" name="a3" value="c"> \(\sqrt{136} \approx 11{,}7\) cm</label>
+    <label><input type="radio" name="a3" value="d"> 6 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 4</h3>
+  <p class="theme">Section plane – Cône (rapport de réduction)</p>
+  <p>Un cône de hauteur \(H = 15\) cm et de rayon \(R = 6\) cm est coupé à \(h = 10\) cm du sommet. Le rayon \(r\) de la section est :</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> 2 cm</label>
+    <label><input type="radio" name="a4" value="b"> 3 cm</label>
+    <label><input type="radio" name="a4" value="c"> 4 cm</label>
+    <label><input type="radio" name="a4" value="d"> 9 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Solide composé – Volume évidé</p>
+  <p>Un bloc cylindrique en bois de rayon 5 cm et hauteur 12 cm est percé d'un trou cylindrique central de rayon 2 cm sur toute sa hauteur. Le volume de bois restant est :</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> \(300\pi \approx 942{,}5 \text{ cm}^3\)</label>
+    <label><input type="radio" name="a5" value="b"> \(252\pi \approx 791{,}7 \text{ cm}^3\)</label>
+    <label><input type="radio" name="a5" value="c"> \(25\pi \approx 78{,}5 \text{ cm}^3\)</label>
+    <label><input type="radio" name="a5" value="d"> \(348\pi \approx 1093{,}3 \text{ cm}^3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 6</h3>
+  <p class="theme">Formule – Génératrice du cône</p>
+  <p>Un cône a un rayon de base \(r = 3\) cm et une hauteur \(h = 4\) cm. Sa génératrice \(g\) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="a6" value="a"> 3,5 cm</label>
+    <label><input type="radio" name="a6" value="b"> 4,5 cm</label>
+    <label><input type="radio" name="a6" value="c"> 4 cm</label>
+    <label><input type="radio" name="a6" value="d"> 5 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Aire latérale – Cône</p>
+  <p>Un cône de rayon \(r = 3\) cm et de génératrice \(g = 5\) cm a une aire latérale de :</p>
+  <div class="options">
+    <label><input type="radio" name="a7" value="a"> \(15\pi \approx 47{,}1 \text{ cm}^2\)</label>
+    <label><input type="radio" name="a7" value="b"> \(9\pi \approx 28{,}3 \text{ cm}^2\)</label>
+    <label><input type="radio" name="a7" value="c"> \(24\pi \approx 75{,}4 \text{ cm}^2\)</label>
+    <label><input type="radio" name="a7" value="d"> \(30\pi \approx 94{,}2 \text{ cm}^2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 8</h3>
+  <p class="theme">Patron – Calcul d'aire</p>
+  <p>Un patron d'un pavé droit permet de calculer :</p>
+  <div class="options">
+    <label><input type="radio" name="a8" value="a"> uniquement le volume du pavé</label>
+    <label><input type="radio" name="a8" value="b"> uniquement l'aire latérale</label>
+    <label><input type="radio" name="a8" value="c"> l'aire totale du pavé (toutes ses faces)</label>
+    <label><input type="radio" name="a8" value="d"> la diagonale du pavé</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Optimisation – Conditionnement</p>
+  <p>On verse du béton dans un moule cylindrique de rayon 20 cm et de hauteur 50 cm. Le volume de béton en litres est :</p>
+  <div class="options">
+    <label><input type="radio" name="a9" value="a"> environ 6,28 L</label>
+    <label><input type="radio" name="a9" value="b"> environ 62,8 L</label>
+    <label><input type="radio" name="a9" value="c"> environ 628 L</label>
+    <label><input type="radio" name="a9" value="d"> environ 0,628 L</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Solide composé – Raisonnement</p>
+  <p>Un objet est formé d'un cylindre de rayon 4 cm et hauteur 10 cm, surmonté d'une demi-boule de rayon 4 cm. Son volume total est :</p>
+  <div class="options">
+    <label><input type="radio" name="a10" value="a"> \(160\pi + \dfrac{128\pi}{3} \approx 636{,}2 \text{ cm}^3\)</label>
+    <label><input type="radio" name="a10" value="b"> \(160\pi \approx 502{,}7 \text{ cm}^3\)</label>
+    <label><input type="radio" name="a10" value="c"> \(160\pi + \dfrac{256\pi}{3} \approx 771{,}0 \text{ cm}^3\)</label>
+    <label><input type="radio" name="a10" value="d"> \(288\pi \approx 904{,}8 \text{ cm}^3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 11</h3>
+  <p class="theme">Conversion – cm³, dm³, m³</p>
+  <p>Un réservoir a une capacité de 2 500 000 cm³. Cela correspond à :</p>
+  <div class="options">
+    <label><input type="radio" name="a11" value="a"> 25 m³</label>
+    <label><input type="radio" name="a11" value="b"> 0,25 m³</label>
+    <label><input type="radio" name="a11" value="c"> 250 m³</label>
+    <label><input type="radio" name="a11" value="d"> 2,5 m³</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 12</h3>
+  <p class="theme">Section plane – Pyramide</p>
+  <p>Une pyramide à base carrée de côté 6 cm et hauteur 9 cm est coupée par un plan parallèle à la base à mi-hauteur. Le côté du carré-section est :</p>
+  <div class="options">
+    <label><input type="radio" name="a12" value="a"> 6 cm</label>
+    <label><input type="radio" name="a12" value="b"> 4 cm</label>
+    <label><input type="radio" name="a12" value="c"> 3 cm</label>
+    <label><input type="radio" name="a12" value="d"> 2 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Aire de la sphère</p>
+  <p>Un technicien doit peindre une sphère de rayon 30 cm. La surface à peindre est :</p>
+  <div class="options">
+    <label><input type="radio" name="a13" value="a"> \(900\pi \approx 2827{,}4 \text{ cm}^2\)</label>
+    <label><input type="radio" name="a13" value="b"> \(3600\pi \approx 11309{,}7 \text{ cm}^2\)</label>
+    <label><input type="radio" name="a13" value="c"> \(1200\pi \approx 3769{,}9 \text{ cm}^2\)</label>
+    <label><input type="radio" name="a13" value="d"> \(7200\pi \approx 22619{,}5 \text{ cm}^2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 14</h3>
+  <p class="theme">Problème type BTS – Remplissage</p>
+  <p>Un réservoir sphérique de rayon 1,2 m est rempli à 75 %. Le volume de liquide qu'il contient est :</p>
+  <div class="options">
+    <label><input type="radio" name="a14" value="a"> \(\approx 5{,}429 \text{ m}^3\)</label>
+    <label><input type="radio" name="a14" value="b"> \(\approx 7{,}238 \text{ m}^3\)</label>
+    <label><input type="radio" name="a14" value="c"> \(\approx 4{,}524 \text{ m}^3\)</label>
+    <label><input type="radio" name="a14" value="d"> \(\approx 6{,}031 \text{ m}^3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 15</h3>
+  <p class="theme">Problème ouvert – Comparaison de volumes</p>
+  <p>Un cube d'arête 10 cm et un cylindre de rayon 5,64 cm et hauteur 10 cm. Lequel a le plus grand volume ?</p>
+  <div class="options">
+    <label><input type="radio" name="a15" value="a"> Le cube, car son volume est \(1000 \text{ cm}^3\) contre environ \(1000 \text{ cm}^3\) pour le cylindre</label>
+    <label><input type="radio" name="a15" value="b"> Le cylindre, car \(\pi r^2 h > a^3\) toujours</label>
+    <label><input type="radio" name="a15" value="c"> Impossible à comparer sans calculatrice</label>
+    <label><input type="radio" name="a15" value="d"> Ils ont le même volume (environ 1000 cm³), car \(\pi \times 5{,}64^2 \times 10 \approx 1000\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "Un cube possède 8 sommets, 12 arêtes et 6 faces (toutes carrées et identiques).",
+  "s2": "Un cylindre est un solide de révolution obtenu par rotation d'un rectangle. Le cube, le pavé et la pyramide sont des polyèdres.",
+  "s3": "Le volume d'un cube d'arête a est V = a³. L'aire totale est 6a² et l'aire latérale est 4a².",
+  "s4": "V = a³ = 4³ = 4 × 4 × 4 = 64 cm³.",
+  "s5": "La formule du volume d'un pavé droit est V = L × ℓ × h (produit des trois dimensions).",
+  "s6": "V = 50 × 30 × 20 = 30 000 cm³.",
+  "s7": "V = π r² h. L'aire latérale est 2πrh et l'aire totale est 2πr(r+h).",
+  "s8": "La génératrice g est le segment qui relie le sommet (apex) à un point du cercle de base. C'est la longueur de la surface inclinée.",
+  "s9": "Le volume d'un cône est V = (1/3)πr²h, soit le tiers du volume du cylindre de mêmes dimensions.",
+  "s10": "La formule du volume d'une boule est V = (4/3)πR³. L'aire de la sphère est 4πR².",
+  "s11": "L'apex (ou sommet) d'une pyramide est le point commun à toutes les faces triangulaires latérales.",
+  "s12": "En perspective cavalière, les arêtes non visibles (cachées) sont représentées en pointillés.",
+  "s13": "1 m³ = 1 000 L = 1 000 dm³. Pour passer de m³ en L, on multiplie par 1 000.",
+  "s14": "Un cylindre est obtenu par rotation d'un rectangle autour d'un de ses côtés. Un cône est obtenu par rotation d'un triangle rectangle.",
+  "s15": "La section d'un cube par un plan parallèle à une face est un carré (même forme que la face, même dimension).",
+  /* === STANDARD === */
+  "t1": "r = 0,25 m, h = 1,20 m. V = π × 0,25² × 1,20 = π × 0,0625 × 1,20 = 0,075π ≈ 0,2356 m³.",
+  "t2": "1 m³ = 1 000 L, donc 0,2356 m³ = 0,2356 × 1 000 ≈ 235,6 L.",
+  "t3": "A = 2(Lℓ + Lh + ℓh) = 2(80×40 + 80×60 + 40×60) = 2(3200 + 4800 + 2400) = 2 × 10400 = 20 800 cm².",
+  "t4": "V = (1/3)πr²h = (1/3) × π × 1,5² × 0,8 = (1/3) × π × 2,25 × 0,8 = 0,6π ≈ 1,885 m³.",
+  "t5": "Base carrée : Ab = 30² = 900 cm². V = (1/3) × 900 × 20 = 6 000 cm³ = 6 L.",
+  "t6": "r = 10 cm = 0,10 m, h = 3 m. Aire latérale = 2πrh = 2π × 0,10 × 3 = 0,6π ≈ 1,88 m².",
+  "t7": "Diamètre = 22 cm, donc R = 11 cm. V = (4/3)π × 11³ = (4/3)π × 1331 = (5324π)/3 ≈ 5 575,3 cm³.",
+  "t8": "1 L = 1 dm³ = 1 000 cm³, donc 5 000 cm³ = 5 000 / 1 000 = 5 L.",
+  "t9": "A totale = 6a² = 6 × 5² = 6 × 25 = 150 cm².",
+  "t10": "La section d'un cylindre par un plan parallèle à ses bases est un cercle de même rayon.",
+  "t11": "r = R × (h/H) = 5 × (8/12) = 5 × (2/3) ≈ 3,33 cm.",
+  "t12": "En perspective cavalière, les arêtes parallèles dans l'espace restent parallèles sur le dessin.",
+  "t13": "Le patron est un dessin à plat que l'on peut plier pour reconstituer le solide. Il montre chaque face en vraie grandeur.",
+  "t14": "1 m³ = 1 000 dm³, donc 2,5 m³ = 2 500 dm³.",
+  "t15": "V = 2,40 × 0,60 × 1,80 = 2,592 m³.",
+  /* === APPROFONDISSEMENT === */
+  "a1": "V cylindre = π × 3² × 8 = 72π ≈ 226,2 m³. V cône = (1/3)π × 3² × 2 = 6π ≈ 18,8 m³. Total = 78π ≈ 245,0 m³.",
+  "a2": "Aire totale = 2πr(r+h) = 2π × 0,25 × (0,25 + 1,20) = 2π × 0,25 × 1,45 = 0,725π ≈ 2,28 m².",
+  "a3": "r = √(R² − d²) = √(10² − 6²) = √(100 − 36) = √64 = 8 cm.",
+  "a4": "r = R × (h/H) = 6 × (10/15) = 6 × (2/3) = 4 cm.",
+  "a5": "V total = π × 5² × 12 = 300π cm³. V trou = π × 2² × 12 = 48π cm³. V restant = 300π − 48π = 252π ≈ 791,7 cm³.",
+  "a6": "g = √(r² + h²) = √(3² + 4²) = √(9 + 16) = √25 = 5 cm.",
+  "a7": "Aire latérale cône = πrg = π × 3 × 5 = 15π ≈ 47,1 cm².",
+  "a8": "Le patron d'un solide montre toutes ses faces en vraie grandeur. Son aire totale est donc la somme des aires de toutes les faces.",
+  "a9": "r = 20 cm, h = 50 cm. V = π × 20² × 50 = 20 000π cm³ ≈ 62 832 cm³ = 62,8 L (car 1 L = 1 000 cm³).",
+  "a10": "V cylindre = π × 4² × 10 = 160π cm³. V demi-boule = (1/2) × (4/3)π × 4³ = (128π)/3 cm³. Total = 160π + (128π)/3 ≈ 636,2 cm³.",
+  "a11": "1 m³ = 1 000 dm³ = 1 000 000 cm³. Donc 2 500 000 cm³ = 2 500 000 / 1 000 000 = 2,5 m³.",
+  "a12": "Pour une pyramide, la section à mi-hauteur est semblable à la base avec un rapport de réduction h/H = (9/2)/9 = 1/2. Côté section = 6 × (1/2) = 3 cm.",
+  "a13": "Aire sphère = 4πR² = 4π × 30² = 4π × 900 = 3600π ≈ 11 309,7 cm².",
+  "a14": "V boule = (4/3)π × 1,2³ = (4/3)π × 1,728 = 2,304π ≈ 7,238 m³. Volume à 75% = 0,75 × 7,238 ≈ 5,429 m³.",
+  "a15": "V cube = 10³ = 1 000 cm³. V cylindre = π × 5,64² × 10 ≈ π × 31,81 × 10 ≈ 999,6 cm³ ≈ 1 000 cm³. Les volumes sont quasi égaux."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block, i) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '✅ Bonne réponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '❌ Mauvaise réponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '⚠️ Pas de réponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

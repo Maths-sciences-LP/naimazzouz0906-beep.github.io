@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch13 – QCM – Théorème de Thalès dans le triangle – 2nde MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}
+
+.qcm-header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.qcm-header .dh-item{display:flex;align-items:center;gap:6px}
+.qcm-header strong{color:var(--p)}
+.q-block{border:1px solid #e2e8f0;border-radius:10px;padding:18px 20px;margin:16px 0;background:#fff}
+.q-block h3{margin:0 0 10px;font-size:1em;color:var(--p)}
+.q-block .theme{font-size:.78em;color:#718096;margin-bottom:8px;font-style:italic}
+.options label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:1.5px solid #e2e8f0;transition:background .15s,border-color .15s;font-size:.95em}
+.options label:hover{background:var(--p-bg);border-color:var(--p-border)}
+.options input[type="radio"]{margin-right:8px;accent-color:var(--p)}
+.options label.correct{background:#d1fae5;border-color:#34d399}
+.options label.incorrect{background:#fee2e2;border-color:#f87171}
+.q-feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:.88em;display:none}
+.q-feedback.ok{background:#d1fae5;color:#065f46;display:block}
+.q-feedback.ko{background:#fee2e2;color:#991b1b;display:block}
+.btn-valider{background:var(--p);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;margin-top:20px;display:block}
+.btn-valider:hover{opacity:.85}
+.btn-reset{background:#e2e8f0;color:#374151;border:none;padding:8px 20px;border-radius:8px;font-size:.9em;cursor:pointer;margin-top:8px}
+.btn-reset:hover{background:#cbd5e1}
+.score-box{margin-top:24px;padding:18px 24px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:700;display:none}
+.score-box.show{display:block}
+.score-good{background:#d1fae5;color:#065f46;border:2px solid #34d399}
+.score-avg{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}
+.score-low{background:#fee2e2;color:#991b1b;border:2px solid #f87171}
+@media print{.nb,.btn-valider,.btn-reset,.diff-toggle-wrap{display:none}.options label{border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>QCM – Théorème de Thalès dans le triangle</h1>
+  <p class="sous-titre">Chapitre 13 | Seconde Bac Pro MAMA | Mathématiques</p>
+</header>
+
+<div class="qcm-header">
+  <div class="dh-item">⏱ <strong>Durée :</strong> 15–20 min</div>
+  <div class="dh-item">📄 <strong>15 questions</strong></div>
+  <div class="dh-item">🧮 <strong>Calculatrice autorisée</strong></div>
+</div>
+
+<p style="font-size:.9em;color:#4a5568">Pour chaque question, cochez la <strong>seule bonne réponse</strong> puis cliquez sur « Valider le QCM » en bas de page.</p>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<form id="qcm-socle">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Vocabulaire – Configuration de Thalès</p>
+  <p>Dans un triangle ABC, D est sur [AB] et E est sur [AC]. Quelle condition faut-il vérifier pour appliquer le théorème de Thalès ?</p>
+  <div class="options">
+    <label><input type="radio" name="s1" value="a"> DE = BC</label>
+    <label><input type="radio" name="s1" value="b"> AD = AE</label>
+    <label><input type="radio" name="s1" value="c"> (DE) est parallèle à (BC)</label>
+    <label><input type="radio" name="s1" value="d"> Le triangle est rectangle</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Vocabulaire – Égalité des rapports</p>
+  <p>Si DE ∥ BC dans un triangle ABC (D sur [AB], E sur [AC]), le théorème de Thalès donne :</p>
+  <div class="options">
+    <label><input type="radio" name="s2" value="a"> AD + DB = AE + EC</label>
+    <label><input type="radio" name="s2" value="b"> \(\dfrac{AD}{AB} = \dfrac{AE}{AC} = \dfrac{DE}{BC}\)</label>
+    <label><input type="radio" name="s2" value="c"> AD × AE = AB × AC</label>
+    <label><input type="radio" name="s2" value="d"> AD − DB = AE − EC</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Calcul – Rapport simple</p>
+  <p>Dans un triangle ABC, DE ∥ BC avec AD = 3 cm et AB = 6 cm. Le rapport \(\dfrac{AD}{AB}\) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="s3" value="a"> 0,5</label>
+    <label><input type="radio" name="s3" value="b"> 2</label>
+    <label><input type="radio" name="s3" value="c"> 3</label>
+    <label><input type="radio" name="s3" value="d"> 0,3</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Calcul – Longueur inconnue DE</p>
+  <p>DE ∥ BC, AD = 4, AB = 8, BC = 10. Calculer DE.</p>
+  <div class="options">
+    <label><input type="radio" name="s4" value="a"> 8</label>
+    <label><input type="radio" name="s4" value="b"> 20</label>
+    <label><input type="radio" name="s4" value="c"> 2,5</label>
+    <label><input type="radio" name="s4" value="d"> 5</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Calcul – Longueur inconnue AE</p>
+  <p>DE ∥ BC, AD = 3, AB = 9, AC = 12. Calculer AE.</p>
+  <div class="options">
+    <label><input type="radio" name="s5" value="a"> 6</label>
+    <label><input type="radio" name="s5" value="b"> 4</label>
+    <label><input type="radio" name="s5" value="c"> 36</label>
+    <label><input type="radio" name="s5" value="d"> 3</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 6</h3>
+  <p class="theme">Méthode – Produit en croix</p>
+  <p>Pour résoudre \(\dfrac{4}{AB} = \dfrac{6}{15}\), on utilise le produit en croix. On obtient :</p>
+  <div class="options">
+    <label><input type="radio" name="s6" value="a"> \(AB = \dfrac{4 \times 15}{6} = 10\)</label>
+    <label><input type="radio" name="s6" value="b"> \(AB = \dfrac{6 \times 15}{4} = 22{,}5\)</label>
+    <label><input type="radio" name="s6" value="c"> \(AB = 4 + 15 - 6 = 13\)</label>
+    <label><input type="radio" name="s6" value="d"> \(AB = \dfrac{4 \times 6}{15} = 1{,}6\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 7</h3>
+  <p class="theme">Vocabulaire – Parallélisme</p>
+  <p>Que signifie « DE ∥ BC » ?</p>
+  <div class="options">
+    <label><input type="radio" name="s7" value="a"> DE et BC sont perpendiculaires</label>
+    <label><input type="radio" name="s7" value="b"> DE et BC se croisent</label>
+    <label><input type="radio" name="s7" value="c"> DE et BC sont parallèles</label>
+    <label><input type="radio" name="s7" value="d"> DE est plus grand que BC</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 8</h3>
+  <p class="theme">Calcul – Rapport d'échelle</p>
+  <p>Sur un plan au 1/50, une cloison mesure 6 cm. Quelle est sa longueur réelle ?</p>
+  <div class="options">
+    <label><input type="radio" name="s8" value="a"> 120 cm</label>
+    <label><input type="radio" name="s8" value="b"> 300 cm (3 m)</label>
+    <label><input type="radio" name="s8" value="c"> 56 cm</label>
+    <label><input type="radio" name="s8" value="d"> 0,12 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 9</h3>
+  <p class="theme">Agrandissement/réduction – Coefficient</p>
+  <p>Si \(k = 0{,}4\), il s'agit :</p>
+  <div class="options">
+    <label><input type="radio" name="s9" value="a"> d'un agrandissement</label>
+    <label><input type="radio" name="s9" value="b"> d'une conservation (figure identique)</label>
+    <label><input type="radio" name="s9" value="c"> on ne peut pas savoir</label>
+    <label><input type="radio" name="s9" value="d"> d'une réduction</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Calcul – Réduction</p>
+  <p>Un meuble mesure 200 cm de long. On le dessine avec un rapport \(k = \dfrac{1}{10}\). La longueur sur le dessin est :</p>
+  <div class="options">
+    <label><input type="radio" name="s10" value="a"> 20 cm</label>
+    <label><input type="radio" name="s10" value="b"> 2 000 cm</label>
+    <label><input type="radio" name="s10" value="c"> 190 cm</label>
+    <label><input type="radio" name="s10" value="d"> 2 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Calcul – Longueur inconnue AB</p>
+  <p>DE ∥ BC, AD = 6, AE = 9, AC = 15. Calculer AB.</p>
+  <div class="options">
+    <label><input type="radio" name="s11" value="a"> 12</label>
+    <label><input type="radio" name="s11" value="b"> 6</label>
+    <label><input type="radio" name="s11" value="c"> 10</label>
+    <label><input type="radio" name="s11" value="d"> 15</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Attention – Ordre des points</p>
+  <p>Dans le théorème de Thalès, les segments au numérateur doivent :</p>
+  <div class="options">
+    <label><input type="radio" name="s12" value="a"> toujours être les plus grands</label>
+    <label><input type="radio" name="s12" value="b"> partir du même sommet A</label>
+    <label><input type="radio" name="s12" value="c"> être perpendiculaires</label>
+    <label><input type="radio" name="s12" value="d"> être égaux entre eux</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 13</h3>
+  <p class="theme">Contexte professionnel – Ombre</p>
+  <p>Un piquet de 1 m projette une ombre de 0,8 m. Un arbre projette une ombre de 4 m. La hauteur de l'arbre est :</p>
+  <div class="options">
+    <label><input type="radio" name="s13" value="a"> 5 m</label>
+    <label><input type="radio" name="s13" value="b"> 3,2 m</label>
+    <label><input type="radio" name="s13" value="c"> 4,8 m</label>
+    <label><input type="radio" name="s13" value="d"> 0,2 m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 14</h3>
+  <p class="theme">Réciproque – Vérifier le parallélisme</p>
+  <p>AD = 4, AB = 8, AE = 5, AC = 10. Les rapports AD/AB et AE/AC valent :</p>
+  <div class="options">
+    <label><input type="radio" name="s14" value="a"> 0,4 et 0,5 (différents)</label>
+    <label><input type="radio" name="s14" value="b"> 2 et 2 (égaux)</label>
+    <label><input type="radio" name="s14" value="c"> 0,5 et 0,4 (différents)</label>
+    <label><input type="radio" name="s14" value="d"> 0,5 et 0,5 (égaux, donc (DE) ∥ (BC))</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Calcul – Dimension sur un plan</p>
+  <p>Un artisan menuisier dessine un plan au 1/20. Le meuble réel fait 160 cm de large. Sur le plan, la largeur est :</p>
+  <div class="options">
+    <label><input type="radio" name="s15" value="a"> 3 200 cm</label>
+    <label><input type="radio" name="s15" value="b"> 80 cm</label>
+    <label><input type="radio" name="s15" value="c"> 8 cm</label>
+    <label><input type="radio" name="s15" value="d"> 140 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
+<div class="score-box" id="score-socle"></div>
+</form>
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<form id="qcm-standard">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Configuration – Identifier les données</p>
+  <p>Dans un triangle ABC, D est sur [AB] et E est sur [AC] avec DE ∥ BC. On sait que AD = 5, DB = 3 et AE = 7,5. Quel rapport faut-il écrire pour trouver EC ?</p>
+  <div class="options">
+    <label><input type="radio" name="t1" value="a"> \(\dfrac{AD}{DB} = \dfrac{AE}{AC}\)</label>
+    <label><input type="radio" name="t1" value="b"> \(\dfrac{AD}{AB} = \dfrac{AE}{AC}\)</label>
+    <label><input type="radio" name="t1" value="c"> \(\dfrac{AD}{AE} = \dfrac{DB}{EC}\)</label>
+    <label><input type="radio" name="t1" value="d"> \(\dfrac{DE}{BC} = \dfrac{DB}{AB}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Calcul – Longueur EC (suite Q1)</p>
+  <p>Avec AD = 5, DB = 3 (donc AB = 8), AE = 7,5, calculer AC puis EC.</p>
+  <div class="options">
+    <label><input type="radio" name="t2" value="a"> AC = 10 ; EC = 2,5</label>
+    <label><input type="radio" name="t2" value="b"> AC = 15 ; EC = 7,5</label>
+    <label><input type="radio" name="t2" value="c"> AC = 12 ; EC = 4,5</label>
+    <label><input type="radio" name="t2" value="d"> AC = 9 ; EC = 1,5</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Calcul – Longueur DE</p>
+  <p>DE ∥ BC, AD = 6, AB = 10, BC = 15. Calculer DE.</p>
+  <div class="options">
+    <label><input type="radio" name="t3" value="a"> 9</label>
+    <label><input type="radio" name="t3" value="b"> 25</label>
+    <label><input type="radio" name="t3" value="c"> 10</label>
+    <label><input type="radio" name="t3" value="d"> 6</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Réciproque – Droites parallèles</p>
+  <p>AD = 6, AB = 18, AE = 4, AC = 12. Les droites (DE) et (BC) sont-elles parallèles ?</p>
+  <div class="options">
+    <label><input type="radio" name="t4" value="a"> Non, car 6/18 = 0,3 et 4/12 = 0,4</label>
+    <label><input type="radio" name="t4" value="b"> Non, car les triangles ne sont pas rectangles</label>
+    <label><input type="radio" name="t4" value="c"> Oui, car AD + AE = AB</label>
+    <label><input type="radio" name="t4" value="d"> Oui, car 6/18 = 1/3 et 4/12 = 1/3</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Réciproque – Droites non parallèles</p>
+  <p>AD = 3, AB = 9, AE = 5, AC = 12. Les droites (DE) et (BC) sont-elles parallèles ?</p>
+  <div class="options">
+    <label><input type="radio" name="t5" value="a"> Oui, car les deux rapports sont proches</label>
+    <label><input type="radio" name="t5" value="b"> Non, car 3/9 ≈ 0,333 et 5/12 ≈ 0,417</label>
+    <label><input type="radio" name="t5" value="c"> Oui, car 3 × 12 = 36 et 9 × 5 = 45 sont proches</label>
+    <label><input type="radio" name="t5" value="d"> On ne peut pas conclure</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 6</h3>
+  <p class="theme">Contexte professionnel – Lecture de plan</p>
+  <p>Un menuisier agenceur consulte un plan au 1/50. Un mur mesure 7,6 cm sur le plan. Quelle est la longueur réelle du mur ?</p>
+  <div class="options">
+    <label><input type="radio" name="t6" value="a"> 3,80 m</label>
+    <label><input type="radio" name="t6" value="b"> 0,152 m</label>
+    <label><input type="radio" name="t6" value="c"> 38 m</label>
+    <label><input type="radio" name="t6" value="d"> 380 m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 7</h3>
+  <p class="theme">Agrandissement/réduction – Coefficient k</p>
+  <p>Une figure a un coefficient \(k = 2{,}5\). Un segment de 4 cm dans l'original mesure dans l'image :</p>
+  <div class="options">
+    <label><input type="radio" name="t7" value="a"> 1,6 cm</label>
+    <label><input type="radio" name="t7" value="b"> 6,5 cm</label>
+    <label><input type="radio" name="t7" value="c"> 10 cm</label>
+    <label><input type="radio" name="t7" value="d"> 4 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 8</h3>
+  <p class="theme">Contexte professionnel – Ombre et hauteur</p>
+  <p>Un panneau vertical de 2 m projette une ombre de 1,5 m. Un poteau projette une ombre de 3,6 m. La hauteur du poteau est :</p>
+  <div class="options">
+    <label><input type="radio" name="t8" value="a"> 5,4 m</label>
+    <label><input type="radio" name="t8" value="b"> 4,8 m</label>
+    <label><input type="radio" name="t8" value="c"> 2,7 m</label>
+    <label><input type="radio" name="t8" value="d"> 3,6 m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 9</h3>
+  <p class="theme">Calcul – Trouver AB</p>
+  <p>DE ∥ BC, DE = 6, BC = 10, AD = 9. Calculer AB.</p>
+  <div class="options">
+    <label><input type="radio" name="t9" value="a"> 5,4</label>
+    <label><input type="radio" name="t9" value="b"> 6</label>
+    <label><input type="radio" name="t9" value="c"> 12</label>
+    <label><input type="radio" name="t9" value="d"> 15</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Contexte professionnel – Plan de cuisine</p>
+  <p>Un poseur de cuisines dessine un plan au 1/25. La cuisine réelle fait 3,50 m de long. Sur le plan, elle mesure :</p>
+  <div class="options">
+    <label><input type="radio" name="t10" value="a"> 14 cm</label>
+    <label><input type="radio" name="t10" value="b"> 87,5 cm</label>
+    <label><input type="radio" name="t10" value="c"> 1,4 cm</label>
+    <label><input type="radio" name="t10" value="d"> 140 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Méthode – Étapes de résolution</p>
+  <p>Pour calculer une longueur inconnue avec Thalès, la bonne méthode est :</p>
+  <div class="options">
+    <label><input type="radio" name="t11" value="a"> Additionner toutes les longueurs connues</label>
+    <label><input type="radio" name="t11" value="b"> Utiliser le théorème de Pythagore</label>
+    <label><input type="radio" name="t11" value="c"> Écrire l'égalité des rapports puis faire un produit en croix</label>
+    <label><input type="radio" name="t11" value="d"> Multiplier les longueurs entre elles</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Calcul – Rapport et longueur BC</p>
+  <p>DE ∥ BC, AD = 4, AB = 12, DE = 5. Calculer BC.</p>
+  <div class="options">
+    <label><input type="radio" name="t12" value="a"> 1,67</label>
+    <label><input type="radio" name="t12" value="b"> 15</label>
+    <label><input type="radio" name="t12" value="c"> 20</label>
+    <label><input type="radio" name="t12" value="d"> 7</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 13</h3>
+  <p class="theme">Agrandissement – Coefficient k > 1</p>
+  <p>On agrandit une maquette d'un facteur \(k = 3\). Si un segment mesure 5 cm sur la maquette, il mesure en réalité :</p>
+  <div class="options">
+    <label><input type="radio" name="t13" value="a"> 1,67 cm</label>
+    <label><input type="radio" name="t13" value="b"> 8 cm</label>
+    <label><input type="radio" name="t13" value="c"> 2 cm</label>
+    <label><input type="radio" name="t13" value="d"> 15 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 14</h3>
+  <p class="theme">Erreur fréquente – Ordre des segments</p>
+  <p>Un élève écrit \(\dfrac{DA}{AB} = \dfrac{DE}{BC}\). L'erreur est :</p>
+  <div class="options">
+    <label><input type="radio" name="t14" value="a"> DA devrait s'écrire AD (partir du sommet A)</label>
+    <label><input type="radio" name="t14" value="b"> Il fallait écrire DA/DB</label>
+    <label><input type="radio" name="t14" value="c"> Il n'y a pas d'erreur</label>
+    <label><input type="radio" name="t14" value="d"> DE et BC doivent être au numérateur</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Contexte professionnel – Panneau de bois</p>
+  <p>Un fabricant de meubles réduit un patron de découpe avec un rapport \(k = 0{,}8\). Si le panneau original fait 125 cm de large, la largeur réduite est :</p>
+  <div class="options">
+    <label><input type="radio" name="t15" value="a"> 156,25 cm</label>
+    <label><input type="radio" name="t15" value="b"> 125,8 cm</label>
+    <label><input type="radio" name="t15" value="c"> 100 cm</label>
+    <label><input type="radio" name="t15" value="d"> 45 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
+</form>
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<form id="qcm-appro">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Calcul – Configuration complexe</p>
+  <p>Dans un triangle ABC, DE ∥ BC avec AD = 7, DB = 3, AE = 10,5. Calculer EC.</p>
+  <div class="options">
+    <label><input type="radio" name="a1" value="a"> 3</label>
+    <label><input type="radio" name="a1" value="b"> 3,5</label>
+    <label><input type="radio" name="a1" value="c"> 4,5</label>
+    <label><input type="radio" name="a1" value="d"> 5</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Réciproque – Justification complète</p>
+  <p>AD = 8, AB = 20, AE = 6, AC = 15. Quelle conclusion peut-on tirer ?</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> (DE) n'est pas parallèle à (BC) car 8/20 ≠ 6/15</label>
+    <label><input type="radio" name="a2" value="b"> (DE) ∥ (BC) car 8/20 = 6/15 = 0,4</label>
+    <label><input type="radio" name="a2" value="c"> On ne peut pas conclure sans connaître DE et BC</label>
+    <label><input type="radio" name="a2" value="d"> (DE) ∥ (BC) car AD × AC = AE × AB</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Calcul inversé – Trouver AD</p>
+  <p>DE ∥ BC, DE = 4,2, BC = 14, AB = 20. Calculer AD.</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> 6</label>
+    <label><input type="radio" name="a3" value="b"> 8,4</label>
+    <label><input type="radio" name="a3" value="c"> 66,7</label>
+    <label><input type="radio" name="a3" value="d"> 10</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Contexte professionnel – Hauteur inaccessible</p>
+  <p>Un installateur d'agencement veut mesurer la hauteur d'un bâtiment. Il plante un jalon de 1,50 m qui projette une ombre de 2 m. L'ombre du bâtiment mesure 12 m. La hauteur du bâtiment est :</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> 16 m</label>
+    <label><input type="radio" name="a4" value="b"> 8 m</label>
+    <label><input type="radio" name="a4" value="c"> 10 m</label>
+    <label><input type="radio" name="a4" value="d"> 9 m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Échelle – Calcul à rebours</p>
+  <p>Sur un plan, une pièce mesure 9 cm et la dimension réelle est 4,50 m. L'échelle du plan est :</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> 1/100</label>
+    <label><input type="radio" name="a5" value="b"> 1/50</label>
+    <label><input type="radio" name="a5" value="c"> 1/25</label>
+    <label><input type="radio" name="a5" value="d"> 1/20</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Double application – Deux inconnues</p>
+  <p>DE ∥ BC, AD = 5, AB = 15, BC = 12, AC = 18. Calculer DE et AE.</p>
+  <div class="options">
+    <label><input type="radio" name="a6" value="a"> DE = 6 ; AE = 9</label>
+    <label><input type="radio" name="a6" value="b"> DE = 3 ; AE = 4</label>
+    <label><input type="radio" name="a6" value="c"> DE = 4 ; AE = 6</label>
+    <label><input type="radio" name="a6" value="d"> DE = 8 ; AE = 12</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Contexte professionnel – Découpe en atelier</p>
+  <p>Un menuisier doit découper un gabarit triangulaire. Le grand triangle a une base BC = 90 cm. Il trace une parallèle à BC à mi-hauteur (rapport \(k = 0{,}5\)). La longueur de cette parallèle est :</p>
+  <div class="options">
+    <label><input type="radio" name="a7" value="a"> 45 cm</label>
+    <label><input type="radio" name="a7" value="b"> 180 cm</label>
+    <label><input type="radio" name="a7" value="c"> 60 cm</label>
+    <label><input type="radio" name="a7" value="d"> 40 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Raisonnement – Contre-exemple</p>
+  <p>AD = 4, AB = 10, AE = 6, AC = 16. Peut-on conclure que (DE) ∥ (BC) ?</p>
+  <div class="options">
+    <label><input type="radio" name="a8" value="a"> Oui, car les rapports sont proches</label>
+    <label><input type="radio" name="a8" value="b"> Oui, car AD < AB et AE < AC</label>
+    <label><input type="radio" name="a8" value="c"> Oui, car AD × AC = AE × AB</label>
+    <label><input type="radio" name="a8" value="d"> Non, car 4/10 = 0,4 ≠ 6/16 = 0,375</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Contexte professionnel – Maquette d'agencement</p>
+  <p>Un technicien d'agencement réalise une maquette à l'échelle 1/15. La pièce réelle mesure 6 m × 4,5 m. Les dimensions de la maquette sont :</p>
+  <div class="options">
+    <label><input type="radio" name="a9" value="a"> 60 cm × 45 cm</label>
+    <label><input type="radio" name="a9" value="b"> 40 cm × 30 cm</label>
+    <label><input type="radio" name="a9" value="c"> 90 cm × 67,5 cm</label>
+    <label><input type="radio" name="a9" value="d"> 24 cm × 18 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Raisonnement – Lien Thalès et proportionnalité</p>
+  <p>Le théorème de Thalès est un cas particulier de :</p>
+  <div class="options">
+    <label><input type="radio" name="a10" value="a"> la symétrie axiale</label>
+    <label><input type="radio" name="a10" value="b"> le théorème de Pythagore</label>
+    <label><input type="radio" name="a10" value="c"> la proportionnalité</label>
+    <label><input type="radio" name="a10" value="d"> la trigonométrie</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Calcul – Valeurs décimales</p>
+  <p>DE ∥ BC, AD = 3,5, AB = 8,75, BC = 12,5. Calculer DE.</p>
+  <div class="options">
+    <label><input type="radio" name="a11" value="a"> 5</label>
+    <label><input type="radio" name="a11" value="b"> 6,25</label>
+    <label><input type="radio" name="a11" value="c"> 31,25</label>
+    <label><input type="radio" name="a11" value="d"> 4,375</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Contexte professionnel – Charpente</p>
+  <p>Sur une ferme de charpente triangulaire, la base BC = 8 m. Un entrait retroussé DE est parallèle à BC et situé aux 3/4 de la hauteur depuis le sommet A. La longueur de l'entrait DE est :</p>
+  <div class="options">
+    <label><input type="radio" name="a12" value="a"> 2 m</label>
+    <label><input type="radio" name="a12" value="b"> 3 m</label>
+    <label><input type="radio" name="a12" value="c"> 5 m</label>
+    <label><input type="radio" name="a12" value="d"> 6 m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Problème ouvert – Double triangle</p>
+  <p>Deux droites parallèles coupent les côtés d'un triangle ABC en D, E et en F, G (D et F sur [AB], E et G sur [AC], avec A–D–F–B). On sait AD = 2, DF = 3, FB = 5, AE = 3. Calculer AC.</p>
+  <div class="options">
+    <label><input type="radio" name="a13" value="a"> 12</label>
+    <label><input type="radio" name="a13" value="b"> 15</label>
+    <label><input type="radio" name="a13" value="c"> 10</label>
+    <label><input type="radio" name="a13" value="d"> 18</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Échelle – Passage entre deux plans</p>
+  <p>Un plan A est au 1/50 et un plan B au 1/20. Sur le plan A, un mur mesure 5 cm. Sur le plan B, ce même mur mesure :</p>
+  <div class="options">
+    <label><input type="radio" name="a14" value="a"> 2 cm</label>
+    <label><input type="radio" name="a14" value="b"> 10 cm</label>
+    <label><input type="radio" name="a14" value="c"> 12,5 cm</label>
+    <label><input type="radio" name="a14" value="d"> 25 cm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Problème type BTS – Optimisation</p>
+  <p>Un architecte d'intérieur conçoit un escalier dans un triangle rectangle (base 4 m, hauteur 3 m). Chaque marche est une parallèle à la base. Il veut 10 marches de profondeur égale. La largeur de la 7<sup>e</sup> marche (en partant du haut) est :</p>
+  <div class="options">
+    <label><input type="radio" name="a15" value="a"> 2,8 m</label>
+    <label><input type="radio" name="a15" value="b"> 2,4 m</label>
+    <label><input type="radio" name="a15" value="c"> 3,2 m</label>
+    <label><input type="radio" name="a15" value="d"> 1,2 m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "Le théorème de Thalès s'applique quand (DE) est parallèle à (BC), avec D sur [AB] et E sur [AC].",
+  "s2": "Le théorème de Thalès donne l'égalité des trois rapports : AD/AB = AE/AC = DE/BC.",
+  "s3": "AD/AB = 3/6 = 0,5. Le rapport vaut la moitié.",
+  "s4": "AD/AB = 4/8 = 0,5. Par Thalès : DE/BC = 0,5, donc DE = 0,5 × 10 = 5.",
+  "s5": "AD/AB = 3/9 = 1/3. Par Thalès : AE/AC = 1/3, donc AE = 12 × 1/3 = 4.",
+  "s6": "Produit en croix : 4 × 15 = AB × 6, donc AB = 60/6 = 10.",
+  "s7": "Le symbole ∥ signifie « parallèle ». DE ∥ BC signifie que les droites (DE) et (BC) sont parallèles.",
+  "s8": "Échelle 1/50 : longueur réelle = 6 × 50 = 300 cm = 3 m.",
+  "s9": "k = 0,4 est compris entre 0 et 1 : c'est une réduction (la figure est plus petite).",
+  "s10": "Longueur sur le dessin = 200 × 1/10 = 20 cm.",
+  "s11": "AD/AB = AE/AC → 6/AB = 9/15 → AB = 6 × 15/9 = 90/9 = 10.",
+  "s12": "Les segments au numérateur partent tous du même sommet A : AD/AB (pas DA/AB).",
+  "s13": "Rapports égaux (rayons parallèles) : 1/h = 0,8/4 → h = 1 × 4/0,8 = 5 m.",
+  "s14": "AD/AB = 4/8 = 0,5 et AE/AC = 5/10 = 0,5. Les rapports sont égaux, donc (DE) ∥ (BC).",
+  "s15": "Rapport 1/20 : longueur sur le plan = 160 × 1/20 = 8 cm.",
+  /* === STANDARD === */
+  "t1": "Le théorème de Thalès donne AD/AB = AE/AC. Ici AB = AD + DB = 5 + 3 = 8.",
+  "t2": "AD/AB = 5/8. Par Thalès : AE/AC = 5/8, donc AC = 7,5 × 8/5 = 12. Puis EC = AC − AE = 12 − 7,5 = 4,5.",
+  "t3": "AD/AB = 6/10 = 0,6. Par Thalès : DE = 0,6 × 15 = 9.",
+  "t4": "6/18 = 1/3 et 4/12 = 1/3. Les rapports sont égaux, donc par la réciproque, (DE) ∥ (BC).",
+  "t5": "3/9 ≈ 0,333 et 5/12 ≈ 0,417. Les rapports sont différents, donc (DE) n'est pas parallèle à (BC).",
+  "t6": "Longueur réelle = 7,6 × 50 = 380 cm = 3,80 m.",
+  "t7": "Agrandissement de rapport k = 2,5 : longueur image = 4 × 2,5 = 10 cm.",
+  "t8": "Rapports égaux : 2/h = 1,5/3,6 → h = 2 × 3,6/1,5 = 7,2/1,5 = 4,8 m.",
+  "t9": "DE/BC = AD/AB → 6/10 = 9/AB → AB = 9 × 10/6 = 15.",
+  "t10": "Réel = 3,50 m = 350 cm. Plan = 350/25 = 14 cm.",
+  "t11": "La méthode de Thalès : écrire l'égalité des rapports, puis résoudre par produit en croix.",
+  "t12": "AD/AB = DE/BC → 4/12 = 5/BC → BC = 5 × 12/4 = 15.",
+  "t13": "Agrandissement k = 3 : longueur réelle = 5 × 3 = 15 cm.",
+  "t14": "On écrit toujours AD (en partant du sommet A), jamais DA. L'ordre des lettres suit la convention du théorème.",
+  "t15": "Réduction k = 0,8 : largeur réduite = 125 × 0,8 = 100 cm.",
+  /* === APPROFONDISSEMENT === */
+  "a1": "AB = AD + DB = 7 + 3 = 10. AD/AB = 7/10. Par Thalès : AE/AC = 7/10. AC = 10,5 × 10/7 = 15. EC = 15 − 10,5 = 4,5.",
+  "a2": "8/20 = 0,4 et 6/15 = 0,4. Les rapports sont égaux, donc par la réciproque de Thalès, (DE) ∥ (BC).",
+  "a3": "DE/BC = AD/AB → 4,2/14 = AD/20 → AD = 4,2 × 20/14 = 84/14 = 6.",
+  "a4": "Rapports égaux (rayons parallèles) : 1,5/h = 2/12 → h = 1,5 × 12/2 = 18/2 = 9 m.",
+  "a5": "Réel = 4,50 m = 450 cm. Échelle = plan/réel = 9/450 = 1/50.",
+  "a6": "k = AD/AB = 5/15 = 1/3. DE = BC × 1/3 = 12/3 = 4. AE = AC × 1/3 = 18/3 = 6.",
+  "a7": "Rapport k = 0,5. Par Thalès : DE = k × BC = 0,5 × 90 = 45 cm.",
+  "a8": "4/10 = 0,4 et 6/16 = 0,375. Les rapports sont différents, donc (DE) n'est pas parallèle à (BC).",
+  "a9": "Échelle 1/15 : 6 m = 600 cm → 600/15 = 40 cm. 4,5 m = 450 cm → 450/15 = 30 cm.",
+  "a10": "Le théorème de Thalès exprime l'égalité de trois rapports de longueurs : c'est une situation de proportionnalité.",
+  "a11": "k = AD/AB = 3,5/8,75 = 0,4. DE = 0,4 × 12,5 = 5.",
+  "a12": "Le point D est aux 3/4 de la hauteur depuis A, donc k = 3/4. DE = k × BC = 3/4 × 8 = 6 m.",
+  "a13": "AB = AD + DF + FB = 2 + 3 + 5 = 10. Pour la droite passant par D et E : AD/AB = AE/AC → 2/10 = 3/AC → AC = 3 × 10/2 = 15.",
+  "a14": "Sur le plan A (1/50) : 5 cm → réel = 5 × 50 = 250 cm. Sur le plan B (1/20) : 250/20 = 12,5 cm.",
+  "a15": "La 7e marche est au rapport k = 7/10 depuis le sommet. Largeur = k × base = 7/10 × 4 = 2,8 m."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '✅ Bonne réponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '❌ Mauvaise réponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '⚠️ Pas de réponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

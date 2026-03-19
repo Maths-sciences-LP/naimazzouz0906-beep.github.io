@@ -1,7 +1,7 @@
 # Audit Pedagogique Global
 
 **Date** : 2026-03-16
-**Derniere mise a jour** : 2026-03-18
+**Derniere mise a jour** : 2026-03-19 (verification detaillee Seconde)
 **Perimetre** : qualite des cours, clarte pedagogique, coherence inter-niveaux, progression 2nde-1ere-Tle, exemples, contextes professionnels
 **Methode** : lecture integrale ou partielle de 50+ fichiers lecon.html, analyses statistiques CSS, comparaison inter-sections
 **Rapports detailles** : `audit-pedagogique-maths.md`, `audit-pedagogique-pc.md`
@@ -46,8 +46,8 @@ Le site presente une **qualite pedagogique globalement bonne** (note moyenne 4/5
 |---|---|---|
 | `maths/premiere/ch05` | **Stub vide** — Polynomes degre 2 (discriminant, forme canonique) | CRITIQUE |
 | `maths/premiere/ch09` | **Stub vide** — Trigonometrie (cos, sin, tan) | CRITIQUE |
-| `maths/seconde/ch02` | Incomplet (renvoie vers ch03), classes CSS non-standard | HAUTE |
-| `maths/seconde/ch03` | Container non-standard, classes CSS non-standard | HAUTE |
+| ~~`maths/seconde/ch02`~~ | ~~Classes CSS non-standard~~ — **CORRIGE** (2026-03-16). Reste : anomalie `niv1` dans ch03 | ~~HAUTE~~ |
+| ~~`maths/seconde/ch03`~~ | ~~Container non-standard~~ — **CORRIGE** (2026-03-16). Reste : `niv1/niv2/niv3/niv4` au lieu de `niveau-1` | ~~HAUTE~~ |
 | ~~Tous les chapitres `PC Tle ERA`~~ | ~~Seulement 4 blocs `.meth` sur 8 chapitres~~ — **CORRIGE** (2+ par chapitre) | ~~MOYENNE~~ |
 
 ---
@@ -75,7 +75,7 @@ Le site presente une **qualite pedagogique globalement bonne** (note moyenne 4/5
 - Maths : calcul mental, lecture graphique, reconnaissance de formules
 - PC : unites, schemas, protocoles, vocabulaire scientifique, conversions
 
-**Couverture actuelle** : 1 QCM (PC seconde ch07) + 1 interro (maths terminale ch04) sur 84 chapitres.
+**Couverture actuelle** : 48 QCMs sur 84 chapitres (57%) + 30 interros sur 84 chapitres (36%). Sections QCM complètes : maths/seconde (14/14), maths/premiere (9/9), maths/terminale (11/11), PC seconde (14/14). Restant QCM : PC 1ere ICCER (0/10), PC 1ere ERA (0/10), PC Tle ICCER (0/8), PC Tle ERA (0/8). Sections interro complètes : maths/seconde (14/14), PC seconde (14/14). Restant interro : maths/premiere 0/9, maths/terminale 2/11, PC 1ere ICCER 0/10, PC 1ere ERA 0/10, PC Tle ICCER 0/8, PC Tle ERA 0/8.
 
 ---
 
@@ -187,7 +187,7 @@ Les modules communs (combustion, transferts thermiques, moments, pression, solut
 
 ### Problemes CSS identifies
 
-1. **maths/seconde ch02-ch05** : classes non-standard (`def-box`, `exemple`, `methode`, `attention`, `container`)
+1. ~~**maths/seconde ch02-ch05** : classes non-standard (`def-box`, `exemple`, `methode`, `attention`, `container`)~~ — **CORRIGE 2026-03-16**. Verification 2026-03-19 : aucune classe non-standard residuelle. Seule anomalie : `niv1/niv2/niv3/niv4` au lieu de `niveau-1` dans ch03/exercices.html
 2. **PC seconde (14 fichiers)** : redefinition inline de `.exo .exo-num` et `details.corr`
 3. **PC 1ere ICCER (10 fichiers)** : `label-def` au lieu de `label label-def`
 4. **PC 1ere ERA (5 fichiers)** : format de labels mixte
@@ -236,7 +236,7 @@ Les modules communs (combustion, transferts thermiques, moments, pression, solut
 
 15. ~~**Maths terminale** : entites HTML (`&ndash;`, `&eacute;`) au lieu de caracteres UTF-8 dans certains titres.~~ — **CORRIGE 2026-03-16** (44 fichiers, 6 041 entites)
 
-16. **PC seconde** : pas de classe `.situation` (0 occurrences) — contextes pro non balises.
+16. **PC seconde** : quasi-absence de `.situation` (3 occurrences dans ch07/lecon.html uniquement) — **695 contextes professionnels non tagués** sur les 84 fichiers de la section (verification 2026-03-19). Les contextes pro existent (menuisier, atelier, chantier...) mais ne sont pas balisés avec la classe `.situation`.
 
 17. **PC 1ere ICCER** : pas de mini-exercices dans les lecons (0 `.exo`).
 
@@ -257,6 +257,8 @@ Les modules communs (combustion, transferts thermiques, moments, pression, solut
 - **2026-03-16** : Ajoute animation tangente glissante interactive dans maths/premiere/ch06 (Canvas)
 - **2026-03-16** : Uniformise labels dans PC premiere-era ch06-ch10 (`label-def` → `label label-def`)
 - **2026-03-16** : Corrige CLAUDE.md : terminale-iccer ch01..ch08 (et non ch11)
+- **2026-03-19** : Bilan Seconde — la Seconde est confirmee comme section modele du site : 28/28 chapitres avec 6 types de pages (170 fichiers), differenciation systematique (337 blocs diff-* equilibres), 32 simulations interactives, 100% conformite programme
+- **2026-03-19** : Verification detaillee — (1) CSS ch02-ch05 : RESOLU, aucune classe non-standard residuelle sauf `niv1` dans ch03. (2) `.situation` PC Seconde : 3 occurrences sur 695 contextes pro = quasi-absence de balisage. (3) 3e comptage corrections : exercices maths 41% (79/191), PC 80% (159/199). DS 100%. 152 corrections manquantes (112 maths + 40 PC)
 
 ---
 
@@ -268,7 +270,7 @@ Les modules communs (combustion, transferts thermiques, moments, pression, solut
 
 ### Priorite haute
 - [x] Ajouter diff.js et differenciation dans `maths/premiere` (18 fichiers exercices + ds) (2026-03-16)
-- [x] Harmoniser CSS de `maths/seconde/ch02-ch05` (def-box → def, exemple → ex, etc.) (2026-03-16)
+- [x] Harmoniser CSS de `maths/seconde/ch02-ch05` (def-box → def, exemple → ex, etc.) (2026-03-16) — **verifie 2026-03-19 : aucune classe non-standard residuelle**
 - [x] Supprimer redefinitions CSS inline dans les 14 fichiers `physique-chimie/seconde` (2026-03-16)
 - [x] Uniformiser labels en `label label-def` dans les 17 fichiers `premiere-iccer` (2026-03-16)
 - [x] Remplacer `class="appli"` par `class="situation"` dans les 8 fichiers `terminale-era` (2026-03-16)
@@ -282,15 +284,15 @@ Les modules communs (combustion, transferts thermiques, moments, pression, solut
 - [x] Uniformiser les labels dans les 5 fichiers `premiere-era` concernes (2026-03-16)
 
 ### Priorite haute (uniformisation 2026-03-18)
-- [ ] Creer les 83 `qcm.html` differencies (3×15 questions socle/standard/appro)
-- [ ] Creer les 83 `interro.html` differencies (3×5-8 questions socle/standard/appro)
+- [ ] Creer les 36 `qcm.html` restants (PC 1ere ICCER 10, PC 1ere ERA 10, PC Tle ICCER 8, PC Tle ERA 8) — 48/84 faits
+- [ ] Creer les 54 `interro.html` restants (30/84 faits : Seconde 28 + Terminale 2)
 - [ ] Centraliser les classes CSS QCM dans `styles.css` (prerequis)
 
 ### Priorite basse
 - [ ] Uniformiser le format des `<title>` dans toutes les sections
 - [ ] Harmoniser badges de niveaux dans mini-exercices `maths/seconde`
 - [x] Convertir entites HTML en UTF-8 dans maths/terminale (44 fichiers, 6 041 entites) (2026-03-16)
-- [ ] Ajouter `.situation` aux contextes pro existants en `physique-chimie/seconde`
+- [ ] Ajouter `.situation` aux 695 contextes pro non tagués en `physique-chimie/seconde` (3/695 tagués — verification 2026-03-19)
 - [ ] Ajouter mini-exercices dans les lecons de `premiere-iccer`
 - [ ] Enrichir situations pro de `terminale-era` (personnages, scenarios)
 - [ ] Diversifier les contextes en Seconde (sport, sante, environnement)

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch07 – QCM – Notion de fonction – 2nde MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}
+
+.qcm-header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.qcm-header .dh-item{display:flex;align-items:center;gap:6px}
+.qcm-header strong{color:var(--p)}
+.q-block{border:1px solid #e2e8f0;border-radius:10px;padding:18px 20px;margin:16px 0;background:#fff}
+.q-block h3{margin:0 0 10px;font-size:1em;color:var(--p)}
+.q-block .theme{font-size:.78em;color:#718096;margin-bottom:8px;font-style:italic}
+.options label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:1.5px solid #e2e8f0;transition:background .15s,border-color .15s;font-size:.95em}
+.options label:hover{background:var(--p-bg);border-color:var(--p-border)}
+.options input[type="radio"]{margin-right:8px;accent-color:var(--p)}
+.options label.correct{background:#d1fae5;border-color:#34d399}
+.options label.incorrect{background:#fee2e2;border-color:#f87171}
+.q-feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:.88em;display:none}
+.q-feedback.ok{background:#d1fae5;color:#065f46;display:block}
+.q-feedback.ko{background:#fee2e2;color:#991b1b;display:block}
+.btn-valider{background:var(--p);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;margin-top:20px;display:block}
+.btn-valider:hover{opacity:.85}
+.btn-reset{background:#e2e8f0;color:#374151;border:none;padding:8px 20px;border-radius:8px;font-size:.9em;cursor:pointer;margin-top:8px}
+.btn-reset:hover{background:#cbd5e1}
+.score-box{margin-top:24px;padding:18px 24px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:700;display:none}
+.score-box.show{display:block}
+.score-good{background:#d1fae5;color:#065f46;border:2px solid #34d399}
+.score-avg{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}
+.score-low{background:#fee2e2;color:#991b1b;border:2px solid #f87171}
+@media print{.nb,.btn-valider,.btn-reset,.diff-toggle-wrap{display:none}.options label{border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>QCM – Notion de fonction</h1>
+  <p class="sous-titre">Chapitre 7 | Seconde Bac Pro MAMA | Mathématiques</p>
+</header>
+
+<div class="qcm-header">
+  <div class="dh-item">⏱ <strong>Durée :</strong> 15–20 min</div>
+  <div class="dh-item">📄 <strong>15 questions</strong></div>
+  <div class="dh-item">🧮 <strong>Calculatrice autorisée</strong></div>
+</div>
+
+<p style="font-size:.9em;color:#4a5568">Pour chaque question, cochez la <strong>seule bonne réponse</strong> puis cliquez sur « Valider le QCM » en bas de page.</p>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<form id="qcm-socle">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Vocabulaire – Définition d'une fonction</p>
+  <p>Une fonction \(f\) associe à chaque valeur de \(x\) :</p>
+  <div class="options">
+    <label><input type="radio" name="s1" value="a"> plusieurs valeurs possibles</label>
+    <label><input type="radio" name="s1" value="b"> une seule et unique valeur \(f(x)\)</label>
+    <label><input type="radio" name="s1" value="c"> toujours un nombre positif</label>
+    <label><input type="radio" name="s1" value="d"> toujours un nombre entier</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Vocabulaire – Image</p>
+  <p>L'image de \(x\) par la fonction \(f\) se note :</p>
+  <div class="options">
+    <label><input type="radio" name="s2" value="a"> \(x(f)\)</label>
+    <label><input type="radio" name="s2" value="b"> \(x + f\)</label>
+    <label><input type="radio" name="s2" value="c"> \(f(x)\)</label>
+    <label><input type="radio" name="s2" value="d"> \(f \times x\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Calcul d'image – Substitution simple</p>
+  <p>Soit \(f(x) = 2x - 5\). Quelle est l'image de 3 ?</p>
+  <div class="options">
+    <label><input type="radio" name="s3" value="a"> 1</label>
+    <label><input type="radio" name="s3" value="b"> 11</label>
+    <label><input type="radio" name="s3" value="c"> −1</label>
+    <label><input type="radio" name="s3" value="d"> 6</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Calcul d'image – Valeur nulle</p>
+  <p>Soit \(f(x) = 4x - 3\). Que vaut \(f(0)\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="s4" value="a"> 0</label>
+    <label><input type="radio" name="s4" value="b"> 4</label>
+    <label><input type="radio" name="s4" value="c"> 3</label>
+    <label><input type="radio" name="s4" value="d"> −3</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Vocabulaire – Antécédent</p>
+  <p>Dire que 5 est un antécédent de 11 par la fonction \(f\) signifie que :</p>
+  <div class="options">
+    <label><input type="radio" name="s5" value="a"> \(f(11) = 5\)</label>
+    <label><input type="radio" name="s5" value="b"> \(f(5) = 11\)</label>
+    <label><input type="radio" name="s5" value="c"> \(f(5) = 5\)</label>
+    <label><input type="radio" name="s5" value="d"> \(f(11) = 11\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Calcul d'image – Nombre négatif</p>
+  <p>Soit \(f(x) = 3x + 1\). Que vaut \(f(-1)\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="s6" value="a"> 4</label>
+    <label><input type="radio" name="s6" value="b"> −4</label>
+    <label><input type="radio" name="s6" value="c"> −2</label>
+    <label><input type="radio" name="s6" value="d"> 2</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Tableau de valeurs – Lecture</p>
+  <p>On donne le tableau de valeurs suivant :</p>
+  <table style="margin:8px 0">
+    <tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+    <tr><th>\(f(x)\)</th><td>−1</td><td>1</td><td>3</td><td>5</td></tr>
+  </table>
+  <p>Quelle est l'image de 2 par \(f\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="s7" value="a"> 3</label>
+    <label><input type="radio" name="s7" value="b"> 2</label>
+    <label><input type="radio" name="s7" value="c"> 5</label>
+    <label><input type="radio" name="s7" value="d"> 1</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Tableau de valeurs – Antécédent</p>
+  <p>Avec le même tableau (Q7), quel est l'antécédent de 5 ?</p>
+  <div class="options">
+    <label><input type="radio" name="s8" value="a"> 0</label>
+    <label><input type="radio" name="s8" value="b"> 1</label>
+    <label><input type="radio" name="s8" value="c"> 2</label>
+    <label><input type="radio" name="s8" value="d"> 3</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Machine-fonction – Comprendre le mécanisme</p>
+  <p>Un poseur de parquet facture 15 € par m². La fonction prix est \(f(x) = 15x\). Pour 20 m², le prix est :</p>
+  <div class="options">
+    <label><input type="radio" name="s9" value="a"> 35 €</label>
+    <label><input type="radio" name="s9" value="b"> 300 €</label>
+    <label><input type="radio" name="s9" value="c"> 150 €</label>
+    <label><input type="radio" name="s9" value="d"> 200 €</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Lecture graphique – Image</p>
+  <p>Sur la courbe d'une fonction, pour trouver l'image de \(x = 2\), on part de 2 sur l'axe horizontal, on monte jusqu'à la courbe, puis on lit :</p>
+  <div class="options">
+    <label><input type="radio" name="s10" value="a"> la valeur sur l'axe vertical (ordonnée)</label>
+    <label><input type="radio" name="s10" value="b"> la valeur sur l'axe horizontal (abscisse)</label>
+    <label><input type="radio" name="s10" value="c"> le nom de la fonction</label>
+    <label><input type="radio" name="s10" value="d"> la pente de la courbe</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Représentation graphique – Vocabulaire</p>
+  <p>L'axe horizontal d'un repère est appelé :</p>
+  <div class="options">
+    <label><input type="radio" name="s11" value="a"> axe des ordonnées</label>
+    <label><input type="radio" name="s11" value="b"> axe des images</label>
+    <label><input type="radio" name="s11" value="c"> axe des abscisses</label>
+    <label><input type="radio" name="s11" value="d"> axe des fonctions</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Calcul d'image – Fonction carré</p>
+  <p>Soit \(g(x) = x^2\). Que vaut \(g(3)\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="s12" value="a"> 6</label>
+    <label><input type="radio" name="s12" value="b"> 9</label>
+    <label><input type="radio" name="s12" value="c"> 5</label>
+    <label><input type="radio" name="s12" value="d"> 32</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 13</h3>
+  <p class="theme">Erreur fréquente – Parenthèses</p>
+  <p>Soit \(f(x) = 3x + 1\). On calcule \(f(-2)\). Le bon calcul est :</p>
+  <div class="options">
+    <label><input type="radio" name="s13" value="a"> \(3 \times -2 + 1 = -7\)</label>
+    <label><input type="radio" name="s13" value="b"> \(3 - 2 + 1 = 2\)</label>
+    <label><input type="radio" name="s13" value="c"> \(3 \times 2 + 1 = 7\)</label>
+    <label><input type="radio" name="s13" value="d"> \(3 \times (-2) + 1 = -5\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 14</h3>
+  <p class="theme">Contexte professionnel – Facturation</p>
+  <p>Un menuisier facture selon la formule \(C(h) = 45h + 60\), où \(h\) est le nombre d'heures. Pour 0 heure de travail, le client paye :</p>
+  <div class="options">
+    <label><input type="radio" name="s14" value="a"> 60 € (frais de déplacement)</label>
+    <label><input type="radio" name="s14" value="b"> 0 €</label>
+    <label><input type="radio" name="s14" value="c"> 45 €</label>
+    <label><input type="radio" name="s14" value="d"> 105 €</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Coordonnées d'un point</p>
+  <p>Si \(f(4) = 7\), le point correspondant sur la courbe a pour coordonnées :</p>
+  <div class="options">
+    <label><input type="radio" name="s15" value="a"> \((7\,;\,4)\)</label>
+    <label><input type="radio" name="s15" value="b"> \((4\,;\,0)\)</label>
+    <label><input type="radio" name="s15" value="c"> \((4\,;\,7)\)</label>
+    <label><input type="radio" name="s15" value="d"> \((0\,;\,7)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
+<div class="score-box" id="score-socle"></div>
+</form>
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<form id="qcm-standard">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Notation – Lire une écriture fonctionnelle</p>
+  <p>L'écriture \(f : x \mapsto 3x + 2\) se lit :</p>
+  <div class="options">
+    <label><input type="radio" name="t1" value="a"> « \(f\) est égal à \(3x + 2\) »</label>
+    <label><input type="radio" name="t1" value="b"> « \(x\) fois \(f\) égale \(3x + 2\) »</label>
+    <label><input type="radio" name="t1" value="c"> « la fonction \(f\) qui à \(x\) associe \(3x + 2\) »</label>
+    <label><input type="radio" name="t1" value="d"> « \(3x + 2\) est l'antécédent de \(x\) »</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Calcul d'image – Fonction affine</p>
+  <p>Soit \(f(x) = 2x - 1\). Que vaut \(f(-3)\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="t2" value="a"> −5</label>
+    <label><input type="radio" name="t2" value="b"> −7</label>
+    <label><input type="radio" name="t2" value="c"> 5</label>
+    <label><input type="radio" name="t2" value="d"> −4</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Antécédent – Résolution d'équation</p>
+  <p>Soit \(f(x) = 3x + 1\). L'antécédent de 10 par \(f\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="t3" value="a"> 3</label>
+    <label><input type="radio" name="t3" value="b"> 31</label>
+    <label><input type="radio" name="t3" value="c"> 10</label>
+    <label><input type="radio" name="t3" value="d"> 4</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Antécédent – Fonction carré</p>
+  <p>Soit \(g(x) = x^2\). L'image 9 admet :</p>
+  <div class="options">
+    <label><input type="radio" name="t4" value="a"> un seul antécédent : 3</label>
+    <label><input type="radio" name="t4" value="b"> un seul antécédent : −3</label>
+    <label><input type="radio" name="t4" value="c"> aucun antécédent</label>
+    <label><input type="radio" name="t4" value="d"> deux antécédents : 3 et −3</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Tableau de valeurs – Compléter</p>
+  <p>Soit \(f(x) = 2x - 1\). La valeur manquante dans le tableau pour \(x = -2\) est :</p>
+  <table style="margin:8px 0">
+    <tr><th>\(x\)</th><td>−2</td><td>−1</td><td>0</td><td>1</td></tr>
+    <tr><th>\(f(x)\)</th><td>?</td><td>−3</td><td>−1</td><td>1</td></tr>
+  </table>
+  <div class="options">
+    <label><input type="radio" name="t5" value="a"> −3</label>
+    <label><input type="radio" name="t5" value="b"> −5</label>
+    <label><input type="radio" name="t5" value="c"> −4</label>
+    <label><input type="radio" name="t5" value="d"> 3</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Contexte professionnel – Coût de pose</p>
+  <p>Un menuisier facture selon la formule \(C(h) = 45h + 60\). Le coût pour 8 heures de travail est :</p>
+  <div class="options">
+    <label><input type="radio" name="t6" value="a"> 360 €</label>
+    <label><input type="radio" name="t6" value="b"> 400 €</label>
+    <label><input type="radio" name="t6" value="c"> 420 €</label>
+    <label><input type="radio" name="t6" value="d"> 480 €</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Lecture graphique – Image sur la courbe</p>
+  <p>Sur le graphique de \(f(x) = 2x - 1\), le point de coordonnées \((2\,;\,3)\) est sur la courbe. On en déduit que :</p>
+  <div class="options">
+    <label><input type="radio" name="t7" value="a"> l'image de 2 est 3</label>
+    <label><input type="radio" name="t7" value="b"> l'image de 3 est 2</label>
+    <label><input type="radio" name="t7" value="c"> l'antécédent de 2 est 3</label>
+    <label><input type="radio" name="t7" value="d"> \(f(3) = 2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Lecture graphique – Antécédent</p>
+  <p>Sur la courbe de \(f(x) = 2x - 1\), on lit que \(f(x) = 0\). L'antécédent de 0 est :</p>
+  <div class="options">
+    <label><input type="radio" name="t8" value="a"> \(x = 0\)</label>
+    <label><input type="radio" name="t8" value="b"> \(x = 1\)</label>
+    <label><input type="radio" name="t8" value="c"> \(x = -1\)</label>
+    <label><input type="radio" name="t8" value="d"> \(x = 0{,}5\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Erreur fréquente – \(f(a+b) \neq f(a)+f(b)\)</p>
+  <p>Soit \(f(x) = x^2\). Que vaut \(f(2+3)\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="t9" value="a"> \(f(2) + f(3) = 4 + 9 = 13\)</label>
+    <label><input type="radio" name="t9" value="b"> \(f(5) = 25\)</label>
+    <label><input type="radio" name="t9" value="c"> \(f(5) = 10\)</label>
+    <label><input type="radio" name="t9" value="d"> \(f(2) \times f(3) = 36\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Contexte professionnel – Peinture</p>
+  <p>Un artisan peintre utilise la fonction \(f(x) = 3{,}5x\) pour estimer la quantité de peinture (en litres) pour une surface de \(x\) m². Pour peindre 10 m², il lui faut :</p>
+  <div class="options">
+    <label><input type="radio" name="t10" value="a"> 30 L</label>
+    <label><input type="radio" name="t10" value="b"> 13,5 L</label>
+    <label><input type="radio" name="t10" value="c"> 35 L</label>
+    <label><input type="radio" name="t10" value="d"> 3,5 L</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Antécédent – Contexte professionnel</p>
+  <p>Un poseur de carrelage facture selon \(C(m) = 28m + 50\). Un client paye 386 €. La surface posée est :</p>
+  <div class="options">
+    <label><input type="radio" name="t11" value="a"> 12 m²</label>
+    <label><input type="radio" name="t11" value="b"> 14 m²</label>
+    <label><input type="radio" name="t11" value="c"> 10 m²</label>
+    <label><input type="radio" name="t11" value="d"> 13 m²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Représentation graphique – Coordonnées</p>
+  <p>Un point de la courbe de \(f\) a pour coordonnées \((-1\,;\,4)\). On en déduit :</p>
+  <div class="options">
+    <label><input type="radio" name="t12" value="a"> \(f(4) = -1\)</label>
+    <label><input type="radio" name="t12" value="b"> l'antécédent de −1 est 4</label>
+    <label><input type="radio" name="t12" value="c"> \(f(-1) = -4\)</label>
+    <label><input type="radio" name="t12" value="d"> \(f(-1) = 4\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Calcul d'image – Fonction carré</p>
+  <p>Soit \(g(x) = x^2 - 1\). Que vaut \(g(-2)\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="t13" value="a"> −5</label>
+    <label><input type="radio" name="t13" value="b"> 3</label>
+    <label><input type="radio" name="t13" value="c"> −3</label>
+    <label><input type="radio" name="t13" value="d"> 5</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 14</h3>
+  <p class="theme">Comparaison de fonctions – Tarifs artisans</p>
+  <p>Artisan A : \(f(h) = 50h\). Artisan B : \(g(h) = 35h + 80\). Pour 4 heures de travail :</p>
+  <div class="options">
+    <label><input type="radio" name="t14" value="a"> les deux coûtent le même prix</label>
+    <label><input type="radio" name="t14" value="b"> l'artisan A est moins cher (200 € contre 220 €)</label>
+    <label><input type="radio" name="t14" value="c"> l'artisan B est moins cher (220 € contre 200 €)</label>
+    <label><input type="radio" name="t14" value="d"> l'artisan A coûte 220 €</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Tableau de valeurs – Construire</p>
+  <p>Soit \(f(x) = -x + 5\). Pour construire un tableau de valeurs, on calcule \(f(x)\) pour plusieurs valeurs de \(x\). Que vaut \(f(3)\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="t15" value="a"> 2</label>
+    <label><input type="radio" name="t15" value="b"> 8</label>
+    <label><input type="radio" name="t15" value="c"> −2</label>
+    <label><input type="radio" name="t15" value="d"> 3</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
+</form>
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<form id="qcm-appro">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Antécédent – Résolution d'équation</p>
+  <p>Soit \(f(x) = 5x + 10\). L'antécédent de 35 est :</p>
+  <div class="options">
+    <label><input type="radio" name="a1" value="a"> 7</label>
+    <label><input type="radio" name="a1" value="b"> 5</label>
+    <label><input type="radio" name="a1" value="c"> 9</label>
+    <label><input type="radio" name="a1" value="d"> 185</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Fonction carré – Antécédents multiples</p>
+  <p>Soit \(g(x) = x^2\). Combien de valeurs de \(x\) vérifient \(g(x) = 16\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> aucune</label>
+    <label><input type="radio" name="a2" value="b"> une seule : \(x = 4\)</label>
+    <label><input type="radio" name="a2" value="c"> deux : \(x = 4\) et \(x = -4\)</label>
+    <label><input type="radio" name="a2" value="d"> trois</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Comparaison de fonctions – Point de croisement</p>
+  <p>Artisan A : \(f(h) = 50h\). Artisan B : \(g(h) = 35h + 80\). Les deux tarifs sont égaux pour :</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> \(h \approx 5{,}3\) heures</label>
+    <label><input type="radio" name="a3" value="b"> \(h = 4\) heures</label>
+    <label><input type="radio" name="a3" value="c"> \(h = 6\) heures</label>
+    <label><input type="radio" name="a3" value="d"> \(h = 8\) heures</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Calcul d'image – Expression complexe</p>
+  <p>Soit \(h(x) = \dfrac{10}{x}\). Que vaut \(h(4)\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> 40</label>
+    <label><input type="radio" name="a4" value="b"> 14</label>
+    <label><input type="radio" name="a4" value="c"> 6</label>
+    <label><input type="radio" name="a4" value="d"> 2,5</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Domaine de définition – Fonction inverse</p>
+  <p>La fonction \(h(x) = \dfrac{10}{x}\) n'est pas définie pour :</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> \(x = 10\)</label>
+    <label><input type="radio" name="a5" value="b"> \(x = 0\)</label>
+    <label><input type="radio" name="a5" value="c"> \(x = -10\)</label>
+    <label><input type="radio" name="a5" value="d"> \(x = 1\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Contexte professionnel – Facture d'électricité</p>
+  <p>La facture d'électricité d'un atelier de menuiserie est modélisée par \(f(x) = 0{,}18x + 9\), où \(x\) est la consommation en kWh. Un artisan reçoit une facture de 45 €. Sa consommation est :</p>
+  <div class="options">
+    <label><input type="radio" name="a6" value="a"> 250 kWh</label>
+    <label><input type="radio" name="a6" value="b"> 180 kWh</label>
+    <label><input type="radio" name="a6" value="c"> 200 kWh</label>
+    <label><input type="radio" name="a6" value="d"> 300 kWh</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Lecture graphique – Intersection avec l'axe des abscisses</p>
+  <p>La courbe de \(f(x) = 2x - 1\) coupe l'axe des abscisses quand \(f(x) = 0\). Le point d'intersection est :</p>
+  <div class="options">
+    <label><input type="radio" name="a7" value="a"> \((0{,}5\,;\,0)\)</label>
+    <label><input type="radio" name="a7" value="b"> \((0\,;\,-1)\)</label>
+    <label><input type="radio" name="a7" value="c"> \((1\,;\,0)\)</label>
+    <label><input type="radio" name="a7" value="d"> \((-0{,}5\,;\,0)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Erreur fréquente – Confusion image/antécédent</p>
+  <p>On sait que \(f(7) = 13\). L'affirmation correcte est :</p>
+  <div class="options">
+    <label><input type="radio" name="a8" value="a"> 13 est un antécédent de 7</label>
+    <label><input type="radio" name="a8" value="b"> 7 est l'image de 13</label>
+    <label><input type="radio" name="a8" value="c"> l'antécédent de 7 est 13</label>
+    <label><input type="radio" name="a8" value="d"> 7 est un antécédent de 13</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Contexte professionnel – Indemnité kilométrique</p>
+  <p>Un artisan menuisier utilise la fonction \(f(x) = 0{,}42x + 20\) pour calculer ses indemnités de déplacement (en €), où \(x\) est la distance en km. Pour un trajet de 50 km, l'indemnité est :</p>
+  <div class="options">
+    <label><input type="radio" name="a9" value="a"> 21 €</label>
+    <label><input type="radio" name="a9" value="b"> 41 €</label>
+    <label><input type="radio" name="a9" value="c"> 62 €</label>
+    <label><input type="radio" name="a9" value="d"> 31 €</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Tableau de valeurs – Fonction carré</p>
+  <p>Soit \(g(x) = x^2 - 1\). On construit un tableau de valeurs. Quelle affirmation est vraie ?</p>
+  <div class="options">
+    <label><input type="radio" name="a10" value="a"> \(g(-2) = -5\)</label>
+    <label><input type="radio" name="a10" value="b"> \(g(0) = 1\)</label>
+    <label><input type="radio" name="a10" value="c"> \(g(-1) = g(1) = 0\)</label>
+    <label><input type="radio" name="a10" value="d"> \(g(2) = 5\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Comparaison – Choix optimal</p>
+  <p>Un client a besoin de 3 heures de travail. Artisan A : \(f(h) = 50h\). Artisan B : \(g(h) = 35h + 80\). Quel artisan est le moins cher ?</p>
+  <div class="options">
+    <label><input type="radio" name="a11" value="a"> Artisan A : 150 € contre 185 €</label>
+    <label><input type="radio" name="a11" value="b"> Artisan B : 150 € contre 185 €</label>
+    <label><input type="radio" name="a11" value="c"> ils coûtent le même prix</label>
+    <label><input type="radio" name="a11" value="d"> Artisan A : 180 € contre 185 €</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Antécédent – Interprétation professionnelle</p>
+  <p>Un poseur de parquet facture \(f(x) = 15x\). Un devis s'élève à 525 €. La surface à poser est :</p>
+  <div class="options">
+    <label><input type="radio" name="a12" value="a"> 30 m²</label>
+    <label><input type="radio" name="a12" value="b"> 40 m²</label>
+    <label><input type="radio" name="a12" value="c"> 25 m²</label>
+    <label><input type="radio" name="a12" value="d"> 35 m²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Lecture graphique – Ordonnée à l'origine</p>
+  <p>La courbe de \(f(x) = 2x - 1\) coupe l'axe des ordonnées au point :</p>
+  <div class="options">
+    <label><input type="radio" name="a13" value="a"> \((0\,;\,2)\)</label>
+    <label><input type="radio" name="a13" value="b"> \((0\,;\,-1)\)</label>
+    <label><input type="radio" name="a13" value="c"> \((0\,;\,1)\)</label>
+    <label><input type="radio" name="a13" value="d"> \((-1\,;\,0)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Problème ouvert – Deux fonctions</p>
+  <p>Un fabricant de mobilier compare deux fournisseurs de bois. Fournisseur 1 : \(f(x) = 12x\) (€ par planche). Fournisseur 2 : \(g(x) = 8x + 40\) (€ par planche + frais fixes). À partir de combien de planches le fournisseur 2 est-il moins cher ?</p>
+  <div class="options">
+    <label><input type="radio" name="a14" value="a"> à partir de 8 planches</label>
+    <label><input type="radio" name="a14" value="b"> à partir de 12 planches</label>
+    <label><input type="radio" name="a14" value="c"> à partir de 11 planches</label>
+    <label><input type="radio" name="a14" value="d"> à partir de 15 planches</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Synthèse – Image, antécédent, courbe</p>
+  <p>On considère une fonction \(f\) dont la courbe passe par les points \(A(1\,;\,3)\), \(B(2\,;\,7)\) et \(C(4\,;\,7)\). L'image 7 admet :</p>
+  <div class="options">
+    <label><input type="radio" name="a15" value="a"> au moins deux antécédents : 2 et 4</label>
+    <label><input type="radio" name="a15" value="b"> un seul antécédent : 2</label>
+    <label><input type="radio" name="a15" value="c"> un seul antécédent : 4</label>
+    <label><input type="radio" name="a15" value="d"> aucun antécédent</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "Par définition, une fonction associe à chaque valeur de x une seule et unique valeur f(x).",
+  "s2": "L'image de x par f se note f(x), qui se lit « f de x ».",
+  "s3": "f(3) = 2×3 − 5 = 6 − 5 = 1.",
+  "s4": "f(0) = 4×0 − 3 = 0 − 3 = −3.",
+  "s5": "Si 5 est un antécédent de 11, cela signifie que f(5) = 11. L'antécédent est le point de départ, l'image est le point d'arrivée.",
+  "s6": "f(−1) = 3×(−1) + 1 = −3 + 1 = −2. Attention aux parenthèses autour du nombre négatif.",
+  "s7": "Dans le tableau, on lit que pour x = 2, f(x) = 3. L'image de 2 est donc 3.",
+  "s8": "On cherche le x pour lequel f(x) = 5. Dans le tableau, f(3) = 5, donc l'antécédent de 5 est 3.",
+  "s9": "f(20) = 15 × 20 = 300 €.",
+  "s10": "Pour lire une image graphiquement, on part de x sur l'axe horizontal, on monte jusqu'à la courbe, puis on lit la valeur sur l'axe vertical (ordonnée).",
+  "s11": "L'axe horizontal est l'axe des abscisses (valeurs de x). L'axe vertical est l'axe des ordonnées (valeurs de f(x)).",
+  "s12": "g(3) = 3² = 3 × 3 = 9. Attention : 3² signifie « 3 au carré », pas « 3 × 2 ».",
+  "s13": "f(−2) = 3×(−2) + 1 = −6 + 1 = −5. Il faut toujours mettre des parenthèses autour de la valeur substituée.",
+  "s14": "C(0) = 45×0 + 60 = 0 + 60 = 60 €. Même sans travailler, le déplacement est facturé.",
+  "s15": "Si f(4) = 7, le point a pour abscisse 4 et pour ordonnée 7, donc ses coordonnées sont (4 ; 7).",
+  /* === STANDARD === */
+  "t1": "L'écriture f : x ↦ 3x + 2 se lit « la fonction f qui à x associe 3x + 2 ».",
+  "t2": "f(−3) = 2×(−3) − 1 = −6 − 1 = −7.",
+  "t3": "On résout 3x + 1 = 10, soit 3x = 9, donc x = 3. L'antécédent de 10 est 3.",
+  "t4": "g(3) = 9 et g(−3) = 9. Donc 9 a deux antécédents : 3 et −3.",
+  "t5": "f(−2) = 2×(−2) − 1 = −4 − 1 = −5.",
+  "t6": "C(8) = 45×8 + 60 = 360 + 60 = 420 €.",
+  "t7": "Le point (2 ; 3) signifie x = 2 et f(x) = 3. Donc l'image de 2 est 3, c'est-à-dire f(2) = 3.",
+  "t8": "On résout 2x − 1 = 0, soit 2x = 1, donc x = 0,5. La courbe coupe l'axe des abscisses en x = 0,5.",
+  "t9": "f(2+3) = f(5) = 5² = 25. Attention : f(a+b) ≠ f(a) + f(b) en général !",
+  "t10": "f(10) = 3,5 × 10 = 35 L.",
+  "t11": "On résout 28m + 50 = 386, soit 28m = 336, donc m = 336 ÷ 28 = 12 m².",
+  "t12": "Le point (−1 ; 4) signifie que x = −1 et f(x) = 4, donc f(−1) = 4.",
+  "t13": "g(−2) = (−2)² − 1 = 4 − 1 = 3. Attention : (−2)² = 4, pas −4.",
+  "t14": "f(4) = 50×4 = 200 € et g(4) = 35×4 + 80 = 140 + 80 = 220 €. L'artisan A est moins cher (200 € contre 220 €).",
+  "t15": "f(3) = −3 + 5 = 2.",
+  /* === APPROFONDISSEMENT === */
+  "a1": "On résout 5x + 10 = 35, soit 5x = 25, donc x = 5.",
+  "a2": "x² = 16 donne x = 4 ou x = −4. La fonction carré donne deux antécédents pour tout nombre positif.",
+  "a3": "50h = 35h + 80 → 15h = 80 → h = 80/15 ≈ 5,33 heures.",
+  "a4": "h(4) = 10/4 = 2,5.",
+  "a5": "On ne peut pas diviser par 0. Donc h(x) = 10/x n'est pas définie pour x = 0.",
+  "a6": "On résout 0,18x + 9 = 45, soit 0,18x = 36, donc x = 36 ÷ 0,18 = 200 kWh.",
+  "a7": "On résout 2x − 1 = 0, soit x = 0,5. Le point d'intersection est (0,5 ; 0).",
+  "a8": "f(7) = 13 signifie que 13 est l'image de 7, et 7 est un antécédent de 13.",
+  "a9": "f(50) = 0,42 × 50 + 20 = 21 + 20 = 41 €.",
+  "a10": "g(−1) = (−1)² − 1 = 1 − 1 = 0 et g(1) = 1² − 1 = 0. Donc g(−1) = g(1) = 0.",
+  "a11": "f(3) = 50×3 = 150 € et g(3) = 35×3 + 80 = 105 + 80 = 185 €. L'artisan A est moins cher.",
+  "a12": "On résout 15x = 525, donc x = 525 ÷ 15 = 35 m².",
+  "a13": "L'axe des ordonnées correspond à x = 0. f(0) = 2×0 − 1 = −1. Le point est (0 ; −1).",
+  "a14": "On résout 12x = 8x + 40, soit 4x = 40, donc x = 10. À 10 planches, les prix sont égaux (120 €). À partir de 11 planches, le fournisseur 2 est moins cher.",
+  "a15": "La courbe passe par B(2 ; 7) et C(4 ; 7), donc f(2) = 7 et f(4) = 7. L'image 7 a au moins deux antécédents : 2 et 4."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '✅ Bonne réponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '❌ Mauvaise réponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '⚠️ Pas de réponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Fonction dérivée et variations – QCM – 1ère Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+
+.qcm-header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.qcm-header .dh-item{display:flex;align-items:center;gap:6px}
+.qcm-header strong{color:var(--p)}
+.q-block{border:1px solid #e2e8f0;border-radius:10px;padding:18px 20px;margin:16px 0;background:#fff}
+.q-block h3{margin:0 0 10px;font-size:1em;color:var(--p)}
+.q-block .theme{font-size:.78em;color:#718096;margin-bottom:8px;font-style:italic}
+.options label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:1.5px solid #e2e8f0;transition:background .15s,border-color .15s;font-size:.95em}
+.options label:hover{background:var(--p-bg);border-color:var(--p-border)}
+.options input[type="radio"]{margin-right:8px;accent-color:var(--p)}
+.options label.correct{background:#d1fae5;border-color:#34d399}
+.options label.incorrect{background:#fee2e2;border-color:#f87171}
+.q-feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:.88em;display:none}
+.q-feedback.ok{background:#d1fae5;color:#065f46;display:block}
+.q-feedback.ko{background:#fee2e2;color:#991b1b;display:block}
+.btn-valider{background:var(--p);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;margin-top:20px;display:block}
+.btn-valider:hover{opacity:.85}
+.btn-reset{background:#e2e8f0;color:#374151;border:none;padding:8px 20px;border-radius:8px;font-size:.9em;cursor:pointer;margin-top:8px}
+.btn-reset:hover{background:#cbd5e1}
+.score-box{margin-top:24px;padding:18px 24px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:700;display:none}
+.score-box.show{display:block}
+.score-good{background:#d1fae5;color:#065f46;border:2px solid #34d399}
+.score-avg{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}
+.score-low{background:#fee2e2;color:#991b1b;border:2px solid #f87171}
+@media print{.nb,.btn-valider,.btn-reset,.diff-toggle-wrap{display:none}.options label{border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>QCM – Fonction dérivée et variations</h1>
+  <p class="sous-titre">Chapitre 6 | 1ère Bac Pro | Mathématiques</p>
+</header>
+
+<div class="qcm-header">
+  <div class="dh-item">⏱ <strong>Durée :</strong> 15–20 min</div>
+  <div class="dh-item">📄 <strong>15 questions</strong></div>
+  <div class="dh-item">🧮 <strong>Calculatrice autorisée</strong></div>
+</div>
+
+<p style="font-size:.9em;color:#4a5568">Pour chaque question, cochez la <strong>seule bonne réponse</strong> puis cliquez sur « Valider le QCM » en bas de page.</p>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<form id="qcm-socle">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Dérivée d'une constante</p>
+  <p>Si \(f(x) = 7\), alors \(f'(x) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="s1" value="a"> 7</label>
+    <label><input type="radio" name="s1" value="b"> 0</label>
+    <label><input type="radio" name="s1" value="c"> 1</label>
+    <label><input type="radio" name="s1" value="d"> \(7x\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Dérivée de \(x^2\)</p>
+  <p>Si \(f(x) = x^2\), alors \(f'(x) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="s2" value="a"> \(x\)</label>
+    <label><input type="radio" name="s2" value="b"> \(x^2\)</label>
+    <label><input type="radio" name="s2" value="c"> \(2x\)</label>
+    <label><input type="radio" name="s2" value="d"> \(2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Dérivée de \(x^3\)</p>
+  <p>Si \(f(x) = x^3\), alors \(f'(x) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="s3" value="a"> \(3x^2\)</label>
+    <label><input type="radio" name="s3" value="b"> \(3x\)</label>
+    <label><input type="radio" name="s3" value="c"> \(x^2\)</label>
+    <label><input type="radio" name="s3" value="d"> \(3x^3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Dérivée d'une fonction linéaire</p>
+  <p>Si \(f(x) = 5x\), alors \(f'(x) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="s4" value="a"> \(5x^2\)</label>
+    <label><input type="radio" name="s4" value="b"> \(0\)</label>
+    <label><input type="radio" name="s4" value="c"> \(x\)</label>
+    <label><input type="radio" name="s4" value="d"> \(5\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Produit par un scalaire</p>
+  <p>Si \(f(x) = 4x^2\), alors \(f'(x) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="s5" value="a"> \(4x\)</label>
+    <label><input type="radio" name="s5" value="b"> \(8x\)</label>
+    <label><input type="radio" name="s5" value="c"> \(2x\)</label>
+    <label><input type="radio" name="s5" value="d"> \(4\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Dérivation – somme simple</p>
+  <p>Si \(f(x) = x^2 + 3\), alors \(f'(x) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="s6" value="a"> \(2x + 3\)</label>
+    <label><input type="radio" name="s6" value="b"> \(x + 3\)</label>
+    <label><input type="radio" name="s6" value="c"> \(2x\)</label>
+    <label><input type="radio" name="s6" value="d"> \(2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Dérivation – polynôme du 2nd degré</p>
+  <p>Si \(f(x) = 3x^2 - 5x + 2\), alors \(f'(x) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="s7" value="a"> \(6x - 5\)</label>
+    <label><input type="radio" name="s7" value="b"> \(3x - 5\)</label>
+    <label><input type="radio" name="s7" value="c"> \(6x^2 - 5\)</label>
+    <label><input type="radio" name="s7" value="d"> \(6x - 5 + 2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 8</h3>
+  <p class="theme">Signe de la dérivée et croissance</p>
+  <p>Si \(f'(x) > 0\) sur un intervalle, alors \(f\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s8" value="a"> décroissante</label>
+    <label><input type="radio" name="s8" value="b"> croissante</label>
+    <label><input type="radio" name="s8" value="c"> constante</label>
+    <label><input type="radio" name="s8" value="d"> nulle</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 9</h3>
+  <p class="theme">Signe de la dérivée et décroissance</p>
+  <p>Si \(f'(x) < 0\) sur un intervalle, alors \(f\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s9" value="a"> croissante</label>
+    <label><input type="radio" name="s9" value="b"> constante</label>
+    <label><input type="radio" name="s9" value="c"> nulle</label>
+    <label><input type="radio" name="s9" value="d"> décroissante</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Annulation de la dérivée</p>
+  <p>Si \(f'(a) = 0\) et que \(f'\) change de signe en \(a\), alors \(f\) admet en \(a\) :</p>
+  <div class="options">
+    <label><input type="radio" name="s10" value="a"> un extremum local</label>
+    <label><input type="radio" name="s10" value="b"> une racine</label>
+    <label><input type="radio" name="s10" value="c"> une asymptote</label>
+    <label><input type="radio" name="s10" value="d"> une discontinuité</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Type d'extremum</p>
+  <p>Si \(f'\) passe du signe positif au signe négatif en \(a\), alors \(f(a)\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s11" value="a"> un minimum</label>
+    <label><input type="radio" name="s11" value="b"> une valeur quelconque</label>
+    <label><input type="radio" name="s11" value="c"> un maximum</label>
+    <label><input type="radio" name="s11" value="d"> nul</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Minimum local</p>
+  <p>Si \(f'\) passe du signe négatif au signe positif en \(a\), alors \(f(a)\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s12" value="a"> un maximum</label>
+    <label><input type="radio" name="s12" value="b"> un minimum</label>
+    <label><input type="radio" name="s12" value="c"> nul</label>
+    <label><input type="radio" name="s12" value="d"> une valeur quelconque</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 13</h3>
+  <p class="theme">Valeur critique</p>
+  <p>Soit \(f(x) = x^2 - 4x + 1\). La dérivée \(f'(x) = 2x - 4\) s'annule en :</p>
+  <div class="options">
+    <label><input type="radio" name="s13" value="a"> \(x = 0\)</label>
+    <label><input type="radio" name="s13" value="b"> \(x = 4\)</label>
+    <label><input type="radio" name="s13" value="c"> \(x = -2\)</label>
+    <label><input type="radio" name="s13" value="d"> \(x = 2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 14</h3>
+  <p class="theme">Interprétation graphique</p>
+  <p>Le nombre dérivé \(f'(a)\) représente graphiquement :</p>
+  <div class="options">
+    <label><input type="radio" name="s14" value="a"> la pente de la tangente à la courbe au point d'abscisse \(a\)</label>
+    <label><input type="radio" name="s14" value="b"> la valeur de \(f(a)\)</label>
+    <label><input type="radio" name="s14" value="c"> la distance entre deux points de la courbe</label>
+    <label><input type="radio" name="s14" value="d"> l'ordonnée à l'origine de la courbe</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Taux de variation</p>
+  <p>Le taux de variation de \(f\) entre \(a\) et \(b\) est donné par :</p>
+  <div class="options">
+    <label><input type="radio" name="s15" value="a"> \(f(b) - f(a)\)</label>
+    <label><input type="radio" name="s15" value="b"> \(f(a) \times f(b)\)</label>
+    <label><input type="radio" name="s15" value="c"> \(\dfrac{f(b) - f(a)}{b - a}\)</label>
+    <label><input type="radio" name="s15" value="d"> \(\dfrac{b - a}{f(b) - f(a)}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
+<div class="score-box" id="score-socle"></div>
+</form>
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<form id="qcm-standard">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Dérivation – polynôme du 3e degré</p>
+  <p>Si \(f(x) = 4x^3 + 2x^2 - 7x + 1\), alors \(f'(x) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="t1" value="a"> \(4x^2 + 2x - 7\)</label>
+    <label><input type="radio" name="t1" value="b"> \(12x^2 + 4x - 7\)</label>
+    <label><input type="radio" name="t1" value="c"> \(12x^3 + 4x^2 - 7\)</label>
+    <label><input type="radio" name="t1" value="d"> \(12x^2 + 4x\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Dérivation – polynôme avec coefficient négatif</p>
+  <p>Si \(g(x) = -2x^2 + 8x\), alors \(g'(x) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="t2" value="a"> \(-4x^2 + 8\)</label>
+    <label><input type="radio" name="t2" value="b"> \(-2x + 8\)</label>
+    <label><input type="radio" name="t2" value="c"> \(-4x + 8\)</label>
+    <label><input type="radio" name="t2" value="d"> \(-4x - 8\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Étude des variations – sens sur un intervalle</p>
+  <p>Soit \(f(x) = x^2 - 6x + 5\). On a \(f'(x) = 2x - 6\). Sur quel intervalle \(f\) est-elle croissante ?</p>
+  <div class="options">
+    <label><input type="radio" name="t3" value="a"> \([3\,;\,+\infty[\)</label>
+    <label><input type="radio" name="t3" value="b"> \(]-\infty\,;\,3]\)</label>
+    <label><input type="radio" name="t3" value="c"> \(]-\infty\,;\,0]\)</label>
+    <label><input type="radio" name="t3" value="d"> \(\mathbb{R}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Extremum – valeur minimale</p>
+  <p>Soit \(f(x) = x^2 - 6x + 5\). L'extremum de \(f\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="t4" value="a"> un maximum de valeur 5 en \(x = 0\)</label>
+    <label><input type="radio" name="t4" value="b"> un maximum de valeur \(-4\) en \(x = 3\)</label>
+    <label><input type="radio" name="t4" value="c"> un minimum de valeur 5 en \(x = 0\)</label>
+    <label><input type="radio" name="t4" value="d"> un minimum de valeur \(-4\) en \(x = 3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Extremum – maximum</p>
+  <p>Soit \(f(x) = -2x^2 + 8x - 3\). Résoudre \(f'(x) = 0\) donne :</p>
+  <div class="options">
+    <label><input type="radio" name="t5" value="a"> \(x = -2\)</label>
+    <label><input type="radio" name="t5" value="b"> \(x = 2\)</label>
+    <label><input type="radio" name="t5" value="c"> \(x = 4\)</label>
+    <label><input type="radio" name="t5" value="d"> \(x = -4\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Tableau de variations – lecture</p>
+  <p>Soit \(f(x) = -2x^2 + 8x - 3\). La valeur maximale de \(f\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="t6" value="a"> \(-3\)</label>
+    <label><input type="radio" name="t6" value="b"> \(2\)</label>
+    <label><input type="radio" name="t6" value="c"> \(5\)</label>
+    <label><input type="radio" name="t6" value="d"> \(8\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Coût marginal – définition</p>
+  <p>Le coût total de production est \(C(x) = 0{,}2x^2 + 30x + 500\). Le coût marginal \(C'(x)\) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="t7" value="a"> \(0{,}4x + 30\)</label>
+    <label><input type="radio" name="t7" value="b"> \(0{,}2x + 30\)</label>
+    <label><input type="radio" name="t7" value="c"> \(0{,}4x^2 + 30\)</label>
+    <label><input type="radio" name="t7" value="d"> \(0{,}2x + 30x\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Coût marginal – calcul numérique</p>
+  <p>Avec \(C'(x) = 0{,}4x + 30\), le coût marginal pour \(x = 20\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="t8" value="a"> 20 €</label>
+    <label><input type="radio" name="t8" value="b"> 30 €</label>
+    <label><input type="radio" name="t8" value="c"> 50 €</label>
+    <label><input type="radio" name="t8" value="d"> 38 €</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Optimisation – aire maximale</p>
+  <p>L'aire d'un rectangle est \(A(x) = 60x - x^2\) avec \(x \in ]0\,;\,60[\). La valeur de \(x\) qui maximise \(A\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="t9" value="a"> \(x = 60\)</label>
+    <label><input type="radio" name="t9" value="b"> \(x = 30\)</label>
+    <label><input type="radio" name="t9" value="c"> \(x = 20\)</label>
+    <label><input type="radio" name="t9" value="d"> \(x = 15\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Équation de la tangente</p>
+  <p>La tangente à la courbe de \(f\) au point d'abscisse \(a\) a pour équation :</p>
+  <div class="options">
+    <label><input type="radio" name="t10" value="a"> \(y = f(a) \cdot x + f'(a)\)</label>
+    <label><input type="radio" name="t10" value="b"> \(y = f'(a) + f(a)\)</label>
+    <label><input type="radio" name="t10" value="c"> \(y = f'(a)(x - a) + f(a)\)</label>
+    <label><input type="radio" name="t10" value="d"> \(y = f'(a)(x + a) - f(a)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Tangente – calcul numérique</p>
+  <p>Soit \(f(x) = x^2 - 4x + 3\). L'équation de la tangente au point d'abscisse \(x = 1\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="t11" value="a"> \(y = -2x + 2\)</label>
+    <label><input type="radio" name="t11" value="b"> \(y = 2x - 2\)</label>
+    <label><input type="radio" name="t11" value="c"> \(y = -2x - 2\)</label>
+    <label><input type="radio" name="t11" value="d"> \(y = 2x + 2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Rendement – optimisation</p>
+  <p>Le rendement d'une chaudière est \(R(x) = -0{,}5x^2 + 10x + 20\). Le débit \(x\) qui maximise le rendement est :</p>
+  <div class="options">
+    <label><input type="radio" name="t12" value="a"> \(x = 5\)</label>
+    <label><input type="radio" name="t12" value="b"> \(x = 20\)</label>
+    <label><input type="radio" name="t12" value="c"> \(x = 0\)</label>
+    <label><input type="radio" name="t12" value="d"> \(x = 10\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Bénéfice – maximiser</p>
+  <p>Le bénéfice d'un artisan est \(B(x) = -x^2 + 40x - 300\). Le nombre de meubles à vendre pour maximiser le bénéfice est :</p>
+  <div class="options">
+    <label><input type="radio" name="t13" value="a"> \(x = 10\)</label>
+    <label><input type="radio" name="t13" value="b"> \(x = 20\)</label>
+    <label><input type="radio" name="t13" value="c"> \(x = 40\)</label>
+    <label><input type="radio" name="t13" value="d"> \(x = 30\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Dérivée – règle \((x^n)' = nx^{n-1}\)</p>
+  <p>Si \(f(x) = x^5\), alors \(f'(x) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="t14" value="a"> \(x^4\)</label>
+    <label><input type="radio" name="t14" value="b"> \(5x\)</label>
+    <label><input type="radio" name="t14" value="c"> \(5x^4\)</label>
+    <label><input type="radio" name="t14" value="d"> \(4x^5\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Tableau de variations – type de fonction</p>
+  <p>Soit \(f(x) = x^2 - 2x - 3\). Quel type d'extremum possède-t-elle, et en quelle valeur ?</p>
+  <div class="options">
+    <label><input type="radio" name="t15" value="a"> Un minimum en \(x = 1\)</label>
+    <label><input type="radio" name="t15" value="b"> Un maximum en \(x = 1\)</label>
+    <label><input type="radio" name="t15" value="c"> Un minimum en \(x = -1\)</label>
+    <label><input type="radio" name="t15" value="d"> Un maximum en \(x = 2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
+</form>
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<form id="qcm-appro">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Dérivée d'un polynôme – calcul complet</p>
+  <p>Si \(h(x) = 5x^3 - 3x + 10\), alors \(h'(x) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="a1" value="a"> \(5x^2 - 3\)</label>
+    <label><input type="radio" name="a1" value="b"> \(15x^2 - 3x\)</label>
+    <label><input type="radio" name="a1" value="c"> \(15x^2 - 3\)</label>
+    <label><input type="radio" name="a1" value="d"> \(15x^3 - 3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Nombre dérivé – calcul par définition</p>
+  <p>En utilisant \(f'(a) = \lim_{h \to 0} \dfrac{f(a+h)-f(a)}{h}\), le taux de variation de \(f(x) = x^2\) entre \(x = 3\) et \(x = 3+h\) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> \(h + 3\)</label>
+    <label><input type="radio" name="a2" value="b"> \(6 + h\)</label>
+    <label><input type="radio" name="a2" value="c"> \(6h\)</label>
+    <label><input type="radio" name="a2" value="d"> \(9 + h\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Tangente – équation complète</p>
+  <p>Soit \(f(x) = x^2\). L'équation de la tangente au point d'abscisse \(a = 3\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> \(y = 6x - 9\)</label>
+    <label><input type="radio" name="a3" value="b"> \(y = 6x + 9\)</label>
+    <label><input type="radio" name="a3" value="c"> \(y = 3x - 9\)</label>
+    <label><input type="radio" name="a3" value="d"> \(y = 6x\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Optimisation – bénéfice maximal</p>
+  <p>Le bénéfice d'un artisan menuisier est \(B(x) = -x^2 + 40x - 300\) pour \(x \in [0\,;\,40]\). Le bénéfice maximal est :</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> 300 €</label>
+    <label><input type="radio" name="a4" value="b"> 400 €</label>
+    <label><input type="radio" name="a4" value="c"> 40 €</label>
+    <label><input type="radio" name="a4" value="d"> 100 €</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Optimisation – périmètre fixé</p>
+  <p>Un menuisier agenceur dispose de 160 cm de baguette pour encadrer un rectangle. L'aire \(A(x)\) en fonction de la largeur \(x\) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> \(A(x) = 160x - x^2\)</label>
+    <label><input type="radio" name="a5" value="b"> \(A(x) = 80x - x^2\)</label>
+    <label><input type="radio" name="a5" value="c"> \(A(x) = 40x - x^2\)</label>
+    <label><input type="radio" name="a5" value="d"> \(A(x) = 160 - 2x\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Optimisation – aire maximale</p>
+  <p>Pour \(A(x) = 80x - x^2\), la valeur de \(x\) qui maximise l'aire est :</p>
+  <div class="options">
+    <label><input type="radio" name="a6" value="a"> \(x = 160\)</label>
+    <label><input type="radio" name="a6" value="b"> \(x = 20\)</label>
+    <label><input type="radio" name="a6" value="c"> \(x = 40\)</label>
+    <label><input type="radio" name="a6" value="d"> \(x = 80\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Étude complète – signe de la dérivée</p>
+  <p>Soit \(f(x) = 2x^3 - 6x + 1\). On trouve \(f'(x) = 6x^2 - 6 = 6(x^2 - 1)\). Sur quel intervalle \(f\) est-elle décroissante ?</p>
+  <div class="options">
+    <label><input type="radio" name="a7" value="a"> \([-1\,;\,1]\)</label>
+    <label><input type="radio" name="a7" value="b"> \(]-\infty\,;\,-1]\)</label>
+    <label><input type="radio" name="a7" value="c"> \([1\,;\,+\infty[\)</label>
+    <label><input type="radio" name="a7" value="d"> \(\mathbb{R}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Dérivée composée simple – \((ax+b)^2\)</p>
+  <p>Soit \(f(x) = (2x + 1)^2\). En développant puis dérivant, \(f'(x) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="a8" value="a"> \(2(2x+1)\)</label>
+    <label><input type="radio" name="a8" value="b"> \(2\)</label>
+    <label><input type="radio" name="a8" value="c"> \(4\)</label>
+    <label><input type="radio" name="a8" value="d"> \(8x + 4\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Interprétation physique – vitesse instantanée</p>
+  <p>La position d'un objet est \(s(t) = 3t^2 - 12t\) (en mètres, \(t\) en secondes). La vitesse instantanée à \(t = 2\) s est :</p>
+  <div class="options">
+    <label><input type="radio" name="a9" value="a"> 12 m/s</label>
+    <label><input type="radio" name="a9" value="b"> 0 m/s</label>
+    <label><input type="radio" name="a9" value="c"> \(-12\) m/s</label>
+    <label><input type="radio" name="a9" value="d"> 6 m/s</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Optimisation – contrainte linéaire</p>
+  <p>Un menuisier veut fabriquer une boîte rectangulaire (sans couvercle) à base carrée de côté \(x\) cm et de hauteur \(h\) cm. La surface totale des faces vaut 300 cm². Alors \(h\) en fonction de \(x\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="a10" value="a"> \(h = \dfrac{300 - x^2}{x}\)</label>
+    <label><input type="radio" name="a10" value="b"> \(h = \dfrac{300}{4x}\)</label>
+    <label><input type="radio" name="a10" value="c"> \(h = \dfrac{300 - x^2}{4x}\)</label>
+    <label><input type="radio" name="a10" value="d"> \(h = 300 - x^2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Taux de variation – limite</p>
+  <p>Le nombre dérivé \(f'(a)\) est la limite du taux de variation \(\dfrac{f(a+h)-f(a)}{h}\) quand :</p>
+  <div class="options">
+    <label><input type="radio" name="a11" value="a"> \(h \to 0\)</label>
+    <label><input type="radio" name="a11" value="b"> \(h \to +\infty\)</label>
+    <label><input type="radio" name="a11" value="c"> \(a \to 0\)</label>
+    <label><input type="radio" name="a11" value="d"> \(f(a) \to 0\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Extremum global sur un intervalle fermé</p>
+  <p>Sur \([-1\,;\,3]\), la fonction \(f(x) = x^2 - 2x - 3\) admet un minimum absolu en :</p>
+  <div class="options">
+    <label><input type="radio" name="a12" value="a"> \(x = -1\) (valeur : 0)</label>
+    <label><input type="radio" name="a12" value="b"> \(x = 3\) (valeur : 0)</label>
+    <label><input type="radio" name="a12" value="c"> \(x = 0\) (valeur : \(-3\))</label>
+    <label><input type="radio" name="a12" value="d"> \(x = 1\) (valeur : \(-4\))</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Dérivée et signe – fonction cubique</p>
+  <p>Soit \(f(x) = -x^3 + 3x\). On a \(f'(x) = -3x^2 + 3 = -3(x^2 - 1)\). Les extremums locaux se trouvent en :</p>
+  <div class="options">
+    <label><input type="radio" name="a13" value="a"> \(x = 0\) seulement</label>
+    <label><input type="radio" name="a13" value="b"> \(x = -1\) et \(x = 1\)</label>
+    <label><input type="radio" name="a13" value="c"> \(x = 3\) seulement</label>
+    <label><input type="radio" name="a13" value="d"> \(x = 0\) et \(x = 3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Optimisation – type BTS</p>
+  <p>Un installateur thermique modélise la consommation annuelle (en kWh) d'une pompe à chaleur par \(C(T) = 2T^2 - 80T + 1200\) où \(T\) est la température de consigne (°C), \(T \in [15\,;\,25]\). La température qui minimise la consommation est :</p>
+  <div class="options">
+    <label><input type="radio" name="a14" value="a"> \(T = 15\,°C\)</label>
+    <label><input type="radio" name="a14" value="b"> \(T = 25\,°C\)</label>
+    <label><input type="radio" name="a14" value="c"> \(T = 20\,°C\)</label>
+    <label><input type="radio" name="a14" value="d"> \(T = 10\,°C\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Problème ouvert – interprétation des résultats</p>
+  <p>Un fabricant de meubles modélise son profit par \(P(x) = -2x^2 + 60x - 400\) pour \(x \in [0\,;\,30]\). Le profit est positif pour :</p>
+  <div class="options">
+    <label><input type="radio" name="a15" value="a"> \(x \in \,]10\,;\,20[\)</label>
+    <label><input type="radio" name="a15" value="b"> \(x \in \,]0\,;\,30[\)</label>
+    <label><input type="radio" name="a15" value="c"> \(x \in \,]15\,;\,30]\)</label>
+    <label><input type="radio" name="a15" value="d"> \(x \in \,]0\,;\,10[\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "La dérivée d'une constante est toujours 0 : si f(x) = k, alors f'(x) = 0.",
+  "s2": "Dérivée de x² : (x²)' = 2x. La puissance descend en facteur et on diminue l'exposant de 1.",
+  "s3": "Dérivée de x³ : (x³)' = 3x². La puissance descend en facteur.",
+  "s4": "Si f(x) = 5x, c'est une fonction affine (a = 5, b = 0), donc f'(x) = 5.",
+  "s5": "(4x²)' = 4 × (x²)' = 4 × 2x = 8x. On multiplie la dérivée de x² par le scalaire 4.",
+  "s6": "(x² + 3)' = 2x + 0 = 2x. La dérivée d'une constante (ici 3) est nulle.",
+  "s7": "(3x² - 5x + 2)' = 3×2x - 5×1 + 0 = 6x - 5. On dérive terme par terme.",
+  "s8": "Si f'(x) > 0 sur un intervalle, la fonction est strictement croissante sur cet intervalle.",
+  "s9": "Si f'(x) < 0 sur un intervalle, la fonction est strictement décroissante sur cet intervalle.",
+  "s10": "Si f'(a) = 0 et f' change de signe en a, alors f admet un extremum local (maximum ou minimum) en a.",
+  "s11": "Quand f' passe de + à −, la fonction monte puis descend : c'est un maximum local.",
+  "s12": "Quand f' passe de − à +, la fonction descend puis monte : c'est un minimum local.",
+  "s13": "f'(x) = 2x - 4 = 0 ⟺ 2x = 4 ⟺ x = 2.",
+  "s14": "f'(a) est la pente de la tangente à la courbe de f au point d'abscisse a. C'est l'interprétation géométrique du nombre dérivé.",
+  "s15": "Le taux de variation mesure la variation moyenne de f entre a et b : τ = (f(b) - f(a)) / (b - a).",
+  /* === STANDARD === */
+  "t1": "(4x³ + 2x² - 7x + 1)' = 12x² + 4x - 7. On dérive chaque terme : (4x³)' = 12x², (2x²)' = 4x, (-7x)' = -7, (1)' = 0.",
+  "t2": "(-2x² + 8x)' = -4x + 8. On multiplie les dérivées par les coefficients.",
+  "t3": "f'(x) = 2x - 6 > 0 ⟺ x > 3. Donc f est croissante sur [3 ; +∞[.",
+  "t4": "f'(x) = 2x - 6 = 0 ⟺ x = 3. f'  < 0 si x < 3 (décroissant) et f' > 0 si x > 3 (croissant). Donc minimum en x = 3 : f(3) = 9 - 18 + 5 = -4.",
+  "t5": "g'(x) = -4x + 8 = 0 ⟺ x = 2.",
+  "t6": "g(2) = -2×4 + 8×2 - 3 = -8 + 16 - 3 = 5. C'est le maximum.",
+  "t7": "C'(x) = (0,2x²)' + (30x)' + (500)' = 0,4x + 30.",
+  "t8": "C'(20) = 0,4 × 20 + 30 = 8 + 30 = 38 €. La 21e poutre coûte environ 38 € à produire.",
+  "t9": "A'(x) = 60 - 2x = 0 ⟺ x = 30. A' > 0 si x < 30 et A' < 0 si x > 30 : maximum en x = 30.",
+  "t10": "L'équation de la tangente à la courbe de f au point d'abscisse a est : y = f'(a)(x - a) + f(a).",
+  "t11": "f(1) = 1 - 4 + 3 = 0, f'(x) = 2x - 4, f'(1) = -2. Tangente : y = -2(x - 1) + 0 = -2x + 2.",
+  "t12": "R'(x) = -x + 10 = 0 ⟺ x = 10. R' > 0 si x < 10, R' < 0 si x > 10 : maximum en x = 10.",
+  "t13": "B'(x) = -2x + 40 = 0 ⟺ x = 20. B' > 0 avant et B' < 0 après : maximum en x = 20.",
+  "t14": "(x⁵)' = 5x⁴. La règle est (xⁿ)' = nxⁿ⁻¹.",
+  "t15": "f'(x) = 2x - 2 = 0 ⟺ x = 1. f' < 0 si x < 1, f' > 0 si x > 1 : minimum en x = 1.",
+  /* === APPROFONDISSEMENT === */
+  "a1": "h'(x) = 5×3x² - 3×1 + 0 = 15x² - 3. On dérive terme par terme.",
+  "a2": "(f(3+h) - f(3))/h = ((3+h)² - 9)/h = (9 + 6h + h² - 9)/h = (6h + h²)/h = 6 + h. En faisant tendre h vers 0, on obtient f'(3) = 6.",
+  "a3": "f'(x) = 2x, donc f'(3) = 6. f(3) = 9. Tangente : y = 6(x - 3) + 9 = 6x - 18 + 9 = 6x - 9.",
+  "a4": "B'(x) = -2x + 40 = 0 ⟺ x = 20. B(20) = -400 + 800 - 300 = 100 €.",
+  "a5": "Périmètre = 2x + 2y = 160 ⟹ y = 80 - x. Aire A(x) = x × (80 - x) = 80x - x².",
+  "a6": "A'(x) = 80 - 2x = 0 ⟺ x = 40. A' > 0 si x < 40, A' < 0 si x > 40 : maximum en x = 40.",
+  "a7": "f'(x) = 6(x² - 1) = 6(x-1)(x+1). f'(x) < 0 pour x ∈ ]-1 ; 1[ : f est décroissante sur [-1 ; 1].",
+  "a8": "f(x) = (2x+1)² = 4x² + 4x + 1. f'(x) = 8x + 4.",
+  "a9": "s'(t) = 6t - 12. s'(2) = 12 - 12 = 0 m/s. La vitesse est nulle à t = 2 s.",
+  "a10": "Surface = x² + 4xh = 300 ⟹ 4xh = 300 - x² ⟹ h = (300 - x²)/(4x).",
+  "a11": "Par définition, f'(a) = lim_{h→0} [f(a+h) - f(a)] / h. On fait tendre h (l'accroissement) vers 0.",
+  "a12": "f'(x) = 2x - 2 = 0 ⟺ x = 1. f(1) = 1 - 2 - 3 = -4. C'est le minimum absolu sur [-1 ; 3]. (f(-1) = 0, f(3) = 0 sont plus grands.)",
+  "a13": "f'(x) = -3(x² - 1) = -3(x-1)(x+1) = 0 ⟺ x = 1 ou x = -1. En x = -1 : f' passe de - à + (minimum). En x = 1 : f' passe de + à - (maximum).",
+  "a14": "C'(T) = 4T - 80 = 0 ⟺ T = 20. C' < 0 si T < 20, C' > 0 si T > 20 : minimum en T = 20°C.",
+  "a15": "P(x) > 0 ⟺ -2x² + 60x - 400 > 0 ⟺ x² - 30x + 200 < 0. Discriminant : Δ = 900 - 800 = 100. Racines : x₁ = (30-10)/2 = 10 et x₂ = (30+10)/2 = 20. P(x) > 0 pour x ∈ ]10 ; 20[."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '✅ Bonne réponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '❌ Mauvaise réponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '⚠️ Pas de réponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

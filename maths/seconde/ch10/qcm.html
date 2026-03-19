@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch10 – QCM – Fonction carré et variations – 2nde MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}
+
+.qcm-header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.qcm-header .dh-item{display:flex;align-items:center;gap:6px}
+.qcm-header strong{color:var(--p)}
+.q-block{border:1px solid #e2e8f0;border-radius:10px;padding:18px 20px;margin:16px 0;background:#fff}
+.q-block h3{margin:0 0 10px;font-size:1em;color:var(--p)}
+.q-block .theme{font-size:.78em;color:#718096;margin-bottom:8px;font-style:italic}
+.options label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:1.5px solid #e2e8f0;transition:background .15s,border-color .15s;font-size:.95em}
+.options label:hover{background:var(--p-bg);border-color:var(--p-border)}
+.options input[type="radio"]{margin-right:8px;accent-color:var(--p)}
+.options label.correct{background:#d1fae5;border-color:#34d399}
+.options label.incorrect{background:#fee2e2;border-color:#f87171}
+.q-feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:.88em;display:none}
+.q-feedback.ok{background:#d1fae5;color:#065f46;display:block}
+.q-feedback.ko{background:#fee2e2;color:#991b1b;display:block}
+.btn-valider{background:var(--p);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;margin-top:20px;display:block}
+.btn-valider:hover{opacity:.85}
+.btn-reset{background:#e2e8f0;color:#374151;border:none;padding:8px 20px;border-radius:8px;font-size:.9em;cursor:pointer;margin-top:8px}
+.btn-reset:hover{background:#cbd5e1}
+.score-box{margin-top:24px;padding:18px 24px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:700;display:none}
+.score-box.show{display:block}
+.score-good{background:#d1fae5;color:#065f46;border:2px solid #34d399}
+.score-avg{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}
+.score-low{background:#fee2e2;color:#991b1b;border:2px solid #f87171}
+@media print{.nb,.btn-valider,.btn-reset,.diff-toggle-wrap{display:none}.options label{border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>QCM – Fonction carré et variations</h1>
+  <p class="sous-titre">Chapitre 10 | Seconde Bac Pro MAMA | Mathématiques</p>
+</header>
+
+<div class="qcm-header">
+  <div class="dh-item">⏱ <strong>Durée :</strong> 15–20 min</div>
+  <div class="dh-item">📄 <strong>15 questions</strong></div>
+  <div class="dh-item">🧮 <strong>Calculatrice autorisée</strong></div>
+</div>
+
+<p style="font-size:.9em;color:#4a5568">Pour chaque question, cochez la <strong>seule bonne réponse</strong> puis cliquez sur « Valider le QCM » en bas de page.</p>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<form id="qcm-socle">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Définition – Fonction carré</p>
+  <p>La fonction carré est définie par :</p>
+  <div class="options">
+    <label><input type="radio" name="s1" value="a"> \(f(x) = 2x\)</label>
+    <label><input type="radio" name="s1" value="b"> \(f(x) = x + 2\)</label>
+    <label><input type="radio" name="s1" value="c"> \(f(x) = x^2\)</label>
+    <label><input type="radio" name="s1" value="d"> \(f(x) = \sqrt{x}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Calcul d'image – Nombre positif</p>
+  <p>Si \(f(x) = x^2\), alors \(f(5) =\)</p>
+  <div class="options">
+    <label><input type="radio" name="s2" value="a"> 10</label>
+    <label><input type="radio" name="s2" value="b"> 25</label>
+    <label><input type="radio" name="s2" value="c"> 7</label>
+    <label><input type="radio" name="s2" value="d"> 52</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Calcul d'image – Nombre négatif</p>
+  <p>Si \(f(x) = x^2\), alors \(f(-3) =\)</p>
+  <div class="options">
+    <label><input type="radio" name="s3" value="a"> 9</label>
+    <label><input type="radio" name="s3" value="b"> \(-9\)</label>
+    <label><input type="radio" name="s3" value="c"> \(-6\)</label>
+    <label><input type="radio" name="s3" value="d"> 6</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Signe du carré</p>
+  <p>Le carré d'un nombre réel est toujours :</p>
+  <div class="options">
+    <label><input type="radio" name="s4" value="a"> strictement positif</label>
+    <label><input type="radio" name="s4" value="b"> négatif</label>
+    <label><input type="radio" name="s4" value="c"> nul</label>
+    <label><input type="radio" name="s4" value="d"> positif ou nul</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Symétrie – Opposés</p>
+  <p>On sait que \(f(4) = 16\). Que vaut \(f(-4)\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="s5" value="a"> \(-16\)</label>
+    <label><input type="radio" name="s5" value="b"> 16</label>
+    <label><input type="radio" name="s5" value="c"> 8</label>
+    <label><input type="radio" name="s5" value="d"> \(-8\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Vocabulaire – Courbe</p>
+  <p>La courbe de la fonction carré s'appelle :</p>
+  <div class="options">
+    <label><input type="radio" name="s6" value="a"> une droite</label>
+    <label><input type="radio" name="s6" value="b"> un cercle</label>
+    <label><input type="radio" name="s6" value="c"> une parabole</label>
+    <label><input type="radio" name="s6" value="d"> une hyperbole</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Minimum de la fonction</p>
+  <p>Le minimum de \(f(x) = x^2\) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="s7" value="a"> 0, atteint en \(x = 0\)</label>
+    <label><input type="radio" name="s7" value="b"> 1, atteint en \(x = 1\)</label>
+    <label><input type="radio" name="s7" value="c"> \(-1\), atteint en \(x = -1\)</label>
+    <label><input type="radio" name="s7" value="d"> il n'y a pas de minimum</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Sens de variation – Partie droite</p>
+  <p>Sur l'intervalle \([0\,;\,+\infty[\), la fonction carré est :</p>
+  <div class="options">
+    <label><input type="radio" name="s8" value="a"> décroissante</label>
+    <label><input type="radio" name="s8" value="b"> constante</label>
+    <label><input type="radio" name="s8" value="c"> d'abord croissante puis décroissante</label>
+    <label><input type="radio" name="s8" value="d"> croissante</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Sens de variation – Partie gauche</p>
+  <p>Sur l'intervalle \(]-\infty\,;\,0]\), la fonction carré est :</p>
+  <div class="options">
+    <label><input type="radio" name="s9" value="a"> croissante</label>
+    <label><input type="radio" name="s9" value="b"> décroissante</label>
+    <label><input type="radio" name="s9" value="c"> constante</label>
+    <label><input type="radio" name="s9" value="d"> ni croissante ni décroissante</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Calcul d'image – Nombre décimal</p>
+  <p>Si \(f(x) = x^2\), alors \(f(1{,}5) =\)</p>
+  <div class="options">
+    <label><input type="radio" name="s10" value="a"> 3</label>
+    <label><input type="radio" name="s10" value="b"> 1,5</label>
+    <label><input type="radio" name="s10" value="c"> 2,25</label>
+    <label><input type="radio" name="s10" value="d"> 2,5</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Lecture graphique – Image</p>
+  <p>Sur la parabole, le point de coordonnées \((2\,;\,?)\) a pour ordonnée :</p>
+  <div class="options">
+    <label><input type="radio" name="s11" value="a"> 4</label>
+    <label><input type="radio" name="s11" value="b"> 2</label>
+    <label><input type="radio" name="s11" value="c"> 8</label>
+    <label><input type="radio" name="s11" value="d"> \(-4\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Sommet de la parabole</p>
+  <p>Le sommet de la parabole \(f(x) = x^2\) a pour coordonnées :</p>
+  <div class="options">
+    <label><input type="radio" name="s12" value="a"> \((1\,;\,1)\)</label>
+    <label><input type="radio" name="s12" value="b"> \((0\,;\,0)\)</label>
+    <label><input type="radio" name="s12" value="c"> \((0\,;\,1)\)</label>
+    <label><input type="radio" name="s12" value="d"> \((1\,;\,0)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 13</h3>
+  <p class="theme">Contexte professionnel – Surface</p>
+  <p>Un menuisier doit couvrir un panneau carré de côté 3 m. La surface à couvrir est :</p>
+  <div class="options">
+    <label><input type="radio" name="s13" value="a"> 6 m²</label>
+    <label><input type="radio" name="s13" value="b"> 12 m²</label>
+    <label><input type="radio" name="s13" value="c"> 3 m²</label>
+    <label><input type="radio" name="s13" value="d"> 9 m²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Axe de symétrie</p>
+  <p>La parabole \(f(x) = x^2\) est symétrique par rapport à :</p>
+  <div class="options">
+    <label><input type="radio" name="s14" value="a"> l'axe des abscisses</label>
+    <label><input type="radio" name="s14" value="b"> la droite \(y = x\)</label>
+    <label><input type="radio" name="s14" value="c"> l'axe des ordonnées</label>
+    <label><input type="radio" name="s14" value="d"> la droite \(y = 1\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Maximum de la fonction</p>
+  <p>La fonction \(f(x) = x^2\) :</p>
+  <div class="options">
+    <label><input type="radio" name="s15" value="a"> n'a pas de maximum</label>
+    <label><input type="radio" name="s15" value="b"> a un maximum égal à 100</label>
+    <label><input type="radio" name="s15" value="c"> a un maximum égal à 0</label>
+    <label><input type="radio" name="s15" value="d"> a un maximum égal à 1</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
+<div class="score-box" id="score-socle"></div>
+</form>
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<form id="qcm-standard">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Calcul d'image – Erreur fréquente</p>
+  <p>Que vaut \((-5)^2\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="t1" value="a"> \(-25\)</label>
+    <label><input type="radio" name="t1" value="b"> 25</label>
+    <label><input type="radio" name="t1" value="c"> \(-10\)</label>
+    <label><input type="radio" name="t1" value="d"> 10</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 2</h3>
+  <p class="theme">Comparaison d'images</p>
+  <p>On compare \(f(3)\) et \(f(5)\) avec \(f(x) = x^2\). Quel résultat est correct ?</p>
+  <div class="options">
+    <label><input type="radio" name="t2" value="a"> \(f(3) > f(5)\)</label>
+    <label><input type="radio" name="t2" value="b"> \(f(3) = f(5)\)</label>
+    <label><input type="radio" name="t2" value="c"> \(f(3) = 6\) et \(f(5) = 10\)</label>
+    <label><input type="radio" name="t2" value="d"> \(f(3) < f(5)\) car \(9 < 25\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Résolution – Équation \(f(x) = c\)</p>
+  <p>Les solutions de \(x^2 = 16\) sont :</p>
+  <div class="options">
+    <label><input type="radio" name="t3" value="a"> \(x = -4\) et \(x = 4\)</label>
+    <label><input type="radio" name="t3" value="b"> \(x = 4\) uniquement</label>
+    <label><input type="radio" name="t3" value="c"> \(x = 8\) et \(x = -8\)</label>
+    <label><input type="radio" name="t3" value="d"> \(x = 256\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 4</h3>
+  <p class="theme">Résolution – Équation sans solution</p>
+  <p>L'équation \(x^2 = -4\) :</p>
+  <div class="options">
+    <label><input type="radio" name="t4" value="a"> a pour solution \(x = -2\)</label>
+    <label><input type="radio" name="t4" value="b"> a pour solutions \(x = 2\) et \(x = -2\)</label>
+    <label><input type="radio" name="t4" value="c"> n'a aucune solution dans \(\mathbb{R}\)</label>
+    <label><input type="radio" name="t4" value="d"> a pour solution \(x = 2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Tableau de variations</p>
+  <p>Dans le tableau de variations de \(f(x) = x^2\), quelle affirmation est correcte ?</p>
+  <div class="options">
+    <label><input type="radio" name="t5" value="a"> \(f\) est croissante sur \(\mathbb{R}\) entier</label>
+    <label><input type="radio" name="t5" value="b"> \(f\) est décroissante sur \(]-\infty\,;\,0]\) puis croissante sur \([0\,;\,+\infty[\)</label>
+    <label><input type="radio" name="t5" value="c"> \(f\) est croissante sur \(]-\infty\,;\,0]\) puis décroissante sur \([0\,;\,+\infty[\)</label>
+    <label><input type="radio" name="t5" value="d"> \(f\) est décroissante sur \(\mathbb{R}\) entier</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 6</h3>
+  <p class="theme">Inéquation – Résolution graphique</p>
+  <p>L'ensemble des solutions de \(x^2 \leq 9\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="t6" value="a"> \(]-\infty\,;\,3]\)</label>
+    <label><input type="radio" name="t6" value="b"> \([0\,;\,3]\)</label>
+    <label><input type="radio" name="t6" value="c"> \(\{-3\,;\,3\}\)</label>
+    <label><input type="radio" name="t6" value="d"> \([-3\,;\,3]\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Transformation – Décalage vertical</p>
+  <p>La fonction \(g(x) = x^2 + 5\) a pour minimum :</p>
+  <div class="options">
+    <label><input type="radio" name="t7" value="a"> 5, atteint en \(x = 0\)</label>
+    <label><input type="radio" name="t7" value="b"> 0, atteint en \(x = 0\)</label>
+    <label><input type="radio" name="t7" value="c"> 5, atteint en \(x = 5\)</label>
+    <label><input type="radio" name="t7" value="d"> \(-5\), atteint en \(x = 0\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 8</h3>
+  <p class="theme">Contexte professionnel – Surface carrée</p>
+  <p>Un agenceur doit poser un revêtement sur un sol carré de côté \(c\) mètres. La surface est \(A = c^2\). Si le côté passe de 3 m à 6 m, la surface est multipliée par :</p>
+  <div class="options">
+    <label><input type="radio" name="t8" value="a"> 2</label>
+    <label><input type="radio" name="t8" value="b"> 3</label>
+    <label><input type="radio" name="t8" value="c"> 4</label>
+    <label><input type="radio" name="t8" value="d"> 6</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Transformation – Coefficient multiplicatif</p>
+  <p>La parabole de \(h(x) = 3x^2\) comparée à celle de \(f(x) = x^2\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="t9" value="a"> plus ouverte (plus large)</label>
+    <label><input type="radio" name="t9" value="b"> plus resserrée (plus étroite)</label>
+    <label><input type="radio" name="t9" value="c"> identique</label>
+    <label><input type="radio" name="t9" value="d"> retournée vers le bas</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 10</h3>
+  <p class="theme">Transformation – Parabole retournée</p>
+  <p>La fonction \(p(x) = -x^2\) :</p>
+  <div class="options">
+    <label><input type="radio" name="t10" value="a"> a un minimum de 0</label>
+    <label><input type="radio" name="t10" value="b"> est croissante sur \([0\,;\,+\infty[\)</label>
+    <label><input type="radio" name="t10" value="c"> a une parabole ouverte vers le haut</label>
+    <label><input type="radio" name="t10" value="d"> a un maximum de 0, atteint en \(x = 0\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Lecture graphique – Antécédents</p>
+  <p>Le nombre 9 a pour antécédents par la fonction carré :</p>
+  <div class="options">
+    <label><input type="radio" name="t11" value="a"> \(-3\) et \(3\)</label>
+    <label><input type="radio" name="t11" value="b"> \(3\) uniquement</label>
+    <label><input type="radio" name="t11" value="c"> \(81\)</label>
+    <label><input type="radio" name="t11" value="d"> \(4{,}5\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 12</h3>
+  <p class="theme">Comparaison – Nombres négatifs</p>
+  <p>On compare \(f(-2)\) et \(f(-6)\) avec \(f(x) = x^2\). On obtient :</p>
+  <div class="options">
+    <label><input type="radio" name="t12" value="a"> \(f(-2) > f(-6)\)</label>
+    <label><input type="radio" name="t12" value="b"> \(f(-2) = f(-6)\)</label>
+    <label><input type="radio" name="t12" value="c"> \(f(-2) < f(-6)\) car \(4 < 36\)</label>
+    <label><input type="radio" name="t12" value="d"> on ne peut pas comparer</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Contexte professionnel – Coût</p>
+  <p>Le coût d'un revêtement pour une pièce carrée de côté \(c\) est \(C(c) = 45c^2 + 120\). Pour \(c = 4\) m, le coût est :</p>
+  <div class="options">
+    <label><input type="radio" name="t13" value="a"> 300 €</label>
+    <label><input type="radio" name="t13" value="b"> 840 €</label>
+    <label><input type="radio" name="t13" value="c"> 720 €</label>
+    <label><input type="radio" name="t13" value="d"> 900 €</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 14</h3>
+  <p class="theme">Inéquation – \(f(x) > c\)</p>
+  <p>L'ensemble des solutions de \(x^2 > 4\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="t14" value="a"> \(]-\infty\,;\,-2[ \cup ]2\,;\,+\infty[\)</label>
+    <label><input type="radio" name="t14" value="b"> \(]2\,;\,+\infty[\)</label>
+    <label><input type="radio" name="t14" value="c"> \([-2\,;\,2]\)</label>
+    <label><input type="radio" name="t14" value="d"> \(\{-2\,;\,2\}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 15</h3>
+  <p class="theme">Transformation – Décalage vers le bas</p>
+  <p>Le sommet de la parabole \(g(x) = x^2 - 3\) a pour coordonnées :</p>
+  <div class="options">
+    <label><input type="radio" name="t15" value="a"> \((3\,;\,0)\)</label>
+    <label><input type="radio" name="t15" value="b"> \((0\,;\,3)\)</label>
+    <label><input type="radio" name="t15" value="c"> \((-3\,;\,0)\)</label>
+    <label><input type="radio" name="t15" value="d"> \((0\,;\,-3)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
+</form>
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<form id="qcm-appro">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Comparaison – Utilisation des variations</p>
+  <p>Sans calculer, comparer \(f(-7)\) et \(f(-3)\) sachant que \(f(x) = x^2\) :</p>
+  <div class="options">
+    <label><input type="radio" name="a1" value="a"> \(f(-7) < f(-3)\)</label>
+    <label><input type="radio" name="a1" value="b"> \(f(-7) = f(-3)\)</label>
+    <label><input type="radio" name="a1" value="c"> \(f(-7) > f(-3)\)</label>
+    <label><input type="radio" name="a1" value="d"> on ne peut pas comparer sans calculer</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Résolution – Équation avec transformation</p>
+  <p>Résoudre \(x^2 + 5 = 30\). Les solutions sont :</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> \(x = 5\) uniquement</label>
+    <label><input type="radio" name="a2" value="b"> \(x = -5\) et \(x = 5\)</label>
+    <label><input type="radio" name="a2" value="c"> \(x = 25\) et \(x = -25\)</label>
+    <label><input type="radio" name="a2" value="d"> \(x = \sqrt{30}\) uniquement</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Transformation – Coefficient \(k\)</p>
+  <p>La fonction \(h(x) = 0{,}5x^2\) comparée à \(f(x) = x^2\) a une parabole :</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> plus ouverte, avec le même sommet \(S(0\,;\,0)\)</label>
+    <label><input type="radio" name="a3" value="b"> plus resserrée, avec le même sommet</label>
+    <label><input type="radio" name="a3" value="c"> retournée vers le bas</label>
+    <label><input type="radio" name="a3" value="d"> décalée vers le haut de 0,5</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Variations – Fonction \(kx^2\) avec \(k < 0\)</p>
+  <p>La fonction \(p(x) = -2x^2\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> croissante sur \([0\,;\,+\infty[\)</label>
+    <label><input type="radio" name="a4" value="b"> décroissante sur \(]-\infty\,;\,0]\)</label>
+    <label><input type="radio" name="a4" value="c"> décroissante sur \(\mathbb{R}\)</label>
+    <label><input type="radio" name="a4" value="d"> croissante sur \(]-\infty\,;\,0]\) puis décroissante sur \([0\,;\,+\infty[\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 5</h3>
+  <p class="theme">Inéquation – Résolution algébrique</p>
+  <p>L'ensemble des solutions de \(x^2 < 25\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> \(]0\,;\,5[\)</label>
+    <label><input type="radio" name="a5" value="b"> \(]-\infty\,;\,-5[ \cup ]5\,;\,+\infty[\)</label>
+    <label><input type="radio" name="a5" value="c"> \(]-5\,;\,5[\)</label>
+    <label><input type="radio" name="a5" value="d"> \([-5\,;\,5]\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 6</h3>
+  <p class="theme">Contexte professionnel – Budget maximal</p>
+  <p>Un artisan menuisier doit poser un carrelage dans une pièce carrée de côté \(c\). Le coût est \(C(c) = 50c^2 + 200\). Son budget maximal est 1 000 €. Le côté maximal est :</p>
+  <div class="options">
+    <label><input type="radio" name="a6" value="a"> \(c = 5\) m</label>
+    <label><input type="radio" name="a6" value="b"> \(c = 4\) m</label>
+    <label><input type="radio" name="a6" value="c"> \(c = 3\) m</label>
+    <label><input type="radio" name="a6" value="d"> \(c = 6\) m</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Calcul – Valeur de \(h(x) = kx^2\)</p>
+  <p>Si \(h(x) = 2x^2\), alors \(h(3) =\)</p>
+  <div class="options">
+    <label><input type="radio" name="a7" value="a"> 18</label>
+    <label><input type="radio" name="a7" value="b"> 12</label>
+    <label><input type="radio" name="a7" value="c"> 36</label>
+    <label><input type="radio" name="a7" value="d"> 6</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Résolution – Nombre de solutions</p>
+  <p>L'équation \(x^2 = 0\) a :</p>
+  <div class="options">
+    <label><input type="radio" name="a8" value="a"> deux solutions : \(x = 0\) et \(x = -0\)</label>
+    <label><input type="radio" name="a8" value="b"> aucune solution</label>
+    <label><input type="radio" name="a8" value="c"> une infinité de solutions</label>
+    <label><input type="radio" name="a8" value="d"> une seule solution : \(x = 0\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 9</h3>
+  <p class="theme">Contexte professionnel – Doublement du côté</p>
+  <p>Un poseur de cuisines doit couvrir un sol carré de côté \(c\). Si le côté est doublé, la surface est multipliée par :</p>
+  <div class="options">
+    <label><input type="radio" name="a9" value="a"> 2</label>
+    <label><input type="radio" name="a9" value="b"> 3</label>
+    <label><input type="radio" name="a9" value="c"> 4</label>
+    <label><input type="radio" name="a9" value="d"> 8</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 10</h3>
+  <p class="theme">Inéquation – \(x^2 \geq c\)</p>
+  <p>L'ensemble des solutions de \(x^2 \geq 1\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="a10" value="a"> \([1\,;\,+\infty[\)</label>
+    <label><input type="radio" name="a10" value="b"> \(]-\infty\,;\,-1] \cup [1\,;\,+\infty[\)</label>
+    <label><input type="radio" name="a10" value="c"> \([-1\,;\,1]\)</label>
+    <label><input type="radio" name="a10" value="d"> \(\{-1\,;\,1\}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Transformation – Variation de \(g(x) = x^2 + k\)</p>
+  <p>La fonction \(g(x) = x^2 + 7\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="a11" value="a"> décroissante sur \(]-\infty\,;\,0]\) et croissante sur \([0\,;\,+\infty[\)</label>
+    <label><input type="radio" name="a11" value="b"> croissante sur \(\mathbb{R}\)</label>
+    <label><input type="radio" name="a11" value="c"> décroissante sur \(\mathbb{R}\)</label>
+    <label><input type="radio" name="a11" value="d"> croissante sur \(]-\infty\,;\,7]\) et décroissante après</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 12</h3>
+  <p class="theme">Problème ouvert – Encadrement</p>
+  <p>On cherche un nombre \(x > 0\) tel que \(x^2\) soit compris entre 10 et 20. Lequel convient ?</p>
+  <div class="options">
+    <label><input type="radio" name="a12" value="a"> \(x = 2\) car \(4\) est petit</label>
+    <label><input type="radio" name="a12" value="b"> \(x = 5\) car \(25\) est proche</label>
+    <label><input type="radio" name="a12" value="c"> \(x = 4\) car \(16\) est entre 10 et 20</label>
+    <label><input type="radio" name="a12" value="d"> \(x = 1\) car \(1\) est positif</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 13</h3>
+  <p class="theme">Contexte professionnel – Optimisation</p>
+  <p>Un fabricant de mobilier stocke des panneaux carrés. Un panneau de côté 1,5 m occupe une surface au sol de :</p>
+  <div class="options">
+    <label><input type="radio" name="a13" value="a"> 3 m²</label>
+    <label><input type="radio" name="a13" value="b"> 1,5 m²</label>
+    <label><input type="radio" name="a13" value="c"> 3,25 m²</label>
+    <label><input type="radio" name="a13" value="d"> 2,25 m²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 14</h3>
+  <p class="theme">Résolution – Équation \(kx^2 = c\)</p>
+  <p>Résoudre \(2x^2 = 50\). Les solutions sont :</p>
+  <div class="options">
+    <label><input type="radio" name="a14" value="a"> \(x = 25\) uniquement</label>
+    <label><input type="radio" name="a14" value="b"> \(x = -5\) et \(x = 5\)</label>
+    <label><input type="radio" name="a14" value="c"> \(x = 10\) et \(x = -10\)</label>
+    <label><input type="radio" name="a14" value="d"> \(x = 5\) uniquement</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Problème type BTS – Coût quadratique</p>
+  <p>Le coût de production d'un meuble est modélisé par \(C(x) = 3x^2 + 100\) (en euros), où \(x\) est le nombre d'heures de travail. Pour un budget de 175 €, le nombre maximal d'heures est :</p>
+  <div class="options">
+    <label><input type="radio" name="a15" value="a"> 5 h</label>
+    <label><input type="radio" name="a15" value="b"> 25 h</label>
+    <label><input type="radio" name="a15" value="c"> 7 h</label>
+    <label><input type="radio" name="a15" value="d"> 4 h</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "La fonction carré associe à tout réel x son carré : f(x) = x² = x × x.",
+  "s2": "f(5) = 5² = 5 × 5 = 25.",
+  "s3": "f(−3) = (−3)² = (−3) × (−3) = 9. Le carré d'un nombre négatif est positif.",
+  "s4": "x² = x × x. Si x > 0, le produit est positif. Si x < 0, le produit de deux négatifs est positif. Si x = 0, x² = 0. Donc x² ≥ 0 toujours.",
+  "s5": "f(−4) = (−4)² = 16. Deux nombres opposés ont la même image par la fonction carré : f(−x) = f(x).",
+  "s6": "La courbe représentative de f(x) = x² est une parabole, en forme de U.",
+  "s7": "Le point le plus bas de la parabole est le sommet S(0 ; 0). Le minimum vaut 0, atteint en x = 0.",
+  "s8": "Sur [0 ; +∞[, quand x augmente, x² augmente aussi : la fonction est croissante.",
+  "s9": "Sur ]−∞ ; 0], quand x augmente (se rapproche de 0), x² diminue : la fonction est décroissante.",
+  "s10": "f(1,5) = (1,5)² = 1,5 × 1,5 = 2,25.",
+  "s11": "f(2) = 2² = 4. Le point sur la parabole a pour coordonnées (2 ; 4).",
+  "s12": "Le sommet est le point le plus bas de la parabole. Pour f(x) = x², c'est le point S(0 ; 0).",
+  "s13": "Surface d'un carré = côté² = 3² = 9 m².",
+  "s14": "f(−x) = f(x), donc la courbe est symétrique par rapport à l'axe des ordonnées (axe y).",
+  "s15": "La parabole monte sans limite vers +∞ : il n'y a pas de maximum.",
+  /* === STANDARD === */
+  "t1": "(−5)² = (−5) × (−5) = 25. Le produit de deux nombres négatifs est positif.",
+  "t2": "f(3) = 9 et f(5) = 25. Comme 3 et 5 sont positifs et 3 < 5, et f est croissante sur [0 ; +∞[, on a f(3) < f(5).",
+  "t3": "x² = 16 ⟹ x = 4 ou x = −4, car 4² = 16 et (−4)² = 16.",
+  "t4": "x² ≥ 0 pour tout réel x. Donc x² = −4 est impossible : aucune solution.",
+  "t5": "f est décroissante sur ]−∞ ; 0] (la courbe descend) puis croissante sur [0 ; +∞[ (la courbe monte).",
+  "t6": "x² ≤ 9 signifie que la courbe est en dessous de y = 9. Les solutions de x² = 9 sont x = −3 et x = 3. Entre ces deux valeurs, x² ≤ 9 : S = [−3 ; 3].",
+  "t7": "g(x) = x² + 5 est la parabole de f décalée de 5 vers le haut. Le minimum est 0 + 5 = 5, atteint en x = 0.",
+  "t8": "Surface initiale : 3² = 9 m². Surface finale : 6² = 36 m². Rapport : 36/9 = 4. Doubler le côté multiplie la surface par 4.",
+  "t9": "Comme k = 3 > 1, la parabole de 3x² est plus resserrée (plus étroite) que celle de x².",
+  "t10": "Quand k < 0, la parabole est retournée vers le bas. p(x) = −x² a un maximum de 0 en x = 0.",
+  "t11": "On cherche x tel que x² = 9. Les solutions sont x = 3 et x = −3 : le nombre 9 a deux antécédents.",
+  "t12": "−2 et −6 sont négatifs. Sur ]−∞ ; 0], f est décroissante : −6 < −2 donc f(−6) > f(−2), soit 36 > 4.",
+  "t13": "C(4) = 45 × 4² + 120 = 45 × 16 + 120 = 720 + 120 = 840 €.",
+  "t14": "x² > 4 : la courbe est au-dessus de y = 4 à l'extérieur des points x = −2 et x = 2. S = ]−∞ ; −2[ ∪ ]2 ; +∞[.",
+  "t15": "g(x) = x² − 3 est la parabole de f décalée de 3 vers le bas. Le sommet est S(0 ; −3).",
+  /* === APPROFONDISSEMENT === */
+  "a1": "−7 et −3 sont négatifs avec −7 < −3. Sur ]−∞ ; 0], f est décroissante, donc f(−7) > f(−3) (49 > 9).",
+  "a2": "x² + 5 = 30 ⟹ x² = 25 ⟹ x = 5 ou x = −5.",
+  "a3": "0 < k = 0,5 < 1, donc la parabole est plus ouverte (plus large) que celle de x², avec le même sommet S(0 ; 0).",
+  "a4": "Quand k < 0, les variations sont inversées : p est croissante sur ]−∞ ; 0] puis décroissante sur [0 ; +∞[. Maximum de 0 en x = 0.",
+  "a5": "x² < 25 : la courbe est en dessous de y = 25 strictement entre x = −5 et x = 5. S = ]−5 ; 5[.",
+  "a6": "50c² + 200 ≤ 1000 ⟹ 50c² ≤ 800 ⟹ c² ≤ 16 ⟹ c ≤ 4 m (car c > 0). Le côté maximal est 4 m.",
+  "a7": "h(3) = 2 × 3² = 2 × 9 = 18.",
+  "a8": "x² = 0 a une seule solution : x = 0. C'est le minimum de la parabole.",
+  "a9": "Si le côté passe de c à 2c, la surface passe de c² à (2c)² = 4c². Elle est multipliée par 4.",
+  "a10": "x² ≥ 1 : la courbe est au-dessus de y = 1 à l'extérieur de [−1 ; 1]. S = ]−∞ ; −1] ∪ [1 ; +∞[.",
+  "a11": "g(x) = x² + 7 a les mêmes variations que f(x) = x² : décroissante sur ]−∞ ; 0] et croissante sur [0 ; +∞[. Le + 7 ne change que le minimum (qui vaut 7).",
+  "a12": "4² = 16, qui est bien entre 10 et 20. Les autres : 2² = 4 (trop petit), 5² = 25 (trop grand), 1² = 1 (trop petit).",
+  "a13": "Surface = 1,5² = 2,25 m².",
+  "a14": "2x² = 50 ⟹ x² = 25 ⟹ x = 5 ou x = −5.",
+  "a15": "3x² + 100 ≤ 175 ⟹ 3x² ≤ 75 ⟹ x² ≤ 25 ⟹ x ≤ 5 h (car x > 0). Le nombre maximal d'heures est 5."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '✅ Bonne réponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '❌ Mauvaise réponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '⚠️ Pas de réponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

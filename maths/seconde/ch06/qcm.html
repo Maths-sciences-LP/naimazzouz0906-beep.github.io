@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – QCM – Inéquations du premier degré – 2nde MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}
+
+.qcm-header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.qcm-header .dh-item{display:flex;align-items:center;gap:6px}
+.qcm-header strong{color:var(--p)}
+.q-block{border:1px solid #e2e8f0;border-radius:10px;padding:18px 20px;margin:16px 0;background:#fff}
+.q-block h3{margin:0 0 10px;font-size:1em;color:var(--p)}
+.q-block .theme{font-size:.78em;color:#718096;margin-bottom:8px;font-style:italic}
+.options label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:1.5px solid #e2e8f0;transition:background .15s,border-color .15s;font-size:.95em}
+.options label:hover{background:var(--p-bg);border-color:var(--p-border)}
+.options input[type="radio"]{margin-right:8px;accent-color:var(--p)}
+.options label.correct{background:#d1fae5;border-color:#34d399}
+.options label.incorrect{background:#fee2e2;border-color:#f87171}
+.q-feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:.88em;display:none}
+.q-feedback.ok{background:#d1fae5;color:#065f46;display:block}
+.q-feedback.ko{background:#fee2e2;color:#991b1b;display:block}
+.btn-valider{background:var(--p);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;margin-top:20px;display:block}
+.btn-valider:hover{opacity:.85}
+.btn-reset{background:#e2e8f0;color:#374151;border:none;padding:8px 20px;border-radius:8px;font-size:.9em;cursor:pointer;margin-top:8px}
+.btn-reset:hover{background:#cbd5e1}
+.score-box{margin-top:24px;padding:18px 24px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:700;display:none}
+.score-box.show{display:block}
+.score-good{background:#d1fae5;color:#065f46;border:2px solid #34d399}
+.score-avg{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}
+.score-low{background:#fee2e2;color:#991b1b;border:2px solid #f87171}
+@media print{.nb,.btn-valider,.btn-reset,.diff-toggle-wrap{display:none}.options label{border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>QCM – Inéquations du premier degré</h1>
+  <p class="sous-titre">Chapitre 6 | Seconde Bac Pro MAMA | Mathématiques</p>
+</header>
+
+<div class="qcm-header">
+  <div class="dh-item">⏱ <strong>Durée :</strong> 15–20 min</div>
+  <div class="dh-item">📄 <strong>15 questions</strong></div>
+  <div class="dh-item">🧮 <strong>Calculatrice autorisée</strong></div>
+</div>
+
+<p style="font-size:.9em;color:#4a5568">Pour chaque question, cochez la <strong>seule bonne réponse</strong> puis cliquez sur « Valider le QCM » en bas de page.</p>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<form id="qcm-socle">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Vocabulaire – Reconnaître une inéquation</p>
+  <p>Parmi les expressions suivantes, laquelle est une inéquation ?</p>
+  <div class="options">
+    <label><input type="radio" name="s1" value="a"> \(3x + 5 = 20\)</label>
+    <label><input type="radio" name="s1" value="b"> \(3 + 5 = 8\)</label>
+    <label><input type="radio" name="s1" value="c"> \(3x + 5 \leq 20\)</label>
+    <label><input type="radio" name="s1" value="d"> \(3x + 5\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Vocabulaire – Symboles d'inégalité</p>
+  <p>Le symbole \(\geq\) se lit :</p>
+  <div class="options">
+    <label><input type="radio" name="s2" value="a"> strictement supérieur à</label>
+    <label><input type="radio" name="s2" value="b"> supérieur ou égal à</label>
+    <label><input type="radio" name="s2" value="c"> inférieur ou égal à</label>
+    <label><input type="radio" name="s2" value="d"> strictement inférieur à</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Vocabulaire – Différence équation / inéquation</p>
+  <p>Quelle est la différence principale entre une équation et une inéquation ?</p>
+  <div class="options">
+    <label><input type="radio" name="s3" value="a"> une équation donne une valeur unique, une inéquation donne un intervalle de valeurs</label>
+    <label><input type="radio" name="s3" value="b"> une inéquation n'a pas de solution</label>
+    <label><input type="radio" name="s3" value="c"> une équation contient toujours des nombres négatifs</label>
+    <label><input type="radio" name="s3" value="d"> il n'y a aucune différence</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Résolution – Inéquation simple</p>
+  <p>Résoudre \(2x \leq 10\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="s4" value="a"> \(x = 5\)</label>
+    <label><input type="radio" name="s4" value="b"> \(x \geq 5\)</label>
+    <label><input type="radio" name="s4" value="c"> \(x > 5\)</label>
+    <label><input type="radio" name="s4" value="d"> \(x \leq 5\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Résolution – Forme \(ax + b \leq c\)</p>
+  <p>Résoudre \(3x + 6 \leq 21\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="s5" value="a"> \(x \leq 9\)</label>
+    <label><input type="radio" name="s5" value="b"> \(x \leq 5\)</label>
+    <label><input type="radio" name="s5" value="c"> \(x \geq 5\)</label>
+    <label><input type="radio" name="s5" value="d"> \(x \leq 27\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Intervalles – Notation</p>
+  <p>L'inéquation \(x \leq 5\) s'écrit en notation intervalle :</p>
+  <div class="options">
+    <label><input type="radio" name="s6" value="a"> \([5 ; +\infty[\)</label>
+    <label><input type="radio" name="s6" value="b"> \(]5 ; +\infty[\)</label>
+    <label><input type="radio" name="s6" value="c"> \(]-\infty ; 5]\)</label>
+    <label><input type="radio" name="s6" value="d"> \(]-\infty ; 5[\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Intervalles – Crochet ouvert ou fermé</p>
+  <p>Pour \(x > 3\), le crochet côté 3 est :</p>
+  <div class="options">
+    <label><input type="radio" name="s7" value="a"> ouvert, car 3 est exclu</label>
+    <label><input type="radio" name="s7" value="b"> fermé, car 3 est inclus</label>
+    <label><input type="radio" name="s7" value="c"> ouvert, car 3 est inclus</label>
+    <label><input type="radio" name="s7" value="d"> fermé, car 3 est exclu</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Droite graduée – Représentation</p>
+  <p>Sur une droite graduée, pour représenter \(x \geq 3\), on utilise :</p>
+  <div class="options">
+    <label><input type="radio" name="s8" value="a"> un point vide en 3 et on colorie vers la gauche</label>
+    <label><input type="radio" name="s8" value="b"> un point vide en 3 et on colorie vers la droite</label>
+    <label><input type="radio" name="s8" value="c"> un point plein en 3 et on colorie vers la gauche</label>
+    <label><input type="radio" name="s8" value="d"> un point plein en 3 et on colorie vers la droite</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Résolution – Soustraction</p>
+  <p>Résoudre \(x + 4 > 10\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="s9" value="a"> \(x > 14\)</label>
+    <label><input type="radio" name="s9" value="b"> \(x > 6\)</label>
+    <label><input type="radio" name="s9" value="c"> \(x < 6\)</label>
+    <label><input type="radio" name="s9" value="d"> \(x > 4\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Règle d'or – Sens de l'inégalité</p>
+  <p>Quand on multiplie ou divise les deux membres d'une inéquation par un nombre négatif :</p>
+  <div class="options">
+    <label><input type="radio" name="s10" value="a"> le signe reste le même</label>
+    <label><input type="radio" name="s10" value="b"> on supprime l'inéquation</label>
+    <label><input type="radio" name="s10" value="c"> le sens de l'inégalité s'inverse</label>
+    <label><input type="radio" name="s10" value="d"> la solution est toujours 0</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Résolution – Division par un positif</p>
+  <p>Résoudre \(4x > 20\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="s11" value="a"> \(x > 5\)</label>
+    <label><input type="radio" name="s11" value="b"> \(x < 5\)</label>
+    <label><input type="radio" name="s11" value="c"> \(x > 24\)</label>
+    <label><input type="radio" name="s11" value="d"> \(x > 16\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Intervalles – Infini</p>
+  <p>Le crochet côté \(+\infty\) est toujours :</p>
+  <div class="options">
+    <label><input type="radio" name="s12" value="a"> fermé car l'infini est une valeur</label>
+    <label><input type="radio" name="s12" value="b"> fermé par convention</label>
+    <label><input type="radio" name="s12" value="c"> ouvert si l'inégalité est stricte, fermé sinon</label>
+    <label><input type="radio" name="s12" value="d"> ouvert car l'infini n'est jamais atteint</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Contexte quotidien – Budget</p>
+  <p>Tu as 50 € pour acheter des cahiers à 4 € pièce. L'inéquation qui traduit la contrainte est :</p>
+  <div class="options">
+    <label><input type="radio" name="s13" value="a"> \(4x = 50\)</label>
+    <label><input type="radio" name="s13" value="b"> \(4x \leq 50\)</label>
+    <label><input type="radio" name="s13" value="c"> \(4x \geq 50\)</label>
+    <label><input type="radio" name="s13" value="d"> \(4 + x \leq 50\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 14</h3>
+  <p class="theme">Contexte quotidien – Suite Q13</p>
+  <p>Combien de cahiers peux-tu acheter au maximum ? (suite de la Q13)</p>
+  <div class="options">
+    <label><input type="radio" name="s14" value="a"> 12 cahiers</label>
+    <label><input type="radio" name="s14" value="b"> 13 cahiers</label>
+    <label><input type="radio" name="s14" value="c"> 50 cahiers</label>
+    <label><input type="radio" name="s14" value="d"> 10 cahiers</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Résolution – Forme \(ax + b \geq c\)</p>
+  <p>Résoudre \(5x - 10 \geq 15\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="s15" value="a"> \(x \geq 1\)</label>
+    <label><input type="radio" name="s15" value="b"> \(x \leq 5\)</label>
+    <label><input type="radio" name="s15" value="c"> \(x \geq 5\)</label>
+    <label><input type="radio" name="s15" value="d"> \(x \geq 25\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
+<div class="score-box" id="score-socle"></div>
+</form>
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<form id="qcm-standard">
+
+<div class="q-block" data-correct="d">
+  <h3>Question 1</h3>
+  <p class="theme">Résolution – Inéquation avec soustraction</p>
+  <p>Résoudre \(3x - 6 > 9\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="t1" value="a"> \(x > 1\)</label>
+    <label><input type="radio" name="t1" value="b"> \(x > 3\)</label>
+    <label><input type="radio" name="t1" value="c"> \(x < 5\)</label>
+    <label><input type="radio" name="t1" value="d"> \(x > 5\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 2</h3>
+  <p class="theme">Résolution – Division par un négatif</p>
+  <p>Résoudre \(-2x \leq 10\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="t2" value="a"> \(x \geq -5\)</label>
+    <label><input type="radio" name="t2" value="b"> \(x \leq -5\)</label>
+    <label><input type="radio" name="t2" value="c"> \(x \leq 5\)</label>
+    <label><input type="radio" name="t2" value="d"> \(x \geq 5\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 3</h3>
+  <p class="theme">Résolution – Coefficient négatif complet</p>
+  <p>Résoudre \(-4x + 8 \leq 20\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="t3" value="a"> \(x \leq -3\)</label>
+    <label><input type="radio" name="t3" value="b"> \(x \leq 3\)</label>
+    <label><input type="radio" name="t3" value="c"> \(x \geq -3\)</label>
+    <label><input type="radio" name="t3" value="d"> \(x \geq 3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 4</h3>
+  <p class="theme">Intervalles – Conversion</p>
+  <p>L'ensemble solution \(x \geq -3\) s'écrit en notation intervalle :</p>
+  <div class="options">
+    <label><input type="radio" name="t4" value="a"> \(]-\infty ; -3]\)</label>
+    <label><input type="radio" name="t4" value="b"> \([-3 ; +\infty[\)</label>
+    <label><input type="radio" name="t4" value="c"> \(]-3 ; +\infty[\)</label>
+    <label><input type="radio" name="t4" value="d"> \(]-\infty ; -3[\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 5</h3>
+  <p class="theme">Résolution – Termes des deux côtés</p>
+  <p>Résoudre \(5x - 3 > 2x + 9\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="t5" value="a"> \(x > 4\)</label>
+    <label><input type="radio" name="t5" value="b"> \(x > 2\)</label>
+    <label><input type="radio" name="t5" value="c"> \(x < 4\)</label>
+    <label><input type="radio" name="t5" value="d"> \(x > 6\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 6</h3>
+  <p class="theme">Contexte professionnel – Budget parquet</p>
+  <p>Un menuisier dispose de 500 € pour acheter des lames de parquet à 12 € le m² et doit payer 35 € de colle (forfait). Quelle surface maximale peut-il commander ?</p>
+  <div class="options">
+    <label><input type="radio" name="t6" value="a"> 41 m²</label>
+    <label><input type="radio" name="t6" value="b"> 44 m²</label>
+    <label><input type="radio" name="t6" value="c"> 39 m²</label>
+    <label><input type="radio" name="t6" value="d"> 38 m²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 7</h3>
+  <p class="theme">Intervalles – Encadrement</p>
+  <p>La condition « une étagère doit mesurer entre 80 cm et 120 cm inclus » s'écrit :</p>
+  <div class="options">
+    <label><input type="radio" name="t7" value="a"> \(]80 ; 120[\)</label>
+    <label><input type="radio" name="t7" value="b"> \(x > 80\) et \(x < 120\)</label>
+    <label><input type="radio" name="t7" value="c"> \([80 ; 120]\)</label>
+    <label><input type="radio" name="t7" value="d"> \(]-\infty ; 120]\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 8</h3>
+  <p class="theme">Résolution – Inversion du signe</p>
+  <p>Résoudre \(-3x > 9\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="t8" value="a"> \(x > -3\)</label>
+    <label><input type="radio" name="t8" value="b"> \(x < -3\)</label>
+    <label><input type="radio" name="t8" value="c"> \(x > 3\)</label>
+    <label><input type="radio" name="t8" value="d"> \(x < 3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 9</h3>
+  <p class="theme">Contexte professionnel – Rentabilité</p>
+  <p>Un ébéniste fabrique des chaises. Coûts fixes : 180 €, coût unitaire : 25 €. Il les vend 65 € pièce. À partir de combien de chaises réalise-t-il un bénéfice ?</p>
+  <div class="options">
+    <label><input type="radio" name="t9" value="a"> 5 chaises</label>
+    <label><input type="radio" name="t9" value="b"> 4 chaises</label>
+    <label><input type="radio" name="t9" value="c"> 6 chaises</label>
+    <label><input type="radio" name="t9" value="d"> 3 chaises</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 10</h3>
+  <p class="theme">Droite graduée – Lecture</p>
+  <p>Sur une droite graduée, un point vide (○) en 2 avec la zone coloriée vers la gauche représente :</p>
+  <div class="options">
+    <label><input type="radio" name="t10" value="a"> \(x \geq 2\)</label>
+    <label><input type="radio" name="t10" value="b"> \(x \leq 2\)</label>
+    <label><input type="radio" name="t10" value="c"> \(x > 2\)</label>
+    <label><input type="radio" name="t10" value="d"> \(x < 2\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Résolution – Nombres décimaux</p>
+  <p>Résoudre \(2{,}5x + 3 \leq 15{,}5\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="t11" value="a"> \(x \leq 7{,}4\)</label>
+    <label><input type="radio" name="t11" value="b"> \(x \leq 6{,}2\)</label>
+    <label><input type="radio" name="t11" value="c"> \(x \leq 5\)</label>
+    <label><input type="radio" name="t11" value="d"> \(x \leq 4\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Erreur fréquente – Inversion oubliée</p>
+  <p>Un élève résout \(-5x + 10 \geq 25\) et trouve \(x \geq -3\). Son résultat est :</p>
+  <div class="options">
+    <label><input type="radio" name="t12" value="a"> correct</label>
+    <label><input type="radio" name="t12" value="b"> faux, la bonne réponse est \(x \leq -3\)</label>
+    <label><input type="radio" name="t12" value="c"> faux, la bonne réponse est \(x \geq 3\)</label>
+    <label><input type="radio" name="t12" value="d"> faux, la bonne réponse est \(x \leq 3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 13</h3>
+  <p class="theme">Contexte professionnel – Panneaux isolants</p>
+  <p>Chaque panneau isolant fait 0,72 m². Il faut couvrir au moins 12 m². Combien de panneaux faut-il au minimum ?</p>
+  <div class="options">
+    <label><input type="radio" name="t13" value="a"> 17 panneaux</label>
+    <label><input type="radio" name="t13" value="b"> 16 panneaux</label>
+    <label><input type="radio" name="t13" value="c"> 15 panneaux</label>
+    <label><input type="radio" name="t13" value="d"> 18 panneaux</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 14</h3>
+  <p class="theme">Interprétation – Arrondi dans le contexte</p>
+  <p>On résout une inéquation et on trouve \(x \leq 38{,}75\). On cherche un nombre entier de m² à commander au maximum. La réponse est :</p>
+  <div class="options">
+    <label><input type="radio" name="t14" value="a"> 39 m²</label>
+    <label><input type="radio" name="t14" value="b"> 38,75 m²</label>
+    <label><input type="radio" name="t14" value="c"> 40 m²</label>
+    <label><input type="radio" name="t14" value="d"> 38 m²</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Résolution – Addition puis division</p>
+  <p>Résoudre \(7x - 14 \geq 21\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="t15" value="a"> \(x \geq 1\)</label>
+    <label><input type="radio" name="t15" value="b"> \(x \geq 7\)</label>
+    <label><input type="radio" name="t15" value="c"> \(x \geq 5\)</label>
+    <label><input type="radio" name="t15" value="d"> \(x \leq 5\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
+</form>
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<form id="qcm-appro">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Résolution – Termes des deux côtés avec négatif</p>
+  <p>Résoudre \(3x + 7 \leq 8x - 13\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="a1" value="a"> \(x \leq 4\)</label>
+    <label><input type="radio" name="a1" value="b"> \(x \geq 4\)</label>
+    <label><input type="radio" name="a1" value="c"> \(x \geq -4\)</label>
+    <label><input type="radio" name="a1" value="d"> \(x \leq -4\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Résolution – Parenthèses</p>
+  <p>Résoudre \(2(3x - 1) > 4(x + 3)\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> \(x > 5\)</label>
+    <label><input type="radio" name="a2" value="b"> \(x > 2\)</label>
+    <label><input type="radio" name="a2" value="c"> \(x > 7\)</label>
+    <label><input type="radio" name="a2" value="d"> \(x > 3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Intervalles – Double inégalité</p>
+  <p>L'intervalle \([-2 ; 4[\) correspond à :</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> \(-2 \leq x < 4\)</label>
+    <label><input type="radio" name="a3" value="b"> \(-2 < x \leq 4\)</label>
+    <label><input type="radio" name="a3" value="c"> \(-2 \leq x \leq 4\)</label>
+    <label><input type="radio" name="a3" value="d"> \(-2 < x < 4\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Résolution – Coefficient négatif des deux côtés</p>
+  <p>Résoudre \(-3x + 5 \geq -x + 11\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> \(x \geq 3\)</label>
+    <label><input type="radio" name="a4" value="b"> \(x \geq -3\)</label>
+    <label><input type="radio" name="a4" value="c"> \(x \leq 8\)</label>
+    <label><input type="radio" name="a4" value="d"> \(x \leq -3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Contexte professionnel – Devis menuiserie</p>
+  <p>Un menuisier agenceur facture ses prestations 45 € de l'heure, plus 320 € de fournitures. Le client dispose de 1 000 € de budget. L'inéquation est \(45x + 320 \leq 1000\). Le nombre maximal d'heures est :</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> 16 h</label>
+    <label><input type="radio" name="a5" value="b"> 15 h</label>
+    <label><input type="radio" name="a5" value="c"> 14 h</label>
+    <label><input type="radio" name="a5" value="d"> 22 h</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 6</h3>
+  <p class="theme">Résolution graphique – Lecture d'un graphique</p>
+  <p>On trace la droite \(f(x) = 2x - 4\). Résoudre \(2x - 4 < 0\) revient à chercher les valeurs de \(x\) pour lesquelles la droite est :</p>
+  <div class="options">
+    <label><input type="radio" name="a6" value="a"> en dessous de l'axe des abscisses</label>
+    <label><input type="radio" name="a6" value="b"> au-dessus de l'axe des abscisses</label>
+    <label><input type="radio" name="a6" value="c"> sur l'axe des abscisses</label>
+    <label><input type="radio" name="a6" value="d"> à droite de l'axe des ordonnées</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 7</h3>
+  <p class="theme">Résolution graphique – Suite Q6</p>
+  <p>La solution de \(2x - 4 < 0\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="a7" value="a"> \(x < -2\)</label>
+    <label><input type="radio" name="a7" value="b"> \(x > 2\)</label>
+    <label><input type="radio" name="a7" value="c"> \(x < 2\)</label>
+    <label><input type="radio" name="a7" value="d"> \(x < 4\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Contexte professionnel – Production minimale</p>
+  <p>Un fabricant de meubles vend des tables à 120 € et des chaises à 35 €. Il fabrique 3 tables. Combien de chaises doit-il vendre au minimum pour atteindre 700 € de bénéfice total ?</p>
+  <div class="options">
+    <label><input type="radio" name="a8" value="a"> 8 chaises</label>
+    <label><input type="radio" name="a8" value="b"> 9 chaises</label>
+    <label><input type="radio" name="a8" value="c"> 11 chaises</label>
+    <label><input type="radio" name="a8" value="d"> 10 chaises</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Résolution – Fractions</p>
+  <p>Résoudre \(\dfrac{x}{3} + 2 \leq 5\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="a9" value="a"> \(x \leq 21\)</label>
+    <label><input type="radio" name="a9" value="b"> \(x \leq 9\)</label>
+    <label><input type="radio" name="a9" value="c"> \(x \leq 1\)</label>
+    <label><input type="radio" name="a9" value="d"> \(x \leq 3\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Résolution – Double développement</p>
+  <p>Résoudre \(5(x - 2) + 3 \leq 2(x + 4)\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="a10" value="a"> \(x \leq 5\)</label>
+    <label><input type="radio" name="a10" value="b"> \(x \leq 3\)</label>
+    <label><input type="radio" name="a10" value="c"> \(x \leq 7\)</label>
+    <label><input type="radio" name="a10" value="d"> \(x \leq 1\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Contexte professionnel – Commande de vernis</p>
+  <p>Un atelier dispose de 180 € pour du vernis à 14,50 € le bidon. Combien de bidons peut-il acheter au maximum ?</p>
+  <div class="options">
+    <label><input type="radio" name="a11" value="a"> 13 bidons</label>
+    <label><input type="radio" name="a11" value="b"> 11 bidons</label>
+    <label><input type="radio" name="a11" value="c"> 12 bidons</label>
+    <label><input type="radio" name="a11" value="d"> 14 bidons</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Résolution – Inégalité stricte et intervalle</p>
+  <p>La solution de \(x > 5\) s'écrit en notation intervalle :</p>
+  <div class="options">
+    <label><input type="radio" name="a12" value="a"> \([5 ; +\infty[\)</label>
+    <label><input type="radio" name="a12" value="b"> \(]5 ; +\infty[\)</label>
+    <label><input type="radio" name="a12" value="c"> \(]-\infty ; 5[\)</label>
+    <label><input type="radio" name="a12" value="d"> \(]-\infty ; 5]\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 13</h3>
+  <p class="theme">Contexte professionnel – Seuil de rentabilité type BTS</p>
+  <p>Un artisan menuisier a des charges fixes mensuelles de 2 400 € et un coût variable de 18 € par unité produite. Il vend chaque pièce 42 €. Combien de pièces doit-il vendre par mois au minimum pour être rentable ?</p>
+  <div class="options">
+    <label><input type="radio" name="a13" value="a"> 57 pièces</label>
+    <label><input type="radio" name="a13" value="b"> 120 pièces</label>
+    <label><input type="radio" name="a13" value="c"> 96 pièces</label>
+    <label><input type="radio" name="a13" value="d"> 100 pièces</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 14</h3>
+  <p class="theme">Résolution – Coefficient négatif complet</p>
+  <p>Résoudre \(-6x + 9 < -3x + 30\). La solution est :</p>
+  <div class="options">
+    <label><input type="radio" name="a14" value="a"> \(x > -7\)</label>
+    <label><input type="radio" name="a14" value="b"> \(x < -7\)</label>
+    <label><input type="radio" name="a14" value="c"> \(x > 7\)</label>
+    <label><input type="radio" name="a14" value="d"> \(x < 7\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Problème ouvert – Double contrainte</p>
+  <p>Un poseur de cuisines doit respecter deux contraintes pour une longueur de plan de travail \(x\) (en cm) : \(x \geq 180\) et \(x \leq 240\). L'ensemble des longueurs possibles est :</p>
+  <div class="options">
+    <label><input type="radio" name="a15" value="a"> \(]180 ; 240[\)</label>
+    <label><input type="radio" name="a15" value="b"> \([180 ; +\infty[\)</label>
+    <label><input type="radio" name="a15" value="c"> \([180 ; 240]\)</label>
+    <label><input type="radio" name="a15" value="d"> \(]-\infty ; 240]\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "Une inéquation contient un signe d'inégalité (<, >, ≤, ≥) et une inconnue. « 3x + 5 ≤ 20 » vérifie les deux conditions.",
+  "s2": "Le symbole ≥ se lit « supérieur ou égal à ». Il inclut la valeur (contrairement à > qui est strict).",
+  "s3": "Une équation (=) donne une valeur unique ; une inéquation (≤, ≥, <, >) donne un ensemble de valeurs (intervalle).",
+  "s4": "2x ≤ 10 → x ≤ 10 ÷ 2 = 5. On divise par 2 (positif), le sens ne change pas.",
+  "s5": "3x + 6 ≤ 21 → 3x ≤ 15 → x ≤ 5.",
+  "s6": "x ≤ 5 signifie tous les nombres inférieurs ou égaux à 5 : ]-∞ ; 5]. Crochet fermé car 5 est inclus.",
+  "s7": "x > 3 : le 3 est exclu (strictement supérieur). Le crochet est donc ouvert : ]3 ; +∞[.",
+  "s8": "x ≥ 3 : le 3 est inclus (point plein ●) et la solution va vers la droite (valeurs plus grandes).",
+  "s9": "x + 4 > 10 → x > 10 − 4 = 6.",
+  "s10": "C'est la règle d'or des inéquations : multiplier ou diviser par un négatif → le sens s'inverse.",
+  "s11": "4x > 20 → x > 5. On divise par 4 (positif), le sens ne change pas.",
+  "s12": "L'infini (+∞ ou −∞) n'est jamais atteint, donc le crochet est toujours ouvert.",
+  "s13": "La dépense (4x) ne doit pas dépasser le budget (50 €) : 4x ≤ 50.",
+  "s14": "4x ≤ 50 → x ≤ 12,5. On ne peut pas acheter 12,5 cahiers, donc au maximum 12 cahiers.",
+  "s15": "5x − 10 ≥ 15 → 5x ≥ 25 → x ≥ 5.",
+  /* === STANDARD === */
+  "t1": "3x − 6 > 9 → 3x > 15 → x > 5.",
+  "t2": "−2x ≤ 10. On divise par −2 (négatif) → le sens s'inverse : x ≥ −5.",
+  "t3": "−4x + 8 ≤ 20 → −4x ≤ 12 → on divise par −4 (négatif), le sens s'inverse : x ≥ −3.",
+  "t4": "x ≥ −3 : le −3 est inclus (crochet fermé) et les valeurs vont vers +∞ : [−3 ; +∞[.",
+  "t5": "5x − 3 > 2x + 9 → 3x > 12 → x > 4.",
+  "t6": "12x + 35 ≤ 500 → 12x ≤ 465 → x ≤ 38,75. En pratique : 38 m² au maximum.",
+  "t7": "80 ≤ x ≤ 120 : les deux bornes sont incluses, c'est l'intervalle [80 ; 120].",
+  "t8": "−3x > 9 → on divise par −3 (négatif), le sens s'inverse : x < −3.",
+  "t9": "65x − (180 + 25x) > 0 → 40x > 180 → x > 4,5. Il faut vendre au minimum 5 chaises.",
+  "t10": "Point vide = valeur exclue (inégalité stricte). Zone vers la gauche = valeurs inférieures. C'est x < 2.",
+  "t11": "2,5x + 3 ≤ 15,5 → 2,5x ≤ 12,5 → x ≤ 5.",
+  "t12": "−5x + 10 ≥ 25 → −5x ≥ 15 → on divise par −5, le sens s'inverse : x ≤ −3. L'élève a oublié d'inverser.",
+  "t13": "0,72x ≥ 12 → x ≥ 16,67. Il faut arrondir au-dessus : 17 panneaux minimum.",
+  "t14": "x ≤ 38,75 et on cherche un entier : le plus grand entier ≤ 38,75 est 38.",
+  "t15": "7x − 14 ≥ 21 → 7x ≥ 35 → x ≥ 5.",
+  /* === APPROFONDISSEMENT === */
+  "a1": "3x + 7 ≤ 8x − 13 → 7 + 13 ≤ 8x − 3x → 20 ≤ 5x → x ≥ 4.",
+  "a2": "2(3x − 1) > 4(x + 3) → 6x − 2 > 4x + 12 → 2x > 14 → x > 7.",
+  "a3": "Crochet fermé [ en −2 = inclus (≤). Crochet ouvert [ en 4 = exclu (<). Donc −2 ≤ x < 4.",
+  "a4": "−3x + 5 ≥ −x + 11 → −3x + x ≥ 11 − 5 → −2x ≥ 6 → x ≤ −3 (on divise par −2, inversion).",
+  "a5": "45x + 320 ≤ 1000 → 45x ≤ 680 → x ≤ 15,11. Au maximum 15 heures entières.",
+  "a6": "f(x) < 0 signifie que la valeur de f est négative, donc la droite est en dessous de l'axe des abscisses (y = 0).",
+  "a7": "2x − 4 < 0 → 2x < 4 → x < 2.",
+  "a8": "3 × 120 + 35x ≥ 700 → 360 + 35x ≥ 700 → 35x ≥ 340 → x ≥ 9,71. Il faut au minimum 10 chaises.",
+  "a9": "x/3 + 2 ≤ 5 → x/3 ≤ 3 → x ≤ 9.",
+  "a10": "5x − 10 + 3 ≤ 2x + 8 → 5x − 7 ≤ 2x + 8 → 3x ≤ 15 → x ≤ 5.",
+  "a11": "14,50x ≤ 180 → x ≤ 12,41. Au maximum 12 bidons.",
+  "a12": "x > 5 : le 5 est exclu (inégalité stricte), donc crochet ouvert : ]5 ; +∞[.",
+  "a13": "42x − (2400 + 18x) ≥ 0 → 24x ≥ 2400 → x ≥ 100 pièces.",
+  "a14": "−6x + 9 < −3x + 30 → −6x + 3x < 30 − 9 → −3x < 21 → x > −7 (division par −3, inversion).",
+  "a15": "x ≥ 180 et x ≤ 240 combinés donnent 180 ≤ x ≤ 240, soit [180 ; 240]."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '✅ Bonne réponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '❌ Mauvaise réponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '⚠️ Pas de réponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch02 – QCM – Statistiques à une variable – 2nde MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}
+
+.qcm-header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.qcm-header .dh-item{display:flex;align-items:center;gap:6px}
+.qcm-header strong{color:var(--p)}
+.q-block{border:1px solid #e2e8f0;border-radius:10px;padding:18px 20px;margin:16px 0;background:#fff}
+.q-block h3{margin:0 0 10px;font-size:1em;color:var(--p)}
+.q-block .theme{font-size:.78em;color:#718096;margin-bottom:8px;font-style:italic}
+.options label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:1.5px solid #e2e8f0;transition:background .15s,border-color .15s;font-size:.95em}
+.options label:hover{background:var(--p-bg);border-color:var(--p-border)}
+.options input[type="radio"]{margin-right:8px;accent-color:var(--p)}
+.options label.correct{background:#d1fae5;border-color:#34d399}
+.options label.incorrect{background:#fee2e2;border-color:#f87171}
+.q-feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:.88em;display:none}
+.q-feedback.ok{background:#d1fae5;color:#065f46;display:block}
+.q-feedback.ko{background:#fee2e2;color:#991b1b;display:block}
+.btn-valider{background:var(--p);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;margin-top:20px;display:block}
+.btn-valider:hover{opacity:.85}
+.btn-reset{background:#e2e8f0;color:#374151;border:none;padding:8px 20px;border-radius:8px;font-size:.9em;cursor:pointer;margin-top:8px}
+.btn-reset:hover{background:#cbd5e1}
+.score-box{margin-top:24px;padding:18px 24px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:700;display:none}
+.score-box.show{display:block}
+.score-good{background:#d1fae5;color:#065f46;border:2px solid #34d399}
+.score-avg{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}
+.score-low{background:#fee2e2;color:#991b1b;border:2px solid #f87171}
+@media print{.nb,.btn-valider,.btn-reset,.diff-toggle-wrap{display:none}.options label{border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>QCM – Statistiques à une variable</h1>
+  <p class="sous-titre">Chapitre 2 | Seconde Bac Pro MAMA | Mathématiques</p>
+</header>
+
+<div class="qcm-header">
+  <div class="dh-item">⏱ <strong>Durée :</strong> 15–20 min</div>
+  <div class="dh-item">📄 <strong>15 questions</strong></div>
+  <div class="dh-item">🧮 <strong>Calculatrice autorisée</strong></div>
+</div>
+
+<p style="font-size:.9em;color:#4a5568">Pour chaque question, cochez la <strong>seule bonne réponse</strong> puis cliquez sur « Valider le QCM » en bas de page.</p>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<form id="qcm-socle">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Vocabulaire – Population</p>
+  <p>Un menuisier mesure la longueur de 30 planches produites dans son atelier. La <strong>population</strong> étudiée est :</p>
+  <div class="options">
+    <label><input type="radio" name="s1" value="a"> la longueur des planches</label>
+    <label><input type="radio" name="s1" value="b"> le menuisier</label>
+    <label><input type="radio" name="s1" value="c"> l'ensemble des 30 planches</label>
+    <label><input type="radio" name="s1" value="d"> l'atelier de menuiserie</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 2</h3>
+  <p class="theme">Vocabulaire – Individu</p>
+  <p>Dans cette même étude (30 planches), un <strong>individu</strong> est :</p>
+  <div class="options">
+    <label><input type="radio" name="s2" value="a"> une planche particulière</label>
+    <label><input type="radio" name="s2" value="b"> la longueur moyenne</label>
+    <label><input type="radio" name="s2" value="c"> le lot de 30 planches</label>
+    <label><input type="radio" name="s2" value="d"> le résultat de la mesure</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 3</h3>
+  <p class="theme">Vocabulaire – Caractère</p>
+  <p>On mesure la longueur (en cm) de chaque planche. La longueur est :</p>
+  <div class="options">
+    <label><input type="radio" name="s3" value="a"> un caractère qualitatif</label>
+    <label><input type="radio" name="s3" value="b"> un caractère quantitatif</label>
+    <label><input type="radio" name="s3" value="c"> un effectif</label>
+    <label><input type="radio" name="s3" value="d"> une fréquence</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Vocabulaire – Effectif</p>
+  <p>Dans un atelier, on contrôle 20 liteaux. 7 liteaux mesurent 50 cm. L'<strong>effectif</strong> de la valeur 50 cm est :</p>
+  <div class="options">
+    <label><input type="radio" name="s4" value="a"> 20</label>
+    <label><input type="radio" name="s4" value="b"> 50</label>
+    <label><input type="radio" name="s4" value="c"> 35 %</label>
+    <label><input type="radio" name="s4" value="d"> 7</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 5</h3>
+  <p class="theme">Vocabulaire – Effectif total</p>
+  <p>On relève les notes de 25 élèves à un DS. L'<strong>effectif total</strong> \(N\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s5" value="a"> 25</label>
+    <label><input type="radio" name="s5" value="b"> la meilleure note</label>
+    <label><input type="radio" name="s5" value="c"> la somme des notes</label>
+    <label><input type="radio" name="s5" value="d"> 100 %</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Calcul – Fréquence</p>
+  <p>Sur 20 liteaux, 4 mesurent 48 cm. La fréquence de la valeur 48 cm est :</p>
+  <div class="options">
+    <label><input type="radio" name="s6" value="a"> 4</label>
+    <label><input type="radio" name="s6" value="b"> 48 %</label>
+    <label><input type="radio" name="s6" value="c"> 0,20 soit 20 %</label>
+    <label><input type="radio" name="s6" value="d"> 0,48 soit 48 %</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 7</h3>
+  <p class="theme">Calcul – Fréquence en pourcentage</p>
+  <p>Sur 40 pièces de bois, 10 sont défectueuses. La fréquence des pièces défectueuses en pourcentage est :</p>
+  <div class="options">
+    <label><input type="radio" name="s7" value="a"> 10 %</label>
+    <label><input type="radio" name="s7" value="b"> 25 %</label>
+    <label><input type="radio" name="s7" value="c"> 40 %</label>
+    <label><input type="radio" name="s7" value="d"> 4 %</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 8</h3>
+  <p class="theme">Propriété – Somme des fréquences</p>
+  <p>La somme de toutes les fréquences d'une série statistique est toujours égale à :</p>
+  <div class="options">
+    <label><input type="radio" name="s8" value="a"> 1 (ou 100 %)</label>
+    <label><input type="radio" name="s8" value="b"> l'effectif total \(N\)</label>
+    <label><input type="radio" name="s8" value="c"> la moyenne</label>
+    <label><input type="radio" name="s8" value="d"> 0</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 9</h3>
+  <p class="theme">Propriété – Somme des effectifs</p>
+  <p>Dans un tableau statistique, la somme de tous les effectifs est égale à :</p>
+  <div class="options">
+    <label><input type="radio" name="s9" value="a"> 100</label>
+    <label><input type="radio" name="s9" value="b"> la plus grande valeur</label>
+    <label><input type="radio" name="s9" value="c"> 1</label>
+    <label><input type="radio" name="s9" value="d"> l'effectif total \(N\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 10</h3>
+  <p class="theme">Lecture de tableau</p>
+  <p>Voici un extrait de tableau : la valeur 51 cm a un effectif de 4 sur un total de 20 liteaux. La fréquence de 51 cm est :</p>
+  <div class="options">
+    <label><input type="radio" name="s10" value="a"> 0,25</label>
+    <label><input type="radio" name="s10" value="b"> 0,20</label>
+    <label><input type="radio" name="s10" value="c"> 0,40</label>
+    <label><input type="radio" name="s10" value="d"> 0,51</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Graphique – Diagramme en bâtons</p>
+  <p>Un diagramme en bâtons est adapté pour représenter :</p>
+  <div class="options">
+    <label><input type="radio" name="s11" value="a"> l'évolution d'une grandeur dans le temps</label>
+    <label><input type="radio" name="s11" value="b"> des proportions d'un tout</label>
+    <label><input type="radio" name="s11" value="c"> des données discrètes (valeurs séparées)</label>
+    <label><input type="radio" name="s11" value="d"> des données regroupées en classes</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 12</h3>
+  <p class="theme">Graphique – Diagramme en secteurs</p>
+  <p>Un diagramme en secteurs (camembert) sert principalement à montrer :</p>
+  <div class="options">
+    <label><input type="radio" name="s12" value="a"> la répartition en proportions</label>
+    <label><input type="radio" name="s12" value="b"> l'évolution dans le temps</label>
+    <label><input type="radio" name="s12" value="c"> les effectifs en valeur absolue</label>
+    <label><input type="radio" name="s12" value="d"> la moyenne d'une série</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 13</h3>
+  <p class="theme">Graphique – Diagramme en ligne</p>
+  <p>Pour représenter l'évolution du coût des matériaux mois par mois sur un an, on utilise un :</p>
+  <div class="options">
+    <label><input type="radio" name="s13" value="a"> diagramme en secteurs</label>
+    <label><input type="radio" name="s13" value="b"> diagramme en bâtons</label>
+    <label><input type="radio" name="s13" value="c"> tableau de fréquences</label>
+    <label><input type="radio" name="s13" value="d"> diagramme en ligne</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 14</h3>
+  <p class="theme">Calcul – Retrouver un effectif</p>
+  <p>Dans une série de 50 mesures, la fréquence d'une valeur est 0,12. L'effectif de cette valeur est :</p>
+  <div class="options">
+    <label><input type="radio" name="s14" value="a"> 12</label>
+    <label><input type="radio" name="s14" value="b"> 6</label>
+    <label><input type="radio" name="s14" value="c"> 50</label>
+    <label><input type="radio" name="s14" value="d"> 0,24</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Vérification – Contrôle d'un tableau</p>
+  <p>Un tableau donne les effectifs : 5, 8, 3 et 6 pour un effectif total annoncé de 20. Ce tableau est :</p>
+  <div class="options">
+    <label><input type="radio" name="s15" value="a"> faux, car la somme vaut 24</label>
+    <label><input type="radio" name="s15" value="b"> faux, car la somme vaut 21</label>
+    <label><input type="radio" name="s15" value="c"> faux, car la somme vaut 22</label>
+    <label><input type="radio" name="s15" value="d"> correct, car 5 + 8 + 3 + 6 = 20</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
+<div class="score-box" id="score-socle"></div>
+</form>
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<form id="qcm-standard">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Vocabulaire – Caractère qualitatif ou quantitatif</p>
+  <p>On classe les essences de bois utilisées dans un atelier (chêne, hêtre, pin, MDF). Ce caractère est :</p>
+  <div class="options">
+    <label><input type="radio" name="t1" value="a"> quantitatif continu</label>
+    <label><input type="radio" name="t1" value="b"> qualitatif</label>
+    <label><input type="radio" name="t1" value="c"> quantitatif discret</label>
+    <label><input type="radio" name="t1" value="d"> une fréquence</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 2</h3>
+  <p class="theme">Calcul – Fréquence</p>
+  <p>Un artisan menuisier contrôle 80 tasseaux. 20 tasseaux ont une longueur de 120 cm. La fréquence de cette valeur est :</p>
+  <div class="options">
+    <label><input type="radio" name="t2" value="a"> 0,25 soit 25 %</label>
+    <label><input type="radio" name="t2" value="b"> 0,20 soit 20 %</label>
+    <label><input type="radio" name="t2" value="c"> 20 %</label>
+    <label><input type="radio" name="t2" value="d"> 0,80 soit 80 %</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 3</h3>
+  <p class="theme">Tableau – Compléter un effectif manquant</p>
+  <p>Un tableau donne les effectifs d'une série de \(N = 30\) individus : 5 ; 8 ; ? ; 4 ; 3. L'effectif manquant est :</p>
+  <div class="options">
+    <label><input type="radio" name="t3" value="a"> 12</label>
+    <label><input type="radio" name="t3" value="b"> 8</label>
+    <label><input type="radio" name="t3" value="c"> 10</label>
+    <label><input type="radio" name="t3" value="d"> 15</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Calcul – Fréquence manquante</p>
+  <p>Dans un tableau de fréquences, les fréquences déjà renseignées sont : 0,15 ; 0,30 ; 0,25 ; 0,10. La fréquence manquante est :</p>
+  <div class="options">
+    <label><input type="radio" name="t4" value="a"> 0,10</label>
+    <label><input type="radio" name="t4" value="b"> 0,25</label>
+    <label><input type="radio" name="t4" value="c"> 0,15</label>
+    <label><input type="radio" name="t4" value="d"> 0,20</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Contexte professionnel – Lecture de tableau</p>
+  <p>Un fabricant de mobilier relève le nombre de défauts par meuble sur 50 meubles :<br>
+  0 défaut : 18 ; 1 défaut : 22 ; 2 défauts : 7 ; 3 défauts : 3.<br>
+  La fréquence des meubles avec exactement 1 défaut est :</p>
+  <div class="options">
+    <label><input type="radio" name="t5" value="a"> 22 %</label>
+    <label><input type="radio" name="t5" value="b"> 44 %</label>
+    <label><input type="radio" name="t5" value="c"> 36 %</label>
+    <label><input type="radio" name="t5" value="d"> 50 %</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 6</h3>
+  <p class="theme">Graphique – Choix du diagramme</p>
+  <p>On veut comparer les quantités de 4 types de panneaux (contreplaqué, OSB, MDF, aggloméré) commandés en un mois. Le graphique le plus adapté est :</p>
+  <div class="options">
+    <label><input type="radio" name="t6" value="a"> un diagramme en colonnes</label>
+    <label><input type="radio" name="t6" value="b"> un diagramme en ligne</label>
+    <label><input type="radio" name="t6" value="c"> un nuage de points</label>
+    <label><input type="radio" name="t6" value="d"> un histogramme</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 7</h3>
+  <p class="theme">Graphique – Lecture d'un diagramme en colonnes</p>
+  <p>Dans un diagramme en colonnes, la colonne la plus haute correspond à :</p>
+  <div class="options">
+    <label><input type="radio" name="t7" value="a"> la valeur la plus grande</label>
+    <label><input type="radio" name="t7" value="b"> la fréquence la plus faible</label>
+    <label><input type="radio" name="t7" value="c"> l'effectif le plus élevé</label>
+    <label><input type="radio" name="t7" value="d"> la moyenne de la série</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Diagramme en secteurs – Calcul d'angle</p>
+  <p>Dans un diagramme en secteurs, une catégorie représente 25 % du total. L'angle du secteur correspondant est :</p>
+  <div class="options">
+    <label><input type="radio" name="t8" value="a"> 25°</label>
+    <label><input type="radio" name="t8" value="b"> 45°</label>
+    <label><input type="radio" name="t8" value="c"> 75°</label>
+    <label><input type="radio" name="t8" value="d"> 90°</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Formule – Fréquence</p>
+  <p>La formule de la fréquence \(f_i\) d'une valeur est :</p>
+  <div class="options">
+    <label><input type="radio" name="t9" value="a"> \(f_i = N \times n_i\)</label>
+    <label><input type="radio" name="t9" value="b"> \(f_i = \dfrac{n_i}{N}\)</label>
+    <label><input type="radio" name="t9" value="c"> \(f_i = \dfrac{N}{n_i}\)</label>
+    <label><input type="radio" name="t9" value="d"> \(f_i = n_i - N\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Contexte professionnel – Tableau de fréquences</p>
+  <p>Un poseur de cuisines relève le temps (en min) de pose de 5 éléments hauts : 25, 30, 25, 35, 25. La fréquence de la valeur 25 min est :</p>
+  <div class="options">
+    <label><input type="radio" name="t10" value="a"> \(\dfrac{3}{5} = 0{,}60\) soit 60 %</label>
+    <label><input type="radio" name="t10" value="b"> \(\dfrac{2}{5} = 0{,}40\) soit 40 %</label>
+    <label><input type="radio" name="t10" value="c"> \(\dfrac{1}{5} = 0{,}20\) soit 20 %</label>
+    <label><input type="radio" name="t10" value="d"> \(\dfrac{25}{5} = 5\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 11</h3>
+  <p class="theme">Conversion – Fréquence et pourcentage</p>
+  <p>Une fréquence vaut 0,35. En pourcentage, cela donne :</p>
+  <div class="options">
+    <label><input type="radio" name="t11" value="a"> 3,5 %</label>
+    <label><input type="radio" name="t11" value="b"> 0,35 %</label>
+    <label><input type="radio" name="t11" value="c"> 35 %</label>
+    <label><input type="radio" name="t11" value="d"> 350 %</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Retrouver un effectif à partir d'une fréquence</p>
+  <p>Dans une série de \(N = 60\) individus, la fréquence d'une valeur est 0,15. L'effectif correspondant est :</p>
+  <div class="options">
+    <label><input type="radio" name="t12" value="a"> 15</label>
+    <label><input type="radio" name="t12" value="b"> 9</label>
+    <label><input type="radio" name="t12" value="c"> 4</label>
+    <label><input type="radio" name="t12" value="d"> 12</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 13</h3>
+  <p class="theme">Contexte professionnel – Contrôle qualité</p>
+  <p>Un chef d'atelier mesure 100 pièces. 72 sont conformes (tolérances respectées). Le pourcentage de pièces non conformes est :</p>
+  <div class="options">
+    <label><input type="radio" name="t13" value="a"> 28 %</label>
+    <label><input type="radio" name="t13" value="b"> 72 %</label>
+    <label><input type="radio" name="t13" value="c"> 18 %</label>
+    <label><input type="radio" name="t13" value="d"> 82 %</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 14</h3>
+  <p class="theme">Graphique – Erreur de représentation</p>
+  <p>Pour représenter la répartition de 12 essences de bois différentes, un diagramme en secteurs est :</p>
+  <div class="options">
+    <label><input type="radio" name="t14" value="a"> toujours le meilleur choix</label>
+    <label><input type="radio" name="t14" value="b"> obligatoire en statistiques</label>
+    <label><input type="radio" name="t14" value="c"> adapté car il montre les effectifs</label>
+    <label><input type="radio" name="t14" value="d"> peu lisible car il y a trop de catégories</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Tableau – Vérification globale</p>
+  <p>Un tableau de fréquences donne : 15 % ; 20 % ; 30 % ; 25 % ; 12 %. Ce tableau est :</p>
+  <div class="options">
+    <label><input type="radio" name="t15" value="a"> correct, car toutes les valeurs sont positives</label>
+    <label><input type="radio" name="t15" value="b"> correct, car la somme fait 100 %</label>
+    <label><input type="radio" name="t15" value="c"> incorrect, car la somme fait 102 %</label>
+    <label><input type="radio" name="t15" value="d"> incorrect, car il manque la moyenne</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
+</form>
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<form id="qcm-appro">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Vocabulaire avancé – Types de caractères</p>
+  <p>On relève le nombre de panneaux utilisés par chantier (0, 1, 2, 3...). Ce caractère est :</p>
+  <div class="options">
+    <label><input type="radio" name="a1" value="a"> qualitatif nominal</label>
+    <label><input type="radio" name="a1" value="b"> quantitatif discret</label>
+    <label><input type="radio" name="a1" value="c"> quantitatif continu</label>
+    <label><input type="radio" name="a1" value="d"> qualitatif ordinal</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Calcul – Effectif à partir d'une fréquence</p>
+  <p>Dans une série de \(N\) mesures, la fréquence d'une valeur est \(\dfrac{3}{8}\) et l'effectif correspondant est 15. L'effectif total \(N\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> 45</label>
+    <label><input type="radio" name="a2" value="b"> 56</label>
+    <label><input type="radio" name="a2" value="c"> 40</label>
+    <label><input type="radio" name="a2" value="d"> 24</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Tableau – Construction complète</p>
+  <p>Un installateur d'agencement relève le nombre de tiroirs posés par jour sur 10 jours : 4, 6, 5, 4, 7, 5, 4, 6, 5, 4. La fréquence de la valeur 4 est :</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> 0,40 soit 40 %</label>
+    <label><input type="radio" name="a3" value="b"> 0,30 soit 30 %</label>
+    <label><input type="radio" name="a3" value="c"> 0,50 soit 50 %</label>
+    <label><input type="radio" name="a3" value="d"> 0,25 soit 25 %</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Diagramme en secteurs – Angle</p>
+  <p>Dans une série, une valeur a une fréquence de \(\dfrac{3}{10}\). Dans un diagramme en secteurs, l'angle de ce secteur est :</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> 30°</label>
+    <label><input type="radio" name="a4" value="b"> 120°</label>
+    <label><input type="radio" name="a4" value="c"> 90°</label>
+    <label><input type="radio" name="a4" value="d"> 108°</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Contexte professionnel – Analyse de production</p>
+  <p>Un atelier de menuiserie produit 200 pièces par semaine. Le tableau de contrôle donne : conformes 82 %, petits défauts 12 %, défauts majeurs 6 %. Le nombre de pièces avec défauts majeurs est :</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> 6</label>
+    <label><input type="radio" name="a5" value="b"> 12</label>
+    <label><input type="radio" name="a5" value="c"> 24</label>
+    <label><input type="radio" name="a5" value="d"> 60</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 6</h3>
+  <p class="theme">Regroupement en classes – Lecture</p>
+  <p>Les notes d'un DS sont regroupées en classes : [0 ; 5[, [5 ; 10[, [10 ; 15[, [15 ; 20]. Un élève ayant 10 appartient à la classe :</p>
+  <div class="options">
+    <label><input type="radio" name="a6" value="a"> [10 ; 15[</label>
+    <label><input type="radio" name="a6" value="b"> [5 ; 10[</label>
+    <label><input type="radio" name="a6" value="c"> [10 ; 15] et [5 ; 10[</label>
+    <label><input type="radio" name="a6" value="d"> aucune classe</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 7</h3>
+  <p class="theme">Fréquences cumulées</p>
+  <p>Les fréquences d'une série sont : 0,10 ; 0,25 ; 0,35 ; 0,20 ; 0,10. La fréquence cumulée des trois premières valeurs est :</p>
+  <div class="options">
+    <label><input type="radio" name="a7" value="a"> 0,35</label>
+    <label><input type="radio" name="a7" value="b"> 0,60</label>
+    <label><input type="radio" name="a7" value="c"> 0,70</label>
+    <label><input type="radio" name="a7" value="d"> 1,00</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Contexte professionnel – Comparaison de séries</p>
+  <p>Deux ateliers produisent des étagères. L'atelier A (40 étagères) : 32 conformes. L'atelier B (60 étagères) : 45 conformes. Le meilleur taux de conformité est celui de :</p>
+  <div class="options">
+    <label><input type="radio" name="a8" value="a"> l'atelier A car 32 &gt; 30</label>
+    <label><input type="radio" name="a8" value="b"> l'atelier B car 45 &gt; 32</label>
+    <label><input type="radio" name="a8" value="c"> les deux sont identiques</label>
+    <label><input type="radio" name="a8" value="d"> l'atelier A car 80 % &gt; 75 %</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Calcul inverse – Effectif total inconnu</p>
+  <p>La fréquence d'une valeur est 0,20 et son effectif est 14. L'effectif total \(N\) est :</p>
+  <div class="options">
+    <label><input type="radio" name="a9" value="a"> 28</label>
+    <label><input type="radio" name="a9" value="b"> 70</label>
+    <label><input type="radio" name="a9" value="c"> 56</label>
+    <label><input type="radio" name="a9" value="d"> 80</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 10</h3>
+  <p class="theme">Interprétation – Diagramme en colonnes</p>
+  <p>Un diagramme en colonnes montre les effectifs de liteaux par longueur. La colonne de 50 cm est deux fois plus haute que celle de 52 cm. Si l'effectif de 52 cm est 4, l'effectif de 50 cm est :</p>
+  <div class="options">
+    <label><input type="radio" name="a10" value="a"> 8</label>
+    <label><input type="radio" name="a10" value="b"> 6</label>
+    <label><input type="radio" name="a10" value="c"> 100</label>
+    <label><input type="radio" name="a10" value="d"> 2</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 11</h3>
+  <p class="theme">Analyse – Cohérence d'un tableau</p>
+  <p>Un tableau statistique donne les fréquences : 0,20 ; 0,35 ; 0,15 ; 0,25 et les effectifs : 8 ; 14 ; 6 ; 10 pour \(N = 40\). Ce tableau est :</p>
+  <div class="options">
+    <label><input type="radio" name="a11" value="a"> cohérent car chaque \(f_i \times N\) donne bien \(n_i\)</label>
+    <label><input type="radio" name="a11" value="b"> incohérent car la somme des effectifs (38) ne vaut pas \(N = 40\)</label>
+    <label><input type="radio" name="a11" value="c"> cohérent car toutes les fréquences sont positives</label>
+    <label><input type="radio" name="a11" value="d"> incohérent car il manque la moyenne</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Problème ouvert – Construction de tableau</p>
+  <p>Un technicien d'agencement note l'épaisseur (en mm) de 20 panneaux : 18 apparaissent en 3 épaisseurs différentes, la 4e épaisseur n'apparaît que 2 fois. L'effectif total est bien :</p>
+  <div class="options">
+    <label><input type="radio" name="a12" value="a"> 18</label>
+    <label><input type="radio" name="a12" value="b"> 20</label>
+    <label><input type="radio" name="a12" value="c"> 22</label>
+    <label><input type="radio" name="a12" value="d"> on ne peut pas savoir</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 13</h3>
+  <p class="theme">Raisonnement – Fréquence et proportion</p>
+  <p>Dans une livraison de 200 vis, 5 % sont défectueuses. On retire les vis défectueuses. Le nombre de vis restantes est :</p>
+  <div class="options">
+    <label><input type="radio" name="a13" value="a"> 195</label>
+    <label><input type="radio" name="a13" value="b"> 10</label>
+    <label><input type="radio" name="a13" value="c"> 190</label>
+    <label><input type="radio" name="a13" value="d"> 180</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 14</h3>
+  <p class="theme">Contexte BTS – Analyse de données</p>
+  <p>Un conducteur de travaux analyse les retards de livraison (en jours) sur 50 chantiers. Il regroupe les données en classes. Pour construire un histogramme, la hauteur de chaque rectangle est proportionnelle à :</p>
+  <div class="options">
+    <label><input type="radio" name="a14" value="a"> l'effectif (ou la fréquence) de la classe</label>
+    <label><input type="radio" name="a14" value="b"> la valeur centrale de la classe</label>
+    <label><input type="radio" name="a14" value="c"> la largeur de la classe</label>
+    <label><input type="radio" name="a14" value="d"> l'effectif total</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Problème ouvert – Synthèse</p>
+  <p>Un ébéniste fabrique 3 modèles de tables. Modèle A : 45 % des ventes, modèle B : 30 %, modèle C : le reste. Sur 200 tables vendues, le nombre de tables du modèle C est :</p>
+  <div class="options">
+    <label><input type="radio" name="a15" value="a"> 25</label>
+    <label><input type="radio" name="a15" value="b"> 60</label>
+    <label><input type="radio" name="a15" value="c"> 50</label>
+    <label><input type="radio" name="a15" value="d"> 75</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "La population est l'ensemble des individus étudiés, ici les 30 planches. La longueur est le caractère, pas la population.",
+  "s2": "Un individu est un élément de la population. Ici, c'est une planche particulière parmi les 30.",
+  "s3": "La longueur est une grandeur mesurable avec des nombres : c'est un caractère quantitatif. Un caractère qualitatif serait par exemple la couleur du bois.",
+  "s4": "L'effectif est le nombre d'individus ayant une valeur donnée. 7 liteaux mesurent 50 cm, donc l'effectif de 50 cm est 7.",
+  "s5": "L'effectif total N est le nombre total d'individus de la série, ici 25 élèves.",
+  "s6": "Fréquence = effectif / effectif total = 4/20 = 0,20 = 20 %.",
+  "s7": "Fréquence = 10/40 = 0,25 = 25 %.",
+  "s8": "La somme de toutes les fréquences vaut toujours 1 (ou 100 %). C'est une propriété fondamentale.",
+  "s9": "La somme de tous les effectifs est égale à l'effectif total N.",
+  "s10": "Fréquence = 4/20 = 0,20.",
+  "s11": "Un diagramme en bâtons représente des données discrètes : chaque valeur est un trait vertical dont la hauteur correspond à l'effectif.",
+  "s12": "Le diagramme en secteurs (camembert) montre les proportions de chaque catégorie dans un ensemble.",
+  "s13": "Le diagramme en ligne est adapté pour représenter une évolution dans le temps (données chronologiques).",
+  "s14": "Effectif = fréquence × N = 0,12 × 50 = 6.",
+  "s15": "5 + 8 + 3 + 6 = 22 ≠ 20. Le tableau est incorrect.",
+  /* === STANDARD === */
+  "t1": "Les essences de bois (chêne, hêtre, pin, MDF) sont des catégories sans valeur numérique : c'est un caractère qualitatif.",
+  "t2": "Fréquence = 20/80 = 0,25 = 25 %. Attention, c'est bien 20 ÷ 80, pas 20 %.",
+  "t3": "La somme doit valoir N = 30. On a 5 + 8 + ? + 4 + 3 = 30, donc ? = 30 − 20 = 10.",
+  "t4": "La somme des fréquences doit valoir 1. On a 0,15 + 0,30 + 0,25 + 0,10 = 0,80. La fréquence manquante est 1 − 0,80 = 0,20.",
+  "t5": "Fréquence = 22/50 = 0,44 = 44 %.",
+  "t6": "Pour comparer des catégories (types de panneaux), le diagramme en colonnes est le plus adapté. Le diagramme en ligne sert pour les évolutions dans le temps.",
+  "t7": "Dans un diagramme en colonnes, la hauteur de chaque colonne est proportionnelle à l'effectif. La plus haute correspond donc à l'effectif le plus élevé.",
+  "t8": "L'angle = fréquence × 360° = 0,25 × 360° = 90°.",
+  "t9": "La fréquence est le rapport de l'effectif sur l'effectif total : f_i = n_i / N.",
+  "t10": "La valeur 25 apparaît 3 fois sur 5. Fréquence = 3/5 = 0,60 = 60 %.",
+  "t11": "Pour convertir une fréquence en pourcentage, on multiplie par 100 : 0,35 × 100 = 35 %.",
+  "t12": "n_i = f_i × N = 0,15 × 60 = 9.",
+  "t13": "Si 72 % sont conformes, alors 100 % − 72 % = 28 % sont non conformes.",
+  "t14": "Le cours indique qu'un diagramme en secteurs est adapté quand le nombre de catégories est limité (6 ou moins). Avec 12 essences, il serait peu lisible.",
+  "t15": "15 + 20 + 30 + 25 + 12 = 102 %. La somme devrait faire 100 %, le tableau est incorrect.",
+  /* === APPROFONDISSEMENT === */
+  "a1": "Le nombre de panneaux prend des valeurs entières (0, 1, 2, 3...) : c'est un caractère quantitatif discret.",
+  "a2": "f_i = n_i / N donc N = n_i / f_i = 15 / (3/8) = 15 × 8/3 = 40.",
+  "a3": "La valeur 4 apparaît 4 fois sur 10 jours. Fréquence = 4/10 = 0,40 = 40 %.",
+  "a4": "Angle = fréquence × 360° = (3/10) × 360° = 108°.",
+  "a5": "Effectif défauts majeurs = 6 % × 200 = 0,06 × 200 = 12 pièces.",
+  "a6": "La notation [10 ; 15[ signifie que 10 est inclus et 15 exclu. Un élève ayant 10 appartient donc à [10 ; 15[.",
+  "a7": "Fréquence cumulée = 0,10 + 0,25 + 0,35 = 0,70.",
+  "a8": "Atelier A : 32/40 = 80 %. Atelier B : 45/60 = 75 %. L'atelier A a un meilleur taux. On ne compare pas les effectifs bruts mais les fréquences.",
+  "a9": "f_i = n_i / N donc N = n_i / f_i = 14 / 0,20 = 70.",
+  "a10": "Dans un diagramme en colonnes, la hauteur est proportionnelle à l'effectif. Si la colonne est deux fois plus haute, l'effectif est le double : 4 × 2 = 8.",
+  "a11": "8 + 14 + 6 + 10 = 38, mais N = 40. La somme des effectifs ne correspond pas à l'effectif total annoncé. Il manque 2 individus. Le tableau est incohérent.",
+  "a12": "18 panneaux répartis en 3 épaisseurs + 2 panneaux de la 4e épaisseur = 18 + 2 = 20 panneaux au total.",
+  "a13": "5 % de 200 = 0,05 × 200 = 10 vis défectueuses. Vis restantes : 200 − 10 = 190.",
+  "a14": "Dans un histogramme (données en classes de même amplitude), la hauteur de chaque rectangle est proportionnelle à l'effectif ou à la fréquence de la classe.",
+  "a15": "Modèle C : 100 % − 45 % − 30 % = 25 %. Nombre de tables C = 25 % × 200 = 50."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '\u2705 Bonne réponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '\u274c Mauvaise réponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '\u26a0\ufe0f Pas de réponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>
