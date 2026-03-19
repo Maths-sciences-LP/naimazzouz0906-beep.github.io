@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fiche résumé – Ch08 – La force d'Archimède – 1ère Pro ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>
+:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+
+/* ── Fiche layout ── */
+.fiche{max-width:780px;margin:0 auto}
+.fiche h1{font-size:1.3rem;text-align:center;margin-bottom:4px}
+.fiche .sous-titre{text-align:center;margin-bottom:16px}
+
+.fiche-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:600px){.fiche-grid{grid-template-columns:1fr}}
+
+.fiche-card{background:#fff;border:1px solid var(--p-border);border-radius:8px;padding:12px 14px}
+.fiche-card h3{font-size:.82rem;color:var(--p);margin:0 0 6px;text-transform:uppercase;letter-spacing:.5px}
+.fiche-card p,.fiche-card li{font-size:.84rem;line-height:1.5}
+.fiche-card ul{padding-left:16px;margin:0}
+.fiche-card li{margin-bottom:3px}
+
+.fiche-card.full{grid-column:1/-1}
+
+.fiche-formula{background:var(--p-bg);border-radius:6px;padding:8px 12px;margin:6px 0;text-align:center;font-size:.92rem}
+
+.piege{border-left:3px solid #e53e3e;background:#fff5f5;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.piege strong{color:#e53e3e}
+
+.astuce{border-left:3px solid #16a34a;background:#f0fff4;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.astuce strong{color:#16a34a}
+
+@media print{
+  body{font-size:11pt}
+  .fiche{max-width:100%}
+  .nb,.nav-footer{display:none}
+  .fiche-card{break-inside:avoid;border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-iccer.html" class="nb">← Retour au sommaire</a>
+
+<div class="fiche">
+
+<h1>Fiche résumé — La force d'Archimède</h1>
+<p class="sous-titre">Chapitre 8 | 1ère Bac Pro | Physique-Chimie</p>
+
+<!-- ══════ LIGNE 1 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>1. Mise en évidence</h3>
+    <p>Un objet plongé dans un fluide semble <strong>plus léger</strong> : le dynamomètre indique un poids apparent inférieur au poids réel.</p>
+    <p>La différence correspond à la <strong>force d'Archimède</strong> \(F_A\), exercée par le fluide sur l'objet.</p>
+    <div class="astuce"><strong>Origine :</strong> La pression augmente avec la profondeur. La face inférieure subit une pression plus forte que la face supérieure : la résultante pousse vers le haut.</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>2. Formule de la force d'Archimède</h3>
+    <div class="fiche-formula">
+      \(F_A = \rho_{\text{fluide}} \times g \times V_{\text{immergé}}\)
+    </div>
+    <ul>
+      <li>\(F_A\) : force d'Archimède (en N)</li>
+      <li>\(\rho_{\text{fluide}}\) : masse volumique du fluide (en kg/m³)</li>
+      <li>\(g \approx 9{,}81\) N/kg</li>
+      <li>\(V_{\text{immergé}}\) : volume immergé (en m³)</li>
+    </ul>
+    <p><strong>Direction :</strong> verticale, <strong>sens :</strong> vers le haut.</p>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 2 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>3. Paramètres influençant \(F_A\)</h3>
+    <ul>
+      <li><strong>Masse volumique du fluide \(\rho\)</strong> : plus le fluide est dense, plus \(F_A\) est grande (on flotte mieux dans l'eau salée)</li>
+      <li><strong>Volume immergé \(V\)</strong> : plus l'objet est gros, plus \(F_A\) est grande</li>
+    </ul>
+    <div class="piege"><strong>Piège :</strong> \(F_A\) ne dépend pas de la masse ni de la forme de l'objet (pour un même volume immergé). Utiliser \(\rho\) du <strong>fluide</strong>, pas de l'objet !</div>
+    <div class="piege"><strong>Piège :</strong> Le volume doit être en m³. Conversions : \(1 \text{ L} = 10^{-3} \text{ m}^3\) et \(1 \text{ cm}^3 = 10^{-6} \text{ m}^3\).</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>4. Conditions de flottabilité</h3>
+    <table style="width:100%;font-size:.82rem;border-collapse:collapse;margin-top:4px">
+      <tr>
+        <td style="padding:5px 6px;background:#d1fae5;border-radius:4px 0 0 0">\(\rho_{\text{objet}} < \rho_{\text{fluide}}\)</td>
+        <td style="padding:5px 6px"><strong>Flotte</strong> (remonte)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 6px;background:#fef3c7">\(\rho_{\text{objet}} = \rho_{\text{fluide}}\)</td>
+        <td style="padding:5px 6px"><strong>Équilibre</strong> (reste en place)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 6px;background:#fee2e2;border-radius:0 0 0 4px">\(\rho_{\text{objet}} > \rho_{\text{fluide}}\)</td>
+        <td style="padding:5px 6px"><strong>Coule</strong> (descend)</td>
+      </tr>
+    </table>
+    <div class="astuce"><strong>Règle simple :</strong> un corps flotte si sa masse volumique est <strong>inférieure</strong> à celle du fluide.</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 3 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>5. Équilibre d'un corps flottant</h3>
+    <p>À l'équilibre : \(P = F_A\), soit :</p>
+    <div class="fiche-formula">
+      \(\rho_{\text{objet}} \times V_{\text{objet}} \times g = \rho_{\text{fluide}} \times V_{\text{immergé}} \times g\)
+    </div>
+    <p><strong>Fraction immergée :</strong></p>
+    <div class="fiche-formula">
+      \(\dfrac{V_{\text{immergé}}}{V_{\text{objet}}} = \dfrac{\rho_{\text{objet}}}{\rho_{\text{fluide}}}\)
+    </div>
+    <div class="astuce"><strong>Exemple :</strong> Bois (\(\rho = 600\) kg/m³) dans l'eau : immergé à \(\frac{600}{1000} = 60\%\).</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>6. Applications professionnelles</h3>
+    <ul>
+      <li><strong>Flotteur de chauffe-eau :</strong> le polystyrène (\(\rho \approx 25\) kg/m³) flotte facilement dans l'eau, immergé à seulement 2,5 %.</li>
+      <li><strong>Tube de cuivre :</strong> le cuivre (\(\rho = 8\,900\) kg/m³) coule dans l'eau car \(\rho_{\text{cuivre}} \gg \rho_{\text{eau}}\).</li>
+    </ul>
+    <p><strong>Masses volumiques utiles :</strong></p>
+    <ul>
+      <li>Eau douce : 1 000 kg/m³</li>
+      <li>Eau de mer : 1 025 kg/m³</li>
+      <li>Glycol (antigel) : 1 110 kg/m³</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ══════ RÉSUMÉ EXPRESS ══════ -->
+<div class="fiche-grid">
+  <div class="fiche-card full">
+    <h3>Résumé express — Méthode type</h3>
+    <table style="width:100%;font-size:.84rem;border-collapse:collapse">
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:4px 0 0 0;width:28px;text-align:center">1</td>
+        <td style="padding:5px 8px">Identifier \(\rho_{\text{fluide}}\) et \(\rho_{\text{objet}}\) (ou le volume immergé)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">2</td>
+        <td style="padding:5px 8px"><strong>Convertir</strong> le volume en m³ si nécessaire</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;text-align:center">3</td>
+        <td style="padding:5px 8px">Calculer \(F_A = \rho_{\text{fluide}} \times g \times V_{\text{immergé}}\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">4</td>
+        <td style="padding:5px 8px">Comparer \(F_A\) et \(P\) pour déterminer si l'objet <strong>flotte ou coule</strong></td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:0 0 0 4px;text-align:center">5</td>
+        <td style="padding:5px 8px">Si flottaison, calculer la fraction immergée : \(\rho_{\text{objet}} / \rho_{\text{fluide}}\)</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</div><!-- /fiche -->
+
+<div class="nav-footer">
+  <a href="lecon.html" class="nav-btn">← Cours complet</a>
+  <a href="exercices.html" class="nav-btn">Exercices →</a>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

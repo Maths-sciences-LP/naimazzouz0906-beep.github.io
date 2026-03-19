@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fiche résumé – Ch02 – Probabilités – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>
+:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+
+/* ── Fiche layout ── */
+.fiche{max-width:780px;margin:0 auto}
+.fiche h1{font-size:1.3rem;text-align:center;margin-bottom:4px}
+.fiche .sous-titre{text-align:center;margin-bottom:16px}
+
+.fiche-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:600px){.fiche-grid{grid-template-columns:1fr}}
+
+.fiche-card{background:#fff;border:1px solid var(--p-border);border-radius:8px;padding:12px 14px}
+.fiche-card h3{font-size:.82rem;color:var(--p);margin:0 0 6px;text-transform:uppercase;letter-spacing:.5px}
+.fiche-card p,.fiche-card li{font-size:.84rem;line-height:1.5}
+.fiche-card ul{padding-left:16px;margin:0}
+.fiche-card li{margin-bottom:3px}
+
+.fiche-card.full{grid-column:1/-1}
+
+.fiche-formula{background:var(--p-bg);border-radius:6px;padding:8px 12px;margin:6px 0;text-align:center;font-size:.92rem}
+
+.piege{border-left:3px solid #e53e3e;background:#fff5f5;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.piege strong{color:#e53e3e}
+
+.astuce{border-left:3px solid #16a34a;background:#f0fff4;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.astuce strong{color:#16a34a}
+
+.schema-box{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px;text-align:center}
+.schema-box img,.schema-box svg{max-width:100%}
+
+@media print{
+  body{font-size:11pt}
+  .fiche{max-width:100%}
+  .nb,.nav-footer{display:none}
+  .fiche-card{break-inside:avoid;border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<div class="fiche">
+
+<h1>Fiche résumé — Probabilités</h1>
+<p class="sous-titre">Chapitre 2 | 1ère Bac Pro | Mathématiques</p>
+
+<!-- ══════ LIGNE 1 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>1. Vocabulaire</h3>
+    <ul>
+      <li><strong>Expérience aléatoire :</strong> résultat imprévisible, mais résultats possibles connus.</li>
+      <li><strong>Issue :</strong> un résultat possible.</li>
+      <li><strong>Univers \(\Omega\) :</strong> ensemble de toutes les issues.</li>
+      <li><strong>Événement :</strong> sous-ensemble de \(\Omega\).</li>
+    </ul>
+    <p><strong>Événement certain</strong> = \(\Omega\), <strong>impossible</strong> = \(\emptyset\), <strong>élémentaire</strong> = 1 seule issue.</p>
+  </div>
+
+  <div class="fiche-card">
+    <h3>2. Probabilité d'un événement</h3>
+    <div class="fiche-formula">
+      \(0 \leqslant P(A) \leqslant 1\)
+    </div>
+    <ul>
+      <li>\(P(\Omega) = 1\) et \(P(\emptyset) = 0\)</li>
+      <li>La somme des probabilités de toutes les issues vaut 1.</li>
+    </ul>
+    <p><strong>Équiprobabilité :</strong></p>
+    <div class="fiche-formula">
+      \(P(A) = \dfrac{\text{nb d'issues favorables}}{\text{nb total d'issues}}\)
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 2 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>3. Événement contraire</h3>
+    <p>L'événement contraire de \(A\), noté \(\bar{A}\), se réalise quand \(A\) ne se réalise pas.</p>
+    <div class="fiche-formula">
+      \(P(\bar{A}) = 1 - P(A)\)
+    </div>
+    <div class="astuce"><strong>Astuce :</strong> Quand le calcul direct est compliqué, calculer d'abord \(P(\bar{A})\) puis en déduire \(P(A) = 1 - P(\bar{A})\).</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>4. Événements incompatibles</h3>
+    <p>\(A\) et \(B\) sont <strong>incompatibles</strong> s'ils ne peuvent pas se réaliser en même temps.</p>
+    <div class="fiche-formula">
+      Si incompatibles : \(P(A \cup B) = P(A) + P(B)\)
+    </div>
+    <div class="piege"><strong>Piège :</strong> Si \(A\) et \(B\) ne sont <strong>pas</strong> incompatibles :
+    \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 3 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>5. Tableau à double entrée</h3>
+    <p>Permet de calculer des probabilités à partir d'un croisement de deux critères.</p>
+    <p><strong>Probabilité conditionnelle :</strong></p>
+    <div class="fiche-formula">
+      \(P_B(A) = \dfrac{P(A \cap B)}{P(B)}\)
+    </div>
+    <p style="font-size:.82rem">= probabilité de \(A\) <strong>sachant que</strong> \(B\) est réalisé.</p>
+  </div>
+
+  <div class="fiche-card">
+    <h3>6. Arbre de probabilités</h3>
+    <p>Trois règles fondamentales :</p>
+    <ul>
+      <li><strong>Branches :</strong> la somme des probabilités issues d'un noeud = 1.</li>
+      <li><strong>Chemin :</strong> on <strong>multiplie</strong> les probabilités le long d'un chemin.</li>
+      <li><strong>Somme :</strong> la probabilité d'un événement = somme des chemins qui y mènent.</li>
+    </ul>
+    <div class="piege"><strong>Piège :</strong> Ne pas additionner les probabilités le long d'un chemin — on les multiplie !</div>
+  </div>
+
+</div>
+
+<!-- ══════ RÉSUMÉ EXPRESS ══════ -->
+<div class="fiche-grid">
+  <div class="fiche-card full">
+    <h3>Résumé express — Méthode type (arbre pondéré)</h3>
+    <table style="width:100%;font-size:.84rem;border-collapse:collapse">
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:4px 0 0 0;width:28px;text-align:center">1</td>
+        <td style="padding:5px 8px">Identifier l'expérience aléatoire et ses étapes</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">2</td>
+        <td style="padding:5px 8px">Construire l'<strong>arbre pondéré</strong> en plaçant les probabilités sur chaque branche</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;text-align:center">3</td>
+        <td style="padding:5px 8px">Vérifier que la somme des branches issues de chaque noeud = 1</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">4</td>
+        <td style="padding:5px 8px">Calculer la probabilité de chaque chemin en <strong>multipliant</strong> les branches</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:0 0 0 4px;text-align:center">5</td>
+        <td style="padding:5px 8px">Vérifier que la somme de tous les chemins = 1</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</div><!-- /fiche -->
+
+<div class="nav-footer">
+  <a href="lecon.html" class="nav-btn">← Cours complet</a>
+  <a href="exercices.html" class="nav-btn">Exercices →</a>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

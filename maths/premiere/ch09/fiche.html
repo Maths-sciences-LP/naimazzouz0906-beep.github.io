@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fiche résumé – Ch09 – Trigonométrie – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>
+:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+
+/* ── Fiche layout ── */
+.fiche{max-width:780px;margin:0 auto}
+.fiche h1{font-size:1.3rem;text-align:center;margin-bottom:4px}
+.fiche .sous-titre{text-align:center;margin-bottom:16px}
+
+.fiche-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:600px){.fiche-grid{grid-template-columns:1fr}}
+
+.fiche-card{background:#fff;border:1px solid var(--p-border);border-radius:8px;padding:12px 14px}
+.fiche-card h3{font-size:.82rem;color:var(--p);margin:0 0 6px;text-transform:uppercase;letter-spacing:.5px}
+.fiche-card p,.fiche-card li{font-size:.84rem;line-height:1.5}
+.fiche-card ul{padding-left:16px;margin:0}
+.fiche-card li{margin-bottom:3px}
+
+.fiche-card.full{grid-column:1/-1}
+
+.fiche-formula{background:var(--p-bg);border-radius:6px;padding:8px 12px;margin:6px 0;text-align:center;font-size:.92rem}
+
+.piege{border-left:3px solid #e53e3e;background:#fff5f5;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.piege strong{color:#e53e3e}
+
+.astuce{border-left:3px solid #16a34a;background:#f0fff4;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.astuce strong{color:#16a34a}
+
+.schema-box{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px;text-align:center}
+.schema-box img,.schema-box svg{max-width:100%}
+
+@media print{
+  body{font-size:11pt}
+  .fiche{max-width:100%}
+  .nb,.nav-footer{display:none}
+  .fiche-card{break-inside:avoid;border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<div class="fiche">
+
+<h1>Fiche résumé — Trigonométrie</h1>
+<p class="sous-titre">Chapitre 9 | 1ère Bac Pro | Mathématiques</p>
+
+<!-- ══════ LIGNE 1 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>1. Rapports trigonométriques</h3>
+    <p>Dans un <strong>triangle rectangle</strong>, pour un angle aigu \(\alpha\) :</p>
+    <div class="fiche-formula">
+      \(\cos \alpha = \dfrac{\text{adjacent}}{\text{hypoténuse}}\)
+    </div>
+    <div class="fiche-formula">
+      \(\sin \alpha = \dfrac{\text{opposé}}{\text{hypoténuse}}\)
+    </div>
+    <div class="fiche-formula">
+      \(\tan \alpha = \dfrac{\text{opposé}}{\text{adjacent}}\)
+    </div>
+    <div class="astuce"><strong>Mnémotechnique :</strong> SOH — CAH — TOA</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>2. Relations fondamentales</h3>
+    <div class="fiche-formula">
+      \(\cos^2 \alpha + \sin^2 \alpha = 1\)
+    </div>
+    <div class="fiche-formula">
+      \(\tan \alpha = \dfrac{\sin \alpha}{\cos \alpha}\)
+    </div>
+    <div class="piege"><strong>Piège :</strong> Bien identifier les côtés par rapport à l'angle considéré. « Opposé » et « adjacent » changent selon l'angle.</div>
+    <div class="piege"><strong>Piège :</strong> Vérifier que la calculatrice est en mode <strong>DEG</strong> (degrés) et non RAD.</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 2 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>3. Valeurs remarquables</h3>
+    <table style="width:100%;font-size:.78rem;border-collapse:collapse;text-align:center">
+      <tr>
+        <td style="padding:3px;font-weight:700;background:var(--p-bg)">Angle</td>
+        <td style="padding:3px;background:var(--p-bg)">0°</td>
+        <td style="padding:3px;background:var(--p-bg)">30°</td>
+        <td style="padding:3px;background:var(--p-bg)">45°</td>
+        <td style="padding:3px;background:var(--p-bg)">60°</td>
+        <td style="padding:3px;background:var(--p-bg)">90°</td>
+      </tr>
+      <tr>
+        <td style="padding:3px;font-weight:600">cos</td>
+        <td style="padding:3px">1</td>
+        <td style="padding:3px">\(\frac{\sqrt3}{2}\)</td>
+        <td style="padding:3px">\(\frac{\sqrt2}{2}\)</td>
+        <td style="padding:3px">\(\frac{1}{2}\)</td>
+        <td style="padding:3px">0</td>
+      </tr>
+      <tr>
+        <td style="padding:3px;font-weight:600;background:#f8fafc">sin</td>
+        <td style="padding:3px;background:#f8fafc">0</td>
+        <td style="padding:3px;background:#f8fafc">\(\frac{1}{2}\)</td>
+        <td style="padding:3px;background:#f8fafc">\(\frac{\sqrt2}{2}\)</td>
+        <td style="padding:3px;background:#f8fafc">\(\frac{\sqrt3}{2}\)</td>
+        <td style="padding:3px;background:#f8fafc">1</td>
+      </tr>
+      <tr>
+        <td style="padding:3px;font-weight:600">tan</td>
+        <td style="padding:3px">0</td>
+        <td style="padding:3px">\(\frac{\sqrt3}{3}\)</td>
+        <td style="padding:3px">1</td>
+        <td style="padding:3px">\(\sqrt3\)</td>
+        <td style="padding:3px">—</td>
+      </tr>
+    </table>
+    <div class="astuce"><strong>Astuce :</strong> Les sin de 0° à 90° suivent \(\frac{\sqrt0}{2}, \frac{\sqrt1}{2}, \frac{\sqrt2}{2}, \frac{\sqrt3}{2}, \frac{\sqrt4}{2}\). Les cos sont dans l'ordre inverse.</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>4. Le radian et le cercle trigonométrique</h3>
+    <div class="fiche-formula">
+      \(180° = \pi \text{ rad}\)
+    </div>
+    <p>Conversions :</p>
+    <ul>
+      <li>Degrés → Radians : multiplier par \(\frac{\pi}{180}\)</li>
+      <li>Radians → Degrés : multiplier par \(\frac{180}{\pi}\)</li>
+    </ul>
+    <p>Le <strong>cercle trigonométrique</strong> a un rayon 1. Le point \(M\) image de \(x\) a pour coordonnées \((\cos x\,;\,\sin x)\).</p>
+    <div class="fiche-formula">
+      \(-1 \leqslant \cos x \leqslant 1 \quad \text{et} \quad -1 \leqslant \sin x \leqslant 1\)
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 3 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>5. Angles associés</h3>
+    <table style="width:100%;font-size:.82rem;border-collapse:collapse">
+      <tr>
+        <td style="padding:4px 6px;background:var(--p-bg);font-weight:600">Supplémentaires</td>
+        <td style="padding:4px 6px">\(\cos(\pi - x) = -\cos x\)<br>\(\sin(\pi - x) = \sin x\)</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 6px;font-weight:600">Opposés</td>
+        <td style="padding:4px 6px">\(\cos(-x) = \cos x\)<br>\(\sin(-x) = -\sin x\)</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 6px;background:var(--p-bg);font-weight:600">Complémentaires</td>
+        <td style="padding:4px 6px">\(\cos(\frac{\pi}{2} - x) = \sin x\)<br>\(\sin(\frac{\pi}{2} - x) = \cos x\)</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="fiche-card">
+    <h3>6. Fonctions sinus et cosinus</h3>
+    <ul>
+      <li><strong>Périodiques</strong> de période \(2\pi\)</li>
+      <li>Valeurs entre \(-1\) et \(1\)</li>
+      <li>Sinus : <strong>impaire</strong> (\(\sin(-x) = -\sin x\))</li>
+      <li>Cosinus : <strong>paire</strong> (\(\cos(-x) = \cos x\))</li>
+      <li>Lien : \(\cos x = \sin\!\left(x + \frac{\pi}{2}\right)\)</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ══════ RÉSUMÉ EXPRESS ══════ -->
+<div class="fiche-grid">
+  <div class="fiche-card full">
+    <h3>Résumé express — Calculer un côté ou un angle</h3>
+    <table style="width:100%;font-size:.84rem;border-collapse:collapse">
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:4px 0 0 0;width:28px;text-align:center">1</td>
+        <td style="padding:5px 8px"><strong>Repérer</strong> l'angle et identifier les côtés : hypoténuse, opposé, adjacent</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">2</td>
+        <td style="padding:5px 8px"><strong>Choisir</strong> le rapport adapté (cos, sin ou tan) reliant le connu au cherché</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;text-align:center">3</td>
+        <td style="padding:5px 8px"><strong>Écrire</strong> l'équation et <strong>isoler</strong> l'inconnue</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">4</td>
+        <td style="padding:5px 8px"><strong>Calculer</strong> (mode DEG). Pour un angle : utiliser \(\cos^{-1}\), \(\sin^{-1}\) ou \(\tan^{-1}\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:0 0 0 4px;text-align:center">5</td>
+        <td style="padding:5px 8px"><strong>Vérifier</strong> avec Pythagore ou la relation \(\cos^2 \alpha + \sin^2 \alpha = 1\)</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</div><!-- /fiche -->
+
+<div class="nav-footer">
+  <a href="lecon.html" class="nav-btn">← Cours complet</a>
+  <a href="exercices.html" class="nav-btn">Exercices →</a>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

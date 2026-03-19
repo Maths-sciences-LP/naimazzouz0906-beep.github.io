@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fiche résumé – Ch03 – Suites numériques – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>
+:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+
+/* ── Fiche layout ── */
+.fiche{max-width:780px;margin:0 auto}
+.fiche h1{font-size:1.3rem;text-align:center;margin-bottom:4px}
+.fiche .sous-titre{text-align:center;margin-bottom:16px}
+
+.fiche-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:600px){.fiche-grid{grid-template-columns:1fr}}
+
+.fiche-card{background:#fff;border:1px solid var(--p-border);border-radius:8px;padding:12px 14px}
+.fiche-card h3{font-size:.82rem;color:var(--p);margin:0 0 6px;text-transform:uppercase;letter-spacing:.5px}
+.fiche-card p,.fiche-card li{font-size:.84rem;line-height:1.5}
+.fiche-card ul{padding-left:16px;margin:0}
+.fiche-card li{margin-bottom:3px}
+
+.fiche-card.full{grid-column:1/-1}
+
+.fiche-formula{background:var(--p-bg);border-radius:6px;padding:8px 12px;margin:6px 0;text-align:center;font-size:.92rem}
+
+.piege{border-left:3px solid #e53e3e;background:#fff5f5;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.piege strong{color:#e53e3e}
+
+.astuce{border-left:3px solid #16a34a;background:#f0fff4;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.astuce strong{color:#16a34a}
+
+.schema-box{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px;text-align:center}
+.schema-box img,.schema-box svg{max-width:100%}
+
+@media print{
+  body{font-size:11pt}
+  .fiche{max-width:100%}
+  .nb,.nav-footer{display:none}
+  .fiche-card{break-inside:avoid;border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<div class="fiche">
+
+<h1>Fiche résumé — Suites numériques</h1>
+<p class="sous-titre">Chapitre 3 | 1ère Bac Pro | Mathématiques</p>
+
+<!-- ══════ LIGNE 1 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>1. Notion de suite</h3>
+    <p>Une <strong>suite numérique</strong> \((u_n)\) est une liste ordonnée de nombres indexés par \(n \in \mathbb{N}\).</p>
+    <ul>
+      <li>\(u_0\) = terme initial, \(u_n\) = terme de rang \(n\).</li>
+      <li><strong>Formule explicite :</strong> \(u_n\) en fonction de \(n\).</li>
+      <li><strong>Formule de récurrence :</strong> \(u_{n+1}\) en fonction de \(u_n\) (+ valeur de \(u_0\)).</li>
+    </ul>
+  </div>
+
+  <div class="fiche-card">
+    <h3>2. Suite arithmétique</h3>
+    <p>On passe d'un terme au suivant en <strong>ajoutant</strong> la raison \(r\) :</p>
+    <div class="fiche-formula">
+      \(u_{n+1} = u_n + r\)
+    </div>
+    <div class="fiche-formula">
+      \(u_n = u_0 + n \times r\)
+    </div>
+    <ul>
+      <li>\(r > 0\) : suite croissante</li>
+      <li>\(r < 0\) : suite décroissante</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 2 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>3. Somme (suite arithmétique)</h3>
+    <div class="fiche-formula">
+      \(S = u_0 + u_1 + \cdots + u_n = \dfrac{(n+1)(u_0 + u_n)}{2}\)
+    </div>
+    <div class="astuce"><strong>Astuce :</strong> Retenir la formule sous la forme :
+    \(S = \dfrac{\text{nb de termes} \times (\text{1er} + \text{dernier})}{2}\)</div>
+    <div class="piege"><strong>Piège :</strong> De \(u_0\) à \(u_n\), il y a \(n + 1\) termes, pas \(n\) !</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>4. Suite géométrique</h3>
+    <p>On passe d'un terme au suivant en <strong>multipliant</strong> par la raison \(q\) :</p>
+    <div class="fiche-formula">
+      \(u_{n+1} = u_n \times q\)
+    </div>
+    <div class="fiche-formula">
+      \(u_n = u_0 \times q^n\)
+    </div>
+    <ul>
+      <li>\(q > 1\) (et \(u_0 > 0\)) : suite croissante</li>
+      <li>\(0 < q < 1\) (et \(u_0 > 0\)) : suite décroissante</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 3 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>5. Reconnaître le type de suite</h3>
+    <table style="width:100%;font-size:.82rem;border-collapse:collapse;margin-top:4px">
+      <tr>
+        <td style="padding:4px 6px;background:#dbeafe;border-radius:4px 0 0 0;font-weight:700;width:50%;text-align:center">Arithmétique</td>
+        <td style="padding:4px 6px;background:#fef3c7;border-radius:0 4px 0 0;font-weight:700;width:50%;text-align:center">Géométrique</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 6px">\(u_{n+1} - u_n = r\) constant</td>
+        <td style="padding:4px 6px">\(\dfrac{u_{n+1}}{u_n} = q\) constant</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 6px">On <strong>ajoute</strong> \(r\)</td>
+        <td style="padding:4px 6px">On <strong>multiplie</strong> par \(q\)</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 6px;border-radius:0 0 0 4px">Augmentation fixe</td>
+        <td style="padding:4px 6px;border-radius:0 0 4px 0">Évolution en %</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="fiche-card">
+    <h3>6. Représentation graphique</h3>
+    <p>On place les points \((n\,;\, u_n)\) dans un repère.</p>
+    <ul>
+      <li><strong>Arithmétique :</strong> points alignés (fonction affine de \(n\)).</li>
+      <li><strong>Géométrique :</strong> courbe exponentielle.</li>
+    </ul>
+    <div class="piege"><strong>Piège :</strong> On ne relie <strong>pas</strong> les points — une suite n'est définie que pour des valeurs entières de \(n\).</div>
+  </div>
+
+</div>
+
+<!-- ══════ RÉSUMÉ EXPRESS ══════ -->
+<div class="fiche-grid">
+  <div class="fiche-card full">
+    <h3>Résumé express — Méthode type</h3>
+    <table style="width:100%;font-size:.84rem;border-collapse:collapse">
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:4px 0 0 0;width:28px;text-align:center">1</td>
+        <td style="padding:5px 8px">Identifier le <strong>premier terme</strong> \(u_0\) et la règle de passage</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">2</td>
+        <td style="padding:5px 8px">Déterminer le type : <strong>différence constante</strong> → arithmétique ; <strong>quotient constant</strong> → géométrique</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;text-align:center">3</td>
+        <td style="padding:5px 8px">Écrire la <strong>formule du terme général</strong> : \(u_n = u_0 + nr\) ou \(u_n = u_0 \times q^n\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">4</td>
+        <td style="padding:5px 8px">Calculer le terme demandé ou résoudre \(u_n = \text{valeur}\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:0 0 0 4px;text-align:center">5</td>
+        <td style="padding:5px 8px">Si besoin, calculer la <strong>somme</strong> (arithmétique) : \(S = \dfrac{(n+1)(u_0 + u_n)}{2}\)</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</div><!-- /fiche -->
+
+<div class="nav-footer">
+  <a href="lecon.html" class="nav-btn">← Cours complet</a>
+  <a href="exercices.html" class="nav-btn">Exercices →</a>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

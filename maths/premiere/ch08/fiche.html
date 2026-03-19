@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fiche résumé – Ch08 – Vecteurs du plan – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>
+:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+
+/* ── Fiche layout ── */
+.fiche{max-width:780px;margin:0 auto}
+.fiche h1{font-size:1.3rem;text-align:center;margin-bottom:4px}
+.fiche .sous-titre{text-align:center;margin-bottom:16px}
+
+.fiche-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:600px){.fiche-grid{grid-template-columns:1fr}}
+
+.fiche-card{background:#fff;border:1px solid var(--p-border);border-radius:8px;padding:12px 14px}
+.fiche-card h3{font-size:.82rem;color:var(--p);margin:0 0 6px;text-transform:uppercase;letter-spacing:.5px}
+.fiche-card p,.fiche-card li{font-size:.84rem;line-height:1.5}
+.fiche-card ul{padding-left:16px;margin:0}
+.fiche-card li{margin-bottom:3px}
+
+.fiche-card.full{grid-column:1/-1}
+
+.fiche-formula{background:var(--p-bg);border-radius:6px;padding:8px 12px;margin:6px 0;text-align:center;font-size:.92rem}
+
+.piege{border-left:3px solid #e53e3e;background:#fff5f5;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.piege strong{color:#e53e3e}
+
+.astuce{border-left:3px solid #16a34a;background:#f0fff4;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.astuce strong{color:#16a34a}
+
+.schema-box{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px;text-align:center}
+.schema-box img,.schema-box svg{max-width:100%}
+
+@media print{
+  body{font-size:11pt}
+  .fiche{max-width:100%}
+  .nb,.nav-footer{display:none}
+  .fiche-card{break-inside:avoid;border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<div class="fiche">
+
+<h1>Fiche résumé — Vecteurs du plan</h1>
+<p class="sous-titre">Chapitre 8 | 1ère Bac Pro | Mathématiques</p>
+
+<!-- ══════ LIGNE 1 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>1. Notion de vecteur</h3>
+    <p>Un <strong>vecteur</strong> est caractérisé par :</p>
+    <ul>
+      <li>une <strong>direction</strong> (la droite qui le porte)</li>
+      <li>un <strong>sens</strong> (orientation sur cette droite)</li>
+      <li>une <strong>norme</strong> (longueur, notée \(\|\vec{u}\|\))</li>
+    </ul>
+    <div class="piege"><strong>Piège :</strong> \(\vec{AB} \neq \vec{BA}\). Même direction, même norme, mais <strong>sens opposés</strong> : \(\vec{BA} = -\vec{AB}\).</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>2. Coordonnées d'un vecteur</h3>
+    <p>Si \(A(x_A\,;\,y_A)\) et \(B(x_B\,;\,y_B)\) :</p>
+    <div class="fiche-formula">
+      \(\vec{AB} \begin{pmatrix} x_B - x_A \\ y_B - y_A \end{pmatrix}\)
+    </div>
+    <p>Deux vecteurs sont <strong>égaux</strong> s'ils ont les <strong>mêmes coordonnées</strong>.</p>
+    <div class="astuce"><strong>Astuce :</strong> \(\vec{AB} = \vec{CD}\) signifie que \(ABDC\) est un parallélogramme.</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 2 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>3. Opérations sur les vecteurs</h3>
+    <p><strong>Somme :</strong></p>
+    <div class="fiche-formula">
+      \(\begin{pmatrix} x \\ y \end{pmatrix} + \begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} x+x' \\ y+y' \end{pmatrix}\)
+    </div>
+    <p><strong>Produit par un scalaire :</strong></p>
+    <div class="fiche-formula">
+      \(k\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} kx \\ ky \end{pmatrix}\)
+    </div>
+    <p><strong>Relation de Chasles :</strong></p>
+    <div class="fiche-formula">
+      \(\vec{AB} + \vec{BC} = \vec{AC}\)
+    </div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>4. Norme et distance</h3>
+    <p><strong>Norme</strong> d'un vecteur \(\vec{u}\begin{pmatrix} x \\ y \end{pmatrix}\) :</p>
+    <div class="fiche-formula">
+      \(\|\vec{u}\| = \sqrt{x^2 + y^2}\)
+    </div>
+    <p><strong>Distance</strong> entre \(A\) et \(B\) :</p>
+    <div class="fiche-formula">
+      \(AB = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}\)
+    </div>
+    <div class="astuce"><strong>Astuce :</strong> C'est le théorème de Pythagore appliqué aux coordonnées.</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 3 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>5. Milieu d'un segment</h3>
+    <p>Le milieu \(M\) de \([AB]\) :</p>
+    <div class="fiche-formula">
+      \(M\!\left(\dfrac{x_A + x_B}{2}\,;\,\dfrac{y_A + y_B}{2}\right)\)
+    </div>
+    <div class="piege"><strong>Piège :</strong> Pour trouver \(B\) connaissant \(A\) et le milieu \(M\), utiliser : \(x_B = 2x_M - x_A\) et \(y_B = 2y_M - y_A\).</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>6. Colinéarité</h3>
+    <p>Deux vecteurs \(\vec{u}\begin{pmatrix} x \\ y \end{pmatrix}\) et \(\vec{v}\begin{pmatrix} x' \\ y' \end{pmatrix}\) sont <strong>colinéaires</strong> si :</p>
+    <div class="fiche-formula">
+      \(xy' - x'y = 0\)
+    </div>
+    <p>Cette quantité est le <strong>déterminant</strong> des deux vecteurs.</p>
+    <ul>
+      <li>Colinéaires = <strong>même direction</strong> (parallèles)</li>
+      <li>Trois points alignés ⇔ \(\vec{AB}\) et \(\vec{AC}\) colinéaires</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ══════ RÉSUMÉ EXPRESS ══════ -->
+<div class="fiche-grid">
+  <div class="fiche-card full">
+    <h3>Résumé express — Les formules essentielles</h3>
+    <table style="width:100%;font-size:.84rem;border-collapse:collapse">
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:4px 0 0 0;text-align:center;width:40%">Coordonnées</td>
+        <td style="padding:5px 8px">\(\vec{AB}\begin{pmatrix} x_B - x_A \\ y_B - y_A \end{pmatrix}\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">Somme</td>
+        <td style="padding:5px 8px">\(\vec{u}+\vec{v} = \begin{pmatrix} x+x' \\ y+y' \end{pmatrix}\) et \(\vec{AB}+\vec{BC} = \vec{AC}\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;text-align:center">Norme</td>
+        <td style="padding:5px 8px">\(\|\vec{u}\| = \sqrt{x^2+y^2}\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">Milieu</td>
+        <td style="padding:5px 8px">\(M\!\left(\frac{x_A+x_B}{2}\,;\,\frac{y_A+y_B}{2}\right)\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:0 0 0 4px;text-align:center">Colinéarité</td>
+        <td style="padding:5px 8px">\(\vec{u}\) et \(\vec{v}\) colinéaires \(\Leftrightarrow xy'-x'y = 0\)</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</div><!-- /fiche -->
+
+<div class="nav-footer">
+  <a href="lecon.html" class="nav-btn">← Cours complet</a>
+  <a href="exercices.html" class="nav-btn">Exercices →</a>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fiche résumé – Ch02 – Puissance en régime sinusoïdal – 1ère ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>
+:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
+
+/* ── Fiche layout ── */
+.fiche{max-width:780px;margin:0 auto}
+.fiche h1{font-size:1.3rem;text-align:center;margin-bottom:4px}
+.fiche .sous-titre{text-align:center;margin-bottom:16px}
+
+.fiche-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:600px){.fiche-grid{grid-template-columns:1fr}}
+
+.fiche-card{background:#fff;border:1px solid var(--p-border);border-radius:8px;padding:12px 14px}
+.fiche-card h3{font-size:.82rem;color:var(--p);margin:0 0 6px;text-transform:uppercase;letter-spacing:.5px}
+.fiche-card p,.fiche-card li{font-size:.84rem;line-height:1.5}
+.fiche-card ul{padding-left:16px;margin:0}
+.fiche-card li{margin-bottom:3px}
+
+.fiche-card.full{grid-column:1/-1}
+
+.fiche-formula{background:var(--p-bg);border-radius:6px;padding:8px 12px;margin:6px 0;text-align:center;font-size:.92rem}
+
+.piege{border-left:3px solid #e53e3e;background:#fff5f5;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.piege strong{color:#e53e3e}
+
+.astuce{border-left:3px solid #16a34a;background:#f0fff4;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.astuce strong{color:#16a34a}
+
+@media print{
+  body{font-size:11pt}
+  .fiche{max-width:100%}
+  .nb,.nav-footer{display:none}
+  .fiche-card{break-inside:avoid;border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-erama.html" class="nb">← RETOUR SOMMAIRE ERA-MA (Grpt 3)</a>
+
+<div class="fiche">
+
+<h1>Fiche résumé — Puissance en régime sinusoïdal</h1>
+<p class="sous-titre">Chapitre 2 | 1ère Bac Pro ERA-MA (Grpt 3) | Physique-Chimie</p>
+
+<!-- ══════ LIGNE 1 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>1. Grandeurs sinusoïdales</h3>
+    <div class="fiche-formula">
+      \(u(t) = U_{\max} \sin(2\pi f \cdot t)\)
+    </div>
+    <div class="fiche-formula">
+      \(i(t) = I_{\max} \sin(2\pi f \cdot t + \varphi)\)
+    </div>
+    <ul>
+      <li>\(f = 50\) Hz en France, \(T = 1/f = 0{,}02\) s</li>
+      <li>\(\varphi\) : déphasage entre tension et courant</li>
+    </ul>
+  </div>
+
+  <div class="fiche-card">
+    <h3>2. Valeurs efficaces</h3>
+    <div class="fiche-formula">
+      \(U = \dfrac{U_{\max}}{\sqrt{2}} \qquad I = \dfrac{I_{\max}}{\sqrt{2}}\)
+    </div>
+    <p>Ce sont les valeurs lues sur un voltmètre ou un ampèremètre en mode AC.</p>
+    <div class="astuce"><strong>Astuce :</strong> Secteur français : \(U = 230\) V (efficace), soit \(U_{\max} \approx 325\) V.</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 2 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>3. Déphasage \(\varphi\)</h3>
+    <div class="fiche-formula">
+      \(\varphi = \dfrac{\Delta t}{T} \times 360°\)
+    </div>
+    <ul>
+      <li>\(\varphi = 0\) : en phase (résistance pure)</li>
+      <li>\(\varphi < 0\) : courant en retard (moteur, bobine)</li>
+      <li>\(\varphi > 0\) : courant en avance (condensateur)</li>
+    </ul>
+    <div class="piege"><strong>Piège :</strong> \(\varphi\) est un angle (en ° ou rad), pas un temps.</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>4. Facteur de puissance</h3>
+    <div class="fiche-formula">
+      \(\cos \varphi = \dfrac{P}{S} = \dfrac{P}{U \cdot I}\)
+    </div>
+    <ul>
+      <li>\(\cos \varphi = 1\) : tout le courant est utile (résistance)</li>
+      <li>\(\cos \varphi < 1\) : une partie est « perdue » (moteur)</li>
+      <li>Valeur toujours entre 0 et 1</li>
+    </ul>
+    <div class="astuce"><strong>Astuce :</strong> EDF exige \(\cos \varphi \geq 0{,}93\) pour les installations professionnelles.</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 3 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>5. Puissance active P (en W)</h3>
+    <p>C'est la puissance <strong>réellement consommée</strong>, mesurée par un wattmètre et facturée.</p>
+    <div class="fiche-formula">
+      \(P = U \cdot I \cdot \cos \varphi\)
+    </div>
+    <div class="piege"><strong>Piège :</strong> Ne pas oublier \(\cos \varphi\) pour les moteurs ! \(P \neq U \times I\) en général.</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>6. Puissance apparente S (en VA)</h3>
+    <p>C'est le produit \(U \times I\) sans le facteur de puissance. Elle dimensionne les <strong>câbles et les protections</strong>.</p>
+    <div class="fiche-formula">
+      \(S = U \times I\)
+    </div>
+    <div class="piege"><strong>Piège :</strong> Ne pas confondre watts (W) et voltampères (VA). Les câbles sont dimensionnés sur S, pas sur P.</div>
+  </div>
+
+</div>
+
+<!-- ══════ VALEURS TYPIQUES ══════ -->
+<div class="fiche-grid">
+  <div class="fiche-card full">
+    <h3>Valeurs typiques de \(\cos \varphi\) en atelier</h3>
+    <table style="width:100%;font-size:.82rem;border-collapse:collapse;margin-top:4px">
+      <tr>
+        <td style="padding:4px 8px;background:#d1fae5;border-radius:4px 0 0 0">Résistance (radiateur, lampe)</td>
+        <td style="padding:4px 8px;font-weight:700;text-align:center">1,00</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px;background:#fef3c7">Moteur à pleine charge (toupie, dégauchisseuse)</td>
+        <td style="padding:4px 8px;font-weight:700;text-align:center">0,80 – 0,90</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px;background:#fee2e2;border-radius:0 0 0 4px">Moteur à vide (machine en rotation libre)</td>
+        <td style="padding:4px 8px;font-weight:700;text-align:center">0,20 – 0,40</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- ══════ RÉSUMÉ EXPRESS ══════ -->
+<div class="fiche-grid">
+  <div class="fiche-card full">
+    <h3>Résumé express — Méthode type</h3>
+    <table style="width:100%;font-size:.84rem;border-collapse:collapse">
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:4px 0 0 0;width:28px;text-align:center">1</td>
+        <td style="padding:5px 8px">Relever \(U\), \(I\) et \(\cos \varphi\) (ou \(\Delta t\) pour calculer \(\varphi\))</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">2</td>
+        <td style="padding:5px 8px">Calculer la <strong>puissance apparente</strong> : \(S = U \times I\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;text-align:center">3</td>
+        <td style="padding:5px 8px">Calculer la <strong>puissance active</strong> : \(P = U \times I \times \cos \varphi\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">4</td>
+        <td style="padding:5px 8px">Comparer P et S : la différence est l'énergie réactive (inutile mais qui circule)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:0 0 0 4px;text-align:center">5</td>
+        <td style="padding:5px 8px">Vérifier que \(\cos \varphi \geq 0{,}93\) (sinon envisager des condensateurs de compensation)</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</div><!-- /fiche -->
+
+<div class="nav-footer">
+  <a href="lecon.html" class="nav-btn">← Cours complet</a>
+  <a href="exercices.html" class="nav-btn">Exercices →</a>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

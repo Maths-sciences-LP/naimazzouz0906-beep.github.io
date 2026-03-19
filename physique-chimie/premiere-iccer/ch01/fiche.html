@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fiche résumé – Ch01 – Énergie et puissance électrique – 1ère ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>
+:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+
+/* ── Fiche layout ── */
+.fiche{max-width:780px;margin:0 auto}
+.fiche h1{font-size:1.3rem;text-align:center;margin-bottom:4px}
+.fiche .sous-titre{text-align:center;margin-bottom:16px}
+
+.fiche-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:600px){.fiche-grid{grid-template-columns:1fr}}
+
+.fiche-card{background:#fff;border:1px solid var(--p-border);border-radius:8px;padding:12px 14px}
+.fiche-card h3{font-size:.82rem;color:var(--p);margin:0 0 6px;text-transform:uppercase;letter-spacing:.5px}
+.fiche-card p,.fiche-card li{font-size:.84rem;line-height:1.5}
+.fiche-card ul{padding-left:16px;margin:0}
+.fiche-card li{margin-bottom:3px}
+
+.fiche-card.full{grid-column:1/-1}
+
+.fiche-formula{background:var(--p-bg);border-radius:6px;padding:8px 12px;margin:6px 0;text-align:center;font-size:.92rem}
+
+.piege{border-left:3px solid #e53e3e;background:#fff5f5;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.piege strong{color:#e53e3e}
+
+.astuce{border-left:3px solid #16a34a;background:#f0fff4;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.astuce strong{color:#16a34a}
+
+@media print{
+  body{font-size:11pt}
+  .fiche{max-width:100%}
+  .nb,.nav-footer{display:none}
+  .fiche-card{break-inside:avoid;border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-iccer.html" class="nb">&larr; Retour au sommaire</a>
+
+<div class="fiche">
+
+<h1>Fiche résumé &mdash; Énergie et puissance électrique</h1>
+<p class="sous-titre">Chapitre 1 | 1ère Bac Pro ICCER (Grpt 1) | Physique-Chimie</p>
+
+<!-- ══════ LIGNE 1 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>1. Rappels courant continu</h3>
+    <p>Le <strong>courant continu</strong> a un sens et une intensité constants.</p>
+    <ul>
+      <li><strong>Tension \(U\)</strong> (en V) : mesurée au <strong>voltmètre en dérivation</strong></li>
+      <li><strong>Intensité \(I\)</strong> (en A) : mesurée à l'<strong>ampèremètre en série</strong></li>
+    </ul>
+    <div class="piege"><strong>Piège :</strong> Ne jamais inverser les branchements : voltmètre en dérivation, ampèremètre en série.</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>2. Puissance électrique</h3>
+    <div class="fiche-formula">
+      \(P = U \times I\)
+    </div>
+    <p>\(P\) en watts (W), \(U\) en volts (V), \(I\) en ampères (A).</p>
+    <p>Formules dérivées :</p>
+    <div class="fiche-formula">
+      \(U = \dfrac{P}{I} \qquad I = \dfrac{P}{U}\)
+    </div>
+    <div class="astuce"><strong>Astuce :</strong> La puissance nominale (plaque signalétique) correspond au fonctionnement optimal de l'appareil.</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 2 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>3. Énergie électrique</h3>
+    <div class="fiche-formula">
+      \(E = P \times t\)
+    </div>
+    <ul>
+      <li>En <strong>joules</strong> : \(P\) en W et \(t\) en s</li>
+      <li>En <strong>kWh</strong> : \(P\) en kW et \(t\) en h</li>
+    </ul>
+    <div class="fiche-formula">
+      \(E = U \times I \times t\)
+    </div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>4. Joule et kilowattheure</h3>
+    <div class="fiche-formula">
+      \(1 \text{ kWh} = 3\,600\,000 \text{ J} = 3{,}6 \text{ MJ}\)
+    </div>
+    <div class="astuce"><strong>Astuce :</strong> Pour les calculs de coûts, travailler en kWh (P en kW, t en h) est bien plus pratique.</div>
+    <div class="piege"><strong>Piège :</strong> Ne pas oublier de convertir les minutes ou les heures en secondes si on calcule en joules.</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 3 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>5. Rendement</h3>
+    <div class="fiche-formula">
+      \(\eta = \dfrac{P_{\text{utile}}}{P_{\text{totale}}} = \dfrac{E_{\text{utile}}}{E_{\text{totale}}}\)
+    </div>
+    <p>Le rendement est <strong>sans unité</strong>, compris entre 0 et 1 (souvent en %).</p>
+    <p>Pour une pompe à chaleur, on utilise le <strong>COP</strong> :</p>
+    <div class="fiche-formula">
+      \(\text{COP} = \dfrac{P_{\text{thermique}}}{P_{\text{électrique}}}\)
+    </div>
+    <div class="piege"><strong>Piège :</strong> Le rendement est toujours &lt; 1. Le COP d'une PAC peut être &gt; 1 car elle puise de l'énergie dans l'air extérieur.</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>6. Applications professionnelles</h3>
+    <p><strong>Dimensionner une protection :</strong></p>
+    <ul>
+      <li>Calculer \(I = \dfrac{P}{U}\)</li>
+      <li>Choisir le disjoncteur au calibre normalisé supérieur</li>
+    </ul>
+    <p><strong>Estimer un coût d'énergie :</strong></p>
+    <ul>
+      <li>\(E_{\text{kWh}} = P_{\text{kW}} \times t_{\text{h}}\)</li>
+      <li>Coût = \(E \times \text{tarif}\)</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ══════ RÉSUMÉ EXPRESS ══════ -->
+<div class="fiche-grid">
+  <div class="fiche-card full">
+    <h3>Résumé express &mdash; Méthode type</h3>
+    <table style="width:100%;font-size:.84rem;border-collapse:collapse">
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:4px 0 0 0;width:28px;text-align:center">1</td>
+        <td style="padding:5px 8px">Lire la <strong>puissance nominale</strong> et la <strong>tension</strong> sur la plaque signalétique</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">2</td>
+        <td style="padding:5px 8px">Calculer l'<strong>intensité</strong> : \(I = \dfrac{P}{U}\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;text-align:center">3</td>
+        <td style="padding:5px 8px">Calculer l'<strong>énergie</strong> consommée : \(E = P \times t\) (en kWh si P en kW et t en h)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">4</td>
+        <td style="padding:5px 8px">Calculer le <strong>coût</strong> : Coût = \(E_{\text{kWh}} \times \text{tarif (€/kWh)}\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:0 0 0 4px;text-align:center">5</td>
+        <td style="padding:5px 8px">Choisir le <strong>disjoncteur</strong> au calibre normalisé supérieur à \(I\)</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</div><!-- /fiche -->
+
+<div class="nav-footer">
+  <a href="lecon.html" class="nav-btn">&larr; Cours complet</a>
+  <a href="exercices.html" class="nav-btn">Exercices &rarr;</a>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fiche résumé – Ch06 – Équilibre d'un solide en rotation – 1ère ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>
+:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
+
+/* ── Fiche layout ── */
+.fiche{max-width:780px;margin:0 auto}
+.fiche h1{font-size:1.3rem;text-align:center;margin-bottom:4px}
+.fiche .sous-titre{text-align:center;margin-bottom:16px}
+
+.fiche-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:600px){.fiche-grid{grid-template-columns:1fr}}
+
+.fiche-card{background:#fff;border:1px solid var(--p-border);border-radius:8px;padding:12px 14px}
+.fiche-card h3{font-size:.82rem;color:var(--p);margin:0 0 6px;text-transform:uppercase;letter-spacing:.5px}
+.fiche-card p,.fiche-card li{font-size:.84rem;line-height:1.5}
+.fiche-card ul{padding-left:16px;margin:0}
+.fiche-card li{margin-bottom:3px}
+
+.fiche-card.full{grid-column:1/-1}
+
+.fiche-formula{background:var(--p-bg);border-radius:6px;padding:8px 12px;margin:6px 0;text-align:center;font-size:.92rem}
+
+.piege{border-left:3px solid #e53e3e;background:#fff5f5;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.piege strong{color:#e53e3e}
+
+.astuce{border-left:3px solid #16a34a;background:#f0fff4;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.astuce strong{color:#16a34a}
+
+@media print{
+  body{font-size:11pt}
+  .fiche{max-width:100%}
+  .nb,.nav-footer{display:none}
+  .fiche-card{break-inside:avoid;border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-erama.html" class="nb">← Retour au sommaire</a>
+
+<div class="fiche">
+
+<h1>Fiche résumé — Équilibre d'un solide en rotation</h1>
+<p class="sous-titre">Chapitre 6 | 1ère Bac Pro ERA-MA | Physique-Chimie</p>
+
+<!-- ══════ LIGNE 1 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>1. Moment d'une force</h3>
+    <p>Le <strong>moment</strong> d'une force \(\vec{F}\) par rapport à un axe \(\Delta\) mesure sa capacité à faire tourner le solide autour de cet axe.</p>
+    <div class="fiche-formula">
+      \(M_{\Delta}(\vec{F}) = F \times d\)
+    </div>
+    <ul>
+      <li>\(M\) en <strong>N·m</strong></li>
+      <li>\(F\) en <strong>N</strong> (intensité de la force)</li>
+      <li>\(d\) en <strong>m</strong> (bras de levier)</li>
+    </ul>
+  </div>
+
+  <div class="fiche-card">
+    <h3>2. Bras de levier</h3>
+    <p>Le <strong>bras de levier</strong> \(d\) est la distance perpendiculaire entre l'axe de rotation et la droite d'action de la force.</p>
+    <div class="piege"><strong>Piège :</strong> Le bras de levier n'est pas toujours la distance entre l'axe et le point d'application. Ce n'est le cas que si la force est perpendiculaire au segment.</div>
+    <div class="astuce"><strong>Astuce :</strong> Si la droite d'action passe par l'axe, alors \(d = 0\) et \(M = 0\) : pas de rotation.</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 2 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>3. Signe du moment</h3>
+    <p>Par convention :</p>
+    <ul>
+      <li><strong>Positif (+)</strong> : rotation dans le sens antihoraire</li>
+      <li><strong>Négatif (−)</strong> : rotation dans le sens horaire</li>
+    </ul>
+    <div class="astuce"><strong>Retenir :</strong> Sens antihoraire = sens trigonométrique = positif.</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>4. Condition d'équilibre</h3>
+    <div class="fiche-formula">
+      \(\sum M_{\Delta} = 0\)
+    </div>
+    <p>La somme des moments qui font tourner dans un sens est égale à la somme des moments qui font tourner dans l'autre sens :</p>
+    <div class="fiche-formula">
+      \(F_1 \times d_1 = F_2 \times d_2\)
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 3 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>5. Centre de gravité</h3>
+    <p>Le <strong>centre de gravité</strong> G est le point d'application du poids total du solide.</p>
+    <ul>
+      <li>Rectangle : centre (intersection des diagonales)</li>
+      <li>Triangle : intersection des médianes (1/3 de la base)</li>
+      <li>Disque : centre du cercle</li>
+    </ul>
+    <p>On le détermine expérimentalement en suspendant l'objet par deux points et en traçant les verticales.</p>
+  </div>
+
+  <div class="fiche-card">
+    <h3>6. Basculement</h3>
+    <table style="width:100%;font-size:.82rem;border-collapse:collapse">
+      <tr>
+        <td style="padding:6px;background:#d1fae5;border-radius:6px;text-align:center;width:50%">
+          <strong>Stable</strong><br>
+          La verticale de G tombe <strong>dans</strong> la base de sustentation
+        </td>
+        <td style="width:8px"></td>
+        <td style="padding:6px;background:#fee2e2;border-radius:6px;text-align:center;width:50%">
+          <strong>Basculement</strong><br>
+          La verticale de G tombe <strong>hors</strong> de la base
+        </td>
+      </tr>
+    </table>
+    <div class="astuce" style="margin-top:8px"><strong>Retenir :</strong> Plus G est bas et la base large, plus le solide est stable.</div>
+  </div>
+
+</div>
+
+<!-- ══════ RÉSUMÉ EXPRESS ══════ -->
+<div class="fiche-grid">
+  <div class="fiche-card full">
+    <h3>Résumé express — Méthode type</h3>
+    <table style="width:100%;font-size:.84rem;border-collapse:collapse">
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:4px 0 0 0;width:28px;text-align:center">1</td>
+        <td style="padding:5px 8px"><strong>Identifier</strong> l'axe de rotation (pivot, charnière)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">2</td>
+        <td style="padding:5px 8px"><strong>Repérer</strong> toutes les forces et leur point d'application</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;text-align:center">3</td>
+        <td style="padding:5px 8px"><strong>Calculer</strong> le bras de levier de chaque force (distance perpendiculaire)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">4</td>
+        <td style="padding:5px 8px"><strong>Calculer</strong> chaque moment : \(M = F \times d\) et attribuer un signe (+/−)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;text-align:center">5</td>
+        <td style="padding:5px 8px"><strong>Écrire</strong> \(\sum M = 0\) et résoudre pour trouver l'inconnue</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</div><!-- /fiche -->
+
+<div class="nav-footer">
+  <a href="lecon.html" class="nav-btn">← Cours complet</a>
+  <a href="exercices.html" class="nav-btn">Exercices →</a>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

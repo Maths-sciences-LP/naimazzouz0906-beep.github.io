@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fiche résumé – Ch02 – Transport de l'énergie électrique – 1ère ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>
+:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+
+/* ── Fiche layout ── */
+.fiche{max-width:780px;margin:0 auto}
+.fiche h1{font-size:1.3rem;text-align:center;margin-bottom:4px}
+.fiche .sous-titre{text-align:center;margin-bottom:16px}
+
+.fiche-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:600px){.fiche-grid{grid-template-columns:1fr}}
+
+.fiche-card{background:#fff;border:1px solid var(--p-border);border-radius:8px;padding:12px 14px}
+.fiche-card h3{font-size:.82rem;color:var(--p);margin:0 0 6px;text-transform:uppercase;letter-spacing:.5px}
+.fiche-card p,.fiche-card li{font-size:.84rem;line-height:1.5}
+.fiche-card ul{padding-left:16px;margin:0}
+.fiche-card li{margin-bottom:3px}
+
+.fiche-card.full{grid-column:1/-1}
+
+.fiche-formula{background:var(--p-bg);border-radius:6px;padding:8px 12px;margin:6px 0;text-align:center;font-size:.92rem}
+
+.piege{border-left:3px solid #e53e3e;background:#fff5f5;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.piege strong{color:#e53e3e}
+
+.astuce{border-left:3px solid #16a34a;background:#f0fff4;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.astuce strong{color:#16a34a}
+
+@media print{
+  body{font-size:11pt}
+  .fiche{max-width:100%}
+  .nb,.nav-footer{display:none}
+  .fiche-card{break-inside:avoid;border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-iccer.html" class="nb">&larr; Retour au sommaire</a>
+
+<div class="fiche">
+
+<h1>Fiche résumé &mdash; Transport de l'énergie électrique</h1>
+<p class="sous-titre">Chapitre 2 | 1ère Bac Pro ICCER (Grpt 1) | Physique-Chimie</p>
+
+<!-- ══════ LIGNE 1 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>1. Réseau de distribution</h3>
+    <p>De la centrale à l'utilisateur, la tension est d'abord <strong>élevée</strong> puis progressivement <strong>abaissée</strong> :</p>
+    <ul>
+      <li><strong>Transport THT</strong> : 225 - 400 kV</li>
+      <li><strong>Répartition HT</strong> : 63 - 90 kV</li>
+      <li><strong>Distribution MT</strong> : 20 kV</li>
+      <li><strong>Livraison BT</strong> : 230 / 400 V</li>
+    </ul>
+    <p>Chaque changement de tension est réalisé par un <strong>transformateur</strong>.</p>
+  </div>
+
+  <div class="fiche-card">
+    <h3>2. Effet Joule</h3>
+    <p>L'<strong>effet Joule</strong> est l'échauffement d'un conducteur traversé par un courant.</p>
+    <div class="fiche-formula">
+      \(P_J = R \times I^2\)
+    </div>
+    <p>\(P_J\) en W, \(R\) en \(\Omega\), \(I\) en A.</p>
+    <div class="fiche-formula">
+      \(E_J = R \times I^2 \times t\)
+    </div>
+    <div class="piege"><strong>Piège :</strong> Les pertes dépendent du <strong>carré</strong> du courant : si \(I\) double, les pertes quadruplent !</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 2 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>3. Transport en haute tension</h3>
+    <p>Pour une même puissance \(P = U \times I\) :</p>
+    <ul>
+      <li>Haute tension \(\Rightarrow\) faible courant \(\Rightarrow\) <strong>pertes Joule réduites</strong></li>
+      <li>Basse tension \(\Rightarrow\) fort courant \(\Rightarrow\) pertes Joule importantes</li>
+    </ul>
+    <div class="astuce"><strong>Retenir :</strong> En multipliant la tension par 20, le courant est divisé par 20 et les pertes par \(20^2 = 400\).</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>4. Le transformateur</h3>
+    <p><strong>Rapport de transformation :</strong></p>
+    <div class="fiche-formula">
+      \(m = \dfrac{U_2}{U_1} = \dfrac{n_2}{n_1}\)
+    </div>
+    <ul>
+      <li>\(m > 1\) : transformateur <strong>élévateur</strong></li>
+      <li>\(m < 1\) : transformateur <strong>abaisseur</strong></li>
+    </ul>
+    <p><strong>Conservation de la puissance</strong> (idéal) :</p>
+    <div class="fiche-formula">
+      \(U_1 \times I_1 = U_2 \times I_2\)
+    </div>
+    <div class="astuce"><strong>Astuce :</strong> Si la tension augmente, le courant diminue proportionnellement.</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 3 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>5. Section de câble et échauffement</h3>
+    <p>Un câble de section trop faible provoque :</p>
+    <ul>
+      <li>Des <strong>pertes Joule</strong> importantes</li>
+      <li>Un <strong>échauffement</strong> dangereux (risque d'incendie)</li>
+      <li>Une <strong>chute de tension</strong> aux bornes de l'appareil</li>
+    </ul>
+    <div class="piege"><strong>Piège :</strong> Un installateur thermique doit toujours vérifier que la section de câble est adaptée à la puissance de l'appareil raccordé.</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>6. Impact environnemental</h3>
+    <p>Les pertes en ligne du réseau français : environ <strong>11 TWh/an</strong> (2,5 % de la production).</p>
+    <p>Réduire les pertes permet de :</p>
+    <ul>
+      <li>Diminuer la production nécessaire</li>
+      <li>Réduire les émissions de CO\(_2\)</li>
+      <li>Limiter les coûts pour le consommateur</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ══════ RÉSUMÉ EXPRESS ══════ -->
+<div class="fiche-grid">
+  <div class="fiche-card full">
+    <h3>Résumé express &mdash; L'essentiel</h3>
+    <table style="width:100%;font-size:.84rem;border-collapse:collapse">
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:4px 0 0 0;width:28px;text-align:center">1</td>
+        <td style="padding:5px 8px">L'électricité est transportée en <strong>très haute tension</strong> pour réduire les pertes</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">2</td>
+        <td style="padding:5px 8px">Les pertes Joule suivent \(P_J = R \times I^2\) : elles dépendent du <strong>carré du courant</strong></td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;text-align:center">3</td>
+        <td style="padding:5px 8px">Les <strong>transformateurs</strong> élèvent ou abaissent la tension entre les niveaux du réseau</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">4</td>
+        <td style="padding:5px 8px">Pour un transfo idéal : \(U_1 \times I_1 = U_2 \times I_2\) (puissance conservée)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:0 0 0 4px;text-align:center">5</td>
+        <td style="padding:5px 8px">Bien dimensionner les <strong>câbles</strong> pour limiter l'échauffement et la chute de tension</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</div><!-- /fiche -->
+
+<div class="nav-footer">
+  <a href="lecon.html" class="nav-btn">&larr; Cours complet</a>
+  <a href="exercices.html" class="nav-btn">Exercices &rarr;</a>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

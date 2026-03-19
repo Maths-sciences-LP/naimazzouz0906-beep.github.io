@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fiche résumé – Ch10 – Propagation d'un signal sonore – 1ère ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>
+:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
+
+/* ── Fiche layout ── */
+.fiche{max-width:780px;margin:0 auto}
+.fiche h1{font-size:1.3rem;text-align:center;margin-bottom:4px}
+.fiche .sous-titre{text-align:center;margin-bottom:16px}
+
+.fiche-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:600px){.fiche-grid{grid-template-columns:1fr}}
+
+.fiche-card{background:#fff;border:1px solid var(--p-border);border-radius:8px;padding:12px 14px}
+.fiche-card h3{font-size:.82rem;color:var(--p);margin:0 0 6px;text-transform:uppercase;letter-spacing:.5px}
+.fiche-card p,.fiche-card li{font-size:.84rem;line-height:1.5}
+.fiche-card ul{padding-left:16px;margin:0}
+.fiche-card li{margin-bottom:3px}
+
+.fiche-card.full{grid-column:1/-1}
+
+.fiche-formula{background:var(--p-bg);border-radius:6px;padding:8px 12px;margin:6px 0;text-align:center;font-size:.92rem}
+
+.piege{border-left:3px solid #e53e3e;background:#fff5f5;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.piege strong{color:#e53e3e}
+
+.astuce{border-left:3px solid #16a34a;background:#f0fff4;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.astuce strong{color:#16a34a}
+
+@media print{
+  body{font-size:11pt}
+  .fiche{max-width:100%}
+  .nb,.nav-footer{display:none}
+  .fiche-card{break-inside:avoid;border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-erama.html" class="nb">← Retour au sommaire</a>
+
+<div class="fiche">
+
+<h1>Fiche résumé — Propagation d'un signal sonore</h1>
+<p class="sous-titre">Chapitre 10 | 1ère Bac Pro ERA-MA | Physique-Chimie</p>
+
+<!-- ══════ LIGNE 1 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>1. Nature du son</h3>
+    <p>Le <strong>son</strong> est une onde mécanique : il nécessite un <strong>milieu matériel</strong> pour se propager (air, eau, bois, acier). Il ne se propage <strong>pas dans le vide</strong>.</p>
+    <div class="piege"><strong>Piège :</strong> Ne pas confondre le son (onde mécanique, besoin de matière) avec la lumière (onde EM, se propage dans le vide).</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>2. Vitesse du son</h3>
+    <table style="width:100%;font-size:.82rem;border-collapse:collapse">
+      <tr><td style="padding:4px 6px;background:#d1fae5;border-radius:4px 0 0 0"><strong>Air (20 °C)</strong></td><td style="padding:4px 6px"><strong>340 m/s</strong></td></tr>
+      <tr><td style="padding:4px 6px"><strong>Eau</strong></td><td style="padding:4px 6px">1 500 m/s</td></tr>
+      <tr><td style="padding:4px 6px;background:#d1fae5"><strong>Bois (chêne)</strong></td><td style="padding:4px 6px">3 500 – 4 000 m/s</td></tr>
+      <tr><td style="padding:4px 6px;border-radius:0 0 0 4px"><strong>Acier</strong></td><td style="padding:4px 6px">5 000 m/s</td></tr>
+    </table>
+    <div class="astuce" style="margin-top:6px"><strong>Retenir :</strong> Le son va plus vite dans les solides que dans les liquides, et plus vite dans les liquides que dans les gaz.</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 2 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>3. Fréquence, période, longueur d'onde</h3>
+    <div class="fiche-formula">
+      \(\lambda = c_{\text{son}} \times T = \dfrac{c_{\text{son}}}{f}\)
+    </div>
+    <ul>
+      <li>\(\lambda\) en <strong>m</strong>, \(c_{\text{son}}\) en <strong>m/s</strong></li>
+      <li>\(T\) en <strong>s</strong>, \(f\) en <strong>Hz</strong></li>
+      <li>\(f = 1/T\) et \(T = 1/f\)</li>
+    </ul>
+    <div class="astuce"><strong>Domaine audible :</strong> 20 Hz (grave) à 20 000 Hz (aigu). En dessous : infrasons. Au-dessus : ultrasons.</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>4. Niveau sonore (dB)</h3>
+    <div class="fiche-formula">
+      \(L = 10 \times \log\!\left(\dfrac{I}{I_0}\right)\)
+    </div>
+    <p>avec \(I_0 = 10^{-12}\) W/m²</p>
+    <p>L'échelle est <strong>logarithmique</strong> :</p>
+    <ul>
+      <li>+3 dB = intensité x 2</li>
+      <li>+10 dB = intensité x 10</li>
+    </ul>
+    <div class="piege"><strong>Piège :</strong> 90 dB n'est pas « un peu plus » que 80 dB : c'est une intensité <strong>10 fois</strong> plus grande !</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 3 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>5. Seuils et protection</h3>
+    <table style="width:100%;font-size:.82rem;border-collapse:collapse">
+      <tr><td style="padding:4px 6px;background:#d1fae5;border-radius:4px 0 0 0">0 dB</td><td style="padding:4px 6px">Seuil d'audibilité</td></tr>
+      <tr><td style="padding:4px 6px;background:#fef3c7"><strong>85 dB</strong></td><td style="padding:4px 6px"><strong>Seuil de danger</strong> (8h)</td></tr>
+      <tr><td style="padding:4px 6px;background:#fee2e2">95–105 dB</td><td style="padding:4px 6px">Scie circulaire, raboteuse</td></tr>
+      <tr><td style="padding:4px 6px;background:#fee2e2;border-radius:0 0 0 4px"><strong>120 dB</strong></td><td style="padding:4px 6px"><strong>Seuil de douleur</strong></td></tr>
+    </table>
+    <p style="font-size:.82rem;margin-top:6px"><strong>3 niveaux de protection :</strong> a la source (capotage), sur le trajet (isolation), au niveau du recepteur (bouchons, casque).</p>
+  </div>
+
+  <div class="fiche-card">
+    <h3>6. Atténuation et isolation</h3>
+    <p><strong>Atténuation avec la distance :</strong></p>
+    <div class="fiche-formula">
+      Doubler la distance = <strong>−6 dB</strong>
+    </div>
+    <p><strong>Isolation phonique</strong> (en agencement) :</p>
+    <ul>
+      <li><strong>Masse</strong> : paroi lourde = meilleure atténuation</li>
+      <li><strong>Désolidarisation</strong> : double paroi avec lame d'air (masse-ressort-masse)</li>
+      <li><strong>Absorption</strong> : matériaux poreux (laine de bois, laine de roche)</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ══════ RÉSUMÉ EXPRESS ══════ -->
+<div class="fiche-grid">
+  <div class="fiche-card full">
+    <h3>Résumé express — Méthode type</h3>
+    <table style="width:100%;font-size:.84rem;border-collapse:collapse">
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:4px 0 0 0;width:28px;text-align:center">1</td>
+        <td style="padding:5px 8px"><strong>Identifier</strong> le milieu de propagation et la vitesse du son associée</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">2</td>
+        <td style="padding:5px 8px"><strong>Convertir</strong> les unités : \(f\) en Hz, \(T\) en s, \(\lambda\) en m</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;text-align:center">3</td>
+        <td style="padding:5px 8px"><strong>Appliquer</strong> : \(\lambda = c_{\text{son}} / f\) ou \(d = c_{\text{son}} \times t\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">4</td>
+        <td style="padding:5px 8px">Pour le niveau sonore : utiliser \(L = 10 \log(I/I_0)\) ou les règles +3 dB / +10 dB</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:0 0 0 4px;text-align:center">5</td>
+        <td style="padding:5px 8px"><strong>Comparer</strong> aux seuils : 85 dB (danger), 120 dB (douleur)</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</div><!-- /fiche -->
+
+<div class="nav-footer">
+  <a href="lecon.html" class="nav-btn">← Cours complet</a>
+  <a href="exercices.html" class="nav-btn">Exercices →</a>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fiche résumé – Ch05 – Minimiser les transferts thermiques – 1ère ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>
+:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
+
+/* ── Fiche layout ── */
+.fiche{max-width:780px;margin:0 auto}
+.fiche h1{font-size:1.3rem;text-align:center;margin-bottom:4px}
+.fiche .sous-titre{text-align:center;margin-bottom:16px}
+
+.fiche-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:600px){.fiche-grid{grid-template-columns:1fr}}
+
+.fiche-card{background:#fff;border:1px solid var(--p-border);border-radius:8px;padding:12px 14px}
+.fiche-card h3{font-size:.82rem;color:var(--p);margin:0 0 6px;text-transform:uppercase;letter-spacing:.5px}
+.fiche-card p,.fiche-card li{font-size:.84rem;line-height:1.5}
+.fiche-card ul{padding-left:16px;margin:0}
+.fiche-card li{margin-bottom:3px}
+
+.fiche-card.full{grid-column:1/-1}
+
+.fiche-formula{background:var(--p-bg);border-radius:6px;padding:8px 12px;margin:6px 0;text-align:center;font-size:.92rem}
+
+.piege{border-left:3px solid #e53e3e;background:#fff5f5;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.piege strong{color:#e53e3e}
+
+.astuce{border-left:3px solid #16a34a;background:#f0fff4;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
+.astuce strong{color:#16a34a}
+
+@media print{
+  body{font-size:11pt}
+  .fiche{max-width:100%}
+  .nb,.nav-footer{display:none}
+  .fiche-card{break-inside:avoid;border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-erama.html" class="nb">← RETOUR SOMMAIRE ERA-MA (Grpt 3)</a>
+
+<div class="fiche">
+
+<h1>Fiche résumé — Minimiser les transferts thermiques</h1>
+<p class="sous-titre">Chapitre 5 | 1ère Bac Pro ERA-MA (Grpt 3) | Physique-Chimie</p>
+
+<!-- ══════ LIGNE 1 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>1. Conductivité thermique \(\lambda\)</h3>
+    <p>Caractérise la capacité d'un matériau à conduire la chaleur. Unité : <strong>W/(m.K)</strong>.</p>
+    <ul>
+      <li>\(\lambda\) petit → bon <strong>isolant</strong></li>
+      <li>\(\lambda\) grand → bon <strong>conducteur</strong></li>
+    </ul>
+    <table style="width:100%;font-size:.8rem;border-collapse:collapse;margin-top:6px">
+      <tr><td style="padding:3px 6px;background:#d1fae5">Mousse polyuréthane</td><td style="padding:3px 6px;text-align:right">0,022</td></tr>
+      <tr><td style="padding:3px 6px;background:#f0fff4">Laine de verre</td><td style="padding:3px 6px;text-align:right">0,032</td></tr>
+      <tr><td style="padding:3px 6px;background:#f0fff4">Polystyrène</td><td style="padding:3px 6px;text-align:right">0,035</td></tr>
+      <tr><td style="padding:3px 6px;background:#fef3c7">Bois résineux</td><td style="padding:3px 6px;text-align:right">0,12</td></tr>
+      <tr><td style="padding:3px 6px;background:#fee2e2">Béton</td><td style="padding:3px 6px;text-align:right">1,7</td></tr>
+    </table>
+  </div>
+
+  <div class="fiche-card">
+    <h3>2. Conductance thermique G</h3>
+    <p>Mesure la facilité de passage de la chaleur à travers une plaque plane.</p>
+    <div class="fiche-formula">
+      \(G = \dfrac{\lambda \cdot S}{e}\) <small>(en W/K)</small>
+    </div>
+    <ul>
+      <li>\(\lambda\) : conductivité en W/(m.K)</li>
+      <li>\(S\) : surface en m²</li>
+      <li>\(e\) : épaisseur en <strong>mètres</strong></li>
+    </ul>
+    <div class="piege"><strong>Piège :</strong> Toujours convertir l'épaisseur en mètres (10 cm = 0,10 m).</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 2 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>3. Flux thermique \(\Phi\)</h3>
+    <p>C'est la <strong>puissance</strong> (en watts) qui traverse la paroi.</p>
+    <div class="fiche-formula">
+      \(\Phi = G \cdot (T_1 - T_2)\) <small>(en W)</small>
+    </div>
+    <div class="fiche-formula">
+      \(\Phi = \dfrac{\lambda \cdot S}{e} \cdot (T_1 - T_2)\)
+    </div>
+    <div class="piege"><strong>Piège :</strong> \(\Phi\) est en watts (puissance), pas en joules (énergie). Pour l'énergie perdue : \(E = \Phi \times t\).</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>4. Influence des paramètres</h3>
+    <table style="width:100%;font-size:.82rem;border-collapse:collapse">
+      <tr style="background:var(--p);color:#fff">
+        <th style="padding:4px 6px;text-align:left">Si on augmente...</th>
+        <th style="padding:4px 6px;text-align:center">G</th>
+        <th style="padding:4px 6px;text-align:center">Isolation</th>
+      </tr>
+      <tr>
+        <td style="padding:4px 6px">\(\lambda\) (conductivité)</td>
+        <td style="padding:4px 6px;text-align:center;color:#e53e3e;font-weight:700">↑</td>
+        <td style="padding:4px 6px;text-align:center;color:#e53e3e;font-weight:700">↓</td>
+      </tr>
+      <tr style="background:#f8fafc">
+        <td style="padding:4px 6px">\(S\) (surface)</td>
+        <td style="padding:4px 6px;text-align:center;color:#e53e3e;font-weight:700">↑</td>
+        <td style="padding:4px 6px;text-align:center;color:#e53e3e;font-weight:700">↓</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 6px">\(e\) (épaisseur)</td>
+        <td style="padding:4px 6px;text-align:center;color:#16a34a;font-weight:700">↓</td>
+        <td style="padding:4px 6px;text-align:center;color:#16a34a;font-weight:700">↑</td>
+      </tr>
+    </table>
+    <div class="astuce"><strong>Retenir :</strong> Pour bien isoler, choisir un \(\lambda\) faible et une épaisseur \(e\) grande.</div>
+  </div>
+
+</div>
+
+<!-- ══════ LIGNE 3 ══════ -->
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>5. Résistance thermique R</h3>
+    <p>Inverse de la conductance : plus R est grand, meilleure est l'isolation.</p>
+    <div class="fiche-formula">
+      \(R = \dfrac{1}{G} = \dfrac{e}{\lambda \cdot S}\) <small>(en K/W)</small>
+    </div>
+    <p><strong>Parois superposées :</strong></p>
+    <div class="fiche-formula">
+      \(R_{\text{total}} = R_1 + R_2 + R_3 + \ldots\)
+    </div>
+    <div class="piege"><strong>Piège :</strong> Ne pas confondre conductance G (W/K) et résistance R (K/W) : ce sont des inverses.</div>
+  </div>
+
+  <div class="fiche-card">
+    <h3>6. Les premiers centimètres comptent le plus</h3>
+    <p>Le gain d'isolation est <strong>décroissant</strong> avec l'épaisseur :</p>
+    <ul>
+      <li>Passer de 0 à 6 cm d'isolant : gain <strong>majeur</strong></li>
+      <li>Passer de 6 à 12 cm : gain encore important</li>
+      <li>Au-delà de 14 cm : gain de plus en plus faible</li>
+    </ul>
+    <div class="astuce"><strong>Astuce :</strong> Ne pas confondre conductivité \(\lambda\) (propriété du matériau) et conductance G (propriété de la paroi : dépend aussi de S et e).</div>
+  </div>
+
+</div>
+
+<!-- ══════ RÉSUMÉ EXPRESS ══════ -->
+<div class="fiche-grid">
+  <div class="fiche-card full">
+    <h3>Résumé express — Méthode type</h3>
+    <table style="width:100%;font-size:.84rem;border-collapse:collapse">
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:4px 0 0 0;width:28px;text-align:center">1</td>
+        <td style="padding:5px 8px">Repérer \(\lambda\), \(S\), \(e\) et les températures \(T_1\), \(T_2\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">2</td>
+        <td style="padding:5px 8px">Convertir \(e\) en <strong>mètres</strong> et \(S\) en <strong>m²</strong></td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;text-align:center">3</td>
+        <td style="padding:5px 8px">Calculer la conductance : \(G = \dfrac{\lambda \cdot S}{e}\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p-bg);font-weight:700;text-align:center">4</td>
+        <td style="padding:5px 8px">Calculer le flux thermique : \(\Phi = G \times (T_1 - T_2)\)</td>
+      </tr>
+      <tr>
+        <td style="padding:5px 8px;background:var(--p);color:#fff;font-weight:700;border-radius:0 0 0 4px;text-align:center">5</td>
+        <td style="padding:5px 8px">Si besoin, calculer l'énergie perdue : \(E = \Phi \times t\) (puis le coût)</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</div><!-- /fiche -->
+
+<div class="nav-footer">
+  <a href="lecon.html" class="nav-btn">← Cours complet</a>
+  <a href="exercices.html" class="nav-btn">Exercices →</a>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
