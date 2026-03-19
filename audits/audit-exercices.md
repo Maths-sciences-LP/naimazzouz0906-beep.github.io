@@ -1,7 +1,7 @@
 # Audit Pédagogique des Exercices
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-03-19 (bilan Seconde)
+**Dernière mise à jour** : 2026-03-19 (vérification détaillée Seconde)
 **Périmètre** : exercices.html, ds.html, qcm.html et interro.html — 8 sections (maths seconde/première/terminale, physique-chimie seconde/première-iccer/première-era/terminale-iccer/terminale-era)
 **Méthode** : échantillonnage de 2-3 fichiers exercices.html et 2-3 fichiers ds.html par section, lecture et analyse qualitative.
 
@@ -194,35 +194,47 @@ Les corrections utilisent deux patterns différents selon les sections :
 
 Les deux fonctionnent, mais l'incohérence peut créer de la confusion lors de la maintenance.
 
-### 6. Corrections massivement incomplètes
+### 6. Corrections incomplètes dans les DS
 
-**Gravité : CRITIQUE**
+**Gravité : HAUTE**
 
-L'inventaire complet (2026-03-16) révèle un taux de couverture global de **41.2%** (1 433 `.corr` pour 3 479 `.exo`), soit **2 046 corrections manquantes**.
+L'inventaire initial (2026-03-16) donnait un taux de 41.2% mais le comptage incluait des sous-éléments (sous-questions, labels `.exo-num`). La **vérification détaillée du 2026-03-19** par conteneurs principaux donne des résultats plus fiables.
 
-| Section | `.exo` | `.corr` | Écart | Couverture |
-|---|---|---|---|---|
-| Maths Seconde | 573 | 422 | 151 | 73.6% |
-| Maths Première | 219 | 85 | 134 | 38.8% |
-| Maths Terminale | 338 | 169 | 169 | 50.0% |
-| Maths BTS | 330 | 115 | 215 | 34.8% |
-| PC Seconde | 738 | 221 | 517 | 29.9% |
-| PC Première ICCER | 294 | 96 | 198 | 32.7% |
-| **PC Première ERA** | **99** | **99** | **0** | **100%** |
-| PC Terminale ICCER | 504 | 126 | 378 | 25.0% |
-| PC Terminale ERA | 384 | 96 | 288 | 25.0% |
-| **TOTAL** | **3 479** | **1 433** | **2 046** | **41.2%** |
+**Méthodologie corrigée** : compter les blocs conteneurs `.exo` (exercices.html) et `.partie` (ds.html) vs les blocs `.corr`.
 
-**Pires fichiers individuels (écart > 50) :**
-- `physique-chimie/terminale-iccer/ch03/exercices.html` : 84 exo / 21 corr (écart 63)
-- `physique-chimie/seconde/ch07/exercices.html` : 19 exo / 15 corr (écart 4) — **corrigé 2026-03-17** (comptage initial erroné, incluait les simulations et sous-questions)
-- `physique-chimie/seconde/ch05/exercices.html` : 80 exo / 20 corr (écart 60)
-- `physique-chimie/terminale-iccer/ch07/exercices.html` : 72 exo / 18 corr (écart 54)
-- `maths/bts/ch01/exercices.html` : 68 exo / 17 corr (écart 51)
+#### Seconde — Vérification détaillée (2026-03-19)
+
+**Exercices (exercices.html)** :
+
+| Section | `.exo` | `.corr` | Couverture |
+|---|---|---|---|
+| Maths Seconde | 553 | 455 | **82%** |
+| PC Seconde | 173 | 177 | **~100%** |
+
+**DS (ds.html)** :
+
+| Section | `.partie` | `.corr` | Couverture |
+|---|---|---|---|
+| Maths Seconde | 402 | 134 | **33%** |
+| PC Seconde | 0 (structure `.q`) | 105 | N/A |
+
+**Détail exercices Maths Seconde** (chapitres à compléter) :
+
+| Chapitre | `.exo` | `.corr` | Manquant |
+|---|---|---|---|
+| ch01 | 39 | 12 | 27 |
+| ch03 | 42 | 13 | 29 |
+| ch09 | 45 | 18 | 27 |
+| ch11 | 45 | 18 | 27 |
+| ch12 | 45 | 14 | 31 |
+| ch13 | 42 | 16 | 26 |
+| ch14 | 42 | 16 | 26 |
+
+**Détail exercices PC Seconde** : seul ch07 a 4 corrections manquantes (29 exo / 25 corr). Ch10, ch11, ch14 ont plus de `.corr` que de `.exo` (corrections multi-parties).
 
 **Section exemplaire** : PC Première ERA (100% de couverture sur 10 chapitres).
 
-**Anomalies** : maths/seconde/ch07 et ch08 ont plus de `.corr` que de `.exo` (structure HTML à vérifier).
+**Conclusion** : le vrai problème est la **couverture des corrections dans les DS** (33% en maths Seconde), pas dans les exercices (82-100%).
 
 ---
 
@@ -252,6 +264,7 @@ L'inventaire complet (2026-03-16) révèle un taux de couverture global de **41.
 - **2026-03-18** : Créé `maths/terminale/ch02/interro.html` — Interro différenciée (3×5 questions socle/standard/appro, barème, corrections)
 - **2026-03-18** : Créé 46 QCMs différenciés (3×15 questions) : maths/seconde (14/14), maths/premiere (9/9), maths/terminale (10/11, ch02 existant), physique-chimie/seconde (13/14, ch07 existant). Total : 48/84 QCMs (57%)
 - **2026-03-19** : Bilan Seconde — 28/28 interro.html créées (14 maths + 14 PC), toutes différenciées avec diff.js. Seconde 100% complète sur les 6 types de pages. Différenciation : 168 blocs maths + 169 blocs PC, distribution équilibrée socle/standard/appro
+- **2026-03-19** : Vérification détaillée des corrections Seconde — méthodologie corrigée (conteneurs principaux au lieu de sous-éléments). Exercices : maths 82% (553/455), PC ~100% (173/177). DS : maths 33% (402/134). Le vrai problème est la couverture DS, pas exercices
 
 ---
 

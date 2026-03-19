@@ -1,7 +1,7 @@
 # Audit Global du Site Pédagogique
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-03-19 (bilan Seconde)
+**Dernière mise à jour** : 2026-03-19 (vérification détaillée Seconde)
 **Périmètre** : ensemble du site maths-sciences-lp.github.io
 
 ---
@@ -60,11 +60,14 @@ La **Seconde est la section modèle du site** — la seule avec une couverture d
 | Blocs diff-socle/standard/appro | 168 | 169 | **337** |
 | Simulations (`simulations/`) | 15 | 17 | **32** |
 | Couverture programme officiel | 100% | 100% | **100%** |
-| Corrections (.corr/.exo) | 73.6% | 29.9% | **48.3%** |
+| Corrections exercices (.corr/.exo) | 82% (455/553) | ~100% (177/173) | **88%** |
+| Corrections DS (.corr/.partie) | 33% (134/402) | 26% (105/402) | **30%** |
 
 **Points forts** : différenciation systématique et équilibrée, 32 simulations de qualité, conformité programme 100%, règle sigles filière respectée.
 
-**Axes d'amélioration** : corrections PC Seconde (29.9%), ajout `.situation` en PC Seconde, CSS résiduel maths ch02-ch05.
+**Axes d'amélioration** : corrections DS (30% globalement), ajout `.situation` aux 695 contextes pro non tagués en PC Seconde, anomalie CSS `niv1` dans ch03.
+
+**Note méthodologique (2026-03-19)** : les taux de 73.6% (maths) et 29.9% (PC) de l'audit initial comptaient des sous-éléments (sous-questions, labels). La vérification par conteneurs principaux donne des chiffres plus fiables : exercices ~88%, DS ~30%.
 
 ---
 

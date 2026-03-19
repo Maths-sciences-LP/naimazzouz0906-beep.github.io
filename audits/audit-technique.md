@@ -1,7 +1,7 @@
 # Audit Technique
 
 **Date** : 2026-03-16
-**Derniere mise a jour** : 2026-03-19 (bilan Seconde)
+**Derniere mise a jour** : 2026-03-19 (verification detaillee Seconde)
 **Perimetre** : HTML, CSS, JavaScript, chemins, accessibilite, simulations, performances
 **Nombre total de fichiers HTML audites** : 477 (191 maths, 180 physique-chimie, 63 simulations, 43 autres)
 
@@ -86,6 +86,8 @@ Aucune redefinition inline des classes `.def`, `.prop`, `.att`, `.meth`, `.reten
 20+ fichiers en `physique-chimie/seconde/` et quelques fichiers en `physique-chimie/terminale-iccer/` contiennent du CSS inline specifique (grilles de pictogrammes, styles de cartes EPI, etc.). Ces classes sont uniques a ces pages et ne sont pas des doublons de `styles.css` — **acceptable**.
 
 **Recommandation basse priorite** : si certaines classes comme `.picto-grid`, `.epi-grid` sont reutilisees dans plusieurs pages, envisager de les centraliser dans `styles.css`.
+
+**Verification detaillee maths/seconde/ch02-ch05 (2026-03-19)** : Les 25 fichiers HTML de ces 4 chapitres ont ete audites en profondeur. **Aucune classe non-standard residuelle** (`def-box`, `exemple`, `methode`, `attention`, `container`) n'a ete trouvee — la correction du 2026-03-16 est confirmee. Tous les `<style>` inline contiennent uniquement des classes specifiques aux pages (interactivite, competences, fiches). **Seule anomalie** : `maths/seconde/ch03/exercices.html` utilise `.niveau-header.niv1/niv2/niv3/niv4` au lieu de `.niveau-header.niveau-1/niveau-2/niveau-3/niveau-4` (forme raccourcie non-standard).
 
 ---
 
@@ -235,6 +237,7 @@ Le site repose sur des liens `<a>` et boutons `<button>` standards, naturellemen
 - **2026-03-17** : Remplace .hprog (classe inline) par .hors-prog (classe centralisée dans styles.css) dans maths/terminale/ch02/lecon.html
 - **2026-03-17** : Ajoute « Terminale Bac Pro » aux balises `<title>` de maths/terminale/ch02/ (lecon.html, exercices.html, ds.html)
 - **2026-03-19** : Bilan technique Seconde — 170 fichiers HTML, 84/84 fichiers exercices/ds/interro avec diff.js, 0 chemin absolu, 0 lien cassé. Conformité technique Seconde : 95/100
+- **2026-03-19** : Verification detaillee CSS maths/seconde/ch02-ch05 (25 fichiers) — aucune classe non-standard residuelle. Correction 2026-03-16 confirmee. Anomalie mineure : `niv1` au lieu de `niveau-1` dans ch03/exercices.html
 
 ---
 
