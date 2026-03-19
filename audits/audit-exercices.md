@@ -1,7 +1,7 @@
 # Audit Pédagogique des Exercices
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-03-18
+**Dernière mise à jour** : 2026-03-19
 **Périmètre** : exercices.html, ds.html, qcm.html et interro.html — 8 sections (maths seconde/première/terminale, physique-chimie seconde/première-iccer/première-era/terminale-iccer/terminale-era)
 **Méthode** : échantillonnage de 2-3 fichiers exercices.html et 2-3 fichiers ds.html par section, lecture et analyse qualitative.
 
@@ -194,35 +194,99 @@ Les corrections utilisent deux patterns différents selon les sections :
 
 Les deux fonctionnent, mais l'incohérence peut créer de la confusion lors de la maintenance.
 
-### 6. Corrections massivement incomplètes
+### 6. Comptage automatique `.exo` / `.corr` non fiable — RECTIFICATIF
 
-**Gravité : CRITIQUE**
+**Gravité : BASSE (problème méthodologique, pas de contenu manquant en Seconde)**
 
-L'inventaire complet (2026-03-16) révèle un taux de couverture global de **41.2%** (1 433 `.corr` pour 3 479 `.exo`), soit **2 046 corrections manquantes**.
+**RECTIFICATIF 2026-03-19** : L'inventaire automatique du 2026-03-16 (basé sur le comptage des classes CSS `.exo` et `.corr`) était **massivement erroné** pour les sections Seconde. Le comptage CSS comptait les sous-questions, items QCM, `<div class="corr">` imbriquées et `<details class="corr-wrap">` comme des éléments séparés, produisant des faux positifs.
 
-| Section | `.exo` | `.corr` | Écart | Couverture |
+**Audit chapitre par chapitre (lecture manuelle, 2026-03-19) :**
+
+#### Maths Seconde — 191 exercices, 191 corrigés (100%)
+
+| Chapitre | Titre | Exercices | Corrigés | Manquants |
 |---|---|---|---|---|
-| Maths Seconde | 573 | 422 | 151 | 73.6% |
-| Maths Première | 219 | 85 | 134 | 38.8% |
-| Maths Terminale | 338 | 169 | 169 | 50.0% |
-| Maths BTS | 330 | 115 | 215 | 34.8% |
-| PC Seconde | 738 | 221 | 517 | 29.9% |
-| PC Première ICCER | 294 | 96 | 198 | 32.7% |
-| **PC Première ERA** | **99** | **99** | **0** | **100%** |
-| PC Terminale ICCER | 504 | 126 | 378 | 25.0% |
-| PC Terminale ERA | 384 | 96 | 288 | 25.0% |
-| **TOTAL** | **3 479** | **1 433** | **2 046** | **41.2%** |
+| ch01 | Proportionnalité et pourcentages | 13 | 13 | 0 |
+| ch02 | Statistiques à une variable | 11 | 11 | 0 |
+| ch03 | Indicateurs statistiques | 14 | 14 | 0 |
+| ch04 | Probabilités et fluctuation des fréquences | 13 | 13 | 0 |
+| ch05 | Équations du premier degré | 12 | 12 | 0 |
+| ch06 | Inéquations du premier degré | 12 | 12 | 0 |
+| ch07 | Notion de fonction | 15 | 15 | 0 |
+| ch08 | Fonction linéaire et proportionnalité | 14 | 14 | 0 |
+| ch09 | Fonction affine | 15 | 15 | 0 |
+| ch10 | Fonction carré et variations | 14 | 14 | 0 |
+| ch11 | Figures planes : périmètres et aires | 15 | 15 | 0 |
+| ch12 | Théorème de Pythagore et réciproque | 15 | 15 | 0 |
+| ch13 | Théorème de Thalès dans le triangle | 14 | 14 | 0 |
+| ch14 | Solides, volumes et agrandissement | 14 | 14 | 0 |
 
-**Pires fichiers individuels (écart > 50) :**
-- `physique-chimie/terminale-iccer/ch03/exercices.html` : 84 exo / 21 corr (écart 63)
-- `physique-chimie/seconde/ch07/exercices.html` : 19 exo / 15 corr (écart 4) — **corrigé 2026-03-17** (comptage initial erroné, incluait les simulations et sous-questions)
-- `physique-chimie/seconde/ch05/exercices.html` : 80 exo / 20 corr (écart 60)
-- `physique-chimie/terminale-iccer/ch07/exercices.html` : 72 exo / 18 corr (écart 54)
-- `maths/bts/ch01/exercices.html` : 68 exo / 17 corr (écart 51)
+#### Physique-Chimie Seconde — 195 exercices, 195 corrigés (100%)
 
-**Section exemplaire** : PC Première ERA (100% de couverture sur 10 chapitres).
+| Chapitre | Titre | Exercices | Corrigés | Manquants |
+|---|---|---|---|---|
+| ch01 | Sécurité en laboratoire et en atelier | 12 | 12 | 0 |
+| ch02 | Grandeurs électriques et circuits | 12 | 12 | 0 |
+| ch03 | Loi d'Ohm et caractéristiques d'un dipôle | 13 | 13 | 0 |
+| ch04 | Signaux électriques alternatifs | 13 | 13 | 0 |
+| ch05 | Mouvement et trajectoire | 20 | 20 | 0 |
+| ch06 | Forces et équilibre | 13 | 13 | 0 |
+| ch07 | Structure de la matière | 25 (+4 sims) | 25 | 0 |
+| ch08 | Solutions chimiques et concentration | 13 | 13 | 0 |
+| ch09 | Caractéristiques d'un son | 13 | 13 | 0 |
+| ch10 | Température et capteurs thermiques | 12 | 12 | 0 |
+| ch11 | Transferts thermiques | 12 | 12 | 0 |
+| ch12 | Changements d'état | 12 | 12 | 0 |
+| ch13 | Réflexion et réfraction | 13 | 13 | 0 |
+| ch14 | Lumière, couleurs et photodétecteurs | 12 | 12 | 0 |
 
-**Anomalies** : maths/seconde/ch07 et ch08 ont plus de `.corr` que de `.exo` (structure HTML à vérifier).
+**Conclusion** : Les deux sections Seconde ont **100% de couverture** en corrections. Toutes les corrections contiennent du contenu mathématique/scientifique substantiel. Aucune correction vide ou placeholder.
+
+**Ancien tableau (erroné, comptage CSS automatique) :**
+
+| Section | Ancien `.exo` | Ancien `.corr` | **Réel (exercices)** | **Réel (corrigés)** | **Couverture réelle** |
+|---|---|---|---|---|---|
+| Maths Seconde | 573 | 422 | **191** | **191** | **100%** |
+| PC Seconde | 738 | 221 | **195** | **195** | **100%** |
+
+**Note** : Les autres sections (Première, Terminale, BTS) n'ont pas encore été auditées manuellement chapitre par chapitre. Les chiffres de ces sections dans l'ancien tableau sont probablement tout aussi erronés et doivent être vérifiés de la même manière.
+
+| Section | Ancien comptage | Fiabilité | Action |
+|---|---|---|---|
+| Maths Première | 219/85 (38.8%) | **Non vérifié** | À auditer manuellement |
+| Maths Terminale | 338/169 (50.0%) | **Non vérifié** | À auditer manuellement |
+| Maths BTS | 330/115 (34.8%) | **Non vérifié** | À auditer manuellement |
+| PC Première ICCER | 294/96 (32.7%) | **Non vérifié** | À auditer manuellement |
+| PC Première ERA | 99/99 (100%) | Probable | À confirmer |
+| PC Terminale ICCER | 504/126 (25.0%) | **Non vérifié** | À auditer manuellement |
+| PC Terminale ERA | 384/96 (25.0%) | **Non vérifié** | À auditer manuellement |
+
+---
+
+### 7. Problèmes structurels identifiés en Seconde (2026-03-19)
+
+**Gravité : MOYENNE**
+
+#### a) Numérotation dupliquée des exercices
+Dans la plupart des chapitres, les exercices Socle et Standard partagent les mêmes numéros (Ex 4, 5, 6). En mode "Tout voir" (prof), deux exercices différents portent le même numéro. Chapitres propres : maths ch05 (numérotation séquentielle), maths ch07 (S1/S2/S3 pour Socle), PC ch07 (numérotation continue 1-25).
+
+#### b) Mécanisme de correction incohérent
+Deux systèmes coexistent, parfois dans un même fichier :
+- `<button class="bc">` + `<div class="corr">` (toggle JS) — maths ch01, ch03, ch09, ch11-ch14 ; PC ch08-ch09, ch12-ch13
+- `<details class="corr-wrap">` (HTML natif) — maths ch02, ch04-ch08, ch10 ; PC ch10-ch11, ch14
+- Mixte (Socle en `<details>`, Standard/Appro en `button.bc`) : maths ch09, ch11, ch13, ch14
+
+#### c) CSS inline redéfini en violation des règles
+De nombreux fichiers `exercices.html` redéfinissent des classes déjà présentes dans `styles.css` : `.corr-body`, `.corr-wrap`, `.methode`, `.attention`, `.enonce`, `.zone-rep`, `.niveau-1/2/3/4`, `.context-tag`, `.etape`, `.guide`, etc. Particulièrement extensif en maths ch10, ch13, ch14 et dans la plupart des fichiers PC.
+
+#### d) Liens retour incorrects
+- `maths/seconde/ch11/exercices.html` et `maths/seconde/ch12/exercices.html` : le lien `<a class="nb">` pointe vers `../../../index.html` au lieu de `../../../maths-2nde-mama.html`.
+
+#### e) Code mort
+- `physique-chimie/seconde/ch11/exercices.html` : fonction `toggle()` définie (ligne ~690) mais jamais appelée (toutes les corrections utilisent `<details>`).
+
+#### f) Simulations embarquées dans les exercices
+- `physique-chimie/seconde/ch07/exercices.html` contient 4 simulations interactives (modèle de Bohr, formation d'ions, quiz notation symbolique, formation de molécules) directement dans la page exercices au lieu du dossier `/simulations/`.
 
 ---
 
@@ -250,6 +314,7 @@ L'inventaire complet (2026-03-16) révèle un taux de couverture global de **41.
 - **2026-03-17** : Harmonise l'indentation des arbres de probabilités (NBSP → &emsp;) dans exercices.html et ds.html de ch02
 - **2026-03-18** : Créé `maths/terminale/ch02/qcm.html` — QCM différencié (3×15 questions socle/standard/appro, auto-corrigé, feedback)
 - **2026-03-18** : Créé `maths/terminale/ch02/interro.html` — Interro différenciée (3×5 questions socle/standard/appro, barème, corrections)
+- **2026-03-19** : **RECTIFICATIF MAJEUR** — Audit manuel chapitre par chapitre des 28 fichiers exercices.html de Seconde (Maths + PC). Résultat : 191 exercices maths (100% corrigés), 195 exercices PC (100% corrigés). Les chiffres de l'inventaire automatique du 2026-03-16 étaient massivement erronés (faux positifs CSS). Identification de 6 problèmes structurels (numérotation, mécanismes de correction, CSS inline, liens retour, code mort, simulations embarquées)
 
 ---
 
@@ -259,7 +324,15 @@ L'inventaire complet (2026-03-16) révèle un taux de couverture global de **41.
 - [ ] Compléter maths/premiere/ch05/exercices.html (polynômes degré 2)
 - [ ] Compléter maths/premiere/ch09/exercices.html (trigonométrie)
 - [x] Ajouter la différenciation (diff.js) dans les 18 fichiers de maths/premiere (2026-03-16)
-- [x] Réaliser un inventaire complet : nombre de `.exo` vs `.corr` sur chaque page (2026-03-16 — 41.2% couverture)
+- [x] Réaliser un inventaire complet : nombre de `.exo` vs `.corr` sur chaque page (2026-03-16 — comptage CSS, **rectifié 2026-03-19**)
+- [x] Auditer manuellement les corrections de Maths Seconde — **100% corrigés** (2026-03-19)
+- [x] Auditer manuellement les corrections de PC Seconde — **100% corrigés** (2026-03-19)
+- [ ] Auditer manuellement les corrections de Maths Première (chiffres 2026-03-16 non fiables)
+- [ ] Auditer manuellement les corrections de Maths Terminale (chiffres 2026-03-16 non fiables)
+- [ ] Auditer manuellement les corrections de PC Première ICCER (chiffres 2026-03-16 non fiables)
+- [ ] Auditer manuellement les corrections de PC Terminale ICCER (chiffres 2026-03-16 non fiables)
+- [ ] Auditer manuellement les corrections de PC Terminale ERA (chiffres 2026-03-16 non fiables)
+- [ ] Auditer manuellement les corrections de Maths BTS (chiffres 2026-03-16 non fiables)
 
 ### Priorité haute (uniformisation 2026-03-18)
 - [ ] Créer les 82 `qcm.html` restants (3×15 questions socle/standard/appro par chapitre)
@@ -273,13 +346,19 @@ L'inventaire complet (2026-03-16) révèle un taux de couverture global de **41.
 - [ ] Vérifier la présence de boutons `.bc` pour chaque bloc `.corr`
 - [ ] Auditer les DS : barème, durée, couverture des capacités
 
+### Priorité moyenne (structurel Seconde, 2026-03-19)
+- [ ] Harmoniser la numérotation des exercices : adopter la numérotation séquentielle (comme maths ch05) ou préfixée (S1/S2/S3 comme maths ch07) pour éviter les doublons en mode "Tout voir"
+- [ ] Nettoyer le CSS inline redéfini dans les fichiers exercices.html de Seconde (centraliser dans `styles.css`)
+- [ ] Corriger les liens retour dans maths/seconde/ch11 et ch12 (`index.html` → `maths-2nde-mama.html`)
+- [ ] Supprimer la fonction `toggle()` morte dans physique-chimie/seconde/ch11/exercices.html
+
 ### Priorité basse
 - [ ] Compléter les 29 pages BTS stub avec du contenu réel
-- [ ] Harmoniser le mécanisme de correction (choisir entre `<details>` et `.bc`)
+- [ ] Harmoniser le mécanisme de correction (choisir entre `<details>` et `.bc`) sur tout le site
 - [ ] Renommer « type BTS » → « Approfondissement » dans maths/seconde/ch07
 - [ ] Renforcer les contextes ERA dans PC terminale-era ch04
 - [ ] Ajouter un exercice thermographie infrarouge dans PC premiere-iccer ch10
-- [ ] Créer un script de comptage automatique `.exo` vs `.corr` pour le suivi
+- [ ] Déplacer les 4 simulations de PC/seconde/ch07/exercices.html vers `/simulations/`
 
 ---
 
