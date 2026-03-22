@@ -370,5 +370,12 @@ new Chart(document.getElementById('graphA1').getContext('2d'), {
   options: {responsive:true,plugins:{title:{display:true,text:'Graphe v(t) du monte-charge – 6 étages',font:{size:14}},legend:{display:false}},scales:{x:{title:{display:true,text:'Temps t (s)'},min:0,max:32},y:{title:{display:true,text:'Vitesse v (m/s)'},min:0,max:0.8}}}
 });
 </script>
+<script>
+function toggle(btn){
+  var c=btn.nextElementSibling;
+  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
+  else{c.style.display='block';btn.textContent='Masquer la correction';}
+}
+</script>
 </body>
 </html>

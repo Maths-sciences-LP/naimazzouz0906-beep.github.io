@@ -1,7 +1,7 @@
 # Audit Doublons & Uniformisation des ressources
 
 **Date** : 2026-03-18
-**Derniere mise a jour** : 2026-03-18
+**Derniere mise a jour** : 2026-03-22
 **Perimetre** : Uniformisation du schema de pages par chapitre (automatismes, QCM, interrogations, fiches)
 
 ---
@@ -146,6 +146,7 @@ subject/level/chNN/
 
 ## Corrections realisees
 
+- **2026-03-22** : Harmonisation complete du format exercices.html — 84 fichiers, 1809 exercices convertis au format uniforme (voir section 7 ci-dessous)
 - **2026-03-18** : Doublon automatismes corrige — `automatismes.html` (racine) supprime
 - **2026-03-18** : Liens unifies dans 5 fichiers vers `automatismes/index.html`
 - **2026-03-18** : Liens fusionnes (2→1) dans `maths-term-erama.html` et `maths-term-iccer.html`
@@ -174,3 +175,63 @@ subject/level/chNN/
 
 ### Priorite basse
 - [ ] Harmoniser le rendu MathJax (tex-mml-chtml vs tex-svg) sur toutes les pages
+
+---
+
+## 7. [CORRIGE] Harmonisation du format exercices.html (gravite : HAUTE)
+
+**Date :** 2026-03-22
+
+### Probleme initial
+
+Les 84 fichiers `exercices.html` utilisaient **5 formats HTML differents** selon les sections :
+
+| Section | Ancien format |
+|---|---|
+| Maths Seconde/Premiere | `<div class="exo-num">` + `<div class="exo-titre">` + wrapper `<div class="diff-*">` + `<details class="corr-wrap">` |
+| Maths Terminale | `<span class="num">` dans `<div class="exo-titre">` + wrapper + `<details>` |
+| PC Seconde | `exo-header` avec star badges (`★ Facile`) + wrapper + `<details>` |
+| PC Premiere ERA | `<strong>Exercice N – Titre</strong>` + wrapper + inline onclick |
+| PC Premiere ICCER | Mix de formats (ch01-03 : strong, ch04-10 : format cible) |
+| PC Terminale ERA | Correct mais avec wrapper `<div class="diff-*">` |
+| PC Terminale ICCER | **Deja au format cible** |
+
+### Format cible uniforme (applique)
+
+```html
+<div class="exo diff-{level}">
+  <div class="exo-header">
+    <span class="exo-num">Exercice N</span>
+    <span class="exo-title">Titre</span>
+    <span class="mama-tag">Contexte</span>         <!-- si applicable -->
+    <span class="tag-{level}">{Socle|Standard|Approfondissement}</span>
+  </div>
+  <!-- contenu de l'exercice -->
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr"><!-- correction --></div>
+</div>
+```
+
+### Transformations appliquees
+
+| Transformation | Fichiers |
+|---|---|
+| Wrapper `div.diff-*` → classe individuelle sur chaque `.exo` | 61 |
+| Exercices "communs" (sans diff) → `diff-socle` | ~40 |
+| `<div class="exo-num">` + `<div class="exo-titre">` → `span` dans `exo-header` | 37 |
+| `<span class="num">` → `<span class="exo-num">` | 11 |
+| `<strong>Exercice N – Titre</strong>` → `exo-header` structure | 20 |
+| `<details class="corr-wrap">` → `button.bc` + `div.corr` | 13 |
+| Star badges supprimes | 8 |
+| `</div>` orphelins corriges | 61 |
+| `toggle()` fonction ajoutee aux pages converties | 43 |
+| `mama-tag` / `context-tag` restaures apres suppression accidentelle | 9 (116 tags) |
+| Numerotation doublon corrigee (PC 1ere ERA ch03) | 1 |
+
+### Resultat
+
+- **84 fichiers** au format uniforme
+- **1809 exercices** avec `diff-socle/standard/appro` individuel
+- **0 ancien format** residuel (div.exo-num, details, strong, star badges)
+- **0 div desequilibre**
+- **Compatible diff.js** : le mecanisme CSS body-class fonctionne avec le format individuel

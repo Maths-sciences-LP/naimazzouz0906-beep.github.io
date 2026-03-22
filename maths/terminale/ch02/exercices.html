@@ -111,17 +111,19 @@ td.total,th.total{background:#e8f4fd;font-weight:700;color:var(--p)}
 
 <!-- ============================================================ -->
 <!--                    NAVIGATION                                -->
-<!-- ============================================================ -->
-</div><!-- fin diff-appro -->
-
-<div class="nav-footer">
+<!-- ============================================================ --><div class="nav-footer">
   <a href="lecon.html">📖 Cours Ch02</a>
   <a href="ds.html">📝 Devoir Ch02</a>
   <a href="../../../maths-term-iccer.html">📚 Sommaire</a>
 </div>
-
-</div><!-- fin .c -->
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
+<script>
+function toggle(btn){
+  var c=btn.nextElementSibling;
+  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
+  else{c.style.display='block';btn.textContent='Masquer la correction';}
+}
+</script>
 </body>
 </html>
