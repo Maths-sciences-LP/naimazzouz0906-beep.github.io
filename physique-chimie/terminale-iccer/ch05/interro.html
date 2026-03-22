@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -96,11 +98,82 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(P = \dfrac{F}{S}\) avec P en Pa, F en N, S en m².</div>
+  <p>Une force F = 800 N s'applique sur une surface S = 0,04 m².</p>
+  <p>a) Calculer la pression : \(P = \dfrac{800}{0{,}04} = ...\) Pa</p>
+  <p>b) Convertir en bar (1 bar = 10⁵ Pa) : \(P = \dfrac{...}{100\,000} = ...\) bar</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P = \dfrac{800}{0{,}04} = \mathbf{20\,000}\) Pa</p>
+    <p>b) \(P = \dfrac{20\,000}{100\,000} = \mathbf{0{,}20}\) bar</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Relation de Pascal : \(\Delta P = \rho \times g \times \Delta h\). Eau : ρ = 1 000 kg/m³, g = 9,81 m/s².</div>
+  <p>Un technicien chauffagiste mesure la pression en bas d'une colonne d'eau de h = 5 m.</p>
+  <p>a) Calculer la surpression : \(\Delta P = 1\,000 \times 9{,}81 \times 5 = ...\) Pa</p>
+  <p>b) Convertir en bar : \(\Delta P = \dfrac{...}{100\,000} \approx ...\) bar</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\Delta P = 1\,000 \times 9{,}81 \times 5 = \mathbf{49\,050}\) Pa</p>
+    <p>b) \(\Delta P \approx \mathbf{0{,}49}\) bar</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La pression atmosphérique vaut environ P<sub>atm</sub> = 1,013 bar.</div>
+  <p>Un manomètre indique 1,8 bar (pression relative).</p>
+  <p>a) Quelle est la pression absolue ? \(P_{abs} = 1{,}8 + 1{,}013 = ...\) bar</p>
+  <p>b) 1 bar = 10⁵ Pa. Convertir cette pression absolue en Pa.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P_{abs} = 1{,}8 + 1{,}013 = \mathbf{2{,}813}\) bar</p>
+    <p>b) \(P_{abs} = 2{,}813 \times 10^5 = \mathbf{281\,300}\) Pa</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Presse hydraulique : \(\dfrac{F_1}{S_1} = \dfrac{F_2}{S_2}\), donc \(F_2 = F_1 \times \dfrac{S_2}{S_1}\).</div>
+  <p>Petit piston : S₁ = 8 cm² = 8 × 10⁻⁴ m². Grand piston : S₂ = 200 cm² = 2 × 10⁻² m². F₁ = 100 N.</p>
+  <p>a) Calculer le rapport S₂/S₁ : \(\dfrac{200}{8} = ...\)</p>
+  <p>b) Calculer F₂ : \(F_2 = 100 \times ... = ...\) N</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{S_2}{S_1} = \dfrac{200}{8} = \mathbf{25}\)</p>
+    <p>b) \(F_2 = 100 \times 25 = \mathbf{2\,500}\) N = 2,5 kN</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Force d'un vérin : \(F = P \times S\). Section circulaire : \(S = \pi \times r^2\).</div>
+  <p>Un vérin a un piston de diamètre d = 10 cm. La pression est P = 80 bar = 8 × 10⁶ Pa.</p>
+  <p>a) Calculer le rayon : r = 5 cm = 0,05 m</p>
+  <p>b) Calculer S : \(S = \pi \times (0{,}05)^2 = ...\) m²</p>
+  <p>c) Calculer F : \(F = 8 \times 10^6 \times ... = ...\) N</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) r = 0,05 m</p>
+    <p>b) \(S = \pi \times (0{,}05)^2 \approx \mathbf{7{,}85 \times 10^{-3}}\) m²</p>
+    <p>c) \(F = 8 \times 10^6 \times 7{,}85 \times 10^{-3} \approx \mathbf{62\,800}\) N ≈ 62,8 kN</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">

@@ -424,6 +424,82 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un plombier chauffagiste isole les tuyaux d'eau chaude dans un sous-sol. Un tuyau en cuivre de 2 m² de surface est recouvert de deux couches :</p>
+  <ul>
+    <li>Couche 1 : cuivre, \(e_1 = 2\text{ mm}\), \(\lambda_1 = 380\text{ W·m}^{-1}\text{·K}^{-1}\)</li>
+    <li>Couche 2 : mousse isolante, \(e_2 = 15\text{ mm}\), \(\lambda_2 = 0{,}035\text{ W·m}^{-1}\text{·K}^{-1}\)</li>
+  </ul>
+  <p>a) Calculer la résistance thermique de chaque couche.</p>
+  <p>b) La résistance totale est la somme des résistances : \(R_{th} = R_1 + R_2\). Calculer \(R_{th}\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(R_1 = \dfrac{e_1}{\lambda_1 \times S} = \dfrac{0{,}002}{380 \times 2} = \dfrac{0{,}002}{760} \approx \mathbf{2{,}6 \times 10^{-6}\text{ K/W}}\) (négligeable)</p>
+    <p>\(R_2 = \dfrac{e_2}{\lambda_2 \times S} = \dfrac{0{,}015}{0{,}035 \times 2} = \dfrac{0{,}015}{0{,}070} \approx \mathbf{0{,}21\text{ K/W}}\)</p>
+    <p>b) \(R_{th} = R_1 + R_2 \approx 0 + 0{,}21 = \mathbf{0{,}21\text{ K/W}}\)</p>
+    <p>Le cuivre ne contribue quasiment pas à l'isolation : c'est la mousse isolante qui fait tout le travail.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>On reprend le tuyau isolé de la question 1 (\(R_{th} = 0{,}21\text{ K/W}\), surface 2 m²). L'eau chaude est à 60 °C et le sous-sol est à 10 °C.</p>
+  <p>a) Calculer le flux thermique \(\Phi\) perdu par le tuyau.</p>
+  <p>b) Calculer l'énergie \(Q\) perdue en 8 heures. Donner le résultat en kWh.</p>
+  <p>c) Le prix du gaz est 0,10 €/kWh. Quel est le coût journalier (8 h) de cette perte ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\Delta T = 60 - 10 = 50\text{ K}\)</p>
+    <p>\(\Phi = \dfrac{\Delta T}{R_{th}} = \dfrac{50}{0{,}21} \approx \mathbf{238\text{ W}}\)</p>
+    <p>b) En 8 heures : \(Q = \Phi \times t = 238 \times 8 = 1\,904\text{ Wh} \approx \mathbf{1{,}90\text{ kWh}}\)</p>
+    <p>c) Coût : \(1{,}90 \times 0{,}10 = \mathbf{0{,}19\text{ €}}\) par jour pour ce tuyau.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien de maintenance énergétique compare deux solutions pour isoler un plafond de 20 m². La première solution utilise 80 mm de laine de verre (\(\lambda = 0{,}04\)), la seconde utilise 80 mm de ouate de cellulose (\(\lambda = 0{,}038\)).</p>
+  <p>a) Calculer la résistance thermique de chaque solution.</p>
+  <p>b) Calculer le flux thermique pour un \(\Delta T = 15\text{ K}\) dans chaque cas.</p>
+  <p>c) Quelle économie de flux (en %) apporte la ouate de cellulose par rapport à la laine de verre ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Laine de verre : \(R_1 = \dfrac{0{,}080}{0{,}04 \times 20} = \dfrac{0{,}080}{0{,}80} = \mathbf{0{,}10\text{ K/W}}\)</p>
+    <p>Ouate de cellulose : \(R_2 = \dfrac{0{,}080}{0{,}038 \times 20} = \dfrac{0{,}080}{0{,}76} \approx \mathbf{0{,}105\text{ K/W}}\)</p>
+    <p>b) \(\Phi_1 = \dfrac{15}{0{,}10} = \mathbf{150\text{ W}}\) ; \(\Phi_2 = \dfrac{15}{0{,}105} \approx \mathbf{143\text{ W}}\)</p>
+    <p>c) Économie : \(\dfrac{150 - 143}{150} \times 100 \approx \mathbf{4{,}7\,\%}\). La différence est faible ; le choix se fera sur d'autres critères (coût, écologie).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un ingénieur thermicien doit isoler un mur de 8 m² et 30 mm d'épaisseur. L'objectif est d'obtenir un flux thermique inférieur à 40 W pour un \(\Delta T = 20\text{ K}\).</p>
+  <p>a) Quelle résistance thermique minimale \(R_{th}\) faut-il ?</p>
+  <p>b) En déduire la conductivité thermique maximale \(\lambda_{\max}\) du matériau.</p>
+  <p>c) Parmi les matériaux suivants, lesquels conviennent : laine de roche (\(\lambda = 0{,}040\)), béton (\(\lambda = 1{,}5\)), liège (\(\lambda = 0{,}045\)) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\Phi = \dfrac{\Delta T}{R_{th}} \leq 40\) donc \(R_{th} \geq \dfrac{20}{40} = \mathbf{0{,}50\text{ K/W}}\)</p>
+    <p>b) \(R_{th} = \dfrac{e}{\lambda \times S}\) donc \(\lambda \leq \dfrac{e}{R_{th} \times S} = \dfrac{0{,}030}{0{,}50 \times 8} = \dfrac{0{,}030}{4{,}0} = \mathbf{0{,}0075\text{ W·m}^{-1}\text{·K}^{-1}}\)</p>
+    <p>c) Aucun des matériaux proposés ne convient avec seulement 30 mm d'épaisseur (\(\lambda_{\max} = 0{,}0075\) est très faible). Il faudrait augmenter l'épaisseur d'isolant. Avec 100 mm, la laine de roche et le liège seraient adaptés.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Expliquer, en utilisant les notions de conduction et de convection, pourquoi l'isolation des combles (plafond) est prioritaire par rapport à l'isolation des murs dans une maison. Comment la convection naturelle aggrave-t-elle les pertes par le toit ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>L'air chaud, moins dense, <strong>monte naturellement</strong> vers le plafond par <strong>convection</strong>. La température sous le toit est donc la plus élevée de la maison, ce qui crée un \(\Delta T\) maximum entre l'intérieur et l'extérieur au niveau du toit.</p>
+    <p>Ce \(\Delta T\) élevé entraîne un <strong>flux thermique important</strong> par <strong>conduction</strong> à travers le plafond : \(\Phi = \Delta T / R_{th}\). Sans isolation des combles, on perd environ <strong>30 %</strong> de la chaleur par le toit, contre 20-25 % par les murs.</p>
+    <p>C'est pourquoi l'isolation des combles est le premier geste de rénovation énergétique recommandé.</p>
+  </div>
+</div>
+
 </div>
 
 </div><!-- fin .c -->
