@@ -28,15 +28,16 @@
 <!-- ============================================================ -->
 <!--  NIVEAU 1 – VÉRIFIER LES BASES (COMMUN À TOUS)              -->
 <!-- ============================================================ -->
-<div class="niveau-header niveau-1">
-  <span class="badge-niv badge-1">Niveau 1</span>
-  <h2>Lire et organiser des donn&eacute;es</h2>
-</div>
-
 <!-- EX 1 -->
-<div class="exo">
-  <div class="exo-num">Exercice 1</div>
-  <div class="exo-titre">Lire un tableau statistique</div>
+
+<h2>Exercices guidés pas à pas</h2>
+
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 1</span>
+    <span class="exo-title">Lire un tableau statistique</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Menuiserie &ndash; Agencement</span>
   <div class="enonce">
     Dans un atelier, on a relev&eacute; les types de panneaux utilis&eacute;s sur une semaine de production. Les r&eacute;sultats sont r&eacute;sum&eacute;s ci-dessous :
@@ -77,10 +78,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) Effectif total N = 12 + 8 + 5 + 3 = ...&#10;b) f(contreplaqué) = 12 / N = ...&#10;c) Le type le plus utilisé est ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a) Effectif total :</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a) Effectif total :</strong>
       \[N = 12 + 8 + 5 + 3 = \mathbf{28}\]
 
       <strong>b) Fr&eacute;quences :</strong>
@@ -92,15 +92,17 @@
       <em>V&eacute;rification :</em> \(12 + 8 + 5 + 3 = 28\) et \(42{,}9 + 28{,}6 + 17{,}9 + 10{,}7 \approx 100\,\%\) &#10004;
 
       <div class="corr-rep">c) Le type de panneau le plus utilis&eacute; est le <strong>contreplaqu&eacute;</strong> (12 panneaux, soit environ 43 % du total).</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX 2 -->
-<div class="exo">
-  <div class="exo-num">Exercice 2</div>
-  <div class="exo-titre">Calculer moyenne et mode d'une s&eacute;rie simple</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Calculer moyenne et mode d'une s&eacute;rie simple</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Contr&ocirc;le dimensionnel</span>
   <div class="enonce">
     Un op&eacute;rateur mesure la largeur (en mm) de 10 pi&egrave;ces d&eacute;coup&eacute;es. Il obtient les valeurs suivantes :<br><br>
@@ -113,10 +115,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) x̄ = (45 + 47 + 45 + ...) / 10 = ...&#10;b) Mode = valeur la plus fréquente = ...&#10;c) ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a) Calcul de la moyenne :</strong><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a) Calcul de la moyenne :</strong><br>
       Somme des valeurs :
       \[45 + 47 + 45 + 46 + 48 + 45 + 47 + 46 + 45 + 46 = 460\]
       \[\bar{x} = \frac{460}{10} = \mathbf{46 \text{ mm}}\]
@@ -131,26 +132,20 @@
         <strong>b)</strong> Mode = <strong>45 mm</strong> (appara&icirc;t 4 fois, c'est l'effectif le plus grand).<br>
         <strong>c)</strong> La largeur la plus fr&eacute;quente en production est <strong>45 mm</strong>.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- ================================================================
      NIVEAU SOCLE — exercices très guidés, étape par étape
      ================================================================ -->
-<div class="diff-socle">
-<span class="tag-socle">Socle</span>
-
-<div class="niveau-header niveau-2">
-  <span class="badge-niv badge-2">Niveau 2</span>
-  <h2>Calculer les indicateurs &mdash; pas &agrave; pas</h2>
-</div>
-
 <!-- EX S1 -->
-<div class="exo">
-  <div class="exo-num">Exercice 3</div>
-  <div class="exo-titre">Calculer moyenne, m&eacute;diane et mode &mdash; m&eacute;thode d&eacute;taill&eacute;e</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">Calculer moyenne, m&eacute;diane et mode &mdash; m&eacute;thode d&eacute;taill&eacute;e</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Temps de fabrication</span>
   <div class="meth">
     <strong>M&eacute;thode :</strong> Pour &eacute;tudier une s&eacute;rie statistique, on fait <strong>3 &eacute;tapes</strong> :<br>
@@ -182,10 +177,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="Série triée : 27 ; 28 ; 29 ; ...&#10;Somme = ...&#10;Moyenne = ...&#10;Médiane = ...&#10;Mode = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>S&eacute;rie tri&eacute;e :</strong> 27 ; 28 ; 29 ; 30 ; 31 ; 32 ; 35 ; 35 ; 35 ; 38 ; 41 ; 42<br><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>S&eacute;rie tri&eacute;e :</strong> 27 ; 28 ; 29 ; 30 ; 31 ; 32 ; 35 ; 35 ; 35 ; 38 ; 41 ; 42<br><br>
 
       <strong>Moyenne :</strong>
       \[\text{Somme} = 403\]
@@ -200,14 +194,16 @@
       <div class="att-corr">
         Ne pas oublier de trier la s&eacute;rie avant de chercher la m&eacute;diane !
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S2 -->
-<div class="exo">
-  <div class="exo-num">Exercice 4</div>
-  <div class="exo-titre">Quartiles et &eacute;tendue &mdash; guid&eacute;</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Quartiles et &eacute;tendue &mdash; guid&eacute;</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Gestion &ndash; Prix de revient</span>
   <div class="meth">
     <strong>Rappel :</strong><br>
@@ -242,10 +238,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) Étendue = ...&#10;b) Me = ...&#10;c) Q1 = ... / Q3 = ...&#10;d) Écart interquartile = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a)</strong> \(\text{&Eacute;tendue} = 25 - 12 = \mathbf{13 \text{ &euro;}}\)<br><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a)</strong> \(\text{&Eacute;tendue} = 25 - 12 = \mathbf{13 \text{ &euro;}}\)<br><br>
 
       <strong>b)</strong> Rangs 5 et 6 : 17 et 18.
       \[Me = \frac{17 + 18}{2} = \mathbf{17{,}5 \text{ &euro;}}\]
@@ -259,14 +254,16 @@
       <div class="corr-rep">
         50 % des pi&egrave;ces ont un prix de revient compris entre <strong>15 &euro;</strong> et <strong>20 &euro;</strong>.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S3 -->
-<div class="exo">
-  <div class="exo-num">Exercice 5</div>
-  <div class="exo-titre">Contr&ocirc;le qualit&eacute; guid&eacute;</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Contr&ocirc;le qualit&eacute; guid&eacute;</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Contr&ocirc;le qualit&eacute; &ndash; Menuiserie</span>
   <div class="enonce">
     Un op&eacute;rateur mesure l'&eacute;paisseur (en mm) de 15 pi&egrave;ces. Voici la s&eacute;rie <strong>d&eacute;j&agrave; tri&eacute;e</strong> :<br><br>
@@ -289,10 +286,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) Effectifs : 18,1 → ... ; 18,2 → ... ; 18,3 → ...&#10;b) x̄ = 271,7 / 15 = ...&#10;c) Me = ...&#10;d) Étendue = ...&#10;e) Conformité : ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a)</strong> Effectifs manquants : 18,1 → <strong>2</strong> ; 18,2 → <strong>3</strong> ; 18,3 → <strong>2</strong><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a)</strong> Effectifs manquants : 18,1 → <strong>2</strong> ; 18,2 → <strong>3</strong> ; 18,3 → <strong>2</strong><br>
       V&eacute;rification : 1+1+1+3+2+3+2+1+1 = 15 &#10004;<br><br>
 
       <strong>b)</strong> \(\bar{x} = \dfrac{271{,}7}{15} \approx \mathbf{18{,}11 \text{ mm}}\)<br><br>
@@ -306,14 +302,16 @@
       <div class="corr-rep">
         Toutes les 15 pi&egrave;ces sont <strong>conformes</strong> : leurs &eacute;paisseurs sont comprises dans [17,5 ; 18,5] mm.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S4 -->
-<div class="exo">
-  <div class="exo-num">Exercice 6</div>
-  <div class="exo-titre">Compl&eacute;ter un tableau de fr&eacute;quences &mdash; guid&eacute;</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">Compl&eacute;ter un tableau de fr&eacute;quences &mdash; guid&eacute;</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Vie quotidienne &ndash; Sport</span>
   <div class="meth">
     <strong>Rappel :</strong> La fr&eacute;quence d'une valeur = \(\dfrac{\text{effectif de cette valeur}}{\text{effectif total}}\). La somme des fr&eacute;quences vaut toujours 1 (ou 100 %).
@@ -337,10 +335,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) 3 + 7 + 8 + 5 + 2 = ...&#10;b) f(5) = 3/25 = ... ; f(10) = 7/25 = ...&#10;c) En % : ...&#10;d) Mode = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a)</strong> \(3 + 7 + 8 + 5 + 2 = \mathbf{25}\) &#10004;<br><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a)</strong> \(3 + 7 + 8 + 5 + 2 = \mathbf{25}\) &#10004;<br><br>
 
       <strong>b) et c) Tableau compl&eacute;t&eacute; :</strong>
       <table style="margin:10px 0">
@@ -353,15 +350,17 @@
       <div class="corr-rep">
         <strong>d)</strong> Le mode est <strong>15 pompes</strong> (effectif le plus &eacute;lev&eacute; : 8 &eacute;l&egrave;ves).
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX S5 -->
-<div class="exo">
-  <div class="exo-num">Exercice 7</div>
-  <div class="exo-titre">Effectifs cumul&eacute;s croissants &mdash; guid&eacute;</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 7</span>
+    <span class="exo-title">Effectifs cumul&eacute;s croissants &mdash; guid&eacute;</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Gestion &ndash; Consommation de bois</span>
   <div class="meth">
     <strong>Rappel :</strong> L'effectif cumul&eacute; croissant (ECC) d'une valeur est la somme de tous les effectifs des valeurs <strong>inf&eacute;rieures ou &eacute;gales</strong> &agrave; cette valeur.
@@ -385,10 +384,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) ECC(3) = 3 + 5 = ... ; ECC(4) = ... + 6 = ...&#10;b) Au plus 4 planches : ECC(4) = ...&#10;c) Me = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a) Tableau compl&eacute;t&eacute; :</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a) Tableau compl&eacute;t&eacute; :</strong>
       <table style="margin:10px 0">
         <tr><th>Planches/jour</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
         <tr><td class="tl">Effectif</td><td>3</td><td>5</td><td>6</td><td>4</td><td>2</td></tr>
@@ -401,15 +399,17 @@
       <div class="corr-rep">
         La m&eacute;diane est \(Me = \mathbf{4}\) planches par jour.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX S6 -->
-<div class="exo">
-  <div class="exo-num">Exercice 8</div>
-  <div class="exo-titre">Calculer une moyenne avec un tableau &mdash; guid&eacute;</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 8</span>
+    <span class="exo-title">Calculer une moyenne avec un tableau &mdash; guid&eacute;</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Vie quotidienne &ndash; Temp&eacute;ratures</span>
   <div class="meth">
     <strong>Rappel :</strong> Quand les donn&eacute;es sont regroup&eacute;es dans un tableau, on calcule la moyenne avec :
@@ -434,10 +434,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) N = 2 + 4 + 5 + 3 + 1 = ...&#10;b) x̄ = (28 + 64 + ... + ...) / 15 = ...&#10;c) Mode = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a)</strong> \(2 + 4 + 5 + 3 + 1 = \mathbf{15}\) &#10004;<br><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a)</strong> \(2 + 4 + 5 + 3 + 1 = \mathbf{15}\) &#10004;<br><br>
 
       <strong>b)</strong>
       \[\bar{x} = \frac{2 \times 14 + 4 \times 16 + 5 \times 18 + 3 \times 20 + 1 \times 22}{15}\]
@@ -446,15 +445,17 @@
       <div class="corr-rep">
         <strong>c)</strong> Le mode est <strong>18 &deg;C</strong> (effectif le plus &eacute;lev&eacute; : 5 jours).
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX S7 -->
-<div class="exo">
-  <div class="exo-num">Exercice 9</div>
-  <div class="exo-titre">Lire un diagramme en b&acirc;tons &mdash; guid&eacute;</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 9</span>
+    <span class="exo-title">Lire un diagramme en b&acirc;tons &mdash; guid&eacute;</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">&Eacute;nergie &ndash; Consommation</span>
   <div class="enonce">
     Le diagramme en b&acirc;tons ci-dessous repr&eacute;sente la consommation &eacute;lectrique mensuelle (en kWh) d'un petit atelier sur 6 mois :
@@ -475,10 +476,9 @@
     <label>Mes r&eacute;ponses :</label>
     <textarea placeholder="a) Mois le plus élevé : ...&#10;b) Mois le plus faible : ...&#10;c) Moyenne = ...&#10;d) Étendue = ...&#10;e) ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a)</strong> La consommation la plus &eacute;lev&eacute;e est en <strong>janvier</strong> (320 kWh).<br><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a)</strong> La consommation la plus &eacute;lev&eacute;e est en <strong>janvier</strong> (320 kWh).<br><br>
       <strong>b)</strong> La consommation la plus faible est en <strong>juin</strong> (160 kWh).<br><br>
       <strong>c)</strong>
       \[\bar{x} = \frac{320 + 290 + 250 + 210 + 180 + 160}{6} = \frac{1410}{6} = \mathbf{235 \text{ kWh}}\]
@@ -486,15 +486,17 @@
       <div class="corr-rep">
         <strong>e)</strong> Oui, la consommation diminue r&eacute;guli&egrave;rement de janvier &agrave; juin. Cela s'explique par les jours plus longs et les temp&eacute;ratures plus douces au printemps, n&eacute;cessitant moins de chauffage et d'&eacute;clairage.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX S8 -->
-<div class="exo">
-  <div class="exo-num">Exercice 10</div>
-  <div class="exo-titre">M&eacute;diane d'une s&eacute;rie impaire &mdash; guid&eacute;</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 10</span>
+    <span class="exo-title">M&eacute;diane d'une s&eacute;rie impaire &mdash; guid&eacute;</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Sant&eacute; &ndash; Fr&eacute;quence cardiaque</span>
   <div class="enonce">
     Apr&egrave;s un &eacute;chauffement, on mesure la fr&eacute;quence cardiaque (en battements/min) de 9 &eacute;l&egrave;ves :<br><br>
@@ -518,10 +520,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="Série triée : 78 ; 80 ; ...&#10;Médiane = ...&#10;Étendue = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>S&eacute;rie tri&eacute;e :</strong> 78 ; 80 ; 82 ; 85 ; <strong>87</strong> ; 88 ; 90 ; 92 ; 95<br><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>S&eacute;rie tri&eacute;e :</strong> 78 ; 80 ; 82 ; 85 ; <strong>87</strong> ; 88 ; 90 ; 92 ; 95<br><br>
 
       <strong>M&eacute;diane :</strong> La 5<sup>e</sup> valeur est \(Me = \mathbf{87}\) bpm.<br><br>
 
@@ -530,15 +531,17 @@
       <div class="corr-rep">
         La moiti&eacute; des &eacute;l&egrave;ves a une fr&eacute;quence cardiaque inf&eacute;rieure ou &eacute;gale &agrave; <strong>87 bpm</strong>.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX S9 -->
-<div class="exo">
-  <div class="exo-num">Exercice 11</div>
-  <div class="exo-titre">Diagramme circulaire &mdash; lire et interpr&eacute;ter</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 11</span>
+    <span class="exo-title">Diagramme circulaire &mdash; lire et interpr&eacute;ter</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Menuiserie &ndash; Types de bois</span>
   <div class="meth">
     <strong>Rappel :</strong> Dans un diagramme circulaire, l'angle d'un secteur = fr&eacute;quence &times; 360&deg;.
@@ -563,10 +566,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) f(chêne) = 80/200 = ... ; f(hêtre) = ...&#10;b) Angle(chêne) = ... × 360 = ...&#10;c) Somme = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <table style="margin:10px 0">
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table style="margin:10px 0">
         <tr><th>Essence</th><th>Ch&ecirc;ne</th><th>H&ecirc;tre</th><th>Pin</th><th>Noyer</th><th>Total</th></tr>
         <tr><td class="tl">Effectif</td><td>80</td><td>60</td><td>40</td><td>20</td><td>200</td></tr>
         <tr><td class="tl">Fr&eacute;quence</td><td>0,40</td><td>0,30</td><td>0,20</td><td>0,10</td><td>1</td></tr>
@@ -576,14 +578,16 @@
       <div class="corr-rep">
         V&eacute;rification : \(144 + 108 + 72 + 36 = \mathbf{360&deg;}\) &#10004;
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S10 -->
-<div class="exo">
-  <div class="exo-num">Exercice 12</div>
-  <div class="exo-titre">Effectifs cumul&eacute;s et m&eacute;diane &mdash; guid&eacute;</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 12</span>
+    <span class="exo-title">Effectifs cumul&eacute;s et m&eacute;diane &mdash; guid&eacute;</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Sport &ndash; Course &agrave; pied</span>
   <div class="meth">
     <strong>Rappel :</strong> Les effectifs cumul&eacute;s croissants (ECC) permettent de trouver la m&eacute;diane.
@@ -609,10 +613,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) ECC : 2 ; 7 ; ... ; ... ; ...&#10;b) N = ...&#10;c) N/2 = ... donc Me = ...&#10;d) x̄ = (13×2 + 14×5 + ...) / 20 = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a) Effectifs cumul&eacute;s croissants :</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a) Effectifs cumul&eacute;s croissants :</strong>
       <table style="margin:10px 0">
         <tr><th>Temps (s)</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th></tr>
         <tr><td class="tl">Effectif</td><td>2</td><td>5</td><td>7</td><td>4</td><td>2</td></tr>
@@ -631,15 +634,17 @@
       <div class="corr-rep">
         La m&eacute;diane est <strong>15 s</strong> et la moyenne est <strong>14,95 s</strong>. Les deux indicateurs sont tr&egrave;s proches, ce qui sugg&egrave;re une distribution assez sym&eacute;trique.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX S11 -->
-<div class="exo">
-  <div class="exo-num">Exercice 13</div>
-  <div class="exo-titre">&Eacute;tendue et comparaison &mdash; guid&eacute;</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 13</span>
+    <span class="exo-title">&Eacute;tendue et comparaison &mdash; guid&eacute;</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Vie quotidienne &ndash; Temp&eacute;ratures</span>
   <div class="meth">
     <strong>Rappel :</strong> L'&eacute;tendue = valeur maximale &minus; valeur minimale. Elle mesure la dispersion totale de la s&eacute;rie.
@@ -663,10 +668,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) x̄(A) = ... / x̄(B) = ...&#10;b) Étendue A = ... / Étendue B = ...&#10;c) ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a) Moyennes :</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a) Moyennes :</strong>
       \[\bar{x}_A = \frac{12+14+13+15+14+13+12}{7} = \frac{93}{7} \approx \mathbf{13{,}3\,°C}\]
       \[\bar{x}_B = \frac{8+18+10+20+11+16+9}{7} = \frac{92}{7} \approx \mathbf{13{,}1\,°C}\]
 
@@ -677,14 +681,16 @@
       <div class="corr-rep">
         <strong>c)</strong> Les deux villes ont des moyennes tr&egrave;s proches (environ 13&nbsp;&deg;C), mais l'&eacute;tendue de la ville A (3&nbsp;&deg;C) est beaucoup plus faible que celle de la ville B (12&nbsp;&deg;C). <strong>La ville A a le climat le plus stable.</strong>
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S12 -->
-<div class="exo">
-  <div class="exo-num">Exercice 14</div>
-  <div class="exo-titre">Lire un diagramme en b&acirc;tons &mdash; guid&eacute;</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 14</span>
+    <span class="exo-title">Lire un diagramme en b&acirc;tons &mdash; guid&eacute;</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     On a relev&eacute; la pointure des 20 &eacute;l&egrave;ves d&rsquo;une classe :<br>
     <table>
@@ -697,20 +703,21 @@
     Pointure 39 : \(\dfrac{4}{20} \times 100 =\) ......%<br>
     <strong>c.</strong> Quelle est la pointure la plus fr&eacute;quente (le mode) ?
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a.</strong> \(2+4+6+5+2+1 = 20\) &check;</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a.</strong> \(2+4+6+5+2+1 = 20\) &check;</p>
       <p><strong>b.</strong> 38 : 10%, 39 : 20%, 40 : <strong>30%</strong>, 41 : 25%, 42 : 10%, 43 : 5%</p>
       <p><strong>c.</strong> Le mode est la <strong>pointure 40</strong> (effectif le plus &eacute;lev&eacute; : 6).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S13 -->
-<div class="exo">
-  <div class="exo-num">Exercice 15</div>
-  <div class="exo-titre">Effectifs cumul&eacute;s &mdash; guid&eacute;</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 15</span>
+    <span class="exo-title">Effectifs cumul&eacute;s &mdash; guid&eacute;</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     Reprendre le tableau des pointures de l&rsquo;exercice pr&eacute;c&eacute;dent.<br><br>
     <strong>a.</strong> Compl&eacute;ter le tableau des effectifs cumul&eacute;s croissants :<br>
@@ -721,34 +728,30 @@
     <strong>b.</strong> Combien d&rsquo;&eacute;l&egrave;ves chaussent du 40 ou moins ?<br>
     <strong>c.</strong> Combien d&rsquo;&eacute;l&egrave;ves chaussent plus de 41 ?
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a.</strong> ECC : 2, 6, 12, 17, 19, 20</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a.</strong> ECC : 2, 6, 12, 17, 19, 20</p>
       <p><strong>b.</strong> 40 ou moins : <strong>12 &eacute;l&egrave;ves</strong> (ECC &agrave; 40).</p>
       <p><strong>c.</strong> Plus de 41 : \(20 - 17 = \mathbf{3}\) &eacute;l&egrave;ves.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
-</div><!-- fin diff-socle -->
+</div><!-- fin diff-soc
 
 
 <!-- ================================================================
      NIVEAU STANDARD — exercices du programme
      ================================================================ -->
-<div class="diff-standard">
-<span class="tag-standard">Standard</span>
-
-<div class="niveau-header niveau-2">
-  <span class="badge-niv badge-2">Niveau 2</span>
-  <h2>Calculs d'indicateurs statistiques</h2>
-</div>
-
 <!-- EX 16 -->
-<div class="exo">
-  <div class="exo-num">Exercice 16</div>
-  <div class="exo-titre">Indicateurs de position complets</div>
+
+<h2>Exercices d'application</h2>
+
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 16</span>
+    <span class="exo-title">Indicateurs de position complets</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">Temps de fabrication</span>
   <div class="enonce">
     Un chef d'atelier rel&egrave;ve les temps de fabrication (en minutes) de 12 pi&egrave;ces produites dans la journ&eacute;e :<br><br>
@@ -762,10 +765,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="Série triée : ...&#10;a) x̄ = (28 + 29 + ...) / 12 = ...&#10;b) Me = ...&#10;c) Mode = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>S&eacute;rie tri&eacute;e :</strong> 27 ; 28 ; 29 ; 30 ; 31 ; 32 ; 35 ; 35 ; 35 ; 38 ; 41 ; 42<br><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>S&eacute;rie tri&eacute;e :</strong> 27 ; 28 ; 29 ; 30 ; 31 ; 32 ; 35 ; 35 ; 35 ; 38 ; 41 ; 42<br><br>
 
       <strong>a) Moyenne :</strong>
       \[\bar{x} = \frac{27+28+29+30+31+32+35+35+35+38+41+42}{12} = \frac{403}{12} \approx \mathbf{33{,}6 \text{ min}}\]
@@ -782,15 +784,17 @@
       <div class="att-corr">
         Ne pas oublier de trier la s&eacute;rie avant de chercher la m&eacute;diane !
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX 17 -->
-<div class="exo">
-  <div class="exo-num">Exercice 17</div>
-  <div class="exo-titre">Quartiles et &eacute;tendue</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 17</span>
+    <span class="exo-title">Quartiles et &eacute;tendue</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">Gestion &ndash; Prix de revient</span>
   <div class="enonce">
     Voici les prix de revient (en &euro;) de 10 pi&egrave;ces, d&eacute;j&agrave; tri&eacute;s dans l'ordre croissant :<br><br>
@@ -805,10 +809,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) Étendue = max − min = ...&#10;b) Me = moyenne des rangs 5 et 6 = ...&#10;c) Q1 = ... / Q3 = ...&#10;d) Écart interquartile = Q3 − Q1 = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a) &Eacute;tendue :</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a) &Eacute;tendue :</strong>
       \[\text{Étendue} = 25 - 12 = \mathbf{13 \text{ €}}\]
 
       <strong>b) M&eacute;diane (\(N = 10\), pair) :</strong><br>
@@ -828,20 +831,15 @@
         &Eacute;tendue = 13 &euro; &nbsp;|&nbsp; \(Me = 17{,}5\) &euro; &nbsp;|&nbsp; \(Q_1 = 15\) &euro; &nbsp;|&nbsp; \(Q_3 = 20\) &euro; &nbsp;|&nbsp; &Eacute;cart interquartile = 5 &euro;<br>
         <strong>Interpr&eacute;tation :</strong> 50 % des pi&egrave;ces ont un prix de revient compris entre 15 &euro; et 20 &euro;.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
-
-
-<div class="niveau-header niveau-3">
-  <span class="badge-niv badge-3">Niveau 3</span>
-  <h2>Probl&egrave;mes contextualis&eacute;s &mdash; Menuiserie</h2>
-</div>
-
 <!-- EX 18 -->
-<div class="exo">
-  <div class="exo-num">Exercice 18</div>
-  <div class="exo-titre">Contr&ocirc;le qualit&eacute; en menuiserie</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 18</span>
+    <span class="exo-title">Contr&ocirc;le qualit&eacute; en menuiserie</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">Contr&ocirc;le qualit&eacute; &ndash; Menuiserie</span>
   <div class="enonce">
     Un op&eacute;rateur mesure l'&eacute;paisseur (en mm) de 15 pi&egrave;ces en sortie de machine. Il obtient :
@@ -858,10 +856,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="Série triée : ...&#10;a) x̄ = somme / 15 = ...&#10;b) Me = ...&#10;c) Étendue = ...&#10;d) ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>S&eacute;rie tri&eacute;e (\(N = 15\)) :</strong><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>S&eacute;rie tri&eacute;e (\(N = 15\)) :</strong><br>
       17,7 ; 17,8 ; 17,9 ; 18,0 ; 18,0 ; 18,0 ; 18,1 ; <strong>18,1</strong> ; 18,2 ; 18,2 ; 18,2 ; 18,3 ; 18,3 ; 18,4 ; 18,5<br><br>
 
       <strong>a) Moyenne :</strong>
@@ -883,15 +880,17 @@
       <div class="att-corr">
         L'&eacute;tendue (0,8 mm) est inf&eacute;rieure &agrave; la tol&eacute;rance totale (1 mm), mais il faut v&eacute;rifier que <em>toutes</em> les valeurs sont dans l'intervalle.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX 19 -->
-<div class="exo">
-  <div class="exo-num">Exercice 19</div>
-  <div class="exo-titre">Construire un diagramme en bo&icirc;te</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 19</span>
+    <span class="exo-title">Construire un diagramme en bo&icirc;te</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">Temps de fabrication</span>
   <div class="enonce">
     On reprend la s&eacute;rie de l'exercice 3 (12 temps de fabrication en minutes) :<br><br>
@@ -904,10 +903,9 @@
     <label>Mes r&eacute;ponses :</label>
     <textarea placeholder="a) min = ... / Q1 = ... / Me = ... / Q3 = ... / max = ...&#10;b) Tracer sur papier&#10;c) ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a) Cinq valeurs :</strong><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a) Cinq valeurs :</strong><br>
       &mdash; min = <strong>27</strong> min<br>
       &mdash; \(Q_1\) = \(\dfrac{29+30}{2} = \mathbf{29{,}5}\) min<br>
       &mdash; \(Me\) = <strong>33,5</strong> min<br>
@@ -960,14 +958,16 @@
       <div class="corr-rep">
         La s&eacute;rie n'est pas parfaitement sym&eacute;trique.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 20 -->
-<div class="exo">
-  <div class="exo-num">Exercice 20</div>
-  <div class="exo-titre">Fr&eacute;quences et diagramme en b&acirc;tons</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 20</span>
+    <span class="exo-title">Fr&eacute;quences et diagramme en b&acirc;tons</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">&Eacute;nergie &ndash; Consommation domestique</span>
   <div class="enonce">
     Un technicien de maintenance &eacute;nerg&eacute;tique rel&egrave;ve la consommation &eacute;lectrique mensuelle (en kWh) de 30 logements d'un immeuble. Il regroupe les r&eacute;sultats :
@@ -988,10 +988,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) f(100) = 3/30 = ... ; f(150) = ...&#10;b) Diagramme sur papier&#10;c) Mode = ...&#10;d) x̄ = (100×3 + 150×8 + ...) / 30 = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a) Tableau compl&eacute;t&eacute; :</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a) Tableau compl&eacute;t&eacute; :</strong>
       <table style="margin:10px 0">
         <tr><th>Consommation (kWh)</th><th>100</th><th>150</th><th>200</th><th>250</th><th>300</th><th>Total</th></tr>
         <tr><td class="tl">Effectif</td><td>3</td><td>8</td><td>10</td><td>6</td><td>3</td><td>30</td></tr>
@@ -1007,15 +1006,17 @@
       <div class="corr-rep">
         La consommation moyenne est d'environ <strong>197 kWh</strong> par mois et la consommation la plus fr&eacute;quente est <strong>200 kWh</strong>.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX 21 -->
-<div class="exo">
-  <div class="exo-num">Exercice 21</div>
-  <div class="exo-titre">Moyenne pond&eacute;r&eacute;e et interpr&eacute;tation</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 21</span>
+    <span class="exo-title">Moyenne pond&eacute;r&eacute;e et interpr&eacute;tation</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">Menuiserie &ndash; Devis</span>
   <div class="enonce">
     Un m&eacute;treur &eacute;tablit les devis de 25 chantiers r&eacute;alis&eacute;s dans l'ann&eacute;e. Il classe les montants (en &euro;) :
@@ -1034,10 +1035,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) x̄ = (500×8 + 1000×7 + ...) / 25 = ...&#10;b) Me = ...&#10;c) Comparaison : ...&#10;d) Nouvelle moyenne = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a) Moyenne :</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a) Moyenne :</strong>
       \[\bar{x} = \frac{500 \times 8 + 1\,000 \times 7 + 2\,000 \times 5 + 5\,000 \times 3 + 10\,000 \times 2}{25}\]
       \[= \frac{4\,000 + 7\,000 + 10\,000 + 15\,000 + 20\,000}{25} = \frac{56\,000}{25} = \mathbf{2\,240 \text{ €}}\]
 
@@ -1055,15 +1055,17 @@
       <div class="corr-rep">
         La moyenne passe de 2&nbsp;240 &euro; &agrave; 4&nbsp;077 &euro; : <strong>une seule valeur extr&ecirc;me a presque doubl&eacute; la moyenne</strong>. La m&eacute;diane, elle, reste &agrave; 1&nbsp;000 &euro;. Cela montre que la moyenne est sensible aux valeurs extr&ecirc;mes, contrairement &agrave; la m&eacute;diane.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX 22 -->
-<div class="exo">
-  <div class="exo-num">Exercice 22</div>
-  <div class="exo-titre">Effectifs cumul&eacute;s et lecture graphique</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 22</span>
+    <span class="exo-title">Effectifs cumul&eacute;s et lecture graphique</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">Sant&eacute; &ndash; IMC</span>
   <div class="enonce">
     Lors d'une visite m&eacute;dicale, on a relev&eacute; l'indice de masse corporelle (IMC) de 40 &eacute;l&egrave;ves d'un lyc&eacute;e professionnel :
@@ -1082,10 +1084,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) ECC : 4 ; 14 ; ... ; ... ; ... ; 40&#10;b) Me = ...&#10;c) x̄ = ...&#10;d) % normal = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a) Effectifs cumul&eacute;s croissants :</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a) Effectifs cumul&eacute;s croissants :</strong>
       <table style="margin:10px 0">
         <tr><th>IMC</th><th>18</th><th>20</th><th>22</th><th>24</th><th>28</th><th>28</th></tr>
         <tr><td class="tl">Effectif</td><td>4</td><td>10</td><td>12</td><td>8</td><td>4</td><td>2</td></tr>
@@ -1107,15 +1108,17 @@
       <div class="corr-rep">
         <strong>75 %</strong> des &eacute;l&egrave;ves ont un IMC normal. La m&eacute;diane (22) et la moyenne (22,2) sont tr&egrave;s proches et au c&oelig;ur de la plage normale.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX 23 -->
-<div class="exo">
-  <div class="exo-num">Exercice 23</div>
-  <div class="exo-titre">Quartiles, &eacute;cart interquartile et diagramme en bo&icirc;te</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 23</span>
+    <span class="exo-title">Quartiles, &eacute;cart interquartile et diagramme en bo&icirc;te</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">Climat &ndash; Pluviom&eacute;trie</span>
   <div class="enonce">
     Voici les pr&eacute;cipitations mensuelles (en mm) relev&eacute;es sur 12 mois dans une r&eacute;gion :
@@ -1135,10 +1138,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) Série triée : ...&#10;b) x̄ = ... / Me = ...&#10;c) Q1 = ... / Q3 = ... / EIQ = ...&#10;e) ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a) S&eacute;rie tri&eacute;e :</strong><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a) S&eacute;rie tri&eacute;e :</strong><br>
       15 ; 20 ; 25 ; 35 ; 40 ; 45 ; 50 ; 55 ; 60 ; 65 ; 70 ; 75<br><br>
 
       <strong>b) Moyenne :</strong>
@@ -1156,15 +1158,17 @@
       <div class="corr-rep">
         <strong>e)</strong> L'&eacute;tendue est de 60 mm et l'&eacute;cart interquartile de 32,5 mm : les pr&eacute;cipitations varient fortement selon la saison. <strong>La r&eacute;gion n'a pas de pr&eacute;cipitations r&eacute;guli&egrave;res</strong> : l'&eacute;t&eacute; est sec (15-25 mm) et l'hiver est humide (65-75 mm).
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX 24 -->
-<div class="exo">
-  <div class="exo-num">Exercice 24</div>
-  <div class="exo-titre">Analyser une s&eacute;rie avec tableau et indicateurs</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 24</span>
+    <span class="exo-title">Analyser une s&eacute;rie avec tableau et indicateurs</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">Menuiserie &ndash; Gestion d'atelier</span>
   <div class="enonce">
     Un artisan menuisier note le nombre de pi&egrave;ces finies par jour pendant 20 jours ouvr&eacute;s :
@@ -1183,10 +1187,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) N = 2 + 5 + 8 + 3 + 2 = ...&#10;b) x̄ = (4×2 + 5×5 + ...) / 20 = ...&#10;c) Me = ... / Mode = ...&#10;d) Production totale = ... pièces"></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a)</strong> \(N = 2 + 5 + 8 + 3 + 2 = \mathbf{20}\) jours. &#10004;
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a)</strong> \(N = 2 + 5 + 8 + 3 + 2 = \mathbf{20}\) jours. &#10004;
 
       <strong>b) Moyenne :</strong>
       \[\bar{x} = \frac{4 \times 2 + 5 \times 5 + 6 \times 8 + 7 \times 3 + 8 \times 2}{20} = \frac{8 + 25 + 48 + 21 + 16}{20} = \frac{118}{20} = \mathbf{5{,}9 \text{ pi&egrave;ces/jour}}\]
@@ -1200,13 +1203,15 @@
       <div class="corr-rep">
         L'artisan a produit <strong>118 pi&egrave;ces</strong> en 20 jours, soit 2 pi&egrave;ces de moins que l'objectif de 120. <strong>L'objectif n'est pas atteint</strong>, mais il est tr&egrave;s proche.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 <!-- EX 25 -->
-<div class="exo">
-  <div class="exo-num">Exercice 25</div>
-  <div class="exo-titre">Diagramme circulaire &mdash; R&eacute;partition du budget</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 25</span>
+    <span class="exo-title">Diagramme circulaire &mdash; R&eacute;partition du budget</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">Gestion</span>
   <div class="enonce">
     Le budget mensuel d&rsquo;un atelier de menuiserie se r&eacute;partit ainsi :<br>
@@ -1219,21 +1224,22 @@
     <strong>c.</strong> Calculer l&rsquo;angle au centre correspondant &agrave; chaque poste (en degr&eacute;s).<br>
     <strong>d.</strong> Le poste &laquo;Bois&raquo; augmente de 15%. Quels sont les nouveaux pourcentages ?
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a.</strong> \(3600+1200+2400+4800+600 = \mathbf{12\,600\,\text{€}}\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a.</strong> \(3600+1200+2400+4800+600 = \mathbf{12\,600\,\text{€}}\)</p>
       <p><strong>b.</strong> Bois : 28,6%, Quincaillerie : 9,5%, Machines : 19%, Salaires : 38,1%, Divers : 4,8%</p>
       <p><strong>c.</strong> Bois : \(0{,}286 \times 360 \approx 103°\), Quincaillerie : 34°, Machines : 69°, Salaires : 137°, Divers : 17°</p>
       <p><strong>d.</strong> Nouveau bois : \(3600 \times 1{,}15 = 4140\). Nouveau total : 13 140 &euro;. Bois : 31,5%, les autres postes baissent proportionnellement.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 26 -->
-<div class="exo">
-  <div class="exo-num">Exercice 26</div>
-  <div class="exo-titre">Comparer deux s&eacute;ries &mdash; Notes de deux classes</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 26</span>
+    <span class="exo-title">Comparer deux s&eacute;ries &mdash; Notes de deux classes</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">Scolaire</span>
   <div class="enonce">
     Deux classes ont pass&eacute; le m&ecirc;me contr&ocirc;le. R&eacute;sultats :<br>
@@ -1246,35 +1252,31 @@
     <strong>b.</strong> Calculer l&rsquo;&eacute;tendue de chaque s&eacute;rie.<br>
     <strong>c.</strong> Quelle classe a les meilleurs r&eacute;sultats ? Quelle classe est la plus homog&egrave;ne ?
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a.</strong> Classe A : \(\frac{4+24+50+96+84+64+18}{28} = \frac{340}{28} \approx \mathbf{12{,}14}\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a.</strong> Classe A : \(\frac{4+24+50+96+84+64+18}{28} = \frac{340}{28} \approx \mathbf{12{,}14}\)</p>
       <p>Classe B : \(\frac{16+16+30+48+70+112+54}{28} = \frac{346}{28} \approx \mathbf{12{,}36}\)</p>
       <p><strong>b.</strong> &Eacute;tendue A : \(18-4 = 14\). &Eacute;tendue B : \(18-4 = 14\). M&ecirc;me &eacute;tendue.</p>
       <p><strong>c.</strong> La classe B a une moyenne l&eacute;g&egrave;rement sup&eacute;rieure. Mais la classe A est plus <strong>homog&egrave;ne</strong> (les notes sont regroup&eacute;es autour de 10-14), tandis que B est plus dispers&eacute;e.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
-</div><!-- fin diff-standard -->
+</div><!-- fin diff-standa
 
 
 <!-- ================================================================
      NIVEAU APPROFONDISSEMENT — problèmes ouverts
      ================================================================ -->
-<div class="diff-appro">
-<span class="tag-appro">Approfondissement</span>
-
-<div class="niveau-header niveau-4">
-  <span class="badge-niv badge-4">Niveau 4</span>
-  <h2>Probl&egrave;mes complets &ndash; Analyse et comparaison</h2>
-</div>
-
 <!-- EX 27 -->
-<div class="exo">
-  <div class="exo-num">Exercice 27</div>
-  <div class="exo-titre">Comparer deux ouvriers</div>
+
+<h2>Exercices d'approfondissement</h2>
+
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 27</span>
+    <span class="exo-title">Comparer deux ouvriers</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">Gestion de production &ndash; Menuiserie</span>
   <div class="enonce">
     Un chef d'atelier souhaite comparer les performances de deux ouvriers. Chacun a fabriqu&eacute; 10 pi&egrave;ces.
@@ -1307,10 +1309,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) x̄(A) = ... / x̄(B) = ...&#10;b) Étendue A = ... / Étendue B = ...&#10;c) Le plus rapide : ...&#10;d) Le plus régulier : ...&#10;e) Me(A) = ... / Me(B) = ... / Q1, Q3 ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a) Moyennes :</strong><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a) Moyennes :</strong><br>
       Somme A : \(25+30+28+32+27+35+29+28+31+26 = 291\)
       \[\bar{x}_A = \frac{291}{10} = \mathbf{29{,}1 \text{ min}}\]
       Somme B : \(20+40+28+35+22+42+30+28+35+25 = 305\)
@@ -1335,15 +1336,17 @@
       <div class="att-corr">
         L'ouvrier B a des pics de rapidit&eacute; (20 min) mais aussi des temps tr&egrave;s longs (42 min). L'ouvrier A est beaucoup plus constant.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX 28 -->
-<div class="exo">
-  <div class="exo-num">Exercice 28</div>
-  <div class="exo-titre">Analyse compl&egrave;te d'une production en menuiserie</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 28</span>
+    <span class="exo-title">Analyse compl&egrave;te d'une production en menuiserie</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">Analyse compl&egrave;te &ndash; Contr&ocirc;le qualit&eacute;</span>
   <div class="enonce">
     Un atelier produit des tasseaux dont la longueur nominale est <strong>40 cm</strong>.
@@ -1365,10 +1368,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) Série triée : ...&#10;b) x̄ = ...&#10;c) Me = ...&#10;d) Q1, Q3, écart interquartile = ...&#10;e) Étendue = ...&#10;f) Conformité : ...&#10;g) Comparaison : ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a) S&eacute;rie tri&eacute;e (\(N = 20\)) :</strong><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a) S&eacute;rie tri&eacute;e (\(N = 20\)) :</strong><br>
       39,7 ; 39,8 ; 39,8 ; 39,8 ; 39,9 ; 39,9 ; 39,9 ; 40,0 ; 40,0 ; 40,0 ;<br>
       40,1 ; 40,1 ; 40,1 ; 40,2 ; 40,2 ; 40,2 ; 40,3 ; 40,3 ; 40,4 ; 40,5<br><br>
 
@@ -1400,13 +1402,15 @@
       <div class="att-corr">
         Un tasseau du lot 1 a atteint exactement la limite haute (40,5 cm) : &agrave; surveiller sur la dur&eacute;e.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 <!-- EX 29 -->
-<div class="exo">
-  <div class="exo-num">Exercice 29</div>
-  <div class="exo-titre">S&eacute;rie regroup&eacute;e en classes &mdash; Consommation &eacute;lectrique</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 29</span>
+    <span class="exo-title">S&eacute;rie regroup&eacute;e en classes &mdash; Consommation &eacute;lectrique</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">&Eacute;nergie</span>
   <div class="enonce">
     La consommation mensuelle (en kWh) de 50 logements a &eacute;t&eacute; class&eacute;e :<br>
@@ -1420,22 +1424,23 @@
     <strong>d.</strong> Un fournisseur d&rsquo;&eacute;nergie propose un tarif r&eacute;duit pour les logements consommant moins de 300 kWh. Quel pourcentage de logements est &eacute;ligible ?<br>
     <strong>e.</strong> Estimer le co&ucirc;t total pour ces 50 logements si le kWh co&ucirc;te 0,22 &euro;.
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a.</strong> Centres : 150, 250, 350, 450, 550</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a.</strong> Centres : 150, 250, 350, 450, 550</p>
       <p><strong>b.</strong> \(\bar{x} = \frac{5 \times 150 + 12 \times 250 + 18 \times 350 + 10 \times 450 + 5 \times 550}{50} = \frac{16\,600}{50} = \mathbf{332\,\text{kWh}}\)</p>
       <p><strong>c.</strong> ECC : 5, 17, 35, 45, 50. La 25e valeur est dans [300;400[. <strong>Classe m&eacute;diane : [300;400[</strong>.</p>
       <p><strong>d.</strong> Logements &lt; 300 kWh : \(5 + 12 = 17\). \(\frac{17}{50} \times 100 = \mathbf{34\,\%}\).</p>
       <p><strong>e.</strong> Co&ucirc;t total : \(16\,600 \times 0{,}22 = \mathbf{3\,652\,\text{€}}\).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 30 -->
-<div class="exo">
-  <div class="exo-num">Exercice 30</div>
-  <div class="exo-titre">Probl&egrave;me ouvert &mdash; Optimiser une production</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 30</span>
+    <span class="exo-title">Probl&egrave;me ouvert &mdash; Optimiser une production</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">Gestion d&rsquo;atelier</span>
   <div class="enonce">
     Un atelier de fabrication de mobilier produit des chaises. On rel&egrave;ve le nombre de d&eacute;fauts par lot de 100 chaises sur 30 lots :<br>
@@ -1449,19 +1454,17 @@
     <strong>d.</strong> Si l&rsquo;atelier investit dans une nouvelle machine r&eacute;duisant les d&eacute;fauts de 40%, quel serait le nouveau nombre moyen de d&eacute;fauts par lot ?<br>
     <strong>e.</strong> Chaque d&eacute;faut co&ucirc;te 25 &euro; de r&eacute;paration. L&rsquo;investissement co&ucirc;te 5 000 &euro;. Au bout de combien de lots l&rsquo;investissement est-il rentabilis&eacute; ?
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a.</strong> \(\bar{x} = \frac{0 \times 8 + 1 \times 10 + 2 \times 6 + 3 \times 3 + 4 \times 2 + 5 \times 1}{30} = \frac{44}{30} \approx \mathbf{1{,}47}\) d&eacute;fauts/lot.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a.</strong> \(\bar{x} = \frac{0 \times 8 + 1 \times 10 + 2 \times 6 + 3 \times 3 + 4 \times 2 + 5 \times 1}{30} = \frac{44}{30} \approx \mathbf{1{,}47}\) d&eacute;fauts/lot.</p>
       <p><strong>b.</strong> ECC : 8, 18, 24, 27, 29, 30. M&eacute;diane entre la 15e et 16e valeurs &rarr; <strong>m&eacute;diane = 1</strong>. &Eacute;tendue : \(5 - 0 = 5\).</p>
       <p><strong>c.</strong> Taux : \(\frac{1{,}47}{100} \times 100 = \mathbf{1{,}47\,\%}\). L&rsquo;exigence (&lt; 2%) est <strong>respect&eacute;e</strong>.</p>
       <p><strong>d.</strong> Nouveau : \(1{,}47 \times 0{,}60 = \mathbf{0{,}88}\) d&eacute;fauts/lot.</p>
       <p><strong>e.</strong> &Eacute;conomie/lot : \((1{,}47 - 0{,}88) \times 25 = 14{,}75\) &euro;/lot. \(\frac{5000}{14{,}75} \approx 339\) lots. Rentabilis&eacute; apr&egrave;s <strong>339 lots</strong>.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
-</div><!-- fin diff-appro -->
+</div><!-- fin diff-app
 
 
 <!-- ============================================================ -->

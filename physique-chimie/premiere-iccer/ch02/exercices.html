@@ -31,15 +31,20 @@
 <!-- ============================================================ -->
 <!--                   EXERCICES COMMUNS                           -->
 <!-- ============================================================ -->
-<h2>Exercices communs</h2>
 
-<div class="exo">
-  <strong>Exercice 1 – Le réseau électrique</strong>
+<h2>Exercices guidés pas à pas</h2>
+
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 1</span>
+    <span class="exo-title">Le réseau électrique</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <p>Compléter le schéma du réseau avec les mots : <em>élévateur, abaisseur, 400 kV, 20 kV, 230 V, centrale, utilisateur</em>.</p>
   <p style="text-align:center;">
     ............... → Transformateur ............... → Transport ............... → Transformateur ............... → Distribution ............... → Transformateur ............... → ............... (...............)
   </p>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p style="text-align:center;">
       <strong>Centrale</strong> → Transformateur <strong>élévateur</strong> → Transport <strong>400 kV</strong> → Transformateur <strong>abaisseur</strong> → Distribution <strong>20 kV</strong> → Transformateur <strong>abaisseur</strong> → <strong>Utilisateur</strong> (<strong>230 V</strong>)
@@ -47,8 +52,12 @@
   </div>
 </div>
 
-<div class="exo">
-  <strong>Exercice 2 – Vrai ou Faux</strong>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Vrai ou Faux</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <p>Indiquer si chaque affirmation est vraie ou fausse. Corriger les affirmations fausses.</p>
   <ol>
     <li>L'effet Joule est la production de chaleur par un conducteur traversé par un courant.</li>
@@ -57,7 +66,7 @@
     <li>Un transformateur abaisseur augmente la tension.</li>
     <li>Dans un transformateur idéal, la puissance est conservée.</li>
   </ol>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li><strong>Vrai.</strong></li>
@@ -68,15 +77,12 @@
     </ol>
   </div>
 </div>
-
-<!-- ============================================================ -->
-<!--                       NIVEAU SOCLE                            -->
-<!-- ============================================================ -->
-<h2>Exercices guidés pas à pas</h2>
-
 <div class="exo diff-socle">
   <span class="tag-socle">Socle</span>
-  <strong>Exercice 3 – Pertes Joule dans un câble : calcul guidé</strong>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">Pertes Joule dans un câble : calcul guidé</span>
+  </div>
   <p>Un câble électrique de résistance \(R = 2\;\Omega\) est traversé par un courant \(I = 10\) A.</p>
 
   <p><strong>1.</strong> Quelle est la formule de la puissance dissipée par effet Joule ?</p>
@@ -85,7 +91,7 @@
   <p><strong>3.</strong> Le câble fonctionne pendant 5 heures. Calculer l'énergie dissipée :</p>
   <p>\(E_J = P_J \times t = ....... \times ....... = ....... \text{ Wh} = ....... \text{ kWh}\)</p>
 
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1.</strong> \(P_J = R \times I^2\)</p>
     <p><strong>2.</strong> \(P_J = 2 \times 10^2 = 2 \times 100 = 200 \text{ W}\)</p>
@@ -95,7 +101,10 @@
 
 <div class="exo diff-socle">
   <span class="tag-socle">Socle</span>
-  <strong>Exercice 4 – Transformateur : calcul guidé</strong>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Transformateur : calcul guidé</span>
+  </div>
   <p>Un transformateur abaisseur reçoit une tension \(U_1 = 20\,000\) V et délivre une tension \(U_2 = 400\) V. Le courant au primaire est \(I_1 = 5\) A.</p>
 
   <p><strong>1.</strong> Le transformateur est-il élévateur ou abaisseur ? Justifier.</p>
@@ -107,7 +116,7 @@
   <p><strong>4.</strong> Calculer la puissance transmise :</p>
   <p>\(P = U_2 \times I_2 = ....... \times ....... = ....... \text{ W} = ....... \text{ kW}\)</p>
 
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1.</strong> \(U_2 < U_1\) donc c'est un transformateur <strong>abaisseur</strong>.</p>
     <p><strong>2.</strong> \(m = \dfrac{400}{20\,000} = 0{,}02\)</p>
@@ -118,7 +127,10 @@
 
 <div class="exo diff-socle">
   <span class="tag-socle">Socle</span>
-  <strong>Exercice 5 – Comparer deux tensions de transport</strong>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Comparer deux tensions de transport</span>
+  </div>
   <p>On transporte une puissance \(P = 100\,000\) W. La résistance de la ligne est \(R = 4\;\Omega\). Compléter le tableau :</p>
   <table>
     <thead><tr><th></th><th>Tension = 1 000 V</th><th>Tension = 10 000 V</th></tr></thead>
@@ -128,7 +140,7 @@
     </tbody>
   </table>
   <p>Conclusion : en multipliant la tension par ......., les pertes sont divisées par .......</p>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <table>
       <thead><tr><th></th><th>Tension = 1 000 V</th><th>Tension = 10 000 V</th></tr></thead>
@@ -141,14 +153,14 @@
   </div>
 </div>
 
-<!-- ============================================================ -->
-<!--                       NIVEAU STANDARD                         -->
-<!-- ============================================================ -->
 <h2>Exercices d'application</h2>
 
 <div class="exo diff-standard">
   <span class="tag-standard">Standard</span>
-  <strong>Exercice 6 – Raccordement d'une PAC</strong>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">Raccordement d'une PAC</span>
+  </div>
   <p>Un technicien chauffagiste raccorde une pompe à chaleur de 4 500 W sous 230 V. Le câble mesure 25 m (aller-retour : 50 m) et a une résistance de 0,35 \(\Omega\).</p>
   <ol>
     <li>Calculer l'intensité du courant dans le câble.</li>
@@ -157,7 +169,7 @@
     <li>Calculer l'énergie perdue en un mois (30 jours) si la PAC fonctionne 8 h par jour. Donner le résultat en kWh.</li>
     <li>Calculer le coût annuel de ces pertes au tarif de 0,22 €/kWh (365 jours).</li>
   </ol>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>\(I = \dfrac{4\,500}{230} \approx 19{,}6 \text{ A}\)</li>
@@ -171,7 +183,10 @@
 
 <div class="exo diff-standard">
   <span class="tag-standard">Standard</span>
-  <strong>Exercice 7 – Poste de transformation d'un lotissement</strong>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 7</span>
+    <span class="exo-title">Poste de transformation d'un lotissement</span>
+  </div>
   <p>Le poste de transformation d'un lotissement reçoit une tension de 20 000 V et délivre 230 V. Il alimente 30 maisons qui consomment en moyenne 5 kW chacune.</p>
   <ol>
     <li>Calculer la puissance totale appelée par le lotissement.</li>
@@ -180,7 +195,7 @@
     <li>Calculer le rapport de transformation. Est-il élévateur ou abaisseur ?</li>
     <li>Le primaire est alimenté par un câble de résistance 1,2 \(\Omega\). Calculer les pertes Joule dans ce câble.</li>
   </ol>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>\(P = 30 \times 5 = 150 \text{ kW} = 150\,000 \text{ W}\)</li>
@@ -194,7 +209,10 @@
 
 <div class="exo diff-standard">
   <span class="tag-standard">Standard</span>
-  <strong>Exercice 8 – Section de câble et échauffement</strong>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 8</span>
+    <span class="exo-title">Section de câble et échauffement</span>
+  </div>
   <p>Un installateur thermique doit choisir la section d'un câble en cuivre de 30 m (aller-retour 60 m) pour alimenter un système de climatisation de 3 500 W sous 230 V. La résistivité du cuivre est \(\rho = 1{,}7 \times 10^{-8}\;\Omega \cdot \text{m}\).</p>
   <p>Il hésite entre deux sections :</p>
   <ul>
@@ -207,7 +225,7 @@
     <li>Calculer les pertes Joule pour chaque câble.</li>
     <li>Quel câble conseillez-vous ? Justifier.</li>
   </ol>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>
@@ -224,14 +242,14 @@
   </div>
 </div>
 
-<!-- ============================================================ -->
-<!--                   NIVEAU APPROFONDISSEMENT                    -->
-<!-- ============================================================ -->
 <h2>Exercices d'approfondissement</h2>
 
 <div class="exo diff-appro">
   <span class="tag-appro">Approfondissement</span>
-  <strong>Exercice 9 – Alimentation d'un site isolé</strong>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 9</span>
+    <span class="exo-title">Alimentation d'un site isolé</span>
+  </div>
   <p>Un technicien en énergies renouvelables doit alimenter un refuge de montagne situé à 2 km d'un poste de transformation. Le refuge consomme une puissance maximale de 8 kW. Le câble en cuivre a une section de 16 mm² et une résistivité de \(1{,}7 \times 10^{-8}\;\Omega \cdot \text{m}\).</p>
   <p>Deux options sont envisagées :</p>
   <ul>
@@ -245,7 +263,7 @@
     <li>Comparer les deux options. Laquelle est viable ? Justifier.</li>
     <li>Si le refuge fonctionne en moyenne 12 h/jour pendant 200 jours par an, calculer le coût annuel des pertes pour chaque option (tarif 0,22 €/kWh).</li>
   </ol>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>\(R = 1{,}7 \times 10^{-8} \times \dfrac{4\,000}{16 \times 10^{-6}} = 4{,}25\;\Omega\)</li>
@@ -270,7 +288,10 @@
 
 <div class="exo diff-appro">
   <span class="tag-appro">Approfondissement</span>
-  <strong>Exercice 10 – Problème ouvert : choix d'un transformateur (type BTS)</strong>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 10</span>
+    <span class="exo-title">Problème ouvert : choix d'un transformateur (type BTS)</span>
+  </div>
   <p>Une entreprise d'installation thermique doit équiper un bâtiment neuf. Les besoins sont :</p>
   <ul>
     <li>Chauffage PAC : 12 kW</li>
@@ -286,7 +307,7 @@
     <li>Calculer le courant au primaire et au secondaire du transformateur choisi.</li>
     <li>Le câble entre le réseau et le transformateur mesure 150 m (aller-retour 300 m) en cuivre de section 10 mm². Calculer les pertes Joule. Conclure.</li>
   </ol>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>\(P_{\text{totale}} = 12 + 3 + 8 + 2 = 25 \text{ kW}\)</li>

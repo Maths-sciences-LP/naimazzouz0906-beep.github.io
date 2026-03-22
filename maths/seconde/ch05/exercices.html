@@ -28,15 +28,16 @@
 <!-- ============================================================ -->
 <!--  NIVEAU 1 – VÉRIFIER LES BASES                               -->
 <!-- ============================================================ -->
-<div class="niveau-header niveau-1">
-  <span class="badge-niv badge-1">Niveau 1</span>
-  <h2>Vérifier les bases</h2>
-</div>
-
 <!-- EX 1 -->
-<div class="exo">
-  <div class="exo-num">Exercice 1</div>
-  <div class="exo-titre">Résoudre des équations de la forme \(ax = b\)</div>
+
+<h2>Exercices guidés pas à pas</h2>
+
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 1</span>
+    <span class="exo-title">Résoudre des équations de la forme \(ax = b\)</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     Résoudre les équations suivantes. Donner la valeur exacte de \(x\).<br><br>
     <strong>a)</strong>  \(4x = 28\)
@@ -49,10 +50,9 @@
     <textarea placeholder="a) 4x = 28  →  x = ...
 b) ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a)</strong> \(4x = 28 \implies x = \dfrac{28}{4} = \mathbf{7}\)
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a)</strong> \(4x = 28 \implies x = \dfrac{28}{4} = \mathbf{7}\)
         Vérif : \(4 \times 7 = 28\) ✔<br><br>
       <strong>b)</strong> \(9x = 63 \implies x = \dfrac{63}{9} = \mathbf{7}\)
         Vérif : \(9 \times 7 = 63\) ✔<br><br>
@@ -60,14 +60,16 @@ b) ..."></textarea>
         Vérif : \(3{,}5 \times 4 = 14\) ✔<br><br>
       <strong>d)</strong> \(12x = 0 \implies x = \dfrac{0}{12} = \mathbf{0}\)
         Vérif : \(12 \times 0 = 0\) ✔
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 2 -->
-<div class="exo">
-  <div class="exo-num">Exercice 2</div>
-  <div class="exo-titre">Vérifier si une valeur est solution</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Vérifier si une valeur est solution</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     Pour chaque équation, dire si la valeur proposée est une solution ou non. Justifier en remplaçant \(x\) par la valeur.
     <br><br>
@@ -80,10 +82,9 @@ b) ..."></textarea>
     <label>Mes calculs :</label>
     <textarea placeholder="a) Je remplace x par 5 : 5×5 − 3 = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a)</strong> On remplace : \(5 \times 5 - 3 = 25 - 3 = 22\). C'est bien égal à 22.
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a)</strong> On remplace : \(5 \times 5 - 3 = 25 - 3 = 22\). C'est bien égal à 22.
       <div class="corr-rep">✔ \(x = 5\) est bien solution de \(5x - 3 = 22\).</div>
       <strong>b)</strong> On remplace : \(2 \times 4 + 7 = 8 + 7 = 15\). C'est bien égal à 15.
       <div class="corr-rep">✔ \(x = 4\) est bien solution de \(2x + 7 = 15\).</div>
@@ -91,15 +92,17 @@ b) ..."></textarea>
       <div class="att-corr">✗ \(x = 3\) n'est <strong>pas</strong> solution. La vraie solution est \(x = 4\) (vérif : \(3 \times 4 - 1 = 11\) ✔).</div>
       <strong>d)</strong> On remplace : \(6 \times 5 + 2 = 30 + 2 = 32\). C'est bien égal à 32.
       <div class="corr-rep">✔ \(x = 5\) est bien solution de \(6x + 2 = 32\).</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX 3 commun — Résoudre ax + b = c -->
-<div class="exo">
-  <div class="exo-num">Exercice 3</div>
-  <div class="exo-titre">R&eacute;soudre des &eacute;quations de la forme \(ax + b = c\)</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">R&eacute;soudre des &eacute;quations de la forme \(ax + b = c\)</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     R&eacute;soudre les &eacute;quations suivantes. V&eacute;rifier chaque r&eacute;sultat.<br><br>
     <strong>a)</strong> \(3x + 7 = 22\)<br>
@@ -107,32 +110,25 @@ b) ..."></textarea>
     <strong>c)</strong> \(2x + 1{,}5 = 9{,}5\)<br>
     <strong>d)</strong> \(4x - 3 = 0\)
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \(3x = 22 - 7 = 15\) &rarr; \(x = \frac{15}{3} = \mathbf{5}\). V&eacute;rif : \(3 \times 5 + 7 = 22\) &check;</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(3x = 22 - 7 = 15\) &rarr; \(x = \frac{15}{3} = \mathbf{5}\). V&eacute;rif : \(3 \times 5 + 7 = 22\) &check;</p>
       <p><strong>b)</strong> \(5x = 17 + 8 = 25\) &rarr; \(x = \frac{25}{5} = \mathbf{5}\). V&eacute;rif : \(5 \times 5 - 8 = 17\) &check;</p>
       <p><strong>c)</strong> \(2x = 9{,}5 - 1{,}5 = 8\) &rarr; \(x = \frac{8}{2} = \mathbf{4}\). V&eacute;rif : \(2 \times 4 + 1{,}5 = 9{,}5\) &check;</p>
       <p><strong>d)</strong> \(4x = 3\) &rarr; \(x = \frac{3}{4} = \mathbf{0{,}75}\). V&eacute;rif : \(4 \times 0{,}75 - 3 = 0\) &check;</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- ================================================================
      NIVEAU SOCLE — exercices très guidés, étape par étape
      ================================================================ -->
-<div class="diff-socle">
-<span class="tag-socle">Socle</span>
-
 <!-- EX S1 -->
-<div class="niveau-header niveau-2">
-  <span class="badge-niv badge-2">Niveau 2</span>
-  <h2>Résoudre pas à pas</h2>
-</div>
-
-<div class="exo">
-  <div class="exo-num">Exercice 4</div>
-  <div class="exo-titre">Résoudre \(ax + b = c\) — méthode détaillée</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Résoudre \(ax + b = c\) — méthode détaillée</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="meth">
     <strong>Méthode :</strong> Pour résoudre \(ax + b = c\), on fait <strong>2 étapes</strong> :<br>
     • <strong>Étape 1 :</strong> On isole le terme en \(x\) → on enlève \(b\) des deux côtés<br>
@@ -157,21 +153,22 @@ b) ..."></textarea>
     <label>Mes calculs :</label>
     <textarea placeholder="a) 2x = ... → x = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>Exemple :</strong> \(3x = 20 - 5 = 15\), donc \(x = \frac{15}{3} = 5\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Exemple :</strong> \(3x = 20 - 5 = 15\), donc \(x = \frac{15}{3} = 5\).</p>
       <p><strong>a)</strong> \(2x = 11 - 3 = 8\) → \(x = \frac{8}{2} = \mathbf{4}\)</p>
       <p><strong>b)</strong> \(5x = 25 + 10 = 35\) → \(x = \frac{35}{5} = \mathbf{7}\)</p>
       <p><strong>c)</strong> \(4x = 7 - 7 = 0\) → \(x = \frac{0}{4} = \mathbf{0}\)</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S2 -->
-<div class="exo">
-  <div class="exo-num">Exercice 5</div>
-  <div class="exo-titre">Traduire un énoncé en équation — guidé</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Traduire un énoncé en équation — guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     <span class="context-tag">Atelier de menuiserie</span><br>
     Un menuisier achète des tasseaux à <strong>3 € pièce</strong> et paie un forfait de livraison de <strong>12 €</strong>. Sa facture totale est de <strong>42 €</strong>.<br><br>
@@ -192,20 +189,21 @@ b) ..."></textarea>
     <textarea placeholder="Équation : 3x + 12 = 42
 Résolution : ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>Équation :</strong> \(3x + 12 = 42\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Équation :</strong> \(3x + 12 = 42\)</p>
       <p>\(3x = 42 - 12 = 30\) → \(x = \frac{30}{3} = \mathbf{10}\)</p>
       <p><strong>Conclusion :</strong> Le menuisier a acheté <strong>10 tasseaux</strong>.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S3 -->
-<div class="exo">
-  <div class="exo-num">Exercice 6</div>
-  <div class="exo-titre">Problème guidé — budget peinture</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">Problème guidé — budget peinture</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     <span class="context-tag">Atelier de menuiserie</span><br>
     Un apprenti peintre dispose d’un budget de <strong>80 €</strong>. Un pot de peinture coûte <strong>15 €</strong> et les rouleaux coûtent <strong>5 €</strong> au total.<br><br>
@@ -222,20 +220,21 @@ Résolution : ..."></textarea>
 2. Résolution : ...
 3. Conclusion : ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>1.</strong> \(15x + 5 = 80\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(15x + 5 = 80\)</p>
       <p><strong>2.</strong> \(15x = 75\) → \(x = \frac{75}{15} = 5\)</p>
       <p><strong>3.</strong> Oui, \(x = 5\) est entier. Il peut acheter <strong>5 pots</strong>.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S4 — Équation ax - b = c guidé -->
-<div class="exo">
-  <div class="exo-num">Exercice 7</div>
-  <div class="exo-titre">R&eacute;soudre \(ax - b = c\) &mdash; pas &agrave; pas</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 7</span>
+    <span class="exo-title">R&eacute;soudre \(ax - b = c\) &mdash; pas &agrave; pas</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     R&eacute;soudre chaque &eacute;quation en suivant les deux &eacute;tapes :<br><br>
     <strong>a)</strong> \(6x - 4 = 20\)<br>
@@ -248,20 +247,21 @@ Résolution : ..."></textarea>
     &Eacute;tape 1 : ......<br>
     &Eacute;tape 2 : ......
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \(6x = 24\) &rarr; \(x = \frac{24}{6} = \mathbf{4}\). V&eacute;rif : \(6 \times 4 - 4 = 20\) &check;</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(6x = 24\) &rarr; \(x = \frac{24}{6} = \mathbf{4}\). V&eacute;rif : \(6 \times 4 - 4 = 20\) &check;</p>
       <p><strong>b)</strong> \(8x = 48\) &rarr; \(x = \frac{48}{8} = \mathbf{6}\). V&eacute;rif : \(8 \times 6 - 12 = 36\) &check;</p>
       <p><strong>c)</strong> \(10x = 5\) &rarr; \(x = \frac{5}{10} = \mathbf{0{,}5}\). V&eacute;rif : \(10 \times 0{,}5 - 5 = 0\) &check;</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S5 — Mise en équation guidée : longueur -->
-<div class="exo">
-  <div class="exo-num">Exercice 8</div>
-  <div class="exo-titre">Probl&egrave;me guid&eacute; &mdash; Longueur de planches</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 8</span>
+    <span class="exo-title">Probl&egrave;me guid&eacute; &mdash; Longueur de planches</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     <span class="context-tag">Menuiserie</span><br>
     Un menuisier d&eacute;coupe une planche de <strong>2,40&thinsp;m</strong> en deux morceaux. Le deuxi&egrave;me morceau mesure <strong>30&thinsp;cm de plus</strong> que le premier.<br><br>
@@ -275,22 +275,23 @@ Résolution : ..."></textarea>
     \(x =\) ......<br><br>
     <strong>4.</strong> En d&eacute;duire les longueurs des deux morceaux.
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>1.</strong> Deuxi&egrave;me morceau = \(x + 30\) cm</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Deuxi&egrave;me morceau = \(x + 30\) cm</p>
       <p><strong>2.</strong> \(x + (x + 30) = 240\)</p>
       <p><strong>3.</strong> \(2x + 30 = 240\) &rarr; \(2x = 210\) &rarr; \(x = 105\)</p>
       <p><strong>4.</strong> Premier morceau : <strong>105 cm</strong>, deuxi&egrave;me : \(105 + 30 = \mathbf{135\,\text{cm}}\).</p>
       <p>V&eacute;rif : \(105 + 135 = 240\) &check;</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S6 — Coefficient multiplicateur et équation -->
-<div class="exo">
-  <div class="exo-num">Exercice 9</div>
-  <div class="exo-titre">Probl&egrave;me guid&eacute; &mdash; Prix apr&egrave;s remise</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 9</span>
+    <span class="exo-title">Probl&egrave;me guid&eacute; &mdash; Prix apr&egrave;s remise</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     <span class="context-tag">Commerce</span><br>
     Apr&egrave;s une remise de <strong>20&thinsp;%</strong>, un outil co&ucirc;te <strong>36&thinsp;&euro;</strong>. On cherche le prix initial.<br><br>
@@ -301,21 +302,22 @@ Résolution : ..."></textarea>
     <strong>3.</strong> R&eacute;soudre :<br>
     \(x = \dfrac{36}{......} =\) ...... &euro;
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>1.</strong> CM \(= 0{,}80\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> CM \(= 0{,}80\)</p>
       <p><strong>2.</strong> \(0{,}80x = 36\)</p>
       <p><strong>3.</strong> \(x = \dfrac{36}{0{,}80} = \mathbf{45\,\text{€}}\)</p>
       <p>V&eacute;rif : \(45 \times 0{,}80 = 36\) &check;</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S7 — Équation avec fractions simples -->
-<div class="exo">
-  <div class="exo-num">Exercice 10</div>
-  <div class="exo-titre">R&eacute;soudre une &eacute;quation simple avec une division</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 10</span>
+    <span class="exo-title">R&eacute;soudre une &eacute;quation simple avec une division</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     R&eacute;soudre les &eacute;quations suivantes. Compl&eacute;ter :<br><br>
     <strong>a)</strong> \(\dfrac{x}{4} = 7\)<br>
@@ -326,20 +328,21 @@ Résolution : ..."></textarea>
     <strong>c)</strong> \(\dfrac{x}{5} - 2 = 8\)<br>
     R&eacute;soudre seul en suivant la m&ecirc;me m&eacute;thode.
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \(x = 7 \times 4 = \mathbf{28}\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(x = 7 \times 4 = \mathbf{28}\)</p>
       <p><strong>b)</strong> \(\frac{x}{3} = 6\) &rarr; \(x = 6 \times 3 = \mathbf{18}\). V&eacute;rif : \(\frac{18}{3} + 5 = 11\) &check;</p>
       <p><strong>c)</strong> \(\frac{x}{5} = 10\) &rarr; \(x = 10 \times 5 = \mathbf{50}\). V&eacute;rif : \(\frac{50}{5} - 2 = 8\) &check;</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S8 — Périmètre et équation -->
-<div class="exo">
-  <div class="exo-num">Exercice 11</div>
-  <div class="exo-titre">Probl&egrave;me guid&eacute; &mdash; P&eacute;rim&egrave;tre d&rsquo;un rectangle</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 11</span>
+    <span class="exo-title">Probl&egrave;me guid&eacute; &mdash; P&eacute;rim&egrave;tre d&rsquo;un rectangle</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     <span class="context-tag">G&eacute;om&eacute;trie</span><br>
     Un rectangle a un p&eacute;rim&egrave;tre de <strong>54&thinsp;cm</strong>. Sa longueur mesure <strong>le double</strong> de sa largeur.<br><br>
@@ -351,21 +354,22 @@ Résolution : ..."></textarea>
     \(x =\) ......<br>
     <strong>3.</strong> Donner les dimensions du rectangle.
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>1.</strong> \(L = 2x\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(L = 2x\)</p>
       <p><strong>2.</strong> \(2 \times 3x = 54\) &rarr; \(6x = 54\) &rarr; \(x = 9\)</p>
       <p><strong>3.</strong> Largeur : <strong>9 cm</strong>, longueur : \(2 \times 9 = \mathbf{18\,\text{cm}}\).</p>
       <p>V&eacute;rif : \(2 \times (18 + 9) = 2 \times 27 = 54\) &check;</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S9 — Partage en parts inégales -->
-<div class="exo">
-  <div class="exo-num">Exercice 12</div>
-  <div class="exo-titre">Probl&egrave;me guid&eacute; &mdash; Partage d&rsquo;une somme</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 12</span>
+    <span class="exo-title">Probl&egrave;me guid&eacute; &mdash; Partage d&rsquo;une somme</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     <span class="context-tag">Quotidien</span><br>
     Deux amis se partagent <strong>75&thinsp;&euro;</strong>. Le premier re&ccedil;oit <strong>15&thinsp;&euro; de plus</strong> que le second.<br><br>
@@ -374,37 +378,33 @@ Résolution : ..."></textarea>
     <strong>3.</strong> R&eacute;soudre.<br>
     <strong>4.</strong> Combien re&ccedil;oit chacun ?
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>1.</strong> Part du premier = \(x + 15\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Part du premier = \(x + 15\)</p>
       <p><strong>3.</strong> \(2x + 15 = 75\) &rarr; \(2x = 60\) &rarr; \(x = 30\)</p>
       <p><strong>4.</strong> Second : <strong>30 &euro;</strong>, premier : \(30 + 15 = \mathbf{45\,\text{€}}\).</p>
       <p>V&eacute;rif : \(30 + 45 = 75\) &check;</p>
-    </div>
-  </details>
+  </div>
 </div>
 
-</div><!-- fin diff-socle -->
+</div><!-- fin diff-soc
 
 <!-- ================================================================
      NIVEAU STANDARD — exercices du programme
      ================================================================ -->
-<div class="diff-standard">
-<span class="tag-standard">Standard</span>
-
 <!-- ============================================================ -->
 <!--  NIVEAU 2 – APPLICATION DIRECTE                              -->
 <!-- ============================================================ -->
-<div class="niveau-header niveau-2">
-  <span class="badge-niv badge-2">Niveau 2</span>
-  <h2>Application directe</h2>
-</div>
-
 <!-- EX 6 -->
-<div class="exo">
-  <div class="exo-num">Exercice 13</div>
-  <div class="exo-titre">Résoudre des équations du premier degré</div>
+
+<h2>Exercices d'application</h2>
+
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 13</span>
+    <span class="exo-title">Résoudre des équations du premier degré</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <div class="enonce">
     Résoudre chaque équation et vérifier la solution.
     <br><br>
@@ -420,10 +420,9 @@ Résolution : ..."></textarea>
    3x = ...
    x = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a)</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a)</strong>
       \[3x + 8 = 23 \implies 3x = 15 \implies x = 5\]
       Vérif : \(3 \times 5 + 8 = 15 + 8 = 23\) ✔<br><br>
 
@@ -438,14 +437,16 @@ Résolution : ..."></textarea>
       <strong>d)</strong>
       \[7(x-2) = 3x + 10 \implies 7x - 14 = 3x + 10 \implies 4x = 24 \implies x = 6\]
       Vérif : membre gauche \(7(6-2) = 7 \times 4 = 28\), membre droit \(3 \times 6 + 10 = 28\) ✔
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 7 -->
-<div class="exo">
-  <div class="exo-num">Exercice 14</div>
-  <div class="exo-titre">Équations avec solutions négatives</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 14</span>
+    <span class="exo-title">Équations avec solutions négatives</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <div class="enonce">
     Résoudre chaque équation. Attention, certaines solutions sont négatives !
     <br><br>
@@ -461,10 +462,9 @@ Résolution : ..."></textarea>
    2x = −2
    x = −1"></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a)</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a)</strong>
       \[2x + 3 = 1 \implies 2x = 1 - 3 = -2 \implies x = -1\]
       Vérif : \(2 \times (-1) + 3 = -2 + 3 = 1\) ✔<br><br>
 
@@ -481,23 +481,20 @@ Résolution : ..."></textarea>
       Vérif : \(-4 \times (-2) - 8 = 8 - 8 = 0\) ✔
 
       <div class="att-corr">⚠ Quand on divise par un nombre négatif, le signe du résultat change : \(\frac{-6}{-2} = +3\) et \(\frac{8}{-4} = -2\).</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- ============================================================ -->
 <!--  NIVEAU 3 – PROBLÈMES CONTEXTUALISÉS                         -->
 <!-- ============================================================ -->
-<div class="niveau-header niveau-3">
-  <span class="badge-niv badge-3">Niveau 3</span>
-  <h2>Problèmes contextualisés — Menuiserie</h2>
-</div>
-
 <!-- EX 8 -->
-<div class="exo">
-  <div class="exo-num">Exercice 15</div>
-  <div class="exo-titre">Commande de panneaux de bois</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 15</span>
+    <span class="exo-title">Commande de panneaux de bois</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">🪵 Menuiserie – Agencement</span>
   <div class="enonce">
     Un menuisier commande des panneaux de contreplaqué à 18,50 € le panneau.
@@ -515,10 +512,9 @@ Résolution : ..."></textarea>
 Résolution : ...
 Conclusion : ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
         <li><strong>Inconnue :</strong> on pose \(x\) = nombre de panneaux commandés.</li>
         <li><strong>Équation :</strong> coût total = prix des panneaux + livraison
           \[18{,}50x + 22 = 207\]
@@ -530,14 +526,16 @@ Conclusion : ..."></textarea>
         <li><strong>Vérification :</strong> \(18{,}50 \times 10 + 22 = 185 + 22 = 207\) ✔</li>
       </ol>
       <div class="corr-rep">✔ Le menuisier a commandé <strong>10 panneaux</strong>.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 9 -->
-<div class="exo">
-  <div class="exo-num">Exercice 16</div>
-  <div class="exo-titre">Découpe de tasseaux</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 16</span>
+    <span class="exo-title">Découpe de tasseaux</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">🔨 Charpente – Menuiserie</span>
   <div class="enonce">
     Un artisan dispose d'une barre de bois de <strong>3,60 m</strong>.
@@ -567,10 +565,9 @@ Conclusion : ..."></textarea>
 Résolution : ...
 Conclusion : ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
         <li><strong>Inconnue :</strong> \(x\) = longueur d'un tasseau en cm.</li>
         <li><strong>Équation :</strong> \(8x + 40 = 360\)</li>
         <li><strong>Résolution :</strong>
@@ -580,14 +577,16 @@ Conclusion : ..."></textarea>
         <li><strong>Vérification :</strong> \(8 \times 40 + 40 = 320 + 40 = 360\) ✔</li>
       </ol>
       <div class="corr-rep">✔ Chaque tasseau mesure <strong>40 cm</strong>.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 10 -->
-<div class="exo">
-  <div class="exo-num">Exercice 17</div>
-  <div class="exo-titre">Prix de revient et prix de vente</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 17</span>
+    <span class="exo-title">Prix de revient et prix de vente</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">💶 Gestion – Ameublement</span>
   <div class="enonce">
     Un artisan fabrique des cadres photo en bois. Chaque cadre lui coûte \(x\) euros en matériaux.
@@ -602,24 +601,25 @@ Conclusion : ..."></textarea>
 Équation : ...
 x = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
         <li><strong>Équation :</strong> \(6x + 18 = 66\)</li>
         <li><strong>Résolution :</strong> \(6x = 48 \implies x = 8\)</li>
         <li><strong>Vérification :</strong> \(6 \times 8 + 18 = 48 + 18 = 66\) ✔</li>
       </ol>
       <div class="corr-rep">✔ Chaque cadre coûte <strong>8 € en matériaux</strong>.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- EX 11 Standard — Équation avec x des deux côtés -->
-<div class="exo">
-  <div class="exo-num">Exercice 18</div>
-  <div class="exo-titre">&Eacute;quations avec \(x\) des deux c&ocirc;t&eacute;s &mdash; Entra&icirc;nement</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 18</span>
+    <span class="exo-title">&Eacute;quations avec \(x\) des deux c&ocirc;t&eacute;s &mdash; Entra&icirc;nement</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <div class="enonce">
     R&eacute;soudre les &eacute;quations suivantes :<br><br>
     <strong>a)</strong> \(7x + 3 = 4x + 18\)<br>
@@ -627,21 +627,22 @@ x = ..."></textarea>
     <strong>c)</strong> \(2x + 14 = 5x - 1\)<br>
     <strong>d)</strong> \(6(x + 2) = 3(x + 8)\)
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \(7x - 4x = 18 - 3\) &rarr; \(3x = 15\) &rarr; \(x = \mathbf{5}\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(7x - 4x = 18 - 3\) &rarr; \(3x = 15\) &rarr; \(x = \mathbf{5}\)</p>
       <p><strong>b)</strong> \(9x - 3x = 19 + 5\) &rarr; \(6x = 24\) &rarr; \(x = \mathbf{4}\)</p>
       <p><strong>c)</strong> \(14 + 1 = 5x - 2x\) &rarr; \(3x = 15\) &rarr; \(x = \mathbf{5}\)</p>
       <p><strong>d)</strong> \(6x + 12 = 3x + 24\) &rarr; \(3x = 12\) &rarr; \(x = \mathbf{4}\)</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 12 Standard — Problème âges -->
-<div class="exo">
-  <div class="exo-num">Exercice 19</div>
-  <div class="exo-titre">Probl&egrave;me &mdash; &Acirc;ges de deux personnes</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 19</span>
+    <span class="exo-title">Probl&egrave;me &mdash; &Acirc;ges de deux personnes</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <div class="enonce">
     <span class="context-tag">Quotidien</span><br>
     Un p&egrave;re a <strong>3 fois l&rsquo;&acirc;ge</strong> de son fils. La somme de leurs &acirc;ges est <strong>52 ans</strong>.<br><br>
@@ -649,20 +650,21 @@ x = ..."></textarea>
     <strong>2.</strong> R&eacute;soudre et donner l&rsquo;&acirc;ge de chacun.<br>
     <strong>3.</strong> Dans combien d&rsquo;ann&eacute;es le p&egrave;re aura-t-il exactement le double de l&rsquo;&acirc;ge de son fils ?
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>1.</strong> \(x + 3x = 52\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(x + 3x = 52\)</p>
       <p><strong>2.</strong> \(4x = 52\) &rarr; \(x = 13\). Fils : <strong>13 ans</strong>, p&egrave;re : \(3 \times 13 = \mathbf{39\,\text{ans}}\).</p>
       <p><strong>3.</strong> Dans \(n\) ann&eacute;es : \(39 + n = 2(13 + n)\) &rarr; \(39 + n = 26 + 2n\) &rarr; \(n = 13\). Dans <strong>13 ans</strong>.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 13 Standard — Tarif téléphone -->
-<div class="exo">
-  <div class="exo-num">Exercice 20</div>
-  <div class="exo-titre">Comparaison de forfaits t&eacute;l&eacute;phoniques</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 20</span>
+    <span class="exo-title">Comparaison de forfaits t&eacute;l&eacute;phoniques</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <div class="enonce">
     <span class="context-tag">Quotidien</span><br>
     Deux op&eacute;rateurs proposent :<br>
@@ -674,20 +676,21 @@ x = ..."></textarea>
     <strong>2.</strong> &Agrave; partir de combien de minutes le forfait B est-il plus avantageux ?<br>
     <strong>3.</strong> Un utilisateur consomme en moyenne 250 min/mois. Quel forfait lui conseiller ?
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>1.</strong> \(C_A(x) = 10 + 0{,}05x\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(C_A(x) = 10 + 0{,}05x\)</p>
       <p><strong>2.</strong> \(10 + 0{,}05x = 25\) &rarr; \(0{,}05x = 15\) &rarr; \(x = 300\) minutes. &Agrave; partir de <strong>300 min</strong>, le forfait B est plus avantageux.</p>
       <p><strong>3.</strong> \(C_A(250) = 10 + 12{,}50 = 22{,}50\,\text{€} < 25\,\text{€}\). <strong>Forfait A</strong> est plus avantageux.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 14 Standard — Mélange -->
-<div class="exo">
-  <div class="exo-num">Exercice 21</div>
-  <div class="exo-titre">Probl&egrave;me &mdash; M&eacute;lange de caf&eacute;s</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 21</span>
+    <span class="exo-title">Probl&egrave;me &mdash; M&eacute;lange de caf&eacute;s</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <div class="enonce">
     <span class="context-tag">Commerce</span><br>
     Un torr&eacute;facteur m&eacute;lange deux types de caf&eacute; :<br>
@@ -700,22 +703,23 @@ x = ..."></textarea>
     <strong>2.</strong> &Eacute;crire l&rsquo;&eacute;quation du co&ucirc;t total.<br>
     <strong>3.</strong> R&eacute;soudre et v&eacute;rifier.
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>1.</strong> Robusta : \(5 - x\) kg</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Robusta : \(5 - x\) kg</p>
       <p><strong>2.</strong> \(18x + 10(5 - x) = 15{,}20 \times 5\)</p>
       <p>\(18x + 50 - 10x = 76\) &rarr; \(8x = 26\) &rarr; \(x = 3{,}25\)</p>
       <p><strong>3.</strong> Arabica : <strong>3,25 kg</strong>, Robusta : <strong>1,75 kg</strong>.</p>
       <p>V&eacute;rif : \(3{,}25 \times 18 + 1{,}75 \times 10 = 58{,}50 + 17{,}50 = 76\) &euro; et \(76 \div 5 = 15{,}20\) &check;</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 15 Standard — Surface et équation -->
-<div class="exo">
-  <div class="exo-num">Exercice 22</div>
-  <div class="exo-titre">Probl&egrave;me &mdash; Agrandissement d&rsquo;un jardin</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 22</span>
+    <span class="exo-title">Probl&egrave;me &mdash; Agrandissement d&rsquo;un jardin</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <div class="enonce">
     <span class="context-tag">Am&eacute;nagement</span><br>
     Un jardin rectangulaire mesure <strong>12 m de long et 8 m de large</strong>. On agrandit le jardin en ajoutant une bande de largeur constante \(x\) (en m) <strong>sur les deux longueurs</strong>.<br><br>
@@ -724,37 +728,33 @@ x = ..."></textarea>
     <strong>3.</strong> On veut une aire de <strong>120 m&sup2;</strong>. R&eacute;soudre l&rsquo;&eacute;quation et trouver \(x\).<br>
     <strong>4.</strong> V&eacute;rifier le r&eacute;sultat.
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>1.</strong> Nouvelle largeur : \(8 + 2x\) (on ajoute \(x\) de chaque c&ocirc;t&eacute;).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Nouvelle largeur : \(8 + 2x\) (on ajoute \(x\) de chaque c&ocirc;t&eacute;).</p>
       <p><strong>2.</strong> Nouvelle aire : \(A = 12 \times (8 + 2x) = 96 + 24x\)</p>
       <p><strong>3.</strong> \(96 + 24x = 120\) &rarr; \(24x = 24\) &rarr; \(x = \mathbf{1\,\text{m}}\)</p>
       <p><strong>4.</strong> V&eacute;rif : \(12 \times (8 + 2) = 12 \times 10 = 120\,\text{m}^2\) &check;</p>
-    </div>
-  </details>
+  </div>
 </div>
 
-</div><!-- fin diff-standard -->
+</div><!-- fin diff-standa
 
 <!-- ================================================================
      NIVEAU APPROFONDISSEMENT — problèmes ouverts
      ================================================================ -->
-<div class="diff-appro">
-<span class="tag-appro">Approfondissement</span>
-
 <!-- ============================================================ -->
 <!--  NIVEAU 4 – PROBLÈMES COMPLETS                               -->
 <!-- ============================================================ -->
-<div class="niveau-header niveau-4">
-  <span class="badge-niv badge-4">Niveau 4</span>
-  <h2>Problèmes complets – Plusieurs étapes</h2>
-</div>
-
 <!-- EX 11 -->
-<div class="exo">
-  <div class="exo-num">Exercice 23</div>
-  <div class="exo-titre">Fabrication d'étagères</div>
+
+<h2>Exercices d'approfondissement</h2>
+
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 23</span>
+    <span class="exo-title">Fabrication d'étagères</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">🪚 Menuiserie – Gestion</span>
   <div class="enonce">
     Un artisan menuisier fabrique des étagères en bois.
@@ -771,10 +771,9 @@ x = ..."></textarea>
     <textarea placeholder="1. B(x) = recettes − charges = 75x − (420 + 28x) = ...
 2. Equation : B(x) = 520  →  ...x = ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1. Expression du bénéfice :</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1. Expression du bénéfice :</strong>
       \[B(x) = 75x - (420 + 28x) = 75x - 420 - 28x = 47x - 420\]
 
       <strong>2. Pour un bénéfice de 520 € :</strong>
@@ -783,14 +782,16 @@ x = ..."></textarea>
       \[x = \frac{940}{47} = 20\]
       Vérif : \(47 \times 20 - 420 = 940 - 420 = 520\) ✔
       <div class="corr-rep">✔ Il doit vendre <strong>20 étagères</strong> pour réaliser un bénéfice de 520 €.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 12 -->
-<div class="exo">
-  <div class="exo-num">Exercice 24</div>
-  <div class="exo-titre">Comparaison de deux fournisseurs</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 24</span>
+    <span class="exo-title">Comparaison de deux fournisseurs</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">💼 Gestion – Approvisionnement</span>
   <div class="enonce">
     Un atelier doit acheter des planches de chêne. Deux fournisseurs proposent :
@@ -812,10 +813,9 @@ x = ..."></textarea>
 2. Equation C1(x) = C2(x) → ...
 3. C1(20) = ... et C2(20) = ... → ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1. Coûts totaux :</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1. Coûts totaux :</strong>
       <ul style="padding-left:18px;margin:6px 0">
         <li>BoisPro : \(C_1(x) = 14x\)</li>
         <li>ChêneShop : \(C_2(x) = 11{,}50x + 35\)</li>
@@ -832,17 +832,19 @@ x = ..."></textarea>
       \[C_1(20) = 14 \times 20 = 280 \text{ €}\]
       \[C_2(20) = 11{,}50 \times 20 + 35 = 230 + 35 = 265 \text{ €}\]
       <div class="corr-rep">✔ Il faut choisir <strong>ChêneShop</strong>. Économie : \(280 - 265 = 15\) €.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- ============================================================ -->
 <!--  BILAN                                                        -->
 <!-- EX 13 Appro — Seuil de rentabilité -->
-<div class="exo">
-  <div class="exo-num">Exercice 25</div>
-  <div class="exo-titre">Seuil de rentabilit&eacute; d&rsquo;une production</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 25</span>
+    <span class="exo-title">Seuil de rentabilit&eacute; d&rsquo;une production</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">Gestion</span>
   <div class="enonce">
     Un fabricant de mobilier produit des tabourets. Ses co&ucirc;ts sont :<br>
@@ -856,41 +858,43 @@ x = ..."></textarea>
     <strong>3.</strong> Calculer le b&eacute;n&eacute;fice pour une production de 80 tabourets.<br>
     <strong>4.</strong> Combien de tabourets faut-il vendre pour un b&eacute;n&eacute;fice de 2&thinsp;000&thinsp;&euro; ?
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>1.</strong> \(C(x) = 1200 + 18x\) et \(R(x) = 42x\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(C(x) = 1200 + 18x\) et \(R(x) = 42x\)</p>
       <p><strong>2.</strong> \(R(x) = C(x)\) &rarr; \(42x = 1200 + 18x\) &rarr; \(24x = 1200\) &rarr; \(x = 50\). Seuil : <strong>50 tabourets</strong>.</p>
       <p><strong>3.</strong> \(B(80) = 42 \times 80 - (1200 + 18 \times 80) = 3360 - 2640 = \mathbf{720\,\text{€}}\)</p>
       <p><strong>4.</strong> \(24x - 1200 = 2000\) &rarr; \(24x = 3200\) &rarr; \(x \approx 133{,}3\). Il faut vendre <strong>134 tabourets</strong>.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 14 Appro — Équation avec fractions -->
-<div class="exo">
-  <div class="exo-num">Exercice 26</div>
-  <div class="exo-titre">&Eacute;quations avec fractions</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 26</span>
+    <span class="exo-title">&Eacute;quations avec fractions</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <div class="enonce">
     R&eacute;soudre les &eacute;quations suivantes :<br><br>
     <strong>a)</strong> \(\dfrac{2x + 1}{3} = 5\)<br><br>
     <strong>b)</strong> \(\dfrac{x - 4}{2} = \dfrac{x + 2}{5}\)<br><br>
     <strong>c)</strong> \(\dfrac{3x}{4} - \dfrac{x}{6} = 7\)
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \(2x + 1 = 15\) &rarr; \(2x = 14\) &rarr; \(x = \mathbf{7}\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(2x + 1 = 15\) &rarr; \(2x = 14\) &rarr; \(x = \mathbf{7}\)</p>
       <p><strong>b)</strong> Produits en croix : \(5(x - 4) = 2(x + 2)\) &rarr; \(5x - 20 = 2x + 4\) &rarr; \(3x = 24\) &rarr; \(x = \mathbf{8}\)</p>
       <p><strong>c)</strong> PPCM(4,6) = 12. On multiplie par 12 : \(9x - 2x = 84\) &rarr; \(7x = 84\) &rarr; \(x = \mathbf{12}\)</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 15 Appro — Optimisation -->
-<div class="exo">
-  <div class="exo-num">Exercice 27</div>
-  <div class="exo-titre">Probl&egrave;me &mdash; Choix d&rsquo;un mode de transport</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 27</span>
+    <span class="exo-title">Probl&egrave;me &mdash; Choix d&rsquo;un mode de transport</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">Logistique</span>
   <div class="enonce">
     Une entreprise de menuiserie doit livrer \(x\) meubles par mois. Deux options :<br>
@@ -903,21 +907,22 @@ x = ..."></textarea>
     <strong>3.</strong> L&rsquo;entreprise livre 40 meubles/mois. Quelle option choisir ? Calculer l&rsquo;&eacute;conomie.<br>
     <strong>4.</strong> &Agrave; partir de combien de meubles l&rsquo;option 1 fait-elle &eacute;conomiser plus de 200&thinsp;&euro;/mois ?
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>1.</strong> \(C_1(x) = 800 + 12x\) et \(C_2(x) = 35x\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(C_1(x) = 800 + 12x\) et \(C_2(x) = 35x\)</p>
       <p><strong>2.</strong> \(800 + 12x = 35x\) &rarr; \(23x = 800\) &rarr; \(x \approx 34{,}8\). &Agrave; <strong>35 meubles</strong>, les co&ucirc;ts sont quasi &eacute;gaux.</p>
       <p><strong>3.</strong> \(C_1(40) = 800 + 480 = 1280\) et \(C_2(40) = 1400\). <strong>Option 1</strong>, &eacute;conomie : \(1400 - 1280 = \mathbf{120\,\text{€}}\).</p>
       <p><strong>4.</strong> \(35x - (800 + 12x) > 200\) &rarr; \(23x > 1000\) &rarr; \(x > 43{,}5\). &Agrave; partir de <strong>44 meubles</strong>.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 16 Appro — Problème de mélange -->
-<div class="exo">
-  <div class="exo-num">Exercice 28</div>
-  <div class="exo-titre">Probl&egrave;me &mdash; Alliage de m&eacute;taux</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 28</span>
+    <span class="exo-title">Probl&egrave;me &mdash; Alliage de m&eacute;taux</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">Science</span>
   <div class="enonce">
     Un orf&egrave;vre m&eacute;lange de l&rsquo;or pur (densit&eacute; 19,3) avec du cuivre (densit&eacute; 8,9) pour obtenir un alliage.<br>
@@ -927,21 +932,22 @@ x = ..."></textarea>
     <strong>3.</strong> L&rsquo;orf&egrave;vre veut un b&eacute;n&eacute;fice de 30&thinsp;% sur le co&ucirc;t mati&egrave;re. Quel prix de vente fixer ?<br>
     <strong>4.</strong> Si le prix de l&rsquo;or augmente de \(p\)&thinsp;%, exprimer le nouveau co&ucirc;t mati&egrave;re en fonction de \(p\).
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>1.</strong> Or : \(100 \times 0{,}75 = 75\,\text{g}\). Cuivre : \(100 - 75 = 25\,\text{g}\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Or : \(100 \times 0{,}75 = 75\,\text{g}\). Cuivre : \(100 - 75 = 25\,\text{g}\).</p>
       <p><strong>2.</strong> \(75 \times 65 + 25 \times 0{,}008 = 4875 + 0{,}20 = \mathbf{4875{,}20\,\text{€}}\)</p>
       <p><strong>3.</strong> \(4875{,}20 \times 1{,}30 = \mathbf{6337{,}76\,\text{€}}\)</p>
       <p><strong>4.</strong> Nouveau co&ucirc;t or : \(75 \times 65 \times (1 + \frac{p}{100})\). Co&ucirc;t total : \(4875(1 + \frac{p}{100}) + 0{,}20\).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 17 Appro — Système informel -->
-<div class="exo">
-  <div class="exo-num">Exercice 29</div>
-  <div class="exo-titre">Probl&egrave;me ouvert &mdash; Dimensions d&rsquo;un meuble</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 29</span>
+    <span class="exo-title">Probl&egrave;me ouvert &mdash; Dimensions d&rsquo;un meuble</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">Menuiserie</span>
   <div class="enonce">
     Un artisan con&ccedil;oit une biblioth&egrave;que aux dimensions suivantes :<br>
@@ -956,10 +962,9 @@ x = ..."></textarea>
     <strong>4.</strong> Calculer le volume int&eacute;rieur en dm&sup3; puis en litres.<br>
     <strong>5.</strong> Si le bois co&ucirc;te 0,12&thinsp;&euro; par cm&sup2; de surface, estimer le co&ucirc;t du bois pour les 5 faces (sans la face avant).
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>1.</strong> Largeur : \(x\), hauteur : \(2x\), profondeur : \(\frac{x}{2}\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Largeur : \(x\), hauteur : \(2x\), profondeur : \(\frac{x}{2}\).</p>
       <p><strong>2.</strong> P&eacute;rim&egrave;tre face avant : \(2(x + 2x) = 360\) &rarr; \(6x = 360\) &rarr; \(x = 60\).</p>
       <p><strong>3.</strong> Largeur : <strong>60 cm</strong>, hauteur : <strong>120 cm</strong>, profondeur : <strong>30 cm</strong>.</p>
       <p><strong>4.</strong> Volume : \(60 \times 120 \times 30 = 216\,000\,\text{cm}^3 = 216\,\text{dm}^3 = \mathbf{216\,\text{L}}\).</p>
@@ -971,14 +976,16 @@ x = ..."></textarea>
       </ul>
       <p>Total : \(7200 + 7200 + 3600 = 18\,000\,\text{cm}^2\).</p>
       <p>Co&ucirc;t : \(18\,000 \times 0{,}12 = \mathbf{2\,160\,\text{€}}\).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 18 Appro — Problème type BTS -->
-<div class="exo">
-  <div class="exo-num">Exercice 30</div>
-  <div class="exo-titre">D&eacute;fi BTS &mdash; Tarification &eacute;lectrique</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 30</span>
+    <span class="exo-title">D&eacute;fi BTS &mdash; Tarification &eacute;lectrique</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">&Eacute;nergie</span>
   <div class="enonce">
     Un artisan h&eacute;site entre deux contrats &eacute;lectriques pour son atelier :<br>
@@ -991,10 +998,9 @@ x = ..."></textarea>
     <strong>3.</strong> L&rsquo;atelier consomme 1&thinsp;500 kWh/mois en hiver et 800 kWh/mois en &eacute;t&eacute; (6 mois chacun). Calculer le co&ucirc;t annuel de chaque contrat.<br>
     <strong>4.</strong> Un troisi&egrave;me contrat propose un prix unique de 0,21&thinsp;&euro;/kWh sans abonnement. &Agrave; partir de quelle consommation mensuelle ce contrat devient-il plus cher que le contrat Bleu ?
   </div>
-  <details class="corr-wrap">
-    <summary>&#x25B6; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>1.</strong> Bleu : \(C_B(x) = 180 + 0{,}18x\). Vert : \(C_V(x) = 95 + 0{,}24x\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Bleu : \(C_B(x) = 180 + 0{,}18x\). Vert : \(C_V(x) = 95 + 0{,}24x\).</p>
       <p><strong>2.</strong> \(180 + 0{,}18x = 95 + 0{,}24x\) &rarr; \(85 = 0{,}06x\) &rarr; \(x \approx \mathbf{1\,417\,\text{kWh}}\).</p>
       <p><strong>3.</strong> Bleu annuel : \(6 \times (180 + 0{,}18 \times 1500) + 6 \times (180 + 0{,}18 \times 800)\)</p>
       <p>\(= 6 \times 450 + 6 \times 324 = 2700 + 1944 = \mathbf{4\,644\,\text{€}}\)</p>
@@ -1002,11 +1008,10 @@ x = ..."></textarea>
       <p>\(= 6 \times 455 + 6 \times 287 = 2730 + 1722 = \mathbf{4\,452\,\text{€}}\)</p>
       <p>Le <strong>contrat Vert</strong> est moins cher sur l&rsquo;ann&eacute;e (&eacute;conomie : 192&thinsp;&euro;).</p>
       <p><strong>4.</strong> \(0{,}21x > 180 + 0{,}18x\) &rarr; \(0{,}03x > 180\) &rarr; \(x > 6\,000\). Au-del&agrave; de <strong>6 000 kWh/mois</strong>.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
-</div><!-- fin diff-appro -->
+</div><!-- fin diff-app
 
 <!-- ============================================================ -->
 <div style="background:#ebf5ff;border-radius:10px;padding:18px 22px;margin:32px 0;border:1px solid #93c5fd">

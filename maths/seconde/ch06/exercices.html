@@ -28,15 +28,16 @@
 <!-- ============================================================ -->
 <!--  NIVEAU 1 – VÉRIFIER LES BASES                               -->
 <!-- ============================================================ -->
-<div class="niveau-header niveau-1">
-  <span class="badge-niv badge-1">Niveau 1</span>
-  <h2>Vérifier les bases</h2>
-</div>
-
 <!-- EX 1 -->
-<div class="exo">
-  <div class="exo-num">Exercice 1</div>
-  <div class="exo-titre">Comprendre les intervalles</div>
+
+<h2>Exercices guidés pas à pas</h2>
+
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 1</span>
+    <span class="exo-title">Comprendre les intervalles</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     Pour chaque inégalité, écrire la solution sous forme d'intervalle.
     <br><br>
@@ -49,10 +50,9 @@
     <label>Mes réponses :</label>
     <textarea placeholder="a) x ≥ 4  →  intervalle : [4 ; +∞[&#10;b) ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a)</strong> \(x \geq 4\) → \([4 ; +\infty[\) — crochet <strong>fermé</strong> en 4 (inclus).<br><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a)</strong> \(x \geq 4\) → \([4 ; +\infty[\) — crochet <strong>fermé</strong> en 4 (inclus).<br><br>
       <strong>b)</strong> \(x < -2\) → \(]-\infty ; -2[\) — crochet <strong>ouvert</strong> en −2 (exclu).<br><br>
       <strong>c)</strong> \(x \leq 7\) → \(]-\infty ; 7]\) — crochet <strong>fermé</strong> en 7 (inclus).<br><br>
       <strong>d)</strong> \(-1 \leq x < 5\) → \([-1 ; 5[\) — fermé en −1, ouvert en 5.
@@ -61,14 +61,16 @@
         Crochet inversé <strong>]</strong> ou <strong>[</strong> = valeur exclue (&lt; ou &gt;).
         Les infinis sont toujours avec un crochet ouvert.
       </div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 2 -->
-<div class="exo">
-  <div class="exo-num">Exercice 2</div>
-  <div class="exo-titre">Lire et compléter un tableau d'intervalles</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Lire et compléter un tableau d'intervalles</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     Compléter le tableau :
     <br><br>
@@ -89,10 +91,9 @@
     <label>Mes réponses :</label>
     <textarea placeholder="x > 3  →  ]3 ; +∞[  →  crochet ouvert en 3&#10;..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <table>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
         <tr>
           <th>Condition</th>
           <th>Intervalle</th>
@@ -104,26 +105,20 @@
         <tr><td>\(-5 < x \leq 0\)</td><td>\(]-5 ; 0]\)</td><td>Ouvert en −5, fermé en 0</td></tr>
         <tr><td>\(x \geq 0\)</td><td>\([0 ; +\infty[\)</td><td>Fermé en 0 (inclus)</td></tr>
       </table>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- ================================================================
      NIVEAU SOCLE — exercices très guidés, étape par étape
      ================================================================ -->
-<div class="diff-socle">
-<span class="tag-socle">Socle</span>
-
 <!-- EX S1 -->
-<div class="niveau-header niveau-2">
-  <span class="badge-niv badge-2">Niveau 2</span>
-  <h2>R&eacute;soudre pas &agrave; pas</h2>
-</div>
-
-<div class="exo">
-  <div class="exo-num">Exercice 3</div>
-  <div class="exo-titre">R&eacute;soudre une in&eacute;quation &mdash; m&eacute;thode d&eacute;taill&eacute;e</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">R&eacute;soudre une in&eacute;quation &mdash; m&eacute;thode d&eacute;taill&eacute;e</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="methode" style="background:#fffbeb;border:1px solid #f59e0b;border-radius:8px;padding:14px;margin:10px 0">
     <strong>M&eacute;thode :</strong> Comme pour une &eacute;quation, on isole \(x\) — mais attention :<br>
     &bull; Si on <strong>multiplie ou divise par un nombre n&eacute;gatif</strong>, le sens de l&rsquo;in&eacute;galit&eacute; s&rsquo;<strong>inverse</strong>.<br>
@@ -151,21 +146,22 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) 3x ≤ ... → x ≤ ... → ]-∞ ; ...]&#10;b) ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>Exemple :</strong> \(2x \leq 8\) → \(x \leq 4\). Solution : \(]-\infty ; 4]\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Exemple :</strong> \(2x \leq 8\) → \(x \leq 4\). Solution : \(]-\infty ; 4]\).</p>
       <p><strong>a)</strong> \(3x \leq 15\) → \(x \leq 5\). Solution : \(]-\infty ; 5]\).</p>
       <p><strong>b)</strong> \(5x > 15\) → \(x > 3\). Solution : \(]3 ; +\infty[\).</p>
       <p><strong>c)</strong> \(4x \geq 8\) → \(x \geq 2\). Solution : \([2 ; +\infty[\).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S2 -->
-<div class="exo">
-  <div class="exo-num">Exercice 4</div>
-  <div class="exo-titre">Division par un n&eacute;gatif &mdash; guid&eacute;</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Division par un n&eacute;gatif &mdash; guid&eacute;</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     <div class="att" style="margin-bottom:10px">
       <strong>&#9888; R&egrave;gle importante :</strong> si on divise par un nombre <strong>n&eacute;gatif</strong>, on inverse le signe :<br>
@@ -184,20 +180,21 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) -2x ≤ 8 → division par -2 → signe inversé → x ≥ ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \(-2x \leq 8\) &rarr; on divise par \(-2\) (n&eacute;gatif) &rarr; \(x \geq -4\). Solution : \([-4 ; +\infty[\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(-2x \leq 8\) &rarr; on divise par \(-2\) (n&eacute;gatif) &rarr; \(x \geq -4\). Solution : \([-4 ; +\infty[\).</p>
       <p><strong>b)</strong> \(-4x > -12\) &rarr; on divise par \(-4\) (n&eacute;gatif) &rarr; \(x < 3\). Solution : \(]-\infty ; 3[\).</p>
       <p><strong>c)</strong> \(-x \leq -3\) &rarr; on divise par \(-1\) (n&eacute;gatif) &rarr; \(x \geq 3\). Solution : \([3 ; +\infty[\).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S3 -->
-<div class="exo">
-  <div class="exo-num">Exercice 5</div>
-  <div class="exo-titre">Probl&egrave;me de budget guid&eacute;</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Probl&egrave;me de budget guid&eacute;</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Atelier d'agencement</span>
   <div class="enonce">
     Un apprenti agenceur dispose d&rsquo;un budget de <strong>300 &euro;</strong> pour acheter des planches.
@@ -215,20 +212,21 @@
     <label>Mes calculs :</label>
     <textarea placeholder="Inéquation : 18x + 12 ≤ 300&#10;18x ≤ ...&#10;x ≤ ...&#10;Conclusion : ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>&#9654; Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>In&eacute;quation :</strong> \(18x + 12 \leq 300\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>In&eacute;quation :</strong> \(18x + 12 \leq 300\)</p>
       <p><strong>R&eacute;solution :</strong> \(18x \leq 288\) &rarr; \(x \leq 16\)</p>
       <p><strong>Conclusion :</strong> Il peut acheter au maximum <strong>16 planches</strong>. V&eacute;rif : \(18 \times 16 + 12 = 288 + 12 = 300\) &euro; &#10003;</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S4 -->
-<div class="exo">
-  <div class="exo-num">Exercice 6</div>
-  <div class="exo-titre">Résoudre des inéquations simples — guidé</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">Résoudre des inéquations simples — guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     Résoudre chaque inéquation en complétant les étapes.
     <br><br>
@@ -249,20 +247,21 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) 7x ≤ ... → x ≤ ... → ]-∞ ; ...]&#10;b) ...&#10;c) ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \(7x \leq 21\) → \(x \leq 3\). Solution : \(]-\infty ; 3]\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(7x \leq 21\) → \(x \leq 3\). Solution : \(]-\infty ; 3]\).</p>
       <p><strong>b)</strong> \(6x > 24\) → \(x > 4\). Solution : \(]4 ; +\infty[\).</p>
       <p><strong>c)</strong> \(2x \geq -6\) → \(x \geq -3\). Solution : \([-3 ; +\infty[\).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S5 -->
-<div class="exo">
-  <div class="exo-num">Exercice 7</div>
-  <div class="exo-titre">Inéquation avec terme négatif — guidé</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 7</span>
+    <span class="exo-title">Inéquation avec terme négatif — guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     <div class="att" style="margin-bottom:10px">
       <strong>⚠ Rappel :</strong> Quand on divise par un nombre <strong>négatif</strong>, on <strong>inverse</strong> le sens de l'inégalité.
@@ -283,20 +282,21 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) -5x ≥ 20 → division par -5 → x ≤ ...&#10;b) ...&#10;c) ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \(-5x \geq 20\) → on divise par \(-5\) (négatif) → \(x \leq -4\). Solution : \(]-\infty ; -4]\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(-5x \geq 20\) → on divise par \(-5\) (négatif) → \(x \leq -4\). Solution : \(]-\infty ; -4]\).</p>
       <p><strong>b)</strong> \(-3x < 9\) → on divise par \(-3\) (négatif) → \(x > -3\). Solution : \(]-3 ; +\infty[\).</p>
       <p><strong>c)</strong> \(-6x \leq 12\) → on divise par \(-6\) (négatif) → \(x \geq -2\). Solution : \([-2 ; +\infty[\).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S6 -->
-<div class="exo">
-  <div class="exo-num">Exercice 8</div>
-  <div class="exo-titre">Représenter sur une droite graduée — guidé</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 8</span>
+    <span class="exo-title">Représenter sur une droite graduée — guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     Pour chaque inéquation, résoudre puis représenter la solution sur la droite graduée.
     <br><br>
@@ -314,21 +314,22 @@
     <label>Mes réponses :</label>
     <textarea placeholder="a) x ≤ ...  →  rond plein en ... , flèche vers la gauche&#10;b) x > ...  →  rond vide en ... , flèche vers la droite"></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \(3x \leq 15\) → \(x \leq 5\). Intervalle : \(]-\infty ; 5]\).<br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(3x \leq 15\) → \(x \leq 5\). Intervalle : \(]-\infty ; 5]\).<br>
       Sur la droite : <strong>rond plein ● en 5</strong>, on colorie vers la gauche (flèche vers \(-\infty\)).</p>
       <p><strong>b)</strong> \(2x > 6\) → \(x > 3\). Intervalle : \(]3 ; +\infty[\).<br>
       Sur la droite : <strong>rond vide ○ en 3</strong>, on colorie vers la droite (flèche vers \(+\infty\)).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S7 -->
-<div class="exo">
-  <div class="exo-num">Exercice 9</div>
-  <div class="exo-titre">Budget pour des pots de peinture — guidé</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 9</span>
+    <span class="exo-title">Budget pour des pots de peinture — guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">🏠 Quotidien — Décoration</span>
   <div class="enonce">
     Tu veux repeindre ta chambre. Chaque pot de peinture coûte <strong>14 €</strong> et tu dois aussi acheter un rouleau à <strong>8 €</strong>.
@@ -347,20 +348,21 @@
     <label>Mes calculs :</label>
     <textarea placeholder="Inéquation : 14x + 8 ≤ 80&#10;14x ≤ ...&#10;x ≤ ...&#10;Conclusion : ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>Inéquation :</strong> \(14x + 8 \leq 80\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Inéquation :</strong> \(14x + 8 \leq 80\)</p>
       <p><strong>Résolution :</strong> \(14x \leq 72\) → \(x \leq \dfrac{72}{14} \approx 5{,}14\)</p>
       <p><strong>Conclusion :</strong> Tu peux acheter au maximum <strong>5 pots</strong>. Vérif : \(14 \times 5 + 8 = 78 \leq 80\) ✔</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S8 -->
-<div class="exo">
-  <div class="exo-num">Exercice 10</div>
-  <div class="exo-titre">Double inéquation — guidé</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 10</span>
+    <span class="exo-title">Double inéquation — guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     Résoudre la double inéquation en complétant les étapes.
     <br><br>
@@ -377,21 +379,22 @@
     <label>Mes calculs :</label>
     <textarea placeholder="-4 - 6 ≤ 2x ≤ 14 - 6&#10;... ≤ 2x ≤ ...&#10;... ≤ x ≤ ...&#10;Intervalle : [... ; ...]"></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p>Étape 1 : \(-10 \leq 2x \leq 8\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Étape 1 : \(-10 \leq 2x \leq 8\)</p>
       <p>Étape 2 : \(-5 \leq x \leq 4\)</p>
       <p><strong>Solution :</strong> \([-5 ; 4]\)</p>
       <div class="att-corr">📌 Astuce : dans une double inéquation, on applique la même opération aux trois parties.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S9 -->
-<div class="exo">
-  <div class="exo-num">Exercice 11</div>
-  <div class="exo-titre">Score minimum au sport — guidé</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 11</span>
+    <span class="exo-title">Score minimum au sport — guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">🏃 Sport — Course à pied</span>
   <div class="enonce">
     En course à pied, un athlète parcourt chaque tour de piste en <strong>4 minutes</strong>.
@@ -410,20 +413,21 @@
     <label>Mes calculs :</label>
     <textarea placeholder="Inéquation : 4x + 12 ≥ 40&#10;4x ≥ ...&#10;x ≥ ...&#10;Conclusion : ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>Inéquation :</strong> \(4x + 12 \geq 40\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Inéquation :</strong> \(4x + 12 \geq 40\)</p>
       <p><strong>Résolution :</strong> \(4x \geq 28\) → \(x \geq 7\)</p>
       <p><strong>Conclusion :</strong> Il doit encore courir au minimum <strong>7 tours</strong>. Vérif : \(4 \times 7 + 12 = 40 \geq 40\) ✔</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S10 -->
-<div class="exo">
-  <div class="exo-num">Exercice 12</div>
-  <div class="exo-titre">Inéquations simples — entraînement guidé</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 12</span>
+    <span class="exo-title">Inéquations simples — entraînement guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     Résoudre chaque inéquation en complétant les étapes, puis donner la solution en intervalle.
     <br><br>
@@ -444,20 +448,21 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) 8x ≤ ... → x ≤ ... → ]-∞ ; ...]&#10;b) ...&#10;c) ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \(8x \leq 24\) → \(x \leq 3\). Solution : \(]-\infty ; 3]\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(8x \leq 24\) → \(x \leq 3\). Solution : \(]-\infty ; 3]\).</p>
       <p><strong>b)</strong> \(5x > 25\) → \(x > 5\). Solution : \(]5 ; +\infty[\).</p>
       <p><strong>c)</strong> \(10x \geq 50\) → \(x \geq 5\). Solution : \([5 ; +\infty[\).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S11 -->
-<div class="exo">
-  <div class="exo-num">Exercice 13</div>
-  <div class="exo-titre">Division par un négatif — entraînement guidé</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 13</span>
+    <span class="exo-title">Division par un négatif — entraînement guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     <div class="att" style="margin-bottom:10px">
       <strong>⚠ Rappel :</strong> Quand on divise par un nombre <strong>négatif</strong>, on <strong>inverse</strong> le sens de l'inégalité.
@@ -478,20 +483,21 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) -7x ≤ 21 → division par -7 → x ≥ ...&#10;b) ...&#10;c) ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \(-7x \leq 21\) → on divise par \(-7\) (négatif) → \(x \geq -3\). Solution : \([-3 ; +\infty[\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(-7x \leq 21\) → on divise par \(-7\) (négatif) → \(x \geq -3\). Solution : \([-3 ; +\infty[\).</p>
       <p><strong>b)</strong> \(-2x > 6\) → on divise par \(-2\) (négatif) → \(x < -3\). Solution : \(]-\infty ; -3[\).</p>
       <p><strong>c)</strong> \(-4x \geq -12\) → on divise par \(-4\) (négatif) → \(x \leq 3\). Solution : \(]-\infty ; 3]\).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S12 -->
-<div class="exo">
-  <div class="exo-num">Exercice 14</div>
-  <div class="exo-titre">Budget de fournitures scolaires — guidé</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 14</span>
+    <span class="exo-title">Budget de fournitures scolaires — guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">🛒 Quotidien — Achats</span>
   <div class="enonce">
     Tu veux acheter des cahiers pour la rentrée. Chaque cahier coûte <strong>3,50 €</strong> et tu dois aussi acheter une trousse à <strong>9 €</strong>.
@@ -510,20 +516,21 @@
     <label>Mes calculs :</label>
     <textarea placeholder="Inéquation : 3,5x + 9 ≤ 40&#10;3,5x ≤ ...&#10;x ≤ ...&#10;Conclusion : ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>Inéquation :</strong> \(3{,}5x + 9 \leq 40\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Inéquation :</strong> \(3{,}5x + 9 \leq 40\)</p>
       <p><strong>Résolution :</strong> \(3{,}5x \leq 31\) → \(x \leq \dfrac{31}{3{,}5} \approx 8{,}86\)</p>
       <p><strong>Conclusion :</strong> Tu peux acheter au maximum <strong>8 cahiers</strong>. Vérif : \(3{,}5 \times 8 + 9 = 28 + 9 = 37 \leq 40\) ✔</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S13 -->
-<div class="exo">
-  <div class="exo-num">Exercice 15</div>
-  <div class="exo-titre">Inéquation avec \(x\) des deux côtés — guidé</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 15</span>
+    <span class="exo-title">Inéquation avec \(x\) des deux côtés — guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <div class="enonce">
     <div class="methode" style="background:#fffbeb;border:1px solid #f59e0b;border-radius:8px;padding:14px;margin:10px 0">
       <strong>Méthode :</strong> Quand il y a des \(x\) des deux côtés, on regroupe les \(x\) d'un côté et les nombres de l'autre.
@@ -545,20 +552,21 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) 5x - 3x ≤ 10 - 2 → 2x ≤ 8 → x ≤ ...&#10;b) ...&#10;c) ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \(2x \leq 8\) → \(x \leq 4\). Solution : \(]-\infty ; 4]\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(2x \leq 8\) → \(x \leq 4\). Solution : \(]-\infty ; 4]\).</p>
       <p><strong>b)</strong> \(-4x > 12\) → on divise par \(-4\) (négatif) → \(x < -3\). Solution : \(]-\infty ; -3[\).</p>
       <p><strong>c)</strong> \(3x \geq 15\) → \(x \geq 5\). Solution : \([5 ; +\infty[\).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S14 -->
-<div class="exo">
-  <div class="exo-num">Exercice 16</div>
-  <div class="exo-titre">Quantité minimale de panneaux — guidé</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 16</span>
+    <span class="exo-title">Quantité minimale de panneaux — guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">🔨 Menuiserie — Atelier</span>
   <div class="enonce">
     Un menuisier doit couvrir une surface d'au moins <strong>15 m²</strong> avec des panneaux de bois.
@@ -576,20 +584,21 @@
     <label>Mes calculs :</label>
     <textarea placeholder="Inéquation : 1,2x ≥ 15&#10;x ≥ ...&#10;Conclusion : ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>Inéquation :</strong> \(1{,}2x \geq 15\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Inéquation :</strong> \(1{,}2x \geq 15\)</p>
       <p><strong>Résolution :</strong> \(x \geq \dfrac{15}{1{,}2} = 12{,}5\)</p>
       <p><strong>Conclusion :</strong> Il faut au minimum <strong>13 panneaux</strong> (on arrondit au-dessus car on ne peut pas acheter un demi-panneau). Vérif : \(1{,}2 \times 13 = 15{,}6 \geq 15\) ✔</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S15 -->
-<div class="exo">
-  <div class="exo-num">Exercice 17</div>
-  <div class="exo-titre">Double inéquation — température guidée</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 17</span>
+    <span class="exo-title">Double inéquation — température guidée</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">🌡 Science — Température</span>
   <div class="enonce">
     La température \(T\) dans un atelier de séchage du bois est régulée par la formule \(T = 3h + 12\) (en °C), où \(h\) est le nombre d'heures de fonctionnement du chauffage.
@@ -608,22 +617,23 @@
     <label>Mes calculs :</label>
     <textarea placeholder="18 ≤ 3h + 12 ≤ 30&#10;... ≤ 3h ≤ ...&#10;... ≤ h ≤ ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p>Étape 1 : \(18 \leq 3h + 12 \leq 30\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Étape 1 : \(18 \leq 3h + 12 \leq 30\)</p>
       <p>Étape 2 : \(18 - 12 \leq 3h \leq 30 - 12\) → \(6 \leq 3h \leq 18\)</p>
       <p>Étape 3 : \(2 \leq h \leq 6\)</p>
       <p><strong>Conclusion :</strong> Le chauffage doit fonctionner entre <strong>2 h et 6 h</strong>. Solution : \([2 ; 6]\).</p>
       <div class="att-corr">📌 Vérif : \(T(2) = 3 \times 2 + 12 = 18\) ✔ et \(T(6) = 3 \times 6 + 12 = 30\) ✔</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S16 -->
-<div class="exo">
-  <div class="exo-num">Exercice 18</div>
-  <div class="exo-titre">Budget fournitures scolaires — guidé</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 18</span>
+    <span class="exo-title">Budget fournitures scolaires — guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">🛒 Vie quotidienne — Budget</span>
   <div class="enonce">
     Un élève dispose de <strong>50 €</strong> pour acheter des fournitures scolaires. Chaque cahier coûte <strong>3,50 €</strong> et il a déjà dépensé <strong>15 €</strong> en stylos.<br><br>
@@ -640,22 +650,23 @@
     <label>Mes calculs :</label>
     <textarea placeholder="3,5x + 15 ≤ 50&#10;3,5x ≤ ...&#10;x ≤ ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p>Étape 1 : \(3{,}5x + 15 \leq 50\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Étape 1 : \(3{,}5x + 15 \leq 50\)</p>
       <p>Étape 2 : \(3{,}5x \leq 50 - 15 = 35\)</p>
       <p>Étape 3 : \(x \leq \dfrac{35}{3{,}5} = 10\)</p>
       <p><strong>Conclusion :</strong> L'élève peut acheter au maximum <strong>10 cahiers</strong>. Solution : \(x \in [0 ; 10]\) (valeurs entières).</p>
       <div class="att-corr">📌 Vérif : \(3{,}5 \times 10 + 15 = 50\) ✔ — le budget est exactement atteint.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX S17 -->
-<div class="exo">
-  <div class="exo-num">Exercice 19</div>
-  <div class="exo-titre">Distance de freinage — sécurité routière — guidé</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 19</span>
+    <span class="exo-title">Distance de freinage — sécurité routière — guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">🚗 Science — Sécurité routière</span>
   <div class="enonce">
     La distance de freinage \(d\) (en mètres) d'un véhicule est modélisée par \(d = 0{,}5v + 2\), où \(v\) est la vitesse en km/h.<br>
@@ -672,38 +683,34 @@
     <label>Mes calculs :</label>
     <textarea placeholder="0,5v + 2 ≤ 40&#10;0,5v ≤ ...&#10;v ≤ ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p>Étape 1 : \(0{,}5v + 2 \leq 40\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Étape 1 : \(0{,}5v + 2 \leq 40\)</p>
       <p>Étape 2 : \(0{,}5v \leq 38\)</p>
       <p>Étape 3 : \(v \leq \dfrac{38}{0{,}5} = 76\)</p>
       <p><strong>Conclusion :</strong> La vitesse maximale est de <strong>76 km/h</strong>. Solution : \(v \in ]0 ; 76]\).</p>
       <div class="att-corr">📌 Vérif : \(d(76) = 0{,}5 \times 76 + 2 = 40\) ✔ — pile la distance limite.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
-</div><!-- fin diff-socle -->
+</div><!-- fin diff-soc
 
 <!-- ================================================================
      NIVEAU STANDARD — exercices du programme
      ================================================================ -->
-<div class="diff-standard">
-<span class="tag-standard">Standard</span>
-
 <!-- ============================================================ -->
 <!--  NIVEAU 2 – APPLICATION DIRECTE                              -->
 <!-- ============================================================ -->
-<div class="niveau-header niveau-2">
-  <span class="badge-niv badge-2">Niveau 2</span>
-  <h2>Application directe</h2>
-</div>
-
 <!-- EX 3 -->
-<div class="exo">
-  <div class="exo-num">Exercice 20</div>
-  <div class="exo-titre">Résoudre des inéquations du premier degré</div>
+
+<h2>Exercices d'application</h2>
+
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 20</span>
+    <span class="exo-title">Résoudre des inéquations du premier degré</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <div class="enonce">
     Résoudre chaque inéquation et exprimer la solution sous forme d'intervalle.
     <br><br>
@@ -716,10 +723,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) 4x − 6 > 10&#10;   4x > ...&#10;   x > ...&#10;   Intervalle : ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a)</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a)</strong>
       \[4x - 6 > 10 \implies 4x > 16 \implies x > 4\]
       <div class="corr-rep">Solution : \(]4 ; +\infty[\)</div>
 
@@ -739,14 +745,16 @@
       On divise par −5 (négatif → on <strong>inverse le signe</strong>) :
       \[x > -3\]
       <div class="corr-rep">Solution : \(]-3 ; +\infty[\)</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 4 -->
-<div class="exo">
-  <div class="exo-num">Exercice 21</div>
-  <div class="exo-titre">Inéquations avec termes des deux côtés</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 21</span>
+    <span class="exo-title">Inéquations avec termes des deux côtés</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <div class="enonce">
     Résoudre et exprimer la solution sous forme d'intervalle.
     <br><br>
@@ -759,10 +767,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) 5x − 3 ≥ 2x + 9&#10;   5x − 2x ≥ 9 + 3&#10;   3x ≥ ...&#10;   x ≥ ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a)</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a)</strong>
       \[5x - 3 \geq 2x + 9 \implies 3x \geq 12 \implies x \geq 4\]
       <div class="corr-rep">Solution : \([4 ; +\infty[\)</div>
 
@@ -777,23 +784,20 @@
       <strong>d)</strong>
       \[4(x-1) > 2x + 6 \implies 4x - 4 > 2x + 6 \implies 2x > 10 \implies x > 5\]
       <div class="corr-rep">Solution : \(]5 ; +\infty[\)</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- ============================================================ -->
 <!--  NIVEAU 3 – PROBLÈMES CONTEXTUALISÉS                         -->
 <!-- ============================================================ -->
-<div class="niveau-header niveau-3">
-  <span class="badge-niv badge-3">Niveau 3</span>
-  <h2>Problèmes contextualisés — Menuiserie</h2>
-</div>
-
 <!-- EX 5 -->
-<div class="exo">
-  <div class="exo-num">Exercice 22</div>
-  <div class="exo-titre">Budget pour l'achat de lames de parquet</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 22</span>
+    <span class="exo-title">Budget pour l'achat de lames de parquet</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">🏠 Agencement – Revêtement de sol</span>
   <div class="enonce">
     Un artisan doit poser du parquet dans une chambre. Il dispose d'un budget de <strong>650 €</strong>.
@@ -806,24 +810,25 @@
     <label>Ma démarche :</label>
     <textarea placeholder="Inconnue : x = surface (en m²)&#10;Inéquation : 24x + 35 ≤ 650&#10;..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
         <li><strong>Inéquation :</strong> \(24x + 35 \leq 650\)</li>
         <li><strong>Résolution :</strong> \(24x \leq 615 \implies x \leq 25{,}6 \text{ m}^2\)</li>
       </ol>
       <div class="corr-rep">✔ Surface max : <strong>25,6 m²</strong> — soit en pratique <strong>25 m²</strong>.<br>
       Solution : \(x \in ]0 ; 25{,}6]\)</div>
       <div class="att-corr">Vérif : \(24 \times 25 + 35 = 635 \leq 650\) ✔</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 6 -->
-<div class="exo">
-  <div class="exo-num">Exercice 23</div>
-  <div class="exo-titre">Contrainte de dimension pour un meuble</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 23</span>
+    <span class="exo-title">Contrainte de dimension pour un meuble</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">📐 Agencement – Ameublement</span>
   <div class="enonce">
     Un artisan fabrique une bibliothèque sur mesure. La hauteur totale \(H\) de la bibliothèque en fonction
@@ -839,10 +844,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. 160 ≤ 32n ≤ 220&#10;2. ...&#10;3. n peut valoir ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1. Inéquation :</strong> \(160 \leq 32n \leq 220\)
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1. Inéquation :</strong> \(160 \leq 32n \leq 220\)
 
       <strong>2. Résolution :</strong>
       \[\frac{160}{32} \leq n \leq \frac{220}{32}\]
@@ -855,14 +859,16 @@
         <li>\(n = 7\) : \(H = 32 \times 7 = 224\) cm ✗ (trop grand)</li>
       </ul>
       <div class="corr-rep">✔ Il y a <strong>2 configurations possibles</strong> : 5 rayons (H = 160 cm) ou 6 rayons (H = 192 cm).</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 7 -->
-<div class="exo">
-  <div class="exo-num">Exercice 24</div>
-  <div class="exo-titre">Rentabilité d'un atelier</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 24</span>
+    <span class="exo-title">Rentabilité d'un atelier</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">💶 Gestion – Menuiserie</span>
   <div class="enonce">
     Un artisan menuisier fabrique des étagères en bois.
@@ -879,10 +885,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. B(x) = 75x − (420 + 28x) = ...&#10;2. B(x) > 0  →  ...x > ... → ...&#10;3. B(x) ≥ 500  →  ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong> \(B(x) = 75x - (420 + 28x) = 47x - 420\)
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong> \(B(x) = 75x - (420 + 28x) = 47x - 420\)
 
       <strong>2. Condition bénéficiaire :</strong>
       \[47x - 420 > 0 \implies 47x > 420 \implies x > \frac{420}{47} \approx 8{,}9\]
@@ -891,14 +896,16 @@
       <strong>3. Bénéfice ≥ 500 € :</strong>
       \[47x - 420 \geq 500 \implies 47x \geq 920 \implies x \geq \frac{920}{47} \approx 19{,}6\]
       <div class="corr-rep">✔ Il doit vendre au minimum <strong>20 étagères</strong>. Vérif : \(47 \times 20 - 420 = 520 \geq 500\) ✔</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX ST8 -->
-<div class="exo">
-  <div class="exo-num">Exercice 25</div>
-  <div class="exo-titre">Inéquations avec parenthèses et fractions</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 25</span>
+    <span class="exo-title">Inéquations avec parenthèses et fractions</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <div class="enonce">
     Résoudre chaque inéquation et exprimer la solution sous forme d'intervalle.
     <br><br>
@@ -911,10 +918,9 @@
     <label>Mes calculs :</label>
     <textarea placeholder="a) 3(2x - 1) ≤ 5x + 4&#10;   6x - 3 ≤ 5x + 4&#10;   ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a)</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a)</strong>
       \[3(2x - 1) \leq 5x + 4 \implies 6x - 3 \leq 5x + 4 \implies x \leq 7\]
       <div class="corr-rep">Solution : \(]-\infty ; 7]\)</div>
 
@@ -930,14 +936,16 @@
       <strong>d)</strong>
       \[\frac{3x - 1}{4} < 2 \implies 3x - 1 < 8 \implies 3x < 9 \implies x < 3\]
       <div class="corr-rep">Solution : \(]-\infty ; 3[\)</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX ST9 -->
-<div class="exo">
-  <div class="exo-num">Exercice 26</div>
-  <div class="exo-titre">Choix d'un abonnement sportif</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 26</span>
+    <span class="exo-title">Choix d'un abonnement sportif</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">🏃 Sport — Abonnement</span>
   <div class="enonce">
     Un lycéen hésite entre deux abonnements de salle de sport :
@@ -956,10 +964,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. A(x) = ...  et  B(x) = ...&#10;2. A(x) < B(x) → ...&#10;3. ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong>
       <ul style="padding-left:18px;margin:6px 0">
         <li>Formule A : \(A(x) = 25 + 2x\)</li>
         <li>Formule B : \(B(x) = 6x\)</li>
@@ -973,14 +980,16 @@
       \[A(8) = 25 + 2 \times 8 = 41 \text{ €}\]
       \[B(8) = 6 \times 8 = 48 \text{ €}\]
       <div class="corr-rep">✔ Pour 8 séances, choisir la <strong>Formule A</strong>. Économie : \(48 - 41 = 7\) €.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX ST10 -->
-<div class="exo">
-  <div class="exo-num">Exercice 27</div>
-  <div class="exo-titre">Encadrement d'une température</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 27</span>
+    <span class="exo-title">Encadrement d'une température</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">🌡 Énergie — Chauffage</span>
   <div class="enonce">
     Dans un local technique, la température \(T\) (en °C) évolue selon la formule \(T = -2h + 28\) où \(h\) est le nombre d'heures après l'arrêt du chauffage.
@@ -995,10 +1004,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. 14 ≤ -2h + 28 ≤ 24&#10;2. ...&#10;3. ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong> \(14 \leq -2h + 28 \leq 24\)
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong> \(14 \leq -2h + 28 \leq 24\)
 
       <strong>2. Résolution :</strong>
       \[14 - 28 \leq -2h \leq 24 - 28\]
@@ -1009,14 +1017,16 @@
       <div class="att-corr">⚠ En divisant par un nombre négatif dans une double inéquation, les deux inégalités s'inversent et les bornes s'échangent.</div>
 
       <strong>3.</strong> La température est dans la plage pendant \(7 - 2 = \) <strong>5 heures</strong>.
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX ST11 -->
-<div class="exo">
-  <div class="exo-num">Exercice 28</div>
-  <div class="exo-titre">Devis de pose de parquet</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 28</span>
+    <span class="exo-title">Devis de pose de parquet</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">📐 Agencement — Revêtement de sol</span>
   <div class="enonce">
     Un artisan menuisier propose deux formules de pose de parquet :
@@ -1032,10 +1042,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. Éco(x) = ...  et  Pro(x) = ...&#10;2. Éco(x) < Pro(x) → ...&#10;3. ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong>
       <ul style="padding-left:18px;margin:6px 0">
         <li>Éco : \(E(x) = 15x + 200\)</li>
         <li>Pro : \(P(x) = 22x\)</li>
@@ -1049,14 +1058,16 @@
       \[E(35) = 15 \times 35 + 200 = 725 \text{ €}\]
       \[P(35) = 22 \times 35 = 770 \text{ €}\]
       <div class="corr-rep">✔ Choisir la <strong>Formule Éco</strong>. Le client paiera <strong>725 €</strong> (économie de 45 €).</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX ST12 -->
-<div class="exo">
-  <div class="exo-num">Exercice 29</div>
-  <div class="exo-titre">Contrainte de poids pour une étagère</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 29</span>
+    <span class="exo-title">Contrainte de poids pour une étagère</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">📐 Menuiserie — Mobilier</span>
   <div class="enonce">
     Un fabricant de mobilier conçoit une étagère murale. Chaque livre posé pèse en moyenne <strong>0,8 kg</strong>.
@@ -1071,10 +1082,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. 0,8x + 3 ≤ 15&#10;2. ...&#10;3. ...&#10;4. ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong> \(0{,}8x + 3 \leq 15\)
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong> \(0{,}8x + 3 \leq 15\)
 
       <strong>2.</strong> \(0{,}8x \leq 12 \implies x \leq \dfrac{12}{0{,}8} = 15\)
       <div class="corr-rep">Solution : \(x \in [0 ; 15]\)</div>
@@ -1083,14 +1093,16 @@
 
       <strong>4.</strong> Avec le pot de fleurs : \(0{,}8x + 3 + 1{,}5 \leq 15\) → \(0{,}8x \leq 10{,}5\) → \(x \leq 13{,}125\)
       <div class="corr-rep">✔ On peut encore poser <strong>13 livres</strong>. Vérif : \(0{,}8 \times 13 + 3 + 1{,}5 = 14{,}9 \leq 15\) ✔</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX STD11 -->
-<div class="exo">
-  <div class="exo-num">Exercice 30</div>
-  <div class="exo-titre">Abonnement salle de sport</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 30</span>
+    <span class="exo-title">Abonnement salle de sport</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">🏋️ Sport — Budget</span>
   <div class="enonce">
     Deux salles de sport proposent des tarifs différents :<br>
@@ -1106,24 +1118,25 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. C_A(x) = ...  C_B(x) = ...&#10;2. 3x + 45 < 8x → ...&#10;3. ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong> \(C_A(x) = 8x\) et \(C_B(x) = 3x + 45\).
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong> \(C_A(x) = 8x\) et \(C_B(x) = 3x + 45\).
 
       <strong>2.</strong> \(3x + 45 < 8x \implies 45 < 5x \implies x > 9\)
       <div class="corr-rep">La Salle B est plus avantageuse <strong>à partir de 10 séances</strong> par mois.</div>
 
       <strong>3.</strong> Pour 12 séances : \(C_A(12) = 96\) € et \(C_B(12) = 81\) €.
       <div class="corr-rep">✔ La Salle B est préférable. Économie : \(96 - 81 = \mathbf{15}\) € par mois.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX STD12 -->
-<div class="exo">
-  <div class="exo-num">Exercice 31</div>
-  <div class="exo-titre">Température minimale — énergie</div>
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 31</span>
+    <span class="exo-title">Température minimale — énergie</span>
+    <span class="tag-standard">Standard</span>
+  </div>
   <span class="context-tag">⚡ Énergie — Bâtiment</span>
   <div class="enonce">
     La température \(T\) (en °C) dans un local non chauffé évolue selon \(T(t) = -2t + 18\), où \(t\) est le temps en heures après 8 h du matin.<br><br>
@@ -1136,10 +1149,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. T(0) = ...  T(3) = ...  T(6) = ...&#10;2. -2t + 18 ≥ 10 → ...&#10;3. ...&#10;4. 3t + 18 > 30 → ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong> \(T(0) = 18\) °C ; \(T(3) = -6 + 18 = 12\) °C ; \(T(6) = -12 + 18 = 6\) °C.
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong> \(T(0) = 18\) °C ; \(T(3) = -6 + 18 = 12\) °C ; \(T(6) = -12 + 18 = 6\) °C.
 
       <strong>2.</strong> \(-2t + 18 \geq 10 \implies -2t \geq -8\). On divise par \(-2\) (négatif → on retourne) : \(t \leq 4\).
       <div class="corr-rep">Solution : \(t \in [0 ; 4]\), c'est-à-dire de 8 h à 12 h.</div>
@@ -1149,30 +1161,27 @@
       <strong>4.</strong> \(3t + 18 > 30 \implies 3t > 12 \implies t > 4\).
       <div class="corr-rep">✔ La température dépasse 30 °C <strong>après 4 heures</strong>, soit après 12 h.</div>
       <div class="att-corr">📌 Attention au sens de l'inégalité quand on divise par un nombre négatif !</div>
-    </div>
-  </details>
+  </div>
 </div>
 
-</div><!-- fin diff-standard -->
+</div><!-- fin diff-standa
 
 <!-- ================================================================
      NIVEAU APPROFONDISSEMENT — problèmes ouverts
      ================================================================ -->
-<div class="diff-appro">
-<span class="tag-appro">Approfondissement</span>
-
 <!-- ============================================================ -->
 <!--  NIVEAU 4 – PROBLÈMES COMPLETS                               -->
 <!-- ============================================================ -->
-<div class="niveau-header niveau-4">
-  <span class="badge-niv badge-4">Niveau 4</span>
-  <h2>Probl&egrave;mes complets &ndash; Plusieurs &eacute;tapes</h2>
-</div>
-
 <!-- EX 8 -->
-<div class="exo">
-  <div class="exo-num">Exercice 32</div>
-  <div class="exo-titre">Découpe de tasseaux avec contrainte de longueur</div>
+
+<h2>Exercices d'approfondissement</h2>
+
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 32</span>
+    <span class="exo-title">Découpe de tasseaux avec contrainte de longueur</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">🔨 Charpente – Menuiserie</span>
   <div class="enonce">
     Un artisan dispose d'une barre de bois de <strong>3,60 m</strong>.
@@ -1186,10 +1195,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="Longueur utilisée = 8x + 7 × 0,3 = 8x + 2,1&#10;Chute = 360 − (8x + 2,1)&#10;Inéquation : chute < 10 → ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>Inconnue :</strong> \(x\) = longueur d'un tasseau (en cm).
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>Inconnue :</strong> \(x\) = longueur d'un tasseau (en cm).
       <br><br>
       <strong>Chute :</strong> \(360 - (8x + 2{,}1) < 10\)
       \[360 - 8x - 2{,}1 < 10\]
@@ -1203,14 +1211,16 @@
 
       <div class="corr-rep">✔ Les tasseaux doivent mesurer entre <strong>43,5 cm et 44,7 cm</strong>.<br>
       En pratique : <strong>44 cm</strong> est une bonne longueur. Vérif : \(8 \times 44 + 2{,}1 = 354{,}1\) ; chute = \(360 - 354{,}1 = 5{,}9\) cm &lt; 10 cm ✔</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX 9 -->
-<div class="exo">
-  <div class="exo-num">Exercice 33</div>
-  <div class="exo-titre">Comparaison de deux tarifs de location</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 33</span>
+    <span class="exo-title">Comparaison de deux tarifs de location</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">💼 Gestion – Atelier</span>
   <div class="enonce">
     Un artisan hésite entre deux formules de location d'une camionnette de livraison :
@@ -1229,10 +1239,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. A(x) = ...  et  B(x) = ...&#10;2. Inéquation A(x) < B(x) → ...&#10;3. ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong>
       <ul style="padding-left:18px;margin:6px 0">
         <li>Formule A : \(A(x) = 40 + 0{,}15x\)</li>
         <li>Formule B : \(B(x) = 0{,}35x\)</li>
@@ -1249,14 +1258,16 @@
       \[A(180) = 40 + 0{,}15 \times 180 = 40 + 27 = 67 \text{ €}\]
       \[B(180) = 0{,}35 \times 180 = 63 \text{ €}\]
       <div class="corr-rep">✔ Pour 180 km, choisir la <strong>Formule B</strong>. Économie : \(67 - 63 = 4\) €.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX A10 -->
-<div class="exo">
-  <div class="exo-num">Exercice 34</div>
-  <div class="exo-titre">Optimisation d'un devis de menuiserie</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 34</span>
+    <span class="exo-title">Optimisation d'un devis de menuiserie</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">💶 Gestion — Devis</span>
   <div class="enonce">
     Un métreur doit préparer un devis pour la fabrication de portes sur mesure. Le coût de production d'une porte est de <strong>85 €</strong> (matériaux + main-d'œuvre). Les charges fixes mensuelles de l'atelier sont de <strong>1 200 €</strong>. Chaque porte est vendue <strong>165 €</strong>.
@@ -1270,10 +1281,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. B(x) = 165x − (85x + 1200) = ...&#10;2. B(x) > 0 → ...&#10;3. B(x) ≥ 2000 → ...&#10;4. ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong> \(B(x) = 165x - (85x + 1200) = 80x - 1200\)
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong> \(B(x) = 165x - (85x + 1200) = 80x - 1200\)
 
       <strong>2. Rentabilité :</strong>
       \[80x - 1200 > 0 \implies 80x > 1200 \implies x > 15\]
@@ -1287,14 +1297,16 @@
       \[30p - (85 \times 30 + 1200) \geq 2000\]
       \[30p - 3750 \geq 2000 \implies 30p \geq 5750 \implies p \geq 191{,}67\]
       <div class="corr-rep">✔ Le prix de vente minimal est de <strong>192 €</strong> par porte (arrondi au-dessus).</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX A11 -->
-<div class="exo">
-  <div class="exo-num">Exercice 35</div>
-  <div class="exo-titre">Encadrement de dimensions — Norme de sécurité</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 35</span>
+    <span class="exo-title">Encadrement de dimensions — Norme de sécurité</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">📐 Agencement — Normes</span>
   <div class="enonce">
     Un artisan menuisier fabrique des garde-corps en bois. La norme NF P01-012 impose que la hauteur \(H\) d'un garde-corps soit comprise entre <strong>100 cm et 110 cm</strong>.
@@ -1310,10 +1322,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. H = ...&#10;2. 100 ≤ ... ≤ 110&#10;3. ...&#10;4. ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong> \(H = x + 8 + 5 = x + 13\)
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong> \(H = x + 8 + 5 = x + 13\)
 
       <strong>2.</strong> \(100 \leq x + 13 \leq 110\)
       \[100 - 13 \leq x \leq 110 - 13\]
@@ -1330,14 +1341,16 @@
         <li>95 cm → \(87 \leq 95 \leq 97\) ✔ Conforme</li>
       </ul>
       <div class="corr-rep">✔ Les barreaux de <strong>88 cm, 90 cm et 95 cm</strong> sont conformes.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX A12 -->
-<div class="exo">
-  <div class="exo-num">Exercice 36</div>
-  <div class="exo-titre">Comparaison de deux fournisseurs de bois</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 36</span>
+    <span class="exo-title">Comparaison de deux fournisseurs de bois</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">💶 Gestion — Achat de matériaux</span>
   <div class="enonce">
     Un artisan menuisier commande régulièrement des planches de chêne. Deux fournisseurs proposent :
@@ -1359,10 +1372,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. C_A(x) = ...&#10;2. C_B(x) = 0,9 × 15x = ...&#10;3. C_A(x) < C_B(x) → ...&#10;4. ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong> \(C_A(x) = 12x + 50\)
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong> \(C_A(x) = 12x + 50\)
 
       <strong>2.</strong> Avec remise de 10 % : \(C_B(x) = 0{,}9 \times 15x = 13{,}5x\)
 
@@ -1374,14 +1386,16 @@
       \[C_A(40) = 12 \times 40 + 50 = 530 \text{ €}\]
       \[C_B(40) = 13{,}5 \times 40 = 540 \text{ €}\]
       <div class="corr-rep">✔ Le <strong>Fournisseur A</strong> est moins cher de 10 €.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX A13 -->
-<div class="exo">
-  <div class="exo-num">Exercice 37</div>
-  <div class="exo-titre">Performance énergétique et isolation</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 37</span>
+    <span class="exo-title">Performance énergétique et isolation</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">🔋 Énergie — Isolation thermique</span>
   <div class="enonce">
     La déperdition thermique \(D\) (en watts) à travers une paroi est modélisée par :
@@ -1397,10 +1411,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. D = ...&#10;2. D < 60 → ...&#10;3. R > ...&#10;4. ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong> \(D = \dfrac{12 \times 20}{R} = \dfrac{240}{R}\)
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong> \(D = \dfrac{12 \times 20}{R} = \dfrac{240}{R}\)
 
       <strong>2.</strong> \(\dfrac{240}{R} < 60\). Comme \(R > 0\) :
       \[240 < 60R \implies R > \frac{240}{60} = 4\]
@@ -1412,14 +1425,16 @@
       <br>Si \(R\) est proportionnel à l'épaisseur \(e\) : \(R = \dfrac{3}{10} \times e = 0{,}3e\).
       \[0{,}3e > 4 \implies e > \frac{4}{0{,}3} \approx 13{,}3 \text{ cm}\]
       <div class="corr-rep">✔ Il faut au minimum <strong>14 cm</strong> d'épaisseur d'isolant.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX A14 -->
-<div class="exo">
-  <div class="exo-num">Exercice 38</div>
-  <div class="exo-titre">Système de deux inéquations</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 38</span>
+    <span class="exo-title">Système de deux inéquations</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <div class="enonce">
     Résoudre chaque système d'inéquations. Donner la solution sous forme d'intervalle et représenter sur une droite graduée.
     <br><br>
@@ -1433,10 +1448,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="a) Inéq. 1 : x ≤ ...  Inéq. 2 : x > ...&#10;   Intersection → ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>a)</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>a)</strong>
       <ul style="padding-left:18px;margin:6px 0">
         <li>Inéq. 1 : \(3x \leq 12 \implies x \leq 4\) → \(]-\infty ; 4]\)</li>
         <li>Inéq. 2 : \(x > -3\) → \(]-3 ; +\infty[\)</li>
@@ -1459,14 +1473,16 @@
       </ul>
       Intersection : \(]-5 ; 4]\)
       <div class="corr-rep">✔ Solution : \(]-5 ; 4]\)</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX A15 -->
-<div class="exo">
-  <div class="exo-num">Exercice 39</div>
-  <div class="exo-titre">Optimisation d'un emballage</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 39</span>
+    <span class="exo-title">Optimisation d'un emballage</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">📐 Agencement — Conception</span>
   <div class="enonce">
     Un fabricant de mobilier conçoit un carton d'emballage rectangulaire de longueur \(L\), largeur \(\ell = 40\) cm et hauteur \(h = 30\) cm.
@@ -1484,10 +1500,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. Système : { 2L + 140 < 200 , L ≥ 60 }&#10;2. ...&#10;3. ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong> Système :
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong> Système :
       \[\begin{cases} 2L + 140 < 200 \\ L \geq 60 \end{cases}\]
 
       <strong>2.</strong>
@@ -1500,14 +1515,16 @@
       <strong>3.</strong>
       <div class="corr-rep">✔ Il n'existe <strong>aucune longueur</strong> satisfaisant les deux contraintes simultanément. Le fabricant doit revoir ses contraintes : soit utiliser plus de ruban, soit accepter un carton plus court.</div>
       <div class="att-corr">📌 Un système d'inéquations peut ne pas avoir de solution ! C'est un résultat important : il faut toujours vérifier la compatibilité des contraintes.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX A16 -->
-<div class="exo">
-  <div class="exo-num">Exercice 40</div>
-  <div class="exo-titre">Problème ouvert — Choix d'investissement</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 40</span>
+    <span class="exo-title">Problème ouvert — Choix d'investissement</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">💶 Gestion — Investissement</span>
   <div class="enonce">
     Un artisan menuisier hésite entre acheter une machine-outil neuve ou continuer à sous-traiter.
@@ -1526,10 +1543,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. C₁(x) = ...  et  C₂(x) = ...&#10;2. Amortissement = 8500/5 = ...&#10;3. C₂(x) < C₁(x) → ...&#10;4. ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong>
       <ul style="padding-left:18px;margin:6px 0">
         <li>Option 1 : \(C_1(x) = 22x\)</li>
         <li>Option 2 (sans amortissement) : \(C_2(x) = 4x + 600\)</li>
@@ -1545,14 +1561,16 @@
       <strong>4.</strong> Pour 100 pièces : \(C_1 = 2200\) € et \(C_2 = 2700\) € → sous-traitance moins chère.
       <br>Pour 200 pièces : \(C_1 = 4400\) € et \(C_2 = 3100\) € → machine moins chère.
       <div class="corr-rep">✔ Si l'artisan usine régulièrement <strong>128 pièces ou plus</strong> par an, l'achat de la machine est rentable. Entre 100 et 127 pièces, la sous-traitance reste préférable.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX A10 -->
-<div class="exo">
-  <div class="exo-num">Exercice 41</div>
-  <div class="exo-titre">Optimisation d'un devis — double contrainte</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 41</span>
+    <span class="exo-title">Optimisation d'un devis — double contrainte</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">🔨 Menuiserie — Devis</span>
   <div class="enonce">
     Un métreur prépare un devis pour la pose de parquet dans un couloir rectangulaire. La longueur du couloir est \(L\) mètres et la largeur est fixée à <strong>1,20 m</strong>. Le client impose deux contraintes :<br>
@@ -1570,10 +1588,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. S = 1,2L ; C = (35+15)×1,2L = ...&#10;2. Système : { C ≤ 960 , S ≥ 6 }&#10;3-4. ...&#10;5. ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong> \(S = 1{,}2L\) m² et \(C = (35 + 15) \times 1{,}2L = 60L\) €.
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong> \(S = 1{,}2L\) m² et \(C = (35 + 15) \times 1{,}2L = 60L\) €.
 
       <strong>2.</strong> Système :
       \[\begin{cases} 60L \leq 960 \\ 1{,}2L \geq 6 \end{cases}\]
@@ -1590,14 +1607,16 @@
       <strong>5.</strong> Pour \(L = 18\) : \(C = 60 \times 18 = 1080\) € &gt; 960 €.
       <div class="corr-rep">✔ Non, un couloir de 18 m dépasse le budget de 120 €. Il faudrait réduire à 16 m maximum.</div>
       <div class="att-corr">📌 Un système d'inéquations peut donner un intervalle borné : ici, les deux contraintes limitent \(L\) par le haut ET par le bas.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EX A11 -->
-<div class="exo">
-  <div class="exo-num">Exercice 42</div>
-  <div class="exo-titre">Bilan énergétique — panneaux solaires vs réseau</div>
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 42</span>
+    <span class="exo-title">Bilan énergétique — panneaux solaires vs réseau</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
   <span class="context-tag">☀️ Énergie — Développement durable</span>
   <div class="enonce">
     Un particulier compare deux solutions pour alimenter son atelier :<br>
@@ -1615,10 +1634,9 @@
     <label>Ma démarche :</label>
     <textarea placeholder="1. EDF(x) = ... ; Solaire(x) = ...&#10;2. Solaire < EDF → ...&#10;3. Amortissement = ... → nouveau coût = ...&#10;4. ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <strong>1.</strong>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>1.</strong>
       <ul style="padding-left:18px;margin:6px 0">
         <li>EDF : \(C_1(x) = 0{,}25x\)</li>
         <li>Solaire (1re année) : \(C_2(x) = 0{,}05x + 4200\)</li>
@@ -1634,11 +1652,10 @@
       <strong>4.</strong> Pour 2 500 kWh : \(C_1 = 0{,}25 \times 2500 = 625\) € et \(C_3 = 0{,}05 \times 2500 + 420 = 545\) €.
       <div class="corr-rep">✔ Économie : \(625 - 545 = \mathbf{80}\) € par an. L'installation est rentable car \(2500 > 2100\).</div>
       <div class="att-corr">📌 L'amortissement transforme un investissement ponctuel en coût annuel constant. Sans amortissement, le solaire semble toujours trop cher la première année.</div>
-    </div>
-  </details>
+  </div>
 </div>
 
-</div><!-- fin diff-appro -->
+</div><!-- fin diff-app
 
 <!-- BILAN -->
 <div style="background:#ebf5ff;border-radius:10px;padding:18px 22px;margin:32px 0;border:1px solid #93c5fd">

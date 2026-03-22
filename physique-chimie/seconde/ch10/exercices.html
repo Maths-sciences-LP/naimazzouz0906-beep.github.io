@@ -49,10 +49,11 @@ svg text{font-family:'Segoe UI',sans-serif}
 </div>
 
 <!-- EXO 1 -->
-<div class="exo">
+<div class="exo diff-socle">
   <div class="exo-header">
     <span class="exo-num">Exercice 1</span>
     <span class="exo-title">Conversions °C ↔ K</span>
+    <span class="tag-socle">Socle</span>
   </div>
   <div class="def"><strong>Rappel :</strong> \( T(\text{K}) = T(°\text{C}) + 273 \) &nbsp;et&nbsp; \( T(°\text{C}) = T(\text{K}) - 273 \)<br>Le zéro absolu (0 K = −273 °C) est la température la plus basse possible.</div>
   <div class="enonce">
@@ -67,25 +68,24 @@ svg text{font-family:'Segoe UI',sans-serif}
     </table>
     <p class="q"><strong>b)</strong> Pourquoi les ingénieurs utilisent-ils parfois l'échelle Kelvin plutôt que Celsius ?</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong></p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong></p>
       <p>- 20 °C → <strong>293 K</strong></p>
       <p>- 373 K → <strong>100 °C</strong> (ébullition eau)</p>
       <p>- −40 °C → <strong>233 K</strong></p>
       <p>- 0 K → <strong>−273 °C</strong> (zéro absolu)</p>
       <p>- 87 °C → <strong>360 K</strong></p>
       <p><strong>b)</strong> L'échelle Kelvin est une échelle absolue qui commence à zéro (pas de valeurs négatives). Elle est pratique en physique et en thermodynamique (lois des gaz parfaits, calculs de rendement) car elle simplifie les formules.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO 2 -->
-<div class="exo">
+<div class="exo diff-socle">
   <div class="exo-header">
     <span class="exo-num">Exercice 2</span>
     <span class="exo-title">Choisir le bon capteur de température</span>
+    <span class="tag-socle">Socle</span>
   </div>
   <div class="def">
     <strong>Types de capteurs :</strong><br>
@@ -103,22 +103,21 @@ svg text{font-family:'Segoe UI',sans-serif}
       <tr><td>Capteur thermostat d'atelier</td><td>−10 à 50 °C</td><td>?</td><td>?</td></tr>
     </table>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p>- Sonde d'étuve : <strong>CTN</strong> → signal électrique intégrable dans le régulateur, plage adaptée, faible coût.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>- Sonde d'étuve : <strong>CTN</strong> → signal électrique intégrable dans le régulateur, plage adaptée, faible coût.</p>
       <p>- Thermomètre de laboratoire : <strong>Thermomètre à liquide</strong> → simple, précis pour usage courant, pas besoin de signal électrique.</p>
       <p>- Four de vernissage (haute température) : <strong>Thermocouple</strong> → seul capteur résistant aux très hautes températures.</p>
       <p>- Thermostat d'atelier : <strong>CTN</strong> → signal électrique pour le régulateur, plage adaptée à la température ambiante.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO 3 -->
-<div class="exo">
+<div class="exo diff-socle">
   <div class="exo-header">
     <span class="exo-num">Exercice 3</span>
     <span class="exo-title">Lecture de valeurs sur un tableau R(T) de CTN</span>
+    <span class="tag-socle">Socle</span>
   </div>
   <div class="prop"><strong>Caractéristique CTN :</strong> La résistance <em>diminue</em> quand la température augmente. C'est le signe d'un Coefficient de Température Négatif.</div>
   <div class="enonce">
@@ -167,32 +166,30 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>b)</strong> Par interpolation linéaire, estimer la résistance à T = 70 °C.</p>
     <p class="q"><strong>c)</strong> Un calculateur lit R = 3,5 kΩ. Quelle est la température correspondante ?</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> Oui, c'est bien une CTN : quand T passe de 20 à 100 °C (augmentation), R passe de 10 à 0,8 kΩ (diminution). Coefficient de Température Négatif confirmé.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Oui, c'est bien une CTN : quand T passe de 20 à 100 °C (augmentation), R passe de 10 à 0,8 kΩ (diminution). Coefficient de Température Négatif confirmé.</p>
       <p><strong>b)</strong> Entre 60 °C (R = 3,5 kΩ) et 80 °C (R = 2 kΩ) : interpolation à mi-chemin (70 °C) → \( R \approx \dfrac{3{,}5 + 2}{2} = \mathbf{2{,}75 \text{ kΩ}} \)</p>
       <p><strong>c)</strong> R = 3,5 kΩ correspond à T = <strong>60 °C</strong> (lecture directe dans le tableau).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 
 <!-- ================================================================
      NIVEAU SOCLE — exercices très guidés, étape par étape
      ================================================================ -->
-<div class="diff-socle">
-<span class="tag-socle">Socle</span>
-
 <div class="niveau-header niveau-2">
   <span class="badge-niv badge-2">Niveau 2</span>
   <h2>Comprendre pas à pas – Socle</h2>
 </div>
 
 <!-- EXO S1 -->
-<div class="exo">
-  <div class="exo-num">Exercice 4</div>
-  <div class="exo-titre">Thermostat d'étuve – Étapes guidées</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Thermostat d'étuve – Étapes guidées</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Atelier de menuiserie</span>
   <div class="methode">
     <strong>Méthode :</strong><br>
@@ -223,21 +220,22 @@ svg text{font-family:'Segoe UI',sans-serif}
     <label>Mes réponses :</label>
     <textarea placeholder="Étape 1 : T(K) = 87 + 273 = ... K&#10;Étape 2 : R(87°C) = ... kΩ | R(20°C) = ... kΩ&#10;Étape 3 : R diminue → oui, c'est une CTN&#10;Étape 4 : ..."></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>Étape 1 :</strong> \( T(\text{K}) = 87 + 273 = \mathbf{360 \text{ K}} \)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Étape 1 :</strong> \( T(\text{K}) = 87 + 273 = \mathbf{360 \text{ K}} \)</p>
       <p><strong>Étape 2 :</strong> R(87 °C) = <strong>2,5 kΩ</strong> &nbsp;; R(20 °C) = <strong>10 kΩ</strong>.</p>
       <p><strong>Étape 3 :</strong> R <strong>diminue</strong> (10 → 2,5) quand T augmente (20 → 87 °C). <strong>Oui</strong>, c'est bien une CTN.</p>
       <p><strong>Étape 4 :</strong> À 20 °C, R = 10 kΩ &gt; 8 kΩ → l'étuve est considérée <strong>froide</strong> → le chauffage reste allumé (pleine puissance).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO S2 -->
-<div class="exo">
-  <div class="exo-num">Exercice 5</div>
-  <div class="exo-titre">Thermostat d'atelier – Lecture guidée du tableau</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Thermostat d'atelier – Lecture guidée du tableau</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Atelier d'agencement</span>
   <div class="enonce">
     Le thermostat d'un atelier de menuisier utilise une CTN. Voici son tableau :
@@ -260,20 +258,21 @@ svg text{font-family:'Segoe UI',sans-serif}
     <label>Mes réponses :</label>
     <textarea placeholder="a) R=10kΩ > 12kΩ → T < 10°C → froid&#10;b) T_réelle < T_consigne → chauffage ON&#10;c) R=2,5kΩ → T=30°C > 21°C → chauffage OFF"></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> R = 10 kΩ &gt; 12 kΩ (à 10 °C) → T réelle &lt; 10 °C. Il fait très <strong>froid</strong> dans l'atelier (environ 7–8 °C).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> R = 10 kΩ &gt; 12 kΩ (à 10 °C) → T réelle &lt; 10 °C. Il fait très <strong>froid</strong> dans l'atelier (environ 7–8 °C).</p>
       <p><strong>b)</strong> T_réelle &lt; T_consigne (21 °C) → chauffage <strong>ON</strong>. Le régulateur active le chauffage pour réchauffer l'atelier.</p>
       <p><strong>c)</strong> R = 2,5 kΩ → T = <strong>30 °C</strong> &gt; 21 °C → chauffage <strong>OFF</strong> (il fait trop chaud).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO S3 -->
-<div class="exo">
-  <div class="exo-num">Exercice 6</div>
-  <div class="exo-titre">CTN défectueuse – Raisonnement guidé</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">CTN défectueuse – Raisonnement guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Atelier de menuiserie — Diagnostic</span>
   <div class="enonce">
     Un technicien constate que l'étuve d'un atelier de menuiserie chauffe sans arrêt, même quand la température est correcte. La CTN est suspectée.<br><br>
@@ -294,21 +293,22 @@ svg text{font-family:'Segoe UI',sans-serif}
     <label>Mes réponses :</label>
     <textarea placeholder="a) R → ∞ → T simulée très froide&#10;b) Chauffage ON en permanence&#10;c) Circuit ouvert&#10;d) Mesurer R à l'ohmmètre sur la CTN débranchée"></textarea>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> R → ∞ : le régulateur croit que T est très <strong>froide</strong> (R grande = T basse sur une CTN).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> R → ∞ : le régulateur croit que T est très <strong>froide</strong> (R grande = T basse sur une CTN).</p>
       <p><strong>b)</strong> Le chauffage reste <strong>ON en permanence</strong> → surchauffe possible.</p>
       <p><strong>c)</strong> Chauffage toujours ON → T simulée froide → R grande → <strong>circuit ouvert</strong> (CTN débranchée ou fil coupé).</p>
       <p><strong>d)</strong> Mesurer la résistance de la CTN à l'ohmmètre (régulateur débranché, étuve froide) : si R → ∞, la CTN est en circuit ouvert → la remplacer.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO S4 -->
-<div class="exo">
-  <div class="exo-num">Exercice 7</div>
-  <div class="exo-titre">Conversions guidées °C / K</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 7</span>
+    <span class="exo-title">Conversions guidées °C / K</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Vie quotidienne</span>
   <div class="enonce">
     <p>Compléter chaque ligne en suivant le modèle :</p>
@@ -324,22 +324,23 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p><strong>e)</strong> La surface du Soleil est à environ 5 800 K. Convertir en °C :<br>
     \( \theta = 5\,800 - 273 = \) …… °C</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \( T = -18 + 273 = \mathbf{255 \text{ K}} \)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \( T = -18 + 273 = \mathbf{255 \text{ K}} \)</p>
       <p><strong>b)</strong> \( T = 200 + 273 = \mathbf{473 \text{ K}} \)</p>
       <p><strong>c)</strong> \( T = 37 + 273 = \mathbf{310 \text{ K}} \)</p>
       <p><strong>d)</strong> \( \theta = 350 - 273 = \mathbf{77 \text{ °C}} \)</p>
       <p><strong>e)</strong> \( \theta = 5\,800 - 273 = \mathbf{5\,527 \text{ °C}} \)</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO S5 -->
-<div class="exo">
-  <div class="exo-num">Exercice 8</div>
-  <div class="exo-titre">Classer des températures – Du plus froid au plus chaud</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 8</span>
+    <span class="exo-title">Classer des températures – Du plus froid au plus chaud</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Science et vie quotidienne</span>
   <div class="enonce">
     <p>Voici cinq températures exprimées dans des unités différentes. Convertir toutes les températures en °C, puis les classer de la plus froide à la plus chaude.</p>
@@ -356,23 +357,24 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p><strong>Étape 2 :</strong> Classer de la plus froide à la plus chaude :<br>
     …… &lt; …… &lt; …… &lt; …… &lt; ……</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>Étape 1 :</strong><br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Étape 1 :</strong><br>
       77 K → \( 77 - 273 = \mathbf{-196 \text{ °C}} \) (azote liquide)<br>
       353 K → \( 353 - 273 = \mathbf{80 \text{ °C}} \) (étuve)<br>
       310 K → \( 310 - 273 = \mathbf{37 \text{ °C}} \) (corps humain)</p>
       <p><strong>Étape 2 :</strong> Classement :<br>
       Azote liquide (−196 °C) &lt; Journée d'hiver (−5 °C) &lt; Eau du robinet (15 °C) &lt; Corps humain (37 °C) &lt; Étuve de séchage (80 °C)</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO S6 -->
-<div class="exo">
-  <div class="exo-num">Exercice 9</div>
-  <div class="exo-titre">Vrai ou faux – Capteurs de température</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 9</span>
+    <span class="exo-title">Vrai ou faux – Capteurs de température</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Connaissances du cours</span>
   <div class="enonce">
     <p>Pour chaque affirmation, indiquer si elle est <strong>vraie</strong> ou <strong>fausse</strong>. Corriger les affirmations fausses.</p>
@@ -383,23 +385,24 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p><strong>e)</strong> Une CTP sert à mesurer précisément la température d'une étuve.</p>
     <p><strong>f)</strong> La formule de conversion est \( T(\text{K}) = \theta(\text{°C}) + 273 \).</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> <strong>FAUX</strong> — La résistance d'une CTN <em>diminue</em> quand la température augmente (Coefficient de Température Négatif).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> <strong>FAUX</strong> — La résistance d'une CTN <em>diminue</em> quand la température augmente (Coefficient de Température Négatif).</p>
       <p><strong>b)</strong> <strong>VRAI</strong> — Le thermocouple couvre une plage allant jusqu'à +1 000 °C et plus selon le type.</p>
       <p><strong>c)</strong> <strong>FAUX</strong> — Le zéro absolu vaut 0 K = <strong>−273 °C</strong>.</p>
       <p><strong>d)</strong> <strong>VRAI</strong> — Le LM35 fournit 10 mV par degré Celsius.</p>
       <p><strong>e)</strong> <strong>FAUX</strong> — La CTP sert à la <em>protection</em> (coupure automatique au-delà d'un seuil), pas à la mesure fine de température.</p>
       <p><strong>f)</strong> <strong>VRAI</strong> — C'est la relation de conversion Celsius → Kelvin.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO S7 -->
-<div class="exo">
-  <div class="exo-num">Exercice 10</div>
-  <div class="exo-titre">Lecture guidée d'un thermomètre numérique</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 10</span>
+    <span class="exo-title">Lecture guidée d'un thermomètre numérique</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Santé et vie quotidienne</span>
   <div class="enonce">
     <p>Un thermomètre médical électronique affiche <strong>38,5 °C</strong>.</p>
@@ -410,21 +413,22 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p><strong>c)</strong> Ce thermomètre utilise un capteur à semi-conducteur. Quel est l'avantage principal de ce type de capteur pour un usage médical ?</p>
     <p><strong>d)</strong> Pourquoi n'utilise-t-on pas un thermocouple pour mesurer la température du corps humain ?</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \( T = 38{,}5 + 273 = \mathbf{311{,}5 \text{ K}} \)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \( T = 38{,}5 + 273 = \mathbf{311{,}5 \text{ K}} \)</p>
       <p><strong>b)</strong> 38,5 °C &gt; 37 °C → le patient a de la <strong>fièvre</strong>.</p>
       <p><strong>c)</strong> Le capteur à semi-conducteur donne une sortie linéaire, facile à lire sur un afficheur numérique. Il est précis dans la plage 35–42 °C et peu coûteux.</p>
       <p><strong>d)</strong> Le thermocouple produit un signal très faible (quelques millivolts), nécessite un amplificateur et une compensation. Il est surdimensionné pour la plage corporelle. Le capteur à semi-conducteur est plus simple et plus adapté.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO S8 -->
-<div class="exo">
-  <div class="exo-num">Exercice 11</div>
-  <div class="exo-titre">Associer capteur et application – Relier les colonnes</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 11</span>
+    <span class="exo-title">Associer capteur et application – Relier les colonnes</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Connaissances du cours</span>
   <div class="enonce">
     <p>Relier chaque capteur à l'application qui lui convient le mieux :</p>
@@ -437,21 +441,22 @@ svg text{font-family:'Segoe UI',sans-serif}
     </table>
     <p>Écrire les associations : 1→…, 2→…, 3→…, 4→…</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>1 → D</strong> : La CTN est très sensible dans la plage 0–150 °C, idéale pour réguler une étuve à 80 °C.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1 → D</strong> : La CTN est très sensible dans la plage 0–150 °C, idéale pour réguler une étuve à 80 °C.</p>
       <p><strong>2 → A</strong> : Le thermocouple est le seul capteur qui supporte des températures de 800 °C.</p>
       <p><strong>3 → B</strong> : La CTP protège les moteurs : sa résistance explose au-delà d'un seuil et coupe le circuit.</p>
       <p><strong>4 → C</strong> : Le LM35 fournit une tension proportionnelle à la température, directement lisible par un Arduino.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO S9 -->
-<div class="exo">
-  <div class="exo-num">Exercice 12</div>
-  <div class="exo-titre">Température dans un atelier – Lecture guidée</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 12</span>
+    <span class="exo-title">Température dans un atelier – Lecture guidée</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Atelier de menuiserie</span>
   <div class="enonce">
     <p>Un artisan menuisier relève la température de son atelier à différents moments de la journée :</p>
@@ -466,21 +471,22 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p><strong>c)</strong> À quelle heure la température est-elle la plus basse ? La plus haute ?</p>
     <p><strong>d)</strong> Le confort thermique en atelier se situe entre 18 et 22 °C. Pendant combien de temps l'atelier est-il dans la zone de confort ?</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \( T = 8 + 273 = \mathbf{281 \text{ K}} \)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \( T = 8 + 273 = \mathbf{281 \text{ K}} \)</p>
       <p><strong>b)</strong> \( T = 22 + 273 = \mathbf{295 \text{ K}} \)</p>
       <p><strong>c)</strong> Température la plus basse : <strong>8 h</strong> (8 °C). La plus haute : <strong>14 h</strong> (22 °C).</p>
       <p><strong>d)</strong> La zone de confort (18–22 °C) est atteinte à 12 h (19 °C), 14 h (22 °C) et 17 h (18 °C). L'atelier est confortable pendant environ <strong>5 heures</strong> (de 12 h à 17 h).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO S10 -->
-<div class="exo">
-  <div class="exo-num">Exercice 13</div>
-  <div class="exo-titre">Le zéro absolu – Questions guidées</div>
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 13</span>
+    <span class="exo-title">Le zéro absolu – Questions guidées</span>
+    <span class="tag-socle">Socle</span>
+  </div>
   <span class="context-tag">Science</span>
   <div class="enonce">
     <p><strong>a)</strong> Compléter : Le zéro absolu vaut …… K = …… °C.</p>
@@ -491,36 +497,32 @@ svg text{font-family:'Segoe UI',sans-serif}
     \( T = -25 + 273 = \) …… K<br>
     Cette température est-elle proche du zéro absolu ?</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> Le zéro absolu vaut <strong>0 K</strong> = <strong>−273 °C</strong>.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Le zéro absolu vaut <strong>0 K</strong> = <strong>−273 °C</strong>.</p>
       <p><strong>b)</strong> <strong>NON</strong> — On ne peut pas obtenir de température négative en Kelvin. C'est la température la plus basse possible.</p>
       <p><strong>c)</strong> « Au zéro absolu, l'<strong>agitation</strong> thermique des particules cesse totalement. »</p>
       <p><strong>d)</strong> \( T = -25 + 273 = \mathbf{248 \text{ K}} \). Cette température est loin du zéro absolu (0 K). Le congélateur est à 248 K, soit 248 degrés au-dessus du zéro absolu.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
-</div><!-- fin diff-socle -->
+</div><!-- fin diff-soc
 
 
 <!-- ================================================================
      NIVEAU STANDARD — exercices du programme
      ================================================================ -->
-<div class="diff-standard">
-<span class="tag-standard">Standard</span>
-
 <div class="niveau-header niveau-2">
   <span class="badge-niv badge-2">Niveau 2</span>
   <h2>Applications guidées – Standard</h2>
 </div>
 
 <!-- EXO ST1 -->
-<div class="exo">
+<div class="exo diff-standard">
   <div class="exo-header">
     <span class="exo-num">Exercice 14</span>
     <span class="exo-title">Thermostat d'étuve – Conversion et CTN</span>
+    <span class="tag-standard">Standard</span>
   </div>
   <div class="mama-tag">Contexte professionnel</div>
   <div class="enonce">
@@ -534,22 +536,21 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>c)</strong> Calculer la variation de résistance \( \Delta R = R(20°C) - R(87°C) \). Commenter le signe.</p>
     <p class="q"><strong>d)</strong> Le régulateur surveille R : si R &gt; 8 kΩ, l'étuve est considérée "froide". Est-ce le cas à 20 °C ? Expliquer la conséquence sur le chauffage.</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \( T(\text{K}) = 87 + 273 = \mathbf{360 \text{ K}} \)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \( T(\text{K}) = 87 + 273 = \mathbf{360 \text{ K}} \)</p>
       <p><strong>b)</strong> R(87 °C) = <strong>2,5 kΩ</strong> &nbsp;; R(20 °C) = <strong>10 kΩ</strong>.</p>
       <p><strong>c)</strong> \( \Delta R = 10 - 2{,}5 = \mathbf{+7{,}5 \text{ kΩ}} \). Le signe positif confirme que R <em>diminue</em> quand T augmente → comportement CTN confirmé.</p>
       <p><strong>d)</strong> À 20 °C, R = 10 kΩ &gt; 8 kΩ → le régulateur considère l'étuve <strong>froide</strong> → il maintient le chauffage pleine puissance et ne commute pas encore la ventilation. C'est la phase de <em>montée en température</em>.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO ST2 -->
-<div class="exo">
+<div class="exo diff-standard">
   <div class="exo-header">
     <span class="exo-num">Exercice 15</span>
     <span class="exo-title">Interprétation de la courbe R(T) – Température réelle</span>
+    <span class="tag-standard">Standard</span>
   </div>
   <div class="mama-tag">Contexte professionnel</div>
   <div class="enonce">
@@ -565,14 +566,12 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>b)</strong> La plage normale de fonctionnement est 70–90 °C. R = 0,5 kΩ correspond-il à une situation normale ?</p>
     <p class="q"><strong>c)</strong> Que doit faire le technicien face à cette valeur de résistance ?</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> D'après la courbe, R = 0,5 kΩ ≈ 0,7 kΩ à 120 °C → T est <strong>supérieure à 120 °C</strong> (environ 125–130 °C). L'étuve est <strong>trop chaude</strong>, situation de surchauffe.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> D'après la courbe, R = 0,5 kΩ ≈ 0,7 kΩ à 120 °C → T est <strong>supérieure à 120 °C</strong> (environ 125–130 °C). L'étuve est <strong>trop chaude</strong>, situation de surchauffe.</p>
       <p><strong>b)</strong> R = 0,5 kΩ est en dehors de la plage normale (70–90 °C) → situation <strong>anormale</strong>. L'alarme de surchauffe doit être déclenchée.</p>
       <p><strong>c)</strong> Le technicien doit : 1) Couper l'alimentation de l'étuve immédiatement. 2) Attendre le refroidissement avant toute intervention. 3) Vérifier le régulateur de température, le capteur CTN et le système de ventilation.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <div class="niveau-header niveau-3">
@@ -581,10 +580,11 @@ svg text{font-family:'Segoe UI',sans-serif}
 </div>
 
 <!-- EXO ST3 -->
-<div class="exo">
+<div class="exo diff-standard">
   <div class="exo-header">
     <span class="exo-num">Exercice 16</span>
     <span class="exo-title">Thermostat d'atelier – Régulation par CTN</span>
+    <span class="tag-standard">Standard</span>
   </div>
   <div class="mama-tag">Contexte professionnel</div>
   <div class="enonce">
@@ -599,22 +599,21 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>c)</strong> Le système de chauffage doit-il se mettre en marche (ON) ou rester à l'arrêt (OFF) ? Justifier.</p>
     <p class="q"><strong>d)</strong> Si R_mesurée = 2,5 kΩ, que fait le régulateur ?</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> R = 10 kΩ : cette valeur est supérieure à 12 kΩ (10 °C) → par interpolation, T est inférieure à 10 °C. Environ <strong>7–8 °C</strong>.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> R = 10 kΩ : cette valeur est supérieure à 12 kΩ (10 °C) → par interpolation, T est inférieure à 10 °C. Environ <strong>7–8 °C</strong>.</p>
       <p><strong>b)</strong> T_réelle ≈ 8 °C &lt; 21 °C → la température réelle est <strong>inférieure</strong> à la consigne. Il fait trop froid dans l'atelier.</p>
       <p><strong>c)</strong> Le chauffage doit se mettre <strong>ON</strong> pour réchauffer l'atelier. Le régulateur active la résistance chauffante ou l'aérotherme.</p>
       <p><strong>d)</strong> R = 2,5 kΩ → T = 30 °C &gt; 21 °C → il fait trop chaud. Le régulateur coupe le chauffage (<strong>OFF</strong>) et peut activer la ventilation.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO ST4 -->
-<div class="exo">
+<div class="exo diff-standard">
   <div class="exo-header">
     <span class="exo-num">Exercice 17</span>
     <span class="exo-title">Alarme température huile de lubrification d'une machine-outil</span>
+    <span class="tag-standard">Standard</span>
   </div>
   <div class="mama-tag">Contexte professionnel</div>
   <div class="enonce">
@@ -630,22 +629,21 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>d)</strong> Lors d'un essai, R tombe à 150 Ω. Quel est l'état du voyant ? Que faire ?</p>
     <div class="attention"><strong>Attention :</strong> Une surchauffe de l'huile de lubrification peut provoquer une dégradation des roulements et entraîner la casse de la machine. Ne jamais ignorer ce voyant.</div>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> R_alarme = <strong>200 Ω</strong> (à 140 °C, d'après le tableau).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> R_alarme = <strong>200 Ω</strong> (à 140 °C, d'après le tableau).</p>
       <p><strong>b)</strong> La CTN : R diminue quand T augmente. Si T &gt; 140 °C alors R &lt; 200 Ω. L'alarme s'allume quand <strong>R &lt; R_alarme = 200 Ω</strong>.</p>
       <p><strong>c)</strong> T = 100 °C → R = <strong>700 Ω</strong>. 700 Ω &gt; 200 Ω → voyant <strong>éteint</strong>. Situation normale.</p>
       <p><strong>d)</strong> R = 150 Ω &lt; 200 Ω → T &gt; 140 °C → voyant <strong>allumé</strong>. Action : arrêter immédiatement la machine, couper l'alimentation, attendre refroidissement, vérifier niveau et qualité d'huile, inspecter les roulements.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO ST5 -->
-<div class="exo">
+<div class="exo diff-standard">
   <div class="exo-header">
     <span class="exo-num">Exercice 18</span>
     <span class="exo-title">Capteur LM35 et température d'atelier</span>
+    <span class="tag-standard">Standard</span>
   </div>
   <div class="mama-tag">Contexte professionnel</div>
   <div class="enonce">
@@ -655,22 +653,21 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>c)</strong> L'après-midi, la tension passe à 0,280 V. Quelle est la nouvelle température ?</p>
     <p class="q"><strong>d)</strong> L'écart de température entre le matin et l'après-midi est-il le même en °C et en K ? Justifier.</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \( \theta = \dfrac{V_{\text{out}}}{10 \times 10^{-3}} = \dfrac{0{,}215}{0{,}010} = \mathbf{21{,}5 \text{ °C}} \)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \( \theta = \dfrac{V_{\text{out}}}{10 \times 10^{-3}} = \dfrac{0{,}215}{0{,}010} = \mathbf{21{,}5 \text{ °C}} \)</p>
       <p><strong>b)</strong> \( T = 21{,}5 + 273 = \mathbf{294{,}5 \text{ K}} \)</p>
       <p><strong>c)</strong> \( \theta = \dfrac{0{,}280}{0{,}010} = \mathbf{28 \text{ °C}} \)</p>
       <p><strong>d)</strong> Écart : \( \Delta\theta = 28 - 21{,}5 = 6{,}5 \text{ °C} \). En Kelvin : \( \Delta T = 294{,}5 + 6{,}5 = 301 - 294{,}5 = 6{,}5 \text{ K} \). <strong>Oui</strong>, l'écart est identique car les deux échelles ont le même pas (1 °C = 1 K pour les différences).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO ST6 -->
-<div class="exo">
+<div class="exo diff-standard">
   <div class="exo-header">
     <span class="exo-num">Exercice 19</span>
     <span class="exo-title">Séchage du bois – Suivi de température</span>
+    <span class="tag-standard">Standard</span>
   </div>
   <div class="mama-tag">Contexte professionnel</div>
   <div class="enonce">
@@ -685,22 +682,21 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>c)</strong> L'étuve est-elle dans la plage de séchage correcte ? Que doit faire le menuisier ?</p>
     <p class="q"><strong>d)</strong> Convertir la plage de séchage 70–85 °C en Kelvin.</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> À 70 °C : R = 2,3 kΩ. À 80 °C : R = 1,6 kΩ. La plage de résistance est <strong>1,6 à 2,3 kΩ</strong>.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> À 70 °C : R = 2,3 kΩ. À 80 °C : R = 1,6 kΩ. La plage de résistance est <strong>1,6 à 2,3 kΩ</strong>.</p>
       <p><strong>b)</strong> R = 3,0 kΩ est entre 4,1 kΩ (50 °C) et 2,3 kΩ (70 °C). Interpolation : \( T \approx 50 + 20 \times \dfrac{4{,}1 - 3{,}0}{4{,}1 - 2{,}3} = 50 + 20 \times \dfrac{1{,}1}{1{,}8} \approx 50 + 12 = \mathbf{62 \text{ °C}} \)</p>
       <p><strong>c)</strong> T ≈ 62 °C &lt; 70 °C → l'étuve est <strong>trop froide</strong>. Le menuisier doit augmenter la puissance de chauffe ou attendre que l'étuve monte en température.</p>
       <p><strong>d)</strong> 70 °C → \( 70 + 273 = \mathbf{343 \text{ K}} \) ; 85 °C → \( 85 + 273 = \mathbf{358 \text{ K}} \). Plage : 343 K à 358 K.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO ST7 -->
-<div class="exo">
+<div class="exo diff-standard">
   <div class="exo-header">
     <span class="exo-num">Exercice 20</span>
     <span class="exo-title">Protection d'un moteur par CTP</span>
+    <span class="tag-standard">Standard</span>
   </div>
   <div class="mama-tag">Contexte professionnel</div>
   <div class="enonce">
@@ -710,22 +706,21 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>c)</strong> Un roulement grippé fait monter la température du moteur à 135 °C. Que se passe-t-il au niveau de la CTP ? Conséquence sur l'alimentation du moteur ?</p>
     <p class="q"><strong>d)</strong> Pourquoi utilise-t-on une CTP plutôt qu'une CTN pour cette application de protection ?</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> La résistance d'une CTP augmente très fortement lorsque la température dépasse un seuil critique, ce qui coupe le circuit automatiquement.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> La résistance d'une CTP augmente très fortement lorsque la température dépasse un seuil critique, ce qui coupe le circuit automatiquement.</p>
       <p><strong>b)</strong> À 75 °C &lt; 120 °C (seuil) → la CTP a une résistance proche de <strong>100 Ω</strong>. Le courant circule normalement.</p>
       <p><strong>c)</strong> À 135 °C &gt; 120 °C → la résistance de la CTP passe à plus de <strong>10 000 Ω</strong>. Le courant est quasi nul → le relais coupe l'alimentation du moteur. La machine s'arrête automatiquement.</p>
       <p><strong>d)</strong> La CTP agit comme un <strong>interrupteur thermique automatique</strong> : en dessous du seuil, tout fonctionne ; au-dessus, la coupure est immédiate et sans intervention humaine. Une CTN ne réagirait pas aussi brutalement, ce qui rend la protection moins fiable.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO ST8 -->
-<div class="exo">
+<div class="exo diff-standard">
   <div class="exo-header">
     <span class="exo-num">Exercice 21</span>
     <span class="exo-title">Thermocouple – Mesure sur un four de vernissage</span>
+    <span class="tag-standard">Standard</span>
   </div>
   <div class="mama-tag">Contexte professionnel</div>
   <div class="enonce">
@@ -737,22 +732,21 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>c)</strong> Pourquoi utilise-t-on un thermocouple plutôt qu'une CTN pour cette mesure ?</p>
     <p class="q"><strong>d)</strong> Citer un inconvénient du thermocouple par rapport au capteur LM35.</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \( T \approx \dfrac{20{,}5}{0{,}041} = \mathbf{500 \text{ °C}} \)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \( T \approx \dfrac{20{,}5}{0{,}041} = \mathbf{500 \text{ °C}} \)</p>
       <p><strong>b)</strong> \( T(\text{K}) = 500 + 273 = \mathbf{773 \text{ K}} \)</p>
       <p><strong>c)</strong> La CTN ne fonctionne que jusqu'à environ 150 °C. Le thermocouple peut mesurer jusqu'à <strong>1 000 °C et plus</strong>, ce qui est nécessaire pour un four de vernissage à haute température.</p>
       <p><strong>d)</strong> Le thermocouple délivre un signal très faible (quelques millivolts) qui nécessite un <strong>amplificateur</strong> et une <strong>compensation de jonction froide</strong>, contrairement au LM35 dont la sortie est directement exploitable.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO ST9 -->
-<div class="exo">
+<div class="exo diff-standard">
   <div class="exo-header">
     <span class="exo-num">Exercice 22</span>
     <span class="exo-title">Colle thermofusible – Régulation de température</span>
+    <span class="tag-standard">Standard</span>
   </div>
   <div class="mama-tag">Contexte professionnel</div>
   <div class="enonce">
@@ -766,22 +760,21 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>c)</strong> Si R = 90 Ω, la colle est-elle trop chaude ou trop froide ? Quel est le risque ?</p>
     <p class="q"><strong>d)</strong> Expliquer pourquoi le pistolet intègre aussi une CTP en complément de la CTN.</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> À 160 °C : R = 210 Ω. À 190 °C : R = 110 Ω. Plage de résistance : <strong>110 à 210 Ω</strong>.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> À 160 °C : R = 210 Ω. À 190 °C : R = 110 Ω. Plage de résistance : <strong>110 à 210 Ω</strong>.</p>
       <p><strong>b)</strong> R = 500 Ω est entre 850 Ω (100 °C) et 420 Ω (130 °C), donc T est entre 100 et 130 °C. La colle est <strong>trop froide</strong>, elle n'a pas atteint la température de travail.</p>
       <p><strong>c)</strong> R = 90 Ω &lt; 110 Ω (190 °C) → T &gt; 190 °C. La colle est <strong>trop chaude</strong>. Risque de dégradation de la colle, de brûlure du bois ou de dégagement de fumées toxiques.</p>
       <p><strong>d)</strong> La CTP sert de <strong>sécurité ultime</strong> : si la régulation par CTN tombe en panne et que la température dépasse un seuil critique (~200 °C), la CTP coupe automatiquement le circuit de la résistance chauffante, évitant tout risque d'incendie.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO ST10 -->
-<div class="exo">
+<div class="exo diff-standard">
   <div class="exo-header">
     <span class="exo-num">Exercice 23</span>
     <span class="exo-title">Comparaison de capteurs – Tableau de synthèse</span>
+    <span class="tag-standard">Standard</span>
   </div>
   <div class="mama-tag">Contexte technique</div>
   <div class="enonce">
@@ -794,25 +787,24 @@ svg text{font-family:'Segoe UI',sans-serif}
       <tr><td>Application typique</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
     </table>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <table>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
         <tr><th>Critère</th><th>CTN</th><th>CTP</th><th>Thermocouple</th><th>LM35</th></tr>
         <tr><td>Grandeur de sortie</td><td><strong>Résistance</strong></td><td><strong>Résistance</strong></td><td><strong>Tension (mV)</strong></td><td><strong>Tension (mV)</strong></td></tr>
         <tr><td>Plage de mesure</td><td><strong>−50 à +150 °C</strong></td><td><strong>Seuil fixe</strong></td><td><strong>−200 à +1 000 °C</strong></td><td><strong>−55 à +150 °C</strong></td></tr>
         <tr><td>Relation avec T</td><td><strong>R diminue (non linéaire)</strong></td><td><strong>R explose au seuil</strong></td><td><strong>V proportionnel à ΔT</strong></td><td><strong>V proportionnel à T</strong></td></tr>
         <tr><td>Application typique</td><td><strong>Régulation d'étuve</strong></td><td><strong>Protection moteur</strong></td><td><strong>Four haute T</strong></td><td><strong>Affichage Arduino</strong></td></tr>
       </table>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO ST11 -->
-<div class="exo">
+<div class="exo diff-standard">
   <div class="exo-header">
     <span class="exo-num">Exercice 24</span>
     <span class="exo-title">Confort thermique et énergie – Chauffage d'un atelier</span>
+    <span class="tag-standard">Standard</span>
   </div>
   <div class="mama-tag">Contexte énergie</div>
   <div class="enonce">
@@ -827,22 +819,21 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>c)</strong> Un menuisier ouvre la grande porte de l'atelier pour faire entrer du bois. R passe à 9 kΩ. Estimer la nouvelle température et la réaction du chauffage.</p>
     <p class="q"><strong>d)</strong> Expliquer pourquoi il est important de ne pas régler la consigne trop haut pour économiser de l'énergie.</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> R = 12 kΩ &gt; 11,5 kΩ (12 °C) → T &lt; 12 °C. L'atelier est <strong>en dessous de la consigne</strong> (18 °C) → le chauffage se met <strong>en marche</strong>.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> R = 12 kΩ &gt; 11,5 kΩ (12 °C) → T &lt; 12 °C. L'atelier est <strong>en dessous de la consigne</strong> (18 °C) → le chauffage se met <strong>en marche</strong>.</p>
       <p><strong>b)</strong> R = 6,2 kΩ = R_consigne → T = 18 °C. La consigne est atteinte → le chauffage <strong>s'arrête</strong>.</p>
       <p><strong>c)</strong> R = 9 kΩ est entre 8,5 kΩ (15 °C) et 11,5 kΩ (12 °C). Par interpolation : T ≈ <strong>14 °C</strong>. C'est en dessous de la consigne → le chauffage se <strong>remet en marche</strong>.</p>
       <p><strong>d)</strong> Chaque degré supplémentaire de consigne augmente la consommation d'énergie d'environ <strong>7 %</strong>. Régler le thermostat à 18 °C plutôt qu'à 22 °C permet d'économiser significativement sur la facture de chauffage, tout en restant dans la zone de confort.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO ST12 -->
-<div class="exo">
+<div class="exo diff-standard">
   <div class="exo-header">
     <span class="exo-num">Exercice 25</span>
     <span class="exo-title">Climat et réchauffement – Échelles de température</span>
+    <span class="tag-standard">Standard</span>
   </div>
   <div class="mama-tag">Contexte climat</div>
   <div class="enonce">
@@ -852,36 +843,32 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>c)</strong> Calculer la variation en Kelvin. Est-elle identique à celle en °C ? Pourquoi ?</p>
     <p class="q"><strong>d)</strong> La température de la planète Mars est d'environ −60 °C. Convertir en Kelvin. Pourquoi Mars est-elle beaucoup plus froide que la Terre ?</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \( T = 15 + 273 = \mathbf{288 \text{ K}} \)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \( T = 15 + 273 = \mathbf{288 \text{ K}} \)</p>
       <p><strong>b)</strong> Nouvelle température : \( 15 + 1{,}5 = \mathbf{16{,}5 \text{ °C}} \) → \( 16{,}5 + 273 = \mathbf{289{,}5 \text{ K}} \)</p>
       <p><strong>c)</strong> \( \Delta T = 289{,}5 - 288 = \mathbf{1{,}5 \text{ K}} \). Oui, la variation est <strong>identique</strong> en °C et en K car les deux échelles ont le même pas (seul le point zéro diffère).</p>
       <p><strong>d)</strong> \( T_{\text{Mars}} = -60 + 273 = \mathbf{213 \text{ K}} \). Mars est plus froide car elle est plus éloignée du Soleil et possède une atmosphère très mince qui ne retient pas la chaleur (effet de serre quasi inexistant).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
-</div><!-- fin diff-standard -->
+</div><!-- fin diff-standa
 
 
 <!-- ================================================================
      NIVEAU APPROFONDISSEMENT — problèmes ouverts, type BTS
      ================================================================ -->
-<div class="diff-appro">
-<span class="tag-appro">Approfondissement</span>
-
 <div class="niveau-header niveau-4">
   <span class="badge-niv badge-4">Niveau 4</span>
   <h2>Diagnostic avancé – Approfondissement</h2>
 </div>
 
 <!-- EXO A1 -->
-<div class="exo">
+<div class="exo diff-appro">
   <div class="exo-header">
     <span class="exo-num">Exercice 26</span>
     <span class="exo-title">Diagnostic sonde d'étuve défectueuse</span>
+    <span class="tag-appro">Approfondissement</span>
   </div>
   <div class="mama-tag">Contexte professionnel – Diagnostic avancé</div>
   <div class="enonce">
@@ -898,22 +885,21 @@ svg text{font-family:'Segoe UI',sans-serif}
       Mesurer R à l'ohmmètre (étuve froide, régulateur débranché).
     </div>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> R → ∞ signifie que le régulateur lit une résistance très grande. D'après la courbe CTN, une grande R correspond à une température très <em>basse</em>. Cela simule une étuve <strong>toujours froide</strong>.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> R → ∞ signifie que le régulateur lit une résistance très grande. D'après la courbe CTN, une grande R correspond à une température très <em>basse</em>. Cela simule une étuve <strong>toujours froide</strong>.</p>
       <p><strong>b)</strong> CTN débranchée → circuit ouvert → R → <strong>∞</strong> (infini). Le régulateur croit que l'étuve est froide → il maintient le chauffage allumé en permanence → surchauffe possible.</p>
       <p><strong>c)</strong> Court-circuit (R = 0 Ω) → régulateur lit R très faible → T simulée très <strong>élevée</strong>. Il coupe le chauffage en permanence, l'étuve ne chauffe plus du tout.</p>
       <p><strong>d)</strong> Chauffage toujours ON → T simulée froide → R très grande → <strong>circuit ouvert probable</strong> (CTN débranchée ou fil coupé). À confirmer par mesure à l'ohmmètre sur la sonde.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO A2 -->
-<div class="exo">
+<div class="exo diff-appro">
   <div class="exo-header">
     <span class="exo-num">Exercice 27</span>
     <span class="exo-title">Capteur de thermostat d'atelier dérivé – Analyse complète</span>
+    <span class="tag-appro">Approfondissement</span>
   </div>
   <div class="mama-tag">Contexte professionnel – Diagnostic avancé</div>
   <div class="enonce">
@@ -929,10 +915,9 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>d)</strong> Quelle est la solution pour le technicien ? Justifier le choix de la pièce à remplacer.</p>
     <p class="q"><strong>e)</strong> (Question BTS) Proposer une procédure de vérification en 3 étapes pour s'assurer que le nouveau capteur est correctement calibré.</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> R_mesurée = 15 kΩ &gt; R_consigne = 6 kΩ. D'après la CTN, R élevée → T basse. Le régulateur croit qu'il fait <strong>froid</strong> dans l'atelier → il maintient le <strong>chauffage ON</strong>.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> R_mesurée = 15 kΩ &gt; R_consigne = 6 kΩ. D'après la CTN, R élevée → T basse. Le régulateur croit qu'il fait <strong>froid</strong> dans l'atelier → il maintient le <strong>chauffage ON</strong>.</p>
       <p><strong>b)</strong> R = 15 kΩ est supérieure à 14 kΩ (T = 10 °C) → T_réelle &lt; 10 °C selon le capteur. Mais la valeur mesurée ne correspond pas à la réalité (le capteur est dérivé). La température indiquée est <strong>fausse</strong>.</p>
       <p><strong>c)</strong> Le capteur CTN a vieilli et dérivé : il indique une résistance correspondant à une température plus froide que la réalité. Le régulateur croit que l'atelier est froid et maintient le chauffage → il fait trop chaud → plainte du responsable.</p>
       <p><strong>d)</strong> Solution : <strong>remplacer le capteur CTN</strong> du thermostat. C'est une pièce d'usure peu coûteuse. Après remplacement, vérifier la cohérence entre T affichée et T réelle mesurée avec un thermomètre étalonné.</p>
@@ -940,15 +925,15 @@ svg text{font-family:'Segoe UI',sans-serif}
       1. Mesurer T_réelle avec un thermomètre étalonné certifié.<br>
       2. Mesurer R_nouveau capteur à l'ohmmètre et vérifier qu'elle correspond à T_réelle dans le tableau constructeur.<br>
       3. Comparer T_affichée par le régulateur à T_réelle : l'écart doit être inférieur à ±1 °C. Régler si nécessaire.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO A3 -->
-<div class="exo">
+<div class="exo diff-appro">
   <div class="exo-header">
     <span class="exo-num">Exercice 28</span>
     <span class="exo-title">Calcul avec la loi de la CTN – Formule exponentielle</span>
+    <span class="tag-appro">Approfondissement</span>
   </div>
   <div class="mama-tag">Contexte technique – Calcul avancé</div>
   <div class="enonce">
@@ -959,22 +944,21 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>c)</strong> En déduire la résistance R à 60 °C. Vérifier que R est bien inférieure à \( R_0 \).</p>
     <p class="q"><strong>d)</strong> Calculer de même R à 100 °C. Comparer avec la valeur à 60 °C et commenter la décroissance.</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \( T_0 = 25 + 273 = 298\,\text{K} \) ; \( T_1 = 60 + 273 = 333\,\text{K} \)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \( T_0 = 25 + 273 = 298\,\text{K} \) ; \( T_1 = 60 + 273 = 333\,\text{K} \)</p>
       <p><strong>b)</strong> \( \dfrac{1}{333} - \dfrac{1}{298} = 0{,}003003 - 0{,}003356 = \mathbf{-0{,}000353\,\text{K}^{-1}} \)</p>
       <p><strong>c)</strong> \( R = 10\,000 \times e^{3\,950 \times (-0{,}000353)} = 10\,000 \times e^{-1{,}394} = 10\,000 \times 0{,}248 \approx \mathbf{2{,}48\,\text{kΩ}} \). Bien inférieur à 10 kΩ : la CTN diminue avec T.</p>
       <p><strong>d)</strong> À 100 °C : \( T_2 = 373\,\text{K} \). \( \dfrac{1}{373} - \dfrac{1}{298} = -0{,}000677 \). \( R = 10\,000 \times e^{3\,950 \times (-0{,}000677)} = 10\,000 \times e^{-2{,}674} \approx 10\,000 \times 0{,}069 = \mathbf{0{,}69\,\text{kΩ}} \). La décroissance est très rapide : R passe de 2,48 kΩ à 0,69 kΩ entre 60 et 100 °C. La relation est exponentielle (non linéaire).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO A4 -->
-<div class="exo">
+<div class="exo diff-appro">
   <div class="exo-header">
     <span class="exo-num">Exercice 29</span>
     <span class="exo-title">Pont diviseur de tension et CTN – Mesure indirecte</span>
+    <span class="tag-appro">Approfondissement</span>
   </div>
   <div class="mama-tag">Contexte technique – Électronique</div>
   <div class="enonce">
@@ -986,22 +970,21 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>c)</strong> Comment évolue la tension \( V_{\text{CTN}} \) quand la température augmente ? Justifier.</p>
     <p class="q"><strong>d)</strong> Le microcontrôleur lit une tension de 1,8 V. Par interpolation, estimer la température de la CTN.</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> \( V_{\text{CTN}} = 5 \times \dfrac{12}{10 + 12} = 5 \times \dfrac{12}{22} = \mathbf{2{,}73 \text{ V}} \)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \( V_{\text{CTN}} = 5 \times \dfrac{12}{10 + 12} = 5 \times \dfrac{12}{22} = \mathbf{2{,}73 \text{ V}} \)</p>
       <p><strong>b)</strong> \( V_{\text{CTN}} = 5 \times \dfrac{2{,}2}{10 + 2{,}2} = 5 \times \dfrac{2{,}2}{12{,}2} = \mathbf{0{,}90 \text{ V}} \)</p>
       <p><strong>c)</strong> Quand T augmente, \( R_{\text{CTN}} \) diminue (CTN), donc la fraction \( \dfrac{R_{\text{CTN}}}{R_f + R_{\text{CTN}}} \) diminue, et \( V_{\text{CTN}} \) <strong>diminue</strong>.</p>
       <p><strong>d)</strong> À 40 °C : \( V = 5 \times \dfrac{5}{15} = 1{,}67 \text{ V} \). À 20 °C : V = 2,73 V. V = 1,8 V est entre 1,67 V (40 °C) et 2,73 V (20 °C), plus proche de 40 °C. Par interpolation : \( T \approx 40 - 20 \times \dfrac{1{,}8 - 1{,}67}{2{,}73 - 1{,}67} = 40 - 20 \times 0{,}12 \approx \mathbf{38 \text{ °C}} \)</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO A5 -->
-<div class="exo">
+<div class="exo diff-appro">
   <div class="exo-header">
     <span class="exo-num">Exercice 30</span>
     <span class="exo-title">Rendement d'un système de chauffage et température</span>
+    <span class="tag-appro">Approfondissement</span>
   </div>
   <div class="mama-tag">Contexte énergie – Problème ouvert</div>
   <div class="enonce">
@@ -1016,23 +999,22 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>d)</strong> Estimer la puissance nécessaire si la température extérieure est de −10 °C (extrapolation).</p>
     <p class="q"><strong>e)</strong> Le prix de l'électricité est 0,20 €/kWh. Calculer le coût journalier de chauffage (24 h) quand il fait 0 °C dehors.</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> −5 °C → \( -5 + 273 = \mathbf{268\,\text{K}} \) ; 15 °C → \( 15 + 273 = \mathbf{288\,\text{K}} \)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> −5 °C → \( -5 + 273 = \mathbf{268\,\text{K}} \) ; 15 °C → \( 15 + 273 = \mathbf{288\,\text{K}} \)</p>
       <p><strong>b)</strong> ΔT pour −5 °C : \( 19 - (-5) = 24 \text{ °C} = 24 \text{ K} \). Pour 15 °C : \( 19 - 15 = 4 \text{ °C} = 4 \text{ K} \). <strong>Oui</strong>, l'écart est le même en °C et en K.</p>
       <p><strong>c)</strong> ΔT : 24, 19, 14, 9, 4 °C → Puissance : 12, 9.5, 7, 4.5, 2 kW. La relation est approximativement <strong>linéaire</strong> : la puissance augmente d'environ 0,5 kW par degré d'écart supplémentaire.</p>
       <p><strong>d)</strong> À −10 °C : ΔT = 29 °C. Par extrapolation linéaire : \( P \approx 12 + 0{,}5 \times 5 = \mathbf{14{,}5\,\text{kW}} \)</p>
       <p><strong>e)</strong> À 0 °C : P = 9,5 kW. Coût = \( 9{,}5 \times 24 \times 0{,}20 = \mathbf{45{,}60\,\text{€}} \) par jour.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO A6 -->
-<div class="exo">
+<div class="exo diff-appro">
   <div class="exo-header">
     <span class="exo-num">Exercice 31</span>
     <span class="exo-title">Étalonnage d'une CTN – Protocole expérimental</span>
+    <span class="tag-appro">Approfondissement</span>
   </div>
   <div class="mama-tag">Contexte technique – Métrologie</div>
   <div class="enonce">
@@ -1047,10 +1029,9 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>c)</strong> Calculer la sensibilité moyenne de la CTN entre 40 et 60 °C : \( S = \dfrac{\Delta R}{\Delta T} \) en kΩ/°C.</p>
     <p class="q"><strong>d)</strong> Comparer cette sensibilité avec celle entre 60 et 80 °C. Que constate-t-on ? Pourquoi ?</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> Protocole :<br>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Protocole :<br>
       1. Plonger la CTN et le thermomètre de référence dans le bain thermostaté.<br>
       2. Régler le bain à une température donnée (ex. 20 °C) et attendre la stabilisation.<br>
       3. Relever la température exacte sur le thermomètre de référence.<br>
@@ -1059,15 +1040,15 @@ svg text{font-family:'Segoe UI',sans-serif}
       <p><strong>b)</strong> Interpolation entre 20 °C (12,5 kΩ) et 30 °C (8,3 kΩ) à mi-chemin (25 °C) : \( R(25) \approx \dfrac{12{,}5 + 8{,}3}{2} = \mathbf{10{,}4\,\text{kΩ}} \). Tolérance : 10 ± 5 % = [9,5 ; 10,5] kΩ. R = 10,4 kΩ est dans l'intervalle → la CTN est <strong>conforme</strong>.</p>
       <p><strong>c)</strong> \( S_{40-60} = \dfrac{2{,}9 - 5{,}7}{60 - 40} = \dfrac{-2{,}8}{20} = \mathbf{-0{,}14\,\text{kΩ/°C}} \)</p>
       <p><strong>d)</strong> \( S_{60-80} = \dfrac{1{,}6 - 2{,}9}{80 - 60} = \dfrac{-1{,}3}{20} = \mathbf{-0{,}065\,\text{kΩ/°C}} \). La sensibilité diminue (en valeur absolue) quand T augmente. C'est dû à la <strong>décroissance exponentielle</strong> : la CTN est plus sensible à basse température qu'à haute température.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO A7 -->
-<div class="exo">
+<div class="exo diff-appro">
   <div class="exo-header">
     <span class="exo-num">Exercice 32</span>
     <span class="exo-title">Système de régulation automatique – Analyse fonctionnelle</span>
+    <span class="tag-appro">Approfondissement</span>
   </div>
   <div class="mama-tag">Contexte professionnel – Type BTS</div>
   <div class="enonce">
@@ -1080,23 +1061,22 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>d)</strong> Le régulateur affiche une erreur « sonde déconnectée ». La CTN lit R → ∞. Le chauffage est-il bloqué ON ou OFF ? Quel est le risque pour le bois en cours de séchage ?</p>
     <p class="q"><strong>e)</strong> Proposer une amélioration du système pour éviter la surchauffe en cas de panne du capteur.</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> L'hystérésis est un <strong>écart intentionnel</strong> entre le seuil d'allumage et le seuil d'extinction. Elle évite que le chauffage s'allume et s'éteigne sans cesse (phénomène de « pompage ») quand la température oscille autour de la consigne.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> L'hystérésis est un <strong>écart intentionnel</strong> entre le seuil d'allumage et le seuil d'extinction. Elle évite que le chauffage s'allume et s'éteigne sans cesse (phénomène de « pompage ») quand la température oscille autour de la consigne.</p>
       <p><strong>b)</strong> CTN : R diminue quand T augmente. T &lt; 78 °C → R &gt; 1,8 kΩ : chauffage <strong>ON</strong> si R &gt; 1,8 kΩ. T &gt; 82 °C → R &lt; 1,5 kΩ : chauffage <strong>OFF</strong> si R &lt; 1,5 kΩ.</p>
       <p><strong>c)</strong> La courbe T(t) montre : 1) Phase de montée rapide (20 → 78 °C), chauffage en continu. 2) Oscillations entre 78 et 82 °C (le chauffage s'allume et s'éteint alternativement). 3) Régime permanent : T oscille dans la bande ±2 °C autour de 80 °C.</p>
       <p><strong>d)</strong> R → ∞ → le régulateur interprète T très froide → chauffage bloqué <strong>ON</strong>. Risque : surchauffe incontrôlée de l'étuve, dégradation des fibres du bois, voire risque d'incendie.</p>
       <p><strong>e)</strong> Solutions possibles : installer un <strong>thermostat de sécurité mécanique</strong> indépendant qui coupe le chauffage au-delà de 100 °C, ou utiliser une <strong>CTP</strong> de sécurité en plus de la CTN de régulation, ou encore un <strong>deuxième capteur redondant</strong> avec alarme en cas de divergence entre les deux mesures.</p>
-    </div>
-  </details>
+  </div>
 </div>
 
 <!-- EXO A8 -->
-<div class="exo">
+<div class="exo diff-appro">
   <div class="exo-header">
     <span class="exo-num">Exercice 33</span>
     <span class="exo-title">Dimensionnement d'un système de mesure – Projet Arduino</span>
+    <span class="tag-appro">Approfondissement</span>
   </div>
   <div class="mama-tag">Contexte technique – Projet numérique</div>
   <div class="enonce">
@@ -1107,19 +1087,17 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>d)</strong> La plage de mesure utile en atelier est 5–40 °C. Quelles sont les tensions correspondantes en sortie du LM35 ? Quelle fraction de la plage 0–5 V de l'Arduino est réellement utilisée ?</p>
     <p class="q"><strong>e)</strong> Proposer une modification du circuit pour améliorer la résolution dans cette plage utile (sans changer d'Arduino).</p>
   </div>
-  <details class="corr-wrap">
-    <summary>▶ Voir la correction</summary>
-    <div class="corr-body">
-      <p><strong>a)</strong> Résolution = \( \dfrac{5\,000\,\text{mV}}{1\,023} \approx \mathbf{4{,}89\,\text{mV}} \)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Résolution = \( \dfrac{5\,000\,\text{mV}}{1\,023} \approx \mathbf{4{,}89\,\text{mV}} \)</p>
       <p><strong>b)</strong> Le LM35 donne 10 mV/°C. Résolution en T = \( \dfrac{4{,}89}{10} \approx \mathbf{0{,}49\,\text{°C}} \). Le système détecte des variations d'environ 0,5 °C.</p>
       <p><strong>c)</strong> \( V = \dfrac{205}{1\,023} \times 5 = \mathbf{1{,}002\,\text{V}} \). Température : \( \theta = \dfrac{1\,002\,\text{mV}}{10} = \mathbf{100{,}2\,\text{°C}} \).</p>
       <p><strong>d)</strong> À 5 °C : V = 50 mV. À 40 °C : V = 400 mV. Fraction utilisée : \( \dfrac{400 - 50}{5\,000} = \dfrac{350}{5\,000} = \mathbf{7\,\%} \) de la plage. On n'utilise que 7 % de la résolution de l'Arduino.</p>
       <p><strong>e)</strong> Utiliser un <strong>amplificateur opérationnel</strong> pour amplifier le signal du LM35 et l'adapter à la plage 0–5 V. Par exemple, un gain de 10 donnerait 500 mV à 5 °C et 4 000 mV à 40 °C, utilisant ainsi 70 % de la plage et améliorant la résolution d'un facteur 10 (soit ≈ 0,05 °C).</p>
-    </div>
-  </details>
+  </div>
 </div>
 
-</div><!-- fin diff-appro -->
+</div><!-- fin diff-app
 
 
 <div style="background:#f5f0ff;border-radius:10px;padding:18px 22px;margin:32px 0;border:1px solid #c4b5fd">
