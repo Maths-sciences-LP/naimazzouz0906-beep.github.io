@@ -37,7 +37,7 @@
 
 <!-- ===== TRONC COMMUN : NIVEAU 1 ===== -->
 <h2>Base – Exercices fondamentaux <small style="font-size:.7em;color:#718096">(commun à tous)</small></h2>
-<div class="section-intro">Trois exercices pour maîtriser les grandeurs et composants de base.</div>
+<div class="section-intro">Trois exercices de base pour maîtriser les grandeurs et composants électriques.</div>
 
 <!-- EXO 1 -->
 <div class="exo">
@@ -210,12 +210,12 @@
 <span class="tag-socle">Socle</span>
 
 <h2>Exercices guidés &ndash; Socle</h2>
-<div class="section-intro" style="background:#f0fdf4;border-color:#86efac;color:#14532d">Exercices très guidés avec formules données, tableaux à compléter et calculs amorcés.</div>
+<div class="section-intro" style="background:#f0fdf4;border-color:#86efac;color:#14532d">Dix exercices très guidés avec formules données, tableaux à compléter et calculs amorcés.</div>
 
-<!-- EXO S1 -->
+<!-- EXO 4 -->
 <div class="exo">
   <div class="exo-header">
-    <span class="exo-num">Exercice S1</span>
+    <span class="exo-num">Exercice 4</span>
     <span class="exo-title">Identifier les composants &ndash; tableau à compléter</span>
   </div>
   <div class="methode"><strong>Rappel :</strong> Générateur = fournit l'énergie | Récepteur = consomme l'énergie | Interrupteur = ouvre/ferme le circuit.</div>
@@ -238,10 +238,10 @@
   </div>
 </div>
 
-<!-- EXO S2 -->
+<!-- EXO 5 -->
 <div class="exo">
   <div class="exo-header">
-    <span class="exo-num">Exercice S2</span>
+    <span class="exo-num">Exercice 5</span>
     <span class="exo-title">Conversions d'unités &ndash; guidé étape par étape</span>
   </div>
   <div class="methode"><strong>Formules données :</strong><br>
@@ -268,10 +268,10 @@
   </div>
 </div>
 
-<!-- EXO S3 -->
+<!-- EXO 6 -->
 <div class="exo">
   <div class="exo-header">
-    <span class="exo-num">Exercice S3</span>
+    <span class="exo-num">Exercice 6</span>
     <span class="exo-title">Loi des mailles &ndash; circuit série guidé</span>
   </div>
   <div class="methode"><strong>Loi des mailles (circuit série) :</strong><br>
@@ -297,6 +297,171 @@
   </div>
 </div>
 
+<!-- EXO 7 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 7</span>
+    <span class="exo-title">Grandeurs et unités &ndash; relier les bonnes réponses</span>
+  </div>
+  <p>Reliez chaque grandeur électrique à son unité et à son instrument de mesure.</p>
+  <table>
+    <thead><tr><th>Grandeur</th><th>Unité (à compléter)</th><th>Instrument (à compléter)</th></tr></thead>
+    <tbody>
+      <tr><td>Tension U</td><td>&hellip;&hellip;&hellip;&hellip;</td><td>&hellip;&hellip;&hellip;&hellip;</td></tr>
+      <tr><td>Intensité I</td><td>&hellip;&hellip;&hellip;&hellip;</td><td>&hellip;&hellip;&hellip;&hellip;</td></tr>
+      <tr><td>Résistance R</td><td>&hellip;&hellip;&hellip;&hellip;</td><td>&hellip;&hellip;&hellip;&hellip;</td></tr>
+      <tr><td>Puissance P</td><td>&hellip;&hellip;&hellip;&hellip;</td><td>&hellip;&hellip;&hellip;&hellip;</td></tr>
+    </tbody>
+  </table>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Tension U</strong> : unité = <strong>Volt (V)</strong>, instrument = <strong>Voltmètre</strong></p>
+    <p><strong>Intensité I</strong> : unité = <strong>Ampère (A)</strong>, instrument = <strong>Ampèremètre</strong></p>
+    <p><strong>Résistance R</strong> : unité = <strong>Ohm (\(\Omega\))</strong>, instrument = <strong>Ohmmètre</strong></p>
+    <p><strong>Puissance P</strong> : unité = <strong>Watt (W)</strong>, instrument = <strong>Calculée avec \(P = U \times I\)</strong></p>
+  </div>
+</div>
+
+<!-- EXO 8 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 8</span>
+    <span class="exo-title">Branchement des appareils de mesure &ndash; vrai ou faux</span>
+  </div>
+  <p>Pour chaque affirmation, indiquez si elle est <strong>vraie</strong> ou <strong>fausse</strong>. Corrigez les affirmations fausses.</p>
+  <p><strong>a.</strong> Le voltmètre se branche en série dans le circuit.</p>
+  <p><strong>b.</strong> L'ampèremètre se branche en série dans le circuit.</p>
+  <p><strong>c.</strong> On peut brancher un ampèremètre en parallèle sans risque.</p>
+  <p><strong>d.</strong> L'ohmmètre se branche sur un composant hors tension.</p>
+  <p><strong>e.</strong> Le voltmètre mesure l'intensité du courant.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a.</strong> <strong>Faux.</strong> Le voltmètre se branche en <strong>parallèle</strong> (en dérivation) aux bornes du composant.</p>
+    <p><strong>b.</strong> <strong>Vrai.</strong> L'ampèremètre se branche en série (on coupe le fil pour l'insérer).</p>
+    <p><strong>c.</strong> <strong>Faux.</strong> Un ampèremètre branché en parallèle provoque un <strong>court-circuit</strong> (sa résistance interne est quasi nulle). C'est très dangereux.</p>
+    <p><strong>d.</strong> <strong>Vrai.</strong> L'ohmmètre mesure la résistance d'un composant qui doit être <strong>hors tension</strong> (circuit débranché).</p>
+    <p><strong>e.</strong> <strong>Faux.</strong> Le voltmètre mesure la <strong>tension</strong> (en volts), pas l'intensité.</p>
+  </div>
+</div>
+
+<!-- EXO 9 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 9</span>
+    <span class="exo-title">Série ou parallèle &ndash; identifier le type de circuit</span>
+  </div>
+  <div class="methode"><strong>Rappel :</strong><br>
+  - <strong>Série</strong> : les composants sont les uns après les autres, sur une seule boucle.<br>
+  - <strong>Parallèle</strong> : les composants sont branchés entre les mêmes nœuds (plusieurs chemins possibles).</div>
+  <p>Pour chaque situation, indiquez si le circuit est en <strong>série</strong> ou en <strong>parallèle</strong>.</p>
+  <p><strong>a.</strong> Les guirlandes de Noël anciennes : quand une ampoule grille, toutes les autres s'éteignent.</p>
+  <p><strong>b.</strong> Les prises électriques d'une maison : quand un appareil tombe en panne, les autres fonctionnent toujours.</p>
+  <p><strong>c.</strong> Deux résistances branchées l'une après l'autre avec le même courant qui les traverse.</p>
+  <p><strong>d.</strong> Deux lampes branchées aux mêmes bornes, chacune ayant la même tension à ses bornes.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a.</strong> Circuit en <strong>série</strong>. Une ampoule grillée ouvre le circuit : le courant ne peut plus circuler dans aucune ampoule.</p>
+    <p><strong>b.</strong> Circuit en <strong>parallèle</strong>. Chaque prise est indépendante, reliée directement au réseau 230 V.</p>
+    <p><strong>c.</strong> Circuit en <strong>série</strong>. Les composants sont traversés par le même courant, l'un après l'autre.</p>
+    <p><strong>d.</strong> Circuit en <strong>parallèle</strong>. Les lampes partagent la même tension, branchées entre les mêmes nœuds.</p>
+  </div>
+</div>
+
+<!-- EXO 10 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 10</span>
+    <span class="exo-title">Loi des nœuds &ndash; calcul guidé</span>
+  </div>
+  <div class="methode"><strong>Loi des nœuds :</strong><br>
+  La somme des courants entrants = la somme des courants sortants.<br>
+  \( I_{entrant} = I_{sortant\,1} + I_{sortant\,2} \)</div>
+  <p>Dans un circuit, un courant total \( I = 3 \text{ A} \) arrive à un nœud A. Il se divise en deux branches :</p>
+  <ul>
+    <li>Branche 1 : \( I_1 = 1{,}8 \text{ A} \)</li>
+    <li>Branche 2 : \( I_2 = \,? \)</li>
+  </ul>
+  <p><strong>1.</strong> Complétez le calcul :</p>
+  <p style="padding-left:1em">\( I_2 = I - I_1 = 3 - \ldots\ldots = \) &hellip;&hellip;&hellip; A</p>
+  <p><strong>2.</strong> Si l'on ajoute une troisième branche avec \( I_3 = 0{,}5 \text{ A} \), quelle serait la nouvelle valeur de \( I_2 \) ?</p>
+  <p style="padding-left:1em">\( I_2 = I - I_1 - I_3 = 3 - 1{,}8 - \ldots\ldots = \) &hellip;&hellip;&hellip; A</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \( I_2 = 3 - 1{,}8 = \mathbf{1{,}2 \text{ A}} \)</p>
+    <p><strong>2.</strong> \( I_2 = 3 - 1{,}8 - 0{,}5 = \mathbf{0{,}7 \text{ A}} \)</p>
+  </div>
+</div>
+
+<!-- EXO 11 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 11</span>
+    <span class="exo-title">Puissance électrique &ndash; calcul guidé</span>
+  </div>
+  <div class="methode"><strong>Formule donnée :</strong><br>
+  \( P = U \times I \)<br>
+  Pour trouver \( I \) : \( I = P / U \)<br>
+  Pour trouver \( U \) : \( U = P / I \)</div>
+  <p>Une lampe de chevet fonctionne sous \( U = 230 \text{ V} \) et consomme \( I = 0{,}13 \text{ A} \).</p>
+  <p><strong>1.</strong> Calculez la puissance de la lampe :</p>
+  <p style="padding-left:1em">\( P = U \times I = 230 \times \ldots\ldots = \) &hellip;&hellip;&hellip; W</p>
+  <p><strong>2.</strong> Un radiateur électrique a une puissance de 1 500 W sous 230 V. Calculez l'intensité absorbée :</p>
+  <p style="padding-left:1em">\( I = P / U = \ldots\ldots / 230 = \) &hellip;&hellip;&hellip; A</p>
+  <p><strong>3.</strong> Un moteur de perceuse absorbe \( I = 2{,}6 \text{ A} \) et a une puissance de 600 W. Calculez la tension :</p>
+  <p style="padding-left:1em">\( U = P / I = 600 / \ldots\ldots = \) &hellip;&hellip;&hellip; V</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \( P = 230 \times 0{,}13 \approx \mathbf{30 \text{ W}} \)</p>
+    <p><strong>2.</strong> \( I = 1\,500 / 230 \approx \mathbf{6{,}5 \text{ A}} \)</p>
+    <p><strong>3.</strong> \( U = 600 / 2{,}6 = \mathbf{230{,}8 \text{ V}} \approx 230 \text{ V} \) (tension du réseau domestique)</p>
+  </div>
+</div>
+
+<!-- EXO 12 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 12</span>
+    <span class="exo-title">Circuit ouvert ou fermé &ndash; situations quotidiennes</span>
+  </div>
+  <p>Pour chaque situation, indiquez si le circuit est <strong>ouvert</strong> ou <strong>fermé</strong>, et si l'appareil fonctionne.</p>
+  <p><strong>a.</strong> Un aspirateur est branché sur la prise, le bouton marche est enfoncé.</p>
+  <p><strong>b.</strong> Une lampe de bureau est branchée, l'interrupteur est sur « OFF ».</p>
+  <p><strong>c.</strong> Un chargeur de téléphone est branché et le téléphone est connecté au câble.</p>
+  <p><strong>d.</strong> Un fil électrique est coupé à l'intérieur du câble de la perceuse (câble abîmé).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a.</strong> Circuit <strong>fermé</strong>. Le courant circule, l'aspirateur fonctionne.</p>
+    <p><strong>b.</strong> Circuit <strong>ouvert</strong>. L'interrupteur sur « OFF » coupe le circuit, la lampe est éteinte.</p>
+    <p><strong>c.</strong> Circuit <strong>fermé</strong>. Le courant circule du chargeur vers le téléphone, la batterie se charge.</p>
+    <p><strong>d.</strong> Circuit <strong>ouvert</strong>. Le fil coupé empêche le courant de circuler, même si la prise est branchée. La perceuse ne fonctionne pas.</p>
+  </div>
+</div>
+
+<!-- EXO 13 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 13</span>
+    <span class="exo-title">Loi d'Ohm &ndash; calculs guidés pas à pas</span>
+  </div>
+  <div class="methode"><strong>Loi d'Ohm :</strong><br>
+  \( U = R \times I \)<br>
+  Pour trouver \( R \) : \( R = U / I \)<br>
+  Pour trouver \( I \) : \( I = U / R \)</div>
+  <p>Un artisan menuisier utilise une lampe d'atelier protégée par une résistance.</p>
+  <p><strong>1.</strong> La résistance vaut \( R = 100\,\Omega \) et le courant est \( I = 0{,}5 \text{ A} \). Calculez la tension :</p>
+  <p style="padding-left:1em">\( U = R \times I = 100 \times \ldots\ldots = \) &hellip;&hellip;&hellip; V</p>
+  <p><strong>2.</strong> Aux bornes d'une autre résistance, on mesure \( U = 12 \text{ V} \) et \( I = 0{,}3 \text{ A} \). Calculez la résistance :</p>
+  <p style="padding-left:1em">\( R = U / I = 12 / \ldots\ldots = \) &hellip;&hellip;&hellip; \(\Omega\)</p>
+  <p><strong>3.</strong> Une résistance de \( R = 46\,\Omega \) est branchée sous \( U = 230 \text{ V} \). Calculez le courant :</p>
+  <p style="padding-left:1em">\( I = U / R = 230 / \ldots\ldots = \) &hellip;&hellip;&hellip; A</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \( U = 100 \times 0{,}5 = \mathbf{50 \text{ V}} \)</p>
+    <p><strong>2.</strong> \( R = 12 / 0{,}3 = \mathbf{40\,\Omega} \)</p>
+    <p><strong>3.</strong> \( I = 230 / 46 = \mathbf{5 \text{ A}} \)</p>
+  </div>
+</div>
+
 </div><!-- fin diff-socle -->
 
 <!-- ================================================================
@@ -307,12 +472,12 @@
 
 <!-- ===== SECTION GUIDÉ ===== -->
 <h2>Guidé – Exercices intermédiaires guidés</h2>
-<div class="section-intro">Deux exercices avec étapes fléchées pour appliquer les lois des circuits.</div>
+<div class="section-intro">Exercices avec étapes fléchées pour appliquer les lois des circuits.</div>
 
-<!-- EXO 4 -->
+<!-- EXO 14 -->
 <div class="exo">
   <div class="exo-header">
-    <span class="exo-num">Exercice 4</span>
+    <span class="exo-num">Exercice 14</span>
     <span class="exo-title">Circuit série – Loi d'additivité des tensions (loi des mailles)</span>
     <span class="diff diff-2">Intermédiaire</span>
   </div>
@@ -354,10 +519,10 @@
   </div>
 </div>
 
-<!-- EXO 5 -->
+<!-- EXO 15 -->
 <div class="exo">
   <div class="exo-header">
-    <span class="exo-num">Exercice 5</span>
+    <span class="exo-num">Exercice 15</span>
     <span class="exo-title">Circuit parallèle – Loi des nœuds (éclairage d'un atelier)</span>
     <span class="diff diff-2">Intermédiaire</span>
   </div>
@@ -397,12 +562,12 @@
 
 <!-- ===== SECTION APPLICATION ===== -->
 <h2>Application – Exercices intermédiaires</h2>
-<div class="section-intro">Deux exercices autonomes sur des situations professionnelles et domestiques concrètes.</div>
+<div class="section-intro">Exercices autonomes sur des situations professionnelles et domestiques concrètes.</div>
 
-<!-- EXO 6 -->
+<!-- EXO 16 -->
 <div class="exo">
   <div class="exo-header">
-    <span class="exo-num">Exercice 6</span>
+    <span class="exo-num">Exercice 16</span>
     <span class="exo-title">Circuit mixte d'un atelier – Machines et éclairage</span>
     <span class="diff diff-2">Intermédiaire</span>
   </div>
@@ -432,10 +597,10 @@
   </div>
 </div>
 
-<!-- EXO 7 -->
+<!-- EXO 17 -->
 <div class="exo">
   <div class="exo-header">
-    <span class="exo-num">Exercice 7</span>
+    <span class="exo-num">Exercice 17</span>
     <span class="exo-title">Puissance et énergie d'un éclairage de magasin d'ameublement</span>
     <span class="diff diff-2">Intermédiaire</span>
   </div>
@@ -462,6 +627,148 @@
   </div>
 </div>
 
+<!-- EXO 18 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 18</span>
+    <span class="exo-title">Loi d'Ohm – Résistances dans un circuit de chauffage</span>
+    <span class="diff diff-2">Intermédiaire</span>
+  </div>
+
+  <p>Un installateur thermique vérifie le circuit de commande d'une chaudière. Le circuit comporte une résistance de protection \( R = 470\,\Omega \) alimentée sous une tension \( U = 24 \text{ V} \).</p>
+
+  <p class="q"><strong>1.</strong> Calculez l'intensité du courant traversant la résistance en utilisant la loi d'Ohm \( I = U / R \).</p>
+  <p class="q"><strong>2.</strong> Exprimez ce résultat en milliampères (mA).</p>
+  <p class="q"><strong>3.</strong> On remplace cette résistance par une résistance de \( 220\,\Omega \). Calculez la nouvelle intensité. Comparez avec la question 1.</p>
+  <p class="q"><strong>4.</strong> Que se passerait-il si la résistance était nulle (court-circuit) ? Pourquoi est-ce dangereux ?</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \( I = U / R = 24 / 470 \approx 0{,}051 \text{ A} \)</p>
+    <p><strong>2.</strong> \( 0{,}051 \text{ A} = 0{,}051 \times 1\,000 = \mathbf{51 \text{ mA}} \)</p>
+    <p><strong>3.</strong> \( I = 24 / 220 \approx 0{,}109 \text{ A} \approx 109 \text{ mA} \). L'intensité a plus que doublé car la résistance a diminué : quand \( R \) diminue, \( I \) augmente (à tension constante).</p>
+    <p><strong>4.</strong> Si \( R = 0 \), le courant serait théoriquement infini (\( I = U / 0 \)). En pratique, un courant très élevé circule : c'est un <strong>court-circuit</strong>. Les fils surchauffent, risque d'incendie. Le disjoncteur doit couper le circuit.</p>
+  </div>
+</div>
+
+<!-- EXO 19 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 19</span>
+    <span class="exo-title">Résistance équivalente – Guirlande et décorations</span>
+    <span class="diff diff-2">Intermédiaire</span>
+  </div>
+
+  <p>Pour décorer un stand de salon du meuble, un fabricant de mobilier branche 5 petites ampoules LED en série. Chaque ampoule a une résistance \( R = 120\,\Omega \). L'ensemble est alimenté par un transformateur de \( U = 60 \text{ V} \).</p>
+
+  <p class="q"><strong>1.</strong> Calculez la résistance totale du circuit (5 résistances en série).</p>
+  <p class="q"><strong>2.</strong> Calculez l'intensité dans le circuit.</p>
+  <p class="q"><strong>3.</strong> Calculez la tension aux bornes de chaque ampoule. Vérifiez avec la loi des mailles.</p>
+  <p class="q"><strong>4.</strong> Calculez la puissance totale consommée par la guirlande.</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \( R_{tot} = 5 \times 120 = \mathbf{600\,\Omega} \)</p>
+    <p><strong>2.</strong> \( I = U / R_{tot} = 60 / 600 = \mathbf{0{,}1 \text{ A}} = 100 \text{ mA} \)</p>
+    <p><strong>3.</strong> \( U_{ampoule} = R \times I = 120 \times 0{,}1 = \mathbf{12 \text{ V}} \). Vérification : \( 5 \times 12 = 60 \text{ V} = U_{total} \) ✓</p>
+    <p><strong>4.</strong> \( P = U \times I = 60 \times 0{,}1 = \mathbf{6 \text{ W}} \)</p>
+  </div>
+</div>
+
+<!-- EXO 20 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 20</span>
+    <span class="exo-title">Puissance d'appareils sportifs – Salle de musculation</span>
+    <span class="diff diff-2">Intermédiaire</span>
+  </div>
+
+  <p>Une salle de sport possède plusieurs appareils branchés en parallèle sur le réseau 230 V :</p>
+  <table>
+    <thead><tr><th>Appareil</th><th>Puissance</th></tr></thead>
+    <tbody>
+      <tr><td>Tapis de course motorisé</td><td>2 200 W</td></tr>
+      <tr><td>Vélo elliptique connecté</td><td>150 W</td></tr>
+      <tr><td>Écran TV</td><td>80 W</td></tr>
+      <tr><td>Climatisation</td><td>1 500 W</td></tr>
+    </tbody>
+  </table>
+
+  <p class="q"><strong>1.</strong> Calculez l'intensité absorbée par chaque appareil (\( I = P / U \)).</p>
+  <p class="q"><strong>2.</strong> Calculez l'intensité totale si tous les appareils fonctionnent en même temps.</p>
+  <p class="q"><strong>3.</strong> Le disjoncteur est calibré à 20 A. Tous les appareils peuvent-ils fonctionner simultanément ?</p>
+  <p class="q"><strong>4.</strong> Calculez l'énergie consommée en 2 heures d'entraînement (tous appareils actifs), en kWh.</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong></p>
+    <p>Tapis : \( I = 2\,200 / 230 \approx 9{,}6 \text{ A} \)</p>
+    <p>Vélo : \( I = 150 / 230 \approx 0{,}65 \text{ A} \)</p>
+    <p>TV : \( I = 80 / 230 \approx 0{,}35 \text{ A} \)</p>
+    <p>Clim : \( I = 1\,500 / 230 \approx 6{,}5 \text{ A} \)</p>
+    <p><strong>2.</strong> \( I_{total} = 9{,}6 + 0{,}65 + 0{,}35 + 6{,}5 = \mathbf{17{,}1 \text{ A}} \)</p>
+    <p><strong>3.</strong> 17,1 A &lt; 20 A : oui, le disjoncteur 20 A suffit, mais avec peu de marge. Il vaut mieux ne pas ajouter d'autre appareil puissant.</p>
+    <p><strong>4.</strong> \( P_{total} = 2\,200 + 150 + 80 + 1\,500 = 3\,930 \text{ W} = 3{,}93 \text{ kW} \). \( E = 3{,}93 \times 2 = \mathbf{7{,}86 \text{ kWh}} \)</p>
+  </div>
+</div>
+
+<!-- EXO 21 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 21</span>
+    <span class="exo-title">Tension et intensité – Batterie de visseuse</span>
+    <span class="diff diff-2">Intermédiaire</span>
+  </div>
+
+  <p>Un menuisier utilise une visseuse sans fil équipée d'une batterie lithium 18 V / 5 Ah. La visseuse consomme un courant moyen de \( I = 4 \text{ A} \) en fonctionnement normal.</p>
+
+  <p class="q"><strong>1.</strong> Calculez la puissance consommée par la visseuse en fonctionnement.</p>
+  <p class="q"><strong>2.</strong> Calculez l'énergie stockée dans la batterie (en Wh).</p>
+  <p class="q"><strong>3.</strong> Calculez l'autonomie théorique de la batterie (en heures et en minutes).</p>
+  <p class="q"><strong>4.</strong> En réalité, l'autonomie est environ 20 % inférieure à la valeur théorique. Calculez l'autonomie réelle en minutes.</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \( P = U \times I = 18 \times 4 = \mathbf{72 \text{ W}} \)</p>
+    <p><strong>2.</strong> \( E = U \times C = 18 \times 5 = \mathbf{90 \text{ Wh}} \)</p>
+    <p><strong>3.</strong> Autonomie théorique : \( t = C / I = 5 / 4 = 1{,}25 \text{ h} = \mathbf{1\text{ h }15\text{ min}} \)</p>
+    <p><strong>4.</strong> Autonomie réelle : \( 1{,}25 \times 0{,}80 = 1{,}00 \text{ h} = \mathbf{60 \text{ min}} \). La visseuse tiendra environ 1 heure en usage continu.</p>
+  </div>
+</div>
+
+<!-- EXO 22 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 22</span>
+    <span class="exo-title">Comparaison série / parallèle – Éclairage d'un couloir</span>
+    <span class="diff diff-2">Intermédiaire</span>
+  </div>
+
+  <p>Un électricien hésite entre deux montages pour éclairer un couloir avec 3 lampes identiques de résistance \( R = 460\,\Omega \) chacune, alimentées par le réseau 230 V.</p>
+
+  <p><strong>Montage A : les 3 lampes en série</strong></p>
+  <p class="q"><strong>1.</strong> Calculez la résistance totale du montage A.</p>
+  <p class="q"><strong>2.</strong> Calculez l'intensité dans le circuit.</p>
+  <p class="q"><strong>3.</strong> Calculez la tension aux bornes de chaque lampe.</p>
+
+  <p><strong>Montage B : les 3 lampes en parallèle</strong></p>
+  <p class="q"><strong>4.</strong> Quelle est la tension aux bornes de chaque lampe ?</p>
+  <p class="q"><strong>5.</strong> Calculez l'intensité dans chaque lampe, puis l'intensité totale.</p>
+  <p class="q"><strong>6.</strong> Quel montage choisir pour l'éclairage d'un couloir ? Donnez deux arguments.</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Montage A (série) :</strong></p>
+    <p><strong>1.</strong> \( R_{tot} = 3 \times 460 = \mathbf{1\,380\,\Omega} \)</p>
+    <p><strong>2.</strong> \( I = 230 / 1\,380 \approx \mathbf{0{,}167 \text{ A}} \)</p>
+    <p><strong>3.</strong> \( U_{lampe} = R \times I = 460 \times 0{,}167 \approx \mathbf{76{,}7 \text{ V}} \). Chaque lampe ne reçoit qu'un tiers de 230 V : elles brillent faiblement.</p>
+    <p><strong>Montage B (parallèle) :</strong></p>
+    <p><strong>4.</strong> En parallèle, chaque lampe reçoit la tension du réseau : \( U = \mathbf{230 \text{ V}} \).</p>
+    <p><strong>5.</strong> \( I_{lampe} = 230 / 460 = 0{,}5 \text{ A} \). \( I_{total} = 3 \times 0{,}5 = \mathbf{1{,}5 \text{ A}} \).</p>
+    <p><strong>6.</strong> Le montage B (parallèle) est le bon choix : (1) chaque lampe reçoit 230 V et brille à pleine puissance ; (2) si une lampe grille, les deux autres continuent de fonctionner.</p>
+  </div>
+</div>
+
 </div><!-- fin diff-standard -->
 
 <!-- ================================================================
@@ -472,12 +779,12 @@
 
 <!-- ===== SECTION AVANCÉ ===== -->
 <h2>Contexte professionnel – Exercices avancés</h2>
-<div class="section-intro">Diagnostic et installation électrique en atelier de menuiserie et en bâtiment. Analyse approfondie.</div>
+<div class="section-intro">Diagnostic, installation et dimensionnement électrique en atelier de menuiserie et en bâtiment. Problèmes ouverts et analyse approfondie.</div>
 
-<!-- EXO 8 -->
+<!-- EXO 23 -->
 <div class="exo">
   <div class="exo-header">
-    <span class="exo-num">Exercice 8</span>
+    <span class="exo-num">Exercice 23</span>
     <span class="exo-title">Diagnostic électrique – Disjoncteur qui déclenche en atelier</span>
     <span class="diff diff-3">Avancé</span>
   </div>
@@ -500,10 +807,10 @@
   </div>
 </div>
 
-<!-- EXO 9 -->
+<!-- EXO 24 -->
 <div class="exo">
   <div class="exo-header">
-    <span class="exo-num">Exercice 9</span>
+    <span class="exo-num">Exercice 24</span>
     <span class="exo-title">Installation électrique d'un atelier – Calcul de protection</span>
     <span class="diff diff-3">Avancé</span>
   </div>
@@ -535,6 +842,209 @@
     <p><strong>3.</strong> L'intensité est 19,5 A. Le calibre immédiatement supérieur est <strong>20 A</strong>. Un 16 A sauterait (19,5 > 16), un 25 A fonctionnerait mais avec moins de protection. Le 20 A est le bon choix.</p>
     <p><strong>4.</strong> Avec la ponceuse : \( P = 4\,492 + 750 = 5\,242 \text{ W} \). \( I = 5\,242/230 \approx 22{,}8 \text{ A} \). Le disjoncteur 20 A ne tient plus (22,8 > 20). Il faudrait passer à un <strong>25 A</strong>.</p>
     <p><strong>5.</strong> Le DDR protège contre les courants de fuite (contact indirect avec une masse mise sous tension). En atelier, l'environnement est humide (lavage véhicules), les outils peuvent être endommagés → risque de contact avec une pièce sous tension. Le DDR 30 mA est requis pour la protection des personnes (le courant de fuite de 30 mA est le seuil non létal en général). Il coupe l'alimentation en quelques millisecondes.</p>
+  </div>
+</div>
+
+<!-- EXO 25 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 25</span>
+    <span class="exo-title">Rendement énergétique d'un système d'éclairage</span>
+    <span class="diff diff-3">Avancé</span>
+  </div>
+
+  <p>Un métreur compare deux solutions d'éclairage pour un showroom de meubles de 200 m². Il doit choisir entre des tubes fluorescents et des panneaux LED.</p>
+  <table>
+    <thead><tr><th>Solution</th><th>Nombre</th><th>Puissance unitaire</th><th>Durée de vie</th><th>Prix unitaire</th></tr></thead>
+    <tbody>
+      <tr><td>Tubes fluorescents</td><td>40</td><td>36 W</td><td>8 000 h</td><td>5 &euro;</td></tr>
+      <tr><td>Panneaux LED</td><td>24</td><td>40 W</td><td>50 000 h</td><td>45 &euro;</td></tr>
+    </tbody>
+  </table>
+  <p>Les deux solutions fournissent un éclairement équivalent. Le showroom est éclairé 12 heures par jour, 300 jours par an. Le prix du kWh est de 0,25 &euro;.</p>
+
+  <p class="q"><strong>1.</strong> Calculez la puissance totale installée pour chaque solution.</p>
+  <p class="q"><strong>2.</strong> Calculez l'énergie annuelle consommée par chaque solution (en kWh).</p>
+  <p class="q"><strong>3.</strong> Calculez le coût annuel en électricité pour chaque solution.</p>
+  <p class="q"><strong>4.</strong> Calculez le nombre de remplacements nécessaires sur 10 ans pour chaque solution. En déduire le coût total en lampes sur 10 ans.</p>
+  <p class="q"><strong>5.</strong> Calculez le coût total (électricité + lampes) sur 10 ans pour chaque solution. Quelle est l'économie réalisée avec les LED ?</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Fluorescents : \( P = 40 \times 36 = 1\,440 \text{ W} = 1{,}44 \text{ kW} \). LED : \( P = 24 \times 40 = 960 \text{ W} = 0{,}96 \text{ kW} \).</p>
+    <p><strong>2.</strong> Heures par an : \( 12 \times 300 = 3\,600 \text{ h} \). Fluorescents : \( E = 1{,}44 \times 3\,600 = 5\,184 \text{ kWh} \). LED : \( E = 0{,}96 \times 3\,600 = 3\,456 \text{ kWh} \).</p>
+    <p><strong>3.</strong> Fluorescents : \( 5\,184 \times 0{,}25 = \mathbf{1\,296 \text{ &euro;/an}} \). LED : \( 3\,456 \times 0{,}25 = \mathbf{864 \text{ &euro;/an}} \).</p>
+    <p><strong>4.</strong> Sur 10 ans : \( 3\,600 \times 10 = 36\,000 \text{ h} \). Fluorescents : \( 36\,000 / 8\,000 = 4{,}5 \) remplacements, soit 5 jeux. Coût : \( 5 \times 40 \times 5 = 1\,000 \text{ &euro;} \). LED : \( 36\,000 / 50\,000 = 0{,}72 \), pas de remplacement. Coût initial : \( 24 \times 45 = 1\,080 \text{ &euro;} \).</p>
+    <p><strong>5.</strong> Fluorescents sur 10 ans : \( 1\,296 \times 10 + 1\,000 = \mathbf{13\,960 \text{ &euro;}} \). LED sur 10 ans : \( 864 \times 10 + 1\,080 = \mathbf{9\,720 \text{ &euro;}} \). Économie : \( 13\,960 - 9\,720 = \mathbf{4\,240 \text{ &euro;}} \) sur 10 ans.</p>
+  </div>
+</div>
+
+<!-- EXO 26 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 26</span>
+    <span class="exo-title">Circuit mixte – Analyse complète d'un réseau domestique</span>
+    <span class="diff diff-3">Avancé</span>
+  </div>
+
+  <p>Le tableau électrique d'une maison comporte trois circuits en parallèle sur le réseau 230 V :</p>
+  <ul>
+    <li><strong>Circuit 1 (chambre)</strong> : une lampe (\( R_1 = 1\,150\,\Omega \)) et un radio-réveil (\( R_2 = 23\,000\,\Omega \)) branchés en parallèle.</li>
+    <li><strong>Circuit 2 (cuisine)</strong> : un four micro-ondes de puissance \( P = 1\,200 \text{ W} \).</li>
+    <li><strong>Circuit 3 (salon)</strong> : un téléviseur (\( I_{TV} = 0{,}43 \text{ A} \)) et une box internet (\( I_{box} = 0{,}09 \text{ A} \)) en parallèle.</li>
+  </ul>
+
+  <p class="q"><strong>1.</strong> Circuit 1 : calculez l'intensité dans chaque appareil de la chambre, puis l'intensité totale du circuit 1.</p>
+  <p class="q"><strong>2.</strong> Circuit 2 : calculez l'intensité absorbée par le micro-ondes.</p>
+  <p class="q"><strong>3.</strong> Circuit 3 : calculez l'intensité totale du circuit salon.</p>
+  <p class="q"><strong>4.</strong> Calculez l'intensité totale au niveau du tableau électrique (somme des 3 circuits).</p>
+  <p class="q"><strong>5.</strong> Un disjoncteur général de 30 A protège l'installation. Y a-t-il un risque de déclenchement ? Justifiez.</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Lampe : \( I_1 = 230 / 1\,150 = 0{,}2 \text{ A} \). Radio-réveil : \( I_2 = 230 / 23\,000 = 0{,}01 \text{ A} \). Total circuit 1 : \( I_{C1} = 0{,}2 + 0{,}01 = \mathbf{0{,}21 \text{ A}} \).</p>
+    <p><strong>2.</strong> \( I_{C2} = P / U = 1\,200 / 230 \approx \mathbf{5{,}2 \text{ A}} \).</p>
+    <p><strong>3.</strong> \( I_{C3} = 0{,}43 + 0{,}09 = \mathbf{0{,}52 \text{ A}} \).</p>
+    <p><strong>4.</strong> \( I_{total} = 0{,}21 + 5{,}2 + 0{,}52 = \mathbf{5{,}93 \text{ A}} \).</p>
+    <p><strong>5.</strong> 5,93 A est largement inférieur à 30 A : aucun risque de déclenchement avec ces appareils. Le disjoncteur 30 A laisse une large marge pour brancher d'autres appareils.</p>
+  </div>
+</div>
+
+<!-- EXO 27 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 27</span>
+    <span class="exo-title">Dimensionnement électrique – Atelier de fabrication de mobilier</span>
+    <span class="diff diff-3">Avancé</span>
+  </div>
+
+  <p>Un artisan menuisier agrandit son atelier et doit dimensionner l'installation électrique du nouveau local. Les équipements prévus sont :</p>
+  <table>
+    <thead><tr><th>Équipement</th><th>Puissance nominale</th><th>Courant d'appel au démarrage</th></tr></thead>
+    <tbody>
+      <tr><td>Scie à panneaux</td><td>3 000 W</td><td>3 fois le courant nominal</td></tr>
+      <tr><td>Dégauchisseuse</td><td>1 800 W</td><td>2,5 fois le courant nominal</td></tr>
+      <tr><td>Aspirateur industriel</td><td>1 200 W</td><td>2 fois le courant nominal</td></tr>
+      <tr><td>Éclairage LED (12 réglettes)</td><td>12 &times; 36 W = 432 W</td><td>Pas de surintensité</td></tr>
+      <tr><td>Compresseur</td><td>2 200 W</td><td>3 fois le courant nominal</td></tr>
+    </tbody>
+  </table>
+  <p>Tous les équipements sont branchés en parallèle sur le réseau 230 V.</p>
+
+  <p class="q"><strong>1.</strong> Calculez le courant nominal de chaque équipement.</p>
+  <p class="q"><strong>2.</strong> Calculez l'intensité totale en régime permanent (tous les équipements fonctionnent).</p>
+  <p class="q"><strong>3.</strong> L'artisan démarre la scie à panneaux alors que tous les autres équipements fonctionnent déjà. Calculez le courant de pointe au moment du démarrage.</p>
+  <p class="q"><strong>4.</strong> L'électricien propose un disjoncteur de 40 A à courbe D (tolère les surintensités de démarrage). Est-ce suffisant en régime permanent ? Et au démarrage de la scie ?</p>
+  <p class="q"><strong>5.</strong> Proposez une organisation du travail pour éviter les déclenchements intempestifs.</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong></p>
+    <p>Scie : \( I = 3\,000 / 230 \approx 13{,}0 \text{ A} \)</p>
+    <p>Dégauchisseuse : \( I = 1\,800 / 230 \approx 7{,}8 \text{ A} \)</p>
+    <p>Aspirateur : \( I = 1\,200 / 230 \approx 5{,}2 \text{ A} \)</p>
+    <p>Éclairage : \( I = 432 / 230 \approx 1{,}9 \text{ A} \)</p>
+    <p>Compresseur : \( I = 2\,200 / 230 \approx 9{,}6 \text{ A} \)</p>
+    <p><strong>2.</strong> \( I_{total} = 13{,}0 + 7{,}8 + 5{,}2 + 1{,}9 + 9{,}6 = \mathbf{37{,}5 \text{ A}} \)</p>
+    <p><strong>3.</strong> Au démarrage de la scie, son courant passe à \( 3 \times 13{,}0 = 39{,}0 \text{ A} \). Les autres restent en régime permanent. Courant de pointe : \( 39{,}0 + 7{,}8 + 5{,}2 + 1{,}9 + 9{,}6 = \mathbf{63{,}5 \text{ A}} \).</p>
+    <p><strong>4.</strong> En régime permanent : 37,5 A &lt; 40 A, c'est juste suffisant mais sans marge. Au démarrage de la scie : 63,5 A. Un disjoncteur courbe D 40 A tolère des pointes de 10 à 14 fois le calibre pour les surintensités très brèves, mais la surintensité ici dure plusieurs secondes. Il risque de déclencher. Un <strong>disjoncteur 50 A</strong> serait plus adapté.</p>
+    <p><strong>5.</strong> Ne jamais démarrer deux machines à moteur en même temps. Séquencer les démarrages : allumer d'abord l'aspirateur, attendre le régime établi, puis démarrer la scie. Prévoir deux circuits séparés (machines lourdes sur un circuit, éclairage + petit outillage sur un autre).</p>
+  </div>
+</div>
+
+<!-- EXO 28 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 28</span>
+    <span class="exo-title">Résistance équivalente – Circuit mixte (série + parallèle)</span>
+    <span class="diff diff-3">Avancé</span>
+  </div>
+
+  <p>Dans un circuit alimenté par un générateur de 24 V, on branche :</p>
+  <ul>
+    <li>une résistance \( R_1 = 10\,\Omega \) en série avec</li>
+    <li>deux résistances \( R_2 = 30\,\Omega \) et \( R_3 = 60\,\Omega \) branchées en parallèle entre elles.</li>
+  </ul>
+
+  <p class="q"><strong>1.</strong> Calculez la résistance équivalente \( R_{23} \) du groupement parallèle \( R_2 \) et \( R_3 \). Utilisez : \( \dfrac{1}{R_{23}} = \dfrac{1}{R_2} + \dfrac{1}{R_3} \).</p>
+  <p class="q"><strong>2.</strong> Calculez la résistance totale du circuit : \( R_{tot} = R_1 + R_{23} \).</p>
+  <p class="q"><strong>3.</strong> Calculez l'intensité totale \( I \) débitée par le générateur.</p>
+  <p class="q"><strong>4.</strong> Calculez la tension aux bornes de \( R_1 \) et la tension aux bornes du groupement parallèle. Vérifiez la loi des mailles.</p>
+  <p class="q"><strong>5.</strong> Calculez l'intensité dans \( R_2 \) et dans \( R_3 \). Vérifiez la loi des nœuds.</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \( \dfrac{1}{R_{23}} = \dfrac{1}{30} + \dfrac{1}{60} = \dfrac{2}{60} + \dfrac{1}{60} = \dfrac{3}{60} = \dfrac{1}{20} \). Donc \( R_{23} = \mathbf{20\,\Omega} \).</p>
+    <p><strong>2.</strong> \( R_{tot} = R_1 + R_{23} = 10 + 20 = \mathbf{30\,\Omega} \).</p>
+    <p><strong>3.</strong> \( I = U / R_{tot} = 24 / 30 = \mathbf{0{,}8 \text{ A}} \).</p>
+    <p><strong>4.</strong> \( U_1 = R_1 \times I = 10 \times 0{,}8 = 8 \text{ V} \). \( U_{23} = R_{23} \times I = 20 \times 0{,}8 = 16 \text{ V} \). Vérification : \( U_1 + U_{23} = 8 + 16 = 24 \text{ V} = U_{gen} \) ✓.</p>
+    <p><strong>5.</strong> \( I_2 = U_{23} / R_2 = 16 / 30 \approx 0{,}533 \text{ A} \). \( I_3 = U_{23} / R_3 = 16 / 60 \approx 0{,}267 \text{ A} \). Vérification : \( I_2 + I_3 = 0{,}533 + 0{,}267 = 0{,}8 \text{ A} = I \) ✓.</p>
+  </div>
+</div>
+
+<!-- EXO 29 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 29</span>
+    <span class="exo-title">Bilan de puissance – Maison individuelle</span>
+    <span class="diff diff-3">Avancé</span>
+  </div>
+
+  <p>Un conducteur de travaux doit vérifier le bilan de puissance d'une maison individuelle avant de choisir l'abonnement électrique. Voici les appareils susceptibles de fonctionner simultanément :</p>
+  <table>
+    <thead><tr><th>Appareil</th><th>Puissance</th><th>Durée d'utilisation quotidienne</th></tr></thead>
+    <tbody>
+      <tr><td>Chauffage électrique (3 radiateurs)</td><td>3 &times; 1 500 W</td><td>8 h</td></tr>
+      <tr><td>Chauffe-eau</td><td>2 000 W</td><td>4 h (heures creuses)</td></tr>
+      <tr><td>Lave-linge</td><td>2 200 W</td><td>1 h</td></tr>
+      <tr><td>Four</td><td>2 500 W</td><td>1 h</td></tr>
+      <tr><td>Éclairage LED total</td><td>200 W</td><td>6 h</td></tr>
+      <tr><td>Divers (TV, box, chargeurs)</td><td>300 W</td><td>10 h</td></tr>
+    </tbody>
+  </table>
+  <p>Le réseau est en 230 V monophasé.</p>
+
+  <p class="q"><strong>1.</strong> Calculez la puissance maximale simultanée (tous les appareils en marche en même temps).</p>
+  <p class="q"><strong>2.</strong> Calculez l'intensité correspondante. Quel abonnement choisir parmi : 6 kVA (26 A), 9 kVA (39 A), 12 kVA (52 A), 15 kVA (65 A) ?</p>
+  <p class="q"><strong>3.</strong> Calculez l'énergie consommée par jour (en kWh) en utilisant les durées d'utilisation.</p>
+  <p class="q"><strong>4.</strong> Estimez la facture mensuelle si le kWh coûte 0,25 &euro; (30 jours par mois).</p>
+  <p class="q"><strong>5.</strong> Le conducteur de travaux propose de remplacer le chauffage électrique par une pompe à chaleur (COP = 3). Quelle serait la nouvelle puissance de chauffage nécessaire pour le même confort ? Recalculez la puissance maximale et le nouvel abonnement possible.</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \( P_{max} = 3 \times 1\,500 + 2\,000 + 2\,200 + 2\,500 + 200 + 300 = 4\,500 + 2\,000 + 2\,200 + 2\,500 + 200 + 300 = \mathbf{11\,700 \text{ W}} = 11{,}7 \text{ kW} \).</p>
+    <p><strong>2.</strong> \( I = 11\,700 / 230 \approx 50{,}9 \text{ A} \). Il faut un abonnement <strong>12 kVA (52 A)</strong> : c'est le premier calibre supérieur à 50,9 A.</p>
+    <p><strong>3.</strong> \( E = (4\,500 \times 8) + (2\,000 \times 4) + (2\,200 \times 1) + (2\,500 \times 1) + (200 \times 6) + (300 \times 10) \)
+    \( = 36\,000 + 8\,000 + 2\,200 + 2\,500 + 1\,200 + 3\,000 = 52\,900 \text{ Wh} = \mathbf{52{,}9 \text{ kWh/jour}} \).</p>
+    <p><strong>4.</strong> \( 52{,}9 \times 30 \times 0{,}25 = \mathbf{396{,}75 \text{ &euro;/mois}} \).</p>
+    <p><strong>5.</strong> Avec un COP de 3, la pompe à chaleur consomme 3 fois moins pour le même chauffage : \( P_{PAC} = 4\,500 / 3 = 1\,500 \text{ W} \). Nouvelle puissance max : \( 1\,500 + 2\,000 + 2\,200 + 2\,500 + 200 + 300 = 8\,700 \text{ W} \). \( I = 8\,700 / 230 \approx 37{,}8 \text{ A} \). Un abonnement <strong>9 kVA (39 A)</strong> suffirait, ce qui réduit aussi le coût de l'abonnement.</p>
+  </div>
+</div>
+
+<!-- EXO 30 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 30</span>
+    <span class="exo-title">Panneaux solaires – Production et consommation</span>
+    <span class="diff diff-3">Avancé</span>
+  </div>
+
+  <p>Un artisan menuisier installe des panneaux solaires sur le toit de son atelier pour réduire sa facture d'électricité. L'installation comprend 10 panneaux de 400 Wc (watt-crête) chacun.</p>
+  <p>En conditions réelles dans le sud de la France, les panneaux produisent en moyenne 80 % de leur puissance crête pendant 5 heures par jour (ensoleillement moyen).</p>
+
+  <p class="q"><strong>1.</strong> Calculez la puissance crête totale de l'installation.</p>
+  <p class="q"><strong>2.</strong> Calculez la puissance réelle moyenne produite par l'installation.</p>
+  <p class="q"><strong>3.</strong> Calculez l'énergie produite par jour (en kWh).</p>
+  <p class="q"><strong>4.</strong> L'atelier consomme en moyenne 25 kWh par jour de travail. Quel pourcentage de la consommation est couvert par les panneaux solaires ?</p>
+  <p class="q"><strong>5.</strong> Le prix du kWh acheté au réseau est de 0,25 &euro;. Le surplus de production solaire est revendu à 0,10 &euro;/kWh. L'installation a coûté 8 000 &euro;. Calculez l'économie annuelle (250 jours de travail) et estimez le temps de retour sur investissement.</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \( P_{crête} = 10 \times 400 = \mathbf{4\,000 \text{ Wc}} = 4 \text{ kWc} \).</p>
+    <p><strong>2.</strong> \( P_{réelle} = 4\,000 \times 0{,}80 = \mathbf{3\,200 \text{ W}} = 3{,}2 \text{ kW} \).</p>
+    <p><strong>3.</strong> \( E_{jour} = 3{,}2 \times 5 = \mathbf{16 \text{ kWh/jour}} \).</p>
+    <p><strong>4.</strong> \( \text{Couverture} = 16 / 25 \times 100 = \mathbf{64\,\%} \). Les panneaux couvrent presque les deux tiers de la consommation.</p>
+    <p><strong>5.</strong> L'atelier consomme 25 kWh et produit 16 kWh. La totalité de la production est autoconsommée (16 &lt; 25), pas de surplus à revendre. Économie journalière : \( 16 \times 0{,}25 = 4 \text{ &euro;} \). Économie annuelle : \( 4 \times 250 = \mathbf{1\,000 \text{ &euro;/an}} \). Temps de retour : \( 8\,000 / 1\,000 = \mathbf{8 \text{ ans}} \). L'investissement est rentabilisé en 8 ans, et les panneaux durent en général 25 ans.</p>
   </div>
 </div>
 

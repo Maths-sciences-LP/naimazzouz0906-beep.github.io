@@ -503,6 +503,319 @@
   </div>
 </div>
 
+<!-- ===== EXERCICES SUPPLÉMENTAIRES — SOCLE ===== -->
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 17</span>
+    <span class="exo-title">Vrai ou faux – AC, DC et convertisseurs</span>
+  </div>
+  <p>Pour chaque affirmation, cocher <strong>Vrai</strong> ou <strong>Faux</strong> :</p>
+  <table>
+    <tr><th>Affirmation</th><th>Vrai</th><th>Faux</th></tr>
+    <tr><td>Le courant du secteur en France est continu.</td><td>☐</td><td>☐</td></tr>
+    <tr><td>Un redresseur transforme du courant alternatif en courant continu.</td><td>☐</td><td>☐</td></tr>
+    <tr><td>Un onduleur transforme du courant continu en courant alternatif.</td><td>☐</td><td>☐</td></tr>
+    <tr><td>La valeur maximale \(U_{\max}\) est toujours inférieure à \(U_{\text{eff}}\).</td><td>☐</td><td>☐</td></tr>
+    <tr><td>Un variateur de fréquence permet de régler la vitesse d'un moteur.</td><td>☐</td><td>☐</td></tr>
+    <tr><td>Le pont de Graëtz utilise 2 diodes.</td><td>☐</td><td>☐</td></tr>
+  </table>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Faux</strong> – Le courant du secteur est alternatif sinusoïdal (50 Hz).</p>
+    <p><strong>Vrai</strong> – C'est la fonction du redresseur (AC → DC).</p>
+    <p><strong>Vrai</strong> – C'est la fonction de l'onduleur (DC → AC).</p>
+    <p><strong>Faux</strong> – \(U_{\max} = U_{\text{eff}} \times \sqrt{2} \approx 1{,}414 \times U_{\text{eff}}\), donc \(U_{\max} > U_{\text{eff}}\).</p>
+    <p><strong>Vrai</strong> – En modifiant la fréquence de sortie, on change la vitesse de rotation du moteur.</p>
+    <p><strong>Faux</strong> – Le pont de Graëtz utilise 4 diodes.</p>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 18</span>
+    <span class="exo-title">Calcul guidé – tension maximale d'un signal</span>
+  </div>
+  <p>Un technicien CVC mesure au multimètre une tension efficace \(U_{\text{eff}} = 12\ \text{V}\) aux bornes d'un transformateur.</p>
+  <p><em>Formule :</em> \(U_{\max} = U_{\text{eff}} \times \sqrt{2} \approx U_{\text{eff}} \times 1{,}414\)</p>
+  <p class="q"><strong>1.</strong> Compléter le calcul :</p>
+  <p>\(U_{\max} = 12 \times \boxed{\phantom{000}} = \boxed{\phantom{000}}\ \text{V}\)</p>
+  <p class="q"><strong>2.</strong> Si cette tension est redressée par un pont de Graëtz, calculer la tension moyenne :</p>
+  <p>\(U_{\text{moy}} \approx 0{,}9 \times U_{\text{eff}} = 0{,}9 \times \boxed{\phantom{00}} = \boxed{\phantom{000}}\ \text{V}\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(U_{\max} = 12 \times 1{,}414 = \mathbf{16{,}97\ V \approx 17\ V}\)</p>
+    <p><strong>2.</strong> \(U_{\text{moy}} = 0{,}9 \times 12 = \mathbf{10{,}8\ V}\)</p>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 19</span>
+    <span class="exo-title">Identifier le type de redressement</span>
+  </div>
+  <p>Un oscilloscope affiche les signaux suivants après un redresseur. Associer chaque signal à son type :</p>
+  <ul>
+    <li><strong>Signal A :</strong> une alternance positive sur deux est conservée, l'autre est à 0 V.</li>
+    <li><strong>Signal B :</strong> toutes les alternances sont positives (les négatives sont « retournées »).</li>
+    <li><strong>Signal C :</strong> tension quasi constante avec de faibles ondulations.</li>
+  </ul>
+  <p>Types possibles : mono-alternance / pont de Graëtz / pont de Graëtz + condensateur de filtrage.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Signal A :</strong> redressement <strong>mono-alternance</strong> (une seule diode, seules les alternances positives passent).</p>
+    <p><strong>Signal B :</strong> <strong>pont de Graëtz</strong> (4 diodes, double alternance, toutes les alternances sont positives).</p>
+    <p><strong>Signal C :</strong> <strong>pont de Graëtz + condensateur de filtrage</strong> (le condensateur lisse la tension, donnant un signal quasi continu).</p>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 20</span>
+    <span class="exo-title">Compléter un tableau Ueff / Umax / Umoy</span>
+  </div>
+  <p>Compléter le tableau pour différentes tensions. On utilise un pont de Graëtz.</p>
+  <table>
+    <tr><th>Source</th><th>\(U_{\text{eff}}\) (V)</th><th>\(U_{\max}\) (V)</th><th>\(U_{\text{moy}}\) (V)</th></tr>
+    <tr><td>Secteur 230 V</td><td>230</td><td>…</td><td>…</td></tr>
+    <tr><td>Transfo 24 V</td><td>24</td><td>…</td><td>…</td></tr>
+    <tr><td>Transfo 48 V</td><td>48</td><td>…</td><td>…</td></tr>
+  </table>
+  <p><em>Formules :</em> \(U_{\max} = U_{\text{eff}} \times 1{,}414\) ; \(U_{\text{moy}} = 0{,}9 \times U_{\text{eff}}\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Source</th><th>\(U_{\text{eff}}\)</th><th>\(U_{\max}\)</th><th>\(U_{\text{moy}}\)</th></tr>
+      <tr><td>Secteur</td><td>230 V</td><td>\(230 \times 1{,}414 = \mathbf{325\ V}\)</td><td>\(0{,}9 \times 230 = \mathbf{207\ V}\)</td></tr>
+      <tr><td>Transfo 24 V</td><td>24 V</td><td>\(24 \times 1{,}414 = \mathbf{33{,}9\ V}\)</td><td>\(0{,}9 \times 24 = \mathbf{21{,}6\ V}\)</td></tr>
+      <tr><td>Transfo 48 V</td><td>48 V</td><td>\(48 \times 1{,}414 = \mathbf{67{,}9\ V}\)</td><td>\(0{,}9 \times 48 = \mathbf{43{,}2\ V}\)</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 21</span>
+    <span class="exo-title">Calcul guidé – vitesse d'un moteur</span>
+  </div>
+  <p>Un moteur asynchrone triphasé possède \(p = 1\) paire de pôles. Il est alimenté à la fréquence \(f = 50\ \text{Hz}\).</p>
+  <p><em>Formule :</em> \(n_s = \dfrac{60 \times f}{p}\)</p>
+  <p class="q"><strong>1.</strong> Compléter le calcul de la vitesse de synchronisme :</p>
+  <p>\(n_s = \dfrac{60 \times \boxed{\phantom{00}}}{\boxed{\phantom{0}}} = \boxed{\phantom{0000}}\ \text{tr/min}\)</p>
+  <p class="q"><strong>2.</strong> Le moteur a un glissement de 3 %. Sa vitesse réelle est :</p>
+  <p>\(n = n_s \times (1 - 0{,}03) = \boxed{\phantom{0000}} \times 0{,}97 = \boxed{\phantom{0000}}\ \text{tr/min}\)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(n_s = \dfrac{60 \times 50}{1} = \mathbf{3\,000\ tr/min}\)</p>
+    <p><strong>2.</strong> \(n = 3\,000 \times 0{,}97 = \mathbf{2\,910\ tr/min}\)</p>
+  </div>
+</div>
+
+<!-- ===== EXERCICES SUPPLÉMENTAIRES — STANDARD ===== -->
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 22</span>
+    <span class="exo-title">Comparer mono-alternance et pont de Graëtz</span>
+  </div>
+  <p>Un transformateur fournit \(U_{\text{eff}} = 15\ \text{V}\) à \(f = 50\ \text{Hz}\).</p>
+  <p class="q"><strong>1.</strong> Calculer \(U_{\max}\).</p>
+  <p class="q"><strong>2.</strong> Calculer la tension moyenne obtenue avec un redresseur mono-alternance.</p>
+  <p class="q"><strong>3.</strong> Calculer la tension moyenne obtenue avec un pont de Graëtz.</p>
+  <p class="q"><strong>4.</strong> Quelle est la fréquence de l'ondulation dans chaque cas ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(U_{\max} = 15 \times 1{,}414 = \mathbf{21{,}2\ V}\)</p>
+    <p><strong>2.</strong> Mono-alternance : \(U_{\text{moy}} = 0{,}45 \times 15 = \mathbf{6{,}75\ V}\)</p>
+    <p><strong>3.</strong> Pont de Graëtz : \(U_{\text{moy}} = 0{,}9 \times 15 = \mathbf{13{,}5\ V}\)</p>
+    <p><strong>4.</strong> Mono-alternance : l'ondulation est à la fréquence du signal, soit \(f = \mathbf{50\ Hz}\). Pont de Graëtz : l'ondulation est à \(2f = \mathbf{100\ Hz}\) (deux bosses par période).</p>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 23</span>
+    <span class="exo-title">Condensateur de filtrage – constante de temps</span>
+  </div>
+  <p>Après un pont de Graëtz, on place un condensateur de \(C = 2\,200\ \mu\text{F}\) en parallèle avec une charge de résistance \(R = 100\ \Omega\). La fréquence d'ondulation est \(f_{\text{ond}} = 100\ \text{Hz}\).</p>
+  <p class="q"><strong>1.</strong> Calculer la constante de temps \(\tau = R \times C\).</p>
+  <p class="q"><strong>2.</strong> Calculer la période d'ondulation \(T_{\text{ond}} = 1/f_{\text{ond}}\).</p>
+  <p class="q"><strong>3.</strong> Comparer \(\tau\) et \(T_{\text{ond}}\). Le filtrage est-il efficace ?</p>
+  <p class="q"><strong>4.</strong> On remplace le condensateur par \(C = 470\ \mu\text{F}\). Recalculer \(\tau\). Le filtrage est-il toujours bon ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(\tau = 100 \times 2\,200 \times 10^{-6} = \mathbf{0{,}22\ s}\)</p>
+    <p><strong>2.</strong> \(T_{\text{ond}} = \dfrac{1}{100} = \mathbf{0{,}01\ s}\)</p>
+    <p><strong>3.</strong> \(\tau = 0{,}22\ \text{s} \gg T_{\text{ond}} = 0{,}01\ \text{s}\) (rapport 22). Le filtrage est très efficace : le condensateur se décharge très peu entre deux recharges.</p>
+    <p><strong>4.</strong> \(\tau' = 100 \times 470 \times 10^{-6} = 0{,}047\ \text{s}\). Rapport \(\tau'/T_{\text{ond}} = 4{,}7\). Le filtrage est correct mais l'ondulation résiduelle sera plus visible.</p>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 24</span>
+    <span class="exo-title">Onduleur pour panneaux solaires</span>
+  </div>
+  <p>Un installateur en énergies renouvelables raccorde des panneaux solaires qui produisent du courant continu (\(U_{DC} = 360\ \text{V}\), \(P_{DC} = 3\,200\ \text{W}\)). Un onduleur convertit cette tension en 230 V AC pour injection dans le réseau. Le rendement de l'onduleur est \(\eta = 0{,}96\).</p>
+  <p class="q"><strong>1.</strong> Quel est le rôle de l'onduleur dans cette installation ?</p>
+  <p class="q"><strong>2.</strong> Calculer la puissance AC injectée dans le réseau.</p>
+  <p class="q"><strong>3.</strong> Calculer le courant AC injecté (on suppose \(\cos\varphi = 1\)).</p>
+  <p class="q"><strong>4.</strong> Calculer les pertes dans l'onduleur.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> L'onduleur convertit le courant continu (DC) des panneaux en courant alternatif (AC) compatible avec le réseau 230 V / 50 Hz.</p>
+    <p><strong>2.</strong> \(P_{AC} = \eta \times P_{DC} = 0{,}96 \times 3\,200 = \mathbf{3\,072\ W}\)</p>
+    <p><strong>3.</strong> \(I_{AC} = \dfrac{P_{AC}}{U \times \cos\varphi} = \dfrac{3\,072}{230 \times 1} = \mathbf{13{,}4\ A}\)</p>
+    <p><strong>4.</strong> \(P_{\text{pertes}} = P_{DC} - P_{AC} = 3\,200 - 3\,072 = \mathbf{128\ W}\)</p>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 25</span>
+    <span class="exo-title">Variateur sur un circulateur de chauffage</span>
+  </div>
+  <p>Un plombier chauffagiste installe un variateur de fréquence sur un circulateur de chauffage. Le moteur a \(p = 2\) paires de pôles. À \(f = 50\ \text{Hz}\), la vitesse de synchronisme est \(n_{s0}\) et la puissance absorbée est \(P_0 = 250\ \text{W}\).</p>
+  <p class="q"><strong>1.</strong> Calculer \(n_{s0}\).</p>
+  <p class="q"><strong>2.</strong> En mi-saison, le technicien règle le variateur à \(f = 30\ \text{Hz}\). Calculer la nouvelle vitesse de synchronisme \(n_{s1}\).</p>
+  <p class="q"><strong>3.</strong> Calculer le rapport des vitesses \(k = n_{s1}/n_{s0}\).</p>
+  <p class="q"><strong>4.</strong> Calculer la puissance absorbée à 30 Hz sachant que \(P \propto n^3\), donc \(P_1 = P_0 \times k^3\).</p>
+  <p class="q"><strong>5.</strong> Calculer l'économie d'énergie en pourcentage.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(n_{s0} = \dfrac{60 \times 50}{2} = \mathbf{1\,500\ tr/min}\)</p>
+    <p><strong>2.</strong> \(n_{s1} = \dfrac{60 \times 30}{2} = \mathbf{900\ tr/min}\)</p>
+    <p><strong>3.</strong> \(k = \dfrac{900}{1\,500} = \mathbf{0{,}6}\)</p>
+    <p><strong>4.</strong> \(P_1 = 250 \times 0{,}6^3 = 250 \times 0{,}216 = \mathbf{54\ W}\)</p>
+    <p><strong>5.</strong> Économie : \(\dfrac{250 - 54}{250} = \dfrac{196}{250} = \mathbf{78{,}4\ \%}\). Réduire la vitesse de 40 % économise près de 80 % de la puissance.</p>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 26</span>
+    <span class="exo-title">Lecture d'un oscillogramme – période et fréquence</span>
+  </div>
+  <p>Un technicien de maintenance observe sur un oscilloscope la tension aux bornes d'un moteur alimenté par un variateur de fréquence. L'oscillogramme montre un signal de période \(T = 25\ \text{ms}\) avec une amplitude de \(U_{\max} = 310\ \text{V}\).</p>
+  <p class="q"><strong>1.</strong> Calculer la fréquence \(f\) du signal.</p>
+  <p class="q"><strong>2.</strong> Calculer la tension efficace \(U_{\text{eff}}\).</p>
+  <p class="q"><strong>3.</strong> Le moteur a \(p = 2\) paires de pôles. Calculer sa vitesse de synchronisme à cette fréquence.</p>
+  <p class="q"><strong>4.</strong> Le variateur était initialement à 50 Hz. La vitesse a-t-elle augmenté ou diminué ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(f = \dfrac{1}{T} = \dfrac{1}{0{,}025} = \mathbf{40\ Hz}\)</p>
+    <p><strong>2.</strong> \(U_{\text{eff}} = \dfrac{U_{\max}}{\sqrt{2}} = \dfrac{310}{1{,}414} \approx \mathbf{219\ V}\)</p>
+    <p><strong>3.</strong> \(n_s = \dfrac{60 \times 40}{2} = \mathbf{1\,200\ tr/min}\)</p>
+    <p><strong>4.</strong> À 50 Hz : \(n_s = \dfrac{60 \times 50}{2} = 1\,500\ \text{tr/min}\). La vitesse a <strong>diminué</strong> de 1 500 à 1 200 tr/min.</p>
+  </div>
+</div>
+
+<!-- ===== EXERCICES SUPPLÉMENTAIRES — APPROFONDISSEMENT ===== -->
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 27</span>
+    <span class="exo-title">Installation solaire avec onduleur et batteries</span>
+  </div>
+  <p>Un technicien en énergies renouvelables dimensionne une installation photovoltaïque autonome pour un local technique. Les panneaux produisent \(P_{DC} = 4\ \text{kW}\) crête. L'onduleur a un rendement \(\eta_1 = 0{,}95\). Les batteries ont une capacité de \(C = 200\ \text{Ah}\) sous \(U = 48\ \text{V}\) et un rendement de charge/décharge \(\eta_2 = 0{,}85\).</p>
+  <p class="q"><strong>1.</strong> Calculer l'énergie stockable dans les batteries (en kWh).</p>
+  <p class="q"><strong>2.</strong> En tenant compte du rendement des batteries, quelle énergie utile est réellement disponible ?</p>
+  <p class="q"><strong>3.</strong> Le local consomme 5 kWh par jour. Les batteries suffisent-elles pour une journée sans soleil ?</p>
+  <p class="q"><strong>4.</strong> Calculer la puissance AC maximale que l'onduleur peut fournir.</p>
+  <p class="q"><strong>5.</strong> Le local possède un compresseur de 2,5 kW et un éclairage de 0,5 kW. Peuvent-ils fonctionner simultanément avec cet onduleur ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(W = C \times U = 200 \times 48 = 9\,600\ \text{Wh} = \mathbf{9{,}6\ kWh}\)</p>
+    <p><strong>2.</strong> \(W_{\text{utile}} = 9{,}6 \times 0{,}85 = \mathbf{8{,}16\ kWh}\)</p>
+    <p><strong>3.</strong> \(8{,}16 > 5\) : oui, les batteries couvrent largement une journée de consommation.</p>
+    <p><strong>4.</strong> \(P_{AC} = \eta_1 \times P_{DC} = 0{,}95 \times 4\,000 = \mathbf{3\,800\ W}\)</p>
+    <p><strong>5.</strong> Besoin total : \(2\,500 + 500 = 3\,000\ \text{W} < 3\,800\ \text{W}\). Oui, l'onduleur peut alimenter les deux simultanément.</p>
+  </div>
+</div>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 28</span>
+    <span class="exo-title">Étude économique – variateur sur une pompe de chauffage</span>
+  </div>
+  <p>Un conducteur de travaux étudie l'installation d'un variateur de fréquence sur la pompe principale d'un réseau de chauffage collectif. Le moteur : \(p = 2\) paires de pôles, \(P_0 = 4\ \text{kW}\) à 50 Hz. Le variateur coûte 1 200 €. La pompe fonctionne 3 000 h/an. Le prix du kWh est 0,18 €.</p>
+  <p>En mi-saison (2 000 h/an), le variateur réduit la fréquence à 35 Hz. Le reste du temps (1 000 h/an), la pompe fonctionne à 50 Hz.</p>
+  <p class="q"><strong>1.</strong> Calculer le rapport de vitesse \(k\) à 35 Hz.</p>
+  <p class="q"><strong>2.</strong> Calculer la puissance absorbée à 35 Hz.</p>
+  <p class="q"><strong>3.</strong> Calculer la consommation annuelle sans variateur.</p>
+  <p class="q"><strong>4.</strong> Calculer la consommation annuelle avec variateur.</p>
+  <p class="q"><strong>5.</strong> Calculer l'économie annuelle et le temps de retour sur investissement.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(k = \dfrac{35}{50} = \mathbf{0{,}7}\)</p>
+    <p><strong>2.</strong> \(P_1 = 4 \times 0{,}7^3 = 4 \times 0{,}343 = \mathbf{1{,}37\ kW}\)</p>
+    <p><strong>3.</strong> Sans variateur : \(W_0 = 4 \times 3\,000 = \mathbf{12\,000\ kWh}\). Coût : \(12\,000 \times 0{,}18 = \mathbf{2\,160\ €}\)</p>
+    <p><strong>4.</strong> Avec variateur : \(W_1 = (1{,}37 \times 2\,000) + (4 \times 1\,000) = 2\,740 + 4\,000 = \mathbf{6\,740\ kWh}\). Coût : \(6\,740 \times 0{,}18 = \mathbf{1\,213\ €}\)</p>
+    <p><strong>5.</strong> Économie : \(2\,160 - 1\,213 = \mathbf{947\ €/an}\). Retour sur investissement : \(\dfrac{1\,200}{947} \approx \mathbf{1{,}3\ an}\), soit environ 15 mois.</p>
+  </div>
+</div>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 29</span>
+    <span class="exo-title">Comparaison de moteurs – nombre de paires de pôles</span>
+  </div>
+  <p>Un ingénieur thermicien compare deux moteurs triphasés pour entraîner un ventilateur de CTA :</p>
+  <table>
+    <tr><th>Moteur</th><th>Paires de pôles \(p\)</th><th>Puissance</th><th>Glissement</th></tr>
+    <tr><td>Moteur A</td><td>1</td><td>2,2 kW</td><td>3 %</td></tr>
+    <tr><td>Moteur B</td><td>3</td><td>2,2 kW</td><td>5 %</td></tr>
+  </table>
+  <p>Les deux sont alimentés à \(f = 50\ \text{Hz}\).</p>
+  <p class="q"><strong>1.</strong> Calculer la vitesse de synchronisme de chaque moteur.</p>
+  <p class="q"><strong>2.</strong> Calculer la vitesse réelle de chaque moteur.</p>
+  <p class="q"><strong>3.</strong> On souhaite une vitesse de ventilateur de 950 tr/min. Quel moteur convient sans variateur ?</p>
+  <p class="q"><strong>4.</strong> Si on utilise le moteur A avec un variateur, à quelle fréquence doit-on régler le variateur pour obtenir environ 950 tr/min ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(n_{sA} = \dfrac{60 \times 50}{1} = \mathbf{3\,000\ tr/min}\) ; \(n_{sB} = \dfrac{60 \times 50}{3} = \mathbf{1\,000\ tr/min}\)</p>
+    <p><strong>2.</strong> \(n_A = 3\,000 \times (1 - 0{,}03) = \mathbf{2\,910\ tr/min}\) ; \(n_B = 1\,000 \times (1 - 0{,}05) = \mathbf{950\ tr/min}\)</p>
+    <p><strong>3.</strong> Le <strong>moteur B</strong> (p = 3) donne directement 950 tr/min à 50 Hz.</p>
+    <p><strong>4.</strong> Pour le moteur A : on veut \(n_s \approx \dfrac{950}{0{,}97} \approx 979\ \text{tr/min}\). Donc \(f = \dfrac{n_s \times p}{60} = \dfrac{979 \times 1}{60} \approx \mathbf{16{,}3\ Hz}\).</p>
+  </div>
+</div>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <div class="exo-header">
+    <span class="exo-num">Exercice 30</span>
+    <span class="exo-title">Chaîne complète AC → DC → AC – alimentation d'une PAC</span>
+  </div>
+  <p>Une pompe à chaleur est alimentée via un variateur de fréquence intégré. La chaîne de conversion est : réseau 400 V AC triphasé → redresseur (pont de Graëtz triphasé) → bus DC → onduleur → moteur du compresseur.</p>
+  <p>Données : \(P_{\text{compresseur}} = 6\ \text{kW}\), rendement redresseur \(\eta_R = 0{,}98\), rendement onduleur \(\eta_O = 0{,}96\), \(\cos\varphi_{\text{réseau}} = 0{,}95\), COP de la PAC = 3,5.</p>
+  <p class="q"><strong>1.</strong> Calculer la puissance prélevée sur le réseau en tenant compte des rendements.</p>
+  <p class="q"><strong>2.</strong> Calculer le courant de ligne absorbé sur le réseau triphasé 400 V.</p>
+  <p class="q"><strong>3.</strong> Calculer la puissance thermique restituée par la PAC.</p>
+  <p class="q"><strong>4.</strong> Calculer le rendement global de la chaîne électrique (du réseau au compresseur).</p>
+  <p class="q"><strong>5.</strong> Si la PAC fonctionne 2 000 h/an, calculer la consommation annuelle et le coût (kWh à 0,18 €).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(P_{\text{réseau}} = \dfrac{P_{\text{comp}}}{\eta_R \times \eta_O} = \dfrac{6\,000}{0{,}98 \times 0{,}96} = \dfrac{6\,000}{0{,}9408} \approx \mathbf{6\,378\ W}\)</p>
+    <p><strong>2.</strong> \(I = \dfrac{P_{\text{réseau}}}{\sqrt{3} \times U \times \cos\varphi} = \dfrac{6\,378}{1{,}732 \times 400 \times 0{,}95} = \dfrac{6\,378}{658{,}2} \approx \mathbf{9{,}7\ A}\)</p>
+    <p><strong>3.</strong> \(P_{\text{thermique}} = \text{COP} \times P_{\text{comp}} = 3{,}5 \times 6 = \mathbf{21\ kW}\)</p>
+    <p><strong>4.</strong> \(\eta_{\text{global}} = \eta_R \times \eta_O = 0{,}98 \times 0{,}96 = \mathbf{0{,}941 = 94{,}1\ \%}\)</p>
+    <p><strong>5.</strong> \(W = 6{,}378 \times 2\,000 = \mathbf{12\,756\ kWh}\). Coût : \(12\,756 \times 0{,}18 = \mathbf{2\,296\ €}\)</p>
+  </div>
+</div>
+
 <!-- ===== À RETENIR ===== -->
 <div class="retenir">
   <strong>À retenir – Redressement, onduleur, variateur</strong>
