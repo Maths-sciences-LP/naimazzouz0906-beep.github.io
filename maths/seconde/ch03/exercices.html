@@ -305,6 +305,350 @@
   </div>
 </div>
 
+<!-- EXERCICE S5 — Médiane avec effectif pair guidé -->
+<div class="exo">
+  <div class="exo-num">Exercice 8</div>
+  <span class="mama-tag">Sport — Course à pied</span>
+  <div class="exo-titre">Trouver la médiane — effectif pair, pas à pas</div>
+  <p>Voici les temps (en secondes) de 10 élèves au sprint de 100 m, <strong>déjà triés</strong> :</p>
+  <div class="bam">12,8 &nbsp; 13,1 &nbsp; 13,5 &nbsp; 13,9 &nbsp; 14,2 &nbsp; 14,6 &nbsp; 15,0 &nbsp; 15,3 &nbsp; 15,8 &nbsp; 16,4</div>
+
+  <div class="meth">
+    <strong>Méthode pas à pas :</strong><br>
+    <strong>Étape 1 :</strong> On a \(n = 10\) valeurs (nombre pair).<br>
+    → La médiane est la moyenne des valeurs de rang \(\dfrac{10}{2} = 5\) et \(\dfrac{10}{2}+1 = 6\).<br><br>
+    <strong>Étape 2 :</strong> La 5<sup>e</sup> valeur est …… et la 6<sup>e</sup> valeur est ……<br>
+    → Me = \(\dfrac{…… + ……}{2}\) = ……
+  </div>
+
+  <div class="q"><strong>1.</strong> Compléter les calculs ci-dessus pour trouver la médiane.</div>
+  <div class="q"><strong>2.</strong> Que signifie cette médiane pour le groupe d'élèves ?</div>
+  <div class="q"><strong>3.</strong> Un élève fait 16,4 s. Est-il au-dessus ou en dessous de la médiane ? Que peut-on lui dire ?</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la solution</button>
+  <div class="corr">
+    <span class="etape">1. Médiane :</span>
+    <p>La 5<sup>e</sup> valeur est 14,2 et la 6<sup>e</sup> valeur est 14,6.</p>
+    <p>Me = \(\dfrac{14{,}2 + 14{,}6}{2} = \mathbf{14{,}4 \text{ s}}\)</p>
+    <span class="etape">2. Interprétation :</span>
+    <p>La moitié des élèves court en moins de 14,4 s, l'autre moitié court en plus de 14,4 s.</p>
+    <span class="etape">3. Comparaison :</span>
+    <p>16,4 s &gt; 14,4 s → cet élève est <strong>au-dessus de la médiane</strong> : il fait partie de la moitié la plus lente. Il peut viser un temps sous 14,4 s pour rejoindre la première moitié.</p>
+  </div>
+</div>
+
+<!-- EXERCICE S6 — Étendue guidée -->
+<div class="exo">
+  <div class="exo-num">Exercice 9</div>
+  <span class="mama-tag">Vie quotidienne — Température</span>
+  <div class="exo-titre">Calculer l'étendue — méthode guidée</div>
+  <p>Un artisan menuisier relève la température de son atelier (en °C) chaque matin pendant 7 jours :</p>
+  <div class="bam">14 &nbsp; 18 &nbsp; 12 &nbsp; 20 &nbsp; 16 &nbsp; 11 &nbsp; 19</div>
+
+  <div class="meth">
+    <strong>Aide :</strong><br>
+    <strong>Étape 1 :</strong> Identifier la valeur la plus grande (maximum) : ……<br>
+    <strong>Étape 2 :</strong> Identifier la valeur la plus petite (minimum) : ……<br>
+    <strong>Étape 3 :</strong> Étendue = maximum − minimum = …… − …… = ……
+  </div>
+
+  <div class="q"><strong>1.</strong> Compléter les étapes ci-dessus.</div>
+  <div class="q"><strong>2.</strong> La norme recommande une température d'atelier entre 15 °C et 20 °C. Combien de jours la température est-elle en dehors de cette plage ?</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la solution</button>
+  <div class="corr">
+    <span class="etape">1. Étendue :</span>
+    <p>Maximum = 20 °C &nbsp;|&nbsp; Minimum = 11 °C</p>
+    <p>Étendue = 20 − 11 = <strong>9 °C</strong></p>
+    <span class="etape">2. Jours hors norme :</span>
+    <p>14 °C &lt; 15 °C → <strong>hors norme</strong> (trop froid).<br>
+    12 °C &lt; 15 °C → <strong>hors norme</strong> (trop froid).<br>
+    11 °C &lt; 15 °C → <strong>hors norme</strong> (trop froid).<br>
+    → <strong>3 jours</strong> sur 7 sont en dessous de 15 °C. L'atelier doit être mieux chauffé.</p>
+  </div>
+</div>
+
+<!-- EXERCICE S7 — Diagramme en boîte lecture guidée -->
+<div class="exo">
+  <div class="exo-num">Exercice 10</div>
+  <span class="mama-tag">Santé — Fréquence cardiaque</span>
+  <div class="exo-titre">Lire une boîte à moustaches — lecture guidée</div>
+  <p>Voici la boîte à moustaches des fréquences cardiaques au repos (en bpm) mesurées chez 30 élèves :</p>
+  <div class="bam" style="font-family:monospace;font-size:1em;white-space:pre">
+  55 ──────[  65  │──── 72 ────│  82  ]────── 98
+  Min       Q1       Me        Q3        Max</div>
+
+  <div class="meth">
+    <strong>Aide pour lire la boîte à moustaches :</strong><br>
+    → Le trait le plus à gauche est le <strong>minimum</strong> : ……<br>
+    → Le bord gauche de la boîte est <strong>Q1</strong> : ……<br>
+    → Le trait vertical au milieu de la boîte est la <strong>médiane</strong> : ……<br>
+    → Le bord droit de la boîte est <strong>Q3</strong> : ……<br>
+    → Le trait le plus à droite est le <strong>maximum</strong> : ……
+  </div>
+
+  <div class="q"><strong>1.</strong> Compléter l'aide ci-dessus en relevant les 5 indicateurs.</div>
+  <div class="q"><strong>2.</strong> Calculer l'étendue et l'écart interquartile.</div>
+  <div class="q"><strong>3.</strong> Compléter : « 50 % des élèves ont une fréquence cardiaque entre …… et …… bpm. »</div>
+  <div class="q"><strong>4.</strong> Un élève a un rythme cardiaque de 95 bpm. Se situe-t-il dans la boîte, dans les moustaches, ou en dehors ?</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la solution</button>
+  <div class="corr">
+    <span class="etape">1. Les 5 indicateurs :</span>
+    <p>Min = <strong>55 bpm</strong>, Q1 = <strong>65 bpm</strong>, Me = <strong>72 bpm</strong>, Q3 = <strong>82 bpm</strong>, Max = <strong>98 bpm</strong>.</p>
+    <span class="etape">2. Étendue et IQR :</span>
+    <p>Étendue = 98 − 55 = <strong>43 bpm</strong></p>
+    <p>IQR = Q3 − Q1 = 82 − 65 = <strong>17 bpm</strong></p>
+    <span class="etape">3. Interprétation :</span>
+    <p>50 % des élèves ont une fréquence cardiaque entre <strong>65 bpm et 82 bpm</strong>.</p>
+    <span class="etape">4. Positionnement :</span>
+    <p>95 bpm est supérieur à Q3 (82 bpm) mais inférieur au Max (98 bpm). Cet élève se situe <strong>dans la moustache droite</strong> : il fait partie des 25 % ayant le rythme le plus élevé.</p>
+  </div>
+</div>
+
+<!-- EXERCICE S8 — Moyenne pondérée classes guidée -->
+<div class="exo">
+  <div class="exo-num">Exercice 11</div>
+  <span class="mama-tag">Menuiserie — Découpes</span>
+  <div class="exo-titre">Moyenne par classes — centres de classes guidés</div>
+  <p>Un menuisier mesure la longueur (en cm) de 25 planches découpées. Les résultats sont regroupés par classes :</p>
+  <table>
+    <tr><th>Classe (cm)</th><th>[95 ; 100[</th><th>[100 ; 105[</th><th>[105 ; 110[</th><th>[110 ; 115[</th><th>Total</th></tr>
+    <tr><td>Effectif \(n_i\)</td><td>4</td><td>10</td><td>8</td><td>3</td><td><strong>25</strong></td></tr>
+    <tr><td>Centre \(c_i\)</td><td>……</td><td>……</td><td>……</td><td>……</td><td></td></tr>
+    <tr><td>\(n_i \times c_i\)</td><td>……</td><td>……</td><td>……</td><td>……</td><td><strong>……</strong></td></tr>
+  </table>
+
+  <div class="meth">
+    <strong>Aide :</strong> Le centre de la classe [95 ; 100[ est \(\dfrac{95 + 100}{2} = 97{,}5\).<br>
+    Fais de même pour chaque classe, puis calcule les produits \(n_i \times c_i\).
+  </div>
+
+  <div class="q"><strong>1.</strong> Compléter la ligne des centres de classes.</div>
+  <div class="q"><strong>2.</strong> Compléter la ligne des produits \(n_i \times c_i\).</div>
+  <div class="q"><strong>3.</strong> Calculer la moyenne des longueurs. Arrondir au dixième.</div>
+  <div class="q"><strong>4.</strong> La longueur cible est 105 cm. Les planches sont-elles en moyenne conformes ?</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la solution</button>
+  <div class="corr">
+    <span class="etape">1. Centres de classes :</span>
+    <p>\(c_1 = \dfrac{95+100}{2} = 97{,}5\) ; \(c_2 = \dfrac{100+105}{2} = 102{,}5\) ; \(c_3 = \dfrac{105+110}{2} = 107{,}5\) ; \(c_4 = \dfrac{110+115}{2} = 112{,}5\)</p>
+    <span class="etape">2. Produits :</span>
+    <p>\(4 \times 97{,}5 = 390\) ; \(10 \times 102{,}5 = 1\,025\) ; \(8 \times 107{,}5 = 860\) ; \(3 \times 112{,}5 = 337{,}5\)</p>
+    <p>Total = 390 + 1 025 + 860 + 337,5 = <strong>2 612,5</strong></p>
+    <span class="etape">3. Moyenne :</span>
+    <p>\(\bar{x} = \dfrac{2\,612{,}5}{25} = \mathbf{104{,}5 \text{ cm}}\)</p>
+    <span class="etape">4. Interprétation :</span>
+    <p>104,5 cm &lt; 105 cm : les planches sont en moyenne <strong>légèrement plus courtes</strong> que la cible. Le réglage de la scie doit être vérifié.</p>
+  </div>
+</div>
+
+<!-- EXERCICE S9 — Médiane avec effectif impair guidé -->
+<div class="exo">
+  <div class="exo-num">Exercice 12</div>
+  <span class="mama-tag">Science — Masses</span>
+  <div class="exo-titre">Médiane et quartiles — effectif impair, pas à pas</div>
+  <p>On pèse 11 échantillons de bois (en grammes). Voici les masses <strong>déjà triées</strong> :</p>
+  <div class="bam">42 &nbsp; 45 &nbsp; 48 &nbsp; 50 &nbsp; 53 &nbsp; 55 &nbsp; 58 &nbsp; 61 &nbsp; 64 &nbsp; 70 &nbsp; 78</div>
+
+  <div class="meth">
+    <strong>Méthode pas à pas :</strong><br>
+    <strong>Étape 1 :</strong> On a \(n = 11\) valeurs (nombre impair).<br>
+    → La médiane est la valeur de rang \(\dfrac{11+1}{2} = 6\). La 6<sup>e</sup> valeur est ……<br><br>
+    <strong>Étape 2 :</strong> Première moitié (rangs 1 à 5) : {42, 45, 48, 50, 53}.<br>
+    → Q1 = valeur centrale (rang 3) = ……<br><br>
+    <strong>Étape 3 :</strong> Deuxième moitié (rangs 7 à 11) : {58, 61, 64, 70, 78}.<br>
+    → Q3 = valeur centrale (rang 3 de cette moitié) = ……<br><br>
+    <strong>Étape 4 :</strong> IQR = Q3 − Q1 = …… − …… = ……
+  </div>
+
+  <div class="q"><strong>1.</strong> Compléter les calculs pour trouver Me, Q1, Q3 et l'IQR.</div>
+  <div class="q"><strong>2.</strong> L'échantillon de 78 g semble-t-il très différent des autres ? Justifier en utilisant l'IQR.</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la solution</button>
+  <div class="corr">
+    <span class="etape">1. Calculs :</span>
+    <p>Me = 6<sup>e</sup> valeur = <strong>55 g</strong></p>
+    <p>Q1 = 3<sup>e</sup> valeur de la première moitié = <strong>48 g</strong></p>
+    <p>Q3 = 3<sup>e</sup> valeur de la seconde moitié = <strong>64 g</strong></p>
+    <p>IQR = 64 − 48 = <strong>16 g</strong></p>
+    <span class="etape">2. Analyse de la valeur 78 g :</span>
+    <p>Seuil haut = Q3 + 1,5 × IQR = 64 + 1,5 × 16 = 64 + 24 = <strong>88 g</strong>.<br>
+    78 g &lt; 88 g → la valeur <strong>n'est pas aberrante</strong> selon la règle des 1,5 × IQR, mais elle est au-dessus de Q3, donc dans les 25 % les plus lourds.</p>
+  </div>
+</div>
+
+<!-- EXERCICE S10 — Moyenne simple guidée -->
+<div class="exo">
+  <div class="exo-num">Exercice 13</div>
+  <span class="mama-tag">Menuiserie — Temps de ponçage</span>
+  <div class="exo-titre">Calculer une moyenne simple — pas à pas</div>
+  <p>Un menuisier relève le temps de ponçage (en minutes) de 6 panneaux de bois :</p>
+  <div class="bam">8 &nbsp; 12 &nbsp; 10 &nbsp; 14 &nbsp; 9 &nbsp; 11</div>
+
+  <div class="meth">
+    <strong>Aide :</strong><br>
+    <strong>Étape 1 :</strong> Compter le nombre de panneaux : \(n = \)……<br>
+    <strong>Étape 2 :</strong> Calculer la somme des temps : \(8 + 12 + 10 + 14 + 9 + 11 = \)……<br>
+    <strong>Étape 3 :</strong> Calculer la moyenne : \(\bar{x} = \dfrac{……}{……} = \)……
+  </div>
+
+  <div class="q"><strong>1.</strong> Compléter les étapes ci-dessus pour calculer la moyenne.</div>
+  <div class="q"><strong>2.</strong> Le chef d'atelier demande un temps moyen de ponçage inférieur à 11 min. L'objectif est-il atteint ?</div>
+  <div class="q"><strong>3.</strong> Si le menuisier ponce un 7<sup>e</sup> panneau en 6 min, quelle est la nouvelle moyenne ? L'objectif est-il toujours atteint ?</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la solution</button>
+  <div class="corr">
+    <span class="etape">1. Calculs :</span>
+    <p>\(n = 6\) panneaux.</p>
+    <p>Somme = \(8 + 12 + 10 + 14 + 9 + 11 = \mathbf{64}\) min.</p>
+    <p>Moyenne = \(\dfrac{64}{6} \approx \mathbf{10{,}7}\) min.</p>
+    <span class="etape">2. Interprétation :</span>
+    <p>10,7 min &lt; 11 min → l'objectif est <strong>atteint</strong>.</p>
+    <span class="etape">3. Nouvelle moyenne :</span>
+    <p>Nouvelle somme = \(64 + 6 = 70\) min pour \(n = 7\) panneaux.</p>
+    <p>\(\bar{x} = \dfrac{70}{7} = \mathbf{10{,}0}\) min. L'objectif reste atteint (10 &lt; 11).</p>
+  </div>
+</div>
+
+<!-- EXERCICE S11 — Médiane effectif impair très guidé -->
+<div class="exo">
+  <div class="exo-num">Exercice 14</div>
+  <span class="mama-tag">Quotidien — Trajets</span>
+  <div class="exo-titre">Trouver la médiane — effectif impair, très guidé</div>
+  <p>Voici les durées de trajet (en minutes) d'un apprenti menuisier pour se rendre au lycée pendant 7 jours :</p>
+  <div class="bam">22 &nbsp; 18 &nbsp; 25 &nbsp; 20 &nbsp; 30 &nbsp; 19 &nbsp; 24</div>
+
+  <div class="meth">
+    <strong>Méthode pas à pas :</strong><br>
+    <strong>Étape 1 :</strong> Trier la série par ordre croissant : …… ; …… ; …… ; …… ; …… ; …… ; ……<br>
+    <strong>Étape 2 :</strong> On a \(n = 7\) valeurs (nombre impair).<br>
+    → La médiane est la valeur de rang \(\dfrac{7 + 1}{2} = \)……<br>
+    <strong>Étape 3 :</strong> La ……<sup>e</sup> valeur est ……<br>
+    → Me = …… min
+  </div>
+
+  <div class="q"><strong>1.</strong> Compléter les étapes ci-dessus.</div>
+  <div class="q"><strong>2.</strong> Compléter la phrase : « La moitié des jours, l'apprenti met moins de …… min pour aller au lycée. »</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la solution</button>
+  <div class="corr">
+    <span class="etape">1. Calculs :</span>
+    <p>Série triée : 18 ; 19 ; 20 ; <strong>22</strong> ; 24 ; 25 ; 30</p>
+    <p>Rang de la médiane : \(\dfrac{7+1}{2} = 4\)</p>
+    <p>La 4<sup>e</sup> valeur est <strong>22</strong> → Me = <strong>22 min</strong>.</p>
+    <span class="etape">2. Interprétation :</span>
+    <p>« La moitié des jours, l'apprenti met moins de <strong>22 min</strong> pour aller au lycée. »</p>
+  </div>
+</div>
+
+<!-- EXERCICE S12 — Diagramme en boîte construction guidée -->
+<div class="exo">
+  <div class="exo-num">Exercice 15</div>
+  <span class="mama-tag">Sport — Lancer de poids</span>
+  <div class="exo-titre">Construire une boîte à moustaches — étape par étape</div>
+  <p>Voici les distances (en mètres) de 12 lancers de poids, <strong>déjà triées</strong> :</p>
+  <div class="bam">5,2 &nbsp; 5,8 &nbsp; 6,1 &nbsp; 6,5 &nbsp; 6,9 &nbsp; 7,2 &nbsp; 7,5 &nbsp; 7,8 &nbsp; 8,3 &nbsp; 8,7 &nbsp; 9,1 &nbsp; 9,6</div>
+
+  <div class="meth">
+    <strong>Méthode pas à pas :</strong><br>
+    <strong>Étape 1 :</strong> Min = …… m &nbsp;|&nbsp; Max = …… m<br>
+    <strong>Étape 2 :</strong> \(n = 12\) (pair) → Me = moyenne des rangs 6 et 7 = \(\dfrac{…… + ……}{2}\) = …… m<br>
+    <strong>Étape 3 :</strong> Première moitié {5,2 ; 5,8 ; 6,1 ; 6,5 ; 6,9 ; 7,2} → Q1 = moyenne des rangs 3 et 4 = \(\dfrac{…… + ……}{2}\) = …… m<br>
+    <strong>Étape 4 :</strong> Seconde moitié {7,5 ; 7,8 ; 8,3 ; 8,7 ; 9,1 ; 9,6} → Q3 = moyenne des rangs 3 et 4 = \(\dfrac{…… + ……}{2}\) = …… m<br>
+    <strong>Étape 5 :</strong> Placer Min, Q1, Me, Q3, Max sur un axe gradué de 5 à 10.
+  </div>
+
+  <div class="q"><strong>1.</strong> Compléter les étapes pour trouver les 5 indicateurs.</div>
+  <div class="q"><strong>2.</strong> Dessiner la boîte à moustaches sur un axe gradué.</div>
+  <div class="q"><strong>3.</strong> Calculer l'écart interquartile. Que représente-t-il pour les lancers ?</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la solution</button>
+  <div class="corr">
+    <span class="etape">1. Les 5 indicateurs :</span>
+    <p>Min = <strong>5,2 m</strong> &nbsp;|&nbsp; Max = <strong>9,6 m</strong></p>
+    <p>Me = \(\dfrac{7{,}2 + 7{,}5}{2} = \mathbf{7{,}35}\) m</p>
+    <p>Q1 = \(\dfrac{6{,}1 + 6{,}5}{2} = \mathbf{6{,}3}\) m</p>
+    <p>Q3 = \(\dfrac{8{,}3 + 8{,}7}{2} = \mathbf{8{,}5}\) m</p>
+    <span class="etape">2. Boîte à moustaches :</span>
+    <p style="font-family:monospace;font-size:1em;white-space:pre">  5,2 ──────[ 6,3 │── 7,35 ──│ 8,5 ]────── 9,6
+  Min       Q1       Me        Q3        Max</p>
+    <span class="etape">3. Écart interquartile :</span>
+    <p>IQR = Q3 − Q1 = 8,5 − 6,3 = <strong>2,2 m</strong></p>
+    <p>50 % des lancers se situent entre 6,3 m et 8,5 m. L'IQR montre que la moitié centrale des lancers couvre une plage de 2,2 m.</p>
+  </div>
+</div>
+
+<!-- EXERCICE S13 — Comparaison moyenne/médiane guidée -->
+<div class="exo">
+  <div class="exo-num">Exercice 16</div>
+  <span class="mama-tag">Vie quotidienne — Dépenses</span>
+  <div class="exo-titre">Comparer moyenne et médiane — guidé</div>
+  <p>Voici les montants (en euros) dépensés par 9 élèves à la cantine pendant une semaine :</p>
+  <div class="bam">12 &nbsp; 15 &nbsp; 14 &nbsp; 13 &nbsp; 16 &nbsp; 14 &nbsp; 45 &nbsp; 13 &nbsp; 15</div>
+
+  <div class="meth">
+    <strong>Aide :</strong><br>
+    <strong>Étape 1 :</strong> Trier la série : …… ; …… ; …… ; …… ; …… ; …… ; …… ; …… ; ……<br>
+    <strong>Étape 2 :</strong> Calculer la somme : ……<br>
+    <strong>Étape 3 :</strong> Moyenne = \(\dfrac{……}{9}\) = …… €<br>
+    <strong>Étape 4 :</strong> Médiane = ……<sup>e</sup> valeur de la série triée = …… €
+  </div>
+
+  <div class="q"><strong>1.</strong> Compléter les étapes pour calculer la moyenne et la médiane.</div>
+  <div class="q"><strong>2.</strong> La moyenne et la médiane sont-elles proches ? Expliquer pourquoi.</div>
+  <div class="q"><strong>3.</strong> Quel indicateur (moyenne ou médiane) représente mieux la dépense « typique » d'un élève ? Justifier.</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la solution</button>
+  <div class="corr">
+    <span class="etape">1. Calculs :</span>
+    <p>Série triée : 12 ; 13 ; 13 ; 14 ; <strong>14</strong> ; 15 ; 15 ; 16 ; 45</p>
+    <p>Somme = \(12 + 13 + 13 + 14 + 14 + 15 + 15 + 16 + 45 = \mathbf{157}\) €</p>
+    <p>Moyenne = \(\dfrac{157}{9} \approx \mathbf{17{,}4}\) €</p>
+    <p>Médiane = 5<sup>e</sup> valeur = <strong>14 €</strong></p>
+    <span class="etape">2. Comparaison :</span>
+    <p>Non, la moyenne (17,4 €) est nettement supérieure à la médiane (14 €). C'est parce que la valeur <strong>45 €</strong> est très éloignée des autres et tire la moyenne vers le haut.</p>
+    <span class="etape">3. Indicateur le plus représentatif :</span>
+    <p>La <strong>médiane (14 €)</strong> est plus représentative : 8 élèves sur 9 dépensent entre 12 et 16 €. La moyenne est « faussée » par la valeur extrême de 45 €.</p>
+  </div>
+</div>
+
+<!-- EXERCICE S14 — Écart interquartile guidé -->
+<div class="exo">
+  <div class="exo-num">Exercice 17</div>
+  <span class="mama-tag">Menuiserie — Épaisseur de planches</span>
+  <div class="exo-titre">Écart interquartile et régularité — guidé</div>
+  <p>Un artisan menuisier vérifie l'épaisseur (en mm) de 10 planches après rabotage. Voici les mesures <strong>déjà triées</strong> :</p>
+  <div class="bam">17,8 &nbsp; 18,0 &nbsp; 18,1 &nbsp; 18,2 &nbsp; 18,3 &nbsp; 18,4 &nbsp; 18,5 &nbsp; 18,6 &nbsp; 18,8 &nbsp; 19,1</div>
+
+  <div class="meth">
+    <strong>Aide :</strong><br>
+    <strong>Étape 1 :</strong> \(n = 10\) (pair) → Me = moyenne des rangs 5 et 6 = \(\dfrac{18{,}3 + 18{,}4}{2}\) = …… mm<br>
+    <strong>Étape 2 :</strong> Première moitié {17,8 ; 18,0 ; 18,1 ; 18,2 ; 18,3} → Q1 = valeur de rang 3 = …… mm<br>
+    <strong>Étape 3 :</strong> Seconde moitié {18,4 ; 18,5 ; 18,6 ; 18,8 ; 19,1} → Q3 = valeur de rang 3 = …… mm<br>
+    <strong>Étape 4 :</strong> IQR = Q3 − Q1 = …… − …… = …… mm<br>
+    <strong>Étape 5 :</strong> Étendue = …… − …… = …… mm
+  </div>
+
+  <div class="q"><strong>1.</strong> Compléter les étapes ci-dessus.</div>
+  <div class="q"><strong>2.</strong> La tolérance demandée est de ± 0,5 mm autour de l'épaisseur cible de 18,3 mm (donc entre 17,8 mm et 18,8 mm). Combien de planches sont hors tolérance ?</div>
+  <div class="q"><strong>3.</strong> L'IQR est-il petit ou grand ? Que cela indique-t-il sur la régularité du rabotage ?</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la solution</button>
+  <div class="corr">
+    <span class="etape">1. Calculs :</span>
+    <p>Me = \(\dfrac{18{,}3 + 18{,}4}{2} = \mathbf{18{,}35}\) mm</p>
+    <p>Q1 = 3<sup>e</sup> valeur de la première moitié = <strong>18,1 mm</strong></p>
+    <p>Q3 = 3<sup>e</sup> valeur de la seconde moitié = <strong>18,6 mm</strong></p>
+    <p>IQR = 18,6 − 18,1 = <strong>0,5 mm</strong></p>
+    <p>Étendue = 19,1 − 17,8 = <strong>1,3 mm</strong></p>
+    <span class="etape">2. Planches hors tolérance :</span>
+    <p>Tolérance : [17,8 ; 18,8]. La planche à <strong>19,1 mm</strong> est hors tolérance (19,1 &gt; 18,8). → <strong>1 planche</strong> hors tolérance.</p>
+    <span class="etape">3. Interprétation :</span>
+    <p>L'IQR de 0,5 mm est <strong>petit</strong> par rapport aux valeurs mesurées : 50 % des planches ont une épaisseur comprise dans un intervalle de seulement 0,5 mm. Le rabotage est <strong>régulier</strong>, mais la planche à 19,1 mm nécessite un passage supplémentaire.</p>
+  </div>
+</div>
+
 </div><!-- fin diff-socle -->
 
 <!-- ================================================================
@@ -509,6 +853,176 @@
     <p>\(\text{IQR} = 42 - 20 = \mathbf{22 \text{ min}}\)<br>
     Seuil haut = \(Q3 + 1{,}5 \times \text{IQR} = 42 + 33 = 75 \text{ min}\)<br>
     68 &lt; 75 → la valeur 68 n'est <strong>pas formellement aberrante</strong> selon la règle des 1,5×IQR, mais elle est nettement plus éloignée du reste du groupe. À surveiller.</p>
+  </div>
+</div>
+
+<!-- EXERCICE STD3 — Moyenne pondérée par classes -->
+<div class="exo">
+  <div class="exo-num">Exercice 9</div>
+  <span class="mama-tag">Menuiserie — Longueurs de tasseaux</span>
+  <div class="exo-titre">Moyenne pondérée avec données groupées par classes</div>
+  <p>Un fabricant de mobilier mesure la longueur (en cm) de 40 tasseaux après découpe. Les résultats sont regroupés :</p>
+  <table>
+    <tr><th>Classe (cm)</th><th>[58 ; 60[</th><th>[60 ; 62[</th><th>[62 ; 64[</th><th>[64 ; 66[</th><th>Total</th></tr>
+    <tr><td>Effectif \(n_i\)</td><td>5</td><td>18</td><td>12</td><td>5</td><td><strong>40</strong></td></tr>
+  </table>
+
+  <div class="q"><strong>1.</strong> Calculer le centre de chaque classe.</div>
+  <div class="q"><strong>2.</strong> Calculer la moyenne pondérée des longueurs.</div>
+  <div class="q"><strong>3.</strong> Quelle est la classe modale ? Interpréter.</div>
+  <div class="q"><strong>4.</strong> La longueur nominale est 62 cm. Les tasseaux sont-ils en moyenne conformes ?</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la solution</button>
+  <div class="corr">
+    <span class="etape">1. Centres de classes :</span>
+    <p>\(c_1 = \dfrac{58+60}{2} = 59\) ; \(c_2 = \dfrac{60+62}{2} = 61\) ; \(c_3 = \dfrac{62+64}{2} = 63\) ; \(c_4 = \dfrac{64+66}{2} = 65\)</p>
+    <span class="etape">2. Moyenne pondérée :</span>
+    <p>\(\sum n_i c_i = 5 \times 59 + 18 \times 61 + 12 \times 63 + 5 \times 65 = 295 + 1\,098 + 756 + 325 = \mathbf{2\,474}\)</p>
+    <p>\(\bar{x} = \dfrac{2\,474}{40} = \mathbf{61{,}85}\) cm</p>
+    <span class="etape">3. Classe modale :</span>
+    <p>La classe [60 ; 62[ a le plus grand effectif (18). C'est la <strong>classe modale</strong> : la majorité des tasseaux mesure entre 60 et 62 cm.</p>
+    <span class="etape">4. Conformité :</span>
+    <p>La moyenne (61,85 cm) est <strong>légèrement inférieure</strong> à 62 cm. Les tasseaux sont proches de la cible mais tendent à être un peu courts. Un léger ajustement du réglage de la scie est conseillé.</p>
+  </div>
+</div>
+
+<!-- EXERCICE STD4 — Médiane et quartiles série complète -->
+<div class="exo">
+  <div class="exo-num">Exercice 10</div>
+  <span class="mama-tag">Santé — Tension artérielle</span>
+  <div class="exo-titre">Médiane, quartiles et interprétation médicale</div>
+  <p>La tension systolique (en mmHg) de 16 patients d'un cabinet médical a été mesurée :</p>
+  <div class="bam">115 &nbsp; 128 &nbsp; 132 &nbsp; 140 &nbsp; 118 &nbsp; 135 &nbsp; 142 &nbsp; 125 &nbsp; 155 &nbsp; 130 &nbsp; 122 &nbsp; 138 &nbsp; 148 &nbsp; 120 &nbsp; 136 &nbsp; 145</div>
+
+  <div class="q"><strong>1.</strong> Trier la série par ordre croissant.</div>
+  <div class="q"><strong>2.</strong> Déterminer la médiane. Justifier.</div>
+  <div class="q"><strong>3.</strong> Calculer Q1 et Q3, puis l'écart interquartile.</div>
+  <div class="q"><strong>4.</strong> Une tension supérieure à 140 mmHg est considérée comme de l'hypertension. Quel pourcentage de patients environ est concerné ? (Utiliser les quartiles pour estimer.)</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la solution</button>
+  <div class="corr">
+    <span class="etape">1. Série triée :</span>
+    <p>115, 118, 120, 122, 125, 128, 130, 132, 135, 136, 138, 140, 142, 145, 148, 155</p>
+    <span class="etape">2. Médiane (n = 16, pair) :</span>
+    <p>Me = moyenne des rangs 8 et 9 = \(\dfrac{132 + 135}{2} = \mathbf{133{,}5}\) mmHg</p>
+    <span class="etape">3. Q1 et Q3 :</span>
+    <p>Première moitié (rangs 1 à 8) : {115, 118, 120, 122, 125, 128, 130, 132}<br>
+    Q1 = moyenne des rangs 4 et 5 = \(\dfrac{122 + 125}{2} = \mathbf{123{,}5}\) mmHg</p>
+    <p>Seconde moitié (rangs 9 à 16) : {135, 136, 138, 140, 142, 145, 148, 155}<br>
+    Q3 = moyenne des rangs 4 et 5 = \(\dfrac{140 + 142}{2} = \mathbf{141}\) mmHg</p>
+    <p>IQR = 141 − 123,5 = <strong>17,5 mmHg</strong></p>
+    <span class="etape">4. Estimation de l'hypertension :</span>
+    <p>Q3 = 141 mmHg, donc environ <strong>25 % des patients</strong> ont une tension supérieure à Q3 ≈ 140 mmHg. En comptant exactement : 140, 142, 145, 148, 155 → <strong>5 patients sur 16</strong>, soit environ 31 %.</p>
+  </div>
+</div>
+
+<!-- EXERCICE STD5 — Comparaison de deux séries avec boîte à moustaches -->
+<div class="exo">
+  <div class="exo-num">Exercice 11</div>
+  <span class="mama-tag">Énergie — Consommation de chaudières</span>
+  <div class="exo-titre">Comparer deux séries à l'aide des boîtes à moustaches</div>
+  <p>Un technicien chauffagiste compare la consommation journalière (en kWh) de deux chaudières sur 20 jours. Voici les indicateurs résumés :</p>
+  <table>
+    <tr><th>Indicateur</th><th>Chaudière A</th><th>Chaudière B</th></tr>
+    <tr><td>Minimum</td><td>18</td><td>25</td></tr>
+    <tr><td>Q1</td><td>22</td><td>30</td></tr>
+    <tr><td>Médiane</td><td>28</td><td>35</td></tr>
+    <tr><td>Q3</td><td>35</td><td>38</td></tr>
+    <tr><td>Maximum</td><td>52</td><td>42</td></tr>
+  </table>
+
+  <div class="q"><strong>1.</strong> Calculer l'étendue et l'IQR de chaque chaudière.</div>
+  <div class="q"><strong>2.</strong> Quelle chaudière consomme le moins en général ? Justifier à l'aide de la médiane.</div>
+  <div class="q"><strong>3.</strong> Quelle chaudière est la plus régulière ? Justifier à l'aide de l'IQR et de l'étendue.</div>
+  <div class="q"><strong>4.</strong> La chaudière A a un maximum de 52 kWh. Cette valeur est-elle aberrante ? Utiliser la règle des 1,5 × IQR.</div>
+  <div class="q"><strong>5.</strong> Quelle chaudière le technicien doit-il conseiller à un client qui souhaite une consommation prévisible ? Justifier.</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la solution</button>
+  <div class="corr">
+    <span class="etape">1. Étendue et IQR :</span>
+    <p><strong>Chaudière A :</strong> Étendue = 52 − 18 = <strong>34 kWh</strong> &nbsp;|&nbsp; IQR = 35 − 22 = <strong>13 kWh</strong></p>
+    <p><strong>Chaudière B :</strong> Étendue = 42 − 25 = <strong>17 kWh</strong> &nbsp;|&nbsp; IQR = 38 − 30 = <strong>8 kWh</strong></p>
+    <span class="etape">2. Consommation :</span>
+    <p>La chaudière A a une médiane de 28 kWh contre 35 kWh pour B. <strong>La chaudière A consomme globalement moins.</strong></p>
+    <span class="etape">3. Régularité :</span>
+    <p>La chaudière B a un IQR de 8 kWh (contre 13) et une étendue de 17 kWh (contre 34). <strong>La chaudière B est plus régulière.</strong></p>
+    <span class="etape">4. Valeur aberrante :</span>
+    <p>Seuil haut pour A = Q3 + 1,5 × IQR = 35 + 1,5 × 13 = 35 + 19,5 = <strong>54,5 kWh</strong>.<br>
+    52 &lt; 54,5 → la valeur 52 kWh n'est <strong>pas aberrante</strong> selon cette règle, mais elle est élevée.</p>
+    <span class="etape">5. Conseil :</span>
+    <p>Pour une consommation <strong>prévisible</strong>, la <strong>chaudière B</strong> est préférable : son IQR est plus faible (8 kWh) et son étendue est moitié moindre. Sa consommation est plus stable jour après jour, même si elle est un peu plus élevée en moyenne.</p>
+  </div>
+</div>
+
+<!-- EXERCICE STD6 — Moyenne avec effectifs + médiane -->
+<div class="exo">
+  <div class="exo-num">Exercice 12</div>
+  <span class="mama-tag">Science — Précipitations</span>
+  <div class="exo-titre">Indicateurs complets d'une série avec effectifs</div>
+  <p>On relève le nombre de jours de pluie par mois dans une ville sur une année :</p>
+  <table>
+    <tr><th>Nb de jours de pluie</th><th>3</th><th>5</th><th>7</th><th>9</th><th>11</th><th>13</th></tr>
+    <tr><td>Nombre de mois</td><td>1</td><td>2</td><td>3</td><td>3</td><td>2</td><td>1</td></tr>
+  </table>
+
+  <div class="q"><strong>1.</strong> Vérifier que le nombre total de mois est 12.</div>
+  <div class="q"><strong>2.</strong> Calculer la moyenne pondérée du nombre de jours de pluie par mois.</div>
+  <div class="q"><strong>3.</strong> Reconstituer la série ordonnée de 12 valeurs, puis déterminer la médiane.</div>
+  <div class="q"><strong>4.</strong> Déterminer Q1 et Q3. En déduire l'IQR.</div>
+  <div class="q"><strong>5.</strong> Cette ville reçoit-elle des précipitations de manière régulière au fil de l'année ? Justifier avec l'IQR.</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la solution</button>
+  <div class="corr">
+    <span class="etape">1. Total :</span>
+    <p>\(1 + 2 + 3 + 3 + 2 + 1 = \mathbf{12}\) mois. ✔</p>
+    <span class="etape">2. Moyenne pondérée :</span>
+    <p>\(\sum n_i x_i = 1 \times 3 + 2 \times 5 + 3 \times 7 + 3 \times 9 + 2 \times 11 + 1 \times 13 = 3 + 10 + 21 + 27 + 22 + 13 = \mathbf{96}\)</p>
+    <p>\(\bar{x} = \dfrac{96}{12} = \mathbf{8}\) jours de pluie par mois.</p>
+    <span class="etape">3. Série ordonnée et médiane :</span>
+    <p>3 ; 5 ; 5 ; 7 ; 7 ; 7 ; 9 ; 9 ; 9 ; 11 ; 11 ; 13</p>
+    <p>n = 12 (pair) → Me = moyenne des rangs 6 et 7 = \(\dfrac{7 + 9}{2} = \mathbf{8}\) jours.</p>
+    <span class="etape">4. Q1 et Q3 :</span>
+    <p>Première moitié {3, 5, 5, 7, 7, 7} → Q1 = \(\dfrac{5 + 7}{2} = \mathbf{6}\) jours.</p>
+    <p>Seconde moitié {9, 9, 9, 11, 11, 13} → Q3 = \(\dfrac{9 + 11}{2} = \mathbf{10}\) jours.</p>
+    <p>IQR = 10 − 6 = <strong>4 jours</strong>.</p>
+    <span class="etape">5. Interprétation :</span>
+    <p>L'IQR de 4 jours est <strong>modéré</strong> par rapport à la moyenne de 8 jours. Les précipitations sont <strong>relativement régulières</strong> au fil de l'année : 50 % des mois comptent entre 6 et 10 jours de pluie.</p>
+  </div>
+</div>
+
+<!-- EXERCICE STD7 — Écart-type et comparaison -->
+<div class="exo">
+  <div class="exo-num">Exercice 13</div>
+  <span class="mama-tag">Menuiserie — Temps de montage</span>
+  <div class="exo-titre">Écart-type et comparaison de régularité</div>
+  <p>Deux menuisiers assemblent des meubles. Voici les temps de montage (en minutes) de 5 meubles chacun :</p>
+  <table>
+    <tr><th></th><th>Meuble 1</th><th>Meuble 2</th><th>Meuble 3</th><th>Meuble 4</th><th>Meuble 5</th></tr>
+    <tr><td><strong>Menuisier P</strong></td><td>45</td><td>48</td><td>50</td><td>47</td><td>50</td></tr>
+    <tr><td><strong>Menuisier Q</strong></td><td>35</td><td>60</td><td>42</td><td>55</td><td>48</td></tr>
+  </table>
+
+  <div class="q"><strong>1.</strong> Calculer la moyenne de chaque menuisier.</div>
+  <div class="q"><strong>2.</strong> Calculer l'écart-type de chaque menuisier (arrondir à 0,1 min).</div>
+  <div class="q"><strong>3.</strong> Les deux menuisiers ont-ils la même vitesse moyenne ? Lequel est le plus régulier ? Justifier.</div>
+  <div class="q"><strong>4.</strong> Pour un client exigeant qui veut un délai garanti, quel menuisier faut-il envoyer ? Expliquer.</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la solution</button>
+  <div class="corr">
+    <span class="etape">1. Moyennes :</span>
+    <p>Menuisier P : \(\bar{x}_P = \dfrac{45+48+50+47+50}{5} = \dfrac{240}{5} = \mathbf{48}\) min</p>
+    <p>Menuisier Q : \(\bar{x}_Q = \dfrac{35+60+42+55+48}{5} = \dfrac{240}{5} = \mathbf{48}\) min</p>
+    <span class="etape">2. Écarts-types :</span>
+    <p><strong>Menuisier P :</strong><br>
+    Écarts : (−3)² + (0)² + (2)² + (−1)² + (2)² = 9 + 0 + 4 + 1 + 4 = 18<br>
+    \(\sigma_P = \sqrt{\dfrac{18}{5}} = \sqrt{3{,}6} \approx \mathbf{1{,}9}\) min</p>
+    <p><strong>Menuisier Q :</strong><br>
+    Écarts : (−13)² + (12)² + (−6)² + (7)² + (0)² = 169 + 144 + 36 + 49 + 0 = 398<br>
+    \(\sigma_Q = \sqrt{\dfrac{398}{5}} = \sqrt{79{,}6} \approx \mathbf{8{,}9}\) min</p>
+    <span class="etape">3. Comparaison :</span>
+    <p>Les deux menuisiers ont exactement la <strong>même moyenne (48 min)</strong>, mais le menuisier P a un écart-type de 1,9 min contre 8,9 min pour Q. <strong>Le menuisier P est beaucoup plus régulier.</strong></p>
+    <span class="etape">4. Conseil :</span>
+    <p>Pour un client exigeant un délai garanti, il faut envoyer le <strong>menuisier P</strong> : ses temps de montage sont très prévisibles (entre 45 et 50 min), alors que le menuisier Q peut prendre de 35 à 60 min, ce qui rend le planning incertain.</p>
   </div>
 </div>
 
