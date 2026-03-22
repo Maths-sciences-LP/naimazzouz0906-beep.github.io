@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,8 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -93,11 +96,80 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Une primitive \(F\) de \(f\) vérifie \(F'(x) = f(x)\). Primitives usuelles : primitive de \(x^n\) est \(\dfrac{x^{n+1}}{n+1}\).</div>
+  <p>Donner une primitive de chaque fonction :</p>
+  <p>a) \(f(x) = 5\) → \(F(x) = 5 \times ... = ...\)</p>
+  <p>b) \(f(x) = 4x\) → \(F(x) = ...\)</p>
+  <p>c) \(f(x) = x^3\) → \(F(x) = \dfrac{x^{...}}{...} = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(F(x) = \mathbf{5x}\)</p>
+    <p>b) \(F(x) = \mathbf{2x^2}\) (car \((2x^2)' = 4x\) ✓)</p>
+    <p>c) \(F(x) = \mathbf{\dfrac{x^4}{4}}\) (car \(\left(\dfrac{x^4}{4}\right)' = x^3\) ✓)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(\displaystyle\int_a^b f(x)\,\mathrm{d}x = \Big[F(x)\Big]_a^b = F(b) - F(a)\)</div>
+  <p>Calculer \(\displaystyle\int_2^4 3x\,\mathrm{d}x\) en complétant :</p>
+  <p>a) Primitive de \(3x\) : \(F(x) = ...\)</p>
+  <p>b) \(\Big[...\Big]_2^4 = F(4) - F(2) = ... - ... = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(F(x) = \dfrac{3x^2}{2}\)</p>
+    <p>b) \(\Big[\dfrac{3x^2}{2}\Big]_2^4 = \dfrac{3 \times 16}{2} - \dfrac{3 \times 4}{2} = 24 - 6 = \mathbf{18}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Relation de Chasles : \(\displaystyle\int_a^b f = \int_a^c f + \int_c^b f\)</div>
+  <p>On sait que \(\displaystyle\int_0^8 f(x)\,\mathrm{d}x = 20\) et \(\displaystyle\int_0^3 f(x)\,\mathrm{d}x = 9\).</p>
+  <p>Calculer \(\displaystyle\int_3^8 f(x)\,\mathrm{d}x = \int_0^8 f - \int_0^3 f = ... - ... = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(\displaystyle\int_3^8 f(x)\,\mathrm{d}x = 20 - 9 = \mathbf{11}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> L'intégrale d'une fonction positive représente l'aire sous la courbe.</div>
+  <p>Calculer l'aire sous la courbe de \(f(x) = 5\) sur \([0\,;\,6]\) :</p>
+  <p>a) Primitive de \(f(x) = 5\) : \(F(x) = ...\)</p>
+  <p>b) \(\displaystyle\int_0^6 5\,\mathrm{d}x = \Big[...\Big]_0^6 = ... - ... = ...\) u.a.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(F(x) = 5x\)</p>
+    <p>b) \(\Big[5x\Big]_0^6 = 5 \times 6 - 5 \times 0 = 30 - 0 = \mathbf{30}\) u.a.</p>
+    <p>(C'est l'aire d'un rectangle de base 6 et de hauteur 5.)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Valeur moyenne : \(\overline{f} = \dfrac{1}{b-a}\displaystyle\int_a^b f(x)\,\mathrm{d}x\)</div>
+  <p>La valeur de \(\displaystyle\int_0^8 f(x)\,\mathrm{d}x = 40\). Calculer la valeur moyenne de \(f\) sur \([0\,;\,8]\) :</p>
+  <p>\(\overline{f} = \dfrac{1}{8 - 0} \times 40 = \dfrac{...}{...} = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(\overline{f} = \dfrac{1}{8} \times 40 = \dfrac{40}{8} = \mathbf{5}\)</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -152,11 +224,69 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Donner une primitive de chaque fonction :</p>
+  <p>a) \(f(x) = 4x^2 + 2x - 3\)</p>
+  <p>b) \(f(x) = e^x\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(F(x) = \mathbf{\dfrac{4x^3}{3} + x^2 - 3x}\) (car \(F'(x) = 4x^2 + 2x - 3\) ✓)</p>
+    <p>b) \(F(x) = \mathbf{e^x}\) (car \((e^x)' = e^x\) ✓)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Calculer \(\displaystyle\int_1^3 (2x^2 - x + 2)\,\mathrm{d}x\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Primitive : \(F(x) = \dfrac{2x^3}{3} - \dfrac{x^2}{2} + 2x\)</p>
+    <p>\(\Big[\dfrac{2x^3}{3} - \dfrac{x^2}{2} + 2x\Big]_1^3 = \left(18 - \dfrac{9}{2} + 6\right) - \left(\dfrac{2}{3} - \dfrac{1}{2} + 2\right)\)</p>
+    <p>\(= \dfrac{39}{2} - \dfrac{13}{6} = \dfrac{117 - 13}{6} = \dfrac{104}{6} = \mathbf{\dfrac{52}{3} \approx 17{,}33}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un installateur thermique modélise la puissance d'une pompe à chaleur par \(P(t) = 2t^2 - 8t + 10\) (kW) sur \([0\,;\,3]\) (heures).</p>
+  <p>Calculer l'énergie totale consommée \(E = \displaystyle\int_0^3 P(t)\,\mathrm{d}t\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Primitive : \(F(t) = \dfrac{2t^3}{3} - 4t^2 + 10t\)</p>
+    <p>\(E = \Big[\dfrac{2t^3}{3} - 4t^2 + 10t\Big]_0^3 = \left(18 - 36 + 30\right) - 0 = \mathbf{12}\) kWh</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Calculer la valeur moyenne de \(f(x) = x^2\) sur \([0\,;\,6]\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(\overline{f} = \dfrac{1}{6-0}\displaystyle\int_0^6 x^2\,\mathrm{d}x = \dfrac{1}{6}\Big[\dfrac{x^3}{3}\Big]_0^6 = \dfrac{1}{6} \times \dfrac{216}{3} = \dfrac{1}{6} \times 72 = \mathbf{12}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Calculer \(\displaystyle\int_0^2 e^x\,\mathrm{d}x\). Donner la valeur exacte puis la valeur approchée au millième.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(\Big[e^x\Big]_0^2 = e^2 - e^0 = e^2 - 1\)</p>
+    <p>Valeur exacte : \(\mathbf{e^2 - 1}\). Valeur approchée : \(\approx \mathbf{6{,}389}\).</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -216,6 +346,69 @@
     <p>Primitive : \(F(t) = -\dfrac{t^3}{6} + \dfrac{3t^2}{2} + 18t\)</p>
     <p>\(F(6) = -\dfrac{216}{6} + \dfrac{108}{2} + 108 = -36 + 54 + 108 = 126\)</p>
     <p>\(\overline{T} = \dfrac{126}{6} = \mathbf{21}\) °C</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Calculer \(\displaystyle\int_0^3 (2x^2 + 5e^x)\,\mathrm{d}x\). Donner la valeur exacte puis une valeur approchée au centième.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Par linéarité : \(2\displaystyle\int_0^3 x^2\,\mathrm{d}x + 5\int_0^3 e^x\,\mathrm{d}x\)</p>
+    <p>\(= 2\Big[\dfrac{x^3}{3}\Big]_0^3 + 5\Big[e^x\Big]_0^3 = 2 \times 9 + 5(e^3 - 1) = 18 + 5e^3 - 5\)</p>
+    <p>Valeur exacte : \(\mathbf{13 + 5e^3}\). Valeur approchée : \(\approx 13 + 100{,}43 \approx \mathbf{113{,}43}\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Un installateur thermique réalise un joint isolant dont la section est modélisée par \(f(x) = -x^2 + 6x\) sur \([0\,;\,4]\) (cm).</p>
+  <p>a) Vérifier que \(f(x) \geq 0\) sur \([0\,;\,4]\).</p>
+  <p>b) Calculer la section transversale \(\mathcal{A} = \displaystyle\int_0^4 f(x)\,\mathrm{d}x\).</p>
+  <p>c) En déduire le volume d'isolant pour 2 mètres linéaires.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f(x) = x(-x + 6)\). Zéros : \(x = 0\) et \(x = 6\). Sur \([0\,;\,4] \subset [0\,;\,6]\), on a \(f(x) \geq 0\). ✓</p>
+    <p>b) Primitive : \(F(x) = -\dfrac{x^3}{3} + 3x^2\)</p>
+    <p>\(\Big[-\dfrac{x^3}{3} + 3x^2\Big]_0^4 = \left(-\dfrac{64}{3} + 48\right) - 0 = -\dfrac{64}{3} + 48 = \dfrac{-64 + 144}{3} = \mathbf{\dfrac{80}{3} \approx 26{,}67}\) cm\(^2\)</p>
+    <p>c) Volume pour 2 m : \(V = \dfrac{80}{3} \times 200 = \dfrac{16\,000}{3} \approx 5\,333\) cm\(^3\) \(\approx \mathbf{5{,}33}\) L.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>La puissance d'un radiateur électrique (kW) varie selon :</p>
+  <p>\(P(t) = \begin{cases} 2t & \text{si } 0 \leq t \leq 1 \\ 2 & \text{si } 1 < t \leq 4 \end{cases}\)</p>
+  <p>Calculer l'énergie consommée sur \([0\,;\,4]\) en utilisant la relation de Chasles.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(E = \displaystyle\int_0^1 2t\,\mathrm{d}t + \int_1^4 2\,\mathrm{d}t\)</p>
+    <p>\(= \Big[t^2\Big]_0^1 + \Big[2t\Big]_1^4 = (1 - 0) + (8 - 2) = 1 + 6 = \mathbf{7}\) kWh</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Calculer l'aire comprise entre les courbes de \(f(x) = x^2\) et \(g(x) = 2x\) sur \([0\,;\,2]\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Sur \([0\,;\,2]\), \(2x \geq x^2\) donc \(g(x) \geq f(x)\).</p>
+    <p>\(\mathcal{A} = \displaystyle\int_0^2 (2x - x^2)\,\mathrm{d}x = \Big[x^2 - \dfrac{x^3}{3}\Big]_0^2 = 4 - \dfrac{8}{3} = \dfrac{12 - 8}{3} = \mathbf{\dfrac{4}{3}} \approx 1{,}333\) u.a.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>La température d'un atelier est modélisée par \(T(t) = -t^2 + 4t + 16\) (°C) sur \([0\,;\,4]\) (heures). Calculer la température moyenne sur cette période.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(\overline{T} = \dfrac{1}{4}\displaystyle\int_0^4 (-t^2 + 4t + 16)\,\mathrm{d}t\)</p>
+    <p>Primitive : \(F(t) = -\dfrac{t^3}{3} + 2t^2 + 16t\)</p>
+    <p>\(F(4) = -\dfrac{64}{3} + 32 + 64 = -\dfrac{64}{3} + 96 = \dfrac{-64 + 288}{3} = \dfrac{224}{3}\)</p>
+    <p>\(\overline{T} = \dfrac{1}{4} \times \dfrac{224}{3} = \dfrac{224}{12} = \dfrac{56}{3} \approx \mathbf{18{,}7}\) °C</p>
   </div>
 </div>
 

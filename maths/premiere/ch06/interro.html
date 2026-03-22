@@ -256,11 +256,84 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Calculer la d&eacute;riv&eacute;e de chaque fonction :</p>
+  <p>a) \(f(x) = 5x^3 - 2x^2 + 3x - 1\)</p>
+  <p>b) \(g(x) = -2x^3 + 3x^2 - 6x + 4\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f'(x) = 15x^2 - 4x + 3\)</p>
+    <p>b) \(g'(x) = -6x^2 + 6x - 6\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Soit \(f(x) = 3x^2 - 6x + 2\).</p>
+  <p>a) D&eacute;terminer l'&eacute;quation de la tangente &agrave; la courbe de \(f\) au point d'abscisse \(x = 2\).</p>
+  <p>b) La tangente passe-t-elle par le point \(P(0\,;\,-4)\) ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f(2) = 12 - 12 + 2 = 2\). \(f'(x) = 6x - 6\), donc \(f'(2) = 6\).</p>
+    <p>Tangente : \(y = 6(x - 2) + 2 = 6x - 12 + 2 = \mathbf{6x - 10}\).</p>
+    <p>b) Pour \(x = 0\) : \(y = 6 \times 0 - 10 = -10 \neq -4\). Le point \(P(0\,;\,-4)\) <strong>n'est pas</strong> sur la tangente.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>&Eacute;tudier les variations de \(f(x) = -x^2 + 8x - 7\) sur \(\mathbb{R}\).</p>
+  <p>a) Calculer \(f'(x)\).</p>
+  <p>b) R&eacute;soudre \(f'(x) = 0\).</p>
+  <p>c) &Eacute;tudier le signe de \(f'(x)\) et dresser le tableau de variations.</p>
+  <p>d) Donner l'extremum de \(f\) et sa nature.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f'(x) = -2x + 8\)</p>
+    <p>b) \(-2x + 8 = 0 \Leftrightarrow x = \mathbf{4}\)</p>
+    <p>c) Pour \(x < 4\) : \(f'(x) > 0\) &rarr; \(f\) croissante. Pour \(x > 4\) : \(f'(x) < 0\) &rarr; \(f\) d&eacute;croissante.</p>
+    <p>d) \(f(4) = -16 + 32 - 7 = \mathbf{9}\). La fonction admet un <strong>maximum</strong> &eacute;gal &agrave; 9 en \(x = 4\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un &eacute;b&eacute;niste fabrique des tabourets. Le b&eacute;n&eacute;fice (en euros) pour \(x\) tabourets vendus est mod&eacute;lis&eacute; par :</p>
+  <p>\[B(x) = -3x^2 + 90x - 300 \quad \text{pour } x \in [0\,;\,30]\]</p>
+  <p>a) D&eacute;terminer le nombre de tabourets &agrave; vendre pour maximiser le b&eacute;n&eacute;fice.</p>
+  <p>b) Calculer le b&eacute;n&eacute;fice maximal.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(B'(x) = -6x + 90\). On r&eacute;sout \(B'(x) = 0\) : \(-6x + 90 = 0 \Leftrightarrow x = \mathbf{15}\).</p>
+    <p>Pour \(x < 15\) : \(B'(x) > 0\) (croissant). Pour \(x > 15\) : \(B'(x) < 0\) (d&eacute;croissant).</p>
+    <p>Le b&eacute;n&eacute;fice est maximal pour <strong>15 tabourets</strong>.</p>
+    <p>b) \(B(15) = -3 \times 225 + 1350 - 300 = -675 + 1350 - 300 = \mathbf{375}\) &euro;.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Soit \(f(x) = x^2 - 4x + 3\). Calculer le taux de variation de \(f\) entre \(x = 1\) et \(x = 4\). Comparer avec \(f'(1)\) et commenter.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(f(1) = 1 - 4 + 3 = 0\) et \(f(4) = 16 - 16 + 3 = 3\).</p>
+    <p>Taux de variation : \(\tau = \dfrac{3 - 0}{4 - 1} = \dfrac{3}{3} = \mathbf{1}\).</p>
+    <p>\(f'(x) = 2x - 4\), donc \(f'(1) = -2\).</p>
+    <p>Le taux de variation (1) est diff&eacute;rent du nombre d&eacute;riv&eacute; en \(x = 1\) (\(-2\)). Le taux de variation donne une <strong>pente moyenne</strong> entre deux points, tandis que le nombre d&eacute;riv&eacute; donne la <strong>pente instantan&eacute;e</strong> (pente de la tangente) en un seul point.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Bar&egrave;me :</strong> 20 points</p>
 
 <div class="exo">
@@ -336,6 +409,85 @@
     <p>Pour \(t < 60\) : \(R'(t) > 0\) ; pour \(t > 60\) : \(R'(t) < 0\). Maximum en \(t = 60\).</p>
     <p>\(R(60) = -0{,}02 \times 3600 + 144 + 10 = -72 + 144 + 10 = \mathbf{82}\) %.</p>
     <p>Le rendement maximal est de <strong>82 %</strong> pour une temp&eacute;rature de <strong>60 &deg;C</strong>.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Calculer la d&eacute;riv&eacute;e de chaque fonction et pr&eacute;ciser son ensemble de d&eacute;rivabilit&eacute; :</p>
+  <p>a) \(f(x) = 3x^3 - 4x^2 + 5x - 2\)</p>
+  <p>b) \(g(x) = \dfrac{1}{x} + 3x^2\) pour \(x \neq 0\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f'(x) = 9x^2 - 8x + 5\), d&eacute;rivable sur \(\mathbb{R}\).</p>
+    <p>b) \(g'(x) = -\dfrac{1}{x^2} + 6x\), d&eacute;rivable sur \(\mathbb{R}^*\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>&Eacute;tudier les variations de \(f(x) = x^3 - 12x + 5\) sur \(\mathbb{R}\).</p>
+  <p>a) Calculer \(f'(x)\).</p>
+  <p>b) R&eacute;soudre \(f'(x) = 0\) (indication : mettre en facteur).</p>
+  <p>c) &Eacute;tudier le signe de \(f'(x)\), dresser le tableau de variations et d&eacute;terminer les extremums.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f'(x) = 3x^2 - 12\)</p>
+    <p>b) \(3x^2 - 12 = 0 \Leftrightarrow 3(x^2 - 4) = 0 \Leftrightarrow x^2 = 4 \Leftrightarrow x = -2\) ou \(x = 2\).</p>
+    <p>c) Signe de \(f'(x) = 3(x-2)(x+2)\) :</p>
+    <ul>
+      <li>Si \(x < -2\) : \(f'(x) > 0\) &rarr; \(f\) croissante</li>
+      <li>Si \(-2 < x < 2\) : \(f'(x) < 0\) &rarr; \(f\) d&eacute;croissante</li>
+      <li>Si \(x > 2\) : \(f'(x) > 0\) &rarr; \(f\) croissante</li>
+    </ul>
+    <p>\(f(-2) = -8 + 24 + 5 = \mathbf{21}\) &rarr; <strong>maximum local</strong>.</p>
+    <p>\(f(2) = 8 - 24 + 5 = \mathbf{-11}\) &rarr; <strong>minimum local</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>Un menuisier agenceur doit fabriquer un bac rectangulaire ouvert &agrave; partir d'une t&ocirc;le de 40 cm de largeur. Il plie les deux bords verticalement sur une hauteur \(x\) (en cm). La section du bac est un rectangle de largeur \(40 - 2x\) et de hauteur \(x\).</p>
+  <p>a) Exprimer l'aire \(A(x)\) de la section en fonction de \(x\).</p>
+  <p>b) D&eacute;terminer la valeur de \(x\) qui maximise l'aire de la section.</p>
+  <p>c) Calculer l'aire maximale.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(A(x) = x(40 - 2x) = 40x - 2x^2\) pour \(x \in \,]0\,;\,20[\).</p>
+    <p>b) \(A'(x) = 40 - 4x\). On r&eacute;sout \(A'(x) = 0\) : \(40 - 4x = 0 \Leftrightarrow x = \mathbf{10}\) cm.</p>
+    <p>Pour \(x < 10\) : \(A'(x) > 0\) (croissant). Pour \(x > 10\) : \(A'(x) < 0\) (d&eacute;croissant). Donc maximum en \(x = 10\).</p>
+    <p>c) \(A(10) = 10 \times (40 - 20) = 10 \times 20 = \mathbf{200}\) cm&sup2;.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(3 points)</span></h2>
+  <p>Soit \(f(x) = x^2 - 6x + 8\). D&eacute;terminer l'&eacute;quation de la tangente &agrave; la courbe au point d'abscisse \(a = 2\). Puis d&eacute;terminer en quel autre point cette tangente recoupe la courbe.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(f(2) = 4 - 12 + 8 = 0\) et \(f'(x) = 2x - 6\), donc \(f'(2) = -2\).</p>
+    <p>Tangente : \(y = -2(x - 2) + 0 = -2x + 4\).</p>
+    <p>Intersection tangente/courbe : \(x^2 - 6x + 8 = -2x + 4\)</p>
+    <p>\(x^2 - 4x + 4 = 0 \Leftrightarrow (x - 2)^2 = 0 \Leftrightarrow x = 2\).</p>
+    <p>La tangente ne recoupe <strong>pas</strong> la courbe en un autre point (tangence double en \(x = 2\)).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Un installateur thermique mod&eacute;lise le rendement \(R(t)\) (en %) d'une pompe &agrave; chaleur en fonction de la temp&eacute;rature ext&eacute;rieure \(t\) (en &deg;C) par :</p>
+  <p>\[R(t) = -0{,}05t^2 + 4t + 20 \quad \text{pour } t \in [0\,;\,50]\]</p>
+  <p>D&eacute;terminer la temp&eacute;rature qui maximise le rendement et la valeur de ce rendement maximal.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(R'(t) = -0{,}10t + 4\)</p>
+    <p>\(R'(t) = 0 \Leftrightarrow t = \dfrac{4}{0{,}10} = \mathbf{40}\) &deg;C.</p>
+    <p>Pour \(t < 40\) : \(R'(t) > 0\) ; pour \(t > 40\) : \(R'(t) < 0\). Maximum en \(t = 40\).</p>
+    <p>\(R(40) = -0{,}05 \times 1600 + 160 + 20 = -80 + 160 + 20 = \mathbf{100}\) %.</p>
+    <p>Le rendement maximal est de <strong>100 %</strong> pour une temp&eacute;rature ext&eacute;rieure de <strong>40 &deg;C</strong>.</p>
   </div>
 </div>
 

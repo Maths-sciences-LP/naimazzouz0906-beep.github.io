@@ -266,11 +266,92 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien chauffagiste relève la température extérieure moyenne \(x\) (en °C) et la consommation hebdomadaire d'électricité \(y\) (en kWh) d'un bâtiment :</p>
+  <table>
+    <tr><th>\(x\) (°C)</th><td>2</td><td>6</td><td>10</td><td>14</td><td>18</td><td>22</td></tr>
+    <tr><th>\(y\) (kWh)</th><td>135</td><td>112</td><td>88</td><td>66</td><td>42</td><td>20</td></tr>
+  </table>
+  <p>a) Calculer les coordonnées du point moyen \(G(\bar{x}\,;\,\bar{y})\).</p>
+  <p>b) Placer les points dans un repère et le point moyen \(G\). Le nuage est-il plutôt rectiligne ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\bar{x} = \dfrac{2 + 6 + 10 + 14 + 18 + 22}{6} = \dfrac{72}{6} = \mathbf{12\,°C}\)</p>
+    <p>\(\bar{y} = \dfrac{135 + 112 + 88 + 66 + 42 + 20}{6} = \dfrac{463}{6} \approx \mathbf{77{,}2\,\text{kWh}}\)</p>
+    <p>b) Le nuage a une forme allongée, les points sont bien alignés. Le nuage est <strong>rectiligne</strong> (ajustement affine adapté).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>La calculatrice donne pour les données précédentes :</p>
+  <ul>
+    <li>Droite de régression : \(y = -5{,}75x + 146{,}2\)</li>
+    <li>Coefficient de corrélation : \(r = -0{,}9999\)</li>
+  </ul>
+  <p>a) Interpréter la valeur de \(r\). L'ajustement est-il fiable ?</p>
+  <p>b) Que signifie le coefficient directeur \(a = -5{,}75\) dans le contexte de ce problème ?</p>
+  <p>c) Vérifier que \(G(12\,;\,77{,}2)\) appartient approximativement à la droite.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(|r| = 0{,}9999 > 0{,}95\) : la liaison linéaire est <strong>très forte</strong>. L'ajustement affine est <strong>excellent</strong>.</p>
+    <p>b) Le coefficient \(a = -5{,}75\) signifie que lorsque la température augmente de 1°C, la consommation d'électricité diminue d'environ <strong>5,75 kWh</strong> par semaine.</p>
+    <p>c) \(y = -5{,}75 \times 12 + 146{,}2 = -69 + 146{,}2 = 77{,}2\). On retrouve bien \(\bar{y} \approx 77{,}2\). ✓</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Avec la droite \(y = -5{,}75x + 146{,}2\) :</p>
+  <p>a) Estimer la consommation pour une semaine où la température moyenne est de 8°C. Préciser s'il s'agit d'une interpolation ou d'une extrapolation.</p>
+  <p>b) Estimer la consommation pour une semaine à 28°C. Commenter le résultat.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(y = -5{,}75 \times 8 + 146{,}2 = -46 + 146{,}2 = \mathbf{100{,}2\,\text{kWh}}\). C'est une <strong>interpolation</strong> (8°C est dans l'intervalle [2 ; 22]).</p>
+    <p>b) \(y = -5{,}75 \times 28 + 146{,}2 = -161 + 146{,}2 = \mathbf{-14{,}8\,\text{kWh}}\). C'est une <strong>extrapolation</strong> (28°C est hors de l'intervalle). Le résultat négatif n'a pas de sens physique : le modèle n'est plus valable à cette température.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un ébéniste mesure le temps de séchage \(y\) (en jours) en fonction de l'épaisseur \(x\) (en cm) d'une planche de bois :</p>
+  <table>
+    <tr><th>\(x\) (cm)</th><td>2</td><td>4</td><td>6</td><td>8</td></tr>
+    <tr><th>\(y\) (jours)</th><td>5</td><td>11</td><td>16</td><td>22</td></tr>
+  </table>
+  <p>La calculatrice donne \(r = 0{,}999\) et \(y = 2{,}8x - 0{,}5\).</p>
+  <p>a) Combien de jours de séchage faut-il pour une planche de 5 cm d'épaisseur ?</p>
+  <p>b) Pour un délai maximal de 30 jours, quelle épaisseur maximale peut-on sécher ? (résoudre \(2{,}8x - 0{,}5 = 30\))</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(y = 2{,}8 \times 5 - 0{,}5 = 14 - 0{,}5 = \mathbf{13{,}5\,\text{jours}}\) (interpolation car 5 est dans [2 ; 8]).</p>
+    <p>b) \(2{,}8x - 0{,}5 = 30\) → \(2{,}8x = 30{,}5\) → \(x = \dfrac{30{,}5}{2{,}8} \approx \mathbf{10{,}9\,\text{cm}}\). On peut sécher des planches d'au maximum <strong>10 cm</strong> d'épaisseur environ.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Pour une série de données, la calculatrice donne \(r = 0{,}65\) avec un ajustement affine.</p>
+  <p>a) Cet ajustement est-il satisfaisant ? Justifier.</p>
+  <p>b) Que faut-il faire pour améliorer le modèle ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(|r| = 0{,}65 < 0{,}85\). La liaison linéaire est <strong>faible</strong>. L'ajustement affine n'est <strong>pas satisfaisant</strong>.</p>
+    <p>b) Il faut essayer un <strong>changement de variable</strong> (ajustement exponentiel, puissance ou inverse) pour trouver un modèle mieux adapté à la forme du nuage.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -349,6 +430,89 @@
   <div class="corr">
     <p>L'affirmation est <strong>incorrecte</strong>. Un coefficient \(r\) proche de 0 signifie uniquement qu'il n'y a pas de relation <strong>linéaire</strong> entre les deux variables.</p>
     <p>Il peut exister une relation <strong>non linéaire</strong> forte. Par exemple, si les points forment une parabole (relation quadratique), \(r\) sera proche de 0 alors que la relation entre \(x\) et \(y\) est très nette. Il faut alors tester un <strong>changement de variable</strong> pour trouver un ajustement adapté.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(5 points)</span></h2>
+  <p>Un installateur thermique mesure le rendement \(y\) (en %) d'une chaudière à condensation pour différentes températures de retour d'eau \(x\) (en °C) :</p>
+  <table>
+    <tr><th>Temp. retour \(x\) (°C)</th><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td></tr>
+    <tr><th>Rendement \(y\) (%)</th><td>108</td><td>106</td><td>103</td><td>100</td><td>97</td><td>94</td></tr>
+  </table>
+  <p>a) Calculer les coordonnées du point moyen \(G\).</p>
+  <p>b) La calculatrice donne \(y = -0{,}56x + 122\) et \(r = -0{,}999\). L'ajustement est-il fiable ? Justifier.</p>
+  <p>c) Estimer le rendement pour une température de retour de \(55\,°C\). Préciser le type d'estimation et commenter.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\bar{x} = \dfrac{25 + 30 + 35 + 40 + 45 + 50}{6} = \dfrac{225}{6} = \mathbf{37{,}5\,°C}\)</p>
+    <p>\(\bar{y} = \dfrac{108 + 106 + 103 + 100 + 97 + 94}{6} = \dfrac{608}{6} \approx \mathbf{101{,}3\,\%}\)</p>
+    <p>b) \(|r| = 0{,}999 > 0{,}95\) : la liaison est <strong>très forte</strong>. L'ajustement affine est <strong>excellent</strong>.</p>
+    <p>c) \(y = -0{,}56 \times 55 + 122 = -30{,}8 + 122 = \mathbf{91{,}2\,\%}\). C'est une <strong>extrapolation</strong> (55°C est hors de l'intervalle [25 ; 50]). Le rendement diminue quand la température de retour augmente, ce qui est cohérent avec le fonctionnement d'une chaudière à condensation.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Avec la droite de la question 1, \(y = -0{,}56x + 122\) :</p>
+  <p>a) Pour quelle température de retour le rendement tombe-t-il à 90 % ? (résoudre \(-0{,}56x + 122 = 90\))</p>
+  <p>b) Interpréter ce résultat dans le contexte professionnel.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(-0{,}56x + 122 = 90\) → \(-0{,}56x = 90 - 122 = -32\) → \(x = \dfrac{-32}{-0{,}56} \approx \mathbf{57{,}1\,°C}\)</p>
+    <p>b) Au-delà de 57°C de température de retour, le rendement passe sous 90 %. La chaudière à condensation perd son avantage de rendement et fonctionne comme une chaudière classique. Il est donc essentiel de dimensionner le circuit pour maintenir une température de retour basse.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>On observe la croissance d'un capital placé à intérêts composés \(C\) (en €) au fil des années :</p>
+  <table>
+    <tr><th>Année \(t\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+    <tr><th>\(C\) (€)</th><td>5 000</td><td>5 250</td><td>5 513</td><td>5 788</td><td>6 078</td></tr>
+  </table>
+  <p>a) Vérifier que le nuage \((t, C)\) n'est pas rectiligne en calculant les rapports \(\dfrac{C_1}{C_0}\), \(\dfrac{C_2}{C_1}\), \(\dfrac{C_3}{C_2}\). Que constate-t-on ?</p>
+  <p>b) On pose \(z = \log(C)\). Compléter le tableau des \(z\) (arrondir à 0,01).</p>
+  <p>c) La calculatrice donne pour le nuage \((t, z)\) : \(z = 0{,}0212t + 3{,}699\) avec \(r = 0{,}9999\). En déduire un modèle de la forme \(C = A \times q^t\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{5\,250}{5\,000} = 1{,}05\), \(\dfrac{5\,513}{5\,250} \approx 1{,}05\), \(\dfrac{5\,788}{5\,513} \approx 1{,}05\). Les rapports sont quasi constants, ce qui signifie une croissance exponentielle (pas linéaire).</p>
+    <p>b) \(z = \log(5\,000) \approx 3{,}70\), \(\log(5\,250) \approx 3{,}72\), \(\log(5\,513) \approx 3{,}74\), \(\log(5\,788) \approx 3{,}76\), \(\log(6\,078) \approx 3{,}78\)</p>
+    <p>c) \(\log(C) = 0{,}0212t + 3{,}699\) donc \(C = 10^{0{,}0212t + 3{,}699} = 10^{3{,}699} \times (10^{0{,}0212})^t\).</p>
+    <p>\(10^{3{,}699} \approx 5\,000\) et \(10^{0{,}0212} \approx 1{,}05\).</p>
+    <p>Modèle : \(\boxed{C \approx 5\,000 \times 1{,}05^t}\) (le capital augmente de 5 % par an).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(3 points)</span></h2>
+  <p>En physique, on mesure la pression \(P\) (en bar) pour différentes profondeurs \(d\) (en m) dans un liquide :</p>
+  <table>
+    <tr><th>\(d\) (m)</th><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td></tr>
+    <tr><th>\(P\) (bar)</th><td>1,20</td><td>1,39</td><td>1,59</td><td>1,78</td><td>1,98</td></tr>
+  </table>
+  <p>La régression linéaire donne \(P = 0{,}098d + 1{,}005\) avec \(r = 0{,}9999\).</p>
+  <p>En utilisant la relation \(P = \rho g d + P_0\), déterminer la masse volumique \(\rho\) du liquide (en kg/m³) sachant que \(g = 9{,}8\) m/s². Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Le coefficient directeur \(a = 0{,}098\) bar/m correspond à \(\rho g\) (en bar/m).</p>
+    <p>Conversion : \(0{,}098\,\text{bar/m} = 0{,}098 \times 10^5\,\text{Pa/m} = 9\,800\,\text{Pa/m}\)</p>
+    <p>\(\rho = \dfrac{9\,800}{9{,}8} = \mathbf{1\,000\,\text{kg/m}^3}\)</p>
+    <p>Le liquide est de l'eau (masse volumique 1 000 kg/m³). Le \(r\) très proche de 1 confirme la relation linéaire entre pression et profondeur.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Un élève affirme : « Si le coefficient de corrélation \(r\) est très proche de 1, alors la variable \(x\) cause la variable \(y\). »</p>
+  <p>Cette affirmation est-elle correcte ? Justifier en donnant un contre-exemple.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>L'affirmation est <strong>incorrecte</strong>. Un coefficient \(r\) proche de 1 mesure uniquement une <strong>corrélation</strong> (liaison statistique), pas une <strong>causalité</strong>.</p>
+    <p>Par exemple, la consommation de glaces et le nombre de noyades sont fortement corrélés (\(r\) élevé), mais les glaces ne causent pas les noyades : c'est la chaleur estivale qui est la cause commune des deux phénomènes. On parle de <strong>variable confondante</strong>.</p>
   </div>
 </div>
 

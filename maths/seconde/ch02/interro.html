@@ -446,6 +446,89 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un responsable qualité mesure la largeur (en mm) de 20 lames de parquet. Les résultats sont regroupés par classes :</p>
+  <table>
+    <tr><th>Largeur (mm)</th><td>[118 ; 119[</td><td>[119 ; 120[</td><td>[120 ; 121[</td><td>[121 ; 122[</td></tr>
+    <tr><th>Effectif</th><td>3</td><td>8</td><td>6</td><td>3</td></tr>
+  </table>
+  <p>a) Identifier la classe modale.</p>
+  <p>b) Calculer la moyenne de la série en utilisant les centres de classe.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La classe modale est <strong>[119 ; 120[</strong> (effectif 8, le plus grand).</p>
+    <p>b) Centres de classe : 118,5 ; 119,5 ; 120,5 ; 121,5</p>
+    <p>\(\bar{x} = \dfrac{118{,}5 \times 3 + 119{,}5 \times 8 + 120{,}5 \times 6 + 121{,}5 \times 3}{20}\)</p>
+    <p>\(\bar{x} = \dfrac{355{,}5 + 956 + 723 + 364{,}5}{20} = \dfrac{2399}{20} = \mathbf{119{,}95\text{ mm}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Un ébéniste relève les temps de vernissage (en minutes) de 12 plateaux de table :</p>
+  <p style="font-weight:600">28, 34, 30, 50, 32, 38, 29, 42, 31, 36, 33, 35</p>
+  <p>a) Ranger les valeurs dans l'ordre croissant et calculer la médiane.</p>
+  <p>b) Déterminer les quartiles \(Q_1\) et \(Q_3\).</p>
+  <p>c) Calculer l'écart interquartile (IQR) et interpréter.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Série ordonnée : 28, 29, 30, 31, 32, 33, 34, 35, 36, 38, 42, 50</p>
+    <p>\(N = 12\) (pair). Rangs 6 et 7 : \(Me = \dfrac{33 + 34}{2} = \mathbf{33{,}5\text{ min}}\)</p>
+    <p>b) 1re moitié : 28, 29, 30, 31, 32, 33 → \(Q_1 = \dfrac{30 + 31}{2} = \mathbf{30{,}5\text{ min}}\)</p>
+    <p>2e moitié : 34, 35, 36, 38, 42, 50 → \(Q_3 = \dfrac{36 + 38}{2} = \mathbf{37\text{ min}}\)</p>
+    <p>c) \(\text{IQR} = Q_3 - Q_1 = 37 - 30{,}5 = \mathbf{6{,}5\text{ min}}\)</p>
+    <p>50 % des temps de vernissage sont compris entre 30,5 et 37 min. La dispersion des temps centraux est relativement faible (6,5 min).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Deux machines produisent des tasseaux. Voici les statistiques :</p>
+  <ul>
+    <li><strong>Machine A :</strong> moyenne = 25,1 mm, étendue = 2 mm</li>
+    <li><strong>Machine B :</strong> moyenne = 25,0 mm, étendue = 7 mm</li>
+  </ul>
+  <p>L'épaisseur cible est 25 mm ± 1,5 mm (tolérance).</p>
+  <p>a) Quelle machine a la production la plus régulière ? Justifier.</p>
+  <p>b) Quelle machine risque de produire des pièces hors tolérance ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La <strong>machine A</strong> est la plus régulière car son étendue (2 mm) est beaucoup plus faible que celle de la machine B (7 mm).</p>
+    <p>b) La <strong>machine B</strong> risque de produire des pièces hors tolérance. Avec une étendue de 7 mm, certaines pièces peuvent mesurer jusqu'à 28,5 mm ou aussi peu que 21,5 mm, ce qui dépasse largement la tolérance de ± 1,5 mm autour de 25 mm.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un responsable de magasin note le nombre de panneaux vendus par semaine sur 8 semaines : 10, 13, 12, 38, 11, 14, 12, 13.</p>
+  <p>a) Calculer la moyenne et la médiane.</p>
+  <p>b) Quelle valeur semble aberrante ? Quel indicateur (moyenne ou médiane) est le moins affecté par cette valeur ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Moyenne : \(\bar{x} = \dfrac{10+13+12+38+11+14+12+13}{8} = \dfrac{123}{8} = \mathbf{15{,}375}\)</p>
+    <p>Série ordonnée : 10, 11, 12, 12, 13, 13, 14, 38. Rangs 4 et 5 : \(Me = \dfrac{12+13}{2} = \mathbf{12{,}5}\)</p>
+    <p>b) La valeur <strong>38</strong> semble aberrante (très éloignée des autres).</p>
+    <p>La <strong>médiane</strong> (12,5) est peu affectée car elle ne dépend que des valeurs centrales. La moyenne (15,375) est tirée vers le haut par cette valeur extrême. La médiane est donc plus <strong>robuste</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>On ajoute une 9e semaine avec 15 panneaux vendus à la série précédente (on utilise : 10, 11, 12, 12, 13, 13, 14, 15, 38).</p>
+  <p>a) Calculer la nouvelle médiane (\(N = 9\), impair).</p>
+  <p>b) La médiane a-t-elle beaucoup changé par rapport à la question précédente ? Commenter.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Série ordonnée : 10, 11, 12, 12, 13, 13, 14, 15, 38. \(N = 9\), impair.</p>
+    <p>Rang \(\dfrac{9+1}{2} = 5\). La médiane est la 5e valeur : \(Me = \mathbf{13}\)</p>
+    <p>b) La médiane est passée de 12,5 à 13, soit une variation très faible (+0,5). Cela confirme que la médiane est un indicateur <strong>robuste</strong>, peu sensible à l'ajout de données ou aux valeurs extrêmes.</p>
+  </div>
+</div>
+
 </div>
 
 </div><!-- fin .c -->

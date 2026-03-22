@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,8 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -95,11 +98,87 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le réseau électrique comporte plusieurs niveaux de tension : THT (225-400 kV), HT (63-90 kV), MT (20 kV), BT (230/400 V).</div>
+  <p>Associer chaque niveau de tension à sa valeur :</p>
+  <p>a) Très Haute Tension (THT) → ... kV</p>
+  <p>b) Haute Tension (HT) → ... kV</p>
+  <p>c) Moyenne Tension (MT) → ... kV</p>
+  <p>d) Basse Tension (BT) → ... V</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) THT → <strong>400</strong> kV</p>
+    <p>b) HT → <strong>63-90</strong> kV</p>
+    <p>c) MT → <strong>20</strong> kV</p>
+    <p>d) BT → <strong>230</strong> V</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La puissance dissipée par effet Joule est \(P_J = R \times I^2\).</div>
+  <p>Un câble a une résistance \(R = 3\;\Omega\) et est traversé par un courant \(I = 8\) A.</p>
+  <p>a) Écrire la formule de la puissance dissipée par effet Joule.</p>
+  <p>b) Calculer : \(P_J = 3 \times 8^2 = 3 \times ... = ...\) W</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P_J = R \times I^2\)</p>
+    <p>b) \(P_J = 3 \times 8^2 = 3 \times 64 = \mathbf{192}\) W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Un transformateur élévateur augmente la tension (\(m > 1\)). Un transformateur abaisseur diminue la tension (\(m < 1\)).</div>
+  <p>Répondre par vrai ou faux :</p>
+  <p>a) Un transformateur élévateur augmente la tension et diminue le courant.</p>
+  <p>b) On transporte l'électricité en basse tension pour limiter les pertes.</p>
+  <p>c) Les pertes par effet Joule dépendent du carré de l'intensité.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Vrai</strong> : en augmentant la tension, le courant diminue (à puissance constante).</p>
+    <p>b) <strong>Faux</strong> : on transporte en <strong>haute tension</strong> pour réduire le courant et les pertes.</p>
+    <p>c) <strong>Vrai</strong> : \(P_J = R \times I^2\), les pertes dépendent bien de \(I^2\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le rapport de transformation est \(m = \dfrac{U_2}{U_1}\). Si \(m > 1\), c'est un élévateur.</div>
+  <p>Un transformateur a une tension d'entrée \(U_1 = 230\) V et une tension de sortie \(U_2 = 20\,000\) V.</p>
+  <p>a) Calculer le rapport de transformation : \(m = \dfrac{20\,000}{230} \approx ...\)</p>
+  <p>b) Est-ce un transformateur élévateur ou abaisseur ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(m = \dfrac{20\,000}{230} \approx \mathbf{87}\)</p>
+    <p>b) Comme \(m > 1\), c'est un transformateur <strong>élévateur</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Si le courant triple, les pertes Joule sont multipliées par \(3^2 = 9\) car \(P_J = R \times I^2\).</div>
+  <p>Un câble dissipe 80 W par effet Joule quand il est traversé par un courant de 4 A.</p>
+  <p>a) Si le courant passe à 12 A (il triple), par combien les pertes sont-elles multipliées ?</p>
+  <p>b) Calculer la nouvelle puissance dissipée.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Si le courant triple, les pertes sont multipliées par \(3^2 = \mathbf{9}\).</p>
+    <p>b) Nouvelle puissance : \(80 \times 9 = \mathbf{720}\) W.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -161,11 +240,75 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien chauffagiste raccorde un radiateur électrique de 2 500 W sous 230 V avec un câble de résistance totale \(R = 0{,}35\;\Omega\).</p>
+  <p>a) Calculer l'intensité du courant dans le câble.</p>
+  <p>b) Calculer la puissance dissipée par effet Joule dans le câble.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(I = \dfrac{P}{U} = \dfrac{2\,500}{230} \approx \mathbf{10{,}9}\) A</p>
+    <p>b) \(P_J = R \times I^2 = 0{,}35 \times 10{,}9^2 = 0{,}35 \times 118{,}8 \approx \mathbf{41{,}6}\) W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>On doit transporter une puissance de 5 MW. Comparer les pertes Joule dans une ligne de résistance \(R = 4\;\Omega\) pour deux tensions de transport :</p>
+  <p>a) Calculer l'intensité et les pertes pour \(U = 10\) kV.</p>
+  <p>b) Calculer l'intensité et les pertes pour \(U = 200\) kV.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(I = \dfrac{5\,000\,000}{10\,000} = 500\) A. \(P_J = 4 \times 500^2 = \mathbf{1\,000\,000}\) W soit 1 MW (20 % de pertes).</p>
+    <p>b) \(I = \dfrac{5\,000\,000}{200\,000} = 25\) A. \(P_J = 4 \times 25^2 = \mathbf{2\,500}\) W soit 2,5 kW (0,05 % de pertes).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un transformateur élévateur reçoit une tension de 10 kV avec un courant de 800 A et la porte à 200 kV.</p>
+  <p>a) Calculer la puissance au primaire.</p>
+  <p>b) En supposant le transformateur idéal, calculer le courant au secondaire.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P_1 = U_1 \times I_1 = 10\,000 \times 800 = \mathbf{8\,000\,000}\) W \(= 8\) MW</p>
+    <p>b) \(I_2 = \dfrac{U_1 \times I_1}{U_2} = \dfrac{10\,000 \times 800}{200\,000} = \mathbf{40}\) A</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un plombier chauffagiste constate un échauffement anormal du câble alimentant un plancher chauffant de 1 500 W. Le câble a une résistance de 0,6 \(\Omega\) sous 230 V.</p>
+  <p>a) Calculer le courant et la puissance dissipée par effet Joule dans le câble.</p>
+  <p>b) Expliquer pourquoi cet échauffement est problématique (donner deux risques).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(I = \dfrac{1\,500}{230} \approx 6{,}5\) A. \(P_J = 0{,}6 \times 6{,}5^2 \approx \mathbf{25{,}4}\) W.</p>
+    <p>b) Risques : <strong>risque d'incendie</strong> (échauffement excessif du câble) et <strong>chute de tension</strong> (le plancher chauffant ne reçoit pas sa tension nominale et chauffe moins efficacement).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Citer et décrire les trois avantages du transport de l'électricité en haute tension.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>1. <strong>Réduction des pertes Joule</strong> : en haute tension, le courant est faible, donc les pertes \(P_J = R \times I^2\) sont très réduites.</p>
+    <p>2. <strong>Économie de matériaux</strong> : des câbles de section plus faible suffisent pour transporter la même puissance.</p>
+    <p>3. <strong>Efficacité du réseau</strong> : une plus grande part de l'énergie produite arrive effectivement au consommateur, réduisant le gaspillage et les coûts.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -225,6 +368,69 @@
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
     <p>Réduire les pertes en ligne signifie qu'il faut <strong>produire moins d'électricité</strong> pour satisfaire la même demande. Cela réduit la sollicitation des centrales (notamment celles utilisant des combustibles fossiles), donc <strong>diminue les émissions de CO₂</strong>. De plus, cela <strong>réduit les coûts</strong> pour le consommateur et améliore l'efficacité globale du système énergétique.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(5 points)</span></h2>
+  <p>Un installateur thermique raccorde une chaudière électrique de 4 000 W sous 230 V avec un câble de cuivre de 15 m (aller-retour 30 m) de section 4 mm². La résistivité du cuivre est \(\rho = 1{,}7 \times 10^{-8}\;\Omega \cdot \text{m}\).</p>
+  <p>a) Calculer la résistance du câble avec \(R = \rho \times \dfrac{L}{S}\).</p>
+  <p>b) Calculer le courant et la puissance dissipée par effet Joule.</p>
+  <p>c) Quel pourcentage de la puissance totale ces pertes représentent-elles ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(R = 1{,}7 \times 10^{-8} \times \dfrac{30}{4 \times 10^{-6}} = \mathbf{0{,}128}\;\Omega\)</p>
+    <p>b) \(I = \dfrac{4\,000}{230} \approx 17{,}4\) A. \(P_J = 0{,}128 \times 17{,}4^2 \approx \mathbf{38{,}7}\) W.</p>
+    <p>c) \(\dfrac{38{,}7}{4\,000} \times 100 \approx \mathbf{0{,}97\;\%}\) de la puissance totale.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un transformateur de quartier possède 8 000 spires au primaire et 92 spires au secondaire. La tension au primaire est de 20 000 V.</p>
+  <p>a) Calculer le rapport de transformation \(m = \dfrac{n_2}{n_1}\).</p>
+  <p>b) En déduire la tension au secondaire.</p>
+  <p>c) Ce transformateur est-il élévateur ou abaisseur ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(m = \dfrac{92}{8\,000} = \mathbf{0{,}0115}\)</p>
+    <p>b) \(U_2 = m \times U_1 = 0{,}0115 \times 20\,000 = \mathbf{230}\) V</p>
+    <p>c) Comme \(m < 1\), c'est un transformateur <strong>abaisseur</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Les pertes en ligne d'un réseau régional représentent environ 3 TWh par an pour une production de 120 TWh.</p>
+  <p>a) Calculer le pourcentage de pertes.</p>
+  <p>b) Au tarif moyen de 0,22 €/kWh, estimer le coût annuel de ces pertes en millions d'euros.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{3}{120} \times 100 = \mathbf{2{,}5\;\%}\)</p>
+    <p>b) \(3 \text{ TWh} = 3 \times 10^9\) kWh. Coût \(= 3 \times 10^9 \times 0{,}22 = 6{,}6 \times 10^8\) € \(\approx \mathbf{660}\) millions d'euros.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>On transporte une puissance \(P\) sur une ligne de résistance \(R\). Montrer par le calcul que diviser le courant par 2 divise les pertes Joule par 4.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Les pertes valent \(P_J = R \times I^2\).</p>
+    <p>Si on divise le courant par 2 : \(P_J' = R \times \left(\dfrac{I}{2}\right)^2 = R \times \dfrac{I^2}{4} = \dfrac{P_J}{4}\).</p>
+    <p>Les pertes sont bien <strong>divisées par 4</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Expliquer pourquoi l'enfouissement des lignes électriques (câbles souterrains) peut réduire les pertes en ligne par rapport aux lignes aériennes, en utilisant la notion de résistance.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Les câbles souterrains sont mieux <strong>isolés thermiquement</strong>, ce qui permet d'utiliser des conducteurs qui s'échauffent moins. De plus, ils sont protégés des <strong>intempéries</strong> (vent, givre) qui peuvent augmenter la résistance des conducteurs aériens. Enfin, les câbles souterrains permettent de réduire la <strong>longueur</strong> des trajets (tracés plus directs), diminuant ainsi la résistance totale \(R\) et donc les pertes \(P_J = R \times I^2\).</p>
   </div>
 </div>
 

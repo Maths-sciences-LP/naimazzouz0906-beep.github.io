@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,8 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -100,11 +103,87 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La puissance électrique se calcule avec \(P = U \times I\). Pour trouver l'intensité : \(I = \dfrac{P}{U}\).</div>
+  <p>Une ponceuse de chantier a une puissance P = 2 200 W. Elle est alimentée sous une tension U = 230 V.</p>
+  <p>a) Écrire la formule permettant de calculer l'intensité I.</p>
+  <p>b) Calculer : \(I = \dfrac{2\,200}{230} = ...\) A (arrondir au dixième)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(I = \dfrac{P}{U}\)</p>
+    <p>b) \(I = \dfrac{2\,200}{230} \approx \mathbf{9{,}6}\) A</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Les pertes par effet Joule se calculent avec \(P_J = R \times I^2\).</div>
+  <p>Un câble électrique de résistance R = 3 Ω est parcouru par un courant d'intensité I = 15 A.</p>
+  <p>a) Écrire la formule des pertes Joule.</p>
+  <p>b) Calculer : \(P_J = 3 \times 15^2 = 3 \times ... = ...\) W</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P_J = R \times I^2\)</p>
+    <p>b) \(P_J = 3 \times 15^2 = 3 \times 225 = \mathbf{675}\) W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Un transformateur modifie la tension. Si N₂ &gt; N₁, la tension augmente (élévateur). Si N₂ &lt; N₁, la tension diminue (abaisseur).</div>
+  <p>Un transformateur a N₁ = 200 spires au primaire et N₂ = 4 000 spires au secondaire.</p>
+  <p>a) Ce transformateur est-il élévateur ou abaisseur ? Justifier.</p>
+  <p>b) Compléter : N₂ ... N₁ (choisir &lt; ou &gt;)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) N₂ = 4 000 &gt; N₁ = 200, donc c'est un transformateur <strong>élévateur</strong> (il augmente la tension).</p>
+    <p>b) N₂ <strong>&gt;</strong> N₁</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le rapport de transformation est \(\dfrac{U_1}{U_2} = \dfrac{N_1}{N_2}\), donc \(U_2 = U_1 \times \dfrac{N_2}{N_1}\).</div>
+  <p>Un transformateur a U₁ = 20 000 V, N₁ = 5 000 spires et N₂ = 57 spires.</p>
+  <p>a) Calculer le rapport \(\dfrac{N_2}{N_1} = \dfrac{57}{5\,000} = ...\)</p>
+  <p>b) En déduire U₂ : \(U_2 = 20\,000 \times ... = ...\) V</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{N_2}{N_1} = \dfrac{57}{5\,000} = \mathbf{0{,}0114}\)</p>
+    <p>b) \(U_2 = 20\,000 \times 0{,}0114 = \mathbf{228}\) V</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Plus la tension de transport est élevée, plus l'intensité est faible, et les pertes Joule diminuent.</div>
+  <p>Relier chaque élément du réseau électrique à sa fonction :</p>
+  <table>
+    <tr><th>Élément</th><th>Fonction</th></tr>
+    <tr><td>Transformateur élévateur</td><td>...</td></tr>
+    <tr><td>Lignes haute tension</td><td>...</td></tr>
+    <tr><td>Transformateur abaisseur</td><td>...</td></tr>
+  </table>
+  <p>Fonctions à placer : transporter l'énergie, augmenter la tension, diminuer la tension</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Transformateur élévateur → <strong>augmenter la tension</strong></p>
+    <p>Lignes haute tension → <strong>transporter l'énergie</strong></p>
+    <p>Transformateur abaisseur → <strong>diminuer la tension</strong></p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -169,11 +248,78 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien d'agencement utilise une défonceuse de puissance P = 1 600 W sous une tension de 230 V.</p>
+  <p>a) Calculer l'intensité du courant dans le câble d'alimentation.</p>
+  <p>b) Quelle section minimale de câble est recommandée (voir tableau du cours) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(I = \dfrac{P}{U} = \dfrac{1\,600}{230} \approx \mathbf{7{,}0}\) A</p>
+    <p>b) D'après le tableau du cours, pour ~7 A, la section recommandée est <strong>1,5 mm²</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Une ligne électrique de résistance R = 6 Ω transporte une puissance P = 3 MW.</p>
+  <p>a) Calculer l'intensité si la tension de transport est U = 60 kV.</p>
+  <p>b) Calculer les pertes par effet Joule.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(I = \dfrac{P}{U} = \dfrac{3\,000\,000}{60\,000} = \mathbf{50}\) A</p>
+    <p>b) \(P_J = R \times I^2 = 6 \times 50^2 = 6 \times 2\,500 = \mathbf{15\,000}\) W = 15 kW</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier installe un atelier alimenté par un transformateur abaisseur. Le primaire reçoit U₁ = 20 000 V. Le transformateur a N₁ = 1 000 spires et N₂ = 12 spires.</p>
+  <p>a) Calculer la tension de sortie U₂.</p>
+  <p>b) Vérifier qu'il s'agit bien d'un transformateur abaisseur.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(U_2 = U_1 \times \dfrac{N_2}{N_1} = 20\,000 \times \dfrac{12}{1\,000} = 20\,000 \times 0{,}012 = \mathbf{240}\) V</p>
+    <p>b) U₂ = 240 V &lt; U₁ = 20 000 V, c'est bien un transformateur <strong>abaisseur</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Expliquer pourquoi les pertes Joule diminuent lorsqu'on augmente la tension de transport. Votre réponse doit mentionner la relation entre puissance, tension et intensité.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Pour une puissance P transportée, \(I = \dfrac{P}{U}\). Si on augmente la tension U, l'intensité I diminue.</p>
+    <p>Or les pertes Joule sont \(P_J = R \times I^2\). Comme I diminue, les pertes diminuent fortement car elles dépendent du carré de I.</p>
+    <p>Augmenter la tension permet donc de <strong>réduire considérablement les pertes d'énergie</strong> dans les câbles.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un câble de chantier de résistance R = 2 Ω alimente une raboteuse qui consomme 3 000 W sous 230 V.</p>
+  <p>a) Calculer l'intensité dans le câble.</p>
+  <p>b) Calculer les pertes Joule dans ce câble.</p>
+  <p>c) Quel pourcentage de la puissance est perdu dans le câble ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(I = \dfrac{P}{U} = \dfrac{3\,000}{230} \approx \mathbf{13{,}0}\) A</p>
+    <p>b) \(P_J = R \times I^2 = 2 \times 13{,}0^2 = 2 \times 169 = \mathbf{338}\) W</p>
+    <p>c) \(\%\text{pertes} = \dfrac{338}{3\,000} \times 100 \approx \mathbf{11{,}3\,\%}\)</p>
+    <p>C'est significatif ! Un câble de section plus grande permettrait de réduire ces pertes.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -242,6 +388,77 @@
     <p>b) \(P_J = R \times I^2 = 1{,}2 \times 37{,}5^2 = 1{,}2 \times 1\,406{,}25 = \mathbf{1\,687{,}5}\) W</p>
     <p>\(\%\text{pertes} = \dfrac{1\,687{,}5}{15\,000} \times 100 \approx \mathbf{11{,}3\,\%}\)</p>
     <p>c) Non, 11,3 % &gt; 5 %. Il faudrait utiliser un câble de section plus grande pour réduire R.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Une ligne électrique de résistance R = 8 Ω transporte P = 6 MW. Compléter le tableau :</p>
+  <table>
+    <tr><th>Tension U</th><th>Intensité I</th><th>Pertes P<sub>J</sub></th><th>% pertes</th></tr>
+    <tr><td>30 kV</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>300 kV</td><td>...</td><td>...</td><td>...</td></tr>
+  </table>
+  <p>Conclure sur l'intérêt de la haute tension.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Pour U = 30 kV : \(I = \dfrac{6\,000\,000}{30\,000} = 200\) A ; \(P_J = 8 \times 200^2 = 8 \times 40\,000 = 320\,000\) W = 320 kW ; % = \(\dfrac{320}{6\,000} \times 100 \approx\) 5,3 %</p>
+    <p>Pour U = 300 kV : \(I = \dfrac{6\,000\,000}{300\,000} = 20\) A ; \(P_J = 8 \times 20^2 = 8 \times 400 = 3\,200\) W = 3,2 kW ; % = \(\dfrac{3{,}2}{6\,000} \times 100 \approx\) 0,053 %</p>
+    <p><strong>Conclusion :</strong> En multipliant la tension par 10, les pertes sont divisées par 100. Le transport à haute tension est indispensable.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un transformateur idéal a N₁ = 500 spires, N₂ = 10 000 spires et U₁ = 230 V. Il est alimenté par un courant I₁ = 40 A.</p>
+  <p>a) Calculer U₂.</p>
+  <p>b) En utilisant la conservation de la puissance (\(U_1 \times I_1 = U_2 \times I_2\)), calculer I₂.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(U_2 = U_1 \times \dfrac{N_2}{N_1} = 230 \times \dfrac{10\,000}{500} = 230 \times 20 = \mathbf{4\,600}\) V</p>
+    <p>b) \(I_2 = \dfrac{U_1 \times I_1}{U_2} = \dfrac{230 \times 40}{4\,600} = \dfrac{9\,200}{4\,600} = \mathbf{2}\) A</p>
+    <p>La tension est multipliée par 20, l'intensité est divisée par 20.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un atelier d'agencement est alimenté par un câble de 120 m (aller-retour). La résistivité du cuivre est \(\rho = 1{,}7 \times 10^{-8}\) Ω·m et la section du câble est S = 6 mm² = 6 × 10⁻⁶ m².</p>
+  <p>a) Calculer la résistance totale du câble : \(R = \rho \times \dfrac{L}{S}\)</p>
+  <p>b) Si le courant est I = 25 A, calculer les pertes Joule.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(R = 1{,}7 \times 10^{-8} \times \dfrac{120}{6 \times 10^{-6}} = 1{,}7 \times 10^{-8} \times 2 \times 10^{7} = \mathbf{0{,}34}\) Ω</p>
+    <p>b) \(P_J = R \times I^2 = 0{,}34 \times 25^2 = 0{,}34 \times 625 = \mathbf{212{,}5}\) W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Démontrer que pour une puissance P transportée avec une résistance de ligne R, les pertes Joule s'expriment par \(P_J = \dfrac{R \times P^2}{U^2}\). Partir de \(I = \dfrac{P}{U}\) et \(P_J = R \times I^2\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>On a \(I = \dfrac{P}{U}\), donc :</p>
+    <p>\(P_J = R \times I^2 = R \times \left(\dfrac{P}{U}\right)^2 = \dfrac{R \times P^2}{U^2}\)</p>
+    <p>Cette formule montre que les pertes sont <strong>inversement proportionnelles au carré de la tension</strong>. CQFD.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un chef de chantier dimensionne l'alimentation électrique d'un atelier mobile. Le tableau doit délivrer une puissance totale P = 12 kW sous 400 V (triphasé). Le câble d'alimentation fait 150 m (aller-retour) avec une résistance R = 0,9 Ω.</p>
+  <p>a) Calculer l'intensité totale.</p>
+  <p>b) Calculer les pertes Joule et le pourcentage de pertes.</p>
+  <p>c) Le cahier des charges impose moins de 5 % de pertes. La condition est-elle respectée ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(I = \dfrac{P}{U} = \dfrac{12\,000}{400} = \mathbf{30}\) A</p>
+    <p>b) \(P_J = R \times I^2 = 0{,}9 \times 30^2 = 0{,}9 \times 900 = \mathbf{810}\) W</p>
+    <p>\(\%\text{pertes} = \dfrac{810}{12\,000} \times 100 \approx \mathbf{6{,}75\,\%}\)</p>
+    <p>c) Non, 6,75 % &gt; 5 %. Il faudrait utiliser un câble de section plus grande pour réduire R.</p>
   </div>
 </div>
 

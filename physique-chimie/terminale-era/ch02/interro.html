@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,8 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -99,11 +102,83 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Une pile est non rechargeable, un accumulateur est rechargeable.</div>
+  <p>Vrai ou Faux ? Justifier si faux.</p>
+  <p>a) On peut recharger une pile alcaline.</p>
+  <p>b) Un accumulateur utilise une réaction chimique réversible.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>FAUX</strong>. Une pile alcaline n'est <strong>pas rechargeable</strong> : la réaction chimique est irréversible.</p>
+    <p>b) <strong>VRAI</strong>. Un accumulateur utilise une réaction <strong>réversible</strong>, ce qui permet de le recharger.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> L'énergie stockée se calcule avec \(E = U \times C\) (en Wh).</div>
+  <p>Une batterie de visseuse affiche : 12 V – 3 Ah.</p>
+  <p>a) Quelle est la tension nominale ? U = ... V</p>
+  <p>b) Quelle est la capacité ? C = ... Ah</p>
+  <p>c) Calculer l'énergie stockée : \(E = 12 \times 3 = ...\) Wh</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) U = <strong>12 V</strong></p>
+    <p>b) C = <strong>3 Ah</strong></p>
+    <p>c) \(E = 12 \times 3 = \mathbf{36}\) Wh</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Pour convertir des Wh en joules : \(E_{(J)} = E_{(Wh)} \times 3\,600\).</div>
+  <p>Convertir 36 Wh en joules :</p>
+  <p>\(E = 36 \times 3\,600 = ...\) J</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(E = 36 \times 3\,600 = \mathbf{129\,600}\) J = 129,6 kJ</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> L'autonomie se calcule avec \(t = \dfrac{E}{P}\) (résultat en heures si E en Wh et P en W).</div>
+  <p>La batterie de 36 Wh alimente une visseuse de puissance P = 180 W.</p>
+  <p>a) Calculer l'autonomie : \(t = \dfrac{36}{180} = ...\) h</p>
+  <p>b) Convertir en minutes : \(... \times 60 = ...\) min</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(t = \dfrac{36}{180} = \mathbf{0{,}20}\) h</p>
+    <p>b) \(0{,}20 \times 60 = \mathbf{12}\) min</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> L'anode est le siège de l'oxydation (perte d'électrons). La cathode est le siège de la réduction (gain d'électrons).</div>
+  <p>Compléter les phrases :</p>
+  <p>a) La cathode est l'électrode ... (positive / négative).</p>
+  <p>b) La réduction a lieu à la ... (anode / cathode).</p>
+  <p>c) Le courant conventionnel circule de la ... vers l'... dans le circuit extérieur.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La cathode est l'électrode <strong>positive</strong>.</p>
+    <p>b) La réduction a lieu à la <strong>cathode</strong>.</p>
+    <p>c) Le courant conventionnel circule de la <strong>cathode</strong> vers l'<strong>anode</strong> dans le circuit extérieur.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -170,6 +245,76 @@
     <p>a) Oxydation : \(\text{Zn} \rightarrow \text{Zn}^{2+} + 2e^-\)</p>
     <p>b) Réduction : \(\text{Cu}^{2+} + 2e^- \rightarrow \text{Cu}\)</p>
     <p>c) Les électrons circulent de l'<strong>anode (Zn) vers la cathode (Cu)</strong> dans le circuit extérieur.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un ébéniste utilise une ponceuse 18 V – 3 Ah et une scie sauteuse 18 V – 5 Ah.</p>
+  <p>a) Calculer l'énergie stockée dans chaque batterie.</p>
+  <p>b) Laquelle stocke le plus d'énergie ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Ponceuse : \(E = 18 \times 3 = \mathbf{54}\) Wh. Scie : \(E = 18 \times 5 = \mathbf{90}\) Wh.</p>
+    <p>b) La batterie de la scie sauteuse stocke <strong>plus d'énergie</strong> (90 Wh &gt; 54 Wh).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur utilise une visseuse de puissance P = 400 W alimentée par une batterie 18 V – 4 Ah.</p>
+  <p>a) Calculer l'énergie stockée dans la batterie.</p>
+  <p>b) Calculer l'autonomie en minutes.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(E = 18 \times 4 = \mathbf{72}\) Wh</p>
+    <p>b) \(t = \dfrac{72}{400} = 0{,}18\) h \(= 0{,}18 \times 60 = \mathbf{10{,}8}\) min ≈ 11 min</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un chargeur fournit un courant I = 2 A pour recharger une batterie de capacité C = 5 Ah.</p>
+  <p>a) Calculer le temps de charge.</p>
+  <p>b) Un chargeur rapide fournit I = 5 A. Quel serait le nouveau temps de charge ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(t = \dfrac{C}{I} = \dfrac{5}{2} = \mathbf{2{,}5}\) h</p>
+    <p>b) \(t = \dfrac{5}{5} = \mathbf{1}\) h</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Comparer les technologies de batteries suivantes :</p>
+  <table>
+    <tr><th>Technologie</th><th>Densité d'énergie (Wh/kg)</th></tr>
+    <tr><td>Ni-MH</td><td>80</td></tr>
+    <tr><td>Li-ion</td><td>200</td></tr>
+  </table>
+  <p>a) Si une batterie doit stocker 400 Wh, quelle masse faudrait-il pour chaque technologie ?</p>
+  <p>b) Pourquoi les outils portatifs modernes utilisent-ils des batteries Li-ion ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Ni-MH : \(m = \dfrac{400}{80} = \mathbf{5{,}0}\) kg. Li-ion : \(m = \dfrac{400}{200} = \mathbf{2{,}0}\) kg.</p>
+    <p>b) Les batteries Li-ion sont <strong>beaucoup plus légères</strong> pour la même énergie, ce qui réduit la fatigue lors de l'utilisation d'outils portés à la main.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Dans une pile fer-cuivre :</p>
+  <p>a) Écrire la demi-équation d'oxydation à l'anode (fer).</p>
+  <p>b) Écrire la demi-équation de réduction à la cathode (cuivre).</p>
+  <p>c) Dans quel sens circulent les électrons dans le circuit extérieur ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Oxydation : \(\text{Fe} \rightarrow \text{Fe}^{2+} + 2e^-\)</p>
+    <p>b) Réduction : \(\text{Cu}^{2+} + 2e^- \rightarrow \text{Cu}\)</p>
+    <p>c) Les électrons circulent de l'<strong>anode (Fe) vers la cathode (Cu)</strong> dans le circuit extérieur.</p>
   </div>
 </div>
 

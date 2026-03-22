@@ -7,7 +7,8 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}</style>
 </head>
 <body>
 <div class="c">
@@ -25,6 +26,8 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -106,11 +109,95 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le son est une vibration mécanique. Il a besoin d'un milieu matériel pour se propager (solide, liquide ou gaz).</div>
+  <p>Répondre par vrai ou faux. Justifier si c'est faux.</p>
+  <p>a) Le son se propage dans l'eau.</p>
+  <p>b) Le son se propage plus vite dans l'acier que dans l'air.</p>
+  <p>c) Le son peut se propager dans le vide spatial.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>VRAI</strong> — L'eau est un milieu matériel, le son s'y propage (à environ 1 500 m/s).</p>
+    <p>b) <strong>VRAI</strong> — Le son se propage plus vite dans les solides (acier : 5 000 m/s) que dans l'air (340 m/s).</p>
+    <p>c) <strong>FAUX</strong> — Le son ne se propage pas dans le vide, il a besoin d'un milieu matériel.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Infrasons : \(f < 20 \text{ Hz}\). Sons audibles : \(20 \leq f \leq 20\,000 \text{ Hz}\). Ultrasons : \(f > 20\,000 \text{ Hz}\).</div>
+  <p>Classer les fréquences suivantes dans la bonne catégorie (infrason, son audible ou ultrason) :</p>
+  <p>a) \(f = 15 \text{ Hz}\)</p>
+  <p>b) \(f = 1\,000 \text{ Hz}\)</p>
+  <p>c) \(f = 50\,000 \text{ Hz}\)</p>
+  <p>d) \(f = 200 \text{ Hz}\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(15 < 20\) → <strong>infrason</strong></p>
+    <p>b) \(20 \leq 1\,000 \leq 20\,000\) → <strong>son audible</strong></p>
+    <p>c) \(50\,000 > 20\,000\) → <strong>ultrason</strong></p>
+    <p>d) \(20 \leq 200 \leq 20\,000\) → <strong>son audible</strong></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(v = \dfrac{d}{t}\) avec \(v\) en m/s, \(d\) en m, \(t\) en s. Dans l'air : \(v = 340 \text{ m/s}\).</div>
+  <p>Un artisan utilise une perceuse. Le bruit met 0,8 s pour atteindre son apprenti.</p>
+  <p>a) Quelle est la vitesse du son dans l'air ?</p>
+  <p>b) Calculer la distance entre les deux personnes : \(d = v \times t = 340 \times ... = ...\) m</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(v = \mathbf{340 \text{ m/s}}\) dans l'air à 20 °C.</p>
+    <p>b) \(d = 340 \times 0{,}8 = \mathbf{272 \text{ m}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Au-delà de 85 dB(A), le port de protecteurs auditifs est obligatoire en milieu professionnel.</div>
+  <p>En atelier, les niveaux sonores suivants sont mesurés :</p>
+  <table>
+    <tr><th>Machine</th><th>Niveau sonore (dB)</th></tr>
+    <tr><td>Raboteuse</td><td>100</td></tr>
+    <tr><td>Ventilation</td><td>55</td></tr>
+    <tr><td>Défonceuse</td><td>98</td></tr>
+  </table>
+  <p>a) Pour quelle(s) machine(s) le port d'EPI auditifs est-il obligatoire ?</p>
+  <p>b) Quel est le seuil de douleur ?</p>
+  <p>c) Citer deux types de protecteurs auditifs utilisés en atelier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le port d'EPI auditifs est obligatoire pour la <strong>raboteuse</strong> (100 dB > 85 dB) et la <strong>défonceuse</strong> (98 dB > 85 dB).</p>
+    <p>b) Le seuil de douleur est de <strong>120 dB</strong>.</p>
+    <p>c) <strong>Bouchons d'oreilles</strong> et <strong>casques anti-bruit</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(\lambda = \dfrac{v}{f}\) avec \(\lambda\) en m, \(v\) en m/s, \(f\) en Hz.</div>
+  <p>Une guitare produit un son de fréquence \(f = 880 \text{ Hz}\). La célérité du son dans l'air est \(v = 340 \text{ m/s}\).</p>
+  <p>a) Ce son est-il grave ou aigu ?</p>
+  <p>b) Calculer la longueur d'onde : \(\lambda = \dfrac{340}{880} = ...\) m</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le La 880 Hz est un son <strong>aigu</strong> (fréquence élevée, supérieure au La 440 Hz).</p>
+    <p>b) \(\lambda = \dfrac{340}{880} \approx \mathbf{0{,}39 \text{ m}}\) soit environ 39 cm.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -179,11 +266,81 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier entend le bruit d'un orage 6 s après avoir vu l'éclair. La célérité du son dans l'air est \(v = 340 \text{ m/s}\).</p>
+  <p>a) Calculer la distance entre le menuisier et l'éclair.</p>
+  <p>b) Pourquoi peut-on négliger le temps de propagation de la lumière ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(d = v \times t = 340 \times 6 = \mathbf{2\,040 \text{ m}}\) soit environ 2,0 km.</p>
+    <p>b) La lumière se propage à \(300\,000 \text{ km/s}\), ce qui est quasiment instantané à cette distance. Le temps de propagation de la lumière est négligeable devant celui du son.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Une raboteuse produit un bruit de fréquence fondamentale \(f = 2\,500 \text{ Hz}\) et de niveau sonore 100 dB.</p>
+  <p>a) Ce son est-il grave ou aigu ? Justifier par rapport au La 440 Hz.</p>
+  <p>b) Calculer la longueur d'onde de ce son dans l'air (\(v = 340 \text{ m/s}\)).</p>
+  <p>c) Le menuisier doit-il porter des protections auditives ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f = 2\,500 \text{ Hz} > 440 \text{ Hz}\), le son est <strong>plus aigu</strong> que le La musical.</p>
+    <p>b) \(\lambda = \dfrac{340}{2\,500} = \mathbf{0{,}136 \text{ m}}\) soit environ 13,6 cm.</p>
+    <p>c) Oui. Le niveau sonore de 100 dB dépasse le seuil de 85 dB(A). Le port de <strong>protecteurs auditifs est obligatoire</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>Le son se propage dans le bois de hêtre à \(v = 3\,500 \text{ m/s}\). Un contrôleur envoie une impulsion ultrasonore de fréquence \(f = 200 \text{ kHz}\) dans une planche d'épaisseur 8 cm.</p>
+  <p>a) Convertir la fréquence en Hz et l'épaisseur en m.</p>
+  <p>b) Calculer la longueur d'onde \(\lambda\) de l'ultrason dans le bois.</p>
+  <p>c) Calculer le temps mis par l'ultrason pour traverser la planche.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f = 200 \text{ kHz} = 200\,000 \text{ Hz}\). Épaisseur : \(d = 8 \text{ cm} = 0{,}08 \text{ m}\).</p>
+    <p>b) \(\lambda = \dfrac{v}{f} = \dfrac{3\,500}{200\,000} = \mathbf{0{,}0175 \text{ m} = 17{,}5 \text{ mm}}\)</p>
+    <p>c) \(t = \dfrac{d}{v} = \dfrac{0{,}08}{3\,500} \approx \mathbf{2{,}29 \times 10^{-5} \text{ s} = 22{,}9 \text{ µs}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Deux sons ont la même fréquence (261 Hz) et la même intensité (75 dB), mais l'un est émis par un piano et l'autre par un violon. On les distingue pourtant facilement.</p>
+  <p>a) Quelle caractéristique du son permet de les différencier ?</p>
+  <p>b) De quoi dépend cette caractéristique ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) C'est le <strong>timbre</strong> qui permet de différencier deux instruments jouant la même note à la même intensité.</p>
+    <p>b) Le timbre dépend de la <strong>forme de l'onde sonore</strong> et de la richesse en <strong>harmoniques</strong> (multiples de la fréquence fondamentale). Chaque instrument produit un spectre harmonique différent.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Citer trois moyens utilisés sur un chantier de construction pour limiter la propagation du bruit et protéger les travailleurs.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li><strong>Écrans acoustiques</strong> : panneaux absorbants entre les postes de travail bruyants et les zones calmes.</li>
+      <li><strong>Capots insonorisants</strong> sur les machines bruyantes (compresseurs, groupes électrogènes).</li>
+      <li><strong>EPI auditifs</strong> : bouchons d'oreilles moulés ou casques anti-bruit pour chaque opérateur.</li>
+    </ol>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -254,6 +411,80 @@
   <div class="corr">
     <p>Un émetteur envoie une impulsion ultrasonore dans le bois. Si le bois est homogène, le signal traverse la pièce à vitesse constante. En présence d'un <strong>défaut</strong> (nœud, fissure, zone pourrie), le temps de trajet augmente ou le signal est atténué, ce qui permet de localiser le défaut.</p>
     <p>On utilise des <strong>ultrasons</strong> (hautes fréquences) car leur <strong>longueur d'onde est très courte</strong> (quelques mm). Cela permet de détecter des défauts de petite taille. Les sons audibles auraient des longueurs d'onde trop grandes (dizaines de cm à plusieurs m) pour repérer des détails fins.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien utilise un appareil à ultrasons pour contrôler une poutre en bois de 30 cm d'épaisseur. L'impulsion ultrasonore est émise sur une face et captée sur l'autre face. Le temps de trajet mesuré est \(t = 75 \text{ µs}\).</p>
+  <p>a) Convertir l'épaisseur en mètres et le temps en secondes.</p>
+  <p>b) Calculer la célérité du son dans ce bois.</p>
+  <p>c) Une deuxième mesure donne \(t = 100 \text{ µs}\). Que peut-on en conclure sur la qualité du bois ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(d = 30 \text{ cm} = 0{,}30 \text{ m}\). \(t = 75 \text{ µs} = 75 \times 10^{-6} \text{ s} = 7{,}5 \times 10^{-5} \text{ s}\).</p>
+    <p>b) \(v = \dfrac{d}{t} = \dfrac{0{,}30}{7{,}5 \times 10^{-5}} = \mathbf{4\,000 \text{ m/s}}\)</p>
+    <p>c) \(v_2 = \dfrac{0{,}30}{100 \times 10^{-6}} = 3\,000 \text{ m/s}\). La célérité est plus faible, ce qui indique un bois de <strong>moindre qualité</strong> ou présentant un <strong>défaut interne</strong> (nœud, fissure, zone pourrie) qui ralentit la propagation de l'onde.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Un ingénieur acousticien réalise une étude dans un atelier de fabrication de mobilier. Il mesure les niveaux sonores suivants :</p>
+  <table>
+    <tr><th>Poste</th><th>Niveau (dB)</th><th>Durée d'exposition</th></tr>
+    <tr><td>Toupie</td><td>105</td><td>1 h 30</td></tr>
+    <tr><td>Défonceuse</td><td>98</td><td>2 h 30</td></tr>
+    <tr><td>Assemblage (calme)</td><td>60</td><td>4 h</td></tr>
+  </table>
+  <p>a) À quels postes le port d'EPI auditifs est-il obligatoire ?</p>
+  <p>b) La réglementation impose un maximum de 87 dB(A) en valeur limite d'exposition. Expliquer pourquoi il est dangereux de travailler à la toupie même seulement 1 h 30.</p>
+  <p>c) Proposer deux solutions techniques pour réduire l'exposition sonore à la toupie.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Toupie (105 dB > 85 dB) et défonceuse (98 dB > 85 dB) : EPI <strong>obligatoires</strong>.</p>
+    <p>b) À 105 dB, le niveau dépasse largement la valeur limite de 87 dB(A). Même 1 h 30 d'exposition à ce niveau provoquent des dommages auditifs. L'exposition est cumulative : les cellules ciliées de l'oreille interne sont <strong>irréversiblement endommagées</strong>.</p>
+    <p>c) 1. Installer un <strong>capot insonorisant</strong> sur la toupie. 2. Utiliser des <strong>cloisons acoustiques</strong> entre la toupie et les autres postes de travail.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un son se propage dans l'air à \(v_{\text{air}} = 340 \text{ m/s}\) et dans l'aluminium à \(v_{\text{alu}} = 6\,300 \text{ m/s}\). Un son de fréquence \(f = 1\,000 \text{ Hz}\) est émis.</p>
+  <p>a) Calculer la longueur d'onde dans l'air et dans l'aluminium.</p>
+  <p>b) La fréquence change-t-elle quand le son passe de l'air à l'aluminium ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Dans l'air : \(\lambda_{\text{air}} = \dfrac{340}{1\,000} = \mathbf{0{,}34 \text{ m}}\).</p>
+    <p>Dans l'aluminium : \(\lambda_{\text{alu}} = \dfrac{6\,300}{1\,000} = \mathbf{6{,}3 \text{ m}}\).</p>
+    <p>b) Non. La <strong>fréquence ne change pas</strong> lors du passage d'un milieu à l'autre. C'est la célérité \(v\) et la longueur d'onde \(\lambda\) qui varient, mais \(f\) reste constante (imposée par la source).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un sonar émet un ultrason de fréquence \(f = 50\,000 \text{ Hz}\) dans l'eau (\(v = 1\,500 \text{ m/s}\)). L'écho revient après \(t = 0{,}6 \text{ s}\).</p>
+  <p>a) Calculer la longueur d'onde de l'ultrason dans l'eau.</p>
+  <p>b) Quelle distance totale le son a-t-il parcourue ?</p>
+  <p>c) En déduire la profondeur du fond marin.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\lambda = \dfrac{1\,500}{50\,000} = \mathbf{0{,}03 \text{ m} = 3 \text{ cm}}\)</p>
+    <p>b) Distance totale : \(d_{\text{totale}} = v \times t = 1\,500 \times 0{,}6 = \mathbf{900 \text{ m}}\)</p>
+    <p>c) Le son fait un aller-retour : profondeur = \(\dfrac{900}{2} = \mathbf{450 \text{ m}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Expliquer comment un échographe médical utilise les ultrasons pour produire une image du corps humain. Préciser pourquoi on utilise un gel entre la sonde et la peau.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>L'échographe émet des impulsions ultrasonores qui pénètrent dans le corps. À chaque interface entre deux tissus (de densités différentes), une partie de l'onde est réfléchie (écho). Le capteur mesure le <strong>temps de retour</strong> de chaque écho pour calculer la profondeur de l'interface. L'ensemble des échos est traité pour reconstruire une <strong>image</strong> en coupe du corps.</p>
+    <p>Le <strong>gel</strong> est indispensable car l'air présent entre la sonde et la peau réfléchirait la quasi-totalité des ultrasons (grande différence d'impédance acoustique). Le gel, de densité proche de celle de la peau, assure un bon <strong>couplage acoustique</strong> et permet aux ultrasons de pénétrer dans le corps.</p>
   </div>
 </div>
 

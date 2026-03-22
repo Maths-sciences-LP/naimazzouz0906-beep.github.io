@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,8 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -106,11 +109,93 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La puissance active en courant alternatif se calcule par \(P = U \times I \times \cos \varphi\).</div>
+  <p>Un moteur consomme I = 8 A sous U = 230 V, avec \(\cos \varphi = 0{,}90\).</p>
+  <p>a) Écrire la formule : \(P = ... \times ... \times ...\)</p>
+  <p>b) Calculer : \(P = 230 \times 8 \times 0{,}90 = ...\) W</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P = U \times I \times \cos \varphi\)</p>
+    <p>b) \(P = 230 \times 8 \times 0{,}90 = \mathbf{1\,656}\) W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La puissance apparente est \(S = U \times I\) (en VA). Elle ne tient pas compte du déphasage.</div>
+  <p>Pour le même moteur (U = 230 V, I = 8 A) :</p>
+  <p>a) Calculer la puissance apparente : \(S = 230 \times 8 = ...\) VA</p>
+  <p>b) La puissance active (1 656 W) est-elle plus grande ou plus petite que la puissance apparente ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(S = 230 \times 8 = \mathbf{1\,840}\) VA</p>
+    <p>b) La puissance active (1 656 W) est <strong>plus petite</strong> que la puissance apparente (1 840 VA). La différence correspond à l'énergie réactive.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(\cos \varphi = 1\) pour une résistance pure (radiateur, lampe). \(\cos \varphi < 1\) pour un moteur.</div>
+  <p>Compléter le tableau :</p>
+  <table>
+    <tr><th>Appareil</th><th>\(\cos \varphi\)</th></tr>
+    <tr><td>Lampe à incandescence</td><td>...</td></tr>
+    <tr><td>Moteur de scie à ruban à pleine charge</td><td>0,82 à ...</td></tr>
+    <tr><td>Moteur à faible charge</td><td>0,30 à ...</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Appareil</th><th>\(\cos \varphi\)</th></tr>
+      <tr><td>Lampe à incandescence</td><td><strong>1,00</strong></td></tr>
+      <tr><td>Moteur de scie à ruban à pleine charge</td><td>0,82 à <strong>0,88</strong></td></tr>
+      <tr><td>Moteur à faible charge</td><td>0,30 à <strong>0,50</strong></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le facteur de puissance est : \(\cos \varphi = \dfrac{P}{U \times I}\). C'est un nombre sans unité, compris entre 0 et 1.</div>
+  <p>Un moteur de ventilation branché sous 230 V consomme I = 6,5 A. Un wattmètre mesure P = 1 200 W.</p>
+  <p>a) Calculer \(U \times I = 230 \times 6{,}5 = ...\)</p>
+  <p>b) Calculer \(\cos \varphi = \dfrac{1\,200}{...} = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(U \times I = 230 \times 6{,}5 = \mathbf{1\,495}\) VA</p>
+    <p>b) \(\cos \varphi = \dfrac{1\,200}{1\,495} = \mathbf{0{,}80}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Un \(\cos \varphi\) faible signifie que l'installation consomme plus de courant que nécessaire.</div>
+  <p>Cocher la bonne réponse pour chaque affirmation :</p>
+  <p>a) La puissance apparente S se mesure en : ☐ watts (W) / ☐ voltampères (VA)</p>
+  <p>b) Un bon facteur de puissance est : ☐ proche de 0 / ☐ proche de 1</p>
+  <p>c) Pour un chauffage électrique, on a : ☐ \(\cos \varphi = 1\) / ☐ \(\cos \varphi < 1\)</p>
+  <p>d) Le voltampère (VA) mesure la puissance : ☐ active / ☐ apparente</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La puissance apparente S se mesure en <strong>voltampères (VA)</strong>.</p>
+    <p>b) Un bon facteur de puissance est <strong>proche de 1</strong>.</p>
+    <p>c) Pour un chauffage électrique : <strong>\(\cos \varphi = 1\)</strong> (charge purement résistive).</p>
+    <p>d) Le voltampère mesure la puissance <strong>apparente</strong>.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -179,11 +264,82 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un ébéniste utilise une raboteuse dont le moteur consomme I = 11 A sous U = 230 V avec un facteur de puissance \(\cos \varphi = 0{,}82\).</p>
+  <p>a) Calculer la puissance apparente S.</p>
+  <p>b) Calculer la puissance active P.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(S = U \times I = 230 \times 11 = \mathbf{2\,530}\) VA</p>
+    <p>b) \(P = U \times I \times \cos \varphi = 230 \times 11 \times 0{,}82 = \mathbf{2\,075}\) W ≈ 2,1 kW</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Le moteur d'un compresseur dans un atelier de menuiserie consomme I = 7,0 A sous 230 V. Le facteur de puissance est \(\cos \varphi = 0{,}78\).</p>
+  <p>a) Calculer la puissance active de ce moteur.</p>
+  <p>b) Si ce moteur fonctionnait comme une résistance pure (\(\cos \varphi = 1\)), quelle serait sa puissance ? Comparer.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P = 230 \times 7{,}0 \times 0{,}78 = \mathbf{1\,255}\) W ≈ 1,3 kW</p>
+    <p>b) Si \(\cos \varphi = 1\) : \(P = 230 \times 7{,}0 = 1\,610\) W</p>
+    <p>La puissance active du moteur (1 255 W) est inférieure de 355 W à la puissance apparente.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Sur un oscilloscope, on observe que le courant est en retard de \(\Delta t = 4{,}0\) ms sur la tension pour le moteur d'une défonceuse. La fréquence est 50 Hz.</p>
+  <p>a) Calculer la période T.</p>
+  <p>b) Calculer le déphasage \(\varphi\) en degrés.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(T = 1/f = 1/50 = \mathbf{0{,}020}\) s = 20 ms</p>
+    <p>b) \(\varphi = \dfrac{\Delta t}{T} \times 360° = \dfrac{4{,}0}{20} \times 360° = \mathbf{72°}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien d'agencement relève les données suivantes pour un moteur de pompe : U = 230 V, P = 1 400 W (mesuré au wattmètre), I = 8,2 A.</p>
+  <p>a) Calculer le facteur de puissance de ce moteur.</p>
+  <p>b) Ce facteur de puissance est-il satisfaisant selon les exigences du fournisseur d'énergie ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\cos \varphi = \dfrac{P}{U \times I} = \dfrac{1\,400}{230 \times 8{,}2} = \dfrac{1\,400}{1\,886} = \mathbf{0{,}742} \approx 0{,}74\)</p>
+    <p>b) EDF demande \(\cos \varphi \geq 0{,}93\). Ici \(\cos \varphi = 0{,}74\), ce qui est <strong>insuffisant</strong>. L'installation bénéficierait d'une compensation par condensateurs.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Deux appareils d'un atelier sont branchés sous 230 V et consomment chacun 12 A :</p>
+  <ul>
+    <li>Appareil A : four de séchage (\(\cos \varphi = 1{,}00\))</li>
+    <li>Appareil B : moteur de scie à ruban (\(\cos \varphi = 0{,}80\))</li>
+  </ul>
+  <p>a) Calculer la puissance active de chaque appareil.</p>
+  <p>b) Expliquer pourquoi le moteur fournit moins de puissance utile alors qu'il consomme le même courant.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Four : \(P_A = 230 \times 12 \times 1{,}00 = \mathbf{2\,760}\) W</p>
+    <p>Moteur : \(P_B = 230 \times 12 \times 0{,}80 = \mathbf{2\,208}\) W</p>
+    <p>b) Le moteur a un déphasage entre tension et courant (\(\cos \varphi < 1\)). Une partie du courant circule « en réactif » sans produire de travail utile. Les câbles supportent les mêmes 12 A, mais la puissance réellement convertie en travail est moindre (552 W de différence).</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">

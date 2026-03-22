@@ -264,11 +264,88 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un artisan &eacute;b&eacute;niste rel&egrave;ve le nombre de pi&egrave;ces fabriqu&eacute;es par semaine \(x\) et le co&ucirc;t total \(y\) (en &euro;) :</p>
+  <table>
+    <tr><th>Pi&egrave;ces \(x\)</th><td>4</td><td>8</td><td>12</td><td>16</td><td>20</td></tr>
+    <tr><th>Co&ucirc;t \(y\) (&euro;)</th><td>1 100</td><td>2 000</td><td>2 900</td><td>3 900</td><td>4 700</td></tr>
+  </table>
+  <p>a) Calculer les coordonn&eacute;es du point moyen \(G(\bar{x}\,;\,\bar{y})\).</p>
+  <p>b) Placer le point moyen dans un rep&egrave;re adapt&eacute;.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\bar{x} = \dfrac{4+8+12+16+20}{5} = \dfrac{60}{5} = \mathbf{12}\)</p>
+    <p>\(\bar{y} = \dfrac{1100+2000+2900+3900+4700}{5} = \dfrac{14\,600}{5} = \mathbf{2\,920}\)</p>
+    <p>Le point moyen est \(G(12\,;\,2\,920)\).</p>
+    <p>b) On place le point \(G\) aux coordonn&eacute;es \((12\,;\,2\,920)\) dans le rep&egrave;re.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>La calculatrice donne la droite de r&eacute;gression : \(y = 225x + 220\), avec \(R^2 = 0{,}995\).</p>
+  <p>a) La qualit&eacute; de l'ajustement est-elle satisfaisante ? Justifier.</p>
+  <p>b) V&eacute;rifier que la droite passe par le point moyen \(G\).</p>
+  <p>c) Interpr&eacute;ter le coefficient \(a = 225\) dans le contexte de la situation.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Oui, \(R^2 = 0{,}995\) est tr&egrave;s proche de 1 (\(\geqslant 0{,}90\)), l'ajustement est <strong>excellent</strong>.</p>
+    <p>b) \(y = 225 \times 12 + 220 = 2\,700 + 220 = 2\,920\). On retrouve bien \(\bar{y} = 2\,920\), la droite passe par \(G\). &#10003;</p>
+    <p>c) Le coefficient \(a = 225\) signifie que <strong>chaque pi&egrave;ce suppl&eacute;mentaire co&ucirc;te environ 225 &euro;</strong> de plus en production.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>a) Estimer le co&ucirc;t de production de 14 pi&egrave;ces.</p>
+  <p>b) Estimer le co&ucirc;t de production de 40 pi&egrave;ces.</p>
+  <p>c) Pour chaque estimation, pr&eacute;ciser s'il s'agit d'une interpolation ou d'une extrapolation, et indiquer sa fiabilit&eacute;.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(y = 225 \times 14 + 220 = 3\,150 + 220 = \mathbf{3\,370}\) &euro;.</p>
+    <p>b) \(y = 225 \times 40 + 220 = 9\,000 + 220 = \mathbf{9\,220}\) &euro;.</p>
+    <p>c) Pour 14 pi&egrave;ces : <strong>interpolation</strong> (14 est dans [4 ; 20]) &rarr; estimation <strong>fiable</strong>.</p>
+    <p>Pour 40 pi&egrave;ces : <strong>extrapolation</strong> (40 est hors [4 ; 20]) &rarr; estimation <strong>risqu&eacute;e</strong> (des &eacute;conomies d'&eacute;chelle ou des contraintes de capacit&eacute; peuvent modifier la relation).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(3 points)</span></h2>
+  <p>On observe une corr&eacute;lation entre le nombre d'heures de soleil par jour et les ventes de cr&egrave;me solaire.</p>
+  <p>a) Peut-on en conclure que le soleil fait acheter de la cr&egrave;me solaire ? Justifier.</p>
+  <p>b) Proposer un facteur cach&eacute; qui pourrait expliquer cette corr&eacute;lation.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Attention.</strong> Ici la causalit&eacute; semble plausible, mais il faut rester prudent. Corr&eacute;lation ne signifie pas automatiquement causalit&eacute;.</p>
+    <p>b) La <strong>saison estivale</strong> est un facteur commun : en &eacute;t&eacute;, il y a plus de soleil et les gens partent en vacances, ce qui augmente les deux variables simultan&eacute;ment.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un plombier chauffagiste rel&egrave;ve l'&acirc;ge \(x\) d'une installation et sa consommation &eacute;nerg&eacute;tique \(y\) sur 5 mois. Il obtient \(r = 0{,}94\).</p>
+  <p>a) Calculer \(R^2\).</p>
+  <p>b) Que signifie le signe positif de \(r\) ?</p>
+  <p>c) L'ajustement lin&eacute;aire est-il adapt&eacute; ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(R^2 = (0{,}94)^2 = \mathbf{0{,}8836}\).</p>
+    <p>b) Le signe positif de \(r\) indique une <strong>corr&eacute;lation positive</strong> : quand l'&acirc;ge de l'installation augmente, la consommation augmente aussi.</p>
+    <p>c) \(R^2 = 0{,}88\), ce qui est proche de 0,90 mais l&eacute;g&egrave;rement inf&eacute;rieur. L'ajustement est <strong>correct</strong> mais pas excellent.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Bar&egrave;me :</strong> 20 points</p>
 
 <div class="exo">
@@ -351,6 +428,92 @@
     <p>\(15x > 315\) soit \(x > 21\). Le co&ucirc;t d&eacute;passe 400 &euro; &agrave; partir de <strong>21 m&sup2;</strong>.</p>
     <p>d) \(18x + 50 = 15x + 85\) &rArr; \(3x = 35\) &rArr; \(x = \dfrac{35}{3} \approx \mathbf{11{,}7}\) m&sup2;.</p>
     <p>Les deux mod&egrave;les donnent le m&ecirc;me co&ucirc;t pour environ 11,7 m&sup2;.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(5 points)</span></h2>
+  <p>Un technicien CVC &eacute;tudie la relation entre l'&acirc;ge \(x\) (en ann&eacute;es) d'une pompe &agrave; chaleur et son co&ucirc;t de maintenance annuel \(y\) (en &euro;) :</p>
+  <table>
+    <tr><th>&Acirc;ge \(x\) (ann&eacute;es)</th><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td></tr>
+    <tr><th>Co&ucirc;t \(y\) (&euro;)</th><td>150</td><td>240</td><td>320</td><td>410</td><td>500</td><td>600</td></tr>
+  </table>
+  <p>a) Calculer les coordonn&eacute;es du point moyen \(G\).</p>
+  <p>b) La calculatrice donne \(y = 45x + 60\) avec \(R^2 = 0{,}998\). V&eacute;rifier que la droite passe par \(G\).</p>
+  <p>c) Estimer le co&ucirc;t de maintenance pour une pompe &agrave; chaleur de 18 ans. Commenter la fiabilit&eacute; de cette estimation.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\bar{x} = \dfrac{2+4+6+8+10+12}{6} = \dfrac{42}{6} = 7\)</p>
+    <p>\(\bar{y} = \dfrac{150+240+320+410+500+600}{6} = \dfrac{2\,220}{6} = 370\)</p>
+    <p>Le point moyen est \(G(7\,;\,370)\).</p>
+    <p>b) \(y = 45 \times 7 + 60 = 315 + 60 = 375\). On obtient 375 au lieu de 370, l'&eacute;cart est d&ucirc; aux arrondis des coefficients. La droite passe &laquo; au mieux &raquo; par \(G\).</p>
+    <p>c) \(y = 45 \times 18 + 60 = 810 + 60 = \mathbf{870}\) &euro;. C'est une <strong>extrapolation</strong> (18 est hors de [2 ; 12]). Elle est <strong>risqu&eacute;e</strong> : au-del&agrave; d'un certain &acirc;ge, les co&ucirc;ts pourraient augmenter plus vite (pannes fr&eacute;quentes) ou l'&eacute;quipement &ecirc;tre remplac&eacute;.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Une &eacute;tude compare l'&eacute;paisseur \(x\) (en mm) et la r&eacute;sistance &agrave; la flexion \(y\) (en N) d'un panneau de bois :</p>
+  <table>
+    <tr><th>&Eacute;paisseur \(x\) (mm)</th><td>4</td><td>8</td><td>12</td><td>16</td><td>20</td></tr>
+    <tr><th>R&eacute;sistance \(y\) (N)</th><td>10</td><td>22</td><td>35</td><td>46</td><td>58</td></tr>
+  </table>
+  <p>a) Calculer le point moyen \(G\).</p>
+  <p>b) On obtient \(y = 2{,}98x - 1{,}4\) et \(r = 0{,}999\). Interpr&eacute;ter le coefficient directeur dans le contexte.</p>
+  <p>c) &Agrave; partir de quelle &eacute;paisseur la r&eacute;sistance d&eacute;passe-t-elle 40 N ? R&eacute;soudre l'in&eacute;quation.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\bar{x} = \dfrac{4+8+12+16+20}{5} = \dfrac{60}{5} = 12\)</p>
+    <p>\(\bar{y} = \dfrac{10+22+35+46+58}{5} = \dfrac{171}{5} = 34{,}2\)</p>
+    <p>Point moyen : \(G(12\,;\,34{,}2)\).</p>
+    <p>b) Le coefficient \(a = 2{,}98\) signifie que <strong>chaque millim&egrave;tre d'&eacute;paisseur suppl&eacute;mentaire augmente la r&eacute;sistance d'environ 2,98 N</strong>.</p>
+    <p>c) On r&eacute;sout \(2{,}98x - 1{,}4 \geqslant 40\) :</p>
+    <p>\(2{,}98x \geqslant 41{,}4\)</p>
+    <p>\(x \geqslant \dfrac{41{,}4}{2{,}98} \approx 13{,}9\) mm.</p>
+    <p>La r&eacute;sistance d&eacute;passe 40 N &agrave; partir d'environ <strong>13,9 mm</strong> d'&eacute;paisseur.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Une &eacute;tude montre que dans certains pays, la consommation de fromage augmente en m&ecirc;me temps que le nombre de doctorats d&eacute;livr&eacute;s. Un blogueur &eacute;crit : &laquo; Manger du fromage rend plus intelligent. &raquo;</p>
+  <p>a) Cette conclusion est-elle justifi&eacute;e ? Argumenter pr&eacute;cis&eacute;ment.</p>
+  <p>b) Proposer deux facteurs cach&eacute;s possibles qui expliqueraient cette corr&eacute;lation.</p>
+  <p>c) Formuler une conclusion correcte &agrave; partir de ces donn&eacute;es.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Non</strong>, cette conclusion n'est pas justifi&eacute;e. Le blogueur confond <strong>corr&eacute;lation et causalit&eacute;</strong>. Ce n'est pas parce que deux ph&eacute;nom&egrave;nes &eacute;voluent ensemble que l'un cause l'autre.</p>
+    <p>b) Facteurs cach&eacute;s possibles :</p>
+    <ul>
+      <li>Le <strong>niveau de d&eacute;veloppement &eacute;conomique</strong> : les pays plus riches consomment plus de fromage et offrent davantage de places en doctorat.</li>
+      <li>L'<strong>&eacute;volution d&eacute;mographique</strong> : une population croissante augmente &agrave; la fois la consommation de fromage et le nombre de dipl&ocirc;m&eacute;s.</li>
+    </ul>
+    <p>c) Conclusion correcte : &laquo; On observe une corr&eacute;lation positive entre la consommation de fromage et le nombre de doctorats, mais <strong>cela ne prouve pas</strong> que le fromage favorise les &eacute;tudes. Un facteur commun pourrait expliquer les deux ph&eacute;nom&egrave;nes. &raquo;</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(6 points)</span></h2>
+  <p>Un menuisier agenceur ach&egrave;te du placage. Il dispose de deux mod&egrave;les de r&eacute;gression pour pr&eacute;voir le co&ucirc;t \(y\) (en &euro;) en fonction de la surface \(x\) (en m&sup2;) :</p>
+  <ul>
+    <li><strong>Mod&egrave;le A :</strong> \(y = 22x + 40\) avec \(R^2 = 0{,}89\)</li>
+    <li><strong>Mod&egrave;le B :</strong> \(y = 18x + 80\) avec \(R^2 = 0{,}96\)</li>
+  </ul>
+  <p>a) Quel mod&egrave;le est le mieux ajust&eacute; aux donn&eacute;es ? Justifier.</p>
+  <p>b) Avec le mod&egrave;le B, estimer le co&ucirc;t pour 15 m&sup2; de placage.</p>
+  <p>c) Avec le mod&egrave;le B, &agrave; partir de quelle surface le co&ucirc;t d&eacute;passe-t-il 500 &euro; ?</p>
+  <p>d) Pour quelle surface les deux mod&egrave;les donnent-ils le m&ecirc;me co&ucirc;t ? R&eacute;soudre \(22x + 40 = 18x + 80\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le <strong>mod&egrave;le B</strong> est le mieux ajust&eacute; car \(R^2 = 0{,}96 > 0{,}89\). Plus \(R^2\) est proche de 1, meilleur est l'ajustement.</p>
+    <p>b) \(y = 18 \times 15 + 80 = 270 + 80 = \mathbf{350}\) &euro;.</p>
+    <p>c) On r&eacute;sout \(18x + 80 > 500\) :</p>
+    <p>\(18x > 420\) soit \(x > \dfrac{420}{18} \approx 23{,}3\). Le co&ucirc;t d&eacute;passe 500 &euro; &agrave; partir d'environ <strong>23,3 m&sup2;</strong>.</p>
+    <p>d) \(22x + 40 = 18x + 80\) &rArr; \(4x = 40\) &rArr; \(x = \mathbf{10}\) m&sup2;.</p>
+    <p>Les deux mod&egrave;les donnent le m&ecirc;me co&ucirc;t pour <strong>10 m&sup2;</strong>.</p>
   </div>
 </div>
 
