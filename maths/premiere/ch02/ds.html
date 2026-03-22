@@ -48,6 +48,92 @@
   <span class="comp comp-com">COM – Communiquer</span>
 </div>
 
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║               NIVEAU SOCLE                           ║
+     ╚══════════════════════════════════════════════════════╝ -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<div class="partie">
+<div class="partie-header">
+  <span class="partie-title">Exercice 1 – Tirage dans un lot de pièces</span>
+  <span class="pts">8 points</span>
+</div>
+<p>Un menuisier agenceur reçoit un lot de <strong>100 panneaux de bois</strong>. Après vérification, <strong>8 panneaux</strong> sont défectueux et <strong>92 panneaux</strong> sont conformes.</p>
+<p>On choisit un panneau au hasard dans le lot.</p>
+<p><strong>1.</strong> <span class="comp comp-app">APP</span> Combien d'issues possibles y a-t-il ? <span class="bareme">(1 pt)</span></p>
+<p><em>Aide : une issue = un panneau choisi.</em></p>
+<span class="answer-line"></span>
+<p><strong>2.</strong> <span class="comp comp-rea">REA</span> Calculer la probabilité de l'événement \(D\) : « le panneau est défectueux ». <span class="bareme">(2 pts)</span></p>
+<p><em>Aide : \(P(D) = \dfrac{\text{nombre de panneaux défectueux}}{\text{nombre total de panneaux}} = \dfrac{...}{...}\)</em></p>
+<span class="answer-line"></span>
+<p><strong>3.</strong> <span class="comp comp-rea">REA</span> En déduire \(P(\bar{D})\), la probabilité que le panneau soit conforme. <span class="bareme">(2 pts)</span></p>
+<p><em>Aide : \(P(\bar{D}) = 1 - P(D) = 1 - ... = ...\)</em></p>
+<span class="answer-line"></span>
+<p><strong>4.</strong> <span class="comp comp-ana">ANA</span> Sur un lot de 500 panneaux, combien peut-on estimer de panneaux défectueux ? <span class="bareme">(1,5 pt)</span></p>
+<p><em>Aide : nombre estimé = \(500 \times P(D) = 500 \times ... = ...\)</em></p>
+<span class="answer-line"></span>
+<p><strong>5.</strong> <span class="comp comp-com">COM</span> Le fournisseur garantit un taux de défaut inférieur à 10 %. Le lot est-il conforme à la garantie ? Justifier. <span class="bareme">(1,5 pt)</span></p>
+<span class="answer-line"></span>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
+<div class="corr" style="display:none">
+<p><strong>1.</strong> Il y a 100 issues possibles (100 panneaux).</p>
+<p><strong>2.</strong> \(P(D) = \dfrac{8}{100} = 0{,}08 = 8\,\%\).</p>
+<p><strong>3.</strong> \(P(\bar{D}) = 1 - 0{,}08 = 0{,}92 = 92\,\%\).</p>
+<p><strong>4.</strong> Nombre estimé : \(500 \times 0{,}08 = 40\) panneaux défectueux.</p>
+<p><strong>5.</strong> Le taux de défaut est de 8 %, ce qui est inférieur à 10 %. Le lot est <strong>conforme</strong> à la garantie.</p>
+</div>
+</div>
+
+<div class="partie">
+<div class="partie-header">
+  <span class="partie-title">Exercice 2 – Arbre de probabilités guidé</span>
+  <span class="pts">12 points</span>
+</div>
+<p>Un installateur thermique commande des tubes en cuivre à deux fournisseurs :</p>
+<ul>
+  <li><strong>Fournisseur A</strong> : 70 % des tubes (probabilité 0,7)</li>
+  <li><strong>Fournisseur B</strong> : 30 % des tubes (probabilité 0,3)</li>
+</ul>
+<p>Parmi les tubes du fournisseur A, 5 % sont défectueux. Parmi ceux du fournisseur B, 10 % sont défectueux.</p>
+<p><strong>Étape 1 :</strong> <span class="comp comp-app">APP</span> Compléter les probabilités manquantes. <span class="bareme">(2 pts)</span></p>
+<ul>
+  <li>P(A) = 0,7 → P(B) = ……</li>
+  <li>P(défectueux sachant A) = 0,05 → P(conforme sachant A) = ……</li>
+  <li>P(défectueux sachant B) = 0,10 → P(conforme sachant B) = ……</li>
+</ul>
+<span class="answer-line"></span>
+<p><strong>Étape 2 :</strong> <span class="comp comp-rea">REA</span> Calculer la probabilité qu'un tube vienne du fournisseur A <strong>et</strong> soit défectueux. <span class="bareme">(2 pts)</span></p>
+<p><em>Aide : on multiplie le long du chemin : \(P(A \cap D) = P(A) \times P_A(D) = 0{,}7 \times 0{,}05 = ...\)</em></p>
+<span class="answer-line"></span>
+<p><strong>Étape 3 :</strong> <span class="comp comp-rea">REA</span> De même, calculer \(P(B \cap D)\). <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<p><strong>Étape 4 :</strong> <span class="comp comp-ana">ANA</span> En déduire la probabilité totale qu'un tube soit défectueux : \(P(D) = P(A \cap D) + P(B \cap D)\). <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<p><strong>Étape 5 :</strong> <span class="comp comp-rea">REA</span> Calculer \(P(\bar{D})\). <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<p><strong>Étape 6 :</strong> <span class="comp comp-val">VAL</span> Vérifier que la somme des 4 chemins vaut 1. <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
+<div class="corr" style="display:none">
+<p><strong>Étape 1 :</strong> P(B) = 1 − 0,7 = 0,3. P(conforme sachant A) = 1 − 0,05 = 0,95. P(conforme sachant B) = 1 − 0,10 = 0,90.</p>
+<p><strong>Étape 2 :</strong> \(P(A \cap D) = 0{,}7 \times 0{,}05 = 0{,}035\).</p>
+<p><strong>Étape 3 :</strong> \(P(B \cap D) = 0{,}3 \times 0{,}10 = 0{,}030\).</p>
+<p><strong>Étape 4 :</strong> \(P(D) = 0{,}035 + 0{,}030 = 0{,}065 = 6{,}5\,\%\).</p>
+<p><strong>Étape 5 :</strong> \(P(\bar{D}) = 1 - 0{,}065 = 0{,}935 = 93{,}5\,\%\).</p>
+<p><strong>Étape 6 :</strong> \(0{,}035 + 0{,}665 + 0{,}030 + 0{,}270 = 1{,}000\) ✓
+(Chemins : A∩D = 0,035 ; A∩C = 0,7×0,95 = 0,665 ; B∩D = 0,030 ; B∩C = 0,3×0,90 = 0,270)</p>
+</div>
+</div>
+
+</div><!-- fin diff-socle -->
+
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║               NIVEAU STANDARD                        ║
+     ╚══════════════════════════════════════════════════════╝ -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
 <!-- ═══════════════ EXERCICE 1 ═══════════════ -->
 <div class="partie">
 <div class="partie-header">
@@ -232,6 +318,101 @@ Les deux lignes ont le <strong>même taux de défaut</strong> (10 %). Aucune lig
 En choisissant l'Option 1, le technicien économise environ <strong>1 500 € par an</strong>.</p>
 </div>
 </div>
+
+</div><!-- fin diff-standard -->
+
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║               NIVEAU APPROFONDISSEMENT               ║
+     ╚══════════════════════════════════════════════════════╝ -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<div class="partie">
+<div class="partie-header">
+  <span class="partie-title">Exercice 1 – Fiabilité d'un système de détection</span>
+  <span class="pts">8 points</span>
+</div>
+<p>Un technicien de maintenance énergétique utilise un capteur de fuite de gaz. Le capteur a les caractéristiques suivantes :</p>
+<ul>
+  <li>S'il y a une fuite, le capteur la détecte dans 98 % des cas.</li>
+  <li>S'il n'y a pas de fuite, le capteur donne une fausse alerte dans 3 % des cas.</li>
+  <li>On estime que 2 % des installations présentent réellement une fuite.</li>
+</ul>
+<p>On note \(F\) : « il y a une fuite » et \(A\) : « le capteur donne une alerte ».</p>
+
+<p><strong>1.</strong> <span class="comp comp-app">APP</span> Traduire les données en probabilités : \(P(F)\), \(P_F(A)\), \(P_{\bar{F}}(A)\). <span class="bareme">(1,5 pt)</span></p>
+<span class="answer-line"></span>
+<p><strong>2.</strong> <span class="comp comp-com">COM</span> Construire l'arbre pondéré complet. <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<p><strong>3.</strong> <span class="comp comp-rea">REA</span> Calculer \(P(A)\), la probabilité totale qu'une alerte se déclenche. <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<p><strong>4.</strong> <span class="comp comp-ana">ANA</span> Sachant que le capteur a donné une alerte, quelle est la probabilité qu'il y ait réellement une fuite ? Calculer \(P_A(F)\) et commenter. <span class="bareme">(2,5 pts)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
+<div class="corr" style="display:none">
+<p><strong>1.</strong> \(P(F) = 0{,}02\), \(P_F(A) = 0{,}98\), \(P_{\bar{F}}(A) = 0{,}03\).</p>
+<p><strong>2.</strong> Arbre :<br>
+— Fuite (0,02) → Alerte (0,98) / Pas d'alerte (0,02)<br>
+— Pas de fuite (0,98) → Alerte (0,03) / Pas d'alerte (0,97)</p>
+<p><strong>3.</strong> \(P(A) = P(F \cap A) + P(\bar{F} \cap A) = 0{,}02 \times 0{,}98 + 0{,}98 \times 0{,}03 = 0{,}0196 + 0{,}0294 = 0{,}049\).</p>
+<p><strong>4.</strong> \(P_A(F) = \dfrac{P(F \cap A)}{P(A)} = \dfrac{0{,}0196}{0{,}049} = 0{,}4 = 40\,\%\).</p>
+<p>Quand le capteur sonne, il n'y a réellement une fuite que dans 40 % des cas. Ce résultat, contre-intuitif, est dû à la rareté des fuites (2 %) : les fausses alertes (3 % de 98 %) sont plus nombreuses que les vraies détections en valeur absolue.</p>
+</div>
+</div>
+
+<div class="partie">
+<div class="partie-header">
+  <span class="partie-title">Exercice 2 – Stratégie d'approvisionnement</span>
+  <span class="pts">12 points</span>
+</div>
+<p>Un ébéniste s'approvisionne en bois exotique auprès de trois fournisseurs X, Y et Z :</p>
+<ul>
+  <li>X fournit 50 % du bois, avec 4 % de pièces non conformes</li>
+  <li>Y fournit 30 % du bois, avec 6 % de pièces non conformes</li>
+  <li>Z fournit 20 % du bois, avec 10 % de pièces non conformes</li>
+</ul>
+
+<p><strong>1.</strong> <span class="comp comp-com">COM</span> Construire l'arbre pondéré à deux niveaux (fournisseur, puis conforme/non conforme). <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<p><strong>2.</strong> <span class="comp comp-rea">REA</span> Calculer la probabilité totale qu'une pièce soit non conforme. <span class="bareme">(2,5 pts)</span></p>
+<span class="answer-line"></span>
+<p><strong>3.</strong> <span class="comp comp-ana">ANA</span> Sachant qu'une pièce est non conforme, de quel fournisseur a-t-elle le plus de chances de provenir ? Calculer les trois probabilités conditionnelles \(P_{NC}(X)\), \(P_{NC}(Y)\) et \(P_{NC}(Z)\). <span class="bareme">(3 pts)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+<p><strong>4.</strong> <span class="comp comp-ana">ANA</span> L'ébéniste envisage de remplacer Z par un nouveau fournisseur W qui aurait 3 % de non conformes. Calculer le nouveau taux global de non-conformité. L'amélioration est-elle significative ? <span class="bareme">(2,5 pts)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+<p><strong>5.</strong> <span class="comp comp-val">VAL</span> Proposer une stratégie d'approvisionnement (répartition entre fournisseurs) qui permettrait d'atteindre un taux de non-conformité global inférieur à 4 %. Justifier. <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
+<div class="corr" style="display:none">
+<p><strong>1.</strong> Arbre à 3 branches × 2 :<br>
+X (0,50) → NC (0,04) / C (0,96)<br>
+Y (0,30) → NC (0,06) / C (0,94)<br>
+Z (0,20) → NC (0,10) / C (0,90)</p>
+<p><strong>2.</strong> \(P(NC) = 0{,}50 \times 0{,}04 + 0{,}30 \times 0{,}06 + 0{,}20 \times 0{,}10 = 0{,}020 + 0{,}018 + 0{,}020 = 0{,}058 = 5{,}8\,\%\).</p>
+<p><strong>3.</strong><br>
+\(P_{NC}(X) = \dfrac{0{,}020}{0{,}058} \approx 0{,}345 = 34{,}5\,\%\)<br>
+\(P_{NC}(Y) = \dfrac{0{,}018}{0{,}058} \approx 0{,}310 = 31{,}0\,\%\)<br>
+\(P_{NC}(Z) = \dfrac{0{,}020}{0{,}058} \approx 0{,}345 = 34{,}5\,\%\)</p>
+<p>Une pièce non conforme a autant de chances de venir de X que de Z (34,5 % chacun), malgré le fait que X a un meilleur taux : c'est parce que X fournit beaucoup plus de pièces.</p>
+<p><strong>4.</strong> Avec W (3 %) au lieu de Z (10 %) :
+\(P'(NC) = 0{,}50 \times 0{,}04 + 0{,}30 \times 0{,}06 + 0{,}20 \times 0{,}03 = 0{,}020 + 0{,}018 + 0{,}006 = 0{,}044 = 4{,}4\,\%\).</p>
+<p>L'amélioration est de \(5{,}8 - 4{,}4 = 1{,}4\) points, soit une réduction de 24 %. C'est significatif.</p>
+<p><strong>5.</strong> Par exemple : augmenter la part de X (le meilleur) à 60 %, réduire Y à 20 %, garder W à 20 % :
+\(0{,}60 \times 0{,}04 + 0{,}20 \times 0{,}06 + 0{,}20 \times 0{,}03 = 0{,}024 + 0{,}012 + 0{,}006 = 0{,}042\). Pas encore sous 4 %.</p>
+<p>Autre option : X = 70 %, Y = 10 %, W = 20 % :
+\(0{,}70 \times 0{,}04 + 0{,}10 \times 0{,}06 + 0{,}20 \times 0{,}03 = 0{,}028 + 0{,}006 + 0{,}006 = 0{,}040 = 4{,}0\,\%\). Exactement 4 %, encore limite.</p>
+<p>Pour passer strictement sous 4 % : X = 80 %, W = 20 % (supprimer Y) :
+\(0{,}80 \times 0{,}04 + 0{,}20 \times 0{,}03 = 0{,}032 + 0{,}006 = 0{,}038 = 3{,}8\,\%\) < 4 %. ✓</p>
+</div>
+</div>
+
+</div><!-- fin diff-appro -->
 
 <script>
 function toggle(btn){

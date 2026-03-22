@@ -117,10 +117,15 @@
   </details>
 </div>
 
+<hr class="sep">
+
 <!-- ════════════════════════════════════════════════════ -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
 <div class="niveau-header niv2">
   <span class="badge-blue">Niveau 2</span>
-  <h2>Entraînement</h2>
+  <h2>Raisonnement guidé pas à pas</h2>
 </div>
 
 <!-- EXERCICE 4 -->
@@ -132,10 +137,16 @@
     <tr><th>Distance \(x\) (km)</th><td>3</td><td>5</td><td>8</td><td>10</td><td>12</td><td>15</td></tr>
     <tr><th>FC moyenne \(y\) (bpm)</th><td>125</td><td>138</td><td>150</td><td>158</td><td>165</td><td>175</td></tr>
   </table>
-  <p><strong>a.</strong> Calculer le point moyen \(G\).</p>
+  <p><strong>a.</strong> Calculer le point moyen \(G(\bar{x}\,;\,\bar{y})\).</p>
+  <p class="aide"><em>Étape 1 :</em> Additionner toutes les valeurs de \(x\) : \(3 + 5 + 8 + 10 + 12 + 15 = \ldots\) puis diviser par 6.</p>
+  <p class="aide"><em>Étape 2 :</em> Faire de même pour les valeurs de \(y\).</p>
   <p><strong>b.</strong> La calculatrice donne : \(y = 4{,}12x + 112{,}7\) et \(r = 0{,}998\). Calculer \(R^2\) et commenter la qualité de l'ajustement.</p>
+  <p class="aide"><em>Aide :</em> \(R^2 = r^2 = (0{,}998)^2 = \ldots\) Si \(R^2\) est proche de 1, l'ajustement est bon.</p>
   <p><strong>c.</strong> Estimer la fréquence cardiaque pour une course de 7 km. Est-ce une interpolation ?</p>
+  <p class="aide"><em>Étape 1 :</em> Remplacer \(x\) par 7 dans l'équation : \(y = 4{,}12 \times 7 + 112{,}7 = \ldots\)</p>
+  <p class="aide"><em>Étape 2 :</em> Vérifier si 7 est dans la plage des données \([3\,;\,15]\).</p>
   <p><strong>d.</strong> Estimer la fréquence cardiaque pour une course de 25 km. Commenter.</p>
+  <p class="aide"><em>Aide :</em> 25 est-il dans la plage \([3\,;\,15]\) ? Si non, c'est une extrapolation. Le résultat est-il réaliste ?</p>
 
   <details class="corr-wrap"><summary class="corr-btn">Voir la correction</summary>
   <div class="corr-body">
@@ -162,9 +173,15 @@
     <tr><th>Déperdition \(y\) (W/m²)</th><td>42</td><td>35</td><td>28</td><td>23</td><td>19</td><td>16</td><td>14</td></tr>
   </table>
   <p><strong>a.</strong> Représenter le nuage de points.</p>
+  <p class="aide"><em>Aide :</em> Placer chaque couple \((x\,;\,y)\) dans un repère. L'axe horizontal représente l'épaisseur, l'axe vertical la déperdition.</p>
   <p><strong>b.</strong> Le nuage semble-t-il linéaire ?</p>
+  <p class="aide"><em>Aide :</em> Les points sont-ils à peu près alignés ? Si oui, un ajustement affine est envisageable.</p>
   <p><strong>c.</strong> La calculatrice donne \(y = -2{,}29x + 44{,}5\) et \(R^2 = 0{,}98\). L'ajustement est-il pertinent ?</p>
+  <p class="aide"><em>Aide :</em> Comparer \(R^2\) à 0,90. Si \(R^2 \geq 0{,}90\), l'ajustement est pertinent.</p>
   <p><strong>d.</strong> Quelle épaisseur d'isolant faudrait-il pour une déperdition de 10 W/m² ? S'agit-il d'une interpolation ou d'une extrapolation ?</p>
+  <p class="aide"><em>Étape 1 :</em> Remplacer \(y\) par 10 dans l'équation : \(10 = -2{,}29x + 44{,}5\).</p>
+  <p class="aide"><em>Étape 2 :</em> Isoler \(x\) : \(2{,}29x = 44{,}5 - 10 = \ldots\) puis \(x = \ldots\)</p>
+  <p class="aide"><em>Étape 3 :</em> La valeur trouvée est-elle dans la plage \([2\,;\,14]\) ?</p>
 
   <details class="corr-wrap"><summary class="corr-btn">Voir la correction</summary>
   <div class="corr-body">
@@ -184,9 +201,13 @@
   <div class="exo-num">Exercice 6</div>
   <div class="exo-titre">Corrélation et causalité</div>
   <p>Pour chaque situation, indiquer s'il y a corrélation et si on peut conclure à une relation de causalité. Justifier.</p>
+  <p class="aide"><em>Rappel :</em> <strong>Corrélation</strong> = deux grandeurs évoluent ensemble. <strong>Causalité</strong> = l'une est la cause directe de l'autre. Attention : corrélation ≠ causalité !</p>
   <p><strong>a.</strong> On observe que dans les pays où l'on mange le plus de fromage, il y a plus de lauréats du prix Nobel.</p>
+  <p class="aide"><em>Aide :</em> Y a-t-il un lien direct entre manger du fromage et gagner un Nobel ? Ou bien un facteur caché (richesse du pays) pourrait-il expliquer les deux ?</p>
   <p><strong>b.</strong> Un médecin du sport observe que plus un athlète s'entraîne (en heures/semaine), plus son temps au 100 m diminue.</p>
+  <p class="aide"><em>Aide :</em> L'entraînement peut-il directement améliorer la performance ? Existe-t-il un mécanisme causal ?</p>
   <p><strong>c.</strong> On constate qu'en hiver, les ventes de manteaux et les accidents de la route augmentent simultanément.</p>
+  <p class="aide"><em>Aide :</em> Acheter un manteau provoque-t-il un accident ? Chercher le facteur commun qui influence les deux.</p>
 
   <details class="corr-wrap"><summary class="corr-btn">Voir la correction</summary>
   <div class="corr-body">
@@ -197,10 +218,15 @@
   </details>
 </div>
 
+</div><!-- fin diff-socle -->
+
 <!-- ════════════════════════════════════════════════════ -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
 <div class="niveau-header niv3">
   <span class="badge-yellow">Niveau 3</span>
-  <h2>Approfondissement</h2>
+  <h2>Exercices d'entraînement</h2>
 </div>
 
 <!-- EXERCICE 7 -->
@@ -282,10 +308,15 @@
   </details>
 </div>
 
+</div><!-- fin diff-standard -->
+
 <!-- ════════════════════════════════════════════════════ -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
 <div class="niveau-header niv4">
   <span class="badge-red">Niveau 4</span>
-  <h2>Expertise</h2>
+  <h2>Problèmes ouverts et approfondissement</h2>
 </div>
 
 <!-- EXERCICE 10 -->
@@ -371,6 +402,8 @@
   </div>
   </details>
 </div>
+
+</div><!-- fin diff-appro -->
 
 <!-- ══════════════════════════════════════════════════════ -->
 <div class="nav-footer">

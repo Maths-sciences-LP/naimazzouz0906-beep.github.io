@@ -115,45 +115,61 @@
   </div>
 </div>
 
-<!-- ═══════════════════ NIVEAU 2 ═══════════════════ -->
-<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement</h2></div>
+<hr class="sep">
+
+<!-- ═══════════════════ SOCLE ═══════════════════ -->
+
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement guidé</h2></div>
 
 <div class="exo">
   <div class="exo-num">Exercice 5</div>
-  <div class="exo-titre">Signe de la dérivée et sens de variation</div>
+  <div class="exo-titre">Signe de la dérivée et sens de variation (guidé)</div>
   <p>Soit \(f(x) = x^2 - 6x + 5\).</p>
   <ol>
-    <li>Calculer \(f'(x)\).</li>
-    <li>Résoudre \(f'(x) = 0\).</li>
-    <li>Étudier le signe de \(f'(x)\) et en déduire le sens de variation de \(f\) sur \(\mathbb{R}\).</li>
-    <li>Dresser le tableau de variations de \(f\).</li>
+    <li><strong>Étape 1 — Calculer la dérivée.</strong>
+      <br><em>Rappel :</em> la dérivée de \(ax^2\) est \(2ax\), la dérivée de \(bx\) est \(b\), la dérivée d'une constante est \(0\).
+      <br>Compléter : \(f'(x) = \ldots\)</li>
+    <li><strong>Étape 2 — Résoudre \(f'(x) = 0\).</strong>
+      <br>Résoudre l'équation du premier degré obtenue.</li>
+    <li><strong>Étape 3 — Signe de \(f'(x)\).</strong>
+      <br>Tester une valeur à gauche et une valeur à droite de la solution trouvée. En déduire les intervalles où \(f'(x) > 0\) (croissante) et \(f'(x) < 0\) (décroissante).</li>
+    <li><strong>Étape 4 — Tableau de variations.</strong>
+      <br>Dresser le tableau de variations. Calculer la valeur de \(f\) au sommet.</li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>\(f'(x) = 2x - 6\)</li>
-      <li>\(2x - 6 = 0 \iff x = 3\)</li>
+      <li>\(2x - 6 = 0 \iff 2x = 6 \iff x = 3\)</li>
       <li>
         <ul>
-          <li>Si \(x < 3\) : \(f'(x) < 0\) donc \(f\) est décroissante.</li>
-          <li>Si \(x > 3\) : \(f'(x) > 0\) donc \(f\) est croissante.</li>
+          <li>Pour \(x = 0\) (à gauche de 3) : \(f'(0) = -6 < 0\), donc \(f\) est décroissante.</li>
+          <li>Pour \(x = 5\) (à droite de 3) : \(f'(5) = 4 > 0\), donc \(f\) est croissante.</li>
         </ul>
       </li>
       <li>\(f\) est décroissante sur \(]-\infty\,;\,3]\) et croissante sur \([3\,;\,+\infty[\).
-      <br>Le minimum est atteint en \(x=3\) : \(f(3)=9-18+5=-4\).</li>
+      <br>Le minimum est atteint en \(x=3\) : \(f(3) = 9 - 18 + 5 = -4\).</li>
     </ol>
   </div>
 </div>
 
 <div class="exo">
   <div class="exo-num">Exercice 6</div>
-  <div class="exo-titre">Équation de la tangente</div>
+  <div class="exo-titre">Équation de la tangente (guidé)</div>
   <p>Soit \(f(x) = x^2 - 4x + 3\).</p>
   <ol>
-    <li>Calculer \(f'(x)\).</li>
-    <li>Calculer \(f(1)\) et \(f'(1)\).</li>
-    <li>Écrire l'équation de la tangente à la courbe de \(f\) au point d'abscisse \(1\).</li>
-    <li>Calculer \(f(3)\) et \(f'(3)\), puis écrire l'équation de la tangente au point d'abscisse \(3\).</li>
+    <li><strong>Étape 1 — Dériver.</strong>
+      <br>Calculer \(f'(x)\).</li>
+    <li><strong>Étape 2 — Valeurs en \(x = 1\).</strong>
+      <br>Calculer \(f(1)\) et \(f'(1)\).
+      <br><em>Rappel :</em> \(f(1)\) = on remplace \(x\) par 1 dans \(f(x)\) ; \(f'(1)\) = on remplace \(x\) par 1 dans \(f'(x)\).</li>
+    <li><strong>Étape 3 — Tangente en \(x = 1\).</strong>
+      <br><em>Formule :</em> \(y = f'(a)(x - a) + f(a)\). Remplacer \(a\) par \(1\), puis simplifier.</li>
+    <li><strong>Étape 4 — Tangente en \(x = 3\).</strong>
+      <br>Même méthode : calculer \(f(3)\), \(f'(3)\), puis écrire l'équation de la tangente.</li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
@@ -169,33 +185,30 @@
 
 <div class="exo">
   <div class="exo-num">Exercice 7</div>
-  <div class="exo-titre">Étude complète d'une fonction polynôme</div>
+  <div class="exo-titre">Étude complète d'une fonction polynôme (guidé)</div>
   <p>Soit \(f(x) = -x^2 + 8x - 12\).</p>
   <ol>
-    <li>Calculer \(f'(x)\).</li>
-    <li>Résoudre \(f'(x) = 0\) et étudier le signe de \(f'(x)\).</li>
-    <li>Dresser le tableau de variations de \(f\) sur l'intervalle \([0\,;\,8]\).</li>
-    <li>Déterminer le maximum de \(f\) et la valeur de \(x\) pour laquelle il est atteint.</li>
+    <li><strong>Étape 1 — Dériver.</strong>
+      <br>Calculer \(f'(x)\). <em>Rappel :</em> la dérivée de \(-x^2\) est \(-2x\).</li>
+    <li><strong>Étape 2 — Annuler la dérivée.</strong>
+      <br>Résoudre \(f'(x) = 0\).</li>
+    <li><strong>Étape 3 — Signe de la dérivée et tableau de variations.</strong>
+      <br>Compléter : si \(x < \ldots\), \(f'(x) > 0\) (croissante) ; si \(x > \ldots\), \(f'(x) < 0\) (décroissante).
+      <br>Calculer les valeurs aux bornes : \(f(0)\), \(f(\ldots)\) (sommet), \(f(8)\).</li>
+    <li><strong>Étape 4 — Conclusion.</strong>
+      <br>Indiquer le maximum de \(f\) et la valeur de \(x\) pour laquelle il est atteint.</li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>\(f'(x) = -2x + 8\)</li>
-      <li>\(-2x+8=0 \iff x=4\).
+      <li>\(-2x+8=0 \iff x=4\).</li>
+      <li>
         <ul>
           <li>Si \(x < 4\) : \(f'(x)>0\), \(f\) croissante.</li>
           <li>Si \(x > 4\) : \(f'(x)<0\), \(f\) décroissante.</li>
         </ul>
-      </li>
-      <li>
-        Tableau de variations :
-        <ul>
-          <li>\(f(0) = -12\)</li>
-          <li>\(f\) croissante de \(x=0\) à \(x=4\)</li>
-          <li>\(f(4) = -16+32-12 = 4\)</li>
-          <li>\(f\) décroissante de \(x=4\) à \(x=8\)</li>
-          <li>\(f(8) = -64+64-12 = -12\)</li>
-        </ul>
+        Valeurs : \(f(0) = -12\), \(f(4) = -16+32-12 = 4\), \(f(8) = -64+64-12 = -12\).
       </li>
       <li>Le maximum de \(f\) est \(4\), atteint pour \(x = 4\).</li>
     </ol>
@@ -204,7 +217,7 @@
 
 <div class="exo">
   <div class="exo-num">Exercice 8</div>
-  <div class="exo-titre">Lecture graphique de la dérivée</div>
+  <div class="exo-titre">Lecture graphique de la dérivée (guidé)</div>
   <p>On donne le tableau de signes de \(f'(x)\) :</p>
   <table>
     <tr><th>\(x\)</th><td>\(-\infty\)</td><td></td><td>\(-1\)</td><td></td><td>\(2\)</td><td></td><td>\(+\infty\)</td></tr>
@@ -212,9 +225,13 @@
   </table>
   <p>On sait que \(f(-1)=5\) et \(f(2)=-4\).</p>
   <ol>
-    <li>Dresser le tableau de variations de \(f\).</li>
-    <li>Combien \(f\) admet-elle d'extremums ? Lesquels ?</li>
-    <li>L'équation \(f(x)=0\) admet-elle des solutions ? Justifier graphiquement.</li>
+    <li><strong>Étape 1 — Sens de variation.</strong>
+      <br><em>Rappel :</em> \(f' > 0 \Rightarrow f\) croissante ; \(f' < 0 \Rightarrow f\) décroissante.
+      <br>Compléter : \(f\) est croissante sur \(]-\infty\,;\,\ldots]\), décroissante sur \([\ldots\,;\,\ldots]\), croissante sur \([\ldots\,;\,+\infty[\).</li>
+    <li><strong>Étape 2 — Extremums.</strong>
+      <br>Un maximum local est un point où \(f\) passe de croissante à décroissante. Un minimum local est l'inverse. Identifier les extremums.</li>
+    <li><strong>Étape 3 — Solutions de \(f(x) = 0\).</strong>
+      <br>Le maximum vaut \(5 > 0\) et le minimum vaut \(-4 < 0\). Que peut-on en déduire ?</li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
@@ -227,12 +244,106 @@
         </ul>
       </li>
       <li>\(f\) admet un <strong>maximum local</strong> en \(x=-1\) : \(f(-1)=5\) et un <strong>minimum local</strong> en \(x=2\) : \(f(2)=-4\).</li>
-      <li>Oui. Le maximum local vaut \(5>0\) et le minimum local vaut \(-4<0\). La fonction change de signe, donc par continuité, \(f(x)=0\) admet au moins une solution entre \(-1\) et \(2\), et au moins une autre solution.</li>
+      <li>Le maximum local vaut \(5>0\) et le minimum local vaut \(-4<0\). La fonction change de signe, donc par continuité, \(f(x)=0\) admet au moins une solution entre \(-1\) et \(2\), et au moins une autre solution.</li>
     </ol>
   </div>
 </div>
 
-<!-- ═══════════════════ NIVEAU 3 ═══════════════════ -->
+</div><!-- fin diff-socle -->
+
+<!-- ═══════════════════ STANDARD ═══════════════════ -->
+
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 5</div>
+  <div class="exo-titre">Calcul de dérivées et applications</div>
+  <p>Calculer la dérivée de chacune des fonctions suivantes, puis déterminer \(f'(2)\) dans chaque cas.</p>
+  <ol>
+    <li>\(f(x) = 3x^2 - 5x + 1\)</li>
+    <li>\(g(x) = -x^3 + 6x^2 - 4\)</li>
+    <li>\(h(x) = 2x^3 + x^2 - 7x + 3\)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(f'(x) = 6x - 5\). \(f'(2) = 12 - 5 = 7\).</li>
+      <li>\(g'(x) = -3x^2 + 12x\). \(g'(2) = -12 + 24 = 12\).</li>
+      <li>\(h'(x) = 6x^2 + 2x - 7\). \(h'(2) = 24 + 4 - 7 = 21\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 6</div>
+  <div class="exo-titre">Étude des variations d'une fonction</div>
+  <p>Soit \(f(x) = -2x^2 + 12x - 10\).</p>
+  <ol>
+    <li>Calculer \(f'(x)\).</li>
+    <li>Résoudre \(f'(x) = 0\) et étudier le signe de \(f'(x)\).</li>
+    <li>Dresser le tableau de variations de \(f\) sur \([0\;;\;8]\). Calculer \(f(0)\), \(f(3)\) et \(f(8)\).</li>
+    <li>Écrire l'équation de la tangente à la courbe de \(f\) au point d'abscisse \(x = 1\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(f'(x) = -4x + 12\)</li>
+      <li>\(-4x + 12 = 0 \iff x = 3\).
+        <ul>
+          <li>Si \(x < 3\) : \(f'(x) > 0\), \(f\) est croissante.</li>
+          <li>Si \(x > 3\) : \(f'(x) < 0\), \(f\) est décroissante.</li>
+        </ul>
+      </li>
+      <li>\(f(0) = -10\), \(f(3) = -18 + 36 - 10 = 8\), \(f(8) = -128 + 96 - 10 = -42\).
+        <br>\(f\) est croissante sur \([0\;;\;3]\), puis décroissante sur \([3\;;\;8]\). Le maximum est \(8\), atteint en \(x = 3\).</li>
+      <li>\(f(1) = -2 + 12 - 10 = 0\) et \(f'(1) = -4 + 12 = 8\).
+        <br>Tangente en \(x = 1\) : \(y = 8(x - 1) + 0 = 8x - 8\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 7</div>
+  <div class="exo-titre">Optimisation du rendement — Installateur thermique</div>
+  <p>Un installateur thermique règle le débit d'eau \(x\) (en litres par minute) d'un plancher chauffant. La puissance thermique \(P\) (en watts) transmise au sol est modélisée par :</p>
+  \[P(x) = -5x^2 + 80x + 100 \quad \text{pour } x \in [0\;;\;20]\]
+  <ol>
+    <li>Calculer \(P'(x)\).</li>
+    <li>Résoudre \(P'(x) = 0\) et étudier le signe de \(P'(x)\).</li>
+    <li>Dresser le tableau de variations de \(P\) sur \([0\;;\;20]\). En déduire le débit optimal et la puissance maximale.</li>
+    <li>Le client souhaite une puissance d'au moins 400 W. Résoudre \(P(x) \geq 400\) et indiquer la plage de débits acceptables.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(P'(x) = -10x + 80\)</li>
+      <li>\(-10x + 80 = 0 \iff x = 8\).
+        <ul>
+          <li>Si \(x < 8\) : \(P'(x) > 0\), \(P\) est croissante.</li>
+          <li>Si \(x > 8\) : \(P'(x) < 0\), \(P\) est décroissante.</li>
+        </ul>
+      </li>
+      <li>\(P(0) = 100\), \(P(8) = -320 + 640 + 100 = 420\), \(P(20) = -2\,000 + 1\,600 + 100 = -300\).
+        <br>\(P\) est croissante sur \([0\;;\;8]\) puis décroissante sur \([8\;;\;20]\).
+        <br>Le débit optimal est <strong>8 L/min</strong>, pour une puissance maximale de <strong>420 W</strong>.</li>
+      <li>\(P(x) \geq 400 \iff -5x^2 + 80x + 100 \geq 400 \iff -5x^2 + 80x - 300 \geq 0 \iff x^2 - 16x + 60 \leq 0\).
+        <br>\(\Delta = 256 - 240 = 16\). \(\sqrt{\Delta} = 4\).
+        <br>\(x_1 = \dfrac{16 - 4}{2} = 6\) et \(x_2 = \dfrac{16 + 4}{2} = 10\).
+        <br>\(P(x) \geq 400\) pour \(x \in [6\;;\;10]\). Le débit doit être compris entre <strong>6 et 10 L/min</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+</div><!-- fin diff-standard -->
+
+<!-- ═══════════════════ APPROFONDISSEMENT ═══════════════════ -->
+
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
 <div class="niveau-header niv3"><span class="badge-yellow">Niveau 3</span><h2>Approfondissement</h2></div>
 
 <div class="exo">
@@ -345,9 +456,11 @@
   </div>
 </div>
 
+</div><!-- fin diff-appro -->
+
 </div>
+<script>function toggle(btn){const c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}</script>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
-<script>function toggle(btn){const c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}</script>
 </body>
 </html>

@@ -106,24 +106,31 @@
   </div>
 </div>
 
-<!-- ═══════════════════ NIVEAU 2 ═══════════════════ -->
-<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement</h2></div>
+<hr class="sep">
+
+<!-- ═══════════════════ SOCLE ═══════════════════ -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement guidé</h2></div>
 
 <div class="exo">
   <div class="exo-num">Exercice 5</div>
   <div class="exo-titre">Cuve cylindrique – Contenance</div>
   <p>Un technicien chauffagiste installe une cuve cylindrique de diamètre \(1{,}2\) m et de hauteur \(1{,}5\) m.</p>
   <ol>
-    <li>Calculer le volume de la cuve en m³ (arrondir au centième).</li>
-    <li>Convertir en litres.</li>
+    <li>Calculer le volume de la cuve en m³ (arrondir au centième).
+      <br><em>Aide : le rayon est la moitié du diamètre. On utilise \(V = \pi \times r^2 \times h\).</em></li>
+    <li>Convertir en litres.
+      <br><em>Aide : \(1\) m³ \(= 1\,000\) L.</em></li>
     <li>La cuve doit stocker au moins \(1\,500\) L d'eau. Est-ce suffisant ?</li>
-    <li>Calculer l'aire de tôle nécessaire pour fabriquer cette cuve (fond + paroi latérale, sans couvercle).</li>
+    <li>Calculer l'aire de tôle nécessaire pour fabriquer cette cuve (fond + paroi latérale, sans couvercle).
+      <br><em>Aide : aire du fond \(= \pi r^2\), aire latérale \(= 2\pi r h\). Additionner les deux.</em></li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
-      <li>\(r = 0{,}6\) m. \(V = \pi \times 0{,}6^2 \times 1{,}5 = \pi \times 0{,}36 \times 1{,}5 = 0{,}54\pi \approx 1{,}70\) m³</li>
-      <li>\(1{,}70\) m³ \(= 1\,700\) L</li>
+      <li>\(r = \dfrac{1{,}2}{2} = 0{,}6\) m. \(V = \pi \times 0{,}6^2 \times 1{,}5 = \pi \times 0{,}36 \times 1{,}5 = 0{,}54\pi \approx 1{,}70\) m³</li>
+      <li>\(1{,}70\) m³ \(= 1{,}70 \times 1\,000 = 1\,700\) L</li>
       <li>Oui, \(1\,700 > 1\,500\). La cuve est suffisante.</li>
       <li>Aire du fond : \(\pi \times 0{,}6^2 = 0{,}36\pi \approx 1{,}13\) m²
       <br>Aire latérale : \(2\pi \times 0{,}6 \times 1{,}5 = 1{,}8\pi \approx 5{,}65\) m²
@@ -137,8 +144,10 @@
   <div class="exo-titre">Pyramide à base rectangulaire</div>
   <p>Un architecte conçoit un toit en forme de pyramide à base rectangulaire de \(6\) m sur \(4\) m et de hauteur \(3\) m.</p>
   <ol>
-    <li>Calculer le volume d'air sous le toit.</li>
-    <li>Si l'on souhaite isoler ce volume avec un matériau coûtant \(12\) €/m³, quel est le coût ?</li>
+    <li>Calculer le volume d'air sous le toit.
+      <br><em>Aide : commencer par l'aire de la base rectangulaire, puis appliquer \(V = \dfrac{1}{3} \times \text{aire base} \times h\).</em></li>
+    <li>Si l'on souhaite isoler ce volume avec un matériau coûtant \(12\) €/m³, quel est le coût ?
+      <br><em>Aide : multiplier le volume par le prix au m³.</em></li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
@@ -155,9 +164,12 @@
   <div class="exo-titre">Solide composé – Silo à grain</div>
   <p>Un silo a la forme d'un cylindre surmonté d'un cône. Le cylindre a un rayon de \(3\) m et une hauteur de \(8\) m. Le cône a le même rayon et une hauteur de \(2\) m.</p>
   <ol>
-    <li>Calculer le volume du cylindre (arrondir au dixième).</li>
-    <li>Calculer le volume du cône (arrondir au dixième).</li>
-    <li>Calculer le volume total du silo.</li>
+    <li>Calculer le volume du cylindre (arrondir au dixième).
+      <br><em>Aide : \(V_{\text{cyl}} = \pi \times r^2 \times h\).</em></li>
+    <li>Calculer le volume du cône (arrondir au dixième).
+      <br><em>Aide : \(V_{\text{cône}} = \dfrac{1}{3} \times \pi \times r^2 \times h\).</em></li>
+    <li>Calculer le volume total du silo.
+      <br><em>Aide : additionner les deux volumes.</em></li>
     <li>Un mètre cube de grain pèse \(750\) kg. Quelle masse de grain le silo peut-il contenir ?</li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
@@ -176,8 +188,10 @@
   <div class="exo-titre">Aire latérale et peinture</div>
   <p>Un artisan doit peindre l'extérieur d'un réservoir cylindrique (sans le fond ni le couvercle) de rayon \(1{,}5\) m et de hauteur \(3\) m.</p>
   <ol>
-    <li>Calculer l'aire latérale du réservoir.</li>
-    <li>Un pot de peinture couvre \(10\) m². Combien de pots faut-il acheter pour deux couches ?</li>
+    <li>Calculer l'aire latérale du réservoir.
+      <br><em>Aide : aire latérale d'un cylindre \(= 2\pi r h\).</em></li>
+    <li>Un pot de peinture couvre \(10\) m². Combien de pots faut-il acheter pour deux couches ?
+      <br><em>Aide : calculer l'aire totale pour 2 couches, puis diviser par 10. Arrondir au pot supérieur.</em></li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
@@ -189,7 +203,95 @@
   </div>
 </div>
 
-<!-- ═══════════════════ NIVEAU 3 ═══════════════════ -->
+</div><!-- fin diff-socle -->
+
+<!-- ═══════════════════ STANDARD ═══════════════════ -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 5</div>
+  <div class="exo-titre">Cuve d'eau chaude – Dimensionnement</div>
+  <p>Un installateur thermique doit dimensionner une cuve cylindrique pour stocker \(2\,000\) litres d'eau chaude sanitaire. Le client impose un diamètre maximal de \(1\) m.</p>
+  <ol>
+    <li>Convertir le volume souhaité en m³.</li>
+    <li>En déduire la hauteur minimale de la cuve (arrondir au centième de mètre).</li>
+    <li>La cuve sera surmontée d'un cône de même rayon et de hauteur \(0{,}4\) m pour faciliter l'écoulement. Calculer le volume supplémentaire apporté par le cône.</li>
+    <li>Calculer le volume total de la cuve complète (cylindre + cône).</li>
+    <li>Calculer l'aire totale de tôle nécessaire (fond circulaire + paroi cylindrique + paroi conique). L'apothème du cône vaut \(g = \sqrt{0{,}5^2 + 0{,}4^2}\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(2\,000\) L \(= 2\) m³</li>
+      <li>\(r = 0{,}5\) m. \(V = \pi r^2 h \iff h = \dfrac{V}{\pi r^2} = \dfrac{2}{\pi \times 0{,}25} = \dfrac{2}{0{,}25\pi} \approx 2{,}55\) m</li>
+      <li>\(V_{\text{cône}} = \dfrac{1}{3}\pi \times 0{,}5^2 \times 0{,}4 = \dfrac{1}{3}\pi \times 0{,}1 = \dfrac{0{,}1\pi}{3} \approx 0{,}105\) m³ \(\approx 105\) L</li>
+      <li>\(V_{\text{total}} = 2 + 0{,}105 = 2{,}105\) m³ \(\approx 2\,105\) L</li>
+      <li>
+        \(g = \sqrt{0{,}25 + 0{,}16} = \sqrt{0{,}41} \approx 0{,}640\) m
+        <br>Fond : \(\pi \times 0{,}5^2 = 0{,}25\pi \approx 0{,}785\) m²
+        <br>Paroi cylindrique : \(2\pi \times 0{,}5 \times 2{,}55 = 2{,}55\pi \approx 8{,}012\) m²
+        <br>Paroi conique : \(\pi \times 0{,}5 \times 0{,}640 = 0{,}320\pi \approx 1{,}005\) m²
+        <br>Total : \(0{,}785 + 8{,}012 + 1{,}005 \approx 9{,}80\) m²
+      </li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 6</div>
+  <div class="exo-titre">Section d'un cylindre par un plan</div>
+  <p>Un charpentier doit tailler un poteau cylindrique de rayon \(10\) cm et de longueur \(2\) m. Il réalise une coupe horizontale (perpendiculaire à l'axe du cylindre) à \(60\) cm du sol.</p>
+  <ol>
+    <li>Quelle est la forme de la section obtenue ? Donner ses dimensions.</li>
+    <li>Calculer l'aire de cette section.</li>
+    <li>Il réalise ensuite une coupe verticale passant par l'axe du cylindre. Quelle est la forme de la section obtenue ? Donner ses dimensions.</li>
+    <li>Calculer l'aire de cette section rectangulaire.</li>
+    <li>Calculer le volume de la portion de poteau située sous la première coupe (entre le sol et \(60\) cm).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Une coupe perpendiculaire à l'axe d'un cylindre donne un <strong>disque</strong> de rayon \(r = 10\) cm.</li>
+      <li>\(A = \pi \times 10^2 = 100\pi \approx 314\) cm²</li>
+      <li>Une coupe par l'axe du cylindre donne un <strong>rectangle</strong> de largeur \(2r = 20\) cm et de hauteur \(200\) cm (la longueur du poteau).</li>
+      <li>\(A = 20 \times 200 = 4\,000\) cm²</li>
+      <li>\(V = \pi \times 10^2 \times 60 = 6\,000\pi \approx 18\,850\) cm³ \(\approx 18{,}85\) dm³</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 7</div>
+  <div class="exo-titre">Meuble sur mesure – Volume de rangement</div>
+  <p>Un ébéniste conçoit un meuble de rangement composé de :</p>
+  <ul>
+    <li>un caisson principal en forme de pavé droit de \(120\) cm de long, \(50\) cm de profondeur et \(80\) cm de hauteur ;</li>
+    <li>un compartiment arrondi sur le dessus en forme de demi-cylindre de même longueur et de diamètre \(50\) cm.</li>
+  </ul>
+  <ol>
+    <li>Calculer le volume du caisson principal en cm³.</li>
+    <li>Calculer le volume du demi-cylindre (arrondir à l'unité).</li>
+    <li>En déduire le volume total de rangement en litres.</li>
+    <li>Le bois utilisé (hêtre) a une masse volumique de \(0{,}70\) g/cm³. Si les parois ont une épaisseur de \(2\) cm, estimer la masse du meuble en sachant que le volume de bois est d'environ \(45\,000\) cm³.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(V_{\text{pavé}} = 120 \times 50 \times 80 = 480\,000\) cm³</li>
+      <li>\(r = \dfrac{50}{2} = 25\) cm. \(V_{\text{demi-cyl}} = \dfrac{1}{2}\pi \times 25^2 \times 120 = \dfrac{1}{2}\pi \times 625 \times 120 = 37\,500\pi \approx 117\,810\) cm³</li>
+      <li>\(V_{\text{total}} = 480\,000 + 117\,810 = 597\,810\) cm³ \(\approx 597{,}8\) L</li>
+      <li>Masse \(= 45\,000 \times 0{,}70 = 31\,500\) g \(= 31{,}5\) kg</li>
+    </ol>
+  </div>
+</div>
+
+</div><!-- fin diff-standard -->
+
+<!-- ═══════════════════ APPROFONDISSEMENT ═══════════════════ -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
 <div class="niveau-header niv3"><span class="badge-yellow">Niveau 3</span><h2>Approfondissement</h2></div>
 
 <div class="exo">
@@ -296,6 +398,8 @@
     </ol>
   </div>
 </div>
+
+</div><!-- fin diff-appro -->
 
 </div>
 <script src="../../../nav.js"></script>

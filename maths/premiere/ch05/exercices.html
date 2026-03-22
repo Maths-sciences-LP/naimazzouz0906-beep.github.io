@@ -93,51 +93,67 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════ NIVEAU 2 ══════════════════════════════════════════ -->
+<hr class="sep">
 
-<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement</h2></div>
+<!-- ══════════════════════════════════════════ SOCLE ══════════════════════════════════════════ -->
+
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement guidé</h2></div>
 
 <div class="exo">
   <div class="exo-num">Exercice 4</div>
-  <div class="exo-titre">Étude complète d'une fonction</div>
+  <div class="exo-titre">Étude complète d'une fonction (guidé)</div>
   <p>On considère la fonction \(f(x) = -x^2 + 6x - 5\).</p>
   <ol>
-    <li>Identifier \(a\), \(b\), \(c\). La parabole est-elle ouverte vers le haut ou vers le bas ?</li>
-    <li>Calculer les coordonnées du sommet.</li>
-    <li>Calculer le discriminant et les racines.</li>
-    <li>Écrire la forme factorisée de \(f\).</li>
-    <li>Dresser le tableau de signes de \(f(x)\) sur \(\mathbb{R}\).</li>
-    <li>Résoudre l'inéquation \(f(x) \geq 0\).</li>
+    <li><strong>Étape 1 — Identifier les coefficients.</strong>
+      <br>Compléter : \(a = \ldots\), \(b = \ldots\), \(c = \ldots\).
+      <br><em>Rappel :</em> si \(a > 0\), la parabole est ouverte vers le haut ; si \(a < 0\), vers le bas.</li>
+    <li><strong>Étape 2 — Calculer le sommet.</strong>
+      <br>Utiliser la formule \(x_S = \dfrac{-b}{2a}\). Calculer ensuite \(y_S = f(x_S)\).</li>
+    <li><strong>Étape 3 — Calculer le discriminant.</strong>
+      <br>Appliquer \(\Delta = b^2 - 4ac = (\ldots)^2 - 4 \times (\ldots) \times (\ldots)\).</li>
+    <li><strong>Étape 4 — Trouver les racines.</strong>
+      <br>Puisque \(\Delta > 0\), calculer \(x_1 = \dfrac{-b - \sqrt{\Delta}}{2a}\) et \(x_2 = \dfrac{-b + \sqrt{\Delta}}{2a}\).</li>
+    <li><strong>Étape 5 — Forme factorisée.</strong>
+      <br>Écrire \(f(x) = a(x - x_1)(x - x_2)\).</li>
+    <li><strong>Étape 6 — Tableau de signes et inéquation.</strong>
+      <br>Compléter le tableau de signes. En déduire les valeurs de \(x\) pour lesquelles \(f(x) \geq 0\).</li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>\(a = -1\), \(b = 6\), \(c = -5\). \(a < 0\) : parabole ouverte <strong>vers le bas</strong>.</li>
-      <li>\(x_S = \dfrac{-6}{-2} = 3\). \(f(3) = -9 + 18 - 5 = 4\). Sommet \(S(3\;;\;4)\), c'est un maximum.</li>
-      <li>\(\Delta = 36 - 20 = 16 > 0\). \(\sqrt{\Delta} = 4\).
-        <br>\(x_1 = \dfrac{-6 + 4}{-2} = 1\) et \(x_2 = \dfrac{-6 - 4}{-2} = 5\).</li>
+      <li>\(x_S = \dfrac{-6}{2 \times (-1)} = \dfrac{-6}{-2} = 3\). \(f(3) = -(3)^2 + 6(3) - 5 = -9 + 18 - 5 = 4\). Sommet \(S(3\;;\;4)\), c'est un maximum.</li>
+      <li>\(\Delta = 6^2 - 4 \times (-1) \times (-5) = 36 - 20 = 16 > 0\). \(\sqrt{\Delta} = 4\).</li>
+      <li>\(x_1 = \dfrac{-6 + 4}{-2} = \dfrac{-2}{-2} = 1\) et \(x_2 = \dfrac{-6 - 4}{-2} = \dfrac{-10}{-2} = 5\).</li>
       <li>\(f(x) = -(x-1)(x-5)\).</li>
       <li>
         <table class="full" style="text-align:center">
           <tr><th>\(x\)</th><td>\(-\infty\)</td><td></td><td>\(1\)</td><td></td><td>\(5\)</td><td></td><td>\(+\infty\)</td></tr>
           <tr><th>Signe de \(f(x)\)</th><td></td><td>\(-\)</td><td>\(0\)</td><td>\(+\)</td><td>\(0\)</td><td>\(-\)</td><td></td></tr>
         </table>
-        (\(a < 0\) : négatif à l'extérieur des racines, positif entre les racines.)
+        \(a < 0\) : négatif à l'extérieur des racines, positif entre les racines.
+        <br>\(f(x) \geq 0\) pour \(x \in [1\;;\;5]\).
       </li>
-      <li>\(f(x) \geq 0\) pour \(x \in [1\;;\;5]\).</li>
     </ol>
   </div>
 </div>
 
 <div class="exo">
   <div class="exo-num">Exercice 5</div>
-  <div class="exo-titre">Arche de pont — Charpentier</div>
+  <div class="exo-titre">Arche de pont — Charpentier (guidé)</div>
   <p>Un charpentier conçoit une arche de pont dont le profil est modélisé par \(h(x) = -0{,}5x^2 + 3x\) où \(x\) est la distance horizontale (en mètres) et \(h(x)\) la hauteur (en mètres).</p>
   <ol>
-    <li>Déterminer les points où l'arche touche le sol (\(h(x) = 0\)).</li>
-    <li>Quelle est la largeur de l'arche au sol ?</li>
-    <li>Calculer la hauteur maximale de l'arche.</li>
-    <li>Un bateau de 3 m de large (centré sous l'arche) et de 3,5 m de haut peut-il passer ?</li>
+    <li><strong>Étape 1 — Points au sol.</strong>
+      <br>Résoudre \(h(x) = 0\). Factoriser : \(-0{,}5x^2 + 3x = x(\ldots) = 0\).</li>
+    <li><strong>Étape 2 — Largeur.</strong>
+      <br>La largeur au sol est la distance entre les deux solutions trouvées à l'étape 1.</li>
+    <li><strong>Étape 3 — Hauteur maximale.</strong>
+      <br>Calculer \(x_S = \dfrac{-b}{2a}\) avec \(a = -0{,}5\) et \(b = 3\), puis \(h(x_S)\).</li>
+    <li><strong>Étape 4 — Le bateau passe-t-il ?</strong>
+      <br>Un bateau de 3 m de large (centré sous l'arche) et de 3,5 m de haut veut passer. Ses bords sont en \(x = 1{,}5\) et \(x = 4{,}5\). Calculer \(h(1{,}5)\) et comparer à 3,5.</li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
@@ -149,7 +165,6 @@
         <br>La hauteur maximale est de <strong>4,5 mètres</strong>.</li>
       <li>Le bateau (3 m de large) est centré en \(x = 3\), donc ses bords sont en \(x = 1{,}5\) et \(x = 4{,}5\).
         <br>\(h(1{,}5) = -0{,}5(2{,}25) + 4{,}5 = -1{,}125 + 4{,}5 = 3{,}375\) m.
-        <br>\(h(4{,}5) = -0{,}5(20{,}25) + 13{,}5 = -10{,}125 + 13{,}5 = 3{,}375\) m.
         <br>Comme \(3{,}375 < 3{,}5\), le bateau <strong>ne passe pas</strong> sous l'arche (il manque 12,5 cm).</li>
     </ol>
   </div>
@@ -157,28 +172,126 @@
 
 <div class="exo">
   <div class="exo-num">Exercice 6</div>
-  <div class="exo-titre">Bénéfice d'un artisan menuisier</div>
+  <div class="exo-titre">Bénéfice d'un artisan menuisier (guidé)</div>
   <p>Un artisan menuisier fabrique des tables en bois massif. Le bénéfice pour la fabrication de \(x\) tables par mois est modélisé par :</p>
   <p style="text-align:center">\(B(x) = -3x^2 + 48x - 180\)</p>
   <ol>
-    <li>Calculer le discriminant et déterminer les valeurs de \(x\) pour lesquelles \(B(x) = 0\).</li>
-    <li>Pour combien de tables l'artisan est-il rentable ?</li>
-    <li>Quel est le nombre de tables qui maximise le bénéfice ? Quel est ce bénéfice maximal ?</li>
+    <li><strong>Étape 1 — Identifier les coefficients.</strong>
+      <br>Compléter : \(a = \ldots\), \(b = \ldots\), \(c = \ldots\).</li>
+    <li><strong>Étape 2 — Discriminant et racines.</strong>
+      <br>Calculer \(\Delta = b^2 - 4ac\). Puis les racines \(x_1\) et \(x_2\).</li>
+    <li><strong>Étape 3 — Rentabilité.</strong>
+      <br><em>Rappel :</em> si \(a < 0\), \(B(x) \geq 0\) entre les racines. En déduire pour combien de tables l'artisan est rentable.</li>
+    <li><strong>Étape 4 — Bénéfice maximal.</strong>
+      <br>Calculer \(x_S = \dfrac{-b}{2a}\) et \(B(x_S)\).</li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
-      <li>\(a = -3\), \(b = 48\), \(c = -180\).
-        <br>\(\Delta = 48^2 - 4 \times (-3) \times (-180) = 2\,304 - 2\,160 = 144\). \(\sqrt{\Delta} = 12\).
+      <li>\(a = -3\), \(b = 48\), \(c = -180\).</li>
+      <li>\(\Delta = 48^2 - 4 \times (-3) \times (-180) = 2\,304 - 2\,160 = 144\). \(\sqrt{\Delta} = 12\).
         <br>\(x_1 = \dfrac{-48 + 12}{-6} = \dfrac{-36}{-6} = 6\) et \(x_2 = \dfrac{-48 - 12}{-6} = \dfrac{-60}{-6} = 10\).</li>
       <li>\(a < 0\), donc \(B(x) \geq 0\) entre les racines : l'artisan est rentable pour \(x \in [6\;;\;10]\), soit entre <strong>6 et 10 tables</strong> par mois.</li>
       <li>\(x_S = \dfrac{-48}{2 \times (-3)} = \dfrac{-48}{-6} = 8\). \(B(8) = -3(64) + 48(8) - 180 = -192 + 384 - 180 = 12\) €.
-        <br>Le bénéfice maximal est de <strong>12 €</strong>, atteint pour 8 tables.</li>
+        <br>Le bénéfice maximal est de <strong>12 euros</strong>, atteint pour 8 tables.</li>
     </ol>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════ NIVEAU 3 ══════════════════════════════════════════ -->
+</div><!-- fin diff-socle -->
+
+<!-- ══════════════════════════════════════════ STANDARD ══════════════════════════════════════════ -->
+
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 4</div>
+  <div class="exo-titre">Coefficients, sommet et allure de la parabole</div>
+  <p>On considère la fonction \(f(x) = 2x^2 - 8x + 3\).</p>
+  <ol>
+    <li>Identifier les coefficients \(a\), \(b\) et \(c\). La parabole est-elle ouverte vers le haut ou vers le bas ?</li>
+    <li>Calculer les coordonnées du sommet \(S\) de la parabole.</li>
+    <li>Le sommet correspond-il à un minimum ou un maximum ? Justifier.</li>
+    <li>Calculer \(f(0)\) et \(f(4)\). Placer les points \((0\;;\;f(0))\), \(S\) et \((4\;;\;f(4))\) dans un repère et tracer l'allure de la parabole.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(a = 2\), \(b = -8\), \(c = 3\). \(a = 2 > 0\) : la parabole est ouverte <strong>vers le haut</strong>.</li>
+      <li>\(x_S = \dfrac{-(-8)}{2 \times 2} = \dfrac{8}{4} = 2\). \(f(2) = 2(4) - 8(2) + 3 = 8 - 16 + 3 = -5\).
+        <br>Sommet \(S(2\;;\;-5)\).</li>
+      <li>\(a > 0\), donc le sommet correspond à un <strong>minimum</strong> : la valeur minimale de \(f\) est \(-5\), atteinte en \(x = 2\).</li>
+      <li>\(f(0) = 3\) et \(f(4) = 2(16) - 32 + 3 = 3\).
+        <br>On place \((0\;;\;3)\), \(S(2\;;\;-5)\) et \((4\;;\;3)\). La parabole descend jusqu'au sommet puis remonte (forme en U).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 5</div>
+  <div class="exo-titre">Racines, forme factorisée et étude de signe</div>
+  <p>On considère la fonction \(g(x) = x^2 - 2x - 8\).</p>
+  <ol>
+    <li>Calculer le discriminant \(\Delta\).</li>
+    <li>En déduire les racines de \(g\).</li>
+    <li>Écrire la forme factorisée de \(g(x)\).</li>
+    <li>Dresser le tableau de signes de \(g(x)\) sur \(\mathbb{R}\).</li>
+    <li>Résoudre l'inéquation \(g(x) \leq 0\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\Delta = (-2)^2 - 4 \times 1 \times (-8) = 4 + 32 = 36\). \(\sqrt{\Delta} = 6\).</li>
+      <li>\(x_1 = \dfrac{2 - 6}{2} = \dfrac{-4}{2} = -2\) et \(x_2 = \dfrac{2 + 6}{2} = \dfrac{8}{2} = 4\).</li>
+      <li>\(g(x) = (x + 2)(x - 4)\).</li>
+      <li>
+        <table class="full" style="text-align:center">
+          <tr><th>\(x\)</th><td>\(-\infty\)</td><td></td><td>\(-2\)</td><td></td><td>\(4\)</td><td></td><td>\(+\infty\)</td></tr>
+          <tr><th>Signe de \(g(x)\)</th><td></td><td>\(+\)</td><td>\(0\)</td><td>\(-\)</td><td>\(0\)</td><td>\(+\)</td><td></td></tr>
+        </table>
+        \(a = 1 > 0\) : positif à l'extérieur des racines, négatif entre les racines.
+      </li>
+      <li>\(g(x) \leq 0\) pour \(x \in [-2\;;\;4]\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 6</div>
+  <div class="exo-titre">Optimisation d'une surface de vitrine — Menuisier agenceur</div>
+  <p>Un menuisier agenceur conçoit une vitrine rectangulaire dont le cadre utilise 20 mètres de profilé aluminium (périmètre = 20 m). Il souhaite maximiser la surface vitrée.</p>
+  <ol>
+    <li>On note \(x\) la largeur de la vitrine (en mètres). Exprimer la hauteur en fonction de \(x\) et montrer que la surface est \(S(x) = -x^2 + 10x\).</li>
+    <li>Calculer le discriminant de \(S(x) = 0\) et en déduire les valeurs de \(x\) pour lesquelles la surface est nulle.</li>
+    <li>Calculer les coordonnées du sommet. Quelles dimensions donnent la surface maximale ?</li>
+    <li>Le client souhaite une vitrine d'au moins 24 m². Est-ce possible ? Résoudre \(S(x) \geq 24\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Périmètre : \(2(x + h) = 20\), soit \(h = 10 - x\).
+        <br>Surface : \(S(x) = x(10 - x) = 10x - x^2 = -x^2 + 10x\) (avec \(0 < x < 10\)).</li>
+      <li>\(S(x) = 0 \iff -x^2 + 10x = 0 \iff x(-x + 10) = 0\), soit \(x = 0\) ou \(x = 10\).
+        <br>(On peut aussi calculer \(\Delta = 100 - 0 = 100\), \(\sqrt{\Delta} = 10\), mêmes racines.)</li>
+      <li>\(x_S = \dfrac{-10}{2 \times (-1)} = \dfrac{-10}{-2} = 5\). \(S(5) = -(25) + 50 = 25\) m².
+        <br>La surface maximale est de <strong>25 m²</strong>, obtenue pour une vitrine carrée de <strong>5 m sur 5 m</strong>.</li>
+      <li>\(S(x) \geq 24 \iff -x^2 + 10x - 24 \geq 0 \iff x^2 - 10x + 24 \leq 0\).
+        <br>\(\Delta = 100 - 96 = 4\). \(\sqrt{\Delta} = 2\).
+        <br>\(x_1 = \dfrac{10 - 2}{2} = 4\) et \(x_2 = \dfrac{10 + 2}{2} = 6\).
+        <br>\(S(x) \geq 24\) pour \(x \in [4\;;\;6]\). Oui, c'est possible : la largeur doit être comprise entre <strong>4 m et 6 m</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+</div><!-- fin diff-standard -->
+
+<!-- ══════════════════════════════════════════ APPROFONDISSEMENT ══════════════════════════════════════════ -->
+
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
 
 <div class="niveau-header niv3"><span class="badge-yellow">Niveau 3</span><h2>Approfondissement</h2></div>
 
@@ -264,6 +377,8 @@
     </ol>
   </div>
 </div>
+
+</div><!-- fin diff-appro -->
 
 </div>
 

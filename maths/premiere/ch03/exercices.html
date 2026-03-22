@@ -94,18 +94,30 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════ NIVEAU 2 ══════════════════════════════════════════ -->
+<hr class="sep">
 
-<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement</h2></div>
+<!-- ══════════════════════════════════════════ SOCLE ══════════════════════════════════════════ -->
+
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement guidé</h2></div>
 
 <div class="exo">
   <div class="exo-num">Exercice 4</div>
   <div class="exo-titre">Somme des termes d'une suite arithmétique</div>
   <p>Un artisan carreleur pose des carreaux en formant un motif triangulaire. La première rangée contient 2 carreaux, la deuxième en contient 5, la troisième 8, et ainsi de suite.</p>
   <ol>
-    <li>Montrer que le nombre de carreaux par rangée forme une suite arithmétique. Préciser \(u_1\) et \(r\).</li>
-    <li>Combien de carreaux y a-t-il à la 10<sup>e</sup> rangée ?</li>
-    <li>Calculer le nombre total de carreaux nécessaires pour réaliser un motif de 10 rangées.</li>
+    <li>Montrer que le nombre de carreaux par rangée forme une suite arithmétique. Préciser \(u_1\) et \(r\).
+      <div class="meth"><strong>Étape 1 :</strong> Calculer les différences entre termes consécutifs : \(u_2 - u_1 = \ldots\) et \(u_3 - u_2 = \ldots\)<br>
+      <strong>Étape 2 :</strong> Si les différences sont égales, la suite est arithmétique. La raison \(r\) est cette différence constante.</div>
+    </li>
+    <li>Combien de carreaux y a-t-il à la 10<sup>e</sup> rangée ?
+      <div class="meth"><strong>Aide :</strong> Utiliser la formule \(u_n = u_1 + (n-1) \times r\) avec \(n = 10\).</div>
+    </li>
+    <li>Calculer le nombre total de carreaux nécessaires pour réaliser un motif de 10 rangées.
+      <div class="meth"><strong>Aide :</strong> Utiliser la formule de la somme : \(S = \text{nombre de termes} \times \dfrac{\text{premier terme} + \text{dernier terme}}{2}\).<br>Ici : nombre de termes = 10, premier terme = \(u_1\), dernier terme = \(u_{10}\).</div>
+    </li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
@@ -123,9 +135,19 @@
   <div class="exo-titre">Salaire progressif</div>
   <p>Un menuisier agenceur débute avec un salaire mensuel net de 1 450 €. Son employeur lui garantit une augmentation de 35 € par mois chaque année.</p>
   <ol>
-    <li>Modéliser le salaire annuel \(S_n\) (en euros) en fonction de l'année \(n\), avec \(n = 0\) l'année d'embauche.</li>
-    <li>Quel sera son salaire mensuel au bout de 10 ans ?</li>
-    <li>Au bout de combien d'années son salaire dépassera-t-il 2 000 € par mois ?</li>
+    <li>Modéliser le salaire annuel \(S_n\) (en euros) en fonction de l'année \(n\), avec \(n = 0\) l'année d'embauche.
+      <div class="meth"><strong>Étape 1 :</strong> Identifier le premier terme : \(S_0 = \ldots\) €.<br>
+      <strong>Étape 2 :</strong> Identifier la raison : chaque année on ajoute \(r = \ldots\) €.<br>
+      <strong>Étape 3 :</strong> Écrire la formule : \(S_n = S_0 + r \times n\).</div>
+    </li>
+    <li>Quel sera son salaire mensuel au bout de 10 ans ?
+      <div class="meth"><strong>Aide :</strong> Remplacer \(n\) par 10 dans la formule trouvée à la question 1.</div>
+    </li>
+    <li>Au bout de combien d'années son salaire dépassera-t-il 2 000 € par mois ?
+      <div class="meth"><strong>Étape 1 :</strong> Écrire l'inéquation : \(S_n > 2\,000\).<br>
+      <strong>Étape 2 :</strong> Remplacer \(S_n\) par la formule et isoler \(n\).<br>
+      <strong>Étape 3 :</strong> Arrondir à l'entier supérieur (on ne peut pas travailler une fraction d'année).</div>
+    </li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
@@ -145,10 +167,19 @@
   <div class="exo-titre">Dépréciation d'un véhicule</div>
   <p>Un artisan achète un utilitaire neuf à 25 000 €. Chaque année, sa valeur diminue de 15 %.</p>
   <ol>
-    <li>Justifier que la valeur du véhicule forme une suite géométrique. Préciser \(v_0\) et \(q\).</li>
-    <li>Exprimer \(v_n\) en fonction de \(n\).</li>
-    <li>Calculer la valeur du véhicule au bout de 5 ans (arrondir à l'euro).</li>
-    <li>Au bout de combien d'années la valeur sera-t-elle inférieure à 10 000 € ? (Tester des valeurs.)</li>
+    <li>Justifier que la valeur du véhicule forme une suite géométrique. Préciser \(v_0\) et \(q\).
+      <div class="meth"><strong>Étape 1 :</strong> Diminuer de 15 %, c'est multiplier par \(1 - 0{,}15 = \ldots\)<br>
+      <strong>Étape 2 :</strong> Si on multiplie toujours par le même nombre, la suite est géométrique. Ce nombre est la raison \(q\).</div>
+    </li>
+    <li>Exprimer \(v_n\) en fonction de \(n\).
+      <div class="meth"><strong>Aide :</strong> Formule du terme général : \(v_n = v_0 \times q^n\).</div>
+    </li>
+    <li>Calculer la valeur du véhicule au bout de 5 ans (arrondir à l'euro).
+      <div class="meth"><strong>Aide :</strong> Remplacer \(n\) par 5 dans la formule. Utiliser la calculatrice pour \(0{,}85^5\).</div>
+    </li>
+    <li>Au bout de combien d'années la valeur sera-t-elle inférieure à 10 000 € ? (Tester des valeurs.)
+      <div class="meth"><strong>Aide :</strong> Calculer \(v_5\), \(v_6\), \(v_7\)... jusqu'à trouver une valeur inférieure à 10 000.</div>
+    </li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
@@ -169,10 +200,18 @@
   <div class="exo-titre">Suite géométrique — Population bactérienne</div>
   <p>Dans un laboratoire de contrôle sanitaire, on observe une population de bactéries. Au temps \(t = 0\), on compte 500 bactéries. La population double toutes les heures.</p>
   <ol>
-    <li>Quelle est la nature de la suite \((u_n)\) représentant le nombre de bactéries à l'heure \(n\) ?</li>
-    <li>Exprimer \(u_n\) en fonction de \(n\).</li>
-    <li>Combien de bactéries y aura-t-il au bout de 8 heures ?</li>
-    <li>Au bout de combien d'heures la population dépassera-t-elle 100 000 ? (Tester des valeurs.)</li>
+    <li>Quelle est la nature de la suite \((u_n)\) représentant le nombre de bactéries à l'heure \(n\) ?
+      <div class="meth"><strong>Aide :</strong> « Doubler » signifie multiplier par \(\ldots\) À chaque heure, on multiplie par le même nombre : la suite est donc \(\ldots\)</div>
+    </li>
+    <li>Exprimer \(u_n\) en fonction de \(n\).
+      <div class="meth"><strong>Aide :</strong> Utiliser \(u_n = u_0 \times q^n\) avec \(u_0 = 500\) et \(q = 2\).</div>
+    </li>
+    <li>Combien de bactéries y aura-t-il au bout de 8 heures ?
+      <div class="meth"><strong>Aide :</strong> Calculer \(2^8\) puis multiplier par 500.</div>
+    </li>
+    <li>Au bout de combien d'heures la population dépassera-t-elle 100 000 ? (Tester des valeurs.)
+      <div class="meth"><strong>Aide :</strong> Calculer \(u_7\), \(u_8\)... et comparer à 100 000.</div>
+    </li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
@@ -188,7 +227,105 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════ NIVEAU 3 ══════════════════════════════════════════ -->
+</div><!-- fin diff-socle -->
+
+<!-- ══════════════════════════════════════════ STANDARD ══════════════════════════════════════════ -->
+
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 4</div>
+  <div class="exo-titre">Évolution salariale d'un installateur thermique</div>
+  <p>Un installateur thermique est embauché avec un salaire mensuel net de 1 520 €. Son employeur lui propose une augmentation annuelle de 45 € par mois.</p>
+  <p>On note \(S_n\) le salaire mensuel à l'année \(n\), avec \(S_0 = 1\,520\).</p>
+  <ol>
+    <li>Justifier que \((S_n)\) est une suite arithmétique. Préciser le premier terme et la raison.</li>
+    <li>Exprimer \(S_n\) en fonction de \(n\).</li>
+    <li>Calculer le salaire mensuel au bout de 8 ans.</li>
+    <li>Au bout de combien d'années le salaire dépassera-t-il 2 200 € ?</li>
+    <li>Calculer le total des salaires mensuels perçus sur les 10 premières années (de \(n = 0\) à \(n = 9\)).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Chaque année, le salaire augmente de 45 € : \(S_{n+1} = S_n + 45\). La suite est <strong>arithmétique</strong> de premier terme \(S_0 = 1\,520\) et de raison \(r = 45\).</li>
+      <li>\(S_n = S_0 + n \times r = 1\,520 + 45n\).</li>
+      <li>\(S_8 = 1\,520 + 45 \times 8 = 1\,520 + 360 = 1\,880\) €.</li>
+      <li>On résout \(S_n > 2\,200\) :
+        \[1\,520 + 45n > 2\,200 \implies 45n > 680 \implies n > \dfrac{680}{45} \approx 15{,}1\]
+        Le salaire dépassera 2 200 € à partir de la <strong>16<sup>e</sup> année</strong> (soit \(n = 16\), \(S_{16} = 1\,520 + 720 = 2\,240\) €).</li>
+      <li>Somme des 10 premiers termes (de \(n = 0\) à \(n = 9\)) :
+        \[S = 10 \times \dfrac{S_0 + S_9}{2} = 10 \times \dfrac{1\,520 + 1\,925}{2} = 10 \times 1\,722{,}5 = 17\,225 \text{ €.}\]</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 5</div>
+  <div class="exo-titre">Dépréciation du matériel d'un ébéniste</div>
+  <p>Un ébéniste achète une défonceuse numérique à 8 500 €. La valeur de cette machine perd 12 % par an.</p>
+  <p>On note \(V_n\) la valeur de la machine au bout de \(n\) années, avec \(V_0 = 8\,500\).</p>
+  <ol>
+    <li>Justifier que \((V_n)\) est une suite géométrique. Préciser \(V_0\) et la raison \(q\).</li>
+    <li>Exprimer \(V_n\) en fonction de \(n\).</li>
+    <li>Calculer la valeur de la machine après 4 ans (arrondir à l'euro).</li>
+    <li>L'ébéniste souhaite revendre la machine quand sa valeur passe sous 3 000 €. Au bout de combien d'années cela se produit-il ? (Tester des valeurs successives.)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Chaque année, la valeur est multipliée par \(1 - 0{,}12 = 0{,}88\). La suite est <strong>géométrique</strong> de premier terme \(V_0 = 8\,500\) et de raison \(q = 0{,}88\).</li>
+      <li>\(V_n = 8\,500 \times 0{,}88^n\).</li>
+      <li>\(V_4 = 8\,500 \times 0{,}88^4 = 8\,500 \times 0{,}5997... \approx 5\,097\) €.</li>
+      <li>On teste les valeurs successives :
+        <br>\(V_7 = 8\,500 \times 0{,}88^7 \approx 8\,500 \times 0{,}4087 \approx 3\,474\) € (encore au-dessus)
+        <br>\(V_8 = 8\,500 \times 0{,}88^8 \approx 8\,500 \times 0{,}3596 \approx 3\,057\) € (encore au-dessus)
+        <br>\(V_9 = 8\,500 \times 0{,}88^9 \approx 8\,500 \times 0{,}3165 \approx 2\,690\) € (inférieur à 3 000)
+        <br>La valeur passe sous 3 000 € au bout de <strong>9 ans</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 6</div>
+  <div class="exo-titre">Placement financier d'un menuisier</div>
+  <p>Un menuisier place 5 000 € sur un compte rémunéré à 2,5 % par an (intérêts composés). Il ne fait aucun retrait ni versement supplémentaire.</p>
+  <p>On note \(C_n\) le capital disponible au bout de \(n\) années, avec \(C_0 = 5\,000\).</p>
+  <ol>
+    <li>Justifier que \(C_{n+1} = C_n \times 1{,}025\). En déduire la nature de la suite \((C_n)\).</li>
+    <li>Exprimer \(C_n\) en fonction de \(n\).</li>
+    <li>Calculer le capital au bout de 6 ans (arrondir au centime).</li>
+    <li>Calculer le montant des intérêts produits en 6 ans.</li>
+    <li>Au bout de combien d'années le capital aura-t-il doublé ? (Tester des valeurs.)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Chaque année, le capital est augmenté de 2,5 %, donc multiplié par \(1 + 0{,}025 = 1{,}025\) :
+        <br>\(C_{n+1} = C_n \times 1{,}025\).
+        <br>La suite est <strong>géométrique</strong> de premier terme \(C_0 = 5\,000\) et de raison \(q = 1{,}025\).</li>
+      <li>\(C_n = 5\,000 \times 1{,}025^n\).</li>
+      <li>\(C_6 = 5\,000 \times 1{,}025^6 = 5\,000 \times 1{,}15969... \approx 5\,798{,}47\) €.</li>
+      <li>Intérêts = \(C_6 - C_0 = 5\,798{,}47 - 5\,000 = 798{,}47\) €.</li>
+      <li>On cherche \(n\) tel que \(C_n \geqslant 10\,000\), soit \(5\,000 \times 1{,}025^n \geqslant 10\,000\), c'est-à-dire \(1{,}025^n \geqslant 2\).
+        <br>On teste :
+        <br>\(1{,}025^{27} \approx 1{,}9478 < 2\)
+        <br>\(1{,}025^{28} \approx 1{,}9965 < 2\)
+        <br>\(1{,}025^{29} \approx 2{,}0464 > 2\)
+        <br>Le capital aura doublé au bout de <strong>29 ans</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+</div><!-- fin diff-standard -->
+
+<!-- ══════════════════════════════════════════ APPROFONDISSEMENT ══════════════════════════════════════════ -->
+
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
 
 <div class="niveau-header niv3"><span class="badge-yellow">Niveau 3</span><h2>Approfondissement</h2></div>
 
@@ -331,6 +468,8 @@
     </ol>
   </div>
 </div>
+
+</div><!-- fin diff-appro -->
 
 </div>
 

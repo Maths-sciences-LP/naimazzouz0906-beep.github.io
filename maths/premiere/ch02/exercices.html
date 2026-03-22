@@ -93,9 +93,15 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════ NIVEAU 2 ══════════════════════════════════════════ -->
+<hr class="sep">
 
-<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement</h2></div>
+<!-- ══════════════════════════════════════════════════════
+     NIVEAU SOCLE — Exercices très guidés
+══════════════════════════════════════════════════════ -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement guidé</h2></div>
 
 <div class="exo">
   <div class="exo-num">Exercice 4</div>
@@ -109,16 +115,20 @@
   </table>
   <p>On choisit un client au hasard.</p>
   <ol>
-    <li>Quelle est la probabilité qu'il soit satisfait ?</li>
-    <li>Quelle est la probabilité qu'il ait commandé un placard ?</li>
-    <li>Quelle est la probabilité qu'il soit satisfait <strong>et</strong> ait commandé une cuisine ?</li>
-    <li>Quelle est la probabilité qu'il soit non satisfait <strong>ou</strong> ait commandé une terrasse ?</li>
+    <li><strong>Étape 1 :</strong> Repérer dans le tableau le nombre total de clients satisfaits. Compléter : il y a … clients satisfaits sur … clients au total.
+      <br>Calculer \(P(\text{satisfait}) = \dfrac{\ldots}{\ldots}\).</li>
+    <li><strong>Étape 2 :</strong> Repérer la colonne « Placard ». Combien de clients ont commandé un placard au total ?
+      <br>Calculer \(P(\text{placard}) = \dfrac{\ldots}{\ldots}\).</li>
+    <li><strong>Étape 3 :</strong> Pour « satisfait <strong>et</strong> cuisine », chercher la case à l'intersection de la ligne « Satisfait » et de la colonne « Cuisine ».
+      <br>Calculer \(P(\text{satisfait et cuisine}) = \dfrac{\ldots}{\ldots}\).</li>
+    <li><strong>Étape 4 :</strong> Pour « non satisfait <strong>ou</strong> terrasse », utiliser la formule \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\).
+      <br>Aide : \(P(\text{non satisfait}) = \dfrac{60}{200}\), \(P(\text{terrasse}) = \dfrac{60}{200}\), \(P(\text{non satisfait et terrasse}) = \dfrac{\ldots}{200}\).</li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
-      <li>\(P(\text{satisfait}) = \dfrac{140}{200} = 0{,}70\).</li>
-      <li>\(P(\text{placard}) = \dfrac{60}{200} = 0{,}30\).</li>
+      <li>Il y a 140 clients satisfaits sur 200 au total. \(P(\text{satisfait}) = \dfrac{140}{200} = 0{,}70\).</li>
+      <li>60 clients ont commandé un placard. \(P(\text{placard}) = \dfrac{60}{200} = 0{,}30\).</li>
       <li>\(P(\text{satisfait et cuisine}) = \dfrac{60}{200} = 0{,}30\).</li>
       <li>On utilise la formule : \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\).
         <br>\(P(\text{non satisfait}) = \dfrac{60}{200} = 0{,}30\), \(P(\text{terrasse}) = \dfrac{60}{200} = 0{,}30\), \(P(\text{non satisfait et terrasse}) = \dfrac{25}{200} = 0{,}125\).
@@ -133,9 +143,13 @@
   <p>Dans un magasin de bricolage, on classe les clients selon leur achat principal : peinture (P), bois (B), outillage (O) ou quincaillerie (Q). Les probabilités sont :</p>
   <p>\(P(\text{P}) = 0{,}25\), \(P(\text{B}) = 0{,}30\), \(P(\text{O}) = 0{,}20\), \(P(\text{Q}) = 0{,}25\).</p>
   <ol>
-    <li>Vérifier que la somme des probabilités vaut bien 1.</li>
-    <li>Calculer la probabilité qu'un client achète de la peinture ou du bois.</li>
-    <li>Calculer la probabilité qu'un client n'achète ni peinture ni outillage.</li>
+    <li><strong>Étape 1 :</strong> Additionner toutes les probabilités : \(0{,}25 + 0{,}30 + 0{,}20 + 0{,}25 = \ldots\). La somme vaut-elle 1 ?</li>
+    <li><strong>Étape 2 :</strong> Un client ne peut avoir qu'un seul achat principal. Les événements « peinture » et « bois » sont donc <strong>incompatibles</strong>.
+      <br>Rappel : si \(A\) et \(B\) sont incompatibles, \(P(A \cup B) = P(A) + P(B)\).
+      <br>Calculer \(P(\text{P} \cup \text{B}) = \ldots + \ldots = \ldots\).</li>
+    <li><strong>Étape 3 :</strong> « Ni peinture ni outillage » est le <strong>contraire</strong> de « peinture ou outillage ».
+      <br>D'abord calculer \(P(\text{P} \cup \text{O}) = \ldots + \ldots = \ldots\).
+      <br>Puis utiliser \(P(\overline{\text{P} \cup \text{O}}) = 1 - P(\text{P} \cup \text{O}) = \ldots\).</li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
@@ -159,10 +173,14 @@
     <li>Si la pièce n'a pas de défaut de dimension, la probabilité d'avoir un défaut d'aspect est \(0{,}05\).</li>
   </ul>
   <ol>
-    <li>Construire l'arbre de probabilités.</li>
-    <li>Calculer la probabilité qu'une pièce ait les deux défauts.</li>
-    <li>Calculer la probabilité qu'une pièce ait un défaut d'aspect.</li>
-    <li>Calculer la probabilité qu'une pièce n'ait aucun défaut.</li>
+    <li><strong>Étape 1 :</strong> Compléter les branches de l'arbre. La première branche se sépare en D (probabilité \(0{,}10\)) et \(\bar{D}\) (probabilité \(1 - 0{,}10 = \ldots\)).</li>
+    <li><strong>Étape 2 :</strong> Pour « les deux défauts », on multiplie le long de la branche D puis A :
+      <br>\(P(D \cap A) = P(D) \times P(A|D) = 0{,}10 \times 0{,}30 = \ldots\).</li>
+    <li><strong>Étape 3 :</strong> Pour trouver \(P(A)\), additionner les deux chemins menant à A :
+      <br>\(P(A) = P(D \cap A) + P(\bar{D} \cap A) = \ldots + 0{,}90 \times 0{,}05 = \ldots\).</li>
+    <li><strong>Étape 4 :</strong> Pour « aucun défaut », on suit la branche \(\bar{D}\) puis \(\bar{A}\) :
+      <br>\(P(\bar{D} \cap \bar{A}) = 0{,}90 \times \ldots = \ldots\).
+      <br>Vérification : la somme des 4 probabilités aux bouts de l'arbre doit valoir 1.</li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
@@ -226,10 +244,10 @@
   </table>
   <p>On choisit une commande au hasard.</p>
   <ol>
-    <li>Calculer \(P(\text{conforme})\).</li>
-    <li>Calculer \(P(\text{bois massif})\).</li>
-    <li>Calculer \(P(\text{non conforme et contreplaqué})\).</li>
-    <li>Parmi les commandes de bois massif, quelle proportion est conforme ?</li>
+    <li><strong>Étape 1 :</strong> Repérer le nombre total de commandes conformes dans la ligne « Total ». Calculer \(P(\text{conforme}) = \dfrac{\ldots}{200}\).</li>
+    <li><strong>Étape 2 :</strong> Combien de commandes de bois massif au total ? Calculer \(P(\text{bois massif}) = \dfrac{\ldots}{200}\).</li>
+    <li><strong>Étape 3 :</strong> Pour « non conforme et contreplaqué », chercher la case à l'intersection. Calculer \(P(\text{non conforme et contreplaqué}) = \dfrac{\ldots}{200}\).</li>
+    <li><strong>Étape 4 :</strong> On se restreint aux commandes de bois massif uniquement (80 commandes). Parmi elles, combien sont conformes ? Calculer la proportion : \(\dfrac{\ldots}{80}\).</li>
   </ol>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
@@ -241,6 +259,126 @@
     </ol>
   </div>
 </div>
+
+</div><!-- fin diff-socle -->
+
+<hr class="sep">
+
+<!-- ══════════════════════════════════════════════════════
+     NIVEAU STANDARD — Exercices classiques du programme
+══════════════════════════════════════════════════════ -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<div class="niveau-header niv3"><span class="badge-blue">Niveau 3</span><h2>Exercices d'entraînement</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice S1</div>
+  <div class="exo-titre">Commande de panneaux — Menuisier agenceur</div>
+  <p>Un menuisier agenceur commande des panneaux de mélaminé auprès de deux fournisseurs. Le fournisseur F1 fournit 70 % des panneaux et le fournisseur F2 fournit le reste. Parmi les panneaux du fournisseur F1, 4 % présentent un défaut de surface. Parmi ceux du fournisseur F2, 7 % présentent un défaut de surface.</p>
+  <ol>
+    <li>Quelle est la probabilité qu'un panneau provienne du fournisseur F2 ?</li>
+    <li>Construire un arbre de probabilités représentant cette situation.</li>
+    <li>Calculer la probabilité qu'un panneau choisi au hasard provienne de F1 et présente un défaut de surface.</li>
+    <li>Montrer que la probabilité qu'un panneau présente un défaut de surface est \(0{,}049\).</li>
+    <li>Le menuisier refuse tout panneau défectueux. Sur une livraison de 400 panneaux, combien peut-il s'attendre à devoir renvoyer ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(P(\text{F2}) = 1 - 0{,}70 = 0{,}30\).</li>
+      <li>
+        <p>L'arbre se décompose en deux niveaux :</p>
+        <ul>
+          <li>1er niveau : F1 (\(0{,}70\)) ou F2 (\(0{,}30\))</li>
+          <li>2e niveau : Défaut (D) ou Sans défaut (\(\bar{D}\))</li>
+        </ul>
+        <p>Branches : F1 → D (\(0{,}04\)), F1 → \(\bar{D}\) (\(0{,}96\)), F2 → D (\(0{,}07\)), F2 → \(\bar{D}\) (\(0{,}93\)).</p>
+      </li>
+      <li>\(P(\text{F1} \cap D) = 0{,}70 \times 0{,}04 = 0{,}028\).</li>
+      <li>Par la loi des probabilités totales :
+        \[P(D) = P(\text{F1} \cap D) + P(\text{F2} \cap D) = 0{,}028 + 0{,}30 \times 0{,}07 = 0{,}028 + 0{,}021 = 0{,}049\]</li>
+      <li>Nombre de panneaux défectueux attendus : \(400 \times 0{,}049 = 19{,}6\), soit environ <strong>20 panneaux</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice S2</div>
+  <div class="exo-titre">Diagnostic de chaudières — Installateur thermique</div>
+  <p>Un installateur thermique effectue la maintenance annuelle de 150 chaudières réparties dans trois résidences. Le tableau suivant résume les résultats du diagnostic :</p>
+  <table>
+    <tr><th></th><th>Conforme</th><th>À régler</th><th>À remplacer</th><th>Total</th></tr>
+    <tr><td><strong>Résidence A</strong></td><td>40</td><td>15</td><td>5</td><td>60</td></tr>
+    <tr><td><strong>Résidence B</strong></td><td>30</td><td>10</td><td>10</td><td>50</td></tr>
+    <tr><td><strong>Résidence C</strong></td><td>25</td><td>10</td><td>5</td><td>40</td></tr>
+    <tr><td><strong>Total</strong></td><td>95</td><td>35</td><td>20</td><td>150</td></tr>
+  </table>
+  <p>On choisit une chaudière au hasard parmi les 150.</p>
+  <ol>
+    <li>Calculer la probabilité que la chaudière soit conforme.</li>
+    <li>Calculer la probabilité que la chaudière provienne de la résidence B.</li>
+    <li>Calculer la probabilité que la chaudière soit à remplacer et provienne de la résidence B.</li>
+    <li>Les événements « provenir de la résidence A » et « être à remplacer » sont-ils incompatibles ? Justifier.</li>
+    <li>Calculer la probabilité que la chaudière ne soit <strong>pas</strong> conforme.</li>
+    <li>Sachant que la chaudière provient de la résidence C, quelle est la probabilité qu'elle soit conforme ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(P(\text{conforme}) = \dfrac{95}{150} = \dfrac{19}{30} \approx 0{,}633\).</li>
+      <li>\(P(\text{résidence B}) = \dfrac{50}{150} = \dfrac{1}{3} \approx 0{,}333\).</li>
+      <li>\(P(\text{à remplacer et résidence B}) = \dfrac{10}{150} = \dfrac{1}{15} \approx 0{,}067\).</li>
+      <li>Non, ces événements ne sont <strong>pas</strong> incompatibles : il y a 5 chaudières de la résidence A qui sont à remplacer. L'intersection n'est pas vide.</li>
+      <li>\(P(\text{non conforme}) = 1 - P(\text{conforme}) = 1 - \dfrac{95}{150} = \dfrac{55}{150} = \dfrac{11}{30} \approx 0{,}367\).</li>
+      <li>On se restreint à la résidence C (40 chaudières). Parmi elles, 25 sont conformes.
+        <br>\(P(\text{conforme}|\text{résidence C}) = \dfrac{25}{40} = \dfrac{5}{8} = 0{,}625\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice S3</div>
+  <div class="exo-titre">Choix de finition — Poseur de cuisines</div>
+  <p>Un poseur de cuisines propose trois finitions : mat (M), brillant (B) ou satiné (S). D'après son expérience, les clients choisissent la finition mate avec une probabilité de \(0{,}45\), la finition brillante avec une probabilité de \(0{,}20\) et la finition satinée sinon. De plus, 10 % des clients qui choisissent le mat demandent aussi un plan de travail en granit, contre 25 % pour ceux qui choisissent le brillant et 15 % pour le satiné.</p>
+  <ol>
+    <li>Calculer \(P(S)\).</li>
+    <li>Construire un arbre de probabilités à deux niveaux (finition, puis granit ou non).</li>
+    <li>Calculer la probabilité qu'un client choisisse le brillant avec un plan en granit.</li>
+    <li>Calculer la probabilité qu'un client demande un plan de travail en granit.</li>
+    <li>Le poseur commande 200 plans de travail pour la saison. Combien de plans en granit doit-il prévoir ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(P(S) = 1 - P(M) - P(B) = 1 - 0{,}45 - 0{,}20 = 0{,}35\).</li>
+      <li>
+        <p>Arbre :</p>
+        <ul>
+          <li>M (\(0{,}45\)) → Granit (\(0{,}10\)) / Pas granit (\(0{,}90\))</li>
+          <li>B (\(0{,}20\)) → Granit (\(0{,}25\)) / Pas granit (\(0{,}75\))</li>
+          <li>S (\(0{,}35\)) → Granit (\(0{,}15\)) / Pas granit (\(0{,}85\))</li>
+        </ul>
+      </li>
+      <li>\(P(B \cap G) = 0{,}20 \times 0{,}25 = 0{,}050\).</li>
+      <li>Par la loi des probabilités totales :
+        \[P(G) = P(M \cap G) + P(B \cap G) + P(S \cap G)\]
+        \[P(G) = 0{,}45 \times 0{,}10 + 0{,}20 \times 0{,}25 + 0{,}35 \times 0{,}15\]
+        \[P(G) = 0{,}045 + 0{,}050 + 0{,}0525 = 0{,}1475\]</li>
+      <li>Nombre de plans en granit : \(200 \times 0{,}1475 = 29{,}5\), soit environ <strong>30 plans en granit</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+</div><!-- fin diff-standard -->
+
+<hr class="sep">
+
+<!-- ══════════════════════════════════════════════════════
+     NIVEAU APPROFONDISSEMENT — Problèmes ouverts
+══════════════════════════════════════════════════════ -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
 
 <!-- ══════════════════════════════════════════ NIVEAU 3 ══════════════════════════════════════════ -->
 
@@ -404,6 +542,8 @@
     </ol>
   </div>
 </div>
+
+</div><!-- fin diff-appro -->
 
 </div>
 
