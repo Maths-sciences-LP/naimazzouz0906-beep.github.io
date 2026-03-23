@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -101,11 +103,87 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le niveau sonore se mesure en décibels (dB). L'échelle est logarithmique : +10 dB = intensité × 10.</div>
+  <p>Compléter le tableau :</p>
+  <table>
+    <tr><th>Situation</th><th>Niveau sonore (dB)</th></tr>
+    <tr><td>Chuchotement</td><td>~... dB</td></tr>
+    <tr><td>Atelier de menuiserie en fonctionnement</td><td>~... dB</td></tr>
+    <tr><td>Seuil de danger pour l'ouïe</td><td>~... dB</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Chuchotement → <strong>~30 dB</strong></p>
+    <p>Atelier de menuiserie → <strong>~85-90 dB</strong></p>
+    <p>Seuil de danger → <strong>~85 dB</strong> (exposition prolongée)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> L'indice d'affaiblissement R se calcule avec \(R = L_i - L_t\) (en dB). Plus R est grand, meilleure est l'isolation.</div>
+  <p>Une cloison reçoit un son de 80 dB côté source. On mesure 42 dB de l'autre côté.</p>
+  <p>a) Écrire la formule de R.</p>
+  <p>b) Calculer : \(R = 80 - 42 = ...\) dB</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(R = L_i - L_t\)</p>
+    <p>b) \(R = 80 - 42 = \mathbf{38}\) dB</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La loi de masse : plus une paroi est lourde (kg/m²), meilleure est son isolation acoustique.</div>
+  <p>Classer ces parois de la moins isolante à la plus isolante :</p>
+  <ul>
+    <li>Porte en bois standard (R ≈ 22 dB)</li>
+    <li>Mur en briques 20 cm (R ≈ 48 dB)</li>
+    <li>Double vitrage (R ≈ 32 dB)</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Du moins au plus isolant : <strong>Porte en bois (22 dB) &lt; Double vitrage (32 dB) &lt; Mur briques 20 cm (48 dB)</strong></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Dans l'échelle des décibels : +10 dB = intensité × 10, +30 dB = intensité × 1 000.</div>
+  <p>Un son passe de 50 dB à 80 dB.</p>
+  <p>a) De combien de dB a-t-il augmenté ?</p>
+  <p>b) Par combien l'intensité sonore a-t-elle été multipliée ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Augmentation de <strong>30 dB</strong>.</p>
+    <p>b) +30 dB = intensité multipliée par <strong>1 000</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> En doublant la masse surfacique d'une paroi, on gagne environ +6 dB sur R.</div>
+  <p>Vrai ou Faux ? Justifier si faux.</p>
+  <p>a) Une fenêtre simple vitrage isole aussi bien qu'un mur en béton.</p>
+  <p>b) En doublant l'épaisseur d'un mur (et donc sa masse), on gagne environ 6 dB d'isolation.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>FAUX</strong>. Le mur en béton est beaucoup plus lourd (masse surfacique élevée) et a un R bien supérieur à celui d'une fenêtre simple vitrage.</p>
+    <p>b) <strong>VRAI</strong>. C'est la loi de masse : en doublant la masse surfacique, on gagne environ <strong>+6 dB</strong>.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -161,11 +239,69 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un ébéniste installe une porte entre son atelier et la salle d'exposition. Le niveau sonore dans l'atelier est de 88 dB (machines en fonctionnement). Il hésite entre une porte standard (R = 25 dB) et une porte acoustique (R = 40 dB).</p>
+  <p>a) Calculer le niveau sonore dans la salle d'exposition avec chaque porte.</p>
+  <p>b) Quel est le gain en dB apporté par la porte acoustique ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Porte standard : \(L_t = 88 - 25 = \mathbf{63}\) dB. Porte acoustique : \(L_t = 88 - 40 = \mathbf{48}\) dB.</p>
+    <p>b) Gain : \(40 - 25 = \mathbf{15}\) dB.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur installe un faux plafond acoustique entre un appartement du 1er étage et un local commercial au rez-de-chaussée. Le niveau sonore dans le local est de 78 dB. La norme impose un isolement de 55 dB minimum entre les deux espaces.</p>
+  <p>a) Quel doit être le niveau sonore maximal dans l'appartement ?</p>
+  <p>b) Quel indice R minimum le faux plafond doit-il avoir ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(L_t = 78 - 55 = \mathbf{23}\) dB</p>
+    <p>b) Le faux plafond doit avoir <strong>R ≥ 55 dB</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Calculer l'indice d'affaiblissement R d'une paroi dont le coefficient d'atténuation est τ = 0,05.</p>
+  <p>Formule : \(R = -20 \times \log(\tau)\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(R = -20 \times \log(0{,}05) = -20 \times (-1{,}301) \approx \mathbf{26}\) dB</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Expliquer le principe de la « double paroi » en isolation acoustique. Pourquoi est-elle plus efficace qu'une paroi simple de même masse totale ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>La <strong>double paroi</strong> est composée de deux parois séparées par une lame d'air (ou un isolant fibreux comme la laine de roche). L'onde sonore doit traverser successivement : la première paroi, la lame d'air, puis la deuxième paroi.</p>
+    <p>Elle est plus efficace car le <strong>changement de milieu</strong> (solide → air → solide) provoque des réflexions à chaque interface. L'isolant fibreux dans la lame d'air absorbe une partie de l'énergie sonore par frottement. Le gain est supérieur à ce que donnerait la loi de masse pour une paroi simple de même masse totale.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Pourquoi un atelier de menuiserie doit-il obligatoirement fournir des protections auditives à ses employés ? Quel est le seuil réglementaire d'exposition ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Les machines de menuiserie (scie circulaire, raboteuse, toupie) produisent des niveaux sonores de <strong>85 à 110 dB</strong>. Le seuil réglementaire d'exposition est de <strong>85 dB</strong> sur 8 heures. Au-delà, les protections auditives sont <strong>obligatoires</strong>.</p>
+    <p>Une exposition prolongée au-dessus de 85 dB provoque des dommages irréversibles à l'oreille interne (<strong>surdité professionnelle</strong>). C'est la raison pour laquelle les casques antibruit ou les bouchons d'oreilles sont obligatoires dans les ateliers.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -231,6 +367,75 @@
   <div class="corr">
     <p>a) Causes possibles : <strong>fuites acoustiques</strong> au niveau des prises électriques traversantes, des passages de canalisations, des joints de périphérie mal traités, d'une porte communicante mal isolée, ou de <strong>transmissions latérales</strong> par les planchers ou les murs adjacents.</p>
     <p>b) L'isolation globale est limitée par l'élément le moins isolant. Une cloison R = 55 dB ne sert à rien si une porte R = 25 dB est présente : c'est la porte qui laisse passer le bruit. Il faut traiter <strong>tous les points faibles</strong> pour que l'isolation soit efficace.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Une cloison en plaques de plâtre standard (72 mm) a une masse surfacique de 25 kg/m² et R ≈ 38 dB. Une cloison double placo + laine de roche (120 mm) a une masse surfacique de 50 kg/m² et R ≈ 50 dB.</p>
+  <p>a) Calculer le rapport des masses surfaciques.</p>
+  <p>b) Vérifier que le gain en dB est cohérent avec la loi de masse (doubler la masse → +6 dB).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{50}{25} = \mathbf{2}\) (la masse est exactement doublée).</p>
+    <p>b) Gain : \(50 - 38 = 12\) dB. La loi de masse prévoit +6 dB pour un doublement. Ici on obtient +12 dB, soit <strong>plus que prévu</strong>. C'est parce que la double paroi avec laine de roche bénéficie de l'effet « masse-ressort-masse » qui améliore l'isolation au-delà de la simple loi de masse.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Une paroi a un coefficient d'atténuation τ = 0,005.</p>
+  <p>a) Calculer R.</p>
+  <p>b) Si le niveau incident est de 85 dB, calculer le niveau transmis.</p>
+  <p>c) Cette paroi convient-elle pour séparer un atelier bruyant d'un bureau (norme : R ≥ 45 dB) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(R = -20 \times \log(0{,}005) = -20 \times (-2{,}301) \approx \mathbf{46}\) dB</p>
+    <p>b) \(L_t = 85 - 46 = \mathbf{39}\) dB</p>
+    <p>c) Oui, R = 46 dB &gt; 45 dB → la paroi <strong>respecte la norme</strong> (de justesse).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien d'agencement doit isoler une salle de réunion dans un immeuble de bureaux. Le niveau sonore maximal dans le couloir est de 65 dB. La norme impose que le niveau dans la salle ne dépasse pas 35 dB portes fermées.</p>
+  <p>a) Calculer le R minimum nécessaire.</p>
+  <p>b) Parmi les solutions suivantes, laquelle convient ?</p>
+  <ul>
+    <li>Porte standard en bois (R = 22 dB)</li>
+    <li>Porte acoustique simple (R = 32 dB)</li>
+    <li>Porte acoustique renforcée + joints (R = 42 dB)</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(R = 65 - 35 = \mathbf{30}\) dB</p>
+    <p>b) La <strong>porte acoustique simple (R = 32 dB)</strong> suffit car 32 ≥ 30 dB. La porte standard (22 dB) est insuffisante. La porte renforcée (42 dB) convient aussi mais serait surdimensionnée pour ce besoin.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Montrer que si τ = 0,1, alors R = 20 dB, et que si τ = 0,001, alors R = 60 dB. Que peut-on dire de l'évolution de R quand τ est divisé par 10 ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(\tau = 0{,}1\) : \(R = -20 \times \log(0{,}1) = -20 \times (-1) = \mathbf{20}\) dB</p>
+    <p>\(\tau = 0{,}001\) : \(R = -20 \times \log(0{,}001) = -20 \times (-3) = \mathbf{60}\) dB</p>
+    <p>Quand τ passe de 0,1 à 0,001, il est <strong>divisé par 100</strong> (= 10²) et R augmente de <strong>40 dB</strong> (= 2 × 20 dB). Chaque fois que τ est divisé par 10, R augmente de <strong>20 dB</strong>. Le lien est logarithmique.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un poseur de cuisines constate que ses clients se plaignent du bruit de la hotte aspirante dans leur cuisine ouverte. Le niveau sonore de la hotte est de 72 dB.</p>
+  <p>a) Citer deux solutions pour réduire le bruit perçu dans le séjour ouvert sur la cuisine.</p>
+  <p>b) Expliquer pourquoi il est plus difficile de traiter le bruit dans un espace ouvert que dans un espace cloisonné.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Solutions possibles : choisir une <strong>hotte à moteur déporté</strong> (le moteur bruyant est dans les combles), installer un <strong>plafond absorbant acoustique</strong> au-dessus de la cuisine, poser des <strong>panneaux acoustiques</strong> décoratifs sur les murs, utiliser un <strong>faux plafond avec dalles absorbantes</strong>.</p>
+    <p>b) Dans un espace ouvert, il n'y a <strong>pas de paroi séparatrice</strong> pour bloquer le son (pas d'indice R applicable). Le son se propage librement dans tout le volume. On ne peut agir que sur l'<strong>absorption</strong> (réduire la réverbération) et non sur la <strong>transmission</strong> (bloquer le son). L'isolation par transmission nécessite une paroi fermée.</p>
   </div>
 </div>
 

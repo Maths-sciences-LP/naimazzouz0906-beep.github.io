@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -106,11 +108,92 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Une suite est géométrique si on passe d'un terme au suivant en <strong>multipliant toujours par le même nombre</strong> \(q\) (la raison). On vérifie en calculant \(\dfrac{u_1}{u_0}\), \(\dfrac{u_2}{u_1}\), etc.</div>
+  <p>Voici les valeurs successives d'un four professionnel (en €) : 6 000 → 5 400 → 4 860 → 4 374</p>
+  <p>a) Calculer \(\dfrac{5\,400}{6\,000} = ...\)</p>
+  <p>b) Calculer \(\dfrac{4\,860}{5\,400} = ...\)</p>
+  <p>c) Les quotients sont-ils égaux ? La suite est-elle géométrique ? Donner la raison \(q\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{5\,400}{6\,000} = \mathbf{0{,}90}\)</p>
+    <p>b) \(\dfrac{4\,860}{5\,400} = \mathbf{0{,}90}\)</p>
+    <p>c) Les quotients sont tous égaux à 0,90. La suite est <strong>géométrique</strong> de raison \(q = \mathbf{0{,}90}\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Diminution de \(t\,\%\) → raison \(q = 1 - \dfrac{t}{100}\). Augmentation de \(t\,\%\) → raison \(q = 1 + \dfrac{t}{100}\).</div>
+  <p>Compléter le tableau :</p>
+  <table>
+    <tr><th>Situation</th><th>Raison \(q\)</th></tr>
+    <tr><td>Perte de 10 % par an</td><td>\(q = 1 - \dfrac{10}{100} = 1 - 0{,}10 = ...\)</td></tr>
+    <tr><td>Hausse de 8 % par an</td><td>\(q = 1 + \dfrac{...}{100} = ...\)</td></tr>
+    <tr><td>Perte de 25 % par an</td><td>\(q = ...\)</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Situation</th><th>Raison \(q\)</th></tr>
+      <tr><td>Perte de 10 % par an</td><td>\(q = 1 - 0{,}10 = \mathbf{0{,}90}\)</td></tr>
+      <tr><td>Hausse de 8 % par an</td><td>\(q = 1 + 0{,}08 = \mathbf{1{,}08}\)</td></tr>
+      <tr><td>Perte de 25 % par an</td><td>\(q = 1 - 0{,}25 = \mathbf{0{,}75}\)</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le terme de rang \(n\) se calcule avec \(u_n = u_0 \times q^n\). Pour calculer \(q^n\) à la calculatrice : touche <kbd>^</kbd> ou <kbd>x<sup>y</sup></kbd>.</div>
+  <p>Une scie à panneaux neuve vaut 5 000 €. Elle perd 12 % de sa valeur chaque année. Donc \(u_0 = 5\,000\) et \(q = 0{,}88\).</p>
+  <p>a) Écrire la formule du terme général : \(u_n = ... \times ...^n\)</p>
+  <p>b) Calculer la valeur après 3 ans : \(u_3 = 5\,000 \times 0{,}88^3 = 5\,000 \times ... = ...\) €</p>
+  <p>c) Calculer la valeur après 5 ans : \(u_5 = 5\,000 \times 0{,}88^5 = ...\) €</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_n = \mathbf{5\,000 \times 0{,}88^n}\)</p>
+    <p>b) \(u_3 = 5\,000 \times 0{,}88^3 = 5\,000 \times 0{,}6815 \approx \mathbf{3\,408\,€}\)</p>
+    <p>c) \(u_5 = 5\,000 \times 0{,}88^5 = 5\,000 \times 0{,}5277 \approx \mathbf{2\,639\,€}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Si \(q > 1\) : suite croissante. Si \(0 < q < 1\) : suite décroissante.</div>
+  <p>Pour chaque suite, indiquer si elle est croissante ou décroissante :</p>
+  <p>a) \(u_n = 3\,000 \times 1{,}07^n\) → \(q = ...\) donc la suite est ...</p>
+  <p>b) \(u_n = 9\,000 \times 0{,}92^n\) → \(q = ...\) donc la suite est ...</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(q = 1{,}07 > 1\) donc la suite est <strong>croissante</strong> (valorisation, les termes augmentent).</p>
+    <p>b) \(q = 0{,}92\), on a \(0 < 0{,}92 < 1\) donc la suite est <strong>décroissante</strong> (dépréciation, les termes diminuent).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La somme des termes \(u_0 + u_1 + \cdots + u_n\) se calcule avec \(S_n = u_0 \times \dfrac{1 - q^{n+1}}{1 - q}\).</div>
+  <p>Un installateur thermique épargne 1 500 € par an avec un taux de 4 %. La suite des capitaux est \(u_n = 1\,500 \times 1{,}04^n\).</p>
+  <p>Calculer la somme des 4 premiers termes (\(u_0 + u_1 + u_2 + u_3\)), soit \(n = 3\) et 4 termes :</p>
+  <p>\(S_3 = 1\,500 \times \dfrac{1 - 1{,}04^4}{1 - 1{,}04} = 1\,500 \times \dfrac{1 - ...}{-0{,}04} = ...\) €</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(1{,}04^4 = 1{,}1699\)</p>
+    <p>\(S_3 = 1\,500 \times \dfrac{1 - 1{,}1699}{1 - 1{,}04} = 1\,500 \times \dfrac{-0{,}1699}{-0{,}04} = 1\,500 \times 4{,}246 = \mathbf{6\,370\,€}\)</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -193,11 +276,95 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un véhicule utilitaire est acheté 22 000 € par un artisan menuisier. Il perd 12 % de sa valeur chaque année.</p>
+  <p>a) Montrer que la suite des valeurs est géométrique. Donner \(u_0\) et \(q\).</p>
+  <p>b) Écrire le terme général \(u_n\).</p>
+  <p>c) Calculer la valeur du véhicule après 5 ans.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Chaque année, on garde \(100 - 12 = 88\,\%\) de la valeur, soit une multiplication par \(0{,}88\). C'est bien une suite géométrique : \(u_0 = \mathbf{22\,000}\) et \(q = \mathbf{0{,}88}\).</p>
+    <p>b) \(u_n = 22\,000 \times 0{,}88^n\)</p>
+    <p>c) \(u_5 = 22\,000 \times 0{,}88^5 = 22\,000 \times 0{,}5277 \approx \mathbf{11\,609\,€}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien de maintenance relève la production mensuelle d'une chaudière vieillissante :</p>
+  <table>
+    <tr><th>Année \(n\)</th><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+    <tr><td>Rendement \(u_n\) (%)</td><td>92</td><td>87,4</td><td>83,03</td><td>78,88</td></tr>
+  </table>
+  <p>a) Calculer \(\dfrac{u_1}{u_0}\) et \(\dfrac{u_2}{u_1}\). Que peut-on conclure ?</p>
+  <p>b) La suite est-elle croissante ou décroissante ? Expliquer dans le contexte.</p>
+  <p>c) Calculer le rendement prévisionnel à l'année 7.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{87{,}4}{92} = 0{,}95\) et \(\dfrac{83{,}03}{87{,}4} = 0{,}95\). Les quotients sont égaux : la suite est <strong>géométrique</strong> de raison \(q = 0{,}95\).</p>
+    <p>b) \(0 < q = 0{,}95 < 1\) donc la suite est <strong>décroissante</strong>. Le rendement diminue de 5 % par an en raison de l'usure de la chaudière.</p>
+    <p>c) \(u_7 = 92 \times 0{,}95^7 = 92 \times 0{,}6983 \approx \mathbf{64{,}2\,\%}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>Un menuisier agenceur place 8 000 € sur un livret professionnel rémunéré à 4 % par an. Il ne retire rien.</p>
+  <p>a) Identifier la suite géométrique : donner \(u_0\) et \(q\).</p>
+  <p>b) Écrire le terme général et calculer le capital après 8 ans.</p>
+  <p>c) Calculer le gain total (intérêts) réalisé après 8 ans.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_0 = 8\,000\), \(q = 1 + 0{,}04 = \mathbf{1{,}04}\). Suite géométrique <strong>croissante</strong>.</p>
+    <p>b) \(u_n = 8\,000 \times 1{,}04^n\). Après 8 ans : \(u_8 = 8\,000 \times 1{,}04^8 = 8\,000 \times 1{,}3686 \approx \mathbf{10\,949\,€}\)</p>
+    <p>c) Gain = \(10\,949 - 8\,000 = \mathbf{2\,949\,€}\) d'intérêts composés.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un système de ventilation neuf vaut 9 500 €. Il perd 18 % de sa valeur chaque année.</p>
+  <p>a) Donner la suite géométrique modélisant cette situation.</p>
+  <p>b) Compléter le tableau des valeurs :</p>
+  <table>
+    <tr><th>Année \(n\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+    <tr><td>Valeur \(u_n\) (€)</td><td>9 500</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+  </table>
+  <p>c) À partir de quelle année le système vaut-il moins de 4 000 € ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_n = 9\,500 \times 0{,}82^n\) (suite géométrique décroissante)</p>
+    <p>b)</p>
+    <table>
+      <tr><th>Année \(n\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+      <tr><td>Valeur (€)</td><td>9 500</td><td>7 790</td><td>6 388</td><td>5 238</td><td>4 295</td><td>3 522</td></tr>
+    </table>
+    <p>c) \(u_4 \approx 4\,295 > 4\,000\) et \(u_5 \approx 3\,522 < 4\,000\). Le système vaut moins de 4 000 € à partir de l'<strong>année 5</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Un élève affirme : « Si \(q = 1{,}03\), le capital augmente de 1,03 € chaque année. »</p>
+  <p>Cette affirmation est-elle correcte ? Expliquer l'erreur et donner la bonne interprétation.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>L'affirmation est <strong>fausse</strong>. Dans une suite géométrique, on <strong>multiplie</strong> par \(q = 1{,}03\) à chaque étape (on n'ajoute pas 1,03).</p>
+    <p>La bonne interprétation : chaque terme vaut 103 % du précédent, ce qui correspond à une <strong>augmentation de 3 %</strong> à chaque étape. L'augmentation en valeur absolue n'est pas constante (elle est plus grande au fil du temps).</p>
+    <p>L'élève confond avec une suite <strong>arithmétique</strong> (où l'on additionne/soustrait un même nombre).</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -261,6 +428,74 @@
     <p>c) \(q = 1{,}3685^{1/8} \approx \mathbf{1{,}04}\). Donc le taux annuel est \(t = (1{,}04 - 1) \times 100 = \mathbf{4\,\%}\).</p>
     <p>d) On cherche \(n\) tel que \(u_n = 10\,000 \times 1{,}04^n \geq 20\,000\), soit \(1{,}04^n \geq 2\).</p>
     <p>\(1{,}04^{17} \approx 1{,}948 < 2\) et \(1{,}04^{18} \approx 2{,}026 > 2\). Le capital double après <strong>18 ans</strong>.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(5 points)</span></h2>
+  <p>Un atelier de menuiserie achète une raboteuse industrielle neuve à 18 000 €. Elle perd 12 % de sa valeur chaque année. L'atelier souhaite la revendre quand sa valeur descend sous 6 000 €.</p>
+  <p>a) Écrire le terme général \(u_n\) de la suite.</p>
+  <p>b) Calculer \(u_4\) et \(u_9\). Encadrer l'année à partir de laquelle \(u_n < 6\,000\).</p>
+  <p>c) Déterminer par essais successifs l'année exacte.</p>
+  <p>d) Calculer la valeur totale des dépréciations cumulées sur les 9 premières années : \(u_0 - u_9\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_n = 18\,000 \times 0{,}88^n\)</p>
+    <p>b) \(u_4 = 18\,000 \times 0{,}88^4 \approx 10\,798\,€ > 6\,000\) et \(u_9 = 18\,000 \times 0{,}88^9 \approx 5\,656\,€ < 6\,000\).</p>
+    <p>c) \(u_8 = 18\,000 \times 0{,}88^8 \approx 6\,427\,€ > 6\,000\) et \(u_9 \approx 5\,656 < 6\,000\). La raboteuse passe sous 6 000 € à l'<strong>année 9</strong>.</p>
+    <p>d) Dépréciation cumulée : \(18\,000 - 5\,656 = \mathbf{12\,344\,€}\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Le loyer d'un local artisanal est de 12 000 € la première année. Il augmente de 3 % chaque année.</p>
+  <p>a) Identifier \(u_1\) et \(q\). Écrire \(u_n\) en fonction de \(n\).</p>
+  <p>b) Calculer le loyer à la 8e année.</p>
+  <p>c) Calculer le total des loyers versés sur les 8 premières années à l'aide de la formule de la somme.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_1 = 12\,000\), \(q = 1{,}03\). Le loyer de la \(n\)-ième année est \(u_n = 12\,000 \times 1{,}03^{n-1}\).</p>
+    <p>b) \(u_8 = 12\,000 \times 1{,}03^7 = 12\,000 \times 1{,}2299 \approx \mathbf{14\,759\,€}\)</p>
+    <p>c) Somme de \(u_1\) à \(u_8\) (8 termes, premier terme 12 000, raison 1,03) :</p>
+    <p>\(S = 12\,000 \times \dfrac{1 - 1{,}03^8}{1 - 1{,}03} = 12\,000 \times \dfrac{1 - 1{,}2668}{-0{,}03} = 12\,000 \times 8{,}892 \approx \mathbf{106\,710\,€}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>Un plombier chauffagiste installe un système solaire thermique pour 10 000 €. Ce système permet une économie de 500 € la première année, et cette économie augmente de 3 % chaque année.</p>
+  <p>a) Montrer que les économies annuelles forment une suite géométrique. Donner \(u_1\) et \(q\).</p>
+  <p>b) Calculer le total des économies cumulées sur 12 ans.</p>
+  <p>c) Au bout de combien d'années les économies cumulées dépassent-elles le coût d'installation ? (Tester \(n = 14, 15, 16\).)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Chaque année, l'économie est multipliée par \(1{,}03\). Donc \(u_{n+1} = u_n \times 1{,}03\). C'est une suite géométrique : \(u_1 = 500\), \(q = 1{,}03\).</p>
+    <p>b) \(S_{12} = 500 \times \dfrac{1 - 1{,}03^{12}}{1 - 1{,}03} = 500 \times \dfrac{1 - 1{,}4258}{-0{,}03} = 500 \times 14{,}192 \approx \mathbf{7\,096\,€}\)</p>
+    <p>c) \(S_{14} = 500 \times \dfrac{1 - 1{,}03^{14}}{-0{,}03} \approx 500 \times 17{,}086 \approx 8\,543 < 10\,000\).</p>
+    <p>\(S_{15} \approx 500 \times 18{,}599 \approx 9\,299 < 10\,000\).</p>
+    <p>\(S_{16} \approx 500 \times 20{,}157 \approx 10\,078 > 10\,000\).</p>
+    <p>Les économies cumulées dépassent le coût d'installation au bout de la <strong>16e année</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <p>Un capital de 15 000 € est placé à intérêts composés au taux annuel de \(t\,\%\). Après 6 ans, le capital atteint 19 500 €.</p>
+  <p>a) Écrire l'équation vérifiée par \(q\) : \(15\,000 \times q^6 = 19\,500\).</p>
+  <p>b) En déduire \(q^6 = ...\)</p>
+  <p>c) Utiliser la calculatrice pour trouver \(q\) : \(q = (...)^{1/6}\). En déduire le taux annuel \(t\).</p>
+  <p>d) Après combien d'années le capital dépassera-t-il 25 000 € ? (Tester dans le tableau de valeurs.)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(15\,000 \times q^6 = 19\,500\)</p>
+    <p>b) \(q^6 = \dfrac{19\,500}{15\,000} = 1{,}30\)</p>
+    <p>c) \(q = 1{,}30^{1/6} \approx \mathbf{1{,}045}\). Donc le taux annuel est \(t = (1{,}045 - 1) \times 100 = \mathbf{4{,}5\,\%}\).</p>
+    <p>d) On cherche \(n\) tel que \(u_n = 15\,000 \times 1{,}045^n \geq 25\,000\), soit \(1{,}045^n \geq \dfrac{5}{3} \approx 1{,}667\).</p>
+    <p>\(1{,}045^{11} \approx 1{,}623 < 1{,}667\) et \(1{,}045^{12} \approx 1{,}696 > 1{,}667\). Le capital dépasse 25 000 € après <strong>12 ans</strong>.</p>
   </div>
 </div>
 

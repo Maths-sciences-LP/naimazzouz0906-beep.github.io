@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,8 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -104,11 +107,91 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Une <strong>expérience aléatoire</strong> est une expérience dont on ne peut pas prévoir le résultat, mais dont on connaît toutes les issues possibles. L'<strong>univers</strong> \(\Omega\) est l'ensemble de toutes les issues.</div>
+  <p>Pour chaque situation, donner l'univers \(\Omega\) :</p>
+  <p>a) On tire une carte (rouge ou noire) dans un jeu : \(\Omega = \{...\;;\;...\}\)</p>
+  <p>b) On choisit un jour de la semaine ouvré (lundi à vendredi) : \(\Omega = \{...\;;\;...\;;\;...\;;\;...\;;\;...\}\)</p>
+  <p>c) On vérifie un panneau de bois (conforme ou non conforme) : \(\Omega = \{...\;;\;...\}\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\Omega = \{\text{Rouge}\;;\;\text{Noire}\}\)</p>
+    <p>b) \(\Omega = \{\text{Lundi}\;;\;\text{Mardi}\;;\;\text{Mercredi}\;;\;\text{Jeudi}\;;\;\text{Vendredi}\}\)</p>
+    <p>c) \(\Omega = \{\text{Conforme}\;;\;\text{Non conforme}\}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(P(A) = \dfrac{\text{nombre d'issues favorables}}{\text{nombre total d'issues}}\). La probabilité est toujours comprise entre 0 et 1.</div>
+  <p>Une boîte contient 10 vis numérotées de 1 à 10. On tire une vis au hasard.</p>
+  <p>a) Quelle est la probabilité de tirer la vis n°7 ? \(P(7) = \dfrac{...}{10} = ...\)</p>
+  <p>b) Quelle est la probabilité de tirer une vis portant un nombre impair (1, 3, 5, 7, 9) ? \(P(\text{impair}) = \dfrac{...}{10} = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(7) = \dfrac{1}{10} = \mathbf{0{,}1}\)</p>
+    <p>b) Issues favorables : \(\{1, 3, 5, 7, 9\}\), soit 5 issues. \(P(\text{impair}) = \dfrac{5}{10} = \dfrac{1}{2} = \mathbf{0{,}5}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La <strong>fréquence</strong> se calcule par \(f = \dfrac{\text{nombre d'occurrences}}{\text{nombre total d'expériences}}\).</div>
+  <p>On lance un dé à 6 faces 50 fois. On obtient le 6 exactement 12 fois.</p>
+  <p>a) Calculer la fréquence du 6 : \(f = \dfrac{12}{50} = ...\)</p>
+  <p>b) La probabilité théorique du 6 est \(\dfrac{1}{6} \approx 0{,}167\). La fréquence observée est-elle proche ?</p>
+  <p>c) Est-ce normal que la fréquence ne soit pas exactement \(\dfrac{1}{6}\) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f = \dfrac{12}{50} = \mathbf{0{,}24}\) soit 24 %</p>
+    <p>b) La fréquence (0,24) est <strong>éloignée</strong> de la probabilité théorique (0,167).</p>
+    <p>c) Oui, c'est <strong>normal</strong>. C'est la <strong>fluctuation des fréquences</strong> : avec un nombre limité d'expériences, la fréquence peut s'écarter de la probabilité théorique.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(P(\bar{A}) = 1 - P(A)\) (probabilité de l'événement contraire).</div>
+  <p>Un tiroir contient 5 crayons bleus, 2 crayons rouges et 3 crayons verts.</p>
+  <p>a) Combien y a-t-il de crayons en tout ? \(N = 5 + ... + ... = ...\)</p>
+  <p>b) Quelle est la probabilité de tirer un crayon bleu ? \(P(\text{bleu}) = \dfrac{5}{...} = ...\)</p>
+  <p>c) Quelle est la probabilité de ne PAS tirer un crayon bleu ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(N = 5 + 2 + 3 = \mathbf{10}\) crayons</p>
+    <p>b) \(P(\text{bleu}) = \dfrac{5}{10} = \dfrac{1}{2} = \mathbf{0{,}5}\)</p>
+    <p>c) \(P(\overline{\text{bleu}}) = 1 - \dfrac{5}{10} = \dfrac{5}{10} = \dfrac{1}{2} = \mathbf{0{,}5}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Plus le nombre d'expériences augmente, plus la fréquence se rapproche de la probabilité théorique (loi des grands nombres).</div>
+  <p>On lance une pièce 20 fois puis 2 000 fois. Les fréquences d'obtenir Pile sont :</p>
+  <table>
+    <tr><th>Nombre de lancers</th><td>20</td><td>2 000</td></tr>
+    <tr><th>Fréquence de Pile</th><td>0,35</td><td>0,503</td></tr>
+  </table>
+  <p>a) La probabilité théorique d'obtenir Pile est 0,5. Quelle fréquence est la plus proche ?</p>
+  <p>b) Pourquoi ? Compléter : « Plus le nombre d'expériences est ..., plus la fréquence se ... de la probabilité. »</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La fréquence <strong>0,503</strong> (2 000 lancers) est la plus proche de 0,5.</p>
+    <p>b) « Plus le nombre d'expériences est <strong>grand</strong>, plus la fréquence se <strong>rapproche</strong> de la probabilité. » C'est la <strong>loi des grands nombres</strong>.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -186,11 +269,91 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un artisan menuisier découpe 300 tasseaux dans la journée. Le contrôle en fin de journée révèle que 21 tasseaux sont hors cotes.</p>
+  <p>a) Calculer la fréquence de défaut.</p>
+  <p>b) Estimer la probabilité qu'un tasseau soit hors cotes.</p>
+  <p>c) Sur une production de 1 200 tasseaux, combien peut-on estimer de pièces hors cotes ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f = \dfrac{21}{300} = \mathbf{0{,}07}\) soit 7 %</p>
+    <p>b) On estime \(P(\text{hors cotes}) \approx 0{,}07\) soit environ <strong>7 %</strong>.</p>
+    <p>c) Estimation : \(1\,200 \times 0{,}07 = \mathbf{84}\) tasseaux hors cotes</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un sac contient 5 jetons rouges, 3 jetons bleus et 2 jetons jaunes. On tire un jeton au hasard.</p>
+  <p>a) Quelle est la probabilité de tirer un jeton rouge ?</p>
+  <p>b) Quelle est la probabilité de tirer un jeton bleu ?</p>
+  <p>c) Quelle est la probabilité de ne PAS tirer un jeton jaune ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Il y a 5 rouges sur 10 jetons : \(P(\text{rouge}) = \dfrac{5}{10} = \dfrac{1}{2} = \mathbf{0{,}5}\)</p>
+    <p>b) Il y a 3 bleus : \(P(\text{bleu}) = \dfrac{3}{10} = \mathbf{0{,}3}\)</p>
+    <p>c) \(P(\overline{\text{jaune}}) = 1 - \dfrac{2}{10} = \dfrac{8}{10} = \mathbf{0{,}8}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>Un métreur numérote ses plans de 1 à 8 et en choisit un au hasard pour le vérifier.</p>
+  <p>Calculer les probabilités des événements suivants :</p>
+  <p>a) \(A\) = « obtenir un nombre pair »</p>
+  <p>b) \(B\) = « obtenir un nombre supérieur ou égal à 6 »</p>
+  <p>c) \(C\) = « obtenir un multiple de 4 »</p>
+  <p>d) \(\bar{C}\) = événement contraire de \(C\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(A = \{2, 4, 6, 8\}\), 4 issues favorables : \(P(A) = \dfrac{4}{8} = \dfrac{1}{2} = \mathbf{0{,}5}\)</p>
+    <p>b) \(B = \{6, 7, 8\}\), 3 issues : \(P(B) = \dfrac{3}{8} = \mathbf{0{,}375}\)</p>
+    <p>c) \(C = \{4, 8\}\), 2 issues : \(P(C) = \dfrac{2}{8} = \dfrac{1}{4} = \mathbf{0{,}25}\)</p>
+    <p>d) \(P(\bar{C}) = 1 - \dfrac{1}{4} = \dfrac{3}{4} = \mathbf{0{,}75}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Quatre équipes d'élèves lancent chacune un dé 60 fois et notent la fréquence du 1 :</p>
+  <table>
+    <tr><th>Équipe</th><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+    <tr><th>Fréquence du 1</th><td>0,20</td><td>0,15</td><td>0,12</td><td>0,22</td></tr>
+  </table>
+  <p>a) Les fréquences sont-elles toutes identiques ? Est-ce normal ?</p>
+  <p>b) Autour de quelle valeur les fréquences fluctuent-elles ?</p>
+  <p>c) Si chaque équipe avait fait 5 000 lancers, les fréquences seraient-elles plus proches ou plus éloignées de \(\dfrac{1}{6}\) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Non, les fréquences varient entre 0,12 et 0,22. C'est <strong>normal</strong> : c'est la <strong>fluctuation des fréquences</strong>.</p>
+    <p>b) Les fréquences fluctuent autour de \(\dfrac{1}{6} \approx \mathbf{0{,}167}\) (la probabilité théorique du 1).</p>
+    <p>c) Avec 5 000 lancers, les fréquences seraient <strong>plus proches</strong> de \(\dfrac{1}{6}\). C'est la loi des grands nombres : plus le nombre d'expériences est grand, moins la fluctuation est importante.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Un poseur de cuisines sait que 3 % des charnières livrées présentent un défaut. Il reçoit 400 charnières.</p>
+  <p>a) Combien de charnières défectueuses peut-on estimer ?</p>
+  <p>b) Si le poseur prend une charnière au hasard, quelle est la probabilité qu'elle soit conforme ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Estimation : \(400 \times 0{,}03 = \mathbf{12}\) charnières défectueuses</p>
+    <p>b) \(P(\text{conforme}) = 1 - 0{,}03 = \mathbf{0{,}97}\) soit 97 %</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -272,6 +435,91 @@
     <p>b) \(P = \left(\dfrac{1}{2}\right)^5 = \dfrac{1}{32} \approx \mathbf{0{,}031}\) soit environ 3,1 %</p>
     <p>C'est rare (3,1 %) mais pas impossible.</p>
     <p>c) Il faudrait lancer la pièce un <strong>très grand nombre de fois</strong> (par exemple 1 000 fois) et vérifier si la fréquence de Pile reste éloignée de 0,5. Si la fréquence se stabilise autour de 0,5, la pièce est probablement équilibrée.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un lot de 60 panneaux de bois contient des panneaux de trois catégories : S (supérieur), N (normal) et D (déclassé). On prélève un panneau au hasard.</p>
+  <p>On sait que \(P(S) = 0{,}35\) et \(P(N) = 0{,}50\).</p>
+  <p>a) Calculer \(P(D)\).</p>
+  <p>b) Combien de panneaux de chaque catégorie contient le lot ?</p>
+  <p>c) Quelle est la probabilité de tirer un panneau de bonne qualité (catégorie S ou N) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(S) + P(N) + P(D) = 1\), donc \(P(D) = 1 - 0{,}35 - 0{,}50 = \mathbf{0{,}15}\)</p>
+    <p>b) Panneaux S : \(60 \times 0{,}35 = \mathbf{21}\). Panneaux N : \(60 \times 0{,}50 = \mathbf{30}\). Panneaux D : \(60 \times 0{,}15 = \mathbf{9}\).</p>
+    <p>Vérification : \(21 + 30 + 9 = 60\) ✔</p>
+    <p>c) \(P(\text{S ou N}) = P(S) + P(N) = 0{,}35 + 0{,}50 = \mathbf{0{,}85}\) soit 85 %</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Un installateur d'agencement reçoit un carton de 150 poignées de porte. Il en vérifie 50 et en trouve 4 avec un défaut de finition.</p>
+  <p>a) Calculer la fréquence de poignées défectueuses dans l'échantillon.</p>
+  <p>b) Estimer le nombre total de poignées défectueuses dans le carton de 150.</p>
+  <p>c) Le fabricant garantit un taux de défaut inférieur à 6 %. La garantie est-elle respectée ?</p>
+  <p>d) Pourquoi cette estimation n'est-elle pas certaine ? Quel concept justifie cette incertitude ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f = \dfrac{4}{50} = \mathbf{0{,}08}\) soit 8 %</p>
+    <p>b) Estimation : \(150 \times 0{,}08 = \mathbf{12}\) poignées défectueuses</p>
+    <p>c) Le taux observé (8 %) est <strong>supérieur</strong> à la garantie (6 %). La garantie <strong>ne semble pas respectée</strong>.</p>
+    <p>d) Cette estimation est incertaine à cause de la <strong>fluctuation des fréquences</strong>. L'échantillon de 50 poignées ne représente qu'un tiers du carton. Le taux réel pourrait être différent de 8 %. Pour être plus précis, il faudrait contrôler un échantillon plus grand.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>On lance simultanément deux dés équilibrés à 6 faces. On s'intéresse à la somme des deux dés.</p>
+  <p>a) Combien y a-t-il d'issues au total ?</p>
+  <p>b) Lister toutes les façons d'obtenir une somme de 9.</p>
+  <p>c) Calculer \(P(\text{somme} = 9)\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(6 \times 6 = \mathbf{36}\) issues au total</p>
+    <p>b) Somme = 9 : (3,6), (4,5), (5,4), (6,3) → <strong>4 issues favorables</strong></p>
+    <p>c) \(P(\text{somme} = 9) = \dfrac{4}{36} = \dfrac{1}{9} \approx \mathbf{0{,}111}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un responsable qualité dans une fabrique de mobilier note le nombre de retouches nécessaires sur plusieurs mois :</p>
+  <table>
+    <tr><th>Mois</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+    <tr><th>Meubles produits</th><td>40</td><td>60</td><td>80</td><td>150</td><td>400</td><td>800</td></tr>
+    <tr><th>Meubles à retoucher</th><td>8</td><td>3</td><td>6</td><td>14</td><td>37</td><td>72</td></tr>
+  </table>
+  <p>a) Calculer la fréquence de retouche pour chaque mois.</p>
+  <p>b) Que constate-t-on quand le nombre de meubles produits augmente ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Fréquences :</p>
+    <table>
+      <tr><th>Mois</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+      <tr><th>Fréquence</th><td>0,200</td><td>0,050</td><td>0,075</td><td>0,093</td><td>0,093</td><td>0,090</td></tr>
+    </table>
+    <p>b) Quand le nombre de meubles augmente, la fréquence <strong>se stabilise</strong> autour de 0,09 (environ 9 %). Les premiers mois (petites productions) montrent une forte fluctuation (entre 0,05 et 0,20), tandis que les mois avec beaucoup de meubles donnent des fréquences proches de 9 %. C'est la <strong>loi des grands nombres</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Un élève affirme : « J'ai lancé un dé 4 fois et je n'ai jamais obtenu de 6. Donc il est impossible d'obtenir un 6 avec ce dé. »</p>
+  <p>a) Cette conclusion est-elle justifiée ? Pourquoi ?</p>
+  <p>b) Calculer la probabilité de ne pas obtenir de 6 en 4 lancers avec un dé équilibré : \(P = \left(\dfrac{5}{6}\right)^4\).</p>
+  <p>c) Que faudrait-il faire pour vérifier si le dé est truqué ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Non, cette conclusion n'est <strong>pas justifiée</strong>. Avec seulement 4 lancers, la fluctuation est très importante. Ne pas obtenir de 6 en 4 lancers est en fait assez courant, même avec un dé équilibré.</p>
+    <p>b) \(P = \left(\dfrac{5}{6}\right)^4 = \dfrac{625}{1296} \approx \mathbf{0{,}482}\) soit environ 48,2 %</p>
+    <p>C'est très fréquent (presque une chance sur deux) : cela ne prouve rien.</p>
+    <p>c) Il faudrait lancer le dé un <strong>très grand nombre de fois</strong> (par exemple 1 000 fois) et vérifier si la fréquence du 6 reste éloignée de \(\dfrac{1}{6}\). Si la fréquence se stabilise autour de \(\dfrac{1}{6} \approx 0{,}167\), le dé est probablement équilibré.</p>
   </div>
 </div>
 

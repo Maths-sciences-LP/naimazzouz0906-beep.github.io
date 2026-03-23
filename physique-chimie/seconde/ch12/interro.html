@@ -7,7 +7,7 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}</style>
 </head>
 <body>
 <div class="c">
@@ -25,6 +25,7 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -110,11 +111,98 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Les trois états de la matière sont : <strong>solide</strong>, <strong>liquide</strong>, <strong>gazeux</strong>.</div>
+  <p>Compléter le tableau :</p>
+  <table>
+    <tr><th>État</th><th>Compressible ?</th><th>Forme propre ?</th></tr>
+    <tr><td>Solide</td><td>..........</td><td>..........</td></tr>
+    <tr><td>Liquide</td><td>..........</td><td>..........</td></tr>
+    <tr><td>Gaz</td><td>..........</td><td>..........</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>État</th><th>Compressible ?</th><th>Forme propre ?</th></tr>
+      <tr><td>Solide</td><td><strong>Non</strong></td><td><strong>Oui</strong></td></tr>
+      <tr><td>Liquide</td><td><strong>Non</strong> (quasi incompressible)</td><td><strong>Non</strong> (forme du récipient)</td></tr>
+      <tr><td>Gaz</td><td><strong>Oui</strong></td><td><strong>Non</strong> (occupe tout le volume)</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Les changements d'état : fusion (S→L), solidification (L→S), vaporisation (L→G), condensation (G→L), sublimation (S→G).</div>
+  <p>Indiquer le nom du changement d'état pour chaque situation :</p>
+  <p>a) Le beurre fond dans une poêle chaude → ..........</p>
+  <p>b) Le givre se forme sur une vitre en hiver → ..........</p>
+  <p>c) Un glaçon se transforme en eau liquide → ..........</p>
+  <p>d) La vapeur d'une douche chaude se dépose sur le miroir → ..........</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Fusion</strong> (solide → liquide).</p>
+    <p>b) <strong>Condensation solide</strong> (gaz → solide, la vapeur d'eau passe directement à l'état solide).</p>
+    <p>c) <strong>Fusion</strong> (solide → liquide).</p>
+    <p>d) <strong>Condensation</strong> (gaz → liquide : la vapeur d'eau se transforme en gouttelettes).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Lors d'un changement d'état d'un corps pur, la <strong>température reste constante</strong> (palier).</div>
+  <p>On refroidit de l'eau liquide. On observe un palier de température.</p>
+  <p>a) À quelle température se situe le palier ? Quel changement d'état correspond ? → .......... °C, c'est la ..........</p>
+  <p>b) Pendant le palier, la température augmente, diminue ou reste constante ? → ..........</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le palier est à <strong>0 °C</strong>, c'est la <strong>solidification</strong> (eau liquide → glace).</p>
+    <p>b) Pendant le palier, la température <strong>reste constante</strong>. Toute l'énergie libérée sert au changement d'état.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(Q = m \times L\) avec \(Q\) en J, \(m\) en kg, \(L\) en J/kg. Pour l'eau : \(L_v = 2\,256\,000\) J/kg.</div>
+  <p>Calculer l'énergie nécessaire pour vaporiser 200 g d'eau à 100 °C.</p>
+  <p>a) Convertir 200 g en kg : \(m =\) .......... kg</p>
+  <p>b) Calculer : \(Q = m \times L_v = ......... \times 2\,256\,000 = ..........\) J</p>
+  <p>c) Convertir en kJ : \(Q =\) .......... kJ</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(m = 200\text{ g} = \mathbf{0{,}200\text{ kg}}\)</p>
+    <p>b) \(Q = 0{,}200 \times 2\,256\,000 = \mathbf{451\,200\text{ J}}\)</p>
+    <p>c) \(Q = \mathbf{451{,}2\text{ kJ}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Un changement d'état qui absorbe de la chaleur est <strong>endothermique</strong>. Un changement d'état qui libère de la chaleur est <strong>exothermique</strong>.</div>
+  <p>Pour chaque changement d'état, indiquer s'il est endothermique ou exothermique :</p>
+  <p>a) La sublimation → ..........</p>
+  <p>b) La condensation → ..........</p>
+  <p>c) La fusion → ..........</p>
+  <p>d) La solidification → ..........</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La sublimation est <strong>endothermique</strong> (absorbe de la chaleur).</p>
+    <p>b) La condensation est <strong>exothermique</strong> (dégage de la chaleur).</p>
+    <p>c) La fusion est <strong>endothermique</strong> (absorbe de la chaleur).</p>
+    <p>d) La solidification est <strong>exothermique</strong> (dégage de la chaleur).</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -203,11 +291,98 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Compléter le tableau des changements d'état avec le nom et le sens de la transition :</p>
+  <table>
+    <tr><th>Nom</th><th>Transition</th><th>Absorbe ou dégage ?</th></tr>
+    <tr><td>Fusion</td><td>... → ...</td><td>...</td></tr>
+    <tr><td>...</td><td>Liquide → Gaz</td><td>...</td></tr>
+    <tr><td>Solidification</td><td>... → ...</td><td>...</td></tr>
+    <tr><td>...</td><td>Gaz → Liquide</td><td>...</td></tr>
+    <tr><td>Sublimation</td><td>... → ...</td><td>...</td></tr>
+    <tr><td>...</td><td>Gaz → Solide</td><td>...</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Nom</th><th>Transition</th><th>Absorbe ou dégage ?</th></tr>
+      <tr><td><strong>Fusion</strong></td><td>Solide → Liquide</td><td>Absorbe (endothermique)</td></tr>
+      <tr><td><strong>Vaporisation</strong></td><td>Liquide → Gaz</td><td>Absorbe (endothermique)</td></tr>
+      <tr><td><strong>Solidification</strong></td><td>Liquide → Solide</td><td>Dégage (exothermique)</td></tr>
+      <tr><td><strong>Condensation</strong></td><td>Gaz → Liquide</td><td>Dégage (exothermique)</td></tr>
+      <tr><td><strong>Sublimation</strong></td><td>Solide → Gaz</td><td>Absorbe (endothermique)</td></tr>
+      <tr><td><strong>Condensation solide</strong></td><td>Gaz → Solide</td><td>Dégage (exothermique)</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un fabricant de meubles doit sécher un lot de planches d'érable contenant 3,5 kg d'eau.</p>
+  <p><strong>Donnée :</strong> \(L_v(\text{eau}) = 2\,256\,000\) J/kg</p>
+  <p>a) Calculer l'énergie nécessaire pour vaporiser cette eau.</p>
+  <p>b) Convertir le résultat en MJ.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(Q = m \times L_v = 3{,}5 \times 2\,256\,000 = \mathbf{7\,896\,000\text{ J}}\)</p>
+    <p>b) \(Q = \mathbf{7{,}90\text{ MJ}}\)</p>
+    <p>Le séchage de ce lot consomme une énergie importante, justifiant l'utilisation d'étuves performantes.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>On observe la courbe de chauffage d'un corps pur inconnu. On relève les informations suivantes :</p>
+  <ul>
+    <li>Premier palier à −39 °C</li>
+    <li>Deuxième palier à 357 °C</li>
+  </ul>
+  <p>a) Que se passe-t-il pour la température pendant un palier ?</p>
+  <p>b) Quel changement d'état correspond au premier palier ? Au deuxième ?</p>
+  <p>c) Ce corps pourrait-il être du mercure (fusion à −39 °C, ébullition à 357 °C) ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Pendant un palier, la température <strong>reste constante</strong> même si on continue à chauffer. Toute l'énergie fournie sert au changement d'état.</p>
+    <p>b) Le premier palier (−39 °C) correspond à la <strong>fusion</strong> (solide → liquide). Le deuxième palier (357 °C) correspond à l'<strong>ébullition</strong> (liquide → gaz).</p>
+    <p>c) <strong>Oui</strong>, les températures de changement d'état correspondent exactement à celles du mercure (fusion à −39 °C et ébullition à 357 °C). Ce corps pur est très probablement du <strong>mercure</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un artisan menuisier utilise de la cire d'abeille pour protéger un meuble en noyer. La cire fond à environ 63 °C.</p>
+  <p>a) Quel changement d'état se produit lorsque la cire est chauffée au bain-marie ?</p>
+  <p>b) Ce changement d'état absorbe-t-il ou dégage-t-il de la chaleur ?</p>
+  <p>c) Que se passe-t-il lorsque la cire refroidit sur le bois ? Quel changement d'état se produit ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Il s'agit de la <strong>fusion</strong> (solide → liquide) : la cire passe de l'état solide à l'état liquide.</p>
+    <p>b) Ce changement d'état <strong>absorbe</strong> de la chaleur (endothermique).</p>
+    <p>c) La cire se <strong>solidifie</strong> en refroidissant sur le bois (liquide → solide). La solidification est <strong>exothermique</strong> : elle dégage de la chaleur en formant un film protecteur solide.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Quelle est la différence entre sublimation et condensation solide ? Donner un exemple de sublimation observable dans la vie quotidienne.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Sublimation</strong> : passage direct de l'état solide à l'état gazeux, sans passer par l'état liquide. C'est un processus endothermique (absorbe de la chaleur).</p>
+    <p><strong>Condensation solide</strong> : passage direct de l'état gazeux à l'état solide. C'est un processus exothermique (dégage de la chaleur).</p>
+    <p>Exemple de sublimation : la <strong>naphtaline</strong> (boules antimites) disparaît progressivement sans fondre, elle se sublime directement en vapeur. Autre exemple : la neige carbonique (CO₂ solide) se sublime en gaz à température ambiante.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -286,6 +461,87 @@
   <div class="corr">
     <p>a) \(Q = m \times L_f = 3 \times 397\,000 = \mathbf{1\,191\,000\text{ J} = 1{,}19\text{ MJ}}\)</p>
     <p>b) La solidification est <strong>exothermique</strong> : elle <strong>dégage</strong> de la chaleur. C'est le processus inverse de la fusion (qui absorbe de la chaleur). L'énergie dégagée est la même en valeur absolue que celle qu'il faudrait fournir pour fondre la même masse.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur doit sécher un lot de planches de hêtre contenant au total 12 kg d'eau. L'étuve a une puissance utile de 4 kW.</p>
+  <p><strong>Donnée :</strong> \(L_v(\text{eau}) = 2\,256\,000\) J/kg</p>
+  <p>a) Calculer l'énergie totale nécessaire pour vaporiser cette eau.</p>
+  <p>b) En déduire le temps minimum de séchage en heures. On utilisera \(t = Q / \Phi\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(Q = m \times L_v = 12 \times 2\,256\,000 = \mathbf{27\,072\,000\text{ J} = 27{,}07\text{ MJ}}\)</p>
+    <p>b) \(\Phi = 4\text{ kW} = 4\,000\text{ W}\)</p>
+    <p>\(t = \dfrac{Q}{\Phi} = \dfrac{27\,072\,000}{4\,000} = 6\,768\text{ s} \approx \mathbf{113\text{ min} \approx 1\text{ h } 53\text{ min}}\)</p>
+    <p>En pratique, le séchage dure beaucoup plus longtemps en raison des pertes thermiques et de la lenteur de la diffusion de l'eau dans le bois.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>On souhaite comparer l'énergie de fusion de la glace et l'énergie de fusion du fer.</p>
+  <p><strong>Données :</strong> \(L_f(\text{eau}) = 334\,000\) J/kg ; \(L_f(\text{fer}) = 272\,000\) J/kg</p>
+  <p>a) Pour 5 kg de glace et 5 kg de fer, calculer l'énergie de fusion de chacun.</p>
+  <p>b) Lequel nécessite le plus d'énergie par kilogramme ? Est-ce surprenant ?</p>
+  <p>c) Le fer fond à 1 538 °C et la glace à 0 °C. Expliquer pourquoi la chaleur latente de fusion ne suffit pas à évaluer la difficulté de faire fondre un matériau.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Glace : \(Q = 5 \times 334\,000 = \mathbf{1\,670\,000\text{ J} = 1{,}67\text{ MJ}}\)</p>
+    <p>Fer : \(Q = 5 \times 272\,000 = \mathbf{1\,360\,000\text{ J} = 1{,}36\text{ MJ}}\)</p>
+    <p>b) La <strong>glace</strong> nécessite plus d'énergie par kg (334 kJ/kg > 272 kJ/kg). C'est surprenant car on associe le fer à un matériau difficile à fondre.</p>
+    <p>c) La chaleur latente ne mesure que l'énergie du changement d'état lui-même. Pour fondre le fer, il faut d'abord le <strong>chauffer de la température ambiante jusqu'à 1 538 °C</strong>, ce qui nécessite une énergie considérable supplémentaire (\(Q = m \times c \times \Delta T\)). Pour la glace, il suffit d'atteindre 0 °C. L'énergie totale pour fondre le fer est donc bien supérieure.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un artisan calcule le coût du séchage d'un lot de bois de frêne. Le lot contient 20 kg d'eau à évaporer. Le prix de l'énergie est 0,18 €/kWh.</p>
+  <p><strong>Donnée :</strong> \(L_v = 2\,256\,000\) J/kg ; 1 kWh = 3 600 000 J</p>
+  <p>a) Calculer l'énergie totale \(Q\) en joules.</p>
+  <p>b) Convertir en kWh.</p>
+  <p>c) Calculer le coût de l'énergie nécessaire.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(Q = 20 \times 2\,256\,000 = \mathbf{45\,120\,000\text{ J}}\)</p>
+    <p>b) \(Q = \dfrac{45\,120\,000}{3\,600\,000} = \mathbf{12{,}5\text{ kWh}}\)</p>
+    <p>c) Coût : \(12{,}5 \times 0{,}18 = \mathbf{2{,}25\text{ €}}\)</p>
+    <p>C'est le coût théorique minimal. Avec les pertes de l'étuve, le coût réel est 3 à 5 fois plus élevé.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>L'acétone, utilisée comme solvant de nettoyage en atelier, a un point d'ébullition de 56 °C et un point d'éclair de −20 °C.</p>
+  <p>a) Que signifie « point d'ébullition de 56 °C » ?</p>
+  <p>b) Pourquoi l'acétone est-elle encore plus dangereuse que le white-spirit (point d'éclair 40 °C) ?</p>
+  <p>c) Proposer deux mesures de sécurité pour l'utilisation de l'acétone en atelier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le point d'ébullition de 56 °C signifie que l'acétone <strong>bout à 56 °C</strong> sous pression normale. Elle s'évapore très facilement à température ambiante.</p>
+    <p>b) L'acétone est plus dangereuse car son point d'éclair est de <strong>−20 °C</strong>, ce qui signifie que ses vapeurs peuvent s'enflammer même à des températures largement inférieures à la température ambiante. Toute utilisation produit des vapeurs inflammables, quelle que soit la saison.</p>
+    <p>c) Mesures de sécurité :</p>
+    <ul>
+      <li><strong>Ventilation permanente</strong> et travail dans une zone bien aérée, loin de toute source de chaleur ou d'étincelle.</li>
+      <li><strong>Stockage dans un récipient hermétique</strong> à l'écart des sources d'ignition, dans une armoire anti-feu.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Un conducteur de travaux étudie la solidification du béton. Lors de la prise du béton, une réaction chimique exothermique se produit. Le béton peut atteindre 70 °C au cœur d'une dalle épaisse.</p>
+  <p><strong>Données :</strong> \(L_v(\text{eau}) = 2\,256\,000\) J/kg</p>
+  <p>a) Pourquoi arrose-t-on le béton frais avec de l'eau lors des fortes chaleurs ?</p>
+  <p>b) Quel changement d'état subit l'eau d'arrosage ? Est-il endothermique ou exothermique ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) On arrose le béton pour le <strong>refroidir</strong>. L'eau s'évapore à la surface du béton et <strong>absorbe de la chaleur</strong>, ce qui limite la montée en température et évite la fissuration due aux contraintes thermiques.</p>
+    <p>b) L'eau subit une <strong>vaporisation</strong> (liquide → gaz). C'est un processus <strong>endothermique</strong> : il absorbe de l'énergie, ce qui refroidit le béton. Chaque kilogramme d'eau évaporé absorbe 2,26 MJ de chaleur.</p>
   </div>
 </div>
 

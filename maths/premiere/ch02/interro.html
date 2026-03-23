@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,8 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Bar&egrave;me :</strong> 20 points</p>
 
 <div class="exo">
@@ -105,11 +108,92 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> L'univers \(\Omega\) est l'ensemble de toutes les issues possibles. Un &eacute;v&eacute;nement est un sous-ensemble de \(\Omega\).</div>
+  <p>On lance un d&eacute; &eacute;quilibr&eacute; &agrave; 6 faces.</p>
+  <p>a) &Eacute;crire l'univers \(\Omega = \{...\}\)</p>
+  <p>b) &Eacute;crire l'&eacute;v&eacute;nement \(A\) = &laquo; obtenir un nombre strictement inf&eacute;rieur &agrave; 3 &raquo; : \(A = \{...\}\)</p>
+  <p>c) Combien d'issues contient l'&eacute;v&eacute;nement \(A\) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\Omega = \{1\,;\,2\,;\,3\,;\,4\,;\,5\,;\,6\}\)</p>
+    <p>b) \(A = \{1\,;\,2\}\)</p>
+    <p>c) L'&eacute;v&eacute;nement \(A\) contient <strong>2 issues</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> En situation d'&eacute;quiprobabilit&eacute; : \(P(A) = \dfrac{\text{nombre d'issues favorables}}{\text{nombre total d'issues}}\).</div>
+  <p>On lance un d&eacute; &eacute;quilibr&eacute; &agrave; 6 faces.</p>
+  <p>a) Calculer \(P(A)\) = probabilit&eacute; d'obtenir un nombre \(< 3\) : \(P(A) = \dfrac{...}{6} = ...\)</p>
+  <p>b) Calculer la probabilit&eacute; d'obtenir un nombre pair : \(P(B) = \dfrac{...}{6} = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(A) = \dfrac{2}{6} = \mathbf{\dfrac{1}{3} \approx 0{,}33}\) soit environ 33 %.</p>
+    <p>b) \(B = \{2\,;\,4\,;\,6\}\), donc \(P(B) = \dfrac{3}{6} = \mathbf{0{,}5}\) soit 50 %.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(P(\bar{A}) = 1 - P(A)\). L'&eacute;v&eacute;nement contraire de \(A\) se r&eacute;alise quand \(A\) ne se r&eacute;alise pas.</div>
+  <p>Un artisan menuisier re&ccedil;oit un lot de 200 charnières. 12 sont d&eacute;fectueuses. On pr&eacute;l&egrave;ve une charni&egrave;re au hasard.</p>
+  <p>a) Calculer la probabilit&eacute; que la charni&egrave;re soit d&eacute;fectueuse : \(P(D) = \dfrac{12}{200} = ...\)</p>
+  <p>b) En d&eacute;duire la probabilit&eacute; que la charni&egrave;re soit conforme : \(P(\bar{D}) = 1 - ... = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(D) = \dfrac{12}{200} = \mathbf{0{,}06}\) soit 6 %.</p>
+    <p>b) \(P(\bar{D}) = 1 - 0{,}06 = \mathbf{0{,}94}\) soit 94 %.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Si \(A\) et \(B\) sont incompatibles : \(P(A \cup B) = P(A) + P(B)\).</div>
+  <p>Un technicien chauffagiste contr&ocirc;le 200 radiateurs. Il rel&egrave;ve :</p>
+  <ul>
+    <li>12 radiateurs avec une fuite (&eacute;v&eacute;nement \(F\))</li>
+    <li>8 radiateurs avec un probl&egrave;me de thermostat (&eacute;v&eacute;nement \(T\))</li>
+    <li>Aucun radiateur n'a les deux d&eacute;fauts &agrave; la fois.</li>
+  </ul>
+  <p>a) Calculer \(P(F) = \dfrac{...}{200} = ...\)</p>
+  <p>b) Calculer \(P(T) = \dfrac{...}{200} = ...\)</p>
+  <p>c) Pourquoi les &eacute;v&eacute;nements \(F\) et \(T\) sont-ils incompatibles ?</p>
+  <p>d) Calculer \(P(F \cup T) = P(F) + P(T) = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(F) = \dfrac{12}{200} = \mathbf{0{,}06}\)</p>
+    <p>b) \(P(T) = \dfrac{8}{200} = \mathbf{0{,}04}\)</p>
+    <p>c) Les &eacute;v&eacute;nements \(F\) et \(T\) sont incompatibles car aucun radiateur n'a les deux d&eacute;fauts &agrave; la fois : ils ne peuvent pas se r&eacute;aliser en m&ecirc;me temps.</p>
+    <p>d) \(P(F \cup T) = 0{,}06 + 0{,}04 = \mathbf{0{,}10}\) soit 10 %.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La somme des probabilit&eacute;s de toutes les issues vaut 1.</div>
+  <p>Un sac contient des jetons de 3 couleurs. On tire un jeton au hasard. On sait que \(P(\text{jaune}) = 0{,}3\) et \(P(\text{bleu}) = 0{,}45\).</p>
+  <p>a) Calculer \(P(\text{rouge}) = 1 - ... - ... = ...\)</p>
+  <p>b) Le sac contient 40 jetons. Combien y a-t-il de jetons rouges ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(\text{rouge}) = 1 - 0{,}3 - 0{,}45 = \mathbf{0{,}25}\) soit 25 %.</p>
+    <p>b) Nombre de jetons rouges : \(40 \times 0{,}25 = \mathbf{10}\) jetons rouges.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Bar&egrave;me :</strong> 20 points</p>
 
 <div class="exo">
@@ -200,11 +284,104 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur fabrique des tiroirs. La probabilit&eacute; qu'un tiroir pr&eacute;sente un d&eacute;faut est \(P(D) = 0{,}05\).</p>
+  <p>a) Quelle est la probabilit&eacute; qu'un tiroir soit conforme ?</p>
+  <p>b) Sur un lot de 200 tiroirs, combien peut-on estimer de tiroirs d&eacute;fectueux ?</p>
+  <p>c) Combien de tiroirs conformes peut-on estimer ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(\bar{D}) = 1 - 0{,}05 = \mathbf{0{,}95}\) soit 95 %.</p>
+    <p>b) Tiroirs d&eacute;fectueux : \(200 \times 0{,}05 = \mathbf{10}\) tiroirs.</p>
+    <p>c) Tiroirs conformes : \(200 \times 0{,}95 = \mathbf{190}\) tiroirs (ou \(200 - 10 = 190\)).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Un atelier de menuiserie produit des fen&ecirc;tres en deux mat&eacute;riaux (bois et PVC) sur deux cha&icirc;nes (C1 et C2). Voici les donn&eacute;es sur 200 fen&ecirc;tres :</p>
+  <table>
+    <thead>
+      <tr><th></th><th>C1</th><th>C2</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Bois</strong></td><td>60</td><td>40</td><td>100</td></tr>
+      <tr><td><strong>PVC</strong></td><td>50</td><td>50</td><td>100</td></tr>
+      <tr><td><strong>Total</strong></td><td>110</td><td>90</td><td>200</td></tr>
+    </tbody>
+  </table>
+  <p>On pr&eacute;l&egrave;ve une fen&ecirc;tre au hasard. Calculer :</p>
+  <p>a) \(P(\text{Bois})\)</p>
+  <p>b) \(P(\text{C1})\)</p>
+  <p>c) \(P(\text{Bois et C1})\)</p>
+  <p>d) \(P_{\text{C1}}(\text{Bois})\) (probabilit&eacute; que la fen&ecirc;tre soit en bois sachant qu'elle vient de C1).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(\text{Bois}) = \dfrac{100}{200} = \mathbf{0{,}5}\)</p>
+    <p>b) \(P(\text{C1}) = \dfrac{110}{200} = \mathbf{0{,}55}\)</p>
+    <p>c) \(P(\text{Bois et C1}) = \dfrac{60}{200} = \mathbf{0{,}3}\)</p>
+    <p>d) \(P_{\text{C1}}(\text{Bois}) = \dfrac{60}{110} \approx \mathbf{0{,}545}\) soit environ 54,5 %.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>Un fournisseur livre des raccords &agrave; un installateur thermique. 60 % des raccords viennent du fournisseur A et 40 % du fournisseur B. Parmi les raccords du fournisseur A, 3 % sont d&eacute;fectueux. Parmi ceux du fournisseur B, 7 % sont d&eacute;fectueux.</p>
+  <p>a) Construire l'arbre de probabilit&eacute;s.</p>
+  <p>b) Calculer la probabilit&eacute; qu'un raccord choisi au hasard soit d&eacute;fectueux.</p>
+  <p>c) En d&eacute;duire la probabilit&eacute; qu'un raccord soit conforme.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Arbre :</p>
+    <ul>
+      <li>Fournisseur A (\(0{,}6\)) &rarr; D&eacute;fectueux (\(0{,}03\)) ou Conforme (\(0{,}97\))</li>
+      <li>Fournisseur B (\(0{,}4\)) &rarr; D&eacute;fectueux (\(0{,}07\)) ou Conforme (\(0{,}93\))</li>
+    </ul>
+    <p>b) \(P(D) = P(A \cap D) + P(B \cap D) = 0{,}6 \times 0{,}03 + 0{,}4 \times 0{,}07\)</p>
+    <p>\(P(D) = 0{,}018 + 0{,}028 = \mathbf{0{,}046}\) soit 4,6 %.</p>
+    <p>c) \(P(\bar{D}) = 1 - 0{,}046 = \mathbf{0{,}954}\) soit 95,4 %.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(3 points)</span></h2>
+  <p>On tire une carte au hasard dans un jeu de 32 cartes.</p>
+  <p>Soit \(A\) = &laquo; obtenir un c&oelig;ur &raquo; et \(B\) = &laquo; obtenir un pique &raquo;.</p>
+  <p>a) Les &eacute;v&eacute;nements \(A\) et \(B\) sont-ils incompatibles ? Justifier.</p>
+  <p>b) Calculer \(P(A \cup B)\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Oui</strong>, \(A\) et \(B\) sont incompatibles : une carte ne peut pas &ecirc;tre &agrave; la fois un c&oelig;ur et un pique.</p>
+    <p>b) \(P(A) = \dfrac{8}{32} = \dfrac{1}{4}\) et \(P(B) = \dfrac{8}{32} = \dfrac{1}{4}\).</p>
+    <p>\(P(A \cup B) = P(A) + P(B) = \dfrac{1}{4} + \dfrac{1}{4} = \dfrac{2}{4} = \mathbf{0{,}5}\) soit 50 %.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Vrai ou faux ? Justifier chaque r&eacute;ponse.</p>
+  <p>a) &laquo; Si deux &eacute;v&eacute;nements sont incompatibles, alors \(P(A \cup B) = P(A) \times P(B)\). &raquo;</p>
+  <p>b) &laquo; L'&eacute;v&eacute;nement contraire de &laquo; obtenir un 6 &raquo; est &laquo; obtenir un 1 &raquo;. &raquo;</p>
+  <p>c) &laquo; Si \(P(A) = 0\), l'&eacute;v&eacute;nement \(A\) est impossible. &raquo;</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>FAUX.</strong> Si deux &eacute;v&eacute;nements sont incompatibles, \(P(A \cup B) = P(A) + P(B)\) (somme, pas produit).</p>
+    <p>b) <strong>FAUX.</strong> L'&eacute;v&eacute;nement contraire de &laquo; obtenir un 6 &raquo; est &laquo; ne pas obtenir un 6 &raquo;, soit \(\{1\,;\,2\,;\,3\,;\,4\,;\,5\}\).</p>
+    <p>c) <strong>VRAI.</strong> Un &eacute;v&eacute;nement de probabilit&eacute; nulle est un &eacute;v&eacute;nement impossible.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Bar&egrave;me :</strong> 20 points</p>
 
 <div class="exo">
@@ -294,6 +471,99 @@
     <p>\(P(D) = 0{,}01 + 0{,}015 + 0{,}016 = \mathbf{0{,}041}\) soit 4,1 %.</p>
     <p>c) \(P(\bar{D}) = 1 - 0{,}041 = \mathbf{0{,}959}\) soit 95,9 %.</p>
     <p>d) Nombre estim&eacute; de poign&eacute;es d&eacute;fectueuses : \(500 \times 0{,}041 = \mathbf{20{,}5}\), soit environ <strong>21 poign&eacute;es</strong>.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un entrep&ocirc;t de mat&eacute;riaux vend des rouleaux d'isolant fabriqu&eacute;s par deux machines :</p>
+  <ul>
+    <li>Machine 1 produit 55 % des rouleaux ; parmi ceux-ci, 4 % sont d&eacute;fectueux.</li>
+    <li>Machine 2 produit 45 % des rouleaux ; parmi ceux-ci, 7 % sont d&eacute;fectueux.</li>
+  </ul>
+  <p>a) Construire l'arbre de probabilit&eacute;s.</p>
+  <p>b) Calculer la probabilit&eacute; qu'un rouleau pris au hasard soit d&eacute;fectueux.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Arbre :</p>
+    <ul>
+      <li>Machine 1 (\(0{,}55\)) &rarr; D&eacute;fectueux (\(0{,}04\)) ou Conforme (\(0{,}96\))</li>
+      <li>Machine 2 (\(0{,}45\)) &rarr; D&eacute;fectueux (\(0{,}07\)) ou Conforme (\(0{,}93\))</li>
+    </ul>
+    <p>b) \(P(D) = 0{,}55 \times 0{,}04 + 0{,}45 \times 0{,}07 = 0{,}022 + 0{,}0315 = \mathbf{0{,}0535}\) soit environ 5,35 %.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Un atelier de fabrication produit des pi&egrave;ces en bois. Une pi&egrave;ce subit deux contr&ocirc;les successifs. La probabilit&eacute; qu'elle r&eacute;ussisse le premier contr&ocirc;le est \(0{,}88\). Si elle r&eacute;ussit le premier, elle r&eacute;ussit le second avec une probabilit&eacute; de \(0{,}95\). Si elle &eacute;choue au premier, elle r&eacute;ussit le second avec une probabilit&eacute; de \(0{,}3\).</p>
+  <p>a) Construire l'arbre pond&eacute;r&eacute; complet.</p>
+  <p>b) Calculer la probabilit&eacute; qu'une pi&egrave;ce r&eacute;ussisse les deux contr&ocirc;les.</p>
+  <p>c) Calculer la probabilit&eacute; qu'une pi&egrave;ce r&eacute;ussisse le second contr&ocirc;le (quel que soit le r&eacute;sultat du premier).</p>
+  <p>d) V&eacute;rifier que la somme de toutes les probabilit&eacute;s des chemins vaut 1.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Arbre :</p>
+    <ul>
+      <li>1er contr&ocirc;le R&eacute;ussi (\(0{,}88\)) &rarr; 2e R&eacute;ussi (\(0{,}95\)) ou 2e &Eacute;chou&eacute; (\(0{,}05\))</li>
+      <li>1er contr&ocirc;le &Eacute;chou&eacute; (\(0{,}12\)) &rarr; 2e R&eacute;ussi (\(0{,}3\)) ou 2e &Eacute;chou&eacute; (\(0{,}7\))</li>
+    </ul>
+    <p>b) \(P(R_1 \cap R_2) = 0{,}88 \times 0{,}95 = \mathbf{0{,}836}\)</p>
+    <p>c) \(P(R_2) = 0{,}88 \times 0{,}95 + 0{,}12 \times 0{,}3 = 0{,}836 + 0{,}036 = \mathbf{0{,}872}\)</p>
+    <p>d) V&eacute;rification : \(0{,}836 + 0{,}044 + 0{,}036 + 0{,}084 = 1{,}000\) &#10003;</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>Un plombier chauffagiste contr&ocirc;le 250 vannes r&eacute;parties ainsi :</p>
+  <table>
+    <thead>
+      <tr><th></th><th>Neuve</th><th>Ancienne</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Conforme</strong></td><td>110</td><td>80</td><td>190</td></tr>
+      <tr><td><strong>D&eacute;faillante</strong></td><td>15</td><td>45</td><td>60</td></tr>
+      <tr><td><strong>Total</strong></td><td>125</td><td>125</td><td>250</td></tr>
+    </tbody>
+  </table>
+  <p>On choisit une vanne au hasard.</p>
+  <p>a) Calculer \(P(\text{D&eacute;faillante})\) et \(P(\text{Ancienne})\).</p>
+  <p>b) Calculer \(P(\text{D&eacute;faillante et Ancienne})\).</p>
+  <p>c) Calculer la probabilit&eacute; qu'une vanne soit d&eacute;faillante sachant qu'elle est ancienne : \(P_{\text{Ancienne}}(\text{D&eacute;faillante})\).</p>
+  <p>d) Comparer avec \(P_{\text{Neuve}}(\text{D&eacute;faillante})\). Que peut-on en conclure ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(\text{D&eacute;faillante}) = \dfrac{60}{250} = \mathbf{0{,}24}\) et \(P(\text{Ancienne}) = \dfrac{125}{250} = \mathbf{0{,}5}\).</p>
+    <p>b) \(P(\text{D&eacute;faillante et Ancienne}) = \dfrac{45}{250} = \mathbf{0{,}18}\).</p>
+    <p>c) \(P_{\text{Ancienne}}(\text{D&eacute;faillante}) = \dfrac{45}{125} = \mathbf{0{,}36}\) soit 36 %.</p>
+    <p>d) \(P_{\text{Neuve}}(\text{D&eacute;faillante}) = \dfrac{15}{125} = \mathbf{0{,}12}\) soit 12 %.</p>
+    <p>Une vanne ancienne a <strong>3 fois plus de risque</strong> d'&ecirc;tre d&eacute;faillante qu'une vanne neuve (36 % contre 12 %). L'&acirc;ge du mat&eacute;riel augmente significativement le risque de d&eacute;faillance.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(6 points)</span></h2>
+  <p>Un installateur d'agencement commande des &eacute;querres aupr&egrave;s de trois fournisseurs X, Y et Z. Il commande 40 % chez X, 35 % chez Y et 25 % chez Z. Les taux de d&eacute;faut sont respectivement 3 %, 4 % et 10 %.</p>
+  <p>a) Construire l'arbre de probabilit&eacute;s.</p>
+  <p>b) Calculer la probabilit&eacute; qu'une &eacute;querre prise au hasard soit d&eacute;fectueuse.</p>
+  <p>c) Calculer la probabilit&eacute; qu'une &eacute;querre soit conforme.</p>
+  <p>d) Sur une commande de 400 &eacute;querres, combien peut-on estimer d'&eacute;querres d&eacute;fectueuses ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Arbre :</p>
+    <ul>
+      <li>X (\(0{,}4\)) &rarr; D&eacute;fectueux (\(0{,}03\)) ou Conforme (\(0{,}97\))</li>
+      <li>Y (\(0{,}35\)) &rarr; D&eacute;fectueux (\(0{,}04\)) ou Conforme (\(0{,}96\))</li>
+      <li>Z (\(0{,}25\)) &rarr; D&eacute;fectueux (\(0{,}10\)) ou Conforme (\(0{,}90\))</li>
+    </ul>
+    <p>b) \(P(D) = 0{,}4 \times 0{,}03 + 0{,}35 \times 0{,}04 + 0{,}25 \times 0{,}10\)</p>
+    <p>\(P(D) = 0{,}012 + 0{,}014 + 0{,}025 = \mathbf{0{,}051}\) soit 5,1 %.</p>
+    <p>c) \(P(\bar{D}) = 1 - 0{,}051 = \mathbf{0{,}949}\) soit 94,9 %.</p>
+    <p>d) Nombre estim&eacute; d'&eacute;querres d&eacute;fectueuses : \(400 \times 0{,}051 = \mathbf{20{,}4}\), soit environ <strong>20 &eacute;querres</strong>.</p>
   </div>
 </div>
 

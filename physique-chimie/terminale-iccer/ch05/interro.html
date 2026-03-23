@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -96,11 +98,82 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(P = \dfrac{F}{S}\) avec P en Pa, F en N, S en m².</div>
+  <p>Une force F = 800 N s'applique sur une surface S = 0,04 m².</p>
+  <p>a) Calculer la pression : \(P = \dfrac{800}{0{,}04} = ...\) Pa</p>
+  <p>b) Convertir en bar (1 bar = 10⁵ Pa) : \(P = \dfrac{...}{100\,000} = ...\) bar</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P = \dfrac{800}{0{,}04} = \mathbf{20\,000}\) Pa</p>
+    <p>b) \(P = \dfrac{20\,000}{100\,000} = \mathbf{0{,}20}\) bar</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Relation de Pascal : \(\Delta P = \rho \times g \times \Delta h\). Eau : ρ = 1 000 kg/m³, g = 9,81 m/s².</div>
+  <p>Un technicien chauffagiste mesure la pression en bas d'une colonne d'eau de h = 5 m.</p>
+  <p>a) Calculer la surpression : \(\Delta P = 1\,000 \times 9{,}81 \times 5 = ...\) Pa</p>
+  <p>b) Convertir en bar : \(\Delta P = \dfrac{...}{100\,000} \approx ...\) bar</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\Delta P = 1\,000 \times 9{,}81 \times 5 = \mathbf{49\,050}\) Pa</p>
+    <p>b) \(\Delta P \approx \mathbf{0{,}49}\) bar</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La pression atmosphérique vaut environ P<sub>atm</sub> = 1,013 bar.</div>
+  <p>Un manomètre indique 1,8 bar (pression relative).</p>
+  <p>a) Quelle est la pression absolue ? \(P_{abs} = 1{,}8 + 1{,}013 = ...\) bar</p>
+  <p>b) 1 bar = 10⁵ Pa. Convertir cette pression absolue en Pa.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P_{abs} = 1{,}8 + 1{,}013 = \mathbf{2{,}813}\) bar</p>
+    <p>b) \(P_{abs} = 2{,}813 \times 10^5 = \mathbf{281\,300}\) Pa</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Presse hydraulique : \(\dfrac{F_1}{S_1} = \dfrac{F_2}{S_2}\), donc \(F_2 = F_1 \times \dfrac{S_2}{S_1}\).</div>
+  <p>Petit piston : S₁ = 8 cm² = 8 × 10⁻⁴ m². Grand piston : S₂ = 200 cm² = 2 × 10⁻² m². F₁ = 100 N.</p>
+  <p>a) Calculer le rapport S₂/S₁ : \(\dfrac{200}{8} = ...\)</p>
+  <p>b) Calculer F₂ : \(F_2 = 100 \times ... = ...\) N</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{S_2}{S_1} = \dfrac{200}{8} = \mathbf{25}\)</p>
+    <p>b) \(F_2 = 100 \times 25 = \mathbf{2\,500}\) N = 2,5 kN</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Force d'un vérin : \(F = P \times S\). Section circulaire : \(S = \pi \times r^2\).</div>
+  <p>Un vérin a un piston de diamètre d = 10 cm. La pression est P = 80 bar = 8 × 10⁶ Pa.</p>
+  <p>a) Calculer le rayon : r = 5 cm = 0,05 m</p>
+  <p>b) Calculer S : \(S = \pi \times (0{,}05)^2 = ...\) m²</p>
+  <p>c) Calculer F : \(F = 8 \times 10^6 \times ... = ...\) N</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) r = 0,05 m</p>
+    <p>b) \(S = \pi \times (0{,}05)^2 \approx \mathbf{7{,}85 \times 10^{-3}}\) m²</p>
+    <p>c) \(F = 8 \times 10^6 \times 7{,}85 \times 10^{-3} \approx \mathbf{62\,800}\) N ≈ 62,8 kN</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -163,11 +236,75 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien chauffagiste lit un manomètre sur un circuit de chauffage : P<sub>rel</sub> = 2,0 bar. La pression atmosphérique est 1,013 bar.</p>
+  <p>a) Calculer la pression absolue.</p>
+  <p>b) Cette pression est-elle dans la plage normale pour un réseau de chauffage (1,5 à 3 bar absolus) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P_{abs} = 2{,}0 + 1{,}013 = \mathbf{3{,}013}\) bar</p>
+    <p>b) 3,013 bar ∈ [1,5 ; 3] bar → <strong>à la limite haute</strong>, la pression est acceptable mais à surveiller.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un réservoir de chauffage est au sous-sol. La pression en bas est P₀ = 3 bar. La hauteur jusqu'au radiateur le plus haut est h = 12 m (ρ = 1 000 kg/m³).</p>
+  <p>a) Calculer la surpression ΔP due à la colonne d'eau.</p>
+  <p>b) Calculer la pression au radiateur le plus haut.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\Delta P = 1\,000 \times 9{,}81 \times 12 = 117\,720\) Pa \(\approx \mathbf{1{,}18}\) bar</p>
+    <p>b) En montant la pression diminue : \(P = 3 - 1{,}18 = \mathbf{1{,}82}\) bar</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un piston circulaire de diamètre d = 5 cm est soumis à une pression P = 20 bar.</p>
+  <p>a) Calculer la surface S du piston.</p>
+  <p>b) Calculer la force F exercée sur le piston.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) r = 0,025 m → \(S = \pi \times (0{,}025)^2 \approx \mathbf{1{,}96 \times 10^{-3}}\) m²</p>
+    <p>b) P = 20 bar = 2,0 × 10⁶ Pa → \(F = 2{,}0 \times 10^6 \times 1{,}96 \times 10^{-3} \approx \mathbf{3\,927}\) N ≈ 3,9 kN</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Une presse hydraulique a d₁ = 4 cm et d₂ = 20 cm. Un technicien CVC appuie avec F₁ = 200 N.</p>
+  <p>a) Calculer le rapport d'amplification (S₂/S₁).</p>
+  <p>b) Calculer la force produite F₂.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{S_2}{S_1} = \left(\dfrac{d_2}{d_1}\right)^2 = \left(\dfrac{20}{4}\right)^2 = 5^2 = \mathbf{25}\)</p>
+    <p>b) \(F_2 = 200 \times 25 = \mathbf{5\,000}\) N = 5 kN</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un plongeur descend à 20 m dans l'eau douce (ρ = 1 000 kg/m³). La pression atmosphérique en surface est 1 bar.</p>
+  <p>a) Calculer ΔP due à la colonne d'eau.</p>
+  <p>b) Calculer la pression totale subie par le plongeur.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\Delta P = 1\,000 \times 9{,}81 \times 20 = 196\,200\) Pa \(\approx \mathbf{1{,}96}\) bar</p>
+    <p>b) \(P_{total} = 1 + 1{,}96 = \mathbf{2{,}96}\) bar</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -236,6 +373,78 @@
     <p>a) \(\Delta P = 870 \times 9{,}81 \times 4 \approx \mathbf{34\,139}\) Pa ≈ 0,34 bar</p>
     <p>b) \(P = 3{,}0 + 0{,}34 = \mathbf{3{,}34}\) bar</p>
     <p>c) Eau : \(\Delta P = 1\,000 \times 9{,}81 \times 4 = 39\,240\) Pa ≈ 0,39 bar. L'<strong>eau</strong> exerce une pression plus forte car elle est plus dense (ρ<sub>eau</sub> > ρ<sub>huile</sub>).</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un système hydraulique de serrage est équipé de 3 vérins. Chaque vérin a un piston de d = 8 cm et est alimenté à P = 120 bar.</p>
+  <p>a) Calculer la force développée par un vérin.</p>
+  <p>b) Calculer la force totale que peut exercer ce système (g = 9,81 m/s²).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) S = π × (0,04)² ≈ 5,03 × 10⁻³ m². P = 1,2 × 10⁷ Pa.</p>
+    <p>\(F = 1{,}2 \times 10^7 \times 5{,}03 \times 10^{-3} \approx \mathbf{60\,318}\) N par vérin.</p>
+    <p>b) F<sub>tot</sub> = 3 × 60 318 = <strong>180 955</strong> N ≈ 181 kN.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un réseau ECS d'un hôtel : P₀ = 3,0 bar (relatif) au sous-sol. Hauteur du dernier étage : h = 24 m. Eau à 55 °C (ρ = 986 kg/m³).</p>
+  <p>a) Calculer ΔP dû à la colonne d'eau.</p>
+  <p>b) Calculer la pression relative au dernier étage.</p>
+  <p>c) Un réducteur de pression est réglé à 0,5 bar relatif minimum. La pression au dernier étage est-elle suffisante ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\Delta P = 986 \times 9{,}81 \times 24 \approx 232\,108\) Pa \(\approx \mathbf{2{,}32}\) bar</p>
+    <p>b) P<sub>haut</sub> = 3,0 − 2,32 = <strong>0,68 bar</strong> relatif.</p>
+    <p>c) 0,68 bar > 0,5 bar → la pression est <strong>suffisante</strong>, mais juste.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>On veut soulever une charge de 8 000 kg avec 2 vérins de d = 10 cm.</p>
+  <p>a) Calculer le poids de la charge.</p>
+  <p>b) Calculer la force par vérin.</p>
+  <p>c) Calculer la pression nécessaire.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(W = 8\,000 \times 9{,}81 = \mathbf{78\,480}\) N</p>
+    <p>b) \(F_v = \dfrac{78\,480}{2} = \mathbf{39\,240}\) N</p>
+    <p>c) \(S = \pi \times (0{,}05)^2 \approx 7{,}85 \times 10^{-3}\) m². \(P = \dfrac{39\,240}{7{,}85 \times 10^{-3}} \approx 5{,}0 \times 10^6\) Pa \(\approx \mathbf{50}\) bar.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Dans une presse hydraulique, le grand piston (d₂ = 15 cm) doit monter de 8 mm. Le petit piston a d₁ = 3 cm.</p>
+  <p>a) Calculer le rapport S₂/S₁.</p>
+  <p>b) De combien le petit piston doit-il descendre ? (Conservation du volume : déplacement₁ × S₁ = déplacement₂ × S₂)</p>
+  <p>c) Commenter ce résultat.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{S_2}{S_1} = \left(\dfrac{15}{3}\right)^2 = \mathbf{25}\)</p>
+    <p>b) \(d_1 = 8 \times 25 = \mathbf{200}\) mm = 20 cm</p>
+    <p>c) Le petit piston doit descendre de 20 cm pour que le grand monte de seulement 8 mm. L'amplification de force (×25) se fait au détriment du déplacement (÷25).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un réservoir d'eau glycolée (ρ = 1 040 kg/m³) est pressurisé à P₀ = 2,0 bar en surface. Un capteur est situé à 6 m de profondeur.</p>
+  <p>a) Calculer ΔP dû à la colonne d'eau glycolée.</p>
+  <p>b) Calculer la pression totale au capteur.</p>
+  <p>c) Comparer avec la même profondeur dans l'eau pure (ρ = 1 000 kg/m³). Quel fluide exerce la plus grande pression ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\Delta P = 1\,040 \times 9{,}81 \times 6 \approx \mathbf{61\,214}\) Pa ≈ 0,61 bar</p>
+    <p>b) \(P = 2{,}0 + 0{,}61 = \mathbf{2{,}61}\) bar</p>
+    <p>c) Eau pure : \(\Delta P = 1\,000 \times 9{,}81 \times 6 = 58\,860\) Pa ≈ 0,59 bar. L'<strong>eau glycolée</strong> exerce une pression plus forte car elle est plus dense (ρ<sub>glycol</sub> > ρ<sub>eau</sub>).</p>
   </div>
 </div>
 

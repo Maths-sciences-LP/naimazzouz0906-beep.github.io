@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,8 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -109,11 +112,96 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Dans un triangle rectangle, l'hypoténuse est le côté <strong>opposé à l'angle droit</strong>. C'est le <strong>plus grand côté</strong>.</div>
+  <p>Dans un triangle rectangle en C, les côtés sont AC, BC et AB.</p>
+  <p>a) Quel est le nom du côté opposé à l'angle droit ? ............</p>
+  <p>b) Ce côté est-il le plus grand ou le plus petit du triangle ?</p>
+  <p>c) Écrire la formule du théorème de Pythagore : \(AB^2 = \ldots + \ldots\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) C'est l'<strong>hypoténuse</strong>, ici le côté AB.</p>
+    <p>b) C'est le <strong>plus grand</strong> côté du triangle.</p>
+    <p>c) \(AB^2 = AC^2 + BC^2\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Pour calculer l'hypoténuse : \(AB = \sqrt{AC^2 + BC^2}\).</div>
+  <p>Un triangle est rectangle en C avec AC = 9 cm et BC = 12 cm.</p>
+  <p>a) Identifier l'hypoténuse.</p>
+  <p>b) Calculer : \(AC^2 = 9^2 = \ldots\)</p>
+  <p>c) Calculer : \(BC^2 = 12^2 = \ldots\)</p>
+  <p>d) \(AB^2 = AC^2 + BC^2 = \ldots + \ldots = \ldots\)</p>
+  <p>e) \(AB = \sqrt{\ldots} = \ldots\) cm</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) L'hypoténuse est <strong>AB</strong> (opposée à l'angle droit en C).</p>
+    <p>b) \(AC^2 = 81\)</p>
+    <p>c) \(BC^2 = 144\)</p>
+    <p>d) \(AB^2 = 81 + 144 = 225\)</p>
+    <p>e) \(AB = \sqrt{225} = \mathbf{15\,\text{cm}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Pour calculer un côté de l'angle droit : \(AC = \sqrt{AB^2 - BC^2}\).</div>
+  <p>Un triangle est rectangle en C avec AB = 15 cm (hypoténuse) et BC = 9 cm.</p>
+  <p>a) \(AB^2 = 15^2 = \ldots\)</p>
+  <p>b) \(BC^2 = 9^2 = \ldots\)</p>
+  <p>c) \(AC^2 = AB^2 - BC^2 = \ldots - \ldots = \ldots\)</p>
+  <p>d) \(AC = \sqrt{\ldots} = \ldots\) cm</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(AB^2 = 225\)</p>
+    <p>b) \(BC^2 = 81\)</p>
+    <p>c) \(AC^2 = 225 - 81 = 144\)</p>
+    <p>d) \(AC = \sqrt{144} = \mathbf{12\,\text{cm}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Pour vérifier si un triangle est rectangle : comparer le carré du plus grand côté avec la somme des carrés des deux autres.</div>
+  <p>Un triangle a des côtés de 8 cm, 15 cm et 17 cm. Est-il rectangle ?</p>
+  <p>a) Le plus grand côté est : \(\ldots\) cm. Son carré : \(\ldots^2 = \ldots\)</p>
+  <p>b) Somme des carrés des deux autres : \(\ldots^2 + \ldots^2 = \ldots + \ldots = \ldots\)</p>
+  <p>c) Comparer et conclure.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le plus grand côté est 17 cm. \(17^2 = 289\)</p>
+    <p>b) \(8^2 + 15^2 = 64 + 225 = 289\)</p>
+    <p>c) \(289 = 289\) : les deux résultats sont égaux. Le triangle est <strong>rectangle</strong> (angle droit opposé au côté de 17 cm).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Sur chantier, on utilise la règle des 3-4-5 pour vérifier un angle droit.</div>
+  <p>Un artisan vérifie l'équerrage d'une porte. Il mesure 60 cm sur un montant et 80 cm sur le seuil.</p>
+  <p>a) Quelle devrait être la longueur de la diagonale si l'angle est droit ?</p>
+  <p>b) Il mesure 98 cm. L'angle est-il droit ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(d = \sqrt{60^2 + 80^2} = \sqrt{3\,600 + 6\,400} = \sqrt{10\,000} = \mathbf{100\,\text{cm}}\)</p>
+    <p>(C'est le triplet 3-4-5 multiplié par 20.)</p>
+    <p>b) La diagonale mesurée (98 cm) est différente de la diagonale théorique (100 cm). L'angle n'est <strong>pas droit</strong>, la porte n'est pas d'équerre.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -181,11 +269,81 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un triangle est rectangle en C avec AC = 5 cm et BC = 11 cm.</p>
+  <p>a) Identifier l'hypoténuse. Justifier.</p>
+  <p>b) Calculer AB. Donner la valeur exacte puis une valeur approchée au centième.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) L'angle droit est en C, donc l'hypoténuse est <strong>AB</strong> (côté opposé à C).</p>
+    <p>b) \(AB^2 = AC^2 + BC^2 = 5^2 + 11^2 = 25 + 121 = 146\)</p>
+    <p>Valeur exacte : \(AB = \sqrt{146}\) cm</p>
+    <p>Valeur approchée : \(AB \approx \mathbf{12{,}08\,\text{cm}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un triangle rectangle en A a une hypoténuse BC = 20 cm et un côté AB = 12 cm.</p>
+  <p>a) Calculer le côté AC.</p>
+  <p>b) Vérifier le résultat en recalculant \(AB^2 + AC^2\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(AC^2 = BC^2 - AB^2 = 20^2 - 12^2 = 400 - 144 = 256\)</p>
+    <p>\(AC = \sqrt{256} = \mathbf{16\,\text{cm}}\)</p>
+    <p>b) Vérification : \(AB^2 + AC^2 = 144 + 256 = 400 = 20^2 = BC^2\) ✔</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un triangle a des côtés de 8 cm, 11 cm et 14 cm. Est-il rectangle ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Plus grand côté : 14 cm. \(14^2 = 196\)</p>
+    <p>Somme des carrés des deux autres : \(8^2 + 11^2 = 64 + 121 = 185\)</p>
+    <p>\(196 \neq 185\), donc le triangle n'est <strong>pas rectangle</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <p>Un fabricant de mobilier construit un panneau triangulaire pour un présentoir. Le panneau est un triangle rectangle avec deux côtés perpendiculaires de 36 cm et 48 cm.</p>
+  <p>a) Calculer la longueur de l'hypoténuse (le troisième côté).</p>
+  <p>b) Calculer le périmètre total du panneau.</p>
+  <p>c) Il pose un profilé en aluminium le long de l'hypoténuse. Combien de mètres de profilé doit-il découper ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(h = \sqrt{36^2 + 48^2} = \sqrt{1\,296 + 2\,304} = \sqrt{3\,600} = \mathbf{60\,\text{cm}}\)</p>
+    <p>(Triplet pythagoricien 3-4-5 multiplié par 12.)</p>
+    <p>b) \(P = 36 + 48 + 60 = \mathbf{144\,\text{cm}}\)</p>
+    <p>c) Le profilé mesure 60 cm = <strong>0,60 m</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Parmi les triplets suivants, lesquels sont des triplets pythagoriciens ? Justifier par le calcul.</p>
+  <p>a) (8, 15, 17)</p>
+  <p>b) (7, 10, 13)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(8^2 + 15^2 = 64 + 225 = 289\) et \(17^2 = 289\). \(289 = 289\) ✔ → <strong>Oui</strong>, c'est un triplet pythagoricien.</p>
+    <p>b) \(7^2 + 10^2 = 49 + 100 = 149\) et \(13^2 = 169\). \(149 \neq 169\) → <strong>Non</strong>, ce n'est pas un triplet pythagoricien.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -250,6 +408,74 @@
     <p>\(c^2 = (n^2 + 1)^2 = n^4 + 2n^2 + 1\)</p>
     <p>\(a^2 + b^2 = c^2\) : le triangle est toujours <strong>rectangle</strong>.</p>
     <p><strong>Vérification pour \(n = 3\) :</strong> \(a = 6\), \(b = 8\), \(c = 10\). \(6^2 + 8^2 = 36 + 64 = 100 = 10^2\) ✔</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un triangle rectangle en B a pour côtés AB = \(3\sqrt{2}\) cm et BC = \(\sqrt{2}\) cm.</p>
+  <p>a) Calculer AC² en utilisant le théorème de Pythagore.</p>
+  <p>b) En déduire AC (valeur exacte simplifiée).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(AC^2 = AB^2 + BC^2 = (3\sqrt{2})^2 + (\sqrt{2})^2 = 9 \times 2 + 2 = 18 + 2 = 20\)</p>
+    <p>b) \(AC = \sqrt{20} = \sqrt{4 \times 5} = \mathbf{2\sqrt{5}\,\text{cm}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Un installateur de cuisines pose un plan de travail en angle. La distance le long du mur est de 2,40 m et la profondeur du plan est de 0,65 m.</p>
+  <p>a) Calculer la longueur de la coupe en diagonale (arrondir au centième).</p>
+  <p>b) Le fournisseur propose des baguettes de finition de 2,50 m. Une baguette suffit-elle pour la diagonale ?</p>
+  <p>c) Si la profondeur était réduite à 0,50 m (même longueur le long du mur), quelle serait la nouvelle longueur de coupe ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(L = \sqrt{2{,}40^2 + 0{,}65^2} = \sqrt{5{,}76 + 0{,}4225} = \sqrt{6{,}1825} \approx \mathbf{2{,}49\,\text{m}}\)</p>
+    <p>b) \(2{,}49 < 2{,}50\) : oui, une baguette de 2,50 m <strong>suffit</strong>.</p>
+    <p>c) \(L = \sqrt{2{,}40^2 + 0{,}50^2} = \sqrt{5{,}76 + 0{,}25} = \sqrt{6{,}01} \approx \mathbf{2{,}45\,\text{m}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Dans un rectangle EFGH, on donne EF = 9 cm et FG = 40 cm.</p>
+  <p>a) Calculer la longueur de la diagonale EG.</p>
+  <p>b) Les diagonales d'un rectangle sont-elles égales ? Donner la longueur de FH.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le triangle EFG est rectangle en F. \(EG = \sqrt{EF^2 + FG^2} = \sqrt{81 + 1\,600} = \sqrt{1\,681} = \mathbf{41\,\text{cm}}\)</p>
+    <p>b) Oui, les diagonales d'un rectangle sont <strong>toujours égales</strong>. Donc \(FH = EG = \mathbf{41\,\text{cm}}\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un chef de chantier vérifie la verticalité d'un poteau de 3 m à l'aide d'un fil à plomb. Le fil est accroché au sommet du poteau. Au sol, l'extrémité du fil se trouve à 5 cm de la base du poteau.</p>
+  <p>a) Si le poteau était parfaitement vertical, quelle serait la longueur théorique du fil (du sommet au sol, en ligne droite) ?</p>
+  <p>b) La longueur réelle du fil est \(\sqrt{3^2 + 0{,}05^2}\). Calculer cette valeur.</p>
+  <p>c) Comparer avec 3 m. Le poteau est-il vertical à 1 mm près ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Si le poteau est vertical, le fil descend droit : longueur = <strong>3 m</strong>.</p>
+    <p>b) \(L = \sqrt{9 + 0{,}0025} = \sqrt{9{,}0025} \approx \mathbf{3{,}00042\,\text{m}}\)</p>
+    <p>c) Écart : \(3{,}00042 - 3 = 0{,}00042\,\text{m} = 0{,}42\,\text{mm}\). L'écart est inférieur à 1 mm, le poteau est <strong>vertical</strong> au millimètre près.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Montrer que le triangle de côtés \(a = m^2 - n^2\), \(b = 2mn\) et \(c = m^2 + n^2\) (avec \(m > n \geq 1\) entiers) est toujours rectangle. Vérifier pour \(m = 3\) et \(n = 2\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Le plus grand côté est \(c = m^2 + n^2\).</p>
+    <p>\(a^2 + b^2 = (m^2 - n^2)^2 + (2mn)^2 = m^4 - 2m^2n^2 + n^4 + 4m^2n^2 = m^4 + 2m^2n^2 + n^4\)</p>
+    <p>\(c^2 = (m^2 + n^2)^2 = m^4 + 2m^2n^2 + n^4\)</p>
+    <p>\(a^2 + b^2 = c^2\) : le triangle est toujours <strong>rectangle</strong>.</p>
+    <p><strong>Vérification pour \(m = 3\), \(n = 2\) :</strong> \(a = 9 - 4 = 5\), \(b = 12\), \(c = 9 + 4 = 13\). \(5^2 + 12^2 = 25 + 144 = 169 = 13^2\) ✔</p>
   </div>
 </div>
 

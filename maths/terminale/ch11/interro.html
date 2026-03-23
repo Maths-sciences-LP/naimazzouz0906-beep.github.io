@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -102,11 +104,88 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> En coordonnées, \(\vec{u} \cdot \vec{v} = ac + bd\) avec \(\vec{u}\begin{pmatrix}a\\b\end{pmatrix}\) et \(\vec{v}\begin{pmatrix}c\\d\end{pmatrix}\).</div>
+  <p>Calculer le produit scalaire \(\vec{u} \cdot \vec{v}\) pour chaque cas :</p>
+  <p>a) \(\vec{u}\begin{pmatrix}3\\-2\end{pmatrix}\) et \(\vec{v}\begin{pmatrix}1\\4\end{pmatrix}\) : \(\vec{u} \cdot \vec{v} = 3 \times ... + (-2) \times ... = ...\)</p>
+  <p>b) \(\vec{u}\begin{pmatrix}4\\3\end{pmatrix}\) et \(\vec{v}\begin{pmatrix}6\\-8\end{pmatrix}\) : \(\vec{u} \cdot \vec{v} = 4 \times ... + 3 \times ... = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\vec{u} \cdot \vec{v} = 3 \times 1 + (-2) \times 4 = 3 - 8 = \mathbf{-5}\)</p>
+    <p>b) \(\vec{u} \cdot \vec{v} = 4 \times 6 + 3 \times (-8) = 24 - 24 = \mathbf{0}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Deux vecteurs non nuls sont orthogonaux si et seulement si \(\vec{u} \cdot \vec{v} = 0\).</div>
+  <p>Dire si les vecteurs suivants sont orthogonaux. Justifier par le calcul.</p>
+  <p>a) \(\vec{u}\begin{pmatrix}2\\-5\end{pmatrix}\) et \(\vec{v}\begin{pmatrix}5\\2\end{pmatrix}\) : \(\vec{u} \cdot \vec{v} = 2 \times 5 + (-5) \times 2 = ... + ... = ...\)</p>
+  <p>Conclusion : orthogonaux ? ...</p>
+  <p>b) \(\vec{u}\begin{pmatrix}4\\1\end{pmatrix}\) et \(\vec{v}\begin{pmatrix}2\\-3\end{pmatrix}\) : \(\vec{u} \cdot \vec{v} = ...\)</p>
+  <p>Conclusion : orthogonaux ? ...</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\vec{u} \cdot \vec{v} = 10 - 10 = \mathbf{0}\). <strong>Oui</strong>, les vecteurs sont orthogonaux.</p>
+    <p>b) \(\vec{u} \cdot \vec{v} = 4 \times 2 + 1 \times (-3) = 8 - 3 = \mathbf{5} \neq 0\). <strong>Non</strong>, les vecteurs ne sont pas orthogonaux.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(|\vec{u}| = \sqrt{a^2 + b^2}\). Pour l'angle : \(\cos\theta = \dfrac{\vec{u} \cdot \vec{v}}{|\vec{u}| \times |\vec{v}|}\), puis \(\theta = \arccos(...)\).</div>
+  <p>Soient \(\vec{u}\begin{pmatrix}1\\1\end{pmatrix}\) et \(\vec{v}\begin{pmatrix}4\\0\end{pmatrix}\). Calculer l'angle entre ces deux vecteurs.</p>
+  <p>a) Produit scalaire : \(\vec{u} \cdot \vec{v} = 1 \times 4 + 1 \times 0 = ...\)</p>
+  <p>b) Normes : \(|\vec{u}| = \sqrt{1 + 1} = \sqrt{...} = ...\) et \(|\vec{v}| = \sqrt{16 + 0} = ...\)</p>
+  <p>c) Cosinus : \(\cos\theta = \dfrac{...}{... \times ...} = ...\)</p>
+  <p>d) Angle : \(\theta = \arccos(...) = ...°\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\vec{u} \cdot \vec{v} = 4 + 0 = \mathbf{4}\)</p>
+    <p>b) \(|\vec{u}| = \sqrt{2} \approx \mathbf{1{,}41}\) et \(|\vec{v}| = \sqrt{16} = \mathbf{4}\)</p>
+    <p>c) \(\cos\theta = \dfrac{4}{\sqrt{2} \times 4} = \dfrac{4}{4\sqrt{2}} = \dfrac{1}{\sqrt{2}} \approx \mathbf{0{,}707}\)</p>
+    <p>d) \(\theta = \arccos(0{,}707) = \mathbf{45°}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Avec les normes et l'angle : \(\vec{u} \cdot \vec{v} = |\vec{u}| \times |\vec{v}| \times \cos\theta\).</div>
+  <p>Un artisan menuisier pousse un panneau avec une force \(\vec{F}\) de norme 150 N. La force fait un angle de 30° avec la direction de déplacement.</p>
+  <p>a) Calculer la composante utile de la force dans la direction du déplacement :</p>
+  <p>\(F_{\text{utile}} = |\vec{F}| \times \cos(30°) = 150 \times ... = ...\) N</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(F_{\text{utile}} = 150 \times \cos(30°) = 150 \times \dfrac{\sqrt{3}}{2} \approx 150 \times 0{,}866 \approx \mathbf{130}\) N</p>
+    <p>Environ 87 % de la force est utile dans la direction du déplacement.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La distance du point \(M(x_M\,;\,y_M)\) à la droite \(ax + by + c = 0\) est \(d = \dfrac{|ax_M + by_M + c|}{\sqrt{a^2 + b^2}}\).</div>
+  <p>Calculer la distance du point \(P(1\,;\,3)\) à la droite \(d : 4x - 3y + 5 = 0\).</p>
+  <p>a) Numérateur : \(|4 \times 1 + (-3) \times 3 + 5| = |... + ... + 5| = |...| = ...\)</p>
+  <p>b) Dénominateur : \(\sqrt{4^2 + (-3)^2} = \sqrt{...} = ...\)</p>
+  <p>c) Distance : \(d = \dfrac{...}{...} = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Numérateur : \(|4 - 9 + 5| = |0| = \mathbf{0}\)</p>
+    <p>b) Dénominateur : \(\sqrt{16 + 9} = \sqrt{25} = \mathbf{5}\)</p>
+    <p>c) Distance : \(d = \dfrac{0}{5} = \mathbf{0}\). Le point \(P\) est <strong>sur la droite</strong>.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -174,11 +253,80 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Soient \(\vec{u}\begin{pmatrix}-3\\2\end{pmatrix}\) et \(\vec{v}\begin{pmatrix}1\\4\end{pmatrix}\).</p>
+  <p>a) Calculer \(\vec{u} \cdot \vec{v}\).</p>
+  <p>b) Calculer les normes \(|\vec{u}|\) et \(|\vec{v}|\).</p>
+  <p>c) En déduire l'angle \(\theta\) entre les deux vecteurs (arrondi au degré).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\vec{u} \cdot \vec{v} = (-3) \times 1 + 2 \times 4 = -3 + 8 = \mathbf{5}\)</p>
+    <p>b) \(|\vec{u}| = \sqrt{9 + 4} = \sqrt{13} \approx 3{,}61\) ; \(|\vec{v}| = \sqrt{1 + 16} = \sqrt{17} \approx 4{,}12\)</p>
+    <p>c) \(\cos\theta = \dfrac{5}{\sqrt{13} \times \sqrt{17}} = \dfrac{5}{\sqrt{221}} \approx \dfrac{5}{14{,}87} \approx 0{,}336\)</p>
+    <p>\(\theta = \arccos(0{,}336) \approx \mathbf{70°}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Sur un plan d'agencement, deux murs ont pour vecteurs directeurs \(\vec{u}\begin{pmatrix}3\\4\end{pmatrix}\) et \(\vec{v}\begin{pmatrix}4\\-3\end{pmatrix}\).</p>
+  <p>a) Calculer \(\vec{u} \cdot \vec{v}\).</p>
+  <p>b) Les deux murs sont-ils perpendiculaires ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\vec{u} \cdot \vec{v} = 3 \times 4 + 4 \times (-3) = 12 - 12 = \mathbf{0}\)</p>
+    <p>b) Le produit scalaire est nul et les deux vecteurs sont non nuls, donc les murs sont <strong>perpendiculaires</strong>. ✓</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Une droite \(d\) passe par le point \(A(2\,;\,-1)\) et admet le vecteur normal \(\vec{n}\begin{pmatrix}5\\1\end{pmatrix}\).</p>
+  <p>a) Écrire l'équation de \(d\) sous la forme \(ax + by + c = 0\).</p>
+  <p>b) Donner un vecteur directeur de \(d\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Forme générale : \(5x + y + c = 0\).</p>
+    <p>Point \(A(2\,;\,-1)\) : \(5(2) + (-1) + c = 0 \Rightarrow 10 - 1 + c = 0 \Rightarrow c = -9\).</p>
+    <p>Équation : \(\mathbf{5x + y - 9 = 0}\)</p>
+    <p>b) Un vecteur directeur est \(\vec{u}\begin{pmatrix}-1\\5\end{pmatrix}\) (rotation de 90° du vecteur normal).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <p>Un menuisier agenceur trace le parcours d'une goulotte électrique sur un plan. La goulotte est portée par la droite \(d : 3x + y - 7 = 0\). Une prise est fixée au point \(P(1\,;\,5)\).</p>
+  <p>a) Calculer la distance de la prise à la goulotte.</p>
+  <p>b) Donner le vecteur normal et un vecteur directeur de la goulotte.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(d(P, d) = \dfrac{|3(1) + 1(5) - 7|}{\sqrt{3^2 + 1^2}} = \dfrac{|3 + 5 - 7|}{\sqrt{9 + 1}} = \dfrac{1}{\sqrt{10}} = \dfrac{\sqrt{10}}{10} \approx \mathbf{0{,}32}\) unités</p>
+    <p>b) Vecteur normal : \(\vec{n}\begin{pmatrix}3\\1\end{pmatrix}\). Vecteur directeur : \(\vec{u}\begin{pmatrix}-1\\3\end{pmatrix}\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Un artisan menuisier exerce une traction de norme 400 N sur un chariot. Le câble forme un angle de 25° avec l'horizontale.</p>
+  <p>a) Calculer la composante horizontale de la force (dans la direction du déplacement).</p>
+  <p>b) La charge maximale du chariot à l'horizontal est de 350 N. Le chariot va-t-il avancer sans glisser ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(F_{\text{horizontale}} = 400 \times \cos(25°) \approx 400 \times 0{,}906 \approx \mathbf{362}\) N</p>
+    <p>b) \(362 > 350\) : la composante horizontale <strong>dépasse</strong> la charge maximale (de 12 N). Le chariot risque de glisser.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -260,6 +408,92 @@
     <p>\(|\overrightarrow{AB}| = \sqrt{16+9} = 5\) ; \(|\overrightarrow{AC}| = 4\)</p>
     <p>\(\cos(\widehat{BAC}) = \dfrac{16}{5 \times 4} = \dfrac{16}{20} = 0{,}8\)</p>
     <p>\(\widehat{BAC} = \arccos(0{,}8) \approx \mathbf{36{,}9°}\)</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Soient \(\vec{u}\begin{pmatrix}1\\-4\end{pmatrix}\) et \(\vec{v}\begin{pmatrix}3\\2\end{pmatrix}\).</p>
+  <p>a) Calculer \(\vec{u} \cdot \vec{v}\), \(|\vec{u}|\) et \(|\vec{v}|\).</p>
+  <p>b) En déduire l'angle entre \(\vec{u}\) et \(\vec{v}\) (arrondi au dixième de degré).</p>
+  <p>c) Ces vecteurs sont-ils « presque perpendiculaires » ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\vec{u} \cdot \vec{v} = 1 \times 3 + (-4) \times 2 = 3 - 8 = \mathbf{-5}\)</p>
+    <p>\(|\vec{u}| = \sqrt{1 + 16} = \sqrt{17}\) ; \(|\vec{v}| = \sqrt{9 + 4} = \sqrt{13}\)</p>
+    <p>b) \(\cos\theta = \dfrac{-5}{\sqrt{17} \times \sqrt{13}} = \dfrac{-5}{\sqrt{221}} \approx \dfrac{-5}{14{,}87} \approx -0{,}336\)</p>
+    <p>\(\theta = \arccos(-0{,}336) \approx \mathbf{109{,}6°}\)</p>
+    <p>c) Non, ils ne sont pas presque perpendiculaires : l'angle (\(109{,}6°\)) est assez éloigné de \(90°\) (environ 20° d'écart).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Sur le plan d'un atelier d'agencement (repère en mètres), un rail de guidage est porté par la droite passant par \(A(2\,;\,1)\) et \(B(6\,;\,5)\). Une colonne est au point \(P(1\,;\,4)\).</p>
+  <p>a) Donner le vecteur directeur \(\overrightarrow{AB}\) et un vecteur normal à la droite \((AB)\).</p>
+  <p>b) Écrire l'équation de la droite \((AB)\).</p>
+  <p>c) Calculer la distance de la colonne \(P\) au rail.</p>
+  <p>d) Calculer l'angle que fait le rail avec l'horizontale (axe des \(x\)).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\overrightarrow{AB} = \begin{pmatrix}4\\4\end{pmatrix}\). Vecteur normal : \(\vec{n}\begin{pmatrix}-4\\4\end{pmatrix}\), simplifié en \(\vec{n}\begin{pmatrix}-1\\1\end{pmatrix}\).</p>
+    <p>b) Forme : \(-x + y + c = 0\). Point \(A(2\,;\,1)\) : \(-2 + 1 + c = 0 \Rightarrow c = 1\).</p>
+    <p>Équation : \(\mathbf{-x + y + 1 = 0}\)</p>
+    <p>c) \(d(P, (AB)) = \dfrac{|-1 + 4 + 1|}{\sqrt{1 + 1}} = \dfrac{4}{\sqrt{2}} = \dfrac{4\sqrt{2}}{2} = 2\sqrt{2} \approx \mathbf{2{,}83}\) m</p>
+    <p>d) \(\overrightarrow{AB}\begin{pmatrix}4\\4\end{pmatrix}\) et \(\vec{i}\begin{pmatrix}1\\0\end{pmatrix}\) : \(\cos\theta = \dfrac{4}{\sqrt{32} \times 1} = \dfrac{4}{4\sqrt{2}} = \dfrac{1}{\sqrt{2}} \approx 0{,}707\)</p>
+    <p>\(\theta = \arccos(0{,}707) = \mathbf{45°}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Deux tuyaux dans l'espace 3D ont pour vecteurs directeurs \(\vec{u}\begin{pmatrix}1\\2\\2\end{pmatrix}\) et \(\vec{v}\begin{pmatrix}2\\-1\\0\end{pmatrix}\).</p>
+  <p>a) Calculer \(\vec{u} \cdot \vec{v}\).</p>
+  <p>b) Calculer les normes de \(\vec{u}\) et \(\vec{v}\).</p>
+  <p>c) En déduire l'angle de raccordement entre les deux tuyaux.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\vec{u} \cdot \vec{v} = 1 \times 2 + 2 \times (-1) + 2 \times 0 = 2 - 2 + 0 = \mathbf{0}\)</p>
+    <p>b) \(|\vec{u}| = \sqrt{1 + 4 + 4} = \sqrt{9} = \mathbf{3}\) ; \(|\vec{v}| = \sqrt{4 + 1 + 0} = \sqrt{5} \approx \mathbf{2{,}24}\)</p>
+    <p>c) \(\cos\theta = \dfrac{0}{3 \times \sqrt{5}} = 0\)</p>
+    <p>\(\theta = \arccos(0) = \mathbf{90°}\)</p>
+    <p>Les deux tuyaux sont perpendiculaires (raccordement à angle droit).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Sur un plan d'installation, une conduite principale passe par \(C(1\,;\,3)\) avec le vecteur directeur \(\vec{u}\begin{pmatrix}2\\1\end{pmatrix}\). Un raccord part de \(R(5\,;\,1)\) avec le vecteur directeur \(\vec{v}\begin{pmatrix}1\\3\end{pmatrix}\).</p>
+  <p>a) Calculer l'angle entre la conduite et le raccord.</p>
+  <p>b) Écrire l'équation de la droite portant la conduite.</p>
+  <p>c) Calculer la distance du point \(R\) à la conduite.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\vec{u} \cdot \vec{v} = 2 \times 1 + 1 \times 3 = 5\). \(|\vec{u}| = \sqrt{5}\), \(|\vec{v}| = \sqrt{10}\).</p>
+    <p>\(\cos\theta = \dfrac{5}{\sqrt{5} \times \sqrt{10}} = \dfrac{5}{\sqrt{50}} = \dfrac{5}{5\sqrt{2}} = \dfrac{1}{\sqrt{2}} \approx 0{,}707\)</p>
+    <p>\(\theta = \arccos(0{,}707) = \mathbf{45°}\)</p>
+    <p>b) Vecteur directeur \(\vec{u}\begin{pmatrix}2\\1\end{pmatrix}\) → vecteur normal \(\vec{n}\begin{pmatrix}-1\\2\end{pmatrix}\).</p>
+    <p>Forme : \(-x + 2y + c = 0\). Point \(C(1\,;\,3)\) : \(-1 + 6 + c = 0 \Rightarrow c = -5\).</p>
+    <p>Équation : \(\mathbf{-x + 2y - 5 = 0}\)</p>
+    <p>c) \(d(R, \text{conduite}) = \dfrac{|-5 + 2 - 5|}{\sqrt{1 + 4}} = \dfrac{8}{\sqrt{5}} = \dfrac{8\sqrt{5}}{5} \approx \mathbf{3{,}58}\) unités</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Démontrer que dans un triangle rectangle en \(C\), avec \(\overrightarrow{CA}\begin{pmatrix}5\\0\end{pmatrix}\) et \(\overrightarrow{CB}\begin{pmatrix}0\\12\end{pmatrix}\), le produit scalaire \(\overrightarrow{CA} \cdot \overrightarrow{CB}\) confirme l'angle droit. Puis calculer l'angle \(\widehat{BAC}\) en utilisant les vecteurs \(\overrightarrow{AB}\) et \(\overrightarrow{AC}\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Angle droit en C :</strong> \(\overrightarrow{CA} \cdot \overrightarrow{CB} = 5 \times 0 + 0 \times 12 = \mathbf{0}\). Le produit scalaire est nul, donc \(\overrightarrow{CA} \perp \overrightarrow{CB}\) : l'angle en \(C\) est bien droit. ✓</p>
+    <p><strong>Angle en A :</strong> On prend \(C = (0,0)\), \(A = (5,0)\), \(B = (0,12)\).</p>
+    <p>\(\overrightarrow{AB} = \begin{pmatrix}-5\\12\end{pmatrix}\) et \(\overrightarrow{AC} = \begin{pmatrix}-5\\0\end{pmatrix}\).</p>
+    <p>\(\overrightarrow{AB} \cdot \overrightarrow{AC} = (-5)(-5) + 12 \times 0 = 25\)</p>
+    <p>\(|\overrightarrow{AB}| = \sqrt{25+144} = \sqrt{169} = 13\) ; \(|\overrightarrow{AC}| = 5\)</p>
+    <p>\(\cos(\widehat{BAC}) = \dfrac{25}{13 \times 5} = \dfrac{25}{65} \approx 0{,}385\)</p>
+    <p>\(\widehat{BAC} = \arccos(0{,}385) \approx \mathbf{67{,}4°}\)</p>
   </div>
 </div>
 

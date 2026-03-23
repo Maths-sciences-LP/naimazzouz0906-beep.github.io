@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,8 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -94,11 +97,81 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La pression se calcule par \(P = \dfrac{F}{S}\), avec \(F\) en N et \(S\) en m². Le résultat est en Pa (pascal).</div>
+  <p>Une force pressante de 800 N s'exerce sur une surface de 0,04 m².</p>
+  <p>a) Écrire la formule de la pression : \(P = ...\)</p>
+  <p>b) Calculer la pression : \(P = \dfrac{800}{0{,}04} = ...\) Pa</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P = \dfrac{F}{S}\)</p>
+    <p>b) \(P = \dfrac{800}{0{,}04} = \mathbf{20\,000}\) Pa</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(1 \text{ bar} = 10^5 \text{ Pa} = 100\,000 \text{ Pa}\). Pour convertir des bar en Pa, on multiplie par \(10^5\).</div>
+  <p>Un manomètre de chaudière indique 2,0 bar.</p>
+  <p>a) Convertir cette pression en Pa : \(2{,}0 \times 10^5 = ...\) Pa</p>
+  <p>b) Convertir en hPa : \(\dfrac{...}{100} = ...\) hPa</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(2{,}0 \times 10^5 = \mathbf{200\,000}\) Pa</p>
+    <p>b) \(\dfrac{200\,000}{100} = \mathbf{2\,000}\) hPa</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> On peut aussi écrire \(F = P \times S\) pour trouver la force pressante.</div>
+  <p>L'eau d'un circuit de chauffage est à une pression de 1,5 bar. La face intérieure d'un tuyau a une surface de 0,008 m².</p>
+  <p>a) Convertir 1,5 bar en Pa : \(1{,}5 \times 10^5 = ...\) Pa</p>
+  <p>b) Calculer la force pressante : \(F = P \times S = ... \times 0{,}008 = ...\) N</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(1{,}5 \times 10^5 = \mathbf{150\,000}\) Pa</p>
+    <p>b) \(F = 150\,000 \times 0{,}008 = \mathbf{1\,200}\) N</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La pression atmosphérique vaut environ 1 013 hPa ≈ 1 bar. La pression absolue = pression relative + pression atmosphérique.</div>
+  <p>Un manomètre affiche une pression relative de 1,8 bar. La pression atmosphérique est de 1,0 bar.</p>
+  <p>a) Calculer la pression absolue : \(P_{\text{abs}} = ... + ... = ...\) bar</p>
+  <p>b) Que mesure un manomètre : la pression relative ou la pression absolue ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P_{\text{abs}} = 1{,}8 + 1{,}0 = \mathbf{2{,}8}\) bar</p>
+    <p>b) Un manomètre mesure la <strong>pression relative</strong> (par rapport à la pression atmosphérique).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Loi de Boyle-Mariotte (à température constante) : \(P_1 \times V_1 = P_2 \times V_2\).</div>
+  <p>Un vase d'expansion contient 8 L de gaz sous 1,5 bar. La pression passe à 3 bar (température constante).</p>
+  <p>a) Écrire la loi de Boyle-Mariotte : \(P_1 \times V_1 = ...\)</p>
+  <p>b) Calculer le nouveau volume : \(V_2 = \dfrac{P_1 \times V_1}{P_2} = \dfrac{1{,}5 \times 8}{3} = ...\) L</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P_1 \times V_1 = P_2 \times V_2\)</p>
+    <p>b) \(V_2 = \dfrac{1{,}5 \times 8}{3} = \mathbf{4}\) L. Le volume a été divisé par 2 quand la pression a doublé.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -169,11 +242,84 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien chauffagiste appuie sur le piston d'une pompe manuelle avec une force de 200 N. Le piston a un diamètre de 4 cm.</p>
+  <p>a) Calculer la surface du piston en m².</p>
+  <p>b) En déduire la pression exercée par le piston, en Pa puis en bar.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Rayon : \(r = \dfrac{4}{2} = 2\) cm \(= 0{,}02\) m</p>
+    <p>\(S = \pi \times r^2 = \pi \times (0{,}02)^2 = 1{,}257 \times 10^{-3}\) m²</p>
+    <p>b) \(P = \dfrac{F}{S} = \dfrac{200}{1{,}257 \times 10^{-3}} = \mathbf{159\,108}\) Pa \(\approx \mathbf{1{,}59}\) bar</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un installateur thermique vérifie la pression d'un circuit de chauffage. Le manomètre indique 1,5 bar à froid. La notice de la chaudière recommande une pression entre 1,0 et 2,0 bar.</p>
+  <p>a) La pression est-elle dans la plage recommandée ?</p>
+  <p>b) Calculer la pression absolue sachant que \(P_{\text{atm}} = 1{,}013\) bar.</p>
+  <p>c) Convertir la pression relative en Pa.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Oui, 1,5 bar est compris entre 1,0 et 2,0 bar : la pression est <strong>dans la plage recommandée</strong>.</p>
+    <p>b) \(P_{\text{abs}} = 1{,}5 + 1{,}013 = \mathbf{2{,}513}\) bar</p>
+    <p>c) \(1{,}5 \times 10^5 = \mathbf{150\,000}\) Pa</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un panneau de radiateur a des dimensions de 60 cm × 40 cm. L'eau du circuit est à une pression de 2 bar.</p>
+  <p>a) Calculer la surface de la face du radiateur en m².</p>
+  <p>b) Calculer la force exercée par l'eau sur cette face.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(S = 0{,}60 \times 0{,}40 = \mathbf{0{,}24}\) m²</p>
+    <p>b) \(P = 2 \text{ bar} = 2 \times 10^5\) Pa</p>
+    <p>\(F = P \times S = 2 \times 10^5 \times 0{,}24 = \mathbf{48\,000}\) N \(= 48\) kN</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <p>Un plombier chauffagiste vérifie le vase d'expansion d'un circuit de chauffage. Les données sont :</p>
+  <ul>
+    <li>Volume initial de gaz (à froid) : \(V_1 = 15\) L</li>
+    <li>Pression initiale (pré-charge) : \(P_1 = 1{,}0\) bar</li>
+    <li>Pression de fonctionnement (à chaud) : \(P_2 = 2{,}0\) bar</li>
+  </ul>
+  <p>a) Vérifier que la loi de Boyle-Mariotte s'applique (quelle condition ?)</p>
+  <p>b) Calculer le volume de gaz à chaud \(V_2\).</p>
+  <p>c) En déduire le volume d'eau de dilatation absorbé par le vase.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La loi de Boyle-Mariotte s'applique à <strong>température constante</strong>. Le vase d'expansion est éloigné de la chaudière, donc la température du gaz varie peu : la condition est vérifiée.</p>
+    <p>b) \(V_2 = \dfrac{P_1 \times V_1}{P_2} = \dfrac{1{,}0 \times 15}{2{,}0} = \mathbf{7{,}5}\) L</p>
+    <p>c) Volume d'eau absorbé : \(V_1 - V_2 = 15 - 7{,}5 = \mathbf{7{,}5}\) L</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Expliquer en une ou deux phrases pourquoi les raquettes à neige empêchent de s'enfoncer dans la neige. Utiliser la notion de pression.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Les raquettes à neige augmentent la <strong>surface de contact</strong> avec la neige. Pour un même poids (force), la pression exercée \(P = \dfrac{F}{S}\) est <strong>plus faible</strong> car \(S\) est plus grand. La neige subit donc moins de pression et ne s'enfonce pas.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">

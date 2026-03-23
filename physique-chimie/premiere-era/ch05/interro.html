@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -28,6 +29,7 @@
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
 <p><strong>Barème :</strong> 20 points</p>
+<h3 class="sujet-header">Sujet A</h3>
 
 <div class="exo">
   <h2>Question 1 <span class="pts">(4 points)</span></h2>
@@ -103,12 +105,89 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La conductance thermique se calcule par \(G = \dfrac{\lambda \cdot S}{e}\) avec G en W/K, \(\lambda\) en W/(m·K), S en m² et e en m.</div>
+  <p>Calculer la conductance thermique d'un mur en brique : \(\lambda = 0{,}84\) W/(m·K), S = 12 m², e = 25 cm.</p>
+  <p>a) Convertir l'épaisseur en mètres : e = 25 cm = ... m</p>
+  <p>b) Appliquer la formule : \(G = \dfrac{0{,}84 \times 12}{...} = \dfrac{...}{...} = ...\) W/K</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(e = 25\) cm \(= \mathbf{0{,}25}\) m</p>
+    <p>b) \(G = \dfrac{0{,}84 \times 12}{0{,}25} = \dfrac{10{,}08}{0{,}25} = \mathbf{40{,}3}\) W/K</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le flux thermique (puissance perdue) se calcule par \(\Phi = G \times (T_1 - T_2)\), avec \(\Phi\) en W.</div>
+  <p>Le mur de la question 1 a une conductance G = 40,3 W/K. L'intérieur est à 19 °C, l'extérieur à 4 °C.</p>
+  <p>a) Calculer la différence de température : \(T_1 - T_2 = 19 - 4 = ...\) °C</p>
+  <p>b) Calculer le flux : \(\Phi = 40{,}3 \times ... = ...\) W</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(T_1 - T_2 = 19 - 4 = \mathbf{15}\) °C (= 15 K)</p>
+    <p>b) \(\Phi = 40{,}3 \times 15 = \mathbf{604{,}5}\) W ≈ 605 W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Plus \(\lambda\) est faible, meilleur est l'isolant. Plus G est petit, moins la chaleur passe.</div>
+  <p>Parmi les matériaux suivants, lequel est le meilleur isolant ?</p>
+  <table>
+    <tr><th>Matériau</th><th>\(\lambda\) (W/m·K)</th></tr>
+    <tr><td>Parpaing</td><td>1,1</td></tr>
+    <tr><td>Chêne massif</td><td>0,16</td></tr>
+    <tr><td>Laine de roche</td><td>0,035</td></tr>
+    <tr><td>Liège expansé</td><td>0,040</td></tr>
+  </table>
+  <p>Le meilleur isolant est : .................. car sa conductivité est la plus ..................</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Le meilleur isolant est la <strong>laine de roche</strong> car sa conductivité est la plus <strong>faible</strong> (0,035 W/m·K).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Pour réduire les pertes : choisir un \(\lambda\) faible et augmenter l'épaisseur e.</div>
+  <p>Compléter les phrases :</p>
+  <p>a) Si on diminue l'épaisseur de l'isolant, la conductance G .................. (augmente / diminue).</p>
+  <p>b) Si on utilise un matériau de \(\lambda\) plus grande, la conductance G .................. (augmente / diminue).</p>
+  <p>c) Si la conductance G augmente, le flux thermique \(\Phi\) .................. (augmente / diminue).</p>
+  <p>d) La conductance G est exprimée en .................. (W / W/K / kWh).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) G <strong>augmente</strong>.</p>
+    <p>b) G <strong>augmente</strong>.</p>
+    <p>c) \(\Phi\) <strong>augmente</strong>.</p>
+    <p>d) G est en <strong>W/K</strong> (watts par kelvin).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Ne pas oublier de convertir l'épaisseur en mètres !</div>
+  <p>Calculer la conductance d'une plaque de laine de roche : \(\lambda = 0{,}035\) W/(m·K), S = 8 m², e = 8 cm.</p>
+  <p>a) Convertir : e = ... m</p>
+  <p>b) Calculer : \(G = \dfrac{0{,}035 \times 8}{...} = ...\) W/K</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(e = 8\) cm \(= \mathbf{0{,}08}\) m</p>
+    <p>b) \(G = \dfrac{0{,}035 \times 8}{0{,}08} = \dfrac{0{,}28}{0{,}08} = \mathbf{3{,}5}\) W/K</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
 <p><strong>Barème :</strong> 20 points</p>
+<h3 class="sujet-header">Sujet A</h3>
 
 <div class="exo">
   <h2>Question 1 <span class="pts">(4 points)</span></h2>
@@ -171,12 +250,76 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un ébéniste doit isoler un mur de 10 m² séparant son atelier (19 °C) d'un garage (3 °C). Il utilise de la laine de roche (\(\lambda = 0{,}035\) W/m·K) d'épaisseur 12 cm.</p>
+  <p>a) Calculer la conductance G de l'isolant.</p>
+  <p>b) Calculer le flux thermique \(\Phi\) à travers l'isolant.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(G = \dfrac{0{,}035 \times 10}{0{,}12} = \dfrac{0{,}35}{0{,}12} = \mathbf{2{,}92}\) W/K</p>
+    <p>b) \(\Phi = 2{,}92 \times (19 - 3) = 2{,}92 \times 16 = \mathbf{46{,}7}\) W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un mur en parpaing (\(\lambda = 1{,}1\) W/m·K) a une surface de 12 m² et une épaisseur de 20 cm. La pièce est à 20 °C et l'extérieur à 2 °C.</p>
+  <p>a) Calculer la conductance G du mur.</p>
+  <p>b) Calculer le flux thermique \(\Phi\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(G = \dfrac{1{,}1 \times 12}{0{,}20} = \dfrac{13{,}2}{0{,}20} = \mathbf{66}\) W/K</p>
+    <p>b) \(\Phi = 66 \times (20 - 2) = 66 \times 18 = \mathbf{1\,188}\) W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur compare trois épaisseurs de laine de roche (\(\lambda = 0{,}035\) W/m·K) pour isoler un mur de 12 m² :</p>
+  <p>a) Calculer G pour e = 6 cm, e = 12 cm et e = 24 cm.</p>
+  <p>b) Que se passe-t-il quand on double l'épaisseur ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) e = 6 cm : \(G = \dfrac{0{,}035 \times 12}{0{,}06} = \mathbf{7{,}0}\) W/K</p>
+    <p>e = 12 cm : \(G = \dfrac{0{,}035 \times 12}{0{,}12} = \mathbf{3{,}5}\) W/K</p>
+    <p>e = 24 cm : \(G = \dfrac{0{,}035 \times 12}{0{,}24} = \mathbf{1{,}75}\) W/K</p>
+    <p>b) Quand on double l'épaisseur, la conductance est <strong>divisée par 2</strong>. L'isolation s'améliore proportionnellement à l'épaisseur.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Calculer la conductance thermique d'une porte en bois massif : S = 2 m², e = 4 cm, \(\lambda = 0{,}16\) W/m·K.</p>
+  <p>a) Calculer G.</p>
+  <p>b) La porte laisse-t-elle facilement passer la chaleur ? Justifier par la valeur de G.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(e = 4\) cm \(= 0{,}04\) m. \(G = \dfrac{0{,}16 \times 2}{0{,}04} = \mathbf{8}\) W/K</p>
+    <p>b) G = 8 W/K est une valeur <strong>modérée</strong>. Le bois est un isolant correct mais la faible épaisseur (4 cm) limite son efficacité. Une porte isolée (bois + mousse) serait plus performante.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un mur non isolé laisse passer un flux \(\Phi = 500\) W. Calculer l'énergie perdue en 8 heures et le coût correspondant (tarif 0,20 €/kWh).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Puissance : \(\Phi = 500\) W = 0,500 kW</p>
+    <p>Énergie : \(E = 0{,}500 \times 8 = \mathbf{4}\) kWh</p>
+    <p>Coût : \(4 \times 0{,}20 = \mathbf{0{,}80}\) €</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
 <p><strong>Barème :</strong> 20 points</p>
+<h3 class="sujet-header">Sujet A</h3>
 
 <div class="exo">
   <h2>Question 1 <span class="pts">(4 points)</span></h2>
@@ -260,6 +403,91 @@
     <p>e = 10 cm : \(G = \dfrac{0{,}032 \times 10}{0{,}10} = 3{,}2\) W/K → \(\Phi = 3{,}2 \times 15 = \mathbf{48}\) W</p>
     <p>e = 20 cm : \(G = \dfrac{0{,}032 \times 10}{0{,}20} = 1{,}6\) W/K → \(\Phi = 1{,}6 \times 15 = \mathbf{24}\) W</p>
     <p><strong>Analyse :</strong> De 2 cm à 10 cm, on gagne \(240 - 48 = 192\) W (gain de 80 %). De 10 cm à 20 cm, on gagne seulement \(48 - 24 = 24\) W (gain supplémentaire de 10 %). La relation \(\Phi = k/e\) est une hyperbole : les premières épaisseurs réduisent fortement les pertes, mais le gain marginal décroît. C'est pourquoi au-delà de 12-14 cm, le surcoût de matériau n'est plus justifié par l'économie d'énergie.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur compare trois isolants pour un plancher de 15 m², \(\Delta T = 18\) K :</p>
+  <table>
+    <tr><th>Isolant</th><th>\(\lambda\) (W/m·K)</th><th>Épaisseur (cm)</th><th>Prix (€/m²)</th></tr>
+    <tr><td>Laine de roche</td><td>0,035</td><td>10</td><td>10</td></tr>
+    <tr><td>Mousse polyuréthane</td><td>0,022</td><td>10</td><td>22</td></tr>
+    <tr><td>Liège expansé</td><td>0,040</td><td>10</td><td>25</td></tr>
+  </table>
+  <p>a) Calculer G et \(\Phi\) pour chaque isolant.</p>
+  <p>b) Quel isolant offre le meilleur rapport performance/prix ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Laine de roche : \(G = \dfrac{0{,}035 \times 15}{0{,}10} = 5{,}25\) W/K → \(\Phi = 5{,}25 \times 18 = \mathbf{94{,}5}\) W</p>
+    <p>Mousse polyuréthane : \(G = \dfrac{0{,}022 \times 15}{0{,}10} = 3{,}30\) W/K → \(\Phi = 3{,}30 \times 18 = \mathbf{59{,}4}\) W</p>
+    <p>Liège expansé : \(G = \dfrac{0{,}040 \times 15}{0{,}10} = 6{,}00\) W/K → \(\Phi = 6{,}00 \times 18 = \mathbf{108}\) W</p>
+    <p>b) La <strong>laine de roche</strong> offre le meilleur rapport performance/prix : bonne isolation (\(\Phi = 94{,}5\) W, proche de la mousse) pour un prix nettement inférieur (10 €/m² vs 22 €/m²).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un mur composite est constitué de trois couches :</p>
+  <ul>
+    <li>Brique : e = 20 cm, \(\lambda = 0{,}84\) W/(m·K)</li>
+    <li>Laine de roche : e = 12 cm, \(\lambda = 0{,}035\) W/(m·K)</li>
+    <li>Placo : e = 1,3 cm, \(\lambda = 0{,}25\) W/(m·K)</li>
+  </ul>
+  <p>Surface S = 12 m². \(\Delta T = 18\) K.</p>
+  <p>a) Calculer la résistance thermique de chaque couche (\(R = e / (\lambda \cdot S)\)).</p>
+  <p>b) Calculer la résistance totale et le flux thermique.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(R_{\text{brique}} = \dfrac{0{,}20}{0{,}84 \times 12} = \mathbf{0{,}0198}\) K/W</p>
+    <p>\(R_{\text{laine de roche}} = \dfrac{0{,}12}{0{,}035 \times 12} = \mathbf{0{,}286}\) K/W</p>
+    <p>\(R_{\text{placo}} = \dfrac{0{,}013}{0{,}25 \times 12} = \mathbf{0{,}00433}\) K/W</p>
+    <p>b) \(R_{\text{total}} = 0{,}0198 + 0{,}286 + 0{,}00433 = \mathbf{0{,}310}\) K/W</p>
+    <p>\(\Phi = \dfrac{18}{0{,}310} = \mathbf{58{,}1}\) W</p>
+    <p>L'isolant représente 92 % de la résistance totale : c'est lui qui assure l'essentiel de l'isolation.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un ébéniste rénove un atelier. Le plafond non isolé (dalle béton, S = 20 m², e = 15 cm, \(\lambda = 1{,}7\)) laisse échapper de la chaleur. L'intérieur est à 19 °C, l'extérieur à 3 °C.</p>
+  <p>a) Calculer le flux thermique sans isolation.</p>
+  <p>b) On ajoute 10 cm de mousse polyuréthane (\(\lambda = 0{,}022\)). Calculer la conductance et le flux de l'isolant seul.</p>
+  <p>c) Par combien les pertes sont-elles divisées ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(G = \dfrac{1{,}7 \times 20}{0{,}15} = 226{,}7\) W/K → \(\Phi = 226{,}7 \times 16 = \mathbf{3\,627}\) W</p>
+    <p>b) \(G_{\text{isolant}} = \dfrac{0{,}022 \times 20}{0{,}10} = 4{,}4\) W/K → \(\Phi = 4{,}4 \times 16 = \mathbf{70{,}4}\) W</p>
+    <p>c) Division : \(3\,627 / 70{,}4 \approx \mathbf{51{,}5}\). Les pertes sont divisées par environ <strong>52</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien d'agencement chauffe un atelier avec un radiateur de 3 kW. Le plafond non isolé perd \(\Phi = 3\,627\) W. Après isolation, les pertes tombent à 70 W.</p>
+  <p>a) Sans isolation, quelle fraction de la puissance du radiateur est perdue par ce seul plafond ?</p>
+  <p>b) Calculer l'énergie perdue par ce plafond en un mois (8 h/jour, 22 jours) dans chaque cas.</p>
+  <p>c) Calculer l'économie mensuelle réalisée grâce à l'isolation (tarif 0,20 €/kWh).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Fraction perdue : \(\dfrac{3\,627}{3\,000} = 1{,}21 = \mathbf{121\,\%}\). Le radiateur ne compense même pas les pertes par le plafond seul !</p>
+    <p>b) Durée mensuelle : \(8 \times 22 = 176\) h.</p>
+    <p>Sans isolation : \(E = 3{,}627 \times 176 = 638{,}4\) kWh.</p>
+    <p>Avec isolation : \(E = 0{,}070 \times 176 = 12{,}3\) kWh.</p>
+    <p>c) Économie : \((638{,}4 - 12{,}3) \times 0{,}20 = 626{,}1 \times 0{,}20 = \mathbf{125{,}22}\) €/mois.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Expliquer pourquoi il est plus rentable d'isoler d'abord les combles plutôt que les murs d'une maison. Illustrer avec un calcul : pour un même budget, on peut isoler 50 m² de combles ou 30 m² de mur, les deux en laine de roche (\(\lambda = 0{,}035\)), e = 10 cm, \(\Delta T = 16\) K.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Combles (50 m²) : \(G = \dfrac{0{,}035 \times 50}{0{,}10} = 17{,}5\) W/K → \(\Phi = 17{,}5 \times 16 = \mathbf{280}\) W de pertes restantes.</p>
+    <p>Murs (30 m²) : \(G = \dfrac{0{,}035 \times 30}{0{,}10} = 10{,}5\) W/K → \(\Phi = 10{,}5 \times 16 = \mathbf{168}\) W de pertes restantes.</p>
+    <p><strong>Analyse :</strong> Sans isolation, les combles (grande surface, chaleur montante) représentent jusqu'à <strong>30 % des pertes totales</strong> d'une maison, contre environ 20-25 % pour les murs. Isoler les combles en priorité permet le gain le plus important car : 1) la surface à traiter est plus grande et moins coûteuse (pas de finition murale), 2) l'air chaud monte naturellement vers le plafond, augmentant le \(\Delta T\) effectif, 3) l'isolation des combles est plus facile à poser (soufflage, rouleaux).</p>
   </div>
 </div>
 

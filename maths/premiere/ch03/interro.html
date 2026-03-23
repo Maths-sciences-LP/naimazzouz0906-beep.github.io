@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -28,6 +29,8 @@
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
 <p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<h3 class="sujet-header">Sujet A</h3>
 
 <div class="exo">
   <h2>Question 1 <span class="pts">(4 points)</span></h2>
@@ -111,12 +114,98 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Suite arithm&eacute;tique : \(u_{n+1} = u_n + r\). On passe d'un terme au suivant en <strong>ajoutant</strong> la raison \(r\).</div>
+  <p>Un &eacute;b&eacute;niste d&eacute;bute avec un salaire de 1 500 &euro;. Son employeur lui accorde une augmentation de 40 &euro; par an.</p>
+  <p>a) Quel est le premier terme ? \(u_0 = ...\)</p>
+  <p>b) Quelle est la raison ? \(r = ...\)</p>
+  <p>c) Calculer les termes suivants :</p>
+  <p>\(u_1 = u_0 + r = 1\,500 + 40 = ...\)</p>
+  <p>\(u_2 = u_1 + r = ... + 40 = ...\)</p>
+  <p>\(u_3 = u_2 + r = ... + 40 = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_0 = \mathbf{1\,500}\) &euro;</p>
+    <p>b) \(r = \mathbf{40}\) &euro;</p>
+    <p>c) \(u_1 = 1\,500 + 40 = \mathbf{1\,540}\) &euro;</p>
+    <p>\(u_2 = 1\,540 + 40 = \mathbf{1\,580}\) &euro;</p>
+    <p>\(u_3 = 1\,580 + 40 = \mathbf{1\,620}\) &euro;</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Terme g&eacute;n&eacute;ral d'une suite arithm&eacute;tique : \(u_n = u_0 + n \times r\).</div>
+  <p>Toujours avec \(u_0 = 1\,500\) et \(r = 40\).</p>
+  <p>a) &Eacute;crire la formule du terme g&eacute;n&eacute;ral : \(u_n = 1\,500 + n \times ... = ...\)</p>
+  <p>b) Calculer le salaire apr&egrave;s 5 ans : \(u_5 = 1\,500 + 5 \times 40 = ...\)</p>
+  <p>c) Calculer le salaire apr&egrave;s 10 ans : \(u_{10} = 1\,500 + 10 \times 40 = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_n = 1\,500 + 40n\)</p>
+    <p>b) \(u_5 = 1\,500 + 5 \times 40 = 1\,500 + 200 = \mathbf{1\,700}\) &euro;</p>
+    <p>c) \(u_{10} = 1\,500 + 10 \times 40 = 1\,500 + 400 = \mathbf{1\,900}\) &euro;</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Suite g&eacute;om&eacute;trique : \(u_{n+1} = u_n \times q\). On passe d'un terme au suivant en <strong>multipliant</strong> par la raison \(q\).</div>
+  <p>Un artisan place 5 000 &euro; sur un livret &agrave; 3 % d'int&eacute;r&ecirc;ts par an. Chaque ann&eacute;e, le capital est multipli&eacute; par \(1{,}03\).</p>
+  <p>a) Quel est le premier terme ? \(u_0 = ...\)</p>
+  <p>b) Quelle est la raison ? \(q = ...\)</p>
+  <p>c) Calculer \(u_1 = u_0 \times q = 5\,000 \times 1{,}03 = ...\)</p>
+  <p>d) Calculer \(u_2 = u_1 \times q = ... \times 1{,}03 = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_0 = \mathbf{5\,000}\) &euro;</p>
+    <p>b) \(q = \mathbf{1{,}03}\)</p>
+    <p>c) \(u_1 = 5\,000 \times 1{,}03 = \mathbf{5\,150}\) &euro;</p>
+    <p>d) \(u_2 = 5\,150 \times 1{,}03 = \mathbf{5\,304{,}50}\) &euro;</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Pour reconna&icirc;tre le type de suite : calculer la diff&eacute;rence \(u_{n+1} - u_n\) (arithm&eacute;tique si constante) ou le quotient \(\dfrac{u_{n+1}}{u_n}\) (g&eacute;om&eacute;trique si constant).</div>
+  <p>Voici les premiers termes de deux suites. Identifier le type de chaque suite et donner la raison.</p>
+  <p>a) Suite \((u_n)\) : 7 ; 11 ; 15 ; 19 ; 23</p>
+  <p>\(u_1 - u_0 = 11 - 7 = ...\) et \(u_2 - u_1 = 15 - 11 = ...\) &rarr; Suite ... de raison ...</p>
+  <p>b) Suite \((v_n)\) : 2 ; 10 ; 50 ; 250 ; 1 250</p>
+  <p>\(\dfrac{v_1}{v_0} = \dfrac{10}{2} = ...\) et \(\dfrac{v_2}{v_1} = \dfrac{50}{10} = ...\) &rarr; Suite ... de raison ...</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_1 - u_0 = 4\), \(u_2 - u_1 = 4\). La diff&eacute;rence est constante : suite <strong>arithm&eacute;tique</strong> de raison \(r = \mathbf{4}\).</p>
+    <p>b) \(\dfrac{v_1}{v_0} = 5\), \(\dfrac{v_2}{v_1} = 5\). Le quotient est constant : suite <strong>g&eacute;om&eacute;trique</strong> de raison \(q = \mathbf{5}\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Somme des termes d'une suite arithm&eacute;tique : \(S = \dfrac{\text{nombre de termes} \times (\text{premier} + \text{dernier})}{2}\).</div>
+  <p>Calculer la somme \(S = 3 + 6 + 9 + 12 + 15\).</p>
+  <p>a) Combien y a-t-il de termes ? ...</p>
+  <p>b) Quel est le premier terme ? ... Le dernier ? ...</p>
+  <p>c) Appliquer la formule : \(S = \dfrac{... \times (... + ...)}{2} = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Il y a <strong>5 termes</strong>.</p>
+    <p>b) Premier terme : 3. Dernier terme : 15.</p>
+    <p>c) \(S = \dfrac{5 \times (3 + 15)}{2} = \dfrac{5 \times 18}{2} = \dfrac{90}{2} = \mathbf{45}\)</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
 <p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<h3 class="sujet-header">Sujet A</h3>
 
 <div class="exo">
   <h2>Question 1 <span class="pts">(4 points)</span></h2>
@@ -185,12 +274,82 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur pose des &eacute;tag&egrave;res dans un magasin de 6 niveaux. Au rez-de-chauss&eacute;e, il installe 8 &eacute;tag&egrave;res. &Agrave; chaque niveau sup&eacute;rieur, il en pose 4 de plus.</p>
+  <p>a) Justifier que le nombre d'&eacute;tag&egrave;res forme une suite arithm&eacute;tique. Donner \(u_0\) et \(r\).</p>
+  <p>b) Exprimer \(u_n\) en fonction de \(n\).</p>
+  <p>c) Combien d'&eacute;tag&egrave;res pose-t-il au 5e niveau ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) On ajoute 4 &eacute;tag&egrave;res &agrave; chaque niveau : \(u_{n+1} = u_n + 4\). C'est une suite <strong>arithm&eacute;tique</strong> avec \(u_0 = 8\) et \(r = 4\).</p>
+    <p>b) \(u_n = 8 + 4n\)</p>
+    <p>c) \(u_5 = 8 + 4 \times 5 = 8 + 20 = \mathbf{28}\) &eacute;tag&egrave;res.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un installateur de pompes &agrave; chaleur constate qu'un compresseur perd 8 % de son efficacit&eacute; chaque ann&eacute;e. L'efficacit&eacute; initiale est de 95 %.</p>
+  <p>a) Justifier que l'efficacit&eacute; forme une suite g&eacute;om&eacute;trique. Donner \(u_0\) et \(q\).</p>
+  <p>b) Exprimer \(u_n\) en fonction de \(n\).</p>
+  <p>c) Calculer l'efficacit&eacute; apr&egrave;s 3 ans (arrondir &agrave; 0,1 %).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) L'efficacit&eacute; est multipli&eacute;e chaque ann&eacute;e par \(1 - 0{,}08 = 0{,}92\). C'est une suite <strong>g&eacute;om&eacute;trique</strong> avec \(u_0 = 95\) et \(q = 0{,}92\).</p>
+    <p>b) \(u_n = 95 \times 0{,}92^n\)</p>
+    <p>c) \(u_3 = 95 \times 0{,}92^3 = 95 \times 0{,}77863 \approx \mathbf{74{,}0\,\%}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>Un fabricant de mobilier ach&egrave;te une d&eacute;fonceuse num&eacute;rique d'une valeur de 12 000 &euro;. Elle est amortie de mani&egrave;re lin&eacute;aire sur 8 ans.</p>
+  <p>a) Quelle est la perte de valeur annuelle ?</p>
+  <p>b) Exprimer la valeur r&eacute;siduelle \(v_n\) apr&egrave;s \(n\) ann&eacute;es.</p>
+  <p>c) Quelle est la valeur r&eacute;siduelle apr&egrave;s 5 ans ?</p>
+  <p>d) Au bout de combien d'ann&eacute;es la machine n'a-t-elle plus de valeur ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Perte annuelle : \(\dfrac{12\,000}{8} = \mathbf{1\,500}\) &euro;/an.</p>
+    <p>b) \(v_n = 12\,000 - 1\,500n\) (suite arithm&eacute;tique, \(v_0 = 12\,000\), \(r = -1\,500\)).</p>
+    <p>c) \(v_5 = 12\,000 - 1\,500 \times 5 = 12\,000 - 7\,500 = \mathbf{4\,500}\) &euro;.</p>
+    <p>d) \(v_n = 0\) quand \(12\,000 - 1\,500n = 0\), soit \(n = \dfrac{12\,000}{1\,500} = \mathbf{8}\) ans.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un artisan menuisier place 3 200 &euro; sur un livret d'&eacute;pargne &agrave; un taux annuel de 4 %.</p>
+  <p>a) Exprimer le capital \(c_n\) apr&egrave;s \(n\) ann&eacute;es.</p>
+  <p>b) Calculer le capital apr&egrave;s 5 ans (arrondir au centime).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(c_n = 3\,200 \times 1{,}04^n\) (suite g&eacute;om&eacute;trique, \(c_0 = 3\,200\), \(q = 1{,}04\)).</p>
+    <p>b) \(c_5 = 3\,200 \times 1{,}04^5 = 3\,200 \times 1{,}21665 \approx \mathbf{3\,893{,}29}\) &euro;.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Calculer la somme des 6 premiers termes de la suite \(u_n = 8 + 4n\) (de \(u_0\) &agrave; \(u_5\)).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(u_0 = 8\), \(u_5 = 8 + 4 \times 5 = 28\). Il y a 6 termes (de \(u_0\) &agrave; \(u_5\)).</p>
+    <p>\(S = \dfrac{6 \times (8 + 28)}{2} = \dfrac{6 \times 36}{2} = \dfrac{216}{2} = \mathbf{108}\) &eacute;tag&egrave;res au total.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
 <p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<h3 class="sujet-header">Sujet A</h3>
 
 <div class="exo">
   <h2>Question 1 <span class="pts">(5 points)</span></h2>
@@ -281,6 +440,100 @@
       <li>\(u_7 = 800 \times 0{,}9^7 \approx 800 \times 0{,}4783 \approx 383\) &lt; 400</li>
     </ul>
     <p>La suite passe sous 400 au <strong>rang 7</strong>.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(5 points)</span></h2>
+  <p>Un menuisier agenceur h&eacute;site entre deux offres d'emploi :</p>
+  <ul>
+    <li><strong>Offre A :</strong> salaire initial de 1 800 &euro;, avec une augmentation de 50 &euro; par an.</li>
+    <li><strong>Offre B :</strong> salaire initial de 1 650 &euro;, avec une augmentation de 4 % par an.</li>
+  </ul>
+  <p>a) Identifier le type de suite pour chaque offre et donner les formules des termes g&eacute;n&eacute;raux.</p>
+  <p>b) Calculer le salaire propos&eacute; par chaque offre apr&egrave;s 5 ans.</p>
+  <p>c) Calculer le salaire propos&eacute; par chaque offre apr&egrave;s 10 ans.</p>
+  <p>d) &Agrave; partir de quelle ann&eacute;e l'offre B devient-elle plus avantageuse ? (Tester des valeurs)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Offre A : suite <strong>arithm&eacute;tique</strong>, \(a_n = 1\,800 + 50n\).</p>
+    <p>Offre B : suite <strong>g&eacute;om&eacute;trique</strong>, \(b_n = 1\,650 \times 1{,}04^n\).</p>
+    <p>b) Apr&egrave;s 5 ans :</p>
+    <ul>
+      <li>\(a_5 = 1\,800 + 50 \times 5 = \mathbf{2\,050}\) &euro;</li>
+      <li>\(b_5 = 1\,650 \times 1{,}04^5 \approx 1\,650 \times 1{,}2167 \approx \mathbf{2\,008}\) &euro;</li>
+    </ul>
+    <p>c) Apr&egrave;s 10 ans :</p>
+    <ul>
+      <li>\(a_{10} = 1\,800 + 50 \times 10 = \mathbf{2\,300}\) &euro;</li>
+      <li>\(b_{10} = 1\,650 \times 1{,}04^{10} \approx 1\,650 \times 1{,}4802 \approx \mathbf{2\,442}\) &euro;</li>
+    </ul>
+    <p>d) On teste :</p>
+    <ul>
+      <li>\(n = 8\) : \(a_8 = 2\,200\), \(b_8 \approx 1\,650 \times 1{,}3686 \approx 2\,258\) &rarr; B &gt; A</li>
+      <li>\(n = 7\) : \(a_7 = 2\,150\), \(b_7 \approx 1\,650 \times 1{,}3159 \approx 2\,171\) &rarr; B &gt; A</li>
+      <li>\(n = 6\) : \(a_6 = 2\,100\), \(b_6 \approx 1\,650 \times 1{,}2653 \approx 2\,088\) &rarr; A &gt; B</li>
+    </ul>
+    <p>L'offre B devient plus avantageuse &agrave; partir de l'<strong>ann&eacute;e 7</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Un technicien d'agencement empile des panneaux de bois. La premi&egrave;re rang&eacute;e contient 30 panneaux. Chaque rang&eacute;e au-dessus contient 4 panneaux de moins.</p>
+  <p>a) Exprimer le nombre de panneaux \(u_n\) &agrave; la rang&eacute;e de rang \(n\).</p>
+  <p>b) &Agrave; partir de quelle rang&eacute;e n'y a-t-il plus de panneaux ?</p>
+  <p>c) Calculer le nombre total de panneaux dans la pile (de la rang&eacute;e 0 &agrave; la derni&egrave;re rang&eacute;e non vide).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_n = 30 - 4n\) (suite arithm&eacute;tique, \(u_0 = 30\), \(r = -4\)).</p>
+    <p>b) \(u_n = 0\) quand \(30 - 4n = 0\), soit \(n = 7{,}5\). La derni&egrave;re rang&eacute;e non vide est \(u_7 = 30 - 28 = 2\) panneaux.</p>
+    <p>c) On somme de \(u_0 = 30\) &agrave; \(u_7 = 2\). Il y a 8 termes.</p>
+    <p>\(S = \dfrac{8 \times (30 + 2)}{2} = \dfrac{8 \times 32}{2} = \dfrac{256}{2} = \mathbf{128}\) panneaux.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>Un plombier chauffagiste place 8 000 &euro; sur un compte &agrave; int&eacute;r&ecirc;ts compos&eacute;s au taux annuel de 3,2 %.</p>
+  <p>a) Exprimer le capital \(c_n\) apr&egrave;s \(n\) ann&eacute;es.</p>
+  <p>b) Calculer le capital apr&egrave;s 3 ans (arrondir au centime).</p>
+  <p>c) Au bout de combien d'ann&eacute;es le capital d&eacute;passe-t-il 10 000 &euro; ? (Tester des valeurs)</p>
+  <p>d) Quel est le gain total d'int&eacute;r&ecirc;ts apr&egrave;s ces ann&eacute;es ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(c_n = 8\,000 \times 1{,}032^n\)</p>
+    <p>b) \(c_3 = 8\,000 \times 1{,}032^3 = 8\,000 \times 1{,}09922 \approx \mathbf{8\,793{,}73}\) &euro;.</p>
+    <p>c) On teste :</p>
+    <ul>
+      <li>\(c_7 = 8\,000 \times 1{,}032^7 \approx 8\,000 \times 1{,}24785 \approx 9\,983\) &euro; &lt; 10 000</li>
+      <li>\(c_8 = 8\,000 \times 1{,}032^8 \approx 8\,000 \times 1{,}28778 \approx 10\,302\) &euro; &gt; 10 000</li>
+    </ul>
+    <p>Le capital d&eacute;passe 10 000 &euro; au bout de <strong>8 ans</strong>.</p>
+    <p>d) Gain d'int&eacute;r&ecirc;ts : \(10\,302 - 8\,000 = \mathbf{2\,302}\) &euro; environ.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <p>Voici les premiers termes d'une suite : 1 000 ; 850 ; 722,5 ; 614,125 ; ...</p>
+  <p>a) V&eacute;rifier que cette suite n'est pas arithm&eacute;tique.</p>
+  <p>b) V&eacute;rifier que cette suite est g&eacute;om&eacute;trique et donner sa raison.</p>
+  <p>c) &Eacute;crire la formule du terme g&eacute;n&eacute;ral.</p>
+  <p>d) Au bout de combien de termes la suite passe-t-elle sous 500 ? (Tester des valeurs)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_1 - u_0 = 850 - 1\,000 = -150\) et \(u_2 - u_1 = 722{,}5 - 850 = -127{,}5\). Les diff&eacute;rences ne sont <strong>pas &eacute;gales</strong>, la suite n'est pas arithm&eacute;tique.</p>
+    <p>b) \(\dfrac{u_1}{u_0} = \dfrac{850}{1\,000} = 0{,}85\) et \(\dfrac{u_2}{u_1} = \dfrac{722{,}5}{850} = 0{,}85\). Le quotient est constant : suite <strong>g&eacute;om&eacute;trique</strong> de raison \(q = \mathbf{0{,}85}\).</p>
+    <p>c) \(u_n = 1\,000 \times 0{,}85^n\)</p>
+    <p>d) On teste :</p>
+    <ul>
+      <li>\(u_4 = 1\,000 \times 0{,}85^4 \approx 1\,000 \times 0{,}5220 \approx 522\) &gt; 500</li>
+      <li>\(u_5 = 1\,000 \times 0{,}85^5 \approx 1\,000 \times 0{,}4437 \approx 444\) &lt; 500</li>
+    </ul>
+    <p>La suite passe sous 500 au <strong>rang 5</strong>.</p>
   </div>
 </div>
 

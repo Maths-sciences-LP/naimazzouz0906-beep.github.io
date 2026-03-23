@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -104,11 +106,90 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Les trois modes de transfert thermique sont : la conduction (à travers un solide), la convection (par déplacement d'un fluide) et le rayonnement (par ondes, sans support matériel).</div>
+  <p>Compléter le tableau :</p>
+  <table>
+    <tr><th>Situation</th><th>Mode de transfert thermique</th></tr>
+    <tr><td>La chaleur traverse une paroi en béton</td><td>...</td></tr>
+    <tr><td>L'air chaud circule dans une pièce</td><td>...</td></tr>
+    <tr><td>Le Soleil réchauffe un panneau solaire</td><td>...</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Situation</th><th>Mode de transfert thermique</th></tr>
+      <tr><td>La chaleur traverse une paroi en béton</td><td><strong>Conduction</strong></td></tr>
+      <tr><td>L'air chaud circule dans une pièce</td><td><strong>Convection</strong></td></tr>
+      <tr><td>Le Soleil réchauffe un panneau solaire</td><td><strong>Rayonnement</strong></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le transfert thermique se fait toujours spontanément du corps chaud vers le corps froid.</div>
+  <p>a) Un tuyau d'eau chaude à 70 °C traverse un local à 15 °C. Dans quel sens la chaleur se transfère-t-elle ?</p>
+  <p>b) Quand les deux corps atteignent la même température, comment appelle-t-on cet état ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La chaleur se transfère du <strong>tuyau chaud (70 °C) vers le local froid (15 °C)</strong>.</p>
+    <p>b) C'est l'<strong>équilibre thermique</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La conductivité thermique \(\lambda\) (lambda) s'exprime en W/(m·K). Plus \(\lambda\) est petit, meilleur est l'isolant.</div>
+  <p>Parmi les matériaux suivants, quel est le meilleur conducteur thermique ?</p>
+  <ul>
+    <li>Aluminium : \(\lambda = 237\) W/(m·K)</li>
+    <li>Brique : \(\lambda = 0{,}84\) W/(m·K)</li>
+    <li>Polystyrène : \(\lambda = 0{,}032\) W/(m·K)</li>
+  </ul>
+  <p>Justifier votre réponse.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Le meilleur conducteur thermique est l'<strong>aluminium</strong> (\(\lambda = 237\)) car il a la conductivité thermique la plus élevée. Plus \(\lambda\) est grand, mieux le matériau conduit la chaleur.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Convection naturelle : le fluide chaud monte, le froid descend. Convection forcée : un dispositif mécanique (pompe, ventilateur) provoque le mouvement.</div>
+  <p>Pour chaque situation, indiquer s'il s'agit de convection naturelle ou forcée :</p>
+  <p>a) Un ventilateur qui pulse de l'air chaud dans une pièce.</p>
+  <p>b) L'eau chaude qui monte dans un thermosiphon.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Convection <strong>forcée</strong> (le ventilateur est un dispositif mécanique qui pousse l'air).</p>
+    <p>b) Convection <strong>naturelle</strong> (l'eau chaude, moins dense, monte spontanément).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Conduction = transfert à travers un matériau. Convection = transfert par déplacement d'un fluide. Rayonnement = transfert par ondes (sans contact).</div>
+  <p>Identifier le mode de transfert thermique principal dans chaque situation :</p>
+  <p>a) Un radiateur en fonte qui réchauffe l'air de la pièce.</p>
+  <p>b) La chaleur qui se propage dans une barre de cuivre chauffée à une extrémité.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Convection</strong> (l'air est chauffé au contact du radiateur, monte, et crée un courant convectif).</p>
+    <p>b) <strong>Conduction</strong> (la chaleur se propage de proche en proche à travers le métal).</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -180,11 +261,84 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un installateur thermique installe des canalisations en acier (\(\lambda = 50\) W/(m·K)) pour distribuer l'eau chaude. Il les recouvre d'un calorifugeage en laine de roche (\(\lambda = 0{,}040\) W/(m·K)).</p>
+  <p>a) Calculer le rapport des conductivités thermiques acier/laine de roche.</p>
+  <p>b) Interpréter ce résultat en une phrase.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{50}{0{,}040} = \mathbf{1\,250}\)</p>
+    <p>b) L'acier conduit la chaleur environ <strong>1 250 fois mieux</strong> que la laine de roche. Le calorifugeage est donc très efficace pour limiter les pertes de chaleur.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien CVC intervient dans une chaufferie où la température de l'eau dans la chaudière est de 75 °C et la température ambiante du local est de 12 °C en hiver.</p>
+  <p>a) Dans quel sens la chaleur se transfère-t-elle ?</p>
+  <p>b) Citer les trois modes de transfert thermique qui interviennent simultanément dans ce local.</p>
+  <p>c) Expliquer pourquoi l'isolation du plafond de la chaufferie est prioritaire.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La chaleur se transfère de l'eau chaude (75 °C) <strong>vers le local</strong> (12 °C), puis du local vers l'extérieur.</p>
+    <p>b) <strong>Conduction</strong> (à travers les parois et les tuyaux), <strong>convection</strong> (air chaud qui monte dans le local) et <strong>rayonnement</strong> (émis par la chaudière et les canalisations chaudes).</p>
+    <p>c) Par convection naturelle, l'air chaud monte et s'accumule sous le plafond, augmentant les échanges thermiques à travers cette paroi. Isoler le plafond en priorité réduit donc les pertes les plus importantes.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Associer chaque élément d'une installation de chauffage au mode de transfert thermique principal :</p>
+  <table>
+    <tr><th>Élément</th><th>Mode principal</th></tr>
+    <tr><td>Sèche-serviettes électrique soufflant</td><td>...</td></tr>
+    <tr><td>Plafond chauffant</td><td>...</td></tr>
+    <tr><td>Radiateur infrarouge</td><td>...</td></tr>
+    <tr><td>Ventilo-convecteur</td><td>...</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Élément</th><th>Mode principal</th></tr>
+      <tr><td>Sèche-serviettes électrique soufflant</td><td><strong>Convection</strong> (forcée par le ventilateur)</td></tr>
+      <tr><td>Plafond chauffant</td><td><strong>Rayonnement</strong> (60 %)</td></tr>
+      <tr><td>Radiateur infrarouge</td><td><strong>Rayonnement</strong> (90 %)</td></tr>
+      <tr><td>Ventilo-convecteur</td><td><strong>Convection</strong> (forcée par le ventilateur)</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un plombier chauffagiste effectue un diagnostic thermique avec une caméra infrarouge. Il observe des zones jaunes au niveau des coffres de volets roulants.</p>
+  <p>a) Quel mode de transfert thermique la caméra détecte-t-elle ?</p>
+  <p>b) Que signifient les zones jaunes ? Quel est le problème ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La caméra détecte le <strong>rayonnement infrarouge</strong> émis par les surfaces.</p>
+    <p>b) Les zones jaunes indiquent des températures plus élevées que le reste de la façade : ce sont des <strong>ponts thermiques</strong> au niveau des coffres de volets roulants, zones mal isolées par lesquelles la chaleur s'échappe.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Expliquer le principe de l'isolation des combles par soufflage de laine de verre en utilisant les notions de conduction et de conductivité thermique.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>La laine de verre soufflée emprisonne de l'<strong>air immobile</strong> entre ses fibres. L'air immobile a une très faible conductivité thermique (\(\lambda = 0{,}026\) W/(m·K)), et la laine de verre elle-même a un \(\lambda\) très faible (\(0{,}035\) W/(m·K)). Cette couche isolante réduit considérablement les transferts de chaleur par <strong>conduction</strong> entre l'intérieur chauffé et les combles froids, limitant ainsi les déperditions thermiques par la toiture.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -248,6 +402,74 @@
     <p>1. <strong>Rayonnement :</strong> le Soleil envoie son énergie sous forme de rayonnement infrarouge qui est absorbé par le panneau solaire thermique.</p>
     <p>2. <strong>Conduction :</strong> la chaleur se transmet à travers la paroi métallique du capteur vers le fluide caloporteur qui circule à l'intérieur.</p>
     <p>3. <strong>Convection :</strong> le fluide caloporteur chauffé circule (convection naturelle par thermosiphon ou convection forcée par une pompe) vers le ballon de stockage pour chauffer l'eau sanitaire.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un installateur thermique doit isoler des canalisations d'eau chaude sanitaire. Voici les caractéristiques de deux isolants :</p>
+  <ul>
+    <li><strong>Mousse d'élastomère :</strong> \(\lambda = 0{,}038\) W/(m·K)</li>
+    <li><strong>Coquille de polyuréthane :</strong> \(\lambda = 0{,}023\) W/(m·K)</li>
+  </ul>
+  <p>a) Quel isolant est le plus performant ? Justifier.</p>
+  <p>b) Pour obtenir la même performance d'isolation, quel isolant nécessitera une épaisseur plus importante ?</p>
+  <p>c) Calculer le rapport des conductivités et interpréter.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La <strong>coquille de polyuréthane</strong> est la plus performante car \(\lambda = 0{,}023 < 0{,}038\). Plus \(\lambda\) est faible, meilleur est l'isolant.</p>
+    <p>b) La <strong>mousse d'élastomère</strong> nécessitera une épaisseur plus importante pour compenser sa conductivité plus élevée.</p>
+    <p>c) \(\dfrac{0{,}038}{0{,}023} = \mathbf{1{,}65}\). La mousse d'élastomère conduit 1,65 fois mieux la chaleur : il faudrait environ 1,65 fois plus d'épaisseur pour obtenir la même isolation.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien chauffagiste isole les murs d'une chaufferie avec 8 cm de laine de roche (\(\lambda = 0{,}040\) W/(m·K)). Avant isolation, les déperditions par les murs représentaient 25 % des pertes totales (estimées à 15 000 kWh/an). Après isolation, elles sont réduites à 8 %.</p>
+  <p>a) Calculer les pertes par les murs avant isolation (en kWh).</p>
+  <p>b) Calculer les pertes par les murs après isolation (en kWh).</p>
+  <p>c) Calculer l'économie d'énergie annuelle réalisée (en kWh et en euros au tarif de 0,25 €/kWh).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Avant : \(15\,000 \times 0{,}25 = \mathbf{3\,750}\) kWh</p>
+    <p>b) Après : \(15\,000 \times 0{,}08 = \mathbf{1\,200}\) kWh</p>
+    <p>c) Économie : \(3\,750 - 1\,200 = \mathbf{2\,550}\) kWh. En euros : \(2\,550 \times 0{,}25 = \mathbf{637{,}50}\) €/an.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien CVC doit conseiller un client entre un radiateur à inertie (30 % convection, 70 % rayonnement) et un convecteur à air pulsé (95 % convection, 5 % rayonnement).</p>
+  <p>a) Expliquer pourquoi le radiateur à inertie procure une chaleur plus douce et plus homogène.</p>
+  <p>b) Expliquer pourquoi le convecteur à air pulsé assèche davantage l'air ambiant.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le radiateur à inertie émet principalement par <strong>rayonnement</strong> : il chauffe directement les murs, les meubles et les personnes sans surchauffer l'air. La chaleur est répartie de manière homogène et la sensation de confort est plus douce.</p>
+    <p>b) Le convecteur à air pulsé fonctionne par <strong>convection forcée</strong> : l'air circule rapidement sur une résistance chaude, ce qui élève fortement sa température et réduit son humidité relative. L'air brassé en permanence accentue la sensation de sécheresse.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Expliquer pourquoi un ballon d'eau chaude solaire peut chauffer l'eau sanitaire grâce à l'énergie du Soleil, en identifiant les trois modes de transfert thermique qui interviennent successivement.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>1. <strong>Rayonnement :</strong> l'énergie solaire arrive sur le capteur thermique sous forme de rayonnement infrarouge et visible, absorbé par la surface noire du capteur.</p>
+    <p>2. <strong>Conduction :</strong> la chaleur absorbée par le capteur se transmet à travers la paroi métallique vers le fluide caloporteur qui circule dans les tubes.</p>
+    <p>3. <strong>Convection :</strong> le fluide caloporteur chauffé circule (par thermosiphon naturel ou pompe) vers l'échangeur du ballon pour transférer sa chaleur à l'eau sanitaire.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Expliquer pourquoi un réfrigérateur peut transférer la chaleur de l'intérieur froid vers la pièce chaude, alors que le transfert thermique spontané va du chaud vers le froid. Comparer avec le fonctionnement d'une pompe à chaleur.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Un réfrigérateur utilise un compresseur qui fournit de l'<strong>énergie mécanique</strong> (alimentée par l'électricité) pour <strong>forcer le transfert thermique</strong> du milieu froid (intérieur du réfrigérateur) vers le milieu chaud (cuisine). Ce transfert n'est pas spontané : il nécessite un apport d'énergie.</p>
+    <p>Le principe est <strong>identique</strong> à celui d'une pompe à chaleur : les deux machines utilisent un compresseur et un fluide frigorigène pour inverser le sens naturel du transfert thermique. La différence est l'objectif : le réfrigérateur vise à refroidir l'intérieur, la PAC vise à chauffer l'intérieur du logement.</p>
   </div>
 </div>
 

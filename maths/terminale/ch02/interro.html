@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,8 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -111,11 +114,98 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <p>Compléter avec le mot correct : <em>événements incompatibles</em>, <em>formule des probabilités totales</em>, <em>événement contraire</em>.</p>
+  <p>a) \(P(\bar{A}) = 1 - P(A)\) est la formule de l' ...................</p>
+  <p>b) Si \(A \cap B = \emptyset\), on dit que les événements sont ...................</p>
+  <p>c) \(P(A) = P(B) \times P_B(A) + P(\bar{B}) \times P_{\bar{B}}(A)\) est la ...................</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) événement contraire</p>
+    <p>b) événements incompatibles</p>
+    <p>c) formule des probabilités totales</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(P(\bar{A}) = 1 - P(A)\)</div>
+  <p>La probabilité qu'une planche de bois soit défectueuse est \(P(D) = 0{,}08\).</p>
+  <p>a) Calculer la probabilité qu'une planche soit conforme.</p>
+  <p>b) Sur 400 planches, combien s'attend-on à trouver de planches défectueuses ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(\text{Conforme}) = 1 - 0{,}08 = \mathbf{0{,}92}\)</p>
+    <p>b) \(0{,}08 \times 400 = \mathbf{32}\) planches défectueuses.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Probabilité = effectif de la case ÷ effectif total</div>
+  <p>On contrôle 250 radiateurs produits par deux usines :</p>
+  <table>
+    <thead>
+      <tr><th></th><th>Défectueux (D)</th><th>Conforme (C)</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><th>Usine X</th><td>8</td><td>142</td><td>150</td></tr>
+      <tr><th>Usine Y</th><td>12</td><td>88</td><td>100</td></tr>
+      <tr><th>Total</th><td>20</td><td>230</td><td>250</td></tr>
+    </tbody>
+  </table>
+  <p>On prend un radiateur au hasard. Calculer :</p>
+  <p>a) \(P(X) = \dfrac{...}{...} = ...\)</p>
+  <p>b) \(P(D) = \dfrac{...}{...} = ...\)</p>
+  <p>c) \(P(X \cap D) = \dfrac{...}{...} = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(X) = \dfrac{150}{250} = \mathbf{0{,}60}\)</p>
+    <p>b) \(P(D) = \dfrac{20}{250} = \mathbf{0{,}08}\)</p>
+    <p>c) \(P(X \cap D) = \dfrac{8}{250} = \mathbf{0{,}032}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Sur un nœud, la somme des branches vaut 1. On multiplie le long d'un chemin.</div>
+  <p>Compléter l'arbre de probabilités :</p>
+  <p>Branche X : \(P(X) = 0{,}70\) → branche D : \(P_X(D) = 0{,}04\) → branche C : \(P_X(C) = ...\)</p>
+  <p>Branche Y : \(P(Y) = ...\) → branche D : \(P_Y(D) = 0{,}10\) → branche C : \(P_Y(C) = ...\)</p>
+  <p>Calculer \(P(X \cap D) = P(X) \times P_X(D) = ... \times ... = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(P_X(C) = 1 - 0{,}04 = \mathbf{0{,}96}\)</p>
+    <p>\(P(Y) = 1 - 0{,}70 = \mathbf{0{,}30}\)</p>
+    <p>\(P_Y(C) = 1 - 0{,}10 = \mathbf{0{,}90}\)</p>
+    <p>\(P(X \cap D) = 0{,}70 \times 0{,}04 = \mathbf{0{,}028}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Événements indépendants → \(P(A \cap B) = P(A) \times P(B)\)</div>
+  <p>Un technicien vérifie deux vannes indépendantes. La probabilité de fuite est 0,05 pour la vanne 1 et 0,08 pour la vanne 2.</p>
+  <p>a) Calculer la probabilité que les deux soient en fuite : \(P(F_1 \cap F_2) = ... \times ... = ...\)</p>
+  <p>b) Calculer la probabilité qu'aucune ne soit en fuite : \(P(\bar{F_1} \cap \bar{F_2}) = ... \times ... = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(F_1 \cap F_2) = 0{,}05 \times 0{,}08 = \mathbf{0{,}004}\)</p>
+    <p>b) \(P(\bar{F_1} \cap \bar{F_2}) = 0{,}95 \times 0{,}92 = \mathbf{0{,}874}\)</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -194,11 +284,92 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <p>Rappeler les formules suivantes :</p>
+  <p>a) Formule de la probabilité d'une réunion de deux événements \(P(A \cup B)\).</p>
+  <p>b) Probabilité conditionnelle de B sachant A.</p>
+  <p>c) Condition d'indépendance de deux événements A et B.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</p>
+    <p>b) \(P_A(B) = \dfrac{P(A \cap B)}{P(A)}\)</p>
+    <p>c) A et B sont indépendants si et seulement si \(P(A \cap B) = P(A) \times P(B)\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>On contrôle 400 tuyaux venant de deux fabricants :</p>
+  <table>
+    <thead>
+      <tr><th></th><th>Défectueux</th><th>Conforme</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><th>Fabricant A</th><td>10</td><td>190</td><td>200</td></tr>
+      <tr><th>Fabricant B</th><td>30</td><td>170</td><td>200</td></tr>
+      <tr><th>Total</th><td>40</td><td>360</td><td>400</td></tr>
+    </tbody>
+  </table>
+  <p>On prend un tuyau au hasard.</p>
+  <p>a) Calculer \(P(A)\), \(P(D)\) et \(P(A \cap D)\).</p>
+  <p>b) Calculer \(P_A(D)\). Interpréter le résultat.</p>
+  <p>c) Calculer \(P_B(D)\). Quel fabricant a le plus grand taux de défaut ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(A) = \frac{200}{400} = 0{,}50\) ; \(P(D) = \frac{40}{400} = 0{,}10\) ; \(P(A \cap D) = \frac{10}{400} = 0{,}025\)</p>
+    <p>b) \(P_A(D) = \frac{P(A \cap D)}{P(A)} = \frac{0{,}025}{0{,}50} = \mathbf{0{,}05}\). Parmi les tuyaux de A, 5 % sont défectueux.</p>
+    <p>c) \(P_B(D) = \frac{30}{200} = \mathbf{0{,}15}\). Le fabricant B a le plus grand taux de défaut (15 % contre 5 %).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>Un plombier chauffagiste contrôle des chaudières provenant de deux marques : M1 (70 % de la production, taux de panne 3 %) et M2 (30 %, taux de panne 8 %).</p>
+  <p>a) Construire un arbre de probabilités à deux niveaux.</p>
+  <p>b) Calculer la probabilité qu'une chaudière prise au hasard soit en panne.</p>
+  <p>c) Calculer la probabilité qu'elle soit en bon état.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Branche M1 (0,70) → P (0,03) / NP (0,97). Branche M2 (0,30) → P (0,08) / NP (0,92).</p>
+    <p>b) \(P(\text{Panne}) = 0{,}70 \times 0{,}03 + 0{,}30 \times 0{,}08 = 0{,}021 + 0{,}024 = \mathbf{0{,}045}\)</p>
+    <p>c) \(P(\text{Bon état}) = 1 - 0{,}045 = \mathbf{0{,}955}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Deux pompes fonctionnent de manière indépendante. La probabilité de panne est 0,06 pour la pompe A et 0,04 pour la pompe B.</p>
+  <p>a) Calculer la probabilité que les deux pompes tombent en panne.</p>
+  <p>b) Calculer la probabilité qu'au moins une pompe tombe en panne.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(A \cap B) = 0{,}06 \times 0{,}04 = \mathbf{0{,}0024}\)</p>
+    <p>b) \(P(\text{au moins une}) = 1 - P(\text{aucune}) = 1 - (1-0{,}06)(1-0{,}04) = 1 - 0{,}94 \times 0{,}96 = 1 - 0{,}9024 = \mathbf{0{,}0976}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>On sait que \(P(A) = 0{,}6\), \(P(B) = 0{,}5\), \(P(A \cap B) = 0{,}2\). A et B sont-ils indépendants ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(P(A) \times P(B) = 0{,}6 \times 0{,}5 = 0{,}30\)</p>
+    <p>Or \(P(A \cap B) = 0{,}20\).</p>
+    <p>Comme \(P(A) \times P(B) = 0{,}30 \neq 0{,}20 = P(A \cap B)\), <strong>A et B ne sont pas indépendants</strong>.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -266,6 +437,78 @@
     <p>a) Équipe A : \(0{,}60 \times 0{,}03 \times 1000 = \mathbf{18}\). Équipe B : \(0{,}40 \times 0{,}08 \times 1000 = \mathbf{32}\). Total : \(18 + 32 = \mathbf{50}\).</p>
     <p>b) \(P(\text{NC}) = 0{,}050\). \(P_{\text{NC}}(B) = \dfrac{P(B \cap \text{NC})}{P(\text{NC})} = \dfrac{0{,}032}{0{,}050} = \mathbf{0{,}64}\)</p>
     <p>Parmi les logements non conformes, 64 % ont été câblés par l'équipe B, alors que B ne représente que 40 % de la production. L'équipe B contribue de manière disproportionnée aux non-conformités.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <p>Énoncer la formule des probabilités totales pour un événement A qui peut arriver via trois sous-événements \(B_1\), \(B_2\) et \(B_3\) formant une partition. Donner une interprétation en termes d'arbre de probabilités.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(P(A) = P(B_1) \times P_{B_1}(A) + P(B_2) \times P_{B_2}(A) + P(B_3) \times P_{B_3}(A)\)</p>
+    <p>Sur l'arbre : on identifie tous les chemins qui aboutissent à A, on calcule la probabilité de chaque chemin (produit des branches), puis on additionne.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Un installateur thermique commande des radiateurs chez trois fournisseurs :</p>
+  <ul>
+    <li>F1 : 40 % de la commande, taux de défaut 3 %</li>
+    <li>F2 : 35 % de la commande, taux de défaut 4 %</li>
+    <li>F3 : 25 % de la commande, taux de défaut 10 %</li>
+  </ul>
+  <p>a) Construire un arbre de probabilités à deux niveaux.</p>
+  <p>b) Calculer la probabilité qu'un radiateur pris au hasard soit défectueux.</p>
+  <p>c) Sachant qu'un radiateur est défectueux, calculer la probabilité qu'il vienne de F3.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) F1 (0,40) → D (0,03)/C (0,97) ; F2 (0,35) → D (0,04)/C (0,96) ; F3 (0,25) → D (0,10)/C (0,90)</p>
+    <p>b) \(P(D) = 0{,}40 \times 0{,}03 + 0{,}35 \times 0{,}04 + 0{,}25 \times 0{,}10 = 0{,}012 + 0{,}014 + 0{,}025 = \mathbf{0{,}051}\)</p>
+    <p>c) \(P_D(F3) = \dfrac{P(F3 \cap D)}{P(D)} = \dfrac{0{,}025}{0{,}051} \approx \mathbf{0{,}490}\). Environ 49 % des radiateurs défectueux viennent de F3.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien de maintenance contrôle 4 vannes indépendantes. Les probabilités de fuite sont : \(p_1 = 0{,}08\), \(p_2 = 0{,}06\), \(p_3 = 0{,}04\), \(p_4 = 0{,}03\).</p>
+  <p>a) Calculer la probabilité qu'aucune vanne ne fuie.</p>
+  <p>b) En déduire la probabilité qu'au moins une vanne fuie.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(\text{aucune}) = 0{,}92 \times 0{,}94 \times 0{,}96 \times 0{,}97 = \mathbf{0{,}8050}\)</p>
+    <p>b) \(P(\text{au moins une}) = 1 - 0{,}8050 = \mathbf{0{,}1950}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>On sait que \(P(A) = 0{,}4\), \(P(B) = 0{,}6\) et \(P(A \cap B) = 0{,}24\).</p>
+  <p>a) A et B sont-ils indépendants ? Justifier par le calcul.</p>
+  <p>b) Calculer \(P_B(A)\) et \(P_A(B)\). Sont-elles égales ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(A) \times P(B) = 0{,}4 \times 0{,}6 = 0{,}24\). Or \(P(A \cap B) = 0{,}24\). Comme \(P(A) \times P(B) = P(A \cap B)\), <strong>A et B sont indépendants</strong>.</p>
+    <p>b) \(P_B(A) = \dfrac{0{,}24}{0{,}60} = 0{,}40 = P(A)\)</p>
+    <p>\(P_A(B) = \dfrac{0{,}24}{0{,}40} = 0{,}60 = P(B)\)</p>
+    <p>Non, \(P_B(A) \neq P_A(B)\). Mais on remarque que \(P_B(A) = P(A)\) et \(P_A(B) = P(B)\), ce qui est caractéristique de l'indépendance.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien contrôle 800 installations. 55 % sont réalisées par l'équipe A (taux de non-conformité 4 %), 45 % par l'équipe B (taux de non-conformité 10 %).</p>
+  <p>a) Calculer le nombre d'installations non conformes attendu pour chaque équipe et au total.</p>
+  <p>b) Sachant qu'une installation est non conforme, quelle est la probabilité qu'elle ait été réalisée par l'équipe B ? Interpréter.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Équipe A : \(0{,}55 \times 0{,}04 \times 800 = \mathbf{17{,}6 \approx 18}\). Équipe B : \(0{,}45 \times 0{,}10 \times 800 = \mathbf{36}\). Total : \(18 + 36 = \mathbf{54}\).</p>
+    <p>b) \(P(\text{NC}) = 0{,}55 \times 0{,}04 + 0{,}45 \times 0{,}10 = 0{,}022 + 0{,}045 = 0{,}067\).</p>
+    <p>\(P_{\text{NC}}(B) = \dfrac{0{,}045}{0{,}067} \approx \mathbf{0{,}67}\)</p>
+    <p>Parmi les installations non conformes, 67 % ont été réalisées par l'équipe B, alors que B ne représente que 45 % de la production. L'équipe B contribue de manière disproportionnée aux non-conformités.</p>
   </div>
 </div>
 

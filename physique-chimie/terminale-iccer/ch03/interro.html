@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -94,11 +96,80 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Un moteur est un convertisseur d'énergie : énergie électrique → énergie mécanique.</div>
+  <p>a) Quel type d'énergie un moteur électrique reçoit-il pour fonctionner ?</p>
+  <p>b) Quelle énergie utile fournit-il en sortie ?</p>
+  <p>c) Quelle forme d'énergie représente les pertes dans un moteur ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Énergie électrique</strong></p>
+    <p>b) <strong>Énergie mécanique</strong> (rotation)</p>
+    <p>c) Les pertes se manifestent sous forme de <strong>chaleur</strong> (pertes Joule, frottements, pertes fer).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Puissance absorbée d'un moteur CC : \(P_a = U \times I\). Rendement : \(\eta = P_u / P_a\).</div>
+  <p>Un moteur CC a les caractéristiques : U = 12 V, I = 8 A, P<sub>u</sub> = 72 W.</p>
+  <p>a) Calculer P<sub>a</sub> : \(P_a = 12 \times 8 = ...\) W</p>
+  <p>b) Calculer le rendement : \(\eta = \dfrac{72}{...} = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P_a = 12 \times 8 = \mathbf{96}\) W</p>
+    <p>b) \(\eta = \dfrac{72}{96} = \mathbf{0{,}75}\) soit <strong>75 %</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Bilan de puissance : \(P_a = P_u + P_{\text{pertes}}\).</div>
+  <p>Un moteur absorbe P<sub>a</sub> = 2 500 W et a une puissance utile P<sub>u</sub> = 2 100 W.</p>
+  <p>a) Calculer les pertes : \(P_{\text{pertes}} = 2\,500 - 2\,100 = ...\) W</p>
+  <p>b) Calculer le rendement η (en %).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P_{\text{pertes}} = 2\,500 - 2\,100 = \mathbf{400}\) W</p>
+    <p>b) \(\eta = \dfrac{2\,100}{2\,500} = 0{,}84\) soit <strong>84 %</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Vitesse de synchronisme : \(n_s = \dfrac{60 \times f}{p}\) avec f = 50 Hz et p = nombre de paires de pôles.</div>
+  <p>Un moteur asynchrone a p = 1 paire de pôles, réseau 50 Hz.</p>
+  <p>a) Calculer n<sub>s</sub> : \(n_s = \dfrac{60 \times 50}{1} = ...\) tr/min</p>
+  <p>b) La plaque indique n = 2 880 tr/min. La vitesse réelle est-elle supérieure ou inférieure à n<sub>s</sub> ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(n_s = \dfrac{60 \times 50}{1} = \mathbf{3\,000}\) tr/min</p>
+    <p>b) n = 2 880 < 3 000 → la vitesse réelle est <strong>inférieure</strong> à n<sub>s</sub> (c'est le principe du moteur asynchrone).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Moteur CC : la vitesse est proportionnelle à la tension U. Moteur asynchrone : la vitesse dépend de la fréquence f.</div>
+  <p>a) Pour augmenter la vitesse d'un moteur CC, faut-il augmenter ou diminuer la tension U ?</p>
+  <p>b) Pour diminuer la vitesse d'un moteur asynchrone, le variateur de fréquence doit-il augmenter ou diminuer f ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Il faut <strong>augmenter</strong> la tension U (vitesse proportionnelle à U).</p>
+    <p>b) Il faut <strong>diminuer</strong> la fréquence f.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -158,11 +229,72 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un installateur thermique relève la plaque d'un moteur asynchrone triphasé de circulateur : U = 400 V (Δ), I = 4,5 A, cos φ = 0,80, P<sub>u</sub> = 2,2 kW.</p>
+  <p>a) Calculer la puissance absorbée P<sub>a</sub> avec la formule triphasée \(P_a = \sqrt{3} \times U \times I \times \cos\varphi\).</p>
+  <p>b) En déduire le rendement η.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P_a = 1{,}732 \times 400 \times 4{,}5 \times 0{,}80 \approx \mathbf{2\,494}\) W</p>
+    <p>b) \(\eta = \dfrac{2\,200}{2\,494} \approx \mathbf{0{,}88}\) soit ~88 %.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien chauffagiste doit remplacer un moteur de circulateur prévu pour tourner à 750 tr/min. Le réseau est à 50 Hz.</p>
+  <p>a) Quel nombre de paires de pôles p faut-il choisir ?</p>
+  <p>b) Un moteur avec p = 3 paires de pôles convient-il ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(n_s = \dfrac{60 \times 50}{p} = 750\) → \(p = \dfrac{3\,000}{750} = \mathbf{4}\) paires de pôles.</p>
+    <p>b) Avec p = 3, n<sub>s</sub> = 1 000 tr/min → vitesse trop élevée. Le moteur <strong>ne convient pas</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un moteur asynchrone entraîne un compresseur de climatisation : P<sub>a</sub> = 7 200 W, η = 85 %.</p>
+  <p>a) Calculer la puissance utile mécanique P<sub>u</sub>.</p>
+  <p>b) Calculer les pertes.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P_u = P_a \times \eta = 7\,200 \times 0{,}85 = \mathbf{6\,120}\) W</p>
+    <p>b) \(P_{\text{pertes}} = 7\,200 - 6\,120 = \mathbf{1\,080}\) W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un variateur de fréquence commande un circulateur (moteur p = 3, f nominale = 50 Hz). On réduit la fréquence à 40 Hz.</p>
+  <p>a) Calculer la nouvelle vitesse de synchronisme.</p>
+  <p>b) Quel est le rapport n<sub>s</sub>(40 Hz) / n<sub>s</sub>(50 Hz) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(n_s = \dfrac{60 \times 40}{3} = \mathbf{800}\) tr/min</p>
+    <p>b) \(\dfrac{800}{1\,000} = \mathbf{0{,}80}\) → la vitesse est réduite à 80 %.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien de maintenance énergétique affirme que la vitesse de rotation d'un moteur asynchrone est toujours égale à la vitesse de synchronisme. A-t-il raison ? Expliquer.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Non</strong>, il a tort. La vitesse réelle d'un moteur asynchrone est toujours <strong>inférieure</strong> à la vitesse de synchronisme. C'est l'existence de ce décalage (glissement) qui crée le couple moteur. Sans glissement, il n'y a pas de couple.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -230,6 +362,77 @@
     <p>a) Écart : \(\dfrac{12 - 8{,}6}{8{,}6} \times 100 \approx \mathbf{39{,}5\,\%}\) → largement supérieur à 10 %.</p>
     <p>b) Surcharge mécanique (roulement grippé, charge bloquée) ; bobinage défectueux (court-circuit entre spires).</p>
     <p>c) Arrêter le moteur, vérifier les roulements, contrôler la résistance d'isolement des bobinages (mégohmmètre), vérifier le couple résistant.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un moteur asynchrone triphasé entraîne un ventilateur extracteur : P<sub>u</sub> = 4 kW, η = 86 %, cos φ = 0,82, U = 400 V (Δ).</p>
+  <p>a) Calculer P<sub>a</sub>.</p>
+  <p>b) Calculer le courant de ligne I.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P_a = \dfrac{P_u}{\eta} = \dfrac{4\,000}{0{,}86} \approx \mathbf{4\,651}\) W</p>
+    <p>b) \(I = \dfrac{P_a}{\sqrt{3} \times U \times \cos\varphi} = \dfrac{4\,651}{1{,}732 \times 400 \times 0{,}82} \approx \mathbf{8{,}2}\) A</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un variateur règle un extracteur (P<sub>u</sub> = 4 kW à 50 Hz) à 25 Hz. La puissance mécanique varie avec le cube de la vitesse.</p>
+  <p>a) Calculer le rapport des vitesses n<sub>25</sub>/n<sub>50</sub>.</p>
+  <p>b) Calculer la puissance mécanique à 25 Hz.</p>
+  <p>c) En déduire le pourcentage d'économie d'énergie.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{n_{25}}{n_{50}} = \dfrac{25}{50} = \mathbf{0{,}50}\)</p>
+    <p>b) \(P_{25} = 4\,000 \times 0{,}50^3 = 4\,000 \times 0{,}125 = \mathbf{500}\) W</p>
+    <p>c) Économie : \(\dfrac{4\,000 - 500}{4\,000} \times 100 = \mathbf{87{,}5\,\%}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Une installation de ventilation comporte un moteur (η<sub>moteur</sub> = 90 %) et un ventilateur (η<sub>ventilateur</sub> = 78 %). Le moteur absorbe P<sub>a</sub> = 3 500 W.</p>
+  <p>a) Calculer la puissance mécanique transmise au ventilateur.</p>
+  <p>b) Calculer la puissance aéraulique utile.</p>
+  <p>c) Calculer le rendement global de l'ensemble.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P_u^{moteur} = 3\,500 \times 0{,}90 = \mathbf{3\,150}\) W</p>
+    <p>b) \(P_u^{ventilateur} = 3\,150 \times 0{,}78 \approx \mathbf{2\,457}\) W</p>
+    <p>c) \(\eta_{global} = \dfrac{2\,457}{3\,500} \approx \mathbf{0{,}70}\) soit 70 %.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un moteur CC de 48 V a un coefficient de proportionnalité k = 60 tr/min par volt (n = k × U).</p>
+  <p>a) Calculer la vitesse nominale à U = 48 V.</p>
+  <p>b) On réduit la tension à 36 V. Calculer la nouvelle vitesse.</p>
+  <p>c) En déduire le pourcentage de réduction de vitesse.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(n = 60 \times 48 = \mathbf{2\,880}\) tr/min</p>
+    <p>b) \(n = 60 \times 36 = \mathbf{2\,160}\) tr/min</p>
+    <p>c) Réduction : \(\dfrac{2\,880 - 2\,160}{2\,880} \times 100 = \mathbf{25\,\%}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un installateur thermique mesure à la pince ampèremétrique un courant I = 15 A sur un moteur asynchrone dont la plaque indique I<sub>n</sub> = 10,2 A.</p>
+  <p>a) L'écart est-il supérieur à 10 % ? Calculer le pourcentage d'écart.</p>
+  <p>b) Citer deux causes possibles de ce surcourant.</p>
+  <p>c) Quelle action de maintenance préconisez-vous ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Écart : \(\dfrac{15 - 10{,}2}{10{,}2} \times 100 \approx \mathbf{47{,}1\,\%}\) → largement supérieur à 10 %.</p>
+    <p>b) Surcharge mécanique (ventilateur encrassé, courroie trop tendue) ; déséquilibre de tension d'alimentation.</p>
+    <p>c) Arrêter le moteur, vérifier l'état du ventilateur et de la transmission, contrôler les tensions de ligne, mesurer la résistance d'isolement des bobinages.</p>
   </div>
 </div>
 

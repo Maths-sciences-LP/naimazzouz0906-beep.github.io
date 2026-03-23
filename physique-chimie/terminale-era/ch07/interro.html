@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -103,11 +105,89 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Un système de transmission comprend toujours : un émetteur, un canal de transmission et un récepteur.</div>
+  <p>Un menuisier agenceur utilise un talkie-walkie pour communiquer avec son collègue sur un chantier.</p>
+  <p>a) Quel est l'émetteur dans ce système ?</p>
+  <p>b) Quel est le canal de transmission ?</p>
+  <p>c) Quel est le récepteur ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) L'émetteur est le <strong>talkie-walkie de l'expéditeur</strong> (qui transforme la voix en signal radio).</p>
+    <p>b) Le canal de transmission est l'<strong>air</strong> (propagation des ondes radio).</p>
+    <p>c) Le récepteur est le <strong>talkie-walkie du collègue</strong> (qui reconvertit le signal en son).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Propagation libre = sans fil (WiFi, radio). Propagation guidée = avec fil (câble, fibre optique).</div>
+  <p>Classer chaque technologie : propagation libre ou guidée ?</p>
+  <table>
+    <tr><th>Technologie</th><th>Type</th></tr>
+    <tr><td>Câble téléphonique</td><td>... (libre / guidée)</td></tr>
+    <tr><td>Satellite</td><td>... (libre / guidée)</td></tr>
+    <tr><td>Fibre optique</td><td>... (libre / guidée)</td></tr>
+    <tr><td>4G/5G</td><td>... (libre / guidée)</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Câble téléphonique → <strong>guidée</strong></p>
+    <p>Satellite → <strong>libre</strong></p>
+    <p>Fibre optique → <strong>guidée</strong></p>
+    <p>4G/5G → <strong>libre</strong></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La vitesse de la lumière dans le vide est c = 3 × 10⁸ m/s. La vitesse du son dans l'air est v ≈ 340 m/s.</div>
+  <p>a) Un signal WiFi met-il plus ou moins de temps qu'un son pour traverser une pièce de 10 m ?</p>
+  <p>b) Calculer le temps mis par le son pour parcourir 10 m.</p>
+  <p>c) Calculer le temps mis par le signal WiFi pour parcourir 10 m.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le signal WiFi met <strong>beaucoup moins</strong> de temps (il se propage à la vitesse de la lumière).</p>
+    <p>b) \(t = \dfrac{10}{340} \approx \mathbf{0{,}029}\) s ≈ 29 ms</p>
+    <p>c) \(t = \dfrac{10}{3 \times 10^8} \approx 3{,}3 \times 10^{-8}\) s = <strong>33 ns</strong> (quasi instantané)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Les ondes sonores ne se propagent pas dans le vide. Les ondes électromagnétiques se propagent dans le vide.</div>
+  <p>Vrai ou Faux ? Justifier si faux.</p>
+  <p>a) La fibre optique transporte de l'électricité.</p>
+  <p>b) Les ondes radio peuvent se propager dans le vide (espace).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>FAUX</strong>. La fibre optique transporte de la <strong>lumière</strong> (signal lumineux), pas de l'électricité.</p>
+    <p>b) <strong>VRAI</strong>. Les ondes radio sont des ondes électromagnétiques, elles se propagent dans le vide (c'est ainsi que les satellites communiquent).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La fibre optique guide la lumière grâce à la réflexion totale interne.</div>
+  <p>a) De quoi est composée une fibre optique (2 parties principales) ?</p>
+  <p>b) Quel phénomène physique permet de guider la lumière à l'intérieur ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Une fibre optique est composée d'un <strong>cœur</strong> (en verre ou silice, indice n₁ élevé) et d'une <strong>gaine optique</strong> (indice n₂ plus faible).</p>
+    <p>b) La <strong>réflexion totale interne</strong> : la lumière rebondit à l'interface cœur/gaine sans s'échapper.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -170,11 +250,75 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un ébéniste équipe son atelier d'un réseau informatique pour relier ses machines à commande numérique (CNC) à un ordinateur central. Il hésite entre le WiFi et le câble Ethernet.</p>
+  <p>a) Citer deux avantages du câble Ethernet par rapport au WiFi.</p>
+  <p>b) Quel est le principal avantage du WiFi ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Deux parmi : <strong>débit plus stable</strong>, <strong>pas d'interférences</strong> (poussière de bois, machines ne perturbent pas le signal), <strong>latence plus faible</strong>, connexion plus <strong>fiable</strong>.</p>
+    <p>b) Le WiFi ne nécessite <strong>pas de câblage</strong>, ce qui facilite l'installation et permet la mobilité.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Pour la réflexion totale dans une fibre optique :</p>
+  <p>a) La lumière se propage du cœur vers la gaine. Quelle condition sur les indices n₁ (cœur) et n₂ (gaine) permet la réflexion totale ?</p>
+  <p>b) Que se passe-t-il si on plie trop la fibre ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Il faut que <strong>n₁ &gt; n₂</strong> (indice du cœur supérieur à celui de la gaine).</p>
+    <p>b) Si on plie trop la fibre, l'angle d'incidence devient <strong>inférieur à l'angle critique</strong> : la lumière s'échappe de la gaine et le signal est <strong>perdu</strong> (atténuation ou coupure).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un poseur de cuisines installe un système de pilotage domotique pour les éclairages et les prises d'une cuisine connectée. Le système utilise le protocole Zigbee à 2,4 GHz.</p>
+  <p>a) S'agit-il d'une propagation libre ou guidée ?</p>
+  <p>b) Quel problème peut survenir si la cuisine est entourée de murs en béton épais ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Propagation libre</strong> (sans fil, ondes radio).</p>
+    <p>b) Les murs en béton épais <strong>atténuent fortement</strong> les ondes radio. Le signal peut être trop faible pour atteindre les équipements. Il faudra éventuellement ajouter des <strong>répéteurs</strong> ou choisir un système filaire.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Comparer le câble Ethernet Cat. 5e (100 Mbit/s, 100 m max) et la fibre optique (10 Gbit/s, plusieurs km).</p>
+  <p>a) Combien de fois le débit de la fibre est-il supérieur à celui du câble Ethernet Cat. 5e ?</p>
+  <p>b) Pourquoi la fibre est-elle préférable pour relier deux bâtiments distants de 500 m ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{10\,000}{100} = \mathbf{100}\) fois supérieur.</p>
+    <p>b) Le câble Ethernet Cat. 5e est limité à <strong>100 m</strong> de longueur. Pour 500 m, il faudrait des répéteurs, ce qui complexifie l'installation. La fibre optique peut couvrir cette distance <strong>sans amplification</strong> et avec un débit bien supérieur.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Sur un chantier de rénovation, un technicien d'agencement doit choisir entre un interphone filaire et un interphone sans fil pour un immeuble de 4 étages.</p>
+  <p>a) Citer un avantage du filaire et un avantage du sans fil.</p>
+  <p>b) Lequel est le plus adapté en rénovation ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Filaire : <strong>plus fiable</strong>, pas de problème de batterie ni d'interférences. Sans fil : <strong>installation plus rapide</strong>, pas de travaux de câblage dans les murs.</p>
+    <p>b) Le <strong>sans fil</strong> est plus adapté en rénovation car il évite de <strong>saigner les murs</strong> pour passer les câbles, ce qui réduit les coûts et les nuisances pour les occupants.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -240,6 +384,75 @@
     <p>a) <strong>Fibre optique</strong> : très haut débit nécessaire pour connecter tous les étages, longue distance (plusieurs dizaines de mètres), insensible aux parasites dans la gaine technique.</p>
     <p>b) <strong>Câble Ethernet (RJ45 cat. 6A)</strong> : débit de 1-10 Gbit/s suffisant pour chaque poste, fiable, norme NF EN 50173 (distance max 90 m).</p>
     <p>c) <strong>Sans fil (Zigbee ou Z-Wave)</strong> : pas besoin de câblage dédié pour les volets, faible consommation, facile à programmer.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Une fibre optique multimode a un indice de cœur n₁ = 1,50 et un indice de gaine n₂ = 1,47.</p>
+  <p>a) Vérifier que la condition de réflexion totale est remplie.</p>
+  <p>b) Calculer l'angle critique : \(\theta_c = \arcsin\!\left(\dfrac{n_2}{n_1}\right)\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) n₁ = 1,50 &gt; n₂ = 1,47 → <strong>condition remplie</strong>.</p>
+    <p>b) \(\theta_c = \arcsin\!\left(\dfrac{1{,}47}{1{,}50}\right) = \arcsin(0{,}98) \approx \mathbf{78{,}5°}\)</p>
+    <p>Tout rayon arrivant avec un angle supérieur à 78,5° sera totalement réfléchi.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un signal électrique se propage dans un câble cuivre à environ v = 2 × 10⁸ m/s. Un signal parcourt un câble Ethernet de 80 m.</p>
+  <p>a) Calculer le temps de propagation du signal.</p>
+  <p>b) Comparer avec le temps que mettrait un signal sonore (340 m/s) pour parcourir la même distance.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(t = \dfrac{d}{v} = \dfrac{80}{2 \times 10^8} = 4 \times 10^{-7}\) s = <strong>0,4 µs</strong></p>
+    <p>b) \(t_{\text{son}} = \dfrac{80}{340} \approx 0{,}235\) s ≈ <strong>235 ms</strong></p>
+    <p>Le signal électrique est environ 588 000 fois plus rapide que le son.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur doit transférer les fichiers de conception 3D d'un meuble (500 Mo = 4 000 Mbit) à l'atelier de fabrication via le réseau.</p>
+  <p>a) Calculer le temps de transfert avec une connexion WiFi à 50 Mbit/s.</p>
+  <p>b) Calculer le temps de transfert avec une connexion Ethernet filaire à 1 000 Mbit/s.</p>
+  <p>c) Conclure.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(t = \dfrac{4\,000}{50} = \mathbf{80}\) s ≈ 1 min 20 s</p>
+    <p>b) \(t = \dfrac{4\,000}{1\,000} = \mathbf{4}\) s</p>
+    <p>c) Le réseau filaire permet un transfert en 4 s contre 80 s en WiFi, soit <strong>20 fois plus rapide</strong>. Pour des fichiers volumineux de conception, le câble Ethernet est nettement plus efficace.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Expliquer pourquoi le câble cuivre est sensible aux perturbations électromagnétiques et comment les câbles blindés (STP) réduisent ce problème.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Le câble cuivre transporte des <strong>signaux électriques</strong> (courants). Les champs électromagnétiques parasites (moteurs, néons, câbles électriques voisins) peuvent induire des <strong>courants parasites</strong> dans le câble, ce qui perturbe le signal transmis (erreurs de données, ralentissements).</p>
+    <p>Les câbles blindés (STP = Shielded Twisted Pair) possèdent un <strong>écran métallique</strong> (feuille d'aluminium ou tresse de cuivre) autour des paires torsadées. Cet écran <strong>bloque les champs parasites</strong> extérieurs et protège le signal.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un architecte d'intérieur dimensionne le réseau de communication d'un magasin de meubles de 3 niveaux. Proposer un choix de technologie pour chaque usage et justifier :</p>
+  <ul>
+    <li>a) Liaison entre les 3 niveaux (backbone vertical)</li>
+    <li>b) Caisses enregistreuses et terminaux de paiement</li>
+    <li>c) Enceintes diffusant la musique d'ambiance</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Fibre optique</strong> : très haut débit, insensible aux parasites dans la gaine technique, longue distance entre étages.</p>
+    <p>b) <strong>Câble Ethernet (RJ45)</strong> : fiable et stable pour les transactions financières, pas de risque de coupure WiFi pendant un paiement.</p>
+    <p>c) <strong>Sans fil (Bluetooth ou WiFi)</strong> : pas besoin de câblage dédié, facile à déplacer selon l'aménagement du magasin, débit suffisant pour de l'audio.</p>
   </div>
 </div>
 

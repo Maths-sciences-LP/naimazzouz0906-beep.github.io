@@ -7,7 +7,8 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}</style>
 </head>
 <body>
 <div class="c">
@@ -25,6 +26,8 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Bar&egrave;me :</strong> 20 points</p>
 
 <div class="exo">
@@ -105,11 +108,94 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Les 4 grandeurs &eacute;lectriques fondamentales sont la tension (U, en V), l'intensit&eacute; (I, en A), la r&eacute;sistance (R, en &Omega;) et la puissance (P, en W).</div>
+  <p>Compl&eacute;tez le tableau :</p>
+  <table>
+    <tr><th>Grandeur</th><th>Symbole</th><th>Unit&eacute;</th><th>Abr&eacute;viation</th></tr>
+    <tr><td>Puissance</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>R&eacute;sistance</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Tension</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Intensit&eacute;</td><td>...</td><td>...</td><td>...</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Grandeur</th><th>Symbole</th><th>Unit&eacute;</th><th>Abr&eacute;viation</th></tr>
+      <tr><td>Puissance</td><td><strong>P</strong></td><td>Watt</td><td><strong>W</strong></td></tr>
+      <tr><td>R&eacute;sistance</td><td><strong>R</strong></td><td>Ohm</td><td><strong>&Omega;</strong></td></tr>
+      <tr><td>Tension</td><td><strong>U</strong></td><td>Volt</td><td><strong>V</strong></td></tr>
+      <tr><td>Intensit&eacute;</td><td><strong>I</strong></td><td>Amp&egrave;re</td><td><strong>A</strong></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le voltm&egrave;tre se branche en <em>parall&egrave;le</em>. L'amp&egrave;rem&egrave;tre se branche en <em>s&eacute;rie</em>.</div>
+  <p>Compl&eacute;tez les phrases :</p>
+  <p>a) L'amp&egrave;rem&egrave;tre mesure l'... et se branche en ... .</p>
+  <p>b) Le voltm&egrave;tre mesure la ... et se branche en ... .</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) L'amp&egrave;rem&egrave;tre mesure l'<strong>intensit&eacute;</strong> et se branche en <strong>s&eacute;rie</strong>.</p>
+    <p>b) Le voltm&egrave;tre mesure la <strong>tension</strong> et se branche en <strong>parall&egrave;le</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Dans un circuit en s&eacute;rie, l'intensit&eacute; est identique en tout point : \(I = I_1 = I_2\). Les tensions s'additionnent : \(U = U_1 + U_2\).</div>
+  <p>Un g&eacute;n&eacute;rateur de 9 V alimente deux lampes en s&eacute;rie. On mesure \(U_1 = 4\) V aux bornes de la premi&egrave;re lampe.</p>
+  <p>a) Quelle est la tension aux bornes de la deuxi&egrave;me lampe ?</p>
+  <p>\(U_2 = U - U_1 = 9 - ... = ...\) V</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(U_2 = U - U_1 = 9 - 4 = \mathbf{5}\) V</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Dans un circuit en parall&egrave;le, la tension est identique aux bornes de chaque branche. Les intensit&eacute;s s'additionnent : \(I = I_1 + I_2\).</div>
+  <p>Dans un atelier, deux machines sont branch&eacute;es en parall&egrave;le sur le r&eacute;seau 230 V :</p>
+  <ul>
+    <li>Perceuse : \(I_1 = 3\) A</li>
+    <li>Lampe d'atelier : \(I_2 = 1\) A</li>
+  </ul>
+  <p>a) Quelle est la tension aux bornes de chaque appareil ? Justifier.</p>
+  <p>b) Calculer l'intensit&eacute; totale : \(I = I_1 + I_2 = ... + ... = ...\) A</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Les appareils sont en parall&egrave;le : chacun re&ccedil;oit la m&ecirc;me tension que le g&eacute;n&eacute;rateur, soit \(U = \mathbf{230}\) V.</p>
+    <p>b) \(I = I_1 + I_2 = 3 + 1 = \mathbf{4}\) A</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Pour que le courant circule, le circuit doit &ecirc;tre ferm&eacute;. Si un composant est en panne dans un circuit en s&eacute;rie, tout le circuit s'arr&ecirc;te.</div>
+  <p>Un circuit en s&eacute;rie comprend un g&eacute;n&eacute;rateur, un interrupteur et trois lampes.</p>
+  <p>a) L'interrupteur est ferm&eacute; et toutes les lampes fonctionnent. On d&eacute;visse la lampe 2. Les lampes 1 et 3 brillent-elles encore ? Justifier.</p>
+  <p>b) Si les trois lampes &eacute;taient branch&eacute;es en parall&egrave;le, la r&eacute;ponse serait-elle diff&eacute;rente ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Non</strong>, les lampes 1 et 3 ne brillent plus. En s&eacute;rie, si un composant est retir&eacute; (circuit ouvert), <strong>tout le circuit s'arr&ecirc;te</strong>.</p>
+    <p>b) <strong>Oui</strong>, en parall&egrave;le, chaque lampe a sa propre branche. Si la lampe 2 est retir&eacute;e, les lampes 1 et 3 <strong>continuent de fonctionner</strong> car leurs branches restent ferm&eacute;es.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Bar&egrave;me :</strong> 20 points</p>
 
 <div class="exo">
@@ -185,6 +271,85 @@
   <div class="corr">
     <p>a) L'amp&egrave;rem&egrave;tre a une r&eacute;sistance interne tr&egrave;s faible. Branch&eacute; en parall&egrave;le, il provoque un <strong>court-circuit</strong> : destruction possible de l'appareil, voire d&eacute;part de feu.</p>
     <p>b) L'amp&egrave;rem&egrave;tre doit &ecirc;tre branch&eacute; <strong>en s&eacute;rie</strong> : on coupe le fil pour l'ins&eacute;rer dans le circuit.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Compl&eacute;tez le tableau des grandeurs &eacute;lectriques avec le symbole, l'unit&eacute;, l'instrument de mesure et son branchement :</p>
+  <table>
+    <tr><th>Grandeur</th><th>Symbole</th><th>Unit&eacute;</th><th>Instrument</th><th>Branchement</th></tr>
+    <tr><td>Intensit&eacute;</td><td>?</td><td>?</td><td>?</td><td>?</td></tr>
+    <tr><td>Tension</td><td>?</td><td>?</td><td>?</td><td>?</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Grandeur</th><th>Symbole</th><th>Unit&eacute;</th><th>Instrument</th><th>Branchement</th></tr>
+      <tr><td>Intensit&eacute;</td><td><strong>I</strong></td><td>Amp&egrave;re (A)</td><td>Amp&egrave;rem&egrave;tre</td><td><strong>En s&eacute;rie</strong></td></tr>
+      <tr><td>Tension</td><td><strong>U</strong></td><td>Volt (V)</td><td>Voltm&egrave;tre</td><td><strong>En parall&egrave;le</strong></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un g&eacute;n&eacute;rateur de 18 V alimente trois r&eacute;sistances en s&eacute;rie. On mesure \(U_1 = 6\) V et \(U_2 = 7\) V.</p>
+  <p>a) Calculer la tension \(U_3\) aux bornes de la troisi&egrave;me r&eacute;sistance en utilisant la loi des mailles.</p>
+  <p>b) L'intensit&eacute; mesur&eacute;e en un point du circuit est \(I = 3\) A. Quelle est l'intensit&eacute; qui traverse chaque r&eacute;sistance ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Loi des mailles : \(U = U_1 + U_2 + U_3\)</p>
+    <p>\(U_3 = 18 - 6 - 7 = \mathbf{5}\) V</p>
+    <p>b) En s&eacute;rie, l'intensit&eacute; est identique en tout point : \(I_1 = I_2 = I_3 = \mathbf{3}\) A.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Dans l'atelier d'un artisan menuisier, trois machines sont branch&eacute;es en parall&egrave;le sur le r&eacute;seau 230 V :</p>
+  <ul>
+    <li>D&eacute;fonceuse : \(I_1 = 6\) A</li>
+    <li>Ponceuse &agrave; bande : \(I_2 = 4\) A</li>
+    <li>Lampe halog&egrave;ne : \(I_3 = 2{,}5\) A</li>
+  </ul>
+  <p>a) Calculer l'intensit&eacute; totale d&eacute;bit&eacute;e par le tableau &eacute;lectrique (loi des n&oelig;uds).</p>
+  <p>b) Le disjoncteur se d&eacute;clenche &agrave; 16 A. Va-t-il disjoncter ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Loi des n&oelig;uds : \(I = I_1 + I_2 + I_3 = 6 + 4 + 2{,}5 = \mathbf{12{,}5}\) A</p>
+    <p>b) \(I = 12{,}5\) A < 16 A. Le disjoncteur <strong>ne va pas disjoncter</strong>. Le circuit est en s&eacute;curit&eacute;.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Effectuer les conversions suivantes :</p>
+  <p>a) 750 mA = ... A</p>
+  <p>b) 1{,}5 kV = ... V</p>
+  <p>c) 3 200 &Omega; = ... k&Omega;</p>
+  <p>d) 0{,}25 A = ... mA</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(750\) mA \(= 750 \times 0{,}001 = \mathbf{0{,}750}\) A</p>
+    <p>b) \(1{,}5\) kV \(= 1{,}5 \times 1\,000 = \mathbf{1\,500}\) V</p>
+    <p>c) \(3\,200\) &Omega; \(= 3\,200 \div 1\,000 = \mathbf{3{,}2}\) k&Omega;</p>
+    <p>d) \(0{,}25\) A \(= 0{,}25 \times 1\,000 = \mathbf{250}\) mA</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un &eacute;l&egrave;ve veut mesurer la tension aux bornes d'une lampe. Il branche le voltm&egrave;tre <em>en s&eacute;rie</em> dans le circuit.</p>
+  <p>a) Pourquoi ce branchement est-il incorrect ?</p>
+  <p>b) Comment aurait-il d&ucirc; brancher le voltm&egrave;tre ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le voltm&egrave;tre a une r&eacute;sistance interne tr&egrave;s &eacute;lev&eacute;e. Branch&eacute; en s&eacute;rie, il <strong>bloque pratiquement tout le courant</strong> : la lampe ne s'allume plus et la mesure est fausse.</p>
+    <p>b) Le voltm&egrave;tre doit &ecirc;tre branch&eacute; <strong>en parall&egrave;le</strong> (en d&eacute;rivation) aux bornes de la lampe.</p>
   </div>
 </div>
 

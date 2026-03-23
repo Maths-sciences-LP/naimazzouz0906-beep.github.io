@@ -7,7 +7,7 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}</style>
 </head>
 <body>
 <div class="c">
@@ -25,6 +25,7 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -110,11 +111,98 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La lumière se propage en <strong>ligne droite</strong> dans un milieu homogène. Sa vitesse dans le vide est \(c = 3{,}0 \times 10^8\) m/s.</div>
+  <p>Compléter les phrases suivantes :</p>
+  <p>a) La trajectoire de la lumière dans un milieu homogène est un .......... appelé rayon lumineux.</p>
+  <p>b) La vitesse de la lumière dans le vide vaut \(c =\) .......... km/s.</p>
+  <p>c) L'indice de réfraction d'un milieu est toujours .......... (supérieur / inférieur) ou égal à 1.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La trajectoire est un <strong>segment de droite</strong> (ou une ligne droite) appelé rayon lumineux.</p>
+    <p>b) \(c = 3{,}0 \times 10^8\text{ m/s} = \mathbf{300\,000}\text{ km/s}\).</p>
+    <p>c) L'indice de réfraction est toujours <strong>supérieur</strong> ou égal à 1.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Loi de la réflexion : l'angle de réflexion est <strong>égal</strong> à l'angle d'incidence. Les angles se mesurent par rapport à la <strong>normale</strong>.</div>
+  <p>Un rayon lumineux frappe un miroir plan avec un angle d'incidence de 50° par rapport à la normale.</p>
+  <p>a) Quel est l'angle de réflexion ? \(i_r =\) .......... °</p>
+  <p>b) Une vitre propre réfléchit la lumière dans une direction précise. Est-ce une réflexion spéculaire ou diffuse ? → ..........</p>
+  <p>c) Un mur crépi réfléchit la lumière dans toutes les directions. Est-ce une réflexion spéculaire ou diffuse ? → ..........</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) D'après la loi de réflexion : \(i_r = i_1 = \mathbf{50°}\).</p>
+    <p>b) Une vitre propre présente une réflexion <strong>spéculaire</strong> (surface lisse, reflet net).</p>
+    <p>c) Un mur crépi présente une réflexion <strong>diffuse</strong> (surface rugueuse, lumière renvoyée dans toutes les directions).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> L'indice de réfraction \(n = \dfrac{c}{v}\), toujours \(\geq 1\). Air : \(n \approx 1\) ; Eau : \(n = 1{,}33\).</div>
+  <p>Compléter le tableau :</p>
+  <table>
+    <tr><th>Milieu</th><th>Indice \(n\)</th><th>La lumière va-t-elle plus vite ou moins vite que dans l'air ?</th></tr>
+    <tr><td>Air</td><td>..........</td><td>..........</td></tr>
+    <tr><td>Eau</td><td>..........</td><td>..........</td></tr>
+    <tr><td>Diamant</td><td>2,42</td><td>..........</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Milieu</th><th>Indice \(n\)</th><th>Vitesse</th></tr>
+      <tr><td>Air</td><td><strong>1,00</strong></td><td>Vitesse de référence (quasi égale à \(c\))</td></tr>
+      <tr><td>Eau</td><td><strong>1,33</strong></td><td><strong>Moins vite</strong> que dans l'air</td></tr>
+      <tr><td>Diamant</td><td><strong>2,42</strong></td><td><strong>Beaucoup moins vite</strong> (environ 124 000 km/s)</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Loi de Snell-Descartes : \(n_1 \times \sin(i_1) = n_2 \times \sin(i_2)\). Si \(n_2 > n_1\), le rayon se rapproche de la normale.</div>
+  <p>Un rayon lumineux passe de l'air (\(n_1 = 1{,}00\)) dans l'eau (\(n_2 = 1{,}33\)) avec un angle d'incidence \(i_1 = 45°\).</p>
+  <p>a) Calculer \(\sin(i_2)\) : \(\sin(i_2) = \dfrac{n_1 \times \sin(i_1)}{n_2} = \dfrac{1{,}00 \times \sin(45°)}{1{,}33} = \dfrac{1{,}00 \times .........}{1{,}33} = ..........\)</p>
+  <p>b) En déduire \(i_2\) à l'aide de la calculatrice : \(i_2 = \arcsin(...........) = ..........°\)</p>
+  <p><strong>Donnée :</strong> \(\sin(45°) = 0{,}707\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\sin(i_2) = \dfrac{1{,}00 \times 0{,}707}{1{,}33} = \dfrac{0{,}707}{1{,}33} = \mathbf{0{,}531}\)</p>
+    <p>b) \(i_2 = \arcsin(0{,}531) \approx \mathbf{32{,}1°}\)</p>
+    <p>Le rayon réfracté fait un angle de 32,1° avec la normale, inférieur à 45° : il se rapproche de la normale en entrant dans le milieu plus dense (eau).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La fibre optique utilise la <strong>réflexion totale interne</strong> pour guider la lumière.</div>
+  <p>Répondre par vrai ou faux et corriger si faux :</p>
+  <p>a) La lumière dans une fibre optique circule grâce à des réflexions totales successives. → ..........</p>
+  <p>b) La gaine de la fibre optique a un indice plus élevé que le cœur. → ..........</p>
+  <p>c) Un câble en fibre optique peut transporter des données plus rapidement qu'un câble en cuivre. → ..........</p>
+  <p>d) La fibre optique est perturbée par les champs magnétiques des moteurs. → ..........</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Vrai</strong>. La lumière rebondit dans le cœur par réflexion totale interne.</p>
+    <p>b) <strong>Faux</strong>. La gaine a un indice <strong>plus faible</strong> que le cœur (\(n_2 < n_1\)) : c'est la condition nécessaire à la réflexion totale.</p>
+    <p>c) <strong>Vrai</strong>. La fibre optique offre un débit supérieur et une très faible atténuation sur de longues distances.</p>
+    <p>d) <strong>Faux</strong>. La fibre optique est <strong>insensible</strong> aux perturbations électromagnétiques car le signal est lumineux.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -183,11 +271,81 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un ébéniste compare l'aspect de deux finitions sur un panneau de noyer.</p>
+  <p>a) Expliquer pourquoi une surface laquée brillante fait apparaître un reflet net, en utilisant la notion de réflexion.</p>
+  <p>b) Le même ébéniste ponce un panneau au grain 80 (grossier). Quel type de réflexion observe-t-on ? Pourquoi ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La surface laquée est très lisse. La lumière se réfléchit dans une direction unique selon la loi de réflexion (\(i_r = i_1\)) : c'est une <strong>réflexion spéculaire</strong>. L'œil perçoit un reflet net et brillant.</p>
+    <p>b) La surface poncée au grain 80 est rugueuse avec des micro-rayures. La lumière est réfléchie dans <strong>toutes les directions</strong> : c'est une <strong>réflexion diffuse</strong>. L'aspect est mat, sans reflet visible.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un rayon lumineux passe de l'air (\(n_1 = 1{,}00\)) dans du verre (\(n_2 = 1{,}50\)) avec un angle d'incidence \(i_1 = 60°\).</p>
+  <p><strong>Donnée :</strong> \(\sin(60°) = 0{,}866\)</p>
+  <p>a) Appliquer la loi de Snell-Descartes pour calculer \(\sin(i_2)\).</p>
+  <p>b) En déduire l'angle réfracté \(i_2\).</p>
+  <p>c) Le rayon se rapproche-t-il ou s'éloigne-t-il de la normale ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\sin(i_2) = \dfrac{n_1 \times \sin(i_1)}{n_2} = \dfrac{1{,}00 \times 0{,}866}{1{,}50} = \mathbf{0{,}577}\)</p>
+    <p>b) \(i_2 = \arcsin(0{,}577) \approx \mathbf{35{,}3°}\)</p>
+    <p>c) Le rayon <strong>se rapproche</strong> de la normale car \(i_2 = 35{,}3° < i_1 = 60°\). On passe d'un milieu moins dense (air) vers un milieu plus dense (verre).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>Le cœur d'une fibre optique a un indice \(n_1 = 1{,}48\) et sa gaine a un indice \(n_2 = 1{,}42\).</p>
+  <p>a) Calculer l'angle limite de réflexion totale \(i_\ell\) en utilisant \(\sin(i_\ell) = \dfrac{n_2}{n_1}\).</p>
+  <p>b) Un rayon arrive avec un angle d'incidence \(i = 78°\). Y a-t-il réflexion totale ? Justifier.</p>
+  <p>c) Citer un avantage de la fibre optique par rapport au câble en cuivre dans un environnement industriel.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\sin(i_\ell) = \dfrac{n_2}{n_1} = \dfrac{1{,}42}{1{,}48} = 0{,}959\)</p>
+    <p>\(i_\ell = \arcsin(0{,}959) \approx \mathbf{73{,}6°}\)</p>
+    <p>b) L'angle d'incidence \(i = 78° > i_\ell = 73{,}6°\) : il y a bien <strong>réflexion totale interne</strong>. Le rayon reste dans le cœur de la fibre.</p>
+    <p>c) La fibre optique est <strong>insensible aux interférences électromagnétiques</strong>. Dans un atelier industriel où les moteurs et variateurs de fréquence créent des parasites, c'est un avantage majeur.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un système de sécurité utilise un faisceau laser horizontal qui se réfléchit sur un miroir incliné à 45° pour être redirigé vers un détecteur placé au sol.</p>
+  <p>a) Quel est l'angle d'incidence du faisceau par rapport à la normale du miroir ?</p>
+  <p>b) Dans quelle direction repart le faisceau réfléchi ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La normale au miroir incliné à 45° fait un angle de 45° avec l'horizontale. Le faisceau horizontal a un angle d'incidence de <strong>45°</strong> par rapport à la normale.</p>
+    <p>b) D'après la loi de réflexion : \(i_r = i_1 = 45°\). Le faisceau repart à 90° de sa direction incidente, donc <strong>verticalement vers le bas</strong> (vers le détecteur au sol).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Calculer la vitesse de la lumière dans le plexiglas (\(n = 1{,}49\)) et dans le cristal (\(n = 1{,}62\)).</p>
+  <p><strong>Donnée :</strong> \(c = 3{,}0 \times 10^8\) m/s ; \(v = c/n\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Dans le plexiglas : \(v = \dfrac{c}{n} = \dfrac{3{,}0 \times 10^8}{1{,}49} \approx \mathbf{2{,}01 \times 10^8\text{ m/s}}\) (soit environ 201 000 km/s).</p>
+    <p>Dans le cristal : \(v = \dfrac{c}{n} = \dfrac{3{,}0 \times 10^8}{1{,}62} \approx \mathbf{1{,}85 \times 10^8\text{ m/s}}\) (soit environ 185 000 km/s).</p>
+    <p>Le cristal ralentit davantage la lumière car son indice est plus élevé.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -258,6 +416,80 @@
     <p>a) Ce capteur repose sur la <strong>réflexion</strong> de la lumière. Le faisceau IR se réfléchit sur la surface de la planche (loi de Descartes : angle d'incidence = angle de réflexion).</p>
     <p>b) Si la planche est absente, <strong>aucun signal n'est réfléchi</strong> vers la photodiode. Le capteur détecte l'absence de pièce et peut <strong>arrêter la machine</strong> ou signaler une anomalie.</p>
     <p>c) L'infrarouge est utilisé car il est <strong>invisible à l'œil humain</strong> et ne gêne pas les opérateurs. De plus, il est moins sensible aux variations de l'éclairage ambiant de l'atelier que la lumière visible.</p>
+  </div>
+</div>
+
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un rayon lumineux passe du verre (\(n_1 = 1{,}50\)) vers l'air (\(n_2 = 1{,}00\)) avec un angle d'incidence \(i_1 = 30°\).</p>
+  <p><strong>Donnée :</strong> \(\sin(30°) = 0{,}500\)</p>
+  <p>a) Calculer l'angle réfracté \(i_2\).</p>
+  <p>b) Le rayon s'éloigne-t-il ou se rapproche-t-il de la normale ? Justifier physiquement.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\sin(i_2) = \dfrac{n_1 \times \sin(i_1)}{n_2} = \dfrac{1{,}50 \times 0{,}500}{1{,}00} = \mathbf{0{,}750}\)</p>
+    <p>\(i_2 = \arcsin(0{,}750) \approx \mathbf{48{,}6°}\)</p>
+    <p>b) Le rayon <strong>s'éloigne</strong> de la normale car \(i_2 = 48{,}6° > i_1 = 30°\). On passe d'un milieu plus dense (verre, \(n = 1{,}50\)) vers un milieu moins dense (air, \(n = 1{,}00\)).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>On souhaite déterminer l'angle limite de réflexion totale pour un rayon passant du verre (\(n_1 = 1{,}50\)) vers l'air (\(n_2 = 1{,}00\)).</p>
+  <p>a) Vérifier que la condition \(n_1 > n_2\) est bien respectée.</p>
+  <p>b) Calculer l'angle limite \(i_\ell\).</p>
+  <p>c) Un rayon arrive sur la face du verre avec un angle de 45°. Y a-t-il réflexion totale ? Le rayon sort-il du verre ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) On a \(n_1 = 1{,}50 > n_2 = 1{,}00\) : la condition est <strong>bien respectée</strong>. La réflexion totale est possible.</p>
+    <p>b) \(\sin(i_\ell) = \dfrac{n_2}{n_1} = \dfrac{1{,}00}{1{,}50} = 0{,}667\)</p>
+    <p>\(i_\ell = \arcsin(0{,}667) \approx \mathbf{41{,}8°}\)</p>
+    <p>c) L'angle d'incidence \(i = 45° > i_\ell = 41{,}8°\) : il y a <strong>réflexion totale interne</strong>. Le rayon <strong>ne sort pas</strong> du verre. C'est ce principe qui est utilisé dans les prismes à réflexion totale (jumelles, périscopes).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur installe un réseau de fibres optiques pour l'éclairage décoratif d'un plafond de showroom. La fibre a un cœur d'indice \(n_1 = 1{,}62\) et une gaine d'indice \(n_2 = 1{,}55\).</p>
+  <p>a) Calculer l'angle limite de réflexion totale.</p>
+  <p>b) Pour un fonctionnement fiable, l'angle d'incidence doit dépasser l'angle limite d'au moins 3°. Quel est l'angle minimum à respecter ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\sin(i_\ell) = \dfrac{n_2}{n_1} = \dfrac{1{,}55}{1{,}62} = 0{,}957\)</p>
+    <p>\(i_\ell = \arcsin(0{,}957) \approx \mathbf{73{,}2°}\)</p>
+    <p>b) Angle minimum : \(i_{\min} = 73{,}2 + 3 = \mathbf{76{,}2°}\) (soit environ 76°).</p>
+    <p>Les rayons arrivant avec un angle supérieur à 76° seront guidés de manière fiable dans la fibre pour l'éclairage.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un architecte d'intérieur compare une vitrine en verre (\(n = 1{,}50\)) et une vitrine en polycarbonate (\(n = 1{,}59\)). Un rayon lumineux arrive depuis l'air avec un angle d'incidence \(i_1 = 50°\).</p>
+  <p><strong>Donnée :</strong> \(\sin(50°) = 0{,}766\)</p>
+  <p>a) Calculer l'angle réfracté dans chaque matériau.</p>
+  <p>b) Dans quel matériau le rayon est-il le plus dévié ? Pourquoi ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Verre : \(\sin(i_2) = \dfrac{1{,}00 \times 0{,}766}{1{,}50} = 0{,}511\) → \(i_2 = \arcsin(0{,}511) \approx \mathbf{30{,}7°}\)</p>
+    <p>Polycarbonate : \(\sin(i_2) = \dfrac{1{,}00 \times 0{,}766}{1{,}59} = 0{,}482\) → \(i_2 = \arcsin(0{,}482) \approx \mathbf{28{,}8°}\)</p>
+    <p>b) Le rayon est <strong>plus dévié dans le polycarbonate</strong> (28,8° contre 30,7°). L'indice du polycarbonate étant plus élevé (\(n = 1{,}59 > 1{,}50\)), le rayon se rapproche davantage de la normale. Plus le milieu est dense optiquement, plus la déviation est importante.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Un capteur optique à barrage est installé sur une scie circulaire pour détecter le passage des planches sur le convoyeur. Un émetteur laser envoie un faisceau vers un récepteur placé en face.</p>
+  <p>a) Quel phénomène optique est utilisé pour détecter la planche ?</p>
+  <p>b) Que se passe-t-il quand une planche coupe le faisceau ? Quelle information est transmise au système ?</p>
+  <p>c) Pourquoi préfère-t-on un laser plutôt qu'une lampe ordinaire pour ce type de capteur ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le capteur utilise la <strong>propagation rectiligne de la lumière</strong> : le faisceau se propage en ligne droite entre l'émetteur et le récepteur.</p>
+    <p>b) Quand la planche passe, elle <strong>bloque le faisceau</strong>. Le récepteur ne reçoit plus de signal lumineux. Le système détecte la <strong>présence de la planche</strong> et peut déclencher la coupe ou compter les pièces.</p>
+    <p>c) Le laser est préféré car son faisceau est <strong>très directif</strong> (ne s'étale pas), <strong>monochromatique</strong> (une seule longueur d'onde, facile à filtrer) et <strong>intense</strong>. Cela permet une détection fiable même en environnement lumineux ou poussiéreux.</p>
   </div>
 </div>
 
