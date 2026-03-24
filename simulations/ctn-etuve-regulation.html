@@ -15,6 +15,12 @@ header p{font-size:.82em;opacity:.85;width:100%}
 .wrap{max-width:860px;margin:0 auto;padding:20px 16px}
 .card{background:#fff;border-radius:12px;padding:20px 22px;margin-bottom:18px;box-shadow:0 2px 8px rgba(111,66,193,.1)}
 .card h2{font-size:1em;color:#6f42c1;margin-bottom:14px;border-bottom:2px solid #f0ebff;padding-bottom:6px}
+/* Intro */
+.intro-box{background:#f5f0ff;border-left:4px solid #6f42c1;border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:18px;font-size:.9em;line-height:1.6}
+.intro-box strong{color:#6f42c1}
+.intro-box ul{padding-left:18px;margin-top:6px}
+.intro-box li{margin-bottom:4px}
+/* Sliders */
 .ctrl label{display:block;font-size:.85em;font-weight:600;color:#4a5568;margin-bottom:4px}
 .ctrl input[type=range]{width:100%;accent-color:#6f42c1}
 .val-display{display:flex;justify-content:space-between;font-size:.78em;color:#718096;margin-top:2px}
@@ -26,7 +32,7 @@ header p{font-size:.82em;opacity:.85;width:100%}
 .etuve-box .titre{font-size:.75em;font-weight:700;color:#6f42c1;position:absolute;top:-14px;background:#fff;padding:0 8px}
 .thermometre{display:flex;flex-direction:column;align-items:center;gap:4px}
 .thermo-tube{width:20px;height:90px;border:3px solid #718096;border-radius:10px 10px 0 0;position:relative;overflow:hidden;background:#fff}
-.thermo-fill{position:absolute;bottom:0;width:100%;background:linear-gradient(to top,#e11d48,#f97316);transition:height .6s ease;border-radius:0 0 0 0}
+.thermo-fill{position:absolute;bottom:0;width:100%;background:linear-gradient(to top,#e11d48,#f97316);transition:height .6s ease}
 .thermo-bulb{width:28px;height:28px;border-radius:50%;background:#e11d48;border:3px solid #718096;margin-top:-3px}
 .thermo-val{font-size:1.1em;font-weight:800;color:#e11d48}
 .chauffage-indicator{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:.78em;font-weight:600}
@@ -37,23 +43,34 @@ header p{font-size:.82em;opacity:.85;width:100%}
 .ohmmetre{border:3px solid #6f42c1;border-radius:10px;padding:14px;text-align:center;max-width:220px;margin:0 auto}
 .ohmmetre .ecran{font-size:2em;font-weight:900;color:#6f42c1;font-family:monospace;background:#f0ebff;border-radius:6px;padding:6px 14px;margin:8px 0}
 .ohmmetre .unite{font-size:.8em;color:#718096}
+.ohmmetre .hint{font-size:.74em;color:#718096;margin-top:6px;min-height:2.4em;line-height:1.4}
 /* Verdict */
-.verdict{border-radius:10px;padding:14px 18px;font-size:.95em;font-weight:600;text-align:center;transition:all .4s}
+.verdict{border-radius:10px;padding:14px 18px;font-size:.9em;font-weight:600;text-align:center;transition:all .4s;line-height:1.5}
 .verdict.trop-froid{background:#dbeafe;border:2px solid #3b82f6;color:#1e40af}
 .verdict.ok{background:#d1fae5;border:2px solid #10b981;color:#065f46}
 .verdict.trop-chaud{background:#fee2e2;border:2px solid #ef4444;color:#991b1b}
+/* Observation dynamique */
+.obs-box{border:2px solid #c4b5fd;border-radius:10px;background:#faf5ff;padding:14px 18px;margin-top:14px;font-size:.88em;line-height:1.6;transition:all .4s}
+.obs-box .obs-titre{font-weight:700;color:#6f42c1;margin-bottom:6px;font-size:.95em}
 /* Table */
 table{border-collapse:collapse;width:100%;font-size:.88em}
 th,td{border:1px solid #e2e8f0;padding:7px 10px;text-align:center}
 th{background:#6f42c1;color:#fff}
 td.actif{background:#fef9c3;font-weight:700}
 .chart-wrap{position:relative;height:260px;margin-top:10px}
+/* Méthode */
+.methode-box{background:#fff7ed;border:2px solid #f59e0b;border-radius:10px;padding:16px 18px;margin-bottom:18px}
+.methode-box h3{font-size:.92em;color:#92400e;margin-bottom:10px}
+.methode-box ol{padding-left:18px;font-size:.88em;line-height:1.7}
+.methode-box li{margin-bottom:4px}
+/* Questions */
 .question{background:#fffbeb;border:1px solid #f59e0b;border-radius:8px;padding:14px 16px;font-size:.88em}
 .question strong{color:#92400e}
 .question ol{padding-left:18px;margin-top:6px}
-.question li{margin-bottom:4px}
+.question li{margin-bottom:6px;line-height:1.5}
 .badge-on{display:inline-block;background:#fed7aa;color:#9a3412;padding:2px 10px;border-radius:12px;font-size:.78em;font-weight:700}
 .badge-off{display:inline-block;background:#e2e8f0;color:#374151;padding:2px 10px;border-radius:12px;font-size:.78em;font-weight:700}
+.hl{font-weight:700;color:#6f42c1}
 </style>
 </head>
 <body>
@@ -66,6 +83,19 @@ td.actif{background:#fef9c3;font-weight:700}
 </header>
 
 <div class="wrap">
+
+  <!-- Intro pédagogique -->
+  <div class="intro-box">
+    <strong>Contexte — Comment fonctionne un thermostat d'étuve ?</strong>
+    <p style="margin-top:6px">Dans une étuve de séchage du bois, il faut maintenir une température stable, par exemple <strong>80 °C</strong>. Le thermostat utilise une <strong>CTN</strong> (capteur thermique) placée à l'intérieur de l'étuve.</p>
+    <ul>
+      <li>La CTN mesure en permanence la résistance électrique liée à la température réelle.</li>
+      <li>Le régulateur connaît la résistance correspondant à la consigne (80 °C → environ 1,23 kΩ pour ce modèle).</li>
+      <li>Il compare : si R mesurée &gt; R_consigne → l'étuve est trop froide → le chauffage s'allume (ON).</li>
+      <li>Si R mesurée ≤ R_consigne → l'étuve est à température → le chauffage s'éteint (OFF).</li>
+    </ul>
+    <p style="margin-top:8px"><strong>Rappel fondamental :</strong> la CTN a une résistance qui <em>diminue</em> quand la température <em>augmente</em>. C'est cette propriété qui permet la régulation.</p>
+  </div>
 
   <div class="card">
     <h2>Régler la consigne et observer la mesure</h2>
@@ -98,6 +128,7 @@ td.actif{background:#fef9c3;font-weight:700}
           <div style="font-size:.75em;font-weight:700;color:#4a5568">Ohmmètre (mesure CTN)</div>
           <div class="ecran" id="ohm-ecran">—</div>
           <div class="unite">kΩ</div>
+          <div class="hint" id="ohm-hint"></div>
         </div>
         <div class="chauffage-indicator">
           <div class="led" id="led-chauffage"></div>
@@ -105,10 +136,16 @@ td.actif{background:#fef9c3;font-weight:700}
         </div>
       </div>
     </div>
+
+    <!-- Observation dynamique -->
+    <div class="obs-box" id="obs-box">
+      <div class="obs-titre" id="obs-titre">Ce que vous observez</div>
+      <div id="obs-texte"></div>
+    </div>
   </div>
 
   <div class="card">
-    <h2>Verdict du régulateur</h2>
+    <h2>Verdict du régulateur — Raisonnement complet</h2>
     <div class="verdict" id="verdict">—</div>
   </div>
 
@@ -121,22 +158,65 @@ td.actif{background:#fef9c3;font-weight:700}
         <th>État chauffage</th>
       </tr>
     </table>
-    <p style="font-size:.78em;color:#718096;margin-top:8px">La ligne en jaune correspond à la température réelle actuelle (la plus proche).</p>
+    <p style="font-size:.78em;color:#718096;margin-top:8px">
+      La ligne en <strong>jaune</strong> correspond à la température réelle actuelle (la plus proche).
+      Remarquez que toutes les lignes <em>au-dessus</em> de la consigne ont le chauffage ON, toutes les lignes <em>en dessous</em> ont le chauffage OFF.
+    </p>
   </div>
 
   <div class="card">
-    <h2>Courbe R(T) de la CTN — Point de mesure actuel</h2>
+    <h2>Courbe R(T) de la CTN — Points de mesure</h2>
     <div class="chart-wrap"><canvas id="chart"></canvas></div>
+    <p style="font-size:.78em;color:#718096;margin-top:8px">
+      <strong style="color:#e11d48">Point rouge</strong> = mesure actuelle (T réelle).
+      <strong style="color:#10b981">Triangle vert</strong> = consigne.
+      Le régulateur compare les deux positions sur la courbe : si le point rouge est à <em>gauche</em> du triangle vert, la résistance est plus grande → chauffage ON.
+    </p>
+  </div>
+
+  <!-- Méthode -->
+  <div class="methode-box">
+    <h3>Méthode — Comment le régulateur prend-il sa décision ?</h3>
+    <ol>
+      <li><strong>Mesurer R</strong> avec l'ohmmètre connecté à la CTN (affiché sur l'écran).</li>
+      <li><strong>Connaître R_consigne</strong> : la résistance correspondant à la température de consigne, lue sur la table du fabricant.</li>
+      <li><strong>Comparer R mesurée et R_consigne :</strong>
+        <ul style="padding-left:16px;margin-top:4px">
+          <li>R &gt; R_consigne → T réelle &lt; T_consigne → trop froid → chauffage <strong>ON</strong></li>
+          <li>R &lt; R_consigne → T réelle &gt; T_consigne → trop chaud → chauffage <strong>OFF</strong></li>
+          <li>R ≈ R_consigne → T réelle ≈ T_consigne → chauffage <strong>OFF</strong> (maintien)</li>
+        </ul>
+      </li>
+      <li><strong>Automatiser</strong> : le régulateur fait cette comparaison en continu, plusieurs fois par seconde.</li>
+      <li><strong>Résultat</strong> : la température reste stable autour de la consigne (régulation par tout-ou-rien).</li>
+    </ol>
   </div>
 
   <div class="card">
     <div class="question">
-      <strong>Questions</strong>
+      <strong>Questions d'entraînement</strong>
       <ol>
-        <li>Régler la consigne à <strong>80 °C</strong> et la température réelle à <strong>40 °C</strong>. Quelle est la résistance mesurée ? Le chauffage est-il ON ou OFF ?</li>
-        <li>Augmenter progressivement T jusqu'à 80 °C. À quel moment le chauffage passe-t-il OFF ?</li>
-        <li>Si la CTN est débranché, le régulateur lit R → ∞. Que pense-t-il ? Que fait le chauffage ?</li>
-        <li>Changer la consigne à <strong>60 °C</strong> et régler T = 80 °C. Qu'affiche le régulateur ?</li>
+        <li>
+          Régler la consigne à <strong>80 °C</strong> et la température réelle à <strong>40 °C</strong>.
+          Quelle est la résistance mesurée par l'ohmmètre ? Le chauffage est-il ON ou OFF ? Pourquoi la résistance est-elle élevée alors que la température est basse ?
+        </li>
+        <li>
+          Augmenter progressivement T de 40 °C à 80 °C.
+          À quel moment le chauffage passe-t-il OFF ? Que se passe-t-il à la résistance pendant cette montée en température ?
+        </li>
+        <li>
+          Régler T = 90 °C avec une consigne à 80 °C.
+          Comparer R mesurée et R_consigne. Qu'affiche le régulateur ? Le chauffage est-il ON ou OFF ? Justifier avec la valeur de résistance.
+        </li>
+        <li>
+          Si la CTN est débranchée, le régulateur lit une résistance très grande (R → ∞).
+          Que va-t-il en déduire sur la température ? Que fera le chauffage ? Ce comportement est-il dangereux ?
+        </li>
+        <li>
+          Changer la consigne à <strong>60 °C</strong> et régler T = 80 °C.
+          Calculer (à partir de la table) quelle est la résistance de consigne pour 60 °C.
+          Comparer avec la résistance réelle à 80 °C. Que fait le chauffage ?
+        </li>
       </ol>
     </div>
   </div>
@@ -214,10 +294,7 @@ var myChart = new Chart(ctx, {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      legend: {
-        display: true,
-        labels: { font: { size: 11 } }
-      },
+      legend: { display: true, labels: { font: { size: 11 } } },
       tooltip: {
         callbacks: {
           label: function(c) {
@@ -233,6 +310,44 @@ var myChart = new Chart(ctx, {
   }
 });
 
+function obsText(T, C, R, R_consigne, chauffageON, diff) {
+  var titre, texte;
+  if (T < C - 15) {
+    titre = 'Étuve très froide — chauffage à pleine puissance';
+    texte = 'L\'étuve est encore loin de la consigne. La CTN mesure une résistance <strong>' + R.toFixed(2) + ' kΩ</strong>, '
+      + 'nettement supérieure à la résistance de consigne de <strong>' + R_consigne.toFixed(2) + ' kΩ</strong>. '
+      + 'Le régulateur interprète : R grande → T basse → trop froid → chauffage <strong>ON</strong>. '
+      + 'C\'est la caractéristique fondamentale de la CTN : une résistance <em>élevée</em> signale une <em>basse</em> température.';
+  } else if (T >= C - 15 && T < C - 3) {
+    titre = 'Montée en température — chauffage toujours actif';
+    texte = 'La température monte et se rapproche de la consigne. La résistance <strong>' + R.toFixed(2) + ' kΩ</strong> diminue progressivement '
+      + '(rappel : R diminue quand T augmente). Elle reste supérieure à R_consigne = <strong>' + R_consigne.toFixed(2) + ' kΩ</strong>, '
+      + 'donc le régulateur garde le chauffage <strong>ON</strong>. Le point rouge se rapproche du triangle vert sur la courbe.';
+  } else if (Math.abs(diff) <= 3) {
+    titre = 'Température atteinte — maintien de la consigne';
+    texte = 'L\'étuve est à la température de consigne. La résistance mesurée <strong>' + R.toFixed(2) + ' kΩ</strong> est très proche '
+      + 'de la résistance de consigne <strong>' + R_consigne.toFixed(2) + ' kΩ</strong>. '
+      + 'Le régulateur éteint le chauffage (<strong>OFF</strong>). En réalité, le thermostat oscille légèrement autour '
+      + 'de la consigne (régulation tout-ou-rien) : il rallumera le chauffage si la température baisse un peu.';
+  } else if (T > C + 3 && T < C + 15) {
+    titre = 'Légère surchauffe — chauffage coupé';
+    texte = 'L\'étuve dépasse légèrement la consigne. La résistance <strong>' + R.toFixed(2) + ' kΩ</strong> est maintenant '
+      + '<em>inférieure</em> à la résistance de consigne <strong>' + R_consigne.toFixed(2) + ' kΩ</strong>. '
+      + 'Le régulateur interprète : R petite → T élevée → trop chaud → chauffage <strong>OFF</strong>. '
+      + 'L\'étuve va naturellement refroidir, puis le chauffage se rallumera.';
+  } else if (T >= C + 15) {
+    titre = 'Surchauffe importante — chauffage resté coupé';
+    texte = 'La température réelle dépasse nettement la consigne. La résistance <strong>' + R.toFixed(2) + ' kΩ</strong> '
+      + 'est très inférieure à R_consigne = <strong>' + R_consigne.toFixed(2) + ' kΩ</strong>. '
+      + 'Le chauffage est <strong>OFF</strong>. Cette situation peut arriver si une source extérieure réchauffe l\'étuve '
+      + '(ex : chaleur d\'une machine voisine) ou si la consigne a été abaissée brutalement.';
+  } else {
+    titre = 'Observation';
+    texte = 'Déplacez les curseurs pour observer comment la CTN pilote le chauffage.';
+  }
+  return { titre: titre, texte: texte };
+}
+
 function update() {
   var T = parseInt(document.getElementById('sliderT').value);
   var C = parseInt(document.getElementById('sliderConsigne').value);
@@ -245,13 +360,25 @@ function update() {
   var pct = Math.min(100, Math.max(0, T / 130 * 100));
   document.getElementById('thermo-fill').style.height = pct + '%';
 
-  // Résistance mesurée
+  // Résistances
   var R = R_ctn(T);
   var R_consigne = R_ctn(C);
   document.getElementById('ohm-ecran').textContent = R.toFixed(2);
 
-  // Chauffage : ON si T < consigne (donc R > R_consigne)
+  // Hint ohmmètre
+  var hint;
+  if (R > R_consigne * 1.05) {
+    hint = 'R > R_consigne (' + R_consigne.toFixed(2) + ' kΩ) → T trop basse';
+  } else if (R < R_consigne * 0.95) {
+    hint = 'R < R_consigne (' + R_consigne.toFixed(2) + ' kΩ) → T trop haute';
+  } else {
+    hint = 'R ≈ R_consigne (' + R_consigne.toFixed(2) + ' kΩ) → T correcte';
+  }
+  document.getElementById('ohm-hint').textContent = hint;
+
+  // Chauffage
   var chauffageON = T < C;
+  var diff = T - C;
   var led = document.getElementById('led-chauffage');
   var ledLabel = document.getElementById('led-label');
   if (chauffageON) {
@@ -262,29 +389,39 @@ function update() {
     ledLabel.innerHTML = 'Chauffage <span class="badge-off">OFF</span>';
   }
 
-  // Verdict
+  // Verdict enrichi
   var v = document.getElementById('verdict');
-  var diff = T - C;
   if (diff < -5) {
     v.className = 'verdict trop-froid';
-    v.innerHTML = '🔥 Trop froid (' + T + ' °C < consigne ' + C + ' °C) — Chauffage <strong>ON</strong> — R = ' + R.toFixed(2) + ' kΩ > R_consigne = ' + R_consigne.toFixed(2) + ' kΩ';
+    v.innerHTML = '🔥 <strong>Trop froid</strong> — T réelle = ' + T + ' °C &lt; consigne = ' + C + ' °C<br>'
+      + 'R mesurée = <strong>' + R.toFixed(2) + ' kΩ</strong> &gt; R_consigne = <strong>' + R_consigne.toFixed(2) + ' kΩ</strong><br>'
+      + '→ Résistance grande = température basse = chauffage <strong>ON</strong>';
   } else if (diff > 5) {
     v.className = 'verdict trop-chaud';
-    v.innerHTML = '❄️ Trop chaud (' + T + ' °C > consigne ' + C + ' °C) — Chauffage <strong>OFF</strong> — R = ' + R.toFixed(2) + ' kΩ < R_consigne = ' + R_consigne.toFixed(2) + ' kΩ';
+    v.innerHTML = '❄️ <strong>Trop chaud</strong> — T réelle = ' + T + ' °C &gt; consigne = ' + C + ' °C<br>'
+      + 'R mesurée = <strong>' + R.toFixed(2) + ' kΩ</strong> &lt; R_consigne = <strong>' + R_consigne.toFixed(2) + ' kΩ</strong><br>'
+      + '→ Résistance petite = température haute = chauffage <strong>OFF</strong>';
   } else {
     v.className = 'verdict ok';
-    v.innerHTML = '✔ Température correcte (' + T + ' °C ≈ consigne ' + C + ' °C) — Chauffage <strong>OFF</strong>';
+    v.innerHTML = '✔ <strong>Température correcte</strong> — T réelle ≈ consigne = ' + C + ' °C<br>'
+      + 'R mesurée = <strong>' + R.toFixed(2) + ' kΩ</strong> ≈ R_consigne = <strong>' + R_consigne.toFixed(2) + ' kΩ</strong><br>'
+      + '→ Chauffage <strong>OFF</strong> — maintien de la température';
   }
 
+  // Observation dynamique
+  var obs = obsText(T, C, R, R_consigne, chauffageON, diff);
+  document.getElementById('obs-titre').textContent = obs.titre;
+  document.getElementById('obs-texte').innerHTML = obs.texte;
+
   // Table : colorer la ligne la plus proche
+  var closest = tableTemps.reduce(function(a, b) {
+    return Math.abs(b - T) < Math.abs(a - T) ? b : a;
+  });
   tableTemps.forEach(function(t) {
     var row = document.getElementById('row-' + t);
     var stateCell = document.getElementById('state-' + t);
     var isON = t < C;
     stateCell.innerHTML = isON ? '<span class="badge-on">ON</span>' : '<span class="badge-off">OFF</span>';
-    var closest = tableTemps.reduce(function(a, b) {
-      return Math.abs(b - T) < Math.abs(a - T) ? b : a;
-    });
     if (t === closest) {
       row.querySelectorAll('td').forEach(function(td) { td.classList.add('actif'); });
     } else {
@@ -292,7 +429,7 @@ function update() {
     }
   });
 
-  // Graphique : point de mesure et consigne
+  // Graphique
   myChart.data.datasets[1].data = [{ x: T, y: R }];
   myChart.data.datasets[2].data = [{ x: C, y: R_consigne }];
   myChart.update('none');

@@ -9,113 +9,195 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',sans-serif;background:#f5f0ff;color:#2d3748;min-height:100vh}
 header{background:#6f42c1;color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-header a{background:rgba(255,255,255,.18);color:#fff;text-decoration:none;padding:5px 12px;border-radius:6px;font-size:.85em;white-space:nowrap}
-header h1{font-size:1.15em;flex:1}
-header p{font-size:.82em;opacity:.85;width:100%}
-.wrap{max-width:860px;margin:0 auto;padding:20px 16px}
+header a{background:rgba(255,255,255,.18);color:#fff;text-decoration:none;padding:5px 12px;border-radius:6px;font-size:.85em;white-space:nowrap;flex-shrink:0}
+header div{flex:1}
+header h1{font-size:1.15em;margin-bottom:2px}
+header p{font-size:.82em;opacity:.85}
+.wrap{max-width:880px;margin:0 auto;padding:20px 16px}
 .card{background:#fff;border-radius:12px;padding:20px 22px;margin-bottom:18px;box-shadow:0 2px 8px rgba(111,66,193,.1)}
-.card h2{font-size:1em;color:#6f42c1;margin-bottom:12px;border-bottom:2px solid #f0ebff;padding-bottom:6px}
-.controls{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:560px){.controls{grid-template-columns:1fr}}
-.ctrl label{display:block;font-size:.85em;font-weight:600;color:#4a5568;margin-bottom:4px}
-.ctrl input[type=range]{width:100%;accent-color:#6f42c1}
-.val-display{display:flex;justify-content:space-between;align-items:center;font-size:.82em;color:#718096;margin-top:2px}
-.readout{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
-.readout-box{border-radius:8px;padding:12px 14px;text-align:center}
+.card h2{font-size:1em;color:#6f42c1;margin-bottom:14px;border-bottom:2px solid #f0ebff;padding-bottom:6px;display:flex;align-items:center;gap:8px}
+/* Intro */
+.intro{background:linear-gradient(135deg,#f0ebff 0%,#fdf4ff 100%);border:1.5px solid #c4b5fd;border-radius:12px;padding:18px 20px;margin-bottom:18px;font-size:.92em;line-height:1.7}
+.intro h2{color:#6f42c1;font-size:1em;margin-bottom:10px}
+.intro ul{padding-left:18px;margin-top:6px}
+.intro li{margin-bottom:4px}
+/* Slider */
+.ctrl label{display:block;font-size:.88em;font-weight:600;color:#4a5568;margin-bottom:5px}
+.ctrl input[type=range]{width:100%;accent-color:#6f42c1;cursor:pointer}
+.val-display{display:flex;justify-content:space-between;font-size:.78em;color:#718096;margin-top:3px}
+/* Readout */
+.readout{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+@media(max-width:500px){.readout{grid-template-columns:1fr}}
+.readout-box{border-radius:10px;padding:14px 16px}
 .ctn-box{background:#f0ebff;border:2px solid #6f42c1}
 .pt100-box{background:#fff0f6;border:2px solid #e83e8c}
-.readout-box .label{font-size:.78em;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px}
-.readout-box .val{font-size:1.5em;font-weight:800}
-.readout-box .unit{font-size:.78em;color:#718096;margin-top:2px}
-.ctn-box .label{color:#6f42c1}
-.ctn-box .val{color:#6f42c1}
-.pt100-box .label{color:#e83e8c}
-.pt100-box .val{color:#e83e8c}
-.chart-wrap{position:relative;height:320px;margin-top:10px}
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:480px){.info-grid{grid-template-columns:1fr}}
-.info-box{border-radius:8px;padding:12px 14px;font-size:.85em;line-height:1.6}
-.info-ctn{background:#f0ebff;border-left:4px solid #6f42c1}
-.info-pt100{background:#fff0f6;border-left:4px solid #e83e8c}
-.info-box strong{display:block;margin-bottom:4px;font-size:.9em}
+.rb-header{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.rb-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0}
+.rb-name{font-size:.82em;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.ctn-box .rb-name{color:#6f42c1}
+.pt100-box .rb-name{color:#e83e8c}
+.rb-val{font-size:2em;font-weight:900;line-height:1;margin-bottom:2px}
+.ctn-box .rb-val{color:#6f42c1}
+.pt100-box .rb-val{color:#e83e8c}
+.rb-unit{font-size:.78em;color:#718096}
+.rb-hint{font-size:.78em;color:#718096;margin-top:6px;font-style:italic}
+/* Observation dynamique */
+.obs{border-radius:10px;padding:14px 16px;font-size:.88em;line-height:1.7;transition:background .3s,border-color .3s}
+.obs-neutre{background:#f8f4ff;border:1.5px solid #c4b5fd}
+.obs-bas{background:#eff6ff;border:1.5px solid #93c5fd}
+.obs-moyen{background:#f0fff4;border:1.5px solid #86efac}
+.obs-haut{background:#fff7ed;border:1.5px solid #fdba74}
+.obs .titre{font-weight:700;font-size:.92em;margin-bottom:6px}
+/* Chart */
+.chart-wrap{position:relative;height:310px;margin:10px 0}
 .legend-row{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:8px}
-.legend-item{display:flex;align-items:center;gap:6px;font-size:.82em;font-weight:600}
-.dot{width:14px;height:14px;border-radius:50%;flex-shrink:0}
-.question{background:#fffbeb;border:1px solid #f59e0b;border-radius:8px;padding:14px 16px;font-size:.88em}
-.question strong{color:#92400e}
-.question ol{padding-left:18px;margin-top:6px}
-.question li{margin-bottom:4px}
+.leg{display:flex;align-items:center;gap:6px;font-size:.82em;font-weight:600}
+.leg-dot{width:14px;height:5px;border-radius:3px}
+/* Infos comparées */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:500px){.compare-grid{grid-template-columns:1fr}}
+.compare-box{border-radius:10px;padding:14px 16px;font-size:.85em;line-height:1.65}
+.compare-ctn{background:#f0ebff;border-left:4px solid #6f42c1}
+.compare-pt100{background:#fff0f6;border-left:4px solid #e83e8c}
+.compare-box strong{display:block;font-size:.9em;margin-bottom:6px}
+/* Méthode */
+.methode{background:#fffbeb;border:1.5px solid #f59e0b;border-radius:10px;padding:16px 18px;font-size:.88em;line-height:1.7}
+.methode h3{color:#92400e;font-size:.92em;margin-bottom:8px}
+.methode ol{padding-left:18px}
+.methode li{margin-bottom:5px}
+/* Questions */
+.questions{background:#f0fff4;border:1.5px solid #86efac;border-radius:10px;padding:16px 18px;font-size:.88em}
+.questions h3{color:#065f46;font-size:.92em;margin-bottom:8px}
+.questions ol{padding-left:18px}
+.questions li{margin-bottom:6px}
+.badge{display:inline-block;padding:1px 8px;border-radius:10px;font-size:.78em;font-weight:700;vertical-align:middle}
+.badge-ctn{background:#ede9fe;color:#5b21b6}
+.badge-pt100{background:#fce7f3;color:#9d174d}
 </style>
 </head>
 <body>
 <header>
-  <a href="../simulations.html">← Simulations</a>
+  <a href="../simulations.html">← Retour</a>
   <div>
     <h1>CTN vs Pt100 — Comparaison des courbes R(T)</h1>
-    <p>Physique-Chimie — Seconde Bac Pro — Chapitre 10 : Capteurs thermiques</p>
+    <p>Physique-Chimie · Seconde Bac Pro · Chapitre 10 — Capteurs thermiques</p>
   </div>
 </header>
 
 <div class="wrap">
 
+  <!-- INTRO -->
+  <div class="intro">
+    <h2>Pourquoi comparer CTN et Pt100 ?</h2>
+    <p>Ces deux capteurs mesurent la température <strong>via leur résistance électrique</strong>, mais de façon très différente :</p>
+    <ul>
+      <li>La <strong>CTN</strong> est un semi-conducteur : sa résistance <em>diminue</em> fortement quand la température monte. On dit qu'elle a un <em>Coefficient de Température Négatif</em>.</li>
+      <li>La <strong>Pt100</strong> est un fil de platine : sa résistance <em>augmente</em> régulièrement avec la température. Sa valeur est 100 Ω à 0 °C d'où son nom.</li>
+    </ul>
+    <p style="margin-top:8px"><strong>Objectif :</strong> faire varier la température avec le curseur et observer comment les deux résistances évoluent différemment.</p>
+  </div>
+
+  <!-- CONTRÔLE -->
   <div class="card">
-    <h2>Faire varier la température</h2>
-    <div class="controls">
-      <div class="ctrl">
-        <label>Température : <strong id="T-label">50 °C</strong></label>
-        <input type="range" id="sliderT" min="0" max="150" value="50" step="1" oninput="update()">
-        <div class="val-display"><span>0 °C</span><span>150 °C</span></div>
-      </div>
+    <h2>🌡️ Faire varier la température</h2>
+    <div class="ctrl">
+      <label>Température : <strong id="T-label" style="color:#6f42c1;font-size:1.1em">50 °C</strong></label>
+      <input type="range" id="sliderT" min="0" max="150" value="50" step="1" oninput="update()">
+      <div class="val-display"><span>0 °C (glace fondante)</span><span>150 °C (colle thermofusible)</span></div>
     </div>
 
     <div class="readout">
       <div class="readout-box ctn-box">
-        <div class="label">CTN</div>
-        <div class="val" id="R-ctn">—</div>
-        <div class="unit">kΩ (résistance diminue)</div>
+        <div class="rb-header">
+          <div class="rb-dot" style="background:#6f42c1"></div>
+          <div class="rb-name">CTN — résistance (kΩ)</div>
+        </div>
+        <div class="rb-val" id="R-ctn">—</div>
+        <div class="rb-unit">kΩ (kilohms)</div>
+        <div class="rb-hint" id="hint-ctn">—</div>
       </div>
       <div class="readout-box pt100-box">
-        <div class="label">Pt100</div>
-        <div class="val" id="R-pt100">—</div>
-        <div class="unit">Ω (résistance augmente)</div>
+        <div class="rb-header">
+          <div class="rb-dot" style="background:#e83e8c"></div>
+          <div class="rb-name">Pt100 — résistance (Ω)</div>
+        </div>
+        <div class="rb-val" id="R-pt100">—</div>
+        <div class="rb-unit">Ω (ohms)</div>
+        <div class="rb-hint" id="hint-pt100">—</div>
       </div>
     </div>
   </div>
 
+  <!-- OBSERVATION DYNAMIQUE -->
   <div class="card">
-    <h2>Courbes R(T) comparées</h2>
+    <h2>💡 Ce que vous observez</h2>
+    <div class="obs obs-neutre" id="obs-box">
+      <div class="titre" id="obs-titre">Déplacez le curseur pour commencer</div>
+      <div id="obs-texte">L'explication s'adapte en temps réel à la température sélectionnée.</div>
+    </div>
+  </div>
+
+  <!-- GRAPHIQUE -->
+  <div class="card">
+    <h2>📈 Courbes R(T) superposées</h2>
     <div class="legend-row">
-      <div class="legend-item"><div class="dot" style="background:#6f42c1"></div> CTN (kΩ, axe gauche)</div>
-      <div class="legend-item"><div class="dot" style="background:#e83e8c"></div> Pt100 (Ω × 0,1 pour mise à l'échelle, axe droit)</div>
+      <div class="leg"><div class="leg-dot" style="background:#6f42c1"></div> CTN (kΩ, axe gauche — décroissante)</div>
+      <div class="leg"><div class="leg-dot" style="background:#e83e8c"></div> Pt100 ÷ 10 (mise à l'échelle visuelle, axe gauche — croissante)</div>
+      <div class="leg"><div class="leg-dot" style="background:#f59e0b;height:3px;border-top:2px dashed #f59e0b"></div> Position actuelle</div>
     </div>
     <div class="chart-wrap">
       <canvas id="chart"></canvas>
     </div>
-    <p style="font-size:.78em;color:#718096;margin-top:6px;text-align:center">La ligne pointillée verticale indique la température sélectionnée.</p>
+    <p style="font-size:.78em;color:#718096;margin-top:6px">
+      Les points colorés se déplacent sur chaque courbe. On divise la Pt100 par 10 uniquement pour l'affichage sur le même axe — les vraies valeurs sont affichées dans les cadres ci-dessus.
+    </p>
   </div>
 
+  <!-- COMPRENDRE -->
   <div class="card">
-    <h2>Comprendre la différence</h2>
-    <div class="info-grid">
-      <div class="info-box info-ctn">
+    <h2>📚 Comprendre les deux capteurs</h2>
+    <div class="compare-grid">
+      <div class="compare-box compare-ctn">
         <strong>CTN — Coefficient de Température Négatif</strong>
-        R <em>diminue</em> quand T augmente. Relation <em>non linéaire</em> : la courbe est très pentue à basse température et s'aplatit à haute température. On exploite une table ou une courbe pour lire T depuis R.
+        La résistance <em>diminue</em> quand T augmente. La variation est très rapide à basse température (la courbe est très inclinée) et ralentit à haute température (la courbe s'aplatit). On dit que la relation R(T) est <strong>non linéaire</strong>.<br><br>
+        En pratique : on mesure R avec un ohmmètre, puis on reporte sur la courbe ou on consulte la table du fabricant pour lire T.<br><br>
+        <strong>Usage :</strong> étuves de séchage, thermostats d'atelier, régulateurs de chauffage.
       </div>
-      <div class="info-box info-pt100">
-        <strong>Pt100 — Sonde platine</strong>
-        R <em>augmente</em> régulièrement quand T augmente. Relation <em>quasi linéaire</em> : 100 Ω à 0 °C, environ +0,39 Ω par °C. Très précise, utilisée comme référence industrielle.
+      <div class="compare-box compare-pt100">
+        <strong>Pt100 — Sonde platine de référence</strong>
+        La résistance <em>augmente</em> régulièrement quand T augmente. La variation est quasi constante : environ <strong>+0,39 Ω par °C</strong>. On dit que la relation R(T) est <strong>quasi linéaire</strong>.<br><br>
+        Valeur de référence : <strong>100 Ω à 0 °C</strong>. C'est la référence industrielle pour les mesures précises.<br><br>
+        <strong>Usage :</strong> régulateurs industriels, fours de laboratoire, équipements de précision.
       </div>
     </div>
   </div>
 
+  <!-- MÉTHODE DE LECTURE -->
   <div class="card">
-    <div class="question">
-      <strong>Questions de réflexion</strong>
+    <h2>🔧 Méthode — Lire la température depuis R</h2>
+    <div class="methode">
+      <h3>Avec une CTN (exemple)</h3>
       <ol>
-        <li>À 20 °C, quelle résistance affiche la CTN ? Et la Pt100 ?</li>
-        <li>Si on double la température de 25 °C à 50 °C, la résistance CTN est-elle divisée par deux ? Que cela révèle-t-il sur la linéarité ?</li>
-        <li>Un technicien mesure 2,2 kΩ sur une CTN. Déplacer le curseur pour trouver la température correspondante.</li>
-        <li>Pourquoi dit-on que la Pt100 est plus facile à utiliser dans un régulateur précis ?</li>
+        <li>Couper l'alimentation du circuit (sécurité électrique).</li>
+        <li>Brancher un <strong>ohmmètre</strong> sur les bornes de la CTN.</li>
+        <li>Lire la valeur de R affichée (ex : 4,9 kΩ).</li>
+        <li>Consulter la <strong>table de correspondance</strong> du fabricant (ou reporter sur la courbe R(T)).</li>
+        <li>Lire la température en face : R = 4,9 kΩ → T = 40 °C.</li>
+      </ol>
+      <p style="margin-top:10px">Avec une <strong>Pt100</strong>, la relation étant linéaire, on peut aussi calculer directement : <em>T = (R − 100) ÷ 0,39</em> (approximation).</p>
+    </div>
+  </div>
+
+  <!-- QUESTIONS -->
+  <div class="card">
+    <div class="questions">
+      <h3>Questions d'entraînement</h3>
+      <ol>
+        <li>Régler T = <strong>20 °C</strong>. Quelle est la résistance de la CTN ? Et de la Pt100 ?</li>
+        <li>Régler T = <strong>80 °C</strong>. La résistance CTN a-t-elle été divisée par 2 par rapport à 20 °C ? Que cela dit-il sur la linéarité ?</li>
+        <li>Un technicien mesure <strong>2,2 kΩ</strong> sur une CTN. Déplacer le curseur pour trouver la température correspondante.</li>
+        <li>Régler T = <strong>100 °C</strong>. Quelle résistance affiche la Pt100 ? Calculer : (R − 100) ÷ 0,39. Retrouvez-vous 100 °C ?</li>
+        <li>Pourquoi la Pt100 est-elle plus facile à intégrer dans un régulateur de précision que la CTN ?</li>
       </ol>
     </div>
   </div>
@@ -123,29 +205,20 @@ header p{font-size:.82em;opacity:.85;width:100%}
 </div>
 
 <script>
-// Données CTN (interpolation depuis valeurs réalistes)
-// Basées sur CTN NTC 10kΩ B=3950K
 function R_ctn(T_C) {
-  var T = T_C + 273.15;
-  var T0 = 298.15;
-  var R0 = 10000;
-  var B = 3950;
-  return R0 * Math.exp(B * (1/T - 1/T0)) / 1000; // en kΩ
+  var T = T_C + 273.15, T0 = 298.15, R0 = 10000, B = 3950;
+  return R0 * Math.exp(B * (1/T - 1/T0)) / 1000; // kΩ
 }
-
-// Pt100 : R(T) = 100 * (1 + 3.85e-3 * T)
 function R_pt100(T_C) {
-  return 100 * (1 + 0.00385 * T_C); // en Ω
+  return 100 * (1 + 0.00385 * T_C); // Ω
 }
 
-// Générer les données de courbe
-var temps = [];
-var dataCtn = [];
-var dataPt100Scaled = []; // Pt100 / 10 pour mise à l'échelle avec CTN
+// Données courbe
+var temps = [], dataCtn = [], dataPt100Scaled = [];
 for (var t = 0; t <= 150; t += 2) {
   temps.push(t);
-  dataCtn.push(parseFloat(R_ctn(t).toFixed(3)));
-  dataPt100Scaled.push(parseFloat((R_pt100(t) / 10).toFixed(2)));
+  dataCtn.push(+R_ctn(t).toFixed(3));
+  dataPt100Scaled.push(+(R_pt100(t) / 10).toFixed(2));
 }
 
 var ctx = document.getElementById('chart').getContext('2d');
@@ -154,65 +227,29 @@ var myChart = new Chart(ctx, {
   data: {
     labels: temps,
     datasets: [
-      {
-        label: 'CTN (kΩ)',
-        data: dataCtn,
-        borderColor: '#6f42c1',
-        backgroundColor: 'rgba(111,66,193,0.07)',
-        borderWidth: 2.5,
-        pointRadius: 0,
-        tension: 0.3,
-        fill: false,
-        yAxisID: 'yCTN'
-      },
-      {
-        label: 'Pt100 (Ω)',
-        data: dataPt100Scaled,
-        borderColor: '#e83e8c',
-        backgroundColor: 'rgba(232,62,140,0.07)',
-        borderWidth: 2.5,
-        pointRadius: 0,
-        tension: 0.1,
-        fill: false,
-        yAxisID: 'yCTN'
-      },
-      {
-        label: 'Curseur',
-        data: [],
-        borderColor: '#f59e0b',
-        borderWidth: 2,
-        borderDash: [6,4],
-        pointRadius: 0,
-        fill: false,
-        yAxisID: 'yCTN'
-      }
+      { label: 'CTN (kΩ)', data: dataCtn, borderColor: '#6f42c1', backgroundColor: 'rgba(111,66,193,0.07)', borderWidth: 2.5, pointRadius: 0, tension: 0.3, fill: true },
+      { label: 'Pt100 ÷10', data: dataPt100Scaled, borderColor: '#e83e8c', backgroundColor: 'rgba(232,62,140,0.07)', borderWidth: 2.5, pointRadius: 0, tension: 0.05, fill: false },
+      { label: 'Point CTN', data: [], borderColor: '#6f42c1', backgroundColor: '#6f42c1', pointRadius: 9, pointHoverRadius: 11, showLine: false },
+      { label: 'Point Pt100', data: [], borderColor: '#e83e8c', backgroundColor: '#e83e8c', pointRadius: 9, pointHoverRadius: 11, showLine: false }
     ]
   },
   options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    interaction: { mode: 'index', intersect: false },
+    responsive: true, maintainAspectRatio: false,
     plugins: {
       legend: { display: false },
       tooltip: {
         callbacks: {
-          label: function(ctx) {
-            if (ctx.datasetIndex === 0) return 'CTN : ' + dataCtn[ctx.dataIndex] + ' kΩ';
-            if (ctx.datasetIndex === 1) return 'Pt100 : ' + (dataPt100Scaled[ctx.dataIndex] * 10).toFixed(1) + ' Ω';
+          label: function(c) {
+            if (c.datasetIndex === 0) return 'CTN : ' + dataCtn[c.dataIndex] + ' kΩ';
+            if (c.datasetIndex === 1) return 'Pt100 : ' + (dataPt100Scaled[c.dataIndex]*10).toFixed(1) + ' Ω';
             return '';
           }
         }
       }
     },
     scales: {
-      x: {
-        title: { display: true, text: 'Température (°C)', font: { size: 11 } },
-        ticks: { maxTicksLimit: 10 }
-      },
-      yCTN: {
-        title: { display: true, text: 'Résistance CTN (kΩ) — Pt100 (Ω ÷ 10)', font: { size: 10 } },
-        min: 0
-      }
+      x: { title: { display: true, text: 'Température (°C)', font: { size: 11 } }, ticks: { maxTicksLimit: 10 } },
+      y: { title: { display: true, text: 'CTN (kΩ) — Pt100 ÷10 (Ω)', font: { size: 10 } }, min: 0 }
     }
   }
 });
@@ -221,27 +258,58 @@ function update() {
   var T = parseInt(document.getElementById('sliderT').value);
   document.getElementById('T-label').textContent = T + ' °C';
 
-  var rctn = R_ctn(T);
-  var rpt = R_pt100(T);
+  var rctn = R_ctn(T), rpt = R_pt100(T);
   document.getElementById('R-ctn').textContent = rctn.toFixed(2);
   document.getElementById('R-pt100').textContent = rpt.toFixed(1);
 
-  // Curseur vertical
-  var cursorData = temps.map(function(t) {
-    return t === T ? 20 : null; // valeur arbitraire pour hauteur
-  });
-  // Ligne verticale via annotation simulée avec dataset vide sauf au point
-  myChart.data.datasets[2].data = temps.map(function(t) {
-    return { x: T, y: t === T ? 20 : null };
-  });
+  // Hints contextuels
+  var hctn = '', hpt = '';
+  if (T <= 20) { hctn = 'Valeur élevée : T basse → R grande'; }
+  else if (T <= 60) { hctn = 'La résistance chute rapidement'; }
+  else if (T <= 100) { hctn = 'Courbe qui s'aplatit progressivement'; }
+  else { hctn = 'Faible résistance même à haute T'; }
+  document.getElementById('hint-ctn').textContent = hctn;
 
-  // Points actifs
+  if (T <= 20) { hpt = 'Proche de 100 Ω (valeur de référence à 0 °C)'; }
+  else { hpt = '100 Ω + ' + (0.385 * T).toFixed(1) + ' Ω ≈ ' + rpt.toFixed(1) + ' Ω'; }
+  document.getElementById('hint-pt100').textContent = hpt;
+
+  // Observation dynamique
+  var obs = document.getElementById('obs-box');
+  var titre = document.getElementById('obs-titre');
+  var texte = document.getElementById('obs-texte');
+
+  if (T < 20) {
+    obs.className = 'obs obs-bas';
+    titre.textContent = '🟦 Basse température (' + T + ' °C) — CTN très résistante';
+    texte.innerHTML = 'La CTN affiche <strong>' + rctn.toFixed(2) + ' kΩ</strong> : une résistance très élevée. Le régulateur "sait" que la température est basse car R est grande.<br><br>'
+      + 'La Pt100 affiche <strong>' + rpt.toFixed(1) + ' Ω</strong>, légèrement au-dessus de sa valeur de référence (100 Ω à 0 °C).<br><br>'
+      + '<em>👉 Remarque :</em> à basse température, la CTN varie beaucoup (très sensible) alors que la Pt100 varie peu et régulièrement.';
+  } else if (T < 60) {
+    obs.className = 'obs obs-moyen';
+    titre.textContent = '🟩 Température modérée (' + T + ' °C) — Zone de forte sensibilité CTN';
+    texte.innerHTML = 'La CTN est <strong>très sensible</strong> dans cette zone : un petit changement de température provoque une grande variation de R ('
+      + rctn.toFixed(2) + ' kΩ). C\'est pourquoi on l\'utilise dans les thermostats d\'atelier et les étuves.<br><br>'
+      + 'La Pt100 vaut <strong>' + rpt.toFixed(1) + ' Ω</strong>. Chaque degré supplémentaire ajoute environ 0,39 Ω — c\'est régulier et facile à calculer.';
+  } else if (T < 100) {
+    obs.className = 'obs obs-moyen';
+    titre.textContent = '🟧 Température élevée (' + T + ' °C) — Zone d\'étuve de séchage';
+    texte.innerHTML = 'Cette plage correspond au séchage du bois en atelier (60–90 °C). La CTN vaut <strong>' + rctn.toFixed(2) + ' kΩ</strong>.<br><br>'
+      + 'La courbe CTN commence à s\'aplatir : la sensibilité diminue par rapport aux basses températures. On voit sur le graphique que la pente est moins forte.<br><br>'
+      + 'La Pt100 vaut <strong>' + rpt.toFixed(1) + ' Ω</strong> — elle continue d\'augmenter régulièrement, avec la même pente qu\'à basse température.';
+  } else {
+    obs.className = 'obs obs-haut';
+    titre.textContent = '🟥 Haute température (' + T + ' °C) — CTN peu sensible';
+    texte.innerHTML = 'La CTN affiche <strong>' + rctn.toFixed(2) + ' kΩ</strong> : la résistance est devenue faible. La courbe s\'est beaucoup aplatie, la CTN est moins précise dans cette zone.<br><br>'
+      + 'La Pt100 vaut <strong>' + rpt.toFixed(1) + ' Ω</strong>. Elle reste tout aussi précise à haute température qu\'à basse température — c\'est son avantage principal.<br><br>'
+      + '<em>👉 Conclusion :</em> pour des températures élevées avec précision requise, la Pt100 est préférable à la CTN.';
+  }
+
+  // Points sur graphique
   var idxApprox = Math.round(T / 2);
-  myChart.data.datasets[0].pointRadius = temps.map(function(t, i) { return i === idxApprox ? 6 : 0; });
-  myChart.data.datasets[1].pointRadius = temps.map(function(t, i) { return i === idxApprox ? 6 : 0; });
-  myChart.data.datasets[0].pointBackgroundColor = '#6f42c1';
-  myChart.data.datasets[1].pointBackgroundColor = '#e83e8c';
-
+  idxApprox = Math.min(idxApprox, temps.length - 1);
+  myChart.data.datasets[2].data = [{ x: T, y: dataCtn[idxApprox] }];
+  myChart.data.datasets[3].data = [{ x: T, y: dataPt100Scaled[idxApprox] }];
   myChart.update('none');
 }
 
