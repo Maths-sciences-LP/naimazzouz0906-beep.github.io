@@ -988,6 +988,136 @@
   </details>
 </div>
 
+
+<!-- AP4 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 18</span>
+    <span class="exo-title">Étude complète d'une fonction exponentielle</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>On considère la fonction \(f(x) = (x - 1)\,\text{e}^x\) définie sur \(\mathbb{R}\).</p>
+  <div class="consigne">
+    <strong>1.</strong> Calculer \(f'(x)\) (produit de deux fonctions).<br>
+    <strong>2.</strong> Résoudre \(f'(x) = 0\).<br>
+    <strong>3.</strong> Dresser le tableau de variations de \(f\) sur \([-3\,;\,3]\).<br>
+    <strong>4.</strong> Calculer le minimum de \(f\).<br>
+    <strong>5.</strong> Déterminer les intervalles sur lesquels \(f(x) > 0\).
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(f(x) = (x-1) \cdot \text{e}^x\). Avec \(u = x-1\), \(u' = 1\), \(v = \text{e}^x\), \(v' = \text{e}^x\) :<br>
+    <span class="reponse">\(f'(x) = 1 \cdot \text{e}^x + (x-1) \cdot \text{e}^x = \text{e}^x(1 + x - 1) = x\,\text{e}^x\)</span></p>
+    <p><strong>2.</strong> \(x\,\text{e}^x = 0\). Comme \(\text{e}^x > 0\) toujours, la seule solution est <span class="reponse">\(x = 0\)</span>.</p>
+    <p><strong>3.</strong> Pour \(x < 0\) : \(f'(x) = x\text{e}^x < 0\) → décroissante. Pour \(x > 0\) : croissante.
+    <table>
+      <tr><th>\(x\)</th><td>−3</td><td></td><td>0</td><td></td><td>3</td></tr>
+      <tr><th>\(f'(x)\)</th><td></td><td>−</td><td>0</td><td>+</td><td></td></tr>
+      <tr><th>\(f(x)\)</th><td>\(-4\text{e}^{-3}\approx -0{,}20\)</td><td>↘</td><td>−1</td><td>↗</td><td>\(2\text{e}^3\approx 40{,}2\)</td></tr>
+    </table></p>
+    <p><strong>4.</strong> Minimum : <span class="reponse">\(f(0) = (0-1)\text{e}^0 = -1\)</span></p>
+    <p><strong>5.</strong> \(f(x) > 0\) quand \(x-1 > 0\) (car \(\text{e}^x > 0\)) → <span class="reponse">\(x > 1\)</span>, soit \(]1\,;\,+\infty[\).</p>
+  </div>
+</div>
+
+<!-- AP5 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 19</span>
+    <span class="exo-title">Modélisation du vieillissement d'un isolant thermique</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un bureau d'études thermiques modélise la résistance thermique \(R\) (en m²·K/W) d'une laine de verre en fonction de son âge \(t\) (en années). La résistance diminue selon la loi : \(R(t) = 4{,}5\,\text{e}^{-0{,}02t}\).
+  </div>
+  <div class="consigne">
+    <strong>1.</strong> Quelle est la résistance initiale de l'isolant (neuf) ?<br>
+    <strong>2.</strong> Calculer \(R(10)\), \(R(20)\) et \(R(40)\). Interpréter l'évolution.<br>
+    <strong>3.</strong> La réglementation thermique exige \(R \geq 3{,}5\) m²·K/W. Résoudre l'inéquation \(R(t) \geq 3{,}5\) pour trouver la durée de vie conforme de l'isolant.<br>
+    <strong>4.</strong> Calculer \(R'(t)\) et l'interpréter. Le vieillissement s'accélère-t-il ou ralentit-il ?<br>
+    <strong>5.</strong> De combien de pour cent la résistance a-t-elle chuté après 25 ans ?
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> <span class="reponse">\(R(0) = 4{,}5\) m²·K/W</span></p>
+    <p><strong>2.</strong><br>
+    \(R(10) = 4{,}5\text{e}^{-0{,}2} \approx 4{,}5 \times 0{,}819 \approx\) <span class="reponse">\(3{,}68\) m²·K/W</span><br>
+    \(R(20) = 4{,}5\text{e}^{-0{,}4} \approx 4{,}5 \times 0{,}670 \approx\) <span class="reponse">\(3{,}02\) m²·K/W</span><br>
+    \(R(40) = 4{,}5\text{e}^{-0{,}8} \approx 4{,}5 \times 0{,}449 \approx\) <span class="reponse">\(2{,}02\) m²·K/W</span><br>
+    La résistance diminue progressivement : l'isolant perd de son efficacité avec le temps.</p>
+    <p><strong>3.</strong> \(4{,}5\text{e}^{-0{,}02t} \geq 3{,}5\) → \(\text{e}^{-0{,}02t} \geq \dfrac{3{,}5}{4{,}5}\) → \(-0{,}02t \geq \ln(7/9)\) → \(t \leq \dfrac{-\ln(7/9)}{0{,}02}\)<br>
+    \(\ln(7/9) = \ln 7 - \ln 9 \approx 1{,}946 - 2{,}197 = -0{,}251\)<br>
+    <span class="reponse">\(t \leq \dfrac{0{,}251}{0{,}02} \approx 12{,}5\) années</span></p>
+    <p><strong>4.</strong> <span class="reponse">\(R'(t) = -0{,}09\,\text{e}^{-0{,}02t}\)</span>. \(R'(t) < 0\) → résistance toujours décroissante. \(|R'(t)|\) diminue avec \(t\) → <span class="reponse">le vieillissement ralentit au fil du temps</span> (comme tout phénomène exponentiel décroissant).</p>
+    <p><strong>5.</strong> \(R(25) = 4{,}5\,\text{e}^{-0{,}5} \approx 2{,}73\). Baisse = \(\dfrac{4{,}5 - 2{,}73}{4{,}5} \times 100 \approx\) <span class="reponse">\(39{,}3\,\%\)</span></p>
+  </div>
+</div>
+
+<!-- AP6 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 20</span>
+    <span class="exo-title">Étude d'une fonction logarithmique — optimisation</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un menuisier agenceur étudie le bénéfice (en centaines d'euros) d'une commande en fonction du nombre de pièces fabriquées \(x\) (en centaines). Il modélise : \(B(x) = 3\ln(x) - x + 2\) pour \(x > 0\).
+  </div>
+  <div class="consigne">
+    <strong>1.</strong> Calculer \(B'(x)\) et résoudre \(B'(x) = 0\).<br>
+    <strong>2.</strong> Étudier le signe de \(B'(x)\) et dresser le tableau de variations de \(B\) sur \([0{,}5\,;\,10]\).<br>
+    <strong>3.</strong> Calculer le bénéfice maximal. Pour quel nombre de pièces est-il atteint ?<br>
+    <strong>4.</strong> Le bénéfice est positif (\(B(x) > 0\)) pour quelles valeurs de \(x\) environ ? (Utiliser la calculatrice pour trouver les zéros de \(B\) par essais).<br>
+    <strong>5.</strong> Interpréter le résultat en termes de gestion de production.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(B'(x) = \dfrac{3}{x} - 1\). Résoudre \(\dfrac{3}{x} - 1 = 0\) → <span class="reponse">\(x = 3\)</span></p>
+    <p><strong>2.</strong> Pour \(x < 3\) : \(\dfrac{3}{x} > 1\) → \(B'(x) > 0\) (croissant). Pour \(x > 3\) : \(B'(x) < 0\) (décroissant).
+    <table>
+      <tr><th>\(x\)</th><td>0,5</td><td></td><td>3</td><td></td><td>10</td></tr>
+      <tr><th>\(B'(x)\)</th><td></td><td>+</td><td>0</td><td>−</td><td></td></tr>
+      <tr><th>\(B(x)\)</th><td>\(\approx -0{,}92\)</td><td>↗</td><td>\(3\ln 3 - 1 \approx 2{,}30\)</td><td>↘</td><td>\(\approx -1{,}1\)</td></tr>
+    </table></p>
+    <p><strong>3.</strong> Bénéfice maximal : <span class="reponse">\(B(3) = 3\ln(3) - 3 + 2 = 3\ln 3 - 1 \approx 2{,}30\)</span> (230 €) pour 300 pièces.</p>
+    <p><strong>4.</strong> Par essais : \(B(1) = 0 - 1 + 2 = 1 > 0\), \(B(0{,}5) \approx -0{,}92 < 0\), \(B(8) \approx -0{,}21 < 0\), \(B(7) \approx 0{,}05 > 0\).<br>
+    Les zéros sont approximativement en <span class="reponse">\(x \approx 0{,}75\)</span> et <span class="reponse">\(x \approx 7{,}7\)</span>.</p>
+    <p><strong>5.</strong> <span class="reponse">Le menuisier doit produire entre 75 et 770 pièces environ pour être bénéficiaire.</span> En dessous (trop peu de production) ou au-dessus (surproduction avec coûts trop élevés), le bilan est déficitaire.</p>
+  </div>
+</div>
+
+<!-- AP7 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 21</span>
+    <span class="exo-title">Modélisation d'une loi de Newton complète — type BTS</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un ingénieur thermicien étudie la loi de Newton pour le refroidissement d'un fluide caloporteur dans un échangeur. La température \(T\) (en °C) vérifie l'équation différentielle : \(T'(t) = -k\,(T(t) - T_\infty)\) où \(k > 0\) et \(T_\infty\) est la température ambiante.
+  </div>
+  <p>La solution générale est : \(T(t) = T_\infty + (T_0 - T_\infty)\,\text{e}^{-kt}\), où \(T_0 = T(0)\) est la température initiale.</p>
+  <p>On mesure : \(T_0 = 95\) °C, \(T_\infty = 20\) °C. À \(t = 5\) min : \(T(5) = 70\) °C.</p>
+  <div class="consigne">
+    <strong>1.</strong> Écrire l'expression de \(T(t)\) avec les valeurs numériques \(T_0\) et \(T_\infty\).<br>
+    <strong>2.</strong> En utilisant \(T(5) = 70\), déterminer la constante \(k\) (arrondir à \(10^{-3}\)).<br>
+    <strong>3.</strong> Calculer \(T(15)\) et \(T(30)\).<br>
+    <strong>4.</strong> Résoudre \(T(t) = 40\) pour trouver à quel instant la température atteint 40 °C.<br>
+    <strong>5.</strong> Calculer \(T'(t)\) et vérifier qu'on retrouve bien \(T'(t) = -k(T(t) - T_\infty)\).
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> <span class="reponse">\(T(t) = 20 + 75\,\text{e}^{-kt}\)</span></p>
+    <p><strong>2.</strong> \(T(5) = 70\) → \(20 + 75\,\text{e}^{-5k} = 70\) → \(\text{e}^{-5k} = \dfrac{50}{75} = \dfrac{2}{3}\)<br>
+    \(-5k = \ln(2/3)\) → <span class="reponse">\(k = \dfrac{-\ln(2/3)}{5} = \dfrac{\ln(3/2)}{5} \approx \dfrac{0{,}405}{5} \approx 0{,}081\)</span></p>
+    <p><strong>3.</strong> \(T(15) = 20 + 75\,\text{e}^{-0{,}081 \times 15} = 20 + 75\,\text{e}^{-1{,}215} \approx 20 + 75 \times 0{,}297 \approx\) <span class="reponse">\(42{,}3\) °C</span><br>
+    \(T(30) = 20 + 75\,\text{e}^{-2{,}43} \approx 20 + 75 \times 0{,}0882 \approx\) <span class="reponse">\(26{,}6\) °C</span></p>
+    <p><strong>4.</strong> \(20 + 75\,\text{e}^{-0{,}081t} = 40\) → \(\text{e}^{-0{,}081t} = \dfrac{20}{75}\) → \(t = \dfrac{-\ln(20/75)}{0{,}081} = \dfrac{\ln(75/20)}{0{,}081} \approx \dfrac{1{,}322}{0{,}081} \approx\) <span class="reponse">\(16{,}3\) min</span></p>
+    <p><strong>5.</strong> \(T'(t) = -0{,}081 \times 75\,\text{e}^{-0{,}081t} = -6{,}075\,\text{e}^{-0{,}081t}\)<br>
+    Et \(-k(T(t) - T_\infty) = -0{,}081 \times 75\,\text{e}^{-0{,}081t} = -6{,}075\,\text{e}^{-0{,}081t}\) ✓ <span class="reponse">Les deux expressions sont bien égales.</span></p>
+  </div>
+</div>
+
 </div><!-- fin diff-appro -->
 
 <div class="nav-footer">
