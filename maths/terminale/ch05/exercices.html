@@ -36,9 +36,6 @@
 <!-- NIVEAU 1 -->
 
 <!-- EX 1 -->
-
-<h2>Exercices guidés pas à pas</h2>
-
 <div class="exo diff-socle">
   <div class="exo-header">
     <span class="exo-num">Exercice 1</span>
@@ -62,6 +59,542 @@
   <div class="reponse-box" style="min-height:80px">Réponses : ………………………………………………………………</div>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
+      <p><strong>1.</strong> Tableau complété :</p>
+      <table>
+        <tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+        <tr><th>\(f(x)\)</th><td><span class="reponse">1</span></td><td><span class="reponse">2</span></td><td><span class="reponse">4</span></td><td><span class="reponse">8</span></td><td><span class="reponse">16</span></td><td><span class="reponse">32</span></td></tr>
+      </table>
+      <p><strong>2.</strong> Lecture graphique : <span class="reponse">\(f(1{,}5) \approx 2{,}8\)</span> et <span class="reponse">\(f(3{,}5) \approx 11{,}3\)</span>.</p>
+      <p><strong>3.</strong> La fonction \(f\) est <span class="reponse">croissante</span> car quand \(x\) augmente, \(2^x\) augmente. C'est une croissance exponentielle : la base 2 est supérieure à 1.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 2 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Comparer croissance et décroissance exponentielle</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>On considère les fonctions \(f(x) = 3^x\) et \(g(x) = 0{,}5^x\).</p>
+  <div class="consigne">
+    <strong>1.</strong> Compléter les deux tableaux de valeurs :<br>
+  </div>
+  <table>
+    <tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+    <tr><th>\(f(x) = 3^x\)</th><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <table>
+    <tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+    <tr><th>\(g(x) = 0{,}5^x\)</th><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <div class="consigne">
+    <strong>2.</strong> Quel est le sens de variation de \(f\) ? de \(g\) ?<br>
+    <strong>3.</strong> Observer les courbes ci-dessous. Quelle propriété partagent les deux courbes en \(x = 0\) ?
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx2" height="220"></canvas></div>
+  <p class="chart-label">\(f(x) = 3^x\) (bleu) et \(g(x) = 0{,}5^x\) (rouge)</p>
+  <div class="reponse-box" style="min-height:80px">Réponses : ………………………………………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong></p>
+      <table>
+        <tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr><th>\(f(x) = 3^x\)</th><td><span class="reponse">1</span></td><td><span class="reponse">3</span></td><td><span class="reponse">9</span></td><td><span class="reponse">27</span></td><td><span class="reponse">81</span></td></tr>
+      </table>
+      <table>
+        <tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr><th>\(g(x) = 0{,}5^x\)</th><td><span class="reponse">1</span></td><td><span class="reponse">0,5</span></td><td><span class="reponse">0,25</span></td><td><span class="reponse">0,125</span></td><td><span class="reponse">0,0625</span></td></tr>
+      </table>
+      <p><strong>2.</strong> <span class="reponse">\(f\) est croissante</span> car \(a = 3 > 1\). <span class="reponse">\(g\) est décroissante</span> car \(a = 0{,}5 < 1\).</p>
+      <p><strong>3.</strong> En \(x = 0\), les deux courbes passent par le point \((0\,;\,1)\) car <span class="reponse">\(a^0 = 1\) pour tout \(a > 0\)</span>.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 3 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">Passer de la forme exponentielle à la forme logarithmique</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>Compléter le tableau en utilisant la relation : si \(a^x = b\) alors \(x = \log(b) / \log(a)\).</p>
+  <div class="consigne">
+    <strong>1.</strong> Écrire sous forme logarithmique :<br>
+    <strong>a)</strong> \(10^3 = 1\,000\)  →  \(\log(…) = …\)<br>
+    <strong>b)</strong> \(10^{-2} = 0{,}01\)  →  \(\log(…) = …\)<br>
+    <strong>c)</strong> \(2^{10} = 1\,024\)  →  \(\dfrac{\log(…)}{\log(…)} = …\)<br><br>
+    <strong>2.</strong> Écrire sous forme exponentielle :<br>
+    <strong>a)</strong> \(\log(100) = 2\)  →  \(10^{…} = …\)<br>
+    <strong>b)</strong> \(\log(0{,}001) = -3\)  →  \(10^{…} = …\)<br><br>
+    <strong>3.</strong> Calculer à la calculatrice (arrondir au centième) :<br>
+    <strong>a)</strong> \(\log(50)\)    <strong>b)</strong> \(\log(3\,000)\)    <strong>c)</strong> \(\log(0{,}2)\)
+  </div>
+  <div class="reponse-box" style="min-height:100px">Réponses : ………………………………………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.a)</strong> \(10^3 = 1\,000\) → <span class="reponse">\(\log(1\,000) = 3\)</span></p>
+      <p><strong>1.b)</strong> \(10^{-2} = 0{,}01\) → <span class="reponse">\(\log(0{,}01) = -2\)</span></p>
+      <p><strong>1.c)</strong> \(2^{10} = 1\,024\) → <span class="reponse">\(\dfrac{\log(1\,024)}{\log(2)} = 10\)</span></p>
+      <p><strong>2.a)</strong> \(\log(100) = 2\) → <span class="reponse">\(10^2 = 100\)</span></p>
+      <p><strong>2.b)</strong> \(\log(0{,}001) = -3\) → <span class="reponse">\(10^{-3} = 0{,}001\)</span></p>
+      <p><strong>3.a)</strong> <span class="reponse">\(\log(50) \approx 1{,}70\)</span>   <strong>b)</strong> <span class="reponse">\(\log(3\,000) \approx 3{,}48\)</span>   <strong>c)</strong> <span class="reponse">\(\log(0{,}2) \approx -0{,}70\)</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- ========== SOCLE ========== -->
+<div class="diff-socle">
+
+<!-- S1 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Calculer avec les puissances de 10 — pas à pas</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <div class="meth">
+    <span class="label-meth">Méthode</span>
+    <strong>Puissances de 10 :</strong><br>
+    • \(10^n\) = 1 suivi de \(n\) zéros. Ex : \(10^3 = 1\,000\).<br>
+    • \(10^{-n} = \dfrac{1}{10^n}\). Ex : \(10^{-2} = \dfrac{1}{100} = 0{,}01\).<br>
+    • \(10^0 = 1\) toujours.
+  </div>
+  <div class="consigne">
+    <strong>1.</strong> Compléter le tableau :<br>
+  </div>
+  <table>
+    <tr><th>Puissance</th><td>\(10^1\)</td><td>\(10^2\)</td><td>\(10^3\)</td><td>\(10^4\)</td><td>\(10^5\)</td></tr>
+    <tr><th>Valeur</th><td>\(\boxed{\phantom{10}}\)</td><td>\(\boxed{\phantom{100}}\)</td><td>\(\boxed{\phantom{1000}}\)</td><td>\(\boxed{\phantom{10000}}\)</td><td>\(\boxed{\phantom{100000}}\)</td></tr>
+  </table>
+  <div class="consigne">
+    <strong>2.</strong> Compléter avec des puissances négatives :<br>
+  </div>
+  <table>
+    <tr><th>Puissance</th><td>\(10^{-1}\)</td><td>\(10^{-2}\)</td><td>\(10^{-3}\)</td><td>\(10^{-4}\)</td></tr>
+    <tr><th>Valeur</th><td>\(\boxed{\phantom{0,1}}\)</td><td>\(\boxed{\phantom{0,01}}\)</td><td>\(\boxed{\phantom{0,001}}\)</td><td>\(\boxed{\phantom{0,0001}}\)</td></tr>
+  </table>
+  <div class="consigne">
+    <strong>3.</strong> QCM — Cocher la bonne réponse :<br>
+    \(10^0 = \)   ☐ 0   ☐ 1   ☐ 10<br>
+    \(10^6 = \)   ☐ 600   ☐ 60 000   ☐ 1 000 000<br>
+    \(10^{-3} = \)   ☐ \(-1\,000\)   ☐ \(0{,}001\)   ☐ \(0{,}01\)
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(10^1 = 10\), \(10^2 = 100\), \(10^3 = 1\,000\), \(10^4 = 10\,000\), \(10^5 = 100\,000\).</p>
+      <p><strong>2.</strong> \(10^{-1} = 0{,}1\), \(10^{-2} = 0{,}01\), \(10^{-3} = 0{,}001\), \(10^{-4} = 0{,}0001\).</p>
+      <p><strong>3.</strong> QCM : <span class="reponse">\(10^0 = 1\)</span>   <span class="reponse">\(10^6 = 1\,000\,000\)</span>   <span class="reponse">\(10^{-3} = 0{,}001\)</span>.</p>
+  </div>
+  </details>
+</div>
+
+<!-- S2 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Lire un graphique exponentiel — questions guidées</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>Un menuisier agenceur observe la croissance d'une colonie de moisissures sur un échantillon de bois non traité. Le nombre de colonies \(N\) est modélisé par \(N(t) = 5 \times 2^t\) où \(t\) est le nombre de jours.</p>
+  <div class="meth">
+    <span class="label-meth">Méthode — Lire un graphique exponentiel</span>
+    <strong>Étape 1 :</strong> Repérer la valeur initiale (quand \(t = 0\)).<br>
+    <strong>Étape 2 :</strong> Observer si la courbe monte (croissante) ou descend (décroissante).<br>
+    <strong>Étape 3 :</strong> Chercher le temps de doublement : au bout de combien de temps la valeur a doublé ?
+  </div>
+  <div class="consigne">
+    <strong>1.</strong> Combien y a-t-il de colonies au départ (\(t = 0\)) ?<br>
+    \(N(0) = 5 \times 2^{\boxed{\phantom{0}}} = 5 \times \boxed{\phantom{1}} = \boxed{\phantom{5}}\) colonies.<br><br>
+    <strong>2.</strong> Compléter le tableau :<br>
+  </div>
+  <table>
+    <tr><th>\(t\) (jours)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+    <tr><th>\(N(t)\)</th><td>\(\boxed{\phantom{5}}\)</td><td>\(\boxed{\phantom{10}}\)</td><td>\(\boxed{\phantom{20}}\)</td><td>\(\boxed{\phantom{40}}\)</td><td>\(\boxed{\phantom{80}}\)</td></tr>
+  </table>
+  <div class="consigne">
+    <strong>3.</strong> La fonction \(N\) est-elle croissante ou décroissante ? Cocher : ☐ croissante ☐ décroissante<br><br>
+    <strong>4.</strong> Au bout de combien de jours le nombre de colonies a-t-il doublé (passé de 5 à 10) ?<br>
+    Temps de doublement = \(\boxed{\phantom{1}}\) jour(s).<br><br>
+    <strong>5.</strong> Le menuisier doit traiter le bois avant d'atteindre 50 colonies. A-t-il le temps d'attendre 4 jours ? Justifier.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(N(0) = 5 \times 2^0 = 5 \times 1 = \) <span class="reponse">5 colonies</span>.</p>
+      <p><strong>2.</strong> \(N(0) = 5\), \(N(1) = 10\), \(N(2) = 20\), \(N(3) = 40\), \(N(4) = 80\).</p>
+      <p><strong>3.</strong> La fonction est <span class="reponse">croissante</span> car la base 2 est supérieure à 1.</p>
+      <p><strong>4.</strong> Le nombre passe de 5 à 10 en <span class="reponse">1 jour</span> (temps de doublement = 1 jour).</p>
+      <p><strong>5.</strong> \(N(4) = 80 > 50\) : <span class="reponse">non, il ne peut pas attendre 4 jours</span>. Dès \(t = 3\) jours, \(N(3) = 40\), et entre 3 et 4 jours on dépasse 50.</p>
+  </div>
+  </details>
+</div>
+
+<!-- S3 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">Utiliser le logarithme décimal — pas à pas</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>Un technicien chauffagiste doit calculer le nombre de connecteurs nécessaires pour qu'un signal passe en dessous d'un seuil. Il utilise le logarithme décimal.</p>
+  <div class="meth">
+    <span class="label-meth">Méthode — Utiliser le logarithme décimal</span>
+    <strong>Rappel :</strong> \(\log(10^n) = n\). Le logarithme « compte les zéros ».<br>
+    <strong>Pour résoudre \(a^x = b\) :</strong> on calcule \(x = \dfrac{\log(b)}{\log(a)}\).
+  </div>
+  <div class="consigne">
+    <strong>1.</strong> Compléter (sans calculatrice) :<br>
+    \(\log(10) = \boxed{\phantom{1}}\)   \(\log(100) = \boxed{\phantom{2}}\)   \(\log(1\,000) = \boxed{\phantom{3}}\)   \(\log(1) = \boxed{\phantom{0}}\)<br><br>
+    <strong>2.</strong> Compléter les ordres de grandeur :<br>
+    Un atelier fait 15 m de long. \(15 \approx 10^{\boxed{\phantom{1}}}\), l'ordre de grandeur est \(\boxed{\phantom{10}}\) m.<br>
+    Un fil de cuivre a un diamètre de 0,002 m. \(0{,}002 \approx 10^{\boxed{\phantom{-3}}}\), l'ordre de grandeur est \(\boxed{\phantom{0,001}}\) m.<br><br>
+    <strong>3.</strong> Résoudre pas à pas : \(2^x = 16\).<br>
+    On applique la formule : \(x = \dfrac{\log(\boxed{\phantom{16}})}{\log(\boxed{\phantom{2}})}\).<br>
+    Calculatrice : \(\log(16) = \boxed{\phantom{1,204}}\) et \(\log(2) = \boxed{\phantom{0,301}}\).<br>
+    Donc \(x = \dfrac{\boxed{\phantom{1,204}}}{\boxed{\phantom{0,301}}} = \boxed{\phantom{4}}\).<br><br>
+    <strong>4.</strong> Résoudre de même : \(10^x = 500\).<br>
+    \(x = \log(\boxed{\phantom{500}}) = \boxed{\phantom{2,70}}\) (arrondir au centième).
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> <span class="reponse">\(\log(10) = 1\)</span>, <span class="reponse">\(\log(100) = 2\)</span>, <span class="reponse">\(\log(1\,000) = 3\)</span>, <span class="reponse">\(\log(1) = 0\)</span>.</p>
+      <p><strong>2.</strong> \(15 \approx 10^1\), ordre de grandeur = <span class="reponse">10 m</span>. \(0{,}002 \approx 10^{-3}\), ordre de grandeur = <span class="reponse">0,001 m</span>.</p>
+      <p><strong>3.</strong> \(x = \dfrac{\log(16)}{\log(2)} = \dfrac{1{,}204}{0{,}301} = \) <span class="reponse">\(x = 4\)</span>. Vérification : \(2^4 = 16\) ✓</p>
+      <p><strong>4.</strong> \(x = \log(500) \approx \) <span class="reponse">\(x \approx 2{,}70\)</span>.</p>
+  </div>
+  </details>
+</div>
+</div><!-- fin diff-socle -->
+
+<!-- ========== STANDARD ========== -->
+<div class="diff-standard">
+
+<!-- NIVEAU 2 -->
+
+<!-- EX 4 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 7</span>
+    <span class="exo-title">Résoudre des équations exponentielles</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>Résoudre chaque équation en utilisant le logarithme décimal. Arrondir au centième.</p>
+  <div class="consigne">
+    <strong>a)</strong> \(2^x = 64\)<br>
+    <strong>b)</strong> \(3^x = 50\)<br>
+    <strong>c)</strong> \(10^x = 500\)<br>
+    <strong>d)</strong> \(1{,}05^x = 2\)
+  </div>
+  <div class="reponse-box" style="min-height:90px">Réponses : ………………………………………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> \(2^x = 64\) → \(x = \dfrac{\log(64)}{\log(2)} = \dfrac{\log(2^6)}{\log(2)} = \) <span class="reponse">\(x = 6\)</span></p>
+      <p><strong>b)</strong> \(3^x = 50\) → \(x = \dfrac{\log(50)}{\log(3)} = \dfrac{1{,}699}{0{,}477} \approx\) <span class="reponse">\(x \approx 3{,}56\)</span></p>
+      <p><strong>c)</strong> \(10^x = 500\) → \(x = \log(500) \approx\) <span class="reponse">\(x \approx 2{,}70\)</span></p>
+      <p><strong>d)</strong> \(1{,}05^x = 2\) → \(x = \dfrac{\log(2)}{\log(1{,}05)} = \dfrac{0{,}301}{0{,}0212} \approx\) <span class="reponse">\(x \approx 14{,}21\)</span></p>
+      <div class="meth">
+        <span class="label-meth">Méthode</span>
+        Pour résoudre \(a^x = b\), on applique : \(x = \dfrac{\log(b)}{\log(a)}\).
+      </div>
+  </div>
+  </details>
+</div>
+
+<!-- EX 5 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 8</span>
+    <span class="exo-title">Appliquer les propriétés du logarithme décimal</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>On rappelle que \(\log(a \times b) = \log(a) + \log(b)\) et \(\log(a^n) = n \times \log(a)\).</p>
+  <div class="consigne">
+    <strong>1.</strong> Simplifier sans calculatrice :<br>
+    <strong>a)</strong> \(\log(2) + \log(5)\)<br>
+    <strong>b)</strong> \(\log(4) + \log(25)\)<br>
+    <strong>c)</strong> \(3 \times \log(10)\)<br><br>
+    <strong>2.</strong> Exprimer en fonction de \(\log(2)\) :<br>
+    <strong>a)</strong> \(\log(8)\)    <strong>b)</strong> \(\log(32)\)    <strong>c)</strong> \(\log(0{,}5)\)<br><br>
+    <strong>3.</strong> Sachant que \(\log(2) \approx 0{,}301\) et \(\log(3) \approx 0{,}477\), calculer sans calculatrice :<br>
+    <strong>a)</strong> \(\log(6)\)    <strong>b)</strong> \(\log(9)\)    <strong>c)</strong> \(\log(12)\)
+  </div>
+  <div class="reponse-box" style="min-height:100px">Réponses : ………………………………………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.a)</strong> \(\log(2) + \log(5) = \log(2 \times 5) = \log(10) =\) <span class="reponse">1</span></p>
+      <p><strong>1.b)</strong> \(\log(4) + \log(25) = \log(4 \times 25) = \log(100) =\) <span class="reponse">2</span></p>
+      <p><strong>1.c)</strong> \(3 \times \log(10) = 3 \times 1 =\) <span class="reponse">3</span></p>
+      <p><strong>2.a)</strong> \(\log(8) = \log(2^3) =\) <span class="reponse">\(3\log(2)\)</span></p>
+      <p><strong>2.b)</strong> \(\log(32) = \log(2^5) =\) <span class="reponse">\(5\log(2)\)</span></p>
+      <p><strong>2.c)</strong> \(\log(0{,}5) = \log\!\left(\dfrac{1}{2}\right) = \log(2^{-1}) =\) <span class="reponse">\(-\log(2)\)</span></p>
+      <p><strong>3.a)</strong> \(\log(6) = \log(2 \times 3) = \log(2) + \log(3) \approx 0{,}301 + 0{,}477 =\) <span class="reponse">\(0{,}778\)</span></p>
+      <p><strong>3.b)</strong> \(\log(9) = \log(3^2) = 2\log(3) \approx 2 \times 0{,}477 =\) <span class="reponse">\(0{,}954\)</span></p>
+      <p><strong>3.c)</strong> \(\log(12) = \log(4 \times 3) = 2\log(2) + \log(3) \approx 0{,}602 + 0{,}477 =\) <span class="reponse">\(1{,}079\)</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 6 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 9</span>
+    <span class="exo-title">Modéliser une croissance et une décroissance</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>Le niveau sonore \(L\) (en décibels) est lié à l'intensité sonore \(I\) par la relation :</p>
+  <p style="text-align:center;font-weight:700;font-size:1.05em">\[L = 10 \times \log\!\left(\frac{I}{I_0}\right) \quad \text{avec } I_0 = 10^{-12} \text{ W/m}^2\]</p>
+  <div class="consigne">
+    <strong>1.</strong> Un technicien chauffagiste mesure une intensité \(I = 10^{-5}\) W/m² près d'une chaudière. Calculer le niveau sonore \(L\).<br>
+    <strong>2.</strong> La réglementation impose un niveau maximal de 85 dB dans un local technique. Quelle intensité maximale cela représente-t-il ?<br>
+    <strong>3.</strong> Vérifier que doubler l'intensité sonore augmente le niveau de seulement 3 dB environ.
+  </div>
+  <div class="reponse-box" style="min-height:90px">Réponses : ………………………………………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(L = 10 \times \log\!\left(\dfrac{10^{-5}}{10^{-12}}\right) = 10 \times \log(10^7) = 10 \times 7 =\) <span class="reponse">70 dB</span></p>
+      <p><strong>2.</strong> \(85 = 10 \times \log\!\left(\dfrac{I}{10^{-12}}\right)\) → \(\log\!\left(\dfrac{I}{10^{-12}}\right) = 8{,}5\) → \(\dfrac{I}{10^{-12}} = 10^{8{,}5}\) → <span class="reponse">\(I = 10^{-3{,}5} \approx 3{,}16 \times 10^{-4}\) W/m²</span></p>
+      <p><strong>3.</strong> Si l'intensité passe de \(I\) à \(2I\) :<br>
+      \(\Delta L = 10\log\!\left(\dfrac{2I}{I_0}\right) - 10\log\!\left(\dfrac{I}{I_0}\right) = 10\log(2) \approx 10 \times 0{,}301 \approx\) <span class="reponse">3 dB</span>.<br>
+      Doubler l'intensité n'ajoute que 3 dB : l'échelle logarithmique « compresse » les grands nombres.</p>
+  </div>
+  </details>
+</div>
+
+<!-- NIVEAU 3 -->
+
+<!-- EX 7 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 10</span>
+    <span class="exo-title">Temps de doublement et demi-vie</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>On modélise l'évolution d'une grandeur par \(f(t) = V_0 \times a^t\), où \(t\) est en années.</p>
+  <div class="consigne">
+    <strong>1.</strong> Un placement financier rapporte 3 % par an. On modélise le capital par \(C(t) = 1\,000 \times 1{,}03^t\).<br>
+    <strong>a)</strong> Calculer le capital après 5 ans, puis après 10 ans.<br>
+    <strong>b)</strong> Au bout de combien d'années le capital aura-t-il doublé ? (Résoudre \(1{,}03^t = 2\))<br><br>
+    <strong>2.</strong> Un matériau radioactif a une demi-vie de 8 jours. Sa masse est modélisée par \(m(t) = 100 \times 0{,}5^{t/8}\) (en grammes, \(t\) en jours).<br>
+    <strong>a)</strong> Calculer la masse restante après 8 jours, puis après 24 jours.<br>
+    <strong>b)</strong> Au bout de combien de jours la masse sera-t-elle inférieure à 10 g ?
+  </div>
+  <div class="reponse-box" style="min-height:100px">Réponses : ………………………………………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.a)</strong> \(C(5) = 1\,000 \times 1{,}03^5 \approx 1\,000 \times 1{,}159 \approx\) <span class="reponse">1 159 €</span><br>
+      \(C(10) = 1\,000 \times 1{,}03^{10} \approx 1\,000 \times 1{,}344 \approx\) <span class="reponse">1 344 €</span></p>
+      <p><strong>1.b)</strong> \(1{,}03^t = 2\) → \(t = \dfrac{\log(2)}{\log(1{,}03)} = \dfrac{0{,}301}{0{,}01284} \approx\) <span class="reponse">\(t \approx 23{,}4\) ans</span>.<br>
+      Le capital double en environ 23 ans et demi.</p>
+      <p><strong>2.a)</strong> \(m(8) = 100 \times 0{,}5^{8/8} = 100 \times 0{,}5 =\) <span class="reponse">50 g</span> (logique : une demi-vie).<br>
+      \(m(24) = 100 \times 0{,}5^{24/8} = 100 \times 0{,}5^3 = 100 \times 0{,}125 =\) <span class="reponse">12,5 g</span></p>
+      <p><strong>2.b)</strong> \(100 \times 0{,}5^{t/8} < 10\) → \(0{,}5^{t/8} < 0{,}1\) → \(\dfrac{t}{8} > \dfrac{\log(0{,}1)}{\log(0{,}5)} = \dfrac{-1}{-0{,}301} \approx 3{,}32\)<br>
+      → \(t > 8 \times 3{,}32 \approx\) <span class="reponse">\(t > 26{,}6\) jours</span>, soit à partir du 27e jour.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 8 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 11</span>
+    <span class="exo-title">Interpréter les coefficients d'un modèle exponentiel</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>Le rendement d'une chaudière ancienne diminue au fil du temps. On modélise ce rendement par :</p>
+  <p style="text-align:center;font-weight:700;font-size:1.05em">\[R(t) = 92 \times 0{,}97^t\]</p>
+  <p>où \(R\) est le rendement (en %) et \(t\) le nombre d'années d'utilisation.</p>
+  <div class="chart-wrap"><canvas id="chartEx8" height="220"></canvas></div>
+  <p class="chart-label">Années d'utilisation / Rendement (%)</p>
+  <div class="consigne">
+    <strong>1.</strong> Quel est le rendement initial de la chaudière (à \(t = 0\)) ?<br>
+    <strong>2.</strong> Calculer le rendement après 5 ans, puis après 10 ans.<br>
+    <strong>3.</strong> Que signifie le coefficient \(0{,}97\) en termes de perte annuelle ?<br>
+    <strong>4.</strong> La chaudière est considérée obsolète quand \(R < 75\) %. Après combien d'années ?
+  </div>
+  <div class="reponse-box" style="min-height:100px">Réponses : ………………………………………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(R(0) = 92 \times 0{,}97^0 = 92 \times 1 =\) <span class="reponse">92 %</span></p>
+      <p><strong>2.</strong> \(R(5) = 92 \times 0{,}97^5 \approx 92 \times 0{,}859 \approx\) <span class="reponse">79,0 %</span><br>
+      \(R(10) = 92 \times 0{,}97^{10} \approx 92 \times 0{,}737 \approx\) <span class="reponse">67,8 %</span></p>
+      <p><strong>3.</strong> Le coefficient \(0{,}97 = 1 - 0{,}03\) signifie que <span class="reponse">le rendement perd 3 % de sa valeur chaque année</span>. C'est le facteur multiplicatif annuel.</p>
+      <p><strong>4.</strong> \(92 \times 0{,}97^t < 75\) → \(0{,}97^t < \dfrac{75}{92} \approx 0{,}8152\)<br>
+      → \(t > \dfrac{\log(0{,}8152)}{\log(0{,}97)} = \dfrac{-0{,}0888}{-0{,}01323} \approx\) <span class="reponse">\(t \approx 6{,}7\) ans</span>.<br>
+      La chaudière sera obsolète au bout d'environ 7 ans.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 9 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 12</span>
+    <span class="exo-title">Comparer deux modèles : linéaire vs exponentiel</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>Un menuisier compare deux hypothèses pour l'évolution du prix d'un type de bois :</p>
+  <ul>
+    <li><strong>Modèle A (linéaire) :</strong> \(P_A(t) = 50 + 3t\) (prix en €/m³, \(t\) en années)</li>
+    <li><strong>Modèle B (exponentiel) :</strong> \(P_B(t) = 50 \times 1{,}04^t\)</li>
+  </ul>
+  <div class="consigne">
+    <strong>1.</strong> Compléter le tableau comparatif :<br>
+  </div>
+  <table>
+    <tr><th>\(t\) (années)</th><td>0</td><td>5</td><td>10</td><td>15</td><td>20</td></tr>
+    <tr><th>\(P_A(t)\) (€)</th><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><th>\(P_B(t)\) (€)</th><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <div class="consigne">
+    <strong>2.</strong> À partir de quelle année le modèle exponentiel dépasse-t-il le modèle linéaire ?<br>
+    <strong>3.</strong> Observer les courbes ci-dessous. Lequel des deux modèles semble le plus réaliste à long terme ?
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx9" height="240"></canvas></div>
+  <p class="chart-label">Années / Prix (€/m³) — Modèle A (linéaire) et Modèle B (exponentiel)</p>
+  <div class="reponse-box" style="min-height:80px">Réponses : ………………………………………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <table>
+        <tr><th>\(t\)</th><td>0</td><td>5</td><td>10</td><td>15</td><td>20</td></tr>
+        <tr><th>\(P_A(t)\)</th><td><span class="reponse">50</span></td><td><span class="reponse">65</span></td><td><span class="reponse">80</span></td><td><span class="reponse">95</span></td><td><span class="reponse">110</span></td></tr>
+        <tr><th>\(P_B(t)\)</th><td><span class="reponse">50</span></td><td><span class="reponse">60,8</span></td><td><span class="reponse">74,0</span></td><td><span class="reponse">90,0</span></td><td><span class="reponse">109,6</span></td></tr>
+      </table>
+      <p><strong>2.</strong> Jusqu'à \(t = 20\), les deux modèles donnent des résultats proches. Le modèle B dépasse le modèle A <span class="reponse">aux alentours de \(t = 20\) ans</span>. Au-delà, l'exponentielle croît de plus en plus vite.</p>
+      <p><strong>3.</strong> <span class="reponse">Le modèle exponentiel est souvent plus réaliste</span> pour les prix à long terme car une augmentation de 4 % par an est un pourcentage fixe (comme l'inflation), tandis que le modèle linéaire suppose une augmentation constante en euros.</p>
+  </div>
+  </details>
+</div>
+
+</div><!-- fin diff-standard -->
+
+<!-- ========== APPROFONDISSEMENT ========== -->
+<div class="diff-appro">
+
+<!-- NIVEAU 4 -->
+
+<!-- EX 10 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 13</span>
+    <span class="exo-title">Refroidissement d'un circuit de chauffage</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un technicien chauffagiste effectue la maintenance d'un circuit de chauffage central. Après l'arrêt de la chaudière, la température de l'eau dans le circuit diminue selon un modèle exponentiel.
+  </div>
+  <p>La température \(T\) (en °C) de l'eau dans le circuit est modélisée par :</p>
+  <p style="text-align:center;font-weight:700;font-size:1.05em">\[T(t) = 70 \times 0{,}85^t + 18\]</p>
+  <p>où \(t\) est le temps écoulé (en heures) après l'arrêt de la chaudière. Le terme \(+18\) correspond à la température ambiante du local.</p>
+  <div class="consigne">
+    <strong>1.</strong> Calculer la température de l'eau au moment de l'arrêt (\(t = 0\)).<br>
+    <strong>2.</strong> Compléter le tableau de valeurs (arrondir au dixième) :<br>
+  </div>
+  <table>
+    <tr><th>\(t\) (h)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>5</td><td>8</td><td>12</td></tr>
+    <tr><th>\(T(t)\) (°C)</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <div class="consigne">
+    <strong>3.</strong> Tracer la courbe sur le graphique ci-dessous. Que constate-t-on ?<br>
+    <strong>4.</strong> Le technicien ne peut intervenir que lorsque l'eau est en dessous de 35 °C. Au bout de combien de temps peut-il intervenir ?<br>
+    <strong>5.</strong> Vers quelle température la courbe se stabilise-t-elle ? Interpréter.
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx10" height="240"></canvas></div>
+  <p class="chart-label">Temps (h) / Température (°C) — Refroidissement du circuit</p>
+  <div class="reponse-box" style="min-height:120px">Réponses : ……………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(T(0) = 70 \times 0{,}85^0 + 18 = 70 + 18 =\) <span class="reponse">88 °C</span></p>
+      <p><strong>2.</strong></p>
+      <table>
+        <tr><th>\(t\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>5</td><td>8</td><td>12</td></tr>
+        <tr><th>\(T(t)\)</th><td><span class="reponse">88,0</span></td><td><span class="reponse">77,5</span></td><td><span class="reponse">68,6</span></td><td><span class="reponse">61,0</span></td><td><span class="reponse">49,1</span></td><td><span class="reponse">35,8</span></td><td><span class="reponse">25,3</span></td></tr>
+      </table>
+      <p><strong>3.</strong> La courbe décroît de plus en plus lentement et tend vers la température ambiante.</p>
+      <p><strong>4.</strong> \(T(t) < 35\) → \(70 \times 0{,}85^t + 18 < 35\) → \(0{,}85^t < \dfrac{17}{70} \approx 0{,}2429\)<br>
+      → \(t > \dfrac{\log(0{,}2429)}{\log(0{,}85)} = \dfrac{-0{,}6146}{-0{,}07058} \approx 8{,}7\)<br>
+      <span class="reponse">Le technicien peut intervenir après environ 8 h 45 min.</span></p>
+      <p><strong>5.</strong> La courbe se stabilise vers <span class="reponse">18 °C</span>, la température ambiante. Quand \(t\) est très grand, \(0{,}85^t \to 0\) donc \(T(t) \to 18\). C'est l'asymptote horizontale du modèle.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 11 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 14</span>
+    <span class="exo-title">Séchage du bois en atelier</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un menuisier agenceur prépare des planches de chêne pour un agencement intérieur. Le taux d'humidité du bois diminue de façon exponentielle dans le séchoir de l'atelier.
+  </div>
+  <p>Le taux d'humidité \(H\) (en %) est modélisé par :</p>
+  <p style="text-align:center;font-weight:700;font-size:1.05em">\[H(t) = 45 \times \text{e}^{-0{,}12\,t}\]</p>
+  <p>où \(t\) est le temps en jours et \(\text{e} \approx 2{,}718\).</p>
+  <div class="consigne">
+    <strong>1.</strong> Quel est le taux d'humidité initial du bois ?<br>
+    <strong>2.</strong> Calculer le taux d'humidité après 5 jours, 10 jours et 20 jours.<br>
+    <strong>3.</strong> Le bois est considéré prêt pour l'agencement lorsque \(H < 12\) %. Après combien de jours ?<br>
+    <strong>4.</strong> On souhaite que le bois atteigne 8 % d'humidité. Combien de jours supplémentaires faut-il après avoir atteint 12 % ?<br>
+    <strong>5.</strong> Commenter la forme de la courbe : pourquoi le séchage ralentit-il avec le temps ?
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx11" height="240"></canvas></div>
+  <p class="chart-label">Temps (jours) / Taux d'humidité H (%)</p>
+  <div class="reponse-box" style="min-height:120px">Réponses : ……………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(H(0) = 45 \times \text{e}^{0} = 45 \times 1 =\) <span class="reponse">45 %</span></p>
+      <p><strong>2.</strong><br>
+      \(H(5) = 45 \times \text{e}^{-0{,}6} \approx 45 \times 0{,}549 \approx\) <span class="reponse">24,7 %</span><br>
+      \(H(10) = 45 \times \text{e}^{-1{,}2} \approx 45 \times 0{,}301 \approx\) <span class="reponse">13,5 %</span><br>
+      \(H(20) = 45 \times \text{e}^{-2{,}4} \approx 45 \times 0{,}0907 \approx\) <span class="reponse">4,1 %</span></p>
+      <p><strong>3.</strong> \(45 \times \text{e}^{-0{,}12t} < 12\) → \(\text{e}^{-0{,}12t} < \dfrac{12}{45} \approx 0{,}2667\)<br>
+      → \(-0{,}12t < \ln(0{,}2667) \approx -1{,}322\) → \(t > \dfrac{1{,}322}{0{,}12} \approx\) <span class="reponse">\(t \approx 11{,}0\) jours</span></p>
+      <p><strong>4.</strong> \(45 \times \text{e}^{-0{,}12t} < 8\) → \(\text{e}^{-0{,}12t} < \dfrac{8}{45} \approx 0{,}1778\)<br>
+      → \(t > \dfrac{-\ln(0{,}1778)}{0{,}12} = \dfrac{1{,}727}{0{,}12} \approx\) <span class="reponse">\(t \approx 14{,}4\) jours</span>.<br>
+      Jours supplémentaires après 11 jours : environ <span class="reponse">3,4 jours</span>.</p>
+      <p><strong>5.</strong> <span class="reponse">Le séchage ralentit car l'écart d'humidité entre le bois et l'air ambiant diminue.</span> Plus le bois est sec, plus il est difficile d'en extraire l'eau restante : c'est caractéristique d'une décroissance exponentielle.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 12 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 15</span>
+    <span class="exo-title">Dépréciation d'un équipement professionnel</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un atelier de menuiserie et un bureau d'études en génie climatique achètent chacun un équipement neuf. La valeur de revente de ces équipements diminue chaque année selon un modèle exponentiel.
+  </div>
+  <p>Les deux équipements sont modélisés par :</p>
+  <ul>
+    <li><strong>Scie à panneaux (menuiserie) :</strong> \(V_S(t) = 12\,000 \times 0{,}85^t\) (en €)</li>
+    <li><strong>Caméra thermique (génie climatique) :</strong> \(V_C(t) = 8\,000 \times 0{,}80^t\) (en €)</li>
+  </ul>
+  <div class="consigne">
+    <strong>1.</strong> Quel est le prix d'achat de chaque équipement ?<br>
+    <strong>2.</strong> Compléter le tableau de dépréciation :<br>
+  </div>
+  <table>
+    <tr><th>\(t\) (années)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>5</td><td>8</td></tr>
+    <tr><th>\(V_S(t)\) (€)</th><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><th>\(V_C(t)\) (€)</th><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <div class="consigne">
+    <strong>3.</strong> Quel est le taux de dépréciation annuel de chaque équipement ?<br>
+    <strong>4.</strong> Au bout de combien d'années la scie à panneaux vaudra-t-elle moins de 3 000 € ?<br>
+    <strong>5.</strong> Au bout de combien d'années la caméra thermique vaudra-t-elle moins de 1 000 € ?<br>
+    <strong>6.</strong> Observer les courbes. Les deux équipements auront-ils un jour la même valeur de revente ? Estimer graphiquement quand.
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx12" height="260"></canvas></div>
+  <p class="chart-label">Années / Valeur de revente (€) — Scie à panneaux et Caméra thermique</p>
+  <div class="reponse-box" style="min-height:120px">Réponses : ……………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
       <p><strong>1.</strong> Prix d'achat : <span class="reponse">Scie = 12 000 €</span>, <span class="reponse">Caméra = 8 000 €</span> (valeur à \(t = 0\)).</p>
       <p><strong>2.</strong></p>
       <table>
@@ -76,12 +609,18 @@
       <p><strong>5.</strong> \(8\,000 \times 0{,}80^t < 1\,000\) → \(0{,}80^t < 0{,}125\)<br>
       → \(t > \dfrac{\log(0{,}125)}{\log(0{,}80)} = \dfrac{-0{,}903}{-0{,}0969} \approx\) <span class="reponse">\(t \approx 9{,}3\) ans</span>.</p>
       <p><strong>6.</strong> Les deux courbes se croisent vers <span class="reponse">\(t \approx 7\) ans</span>. À ce moment, les deux équipements ont approximativement la même valeur (environ 4 000 €). Avant ce point, la scie vaut plus ; après, la caméra vaut plus (car elle se déprécie plus vite, elle part de plus bas mais la scie la « rattrape »).</p>
-    </div>
+  </div>
+  </details>
 </div>
+
+</div><!-- fin diff-appro -->
+
 <div class="nav-footer">
   <a href="lecon.html">📖 Cours Ch05</a>
   <a href="ds.html">📝 Devoir Ch05</a>
   <a href="../../../maths-term-iccer.html">📚 Sommaire</a>
+</div>
+
 </div>
 
 <script>
@@ -112,15 +651,9 @@ new Chart(document.getElementById('chartEx11'),{type:'scatter',data:{datasets:[{
 // Ex 12 — Dépréciation scie vs caméra
 new Chart(document.getElementById('chartEx12'),{type:'scatter',data:{datasets:[{type:'line',label:'Scie : V = 12 000 × 0,85^t',data:expData(12000,0.85,0,0,12,50),borderColor:ORANGE,borderWidth:2.5,pointRadius:0,backgroundColor:'transparent'},{type:'line',label:'Caméra : V = 8 000 × 0,80^t',data:expData(8000,0.80,0,0,12,50),borderColor:BLEU,borderWidth:2.5,pointRadius:0,backgroundColor:'transparent'},{type:'line',label:'Seuil 3 000 €',data:[{x:0,y:3000},{x:12,y:3000}],borderColor:'rgba(100,100,100,0.35)',borderWidth:1.5,pointRadius:0,backgroundColor:'transparent',borderDash:[3,3]}]},options:linOpts('Années','Valeur (€)')});
 </script>
-</div>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
-<script>
-function toggle(btn){
-  var c=btn.nextElementSibling;
-  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
-  else{c.style.display='block';btn.textContent='Masquer la correction';}
-}
-</script>
+
+<script>function toggle(b){const c=b.nextElementSibling;c.style.display=c.style.display==='block'?'none':'block';b.textContent=c.style.display==='block'?'Masquer la correction':'Voir la correction';}</script>
 </body>
 </html>

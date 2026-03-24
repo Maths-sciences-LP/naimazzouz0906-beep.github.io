@@ -37,9 +37,6 @@
 <!-- NIVEAU 1 -->
 
 <!-- EX 1 -->
-
-<h2>Exercices guidés pas à pas</h2>
-
 <div class="exo diff-socle">
   <div class="exo-header">
     <span class="exo-num">Exercice 1</span>
@@ -62,6 +59,506 @@
 
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
+      <p><strong>a)</strong> La primitive d'une constante \(k\) est \(kx\). Donc <span class="reponse">\(F(x) = 3x\)</span>.</p>
+      <p><strong>b)</strong> La primitive de \(x^n\) est \(\dfrac{x^{n+1}}{n+1}\). Ici \(n = 2\) : <span class="reponse">\(F(x) = \dfrac{x^3}{3}\)</span>.</p>
+      <p><strong>c)</strong> Primitive de \(x^3\) : \(\dfrac{x^4}{4}\). Donc primitive de \(4x^3\) : \(4 \times \dfrac{x^4}{4}\) = <span class="reponse">\(F(x) = x^4\)</span>.</p>
+      <p><strong>d)</strong> Par linéarité : primitive de \(5x\) → \(\dfrac{5x^2}{2}\), primitive de \(2\) → \(2x\). Donc <span class="reponse">\(F(x) = \dfrac{5x^2}{2} + 2x\)</span>.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 2 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Calculer des intégrales simples</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>Calculer les intégrales suivantes à l'aide de la formule \(\displaystyle\int_a^b f(x)\,dx = \bigl[F(x)\bigr]_a^b = F(b) - F(a)\) :</p>
+
+  <div class="consigne"><strong>a)</strong> \(\displaystyle\int_1^4 2x\,dx\)</div>
+  <div class="reponse-box">………………………………</div>
+
+  <div class="consigne"><strong>b)</strong> \(\displaystyle\int_0^3 x^2\,dx\)</div>
+  <div class="reponse-box">………………………………</div>
+
+  <div class="consigne"><strong>c)</strong> \(\displaystyle\int_2^5 6\,dx\)</div>
+  <div class="reponse-box">………………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> Primitive de \(2x\) : \(F(x) = x^2\).<br>
+      \(\displaystyle\int_1^4 2x\,dx = \bigl[x^2\bigr]_1^4 = 4^2 - 1^2 = 16 - 1 =\) <span class="reponse">\(15\)</span></p>
+      <p><strong>b)</strong> Primitive de \(x^2\) : \(F(x) = \dfrac{x^3}{3}\).<br>
+      \(\displaystyle\int_0^3 x^2\,dx = \left[\dfrac{x^3}{3}\right]_0^3 = \dfrac{27}{3} - \dfrac{0}{3} =\) <span class="reponse">\(9\)</span></p>
+      <p><strong>c)</strong> Primitive de \(6\) : \(F(x) = 6x\).<br>
+      \(\displaystyle\int_2^5 6\,dx = \bigl[6x\bigr]_2^5 = 30 - 12 =\) <span class="reponse">\(18\)</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 3 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">Primitives et notation \([F(x)]_a^b\)</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>Compléter le tableau suivant :</p>
+  <table>
+    <tr><th>\(f(x)\)</th><th>Primitive \(F(x)\)</th><th>Bornes</th><th>\(\displaystyle\int_a^b f(x)\,dx\)</th></tr>
+    <tr><td>\(3x^2\)</td><td>…………</td><td>\(a = 0\), \(b = 2\)</td><td>…………</td></tr>
+    <tr><td>\(4x + 1\)</td><td>…………</td><td>\(a = 1\), \(b = 3\)</td><td>…………</td></tr>
+    <tr><td>\(x^3\)</td><td>…………</td><td>\(a = 0\), \(b = 1\)</td><td>…………</td></tr>
+  </table>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <table>
+        <tr><th>\(f(x)\)</th><th>Primitive \(F(x)\)</th><th>Bornes</th><th>Calcul</th><th>Résultat</th></tr>
+        <tr><td>\(3x^2\)</td><td><span class="reponse">\(x^3\)</span></td><td>\([0\,;2]\)</td><td>\(2^3 - 0^3\)</td><td><span class="reponse">\(8\)</span></td></tr>
+        <tr><td>\(4x + 1\)</td><td><span class="reponse">\(2x^2 + x\)</span></td><td>\([1\,;3]\)</td><td>\((18 + 3) - (2 + 1)\)</td><td><span class="reponse">\(18\)</span></td></tr>
+        <tr><td>\(x^3\)</td><td><span class="reponse">\(\dfrac{x^4}{4}\)</span></td><td>\([0\,;1]\)</td><td>\(\dfrac{1}{4} - 0\)</td><td><span class="reponse">\(0{,}25\)</span></td></tr>
+      </table>
+  </div>
+  </details>
+</div>
+
+<!-- ================================================================
+     SOCLE — EXERCICES TRÈS GUIDÉS
+     ================================================================ -->
+<div class="diff-socle">
+
+<!-- SOCLE S1 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Calculer des primitives — méthode guidée</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+
+  <div class="meth">
+    <strong>Méthode :</strong> pour trouver une primitive, on utilise le tableau des primitives usuelles.<br>
+    <table>
+      <tr><th>\(f(x)\)</th><th>Primitive \(F(x)\)</th></tr>
+      <tr><td>\(k\) (constante)</td><td>\(kx\)</td></tr>
+      <tr><td>\(x\)</td><td>\(\dfrac{x^2}{2}\)</td></tr>
+      <tr><td>\(x^2\)</td><td>\(\dfrac{x^3}{3}\)</td></tr>
+      <tr><td>\(x^3\)</td><td>\(\dfrac{x^4}{4}\)</td></tr>
+      <tr><td>\(x^n\)</td><td>\(\dfrac{x^{n+1}}{n+1}\)</td></tr>
+    </table>
+    <strong>Règle :</strong> la primitive de \(k \times f(x)\) est \(k \times F(x)\).
+  </div>
+
+  <p>Compléter les primitives suivantes à l'aide du tableau ci-dessus :</p>
+
+  <div class="consigne"><strong>a)</strong> \(f(x) = 5\)</div>
+  <p style="font-size:.93em">
+    La primitive d'une constante \(k\) est \(kx\). Ici \(k = 5\), donc :<br>
+    \(F(x) = 5 \times \boxed{\phantom{x}} = \boxed{\phantom{5x}}\)
+  </p>
+
+  <div class="consigne"><strong>b)</strong> \(f(x) = x^2\)</div>
+  <p style="font-size:.93em">
+    On utilise la formule : primitive de \(x^n\) → \(\dfrac{x^{n+1}}{n+1}\). Ici \(n = \boxed{\phantom{2}}\), donc :<br>
+    \(F(x) = \dfrac{x^{\boxed{\phantom{3}}}}{{\boxed{\phantom{3}}}} = \boxed{\phantom{\dfrac{x^3}{3}}}\)
+  </p>
+
+  <div class="consigne"><strong>c)</strong> \(f(x) = 6x\)</div>
+  <p style="font-size:.93em">
+    On sait que la primitive de \(x\) est \(\dfrac{x^2}{2}\). Avec le coefficient 6 :<br>
+    \(F(x) = 6 \times \dfrac{x^{\boxed{\phantom{2}}}}{{\boxed{\phantom{2}}}} = \boxed{\phantom{3x^2}}\)
+  </p>
+
+  <div class="consigne"><strong>d)</strong> \(f(x) = 3x^2 + 2x - 1\)</div>
+  <p style="font-size:.93em">
+    On fait la primitive de chaque terme séparément :<br>
+    Primitive de \(3x^2\) → \(3 \times \dfrac{x^3}{3} = \boxed{\phantom{x^3}}\)<br>
+    Primitive de \(2x\) → \(2 \times \dfrac{x^2}{2} = \boxed{\phantom{x^2}}\)<br>
+    Primitive de \(-1\) → \(\boxed{\phantom{-x}}\)<br>
+    Donc \(F(x) = \boxed{\phantom{x^3 + x^2 - x}}\)
+  </p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> <span class="reponse">\(F(x) = 5x\)</span></p>
+      <p><strong>b)</strong> \(n = 2\), donc \(F(x) = \dfrac{x^3}{3}\). <span class="reponse">\(F(x) = \dfrac{x^3}{3}\)</span></p>
+      <p><strong>c)</strong> \(F(x) = 6 \times \dfrac{x^2}{2} =\) <span class="reponse">\(F(x) = 3x^2\)</span></p>
+      <p><strong>d)</strong> Terme par terme : \(x^3 + x^2 + (-x)\). <span class="reponse">\(F(x) = x^3 + x^2 - x\)</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- SOCLE S2 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Calculer une intégrale définie — pas à pas</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+
+  <div class="meth">
+    <strong>Méthode pour calculer \(\displaystyle\int_a^b f(x)\,dx\) :</strong><br>
+    <strong>Étape 1 :</strong> Trouver une primitive \(F(x)\) de \(f(x)\).<br>
+    <strong>Étape 2 :</strong> Calculer \(F(b)\) (remplacer \(x\) par \(b\)).<br>
+    <strong>Étape 3 :</strong> Calculer \(F(a)\) (remplacer \(x\) par \(a\)).<br>
+    <strong>Étape 4 :</strong> Faire la soustraction \(F(b) - F(a)\).
+  </div>
+
+  <div class="consigne"><strong>a)</strong> Calculer \(\displaystyle\int_1^3 4x\,dx\)</div>
+  <p style="font-size:.93em">
+    <strong>Étape 1 :</strong> Primitive de \(4x\) → \(F(x) = 4 \times \dfrac{x^2}{2} = \boxed{\phantom{2x^2}}\)<br>
+    <strong>Étape 2 :</strong> \(F(3) = 2 \times \boxed{\phantom{3}}^2 = 2 \times \boxed{\phantom{9}} = \boxed{\phantom{18}}\)<br>
+    <strong>Étape 3 :</strong> \(F(1) = 2 \times 1^2 = \boxed{\phantom{2}}\)<br>
+    <strong>Étape 4 :</strong> \(\displaystyle\int_1^3 4x\,dx = F(3) - F(1) = \boxed{\phantom{18}} - \boxed{\phantom{2}} = \boxed{\phantom{16}}\)
+  </p>
+
+  <div class="consigne"><strong>b)</strong> Calculer \(\displaystyle\int_0^2 3x^2\,dx\)</div>
+  <p style="font-size:.93em">
+    <strong>Étape 1 :</strong> Primitive de \(3x^2\) → \(F(x) = 3 \times \dfrac{x^3}{3} = \boxed{\phantom{x^3}}\)<br>
+    <strong>Étape 2 :</strong> \(F(2) = \boxed{\phantom{2}}^3 = \boxed{\phantom{8}}\)<br>
+    <strong>Étape 3 :</strong> \(F(0) = 0^3 = \boxed{\phantom{0}}\)<br>
+    <strong>Étape 4 :</strong> \(\displaystyle\int_0^2 3x^2\,dx = \boxed{\phantom{8}} - \boxed{\phantom{0}} = \boxed{\phantom{8}}\)
+  </p>
+
+  <div class="consigne"><strong>c)</strong> Calculer \(\displaystyle\int_1^4 (2x + 3)\,dx\)</div>
+  <p style="font-size:.93em">
+    <strong>Étape 1 :</strong> Primitive de \(2x\) → \(x^2\). Primitive de \(3\) → \(3x\). Donc \(F(x) = \boxed{\phantom{x^2 + 3x}}\)<br>
+    <strong>Étape 2 :</strong> \(F(4) = 4^2 + 3 \times 4 = \boxed{\phantom{16}} + \boxed{\phantom{12}} = \boxed{\phantom{28}}\)<br>
+    <strong>Étape 3 :</strong> \(F(1) = 1^2 + 3 \times 1 = \boxed{\phantom{4}}\)<br>
+    <strong>Étape 4 :</strong> \(\displaystyle\int_1^4 (2x + 3)\,dx = \boxed{\phantom{28}} - \boxed{\phantom{4}} = \boxed{\phantom{24}}\)
+  </p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> \(F(x) = 2x^2\). \(\displaystyle\int_1^3 4x\,dx = [2x^2]_1^3 = 18 - 2 =\) <span class="reponse">\(16\)</span></p>
+      <p><strong>b)</strong> \(F(x) = x^3\). \(\displaystyle\int_0^2 3x^2\,dx = [x^3]_0^2 = 8 - 0 =\) <span class="reponse">\(8\)</span></p>
+      <p><strong>c)</strong> \(F(x) = x^2 + 3x\). \(\displaystyle\int_1^4 (2x + 3)\,dx = [x^2 + 3x]_1^4 = 28 - 4 =\) <span class="reponse">\(24\)</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- SOCLE S3 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">Interpréter une intégrale comme une aire — lecture guidée</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+
+  <div class="meth">
+    <strong>Règle :</strong> si \(f(x) \geq 0\) sur \([a\,;b]\), alors l'aire sous la courbe est égale à l'intégrale :<br>
+    \(\mathcal{A} = \displaystyle\int_a^b f(x)\,dx\) (en unités d'aire)
+  </div>
+
+  <div class="situation">
+    <strong>Contexte :</strong> Un menuisier agenceur découpe un panneau décoratif dont le bord supérieur suit la courbe \(f(x) = -x^2 + 4\) (en cm), pour \(x\) allant de \(0\) à \(2\). Le bord inférieur est au niveau \(y = 0\).
+  </div>
+
+  <div class="consigne"><strong>1.</strong> La fonction \(f\) est-elle positive sur \([0\,;2]\) ?</div>
+  <p style="font-size:.93em">
+    Calculer : \(f(0) = -0^2 + 4 = \boxed{\phantom{4}}\) et \(f(2) = -2^2 + 4 = \boxed{\phantom{0}}\).<br>
+    Pour \(x \in [0\,;2]\), \(x^2 \leq 4\) donc \(-x^2 + 4 \geq 0\). Réponse : \(f\) est ☐ positive ☐ négative sur \([0\,;2]\).
+  </p>
+
+  <div class="consigne"><strong>2.</strong> Trouver une primitive \(F(x)\) de \(f(x) = -x^2 + 4\).</div>
+  <p style="font-size:.93em">
+    Primitive de \(-x^2\) → \(-\dfrac{x^3}{3}\). Primitive de \(4\) → \(4x\).<br>
+    Donc \(F(x) = \boxed{\phantom{-\dfrac{x^3}{3} + 4x}}\)
+  </p>
+
+  <div class="consigne"><strong>3.</strong> Calculer \(\displaystyle\int_0^2 (-x^2 + 4)\,dx\).</div>
+  <p style="font-size:.93em">
+    \(F(2) = -\dfrac{\boxed{\phantom{8}}}{3} + 4 \times \boxed{\phantom{2}} = -\dfrac{8}{3} + \boxed{\phantom{8}} = \dfrac{-8 + 24}{3} = \boxed{\phantom{\dfrac{16}{3}}}\)<br>
+    \(F(0) = \boxed{\phantom{0}}\)<br>
+    \(\displaystyle\int_0^2 (-x^2 + 4)\,dx = \boxed{\phantom{\dfrac{16}{3}}} - 0 = \boxed{\phantom{\dfrac{16}{3}}}\)
+  </p>
+
+  <div class="consigne"><strong>4.</strong> En déduire l'aire du panneau en cm².</div>
+  <p style="font-size:.93em">
+    Comme \(f \geq 0\) sur \([0\,;2]\), l'aire est : \(\mathcal{A} = \displaystyle\int_0^2 f(x)\,dx = \boxed{\phantom{\dfrac{16}{3} \approx 5{,}33}}\) cm²
+  </p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(f(0) = 4 > 0\) et \(f(2) = 0\). Pour tout \(x \in [0\,;2]\), \(x^2 \leq 4\) donc \(f(x) \geq 0\). <span class="reponse">\(f\) est positive</span> sur \([0\,;2]\).</p>
+      <p><strong>2.</strong> <span class="reponse">\(F(x) = -\dfrac{x^3}{3} + 4x\)</span></p>
+      <p><strong>3.</strong> \(F(2) = -\dfrac{8}{3} + 8 = \dfrac{16}{3}\), \(F(0) = 0\).<br>
+      \(\displaystyle\int_0^2 (-x^2 + 4)\,dx = \dfrac{16}{3} - 0 =\) <span class="reponse">\(\dfrac{16}{3}\)</span></p>
+      <p><strong>4.</strong> \(\mathcal{A} = \dfrac{16}{3} \approx\) <span class="reponse">\(5{,}33\) cm²</span>. Le panneau a une surface d'environ 5,33 cm².</p>
+  </div>
+  </details>
+</div>
+
+</div><!-- fin diff-socle -->
+
+<!-- ================================================================
+     STANDARD — EXERCICES DU PROGRAMME (Niveaux 2 et 3)
+     ================================================================ -->
+<div class="diff-standard">
+
+<!-- NIVEAU 2 -->
+
+<!-- EX 4 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 7</span>
+    <span class="exo-title">Aire sous une courbe (fonction positive)</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>On considère la fonction \(f(x) = x^2\) sur l'intervalle \([0\,;3]\).</p>
+  <div class="chart-wrap"><canvas id="chartEx4" height="220"></canvas></div>
+  <p class="chart-label">Aire sous la courbe \(f(x) = x^2\) entre \(x = 0\) et \(x = 3\)</p>
+  <div class="consigne">
+    <strong>1.</strong> La fonction \(f\) est-elle positive sur \([0\,;3]\) ?<br>
+    <strong>2.</strong> Donner une primitive \(F(x)\) de \(f(x) = x^2\).<br>
+    <strong>3.</strong> Calculer \(\displaystyle\int_0^3 x^2\,dx\).<br>
+    <strong>4.</strong> En déduire l'aire, en unités d'aire, de la surface comprise entre la courbe, l'axe des abscisses et les droites \(x = 0\) et \(x = 3\).
+  </div>
+  <div class="reponse-box" style="min-height:90px">Réponses : ………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> <span class="reponse">Oui</span>, \(x^2 \geq 0\) pour tout \(x\), donc \(f\) est positive sur \([0\,;3]\).</p>
+      <p><strong>2.</strong> <span class="reponse">\(F(x) = \dfrac{x^3}{3}\)</span></p>
+      <p><strong>3.</strong> \(\displaystyle\int_0^3 x^2\,dx = \left[\dfrac{x^3}{3}\right]_0^3 = \dfrac{27}{3} - 0 =\) <span class="reponse">\(9\)</span></p>
+      <p><strong>4.</strong> Comme \(f\) est positive, l'aire est égale à l'intégrale : <span class="reponse">\(\mathcal{A} = 9\) u.a.</span> (unités d'aire).</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 5 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 8</span>
+    <span class="exo-title">Linéarité de l'intégrale</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>On donne : \(\displaystyle\int_0^2 f(x)\,dx = 5\) et \(\displaystyle\int_0^2 g(x)\,dx = 3\).</p>
+  <div class="consigne">
+    Sans calculer les primitives, déterminer :<br>
+    <strong>a)</strong> \(\displaystyle\int_0^2 3f(x)\,dx\)<br>
+    <strong>b)</strong> \(\displaystyle\int_0^2 \bigl[f(x) + g(x)\bigr]\,dx\)<br>
+    <strong>c)</strong> \(\displaystyle\int_0^2 \bigl[2f(x) - 4g(x)\bigr]\,dx\)
+  </div>
+  <div class="reponse-box" style="min-height:80px">Réponses : ………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p>Par <strong>linéarité de l'intégrale</strong> : \(\displaystyle\int_a^b \bigl[\alpha f + \beta g\bigr] = \alpha\int_a^b f + \beta\int_a^b g\).</p>
+      <p><strong>a)</strong> \(\displaystyle\int_0^2 3f(x)\,dx = 3 \times 5 =\) <span class="reponse">\(15\)</span></p>
+      <p><strong>b)</strong> \(\displaystyle\int_0^2 \bigl[f(x) + g(x)\bigr]\,dx = 5 + 3 =\) <span class="reponse">\(8\)</span></p>
+      <p><strong>c)</strong> \(\displaystyle\int_0^2 \bigl[2f(x) - 4g(x)\bigr]\,dx = 2 \times 5 - 4 \times 3 = 10 - 12 =\) <span class="reponse">\(-2\)</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 6 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 9</span>
+    <span class="exo-title">Relation de Chasles</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>On donne : \(\displaystyle\int_0^3 f(x)\,dx = 7\) et \(\displaystyle\int_0^5 f(x)\,dx = 12\).</p>
+  <div class="consigne">
+    <strong>1.</strong> Rappeler la relation de Chasles pour les intégrales.<br>
+    <strong>2.</strong> En déduire \(\displaystyle\int_3^5 f(x)\,dx\).<br>
+    <strong>3.</strong> On sait aussi que \(\displaystyle\int_5^8 f(x)\,dx = 4\). Calculer \(\displaystyle\int_0^8 f(x)\,dx\).
+  </div>
+  <div class="reponse-box" style="min-height:80px">Réponses : ………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> Relation de Chasles : pour \(a \leq c \leq b\),<br>
+      <span class="reponse">\(\displaystyle\int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx\)</span></p>
+      <p><strong>2.</strong> \(\displaystyle\int_0^5 f(x)\,dx = \int_0^3 f(x)\,dx + \int_3^5 f(x)\,dx\)<br>
+      Donc \(\displaystyle\int_3^5 f(x)\,dx = 12 - 7 =\) <span class="reponse">\(5\)</span></p>
+      <p><strong>3.</strong> \(\displaystyle\int_0^8 f(x)\,dx = \int_0^5 f(x)\,dx + \int_5^8 f(x)\,dx = 12 + 4 =\) <span class="reponse">\(16\)</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- NIVEAU 3 -->
+
+<!-- EX 7 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 10</span>
+    <span class="exo-title">Aire entre deux courbes</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>On considère \(f(x) = x^2 + 1\) et \(g(x) = 2x + 1\) sur l'intervalle \([0\,;2]\).</p>
+  <div class="chart-wrap"><canvas id="chartEx7" height="240"></canvas></div>
+  <p class="chart-label">Aire entre \(f(x) = x^2 + 1\) et \(g(x) = 2x + 1\) sur \([0\,;2]\)</p>
+  <div class="consigne">
+    <strong>1.</strong> Calculer \(f(0)\), \(f(2)\), \(g(0)\) et \(g(2)\).<br>
+    <strong>2.</strong> Pour \(x \in [0\,;2]\), quelle courbe est au-dessus ? Justifier en calculant \(f(x) - g(x)\).<br>
+    <strong>3.</strong> Calculer l'aire entre les deux courbes : \(\displaystyle\mathcal{A} = \int_0^2 \bigl|f(x) - g(x)\bigr|\,dx\).
+  </div>
+  <div class="reponse-box" style="min-height:100px">Réponses : ………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(f(0) = 1\), \(f(2) = 5\), \(g(0) = 1\), \(g(2) = 5\).</p>
+      <p><strong>2.</strong> \(f(x) - g(x) = x^2 + 1 - 2x - 1 = x^2 - 2x = x(x-2)\).<br>
+      Sur \(]0\,;2[\), \(x > 0\) et \(x - 2 < 0\) donc \(f(x) - g(x) < 0\) : <span class="reponse">\(g\) est au-dessus de \(f\)</span>.</p>
+      <p><strong>3.</strong> \(\mathcal{A} = \displaystyle\int_0^2 \bigl[g(x) - f(x)\bigr]\,dx = \int_0^2 (2x - x^2)\,dx\)<br>
+      Primitive : \(F(x) = x^2 - \dfrac{x^3}{3}\)<br>
+      \(\mathcal{A} = \left[x^2 - \dfrac{x^3}{3}\right]_0^2 = \left(4 - \dfrac{8}{3}\right) - 0 = \dfrac{12 - 8}{3} = \dfrac{4}{3}\)<br>
+      <span class="reponse">\(\mathcal{A} = \dfrac{4}{3} \approx 1{,}33\) u.a.</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 8 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 11</span>
+    <span class="exo-title">Aire avec changement de signe</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>On considère \(f(x) = x^2 - 4\) sur l'intervalle \([0\,;3]\).</p>
+  <div class="chart-wrap"><canvas id="chartEx8" height="240"></canvas></div>
+  <p class="chart-label">Fonction \(f(x) = x^2 - 4\) — changement de signe en \(x = 2\)</p>
+  <div class="consigne">
+    <strong>1.</strong> Résoudre \(f(x) = 0\) sur \([0\,;3]\). On note \(c\) la solution positive.<br>
+    <strong>2.</strong> Déterminer le signe de \(f\) sur \([0\,;c]\) puis sur \([c\,;3]\).<br>
+    <strong>3.</strong> Calculer séparément \(\displaystyle\int_0^c f(x)\,dx\) et \(\displaystyle\int_c^3 f(x)\,dx\).<br>
+    <strong>4.</strong> En déduire l'aire totale entre la courbe et l'axe des abscisses sur \([0\,;3]\).
+  </div>
+  <div class="reponse-box" style="min-height:120px">Réponses : ………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(x^2 - 4 = 0 \Leftrightarrow x^2 = 4 \Leftrightarrow x = 2\) (on garde la solution positive). <span class="reponse">\(c = 2\)</span>.</p>
+      <p><strong>2.</strong> Sur \([0\,;2]\) : \(x^2 < 4\) donc <span class="reponse">\(f(x) < 0\)</span>. Sur \([2\,;3]\) : \(x^2 > 4\) donc <span class="reponse">\(f(x) > 0\)</span>.</p>
+      <p><strong>3.</strong> Primitive : \(F(x) = \dfrac{x^3}{3} - 4x\).<br>
+      \(\displaystyle\int_0^2 (x^2 - 4)\,dx = \left[\dfrac{x^3}{3} - 4x\right]_0^2 = \dfrac{8}{3} - 8 = -\dfrac{16}{3}\)<br>
+      \(\displaystyle\int_2^3 (x^2 - 4)\,dx = \left[\dfrac{x^3}{3} - 4x\right]_2^3 = (9 - 12) - \left(\dfrac{8}{3} - 8\right) = -3 + \dfrac{16}{3} = \dfrac{7}{3}\)</p>
+      <p><strong>4.</strong> L'aire totale est la somme des <strong>valeurs absolues</strong> :<br>
+      \(\mathcal{A} = \left|-\dfrac{16}{3}\right| + \dfrac{7}{3} = \dfrac{16}{3} + \dfrac{7}{3} = \dfrac{23}{3}\)<br>
+      <span class="reponse">\(\mathcal{A} = \dfrac{23}{3} \approx 7{,}67\) u.a.</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 9 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 12</span>
+    <span class="exo-title">Valeur moyenne d'une fonction</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>On considère \(f(x) = -x^2 + 6x\) sur l'intervalle \([0\,;6]\).</p>
+  <div class="consigne">
+    <strong>1.</strong> Rappeler la formule de la valeur moyenne \(\mu\) de \(f\) sur \([a\,;b]\).<br>
+    <strong>2.</strong> Calculer \(\displaystyle\int_0^6 (-x^2 + 6x)\,dx\).<br>
+    <strong>3.</strong> En déduire la valeur moyenne de \(f\) sur \([0\,;6]\).<br>
+    <strong>4.</strong> Interpréter graphiquement cette valeur moyenne.
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx9" height="220"></canvas></div>
+  <p class="chart-label">Fonction \(f(x) = -x^2 + 6x\) et sa valeur moyenne sur \([0\,;6]\)</p>
+  <div class="reponse-box" style="min-height:100px">Réponses : ………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> <span class="reponse">\(\mu = \dfrac{1}{b-a}\displaystyle\int_a^b f(x)\,dx\)</span></p>
+      <p><strong>2.</strong> Primitive : \(F(x) = -\dfrac{x^3}{3} + 3x^2\).<br>
+      \(\displaystyle\int_0^6 (-x^2 + 6x)\,dx = \left[-\dfrac{x^3}{3} + 3x^2\right]_0^6 = (-72 + 108) - 0 = 36\)</p>
+      <p><strong>3.</strong> \(\mu = \dfrac{1}{6-0} \times 36 = \dfrac{36}{6} =\) <span class="reponse">\(6\)</span></p>
+      <p><strong>4.</strong> La valeur moyenne \(\mu = 6\) est la hauteur du rectangle de même base \([0\,;6]\) qui aurait la même aire (36 u.a.) que la surface sous la courbe.</p>
+  </div>
+  </details>
+</div>
+
+</div><!-- fin diff-standard -->
+
+<!-- ================================================================
+     APPROFONDISSEMENT — PROBLÈMES OUVERTS / TYPE BTS
+     ================================================================ -->
+<div class="diff-appro">
+
+<!-- NIVEAU 4 -->
+
+<!-- EX 10 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 13</span>
+    <span class="exo-title">Énergie consommée par un système de chauffage</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un technicien chauffagiste relève la puissance électrique \(P(t)\) (en kW) d'une pompe à chaleur au cours d'une journée. Le temps \(t\) est exprimé en heures, avec \(t = 0\) à 6 h du matin. La puissance suit le modèle : \(P(t) = -0{,}05t^2 + 0{,}8t + 1\) pour \(t \in [0\,;12]\).
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx10" height="240"></canvas></div>
+  <p class="chart-label">Puissance \(P(t)\) (kW) de la pompe à chaleur — aire = énergie</p>
+  <div class="consigne">
+    <strong>1.</strong> Calculer \(P(0)\), \(P(6)\) et \(P(12)\). Interpréter chaque valeur.<br>
+    <strong>2.</strong> L'énergie consommée entre \(t = 0\) et \(t = 12\) est donnée par \(\displaystyle E = \int_0^{12} P(t)\,dt\). Calculer cette énergie (en kWh).<br>
+    <strong>3.</strong> Calculer la puissance moyenne sur cette période.<br>
+    <strong>4.</strong> Le prix de l'électricité est de 0,18 €/kWh. Quel est le coût de fonctionnement sur ces 12 heures ?
+  </div>
+  <div class="reponse-box" style="min-height:120px">Réponses : ………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong><br>
+      \(P(0) = 1\) kW : puissance au démarrage (6 h).<br>
+      \(P(6) = -0{,}05 \times 36 + 4{,}8 + 1 = -1{,}8 + 5{,}8 =\) <span class="reponse">\(4\) kW</span> : puissance maximale vers midi.<br>
+      \(P(12) = -0{,}05 \times 144 + 9{,}6 + 1 = -7{,}2 + 10{,}6 =\) <span class="reponse">\(3{,}4\) kW</span> : puissance à 18 h.</p>
+      <p><strong>2.</strong> Primitive de \(P(t)\) : \(F(t) = -\dfrac{0{,}05t^3}{3} + 0{,}4t^2 + t\).<br>
+      \(E = \left[-\dfrac{0{,}05t^3}{3} + 0{,}4t^2 + t\right]_0^{12}\)<br>
+      \(E = -\dfrac{0{,}05 \times 1728}{3} + 0{,}4 \times 144 + 12 = -28{,}8 + 57{,}6 + 12 =\) <span class="reponse">\(40{,}8\) kWh</span></p>
+      <p><strong>3.</strong> Puissance moyenne : \(\mu = \dfrac{E}{12} = \dfrac{40{,}8}{12} =\) <span class="reponse">\(3{,}4\) kW</span></p>
+      <p><strong>4.</strong> Coût = \(40{,}8 \times 0{,}18 =\) <span class="reponse">\(7{,}34\) €</span> sur les 12 heures de fonctionnement.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 11 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 14</span>
+    <span class="exo-title">Température moyenne d'un local technique</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un installateur thermique surveille la température \(T(t)\) (en °C) d'un local technique pendant 8 heures. Le modèle est : \(T(t) = 0{,}1t^2 - 1{,}2t + 22\) pour \(t \in [0\,;8]\), avec \(t\) en heures.
+  </div>
+  <div class="consigne">
+    <strong>1.</strong> Calculer \(T(0)\) et \(T(8)\). Le local s'est-il réchauffé ou refroidi ?<br>
+    <strong>2.</strong> La norme exige une température moyenne \(\geq 18\) °C. Calculer la température moyenne \(\mu\) sur \([0\,;8]\).<br>
+    <strong>3.</strong> Le local est-il conforme à la norme ?
+  </div>
+  <div class="reponse-box" style="min-height:100px">Réponses : ………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(T(0) = 22\) °C, \(T(8) = 0{,}1 \times 64 - 9{,}6 + 22 = 6{,}4 - 9{,}6 + 22 =\) <span class="reponse">\(18{,}8\) °C</span>.<br>
+      Le local s'est refroidi de 22 °C à 18,8 °C.</p>
+      <p><strong>2.</strong> Primitive : \(F(t) = \dfrac{0{,}1t^3}{3} - 0{,}6t^2 + 22t\).<br>
+      \(\displaystyle\int_0^8 T(t)\,dt = \left[\dfrac{0{,}1t^3}{3} - 0{,}6t^2 + 22t\right]_0^8 = \dfrac{0{,}1 \times 512}{3} - 0{,}6 \times 64 + 176\)<br>
+      \(= 17{,}07 - 38{,}4 + 176 = 154{,}67\)<br>
+      \(\mu = \dfrac{154{,}67}{8} \approx\) <span class="reponse">\(19{,}3\) °C</span></p>
+      <p><strong>3.</strong> \(\mu \approx 19{,}3\) °C \(\geq 18\) °C : <span class="reponse">le local est conforme à la norme</span>.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 12 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 15</span>
+    <span class="exo-title">Section et volume d'un élément en bois cintré</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un menuisier agenceur fabrique un habillage mural dont le profil supérieur suit la courbe \(y = -0{,}25x^2 + 4\) (en cm), pour \(x \in [-4\,;4]\). La base est au niveau \(y = 0\). L'habillage a une profondeur constante de 30 cm.
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx12" height="240"></canvas></div>
+  <p class="chart-label">Profil du panneau cintré — section = aire sous la courbe</p>
+  <div class="consigne">
+    <strong>1.</strong> Vérifier que la courbe coupe l'axe des abscisses en \(x = -4\) et \(x = 4\).<br>
+    <strong>2.</strong> Calculer l'aire de la section transversale \(\displaystyle\mathcal{A} = \int_{-4}^{4} (-0{,}25x^2 + 4)\,dx\).<br>
+    <strong>3.</strong> En déduire le volume de l'habillage en cm³, puis en dm³.<br>
+    <strong>4.</strong> Le bois utilisé a une masse volumique de 0,6 kg/dm³. Calculer la masse de la pièce.
+  </div>
+  <div class="reponse-box" style="min-height:120px">Réponses : ………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
       <p><strong>1.</strong> \(y(-4) = -0{,}25 \times 16 + 4 = -4 + 4 = 0\) ✓ et \(y(4) = 0\) ✓. <span class="reponse">La courbe coupe bien l'axe en \(x = \pm 4\)</span>.</p>
       <p><strong>2.</strong> Primitive : \(F(x) = -\dfrac{0{,}25x^3}{3} + 4x = -\dfrac{x^3}{12} + 4x\).<br>
       \(\mathcal{A} = \left[-\dfrac{x^3}{12} + 4x\right]_{-4}^{4} = \left(-\dfrac{64}{12} + 16\right) - \left(\dfrac{64}{12} - 16\right)\)<br>
@@ -70,12 +567,18 @@
       <p><strong>3.</strong> Volume = section × profondeur = \(\dfrac{64}{3} \times 30 = 640\) cm³.<br>
       <span class="reponse">\(V = 640\) cm³ \(= 0{,}64\) dm³</span></p>
       <p><strong>4.</strong> Masse = \(0{,}64 \times 0{,}6 =\) <span class="reponse">\(0{,}384\) kg ≈ 384 g</span>.</p>
-    </div>
+  </div>
+  </details>
 </div>
+
+</div><!-- fin diff-appro -->
+
 <div class="nav-footer">
   <a href="lecon.html">📖 Cours Ch08</a>
   <a href="ds.html">📝 Devoir Ch08</a>
   <a href="../../../maths-term-iccer.html">📚 Sommaire</a>
+</div>
+
 </div>
 
 <script>
@@ -160,15 +663,9 @@ function courbe(f,x0,x1,n){const r=[];const s=(x1-x0)/(n-1);for(let i=0;i<n;i++)
   ]},options:linOpts('x (cm)','y (cm)')});
 })();
 </script>
-</div>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
-<script>
-function toggle(btn){
-  var c=btn.nextElementSibling;
-  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
-  else{c.style.display='block';btn.textContent='Masquer la correction';}
-}
-</script>
+
+<script>function toggle(b){const c=b.nextElementSibling;c.style.display=c.style.display==='block'?'none':'block';b.textContent=c.style.display==='block'?'Masquer la correction':'Voir la correction';}</script>
 </body>
 </html>

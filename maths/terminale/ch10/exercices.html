@@ -38,9 +38,6 @@ canvas{border:1px solid #e2e8f0;border-radius:8px;background:#fff}</style>
 <!-- NIVEAU 1 -->
 
 <!-- EX 1 -->
-
-<h2>Exercices guidés pas à pas</h2>
-
 <div class="exo diff-socle">
   <div class="exo-header">
     <span class="exo-num">Exercice 1</span>
@@ -60,6 +57,629 @@ canvas{border:1px solid #e2e8f0;border-radius:8px;background:#fff}</style>
 
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
+      <table>
+        <tr><th>Nombre complexe</th><th>\(\text{Re}(z)\)</th><th>\(\text{Im}(z)\)</th><th>Nature</th></tr>
+        <tr><td>\(z_1 = 5 + 3i\)</td><td><span class="reponse">\(5\)</span></td><td><span class="reponse">\(3\)</span></td><td>Complexe</td></tr>
+        <tr><td>\(z_2 = -2 - 7i\)</td><td><span class="reponse">\(-2\)</span></td><td><span class="reponse">\(-7\)</span></td><td>Complexe</td></tr>
+        <tr><td>\(z_3 = 4i\)</td><td><span class="reponse">\(0\)</span></td><td><span class="reponse">\(4\)</span></td><td>Imaginaire pur</td></tr>
+        <tr><td>\(z_4 = -6\)</td><td><span class="reponse">\(-6\)</span></td><td><span class="reponse">\(0\)</span></td><td>Réel</td></tr>
+        <tr><td>\(z_5 = \dfrac{1}{2} - \dfrac{3}{4}i\)</td><td><span class="reponse">\(\dfrac{1}{2} = 0{,}5\)</span></td><td><span class="reponse">\(-\dfrac{3}{4} = -0{,}75\)</span></td><td>Complexe</td></tr>
+      </table>
+      <p>Rappel : la partie imaginaire est le coefficient de \(i\), <strong>sans</strong> le \(i\). Si \(z = a + ib\), alors \(\text{Im}(z) = b\).</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 2 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Additionner et soustraire des nombres complexes</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>Calculer les sommes et différences suivantes. Donner le résultat sous forme algébrique \(a + ib\) :</p>
+
+  <div class="consigne">
+    <strong>a)</strong> \(z_1 = 3 + 2i\) et \(z_2 = 1 - 5i\). Calculer \(z_1 + z_2\).<br>
+    <strong>b)</strong> \(z_3 = -4 + i\) et \(z_4 = 6 + 3i\). Calculer \(z_3 + z_4\).<br>
+    <strong>c)</strong> \(z_5 = 7 - 2i\) et \(z_6 = 7 + 2i\). Calculer \(z_5 - z_6\).<br>
+    <strong>d)</strong> \(z_7 = -1 + 4i\) et \(z_8 = -3 - 4i\). Calculer \(z_7 - z_8\).
+  </div>
+  <div class="reponse-box" style="min-height:90px">Réponses : ………………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> \(z_1 + z_2 = (3 + 1) + (2 + (-5))i = \) <span class="reponse">\(4 - 3i\)</span></p>
+      <p><strong>b)</strong> \(z_3 + z_4 = (-4 + 6) + (1 + 3)i = \) <span class="reponse">\(2 + 4i\)</span></p>
+      <p><strong>c)</strong> \(z_5 - z_6 = (7 - 7) + (-2 - 2)i = \) <span class="reponse">\(-4i\)</span> (imaginaire pur)</p>
+      <p><strong>d)</strong> \(z_7 - z_8 = (-1 - (-3)) + (4 - (-4))i = \) <span class="reponse">\(2 + 8i\)</span></p>
+      <p>Méthode : on additionne (ou soustrait) les parties réelles entre elles, et les parties imaginaires entre elles.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 3 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">Calculer le conjugué d'un nombre complexe</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>Rappel : le conjugué de \(z = a + ib\) est \(\bar{z} = a - ib\) (on change le signe de la partie imaginaire).</p>
+  <p>Donner le conjugué de chaque nombre complexe :</p>
+
+  <table>
+    <tr><th>\(z\)</th><th>\(\bar{z}\)</th></tr>
+    <tr><td>\(z_1 = 3 + 5i\)</td><td></td></tr>
+    <tr><td>\(z_2 = -2 - i\)</td><td></td></tr>
+    <tr><td>\(z_3 = 7\)</td><td></td></tr>
+    <tr><td>\(z_4 = -4i\)</td><td></td></tr>
+    <tr><td>\(z_5 = 1 + \sqrt{3}\,i\)</td><td></td></tr>
+  </table>
+
+  <div class="consigne">
+    <strong>Bonus :</strong> Pour chaque nombre, calculer \(z + \bar{z}\) et \(z \times \bar{z}\). Que remarquez-vous ?
+  </div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <table>
+        <tr><th>\(z\)</th><th>\(\bar{z}\)</th><th>\(z + \bar{z}\)</th><th>\(z \times \bar{z}\)</th></tr>
+        <tr><td>\(3 + 5i\)</td><td><span class="reponse">\(3 - 5i\)</span></td><td>\(6\)</td><td>\(9 + 25 = 34\)</td></tr>
+        <tr><td>\(-2 - i\)</td><td><span class="reponse">\(-2 + i\)</span></td><td>\(-4\)</td><td>\(4 + 1 = 5\)</td></tr>
+        <tr><td>\(7\)</td><td><span class="reponse">\(7\)</span></td><td>\(14\)</td><td>\(49\)</td></tr>
+        <tr><td>\(-4i\)</td><td><span class="reponse">\(4i\)</span></td><td>\(0\)</td><td>\(16\)</td></tr>
+        <tr><td>\(1 + \sqrt{3}\,i\)</td><td><span class="reponse">\(1 - \sqrt{3}\,i\)</span></td><td>\(2\)</td><td>\(1 + 3 = 4\)</td></tr>
+      </table>
+      <p>On remarque que :</p>
+      <ul>
+        <li>\(z + \bar{z} = 2\,\text{Re}(z)\) est toujours <strong>réel</strong>.</li>
+        <li>\(z \times \bar{z} = a^2 + b^2 = |z|^2\) est toujours <strong>réel positif</strong>.</li>
+      </ul>
+  </div>
+  </details>
+</div>
+
+<!-- ========== SOCLE ========== -->
+<div class="diff-socle">
+
+<!-- EX S1 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Identifier parties réelle et imaginaire — Guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+
+  <div class="meth">
+    <span class="label label-meth">Méthode</span><br>
+    Un nombre complexe s'écrit \(z = a + bi\) où :<br>
+    • \(a\) est la <strong>partie réelle</strong> → \(\text{Re}(z) = a\)<br>
+    • \(b\) est la <strong>partie imaginaire</strong> → \(\text{Im}(z) = b\) (le coefficient devant \(i\), <strong>sans</strong> le \(i\))
+  </div>
+
+  <p><strong>Exemple guidé :</strong> \(z = 7 - 3i\)<br>
+  On identifie : \(a = \boxed{7}\) et \(b = \boxed{-3}\). Donc \(\text{Re}(z) = 7\) et \(\text{Im}(z) = -3\).</p>
+
+  <p><strong>À toi :</strong> Compléter le tableau ci-dessous.</p>
+  <table>
+    <tr><th>Nombre complexe \(z\)</th><th>\(\text{Re}(z) = \boxed{\phantom{00}}\)</th><th>\(\text{Im}(z) = \boxed{\phantom{00}}\)</th><th>Nature</th></tr>
+    <tr><td>\(z_1 = 4 + 5i\)</td><td>\(\boxed{\phantom{00}}\)</td><td>\(\boxed{\phantom{00}}\)</td><td>
+      <label><input type="radio" name="s1a"> Réel</label>
+      <label><input type="radio" name="s1a"> Imaginaire pur</label>
+      <label><input type="radio" name="s1a"> Complexe</label>
+    </td></tr>
+    <tr><td>\(z_2 = -3i\)</td><td>\(\boxed{\phantom{00}}\)</td><td>\(\boxed{\phantom{00}}\)</td><td>
+      <label><input type="radio" name="s1b"> Réel</label>
+      <label><input type="radio" name="s1b"> Imaginaire pur</label>
+      <label><input type="radio" name="s1b"> Complexe</label>
+    </td></tr>
+    <tr><td>\(z_3 = 9\)</td><td>\(\boxed{\phantom{00}}\)</td><td>\(\boxed{\phantom{00}}\)</td><td>
+      <label><input type="radio" name="s1c"> Réel</label>
+      <label><input type="radio" name="s1c"> Imaginaire pur</label>
+      <label><input type="radio" name="s1c"> Complexe</label>
+    </td></tr>
+    <tr><td>\(z_4 = -2 + 6i\)</td><td>\(\boxed{\phantom{00}}\)</td><td>\(\boxed{\phantom{00}}\)</td><td>
+      <label><input type="radio" name="s1d"> Réel</label>
+      <label><input type="radio" name="s1d"> Imaginaire pur</label>
+      <label><input type="radio" name="s1d"> Complexe</label>
+    </td></tr>
+  </table>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <table>
+        <tr><th>Nombre complexe</th><th>\(\text{Re}(z)\)</th><th>\(\text{Im}(z)\)</th><th>Nature</th></tr>
+        <tr><td>\(z_1 = 4 + 5i\)</td><td><span class="reponse">\(4\)</span></td><td><span class="reponse">\(5\)</span></td><td>Complexe</td></tr>
+        <tr><td>\(z_2 = -3i\)</td><td><span class="reponse">\(0\)</span></td><td><span class="reponse">\(-3\)</span></td><td>Imaginaire pur</td></tr>
+        <tr><td>\(z_3 = 9\)</td><td><span class="reponse">\(9\)</span></td><td><span class="reponse">\(0\)</span></td><td>Réel</td></tr>
+        <tr><td>\(z_4 = -2 + 6i\)</td><td><span class="reponse">\(-2\)</span></td><td><span class="reponse">\(6\)</span></td><td>Complexe</td></tr>
+      </table>
+      <p>Astuce : si \(b = 0\), le nombre est réel. Si \(a = 0\) et \(b \neq 0\), c'est un imaginaire pur.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX S2 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Calculer avec les complexes — Pas à pas</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+
+  <div class="meth">
+    <span class="label label-meth">Méthode — Addition</span><br>
+    Pour additionner \(z_1 = a + bi\) et \(z_2 = c + di\) :<br>
+    \(z_1 + z_2 = (a + c) + (b + d)i\)<br>
+    → On additionne les parties réelles entre elles, et les parties imaginaires entre elles.
+  </div>
+
+  <p><strong>a) Addition guidée :</strong> \(z_1 = 5 + 3i\) et \(z_2 = 2 - i\).</p>
+  <p>Parties réelles : \(5 + 2 = \boxed{\phantom{00}}\)<br>
+  Parties imaginaires : \(3 + (-1) = \boxed{\phantom{00}}\)<br>
+  Donc \(z_1 + z_2 = \boxed{\phantom{000}} + \boxed{\phantom{000}}i\)</p>
+
+  <div class="meth">
+    <span class="label label-meth">Méthode — Multiplication</span><br>
+    Pour multiplier : on développe comme \((a + bi)(c + di)\) et on remplace \(i^2 = -1\).<br>
+    \((a + bi)(c + di) = ac + adi + bci + bdi^2 = (ac - bd) + (ad + bc)i\)
+  </div>
+
+  <p><strong>b) Multiplication guidée :</strong> \((3 + 2i)(1 + i)\).</p>
+  <p>Étape 1 — On développe :<br>
+  \(3 \times 1 = \boxed{\phantom{00}}\)   \(3 \times i = \boxed{\phantom{00}}\)   \(2i \times 1 = \boxed{\phantom{00}}\)   \(2i \times i = \boxed{\phantom{00}}\)</p>
+  <p>Étape 2 — On rassemble : \(\boxed{\phantom{00}} + \boxed{\phantom{00}} + \boxed{\phantom{00}} + \boxed{\phantom{00}}\)</p>
+  <p>Étape 3 — On remplace \(i^2 = -1\) : \(2i^2 = 2 \times (-1) = \boxed{\phantom{00}}\)</p>
+  <p>Résultat : \((3 + 2i)(1 + i) = \boxed{\phantom{000}} + \boxed{\phantom{000}}i\)</p>
+
+  <p><strong>c) À toi :</strong> Calculer \((4 + i)(2 - 3i)\).</p>
+  <p>Développement : \(\boxed{\phantom{00}} + \boxed{\phantom{00}} + \boxed{\phantom{00}} + \boxed{\phantom{00}}\)<br>
+  Remplacement de \(i^2\) : ………<br>
+  Résultat : \(\boxed{\phantom{000}} + \boxed{\phantom{000}}i\)</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> Parties réelles : \(5 + 2 = 7\). Parties imaginaires : \(3 + (-1) = 2\).<br>
+      <span class="reponse">\(z_1 + z_2 = 7 + 2i\)</span></p>
+
+      <p><strong>b)</strong> Développement : \(3 + 3i + 2i + 2i^2 = 3 + 5i + 2(-1) = 3 + 5i - 2\).<br>
+      <span class="reponse">\((3 + 2i)(1 + i) = 1 + 5i\)</span></p>
+
+      <p><strong>c)</strong> \((4 + i)(2 - 3i) = 8 - 12i + 2i - 3i^2 = 8 - 10i - 3(-1) = 8 - 10i + 3\).<br>
+      <span class="reponse">\((4 + i)(2 - 3i) = 11 - 10i\)</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- EX S3 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">Placer des complexes dans le plan — Guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+
+  <div class="meth">
+    <span class="label label-meth">Méthode</span><br>
+    Pour placer \(z = a + bi\) dans le plan complexe :<br>
+    • L'axe horizontal (→) correspond à la <strong>partie réelle</strong> \(a\).<br>
+    • L'axe vertical (↑) correspond à la <strong>partie imaginaire</strong> \(b\).<br>
+    • Le point se place aux coordonnées \((a\,;\,b)\).
+  </div>
+
+  <p><strong>Exemple guidé :</strong> Placer \(z = 3 + 2i\).<br>
+  Partie réelle = \(3\) → on avance de 3 vers la droite.<br>
+  Partie imaginaire = \(2\) → on monte de 2. Le point est en \((3\,;\,2)\).</p>
+
+  <p><strong>À toi :</strong> Compléter le tableau, puis placer les points sur le plan.</p>
+  <table>
+    <tr><th>Complexe \(z\)</th><th>Partie réelle \(a = \boxed{\phantom{0}}\)</th><th>Partie imaginaire \(b = \boxed{\phantom{0}}\)</th><th>Point \((a\,;\,b)\)</th></tr>
+    <tr><td>\(z_1 = 2 + 4i\)</td><td>\(\boxed{\phantom{0}}\)</td><td>\(\boxed{\phantom{0}}\)</td><td>\((\boxed{\phantom{0}}\,;\,\boxed{\phantom{0}})\)</td></tr>
+    <tr><td>\(z_2 = -3 + i\)</td><td>\(\boxed{\phantom{0}}\)</td><td>\(\boxed{\phantom{0}}\)</td><td>\((\boxed{\phantom{0}}\,;\,\boxed{\phantom{0}})\)</td></tr>
+    <tr><td>\(z_3 = 5\)</td><td>\(\boxed{\phantom{0}}\)</td><td>\(\boxed{\phantom{0}}\)</td><td>\((\boxed{\phantom{0}}\,;\,\boxed{\phantom{0}})\)</td></tr>
+    <tr><td>\(z_4 = -2i\)</td><td>\(\boxed{\phantom{0}}\)</td><td>\(\boxed{\phantom{0}}\)</td><td>\((\boxed{\phantom{0}}\,;\,\boxed{\phantom{0}})\)</td></tr>
+  </table>
+
+  <div style="text-align:center;margin:12px 0">
+    <canvas id="canSocle3" width="500" height="440"></canvas>
+    <p style="font-size:.85em;color:#64748b">Plan complexe — place les 4 points</p>
+  </div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <table>
+        <tr><th>Complexe</th><th>\(a\)</th><th>\(b\)</th><th>Point</th></tr>
+        <tr><td>\(z_1 = 2 + 4i\)</td><td><span class="reponse">\(2\)</span></td><td><span class="reponse">\(4\)</span></td><td><span class="reponse">\((2\,;\,4)\)</span></td></tr>
+        <tr><td>\(z_2 = -3 + i\)</td><td><span class="reponse">\(-3\)</span></td><td><span class="reponse">\(1\)</span></td><td><span class="reponse">\((-3\,;\,1)\)</span></td></tr>
+        <tr><td>\(z_3 = 5\)</td><td><span class="reponse">\(5\)</span></td><td><span class="reponse">\(0\)</span></td><td><span class="reponse">\((5\,;\,0)\)</span> — sur l'axe réel</td></tr>
+        <tr><td>\(z_4 = -2i\)</td><td><span class="reponse">\(0\)</span></td><td><span class="reponse">\(-2\)</span></td><td><span class="reponse">\((0\,;\,-2)\)</span> — sur l'axe imaginaire</td></tr>
+      </table>
+      <div style="text-align:center;margin:12px 0">
+        <canvas id="canCorrSocle3" width="500" height="440"></canvas>
+        <p style="font-size:.85em;color:#64748b">Correction — plan complexe</p>
+      </div>
+  </div>
+  </details>
+</div>
+
+</div><!-- fin diff-socle -->
+
+<!-- ========== STANDARD ========== -->
+<div class="diff-standard">
+
+<!-- NIVEAU 2 -->
+
+<!-- EX 4 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 7</span>
+    <span class="exo-title">Multiplier des nombres complexes</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>Calculer les produits suivants en utilisant la règle \(i^2 = -1\). Donner le résultat sous forme algébrique.</p>
+
+  <div class="consigne">
+    <strong>a)</strong> \((2 + 3i)(4 - i)\)<br>
+    <strong>b)</strong> \((1 + i)(1 - i)\)<br>
+    <strong>c)</strong> \((-3 + 2i)(5 + 4i)\)<br>
+    <strong>d)</strong> \((2i)(3 - 5i)\)
+  </div>
+  <div class="reponse-box" style="min-height:90px">Réponses : ………………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> \((2 + 3i)(4 - i) = 8 - 2i + 12i - 3i^2 = 8 + 10i - 3(-1) = 8 + 10i + 3 = \) <span class="reponse">\(11 + 10i\)</span></p>
+      <p><strong>b)</strong> \((1 + i)(1 - i) = 1 - i + i - i^2 = 1 - (-1) = \) <span class="reponse">\(2\)</span> (réel !)</p>
+      <p><strong>c)</strong> \((-3 + 2i)(5 + 4i) = -15 - 12i + 10i + 8i^2 = -15 - 2i + 8(-1) = \) <span class="reponse">\(-23 - 2i\)</span></p>
+      <p><strong>d)</strong> \((2i)(3 - 5i) = 6i - 10i^2 = 6i - 10(-1) = \) <span class="reponse">\(10 + 6i\)</span></p>
+      <p>Méthode : on développe comme un produit classique \((a+b)(c+d)\), puis on remplace \(i^2\) par \(-1\).</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 5 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 8</span>
+    <span class="exo-title">Calculer le module d'un nombre complexe</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>Le module de \(z = a + ib\) est : \(|z| = \sqrt{a^2 + b^2}\).</p>
+  <p>Calculer le module de chaque nombre complexe :</p>
+
+  <table>
+    <tr><th>\(z\)</th><th>\(a\)</th><th>\(b\)</th><th>\(a^2 + b^2\)</th><th>\(|z|\)</th></tr>
+    <tr><td>\(z_1 = 3 + 4i\)</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>\(z_2 = -5 + 12i\)</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>\(z_3 = 1 - i\)</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>\(z_4 = 6i\)</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>\(z_5 = -2 - 2i\)</td><td></td><td></td><td></td><td></td></tr>
+  </table>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <table>
+        <tr><th>\(z\)</th><th>\(a\)</th><th>\(b\)</th><th>\(a^2 + b^2\)</th><th>\(|z|\)</th></tr>
+        <tr><td>\(3 + 4i\)</td><td>\(3\)</td><td>\(4\)</td><td>\(9 + 16 = 25\)</td><td><span class="reponse">\(5\)</span></td></tr>
+        <tr><td>\(-5 + 12i\)</td><td>\(-5\)</td><td>\(12\)</td><td>\(25 + 144 = 169\)</td><td><span class="reponse">\(13\)</span></td></tr>
+        <tr><td>\(1 - i\)</td><td>\(1\)</td><td>\(-1\)</td><td>\(1 + 1 = 2\)</td><td><span class="reponse">\(\sqrt{2} \approx 1{,}41\)</span></td></tr>
+        <tr><td>\(6i\)</td><td>\(0\)</td><td>\(6\)</td><td>\(0 + 36 = 36\)</td><td><span class="reponse">\(6\)</span></td></tr>
+        <tr><td>\(-2 - 2i\)</td><td>\(-2\)</td><td>\(-2\)</td><td>\(4 + 4 = 8\)</td><td><span class="reponse">\(2\sqrt{2} \approx 2{,}83\)</span></td></tr>
+      </table>
+      <p>Le module est toujours positif ou nul. Il représente la <strong>distance du point au centre</strong> dans le plan complexe.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 6 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 9</span>
+    <span class="exo-title">Représenter des nombres complexes dans le plan</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>Placer les nombres complexes suivants dans le plan complexe (axe horizontal = partie réelle, axe vertical = partie imaginaire) :</p>
+  <p>\(z_1 = 3 + 2i\)   \(z_2 = -1 + 4i\)   \(z_3 = -3 - 2i\)   \(z_4 = 4 - 3i\)   \(z_5 = 5i\)   \(z_6 = -4\)</p>
+
+  <div style="text-align:center;margin:12px 0">
+    <canvas id="canPlan6" width="500" height="440"></canvas>
+    <p style="font-size:.85em;color:#64748b">Plan complexe — placez les 6 points</p>
+  </div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <div style="text-align:center;margin:12px 0">
+        <canvas id="canCorr6" width="500" height="440"></canvas>
+        <p style="font-size:.85em;color:#64748b">Correction — plan complexe</p>
+      </div>
+      <table>
+        <tr><th>Complexe</th><th>Point \((a\,;\,b)\)</th><th>Quadrant</th></tr>
+        <tr><td>\(z_1 = 3 + 2i\)</td><td><span class="reponse">\((3\,;\,2)\)</span></td><td>I</td></tr>
+        <tr><td>\(z_2 = -1 + 4i\)</td><td><span class="reponse">\((-1\,;\,4)\)</span></td><td>II</td></tr>
+        <tr><td>\(z_3 = -3 - 2i\)</td><td><span class="reponse">\((-3\,;\,-2)\)</span></td><td>III</td></tr>
+        <tr><td>\(z_4 = 4 - 3i\)</td><td><span class="reponse">\((4\,;\,-3)\)</span></td><td>IV</td></tr>
+        <tr><td>\(z_5 = 5i\)</td><td><span class="reponse">\((0\,;\,5)\)</span></td><td>Axe imaginaire</td></tr>
+        <tr><td>\(z_6 = -4\)</td><td><span class="reponse">\((-4\,;\,0)\)</span></td><td>Axe réel</td></tr>
+      </table>
+  </div>
+  </details>
+</div>
+
+<!-- NIVEAU 3 -->
+
+<!-- EX 7 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 10</span>
+    <span class="exo-title">Forme algébrique ↔ forme trigonométrique</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>La forme trigonométrique de \(z\) est : \(z = |z|(\cos\theta + i\sin\theta)\), où \(\theta\) est l'argument de \(z\).</p>
+
+  <div class="consigne">
+    <strong>Partie A — Algébrique → Trigonométrique :</strong> convertir les nombres suivants.<br>
+    <strong>a)</strong> \(z_1 = 1 + i\)<br>
+    <strong>b)</strong> \(z_2 = -\sqrt{3} + i\)<br>
+    <strong>c)</strong> \(z_3 = -2\)<br><br>
+    <strong>Partie B — Trigonométrique → Algébrique :</strong> convertir les nombres suivants.<br>
+    <strong>d)</strong> \(z_4 = 4\left(\cos\dfrac{\pi}{3} + i\sin\dfrac{\pi}{3}\right)\)<br>
+    <strong>e)</strong> \(z_5 = 3\left(\cos\dfrac{\pi}{2} + i\sin\dfrac{\pi}{2}\right)\)
+  </div>
+  <div class="reponse-box" style="min-height:120px">Réponses : ………………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> \(z_1 = 1 + i\) : \(|z_1| = \sqrt{1^2 + 1^2} = \sqrt{2}\).<br>
+      \(\cos\theta = \dfrac{1}{\sqrt{2}}\), \(\sin\theta = \dfrac{1}{\sqrt{2}}\) → \(\theta = \dfrac{\pi}{4}\).<br>
+      <span class="reponse">\(z_1 = \sqrt{2}\left(\cos\dfrac{\pi}{4} + i\sin\dfrac{\pi}{4}\right)\)</span></p>
+
+      <p><strong>b)</strong> \(z_2 = -\sqrt{3} + i\) : \(|z_2| = \sqrt{3 + 1} = 2\).<br>
+      \(\cos\theta = \dfrac{-\sqrt{3}}{2}\), \(\sin\theta = \dfrac{1}{2}\) → \(\theta = \dfrac{5\pi}{6}\).<br>
+      <span class="reponse">\(z_2 = 2\left(\cos\dfrac{5\pi}{6} + i\sin\dfrac{5\pi}{6}\right)\)</span></p>
+
+      <p><strong>c)</strong> \(z_3 = -2\) : \(|z_3| = 2\), \(\theta = \pi\).<br>
+      <span class="reponse">\(z_3 = 2(\cos\pi + i\sin\pi)\)</span></p>
+
+      <p><strong>d)</strong> \(z_4 = 4\left(\cos\dfrac{\pi}{3} + i\sin\dfrac{\pi}{3}\right) = 4\left(\dfrac{1}{2} + i\dfrac{\sqrt{3}}{2}\right) = \) <span class="reponse">\(2 + 2\sqrt{3}\,i\)</span></p>
+
+      <p><strong>e)</strong> \(z_5 = 3\left(\cos\dfrac{\pi}{2} + i\sin\dfrac{\pi}{2}\right) = 3(0 + i \times 1) = \) <span class="reponse">\(3i\)</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 8 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 11</span>
+    <span class="exo-title">Résoudre \(z^2 = -a\) (avec \(a > 0\))</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>On cherche les nombres complexes \(z\) tels que \(z^2\) soit un réel négatif.</p>
+
+  <div class="consigne">
+    <strong>a)</strong> Résoudre \(z^2 = -9\).<br>
+    <strong>b)</strong> Résoudre \(z^2 = -25\).<br>
+    <strong>c)</strong> Résoudre \(z^2 = -7\).<br>
+    <strong>d)</strong> Vérifier : si \(z = 3i\), calculer \(z^2\).
+  </div>
+  <div class="reponse-box" style="min-height:80px">Réponses : ………………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> \(z^2 = -9\) → \(z^2 = 9 \times (-1) = 9i^2\) → \(z = \pm 3i\).<br>
+      <span class="reponse">\(z = 3i\) ou \(z = -3i\)</span></p>
+
+      <p><strong>b)</strong> \(z^2 = -25\) → \(z = \pm 5i\).<br>
+      <span class="reponse">\(z = 5i\) ou \(z = -5i\)</span></p>
+
+      <p><strong>c)</strong> \(z^2 = -7\) → \(z = \pm i\sqrt{7}\).<br>
+      <span class="reponse">\(z = i\sqrt{7}\) ou \(z = -i\sqrt{7}\)</span>   (\(\sqrt{7} \approx 2{,}65\))</p>
+
+      <p><strong>d)</strong> Vérification : \(z = 3i\) → \(z^2 = (3i)^2 = 9i^2 = 9 \times (-1) = -9\) ✓</p>
+
+      <div class="meth">
+        <span class="label label-meth">Méthode</span><br>
+        Si \(z^2 = -a\) avec \(a > 0\), alors \(z = \pm i\sqrt{a}\).
+      </div>
+  </div>
+  </details>
+</div>
+
+<!-- EX 9 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 12</span>
+    <span class="exo-title">Résoudre une équation du second degré à discriminant négatif</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>On résout \(az^2 + bz + c = 0\) dans \(\mathbb{C}\). Si \(\Delta = b^2 - 4ac < 0\), les solutions sont complexes :</p>
+  <p style="text-align:center;font-weight:700">\(z = \dfrac{-b \pm i\sqrt{|\Delta|}}{2a}\)</p>
+
+  <div class="consigne">
+    <strong>a)</strong> Résoudre \(z^2 - 2z + 5 = 0\).<br>
+    <strong>b)</strong> Résoudre \(z^2 + 4z + 13 = 0\).<br>
+    <strong>c)</strong> Résoudre \(2z^2 - 4z + 4 = 0\).
+  </div>
+  <div class="reponse-box" style="min-height:120px">Réponses : ………………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> \(z^2 - 2z + 5 = 0\) → \(\Delta = (-2)^2 - 4(1)(5) = 4 - 20 = -16\).<br>
+      \(\Delta < 0\) donc solutions complexes : \(\sqrt{|\Delta|} = \sqrt{16} = 4\).<br>
+      \(z = \dfrac{2 \pm 4i}{2}\)<br>
+      <span class="reponse">\(z_1 = 1 + 2i\)   \(z_2 = 1 - 2i\)</span></p>
+
+      <p><strong>b)</strong> \(z^2 + 4z + 13 = 0\) → \(\Delta = 16 - 52 = -36\).<br>
+      \(\sqrt{|\Delta|} = 6\). \(z = \dfrac{-4 \pm 6i}{2}\)<br>
+      <span class="reponse">\(z_1 = -2 + 3i\)   \(z_2 = -2 - 3i\)</span></p>
+
+      <p><strong>c)</strong> \(2z^2 - 4z + 4 = 0\) → \(\Delta = 16 - 32 = -16\).<br>
+      \(\sqrt{|\Delta|} = 4\). \(z = \dfrac{4 \pm 4i}{4}\)<br>
+      <span class="reponse">\(z_1 = 1 + i\)   \(z_2 = 1 - i\)</span></p>
+
+      <div class="att">
+        <span class="label label-att">Attention</span><br>
+        Les deux solutions sont toujours <strong>conjuguées</strong> l'une de l'autre : \(z_2 = \bar{z_1}\).
+      </div>
+  </div>
+  </details>
+</div>
+
+</div><!-- fin diff-standard -->
+
+<!-- ========== APPROFONDISSEMENT ========== -->
+<div class="diff-appro">
+
+<!-- NIVEAU 4 -->
+
+<!-- EX 10 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 13</span>
+    <span class="exo-title">Impédance d'un circuit en courant alternatif</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un technicien chauffagiste-climaticien installe une pompe à chaleur raccordée au réseau électrique. Pour dimensionner les protections, il doit calculer l'impédance complexe du circuit. En électrotechnique, on note \(j\) l'unité imaginaire (au lieu de \(i\), réservé à l'intensité du courant).
+  </div>
+
+  <div class="def">
+    <span class="label label-def">Rappel</span><br>
+    L'<strong>impédance complexe</strong> d'un circuit est : \(\underline{Z} = R + jX\)<br>
+    • \(R\) = résistance (en \(\Omega\))   • \(X\) = réactance (en \(\Omega\))<br>
+    • Le <strong>module</strong> \(|\underline{Z}| = \sqrt{R^2 + X^2}\) donne l'impédance totale.<br>
+    • L'intensité efficace : \(I = \dfrac{U}{|\underline{Z}|}\)   (\(U\) = tension efficace en V).
+  </div>
+
+  <p>Le circuit de la pompe à chaleur a les caractéristiques suivantes :</p>
+  <table>
+    <tr><th>Composant</th><th>Résistance \(R\) (\(\Omega\))</th><th>Réactance \(X\) (\(\Omega\))</th></tr>
+    <tr><td>Compresseur</td><td>12</td><td>16</td></tr>
+    <tr><td>Ventilateur</td><td>30</td><td>40</td></tr>
+  </table>
+  <p>Tension du réseau : \(U = 230\) V.</p>
+
+  <div class="consigne">
+    <strong>1.</strong> Écrire l'impédance complexe du compresseur \(\underline{Z_1}\).<br>
+    <strong>2.</strong> Calculer le module \(|\underline{Z_1}|\).<br>
+    <strong>3.</strong> En déduire l'intensité \(I_1\) traversant le compresseur.<br>
+    <strong>4.</strong> Écrire l'impédance complexe du ventilateur \(\underline{Z_2}\) et calculer \(|\underline{Z_2}|\).<br>
+    <strong>5.</strong> Calculer l'intensité \(I_2\) du ventilateur.<br>
+    <strong>6.</strong> Un disjoncteur de 16 A protège le circuit du compresseur. Est-il suffisant ?
+  </div>
+
+  <div style="text-align:center;margin:12px 0">
+    <canvas id="canImp10" width="500" height="400"></canvas>
+    <p style="font-size:.85em;color:#64748b">Représentation des impédances dans le plan complexe</p>
+  </div>
+
+  <div class="reponse-box" style="min-height:140px">Réponses : ……………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> <span class="reponse">\(\underline{Z_1} = 12 + 16j\) \(\Omega\)</span></p>
+
+      <p><strong>2.</strong> \(|\underline{Z_1}| = \sqrt{12^2 + 16^2} = \sqrt{144 + 256} = \sqrt{400} = \) <span class="reponse">\(20\) \(\Omega\)</span></p>
+
+      <p><strong>3.</strong> \(I_1 = \dfrac{U}{|\underline{Z_1}|} = \dfrac{230}{20} = \) <span class="reponse">\(11{,}5\) A</span></p>
+
+      <p><strong>4.</strong> \(\underline{Z_2} = 30 + 40j\) \(\Omega\).<br>
+      \(|\underline{Z_2}| = \sqrt{30^2 + 40^2} = \sqrt{900 + 1600} = \sqrt{2500} = \) <span class="reponse">\(50\) \(\Omega\)</span></p>
+
+      <p><strong>5.</strong> \(I_2 = \dfrac{230}{50} = \) <span class="reponse">\(4{,}6\) A</span></p>
+
+      <p><strong>6.</strong> Le compresseur consomme \(11{,}5\) A. <span class="reponse">Le disjoncteur de 16 A est suffisant</span> (\(11{,}5 < 16\)).</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 11 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 14</span>
+    <span class="exo-title">Résonance d'un circuit RLC</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un installateur en génie climatique vérifie le circuit électrique d'un système de ventilation. Le circuit comporte une résistance \(R\), une bobine (réactance inductive \(X_L > 0\)) et un condensateur (réactance capacitive \(X_C < 0\)). L'impédance totale est \(\underline{Z} = R + j(X_L + X_C)\).
+  </div>
+
+  <p>Caractéristiques du circuit :</p>
+  <ul>
+    <li>\(R = 10\) \(\Omega\)</li>
+    <li>\(X_L = +24\) \(\Omega\) (bobine)</li>
+    <li>\(X_C = -24\) \(\Omega\) (condensateur)</li>
+    <li>Tension : \(U = 230\) V</li>
+  </ul>
+
+  <div class="consigne">
+    <strong>1.</strong> Écrire l'impédance complexe totale \(\underline{Z}\).<br>
+    <strong>2.</strong> Que vaut la partie imaginaire de \(\underline{Z}\) ? Que se passe-t-il ?<br>
+    <strong>3.</strong> Calculer le module \(|\underline{Z}|\) et l'intensité \(I\).<br>
+    <strong>4.</strong> Ce phénomène s'appelle la <strong>résonance</strong>. Quelle est la condition sur \(X_L\) et \(X_C\) ?<br>
+    <strong>5.</strong> Pourquoi l'intensité est-elle maximale à la résonance ?
+  </div>
+  <div class="reponse-box" style="min-height:120px">Réponses : ……………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(\underline{Z} = 10 + j(24 + (-24)) = 10 + j \times 0 = \) <span class="reponse">\(10\) \(\Omega\)</span></p>
+
+      <p><strong>2.</strong> La partie imaginaire est nulle : \(\text{Im}(\underline{Z}) = 0\). <span class="reponse">L'impédance est purement résistive</span> — les effets de la bobine et du condensateur se compensent exactement.</p>
+
+      <p><strong>3.</strong> \(|\underline{Z}| = \sqrt{10^2 + 0^2} = 10\) \(\Omega\).<br>
+      \(I = \dfrac{230}{10} = \) <span class="reponse">\(23\) A</span></p>
+
+      <p><strong>4.</strong> Condition de résonance : <span class="reponse">\(X_L + X_C = 0\)</span>, soit \(X_L = -X_C\) (la réactance inductive compense la réactance capacitive).</p>
+
+      <p><strong>5.</strong> À la résonance, \(|\underline{Z}|\) est minimal (il ne reste que \(R\)). Comme \(I = \dfrac{U}{|\underline{Z}|}\), <span class="reponse">l'intensité est maximale quand l'impédance est minimale</span>.</p>
+
+      <div class="att">
+        <span class="label label-att">Attention</span><br>
+        En pratique, un courant de résonance trop élevé (ici 23 A) peut endommager le circuit. C'est pourquoi les installations sont dimensionnées pour éviter ce phénomène.
+      </div>
+  </div>
+  </details>
+</div>
+
+<!-- EX 12 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 15</span>
+    <span class="exo-title">Distances et plan complexe en agencement</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un agenceur d'intérieur utilise un plan coté pour implanter des prises électriques dans une pièce rectangulaire. Il place un repère dans le coin inférieur gauche de la pièce et associe un nombre complexe à chaque prise.
+  </div>
+
+  <p>Positions des prises (en mètres) :</p>
+  <table>
+    <tr><th>Prise</th><th>Nombre complexe</th><th>Position \((x\,;\,y)\)</th></tr>
+    <tr><td>A</td><td>\(z_A = 1 + 2i\)</td><td>(1 m ; 2 m)</td></tr>
+    <tr><td>B</td><td>\(z_B = 4 + 2i\)</td><td>(4 m ; 2 m)</td></tr>
+    <tr><td>C</td><td>\(z_C = 4 + 5i\)</td><td>(4 m ; 5 m)</td></tr>
+    <tr><td>D</td><td>\(z_D = 1 + 5i\)</td><td>(1 m ; 5 m)</td></tr>
+  </table>
+
+  <p>La distance entre deux points \(z_1\) et \(z_2\) dans le plan complexe est \(d = |z_2 - z_1|\).</p>
+
+  <div class="consigne">
+    <strong>1.</strong> Placer les 4 prises dans le plan complexe ci-dessous.<br>
+    <strong>2.</strong> Calculer la distance AB.<br>
+    <strong>3.</strong> Calculer la distance AC (diagonale).<br>
+    <strong>4.</strong> L'agenceur doit tirer un câble de A vers C. Combien de mètres de câble faut-il prévoir (ajouter 10 % de marge) ?<br>
+    <strong>5.</strong> Quelle est la nature du quadrilatère ABCD ? Justifier par les distances.
+  </div>
+
+  <div style="text-align:center;margin:12px 0">
+    <canvas id="canPlan12" width="500" height="400"></canvas>
+    <p style="font-size:.85em;color:#64748b">Plan de la pièce — placez les 4 prises</p>
+  </div>
+
+  <div class="reponse-box" style="min-height:120px">Réponses : ……………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
       <div style="text-align:center;margin:12px 0">
         <canvas id="canCorr12" width="500" height="400"></canvas>
         <p style="font-size:.85em;color:#64748b">Correction — plan complexe</p>
@@ -77,12 +697,18 @@ canvas{border:1px solid #e2e8f0;border-radius:8px;background:#fff}</style>
       \(d_{AB} = 3\) m, \(d_{BC} = |0 + 3i| = 3\) m, \(d_{CD} = |-3| = 3\) m, \(d_{DA} = |0 - 3i| = 3\) m.<br>
       Les 4 côtés sont égaux. Vérifions un angle : \(d_{AC} = 3\sqrt{2}\), ce qui correspond à la diagonale d'un carré de côté 3.<br>
       <span class="reponse">ABCD est un <strong>carré</strong> de côté 3 m.</span></p>
-    </div>
+  </div>
+  </details>
 </div>
+
+</div><!-- fin diff-appro -->
+
 <div class="nav-footer">
   <a href="lecon.html">📖 Cours Ch10</a>
   <a href="ds.html">📝 Devoir Ch10</a>
   <a href="../../../maths-term-iccer.html">📚 Sommaire</a>
+</div>
+
 </div>
 
 <script>
@@ -262,15 +888,9 @@ drawComplexPlane('canPlan12',-0.5,6,-0.5,6.5,[],{hint:'Placez les 4 prises A, B,
   ctx.fillText('AC = 3√2 ≈ 4,24 m',(pA[0]+pC[0])/2+30,(pA[1]+pC[1])/2);
 })();
 </script>
-</div>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
-<script>
-function toggle(btn){
-  var c=btn.nextElementSibling;
-  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
-  else{c.style.display='block';btn.textContent='Masquer la correction';}
-}
-</script>
+
+<script>function toggle(b){const c=b.nextElementSibling;c.style.display=c.style.display==='block'?'none':'block';b.textContent=c.style.display==='block'?'Masquer la correction':'Voir la correction';}</script>
 </body>
 </html>

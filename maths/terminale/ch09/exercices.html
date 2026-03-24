@@ -36,9 +36,6 @@
 <!-- NIVEAU 1 -->
 
 <!-- EX 1 -->
-
-<h2>Exercices guidés pas à pas</h2>
-
 <div class="exo diff-socle">
   <div class="exo-header">
     <span class="exo-num">Exercice 1</span>
@@ -59,6 +56,577 @@
 
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
+      <p><strong>a)</strong> <span class="reponse">\(\text{e}^{\ln 3} = 3\)</span> car \(\text{e}^{\ln a} = a\) pour tout \(a > 0\).</p>
+      <p><strong>b)</strong> <span class="reponse">\(\ln(\text{e}^5) = 5\)</span> car \(\ln(\text{e}^x) = x\) pour tout \(x\).</p>
+      <p><strong>c)</strong> <span class="reponse">\(\text{e}^0 = 1\)</span> — tout nombre élevé à la puissance 0 vaut 1.</p>
+      <p><strong>d)</strong> <span class="reponse">\(\ln(1) = 0\)</span> car \(\text{e}^0 = 1\).</p>
+      <p><strong>e)</strong> <span class="reponse">\(\text{e}^{\ln 1} = \text{e}^0 = 1\)</span>.</p>
+      <p><strong>f)</strong> <span class="reponse">\(\ln(\text{e}) = 1\)</span> car \(\text{e}^1 = \text{e}\).</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 2 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Passer de la forme exponentielle à la forme logarithmique</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>Réécrire chaque égalité sous l'autre forme (exponentielle ↔ logarithmique) :</p>
+
+  <div class="consigne">
+    <strong>a)</strong> \(\text{e}^x = 7\) → écrire sous forme logarithmique.<br>
+    <strong>b)</strong> \(\ln(x) = 4\) → écrire sous forme exponentielle.<br>
+    <strong>c)</strong> \(\text{e}^{2} = a\) → écrire sous forme logarithmique.<br>
+    <strong>d)</strong> \(\ln(10) = b\) → écrire sous forme exponentielle.
+  </div>
+  <div class="reponse-box" style="min-height:80px">Réponses : ………………………………………………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> \(\text{e}^x = 7\) ⟺ <span class="reponse">\(x = \ln(7)\)</span></p>
+      <p><strong>b)</strong> \(\ln(x) = 4\) ⟺ <span class="reponse">\(x = \text{e}^4\)</span></p>
+      <p><strong>c)</strong> \(\text{e}^{2} = a\) ⟺ <span class="reponse">\(\ln(a) = 2\)</span></p>
+      <p><strong>d)</strong> \(\ln(10) = b\) ⟺ <span class="reponse">\(\text{e}^b = 10\)</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 3 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">Propriétés du logarithme népérien</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>Utiliser les propriétés de \(\ln\) pour simplifier les expressions suivantes :</p>
+
+  <div class="consigne">
+    <strong>a)</strong> \(\ln(2) + \ln(5)\)<br>
+    <strong>b)</strong> \(\ln(12) - \ln(3)\)<br>
+    <strong>c)</strong> \(3\ln(2)\)<br>
+    <strong>d)</strong> \(\ln(2) + \ln(3) + \ln(7)\)
+  </div>
+  <div class="att">⚠️ Rappels : \(\ln(a \times b) = \ln(a) + \ln(b)\)  |  \(\ln\!\left(\dfrac{a}{b}\right) = \ln(a) - \ln(b)\)  |  \(\ln(a^n) = n\ln(a)\)</div>
+  <div class="reponse-box" style="min-height:80px">Réponses : ………………………………………………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> \(\ln(2) + \ln(5) = \ln(2 \times 5) =\) <span class="reponse">\(\ln(10)\)</span></p>
+      <p><strong>b)</strong> \(\ln(12) - \ln(3) = \ln\!\left(\dfrac{12}{3}\right) =\) <span class="reponse">\(\ln(4)\)</span></p>
+      <p><strong>c)</strong> \(3\ln(2) = \ln(2^3) =\) <span class="reponse">\(\ln(8)\)</span></p>
+      <p><strong>d)</strong> \(\ln(2) + \ln(3) + \ln(7) = \ln(2 \times 3 \times 7) =\) <span class="reponse">\(\ln(42)\)</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- ========== SOCLE ========== -->
+<div class="diff-socle">
+
+<!-- S1 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Calculer des valeurs de exp et ln — pas à pas</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <div class="meth">
+    <span class="label-meth">Méthode</span>
+    <strong>Touches de la calculatrice :</strong><br>
+    • Pour calculer \(\text{e}^x\) : taper la valeur de \(x\), puis appuyer sur la touche <kbd>e<sup>x</sup></kbd> (ou <kbd>2nde</kbd> + <kbd>ln</kbd>).<br>
+    • Pour calculer \(\ln(x)\) : taper la valeur de \(x\), puis appuyer sur la touche <kbd>ln</kbd>.<br>
+    • Rappel : \(\text{e}^{\ln a} = a\) et \(\ln(\text{e}^x) = x\).
+  </div>
+  <div class="consigne">
+    <strong>1.</strong> Compléter le tableau à la calculatrice (arrondir au centième) :<br>
+  </div>
+  <table>
+    <tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>−1</td><td>0,5</td></tr>
+    <tr><th>\(\text{e}^x\)</th><td>\(\boxed{\phantom{1,00}}\)</td><td>\(\boxed{\phantom{2,72}}\)</td><td>\(\boxed{\phantom{7,39}}\)</td><td>\(\boxed{\phantom{0,37}}\)</td><td>\(\boxed{\phantom{1,65}}\)</td></tr>
+  </table>
+  <div class="consigne">
+    <strong>2.</strong> Compléter le tableau à la calculatrice (arrondir au centième) :<br>
+  </div>
+  <table>
+    <tr><th>\(x\)</th><td>1</td><td>2</td><td>10</td><td>0,5</td><td>100</td></tr>
+    <tr><th>\(\ln(x)\)</th><td>\(\boxed{\phantom{0,00}}\)</td><td>\(\boxed{\phantom{0,69}}\)</td><td>\(\boxed{\phantom{2,30}}\)</td><td>\(\boxed{\phantom{-0,69}}\)</td><td>\(\boxed{\phantom{4,61}}\)</td></tr>
+  </table>
+  <div class="consigne">
+    <strong>3.</strong> QCM — Cocher la bonne réponse :<br>
+    \(\text{e}^0 = \)   ☐ 0   ☐ 1   ☐ \(\text{e}\)<br>
+    \(\ln(1) = \)   ☐ 0   ☐ 1   ☐ \(\text{e}\)<br>
+    \(\text{e}^{\ln 5} = \)   ☐ \(\ln 5\)   ☐ 5   ☐ \(\text{e}^5\)<br>
+    \(\ln(\text{e}^3) = \)   ☐ \(\text{e}^3\)   ☐ 3   ☐ \(\ln 3\)
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(\text{e}^0 = 1{,}00\) ; \(\text{e}^1 \approx 2{,}72\) ; \(\text{e}^2 \approx 7{,}39\) ; \(\text{e}^{-1} \approx 0{,}37\) ; \(\text{e}^{0{,}5} \approx 1{,}65\).</p>
+      <p><strong>2.</strong> \(\ln(1) = 0{,}00\) ; \(\ln(2) \approx 0{,}69\) ; \(\ln(10) \approx 2{,}30\) ; \(\ln(0{,}5) \approx -0{,}69\) ; \(\ln(100) \approx 4{,}61\).</p>
+      <p><strong>3.</strong> QCM : <span class="reponse">\(\text{e}^0 = 1\)</span>   <span class="reponse">\(\ln(1) = 0\)</span>   <span class="reponse">\(\text{e}^{\ln 5} = 5\)</span>   <span class="reponse">\(\ln(\text{e}^3) = 3\)</span>.</p>
+  </div>
+  </details>
+</div>
+
+<!-- S2 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Résoudre des équations exponentielles — pas à pas</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <div class="meth">
+    <span class="label-meth">Méthode</span>
+    <strong>Résoudre \(\text{e}^x = k\) :</strong><br>
+    • Si \(k > 0\) : on applique \(\ln\) des deux côtés → \(x = \ln(k)\).<br>
+    • Si \(k \leq 0\) : <strong>pas de solution</strong> car \(\text{e}^x > 0\) toujours.<br>
+    • Puis on calcule \(\ln(k)\) à la calculatrice.
+  </div>
+  <div class="consigne">
+    <strong>1.</strong> Résoudre \(\text{e}^x = 4\). Compléter :<br>
+    <p style="font-size:.93em">
+      On applique \(\ln\) des deux côtés :<br>
+      \(\ln(\text{e}^x) = \ln(4)\)<br>
+      \(x = \ln(4)\)<br>
+      À la calculatrice : \(x \approx \boxed{\phantom{1,39}}\)
+    </p>
+    <strong>2.</strong> Résoudre \(\text{e}^x = 10\). Compléter :<br>
+    <p style="font-size:.93em">
+      \(x = \ln(\boxed{\phantom{10}})\)<br>
+      À la calculatrice : \(x \approx \boxed{\phantom{2,30}}\)
+    </p>
+    <strong>3.</strong> Résoudre \(5\text{e}^x = 15\). Compléter :<br>
+    <p style="font-size:.93em">
+      On isole d'abord \(\text{e}^x\) : \(\text{e}^x = \dfrac{15}{5} = \boxed{\phantom{3}}\)<br>
+      Puis : \(x = \ln(\boxed{\phantom{3}}) \approx \boxed{\phantom{1,10}}\)
+    </p>
+    <strong>4.</strong> L'équation \(\text{e}^x = -2\) a-t-elle une solution ? Justifier.<br>
+    <span class="answer-line"></span>
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(x = \ln(4) \approx\) <span class="reponse">\(1{,}39\)</span>.</p>
+      <p><strong>2.</strong> \(x = \ln(10) \approx\) <span class="reponse">\(2{,}30\)</span>.</p>
+      <p><strong>3.</strong> \(\text{e}^x = 3\), donc \(x = \ln(3) \approx\) <span class="reponse">\(1{,}10\)</span>.</p>
+      <p><strong>4.</strong> <span class="reponse">Pas de solution</span> car \(\text{e}^x > 0\) pour tout \(x\), donc \(\text{e}^x\) ne peut jamais valoir \(-2\).</p>
+  </div>
+  </details>
+</div>
+
+<!-- S3 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">Refroidissement d'un atelier — problème guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un technicien chauffagiste coupe le chauffage d'un atelier pour une intervention. La température de l'atelier (en °C) est modélisée par :
+  </div>
+  <div class="formule-box">
+    \(T(t) = 15 + 10\,\text{e}^{-0{,}1\,t}\)
+  </div>
+  <p>où \(t\) est le temps en minutes après l'arrêt du chauffage.</p>
+
+  <div class="meth">
+    <span class="label-meth">Méthode</span>
+    <strong>Lire une fonction exponentielle \(T(t) = a + b\,\text{e}^{-kt}\) :</strong><br>
+    • Température initiale : remplacer \(t\) par 0, on obtient \(T(0) = a + b\).<br>
+    • Température limite (quand \(t \to +\infty\)) : \(\text{e}^{-kt} \to 0\), donc \(T \to a\).
+  </div>
+
+  <div class="consigne">
+    <strong>1.</strong> Calculer la température initiale. Compléter :<br>
+    <p style="font-size:.93em">
+      \(T(0) = 15 + 10 \times \text{e}^{0} = 15 + 10 \times \boxed{\phantom{1}} = \boxed{\phantom{25}}\) °C
+    </p>
+    <strong>2.</strong> Vers quelle température l'atelier va-t-il tendre ? Compléter :<br>
+    <p style="font-size:.93em">
+      Quand \(t \to +\infty\), \(\text{e}^{-0{,}1t} \to \boxed{\phantom{0}}\), donc \(T \to 15 + 10 \times 0 = \boxed{\phantom{15}}\) °C
+    </p>
+    <strong>3.</strong> Calculer la température après 10 minutes. Compléter :<br>
+    <p style="font-size:.93em">
+      \(T(10) = 15 + 10 \times \text{e}^{-0{,}1 \times 10} = 15 + 10 \times \text{e}^{-1}\)<br>
+      À la calculatrice : \(\text{e}^{-1} \approx \boxed{\phantom{0,368}}\)<br>
+      \(T(10) \approx 15 + 10 \times 0{,}368 = \boxed{\phantom{18,7}}\) °C
+    </p>
+    <strong>4.</strong> Le technicien veut que la température soit à 18 °C. Résoudre \(T(t) = 18\). Compléter :<br>
+    <p style="font-size:.93em">
+      \(15 + 10\,\text{e}^{-0{,}1t} = 18\)<br>
+      \(10\,\text{e}^{-0{,}1t} = 18 - 15 = \boxed{\phantom{3}}\)<br>
+      \(\text{e}^{-0{,}1t} = \dfrac{3}{10} = \boxed{\phantom{0,3}}\)<br>
+      \(-0{,}1t = \ln(0{,}3) \approx \boxed{\phantom{-1,204}}\)<br>
+      \(t = \dfrac{-\ln(0{,}3)}{0{,}1} \approx \boxed{\phantom{12,0}}\) minutes
+    </p>
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(T(0) = 15 + 10 \times 1 =\) <span class="reponse">25 °C</span>.</p>
+      <p><strong>2.</strong> L'atelier tend vers <span class="reponse">15 °C</span> (température extérieure).</p>
+      <p><strong>3.</strong> \(T(10) = 15 + 10 \times \text{e}^{-1} \approx 15 + 3{,}68 =\) <span class="reponse">18,7 °C</span>.</p>
+      <p><strong>4.</strong> \(10\,\text{e}^{-0{,}1t} = 3\) → \(\text{e}^{-0{,}1t} = 0{,}3\) → \(-0{,}1t = \ln(0{,}3) \approx -1{,}204\) → <span class="reponse">\(t \approx 12{,}0\) minutes</span>.</p>
+  </div>
+  </details>
+</div>
+
+</div><!-- fin diff-socle -->
+
+<!-- ========== STANDARD ========== -->
+<div class="diff-standard">
+
+<!-- NIVEAU 2 -->
+
+<!-- EX 4 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 7</span>
+    <span class="exo-title">Résoudre des équations avec l'exponentielle</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>Résoudre chaque équation. On donnera la valeur exacte puis une valeur approchée à \(10^{-2}\) près.</p>
+
+  <div class="consigne">
+    <strong>a)</strong> \(\text{e}^x = 5\)<br>
+    <strong>b)</strong> \(\text{e}^x = 0{,}3\)<br>
+    <strong>c)</strong> \(\text{e}^{2x} = 12\)<br>
+    <strong>d)</strong> \(3\text{e}^x = 21\)
+  </div>
+  <div class="reponse-box" style="min-height:100px">Réponses : ………………………………………………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> \(\text{e}^x = 5\) ⟹ <span class="reponse">\(x = \ln(5) \approx 1{,}61\)</span></p>
+      <p><strong>b)</strong> \(\text{e}^x = 0{,}3\) ⟹ <span class="reponse">\(x = \ln(0{,}3) \approx -1{,}20\)</span></p>
+      <p><strong>c)</strong> \(\text{e}^{2x} = 12\) ⟹ \(2x = \ln(12)\) ⟹ <span class="reponse">\(x = \dfrac{\ln(12)}{2} \approx 1{,}24\)</span></p>
+      <p><strong>d)</strong> \(3\text{e}^x = 21\) ⟹ \(\text{e}^x = 7\) ⟹ <span class="reponse">\(x = \ln(7) \approx 1{,}95\)</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 5 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 8</span>
+    <span class="exo-title">Résoudre des équations avec le logarithme</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>Résoudre chaque équation. On donnera la valeur exacte puis une valeur approchée à \(10^{-2}\) près.</p>
+
+  <div class="consigne">
+    <strong>a)</strong> \(\ln(x) = 3\)<br>
+    <strong>b)</strong> \(\ln(x) = -1\)<br>
+    <strong>c)</strong> \(\ln(2x) = 4\)<br>
+    <strong>d)</strong> \(\ln(x) + \ln(5) = \ln(20)\)
+  </div>
+  <div class="reponse-box" style="min-height:100px">Réponses : ………………………………………………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> \(\ln(x) = 3\) ⟹ <span class="reponse">\(x = \text{e}^3 \approx 20{,}09\)</span></p>
+      <p><strong>b)</strong> \(\ln(x) = -1\) ⟹ <span class="reponse">\(x = \text{e}^{-1} \approx 0{,}37\)</span></p>
+      <p><strong>c)</strong> \(\ln(2x) = 4\) ⟹ \(2x = \text{e}^4\) ⟹ <span class="reponse">\(x = \dfrac{\text{e}^4}{2} \approx 27{,}30\)</span></p>
+      <p><strong>d)</strong> \(\ln(x) + \ln(5) = \ln(20)\) ⟹ \(\ln(5x) = \ln(20)\) ⟹ \(5x = 20\) ⟹ <span class="reponse">\(x = 4\)</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 6 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 9</span>
+    <span class="exo-title">Dérivées de fonctions exponentielles et logarithmes</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>Calculer la dérivée de chaque fonction :</p>
+
+  <div class="consigne">
+    <strong>a)</strong> \(f(x) = \text{e}^x\)<br>
+    <strong>b)</strong> \(g(x) = \ln(x)\)<br>
+    <strong>c)</strong> \(h(x) = 5\text{e}^x + 3\)<br>
+    <strong>d)</strong> \(k(x) = 2\ln(x) - x\)
+  </div>
+  <div class="att">⚠️ Rappels : \(\left(\text{e}^x\right)' = \text{e}^x\)  |  \(\left(\ln(x)\right)' = \dfrac{1}{x}\) pour \(x > 0\)</div>
+  <div class="reponse-box" style="min-height:100px">Réponses : ………………………………………………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> <span class="reponse">\(f'(x) = \text{e}^x\)</span> — la fonction exponentielle est sa propre dérivée.</p>
+      <p><strong>b)</strong> <span class="reponse">\(g'(x) = \dfrac{1}{x}\)</span> pour \(x > 0\).</p>
+      <p><strong>c)</strong> <span class="reponse">\(h'(x) = 5\text{e}^x\)</span> — la dérivée d'une constante est 0.</p>
+      <p><strong>d)</strong> <span class="reponse">\(k'(x) = \dfrac{2}{x} - 1\)</span> pour \(x > 0\).</p>
+  </div>
+  </details>
+</div>
+
+<!-- NIVEAU 3 -->
+
+<!-- EX 7 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 10</span>
+    <span class="exo-title">Dérivées de fonctions composées</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>Calculer la dérivée de chaque fonction :</p>
+
+  <div class="consigne">
+    <strong>a)</strong> \(f(x) = \text{e}^{2x+1}\)<br>
+    <strong>b)</strong> \(g(x) = \text{e}^{-3x}\)<br>
+    <strong>c)</strong> \(h(x) = \ln(3x)\) pour \(x > 0\)<br>
+    <strong>d)</strong> \(k(x) = \ln(x^2 + 1)\)
+  </div>
+  <div class="att">⚠️ Formules : \(\left(\text{e}^{u(x)}\right)' = u'(x) \cdot \text{e}^{u(x)}\)  |  \(\left(\ln(u(x))\right)' = \dfrac{u'(x)}{u(x)}\)</div>
+  <div class="reponse-box" style="min-height:100px">Réponses : ………………………………………………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> \(u(x) = 2x + 1\), \(u'(x) = 2\)<br>
+      <span class="reponse">\(f'(x) = 2\text{e}^{2x+1}\)</span></p>
+      <p><strong>b)</strong> \(u(x) = -3x\), \(u'(x) = -3\)<br>
+      <span class="reponse">\(g'(x) = -3\text{e}^{-3x}\)</span></p>
+      <p><strong>c)</strong> \(u(x) = 3x\), \(u'(x) = 3\)<br>
+      \(h'(x) = \dfrac{3}{3x} =\) <span class="reponse">\(\dfrac{1}{x}\)</span></p>
+      <p><strong>d)</strong> \(u(x) = x^2 + 1\), \(u'(x) = 2x\)<br>
+      <span class="reponse">\(k'(x) = \dfrac{2x}{x^2 + 1}\)</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 8 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 11</span>
+    <span class="exo-title">Étude de variations d'une fonction exponentielle</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>On considère la fonction \(f(x) = x\,\text{e}^{-x}\) définie sur \([0\,;\,+\infty[\).</p>
+
+  <div class="consigne">
+    <strong>1.</strong> Calculer \(f'(x)\). On montrera que \(f'(x) = (1 - x)\,\text{e}^{-x}\).<br>
+    <strong>2.</strong> Étudier le signe de \(f'(x)\) sachant que \(\text{e}^{-x} > 0\) pour tout \(x\).<br>
+    <strong>3.</strong> En déduire le tableau de variations de \(f\) sur \([0\,;\,5]\).<br>
+    <strong>4.</strong> Quel est le maximum de \(f\) ? Pour quelle valeur de \(x\) est-il atteint ?
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx8" height="240"></canvas></div>
+  <p class="chart-label">Courbe de \(f(x) = x\,\text{e}^{-x}\) sur \([0\,;\,5]\)</p>
+  <div class="reponse-box" style="min-height:120px">Réponses : ………………………………………………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(f(x) = x \cdot \text{e}^{-x}\) — produit de \(u = x\) et \(v = \text{e}^{-x}\).<br>
+      \(u' = 1\), \(v' = -\text{e}^{-x}\).<br>
+      \(f'(x) = 1 \cdot \text{e}^{-x} + x \cdot (-\text{e}^{-x}) = \text{e}^{-x}(1 - x)\).<br>
+      <span class="reponse">\(f'(x) = (1 - x)\,\text{e}^{-x}\)</span> ✓</p>
+
+      <p><strong>2.</strong> Comme \(\text{e}^{-x} > 0\), le signe de \(f'(x)\) dépend de \((1 - x)\) :<br>
+      — Si \(x < 1\) : \(1 - x > 0\) donc <span class="reponse">\(f'(x) > 0\)</span> → \(f\) croissante.<br>
+      — Si \(x = 1\) : \(f'(x) = 0\).<br>
+      — Si \(x > 1\) : \(1 - x < 0\) donc <span class="reponse">\(f'(x) < 0\)</span> → \(f\) décroissante.</p>
+
+      <p><strong>3.</strong> Tableau de variations :</p>
+      <table>
+        <tr><th>\(x\)</th><td>0</td><td></td><td>1</td><td></td><td>5</td></tr>
+        <tr><th>\(f'(x)\)</th><td></td><td>+</td><td>0</td><td>−</td><td></td></tr>
+        <tr><th>\(f(x)\)</th><td>0</td><td>↗</td><td>\(\text{e}^{-1}\)</td><td>↘</td><td>\(5\text{e}^{-5}\)</td></tr>
+      </table>
+
+      <p><strong>4.</strong> Le maximum est <span class="reponse">\(f(1) = 1 \times \text{e}^{-1} = \dfrac{1}{\text{e}} \approx 0{,}37\)</span>, atteint en \(x = 1\).</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 9 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 12</span>
+    <span class="exo-title">Étude de variations d'une fonction logarithme</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>On considère la fonction \(g(x) = 2\ln(x) - x\) définie sur \(]0\,;\,+\infty[\).</p>
+
+  <div class="consigne">
+    <strong>1.</strong> Calculer \(g'(x)\).<br>
+    <strong>2.</strong> Résoudre \(g'(x) = 0\).<br>
+    <strong>3.</strong> Étudier le signe de \(g'(x)\) et dresser le tableau de variations de \(g\) sur \([0{,}5\,;\,6]\).<br>
+    <strong>4.</strong> Calculer la valeur du maximum de \(g\).
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx9" height="240"></canvas></div>
+  <p class="chart-label">Courbe de \(g(x) = 2\ln(x) - x\) sur \([0{,}5\,;\,6]\)</p>
+  <div class="reponse-box" style="min-height:120px">Réponses : ………………………………………………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> <span class="reponse">\(g'(x) = \dfrac{2}{x} - 1\)</span></p>
+
+      <p><strong>2.</strong> \(g'(x) = 0\) ⟹ \(\dfrac{2}{x} - 1 = 0\) ⟹ \(\dfrac{2}{x} = 1\) ⟹ <span class="reponse">\(x = 2\)</span></p>
+
+      <p><strong>3.</strong> Pour \(x < 2\) : \(\dfrac{2}{x} > 1\) donc \(g'(x) > 0\) → \(g\) croissante.<br>
+      Pour \(x > 2\) : \(\dfrac{2}{x} < 1\) donc \(g'(x) < 0\) → \(g\) décroissante.</p>
+
+      <table>
+        <tr><th>\(x\)</th><td>0,5</td><td></td><td>2</td><td></td><td>6</td></tr>
+        <tr><th>\(g'(x)\)</th><td></td><td>+</td><td>0</td><td>−</td><td></td></tr>
+        <tr><th>\(g(x)\)</th><td>\(\approx -1{,}89\)</td><td>↗</td><td>\(2\ln 2 - 2\)</td><td>↘</td><td>\(\approx -2{,}42\)</td></tr>
+      </table>
+
+      <p><strong>4.</strong> Le maximum est <span class="reponse">\(g(2) = 2\ln(2) - 2 \approx 2 \times 0{,}693 - 2 = -0{,}61\)</span>.</p>
+  </div>
+  </details>
+</div>
+
+</div><!-- fin diff-standard -->
+
+<!-- ========== APPROFONDISSEMENT ========== -->
+<div class="diff-appro">
+
+<!-- NIVEAU 4 -->
+
+<!-- EX 10 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 13</span>
+    <span class="exo-title">Refroidissement d'un circuit de chauffage</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un technicien chauffagiste contrôle le refroidissement d'un circuit de chauffage après l'arrêt de la chaudière. La loi de Newton modélise la température du fluide en fonction du temps.
+  </div>
+  <p>La température \(T\) (en °C) du fluide caloporteur est modélisée par :</p>
+  <div class="formule-box">
+    \(T(t) = 20 + 50\,\text{e}^{-0{,}04\,t}\)
+  </div>
+  <p>où \(t\) est le temps en minutes après l'arrêt de la chaudière.</p>
+
+  <table>
+    <tr><th>\(t\) (min)</th><td>0</td><td>10</td><td>20</td><td>30</td><td>45</td><td>60</td><td>90</td></tr>
+    <tr><th>\(T(t)\) (°C)</th><td>70</td><td>53,5</td><td>44,9</td><td>38,0</td><td>31,6</td><td>27,4</td><td>22,8</td></tr>
+  </table>
+
+  <div class="consigne">
+    <strong>1.</strong> Quelle est la température initiale du fluide ? Quelle est la température ambiante ?<br>
+    <strong>2.</strong> Calculer \(T(15)\). Arrondir à \(0{,}1\) °C.<br>
+    <strong>3.</strong> Le technicien doit intervenir sur le circuit quand la température atteint 30 °C. Résoudre \(T(t) = 30\) pour trouver le temps d'attente.<br>
+    <strong>4.</strong> Calculer \(T'(t)\). La température descend-elle de plus en plus vite ou de plus en plus lentement ? Justifier.<br>
+    <strong>5.</strong> Le graphique ci-dessous représente l'évolution de \(T(t)\). Vérifier graphiquement les résultats des questions 2 et 3.
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx10" height="260"></canvas></div>
+  <p class="chart-label">Température du fluide T (°C) en fonction du temps t (min)</p>
+  <div class="reponse-box" style="min-height:140px">Réponses : ……………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> Température initiale : \(T(0) = 20 + 50\,\text{e}^{0} = 20 + 50 =\) <span class="reponse">70 °C</span>.<br>
+      Température ambiante : quand \(t \to +\infty\), \(\text{e}^{-0{,}04t} \to 0\), donc \(T \to\) <span class="reponse">20 °C</span>.</p>
+
+      <p><strong>2.</strong> \(T(15) = 20 + 50\,\text{e}^{-0{,}04 \times 15} = 20 + 50\,\text{e}^{-0{,}6}\)<br>
+      \(\text{e}^{-0{,}6} \approx 0{,}5488\)<br>
+      \(T(15) = 20 + 50 \times 0{,}5488 =\) <span class="reponse">\(47{,}4\) °C</span></p>
+
+      <p><strong>3.</strong> \(T(t) = 30\) ⟹ \(20 + 50\,\text{e}^{-0{,}04t} = 30\)<br>
+      \(50\,\text{e}^{-0{,}04t} = 10\)<br>
+      \(\text{e}^{-0{,}04t} = 0{,}2\)<br>
+      \(-0{,}04t = \ln(0{,}2)\)<br>
+      \(t = \dfrac{-\ln(0{,}2)}{0{,}04} = \dfrac{\ln(5)}{0{,}04} \approx \dfrac{1{,}6094}{0{,}04} \approx\) <span class="reponse">\(40{,}2\) minutes</span><br>
+      Le technicien doit attendre environ <strong>40 minutes</strong>.</p>
+
+      <p><strong>4.</strong> \(T'(t) = 50 \times (-0{,}04) \times \text{e}^{-0{,}04t} =\) <span class="reponse">\(-2\,\text{e}^{-0{,}04t}\)</span><br>
+      \(T'(t) < 0\) (la température descend) et \(|T'(t)| = 2\,\text{e}^{-0{,}04t}\) décroît quand \(t\) augmente.<br>
+      <span class="reponse">La température descend de plus en plus lentement</span> — c'est logique : plus elle se rapproche de la température ambiante, plus le refroidissement ralentit.</p>
+
+      <p><strong>5.</strong> Vérification graphique : la courbe passe bien par \((15\,;\,47{,}4)\) et atteint 30 °C vers \(t = 40\) min.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 11 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 14</span>
+    <span class="exo-title">Séchage du bois en atelier</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un menuisier agenceur surveille le séchage de panneaux de chêne dans un séchoir industriel. Le taux d'humidité diminue selon un modèle exponentiel.
+  </div>
+  <p>Le taux d'humidité \(H\) (en %) du bois est modélisé par :</p>
+  <div class="formule-box">
+    \(H(t) = 35\,\text{e}^{-0{,}05\,t}\)
+  </div>
+  <p>où \(t\) est le temps en jours.</p>
+
+  <table>
+    <tr><th>\(t\) (jours)</th><td>0</td><td>5</td><td>10</td><td>15</td><td>20</td><td>30</td><td>40</td></tr>
+    <tr><th>\(H(t)\) (%)</th><td>35,0</td><td>27,3</td><td>21,2</td><td>16,5</td><td>12,9</td><td>7,8</td><td>4,7</td></tr>
+  </table>
+
+  <div class="consigne">
+    <strong>1.</strong> Quel est le taux d'humidité initial du bois ?<br>
+    <strong>2.</strong> Calculer le taux d'humidité après 12 jours. Arrondir à \(0{,}1\) %.<br>
+    <strong>3.</strong> Le bois est utilisable en agencement lorsque son taux d'humidité atteint 12 %. Résoudre \(H(t) = 12\) pour déterminer le temps de séchage nécessaire.<br>
+    <strong>4.</strong> Le menuisier veut atteindre 8 % pour un parquet haut de gamme. Combien de jours faut-il ?<br>
+    <strong>5.</strong> Calculer \(H'(t)\) et interpréter son signe.
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx11" height="260"></canvas></div>
+  <p class="chart-label">Taux d'humidité H (%) en fonction du temps t (jours)</p>
+  <div class="reponse-box" style="min-height:140px">Réponses : ……………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> Humidité initiale : \(H(0) = 35\,\text{e}^{0} =\) <span class="reponse">35 %</span>.</p>
+
+      <p><strong>2.</strong> \(H(12) = 35\,\text{e}^{-0{,}05 \times 12} = 35\,\text{e}^{-0{,}6}\)<br>
+      \(\text{e}^{-0{,}6} \approx 0{,}5488\)<br>
+      \(H(12) = 35 \times 0{,}5488 \approx\) <span class="reponse">\(19{,}2\) %</span></p>
+
+      <p><strong>3.</strong> \(H(t) = 12\) ⟹ \(35\,\text{e}^{-0{,}05t} = 12\)<br>
+      \(\text{e}^{-0{,}05t} = \dfrac{12}{35}\)<br>
+      \(-0{,}05t = \ln\!\left(\dfrac{12}{35}\right)\)<br>
+      \(t = \dfrac{-\ln(12/35)}{0{,}05} = \dfrac{\ln(35/12)}{0{,}05} \approx \dfrac{1{,}0706}{0{,}05} \approx\) <span class="reponse">\(21{,}4\) jours</span><br>
+      Il faut environ <strong>22 jours</strong> de séchage.</p>
+
+      <p><strong>4.</strong> \(H(t) = 8\) ⟹ \(35\,\text{e}^{-0{,}05t} = 8\)<br>
+      \(t = \dfrac{\ln(35/8)}{0{,}05} \approx \dfrac{1{,}4759}{0{,}05} \approx\) <span class="reponse">\(29{,}5\) jours</span><br>
+      Il faut environ <strong>30 jours</strong> pour atteindre 8 %.</p>
+
+      <p><strong>5.</strong> \(H'(t) = 35 \times (-0{,}05) \times \text{e}^{-0{,}05t} =\) <span class="reponse">\(-1{,}75\,\text{e}^{-0{,}05t}\)</span><br>
+      \(H'(t) < 0\) pour tout \(t\) : <span class="reponse">le taux d'humidité est toujours décroissant</span>. Le séchage ralentit au fil du temps car \(|H'(t)|\) diminue.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 12 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 15</span>
+    <span class="exo-title">Rendement d'une pompe à chaleur</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un installateur thermicien étudie le rendement d'une pompe à chaleur (PAC) en fonction de la température extérieure. Le COP (coefficient de performance) est modélisé par une fonction logarithmique.
+  </div>
+  <p>Le COP de la PAC est modélisé par :</p>
+  <div class="formule-box">
+    \(\text{COP}(T) = 1{,}2\,\ln(T + 15) + 0{,}5\)
+  </div>
+  <p>où \(T\) est la température extérieure (en °C), pour \(T \geq -10\) °C.</p>
+
+  <table>
+    <tr><th>\(T\) (°C)</th><td>−10</td><td>−5</td><td>0</td><td>5</td><td>10</td><td>15</td><td>20</td></tr>
+    <tr><th>COP</th><td>2,4</td><td>2,9</td><td>3,2</td><td>3,5</td><td>3,7</td><td>3,9</td><td>4,1</td></tr>
+  </table>
+
+  <div class="consigne">
+    <strong>1.</strong> Calculer le COP pour \(T = 7\) °C. Arrondir à \(0{,}1\).<br>
+    <strong>2.</strong> Un COP de 3 signifie que pour 1 kWh d'électricité consommé, la PAC produit 3 kWh de chaleur. En dessous de quelle température le COP est-il inférieur à 3 ?<br>
+    <strong>3.</strong> Calculer \(\text{COP}'(T)\). La PAC est-elle plus efficace quand il fait chaud ou quand il fait froid ?<br>
+    <strong>4.</strong> Le gain de COP entre −5 °C et 0 °C est-il le même qu'entre 15 °C et 20 °C ? Justifier par le calcul.
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx12" height="260"></canvas></div>
+  <p class="chart-label">COP de la PAC en fonction de la température extérieure T (°C)</p>
+  <div class="reponse-box" style="min-height:140px">Réponses : ……………………………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
       <p><strong>1.</strong> \(\text{COP}(7) = 1{,}2\,\ln(7 + 15) + 0{,}5 = 1{,}2\,\ln(22) + 0{,}5\)<br>
       \(\ln(22) \approx 3{,}0910\)<br>
       \(\text{COP}(7) \approx 1{,}2 \times 3{,}091 + 0{,}5 \approx\) <span class="reponse">\(4{,}2\)</span></p>
@@ -75,12 +643,18 @@
       <p><strong>4.</strong> Gain entre −5 et 0 : \(\text{COP}(0) - \text{COP}(-5) = 3{,}2 - 2{,}9 =\) <span class="reponse">\(0{,}3\)</span>.<br>
       Gain entre 15 et 20 : \(\text{COP}(20) - \text{COP}(15) = 4{,}1 - 3{,}9 =\) <span class="reponse">\(0{,}2\)</span>.<br>
       <span class="reponse">Le gain est plus important à basse température</span>. C'est normal : la fonction \(\ln\) croît de plus en plus lentement. Chaque degré gagné a plus d'impact quand il fait froid.</p>
-    </div>
+  </div>
+  </details>
 </div>
+
+</div><!-- fin diff-appro -->
+
 <div class="nav-footer">
   <a href="lecon.html">📖 Cours Ch09</a>
   <a href="ds.html">📝 Devoir Ch09</a>
   <a href="../../../maths-term-iccer.html">📚 Sommaire</a>
+</div>
+
 </div>
 
 <script>
@@ -126,15 +700,9 @@ const linOpts=(xl,yl)=>({responsive:true,plugins:{legend:{display:true,labels:{b
   new Chart(document.getElementById('chartEx12'),{type:'scatter',data:{datasets:[{type:'line',label:'COP(T) = 1,2·ln(T+15) + 0,5',data:curve,borderColor:VIOLET,borderWidth:2.5,pointRadius:0,backgroundColor:'transparent',tension:0.3},{type:'scatter',label:'Relevés',data:pts,backgroundColor:BLEU,pointRadius:6}]},options:linOpts('Température T (°C)','COP')});
 })();
 </script>
-</div>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
-<script>
-function toggle(btn){
-  var c=btn.nextElementSibling;
-  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
-  else{c.style.display='block';btn.textContent='Masquer la correction';}
-}
-</script>
+
+<script>function toggle(b){const c=b.nextElementSibling;c.style.display=c.style.display==='block'?'none':'block';b.textContent=c.style.display==='block'?'Masquer la correction':'Voir la correction';}</script>
 </body>
 </html>

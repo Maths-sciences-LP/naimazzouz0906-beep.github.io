@@ -36,9 +36,6 @@
 <!-- NIVEAU 1 -->
 
 <!-- EX 1 -->
-
-<h2>Exercices guidés pas à pas</h2>
-
 <div class="exo diff-socle">
   <div class="exo-header">
     <span class="exo-num">Exercice 1</span>
@@ -58,18 +55,503 @@
 
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
+      <p><strong>a)</strong> <span class="reponse">\(x\) = puissance nominale (W)</span> <span class="reponse">\(y\) = consommation mensuelle (kWh)</span><br>
+      La puissance choisie explique la consommation observée.</p>
+      <p><strong>b)</strong> <span class="reponse">\(x\) = surface posée (m²)</span> <span class="reponse">\(y\) = coût en matériaux (€)</span><br>
+      Plus la surface est grande, plus le coût augmente.</p>
+      <p><strong>c)</strong> <span class="reponse">\(x\) = débit (m³/h)</span> <span class="reponse">\(y\) = perte de charge (bar)</span><br>
+      Le débit imposé détermine la perte de charge résultante.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 2 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Lire un tableau de données</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>Un technicien a relevé la consommation de chauffage d'une école selon la température extérieure :</p>
+  <table>
+    <tr><th>Température \(T\) (°C)</th><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td><td>16</td></tr>
+    <tr><th>Consommation \(C\) (kWh)</th><td>85</td><td>78</td><td>70</td><td>62</td><td>55</td><td>48</td><td>40</td><td>32</td></tr>
+  </table>
+  <div class="consigne">
+    <strong>1.</strong> Quelles sont les deux variables étudiées ?<br>
+    <strong>2.</strong> Quelle est la consommation pour \(T = 12\) °C ?<br>
+    <strong>3.</strong> Décrivez en une phrase la tendance observée.
+  </div>
+  <div class="reponse-box" style="min-height:80px">Réponses : ………………………………………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> Variables : <span class="reponse">température extérieure \(T\) (°C)</span> et <span class="reponse">consommation de chauffage \(C\) (kWh)</span>.</p>
+      <p><strong>2.</strong> Pour \(T = 12\) °C : <span class="reponse">\(C = 48\) kWh</span> (lecture directe dans le tableau).</p>
+      <p><strong>3.</strong> Tendance : <span class="reponse">quand la température extérieure augmente, la consommation de chauffage diminue</span> — tendance <strong>décroissante</strong> : plus il fait chaud dehors, moins on chauffe.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 3 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">Reconnaître une tendance dans un nuage de points</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>Pour chaque nuage de points, indiquer si la tendance est <strong>croissante</strong>, <strong>décroissante</strong> ou s'il <strong>n'y a pas de tendance</strong> :</p>
+  <div class="deux-col" style="margin-top:12px">
+    <div>
+      <div class="chart-wrap"><canvas id="chartN1a" height="180"></canvas></div>
+      <p style="text-align:center;font-size:.83em"><strong>Nuage A</strong> — Débit / Perte de charge</p>
+    </div>
+    <div>
+      <div class="chart-wrap"><canvas id="chartN1b" height="180"></canvas></div>
+      <p style="text-align:center;font-size:.83em"><strong>Nuage B</strong> — Puissance / Consommation</p>
+    </div>
+    <div>
+      <div class="chart-wrap"><canvas id="chartN1c" height="180"></canvas></div>
+      <p style="text-align:center;font-size:.83em"><strong>Nuage C</strong> — Couleur pièce / Masse</p>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:10px 0">
+      <div class="reponse-box" style="min-height:36px">Nuage A : tendance = …………………</div>
+      <div class="reponse-box" style="min-height:36px">Nuage B : tendance = …………………</div>
+      <div class="reponse-box" style="min-height:36px">Nuage C : tendance = …………………</div>
+    </div>
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>Nuage A</strong> : <span class="reponse">tendance décroissante</span> — quand le débit augmente, la pression résiduelle diminue.</p>
+      <p><strong>Nuage B</strong> : <span class="reponse">tendance croissante</span> — plus la puissance est élevée, plus la consommation augmente.</p>
+      <p><strong>Nuage C</strong> : <span class="reponse">pas de tendance</span> — la couleur d'une pièce n'a aucun lien avec sa masse.</p>
+  </div>
+  </details>
+</div>
+
+<!-- ================================================================
+     SOCLE — EXERCICES TRÈS GUIDÉS
+     ================================================================ -->
+<div class="diff-socle">
+
+<!-- SOCLE S1 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Identifier les deux variables — méthode guidée</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <div class="meth">
+    <strong>Méthode :</strong> Dans une étude à deux variables :<br>
+    – la variable \(x\) est celle qui <strong>explique</strong> ou qui est choisie (la cause)<br>
+    – la variable \(y\) est celle qu'on <strong>mesure</strong> ou qu'on observe (l'effet)
+  </div>
+  <p>Pour chaque situation, cocher la bonne réponse :</p>
+
+  <p><strong>a)</strong> Un technicien chauffagiste mesure la consommation électrique mensuelle \(C\) (kWh) de radiateurs selon leur puissance nominale \(P\) (W).</p>
+  <table style="max-width:380px">
+    <tr><th></th><th>Puissance \(P\)</th><th>Consommation \(C\)</th></tr>
+    <tr><td>\(x\) (cause)</td><td class="vide">☐</td><td class="vide">☐</td></tr>
+    <tr><td>\(y\) (effet)</td><td class="vide">☐</td><td class="vide">☐</td></tr>
+  </table>
+
+  <p><strong>b)</strong> Un menuisier agenceur note la surface de panneaux posée \(S\) (m²) et le coût total en matériaux \(C\) (€) pour ses chantiers.</p>
+  <table style="max-width:380px">
+    <tr><th></th><th>Surface \(S\)</th><th>Coût \(C\)</th></tr>
+    <tr><td>\(x\) (cause)</td><td class="vide">☐</td><td class="vide">☐</td></tr>
+    <tr><td>\(y\) (effet)</td><td class="vide">☐</td><td class="vide">☐</td></tr>
+  </table>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>a)</strong> \(x\) = <span class="reponse">puissance \(P\) (W)</span> — on choisit la puissance (cause).<br>
+      \(y\) = <span class="reponse">consommation \(C\) (kWh)</span> — on observe la consommation (effet).</p>
+      <p><strong>b)</strong> \(x\) = <span class="reponse">surface \(S\) (m²)</span> — la surface choisie détermine le coût.<br>
+      \(y\) = <span class="reponse">coût \(C\) (€)</span> — le coût est la conséquence de la surface.</p>
+      <div class="att">Astuce : \(x\) est souvent la variable que l'on peut <strong>choisir ou contrôler</strong>. \(y\) en résulte.</div>
+  </div>
+  </details>
+</div>
+
+<!-- SOCLE S2 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Lire un tableau et identifier la tendance</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>Relevés de la consommation de chauffage d'une école selon la température extérieure :</p>
+  <table>
+    <tr><th>Température \(T\) (°C)</th><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td><td>16</td></tr>
+    <tr><th>Consommation \(C\) (kWh)</th><td>85</td><td>78</td><td>70</td><td>62</td><td>55</td><td>48</td><td>40</td><td>32</td></tr>
+  </table>
+
+  <div class="consigne"><strong>1.</strong> Lire dans le tableau : quelle est la consommation pour \(T = 8\) °C ?</div>
+  <div class="reponse-box">\(C = \) ……… kWh</div>
+
+  <div class="consigne"><strong>2.</strong> Entre \(T = 2\) °C et \(T = 16\) °C, la consommation :</div>
+  <p style="margin-left:1em">☐ augmente    ☐ diminue    ☐ reste constante</p>
+
+  <div class="consigne"><strong>3.</strong> La tendance est donc :</div>
+  <p style="margin-left:1em">☐ croissante    ☐ décroissante    ☐ pas de tendance</p>
+
+  <div class="consigne"><strong>4.</strong> Compléter : quand la température augmente d'1 °C, la consommation diminue d'environ ……… kWh.</div>
+  <div class="reponse-box">(Calculer : (85 − 32) ÷ (16 − 2) ≈ ………)</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> Pour \(T = 8\) °C : <span class="reponse">\(C = 62\) kWh</span> (lecture directe dans le tableau).</p>
+      <p><strong>2.</strong> La consommation <span class="reponse">diminue</span> : 85 → 78 → 70 → … → 32.</p>
+      <p><strong>3.</strong> Tendance : <span class="reponse">décroissante</span> — plus il fait chaud, moins on chauffe.</p>
+      <p><strong>4.</strong> \((85 - 32) \div (16 - 2) = 53 \div 14 \approx \)<span class="reponse">\(3{,}8\) kWh par °C</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- SOCLE S3 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">Calculer avec une droite d'ajustement — pas à pas</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>La droite d'ajustement de la consommation est : \(C = -3{,}8 \times T + 92{,}7\)</p>
+  <div class="meth">
+    <strong>Méthode :</strong> Pour calculer \(C\) pour \(T = 5\) °C, on remplace \(T\) par \(5\) :<br>
+    \(C = -3{,}8 \times \mathbf{5} + 92{,}7 = -19 + 92{,}7 = \mathbf{73{,}7}\) kWh ✓
+  </div>
+
+  <div class="consigne"><strong>1.</strong> Calculer \(C\) pour \(T = 10\) °C. Compléter les cases :</div>
+  <p style="font-size:.93em">\(C = -3{,}8 \times \boxed{\phantom{10}} + 92{,}7 = \boxed{\phantom{-38}} + 92{,}7 = \boxed{\phantom{54,7}}\) kWh</p>
+
+  <div class="consigne"><strong>2.</strong> \(T = 10\) est-il entre 2 et 16 (les valeurs du tableau) ?</div>
+  <p style="margin-left:1em">☐ Oui → c'est une <strong>interpolation</strong> (estimation fiable)<br>
+  ☐ Non → c'est une <strong>extrapolation</strong> (moins sûre, hors données)</p>
+
+  <div class="consigne"><strong>3.</strong> Calculer \(C\) pour \(T = 25\) °C (hors tableau). Indiquer le type d'estimation :</div>
+  <p style="font-size:.93em">\(C = -3{,}8 \times \boxed{\phantom{25}} + 92{,}7 = \) ……… kWh</p>
+  <div class="reponse-box">Type d'estimation : ………  — La valeur obtenue est-elle réaliste ? ………</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(C = -3{,}8 \times 10 + 92{,}7 = -38 + 92{,}7 = \)<span class="reponse">\(54{,}7\) kWh</span></p>
+      <p><strong>2.</strong> \(T = 10\) est entre 2 et 16 → <span class="reponse">interpolation</span> ✓ (estimation fiable)</p>
+      <p><strong>3.</strong> \(C = -3{,}8 \times 25 + 92{,}7 = -95 + 92{,}7 = \)<span class="reponse">\(-2{,}3\) kWh</span> → <span class="reponse">extrapolation</span> ⚠️<br>
+      Valeur négative : <strong>pas réaliste</strong> — une consommation ne peut pas être négative. Le modèle n'est plus valable à 25 °C.</p>
+  </div>
+  </details>
+</div>
+
+</div><!-- fin diff-socle -->
+
+<!-- ================================================================
+     STANDARD — EXERCICES DU PROGRAMME (Niveaux 2 à 3)
+     ================================================================ -->
+<div class="diff-standard">
+
+<!-- EX 4 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 7</span>
+    <span class="exo-title">Placer des points dans un repère</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>Données relevées sur une installation hydraulique :</p>
+  <table>
+    <tr><th>Débit \(D\) (m³/h)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+    <tr><th>Perte de charge \(P\) (bar)</th><td>3,2</td><td>2,8</td><td>2,3</td><td>1,9</td><td>1,4</td><td>1,0</td><td>0,6</td></tr>
+  </table>
+  <div class="consigne">
+    <strong>1.</strong> Sur la grille ci-dessous, placer les 7 points du nuage.<br>
+    <strong>2.</strong> Décrire la tendance observée.
+  </div>
+  <div style="text-align:center;margin:12px 0">
+    <canvas id="canGrille4" width="500" height="240"></canvas>
+    <p class="chart-label">Repère à compléter — \(x\) : Débit (m³/h)  |  \(y\) : Perte de charge (bar)</p>
+  </div>
+  <div class="reponse-box">Tendance : ……………………………………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <div class="chart-wrap"><canvas id="chartCorr4" height="200"></canvas></div>
+      <p>Tendance : <span class="reponse">décroissante</span> — quand le débit augmente, la perte de charge diminue. La pression résiduelle en aval baisse quand on fait passer plus de fluide.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 5 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 8</span>
+    <span class="exo-title">Lire un nuage de points</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>Nuage de points représentant la consommation mensuelle \(C\) (kWh) de 7 modèles de radiateurs électriques selon leur puissance \(P\) (W) :</p>
+  <div class="chart-wrap"><canvas id="chartEx5" height="220"></canvas></div>
+  <p class="chart-label">Puissance nominale (W) / Consommation mensuelle (kWh)</p>
+  <div class="consigne">
+    <strong>1.</strong> Combien de radiateurs sont représentés ?<br>
+    <strong>2.</strong> Quelle est la consommation aproximative du radiateur de 1 500 W ?<br>
+    <strong>3.</strong> Un radiateur consomme 60 kWh/mois. Quelle est sa puissance approximative ?<br>
+    <strong>4.</strong> La tendance est-elle croissante ou décroissante ? Est-ce logique ?
+  </div>
+  <div class="reponse-box" style="min-height:90px">Réponses : ……………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> <span class="reponse">7 radiateurs</span> (7 points sur le nuage).</p>
+      <p><strong>2.</strong> Pour \(P = 1\,500\) W : <span class="reponse">\(C \approx 45\) kWh/mois</span>.</p>
+      <p><strong>3.</strong> Pour \(C = 60\) kWh/mois : <span class="reponse">\(P \approx 2\,000\) W</span>.</p>
+      <p><strong>4.</strong> Tendance <span class="reponse">croissante</span> : plus la puissance est élevée, plus la consommation est grande. C'est logique — puissance et énergie sont directement liées.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 6 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 9</span>
+    <span class="exo-title">Estimer une valeur à partir d'une droite d'ajustement</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>Droite d'ajustement reliant la surface de panneaux \(S\) (m²) au coût en matériaux \(C\) (€) :</p>
+  <p style="text-align:center;font-weight:700;font-size:1.05em">\(C = 20{,}2 \times S + 18{,}7\)</p>
+  <div class="chart-wrap"><canvas id="chartEx6" height="220"></canvas></div>
+  <p class="chart-label">Surface S (m²) / Coût C (€) avec droite d'ajustement</p>
+  <div class="consigne">
+    <strong>1.</strong> Estimer le coût pour \(S = 9\) m². Interpolation ou extrapolation ?<br>
+    <strong>2.</strong> Estimer le coût pour \(S = 25\) m². Interpolation ou extrapolation ?<br>
+    <strong>3.</strong> Interpréter le coefficient 20,2 dans le contexte professionnel.
+  </div>
+  <div class="reponse-box" style="min-height:90px">Réponses : ………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> \(S = 9\) m² (entre 8 et 10, dans les données) :<br>
+      \(C = 20{,}2 \times 9 + 18{,}7 = 181{,}8 + 18{,}7 = \mathbf{200{,}5}\) € → <span class="reponse">interpolation</span></p>
+      <p><strong>2.</strong> \(S = 25\) m² (hors des données, au-delà de 20) :<br>
+      \(C = 20{,}2 \times 25 + 18{,}7 = 505 + 18{,}7 = \mathbf{523{,}7}\) € → <span class="reponse">extrapolation</span> ⚠️ valeur moins fiable</p>
+      <p><strong>3.</strong> Le coefficient 20,2 signifie : <span class="reponse">chaque m² supplémentaire coûte environ 20,20 € de matériaux</span>. C'est le coût unitaire moyen au m².</p>
+  </div>
+  </details>
+</div>
+
+<!-- NIVEAU 3 -->
+
+<!-- EX 7 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 10</span>
+    <span class="exo-title">Interpréter une droite d'ajustement</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>Droite d'ajustement de la consommation de chauffage \(C\) (kWh) en fonction de la température \(T\) (°C) :</p>
+  <p style="text-align:center;font-weight:700;font-size:1.05em">\(C = -3{,}8 \times T + 92{,}7\)</p>
+  <div class="consigne">
+    <strong>1.</strong> Que représente le coefficient \(-3{,}8\) ?<br>
+    <strong>2.</strong> Que représente \(+92{,}7\) ?<br>
+    <strong>3.</strong> Calculer \(C\) pour \(T = 5\) °C et pour \(T = 15\) °C.<br>
+    <strong>4.</strong> Pour quelle température la consommation théorique serait-elle nulle ? Ce résultat est-il réaliste ?
+  </div>
+  <div class="reponse-box" style="min-height:100px">Réponses : ……………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> Le coefficient \(-3{,}8\) est la <strong>pente</strong> : <span class="reponse">chaque degré supplémentaire entraîne une baisse de 3,8 kWh</span>. Le signe négatif traduit la tendance décroissante.</p>
+      <p><strong>2.</strong> Le terme \(+92{,}7\) est l'<strong>ordonnée à l'origine</strong> : <span class="reponse">consommation théorique pour \(T = 0\) °C</span>, soit ≈ 92,7 kWh/jour.</p>
+      <p><strong>3.</strong> \(T = 5\) : \(C = -3{,}8 \times 5 + 92{,}7 = \mathbf{73{,}7}\) kWh  |  \(T = 15\) : \(C = -3{,}8 \times 15 + 92{,}7 = \mathbf{35{,}7}\) kWh</p>
+      <p><strong>4.</strong> \(C = 0\) : \(T = 92{,}7 / 3{,}8 \approx \mathbf{24{,}4}\) °C.<br>
+      <span class="reponse">Pas réaliste</span> : à 24 °C, un bâtiment consomme encore de l'énergie. Le modèle linéaire a ses limites hors des données observées.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 8 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 11</span>
+    <span class="exo-title">Interpolation ou extrapolation ?</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>Données pour des débits entre <strong>1 et 7 m³/h</strong>. Droite d'ajustement : \(P = -0{,}44 \times D + 3{,}65\)</p>
+  <div class="consigne">Pour chaque débit, indiquer le type d'estimation et calculer la perte de charge :</div>
+  <table>
+    <tr><th>Débit (m³/h)</th><th>Dans [1 ; 7] ?</th><th>Type d'estimation</th><th>Résultat (bar)</th></tr>
+    <tr><td>3,5</td><td></td><td></td><td></td></tr>
+    <tr><td>0,5</td><td></td><td></td><td></td></tr>
+    <tr><td>5,5</td><td></td><td></td><td></td></tr>
+    <tr><td>10</td><td></td><td></td><td></td></tr>
+  </table>
+  <div class="att">⚠️ Une extrapolation utilise le modèle hors de l'intervalle des données : elle est moins fiable et doit être signalée.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <table>
+        <tr><th>Débit</th><th>Dans [1;7] ?</th><th>Type</th><th>Calcul</th><th>Résultat</th></tr>
+        <tr><td>3,5</td><td>✅ Oui</td><td><span class="reponse" style="font-size:.88em">Interpolation</span></td><td>\(-0{,}44 \times 3{,}5 + 3{,}65\)</td><td>2,11 bar</td></tr>
+        <tr><td>0,5</td><td>❌ Non</td><td style="color:#c53030;font-weight:700">Extrapolation ⚠️</td><td>\(-0{,}44 \times 0{,}5 + 3{,}65\)</td><td>3,43 bar</td></tr>
+        <tr><td>5,5</td><td>✅ Oui</td><td><span class="reponse" style="font-size:.88em">Interpolation</span></td><td>\(-0{,}44 \times 5{,}5 + 3{,}65\)</td><td>1,23 bar</td></tr>
+        <tr><td>10</td><td>❌ Non</td><td style="color:#c53030;font-weight:700">Extrapolation ⚠️</td><td>\(-0{,}44 \times 10 + 3{,}65\)</td><td><strong>−0,75 bar (irréaliste)</strong></td></tr>
+      </table>
+      <p>Pour \(D = 10\) m³/h, la valeur négative est physiquement impossible. Cela confirme que l'extrapolation loin des données est dangereuse.</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 9 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 12</span>
+    <span class="exo-title">Analyser la pertinence d'un modèle</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>Deux nuages de points et leurs droites d'ajustement :</p>
+  <div class="deux-col">
+    <div>
+      <div class="chart-wrap"><canvas id="chartEx9a" height="200"></canvas></div>
+      <p style="text-align:center;font-size:.83em"><strong>Modèle A</strong> — points très groupés</p>
+    </div>
+    <div>
+      <div class="chart-wrap"><canvas id="chartEx9b" height="200"></canvas></div>
+      <p style="text-align:center;font-size:.83em"><strong>Modèle B</strong> — points très dispersés</p>
+    </div>
+  </div>
+  <div class="consigne">
+    <strong>1.</strong> Pour quel modèle la droite représente-t-elle bien les données ?<br>
+    <strong>2.</strong> Pour quel modèle l'utilisation de la droite serait-elle risquée ?<br>
+    <strong>3.</strong> Donnez deux exemples professionnels où un mauvais modèle peut avoir des conséquences.
+  </div>
+  <div class="reponse-box" style="min-height:80px">Réponses : ………………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> <span class="reponse">Modèle A</span> : points proches de la droite, ajustement pertinent.</p>
+      <p><strong>2.</strong> <span class="reponse">Modèle B</span> : points dispersés, les estimations seraient peu précises.</p>
+      <p><strong>3.</strong>
+        <ul>
+          <li><span class="ticcer-badge">ICCER</span> Un mauvais modèle Température/Consommation peut conduire à un <strong>surdimensionnement ou sous-dimensionnement</strong> de la chaudière → surcoût ou inconfort.</li>
+          <li><span class="erama-badge">ERA-MA</span> Un mauvais modèle Surface/Coût peut générer une <strong>sous-estimation du budget matériaux</strong> et une perte financière sur le chantier.</li>
+        </ul>
+      </p>
+  </div>
+  </details>
+</div>
+
+</div><!-- fin diff-standard -->
+
+<!-- ================================================================
+     APPROFONDISSEMENT — PROBLÈMES OUVERTS
+     ================================================================ -->
+<div class="diff-appro">
+
+<!-- EX 10 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 13</span>
+    <span class="exo-title">Consommation de chauffage et température extérieure</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un technicien chauffagiste supervise une chaudière à condensation dans une école. Il veut modéliser la relation entre température extérieure et consommation journalière de gaz pour anticiper les coûts et régler la chaudière.
+  </div>
+  <table>
+    <tr><th>Température \(T\) (°C)</th><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td><td>16</td></tr>
+    <tr><th>Consommation \(C\) (kWh)</th><td>85</td><td>78</td><td>70</td><td>62</td><td>55</td><td>48</td><td>40</td><td>32</td></tr>
+  </table>
+  <div class="consigne">
+    <strong>1.</strong> Tracer le nuage de points et décrire la tendance.<br>
+    <strong>2.</strong> La droite d'ajustement est \(C = -3{,}8 \times T + 92{,}7\). Vérifier pour \(T = 8\) °C.<br>
+    <strong>3.</strong> Estimer la consommation pour \(T = 7\) °C. Interpolation ou extrapolation ?<br>
+    <strong>4.</strong> Estimer la consommation pour \(T = 20\) °C. Ce résultat est-il réaliste ?<br>
+    <strong>5.</strong> Le chauffage se déclenche si la consommation prévisionnelle dépasse 60 kWh. En dessous de quelle température ?
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx10" height="240"></canvas></div>
+  <p class="chart-label">Nuage de points et droite d'ajustement — Température (°C) / Consommation (kWh)</p>
+  <div class="reponse-box" style="min-height:120px">Réponses : ……………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> Tendance <span class="reponse">décroissante</span> : quand \(T\) augmente, \(C\) diminue. Plus il fait chaud, moins on chauffe.</p>
+      <p><strong>2.</strong> \(T = 8\) : \(C = -3{,}8 \times 8 + 92{,}7 = -30{,}4 + 92{,}7 = \mathbf{62{,}3}\) kWh ≈ 62 kWh ✓</p>
+      <p><strong>3.</strong> \(T = 7\) (entre 6 et 8, dans les données) : \(C = -3{,}8 \times 7 + 92{,}7 = \mathbf{66{,}1}\) kWh → <span class="reponse">interpolation</span></p>
+      <p><strong>4.</strong> \(T = 20\) (hors données) : \(C = -3{,}8 \times 20 + 92{,}7 = \mathbf{16{,}7}\) kWh → <span class="reponse">extrapolation</span>. À 20 °C, l'école n'a probablement plus besoin de chauffage : le modèle n'est plus valable.</p>
+      <p><strong>5.</strong> \(C = 60\) : \(60 = -3{,}8T + 92{,}7\) → \(T = 32{,}7 / 3{,}8 \approx \mathbf{8{,}6}\) °C.<br>
+      <span class="reponse">Le chauffage doit se déclencher dès que \(T\) descend en dessous de 8,6 °C.</span></p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 11 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 14</span>
+    <span class="exo-title">Coût des matériaux selon la surface posée</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un menuisier agenceur veut établir une relation entre la surface de panneaux posée et le coût en matériaux, pour établir des devis rapidement sans calcul complexe.
+  </div>
+  <table>
+    <tr><th>Surface \(S\) (m²)</th><td>5</td><td>8</td><td>10</td><td>12</td><td>15</td><td>18</td><td>20</td></tr>
+    <tr><th>Coût \(C\) (€)</th><td>120</td><td>180</td><td>220</td><td>260</td><td>320</td><td>385</td><td>420</td></tr>
+  </table>
+  <div class="consigne">
+    <strong>1.</strong> Décrire la tendance du nuage de points.<br>
+    <strong>2.</strong> La droite est \(C = 20{,}2 \times S + 18{,}7\). Vérifier pour \(S = 10\) m².<br>
+    <strong>3.</strong> Estimer le coût pour un chantier de 13 m².<br>
+    <strong>4.</strong> Un client a un budget de 300 €. Quelle surface maximum peut-il faire poser ?<br>
+    <strong>5.</strong> Que représente le nombre 20,2 ?
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx11" height="240"></canvas></div>
+  <p class="chart-label">Surface S (m²) / Coût C (€)</p>
+  <div class="reponse-box" style="min-height:120px">Réponses : ……………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+      <p><strong>1.</strong> Tendance <span class="reponse">croissante</span> : plus la surface est grande, plus le coût est élevé.</p>
+      <p><strong>2.</strong> \(S = 10\) : \(C = 20{,}2 \times 10 + 18{,}7 = \mathbf{220{,}7}\) € ≈ 220 € ✓</p>
+      <p><strong>3.</strong> \(S = 13\) (interpolation, entre 12 et 15) : \(C = 20{,}2 \times 13 + 18{,}7 = \mathbf{281{,}3}\) € ≈ 281 €</p>
+      <p><strong>4.</strong> \(C = 300\) : \(300 = 20{,}2S + 18{,}7\) → \(S = 281{,}3 / 20{,}2 \approx \mathbf{13{,}9}\) m²<br>
+      <span class="reponse">Avec 300 €, le client peut faire poser environ 13,9 m² de panneaux.</span></p>
+      <p><strong>5.</strong> Le 20,2 signifie : <span class="reponse">chaque m² supplémentaire coûte environ 20,20 € de matériaux</span> — c'est le coût moyen au m².</p>
+  </div>
+  </details>
+</div>
+
+<!-- EX 12 -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 15</span>
+    <span class="exo-title">Pression dans un circuit hydraulique</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un installateur thermique mesure la pression résiduelle \(P\) (bar) en aval d'une installation pour différents débits \(D\) (m³/h). Il veut vérifier la conformité de l'installation selon le cahier des charges.
+  </div>
+  <table>
+    <tr><th>Débit \(D\) (m³/h)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+    <tr><th>Pression \(P\) (bar)</th><td>3,2</td><td>2,8</td><td>2,3</td><td>1,9</td><td>1,4</td><td>1,0</td><td>0,6</td></tr>
+  </table>
+  <div class="consigne">
+    <strong>1.</strong> Droite d'ajustement : \(P = -0{,}44 \times D + 3{,}65\). Calculer \(P\) pour \(D = 4\) m³/h et comparer au tableau.<br>
+    <strong>2.</strong> Le cahier des charges impose \(P \geq 1{,}5\) bar. Quel est le débit maximal conforme ?<br>
+    <strong>3.</strong> Calculer \(P\) pour \(D = 8\) m³/h. Interpolation ou extrapolation ?<br>
+    <strong>4.</strong> La pression ne peut pas être négative. Quel est le débit maximal théorique selon le modèle ?
+  </div>
+  <div class="chart-wrap"><canvas id="chartEx12" height="240"></canvas></div>
+  <p class="chart-label">Débit D (m³/h) / Pression résiduelle P (bar)</p>
+  <div class="reponse-box" style="min-height:120px">Réponses : ……………………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
       <p><strong>1.</strong> \(D = 4\) : \(P = -0{,}44 \times 4 + 3{,}65 = -1{,}76 + 3{,}65 = \mathbf{1{,}89}\) ≈ 1,9 bar ✓</p>
       <p><strong>2.</strong> \(P = 1{,}5\) : \(1{,}5 = -0{,}44D + 3{,}65\) → \(D = 2{,}15 / 0{,}44 \approx \mathbf{4{,}9}\) m³/h.<br>
       <span class="reponse">L'installation est conforme jusqu'à un débit de 4,9 m³/h.</span></p>
       <p><strong>3.</strong> \(D = 8\) (hors [1;7]) : \(P = -0{,}44 \times 8 + 3{,}65 = \mathbf{0{,}13}\) bar → <span class="reponse">extrapolation</span> ⚠️</p>
       <p><strong>4.</strong> \(P = 0\) : \(D = 3{,}65 / 0{,}44 \approx \mathbf{8{,}3}\) m³/h.<br>
       <span class="reponse">Au-delà de 8,3 m³/h, la pression modélisée devient négative</span> — physiquement impossible, l'installation est sous-dimensionnée pour ce débit.</p>
-    </div>
+  </div>
+  </details>
 </div>
+
+</div><!-- fin diff-appro -->
+
 <div class="nav-footer">
   <a href="lecon.html">📖 Cours Ch01</a>
   <a href="ds.html">📝 Devoir Ch01</a>
   <a href="../../../maths-term-iccer.html">📚 Sommaire</a>
+</div>
+
 </div>
 
 <script>
@@ -125,15 +607,9 @@ new Chart(document.getElementById('chartEx11'),{type:'scatter',data:{datasets:[{
 // Ex 12
 new Chart(document.getElementById('chartEx12'),{type:'scatter',data:{datasets:[{type:'scatter',label:'Mesures',data:[{x:1,y:3.2},{x:2,y:2.8},{x:3,y:2.3},{x:4,y:1.9},{x:5,y:1.4},{x:6,y:1.0},{x:7,y:0.6}],backgroundColor:BLEU,pointRadius:7},{type:'line',label:'P = -0,44D + 3,65',data:droite(-0.44,3.65,0,9,30),borderColor:ROUGE,borderWidth:2.5,pointRadius:0,backgroundColor:'transparent',borderDash:[5,3]}]},options:linOpts('Débit D (m³/h)','Pression P (bar)')});
 </script>
-</div>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
-<script>
-function toggle(btn){
-  var c=btn.nextElementSibling;
-  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
-  else{c.style.display='block';btn.textContent='Masquer la correction';}
-}
-</script>
+
+<script>function toggle(b){const c=b.nextElementSibling;c.style.display=c.style.display==='block'?'none':'block';b.textContent=c.style.display==='block'?'Masquer la correction':'Voir la correction';}</script>
 </body>
 </html>
