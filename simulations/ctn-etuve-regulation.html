@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CTN — Thermostat d'étuve — PC Seconde</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',sans-serif;background:#f5f0ff;color:#2d3748;min-height:100vh}
+header{background:#6f42c1;color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header a{background:rgba(255,255,255,.18);color:#fff;text-decoration:none;padding:5px 12px;border-radius:6px;font-size:.85em;white-space:nowrap}
+header h1{font-size:1.15em;flex:1}
+header p{font-size:.82em;opacity:.85;width:100%}
+.wrap{max-width:860px;margin:0 auto;padding:20px 16px}
+.card{background:#fff;border-radius:12px;padding:20px 22px;margin-bottom:18px;box-shadow:0 2px 8px rgba(111,66,193,.1)}
+.card h2{font-size:1em;color:#6f42c1;margin-bottom:14px;border-bottom:2px solid #f0ebff;padding-bottom:6px}
+.ctrl label{display:block;font-size:.85em;font-weight:600;color:#4a5568;margin-bottom:4px}
+.ctrl input[type=range]{width:100%;accent-color:#6f42c1}
+.val-display{display:flex;justify-content:space-between;font-size:.78em;color:#718096;margin-top:2px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}}
+/* Étuve */
+.etuve-scene{display:flex;justify-content:center;align-items:center;gap:30px;flex-wrap:wrap;padding:10px 0}
+.etuve-box{position:relative;width:200px;height:160px;border:5px solid #6f42c1;border-radius:12px;background:#f5f0ff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.etuve-box .titre{font-size:.75em;font-weight:700;color:#6f42c1;position:absolute;top:-14px;background:#fff;padding:0 8px}
+.thermometre{display:flex;flex-direction:column;align-items:center;gap:4px}
+.thermo-tube{width:20px;height:90px;border:3px solid #718096;border-radius:10px 10px 0 0;position:relative;overflow:hidden;background:#fff}
+.thermo-fill{position:absolute;bottom:0;width:100%;background:linear-gradient(to top,#e11d48,#f97316);transition:height .6s ease;border-radius:0 0 0 0}
+.thermo-bulb{width:28px;height:28px;border-radius:50%;background:#e11d48;border:3px solid #718096;margin-top:-3px}
+.thermo-val{font-size:1.1em;font-weight:800;color:#e11d48}
+.chauffage-indicator{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:.78em;font-weight:600}
+.led{width:28px;height:28px;border-radius:50%;border:3px solid #ccc;transition:background .4s,box-shadow .4s}
+.led.on{background:#f97316;box-shadow:0 0 14px 4px rgba(249,115,22,.5);border-color:#f97316}
+.led.off{background:#e2e8f0}
+/* Ohmmètre virtuel */
+.ohmmetre{border:3px solid #6f42c1;border-radius:10px;padding:14px;text-align:center;max-width:220px;margin:0 auto}
+.ohmmetre .ecran{font-size:2em;font-weight:900;color:#6f42c1;font-family:monospace;background:#f0ebff;border-radius:6px;padding:6px 14px;margin:8px 0}
+.ohmmetre .unite{font-size:.8em;color:#718096}
+/* Verdict */
+.verdict{border-radius:10px;padding:14px 18px;font-size:.95em;font-weight:600;text-align:center;transition:all .4s}
+.verdict.trop-froid{background:#dbeafe;border:2px solid #3b82f6;color:#1e40af}
+.verdict.ok{background:#d1fae5;border:2px solid #10b981;color:#065f46}
+.verdict.trop-chaud{background:#fee2e2;border:2px solid #ef4444;color:#991b1b}
+/* Table */
+table{border-collapse:collapse;width:100%;font-size:.88em}
+th,td{border:1px solid #e2e8f0;padding:7px 10px;text-align:center}
+th{background:#6f42c1;color:#fff}
+td.actif{background:#fef9c3;font-weight:700}
+.chart-wrap{position:relative;height:260px;margin-top:10px}
+.question{background:#fffbeb;border:1px solid #f59e0b;border-radius:8px;padding:14px 16px;font-size:.88em}
+.question strong{color:#92400e}
+.question ol{padding-left:18px;margin-top:6px}
+.question li{margin-bottom:4px}
+.badge-on{display:inline-block;background:#fed7aa;color:#9a3412;padding:2px 10px;border-radius:12px;font-size:.78em;font-weight:700}
+.badge-off{display:inline-block;background:#e2e8f0;color:#374151;padding:2px 10px;border-radius:12px;font-size:.78em;font-weight:700}
+</style>
+</head>
+<body>
+<header>
+  <a href="../simulations.html">← Simulations</a>
+  <div>
+    <h1>CTN — Thermostat d'étuve de séchage</h1>
+    <p>Physique-Chimie — Seconde Bac Pro — Chapitre 10 : Capteurs thermiques</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="card">
+    <h2>Régler la consigne et observer la mesure</h2>
+    <div class="grid2">
+      <div class="ctrl">
+        <label>Consigne de l'étuve : <strong id="lbl-consigne">80 °C</strong></label>
+        <input type="range" id="sliderConsigne" min="40" max="120" value="80" step="5" oninput="update()">
+        <div class="val-display"><span>40 °C</span><span>120 °C</span></div>
+      </div>
+      <div class="ctrl">
+        <label>Température réelle de l'étuve : <strong id="lbl-T">55 °C</strong></label>
+        <input type="range" id="sliderT" min="0" max="130" value="55" step="1" oninput="update()">
+        <div class="val-display"><span>0 °C</span><span>130 °C</span></div>
+      </div>
+    </div>
+
+    <div class="etuve-scene">
+      <div class="etuve-box">
+        <span class="titre">Étuve de séchage</span>
+        <div class="thermometre">
+          <div class="thermo-tube"><div class="thermo-fill" id="thermo-fill"></div></div>
+          <div class="thermo-bulb"></div>
+          <div class="thermo-val" id="thermo-val">55 °C</div>
+        </div>
+        <div style="font-size:.72em;color:#718096">T réelle</div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+        <div class="ohmmetre">
+          <div style="font-size:.75em;font-weight:700;color:#4a5568">Ohmmètre (mesure CTN)</div>
+          <div class="ecran" id="ohm-ecran">—</div>
+          <div class="unite">kΩ</div>
+        </div>
+        <div class="chauffage-indicator">
+          <div class="led" id="led-chauffage"></div>
+          <span id="led-label">Chauffage</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Verdict du régulateur</h2>
+    <div class="verdict" id="verdict">—</div>
+  </div>
+
+  <div class="card">
+    <h2>Table de correspondance R(T) — CTN de l'étuve</h2>
+    <table id="table-ctn">
+      <tr>
+        <th>T (°C)</th>
+        <th>R (kΩ)</th>
+        <th>État chauffage</th>
+      </tr>
+    </table>
+    <p style="font-size:.78em;color:#718096;margin-top:8px">La ligne en jaune correspond à la température réelle actuelle (la plus proche).</p>
+  </div>
+
+  <div class="card">
+    <h2>Courbe R(T) de la CTN — Point de mesure actuel</h2>
+    <div class="chart-wrap"><canvas id="chart"></canvas></div>
+  </div>
+
+  <div class="card">
+    <div class="question">
+      <strong>Questions</strong>
+      <ol>
+        <li>Régler la consigne à <strong>80 °C</strong> et la température réelle à <strong>40 °C</strong>. Quelle est la résistance mesurée ? Le chauffage est-il ON ou OFF ?</li>
+        <li>Augmenter progressivement T jusqu'à 80 °C. À quel moment le chauffage passe-t-il OFF ?</li>
+        <li>Si la CTN est débranché, le régulateur lit R → ∞. Que pense-t-il ? Que fait le chauffage ?</li>
+        <li>Changer la consigne à <strong>60 °C</strong> et régler T = 80 °C. Qu'affiche le régulateur ?</li>
+      </ol>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// CTN NTC 10kΩ, B=3950K
+function R_ctn(T_C) {
+  var T = T_C + 273.15;
+  var T0 = 298.15;
+  var R0 = 10000;
+  var B = 3950;
+  return R0 * Math.exp(B * (1/T - 1/T0)) / 1000;
+}
+
+// Table de référence : points tous les 10°C de 20 à 120°C
+var tableTemps = [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];
+
+// Initialiser table
+var tbody = document.getElementById('table-ctn');
+tableTemps.forEach(function(t) {
+  var r = R_ctn(t);
+  var tr = document.createElement('tr');
+  tr.id = 'row-' + t;
+  tr.innerHTML = '<td>' + t + '</td><td>' + r.toFixed(2) + '</td><td id="state-'+t+'">—</td>';
+  tbody.appendChild(tr);
+});
+
+// Graphique
+var chartTemps = [];
+var chartData = [];
+for (var t = 0; t <= 130; t += 2) {
+  chartTemps.push(t);
+  chartData.push(parseFloat(R_ctn(t).toFixed(3)));
+}
+
+var ctx = document.getElementById('chart').getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: chartTemps,
+    datasets: [
+      {
+        label: 'CTN R(T)',
+        data: chartData,
+        borderColor: '#6f42c1',
+        backgroundColor: 'rgba(111,66,193,0.08)',
+        borderWidth: 2.5,
+        pointRadius: 0,
+        tension: 0.3,
+        fill: true
+      },
+      {
+        label: 'Mesure actuelle',
+        data: [],
+        borderColor: '#e11d48',
+        backgroundColor: '#e11d48',
+        pointRadius: 10,
+        pointStyle: 'circle',
+        showLine: false
+      },
+      {
+        label: 'Consigne',
+        data: [],
+        borderColor: '#10b981',
+        backgroundColor: '#10b981',
+        pointRadius: 8,
+        pointStyle: 'triangle',
+        showLine: false
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: true,
+        labels: { font: { size: 11 } }
+      },
+      tooltip: {
+        callbacks: {
+          label: function(c) {
+            return c.dataset.label + ' : ' + c.parsed.y.toFixed(2) + ' kΩ @ ' + c.parsed.x + ' °C';
+          }
+        }
+      }
+    },
+    scales: {
+      x: { title: { display: true, text: 'Température (°C)', font: { size: 11 } }, ticks: { maxTicksLimit: 8 } },
+      y: { title: { display: true, text: 'Résistance R (kΩ)', font: { size: 11 } }, min: 0 }
+    }
+  }
+});
+
+function update() {
+  var T = parseInt(document.getElementById('sliderT').value);
+  var C = parseInt(document.getElementById('sliderConsigne').value);
+
+  document.getElementById('lbl-T').textContent = T + ' °C';
+  document.getElementById('lbl-consigne').textContent = C + ' °C';
+  document.getElementById('thermo-val').textContent = T + ' °C';
+
+  // Thermomètre visuel
+  var pct = Math.min(100, Math.max(0, T / 130 * 100));
+  document.getElementById('thermo-fill').style.height = pct + '%';
+
+  // Résistance mesurée
+  var R = R_ctn(T);
+  var R_consigne = R_ctn(C);
+  document.getElementById('ohm-ecran').textContent = R.toFixed(2);
+
+  // Chauffage : ON si T < consigne (donc R > R_consigne)
+  var chauffageON = T < C;
+  var led = document.getElementById('led-chauffage');
+  var ledLabel = document.getElementById('led-label');
+  if (chauffageON) {
+    led.className = 'led on';
+    ledLabel.innerHTML = 'Chauffage <span class="badge-on">ON</span>';
+  } else {
+    led.className = 'led off';
+    ledLabel.innerHTML = 'Chauffage <span class="badge-off">OFF</span>';
+  }
+
+  // Verdict
+  var v = document.getElementById('verdict');
+  var diff = T - C;
+  if (diff < -5) {
+    v.className = 'verdict trop-froid';
+    v.innerHTML = '🔥 Trop froid (' + T + ' °C < consigne ' + C + ' °C) — Chauffage <strong>ON</strong> — R = ' + R.toFixed(2) + ' kΩ > R_consigne = ' + R_consigne.toFixed(2) + ' kΩ';
+  } else if (diff > 5) {
+    v.className = 'verdict trop-chaud';
+    v.innerHTML = '❄️ Trop chaud (' + T + ' °C > consigne ' + C + ' °C) — Chauffage <strong>OFF</strong> — R = ' + R.toFixed(2) + ' kΩ < R_consigne = ' + R_consigne.toFixed(2) + ' kΩ';
+  } else {
+    v.className = 'verdict ok';
+    v.innerHTML = '✔ Température correcte (' + T + ' °C ≈ consigne ' + C + ' °C) — Chauffage <strong>OFF</strong>';
+  }
+
+  // Table : colorer la ligne la plus proche
+  tableTemps.forEach(function(t) {
+    var row = document.getElementById('row-' + t);
+    var stateCell = document.getElementById('state-' + t);
+    var isON = t < C;
+    stateCell.innerHTML = isON ? '<span class="badge-on">ON</span>' : '<span class="badge-off">OFF</span>';
+    var closest = tableTemps.reduce(function(a, b) {
+      return Math.abs(b - T) < Math.abs(a - T) ? b : a;
+    });
+    if (t === closest) {
+      row.querySelectorAll('td').forEach(function(td) { td.classList.add('actif'); });
+    } else {
+      row.querySelectorAll('td').forEach(function(td) { td.classList.remove('actif'); });
+    }
+  });
+
+  // Graphique : point de mesure et consigne
+  myChart.data.datasets[1].data = [{ x: T, y: R }];
+  myChart.data.datasets[2].data = [{ x: C, y: R_consigne }];
+  myChart.update('none');
+}
+
+// Init
+update();
+</script>
+</body>
+</html>

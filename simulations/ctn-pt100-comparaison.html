@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CTN vs Pt100 — Comparaison interactive — PC Seconde</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',sans-serif;background:#f5f0ff;color:#2d3748;min-height:100vh}
+header{background:#6f42c1;color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header a{background:rgba(255,255,255,.18);color:#fff;text-decoration:none;padding:5px 12px;border-radius:6px;font-size:.85em;white-space:nowrap}
+header h1{font-size:1.15em;flex:1}
+header p{font-size:.82em;opacity:.85;width:100%}
+.wrap{max-width:860px;margin:0 auto;padding:20px 16px}
+.card{background:#fff;border-radius:12px;padding:20px 22px;margin-bottom:18px;box-shadow:0 2px 8px rgba(111,66,193,.1)}
+.card h2{font-size:1em;color:#6f42c1;margin-bottom:12px;border-bottom:2px solid #f0ebff;padding-bottom:6px}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:560px){.controls{grid-template-columns:1fr}}
+.ctrl label{display:block;font-size:.85em;font-weight:600;color:#4a5568;margin-bottom:4px}
+.ctrl input[type=range]{width:100%;accent-color:#6f42c1}
+.val-display{display:flex;justify-content:space-between;align-items:center;font-size:.82em;color:#718096;margin-top:2px}
+.readout{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.readout-box{border-radius:8px;padding:12px 14px;text-align:center}
+.ctn-box{background:#f0ebff;border:2px solid #6f42c1}
+.pt100-box{background:#fff0f6;border:2px solid #e83e8c}
+.readout-box .label{font-size:.78em;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px}
+.readout-box .val{font-size:1.5em;font-weight:800}
+.readout-box .unit{font-size:.78em;color:#718096;margin-top:2px}
+.ctn-box .label{color:#6f42c1}
+.ctn-box .val{color:#6f42c1}
+.pt100-box .label{color:#e83e8c}
+.pt100-box .val{color:#e83e8c}
+.chart-wrap{position:relative;height:320px;margin-top:10px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:480px){.info-grid{grid-template-columns:1fr}}
+.info-box{border-radius:8px;padding:12px 14px;font-size:.85em;line-height:1.6}
+.info-ctn{background:#f0ebff;border-left:4px solid #6f42c1}
+.info-pt100{background:#fff0f6;border-left:4px solid #e83e8c}
+.info-box strong{display:block;margin-bottom:4px;font-size:.9em}
+.legend-row{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:8px}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:.82em;font-weight:600}
+.dot{width:14px;height:14px;border-radius:50%;flex-shrink:0}
+.question{background:#fffbeb;border:1px solid #f59e0b;border-radius:8px;padding:14px 16px;font-size:.88em}
+.question strong{color:#92400e}
+.question ol{padding-left:18px;margin-top:6px}
+.question li{margin-bottom:4px}
+</style>
+</head>
+<body>
+<header>
+  <a href="../simulations.html">← Simulations</a>
+  <div>
+    <h1>CTN vs Pt100 — Comparaison des courbes R(T)</h1>
+    <p>Physique-Chimie — Seconde Bac Pro — Chapitre 10 : Capteurs thermiques</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="card">
+    <h2>Faire varier la température</h2>
+    <div class="controls">
+      <div class="ctrl">
+        <label>Température : <strong id="T-label">50 °C</strong></label>
+        <input type="range" id="sliderT" min="0" max="150" value="50" step="1" oninput="update()">
+        <div class="val-display"><span>0 °C</span><span>150 °C</span></div>
+      </div>
+    </div>
+
+    <div class="readout">
+      <div class="readout-box ctn-box">
+        <div class="label">CTN</div>
+        <div class="val" id="R-ctn">—</div>
+        <div class="unit">kΩ (résistance diminue)</div>
+      </div>
+      <div class="readout-box pt100-box">
+        <div class="label">Pt100</div>
+        <div class="val" id="R-pt100">—</div>
+        <div class="unit">Ω (résistance augmente)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Courbes R(T) comparées</h2>
+    <div class="legend-row">
+      <div class="legend-item"><div class="dot" style="background:#6f42c1"></div> CTN (kΩ, axe gauche)</div>
+      <div class="legend-item"><div class="dot" style="background:#e83e8c"></div> Pt100 (Ω × 0,1 pour mise à l'échelle, axe droit)</div>
+    </div>
+    <div class="chart-wrap">
+      <canvas id="chart"></canvas>
+    </div>
+    <p style="font-size:.78em;color:#718096;margin-top:6px;text-align:center">La ligne pointillée verticale indique la température sélectionnée.</p>
+  </div>
+
+  <div class="card">
+    <h2>Comprendre la différence</h2>
+    <div class="info-grid">
+      <div class="info-box info-ctn">
+        <strong>CTN — Coefficient de Température Négatif</strong>
+        R <em>diminue</em> quand T augmente. Relation <em>non linéaire</em> : la courbe est très pentue à basse température et s'aplatit à haute température. On exploite une table ou une courbe pour lire T depuis R.
+      </div>
+      <div class="info-box info-pt100">
+        <strong>Pt100 — Sonde platine</strong>
+        R <em>augmente</em> régulièrement quand T augmente. Relation <em>quasi linéaire</em> : 100 Ω à 0 °C, environ +0,39 Ω par °C. Très précise, utilisée comme référence industrielle.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="question">
+      <strong>Questions de réflexion</strong>
+      <ol>
+        <li>À 20 °C, quelle résistance affiche la CTN ? Et la Pt100 ?</li>
+        <li>Si on double la température de 25 °C à 50 °C, la résistance CTN est-elle divisée par deux ? Que cela révèle-t-il sur la linéarité ?</li>
+        <li>Un technicien mesure 2,2 kΩ sur une CTN. Déplacer le curseur pour trouver la température correspondante.</li>
+        <li>Pourquoi dit-on que la Pt100 est plus facile à utiliser dans un régulateur précis ?</li>
+      </ol>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Données CTN (interpolation depuis valeurs réalistes)
+// Basées sur CTN NTC 10kΩ B=3950K
+function R_ctn(T_C) {
+  var T = T_C + 273.15;
+  var T0 = 298.15;
+  var R0 = 10000;
+  var B = 3950;
+  return R0 * Math.exp(B * (1/T - 1/T0)) / 1000; // en kΩ
+}
+
+// Pt100 : R(T) = 100 * (1 + 3.85e-3 * T)
+function R_pt100(T_C) {
+  return 100 * (1 + 0.00385 * T_C); // en Ω
+}
+
+// Générer les données de courbe
+var temps = [];
+var dataCtn = [];
+var dataPt100Scaled = []; // Pt100 / 10 pour mise à l'échelle avec CTN
+for (var t = 0; t <= 150; t += 2) {
+  temps.push(t);
+  dataCtn.push(parseFloat(R_ctn(t).toFixed(3)));
+  dataPt100Scaled.push(parseFloat((R_pt100(t) / 10).toFixed(2)));
+}
+
+var ctx = document.getElementById('chart').getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: temps,
+    datasets: [
+      {
+        label: 'CTN (kΩ)',
+        data: dataCtn,
+        borderColor: '#6f42c1',
+        backgroundColor: 'rgba(111,66,193,0.07)',
+        borderWidth: 2.5,
+        pointRadius: 0,
+        tension: 0.3,
+        fill: false,
+        yAxisID: 'yCTN'
+      },
+      {
+        label: 'Pt100 (Ω)',
+        data: dataPt100Scaled,
+        borderColor: '#e83e8c',
+        backgroundColor: 'rgba(232,62,140,0.07)',
+        borderWidth: 2.5,
+        pointRadius: 0,
+        tension: 0.1,
+        fill: false,
+        yAxisID: 'yCTN'
+      },
+      {
+        label: 'Curseur',
+        data: [],
+        borderColor: '#f59e0b',
+        borderWidth: 2,
+        borderDash: [6,4],
+        pointRadius: 0,
+        fill: false,
+        yAxisID: 'yCTN'
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: function(ctx) {
+            if (ctx.datasetIndex === 0) return 'CTN : ' + dataCtn[ctx.dataIndex] + ' kΩ';
+            if (ctx.datasetIndex === 1) return 'Pt100 : ' + (dataPt100Scaled[ctx.dataIndex] * 10).toFixed(1) + ' Ω';
+            return '';
+          }
+        }
+      }
+    },
+    scales: {
+      x: {
+        title: { display: true, text: 'Température (°C)', font: { size: 11 } },
+        ticks: { maxTicksLimit: 10 }
+      },
+      yCTN: {
+        title: { display: true, text: 'Résistance CTN (kΩ) — Pt100 (Ω ÷ 10)', font: { size: 10 } },
+        min: 0
+      }
+    }
+  }
+});
+
+function update() {
+  var T = parseInt(document.getElementById('sliderT').value);
+  document.getElementById('T-label').textContent = T + ' °C';
+
+  var rctn = R_ctn(T);
+  var rpt = R_pt100(T);
+  document.getElementById('R-ctn').textContent = rctn.toFixed(2);
+  document.getElementById('R-pt100').textContent = rpt.toFixed(1);
+
+  // Curseur vertical
+  var cursorData = temps.map(function(t) {
+    return t === T ? 20 : null; // valeur arbitraire pour hauteur
+  });
+  // Ligne verticale via annotation simulée avec dataset vide sauf au point
+  myChart.data.datasets[2].data = temps.map(function(t) {
+    return { x: T, y: t === T ? 20 : null };
+  });
+
+  // Points actifs
+  var idxApprox = Math.round(T / 2);
+  myChart.data.datasets[0].pointRadius = temps.map(function(t, i) { return i === idxApprox ? 6 : 0; });
+  myChart.data.datasets[1].pointRadius = temps.map(function(t, i) { return i === idxApprox ? 6 : 0; });
+  myChart.data.datasets[0].pointBackgroundColor = '#6f42c1';
+  myChart.data.datasets[1].pointBackgroundColor = '#e83e8c';
+
+  myChart.update('none');
+}
+
+update();
+</script>
+</body>
+</html>
