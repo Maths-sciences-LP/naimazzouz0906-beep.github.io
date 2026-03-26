@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Résistance thermique d'une paroi — Co-intervention ERA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9;--s-bg:#e0f2fe;--s-border:#7dd3fc}</style>
+</head>
+<body>
+<div class="c">
+<a href="index.html" class="nb">← Retour à l'index co-intervention</a>
+
+<header>
+  <h1>Résistance thermique d'une paroi</h1>
+  <p class="sous-titre">Co-intervention Maths-Sciences | Première Bac Pro ERA | Savoir S4.1 — CME 6</p>
+</header>
+
+<div class="objectifs">
+  <strong>Objectifs</strong>
+  <ul>
+    <li>Calculer la résistance thermique d'une couche de matériau avec \(R = e / \lambda\)</li>
+    <li>Additionner les résistances thermiques d'une paroi composée</li>
+    <li>Déduire le coefficient de transmission thermique \(U = 1 / R_{\text{total}}\)</li>
+    <li>Comparer l'efficacité de différents isolants à partir de leur conductivité thermique</li>
+  </ul>
+</div>
+
+<!-- BADGE IDENTIFICATION -->
+<div style="border:1px solid var(--s-border);background:var(--s-bg);border-radius:8px;padding:1rem;margin:1rem 0;font-size:.9rem">
+  <strong>Identification de la ressource</strong>
+  <ul style="margin:.5rem 0 0">
+    <li><strong>Savoir professionnel ERA :</strong> S4.1 — Isolation thermique</li>
+    <li><strong>Module sciences :</strong> CME 6 — Comment fonctionnent certains dispositifs de chauffage ?</li>
+    <li><strong>Notions mathématiques :</strong> Division, fractions, somme, inverse — calcul littéral</li>
+    <li><strong>Niveau :</strong> Première Bac Pro ERA</li>
+  </ul>
+</div>
+
+<!-- MISE EN SITUATION -->
+<h2>1. Mise en situation professionnelle</h2>
+
+<div class="situation">
+  <strong>Contexte professionnel — Habillage d'un couloir dans une maison individuelle</strong><br><br>
+  Un menuisier agenceur réalise l'habillage intérieur d'un mur extérieur dans un couloir d'entrée. La paroi finale est composée de trois couches superposées, de l'extérieur vers l'intérieur :
+  <ol>
+    <li>Béton banché : épaisseur 20 cm, conductivité λ = 1,75 W/(m·K)</li>
+    <li>Laine de verre (panneau rigide) : épaisseur 10 cm, conductivité λ = 0,035 W/(m·K)</li>
+    <li>Plaque de plâtre BA13 : épaisseur 1,3 cm, conductivité λ = 0,25 W/(m·K)</li>
+  </ol>
+  Le maître d'ouvrage vous demande : <em>« Est-ce que ce mur respecte bien la réglementation thermique ? Et si l'on doublait l'épaisseur de laine de verre, le coefficient U serait-il deux fois meilleur ? »</em>
+</div>
+
+<!-- COURS -->
+<h2>2. Conductivité thermique et résistance thermique</h2>
+
+<div class="def">
+  <span class="label label-def">Définition — Conductivité thermique λ (lambda)</span><br>
+  La <strong>conductivité thermique</strong> d'un matériau caractérise sa capacité à laisser passer la chaleur. Plus λ est <strong>faible</strong>, plus le matériau est <strong>isolant</strong>.
+  <ul>
+    <li>Unité : <strong>W/(m·K)</strong></li>
+    <li>Exemples : acier ≈ 50, béton ≈ 1,75, bois massif ≈ 0,12, laine de verre ≈ 0,035</li>
+  </ul>
+</div>
+
+<div class="def">
+  <span class="label label-def">Définition — Résistance thermique R d'une couche</span><br>
+  La résistance thermique d'une couche de matériau homogène se calcule par :
+  \[ R = \frac{e}{\lambda} \]
+  <ul>
+    <li>\(R\) : résistance thermique en <strong>m²·K/W</strong></li>
+    <li>\(e\) : épaisseur de la couche en <strong>mètres (m)</strong></li>
+    <li>\(\lambda\) : conductivité thermique en <strong>W/(m·K)</strong></li>
+  </ul>
+  Plus \(R\) est <strong>grand</strong>, plus la paroi est <strong>isolante</strong>.
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Résistance thermique d'une paroi composée</span><br>
+  Pour une paroi formée de plusieurs couches successives, les résistances thermiques <strong>s'additionnent</strong> :
+  \[ R_{\text{total}} = R_1 + R_2 + R_3 + \cdots = \frac{e_1}{\lambda_1} + \frac{e_2}{\lambda_2} + \frac{e_3}{\lambda_3} + \cdots \]
+</div>
+
+<div class="def">
+  <span class="label label-def">Définition — Coefficient de transmission thermique U</span><br>
+  Le coefficient \(U\) (anciennement noté K) est l'inverse de la résistance thermique totale :
+  \[ U = \frac{1}{R_{\text{total}}} \]
+  <ul>
+    <li>Unité : <strong>W/(m²·K)</strong></li>
+    <li>Plus \(U\) est <strong>faible</strong>, plus la paroi est <strong>isolante</strong></li>
+    <li>La réglementation thermique fixe des valeurs maximales de \(U\) pour les parois des bâtiments</li>
+  </ul>
+</div>
+
+<!-- TABLEAU MATÉRIAUX -->
+<h2>3. Conductivités thermiques de matériaux courants en agencement</h2>
+
+<div class="grid2">
+<div>
+<table>
+  <thead><tr><th>Matériau</th><th>λ (W/m·K)</th></tr></thead>
+  <tbody>
+    <tr><td>Acier</td><td>50</td></tr>
+    <tr><td>Aluminium</td><td>160</td></tr>
+    <tr><td>Béton banché</td><td>1,75</td></tr>
+    <tr><td>Brique creuse</td><td>0,60</td></tr>
+    <tr><td>Plaque de plâtre BA13</td><td>0,25</td></tr>
+    <tr><td>Bois massif (chêne)</td><td>0,17</td></tr>
+  </tbody>
+</table>
+</div>
+<div>
+<table>
+  <thead><tr><th>Matériau</th><th>λ (W/m·K)</th></tr></thead>
+  <tbody>
+    <tr><td>Contreplaqué</td><td>0,13</td></tr>
+    <tr><td>Panneau MDF</td><td>0,11</td></tr>
+    <tr><td>Mousse polyuréthane</td><td>0,024</td></tr>
+    <tr><td>Laine de verre</td><td>0,035</td></tr>
+    <tr><td>Laine de roche</td><td>0,038</td></tr>
+    <tr><td>Air (couche mince)</td><td>0,025</td></tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+<!-- APPLICATION -->
+<h2>4. Application — Paroi du couloir</h2>
+
+<div class="ex">
+  <strong>Calcul de la résistance thermique de la paroi du couloir</strong><br><br>
+
+  On convertit d'abord les épaisseurs en mètres :
+  <ul>
+    <li>Béton : e₁ = 20 cm = 0,20 m — λ₁ = 1,75 W/(m·K)</li>
+    <li>Laine de verre : e₂ = 10 cm = 0,10 m — λ₂ = 0,035 W/(m·K)</li>
+    <li>Plaque de plâtre : e₃ = 1,3 cm = 0,013 m — λ₃ = 0,25 W/(m·K)</li>
+  </ul>
+
+  On calcule chaque résistance :
+  \[ R_1 = \frac{0{,}20}{1{,}75} \approx 0{,}11 \; \text{m}^2\text{·K/W} \]
+  \[ R_2 = \frac{0{,}10}{0{,}035} \approx 2{,}86 \; \text{m}^2\text{·K/W} \]
+  \[ R_3 = \frac{0{,}013}{0{,}25} \approx 0{,}05 \; \text{m}^2\text{·K/W} \]
+
+  Résistance totale :
+  \[ R_{\text{total}} = 0{,}11 + 2{,}86 + 0{,}05 = 3{,}02 \; \text{m}^2\text{·K/W} \]
+
+  Coefficient U :
+  \[ U = \frac{1}{3{,}02} \approx 0{,}33 \; \text{W/(m}^2\text{·K)} \]
+
+  <div class="retenir" style="margin-top:.8rem">
+    La réglementation thermique en rénovation fixe généralement U ≤ 0,40 W/(m²·K) pour un mur. Ici U = 0,33 W/(m²·K) : la paroi est <strong>conforme</strong>.
+  </div>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Répondre à la question du client</span><br>
+  Si l'on double l'épaisseur de laine de verre (20 cm au lieu de 10 cm) :
+  \[ R_2' = \frac{0{,}20}{0{,}035} \approx 5{,}71 \; \text{m}^2\text{·K/W} \]
+  \[ R_{\text{total}}' = 0{,}11 + 5{,}71 + 0{,}05 = 5{,}87 \; \text{m}^2\text{·K/W} \]
+  \[ U' = \frac{1}{5{,}87} \approx 0{,}17 \; \text{W/(m}^2\text{·K)} \]
+  Le U est divisé par presque 2 (de 0,33 à 0,17), ce qui confirme : doubler l'isolant améliore très significativement le U, <strong>presque par un facteur 2</strong>.
+</div>
+
+<!-- SVG SCHÉMA PAROI -->
+<h2>5. Schéma de la paroi composée</h2>
+
+<div class="svg-wrap">
+<svg viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;width:100%;border:1px solid #ddd;border-radius:6px;background:#fafafa">
+  <!-- Béton -->
+  <rect x="30" y="20" width="120" height="160" fill="#b0b8c4" rx="2"/>
+  <text x="90" y="90" text-anchor="middle" font-size="12" fill="#222" font-weight="bold">Béton</text>
+  <text x="90" y="107" text-anchor="middle" font-size="11" fill="#222">e = 20 cm</text>
+  <text x="90" y="122" text-anchor="middle" font-size="11" fill="#444">λ = 1,75</text>
+
+  <!-- Laine de verre -->
+  <rect x="150" y="20" width="180" height="160" fill="#fde68a" rx="2"/>
+  <!-- Motif laine de verre -->
+  <path d="M155,50 Q170,35 185,50 Q200,65 215,50 Q230,35 245,50 Q260,65 275,50 Q290,35 305,50 Q320,65 320,65" stroke="#f59e0b" stroke-width="1.5" fill="none"/>
+  <path d="M155,80 Q170,65 185,80 Q200,95 215,80 Q230,65 245,80 Q260,95 275,80 Q290,65 305,80 Q320,95 320,95" stroke="#f59e0b" stroke-width="1.5" fill="none"/>
+  <path d="M155,110 Q170,95 185,110 Q200,125 215,110 Q230,95 245,110 Q260,125 275,110 Q290,95 305,110 Q320,125 320,125" stroke="#f59e0b" stroke-width="1.5" fill="none"/>
+  <path d="M155,140 Q170,125 185,140 Q200,155 215,140 Q230,125 245,140 Q260,155 275,140 Q290,125 305,140 Q320,155 320,155" stroke="#f59e0b" stroke-width="1.5" fill="none"/>
+  <text x="240" y="90" text-anchor="middle" font-size="12" fill="#222" font-weight="bold">Laine de verre</text>
+  <text x="240" y="107" text-anchor="middle" font-size="11" fill="#222">e = 10 cm</text>
+  <text x="240" y="122" text-anchor="middle" font-size="11" fill="#444">λ = 0,035</text>
+
+  <!-- Plaque de plâtre -->
+  <rect x="330" y="20" width="30" height="160" fill="#e5e7eb" rx="2"/>
+  <text x="345" y="90" text-anchor="middle" font-size="9" fill="#222" transform="rotate(-90,345,100)">Plâtre 1,3 cm</text>
+
+  <!-- Flèches intérieur / extérieur -->
+  <text x="15" y="105" text-anchor="middle" font-size="11" fill="#555">⇦</text>
+  <text x="15" y="118" text-anchor="middle" font-size="9" fill="#555">Ext.</text>
+  <text x="380" y="105" text-anchor="middle" font-size="11" fill="#555">⇦</text>
+  <text x="395" y="108" text-anchor="middle" font-size="9" fill="#555">Int.</text>
+
+  <!-- Flèche chaleur -->
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444"/>
+    </marker>
+  </defs>
+  <line x1="435" y1="100" x2="480" y2="100" stroke="#ef4444" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="457" y="90" text-anchor="middle" font-size="10" fill="#ef4444">Flux Φ</text>
+
+  <!-- R total -->
+  <text x="265" y="195" text-anchor="middle" font-size="11" fill="#166534" font-weight="bold">R_total = 0,11 + 2,86 + 0,05 = 3,02 m²·K/W — U = 0,33 W/(m²·K)</text>
+</svg>
+</div>
+
+<!-- EXERCICES -->
+<h2>6. Exercices</h2>
+
+<!-- SOCLE -->
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 1 — Résistance d'un isolant seul</strong><br><br>
+  Un artisan menuisier pose un panneau de laine de roche d'épaisseur <strong>8 cm</strong> (λ = 0,038 W/(m·K)) sur un mur.
+  <ol>
+    <li>Convertir 8 cm en mètres : e = ……… m</li>
+    <li>Calculer \(R = e / \lambda\) :<br>
+    \(R = \dfrac{\text{……}}{0{,}038} = \text{……} \; \text{m}^2\text{·K/W}\)</li>
+    <li>Calculer le coefficient U de ce panneau seul :<br>
+    \(U = 1 / R = \text{……} \; \text{W/(m}^2\text{·K)}\)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>e = 0,08 m</li>
+      <li>R = 0,08 / 0,038 ≈ 2,11 m²·K/W</li>
+      <li>U = 1 / 2,11 ≈ 0,47 W/(m²·K)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 2 — Paroi à deux couches</strong><br><br>
+  Une cloison d'atelier est formée de :
+  <ul>
+    <li>Plaque de plâtre : e = 1,3 cm, λ = 0,25 W/(m·K)</li>
+    <li>Laine de verre : e = 6 cm, λ = 0,035 W/(m·K)</li>
+  </ul>
+  Compléter :
+  <table>
+    <thead><tr><th>Couche</th><th>e (m)</th><th>λ (W/m·K)</th><th>R = e/λ (m²·K/W)</th></tr></thead>
+    <tbody>
+      <tr><td>Plâtre</td><td>0,013</td><td>0,25</td><td>……</td></tr>
+      <tr><td>Laine de verre</td><td>……</td><td>0,035</td><td>……</td></tr>
+      <tr><td><strong>Total</strong></td><td>—</td><td>—</td><td>……</td></tr>
+    </tbody>
+  </table>
+  Calculer ensuite U de la cloison.
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>Couche</th><th>e (m)</th><th>λ</th><th>R</th></tr></thead>
+      <tbody>
+        <tr><td>Plâtre</td><td>0,013</td><td>0,25</td><td>0,052</td></tr>
+        <tr><td>Laine de verre</td><td>0,06</td><td>0,035</td><td>1,714</td></tr>
+        <tr><td><strong>Total</strong></td><td>—</td><td>—</td><td><strong>1,766</strong></td></tr>
+      </tbody>
+    </table>
+    U = 1 / 1,766 ≈ 0,57 W/(m²·K)
+  </div>
+</div>
+
+<!-- STANDARD -->
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 3 — Façade de maison : trois couches</strong><br><br>
+  La façade d'une maison rénovée par un menuisier agenceur comprend, de l'extérieur vers l'intérieur :
+  <ul>
+    <li>Enduit extérieur : e = 2 cm, λ = 0,87 W/(m·K)</li>
+    <li>Brique creuse : e = 15 cm, λ = 0,60 W/(m·K)</li>
+    <li>Mousse polyuréthane projetée : e = 12 cm, λ = 0,024 W/(m·K)</li>
+    <li>Plaque de plâtre BA13 : e = 1,3 cm, λ = 0,25 W/(m·K)</li>
+  </ul>
+  <ol>
+    <li>Calculer la résistance thermique de chaque couche.</li>
+    <li>Calculer R_total et le coefficient U de la façade.</li>
+    <li>La réglementation impose U ≤ 0,36 W/(m²·K) pour un mur en rénovation. La façade est-elle conforme ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>
+        <ul>
+          <li>R_enduit = 0,02 / 0,87 ≈ 0,023 m²·K/W</li>
+          <li>R_brique = 0,15 / 0,60 = 0,25 m²·K/W</li>
+          <li>R_mousse = 0,12 / 0,024 = 5,00 m²·K/W</li>
+          <li>R_plâtre = 0,013 / 0,25 = 0,052 m²·K/W</li>
+        </ul>
+      </li>
+      <li>R_total = 0,023 + 0,25 + 5,00 + 0,052 = 5,325 m²·K/W<br>U = 1 / 5,325 ≈ 0,19 W/(m²·K)</li>
+      <li>U = 0,19 W/(m²·K) &lt; 0,36 W/(m²·K) → la façade est <strong>conforme</strong> (et même très performante).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 4 — Comparaison de deux solutions d'isolation</strong><br><br>
+  Pour isoler un plancher d'un bureau d'accueil (S = 25 m²), deux solutions sont proposées :
+  <ul>
+    <li><strong>Solution A</strong> : laine de verre 10 cm (λ = 0,035 W/(m·K))</li>
+    <li><strong>Solution B</strong> : mousse polyuréthane 6 cm (λ = 0,024 W/(m·K))</li>
+  </ul>
+  <ol>
+    <li>Calculer R et U pour chaque solution.</li>
+    <li>Laquelle est la plus isolante ?</li>
+    <li>Quel avantage pratique la solution B présente-t-elle sur un chantier d'agencement ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>
+        Solution A : R = 0,10 / 0,035 ≈ 2,86 m²·K/W → U = 0,35 W/(m²·K)<br>
+        Solution B : R = 0,06 / 0,024 = 2,50 m²·K/W → U = 0,40 W/(m²·K)
+      </li>
+      <li>La solution A est légèrement plus isolante (R plus grand, U plus petit).</li>
+      <li>La solution B (polyuréthane) est deux fois moins épaisse (6 cm vs 10 cm), ce qui libère de la hauteur sous plafond et peut être décisif dans un bureau d'accueil bas de plafond.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- APPROFONDISSEMENT -->
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <strong>Exercice 5 — Optimisation d'une paroi : trouver l'épaisseur nécessaire</strong><br><br>
+  Un technicien d'agencement conçoit la paroi séparative d'un showroom. Le cahier des charges impose un coefficient U ≤ 0,25 W/(m²·K). La paroi comprend :
+  <ul>
+    <li>Plaque de plâtre côté A : e = 1,3 cm, λ = 0,25 W/(m·K)</li>
+    <li>Laine de roche (épaisseur x à déterminer) : λ = 0,038 W/(m·K)</li>
+    <li>Plaque de plâtre côté B : e = 1,3 cm, λ = 0,25 W/(m·K)</li>
+  </ul>
+  <ol>
+    <li>Exprimer R_total en fonction de x (en m).</li>
+    <li>À partir de la condition U ≤ 0,25, établir l'inégalité sur R_total.</li>
+    <li>En déduire l'épaisseur minimale x de laine de roche (en cm).</li>
+    <li>Quel panneau standard (en cm) le technicien doit-il commander parmi les épaisseurs disponibles : 6, 8, 10, 12, 15 cm ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>
+        R_plâtre = 0,013 / 0,25 = 0,052 m²·K/W (×2)<br>
+        R_total = 0,052 + x/0,038 + 0,052 = 0,104 + x/0,038
+      </li>
+      <li>
+        U ≤ 0,25 ⟺ 1/R_total ≤ 0,25 ⟺ R_total ≥ 4 m²·K/W<br>
+        Donc : 0,104 + x/0,038 ≥ 4
+      </li>
+      <li>
+        x/0,038 ≥ 3,896<br>
+        x ≥ 3,896 × 0,038 ≈ 0,148 m → <strong>x ≥ 14,8 cm</strong>
+      </li>
+      <li>Il faut commander l'épaisseur <strong>15 cm</strong> (la première épaisseur standard supérieure à 14,8 cm).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <strong>Exercice 6 — Impact économique de l'isolation</strong><br><br>
+  Un mur de 30 m² (S = 30 m²) sépare un atelier chauffé à 19 °C de l'extérieur à −3 °C (ΔT = 22 K). On compare deux états :
+  <ul>
+    <li><strong>Avant travaux :</strong> U₁ = 1,20 W/(m²·K) — mur béton nu sans isolation</li>
+    <li><strong>Après travaux :</strong> U₂ = 0,28 W/(m²·K) — après habillage bois + laine de verre</li>
+  </ul>
+  Le kWh électrique coûte 0,23 €. L'atelier est chauffé 14 h/jour pendant 180 jours par an.
+  <ol>
+    <li>Calculer les déperditions à travers ce mur avant et après travaux (en W).</li>
+    <li>Calculer l'énergie perdue à travers ce mur sur une saison (en kWh) dans les deux cas.</li>
+    <li>Calculer l'économie annuelle sur la facture de chauffage grâce à l'isolation.</li>
+    <li>Si le coût des travaux d'isolation (pose du bardage bois + laine de verre) est de 2 400 €, en combien d'années est-il rentabilisé ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>
+        Φ₁ = U₁ × S × ΔT = 1,20 × 30 × 22 = <strong>792 W</strong><br>
+        Φ₂ = U₂ × S × ΔT = 0,28 × 30 × 22 = <strong>184,8 W</strong>
+      </li>
+      <li>
+        Durée saisonnière : 180 × 14 = 2 520 h<br>
+        E₁ = 0,792 × 2 520 ≈ 1 996 kWh<br>
+        E₂ = 0,1848 × 2 520 ≈ 466 kWh
+      </li>
+      <li>
+        Économie d'énergie : 1 996 − 466 = 1 530 kWh/an<br>
+        Économie financière : 1 530 × 0,23 ≈ <strong>352 € / an</strong>
+      </li>
+      <li>Temps de retour : 2 400 / 352 ≈ <strong>6,8 ans</strong>, soit environ 7 ans.</li>
+    </ol>
+  </div>
+</div>
+
+</div>
+<script src="../nav.js"></script>
+<script src="../diff.js"></script>
+<script>
+function toggle(btn){
+  const c=btn.nextElementSibling;
+  if(c.style.display==='none'||!c.style.display){c.style.display='block';btn.textContent='Masquer la correction';}
+  else{c.style.display='none';btn.textContent='Voir la correction';}
+}
+</script>
+</body>
+</html>
