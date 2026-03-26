@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch02 – Exercices par capacités – Transport de l'énergie électrique – 1ère Bac Pro ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-iccer.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 2 – Exercices par capacités</h1>
+  <p class="sous-titre">Transporter l'énergie sous forme électrique &nbsp;|&nbsp; 1ère Bac Pro ICCER &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> – Identifier les pertes par effet Joule (\(P = RI^2\))</li>
+    <li><strong>C2</strong> – Calculer la chute de tension dans un câble</li>
+    <li><strong>C3</strong> – Justifier l'intérêt du transport haute tension (\(P = UI \Rightarrow I\) faible si \(U\) grand)</li>
+    <li><strong>C4</strong> – Appliquer les relations du transformateur (\(U_1/U_2 = N_1/N_2\))</li>
+    <li><strong>C5</strong> – Calculer un rendement de transport</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Pertes par effet Joule</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong> Quand un courant \(I\) traverse un conducteur de résistance \(R\), une puissance est perdue sous forme de chaleur : \(P_{\text{pertes}} = R \times I^2\). Ces pertes augmentent avec le carré de l'intensité.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Calcul direct des pertes</h3>
+  <p>Un câble électrique a une résistance totale de \(R = 0{,}5\) Ω et est parcouru par un courant de \(I = 10\) A.</p>
+  <p>Calculer la puissance dissipée par effet Joule dans ce câble.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(P_{\text{pertes}} = R \times I^2 = 0{,}5 \times 10^2 = 0{,}5 \times 100 = \mathbf{50}\) W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Effet de l'intensité sur les pertes</h3>
+  <p>Un câble de résistance \(R = 2\) Ω est successivement parcouru par \(I_1 = 5\) A puis \(I_2 = 10\) A.</p>
+  <p>a) Calculer les pertes par effet Joule dans les deux cas.</p>
+  <p>b) Quand l'intensité double, comment évoluent les pertes ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(P_1 = 2 \times 5^2 = 2 \times 25 = 50\) W</p>
+    <p>\(P_2 = 2 \times 10^2 = 2 \times 100 = 200\) W</p>
+    <p>b) L'intensité a doublé, les pertes ont été multipliées par \(2^2 = \mathbf{4}\). Les pertes évoluent avec le carré de l'intensité.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Ligne d'alimentation d'un bâtiment</h3>
+  <p>Une ligne électrique relie un poste de transformation à un immeuble. La résistance totale des câbles est \(R = 0{,}8\) Ω. Le courant transporté est \(I = 15\) A.</p>
+  <p>a) Calculer la puissance perdue dans les câbles.</p>
+  <p>b) En 8 heures de fonctionnement, quelle énergie est perdue (en kWh) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(P_{\text{pertes}} = 0{,}8 \times 15^2 = 0{,}8 \times 225 = \mathbf{180}\) W</p>
+    <p>b) \(W = 0{,}180 \text{ kW} \times 8 \text{ h} = \mathbf{1{,}44}\) kWh perdus</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Déterminer la résistance d'un câble</h3>
+  <p>Une ligne transporte un courant de \(I = 20\) A. Les pertes par effet Joule mesurées sont de \(P = 800\) W.</p>
+  <p>Calculer la résistance totale du câble.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>On isole \(R\) dans \(P = R \times I^2\) :</p>
+    <p>\(R = \dfrac{P}{I^2} = \dfrac{800}{20^2} = \dfrac{800}{400} = \mathbf{2}\) Ω</p>
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Chute de tension dans un câble</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> La chute de tension dans un câble de résistance \(R\) parcouru par un courant \(I\) est : \(\Delta U = R \times I\). La tension aux bornes du récepteur est \(U_{\text{réc}} = U_{\text{source}} - \Delta U\).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Chute de tension simple</h3>
+  <p>Un câble de résistance \(R = 0{,}6\) Ω est parcouru par un courant de \(I = 8\) A.</p>
+  <p>Calculer la chute de tension dans ce câble.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\Delta U = R \times I = 0{,}6 \times 8 = \mathbf{4{,}8}\) V</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Tension aux bornes du récepteur</h3>
+  <p>Une source délivre \(U_{\text{source}} = 230\) V. Le câble d'alimentation a une résistance de \(R = 0{,}4\) Ω et est traversé par \(I = 12\) A.</p>
+  <p>Calculer la tension aux bornes de l'appareil alimenté.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\Delta U = R \times I = 0{,}4 \times 12 = 4{,}8\) V</p>
+    <p>\(U_{\text{réc}} = 230 - 4{,}8 = \mathbf{225{,}2}\) V</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Chute de tension réglementaire</h3>
+  <p>La norme impose que la chute de tension dans une installation ne dépasse pas 3 % de la tension nominale (230 V).</p>
+  <p>Un câble de \(R = 0{,}3\) Ω transporte \(I = 20\) A.</p>
+  <p>a) Calculer la chute de tension.</p>
+  <p>b) Calculer le pourcentage de chute de tension par rapport à 230 V.</p>
+  <p>c) L'installation respecte-t-elle la norme ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(\Delta U = 0{,}3 \times 20 = 6\) V</p>
+    <p>b) \(\dfrac{6}{230} \times 100 \approx 2{,}6\%\)</p>
+    <p>c) Oui, \(2{,}6\% < 3\%\) : la norme est respectée.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Trouver l'intensité maximale</h3>
+  <p>Un câble de résistance \(R = 0{,}5\) Ω est connecté à une source de 230 V. La chute de tension ne doit pas dépasser \(\Delta U_{\max} = 5\) V.</p>
+  <p>Calculer l'intensité maximale admissible dans ce câble.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>On isole \(I\) dans \(\Delta U = R \times I\) :</p>
+    <p>\(I_{\max} = \dfrac{\Delta U_{\max}}{R} = \dfrac{5}{0{,}5} = \mathbf{10}\) A</p>
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Intérêt du transport haute tension</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong> Pour transporter une puissance \(P\) donnée, augmenter la tension \(U\) permet de réduire l'intensité \(I\) (car \(P = U \times I\)). Or les pertes par effet Joule sont \(P_{\text{pertes}} = R \times I^2\) : une intensité plus faible réduit drastiquement les pertes.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Pourquoi la haute tension ?</h3>
+  <p>Une centrale doit transporter \(P = 100\) kW sur une longue distance. Comparer deux scénarios :</p>
+  <ul>
+    <li>Scénario A : transport à \(U_A = 1\,000\) V</li>
+    <li>Scénario B : transport à \(U_B = 100\,000\) V</li>
+  </ul>
+  <p>a) Calculer l'intensité dans chaque cas.</p>
+  <p>b) Si la résistance de la ligne est \(R = 10\) Ω, calculer les pertes par effet Joule dans chaque cas.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(I_A = \dfrac{P}{U_A} = \dfrac{100\,000}{1\,000} = 100\) A</p>
+    <p>\(I_B = \dfrac{P}{U_B} = \dfrac{100\,000}{100\,000} = 1\) A</p>
+    <p>b) \(P_A = 10 \times 100^2 = 100\,000\) W = 100 kW (toute la puissance est perdue !)</p>
+    <p>\(P_B = 10 \times 1^2 = \mathbf{10}\) W (pertes négligeables)</p>
+    <p>Conclusion : en multipliant la tension par 100, les pertes sont divisées par \(100^2 = 10\,000\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Réduire les pertes en augmentant la tension</h3>
+  <p>Une ligne transporte \(P = 50\) kW. La résistance du câble est \(R = 5\) Ω. On passe la tension de 500 V à 5 000 V.</p>
+  <p>a) Calculer l'intensité dans chaque cas.</p>
+  <p>b) Calculer les pertes dans chaque cas et conclure.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) À 500 V : \(I = \dfrac{50\,000}{500} = 100\) A ; à 5 000 V : \(I = \dfrac{50\,000}{5\,000} = 10\) A</p>
+    <p>b) À 500 V : \(P_{\text{pertes}} = 5 \times 100^2 = 50\,000\) W = 50 kW (catastrophique)</p>
+    <p>À 5 000 V : \(P_{\text{pertes}} = 5 \times 10^2 = 500\) W (soit 1% de la puissance transportée)</p>
+    <p>La tension a été multipliée par 10, les pertes divisées par 100.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Application à une installation industrielle</h3>
+  <p>Un technicien CVC doit alimenter une installation de \(P = 20\) kW. Il a le choix entre une alimentation à 230 V ou à 400 V. La résistance de la ligne est \(R = 1\) Ω.</p>
+  <p>Calculer le pourcentage de pertes dans chaque cas et recommander la solution.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>À 230 V : \(I = \dfrac{20\,000}{230} \approx 87\) A → \(P_{\text{pertes}} = 1 \times 87^2 \approx 7\,569\) W → 37,8 %</p>
+    <p>À 400 V : \(I = \dfrac{20\,000}{400} = 50\) A → \(P_{\text{pertes}} = 1 \times 50^2 = 2\,500\) W → 12,5 %</p>
+    <p>La solution à <strong>400 V</strong> est recommandée : les pertes sont trois fois plus faibles.</p>
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Relations du transformateur</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> Un transformateur idéal vérifie la relation : \(\dfrac{U_1}{U_2} = \dfrac{N_1}{N_2}\) où \(U_1, U_2\) sont les tensions primaire et secondaire, et \(N_1, N_2\) le nombre de spires. Pour un transformateur idéal, la puissance est conservée : \(U_1 I_1 = U_2 I_2\).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Calcul de la tension secondaire</h3>
+  <p>Un transformateur a \(N_1 = 2\,000\) spires au primaire et \(N_2 = 100\) spires au secondaire. La tension primaire est \(U_1 = 20\,000\) V.</p>
+  <p>Calculer la tension secondaire \(U_2\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\dfrac{U_1}{U_2} = \dfrac{N_1}{N_2} \Rightarrow U_2 = U_1 \times \dfrac{N_2}{N_1} = 20\,000 \times \dfrac{100}{2\,000} = \mathbf{1\,000}\) V</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Rapport de transformation</h3>
+  <p>Un transformateur abaisse la tension de 230 V à 12 V (pour alimenter une sonnette de porte).</p>
+  <p>Si le primaire a \(N_1 = 460\) spires, combien de spires le secondaire doit-il avoir ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\dfrac{U_1}{U_2} = \dfrac{N_1}{N_2} \Rightarrow N_2 = N_1 \times \dfrac{U_2}{U_1} = 460 \times \dfrac{12}{230} = \mathbf{24}\) spires</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Intensité au secondaire</h3>
+  <p>Un transformateur idéal a \(U_1 = 10\,000\) V, \(U_2 = 230\) V. L'intensité au primaire est \(I_1 = 0{,}5\) A.</p>
+  <p>a) Calculer la puissance transportée.</p>
+  <p>b) Calculer l'intensité au secondaire.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(P = U_1 \times I_1 = 10\,000 \times 0{,}5 = 5\,000\) W = 5 kW</p>
+    <p>b) \(I_2 = \dfrac{P}{U_2} = \dfrac{5\,000}{230} \approx \mathbf{21{,}7}\) A</p>
+    <p>Vérification : \(U_1 I_1 = 10\,000 \times 0{,}5 = 5\,000\) W = \(U_2 I_2 = 230 \times 21{,}7 \approx 5\,000\) W ✓</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Transformateur du réseau électrique</h3>
+  <p>Un poste de transformation du réseau RTE abaisse la tension de 63 000 V (réseau haute tension) à 20 000 V (réseau de distribution). Le primaire comporte \(N_1 = 6\,300\) spires.</p>
+  <p>Calculer le nombre de spires au secondaire.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(N_2 = N_1 \times \dfrac{U_2}{U_1} = 6\,300 \times \dfrac{20\,000}{63\,000} = 6\,300 \times \dfrac{20}{63} = \mathbf{2\,000}\) spires</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 5 – Transformateur élévateur</h3>
+  <p>Pour le transport longue distance, une centrale élève la tension de 20 kV à 400 kV grâce à un transformateur élévateur. Si le secondaire a \(N_2 = 2\,000\) spires, combien de spires le primaire doit-il avoir ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(N_1 = N_2 \times \dfrac{U_1}{U_2} = 2\,000 \times \dfrac{20\,000}{400\,000} = 2\,000 \times 0{,}05 = \mathbf{100}\) spires</p>
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Rendement de transport</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> Le rendement d'une ligne de transport est le rapport entre la puissance reçue par le récepteur et la puissance émise par la source :
+  \[\eta = \dfrac{P_{\text{reçue}}}{P_{\text{émise}}} = \dfrac{P_{\text{émise}} - P_{\text{pertes}}}{P_{\text{émise}}}\]
+  Il s'exprime en % en multipliant par 100.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Calcul de rendement simple</h3>
+  <p>Une ligne de transport émet \(P_{\text{émise}} = 10\,000\) W. Les pertes par effet Joule dans les câbles sont \(P_{\text{pertes}} = 500\) W.</p>
+  <p>Calculer le rendement de la ligne en %.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(P_{\text{reçue}} = 10\,000 - 500 = 9\,500\) W</p>
+    <p>\(\eta = \dfrac{9\,500}{10\,000} \times 100 = \mathbf{95}\%\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Pertes et rendement</h3>
+  <p>Un câble de résistance \(R = 2\) Ω est parcouru par \(I = 5\) A. La puissance émise à la source est \(P_{\text{source}} = 5\,000\) W.</p>
+  <p>a) Calculer les pertes par effet Joule.</p>
+  <p>b) Calculer le rendement.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(P_{\text{pertes}} = R \times I^2 = 2 \times 25 = 50\) W</p>
+    <p>b) \(\eta = \dfrac{5\,000 - 50}{5\,000} \times 100 = \dfrac{4\,950}{5\,000} \times 100 = \mathbf{99}\%\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Comparer deux lignes</h3>
+  <p>Deux lignes transportent la même puissance \(P = 100\) kW.</p>
+  <ul>
+    <li>Ligne 1 : tension 1 000 V, résistance \(R = 5\) Ω</li>
+    <li>Ligne 2 : tension 10 000 V, résistance \(R = 5\) Ω</li>
+  </ul>
+  <p>Calculer le rendement de chaque ligne et conclure.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Ligne 1 : \(I = \dfrac{100\,000}{1\,000} = 100\) A → \(P_{\text{pertes}} = 5 \times 100^2 = 50\,000\) W</p>
+    <p>\(\eta_1 = \dfrac{50\,000}{100\,000} \times 100 = 50\%\) — médiocre !</p>
+    <p>Ligne 2 : \(I = \dfrac{100\,000}{10\,000} = 10\) A → \(P_{\text{pertes}} = 5 \times 10^2 = 500\) W</p>
+    <p>\(\eta_2 = \dfrac{99\,500}{100\,000} \times 100 = 99{,}5\%\) — excellent !</p>
+    <p>La ligne à haute tension est bien plus efficace.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Puissance utile à partir du rendement</h3>
+  <p>Une ligne de transport a un rendement de 97 %. La puissance émise par la centrale est de 50 MW.</p>
+  <p>a) Quelle puissance est effectivement reçue par les consommateurs ?</p>
+  <p>b) Quelle puissance est perdue dans les câbles ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(P_{\text{reçue}} = \eta \times P_{\text{émise}} = 0{,}97 \times 50 = \mathbf{48{,}5}\) MW</p>
+    <p>b) \(P_{\text{pertes}} = 50 - 48{,}5 = \mathbf{1{,}5}\) MW = 1 500 000 W</p>
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

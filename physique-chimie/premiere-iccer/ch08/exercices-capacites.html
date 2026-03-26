@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch08 – Exercices par capacités – La force d'Archimède – 1ère Bac Pro ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-iccer.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 8 – Exercices par capacités</h1>
+  <p class="sous-titre">La force d'Archimède &nbsp;|&nbsp; 1ère Bac Pro ICCER &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> – Énoncer le principe d'Archimède (\(\Pi = \rho_{\text{fluide}} \times V_{\text{immergé}} \times g\))</li>
+    <li><strong>C2</strong> – Calculer la poussée d'Archimède</li>
+    <li><strong>C3</strong> – Déterminer si un objet flotte ou coule (comparer poids et poussée)</li>
+    <li><strong>C4</strong> – Calculer la fraction immergée d'un flotteur</li>
+    <li><strong>C5</strong> – Appliquer dans un contexte de plomberie/canalisations</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Principe d'Archimède</h2>
+
+<div class="retenir">
+  <strong>Principe d'Archimède :</strong> Tout corps plongé dans un fluide reçoit de ce fluide une force verticale, dirigée vers le haut, appelée poussée d'Archimède, égale au poids du fluide déplacé :
+  \[\Pi = \rho_{\text{fluide}} \times V_{\text{immergé}} \times g\]
+  avec : \(\rho_{\text{fluide}}\) en kg/m³, \(V_{\text{immergé}}\) en m³, \(g = 9{,}81\) m/s², \(\Pi\) en N.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Énoncer le principe</h3>
+  <p>Un tuyau en PVC (vide, donc flottant) est posé dans une tranchée inondée sur un chantier de plomberie.</p>
+  <p>a) Quelle force subit le tuyau de la part de l'eau ? Dans quel sens est-elle dirigée ?</p>
+  <p>b) De quoi dépend son intensité ? Citer les deux facteurs principaux.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Le tuyau subit la <strong>poussée d'Archimède</strong>, dirigée verticalement <strong>vers le haut</strong>.</p>
+    <p>b) Elle dépend de :</p>
+    <ul>
+      <li>la <strong>masse volumique du fluide</strong> (ici l'eau : 1 000 kg/m³)</li>
+      <li>le <strong>volume de tuyau immergé</strong> dans l'eau</li>
+    </ul>
+    <p>(Et de g, constant ≈ 9,81 m/s²)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Poussée dans différents fluides</h3>
+  <p>Le même objet de volume \(V = 0{,}002\) m³ est immergé dans trois fluides différents :</p>
+  <ul>
+    <li>Eau : \(\rho = 1\,000\) kg/m³</li>
+    <li>Huile : \(\rho = 900\) kg/m³</li>
+    <li>Mercure : \(\rho = 13\,600\) kg/m³</li>
+  </ul>
+  <p>Calculer la poussée d'Archimède dans chaque cas. (\(g = 9{,}81\) m/s²)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Eau : \(\Pi = 1\,000 \times 0{,}002 \times 9{,}81 = \mathbf{19{,}62}\) N</p>
+    <p>Huile : \(\Pi = 900 \times 0{,}002 \times 9{,}81 = \mathbf{17{,}66}\) N</p>
+    <p>Mercure : \(\Pi = 13\,600 \times 0{,}002 \times 9{,}81 = \mathbf{266{,}8}\) N</p>
+    <p>Plus le fluide est dense, plus la poussée est grande.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Poids du fluide déplacé</h3>
+  <p>Un plombier plonge un bouchon de liège de volume \(V = 5 \text{ cm}^3\) dans de l'eau.</p>
+  <p>a) Calculer le volume d'eau déplacé en m³.</p>
+  <p>b) Calculer la masse d'eau déplacée.</p>
+  <p>c) Calculer la poussée d'Archimède. (\(g = 9{,}81\) m/s²)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(V = 5 \text{ cm}^3 = 5 \times 10^{-6}\) m³</p>
+    <p>b) \(m = \rho_{\text{eau}} \times V = 1\,000 \times 5 \times 10^{-6} = 5 \times 10^{-3}\) kg = 5 g</p>
+    <p>c) \(\Pi = m \times g = 5 \times 10^{-3} \times 9{,}81 = \mathbf{4{,}9 \times 10^{-2}}\) N ≈ 0,049 N</p>
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Calculer la poussée d'Archimède</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> \(\Pi = \rho_{\text{fluide}} \times V_{\text{immergé}} \times g\). Attention : si l'objet est partiellement immergé, \(V_{\text{immergé}}\) est seulement la partie submergée, pas le volume total de l'objet.
+</invoke>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Tuyau métallique dans l'eau</h3>
+  <p>Un technicien plonge un tuyau en acier (plein) de volume \(V = 0{,}5\) L dans de l'eau. (\(\rho_{\text{eau}} = 1\,000\) kg/m³, \(g = 9{,}81\) m/s²)</p>
+  <p>Calculer la poussée d'Archimède exercée sur ce tuyau.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(V = 0{,}5 \text{ L} = 5 \times 10^{-4}\) m³</p>
+    <p>\(\Pi = 1\,000 \times 5 \times 10^{-4} \times 9{,}81 = \mathbf{4{,}905}\) N</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Immersion partielle</h3>
+  <p>Un flotteur de robinet a un volume total de \(V = 100 \text{ cm}^3\). Il est immergé à moitié dans l'eau. (\(\rho_{\text{eau}} = 1\,000\) kg/m³, \(g = 9{,}81\) m/s²)</p>
+  <p>Calculer la poussée d'Archimède.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Volume immergé : \(V_{\text{imm}} = 100/2 = 50 \text{ cm}^3 = 5 \times 10^{-5}\) m³</p>
+    <p>\(\Pi = 1\,000 \times 5 \times 10^{-5} \times 9{,}81 = \mathbf{0{,}4905}\) N</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Bouteille de gaz dans un bac d'eau</h3>
+  <p>Pour tester l'étanchéité d'une bouteille de gaz vide (\(V = 5\) L, masse = 1,5 kg), on la plonge entièrement dans l'eau. (\(\rho_{\text{eau}} = 1\,000\) kg/m³, \(g = 9{,}81\) m/s²)</p>
+  <p>a) Calculer la poussée d'Archimède.</p>
+  <p>b) Calculer le poids de la bouteille.</p>
+  <p>c) La bouteille remonte-t-elle ou coule-t-elle ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(V = 5 \text{ L} = 5 \times 10^{-3}\) m³ → \(\Pi = 1\,000 \times 5 \times 10^{-3} \times 9{,}81 = \mathbf{49{,}05}\) N</p>
+    <p>b) \(P = mg = 1{,}5 \times 9{,}81 = \mathbf{14{,}72}\) N</p>
+    <p>c) \(\Pi > P\) → la bouteille <strong>remonte</strong> (flotte). Il faut la maintenir pour la garder immergée.</p>
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Flotte ou coule ?</h2>
+
+<div class="retenir">
+  <strong>Règle :</strong>
+  <ul>
+    <li>Si \(\Pi > P\) → l'objet <strong>remonte</strong> (trop de poussée)</li>
+    <li>Si \(\Pi = P\) → l'objet est en <strong>équilibre</strong> (flottaison ou suspension)</li>
+    <li>Si \(\Pi < P\) → l'objet <strong>coule</strong></li>
+  </ul>
+  Critère simplifié : si \(\rho_{\text{objet}} < \rho_{\text{fluide}}\) → flotte ; si \(\rho_{\text{objet}} > \rho_{\text{fluide}}\) → coule.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Classer des matériaux</h3>
+  <p>Indiquer si les objets suivants flottent ou coulent dans l'eau (\(\rho_{\text{eau}} = 1\,000\) kg/m³) :</p>
+  <table>
+    <tr><th>Matériau</th><th>Masse volumique (kg/m³)</th><th>Comportement</th></tr>
+    <tr><td>Polypropylène (PP)</td><td>900</td><td>?</td></tr>
+    <tr><td>Acier</td><td>7 800</td><td>?</td></tr>
+    <tr><td>PVC</td><td>1 400</td><td>?</td></tr>
+    <tr><td>Polyéthylène (PE)</td><td>950</td><td>?</td></tr>
+    <tr><td>Liège</td><td>120</td><td>?</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <table>
+      <tr><th>Matériau</th><th>ρ (kg/m³)</th><th>Comportement</th></tr>
+      <tr><td>Polypropylène (PP)</td><td>900 &lt; 1000</td><td><strong>Flotte</strong></td></tr>
+      <tr><td>Acier</td><td>7800 &gt; 1000</td><td><strong>Coule</strong></td></tr>
+      <tr><td>PVC</td><td>1400 &gt; 1000</td><td><strong>Coule</strong></td></tr>
+      <tr><td>Polyéthylène (PE)</td><td>950 &lt; 1000</td><td><strong>Flotte</strong></td></tr>
+      <tr><td>Liège</td><td>120 &lt; 1000</td><td><strong>Flotte</strong></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Calcul pour décider</h3>
+  <p>Un bloc de béton (\(\rho = 2\,400\) kg/m³, \(V = 0{,}01\) m³) est posé dans un bac d'eau.</p>
+  <p>a) Calculer le poids du bloc.</p>
+  <p>b) Calculer la poussée d'Archimède.</p>
+  <p>c) Le bloc flotte-t-il ou coule-t-il ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(m = \rho_{\text{béton}} \times V = 2\,400 \times 0{,}01 = 24\) kg → \(P = 24 \times 9{,}81 = 235{,}4\) N</p>
+    <p>b) \(\Pi = 1\,000 \times 0{,}01 \times 9{,}81 = 98{,}1\) N</p>
+    <p>c) \(P = 235{,}4 \text{ N} > \Pi = 98{,}1 \text{ N}\) → le bloc <strong>coule</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Masse maximale pour flotter</h3>
+  <p>Un bac de récupération en plastique de volume \(V = 20\) L doit flotter sur l'eau. Quelle est la masse maximale qu'il peut contenir (bac + contenu) pour rester à flot ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Pour flotter, il faut \(P \leq \Pi\), soit \(mg \leq \rho_{\text{eau}} V g\).</p>
+    <p>\(m \leq \rho_{\text{eau}} \times V = 1\,000 \times 0{,}020 = \mathbf{20}\) kg</p>
+    <p>Le bac peut contenir au maximum 20 kg (bac + contenu) pour flotter.</p>
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Fraction immergée d'un flotteur</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> Pour un solide homogène flottant à l'équilibre (\(\Pi = P\)) :
+  \[\rho_{\text{fluide}} \times V_{\text{immergé}} \times g = \rho_{\text{objet}} \times V_{\text{total}} \times g\]
+  Donc : \(\dfrac{V_{\text{immergé}}}{V_{\text{total}}} = \dfrac{\rho_{\text{objet}}}{\rho_{\text{fluide}}}\)
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Iceberg</h3>
+  <p>La glace a une masse volumique \(\rho_{\text{glace}} = 917\) kg/m³ et l'eau de mer \(\rho_{\text{eau}} = 1\,025\) kg/m³.</p>
+  <p>Calculer la fraction d'un iceberg immergée dans l'eau de mer.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\dfrac{V_{\text{immergé}}}{V_{\text{total}}} = \dfrac{\rho_{\text{glace}}}{\rho_{\text{eau}}} = \dfrac{917}{1\,025} \approx \mathbf{0{,}895} = 89{,}5\%\)</p>
+    <p>Environ 90% de l'iceberg est sous l'eau — seuls 10% sont visibles.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Flotteur de chasse d'eau</h3>
+  <p>Le flotteur d'une chasse d'eau est une sphère creuse en plastique. Sa masse est \(m = 25\) g et son volume total est \(V = 80 \text{ cm}^3\). (\(\rho_{\text{eau}} = 1\,000\) kg/m³, \(g = 9{,}81\) m/s²)</p>
+  <p>a) Calculer le poids du flotteur.</p>
+  <p>b) Pour quelle fraction immergée la poussée d'Archimède équilibre-t-elle exactement le poids ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(P = mg = 0{,}025 \times 9{,}81 = \mathbf{0{,}245}\) N</p>
+    <p>b) À l'équilibre : \(\Pi = P \Rightarrow \rho_{\text{eau}} \times V_{\text{imm}} \times g = P\)</p>
+    <p>\(V_{\text{imm}} = \dfrac{P}{\rho_{\text{eau}} \times g} = \dfrac{0{,}245}{1\,000 \times 9{,}81} = 2{,}5 \times 10^{-5}\) m³ = 25 cm³</p>
+    <p>Fraction immergée : \(\dfrac{25}{80} = \mathbf{31{,}25}\%\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Masse volumique apparente</h3>
+  <p>Un morceau de plastique flotte dans l'eau avec 60% de son volume immergé. Calculer sa masse volumique.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\dfrac{V_{\text{imm}}}{V_{\text{total}}} = \dfrac{\rho_{\text{objet}}}{\rho_{\text{eau}}} \Rightarrow \rho_{\text{objet}} = 0{,}60 \times 1\,000 = \mathbf{600}\) kg/m³</p>
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Application en plomberie et canalisations</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> En plomberie, la poussée d'Archimède intervient pour : le comportement des tuyaux enterrés en zone inondable, les flotteurs de régulation (chasse d'eau, bac de stockage), et le transport de fluides dans les réseaux.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Tuyau PVC dans une tranchée inondée</h3>
+  <p>Un technicien pose une canalisation en PVC (\(\rho_{\text{PVC}} = 1\,400\) kg/m³). Le tuyau est creux : son volume total (matière + vide intérieur) est de 5 L et sa masse est 2 kg. La tranchée se remplit d'eau.</p>
+  <p>a) Calculer le poids du tuyau.</p>
+  <p>b) Calculer la poussée d'Archimède.</p>
+  <p>c) Le tuyau risque-t-il de remonter à la surface ? Que faire ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(P = 2 \times 9{,}81 = 19{,}62\) N</p>
+    <p>b) \(V_{\text{total}} = 5 \text{ L} = 5 \times 10^{-3}\) m³ → \(\Pi = 1\,000 \times 5 \times 10^{-3} \times 9{,}81 = 49{,}05\) N</p>
+    <p>c) \(\Pi = 49{,}05 \text{ N} > P = 19{,}62 \text{ N}\) → le tuyau <strong>remonte</strong>. Il faut le lester (gravier, ancrage) ou vider la tranchée avant de remblayer.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Flotteur de régulation de bac</h3>
+  <p>Un bac d'expansion de circuit de chauffage est équipé d'un flotteur pour détecter le niveau d'eau. Le flotteur est une sphère de plastique (\(\rho = 800\) kg/m³) de rayon \(r = 4\) cm.</p>
+  <p>a) Calculer le volume de la sphère (\(V = \dfrac{4}{3}\pi r^3\)).</p>
+  <p>b) Calculer sa masse.</p>
+  <p>c) Calculer la fraction immergée à l'équilibre dans l'eau.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(V = \dfrac{4}{3} \pi (0{,}04)^3 = \dfrac{4}{3} \times 3{,}14 \times 6{,}4 \times 10^{-5} \approx 2{,}68 \times 10^{-4}\) m³</p>
+    <p>b) \(m = \rho \times V = 800 \times 2{,}68 \times 10^{-4} \approx 0{,}214\) kg</p>
+    <p>c) Fraction immergée : \(\dfrac{\rho_{\text{objet}}}{\rho_{\text{eau}}} = \dfrac{800}{1\,000} = \mathbf{80\%}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Utilité de la poussée d'Archimède en chauffage</h3>
+  <p>Dans un circuit de chauffage à convection naturelle (sans pompe), l'eau chaude monte et l'eau froide descend. Expliquer ce phénomène en utilisant le principe d'Archimède.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>L'eau chaude a une masse volumique plus faible que l'eau froide (\(\rho_{\text{chaud}} < \rho_{\text{froid}}\)).</p>
+    <p>Appliquant le principe d'Archimède : la colonne d'eau froide (plus dense) exerce une plus grande poussée sur l'eau chaude voisine, poussant l'eau chaude vers le haut.</p>
+    <p>C'est le principe de la <strong>convection naturelle</strong> : l'eau chaude monte spontanément vers les radiateurs, se refroidit, descend, et le cycle recommence — sans pompe.</p>
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

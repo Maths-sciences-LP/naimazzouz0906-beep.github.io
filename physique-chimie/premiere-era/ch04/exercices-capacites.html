@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Exercices par capacités – Transferts thermiques – 1ère Bac Pro ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-erama.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 4 – Exercices par capacités</h1>
+  <p class="sous-titre">Les trois modes de transfert thermique &nbsp;|&nbsp; 1ère Bac Pro ERA-MA &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> — Identifier les 3 modes de transfert thermique (conduction, convection, rayonnement)</li>
+    <li><strong>C2</strong> — Calculer un flux thermique conductif \(\varphi = \lambda S \Delta T / e\)</li>
+    <li><strong>C3</strong> — Calculer une résistance thermique \(R = e / (\lambda S)\)</li>
+    <li><strong>C4</strong> — Interpréter la résistance thermique (isolation)</li>
+    <li><strong>C5</strong> — Appliquer dans le contexte des matériaux de menuiserie (bois, vitrage, isolants)</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-filtre="toutes">Toutes</button>
+  <button class="btn-cap" data-filtre="C1">C1 – Les 3 modes</button>
+  <button class="btn-cap" data-filtre="C2">C2 – Flux conductif</button>
+  <button class="btn-cap" data-filtre="C3">C3 – Résistance thermique</button>
+  <button class="btn-cap" data-filtre="C4">C4 – Interprétation</button>
+  <button class="btn-cap" data-filtre="C5">C5 – Matériaux menuiserie</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- ===== C1 ===== -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Identifier les 3 modes de transfert thermique</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <ul>
+    <li><strong>Conduction</strong> : transfert dans un solide de proche en proche, sans déplacement de matière. Ex : chaleur traversant un mur.</li>
+    <li><strong>Convection</strong> : transfert par déplacement d'un fluide (air, eau). Ex : radiateur qui chauffe l'air d'une pièce.</li>
+    <li><strong>Rayonnement</strong> : transfert par ondes électromagnétiques, sans support matériel. Ex : chaleur du soleil.</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Identifier le mode de transfert thermique dans chaque situation :</p>
+  <ol type="a">
+    <li>La chaleur se propage à travers une planche de chêne.</li>
+    <li>Un radiateur à eau chaude réchauffe l'air d'un atelier.</li>
+    <li>Le soleil réchauffe une fenêtre vitrée.</li>
+    <li>La chaleur des doigts réchauffe une poignée de porte en métal.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li><strong>Conduction</strong> : transfert dans le solide (bois).</li>
+      <li><strong>Convection</strong> : l'air chaud monte et se déplace.</li>
+      <li><strong>Rayonnement</strong> : ondes électromagnétiques du soleil.</li>
+      <li><strong>Conduction</strong> : contact direct métal–doigt.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un technicien d'agencement installe une fenêtre. Citer un exemple de chaque mode de transfert thermique dans une fenêtre en fonctionnement hivernal.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li><strong>Conduction</strong> : la chaleur traverse le verre et le cadre bois/PVC.</li>
+      <li><strong>Convection</strong> : l'air chaud intérieur refroidit au contact du vitrage et descend (courant d'air froid).</li>
+      <li><strong>Rayonnement</strong> : le vitrage émet du rayonnement thermique infrarouge vers l'extérieur froid.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Associer chaque mode de transfert à sa caractéristique principale :</p>
+  <ul>
+    <li>A — Se produit dans le vide (espace sans matière).</li>
+    <li>B — Nécessite un contact entre solides.</li>
+    <li>C — Implique le déplacement d'un fluide (liquide ou gaz).</li>
+  </ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>A → <strong>Rayonnement</strong></li>
+      <li>B → <strong>Conduction</strong></li>
+      <li>C → <strong>Convection</strong></li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!-- ===== C2 ===== -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Calculer un flux thermique conductif</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Le <strong>flux thermique</strong> par conduction est : \(\varphi = \dfrac{\lambda \cdot S \cdot \Delta T}{e}\)</p>
+  <ul>
+    <li>\(\varphi\) : flux thermique en watts (W)</li>
+    <li>\(\lambda\) : conductivité thermique du matériau en W/(m·K)</li>
+    <li>\(S\) : surface de la paroi en m²</li>
+    <li>\(\Delta T\) : différence de température en K (ou °C)</li>
+    <li>\(e\) : épaisseur de la paroi en m</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Un panneau de chêne massif a les caractéristiques suivantes : \(\lambda = 0{,}17\) W/(m·K), \(e = 0{,}04\) m, \(S = 2\) m². La température est de 20°C d'un côté et 5°C de l'autre. Calculer le flux thermique traversant ce panneau.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(\Delta T = 20 - 5 = 15\) K<br>
+    \(\varphi = \dfrac{0{,}17 \times 2 \times 15}{0{,}04} = \dfrac{5{,}1}{0{,}04} = \mathbf{127{,}5}\) W
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 5</h3>
+  <p>Un vitrage simple de surface \(S = 1{,}5\) m², d'épaisseur \(e = 4\) mm = 0,004 m et de conductivité \(\lambda = 1{,}0\) W/(m·K). \(\Delta T = 18\) K. Calculer le flux thermique perdu.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(\varphi = \dfrac{1{,}0 \times 1{,}5 \times 18}{0{,}004} = \dfrac{27}{0{,}004} = \mathbf{6\,750}\) W = 6,75 kW<br>
+    <em>Ce résultat élevé montre que le vitrage simple isole très mal.</em>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 6</h3>
+  <p>Une paroi en épicéa (\(\lambda = 0{,}13\) W/(m·K)) d'épaisseur 60 mm et de surface 6 m² laisse passer un flux de 78 W. Calculer la différence de température entre les deux faces.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(\varphi = \dfrac{\lambda S \Delta T}{e}\) donc \(\Delta T = \dfrac{\varphi \cdot e}{\lambda \cdot S} = \dfrac{78 \times 0{,}06}{0{,}13 \times 6} = \dfrac{4{,}68}{0{,}78} = \mathbf{6}\) K = 6°C
+  </div>
+</div>
+</div>
+
+<!-- ===== C3 ===== -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Calculer une résistance thermique</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>La <strong>résistance thermique</strong> d'une paroi est : \(R_{th} = \dfrac{e}{\lambda \cdot S}\) (en K/W)</p>
+  <p>Plus \(R_{th}\) est grand, plus la paroi est isolante (s'oppose au transfert de chaleur).<br>
+  On peut aussi travailler par unité de surface : \(R = e / \lambda\) (en m²·K/W).</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 7</h3>
+  <p>Calculer la résistance thermique d'une porte en chêne (\(\lambda = 0{,}17\) W/(m·K)), d'épaisseur 40 mm, de surface 2 m².</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(R_{th} = \dfrac{e}{\lambda \cdot S} = \dfrac{0{,}04}{0{,}17 \times 2} = \dfrac{0{,}04}{0{,}34} \approx \mathbf{0{,}118}\) K/W
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 8</h3>
+  <p>Comparer les résistances thermiques des deux panneaux suivants (même surface \(S = 1\) m²) :</p>
+  <ul>
+    <li>Panneau A : bois (\(\lambda = 0{,}15\) W/(m·K)), \(e = 20\) mm</li>
+    <li>Panneau B : verre (\(\lambda = 1{,}0\) W/(m·K)), \(e = 20\) mm</li>
+  </ul>
+  <p>Lequel isole le mieux ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Panneau A : \(R_A = \dfrac{0{,}02}{0{,}15 \times 1} = 0{,}133\) K/W<br>
+    Panneau B : \(R_B = \dfrac{0{,}02}{1{,}0 \times 1} = 0{,}020\) K/W<br>
+    Le <strong>panneau A (bois)</strong> isole mieux : \(R_A > R_B\).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 9</h3>
+  <p>Un menuisier agenceur dispose d'un panneau isolant de résistance thermique surfacique \(R = e/\lambda = 2{,}5\) m²·K/W. Quel flux thermique traversera ce panneau (\(S = 4\) m²) si \(\Delta T = 15\) K ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(R_{th} = \dfrac{R}{S} = \dfrac{2{,}5}{4} = 0{,}625\) K/W (résistance totale)<br>
+    \(\varphi = \dfrac{\Delta T}{R_{th}} = \dfrac{15}{0{,}625} = \mathbf{24}\) W
+  </div>
+</div>
+</div>
+
+<!-- ===== C4 ===== -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Interpréter la résistance thermique</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>La résistance thermique permet de <strong>comparer l'efficacité isolante</strong> de différents matériaux et parois :</p>
+  <ul>
+    <li>Grande \(R_{th}\) → bon isolant → moins de pertes de chaleur.</li>
+    <li>Petite \(R_{th}\) → mauvais isolant → beaucoup de pertes.</li>
+    <li>Pour des couches en série (paroi multicouche) : \(R_{total} = R_1 + R_2 + \ldots\)</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 10</h3>
+  <p>Un artisan compare deux portes pour un chalet :</p>
+  <ul>
+    <li>Porte A : \(R_{th} = 0{,}45\) K/W</li>
+    <li>Porte B : \(R_{th} = 0{,}12\) K/W</li>
+  </ul>
+  <ol type="a">
+    <li>Quelle porte isole le mieux ?</li>
+    <li>Avec \(\Delta T = 20\) K, calculer le flux perdu par chaque porte.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>La <strong>porte A</strong> (\(R_{th}\) plus grand → meilleure isolation).</li>
+      <li>Porte A : \(\varphi_A = \dfrac{20}{0{,}45} \approx 44{,}4\) W ; Porte B : \(\varphi_B = \dfrac{20}{0{,}12} \approx 167\) W.<br>
+      La porte B perd près de 4 fois plus de chaleur.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 11</h3>
+  <p>Une paroi est constituée de deux couches en série : bois (\(R_1 = 0{,}15\) m²·K/W) + laine de verre (\(R_2 = 2{,}0\) m²·K/W). Surface totale : 10 m².</p>
+  <ol type="a">
+    <li>Calculer la résistance thermique totale surfacique.</li>
+    <li>Laquelle des deux couches contribue le plus à l'isolation ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(R_{total} = R_1 + R_2 = 0{,}15 + 2{,}0 = \mathbf{2{,}15}\) m²·K/W</li>
+      <li>La <strong>laine de verre</strong> (\(R_2 = 2{,}0\)) contribue très majoritairement à l'isolation (93 % de la résistance totale).</li>
+    </ol>
+  </div>
+</div>
+</div>
+
+<!-- ===== C5 ===== -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Matériaux de menuiserie : bois, vitrage, isolants</h2>
+
+<div class="retenir">
+  <strong>Conductivités thermiques de référence</strong>
+  <table>
+    <tr><th>Matériau</th><th>\(\lambda\) (W/(m·K))</th></tr>
+    <tr><td>Chêne, hêtre</td><td>0,17 – 0,20</td></tr>
+    <tr><td>Épicéa, sapin</td><td>0,12 – 0,15</td></tr>
+    <tr><td>Verre simple</td><td>0,96 – 1,05</td></tr>
+    <tr><td>Laine de roche/verre</td><td>0,032 – 0,040</td></tr>
+    <tr><td>Polystyrène expansé</td><td>0,030 – 0,040</td></tr>
+    <tr><td>Air</td><td>0,026</td></tr>
+  </table>
+</div>
+
+<div class="exo">
+  <h3>Exercice 12</h3>
+  <p>Classer les matériaux suivants du moins isolant au plus isolant : verre simple, chêne, laine de roche, polystyrène expansé.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Plus \(\lambda\) est grand, moins le matériau est isolant :<br>
+    Ordre du moins isolant au plus isolant :<br>
+    <strong>Verre simple</strong> (\(\lambda \approx 1\)) &gt; Chêne (\(\lambda \approx 0{,}17\)) &gt; Laine de roche (\(\lambda \approx 0{,}036\)) ≈ Polystyrène (\(\lambda \approx 0{,}035\))
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 13</h3>
+  <p>Un fabricant de meubles conçoit un panneau sandwich : deux plaques de contreplaqué de 10 mm (\(\lambda = 0{,}15\) W/(m·K)) encadrant de la laine de roche de 60 mm (\(\lambda = 0{,}036\) W/(m·K)). Calculer la résistance thermique surfacique totale.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(R_{\text{bois}} = \dfrac{0{,}01}{0{,}15} = 0{,}067\) m²·K/W (par couche) → 2 couches : \(0{,}133\) m²·K/W<br>
+    \(R_{\text{laine}} = \dfrac{0{,}06}{0{,}036} = 1{,}67\) m²·K/W<br>
+    \(R_{total} = 0{,}133 + 1{,}67 = \mathbf{1{,}80}\) m²·K/W<br>
+    L'isolation est assurée à 93 % par la laine de roche.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 14</h3>
+  <p>Un menuisier agenceur compare une fenêtre simple vitrage (\(e = 4\) mm, \(\lambda = 1\), \(S = 1{,}2\) m²) et une fenêtre double vitrage avec lame d'air de 12 mm (modélisée comme une couche d'air : \(\lambda = 0{,}026\), \(e = 12\) mm). Calculer la résistance thermique surfacique de la lame d'air seule et commenter.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(R_{\text{air}} = \dfrac{0{,}012}{0{,}026} \approx 0{,}46\) m²·K/W<br>
+    \(R_{\text{verre simple}} = \dfrac{0{,}004}{1} = 0{,}004\) m²·K/W<br>
+    La lame d'air seule apporte une résistance <strong>115 fois supérieure</strong> au verre simple. C'est cette lame d'air qui fait tout l'intérêt du double vitrage.
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

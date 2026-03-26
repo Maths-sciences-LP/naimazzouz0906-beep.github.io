@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch10 – Exercices par capacités – Température et capteurs thermiques – 2nde Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 10 – Exercices par capacités</h1>
+  <p class="sous-titre">Température et capteurs thermiques &nbsp;|&nbsp; 2nde Bac Pro &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> — Convertir une température entre °C et K : \(T(\text{K}) = T(°\text{C}) + 273\)</li>
+    <li><strong>C2</strong> — Utiliser un thermomètre, un thermocouple, une thermistance</li>
+    <li><strong>C3</strong> — Lire et exploiter une courbe d'étalonnage d'un capteur de température</li>
+    <li><strong>C4</strong> — Identifier le principe de fonctionnement d'un capteur thermique</li>
+    <li><strong>C5</strong> — Associer une plage de température à un capteur adapté</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-filtre="toutes">Toutes</button>
+  <button class="btn-cap" data-filtre="C1">C1 – Conversion °C / K</button>
+  <button class="btn-cap" data-filtre="C2">C2 – Capteurs thermiques</button>
+  <button class="btn-cap" data-filtre="C3">C3 – Courbe d'étalonnage</button>
+  <button class="btn-cap" data-filtre="C4">C4 – Principe de fonctionnement</button>
+  <button class="btn-cap" data-filtre="C5">C5 – Choix du capteur</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- ===== C1 ===== -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Convertir une température entre °C et K</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Il existe deux échelles de température couramment utilisées en sciences :</p>
+  <ul>
+    <li>Le <strong>degré Celsius</strong> (°C) — utilisé dans la vie courante</li>
+    <li>Le <strong>Kelvin</strong> (K) — unité du système international, utilisée en sciences</li>
+  </ul>
+  <p>La conversion se fait par :</p>
+  <p>\[T(\text{K}) = T(°\text{C}) + 273\] et \[T(°\text{C}) = T(\text{K}) - 273\]</p>
+  <p>Le zéro absolu correspond à \(0\ \text{K} = -273\ °\text{C}\).</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Convertir les températures suivantes en Kelvin :</p>
+  <ol type="a">
+    <li>\(20\ °\text{C}\) (température ambiante)</li>
+    <li>\(100\ °\text{C}\) (ébullition de l'eau)</li>
+    <li>\(-10\ °\text{C}\) (température extérieure en hiver)</li>
+    <li>\(0\ °\text{C}\) (fusion de la glace)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(20 + 273 = \mathbf{293\ \text{K}}\)</li>
+      <li>\(100 + 273 = \mathbf{373\ \text{K}}\)</li>
+      <li>\(-10 + 273 = \mathbf{263\ \text{K}}\)</li>
+      <li>\(0 + 273 = \mathbf{273\ \text{K}}\)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Convertir les températures suivantes en degrés Celsius :</p>
+  <ol type="a">
+    <li>\(300\ \text{K}\)</li>
+    <li>\(373\ \text{K}\)</li>
+    <li>\(250\ \text{K}\)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(300 - 273 = \mathbf{27\ °\text{C}}\)</li>
+      <li>\(373 - 273 = \mathbf{100\ °\text{C}}\) (ébullition de l'eau)</li>
+      <li>\(250 - 273 = \mathbf{-23\ °\text{C}}\)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un plombier chauffagiste installe une chaudière. La température de l'eau dans le circuit est de \(75\ °\text{C}\). Un ingénieur thermicien lui demande d'exprimer cette température en Kelvin. Effectuer la conversion.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(T(\text{K}) = 75 + 273 = \mathbf{348\ \text{K}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Un technicien de maintenance énergétique mesure la température d'un fluide frigorigène à \(238\ \text{K}\). Convertir cette valeur en degrés Celsius et indiquer si ce fluide est à une température au-dessus ou en dessous du point de congélation de l'eau.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(T(°\text{C}) = 238 - 273 = \mathbf{-35\ °\text{C}}\)</p>
+    <p>Le fluide est bien en dessous du point de congélation de l'eau (0 °C) : il est à –35 °C.</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C2 ===== -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Utiliser un thermomètre, un thermocouple, une thermistance</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Il existe plusieurs types de capteurs de température :</p>
+  <ul>
+    <li><strong>Thermomètre à dilatation</strong> : basé sur la dilatation d'un liquide (mercure, alcool) avec la température</li>
+    <li><strong>Thermocouple</strong> : deux fils métalliques de nature différente soudés à une extrémité, qui génèrent une tension \(U\) proportionnelle à la différence de température</li>
+    <li><strong>Thermistance (CTN/CTP)</strong> : résistance dont la valeur varie avec la température — CTN (coefficient de température négatif) : résistance diminue quand \(T\) augmente ; CTP : résistance augmente quand \(T\) augmente</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 5</h3>
+  <p>Un installateur thermique doit mesurer la température d'une tuyauterie. Il dispose d'un thermocouple de type K. Répondre aux questions suivantes :</p>
+  <ol type="a">
+    <li>Quel type de signal électrique délivre un thermocouple ?</li>
+    <li>Pourquoi utilise-t-on un thermocouple plutôt qu'un thermomètre à mercure pour mesurer des températures élevées (jusqu'à 1 000 °C) ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Un thermocouple délivre une <strong>tension électrique</strong> (en mV), proportionnelle à la différence de température entre la soudure chaude et la soudure froide.</li>
+      <li>Le thermomètre à mercure ne peut pas résister à des températures très élevées (le mercure bout à 357 °C). Le thermocouple est bien adapté aux hautes températures car il est constitué de métaux réfractaires et ne contient pas de liquide.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 6</h3>
+  <p>Une CTN (coefficient de température négatif) est utilisée dans un circuit de régulation thermique. À 20 °C, sa résistance est de 10 kΩ. À 80 °C, sa résistance est de 1 kΩ.</p>
+  <ol type="a">
+    <li>Comment évolue la résistance d'une CTN quand la température augmente ?</li>
+    <li>Lorsque la pièce chauffe, le courant dans le circuit augmente-t-il ou diminue-t-il ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>La résistance d'une CTN <strong>diminue</strong> quand la température augmente (de 10 kΩ à 1 kΩ).</li>
+      <li>Comme la résistance diminue, l'intensité du courant <strong>augmente</strong> (loi d'Ohm : \(I = U/R\)).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 7</h3>
+  <p>Pour chaque situation, indiquer quel type de capteur de température est le plus adapté :</p>
+  <ol type="a">
+    <li>Mesure de la température d'un four industriel à 800 °C.</li>
+    <li>Régulation électronique de la température d'une chambre froide à –20 °C.</li>
+    <li>Lecture directe de la température d'un liquide dans un bécher en laboratoire.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li><strong>Thermocouple</strong> — adapté aux très hautes températures.</li>
+      <li><strong>Thermistance (CTN)</strong> — adaptée à la régulation électronique et aux températures négatives.</li>
+      <li><strong>Thermomètre à dilatation</strong> — simple, lecture directe, adapté aux températures courantes de laboratoire.</li>
+    </ol>
+  </div>
+</div>
+</div>
+
+<!-- ===== C3 ===== -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Lire et exploiter une courbe d'étalonnage</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Une <strong>courbe d'étalonnage</strong> est un graphe qui relie la grandeur mesurée par le capteur (ex : résistance en Ω, tension en mV) à la température réelle (en °C ou K).</p>
+  <p>Pour exploiter une courbe d'étalonnage :</p>
+  <ol>
+    <li>Repérer la valeur mesurée par le capteur sur l'axe des ordonnées (ou abscisses)</li>
+    <li>Tracer une droite horizontale (ou verticale) jusqu'à la courbe</li>
+    <li>Lire la température correspondante sur l'autre axe</li>
+  </ol>
+</div>
+
+<div class="exo">
+  <h3>Exercice 8</h3>
+  <p>La courbe d'étalonnage d'une CTN donne les correspondances suivantes :</p>
+  <table style="border-collapse:collapse;width:100%;margin:8px 0">
+    <tr style="background:var(--p-bg)">
+      <th style="padding:6px;border:1px solid var(--p-border)">Résistance (Ω)</th>
+      <td style="padding:6px;border:1px solid var(--p-border)">10 000</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">5 000</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">2 000</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">1 000</td>
+    </tr>
+    <tr>
+      <th style="padding:6px;border:1px solid var(--p-border)">Température (°C)</th>
+      <td style="padding:6px;border:1px solid var(--p-border)">20</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">40</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">60</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">80</td>
+    </tr>
+  </table>
+  <ol type="a">
+    <li>À quelle température correspond une résistance de 5 000 Ω ?</li>
+    <li>Quelle résistance correspond à 60 °C ?</li>
+    <li>La CTN est-elle de type CTN (coefficient négatif) ? Justifier.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>5 000 Ω → <strong>40 °C</strong></li>
+      <li>60 °C → <strong>2 000 Ω</strong></li>
+      <li>Oui, c'est bien une CTN : quand la température augmente (de 20 à 80 °C), la résistance diminue (de 10 000 à 1 000 Ω).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 9</h3>
+  <p>Un thermocouple de type J a une courbe d'étalonnage linéaire : \(U\ (\text{mV}) = 0{,}05 \times T\ (°\text{C})\).</p>
+  <ol type="a">
+    <li>Calculer la tension mesurée pour \(T = 200\ °\text{C}\).</li>
+    <li>Pour une tension mesurée de \(U = 8\ \text{mV}\), déterminer la température.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(U = 0{,}05 \times 200 = \mathbf{10\ \text{mV}}\)</li>
+      <li>\(T = \frac{U}{0{,}05} = \frac{8}{0{,}05} = \mathbf{160\ °\text{C}}\)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 10</h3>
+  <p>Un technicien de maintenance utilise un capteur étalonné. Il lit une valeur de 3 500 Ω sur son ohmmètre. D'après la courbe d'étalonnage (interpolation linéaire entre 40 °C à 5 000 Ω et 60 °C à 2 000 Ω), estimer la température mesurée.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Entre 5 000 Ω (40 °C) et 2 000 Ω (60 °C), la résistance diminue de 3 000 Ω pour une augmentation de 20 °C.</p>
+    <p>À 3 500 Ω : on est à \(5\,000 - 3\,500 = 1\,500\ \Omega\) en dessous de 5 000 Ω.</p>
+    <p>Proportion : \(\frac{1\,500}{3\,000} \times 20 = 10\ °\text{C}\) au-dessus de 40 °C.</p>
+    <p>Température estimée : \(40 + 10 = \mathbf{50\ °\text{C}}\)</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C4 ===== -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Identifier le principe de fonctionnement d'un capteur thermique</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Chaque type de capteur repose sur un phénomène physique différent :</p>
+  <ul>
+    <li><strong>Thermomètre à dilatation</strong> : la dilatation thermique d'un liquide (volume augmente avec \(T\))</li>
+    <li><strong>Thermocouple</strong> : effet thermoélectrique (effet Seebeck) — jonction de deux métaux génère une tension dépendant de \(\Delta T\)</li>
+    <li><strong>Thermistance (CTN/CTP)</strong> : variation de la résistivité d'un semi-conducteur avec la température</li>
+    <li><strong>Caméra thermique</strong> : détection du rayonnement infrarouge émis par les corps chauds</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 11</h3>
+  <p>Associer chaque capteur à son principe physique :</p>
+  <ol type="a">
+    <li>Thermocouple de type K</li>
+    <li>Thermomètre médical à dilatation</li>
+    <li>CTN en céramique</li>
+  </ol>
+  <p>Principes : (1) variation de résistance d'un semi-conducteur — (2) effet thermoélectrique — (3) dilatation d'un liquide</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Thermocouple → <strong>(2) effet thermoélectrique</strong></li>
+      <li>Thermomètre à dilatation → <strong>(3) dilatation d'un liquide</strong></li>
+      <li>CTN → <strong>(1) variation de résistance d'un semi-conducteur</strong></li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 12</h3>
+  <p>Un installateur de pompes à chaleur utilise une caméra thermique pour visualiser les déperditions de chaleur d'une habitation. Expliquer quel phénomène physique permet à la caméra thermique de « voir » la chaleur.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Tout corps chaud émet un <strong>rayonnement infrarouge</strong> dont l'intensité et la longueur d'onde dépendent de sa température. La caméra thermique détecte ce rayonnement infrarouge (invisible à l'œil nu) et le convertit en image colorée, permettant de visualiser les zones de déperdition thermique.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 13</h3>
+  <p>Un thermocouple est formé de deux fils de métaux différents (chromel et alumel). Lorsque la jonction chaude est à 500 °C et la jonction de référence à 20 °C, il produit une tension de 20,6 mV.</p>
+  <ol type="a">
+    <li>Quel phénomène physique est à l'origine de cette tension ?</li>
+    <li>Si on maintient les deux jonctions à la même température, quelle tension mesure-t-on ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>L'<strong>effet Seebeck</strong> (effet thermoélectrique) : la différence de température entre les deux jonctions de métaux différents génère une tension électrique.</li>
+      <li>Si les deux jonctions sont à la même température (\(\Delta T = 0\)), la tension est <strong>nulle</strong> : \(U = 0\ \text{V}\).</li>
+    </ol>
+  </div>
+</div>
+</div>
+
+<!-- ===== C5 ===== -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Associer une plage de température à un capteur adapté</h2>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <table style="border-collapse:collapse;width:100%;margin:8px 0">
+    <tr style="background:var(--p-bg)">
+      <th style="padding:6px;border:1px solid var(--p-border)">Capteur</th>
+      <th style="padding:6px;border:1px solid var(--p-border)">Plage typique</th>
+      <th style="padding:6px;border:1px solid var(--p-border)">Avantages</th>
+    </tr>
+    <tr>
+      <td style="padding:6px;border:1px solid var(--p-border)">Thermomètre à dilatation</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">–50 °C à 350 °C</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">Simple, direct, sans électricité</td>
+    </tr>
+    <tr>
+      <td style="padding:6px;border:1px solid var(--p-border)">Thermistance CTN</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">–40 °C à 150 °C</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">Précis, régulation électronique</td>
+    </tr>
+    <tr>
+      <td style="padding:6px;border:1px solid var(--p-border)">Thermocouple</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">–200 °C à 1 300 °C</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">Large plage, hautes températures</td>
+    </tr>
+  </table>
+</div>
+
+<div class="exo">
+  <h3>Exercice 14</h3>
+  <p>Pour chaque application industrielle, choisir le capteur le plus adapté (thermomètre à dilatation, thermistance CTN, thermocouple) :</p>
+  <ol type="a">
+    <li>Mesure de la température d'un four de soudure à 900 °C.</li>
+    <li>Régulation de la température d'un réfrigérateur entre –20 °C et 5 °C.</li>
+    <li>Contrôle de la température d'un bain-marie en laboratoire à 60 °C.</li>
+    <li>Mesure de la température de fumées d'une chaudière à 600 °C.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li><strong>Thermocouple</strong> — seul capteur fiable à 900 °C.</li>
+      <li><strong>Thermistance CTN</strong> — adaptée aux températures négatives et à la régulation électronique.</li>
+      <li><strong>Thermomètre à dilatation</strong> — simple et suffisant pour cette plage courante.</li>
+      <li><strong>Thermocouple</strong> — adapté aux hautes températures (600 °C).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 15</h3>
+  <p>Un technicien en climatisation doit installer un capteur de température sur une ligne de fluide frigorigène à –15 °C. Il hésite entre un thermocouple de type K et une thermistance CTN.</p>
+  <ol type="a">
+    <li>Les deux capteurs peuvent-ils fonctionner à –15 °C ?</li>
+    <li>Lequel est le plus économique et le plus simple à intégrer dans un circuit électronique de régulation ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Oui, les deux fonctionnent à –15 °C : la CTN est utilisable jusqu'à –40 °C et le thermocouple de type K jusqu'à –200 °C.</li>
+      <li>La <strong>thermistance CTN</strong> est plus économique et plus simple à intégrer dans un circuit électronique de régulation.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 16</h3>
+  <p>Un ingénieur doit choisir un capteur pour mesurer la température d'un métal en fusion à 1 100 °C. Expliquer pourquoi un thermomètre à dilatation et une thermistance CTN sont inadaptés, et proposer le capteur correct.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Thermomètre à dilatation</strong> : son liquide interne (mercure ou alcool) s'évaporerait bien avant 1 100 °C (mercure bout à 357 °C, alcool à 78 °C). Inadapté.</p>
+    <p><strong>Thermistance CTN</strong> : son semi-conducteur est détruit au-delà de 150 °C environ. Inadaptée.</p>
+    <p>Le capteur adapté est le <strong>thermocouple</strong> (type B, R ou S), qui peut mesurer jusqu'à 1 300 °C ou plus selon le type.</p>
+  </div>
+</div>
+</div>
+
+</div>
+
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+<script>
+function toggle(btn){
+  var corr=btn.nextElementSibling;
+  if(corr.style.display==='block'){corr.style.display='none';btn.textContent='Voir la correction';}
+  else{corr.style.display='block';btn.textContent='Masquer la correction';}
+}
+</script>
+</body>
+</html>

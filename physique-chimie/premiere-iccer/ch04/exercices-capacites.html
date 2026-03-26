@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Exercices par capacités – Transferts thermiques – 1ère Bac Pro ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-iccer.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 4 – Exercices par capacités</h1>
+  <p class="sous-titre">Les trois modes de transfert thermique &nbsp;|&nbsp; 1ère Bac Pro ICCER &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> – Identifier les trois modes de transfert thermique (conduction, convection, rayonnement)</li>
+    <li><strong>C2</strong> – Calculer un flux thermique conductif (\(\varphi = \lambda S \Delta T / e\))</li>
+    <li><strong>C3</strong> – Calculer une résistance thermique (\(R = e / \lambda S\))</li>
+    <li><strong>C4</strong> – Interpréter une résistance thermique comme indicateur d'isolation</li>
+    <li><strong>C5</strong> – Appliquer dans un contexte de chauffage/isolation du bâtiment</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Identifier les trois modes de transfert thermique</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong>
+  <ul>
+    <li><strong>Conduction</strong> : transfert de chaleur dans un solide (ou entre solides en contact), sans déplacement de matière. Ex : manche d'une casserole qui chauffe.</li>
+    <li><strong>Convection</strong> : transfert de chaleur par déplacement de fluide (liquide ou gaz). Ex : radiateur à eau chaude qui réchauffe l'air d'une pièce.</li>
+    <li><strong>Rayonnement</strong> : transfert de chaleur par ondes électromagnétiques, sans support matériel. Ex : chaleur du soleil, radiateur infrarouge.</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Identifier le mode de transfert</h3>
+  <p>Pour chaque situation, identifier le mode de transfert thermique dominant :</p>
+  <ol type="a">
+    <li>La poignée métallique d'un radiateur brûlant chauffe la main qui la tient.</li>
+    <li>L'eau chaude d'un plancher chauffant réchauffe le sol de la pièce.</li>
+    <li>Un convecteur électrique réchauffe une pièce par brassage d'air chaud.</li>
+    <li>Un panneau solaire thermique absorbe la chaleur du soleil.</li>
+    <li>Un tuyau chaud réchauffe le tuyau adjacent qui le touche.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol type="a">
+      <li><strong>Conduction</strong> : transfert dans le solide métallique.</li>
+      <li><strong>Conduction</strong> : transfert de l'eau au sol (contact solide-fluide, mais le mécanisme dans le sol est la conduction).</li>
+      <li><strong>Convection</strong> : déplacement d'air chaud.</li>
+      <li><strong>Rayonnement</strong> : ondes électromagnétiques du soleil.</li>
+      <li><strong>Conduction</strong> : transfert entre solides en contact.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Modes de transfert dans une installation de chauffage</h3>
+  <p>Un technicien CVC installe un système de chauffage central : une chaudière chauffe de l'eau, qui circule dans des radiateurs, lesquels réchauffent la pièce.</p>
+  <p>Identifier le mode de transfert thermique dominant à chaque étape :</p>
+  <ol type="a">
+    <li>La combustion du gaz chauffe les parois métalliques de la chaudière.</li>
+    <li>L'eau chaude circule dans les tuyaux et les radiateurs.</li>
+    <li>Le radiateur chaud réchauffe l'air de la pièce par mouvement d'air.</li>
+    <li>La façade du bâtiment perd de la chaleur vers l'extérieur.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol type="a">
+      <li><strong>Conduction + rayonnement</strong> (flamme → paroi métallique)</li>
+      <li><strong>Convection forcée</strong> (déplacement de fluide par pompe)</li>
+      <li><strong>Convection naturelle</strong> (l'air chaud monte, l'air froid descend)</li>
+      <li><strong>Conduction</strong> (à travers la paroi) + <strong>convection</strong> (côté extérieur)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Rayonnement infrarouge</h3>
+  <p>Un client demande à un installateur thermique la différence entre un radiateur à rayonnement infrarouge et un convecteur électrique.</p>
+  <p>Expliquer en utilisant les notions de transfert thermique.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Le radiateur infrarouge transfère la chaleur par <strong>rayonnement</strong> (ondes électromagnétiques) : il chauffe directement les objets et les personnes sans avoir besoin de réchauffer l'air. L'effet est immédiat.</p>
+    <p>Le convecteur électrique transfère la chaleur par <strong>convection</strong> : il réchauffe l'air qui monte et crée un brassage. L'air doit d'abord se réchauffer, ce qui est plus lent et peut créer des courants d'air.</p>
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Calcul du flux thermique conductif</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> Le flux thermique (puissance thermique transférée par conduction) à travers une paroi est :
+  \[\varphi = \frac{\lambda \times S \times \Delta T}{e}\]
+  avec : \(\lambda\) = conductivité thermique (W·m⁻¹·K⁻¹) ; \(S\) = surface (m²) ; \(\Delta T = T_{\text{chaud}} - T_{\text{froid}}\) (K ou °C) ; \(e\) = épaisseur (m) ; \(\varphi\) = flux (W).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Mur en béton</h3>
+  <p>Un mur en béton a les caractéristiques suivantes : surface \(S = 20\) m², épaisseur \(e = 0{,}20\) m, conductivité \(\lambda = 1{,}75\) W·m⁻¹·K⁻¹. La température intérieure est \(T_i = 20\)°C et la température extérieure est \(T_e = 5\)°C.</p>
+  <p>Calculer le flux thermique perdu à travers ce mur.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\Delta T = 20 - 5 = 15\) K</p>
+    <p>\(\varphi = \dfrac{1{,}75 \times 20 \times 15}{0{,}20} = \dfrac{525}{0{,}20} = \mathbf{2\,625}\) W = 2,625 kW</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Isolant en laine de verre</h3>
+  <p>Un panneau isolant en laine de verre (\(\lambda = 0{,}04\) W·m⁻¹·K⁻¹) couvre une surface de \(S = 30\) m² avec une épaisseur de \(e = 0{,}10\) m. L'écart de température est \(\Delta T = 20\)°C.</p>
+  <p>Calculer le flux thermique à travers cet isolant.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\varphi = \dfrac{0{,}04 \times 30 \times 20}{0{,}10} = \dfrac{24}{0{,}10} = \mathbf{240}\) W</p>
+    <p>Comparé au mur en béton de l'exercice précédent, la laine de verre perd beaucoup moins d'énergie !</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Comparer deux matériaux</h3>
+  <p>Un technicien compare deux options pour isoler un mur de \(S = 25\) m², \(\Delta T = 15\)°C, \(e = 0{,}10\) m :</p>
+  <ul>
+    <li>Polystyrène expansé : \(\lambda = 0{,}035\) W·m⁻¹·K⁻¹</li>
+    <li>Laine de roche : \(\lambda = 0{,}040\) W·m⁻¹·K⁻¹</li>
+  </ul>
+  <p>Calculer le flux thermique pour chaque matériau et indiquer lequel isole le mieux.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Polystyrène : \(\varphi = \dfrac{0{,}035 \times 25 \times 15}{0{,}10} = \dfrac{13{,}125}{0{,}10} = 131{,}25\) W</p>
+    <p>Laine de roche : \(\varphi = \dfrac{0{,}040 \times 25 \times 15}{0{,}10} = \dfrac{15}{0{,}10} = 150\) W</p>
+    <p>Le <strong>polystyrène expansé</strong> isole mieux (flux plus faible) car sa conductivité thermique est plus faible.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Trouver l'épaisseur nécessaire</h3>
+  <p>Un installateur thermique veut limiter les pertes à travers un mur isolé (\(\lambda = 0{,}04\) W·m⁻¹·K⁻¹, \(S = 20\) m², \(\Delta T = 25\)°C) à \(\varphi_{\max} = 200\) W.</p>
+  <p>Calculer l'épaisseur minimale d'isolant nécessaire.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>On isole \(e\) dans \(\varphi = \dfrac{\lambda S \Delta T}{e}\) :</p>
+    <p>\(e = \dfrac{\lambda S \Delta T}{\varphi} = \dfrac{0{,}04 \times 20 \times 25}{200} = \dfrac{20}{200} = \mathbf{0{,}10}\) m = 10 cm</p>
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Résistance thermique</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> La résistance thermique d'une paroi est :
+  \[R_{th} = \frac{e}{\lambda \times S}\]
+  (en K/W). Elle peut aussi s'exprimer par unité de surface : \(R = e / \lambda\) (en m²·K/W, noté valeur R ou R-value).
+  Le flux s'écrit alors : \(\varphi = \Delta T / R_{th}\).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Calcul de résistance thermique</h3>
+  <p>Un mur en béton cellulaire a une épaisseur \(e = 0{,}25\) m et une conductivité \(\lambda = 0{,}12\) W·m⁻¹·K⁻¹. Sa surface est \(S = 15\) m².</p>
+  <p>Calculer la résistance thermique de ce mur.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(R_{th} = \dfrac{e}{\lambda \times S} = \dfrac{0{,}25}{0{,}12 \times 15} = \dfrac{0{,}25}{1{,}8} \approx \mathbf{0{,}139}\) K/W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Utiliser la résistance thermique pour trouver le flux</h3>
+  <p>La résistance thermique d'une paroi est \(R_{th} = 0{,}5\) K/W. L'écart de température entre les deux faces est \(\Delta T = 18\)°C.</p>
+  <p>Calculer le flux thermique à travers cette paroi.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\varphi = \dfrac{\Delta T}{R_{th}} = \dfrac{18}{0{,}5} = \mathbf{36}\) W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Résistance par unité de surface (valeur R)</h3>
+  <p>Un panneau isolant a une épaisseur \(e = 0{,}12\) m et \(\lambda = 0{,}04\) W·m⁻¹·K⁻¹.</p>
+  <p>a) Calculer la résistance thermique par unité de surface (valeur R = e/λ) en m²·K/W.</p>
+  <p>b) Est-ce que cette valeur est conforme aux exigences de la RT2012 qui impose R ≥ 3,7 m²·K/W pour les murs ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(R = \dfrac{e}{\lambda} = \dfrac{0{,}12}{0{,}04} = \mathbf{3}\) m²·K/W</p>
+    <p>b) Non, \(3 < 3{,}7\) : la valeur R est inférieure à l'exigence. Il faudrait une épaisseur d'au moins \(e = 3{,}7 \times 0{,}04 = 0{,}148\) m ≈ 15 cm.</p>
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Résistance thermique et isolation</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong> Plus la résistance thermique \(R_{th}\) est <strong>grande</strong>, plus la paroi est <strong>isolante</strong> (le flux thermique est faible). \(R_{th}\) augmente quand l'épaisseur augmente et quand la conductivité \(\lambda\) diminue. Les bons isolants ont une conductivité thermique très faible (\(\lambda < 0{,}1\) W·m⁻¹·K⁻¹).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Classer des matériaux par pouvoir isolant</h3>
+  <p>Voici les conductivités thermiques de différents matériaux :</p>
+  <table>
+    <tr><th>Matériau</th><th>λ (W·m⁻¹·K⁻¹)</th></tr>
+    <tr><td>Cuivre</td><td>380</td></tr>
+    <tr><td>Béton</td><td>1,75</td></tr>
+    <tr><td>Brique</td><td>0,84</td></tr>
+    <tr><td>Laine de verre</td><td>0,04</td></tr>
+    <tr><td>Polystyrène</td><td>0,035</td></tr>
+    <tr><td>Aérogel</td><td>0,015</td></tr>
+  </table>
+  <p>a) Classer ces matériaux du plus conducteur au meilleur isolant.</p>
+  <p>b) Lequel serait utilisé pour un tuyau de chauffage ? Pour l'isolation d'un mur ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Plus conducteur → meilleur isolant :</p>
+    <p>Cuivre (380) > Béton (1,75) > Brique (0,84) > Laine de verre (0,04) > Polystyrène (0,035) > Aérogel (0,015)</p>
+    <p>b) Le cuivre est utilisé pour les tuyaux (bon conducteur → échange thermique efficace). L'aérogel ou le polystyrène sont utilisés pour l'isolation des murs (très faible λ → grande résistance thermique).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Effet de l'épaisseur sur l'isolation</h3>
+  <p>Un mur en béton (\(\lambda = 1{,}75\) W·m⁻¹·K⁻¹, \(S = 20\) m²) est recouvert d'isolant (λ = 0,04 W·m⁻¹·K⁻¹). Calculer la résistance thermique du seul isolant pour des épaisseurs de 5 cm, 10 cm et 20 cm.</p>
+  <p>Que peut-on conclure sur l'effet de l'épaisseur ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(R_{5\text{cm}} = \dfrac{0{,}05}{0{,}04 \times 20} = \dfrac{0{,}05}{0{,}8} = 0{,}0625\) K/W</p>
+    <p>\(R_{10\text{cm}} = \dfrac{0{,}10}{0{,}8} = 0{,}125\) K/W</p>
+    <p>\(R_{20\text{cm}} = \dfrac{0{,}20}{0{,}8} = 0{,}250\) K/W</p>
+    <p>Conclusion : doubler l'épaisseur double la résistance thermique → le flux de chaleur perdu est divisé par 2. Augmenter l'épaisseur de l'isolant améliore proportionnellement l'isolation.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Pont thermique</h3>
+  <p>Un pont thermique est une zone de la paroi où la résistance thermique est plus faible que dans la paroi courante (armature métallique, jonction mur-plancher…).</p>
+  <p>a) Qu'arrive-t-il au flux thermique au niveau d'un pont thermique ?</p>
+  <p>b) Quelles sont les conséquences pratiques pour le bâtiment ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Au niveau du pont thermique, la résistance thermique est plus faible → le flux thermique est plus élevé localement → plus de chaleur s'échappe par cet endroit.</p>
+    <p>b) Conséquences : surconsommation d'énergie de chauffage, condensation de vapeur d'eau (risque de moisissures) sur la paroi froide, inconfort thermique près des ponts thermiques.</p>
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Application au chauffage et à l'isolation du bâtiment</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> Pour calculer les pertes thermiques totales d'un bâtiment, on additionne les flux perdus par chaque paroi :
+  \[\varphi_{\text{total}} = \sum \frac{\lambda_i \times S_i \times \Delta T}{e_i}\]
+  La puissance de chauffage doit compenser ces pertes.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Bilan thermique simplifié</h3>
+  <p>Un installateur thermique calcule les pertes d'un appartement (\(\Delta T = 20\)°C) :</p>
+  <table>
+    <tr><th>Paroi</th><th>S (m²)</th><th>e (m)</th><th>λ (W·m⁻¹·K⁻¹)</th></tr>
+    <tr><td>Mur extérieur</td><td>40</td><td>0,20</td><td>1,75</td></tr>
+    <tr><td>Isolation mur</td><td>40</td><td>0,08</td><td>0,04</td></tr>
+    <tr><td>Fenêtres</td><td>8</td><td>0,024</td><td>1,0</td></tr>
+  </table>
+  <p>Calculer le flux perdu par chaque paroi et la puissance totale perdue.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Mur béton : \(\varphi_1 = \dfrac{1{,}75 \times 40 \times 20}{0{,}20} = 7\,000\) W</p>
+    <p>Isolation : \(\varphi_2 = \dfrac{0{,}04 \times 40 \times 20}{0{,}08} = 400\) W</p>
+    <p>Fenêtres : \(\varphi_3 = \dfrac{1{,}0 \times 8 \times 20}{0{,}024} \approx 6\,667\) W</p>
+    <p>\(\varphi_{\text{total}} \approx 7\,000 + 400 + 6\,667 \approx \mathbf{14\,067}\) W ≈ 14 kW</p>
+    <p>Observation : les fenêtres sont une source majeure de pertes thermiques !</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Choisir la puissance du radiateur</h3>
+  <p>Une chambre perd 1 200 W par ses parois lorsque l'écart de température est de 20°C.</p>
+  <p>a) Quelle doit être la puissance minimale du radiateur pour maintenir cette température ?</p>
+  <p>b) Si on améliore l'isolation et que les pertes tombent à 600 W, peut-on réduire la puissance du radiateur ? De combien ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Le radiateur doit fournir au moins \(\mathbf{1\,200}\) W pour compenser les pertes.</p>
+    <p>b) Oui. Si les pertes tombent à 600 W, un radiateur de 600 W suffit. Économie de 600 W de puissance installée, soit une réduction de 50%.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Rentabilité de l'isolation</h3>
+  <p>Avant isolation, un mur perd 3 000 W. Après isolation (laine de roche, e = 10 cm, λ = 0,04 W·m⁻¹·K⁻¹, S = 25 m², ΔT = 20°C), calculer le flux résiduel et l'économie de puissance réalisée.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Flux après isolation : \(\varphi = \dfrac{0{,}04 \times 25 \times 20}{0{,}10} = \dfrac{20}{0{,}10} = 200\) W</p>
+    <p>Économie de puissance : \(3\,000 - 200 = \mathbf{2\,800}\) W</p>
+    <p>L'isolation a réduit les pertes de plus de 93%.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Temps de retour sur investissement</h3>
+  <p>L'isolation d'un mur coûte 2 500 €. Elle permet d'économiser 2 800 W de puissance thermique, ce qui représente une économie d'énergie de 14 kWh/jour pendant 6 mois (180 jours) par an. Le kWh coûte 0,25 €.</p>
+  <p>a) Calculer l'économie annuelle en € (on suppose le chauffage actif 180 jours/an).</p>
+  <p>b) Calculer le temps de retour sur investissement en années.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Énergie économisée/an : \(14 \times 180 = 2\,520\) kWh</p>
+    <p>Économie : \(2\,520 \times 0{,}25 = \mathbf{630}\) €/an</p>
+    <p>b) Retour sur investissement : \(\dfrac{2\,500}{630} \approx \mathbf{3{,}97}\) ans ≈ 4 ans</p>
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

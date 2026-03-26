@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch07 – Exercices par capacités – Transmission de l'information – Terminale Bac Pro ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-erama.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 7 – Exercices par capacités</h1>
+  <p class="sous-titre">Transmettre l'information &nbsp;|&nbsp; Terminale Bac Pro ERA-MA &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li>C1 – Identifier les différents supports de transmission (filaire, optique, hertzien)</li>
+    <li>C2 – Appliquer \(c = \lambda f\) pour les ondes électromagnétiques</li>
+    <li>C3 – Calculer une fréquence ou longueur d'onde</li>
+    <li>C4 – Distinguer modulation d'amplitude et de fréquence</li>
+    <li>C5 – Reconnaître les applications professionnelles (wifi, bluetooth, fibre optique)</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Identifier les supports de transmission</h2>
+
+<div class="retenir">
+  <strong>Filaire :</strong> câble cuivre (paires torsadées, câble coaxial) — signal électrique<br>
+  <strong>Optique :</strong> fibre optique — signal lumineux (photons)<br>
+  <strong>Hertzien (sans fil) :</strong> ondes électromagnétiques dans l'air — WiFi, Bluetooth, radio, 4G/5G
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Classer les supports de transmission suivants en filaire, optique ou hertzien :<br>
+  a) Câble Ethernet (RJ45) b) Connexion WiFi d'un atelier c) Fibre optique d'une box internet d) Signal Bluetooth d'une machine-outil connectée</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    a) <strong>Filaire</strong> (câble cuivre paires torsadées)<br>
+    b) <strong>Hertzien</strong> (ondes radio 2,4 GHz ou 5 GHz)<br>
+    c) <strong>Optique</strong> (fibre de verre ou plastique, signal laser)<br>
+    d) <strong>Hertzien</strong> (ondes radio 2,4 GHz)
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Donner deux avantages de la fibre optique par rapport au câble cuivre pour la connexion internet d'un atelier de menuiserie.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    1. <strong>Débit très élevé :</strong> la fibre optique peut transmettre plusieurs Gb/s (contre quelques dizaines de Mb/s en cuivre classique), permettant le transfert rapide de fichiers lourds (plans CAO, fichiers CNC).<br>
+    2. <strong>Insensibilité aux interférences électromagnétiques :</strong> le signal lumineux n'est pas perturbé par les moteurs électriques, les machines de soudure ou les variateurs de vitesse présents dans un atelier industriel.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un technicien d'agencement installe une machine à commande numérique dans un atelier. Il hésite entre une connexion filaire Ethernet et une connexion WiFi. Quels critères orienteraient le choix vers une connexion filaire ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Critères en faveur du filaire :<br>
+    – <strong>Fiabilité :</strong> la connexion filaire n'est pas affectée par les obstacles (murs, machines métalliques) ni par d'autres équipements WiFi dans l'atelier.<br>
+    – <strong>Sécurité :</strong> moins vulnérable aux intrusions sans fil (cyberattaques, espionnage industriel).<br>
+    – <strong>Latence faible et stable :</strong> les machines CNC nécessitent une communication temps réel avec les logiciels de FAO : le filaire garantit une latence constante, évitant les erreurs de découpe.
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Appliquer la relation \(c = \lambda f\)</h2>
+
+<div class="retenir">
+  \(c = \lambda \times f\)<br>
+  \(c = 3 \times 10^8\) m/s : vitesse de la lumière (et de toutes les ondes électromagnétiques dans le vide)<br>
+  \(\lambda\) : longueur d'onde (m) — \(f\) : fréquence (Hz)
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Le WiFi standard fonctionne à \(f = 2{,}4\) GHz. Calculer la longueur d'onde de ces ondes électromagnétiques.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[f = 2{,}4 \times 10^9 \text{ Hz}\]
+    \[\lambda = \frac{c}{f} = \frac{3 \times 10^8}{2{,}4 \times 10^9} = \frac{3}{24} = 0{,}125 \text{ m} = 12{,}5 \text{ cm}\]
+    <strong>λ = 12,5 cm.</strong> C'est pourquoi les antennes WiFi ont typiquement une longueur de quelques centimètres.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Le Bluetooth fonctionne sur des ondes de longueur d'onde \(\lambda = 12{,}5\) cm. Calculer la fréquence correspondante.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[f = \frac{c}{\lambda} = \frac{3 \times 10^8}{0{,}125} = 2{,}4 \times 10^9 \text{ Hz} = 2{,}4 \text{ GHz}\]
+    <strong>f = 2,4 GHz.</strong> Bluetooth et WiFi partagent la même bande de fréquences (d'où les interférences possibles).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>La fibre optique transporte un signal lumineux de longueur d'onde \(\lambda = 1\,310\) nm (nanomètres). Calculer la fréquence de ce rayonnement. Est-il visible ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[\lambda = 1\,310 \text{ nm} = 1{,}31 \times 10^{-6} \text{ m}\]
+    \[f = \frac{c}{\lambda} = \frac{3 \times 10^8}{1{,}31 \times 10^{-6}} \approx 2{,}29 \times 10^{14} \text{ Hz}\]
+    Ce rayonnement est dans l'<strong>infrarouge proche</strong> (\(\lambda > 700\) nm), il est <strong>invisible</strong> à l'œil humain. C'est pour cette raison que les transmissions en fibre optique utilisent des longueurs d'onde IR et non le visible : les pertes sont plus faibles dans ce domaine.
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Calculer une fréquence ou une longueur d'onde</h2>
+
+<div class="retenir">
+  \(\lambda = c/f\) et \(f = c/\lambda\)<br>
+  Conversions : 1 GHz = 10⁹ Hz ; 1 nm = 10⁻⁹ m ; 1 cm = 10⁻² m
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Le WiFi 5 GHz (bande haute) a une fréquence \(f = 5{,}8\) GHz. Calculer la longueur d'onde et comparer avec le WiFi 2,4 GHz (\(\lambda = 12{,}5\) cm).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[\lambda = \frac{3 \times 10^8}{5{,}8 \times 10^9} \approx 0{,}0517 \text{ m} \approx 5{,}2 \text{ cm}\]
+    <strong>λ ≈ 5,2 cm.</strong> La longueur d'onde est plus courte qu'à 2,4 GHz. Les ondes à 5 GHz pénètrent moins bien les murs et obstacles, ce qui explique la portée réduite du WiFi 5 GHz en environnement cloisonné.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un interrupteur domotique sans fil d'un kit de cuisine connectée fonctionne à \(\lambda = 35\) cm. Calculer sa fréquence.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[f = \frac{c}{\lambda} = \frac{3 \times 10^8}{0{,}35} \approx 8{,}57 \times 10^8 \text{ Hz} \approx 857 \text{ MHz}\]
+    <strong>f ≈ 857 MHz.</strong> Cette fréquence correspond à la bande 868 MHz utilisée par certains protocoles domotiques (Z-Wave, SigFox).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Une télécommande infrarouge d'une motorisation de volet roulant dans une menuiserie émet à \(f = 38\) kHz (modulation d'une porteuse infrarouge à 940 nm). Calculer la longueur d'onde de la porteuse infrarouge.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[\lambda = 940 \text{ nm} = 940 \times 10^{-9} \text{ m} = 9{,}40 \times 10^{-7} \text{ m}\]
+    La longueur d'onde est directement donnée : <strong>λ = 940 nm</strong>, dans l'infrarouge proche. Le 38 kHz correspond à la fréquence de la modulation du signal (pas de la porteuse lumineuse).
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Distinguer modulation d'amplitude et de fréquence</h2>
+
+<div class="retenir">
+  <strong>Modulation d'amplitude (AM) :</strong> le signal utile modifie l'amplitude (hauteur) de l'onde porteuse. Simple mais sensible aux parasites.<br>
+  <strong>Modulation de fréquence (FM) :</strong> le signal utile modifie la fréquence de l'onde porteuse. Meilleure qualité, moins sensible aux parasites.<br>
+  En numérique (WiFi, 4G…), on utilise des modulations complexes (OFDM, QAM).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>La radio AM diffuse sur de longues ondes (grande longueur d'onde, basse fréquence) et la radio FM diffuse sur des ondes métriques (fréquence 88-108 MHz). Expliquer pourquoi la radio FM offre une meilleure qualité sonore.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    En AM, les parasites électriques (orages, moteurs) modifient l'amplitude du signal, ce qui est indiscernable du signal utile → bruits et crachotements audibles. En FM, les parasites modifient l'amplitude mais pas la fréquence ; comme c'est la fréquence qui porte l'information, les parasites sont éliminés par des circuits limiteurs. La FM offre donc une <strong>meilleure immunité aux parasites</strong> et une qualité sonore supérieure.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un menuisier observe que la télécommande RF de sa motorisation de volet (433 MHz) interfère parfois avec d'autres appareils. Quel type de modulation est souvent utilisé pour ces télécommandes bon marché ? Quelle alternative existe ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Les télécommandes 433 MHz utilisent souvent une modulation d'amplitude numérique (OOK — On/Off Keying), simple et économique mais sensible aux interférences.<br>
+    Alternative : les protocoles domotiques modernes (Z-Wave à 868 MHz, Zigbee à 2,4 GHz) utilisent des modulations plus robustes (FSK — modulation de fréquence numérique) avec des mécanismes de correction d'erreurs, réduisant fortement les interférences.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Le signal WiFi utilise une modulation numérique avancée (OFDM). Sans entrer dans les détails techniques, expliquer pourquoi cette modulation permet des débits très élevés.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    L'OFDM (Multiplexage par Répartition en Fréquences Orthogonales) divise le canal en centaines de sous-porteuses, chacune transmettant une partie de l'information simultanément. En transmettant en parallèle sur de nombreuses fréquences, et en adaptant la modulation de chaque sous-porteuse aux conditions du canal (qualité du signal), l'OFDM maximise l'utilisation de la bande passante disponible et atteint des débits très élevés tout en restant résistant aux perturbations.
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Reconnaître les applications professionnelles</h2>
+
+<div class="meth">
+  Applications dans le secteur de la menuiserie et de l'agencement :<br>
+  – <strong>WiFi :</strong> connexion des machines CNC, transfert des fichiers de fabrication, accès internet de l'atelier<br>
+  – <strong>Bluetooth :</strong> outillage sans fil connecté (visseuses, mesures laser), enceintes<br>
+  – <strong>Fibre optique :</strong> réseau internet haut débit de l'entreprise, transfert rapide de fichiers CAO<br>
+  – <strong>Télécommande RF :</strong> motorisations de volets, portails, motorisation de meubles
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un atelier de menuiserie-agencement veut connecter ses machines CNC à un logiciel de fabrication assistée (FAO) pour recevoir les fichiers de découpe. Quelle solution de transmission recommander et pourquoi ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>Réseau filaire Ethernet (câble RJ45 ou fibre optique en étoile).</strong><br>
+    Justification :<br>
+    – Fiabilité maximale : pas d'interférence avec les moteurs et variateurs de fréquence des machines CNC.<br>
+    – Latence faible et constante : les transferts de fichiers volumineux (fichiers DXF, G-code) se font sans délai imprévisible.<br>
+    – Sécurité des fichiers de production protégée contre les accès externes sans fil.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un fabricant de cuisines installe des meubles connectés dans un appartement témoin. Les placards s'ouvrent via une application sur smartphone. Quel protocole sans fil est généralement utilisé et quelle est la fréquence correspondante ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Les meubles connectés utilisent typiquement :<br>
+    – <strong>Bluetooth Low Energy (BLE)</strong> à 2,4 GHz : pour les commandes de proximité via smartphone.<br>
+    – <strong>WiFi</strong> à 2,4 GHz ou 5 GHz : si les meubles doivent être commandés à distance (depuis l'extérieur de l'appartement).<br>
+    – <strong>Zigbee</strong> à 2,4 GHz : pour les installations domotiques plus complètes reliant plusieurs équipements (éclairage, volets, meubles) à une passerelle centrale.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un poseur de cuisines utilise un télémètre laser Bluetooth pour mesurer les dimensions d'une pièce et envoyer les mesures directement sur tablette. Citer deux avantages par rapport à un mètre traditionnel et une mesure manuelle.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    1. <strong>Précision accrue :</strong> le télémètre laser mesure au millimètre près et sans erreur de lecture humaine, réduisant les risques d'erreur de découpe coûteuse.<br>
+    2. <strong>Gain de temps et traçabilité :</strong> les mesures sont envoyées automatiquement via Bluetooth sur la tablette et enregistrées directement dans le fichier de devis ou de plan, éliminant la retranscription manuelle et le risque de confusion entre plusieurs mesures.
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

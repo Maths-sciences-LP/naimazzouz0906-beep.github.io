@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch02 – Exercices par capacités – Puissance consommée – 1ère Bac Pro ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-erama.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 2 – Exercices par capacités</h1>
+  <p class="sous-titre">Évaluer la puissance consommée par un appareil électrique &nbsp;|&nbsp; 1ère Bac Pro ERA-MA &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> — Mesurer une tension et une intensité</li>
+    <li><strong>C2</strong> — Calculer la puissance active \(P = U \cdot I \cdot \cos\varphi\)</li>
+    <li><strong>C3</strong> — Distinguer puissance active, réactive et apparente</li>
+    <li><strong>C4</strong> — Calculer un facteur de puissance \(\cos\varphi\)</li>
+    <li><strong>C5</strong> — Interpréter une facture d'électricité (kWh, puissance souscrite)</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-filtre="toutes">Toutes</button>
+  <button class="btn-cap" data-filtre="C1">C1 – Mesures U et I</button>
+  <button class="btn-cap" data-filtre="C2">C2 – Puissance active</button>
+  <button class="btn-cap" data-filtre="C3">C3 – P, Q, S</button>
+  <button class="btn-cap" data-filtre="C4">C4 – Facteur de puissance</button>
+  <button class="btn-cap" data-filtre="C5">C5 – Facture d'électricité</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- ===== C1 ===== -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Mesurer une tension et une intensité</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>La <strong>tension</strong> \(U\) (en volts, V) se mesure avec un <strong>voltmètre branché en dérivation</strong> aux bornes de l'appareil. L'<strong>intensité</strong> \(I\) (en ampères, A) se mesure avec un <strong>ampèremètre branché en série</strong> dans le circuit. En atelier, on utilise souvent une pince ampèremétrique pour mesurer \(I\) sans ouvrir le circuit.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un technicien d'agencement mesure la tension aux bornes d'une scie sauteuse et l'intensité du courant qu'elle absorbe. Il lit : \(U = 230\) V et \(I = 3{,}5\) A.</p>
+  <ol type="a">
+    <li>Avec quel instrument a-t-il mesuré la tension ? Comment est-il branché ?</li>
+    <li>Avec quel instrument a-t-il mesuré l'intensité ? Comment est-il branché ?</li>
+    <li>Quelle est l'unité de chaque grandeur ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Un <strong>voltmètre</strong>, branché <strong>en dérivation</strong> (en parallèle) aux bornes de la scie.</li>
+      <li>Un <strong>ampèremètre</strong>, branché <strong>en série</strong> dans le circuit.</li>
+      <li>La tension est en <strong>volts (V)</strong> ; l'intensité est en <strong>ampères (A)</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un menuisier utilise une pince ampèremétrique pour mesurer le courant absorbé par une défonceuse. Il lit \(I = 5{,}2\) A. La tension secteur est de 230 V.</p>
+  <ol type="a">
+    <li>Quel est l'avantage de la pince ampèremétrique par rapport à un ampèremètre classique ?</li>
+    <li>À quelle tension secteur correspond la valeur 230 V en France ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>La pince ampèremétrique permet de mesurer l'intensité <strong>sans ouvrir le circuit</strong> ni déconnecter l'appareil : on place simplement la pince autour du câble. C'est plus rapide et plus sûr.</li>
+      <li>230 V est la tension du <strong>secteur électrique</strong> français, fournie par le réseau EDF (alternatif monophasé).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Compléter le tableau suivant en indiquant pour chaque grandeur : son symbole, son unité et l'instrument de mesure utilisé.</p>
+  <table>
+    <tr><th>Grandeur</th><th>Symbole</th><th>Unité</th><th>Instrument</th><th>Branchement</th></tr>
+    <tr><td>Tension</td><td>…</td><td>…</td><td>…</td><td>…</td></tr>
+    <tr><td>Intensité</td><td>…</td><td>…</td><td>…</td><td>…</td></tr>
+  </table>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Grandeur</th><th>Symbole</th><th>Unité</th><th>Instrument</th><th>Branchement</th></tr>
+      <tr><td>Tension</td><td>\(U\)</td><td>Volt (V)</td><td>Voltmètre</td><td>En dérivation (parallèle)</td></tr>
+      <tr><td>Intensité</td><td>\(I\)</td><td>Ampère (A)</td><td>Ampèremètre (ou pince)</td><td>En série</td></tr>
+    </table>
+  </div>
+</div>
+</div>
+
+<!-- ===== C2 ===== -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Calculer la puissance active \(P = U \cdot I \cdot \cos\varphi\)</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Pour un courant alternatif, la <strong>puissance active</strong> (en watts) est : \(P = U \times I \times \cos\varphi\) où \(\cos\varphi\) est le facteur de puissance (sans unité, compris entre 0 et 1). C'est la puissance réellement consommée et convertie en travail mécanique ou chaleur. Pour un courant continu ou un appareil purement résistif (\(\cos\varphi = 1\)) : \(P = U \times I\).</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Un planeur de menuiserie fonctionne sous \(U = 230\) V, absorbe un courant \(I = 7\) A avec un facteur de puissance \(\cos\varphi = 0{,}85\). Calculer la puissance active consommée.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(P = U \times I \times \cos\varphi = 230 \times 7 \times 0{,}85 = \mathbf{1\,368{,}5}\) W \(\approx 1{,}37\) kW
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 5</h3>
+  <p>Une dégauchisseuse absorbe \(I = 9\) A sous \(U = 230\) V avec \(\cos\varphi = 0{,}92\).</p>
+  <ol type="a">
+    <li>Calculer sa puissance active.</li>
+    <li>Si \(\cos\varphi\) était égal à 1, quelle serait la puissance ? Comparer.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(P = 230 \times 9 \times 0{,}92 = \mathbf{1\,904{,}4}\) W \(\approx 1{,}90\) kW</li>
+      <li>Si \(\cos\varphi = 1\) : \(P = 230 \times 9 = 2\,070\) W. La puissance active réelle (1 904 W) est <strong>inférieure</strong> car une partie du courant est réactive.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 6</h3>
+  <p>Dans un atelier d'agencement, deux machines fonctionnent :</p>
+  <ul>
+    <li>Toupie : \(U = 230\) V, \(I = 8\) A, \(\cos\varphi = 0{,}88\)</li>
+    <li>Scie à format : \(U = 230\) V, \(I = 12\) A, \(\cos\varphi = 0{,}90\)</li>
+  </ul>
+  <p>Calculer la puissance active de chaque machine et la puissance totale consommée.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Toupie : \(P_1 = 230 \times 8 \times 0{,}88 = 1\,619{,}2\) W<br>
+    Scie à format : \(P_2 = 230 \times 12 \times 0{,}90 = 2\,484\) W<br>
+    Puissance totale : \(P_{tot} = 1\,619{,}2 + 2\,484 = \mathbf{4\,103{,}2}\) W \(\approx 4{,}1\) kW
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 7</h3>
+  <p>Un menuisier agenceur sait que sa ponceuse à bande a une puissance active de 920 W. Il mesure \(I = 4{,}5\) A sous \(U = 230\) V. Calculer le facteur de puissance \(\cos\varphi\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(\cos\varphi = \dfrac{P}{U \times I} = \dfrac{920}{230 \times 4{,}5} = \dfrac{920}{1\,035} \approx \mathbf{0{,}89}\)
+  </div>
+</div>
+</div>
+
+<!-- ===== C3 ===== -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Distinguer puissance active, réactive et apparente</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Pour un circuit en courant alternatif :</p>
+  <ul>
+    <li><strong>Puissance active</strong> \(P\) (en W) : puissance réellement convertie en travail ou chaleur. \(P = U \cdot I \cdot \cos\varphi\)</li>
+    <li><strong>Puissance réactive</strong> \(Q\) (en VAR) : puissance échangée avec les bobines et condensateurs (non consommée).</li>
+    <li><strong>Puissance apparente</strong> \(S\) (en VA) : puissance totale « vue » par le réseau. \(S = U \cdot I\)</li>
+    <li>Relation : \(S^2 = P^2 + Q^2\)</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 8</h3>
+  <p>Associer chaque définition à la bonne puissance (active, réactive ou apparente) :</p>
+  <ol type="a">
+    <li>Puissance facturée par EDF (kWh).</li>
+    <li>Puissance totale « vue » par le réseau électrique.</li>
+    <li>Puissance échangée avec les bobines du moteur (non consommée).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li><strong>Puissance active</strong> \(P\) (en W ou kWh).</li>
+      <li><strong>Puissance apparente</strong> \(S\) (en VA).</li>
+      <li><strong>Puissance réactive</strong> \(Q\) (en VAR).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 9</h3>
+  <p>Un moteur d'atelier a : \(P = 1\,500\) W, \(S = 1\,875\) VA.</p>
+  <ol type="a">
+    <li>Calculer la puissance réactive \(Q\).</li>
+    <li>Calculer le facteur de puissance \(\cos\varphi = P/S\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(Q = \sqrt{S^2 - P^2} = \sqrt{1\,875^2 - 1\,500^2} = \sqrt{3\,515\,625 - 2\,250\,000} = \sqrt{1\,265\,625} = \mathbf{1\,125}\) VAR</li>
+      <li>\(\cos\varphi = \dfrac{P}{S} = \dfrac{1\,500}{1\,875} = \mathbf{0{,}80}\)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 10</h3>
+  <p>Une fraiseuse à bois a une puissance apparente \(S = 2\,300\) VA et un facteur de puissance \(\cos\varphi = 0{,}87\). Calculer :</p>
+  <ol type="a">
+    <li>La puissance active \(P\).</li>
+    <li>La puissance réactive \(Q\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(P = S \times \cos\varphi = 2\,300 \times 0{,}87 = \mathbf{2\,001}\) W</li>
+      <li>\(Q = \sqrt{S^2 - P^2} = \sqrt{2\,300^2 - 2\,001^2} = \sqrt{5\,290\,000 - 4\,004\,001} = \sqrt{1\,285\,999} \approx \mathbf{1\,134}\) VAR</li>
+    </ol>
+  </div>
+</div>
+</div>
+
+<!-- ===== C4 ===== -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Calculer un facteur de puissance \(\cos\varphi\)</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Le <strong>facteur de puissance</strong> est : \(\cos\varphi = \dfrac{P}{S} = \dfrac{P}{U \times I}\). Il est compris entre 0 et 1. Plus il est proche de 1, plus l'énergie fournie par le réseau est réellement utilisée. Un \(\cos\varphi\) faible signifie qu'une grande partie du courant est « inutile » (réactif), ce qui surcharge le réseau et peut être pénalisé par le fournisseur d'électricité.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 11</h3>
+  <p>Un wattmètre mesure \(P = 1\,150\) W pour une scie à ruban. Un ampèremètre donne \(I = 6\) A sous \(U = 230\) V. Calculer \(\cos\varphi\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(S = U \times I = 230 \times 6 = 1\,380\) VA<br>
+    \(\cos\varphi = \dfrac{P}{S} = \dfrac{1\,150}{1\,380} \approx \mathbf{0{,}83}\)
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 12</h3>
+  <p>Deux machines ont les caractéristiques suivantes :</p>
+  <ul>
+    <li>Machine A : \(P = 2\,000\) W, \(S = 2\,500\) VA</li>
+    <li>Machine B : \(P = 1\,800\) W, \(S = 2\,000\) VA</li>
+  </ul>
+  <ol type="a">
+    <li>Calculer \(\cos\varphi\) pour chaque machine.</li>
+    <li>Quelle machine utilise le mieux l'électricité fournie par le réseau ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Machine A : \(\cos\varphi_A = \dfrac{2\,000}{2\,500} = 0{,}80\) ; Machine B : \(\cos\varphi_B = \dfrac{1\,800}{2\,000} = \mathbf{0{,}90}\)</li>
+      <li>La <strong>machine B</strong> a le \(\cos\varphi\) le plus élevé : elle utilise mieux l'électricité du réseau.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 13</h3>
+  <p>Un menuisier agenceur doit commander une nouvelle perceuse d'établi. Il a le choix entre :</p>
+  <ul>
+    <li>Modèle X : \(P = 750\) W, \(\cos\varphi = 0{,}75\)</li>
+    <li>Modèle Y : \(P = 750\) W, \(\cos\varphi = 0{,}95\)</li>
+  </ul>
+  <p>Calculer le courant absorbé par chaque modèle (\(U = 230\) V). Quel modèle choisir pour économiser sur le câblage ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Modèle X : \(I_X = \dfrac{P}{U \times \cos\varphi} = \dfrac{750}{230 \times 0{,}75} = \dfrac{750}{172{,}5} \approx 4{,}35\) A<br>
+    Modèle Y : \(I_Y = \dfrac{750}{230 \times 0{,}95} = \dfrac{750}{218{,}5} \approx 3{,}43\) A<br>
+    <strong>Choisir le modèle Y</strong> : même puissance utile, courant plus faible → câblage moins surchargé.
+  </div>
+</div>
+</div>
+
+<!-- ===== C5 ===== -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Interpréter une facture d'électricité</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Une facture d'électricité comporte :</p>
+  <ul>
+    <li>La <strong>consommation</strong> en kWh (kilowattheures) = énergie active consommée.</li>
+    <li>Le <strong>prix du kWh</strong> (tarif en vigueur).</li>
+    <li>La <strong>puissance souscrite</strong> en kVA : puissance maximale que l'abonné est autorisé à consommer simultanément.</li>
+    <li>L'<strong>abonnement</strong> : forfait fixe mensuel.</li>
+  </ul>
+  <p>Coût de consommation : \(\text{Coût} = \text{Énergie (kWh)} \times \text{Prix unitaire (€/kWh)}\)</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 14</h3>
+  <p>L'atelier d'un menuisier a consommé 320 kWh ce mois-ci. Le prix du kWh est 0,2516 €. Calculer le coût de la consommation.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(\text{Coût} = 320 \times 0{,}2516 = \mathbf{80{,}51}\) €
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 15</h3>
+  <p>La facture d'un atelier d'agencement indique :</p>
+  <ul>
+    <li>Consommation : 485 kWh</li>
+    <li>Prix du kWh : 0,2516 €</li>
+    <li>Abonnement : 15,40 € HT</li>
+    <li>TVA (20 %) sur la consommation</li>
+  </ul>
+  <ol type="a">
+    <li>Calculer le coût HT de la consommation.</li>
+    <li>Calculer le montant TTC à payer (abonnement HT + consommation TTC).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Coût HT = \(485 \times 0{,}2516 = 122{,}03\) €</li>
+      <li>TVA sur consommation = \(122{,}03 \times 0{,}20 = 24{,}41\) €<br>
+      Consommation TTC = \(122{,}03 + 24{,}41 = 146{,}44\) €<br>
+      Total TTC = \(15{,}40 + 146{,}44 = \mathbf{161{,}84}\) €</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 16</h3>
+  <p>Un atelier a souscrit une puissance de 9 kVA. En fin de mois, il constate que sa consommation s'élève à 650 kWh sur 22 jours ouvrés de 8 h chacun.</p>
+  <ol type="a">
+    <li>Calculer la puissance moyenne consommée sur un jour.</li>
+    <li>Cette puissance moyenne est-elle compatible avec la puissance souscrite ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Durée totale = \(22 \times 8 = 176\) h<br>
+      Puissance moyenne = \(\dfrac{650}{176} \approx 3{,}69\) kW</li>
+      <li>3,69 kW &lt; 9 kVA : <strong>oui</strong>, la puissance moyenne est bien inférieure à la puissance souscrite. Cependant, les pics de puissance (plusieurs machines simultanées) peuvent dépasser 9 kVA ponctuellement.</li>
+    </ol>
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

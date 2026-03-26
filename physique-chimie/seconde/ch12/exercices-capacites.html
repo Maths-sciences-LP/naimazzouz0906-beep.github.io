@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch12 – Exercices par capacités – Changements d'état et énergie thermique – 2nde Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 12 – Exercices par capacités</h1>
+  <p class="sous-titre">Changements d'état et énergie thermique &nbsp;|&nbsp; 2nde Bac Pro &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> — Identifier les changements d'état (fusion, solidification, vaporisation, condensation, sublimation)</li>
+    <li><strong>C2</strong> — Lire un diagramme de changement d'état (courbe de fusion/ébullition)</li>
+    <li><strong>C3</strong> — Calculer l'énergie mise en jeu lors d'un changement d'état : \(E = m \cdot L\)</li>
+    <li><strong>C4</strong> — Distinguer chaleur sensible et chaleur latente</li>
+    <li><strong>C5</strong> — Appliquer dans un contexte professionnel (réfrigération, climatisation)</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-filtre="toutes">Toutes</button>
+  <button class="btn-cap" data-filtre="C1">C1 – Changements d'état</button>
+  <button class="btn-cap" data-filtre="C2">C2 – Diagramme</button>
+  <button class="btn-cap" data-filtre="C3">C3 – E = mL</button>
+  <button class="btn-cap" data-filtre="C4">C4 – Chaleur sensible/latente</button>
+  <button class="btn-cap" data-filtre="C5">C5 – Applications pro</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- ===== C1 ===== -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Identifier les changements d'état</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>La matière peut exister sous trois états : solide, liquide et gaz. Les changements d'état sont :</p>
+  <table style="border-collapse:collapse;width:100%;margin:8px 0">
+    <tr style="background:var(--p-bg)">
+      <th style="padding:6px;border:1px solid var(--p-border)">Changement</th>
+      <th style="padding:6px;border:1px solid var(--p-border)">De → vers</th>
+      <th style="padding:6px;border:1px solid var(--p-border)">Énergie</th>
+    </tr>
+    <tr><td style="padding:6px;border:1px solid var(--p-border)">Fusion</td><td style="padding:6px;border:1px solid var(--p-border)">Solide → Liquide</td><td style="padding:6px;border:1px solid var(--p-border)">Absorbe</td></tr>
+    <tr><td style="padding:6px;border:1px solid var(--p-border)">Solidification</td><td style="padding:6px;border:1px solid var(--p-border)">Liquide → Solide</td><td style="padding:6px;border:1px solid var(--p-border)">Libère</td></tr>
+    <tr><td style="padding:6px;border:1px solid var(--p-border)">Vaporisation</td><td style="padding:6px;border:1px solid var(--p-border)">Liquide → Gaz</td><td style="padding:6px;border:1px solid var(--p-border)">Absorbe</td></tr>
+    <tr><td style="padding:6px;border:1px solid var(--p-border)">Condensation</td><td style="padding:6px;border:1px solid var(--p-border)">Gaz → Liquide</td><td style="padding:6px;border:1px solid var(--p-border)">Libère</td></tr>
+    <tr><td style="padding:6px;border:1px solid var(--p-border)">Sublimation</td><td style="padding:6px;border:1px solid var(--p-border)">Solide → Gaz</td><td style="padding:6px;border:1px solid var(--p-border)">Absorbe</td></tr>
+  </table>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Identifier le changement d'état dans chaque situation :</p>
+  <ol type="a">
+    <li>De la glace qui fond dans un verre par temps chaud.</li>
+    <li>De l'eau qui bout dans une casserole.</li>
+    <li>De la rosée qui se forme sur l'herbe au petit matin.</li>
+    <li>Du bronze liquide qui durcit dans un moule.</li>
+    <li>De la neige carbonique (CO₂ solide) qui disparaît directement en gaz.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Glace → eau : <strong>fusion</strong> (solide → liquide)</li>
+      <li>Eau → vapeur : <strong>vaporisation</strong> (liquide → gaz)</li>
+      <li>Vapeur d'eau → eau liquide : <strong>condensation</strong> (gaz → liquide)</li>
+      <li>Bronze liquide → solide : <strong>solidification</strong> (liquide → solide)</li>
+      <li>CO₂ solide → gaz directement : <strong>sublimation</strong> (solide → gaz)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Dans un circuit de climatisation, le fluide frigorigène passe de l'état liquide à l'état gazeux dans l'évaporateur. Ce changement d'état absorbe-t-il ou libère-t-il de l'énergie ? Quel effet cela produit-il sur l'air soufflé dans la pièce ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le passage de liquide à gaz (vaporisation) <strong>absorbe de l'énergie</strong>. Cette énergie est prélevée à l'air de la pièce, ce qui <strong>refroidit l'air</strong> soufflé dans la pièce. C'est le principe de fonctionnement de la climatisation.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un technicien en réfrigération explique que le condenseur d'un réfrigérateur chauffe. Quel changement d'état se produit dans le condenseur ? Ce changement absorbe-t-il ou libère-t-il de l'énergie ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Dans le condenseur, le fluide frigorigène passe de l'état gazeux à l'état liquide : c'est une <strong>condensation</strong>. Ce changement d'état <strong>libère de l'énergie</strong>, ce qui explique que le condenseur (à l'arrière ou sous le réfrigérateur) chauffe.</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C2 ===== -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Lire un diagramme de changement d'état</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Un diagramme de changement d'état représente la température en fonction du temps lors d'un chauffage ou refroidissement :</p>
+  <ul>
+    <li>Les <strong>paliers horizontaux</strong> correspondent aux changements d'état (température constante)</li>
+    <li>Les <strong>parties inclinées</strong> correspondent à la chaleur sensible (température variable, pas de changement d'état)</li>
+    <li>La température de fusion et d'ébullition sont des caractéristiques propres à chaque corps pur</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>On chauffe de la glace depuis –20 °C. Le diagramme montre trois phases :</p>
+  <ul>
+    <li>Phase 1 : température monte de –20 °C à 0 °C</li>
+    <li>Phase 2 : température reste à 0 °C</li>
+    <li>Phase 3 : température monte de 0 °C à 100 °C</li>
+  </ul>
+  <ol type="a">
+    <li>Quel changement d'état se produit pendant la phase 2 ?</li>
+    <li>Que représente le palier horizontal ?</li>
+    <li>Pendant quelle phase la glace est-elle entièrement fondue ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>La <strong>fusion</strong> de la glace (solide → liquide).</li>
+      <li>Le palier horizontal représente un <strong>changement d'état</strong> : la température reste constante (ici à 0 °C) tant que la fusion n'est pas terminée.</li>
+      <li>À la fin de la phase 2 (après le palier à 0 °C), la glace est entièrement fondue : on passe alors à la phase 3 où l'eau liquide se réchauffe.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 5</h3>
+  <p>Le diagramme de chauffage du plomb montre un palier à 327 °C lors de la fusion. Que se passe-t-il à cette température ? Peut-on chauffer du plomb solide au-delà de 327 °C ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>À 327 °C, le plomb <strong>fond</strong> (changement d'état solide → liquide). La température reste constante à 327 °C tant que la fusion n'est pas complète, même si on continue de chauffer.</p>
+    <p>Non, on ne peut pas chauffer le plomb solide au-delà de 327 °C tant qu'il y a encore du solide : la chaleur fournie sert uniquement à faire fondre le plomb (chaleur latente), pas à l'échauffer.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 6</h3>
+  <p>Un diagramme de refroidissement de l'eau montre :</p>
+  <ul>
+    <li>Descente de 100 °C à 0 °C</li>
+    <li>Palier à 0 °C</li>
+    <li>Descente de 0 °C à –20 °C</li>
+  </ul>
+  <p>Identifier les états physiques de l'eau dans chacune des trois phases.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>Descente de 100 °C à 0 °C : eau à l'état <strong>liquide</strong></li>
+      <li>Palier à 0 °C : <strong>solidification</strong> (mélange liquide et solide)</li>
+      <li>Descente de 0 °C à –20 °C : eau à l'état <strong>solide</strong> (glace)</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!-- ===== C3 ===== -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Calculer l'énergie lors d'un changement d'état (\(E = m \cdot L\))</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>L'énergie mise en jeu lors d'un changement d'état (chaleur latente) est proportionnelle à la masse :</p>
+  <p>\[E = m \cdot L\]</p>
+  <p>avec :</p>
+  <ul>
+    <li>\(E\) : énergie en joules (J)</li>
+    <li>\(m\) : masse en kilogrammes (kg)</li>
+    <li>\(L\) : chaleur latente en J/kg (caractéristique du corps et du changement d'état)</li>
+  </ul>
+  <p>Valeurs utiles pour l'eau : \(L_{fusion} = 334\,000\ \text{J/kg}\) ; \(L_{vaporisation} = 2\,260\,000\ \text{J/kg}\)</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 7</h3>
+  <p>Calculer l'énergie nécessaire pour faire fondre entièrement 0,5 kg de glace à 0 °C. (\(L_{fusion} = 334\,000\ \text{J/kg}\))</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(E = m \cdot L = 0{,}5 \times 334\,000 = \mathbf{167\,000\ \text{J} = 167\ \text{kJ}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 8</h3>
+  <p>Un technicien en climatisation calcule l'énergie absorbée lors de la vaporisation de 2 kg de fluide frigorigène R410A dont la chaleur latente de vaporisation est \(L = 200\,000\ \text{J/kg}\). Calculer cette énergie.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(E = m \cdot L = 2 \times 200\,000 = \mathbf{400\,000\ \text{J} = 400\ \text{kJ}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 9</h3>
+  <p>Un chaudronnier fait fondre de l'étain (point de fusion 232 °C, \(L_{fusion} = 58\,900\ \text{J/kg}\)). Il dispose de 5 kg d'étain solide. Calculer l'énergie nécessaire à la fusion complète.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(E = m \cdot L = 5 \times 58\,900 = \mathbf{294\,500\ \text{J} \approx 295\ \text{kJ}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 10</h3>
+  <p>On dispose de \(E = 1\,130\,000\ \text{J}\) pour vaporiser de l'eau à 100 °C (\(L_{vaporisation} = 2\,260\,000\ \text{J/kg}\)). Quelle masse d'eau peut-on vaporiser ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(m = \frac{E}{L} = \frac{1\,130\,000}{2\,260\,000} = \mathbf{0{,}5\ \text{kg}}\)</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C4 ===== -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Distinguer chaleur sensible et chaleur latente</h2>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <table style="border-collapse:collapse;width:100%;margin:8px 0">
+    <tr style="background:var(--p-bg)">
+      <th style="padding:6px;border:1px solid var(--p-border)"> </th>
+      <th style="padding:6px;border:1px solid var(--p-border)">Chaleur sensible</th>
+      <th style="padding:6px;border:1px solid var(--p-border)">Chaleur latente</th>
+    </tr>
+    <tr>
+      <td style="padding:6px;border:1px solid var(--p-border)">Définition</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">Énergie pour changer la température</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">Énergie pour changer d'état</td>
+    </tr>
+    <tr>
+      <td style="padding:6px;border:1px solid var(--p-border)">Température</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">Varie</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">Reste constante</td>
+    </tr>
+    <tr>
+      <td style="padding:6px;border:1px solid var(--p-border)">Formule</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">\(Q = mc\Delta T\)</td>
+      <td style="padding:6px;border:1px solid var(--p-border)">\(E = mL\)</td>
+    </tr>
+  </table>
+</div>
+
+<div class="exo">
+  <h3>Exercice 11</h3>
+  <p>On chauffe 1 kg de glace depuis –10 °C jusqu'à 50 °C. La chaleur spécifique de la glace est \(c_{glace} = 2\,100\ \text{J/(kg·°C)}\), de l'eau \(c_{eau} = 4\,180\ \text{J/(kg·°C)}\), et \(L_{fusion} = 334\,000\ \text{J/kg}\).</p>
+  <p>Calculer l'énergie totale pour chaque étape :</p>
+  <ol type="a">
+    <li>Échauffement de la glace de –10 °C à 0 °C (chaleur sensible)</li>
+    <li>Fusion de la glace à 0 °C (chaleur latente)</li>
+    <li>Échauffement de l'eau de 0 °C à 50 °C (chaleur sensible)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(Q_1 = mc_{glace}\Delta T = 1 \times 2\,100 \times 10 = \mathbf{21\,000\ \text{J}}\)</li>
+      <li>\(E = mL = 1 \times 334\,000 = \mathbf{334\,000\ \text{J}}\)</li>
+      <li>\(Q_3 = mc_{eau}\Delta T = 1 \times 4\,180 \times 50 = \mathbf{209\,000\ \text{J}}\)</li>
+    </ol>
+    <p>Énergie totale = 21 000 + 334 000 + 209 000 = <strong>564 000 J</strong></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 12</h3>
+  <p>Lors du chauffage d'un corps, on observe deux phases : la température monte de 20 °C à 80 °C puis reste à 80 °C pendant un certain temps. Identifier quelle grandeur physique est mise en jeu dans chaque phase.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Phase 1 (montée de 20 °C à 80 °C) : la température varie, c'est de la <strong>chaleur sensible</strong> — formule \(Q = mc\Delta T\).</p>
+    <p>Phase 2 (palier à 80 °C) : la température est constante malgré le chauffage, c'est de la <strong>chaleur latente</strong> — il y a un changement d'état — formule \(E = mL\).</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C5 ===== -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Applications professionnelles (réfrigération, climatisation)</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Les systèmes de réfrigération et de climatisation utilisent les changements d'état d'un <strong>fluide frigorigène</strong> :</p>
+  <ul>
+    <li><strong>Évaporateur</strong> : le fluide se vaporise (absorbe de l'énergie) → refroidit le milieu à climatiser</li>
+    <li><strong>Condenseur</strong> : le fluide se condense (libère de l'énergie) → chauffe le milieu extérieur</li>
+    <li>Le compresseur augmente la pression pour déclencher la condensation</li>
+    <li>Le détendeur diminue la pression pour déclencher la vaporisation</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 13</h3>
+  <p>Dans un réfrigérateur, le fluide frigorigène se vaporise dans l'évaporateur. Sa chaleur latente de vaporisation est \(L = 180\,000\ \text{J/kg}\). Le compresseur fait circuler 0,1 kg de fluide par minute.</p>
+  <ol type="a">
+    <li>Calculer l'énergie absorbée par le fluide lors de la vaporisation en 1 minute.</li>
+    <li>Cela refroidit-il l'intérieur du réfrigérateur ? Justifier.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(E = m \cdot L = 0{,}1 \times 180\,000 = \mathbf{18\,000\ \text{J}}\) absorbés par le fluide en 1 minute.</li>
+      <li>Oui : le fluide absorbe de l'énergie en se vaporisant. Cette énergie est prélevée à l'intérieur du réfrigérateur, ce qui le <strong>refroidit</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 14</h3>
+  <p>Un technicien en climatisation calcule que le condenseur d'une installation libère \(Q = 5 \times 10^6\ \text{J}\) en une heure. La chaleur latente de condensation du fluide est \(L = 200\,000\ \text{J/kg}\). Calculer la masse de fluide qui se condense par heure.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(m = \frac{Q}{L} = \frac{5 \times 10^6}{200\,000} = \mathbf{25\ \text{kg}}\)</p>
+    <p>25 kg de fluide frigorigène se condensent par heure dans le condenseur.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 15</h3>
+  <p>Une pompe à chaleur (PAC) prélève de l'énergie au sol à l'aide d'un fluide frigorigène. Le fluide se vaporise dans l'évaporateur souterrain, absorbant \(E = 3{,}6 \times 10^6\ \text{J}\) en 1 heure.</p>
+  <ol type="a">
+    <li>Calculer la puissance thermique absorbée au sol (en W).</li>
+    <li>Cette énergie est-elle de la chaleur latente ou sensible ? Justifier.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(P = \frac{E}{\Delta t} = \frac{3{,}6 \times 10^6}{3\,600} = \mathbf{1\,000\ \text{W} = 1\ \text{kW}}\)</li>
+      <li>Il s'agit de <strong>chaleur latente</strong> : le fluide change d'état (vaporisation) à température constante, sans que la température du fluide ne varie pendant ce changement.</li>
+    </ol>
+  </div>
+</div>
+</div>
+
+</div>
+
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+<script>
+function toggle(btn){
+  var corr=btn.nextElementSibling;
+  if(corr.style.display==='block'){corr.style.display='none';btn.textContent='Voir la correction';}
+  else{corr.style.display='block';btn.textContent='Masquer la correction';}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch03 – Exercices par capacités – Rayonnement thermique et effet de serre – Terminale Bac Pro ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-erama.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 3 – Exercices par capacités</h1>
+  <p class="sous-titre">Rayonnement thermique et effet de serre &nbsp;|&nbsp; Terminale Bac Pro ERA-MA &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li>C1 – Identifier le spectre du rayonnement thermique</li>
+    <li>C2 – Appliquer la loi de Stefan-Boltzmann (\(P = \varepsilon\sigma T^4\))</li>
+    <li>C3 – Expliquer le mécanisme de l'effet de serre</li>
+    <li>C4 – Calculer un bilan radiatif simplifié</li>
+    <li>C5 – Lier bilan carbone et matériaux bois (stockage CO₂)</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Identifier le spectre du rayonnement thermique</h2>
+
+<div class="retenir">
+  Tout corps chaud rayonne dans l'<strong>infrarouge (IR)</strong>.<br>
+  Le Soleil (T ≈ 5 800 K) : rayonnement visible. La Terre (T ≈ 288 K) : rayonnement infrarouge.<br>
+  Spectre électromagnétique : radio → micro-ondes → IR → visible → UV → X → gamma.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un menuisier pose des panneaux isolants sur un mur. Un thermographe (caméra thermique infrarouge) montre que certaines zones du mur sont plus chaudes. Dans quel domaine du spectre électromagnétique la caméra thermique travaille-t-elle ? Pourquoi ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    La caméra thermique capte le rayonnement <strong>infrarouge (IR)</strong> émis par les surfaces du mur. Les zones plus chaudes émettent plus de rayonnement IR et apparaissent plus claires sur l'image. Ce rayonnement IR est invisible à l'œil mais capté par le détecteur de la caméra.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Classer dans l'ordre croissant d'énergie : infrarouge thermique, lumière visible, ultraviolet, micro-ondes.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Ordre croissant d'énergie (= ordre décroissant de longueur d'onde) :<br>
+    <strong>Micro-ondes &lt; IR thermique &lt; Visible &lt; UV</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Expliquer pourquoi les planches de bois stockées à l'extérieur en été s'échauffent au soleil mais rayonnent ensuite dans l'infrarouge la nuit.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Le jour, le bois absorbe le rayonnement solaire (principalement visible) et s'échauffe. La nuit, sans apport solaire, le bois (à une température de l'ordre de 20-40°C ≈ 290-310 K) réémet l'énergie accumulée sous forme de rayonnement infrarouge thermique, invisible à l'œil. C'est la même raison pour laquelle les surfaces chaudes semblent « irradier » de la chaleur.
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Appliquer la loi de Stefan-Boltzmann</h2>
+
+<div class="retenir">
+  \(P = \varepsilon \cdot \sigma \cdot S \cdot T^4\)<br>
+  \(\sigma = 5{,}67 \times 10^{-8}\) W·m⁻²·K⁻⁴ — \(\varepsilon\) : émissivité — \(S\) : surface (m²) — \(T\) : température (K)<br>
+  \(T(\text{K}) = T(°\text{C}) + 273\)
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un panneau de MDF d'émissivité \(\varepsilon = 0{,}92\) et de surface \(S = 2\) m² est à \(T = 25°C\). Calculer la puissance rayonnée.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[T = 25 + 273 = 298 \text{ K}\]
+    \[298^4 = (298^2)^2 = (88\,804)^2 \approx 7{,}886 \times 10^9\]
+    \[P = 0{,}92 \times 5{,}67 \times 10^{-8} \times 2 \times 7{,}886 \times 10^9\]
+    \[= 0{,}92 \times 5{,}67 \times 2 \times 78{,}86 \approx 0{,}92 \times 894{,}2 \approx 822 \text{ W}\]
+    <strong>P ≈ 822 W.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un mur en bois (ε = 0,90, S = 10 m²) est à 15°C (intérieur) et à 5°C (extérieur). Calculer la puissance rayonnée par chaque face et le flux net vers l'extérieur.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Face intérieure (T = 288 K) : \(P_i = 0{,}90 \times 5{,}67 \times 10^{-8} \times 10 \times 288^4\)<br>
+    \(288^4 \approx 6{,}883 \times 10^9\)<br>
+    \(P_i \approx 0{,}90 \times 5{,}67 \times 10^{-7} \times 6{,}883 \times 10^9 \approx 0{,}90 \times 5{,}67 \times 6883 \approx 0{,}90 \times 39\,027 \approx 3\,512 \text{ W}\)<br>
+    Face extérieure (T = 278 K) : \(278^4 \approx 5{,}986 \times 10^9\)<br>
+    \(P_e \approx 0{,}90 \times 5{,}67 \times 10^{-7} \times 5{,}986 \times 10^9 \approx 0{,}90 \times 33\,940 \approx 3\,055 \text{ W}\)<br>
+    Flux net vers l'extérieur : \(\Delta P = P_i - P_e \approx 3\,512 - 3\,055 = 457 \text{ W}\)<br>
+    <strong>ΔP ≈ 457 W</strong> de pertes radiatives à travers ce mur.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Si on double la température absolue d'une surface, par quel facteur la puissance rayonnée est-elle multipliée ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(P \propto T^4\) : si \(T \to 2T\), alors \(P \to (2T)^4 = 16T^4\).<br>
+    La puissance rayonnée est multipliée par <strong>16</strong>.
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Expliquer le mécanisme de l'effet de serre</h2>
+
+<div class="retenir">
+  1. Le Soleil émet un rayonnement visible → traverse l'atmosphère → absorbé par la Terre.<br>
+  2. La Terre réémet un rayonnement infrarouge → absorbé par les GES (CO₂, H₂O, CH₄…).<br>
+  3. Les GES réémettent ce rayonnement IR dans toutes les directions → une partie revient vers la Terre → réchauffement.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Expliquer en trois étapes le mécanisme de l'effet de serre naturel.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Étape 1 – <strong>Absorption solaire :</strong> Le Soleil émet principalement dans le visible. Ce rayonnement traverse l'atmosphère et est absorbé par la surface terrestre qui se réchauffe.<br>
+    Étape 2 – <strong>Réémission IR :</strong> La Terre, à environ 288 K, réémet de l'énergie sous forme de rayonnement infrarouge. Les gaz à effet de serre (H₂O, CO₂, CH₄…) absorbent ce rayonnement.<br>
+    Étape 3 – <strong>Renvoi vers la Terre :</strong> Les GES réémettent l'énergie IR dans toutes les directions, dont une partie vers la Terre. Cet apport d'énergie supplémentaire élève la température de surface (de −19°C à +15°C en moyenne).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un artisan menuisier installe une serre végétale avec des vitres. Expliquer pourquoi la température à l'intérieur est plus élevée qu'à l'extérieur, même les jours nuageux.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Le verre est transparent au rayonnement solaire (visible) qui entre dans la serre et réchauffe le sol et les plantes. Ces surfaces réchauffées réémettent un rayonnement infrarouge, mais le verre est <strong>opaque à l'IR</strong> : il empêche ce rayonnement de sortir. L'énergie est piégée à l'intérieur, ce qui maintient une température plus élevée, même par temps nuageux (énergie diffuse toujours absorbée).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Citer trois gaz à effet de serre et donner, pour chacun, une source liée au secteur de la construction ou de la menuiserie.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    1. <strong>CO₂ :</strong> combustion des engins de chantier et de transport du bois (camions, chariots élévateurs).<br>
+    2. <strong>CH₄ (méthane) :</strong> décomposition de déchets de bois non traités en décharge.<br>
+    3. <strong>N₂O (protoxyde d'azote) :</strong> production d'énergie thermique pour le séchage du bois en étuve utilisant des combustibles fossiles.
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Calculer un bilan radiatif simplifié</h2>
+
+<div class="retenir">
+  Bilan radiatif de la Terre à l'équilibre :<br>
+  Puissance solaire absorbée = Puissance IR réémise<br>
+  \(P_{\text{abs}} = (1 - A) \times \dfrac{P_{\odot}}{4}\) avec \(P_{\odot} = 1\,361\) W/m² et \(A\) : albédo ≈ 0,30
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Calculer la puissance solaire moyenne absorbée par m² de surface terrestre avec \(A = 0{,}30\) et \(P_{\odot} = 1\,361\) W/m².</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[P_{\text{abs}} = (1 - 0{,}30) \times \frac{1\,361}{4} = 0{,}70 \times 340{,}25 \approx 238 \text{ W/m}^2\]
+    <strong>P_abs ≈ 238 W/m².</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>À l'équilibre, la Terre réémet 238 W/m² en IR. Utiliser \(P = \sigma T^4\) pour estimer la température d'équilibre sans effet de serre.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[T^4 = \frac{238}{5{,}67 \times 10^{-8}} \approx 4{,}20 \times 10^9\]
+    \[T = (4{,}20 \times 10^9)^{0{,}25} \approx 254 \text{ K} \approx -19°C\]
+    Sans effet de serre, la Terre serait à <strong>−19°C</strong>. L'effet de serre naturel apporte +34°C pour atteindre +15°C en moyenne.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>La déforestation réduit la surface des forêts et diminue l'albédo de 0,30 à 0,28. Calculer la nouvelle puissance absorbée et discuter l'impact sur le climat.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[P'_{\text{abs}} = (1 - 0{,}28) \times \frac{1\,361}{4} = 0{,}72 \times 340{,}25 \approx 245 \text{ W/m}^2\]
+    L'augmentation de 238 à 245 W/m² (+7 W/m²) crée un déséquilibre radiatif : la Terre absorbe plus qu'elle n'émet. Elle doit élever sa température d'équilibre pour réémettre davantage. La déforestation amplifie ainsi le réchauffement climatique par diminution de l'albédo.
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Lier bilan carbone et matériaux bois (stockage CO₂)</h2>
+
+<div class="retenir">
+  Le bois est une ressource <strong>carbonée renouvelable</strong> : les arbres absorbent du CO₂ durant leur croissance. Le bois utilisé en construction stocke ce carbone pendant toute la durée de vie du bâtiment.<br>
+  Bilan carbone du bois = CO₂ absorbé par la forêt − CO₂ émis (abattage, transport, transformation).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Expliquer pourquoi construire avec du bois plutôt qu'avec du béton contribue à réduire les émissions de GES.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    – Le bois stocke le CO₂ atmosphérique absorbé par l'arbre durant sa croissance. Ce carbone reste immobilisé dans la structure du bâtiment pendant des décennies.<br>
+    – La production du bois d'œuvre émet beaucoup moins de CO₂ que la fabrication du ciment (calcination du calcaire à haute température, très émettrice de CO₂).<br>
+    – En fin de vie, le bois peut être valorisé énergétiquement (biomasse) ou recyclé, offrant un bilan carbone global bien plus favorable que le béton.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un m³ de bois sec contient environ 225 kg de carbone. Calculer la masse de CO₂ correspondante stockée (masse molaire C = 12 g/mol, CO₂ = 44 g/mol).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Chaque atome de C donne une molécule de CO₂ : \(m_{\text{CO}_2} = m_C \times \dfrac{M_{\text{CO}_2}}{M_C} = 225 \times \dfrac{44}{12} = 225 \times 3{,}667 \approx 825 \text{ kg}\)<br>
+    <strong>1 m³ de bois sec stocke environ 825 kg de CO₂</strong>, ce qui correspond à l'émission de CO₂ d'une voiture parcourant environ 5 000 km.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un atelier de menuiserie produit 50 m³ de déchets de bois par an. Ces déchets peuvent être valorisés en biomasse (chauffage). Calculer le volume de CO₂ évité si la valeur calorifique du bois est de 3 000 kWh/m³ et si remplacer du fioul évite 0,26 kg CO₂ par kWh.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Énergie totale : \(50 \times 3\,000 = 150\,000\) kWh<br>
+    CO₂ évité : \(150\,000 \times 0{,}26 = 39\,000\) kg = <strong>39 tonnes de CO₂</strong> évitées par an.<br>
+    La valorisation des déchets de bois en énergie est une contribution significative à la réduction des émissions de l'atelier.
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

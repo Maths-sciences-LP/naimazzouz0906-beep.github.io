@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch08 – Exercices par capacités – Signal sonore – Terminale Bac Pro ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 8 – Exercices par capacités</h1>
+  <p class="sous-titre">Caractériser la propagation d'un signal sonore &nbsp;|&nbsp; Terminale Bac Pro ICCER &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li>C1 – Calculer la fréquence, la période et la longueur d'onde d'un son (\(\lambda = v/f\))</li>
+    <li>C2 – Calculer le niveau sonore en dB (\(L = 10\log(I/I_0)\))</li>
+    <li>C3 – Identifier les effets du bruit sur la santé (seuil douleur 120 dB)</li>
+    <li>C4 – Appliquer les règles de prévention du bruit en milieu professionnel</li>
+    <li>C5 – Calculer l'atténuation d'un écran acoustique</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Calculer fréquence, période et longueur d'onde</h2>
+
+<div class="retenir">
+  \(T = 1/f\) (période en s, fréquence en Hz)<br>
+  \(\lambda = v/f = v \cdot T\) (longueur d'onde en m)<br>
+  Vitesse du son dans l'air : \(v \approx 340\) m/s à 20°C
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un compresseur de PAC émet un son de fréquence \(f = 85\) Hz. Calculer la période \(T\) et la longueur d'onde \(\lambda\) dans l'air (\(v = 340\) m/s).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[T = \frac{1}{f} = \frac{1}{85} \approx 0{,}0118 \text{ s} = 11{,}8 \text{ ms}\]
+    \[\lambda = \frac{v}{f} = \frac{340}{85} = 4 \text{ m}\]
+    <strong>T ≈ 11,8 ms et λ = 4 m.</strong> Ce son grave a une grande longueur d'onde, difficile à atténuer.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un moteur de ventilation émet un son de période \(T = 5\) ms. Calculer la fréquence et la longueur d'onde dans l'air.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[f = \frac{1}{T} = \frac{1}{5 \times 10^{-3}} = 200 \text{ Hz}\]
+    \[\lambda = \frac{340}{200} = 1{,}7 \text{ m}\]
+    <strong>f = 200 Hz et λ = 1,7 m.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>La plage de fréquences audibles par l'oreille humaine est de 20 Hz à 20 000 Hz. Calculer les longueurs d'onde correspondantes dans l'air (\(v = 340\) m/s).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Pour \(f = 20\) Hz : \(\lambda = 340/20 = 17\) m<br>
+    Pour \(f = 20\,000\) Hz : \(\lambda = 340/20\,000 = 0{,}017\) m = 17 mm<br>
+    <strong>Longueurs d'onde audibles : de 17 mm à 17 m.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Un technicien CVC mesure qu'un son se propage à \(v = 340\) m/s et que deux crêtes consécutives sont séparées de 2 m. Calculer la fréquence de ce son.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    La longueur d'onde est \(\lambda = 2\) m.<br>
+    \[f = \frac{v}{\lambda} = \frac{340}{2} = 170 \text{ Hz}\]
+    <strong>f = 170 Hz.</strong>
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Calculer le niveau sonore en décibels</h2>
+
+<div class="retenir">
+  \(L = 10 \log\!\left(\dfrac{I}{I_0}\right)\) (en dB)<br>
+  \(I_0 = 10^{-12}\) W/m² : intensité de référence (seuil d'audition)<br>
+  \(I\) : intensité sonore (W/m²)
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un ventilateur de VMC produit une intensité sonore \(I = 10^{-6}\) W/m². Calculer le niveau sonore \(L\) en dB.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[L = 10 \log\!\left(\frac{10^{-6}}{10^{-12}}\right) = 10 \log(10^6) = 10 \times 6 = 60 \text{ dB}\]
+    <strong>L = 60 dB.</strong> C'est le niveau d'une conversation normale.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un compresseur de PAC émet \(I = 10^{-4}\) W/m². Calculer le niveau sonore.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[L = 10 \log\!\left(\frac{10^{-4}}{10^{-12}}\right) = 10 \log(10^8) = 10 \times 8 = 80 \text{ dB}\]
+    <strong>L = 80 dB.</strong> Exposition prolongée sans protection auditive déconseillée.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>On mesure un niveau sonore de 75 dB. Calculer l'intensité sonore correspondante.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[75 = 10 \log\!\left(\frac{I}{10^{-12}}\right) \Rightarrow \log\!\left(\frac{I}{10^{-12}}\right) = 7{,}5\]
+    \[\frac{I}{10^{-12}} = 10^{7{,}5} \approx 3{,}16 \times 10^7\]
+    \[I = 3{,}16 \times 10^7 \times 10^{-12} = 3{,}16 \times 10^{-5} \text{ W/m}^2\]
+    <strong>I ≈ 3,16 × 10⁻⁵ W/m².</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Deux sources indépendantes de 70 dB chacune sont actionnées simultanément. Quel est le niveau sonore total ? (L'intensité totale est la somme des intensités.)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Chaque source donne \(I_1 = I_2 = 10^{-12} \times 10^7 = 10^{-5}\) W/m².<br>
+    Total : \(I_{\text{tot}} = 2 \times 10^{-5}\) W/m².<br>
+    \[L = 10 \log\!\left(\frac{2 \times 10^{-5}}{10^{-12}}\right) = 10 \log(2 \times 10^7) = 10(\log 2 + 7) \approx 10(0{,}301 + 7) = 73{,}01 \text{ dB}\]
+    <strong>L ≈ 73 dB.</strong> Doubler l'intensité n'augmente le niveau que de 3 dB.
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Identifier les effets du bruit sur la santé</h2>
+
+<div class="retenir">
+  Seuils importants :<br>
+  – 0 dB : seuil d'audition<br>
+  – 80 dB : seuil de risque (exposition prolongée)<br>
+  – 120 dB : seuil de douleur<br>
+  – 140 dB : perforation du tympan<br>
+  Les effets sont irréversibles au-delà du seuil de douleur.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un plombier chauffagiste travaille à proximité d'un compresseur émettant 90 dB. Quels risques court-il et quelles mesures de protection doit-il appliquer ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    À 90 dB, l'exposition prolongée (au-delà de 2 heures selon la réglementation) présente un risque de surdité professionnelle irréversible. Les cellules ciliées de la cochlée, sollicitées en permanence, finissent par se détériorer.<br>
+    Mesures de protection :<br>
+    – Porter des protecteurs auditifs (casque ou bouchons d'oreilles certifiés, atténuation minimale de 25 dB).<br>
+    – Limiter la durée d'exposition.<br>
+    – Éloigner le poste de travail de la source si possible.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Associer chaque niveau sonore à sa situation et à son effet sur la santé :</p>
+  <ul>
+    <li>A) 30 dB — B) 60 dB — C) 85 dB — D) 120 dB</li>
+    <li>1. Seuil de douleur — 2. Bibliothèque silencieuse — 3. Conversation normale — 4. Atelier bruyant (risque de surdité)</li>
+  </ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    A – 2 (30 dB : bibliothèque, très calme, aucun risque)<br>
+    B – 3 (60 dB : conversation normale, aucun risque)<br>
+    C – 4 (85 dB : atelier bruyant, risque de surdité avec exposition prolongée)<br>
+    D – 1 (120 dB : seuil de douleur, risque immédiat)
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Pourquoi les effets du bruit sur l'audition sont-ils qualifiés d'irréversibles ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    L'oreille interne contient des cellules ciliées (environ 15 000 par oreille) qui transforment les vibrations sonores en signaux nerveux. Ces cellules ne se régénèrent pas chez l'humain. Une exposition répétée à des niveaux élevés (ou un choc acoustique unique intense) détruit définitivement ces cellules. La perte auditive qui en résulte (surdité professionnelle, acouphènes) est irréversible et ne peut être soignée qu'avec des prothèses auditives.
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Appliquer les règles de prévention du bruit en milieu professionnel</h2>
+
+<div class="retenir">
+  Valeurs réglementaires (Code du travail) :<br>
+  – 80 dB(A) : valeur d'exposition inférieure (information des travailleurs)<br>
+  – 85 dB(A) : valeur d'exposition supérieure (protection obligatoire)<br>
+  – 87 dB(A) : valeur limite d'exposition (ne jamais dépasser)
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un technicien chauffagiste travaille 8 h/jour dans un local technique où le niveau sonore est 83 dB(A). Que doit faire l'employeur selon la réglementation ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    À 83 dB(A), on dépasse la valeur d'exposition inférieure (80 dB) mais pas la valeur supérieure (85 dB). L'employeur doit :<br>
+    – <strong>Informer</strong> les travailleurs sur les risques liés au bruit.<br>
+    – <strong>Mettre à disposition</strong> des protecteurs auditifs (le port est recommandé mais pas obligatoire à ce stade).<br>
+    – <strong>Surveiller</strong> l'état auditif des salariés (audiogramme).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Classer les mesures de prévention suivantes selon la hiérarchie STOP (Substitution, Technique, Organisation, Protection individuelle) :</p>
+  <ul>
+    <li>a) Porter des bouchons d'oreilles</li>
+    <li>b) Installer un capot insonorisant sur le compresseur</li>
+    <li>c) Remplacer le compresseur bruyant par un modèle silencieux</li>
+    <li>d) Planifier les travaux bruyants hors des horaires de présence des autres employés</li>
+  </ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    a) Protection individuelle (EPI) — priorité la plus basse, mais nécessaire si aucune autre mesure ne suffit.<br>
+    b) Technique (réduction à la source par encoffrement).<br>
+    c) Substitution (remplacement de la source) — priorité la plus haute.<br>
+    d) Organisation (éloignement temporel des personnes exposées).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un local technique abrite une PAC dont le bruit est de 88 dB(A). Proposer trois mesures pour ramener le niveau à 80 dB(A).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    1. <strong>Isolation phonique du local :</strong> revêtir les parois de matériaux absorbants (laine minérale, mousse acoustique) pour réduire les réflexions et atténuer le bruit transmis.<br>
+    2. <strong>Anti-vibrations :</strong> monter la PAC sur des plots anti-vibratoires pour éviter la transmission des vibrations aux structures du bâtiment.<br>
+    3. <strong>Silencieux sur les gaines :</strong> installer des silencieux (pièges à son) sur les conduits d'air entrant et sortant pour atténuer le bruit aérien propagé par les gaines.
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Calculer l'atténuation d'un écran acoustique</h2>
+
+<div class="retenir">
+  L'<strong>affaiblissement acoustique</strong> \(R\) d'une paroi est tel que :<br>
+  \(L_{\text{transmis}} = L_{\text{incident}} - R\)<br>
+  \(R\) dépend de la masse surfacique et de la fréquence (loi de masse : plus la paroi est lourde, plus \(R\) est élevé).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un local technique émet un bruit de 90 dB. Une paroi en béton a un affaiblissement acoustique \(R = 45\) dB. Quel est le niveau sonore dans la pièce voisine ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[L_{\text{transmis}} = L_{\text{incident}} - R = 90 - 45 = 45 \text{ dB}\]
+    <strong>L_transmis = 45 dB.</strong> C'est un niveau très confortable pour une pièce de vie ou un bureau.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un technicien CVC doit installer un compresseur émettant 95 dB dans un local adjacent à des bureaux. La réglementation impose un maximum de 35 dB dans les bureaux. Quel affaiblissement acoustique minimum la paroi doit-elle offrir ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[R_{\min} = L_{\text{incident}} - L_{\text{transmis max}} = 95 - 35 = 60 \text{ dB}\]
+    La paroi doit offrir un affaiblissement d'au moins <strong>R = 60 dB</strong>. Cela correspond à une cloison très lourde (double paroi en béton, traitement acoustique renforcé).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un écran acoustique extérieur réduit le niveau sonore de 88 dB à 73 dB. Quel est l'affaiblissement de cet écran ? Exprimer cette réduction en termes d'intensité.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[R = L_{\text{incident}} - L_{\text{transmis}} = 88 - 73 = 15 \text{ dB}\]
+    L'affaiblissement est <strong>R = 15 dB</strong>.<br>
+    En termes d'intensité : une réduction de 10 dB correspond à une division de l'intensité par 10. Une réduction de 15 dB correspond à une division par \(10^{1{,}5} \approx 31{,}6\). L'écran réduit l'intensité sonore d'un facteur ≈ 32.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Deux parois sont assemblées en série : la première a \(R_1 = 25\) dB et la seconde \(R_2 = 20\) dB. Le niveau incident est 85 dB. Calculer le niveau après chaque paroi puis le niveau final.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Après la 1ère paroi : \(L_1 = 85 - 25 = 60\) dB<br>
+    Après la 2ème paroi : \(L_2 = 60 - 20 = 40\) dB<br>
+    <strong>Niveau final : 40 dB.</strong> L'affaiblissement total est 85 − 40 = 45 dB (= R₁ + R₂).
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

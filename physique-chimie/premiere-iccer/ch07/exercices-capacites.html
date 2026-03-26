@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch07 – Exercices par capacités – Pression et force pressante – 1ère Bac Pro ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-iccer.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 7 – Exercices par capacités</h1>
+  <p class="sous-titre">Pression et force pressante &nbsp;|&nbsp; 1ère Bac Pro ICCER &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> – Définir la pression (\(p = F/S\)) et ses unités (Pa, bar)</li>
+    <li><strong>C2</strong> – Calculer une pression à partir d'une force et d'une surface</li>
+    <li><strong>C3</strong> – Appliquer la loi hydrostatique (\(p = \rho g h\))</li>
+    <li><strong>C4</strong> – Convertir entre unités de pression (bar, Pa, mbar, mmHg)</li>
+    <li><strong>C5</strong> – Appliquer dans le contexte des circuits hydrauliques (chauffage, plomberie)</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Définir la pression et ses unités</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong>
+  <ul>
+    <li>La pression est définie par : \(p = \dfrac{F}{S}\) avec \(F\) en newtons (N) et \(S\) en m². Unité : pascal (Pa).</li>
+    <li>Conversions clés : \(1 \text{ bar} = 10^5 \text{ Pa} = 100\,000 \text{ Pa}\) ; \(1 \text{ mbar} = 100 \text{ Pa}\)</li>
+    <li>Pression atmosphérique standard : \(p_0 = 1{,}013 \times 10^5\) Pa ≈ 1,013 bar</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Unités de pression</h3>
+  <p>Un manomètre indique une pression de 3 bar dans un circuit de chauffage.</p>
+  <p>a) Exprimer cette pression en pascals.</p>
+  <p>b) Exprimer cette pression en millibar (mbar).</p>
+  <p>c) Cette pression est-elle supérieure ou inférieure à la pression atmosphérique ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(3 \text{ bar} = 3 \times 10^5 = \mathbf{300\,000}\) Pa</p>
+    <p>b) \(3 \text{ bar} = 3\,000\) mbar</p>
+    <p>c) Supérieure : \(3 \text{ bar} > 1{,}013 \text{ bar}\). C'est une pression relative (manométrique) au-dessus de la pression atmosphérique.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Identifier les grandeurs</h3>
+  <p>Classer les expressions suivantes en « pression », « force » ou « surface » :</p>
+  <ul>
+    <li>5 bar</li>
+    <li>200 N</li>
+    <li>0,04 m²</li>
+    <li>150 Pa</li>
+    <li>12 cm²</li>
+    <li>350 kPa</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ul>
+      <li>5 bar → <strong>Pression</strong></li>
+      <li>200 N → <strong>Force</strong></li>
+      <li>0,04 m² → <strong>Surface</strong></li>
+      <li>150 Pa → <strong>Pression</strong></li>
+      <li>12 cm² → <strong>Surface</strong></li>
+      <li>350 kPa → <strong>Pression</strong></li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Sens physique de la pression</h3>
+  <p>Un stilet (pointe fine) et un tampon de caoutchouc exercent la même force de 10 N sur une surface. Le stilet a une surface de contact de 1 mm² et le tampon de 10 cm².</p>
+  <p>a) Calculer la pression exercée par chacun en Pa.</p>
+  <p>b) Expliquer pourquoi le stilet perce mais pas le tampon.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Stilet : \(S = 1 \text{ mm}^2 = 10^{-6}\) m² → \(p = \dfrac{10}{10^{-6}} = 10^7\) Pa = 100 bar</p>
+    <p>Tampon : \(S = 10 \text{ cm}^2 = 10^{-3}\) m² → \(p = \dfrac{10}{10^{-3}} = 10\,000\) Pa = 0,1 bar</p>
+    <p>b) La pression exercée par le stilet est un million de fois plus grande : même force mais surface très petite → pression très grande, qui dépasse la résistance du matériau.</p>
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Calculer une pression à partir d'une force et d'une surface</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> \(p = \dfrac{F}{S}\) → F en N, S en m², p en Pa. Attention aux unités de surface (1 cm² = 10⁻⁴ m², 1 mm² = 10⁻⁶ m²). La force pressante : \(F = p \times S\).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Pression exercée par un piston</h3>
+  <p>Un piston de surface \(S = 50 \text{ cm}^2\) est soumis à une force de \(F = 2\,000\) N.</p>
+  <p>Calculer la pression exercée en Pa et en bar.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(S = 50 \text{ cm}^2 = 50 \times 10^{-4} = 5 \times 10^{-3}\) m²</p>
+    <p>\(p = \dfrac{F}{S} = \dfrac{2\,000}{5 \times 10^{-3}} = \mathbf{400\,000}\) Pa = <strong>4 bar</strong></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Force exercée par la pression</h3>
+  <p>Un circuit de chauffage est à une pression de \(p = 2{,}5\) bar. Une bride de fixation a une surface de \(S = 20 \text{ cm}^2\).</p>
+  <p>Calculer la force exercée par le fluide sur cette bride.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(p = 2{,}5 \text{ bar} = 250\,000\) Pa ; \(S = 20 \text{ cm}^2 = 2 \times 10^{-3}\) m²</p>
+    <p>\(F = p \times S = 250\,000 \times 2 \times 10^{-3} = \mathbf{500}\) N</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Surface d'une vanne</h3>
+  <p>La pression maximale dans un circuit est \(p = 6\) bar. Une vanne de sécurité s'ouvre quand la force sur son clapet dépasse \(F = 120\) N.</p>
+  <p>Calculer la surface du clapet.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(p = 6 \text{ bar} = 6 \times 10^5\) Pa</p>
+    <p>\(S = \dfrac{F}{p} = \dfrac{120}{6 \times 10^5} = 2 \times 10^{-4}\) m² = <strong>2 cm²</strong></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Pression d'un gaz dans un ballon d'expansion</h3>
+  <p>Un ballon d'expansion de circuit de chauffage contient un gaz à \(p = 1{,}5\) bar. La membrane du ballon a une surface de \(S = 80 \text{ cm}^2\).</p>
+  <p>Calculer la force exercée par le gaz sur la membrane.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(p = 1{,}5 \times 10^5\) Pa ; \(S = 80 \times 10^{-4} = 8 \times 10^{-3}\) m²</p>
+    <p>\(F = p \times S = 1{,}5 \times 10^5 \times 8 \times 10^{-3} = \mathbf{1\,200}\) N</p>
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Loi hydrostatique</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> La pression exercée par une colonne de fluide de hauteur \(h\) est :
+  \[p = \rho \times g \times h\]
+  avec : \(\rho\) = masse volumique du fluide (kg/m³) ; \(g = 9{,}81\) m/s² ≈ 10 m/s² ; \(h\) = hauteur de fluide (m).
+  Pour l'eau : \(\rho = 1\,000\) kg/m³.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Pression au fond d'un ballon d'eau chaude</h3>
+  <p>Un ballon d'eau chaude a une hauteur d'eau de \(h = 1{,}5\) m. L'eau a une masse volumique de 1 000 kg/m³.</p>
+  <p>Calculer la pression hydrostatique au bas du ballon. (\(g = 9{,}81\) m/s²)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(p = \rho g h = 1\,000 \times 9{,}81 \times 1{,}5 = \mathbf{14\,715}\) Pa ≈ 0,147 bar</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Pression au bas d'une colonne de chauffage</h3>
+  <p>Un immeuble de 5 étages a un circuit de chauffage vertical. La hauteur d'eau entre le haut et le bas du circuit est \(h = 15\) m.</p>
+  <p>Calculer la surpression hydrostatique en bas du circuit en bar. (\(\rho_{\text{eau}} = 1\,000\) kg/m³, \(g = 9{,}81\) m/s²)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(p = \rho g h = 1\,000 \times 9{,}81 \times 15 = 147\,150\) Pa = <strong>1,47 bar</strong></p>
+    <p>Cela s'ajoute à la pression nominale du circuit (souvent 1,5 à 2,5 bar). Le bas du circuit est donc à une pression totale d'environ 3 bar.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Calculer la hauteur d'eau</h3>
+  <p>On souhaite alimenter en eau un bâtiment par gravité depuis un château d'eau. La pression minimale nécessaire est \(p = 2\) bar.</p>
+  <p>Calculer la hauteur minimale du niveau d'eau dans le château d'eau par rapport au point d'utilisation. (\(\rho = 1\,000\) kg/m³, \(g = 10\) m/s²)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(p = \rho g h \Rightarrow h = \dfrac{p}{\rho g} = \dfrac{2 \times 10^5}{1\,000 \times 10} = \dfrac{200\,000}{10\,000} = \mathbf{20}\) m</p>
+    <p>Le niveau d'eau doit être à au moins 20 m au-dessus du point d'utilisation.</p>
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Conversions d'unités de pression</h2>
+
+<div class="retenir">
+  <strong>Tableau de conversion :</strong>
+  <table>
+    <tr><th>Unité</th><th>Valeur en Pa</th></tr>
+    <tr><td>1 Pa</td><td>1 Pa</td></tr>
+    <tr><td>1 hPa</td><td>100 Pa</td></tr>
+    <tr><td>1 kPa</td><td>1 000 Pa</td></tr>
+    <tr><td>1 bar</td><td>100 000 Pa</td></tr>
+    <tr><td>1 mbar</td><td>100 Pa</td></tr>
+    <tr><td>1 atm</td><td>101 325 Pa</td></tr>
+    <tr><td>1 mmHg</td><td>133,3 Pa</td></tr>
+  </table>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Conversions bar ↔ Pa</h3>
+  <p>Convertir les pressions suivantes :</p>
+  <ul>
+    <li>a) 2,5 bar en Pa</li>
+    <li>b) 250 000 Pa en bar</li>
+    <li>c) 0,5 bar en mbar</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(2{,}5 \times 10^5 = \mathbf{250\,000}\) Pa</p>
+    <p>b) \(250\,000 \div 10^5 = \mathbf{2{,}5}\) bar</p>
+    <p>c) \(0{,}5 \text{ bar} = 500\) mbar (car 1 bar = 1 000 mbar)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Pression sanguine en mmHg et Pa</h3>
+  <p>La pression artérielle systolique normale est de 120 mmHg.</p>
+  <p>a) Convertir en Pa. (1 mmHg ≈ 133,3 Pa)</p>
+  <p>b) Convertir en bar.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(120 \times 133{,}3 = \mathbf{15\,996}\) Pa ≈ 16 000 Pa</p>
+    <p>b) \(16\,000 \div 10^5 = \mathbf{0{,}16}\) bar</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Pression de service d'un circulateur</h3>
+  <p>Un circulateur (pompe de chauffage) a une pression maximale de service de 600 kPa.</p>
+  <p>Convertir en bar et vérifier si cela est compatible avec un circuit de chauffage standard (pression max 6 bar).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(600 \text{ kPa} = 600\,000 \text{ Pa} = \dfrac{600\,000}{100\,000} = \mathbf{6}\) bar</p>
+    <p>Oui, la pression maximale de service (6 bar) est compatible avec le circuit standard.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Convertir des mesures de terrain</h3>
+  <p>Un technicien CVC relève les valeurs suivantes sur des manomètres :</p>
+  <ul>
+    <li>Circuit primaire : 1,8 bar</li>
+    <li>Circuit secondaire : 180 000 Pa</li>
+    <li>Ballon ECS : 3,5 bar</li>
+  </ul>
+  <p>Exprimer toutes ces valeurs dans la même unité (bar) et les comparer.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Circuit primaire : 1,8 bar</p>
+    <p>Circuit secondaire : \(180\,000 \div 100\,000 = \mathbf{1{,}8}\) bar — même pression que le circuit primaire</p>
+    <p>Ballon ECS : 3,5 bar</p>
+    <p>Le ballon ECS est à une pression plus élevée que les deux circuits.</p>
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Application aux circuits hydrauliques</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> Dans une installation de chauffage ou de plomberie, la pression doit être :
+  <ul>
+    <li>suffisante pour alimenter tous les points d'utilisation (en hauteur notamment)</li>
+    <li>inférieure à la pression maximale des composants (pour éviter les fuites et ruptures)</li>
+    <li>surveillée via des manomètres et régulée par des soupapes de sécurité</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Pression dans un circuit de chauffage</h3>
+  <p>Un circuit de chauffage central est mis en pression à 1,5 bar à froid. En fonctionnement (eau à 80°C), la pression monte à 2,2 bar. La soupape de sécurité est réglée à 3 bar.</p>
+  <p>a) Quelle est la marge de sécurité entre la pression de fonctionnement et la pression de sécurité ?</p>
+  <p>b) Si une fuite fait chuter la pression à 0,8 bar, que se passe-t-il dans l'installation ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Marge : \(3 - 2{,}2 = \mathbf{0{,}8}\) bar de marge de sécurité.</p>
+    <p>b) À 0,8 bar, la pression est insuffisante. Des poches d'air peuvent se former, les pompes risquent de caviter, la régulation de température est perturbée. Il faut appoint en eau jusqu'à rétablir 1,5 bar.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Pression dans une colonne montante</h3>
+  <p>Un installateur thermique doit alimenter un appartement au 6ème étage (hauteur : 18 m) à partir du réseau municipal. La pression réseau est de 4 bar.</p>
+  <p>a) Calculer la pression hydrostatique due à la colonne d'eau de 18 m. (\(\rho = 1\,000\) kg/m³, \(g = 9{,}81\) m/s²)</p>
+  <p>b) Calculer la pression disponible à l'appartement (pression réseau moins pression statique).</p>
+  <p>c) La pression minimale pour alimenter un robinet est 0,5 bar. L'installation est-elle conforme ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(p_{\text{statique}} = \rho g h = 1\,000 \times 9{,}81 \times 18 = 176\,580\) Pa ≈ <strong>1,77 bar</strong></p>
+    <p>b) \(p_{\text{appartement}} = 4 - 1{,}77 = \mathbf{2{,}23}\) bar</p>
+    <p>c) Oui : \(2{,}23 \text{ bar} > 0{,}5 \text{ bar}\) → l'installation est conforme.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Soupape de sécurité d'un chauffe-eau</h3>
+  <p>Un chauffe-eau électrique a une pression maximale de service de 7 bar. Pour protéger l'appareil, on installe une soupape de sécurité qui s'ouvre à 7 bar et dont la surface de clapet est \(S = 3 \text{ cm}^2\).</p>
+  <p>a) Calculer la force exercée sur le clapet quand la pression atteint 7 bar.</p>
+  <p>b) Le ressort de la soupape doit exercer une force supérieure à cette valeur pour rester fermé avant 7 bar. Quelle doit être la raideur minimale du ressort comprimé de 5 mm ? (\(F = k \times x\))</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(p = 7 \text{ bar} = 700\,000\) Pa ; \(S = 3 \times 10^{-4}\) m²</p>
+    <p>\(F = p \times S = 700\,000 \times 3 \times 10^{-4} = \mathbf{210}\) N</p>
+    <p>b) Le ressort doit exercer \(F = 210\) N pour une compression \(x = 5 \text{ mm} = 0{,}005\) m.</p>
+    <p>\(k = \dfrac{F}{x} = \dfrac{210}{0{,}005} = \mathbf{42\,000}\) N/m = 42 kN/m</p>
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

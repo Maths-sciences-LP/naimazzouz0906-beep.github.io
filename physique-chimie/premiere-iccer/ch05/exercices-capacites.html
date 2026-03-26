@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Exercices par capacités – Vitesse et accélération – 1ère Bac Pro ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-iccer.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 5 – Exercices par capacités</h1>
+  <p class="sous-titre">Vitesse et accélération en mouvement rectiligne &nbsp;|&nbsp; 1ère Bac Pro ICCER &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> – Définir vitesse moyenne et instantanée</li>
+    <li><strong>C2</strong> – Calculer une accélération (\(a = \Delta v / \Delta t\))</li>
+    <li><strong>C3</strong> – Interpréter un diagramme v(t) (pente = accélération)</li>
+    <li><strong>C4</strong> – Appliquer les équations du MRUA (\(v = v_0 + at\), \(d = v_0 t + \frac{1}{2}at^2\))</li>
+    <li><strong>C5</strong> – Calculer une distance de freinage</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Vitesse moyenne et instantanée</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong>
+  <ul>
+    <li><strong>Vitesse moyenne</strong> : \(v_m = \dfrac{d}{\Delta t}\) avec \(d\) la distance parcourue (m) et \(\Delta t\) la durée (s). Unité : m/s.</li>
+    <li><strong>Vitesse instantanée</strong> : vitesse à un instant précis, mesurée sur un intervalle de temps très court.</li>
+    <li>Conversion : \(v \text{ (m/s)} \times 3{,}6 = v \text{ (km/h)}\)</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Calcul de vitesse moyenne</h3>
+  <p>Un technicien se déplace sur un chantier et parcourt 150 m en 30 secondes.</p>
+  <p>a) Calculer sa vitesse moyenne en m/s.</p>
+  <p>b) Convertir en km/h.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(v_m = \dfrac{d}{\Delta t} = \dfrac{150}{30} = \mathbf{5}\) m/s</p>
+    <p>b) \(v_m = 5 \times 3{,}6 = \mathbf{18}\) km/h</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Calculer la durée</h3>
+  <p>Un véhicule de service roule à \(v_m = 90\) km/h sur l'autoroute. La distance jusqu'au chantier est de 135 km.</p>
+  <p>Calculer la durée du trajet en heures et en minutes.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\Delta t = \dfrac{d}{v_m} = \dfrac{135}{90} = 1{,}5\) h = <strong>1 h 30 min</strong></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Distance parcourue</h3>
+  <p>Un fluide circule dans un tuyau à \(v = 2\) m/s. Quelle distance parcourt-il en 45 secondes ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(d = v \times \Delta t = 2 \times 45 = \mathbf{90}\) m</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Distinguer vitesse moyenne et instantanée</h3>
+  <p>Un conducteur effectue un trajet de 60 km en 1 h. À un moment, son compteur indique 110 km/h.</p>
+  <p>a) Quelle est sa vitesse moyenne sur le trajet ?</p>
+  <p>b) Que représente la valeur 110 km/h ?</p>
+  <p>c) Ces deux valeurs peuvent-elles être différentes ? Expliquer.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(v_m = \dfrac{60}{1} = \mathbf{60}\) km/h</p>
+    <p>b) 110 km/h est la <strong>vitesse instantanée</strong> à un moment précis du trajet.</p>
+    <p>c) Oui, car le conducteur a accéléré, décéléré, peut-être stoppé à des feux → sa vitesse variait pendant tout le trajet. La vitesse moyenne est une valeur globale, pas le reflet de chaque instant.</p>
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Calcul d'une accélération</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> L'accélération est la variation de vitesse par unité de temps :
+  \[a = \frac{\Delta v}{\Delta t} = \frac{v_f - v_i}{t_f - t_i}\]
+  Unité : m/s². Si \(a > 0\) : le mobile accélère. Si \(a < 0\) : le mobile décélère (freinage).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Calcul simple d'accélération</h3>
+  <p>Un véhicule passe de \(v_i = 0\) m/s à \(v_f = 20\) m/s en \(\Delta t = 8\) s.</p>
+  <p>Calculer son accélération.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(a = \dfrac{v_f - v_i}{\Delta t} = \dfrac{20 - 0}{8} = \mathbf{2{,}5}\) m/s²</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Décélération (freinage)</h3>
+  <p>Un camion de livraison roule à \(v_i = 72\) km/h et freine pour s'arrêter en \(\Delta t = 6\) s.</p>
+  <p>a) Convertir \(v_i\) en m/s.</p>
+  <p>b) Calculer l'accélération (signe et valeur).</p>
+  <p>c) Que signifie le signe obtenu ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(v_i = 72 \div 3{,}6 = 20\) m/s</p>
+    <p>b) \(a = \dfrac{0 - 20}{6} = \dfrac{-20}{6} \approx \mathbf{-3{,}33}\) m/s²</p>
+    <p>c) Le signe négatif indique une <strong>décélération</strong> : le mobile ralentit.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Accélération d'une pompe</h3>
+  <p>Une pompe de circulation démarre et sa vitesse de rotation augmente de 0 à 1 500 tr/min en 4 s, ce qui correspond à une vitesse d'écoulement de l'eau de 0 à 3 m/s dans le conduit.</p>
+  <p>Calculer l'accélération du fluide dans le conduit.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(a = \dfrac{3 - 0}{4} = \mathbf{0{,}75}\) m/s²</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Trouver la vitesse finale</h3>
+  <p>Un ascenseur de chantier part du repos et accélère à \(a = 0{,}5\) m/s² pendant 6 s.</p>
+  <p>Quelle est sa vitesse après 6 s ? La convertir en km/h.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(v_f = v_i + a \times t = 0 + 0{,}5 \times 6 = \mathbf{3}\) m/s = \(3 \times 3{,}6 = 10{,}8\) km/h</p>
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Interpréter un diagramme v(t)</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong> Sur un graphique v(t) (vitesse en fonction du temps) :
+  <ul>
+    <li>La courbe est <strong>une droite horizontale</strong> → mouvement rectiligne uniforme (MRU), vitesse constante, a = 0</li>
+    <li>La courbe est <strong>une droite oblique montante</strong> → accélération positive (MRUA)</li>
+    <li>La courbe est <strong>une droite oblique descendante</strong> → décélération (MRUA avec a < 0)</li>
+    <li>La <strong>pente de la droite</strong> = accélération : \(a = \Delta v / \Delta t\)</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Lire un graphique v(t)</h3>
+  <p>Un diagramme v(t) montre les phases suivantes pour un véhicule de chantier :</p>
+  <ul>
+    <li>Phase A (0 à 5 s) : vitesse passe de 0 à 10 m/s</li>
+    <li>Phase B (5 à 15 s) : vitesse constante à 10 m/s</li>
+    <li>Phase C (15 à 20 s) : vitesse passe de 10 m/s à 0</li>
+  </ul>
+  <p>a) Décrire le type de mouvement pour chaque phase.</p>
+  <p>b) Calculer l'accélération en phase A et la décélération en phase C.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Phase A : MRUA (accélération positive). Phase B : MRU (vitesse constante). Phase C : MRUA (décélération).</p>
+    <p>b) \(a_A = \dfrac{10 - 0}{5 - 0} = 2\) m/s²</p>
+    <p>\(a_C = \dfrac{0 - 10}{20 - 15} = \dfrac{-10}{5} = -2\) m/s²</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Calculer la pente</h3>
+  <p>Sur un graphique v(t), on lit les points suivants sur une droite : à \(t_1 = 2\) s, \(v_1 = 4\) m/s ; à \(t_2 = 8\) s, \(v_2 = 16\) m/s.</p>
+  <p>a) Calculer la pente de cette droite.</p>
+  <p>b) Que représente physiquement cette pente ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Pente = \(\dfrac{\Delta v}{\Delta t} = \dfrac{16 - 4}{8 - 2} = \dfrac{12}{6} = \mathbf{2}\) m/s²</p>
+    <p>b) La pente représente l'<strong>accélération</strong> du mobile.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Identifier le mouvement depuis la pente</h3>
+  <p>Trois droites sont tracées sur un graphique v(t). Leur pente vaut respectivement : +3 m/s², 0, −1,5 m/s².</p>
+  <p>Pour chacune, décrire le mouvement correspondant.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Pente +3 m/s² → le mobile <strong>accélère</strong> (MRUA, a > 0).</p>
+    <p>Pente 0 → le mobile est en <strong>mouvement rectiligne uniforme</strong> (MRU), vitesse constante.</p>
+    <p>Pente −1,5 m/s² → le mobile <strong>décélère</strong> (MRUA avec a < 0), il freine.</p>
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Équations du MRUA</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> Pour un mouvement rectiligne uniformément accéléré (MRUA) avec vitesse initiale \(v_0\) et accélération \(a\) :
+  \[v(t) = v_0 + a \times t\]
+  \[d = v_0 \times t + \frac{1}{2} \times a \times t^2\]
+  Si le mobile part du repos : \(v_0 = 0\), donc \(v = at\) et \(d = \dfrac{1}{2}at^2\).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Calcul de vitesse après un temps t</h3>
+  <p>Un chariot part du repos avec une accélération de \(a = 1{,}5\) m/s².</p>
+  <p>a) Calculer sa vitesse après \(t = 4\) s.</p>
+  <p>b) Calculer la distance parcourue en 4 s.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(v = v_0 + at = 0 + 1{,}5 \times 4 = \mathbf{6}\) m/s</p>
+    <p>b) \(d = \dfrac{1}{2} \times 1{,}5 \times 4^2 = \dfrac{1}{2} \times 1{,}5 \times 16 = \mathbf{12}\) m</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – MRUA avec vitesse initiale non nulle</h3>
+  <p>Un technicien à vélo roule à \(v_0 = 5\) m/s. Il accélère sur une pente avec \(a = 0{,}8\) m/s² pendant \(t = 5\) s.</p>
+  <p>a) Calculer sa vitesse finale.</p>
+  <p>b) Calculer la distance parcourue.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(v = 5 + 0{,}8 \times 5 = 5 + 4 = \mathbf{9}\) m/s</p>
+    <p>b) \(d = 5 \times 5 + \dfrac{1}{2} \times 0{,}8 \times 25 = 25 + 10 = \mathbf{35}\) m</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Trouver le temps</h3>
+  <p>Un véhicule part du repos avec \(a = 2\) m/s². Après combien de temps atteint-il 80 km/h ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Convertir : \(v = 80 \div 3{,}6 \approx 22{,}2\) m/s</p>
+    <p>\(v = v_0 + at \Rightarrow t = \dfrac{v - v_0}{a} = \dfrac{22{,}2 - 0}{2} = \mathbf{11{,}1}\) s</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Calcul de l'accélération d'un monte-charge</h3>
+  <p>Un monte-charge part du repos et atteint \(v = 1{,}2\) m/s en parcourant \(d = 0{,}9\) m.</p>
+  <p>On utilisera la relation \(v^2 = v_0^2 + 2ad\) pour trouver l'accélération.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(v^2 = v_0^2 + 2ad \Rightarrow a = \dfrac{v^2 - v_0^2}{2d} = \dfrac{1{,}2^2 - 0}{2 \times 0{,}9} = \dfrac{1{,}44}{1{,}8} = \mathbf{0{,}8}\) m/s²</p>
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Distance de freinage</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> La distance d'arrêt totale se décompose en :
+  <ul>
+    <li><strong>Distance de réaction</strong> : \(d_r = v_0 \times t_r\) (pendant le temps de réaction \(t_r\))</li>
+    <li><strong>Distance de freinage</strong> : \(d_f = \dfrac{v_0^2}{2|a|}\) (formule dérivée de \(v^2 = v_0^2 + 2ad\) avec \(v_f = 0\))</li>
+    <li><strong>Distance d'arrêt totale</strong> : \(d = d_r + d_f\)</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Distance de freinage seule</h3>
+  <p>Un camion roule à \(v_0 = 72\) km/h et freine avec une décélération de \(|a| = 5\) m/s².</p>
+  <p>Calculer la distance de freinage (depuis l'actionnement des freins jusqu'à l'arrêt).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(v_0 = 72 \div 3{,}6 = 20\) m/s</p>
+    <p>\(d_f = \dfrac{v_0^2}{2|a|} = \dfrac{20^2}{2 \times 5} = \dfrac{400}{10} = \mathbf{40}\) m</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Distance d'arrêt totale</h3>
+  <p>Un véhicule roule à 90 km/h. Le temps de réaction est \(t_r = 1\) s. La décélération est \(|a| = 8\) m/s².</p>
+  <p>a) Calculer la distance de réaction.</p>
+  <p>b) Calculer la distance de freinage.</p>
+  <p>c) Calculer la distance d'arrêt totale.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(v_0 = 90 \div 3{,}6 = 25\) m/s</p>
+    <p>a) \(d_r = 25 \times 1 = \mathbf{25}\) m</p>
+    <p>b) \(d_f = \dfrac{25^2}{2 \times 8} = \dfrac{625}{16} = \mathbf{39{,}1}\) m</p>
+    <p>c) \(d = 25 + 39{,}1 = \mathbf{64{,}1}\) m</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Effet de la vitesse sur la distance de freinage</h3>
+  <p>Calculer la distance de freinage (\(|a| = 7\) m/s²) pour trois vitesses : 50 km/h, 90 km/h et 130 km/h.</p>
+  <p>Que constate-t-on quand la vitesse double ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>50 km/h = 13,9 m/s : \(d_f = \dfrac{13{,}9^2}{14} = \dfrac{193}{14} \approx 13{,}8\) m</p>
+    <p>90 km/h = 25 m/s : \(d_f = \dfrac{625}{14} \approx 44{,}6\) m</p>
+    <p>130 km/h = 36,1 m/s : \(d_f = \dfrac{1\,303}{14} \approx 93{,}1\) m</p>
+    <p>Quand la vitesse double (50 → 100 km/h), la distance de freinage est multipliée par <strong>4</strong> (\(d_f \propto v^2\)).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Sécurité sur chantier</h3>
+  <p>Sur un chantier, la vitesse est limitée à 20 km/h. Un engin de chantier doit s'arrêter avant un obstacle situé à 10 m. Sa décélération est de \(|a| = 3\) m/s² et son temps de réaction est de 1,5 s.</p>
+  <p>L'engin peut-il s'arrêter à temps ? Justifier par le calcul.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(v_0 = 20 \div 3{,}6 \approx 5{,}56\) m/s</p>
+    <p>\(d_r = 5{,}56 \times 1{,}5 = 8{,}33\) m</p>
+    <p>\(d_f = \dfrac{5{,}56^2}{2 \times 3} = \dfrac{30{,}9}{6} = 5{,}15\) m</p>
+    <p>\(d_{\text{total}} = 8{,}33 + 5{,}15 = \mathbf{13{,}5}\) m</p>
+    <p>Non, l'engin ne peut <strong>pas</strong> s'arrêter à temps : 13,5 m > 10 m. La vitesse sur chantier doit être encore réduite, ou l'obstacle doit être signalé plus tôt.</p>
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>
