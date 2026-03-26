@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch03 – Exercices par capacités – Combustion du carbone et des hydrocarbures – 1ère Bac Pro ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-iccer.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 3 – Exercices par capacités</h1>
+  <p class="sous-titre">Combustion du carbone et des hydrocarbures &nbsp;|&nbsp; 1ère Bac Pro ICCER &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> – Écrire et équilibrer une équation de combustion complète (carbone, méthane, propane)</li>
+    <li><strong>C2</strong> – Calculer la masse de CO₂ produite lors d'une combustion</li>
+    <li><strong>C3</strong> – Distinguer combustion complète et incomplète (CO, suies)</li>
+    <li><strong>C4</strong> – Calculer l'énergie libérée par une combustion (\(Q = m \times \text{PCI}\))</li>
+    <li><strong>C5</strong> – Identifier les risques liés aux produits de combustion</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Équations de combustion complète</h2>
+
+<div class="retenir">
+  <strong>Combustions complètes de référence :</strong>
+  <ul>
+    <li>Carbone : \(\text{C} + \text{O}_2 \rightarrow \text{CO}_2\)</li>
+    <li>Méthane (gaz naturel) : \(\text{CH}_4 + 2\,\text{O}_2 \rightarrow \text{CO}_2 + 2\,\text{H}_2\text{O}\)</li>
+    <li>Propane (GPL) : \(\text{C}_3\text{H}_8 + 5\,\text{O}_2 \rightarrow 3\,\text{CO}_2 + 4\,\text{H}_2\text{O}\)</li>
+    <li>Butane : \(\text{C}_4\text{H}_{10} + \frac{13}{2}\,\text{O}_2 \rightarrow 4\,\text{CO}_2 + 5\,\text{H}_2\text{O}\)</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Combustion du carbone</h3>
+  <p>Le charbon est principalement composé de carbone (C).</p>
+  <p>a) Écrire l'équation de combustion complète du carbone.</p>
+  <p>b) Quels sont les réactifs et les produits ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(\text{C} + \text{O}_2 \rightarrow \text{CO}_2\)</p>
+    <p>b) Réactifs : carbone (C) et dioxygène (O₂). Produit : dioxyde de carbone (CO₂).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Combustion du méthane</h3>
+  <p>Une chaudière à gaz naturel brûle du méthane (CH₄).</p>
+  <p>a) Écrire l'équation de combustion complète du méthane.</p>
+  <p>b) Vérifier que l'équation est bien équilibrée (même nombre d'atomes de chaque côté).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(\text{CH}_4 + 2\,\text{O}_2 \rightarrow \text{CO}_2 + 2\,\text{H}_2\text{O}\)</p>
+    <p>b) Vérification :</p>
+    <ul>
+      <li>C : 1 à gauche, 1 à droite ✓</li>
+      <li>H : 4 à gauche, \(2 \times 2 = 4\) à droite ✓</li>
+      <li>O : \(2 \times 2 = 4\) à gauche, \(2 + 2 = 4\) à droite ✓</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Combustion du propane</h3>
+  <p>Une chaudière à gaz propane brûle du propane (C₃H₈).</p>
+  <p>Écrire et équilibrer l'équation de combustion complète du propane.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\text{C}_3\text{H}_8 + 5\,\text{O}_2 \rightarrow 3\,\text{CO}_2 + 4\,\text{H}_2\text{O}\)</p>
+    <p>Vérification :</p>
+    <ul>
+      <li>C : 3 = 3 ✓</li>
+      <li>H : 8 = \(4 \times 2 = 8\) ✓</li>
+      <li>O : \(5 \times 2 = 10\) = \(3 \times 2 + 4 = 10\) ✓</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Identifier les combustibles</h3>
+  <p>Un plombier chauffagiste travaille sur trois installations : une chaudière gaz naturel, un poêle à granulés de bois, et un brûleur à propane.</p>
+  <p>Pour chaque installation, identifier le combustible principal et écrire son équation de combustion complète simplifiée (on assimile le bois à du carbone pur).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Chaudière gaz naturel → méthane (CH₄) : \(\text{CH}_4 + 2\,\text{O}_2 \rightarrow \text{CO}_2 + 2\,\text{H}_2\text{O}\)</p>
+    <p>Poêle à granulés (assimilé carbone) : \(\text{C} + \text{O}_2 \rightarrow \text{CO}_2\)</p>
+    <p>Brûleur à propane (C₃H₈) : \(\text{C}_3\text{H}_8 + 5\,\text{O}_2 \rightarrow 3\,\text{CO}_2 + 4\,\text{H}_2\text{O}\)</p>
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Masse de CO₂ produite</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> On utilise les masses molaires : C = 12 g/mol ; O = 16 g/mol ; H = 1 g/mol.
+  Donc : CO₂ → \(M = 12 + 2 \times 16 = 44\) g/mol ; CH₄ → \(M = 12 + 4 = 16\) g/mol ; C₃H₈ → \(M = 36 + 8 = 44\) g/mol.
+  La proportion molaire de l'équation donne les masses produites.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – CO₂ produit par la combustion du méthane</h3>
+  <p>Un installateur thermique brûle 1 kg de méthane (CH₄) dans une chaudière.</p>
+  <p>a) Rappeler l'équation de combustion complète du méthane.</p>
+  <p>b) Calculer la masse de CO₂ produite. (Masses molaires : C = 12 ; H = 1 ; O = 16 g/mol)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(\text{CH}_4 + 2\,\text{O}_2 \rightarrow \text{CO}_2 + 2\,\text{H}_2\text{O}\)</p>
+    <p>b) 1 mol de CH₄ (16 g) produit 1 mol de CO₂ (44 g).</p>
+    <p>Rapport de masse : \(\dfrac{m(\text{CO}_2)}{m(\text{CH}_4)} = \dfrac{44}{16} = 2{,}75\)</p>
+    <p>\(m(\text{CO}_2) = 1\,000 \times 2{,}75 = \mathbf{2\,750}\) g = 2,75 kg de CO₂</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – CO₂ produit par la combustion du propane</h3>
+  <p>Une bouteille de propane (C₃H₈) de 13 kg est entièrement brûlée dans une chaudière.</p>
+  <p>Calculer la masse totale de CO₂ rejetée dans l'atmosphère. (M(C₃H₈) = 44 g/mol, M(CO₂) = 44 g/mol)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\text{C}_3\text{H}_8 + 5\,\text{O}_2 \rightarrow 3\,\text{CO}_2 + 4\,\text{H}_2\text{O}\)</p>
+    <p>1 mol de C₃H₈ (44 g) produit 3 mol de CO₂ (\(3 \times 44 = 132\) g).</p>
+    <p>Rapport de masse : \(\dfrac{132}{44} = 3\)</p>
+    <p>\(m(\text{CO}_2) = 13\,000 \times 3 = \mathbf{39\,000}\) g = <strong>39 kg</strong> de CO₂</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Bilan carbone d'une chaudière</h3>
+  <p>Une chaudière à gaz naturel consomme 2 500 m³ de méthane par an. À 0°C et 1 atm, 1 m³ de méthane a une masse d'environ 0,72 kg.</p>
+  <p>Calculer la masse annuelle de CO₂ émise par cette chaudière.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Masse de méthane : \(m = 2\,500 \times 0{,}72 = 1\,800\) kg</p>
+    <p>Rapport masse CO₂/CH₄ = 44/16 = 2,75</p>
+    <p>\(m(\text{CO}_2) = 1\,800 \times 2{,}75 = \mathbf{4\,950}\) kg de CO₂ par an</p>
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Combustion complète et incomplète</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong>
+  <ul>
+    <li><strong>Combustion complète</strong> : suffisamment d'O₂ → produits : CO₂ + H₂O (sans danger direct)</li>
+    <li><strong>Combustion incomplète</strong> : manque d'O₂ → produits : CO (monoxyde de carbone, TRÈS TOXIQUE) + suies (imbrûlés)</li>
+    <li>Le CO est inodore, incolore et potentiellement mortel → détecteur obligatoire</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Identifier le type de combustion</h3>
+  <p>Un technicien chauffagiste inspecte deux chaudières :</p>
+  <ul>
+    <li>Chaudière A : flamme bleue, pas de dépôt noir, évacuation de CO₂ et H₂O</li>
+    <li>Chaudière B : flamme jaune orangé, dépôts noirs sur le brûleur, traces de suie</li>
+  </ul>
+  <p>Identifier le type de combustion de chaque chaudière et justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Chaudière A : combustion <strong>complète</strong>. La flamme bleue et l'absence de suie indiquent un apport suffisant en O₂. Les produits (CO₂ + H₂O) sont ceux d'une combustion complète.</p>
+    <p>Chaudière B : combustion <strong>incomplète</strong>. La flamme jaune, les suies et les dépôts noirs indiquent un manque d'O₂. Du CO toxique est probablement produit.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Équation de combustion incomplète</h3>
+  <p>Lors d'une combustion incomplète du méthane par manque d'O₂, du monoxyde de carbone (CO) est produit à la place du CO₂.</p>
+  <p>Écrire l'équation de combustion incomplète du méthane produisant du CO.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(2\,\text{CH}_4 + 3\,\text{O}_2 \rightarrow 2\,\text{CO} + 4\,\text{H}_2\text{O}\)</p>
+    <p>Vérification : C : 2 = 2 ✓ ; H : 8 = 8 ✓ ; O : 6 = 6 ✓</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Causes d'une combustion incomplète</h3>
+  <p>Un plombier chauffagiste est appelé pour une panne d'une chaudière. Il constate une combustion incomplète.</p>
+  <p>Citer quatre causes possibles d'une combustion incomplète dans une chaudière à gaz.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ul>
+      <li>Arrivée d'air insuffisante (entrée d'air bouchée ou insuffisante)</li>
+      <li>Brûleur encrassé ou mal réglé</li>
+      <li>Ventilation de la pièce insuffisante</li>
+      <li>Conduit d'évacuation des fumées bouché ou tirage insuffisant</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Comparer les produits</h3>
+  <p>Compléter le tableau comparatif entre combustion complète et incomplète du méthane :</p>
+  <table>
+    <tr><th>Critère</th><th>Complète</th><th>Incomplète</th></tr>
+    <tr><td>Apport en O₂</td><td>?</td><td>?</td></tr>
+    <tr><td>Produits gazeux</td><td>?</td><td>?</td></tr>
+    <tr><td>Couleur de flamme</td><td>?</td><td>?</td></tr>
+    <tr><td>Danger</td><td>?</td><td>?</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <table>
+      <tr><th>Critère</th><th>Complète</th><th>Incomplète</th></tr>
+      <tr><td>Apport en O₂</td><td>Suffisant</td><td>Insuffisant</td></tr>
+      <tr><td>Produits gazeux</td><td>CO₂ + H₂O</td><td>CO + H₂O + suies</td></tr>
+      <tr><td>Couleur de flamme</td><td>Bleue</td><td>Jaune orangé</td></tr>
+      <tr><td>Danger</td><td>Faible (CO₂ non toxique)</td><td>ÉLEVÉ (CO toxique mortel)</td></tr>
+    </table>
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Énergie libérée par une combustion</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> L'énergie libérée par la combustion d'une masse \(m\) de combustible est :
+  \[Q = m \times \text{PCI}\]
+  Le PCI (Pouvoir Calorifique Inférieur) est l'énergie libérée par kg de combustible (en MJ/kg ou kWh/kg).
+  Valeurs usuelles : méthane ≈ 50 MJ/kg ; propane ≈ 46 MJ/kg ; charbon ≈ 30 MJ/kg.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Énergie d'une chaudière gaz</h3>
+  <p>Une chaudière à gaz naturel brûle 5 kg de méthane. Le PCI du méthane est 50 MJ/kg.</p>
+  <p>a) Calculer l'énergie thermique libérée en MJ.</p>
+  <p>b) Convertir en kWh.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(Q = m \times \text{PCI} = 5 \times 50 = \mathbf{250}\) MJ</p>
+    <p>b) \(1 \text{ kWh} = 3{,}6 \text{ MJ}\) donc \(Q = \dfrac{250}{3{,}6} \approx \mathbf{69{,}4}\) kWh</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Consommation de propane</h3>
+  <p>Un technicien chauffagiste doit fournir une énergie de \(Q = 230\) MJ pour chauffer un bâtiment. Le combustible utilisé est le propane (PCI = 46 MJ/kg).</p>
+  <p>Calculer la masse de propane à brûler.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>On isole \(m\) dans \(Q = m \times \text{PCI}\) :</p>
+    <p>\(m = \dfrac{Q}{\text{PCI}} = \dfrac{230}{46} = \mathbf{5}\) kg de propane</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Comparer les combustibles</h3>
+  <p>Pour chauffer une pièce, un installateur compare deux combustibles capables de fournir \(Q = 1\,000\) MJ :</p>
+  <ul>
+    <li>Méthane : PCI = 50 MJ/kg</li>
+    <li>Fioul : PCI = 42 MJ/kg</li>
+  </ul>
+  <p>Calculer la masse de chaque combustible nécessaire. Lequel est plus « énergétique » au kilogramme ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Méthane : \(m = \dfrac{1\,000}{50} = 20\) kg</p>
+    <p>Fioul : \(m = \dfrac{1\,000}{42} \approx 23{,}8\) kg</p>
+    <p>Le méthane est plus énergétique au kilogramme (PCI plus élevé) : il faut moins de masse pour obtenir la même énergie.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Rendement d'une chaudière</h3>
+  <p>Une chaudière à gaz brûle 10 kg de méthane (PCI = 50 MJ/kg) et fournit réellement 420 MJ d'énergie thermique utile.</p>
+  <p>a) Calculer l'énergie chimique disponible.</p>
+  <p>b) Calculer le rendement de la chaudière en %.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(Q_{\text{dispo}} = 10 \times 50 = 500\) MJ</p>
+    <p>b) \(\eta = \dfrac{Q_{\text{utile}}}{Q_{\text{dispo}}} \times 100 = \dfrac{420}{500} \times 100 = \mathbf{84}\%\)</p>
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Risques liés aux produits de combustion</h2>
+
+<div class="att">
+  <strong>Attention :</strong> Le monoxyde de carbone (CO) est le premier gaz responsable d'accidents domestiques mortels en France. Il est inodore, incolore et non irritant : imperceptible par les sens. Une concentration de 1 600 ppm peut être mortelle en 2 heures.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Les dangers du monoxyde de carbone</h3>
+  <p>Lors d'une intervention, un technicien chauffagiste explique à un client les risques liés au CO.</p>
+  <p>a) Pourquoi le CO est-il particulièrement dangereux par rapport au CO₂ ?</p>
+  <p>b) Quelle est l'action du CO sur l'organisme ?</p>
+  <p>c) Quel dispositif de sécurité doit être installé dans un logement avec une chaudière à gaz ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Le CO est <strong>inodore, incolore et non irritant</strong> : on ne le détecte pas naturellement. De plus, il est toxique à des concentrations très faibles.</p>
+    <p>b) Le CO se fixe sur l'hémoglobine du sang (à la place de l'O₂), empêchant le transport de l'oxygène. Il provoque des maux de tête, nausées, perte de conscience, et peut être mortel.</p>
+    <p>c) Un <strong>détecteur de monoxyde de carbone</strong> (norme NF EN 50291), obligatoire dans les logements neufs avec installation à combustion.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Les suies et l'encrassement</h3>
+  <p>Un technicien CVC constate un encrassement important du brûleur d'une chaudière lors de la révision annuelle.</p>
+  <p>a) Quel phénomène est à l'origine des suies ?</p>
+  <p>b) Quels risques supplémentaires l'encrassement cause-t-il sur la chaudière ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Les suies sont des imbrûlés (carbone non oxydé) produits lors d'une <strong>combustion incomplète</strong> par manque d'O₂.</p>
+    <p>b) L'encrassement diminue le rendement de la chaudière (isolation thermique), risque d'obstruction du brûleur et du conduit d'évacuation, et aggrave la combustion incomplète → augmentation de la production de CO.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Prévention des accidents</h3>
+  <p>Citer cinq mesures de prévention pour éviter les accidents liés aux produits de combustion dans un logement équipé d'une chaudière à gaz.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Révision annuelle obligatoire de la chaudière par un professionnel qualifié</li>
+      <li>Entretien et nettoyage régulier du brûleur</li>
+      <li>Vérification de l'état du conduit d'évacuation des fumées</li>
+      <li>Assurer une ventilation suffisante de la pièce (entrée d'air)</li>
+      <li>Installer un détecteur de CO homologué</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Gestes d'urgence</h3>
+  <p>Un occupant ressent des maux de tête, vertiges et nausées dans une pièce où fonctionne une chaudière à gaz. Une intoxication au CO est suspectée.</p>
+  <p>Décrire les gestes d'urgence à effectuer dans l'ordre.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li><strong>Évacuer immédiatement</strong> toutes les personnes du logement</li>
+      <li><strong>Ouvrir les fenêtres</strong> pour ventiler les locaux</li>
+      <li><strong>Appeler le 15 (SAMU) ou le 18 (pompiers)</strong> pour les secours</li>
+      <li><strong>Ne pas rallumer</strong> la chaudière ni aucun appareil à combustion</li>
+      <li><strong>Ne pas réintégrer le logement</strong> avant intervention des secours et du professionnel</li>
+    </ol>
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

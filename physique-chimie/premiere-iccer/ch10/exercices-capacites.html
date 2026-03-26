@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch10 – Exercices par capacités – Ondes électromagnétiques – 1ère Bac Pro ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-iccer.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 10 – Exercices par capacités</h1>
+  <p class="sous-titre">Ondes électromagnétiques &nbsp;|&nbsp; 1ère Bac Pro ICCER &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> – Classer les ondes électromagnétiques par fréquence et longueur d'onde</li>
+    <li><strong>C2</strong> – Appliquer la relation \(c = \lambda f\)</li>
+    <li><strong>C3</strong> – Identifier les domaines : radio, IR, visible, UV, rayons X, gamma</li>
+    <li><strong>C4</strong> – Distinguer transmission, absorption et réflexion d'une onde</li>
+    <li><strong>C5</strong> – Reconnaître des applications professionnelles (wifi, capteurs IR, télécommande)</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Classer les ondes électromagnétiques</h2>
+
+<div class="retenir">
+  <strong>Spectre électromagnétique (fréquences croissantes, longueurs d'onde décroissantes) :</strong>
+  <table>
+    <tr><th>Domaine</th><th>Longueur d'onde (m)</th><th>Fréquence (Hz)</th></tr>
+    <tr><td>Ondes radio</td><td>10³ à 0,1 m</td><td>10³ à 10¹⁰ Hz</td></tr>
+    <tr><td>Micro-ondes</td><td>0,1 à 10⁻³ m</td><td>10⁹ à 10¹² Hz</td></tr>
+    <tr><td>Infrarouge (IR)</td><td>10⁻³ à 7×10⁻⁷ m</td><td>10¹² à 4×10¹⁴ Hz</td></tr>
+    <tr><td>Lumière visible</td><td>700 nm à 400 nm</td><td>4×10¹⁴ à 7,5×10¹⁴ Hz</td></tr>
+    <tr><td>Ultraviolet (UV)</td><td>400 nm à 10 nm</td><td>7,5×10¹⁴ à 10¹⁷ Hz</td></tr>
+    <tr><td>Rayons X</td><td>10⁻⁸ à 10⁻¹² m</td><td>10¹⁷ à 10²¹ Hz</td></tr>
+    <tr><td>Rayons gamma</td><td>&lt; 10⁻¹² m</td><td>&gt; 10²¹ Hz</td></tr>
+  </table>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Classer par longueur d'onde</h3>
+  <p>Classer ces longueurs d'onde du plus grand au plus petit et identifier le domaine correspondant :</p>
+  <ul>
+    <li>\(\lambda_A = 10\) m</li>
+    <li>\(\lambda_B = 550\) nm</li>
+    <li>\(\lambda_C = 10\) μm</li>
+    <li>\(\lambda_D = 0{,}1\) nm</li>
+    <li>\(\lambda_E = 2{,}4\) cm</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Du plus grand au plus petit :</p>
+    <ul>
+      <li>\(\lambda_A = 10\) m → <strong>Ondes radio</strong></li>
+      <li>\(\lambda_E = 2{,}4\) cm = 0,024 m → <strong>Micro-ondes / Wifi</strong></li>
+      <li>\(\lambda_C = 10\) μm = 10⁻⁵ m → <strong>Infrarouge</strong></li>
+      <li>\(\lambda_B = 550\) nm = 5,5×10⁻⁷ m → <strong>Lumière visible</strong> (vert)</li>
+      <li>\(\lambda_D = 0{,}1\) nm = 10⁻¹⁰ m → <strong>Rayons X</strong></li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Classer par fréquence</h3>
+  <p>Classer ces fréquences de la plus faible à la plus élevée et identifier le domaine :</p>
+  <ul>
+    <li>Rayon gamma : \(f = 10^{22}\) Hz</li>
+    <li>Télécommande IR : \(f = 10^{14}\) Hz</li>
+    <li>Wifi 2,4 GHz : \(f = 2{,}4 \times 10^9\) Hz</li>
+    <li>Lumière verte : \(f = 5{,}5 \times 10^{14}\) Hz</li>
+    <li>UV solaire : \(f = 10^{15}\) Hz</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>De la plus faible à la plus élevée :</p>
+    <ol>
+      <li>Wifi 2,4 GHz : \(2{,}4 \times 10^9\) Hz → Micro-ondes</li>
+      <li>Télécommande IR : \(10^{14}\) Hz → Infrarouge</li>
+      <li>Lumière verte : \(5{,}5 \times 10^{14}\) Hz → Visible</li>
+      <li>UV solaire : \(10^{15}\) Hz → Ultraviolet</li>
+      <li>Rayon gamma : \(10^{22}\) Hz → Gamma</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Relation fréquence/énergie</h3>
+  <p>Plus la fréquence d'une onde électromagnétique est élevée, plus elle est énergétique et potentiellement dangereuse.</p>
+  <p>a) Parmi UV, Infrarouge et Rayons X, quel domaine est le plus énergétique ?</p>
+  <p>b) Justifier pourquoi les rayons X nécessitent une protection plombée dans les hôpitaux.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Les <strong>rayons X</strong> (fréquence ~10¹⁷ à 10²¹ Hz) sont les plus énergétiques des trois.</p>
+    <p>b) Les rayons X très énergétiques traversent les tissus biologiques et peuvent ioniser les cellules (casser les liaisons chimiques de l'ADN), causant des mutations cancéreuses. Le plomb les absorbe fortement, protégeant le personnel médical.</p>
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Relation c = λf</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> Toutes les ondes électromagnétiques se propagent dans le vide à la vitesse de la lumière :
+  \[c = \lambda \times f\]
+  avec \(c = 3 \times 10^8\) m/s, \(\lambda\) en mètres (m) et \(f\) en hertz (Hz).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Calcul de longueur d'onde</h3>
+  <p>Le wifi 2,4 GHz émet à une fréquence de \(f = 2{,}4 \times 10^9\) Hz. Calculer sa longueur d'onde.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\lambda = \dfrac{c}{f} = \dfrac{3 \times 10^8}{2{,}4 \times 10^9} = \dfrac{3}{24} = 0{,}125\) m = <strong>12,5 cm</strong></p>
+    <p>Les ondes wifi ont des longueurs d'onde de l'ordre du centimètre.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Calcul de fréquence</h3>
+  <p>Une télécommande émet dans l'infrarouge à \(\lambda = 940\) nm.</p>
+  <p>Calculer la fréquence de ces ondes infrarouge.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\lambda = 940 \text{ nm} = 940 \times 10^{-9} = 9{,}4 \times 10^{-7}\) m</p>
+    <p>\(f = \dfrac{c}{\lambda} = \dfrac{3 \times 10^8}{9{,}4 \times 10^{-7}} \approx \mathbf{3{,}19 \times 10^{14}}\) Hz</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Lumière visible</h3>
+  <p>La lumière rouge visible a une longueur d'onde d'environ \(\lambda = 700\) nm et la lumière violette \(\lambda = 400\) nm.</p>
+  <p>Calculer la fréquence de chacune. Laquelle est la plus énergétique ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Rouge : \(f = \dfrac{3 \times 10^8}{700 \times 10^{-9}} = \dfrac{3 \times 10^8}{7 \times 10^{-7}} \approx 4{,}29 \times 10^{14}\) Hz</p>
+    <p>Violet : \(f = \dfrac{3 \times 10^8}{400 \times 10^{-9}} = \dfrac{3 \times 10^8}{4 \times 10^{-7}} = 7{,}5 \times 10^{14}\) Hz</p>
+    <p>La lumière violette a une fréquence plus élevée → elle est plus <strong>énergétique</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Capteur de présence</h3>
+  <p>Un capteur de présence infrarouge émet à une fréquence de \(f = 10^{13}\) Hz. Calculer la longueur d'onde et vérifier qu'elle appartient bien au domaine infrarouge.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\lambda = \dfrac{c}{f} = \dfrac{3 \times 10^8}{10^{13}} = 3 \times 10^{-5}\) m = 30 μm</p>
+    <p>Le domaine infrarouge s'étend de 0,7 μm à 1 mm. Ici 30 μm est bien dans ce domaine → c'est bien un rayonnement <strong>infrarouge</strong>.</p>
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Identifier les domaines du spectre</h2>
+
+<div class="retenir">
+  <strong>Mémo des domaines :</strong>
+  <ul>
+    <li><strong>Radio/TV</strong> : grandes longueurs d'onde (km à cm), communication longue distance</li>
+    <li><strong>Micro-ondes</strong> : cuisson, wifi, radar</li>
+    <li><strong>Infrarouge (IR)</strong> : chaleur, télécommandes, capteurs thermiques</li>
+    <li><strong>Visible</strong> : lumière perçue par l'œil humain (400–700 nm)</li>
+    <li><strong>Ultraviolet (UV)</strong> : soleil, stérilisation, fluorescence</li>
+    <li><strong>Rayons X</strong> : radiologie médicale, contrôle industriel</li>
+    <li><strong>Rayons gamma</strong> : radioactivité nucléaire, très dangereux</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Associer domaine et application</h3>
+  <p>Relier chaque application à son domaine d'onde électromagnétique :</p>
+  <table>
+    <tr><th>Application</th><th>Domaine</th></tr>
+    <tr><td>Chauffage par rayonnement d'une pièce</td><td>?</td></tr>
+    <tr><td>Radio FM</td><td>?</td></tr>
+    <tr><td>Bronzage au soleil</td><td>?</td></tr>
+    <tr><td>Radiographie d'une soudure</td><td>?</td></tr>
+    <tr><td>Stérilisation de l'eau</td><td>?</td></tr>
+    <tr><td>Détection d'une fuite thermique dans un mur</td><td>?</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <table>
+      <tr><th>Application</th><th>Domaine</th></tr>
+      <tr><td>Chauffage par rayonnement</td><td><strong>Infrarouge</strong></td></tr>
+      <tr><td>Radio FM</td><td><strong>Ondes radio</strong></td></tr>
+      <tr><td>Bronzage au soleil</td><td><strong>Ultraviolet</strong></td></tr>
+      <tr><td>Radiographie d'une soudure</td><td><strong>Rayons X</strong></td></tr>
+      <tr><td>Stérilisation de l'eau</td><td><strong>Ultraviolet (UV-C)</strong></td></tr>
+      <tr><td>Détection de fuite thermique</td><td><strong>Infrarouge</strong> (caméra thermique)</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Identifier à partir d'une longueur d'onde</h3>
+  <p>Identifier le domaine correspondant à chaque longueur d'onde :</p>
+  <ul>
+    <li>a) \(\lambda = 12\) cm</li>
+    <li>b) \(\lambda = 500\) nm</li>
+    <li>c) \(\lambda = 100\) μm</li>
+    <li>d) \(\lambda = 10^{-11}\) m</li>
+    <li>e) \(\lambda = 300\) nm</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ul>
+      <li>a) 12 cm → <strong>Micro-ondes</strong> (wifi 2,4 GHz)</li>
+      <li>b) 500 nm → <strong>Lumière visible</strong> (vert)</li>
+      <li>c) 100 μm = 10⁻⁴ m → <strong>Infrarouge lointain</strong></li>
+      <li>d) 10⁻¹¹ m → <strong>Rayons X</strong></li>
+      <li>e) 300 nm → <strong>Ultraviolet</strong></li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Compléter un spectre</h3>
+  <p>Voici un spectre électromagnétique incomplet. Les longueurs d'onde augmentent de droite à gauche :</p>
+  <p>Rayons gamma | Rayons X | [A] | Visible | [B] | Micro-ondes | [C]</p>
+  <p>Identifier A, B et C.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>A = <strong>Ultraviolet</strong> (entre rayons X et visible)</p>
+    <p>B = <strong>Infrarouge</strong> (entre visible et micro-ondes)</p>
+    <p>C = <strong>Ondes radio</strong> (grandes longueurs d'onde)</p>
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Transmission, absorption et réflexion</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong>
+  <ul>
+    <li><strong>Transmission</strong> : l'onde traverse le matériau (verre → lumière visible)</li>
+    <li><strong>Absorption</strong> : l'onde est captée et convertie en énergie thermique (vêtement noir → UV)</li>
+    <li><strong>Réflexion</strong> : l'onde rebondit sur la surface (miroir → lumière ; métal → ondes radio)</li>
+    <li>Un matériau peut simultanément transmettre, absorber et réfléchir une partie de l'onde incidente.</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Comportement du verre face aux ondes</h3>
+  <p>Une vitre en verre ordinaire est traversée par la lumière visible, absorbe partiellement les UV et est opaque aux infrarouges lointains.</p>
+  <p>a) Quel phénomène se produit pour la lumière visible ?</p>
+  <p>b) Quel phénomène se produit pour l'infrarouge lointain ?</p>
+  <p>c) Quel effet de serre cela crée-t-il dans une pièce ensoleillée ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) <strong>Transmission</strong> : la lumière visible traverse le verre.</p>
+    <p>b) <strong>Absorption</strong> : le verre absorbe (et réémet) les infrarouges lointains sans les laisser passer.</p>
+    <p>c) Effet de serre : la lumière solaire (visible + IR proche) entre dans la pièce et chauffe les objets. Ceux-ci réémet des IR lointains qui ne peuvent pas ressortir → la pièce se réchauffe progressivement.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Matériaux et ondes radio</h3>
+  <p>Un installateur thermique constate que la télécommande de sa pompe à chaleur ne fonctionne pas à travers certains murs en béton armé, mais fonctionne bien à travers une cloison en plâtre.</p>
+  <p>Expliquer ce phénomène en termes de transmission/absorption des ondes radio.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Le béton armé contient des armatures métalliques qui <strong>absorbent et réfléchissent</strong> fortement les ondes radio/wifi, les empêchant de traverser.</p>
+    <p>La cloison en plâtre est un matériau poreux qui <strong>transmet</strong> facilement les ondes radio (faible absorption, pas de métal).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Panneaux solaires thermiques</h3>
+  <p>Un capteur solaire thermique est recouvert d'un vitrage sélectif qui transmet les IR solaires (courts) mais bloque les IR thermiques (longs) réémis par le capteur.</p>
+  <p>a) Expliquer comment ce système optimise le captage d'énergie.</p>
+  <p>b) Quel phénomène physique est exploité ici ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Les IR courts du soleil traversent le vitrage et sont <strong>absorbés</strong> par le capteur (noirci). Le capteur chaud réémet des IR longs qui sont <strong>bloqués</strong> par le vitrage → l'énergie reste piégée dans le capteur.</p>
+    <p>b) L'<strong>effet de serre</strong> : transmission sélective du vitrage selon la longueur d'onde des IR.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Réflexion dans un four à micro-ondes</h3>
+  <p>L'enceinte d'un four à micro-ondes est en métal. Expliquer pourquoi :</p>
+  <p>a) Les micro-ondes ne sortent pas du four.</p>
+  <p>b) Un récipient en verre chauffe-t-il dans le four ?</p>
+  <p>c) Un récipient en métal chauffe-t-il ? Quel risque y a-t-il ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) La paroi métallique <strong>réfléchit</strong> les micro-ondes, les confinant à l'intérieur.</p>
+    <p>b) Le verre est pratiquement <strong>transparent</strong> aux micro-ondes : il ne chauffe pas directement. C'est la nourriture (eau) à l'intérieur qui absorbe les micro-ondes et chauffe, réchauffant ensuite le contenant par conduction.</p>
+    <p>c) Un récipient en métal <strong>réfléchit</strong> les micro-ondes et concentre l'énergie → risque d'arcs électriques (étincelles), de dégradation du four et d'incendie.</p>
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Applications professionnelles</h2>
+
+<div class="meth">
+  <strong>Applications dans les métiers du chauffage et de l'énergie :</strong>
+  <ul>
+    <li><strong>Caméra thermique infrarouge</strong> : détection de fuites thermiques, ponts thermiques, défauts d'isolation</li>
+    <li><strong>Télécommande IR</strong> : pilotage de pompes à chaleur, climatiseurs, radiateurs</li>
+    <li><strong>Wifi / Zigbee / Z-Wave</strong> : domotique, régulation connectée du chauffage</li>
+    <li><strong>Capteurs IR de présence</strong> : déclenchement automatique du chauffage ou de l'éclairage</li>
+    <li><strong>UV-C</strong> : stérilisation de l'eau (circuits sanitaires, piscines)</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Caméra thermique et isolation</h3>
+  <p>Un technicien CVC utilise une caméra thermique pour inspecter une maison avant rénovation énergétique. La caméra détecte des zones plus chaudes sur la façade extérieure.</p>
+  <p>a) Quel domaine d'onde la caméra thermique détecte-t-elle ?</p>
+  <p>b) Qu'indiquent les zones chaudes sur la façade ?</p>
+  <p>c) Quelle action corrective recommander ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) La caméra thermique détecte les <strong>infrarouges</strong> (rayonnement thermique émis par toutes les surfaces à une température donnée).</p>
+    <p>b) Les zones chaudes indiquent des endroits où la chaleur intérieure s'échappe plus facilement → <strong>ponts thermiques</strong> ou zones mal isolées.</p>
+    <p>c) Améliorer l'isolation au niveau des zones chaudes : doublage intérieur, ITE (isolation thermique par l'extérieur), traitement des ponts thermiques (liaisons mur-plancher).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Télécommande infrarouge</h3>
+  <p>La télécommande d'un climatiseur émet des impulsions lumineuses infrarouge à \(\lambda = 940\) nm.</p>
+  <p>a) Calculer la fréquence de ces ondes.</p>
+  <p>b) Pourquoi ne peut-on pas voir la lumière émise par la télécommande ?</p>
+  <p>c) Pourquoi la télécommande ne fonctionne-t-elle pas si on la dirige vers un mur épais en béton ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(f = \dfrac{c}{\lambda} = \dfrac{3 \times 10^8}{940 \times 10^{-9}} \approx 3{,}19 \times 10^{14}\) Hz</p>
+    <p>b) 940 nm est dans le domaine infrarouge, au-delà du rouge visible (700 nm). L'œil humain ne perçoit pas les IR → on ne les voit pas.</p>
+    <p>c) Le béton absorbe les infrarouges (il ne les transmet pas). Le signal ne peut donc pas traverser le mur pour atteindre le climatiseur de l'autre côté.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Régulation connectée par Wifi</h3>
+  <p>Un thermostat connecté wifi (2,4 GHz) communique avec la chaudière à travers les murs d'un appartement.</p>
+  <p>a) Calculer la longueur d'onde du signal wifi.</p>
+  <p>b) Pourquoi le signal wifi traverse-t-il les murs en plâtre mais est perturbé par les murs en béton armé ?</p>
+  <p>c) Quelle solution alternative peut être utilisée pour contourner ce problème ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(\lambda = \dfrac{c}{f} = \dfrac{3 \times 10^8}{2{,}4 \times 10^9} = 0{,}125\) m = 12,5 cm</p>
+    <p>b) Le plâtre est peu absorbant pour les micro-ondes → le signal passe facilement. Le béton armé contient des barres d'acier qui réfléchissent et absorbent les micro-ondes, affaiblissant ou bloquant le signal.</p>
+    <p>c) Solutions alternatives : utiliser une fréquence 5 GHz (meilleure pénétration selon les matériaux), installer un répéteur wifi, ou utiliser un protocole radio dédié à la domotique (Zigbee, Z-Wave, EnOcean) avec une meilleure pénétration des obstacles.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Capteur de présence infrarouge</h3>
+  <p>Un capteur de présence infrarouge (PIR) est installé dans un couloir pour déclencher automatiquement l'éclairage et le chauffage.</p>
+  <p>a) Quel phénomène le capteur PIR détecte-t-il ?</p>
+  <p>b) Pourquoi le capteur ne se déclenche-t-il pas si la température de la pièce est proche de celle du corps humain (37°C) ?</p>
+  <p>c) Quel avantage énergétique apporte ce type de capteur dans une installation de chauffage ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Le capteur PIR (Passive Infrared) détecte les variations de <strong>rayonnement infrarouge</strong> émis par les corps chauds (personnes, animaux) en mouvement.</p>
+    <p>b) Si la pièce est à 37°C, le rayonnement IR ambiant est similaire à celui du corps humain : il n'y a pas de contraste suffisant → le capteur ne détecte pas de différence et ne se déclenche pas. Il faut un écart thermique suffisant entre la personne et l'environnement.</p>
+    <p>c) Le chauffage et l'éclairage ne se déclenchent qu'en présence de personnes → économie d'énergie en évitant de chauffer ou d'éclairer des pièces vides.</p>
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

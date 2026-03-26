@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Exercices par capacités – Équilibre en rotation – 1ère Bac Pro ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-iccer.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 6 – Exercices par capacités</h1>
+  <p class="sous-titre">Équilibre d'un solide en rotation autour d'un axe fixe &nbsp;|&nbsp; 1ère Bac Pro ICCER &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> – Définir et calculer un moment de force (\(M = F \times d\))</li>
+    <li><strong>C2</strong> – Appliquer la condition d'équilibre (\(\sum M = 0\))</li>
+    <li><strong>C3</strong> – Résoudre un problème de levier (bras de levier)</li>
+    <li><strong>C4</strong> – Appliquer dans un contexte de robinetterie ou de couple moteur</li>
+    <li><strong>C5</strong> – Identifier l'effet d'un couple sur une pièce mécanique</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Calculer un moment de force</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong> Le moment d'une force par rapport à un axe mesure son effet de rotation :
+  \[M = F \times d\]
+  avec \(F\) la force en newtons (N) et \(d\) le bras de levier en mètres (m) — distance perpendiculaire entre l'axe de rotation et la ligne d'action de la force. Unité du moment : N·m.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Serrage d'un écrou</h3>
+  <p>Un plombier chauffagiste utilise une clé pour serrer un écrou. Il applique une force \(F = 80\) N à l'extrémité d'une clé de longueur \(d = 0{,}25\) m.</p>
+  <p>Calculer le moment de la force par rapport à l'axe de l'écrou.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(M = F \times d = 80 \times 0{,}25 = \mathbf{20}\) N·m</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Effet du bras de levier</h3>
+  <p>Un technicien applique une force de 60 N avec deux clés différentes :</p>
+  <ul>
+    <li>Clé A : bras de levier \(d_A = 0{,}15\) m</li>
+    <li>Clé B : bras de levier \(d_B = 0{,}30\) m</li>
+  </ul>
+  <p>a) Calculer le moment de chaque clé.</p>
+  <p>b) Laquelle serre plus efficacement l'écrou ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(M_A = 60 \times 0{,}15 = 9\) N·m</p>
+    <p>\(M_B = 60 \times 0{,}30 = \mathbf{18}\) N·m</p>
+    <p>b) La clé B est deux fois plus efficace car son bras de levier est double. C'est pourquoi on utilise des clés plus longues pour les serrages importants.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Trouver la force nécessaire</h3>
+  <p>Pour desserrer un raccord, il faut appliquer un moment de \(M = 35\) N·m. Le technicien dispose d'une clé de \(d = 0{,}20\) m.</p>
+  <p>Quelle force minimale doit-il appliquer ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>On isole \(F\) dans \(M = F \times d\) :</p>
+    <p>\(F = \dfrac{M}{d} = \dfrac{35}{0{,}20} = \mathbf{175}\) N</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Poids et moment</h3>
+  <p>Un robinet de coupure pèse \(m = 2\) kg. Son centre de gravité est à \(d = 0{,}15\) m de son axe de rotation. (\(g = 9{,}81\) m/s²)</p>
+  <p>Calculer le moment du poids du robinet par rapport à son axe.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Poids : \(P = m \times g = 2 \times 9{,}81 = 19{,}62\) N</p>
+    <p>\(M = P \times d = 19{,}62 \times 0{,}15 = \mathbf{2{,}94}\) N·m</p>
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Condition d'équilibre en rotation</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> Un solide est en équilibre en rotation si la somme algébrique des moments des forces par rapport à l'axe est nulle :
+  \[\sum M = 0 \quad \Longleftrightarrow \quad M_1 = M_2 \text{ (si forces opposées)}\]
+  Convention : les moments dans le sens trigonométrique (anti-horaire) sont positifs, les autres négatifs.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Équilibre d'une barre</h3>
+  <p>Une barre horizontale peut tourner autour d'un pivot en son centre. Une force \(F_1 = 40\) N est appliquée à gauche, à \(d_1 = 0{,}5\) m du pivot. Pour équilibrer, quelle force \(F_2\) faut-il appliquer à droite, à \(d_2 = 0{,}4\) m ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Condition d'équilibre : \(M_1 = M_2\)</p>
+    <p>\(F_1 \times d_1 = F_2 \times d_2\)</p>
+    <p>\(F_2 = \dfrac{F_1 \times d_1}{d_2} = \dfrac{40 \times 0{,}5}{0{,}4} = \mathbf{50}\) N</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Trois forces sur une barre</h3>
+  <p>Une barre peut tourner autour d'un axe situé en son centre. Trois forces agissent :</p>
+  <ul>
+    <li>\(F_1 = 50\) N à \(d_1 = 0{,}4\) m (sens anti-horaire)</li>
+    <li>\(F_2 = 30\) N à \(d_2 = 0{,}6\) m (sens horaire)</li>
+    <li>\(F_3 = ?\) à \(d_3 = 0{,}5\) m (sens anti-horaire)</li>
+  </ul>
+  <p>Calculer \(F_3\) pour que la barre soit en équilibre.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\sum M = 0 \Rightarrow F_1 d_1 + F_3 d_3 - F_2 d_2 = 0\)</p>
+    <p>\(50 \times 0{,}4 + F_3 \times 0{,}5 - 30 \times 0{,}6 = 0\)</p>
+    <p>\(20 + 0{,}5 F_3 - 18 = 0\)</p>
+    <p>\(0{,}5 F_3 = -2 \Rightarrow F_3 = \mathbf{-4}\) N</p>
+    <p>Le signe négatif signifie que \(F_3\) doit en réalité agir dans le sens horaire (et non anti-horaire) pour l'équilibre.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Balance et équilibre</h3>
+  <p>Une balance artisanale a son pivot à 0,5 m du bord gauche. Un objet de masse \(m_1 = 1{,}2\) kg est posé à l'extrémité gauche (à 0,5 m du pivot). À quelle distance \(d_2\) du pivot faut-il placer une masse \(m_2 = 0{,}8\) kg à droite pour équilibrer la balance ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Les poids sont \(P_1 = m_1 g\) et \(P_2 = m_2 g\). Condition d'équilibre :</p>
+    <p>\(P_1 \times d_1 = P_2 \times d_2 \Rightarrow m_1 \times d_1 = m_2 \times d_2\) (g se simplifie)</p>
+    <p>\(d_2 = \dfrac{m_1 \times d_1}{m_2} = \dfrac{1{,}2 \times 0{,}5}{0{,}8} = \mathbf{0{,}75}\) m</p>
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Problèmes de levier</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong> Un levier permet de multiplier une force en augmentant le bras de levier. La règle fondamentale est : \(F_{\text{moteur}} \times d_{\text{moteur}} = F_{\text{résistant}} \times d_{\text{résistant}}\). L'avantage mécanique vaut \(A = F_{\text{résistant}} / F_{\text{moteur}} = d_{\text{moteur}} / d_{\text{résistant}}\).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Pied-de-biche</h3>
+  <p>Un technicien utilise un pied-de-biche (levier) pour démonter un tuyau encastré. Le pivot est à 5 cm de la résistance et à 45 cm de la poignée. La résistance à vaincre est \(F_r = 900\) N.</p>
+  <p>a) Calculer la force à appliquer sur le pied-de-biche.</p>
+  <p>b) Calculer l'avantage mécanique.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(F_m \times d_m = F_r \times d_r\)</p>
+    <p>\(F_m = \dfrac{F_r \times d_r}{d_m} = \dfrac{900 \times 0{,}05}{0{,}45} = \mathbf{100}\) N</p>
+    <p>b) \(A = \dfrac{F_r}{F_m} = \dfrac{900}{100} = \mathbf{9}\) → le levier multiplie la force par 9</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Brouette sur chantier</h3>
+  <p>Une brouette est assimilée à un levier. La roue est le pivot. La charge (800 N) est à 0,4 m de la roue. Les poignées sont à 1,2 m de la roue.</p>
+  <p>Calculer la force à exercer sur chaque poignée pour soulever la charge (deux mains = deux poignées).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(F_m = \dfrac{F_r \times d_r}{d_m} = \dfrac{800 \times 0{,}4}{1{,}2} = \dfrac{320}{1{,}2} \approx 267\) N au total</p>
+    <p>Soit <strong>133 N par main</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Clé dynamométrique</h3>
+  <p>Un technicien doit serrer un raccord avec un couple (moment) de 40 N·m. Il dispose d'une clé dynamométrique de longueur effective \(d = 0{,}32\) m.</p>
+  <p>Quelle force doit-il exercer sur la clé ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(F = \dfrac{M}{d} = \dfrac{40}{0{,}32} = \mathbf{125}\) N</p>
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Application : robinetterie et couple moteur</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> Dans les installations de chauffage et plomberie, les moments s'appliquent pour : serrer des raccords (clés), ouvrir des vannes (volant), et dimensionner des moteurs (couples de démarrage). Le couple moteur \(C\) (en N·m) permet de calculer la force utile : \(F = C / r\) où \(r\) est le rayon d'action.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Ouverture d'une vanne</h3>
+  <p>Un installateur thermique ouvre une vanne d'arrêt avec un volant de rayon \(r = 8\) cm. La résistance à vaincre est équivalente à un moment de \(M_r = 12\) N·m.</p>
+  <p>Quelle force doit-il appliquer tangentiellement sur le volant ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(F = \dfrac{M_r}{r} = \dfrac{12}{0{,}08} = \mathbf{150}\) N</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Couple de démarrage d'un moteur de pompe</h3>
+  <p>Un moteur de pompe développe un couple de \(C = 8\) N·m. L'arbre du moteur a un rayon de \(r = 0{,}04\) m.</p>
+  <p>a) Calculer la force tangentielle exercée par l'arbre.</p>
+  <p>b) Si ce couple doit vaincre les frottements de la pompe estimés à 5 N·m, le moteur peut-il démarrer ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(F = \dfrac{C}{r} = \dfrac{8}{0{,}04} = 200\) N</p>
+    <p>b) Oui, car le couple moteur (8 N·m) est supérieur au couple résistant (5 N·m). La différence de 3 N·m permet d'accélérer le rotor.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Serrage d'un collier de fixation</h3>
+  <p>Un plombier chauffagiste serre un collier de fixation de tuyauterie avec une clé de \(d = 0{,}18\) m. Il applique une force de \(F = 60\) N.</p>
+  <p>a) Calculer le moment appliqué.</p>
+  <p>b) La notice indique un couple de serrage maximal de 15 N·m. Le serrage est-il correct ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(M = F \times d = 60 \times 0{,}18 = \mathbf{10{,}8}\) N·m</p>
+    <p>b) \(10{,}8 < 15\) N·m → le serrage est correct, sans risque de déformation.</p>
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Effet d'un couple sur une pièce mécanique</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong> Un couple (deux forces égales, opposées, parallèles, non colinéaires) produit un effet de rotation pur (sans translation). Il peut provoquer : torsion d'un arbre, rotation d'un écrou, déformation d'un joint. Le moment résultant d'un couple vaut \(C = F \times d\) où \(d\) est la distance entre les deux forces.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Couple sur un arbre de transmission</h3>
+  <p>Deux forces opposées de \(F = 200\) N s'appliquent sur un arbre de pompe, de part et d'autre, séparées d'une distance \(d = 0{,}06\) m.</p>
+  <p>Calculer le couple résultant appliqué à l'arbre.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(C = F \times d = 200 \times 0{,}06 = \mathbf{12}\) N·m</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Torsion d'un tuyau flexible</h3>
+  <p>Un tuyau flexible soumis à un couple trop important peut se tordre ou se fissurer. Un technicien applique involontairement deux forces opposées de 150 N séparées de 8 cm lors d'un raccordement.</p>
+  <p>a) Calculer le couple appliqué.</p>
+  <p>b) Si le couple maximal admissible du tuyau est 10 N·m, y a-t-il risque de dommage ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(C = 150 \times 0{,}08 = \mathbf{12}\) N·m</p>
+    <p>b) Oui, \(12 > 10\) N·m → le couple dépasse la limite, risque de détérioration du tuyau. Le technicien doit utiliser une contre-clé pour éviter de tordre le tuyau.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Utilité de la contre-clé en plomberie</h3>
+  <p>Lors du serrage d'un raccord union, un plombier utilise deux clés : une clé motrice et une contre-clé. Expliquer pourquoi cette technique est nécessaire en termes de couples.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>La clé motrice applique un couple de serrage sur le raccord. Sans contre-clé, ce couple se transmettrait à l'ensemble du tuyau ou de la pièce adjacente, provoquant sa torsion ou son desserrage.</p>
+    <p>La contre-clé applique un couple en sens inverse égal, sur la pièce adjacente. Les deux couples se compensent : seul le raccord tourne, sans contrainte parasite sur le reste de l'installation.</p>
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

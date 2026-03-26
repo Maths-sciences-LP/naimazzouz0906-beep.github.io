@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch09 – Exercices par capacités – Solutions aqueuses et concentration – 1ère Bac Pro ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-iccer.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 9 – Exercices par capacités</h1>
+  <p class="sous-titre">Solutions aqueuses et concentration &nbsp;|&nbsp; 1ère Bac Pro ICCER &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> – Calculer une concentration massique (\(c_m = m/V\))</li>
+    <li><strong>C2</strong> – Calculer une concentration molaire (\(C = n/V\))</li>
+    <li><strong>C3</strong> – Réaliser une dilution (\(C_1 V_1 = C_2 V_2\))</li>
+    <li><strong>C4</strong> – Mesurer et interpréter un pH</li>
+    <li><strong>C5</strong> – Identifier les risques liés aux produits chimiques ménagers/professionnels</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Concentration massique</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong> La concentration massique d'une solution est la masse de soluté dissoute par litre de solution :
+  \[c_m = \frac{m}{V}\]
+  avec \(m\) en grammes (g), \(V\) en litres (L) et \(c_m\) en g/L (ou g/mL, mg/L…).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Antigel dans un circuit de chauffage</h3>
+  <p>Un technicien CVC ajoute 300 g d'antigel (éthylène glycol) dans 10 L de liquide caloporteur.</p>
+  <p>Calculer la concentration massique de l'antigel dans le circuit.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(c_m = \dfrac{m}{V} = \dfrac{300}{10} = \mathbf{30}\) g/L</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Inhibiteur de corrosion</h3>
+  <p>Un inhibiteur de corrosion est vendu en solution à \(c_m = 50\) g/L. Un installateur en prépare 5 L.</p>
+  <p>a) Calculer la masse d'inhibiteur contenue dans ces 5 L.</p>
+  <p>b) Exprimer cette masse en kg.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(m = c_m \times V = 50 \times 5 = \mathbf{250}\) g</p>
+    <p>b) \(250 \text{ g} = 0{,}25\) kg</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Concentration d'un détartrant</h3>
+  <p>Un plombier prépare un bain de détartrage en dissolvant 120 g d'acide citrique dans 800 mL d'eau.</p>
+  <p>Calculer la concentration massique en g/L.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(V = 800 \text{ mL} = 0{,}8 \text{ L}\)</p>
+    <p>\(c_m = \dfrac{120}{0{,}8} = \mathbf{150}\) g/L</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Volume d'eau à ajouter</h3>
+  <p>Un technicien dispose de 500 mL d'une solution concentrée à \(c_m = 200\) g/L. Il veut préparer une solution à \(c_m = 50\) g/L.</p>
+  <p>De quel volume final aura-t-il besoin ? (On utilisera la formule de conservation de masse : \(m = c_{m1} \times V_1 = c_{m2} \times V_2\))</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Masse de soluté conservée : \(m = 200 \times 0{,}5 = 100\) g</p>
+    <p>\(V_2 = \dfrac{m}{c_{m2}} = \dfrac{100}{50} = \mathbf{2}\) L</p>
+    <p>Il faut compléter avec de l'eau pour atteindre 2 L au total.</p>
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Concentration molaire</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> La concentration molaire (ou molarité) est :
+  \[C = \frac{n}{V}\]
+  avec \(n\) en moles (mol), \(V\) en litres (L), \(C\) en mol/L (ou M).
+  Relation avec la concentration massique : \(c_m = C \times M\) où \(M\) est la masse molaire (g/mol).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Calcul de concentration molaire</h3>
+  <p>On dissout \(n = 0{,}5\) mol de soude (NaOH) dans \(V = 250\) mL de solution.</p>
+  <p>Calculer la concentration molaire de cette solution.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(V = 250 \text{ mL} = 0{,}250 \text{ L}\)</p>
+    <p>\(C = \dfrac{n}{V} = \dfrac{0{,}5}{0{,}250} = \mathbf{2}\) mol/L</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Passer de c_m à C</h3>
+  <p>Un acide chlorhydrique (HCl, \(M = 36{,}5\) g/mol) a une concentration massique de \(c_m = 73\) g/L.</p>
+  <p>Calculer la concentration molaire.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(C = \dfrac{c_m}{M} = \dfrac{73}{36{,}5} = \mathbf{2}\) mol/L</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Masse de soluté à peser</h3>
+  <p>Un technicien prépare 500 mL d'une solution de soude à \(C = 0{,}1\) mol/L. La masse molaire de NaOH est 40 g/mol.</p>
+  <p>Quelle masse de soude doit-il peser ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Nombre de moles : \(n = C \times V = 0{,}1 \times 0{,}500 = 0{,}05\) mol</p>
+    <p>Masse : \(m = n \times M = 0{,}05 \times 40 = \mathbf{2}\) g de NaOH</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Trouver le volume</h3>
+  <p>On dispose d'une solution d'acide chlorhydrique à \(C = 2\) mol/L. Quel volume faut-il prélever pour obtenir \(n = 0{,}3\) mol de HCl ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(V = \dfrac{n}{C} = \dfrac{0{,}3}{2} = \mathbf{0{,}15}\) L = 150 mL</p>
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Dilution</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> Lors d'une dilution, la quantité de soluté est conservée :
+  \[C_1 \times V_1 = C_2 \times V_2\]
+  avec \(C_1, V_1\) : solution initiale (concentrée) ; \(C_2, V_2\) : solution finale (diluée).
+  On appelle facteur de dilution \(f = C_1/C_2 = V_2/V_1\).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Dilution simple</h3>
+  <p>Un détartrant commercial est concentré à \(C_1 = 5\) mol/L. On prélève \(V_1 = 100\) mL et on les dilue pour obtenir \(V_2 = 500\) mL.</p>
+  <p>Calculer la concentration \(C_2\) de la solution diluée.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(C_2 = \dfrac{C_1 \times V_1}{V_2} = \dfrac{5 \times 100}{500} = \mathbf{1}\) mol/L</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Volume à prélever</h3>
+  <p>On veut préparer 250 mL d'une solution d'acide à \(C_2 = 0{,}2\) mol/L à partir d'une solution mère à \(C_1 = 2\) mol/L.</p>
+  <p>Quel volume de solution mère faut-il prélever ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(V_1 = \dfrac{C_2 \times V_2}{C_1} = \dfrac{0{,}2 \times 250}{2} = \mathbf{25}\) mL</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Dilution d'un produit d'entretien</h3>
+  <p>Un produit désinfectant de circuit de chauffage est vendu concentré à \(c_{m1} = 400\) g/L. La notice recommande une concentration d'utilisation de \(c_{m2} = 20\) g/L.</p>
+  <p>a) Calculer le facteur de dilution.</p>
+  <p>b) Si on prépare 2 L de solution prête à l'emploi, quel volume de concentré prélève-t-on ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(f = \dfrac{c_{m1}}{c_{m2}} = \dfrac{400}{20} = \mathbf{20}\) (dilution au 1/20ème)</p>
+    <p>b) \(V_1 = \dfrac{c_{m2} \times V_2}{c_{m1}} = \dfrac{20 \times 2}{400} = \dfrac{40}{400} = \mathbf{0{,}1}\) L = 100 mL</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Dilutions successives</h3>
+  <p>On réalise deux dilutions successives : d'abord au 1/10 (on prend 1 mL dans 10 mL), puis au 1/5. Quelle est la concentration finale si \(C_0 = 100\) mol/L ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Après 1ère dilution (×1/10) : \(C_1 = 100 / 10 = 10\) mol/L</p>
+    <p>Après 2ème dilution (×1/5) : \(C_2 = 10 / 5 = \mathbf{2}\) mol/L</p>
+    <p>Facteur global : \(10 \times 5 = 50\) → \(C_{\text{finale}} = 100/50 = 2\) mol/L ✓</p>
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Mesurer et interpréter un pH</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong>
+  <ul>
+    <li>Le pH mesure l'acidité ou la basicité d'une solution aqueuse.</li>
+    <li>Échelle de 0 à 14 : pH &lt; 7 → acide ; pH = 7 → neutre ; pH &gt; 7 → basique (alcalin).</li>
+    <li>Plus le pH est éloigné de 7, plus la solution est acide ou basique.</li>
+    <li>Outils de mesure : papier pH, bandelette colorimétrique, pH-mètre numérique.</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Interpréter des pH</h3>
+  <p>Un technicien mesure le pH des produits suivants. Pour chacun, préciser s'il est acide, neutre ou basique :</p>
+  <ul>
+    <li>Eau du circuit de chauffage : pH = 8,5</li>
+    <li>Détartrant : pH = 2</li>
+    <li>Eau distillée : pH = 7</li>
+    <li>Dégraissant industriel : pH = 12</li>
+    <li>Vinaigre blanc : pH = 3</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ul>
+      <li>pH = 8,5 → <strong>Basique</strong> (légèrement alcalin : normal pour un circuit de chauffage)</li>
+      <li>pH = 2 → <strong>Acide fort</strong> (détartrant acide)</li>
+      <li>pH = 7 → <strong>Neutre</strong></li>
+      <li>pH = 12 → <strong>Basique fort</strong> (dégraissant alcalin corrosif)</li>
+      <li>pH = 3 → <strong>Acide</strong></li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Contrôle de l'eau d'un circuit de chauffage</h3>
+  <p>L'eau d'un circuit de chauffage doit avoir un pH compris entre 7,5 et 9 pour éviter la corrosion. Un technicien mesure pH = 6,5.</p>
+  <p>a) Le pH est-il dans la plage recommandée ?</p>
+  <p>b) L'eau est-elle plutôt acide ou basique ?</p>
+  <p>c) Que risque le circuit si ce pH est maintenu ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Non, \(6{,}5 < 7{,}5\) : le pH est en dehors de la plage recommandée.</p>
+    <p>b) Légèrement <strong>acide</strong> (pH &lt; 7).</p>
+    <p>c) Un pH acide favorise la <strong>corrosion des métaux</strong> (fer, cuivre, aluminium) des éléments du circuit : radiateurs, chaudière, tuyaux. Il faut traiter l'eau avec un inhibiteur alcalin.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Méthodes de mesure du pH</h3>
+  <p>Citer et comparer trois méthodes de mesure du pH, en précisant leur précision et leur usage professionnel.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <table>
+      <tr><th>Méthode</th><th>Précision</th><th>Usage</th></tr>
+      <tr><td>Papier pH universel</td><td>±1 unité pH</td><td>Contrôle rapide sur chantier</td></tr>
+      <tr><td>Bandelette colorimétrique</td><td>0,5 unité pH</td><td>Contrôle qualité eau de circuit</td></tr>
+      <tr><td>pH-mètre numérique</td><td>0,01 unité pH</td><td>Mesure précise en laboratoire ou maintenance</td></tr>
+    </table>
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Risques liés aux produits chimiques</h2>
+
+<div class="att">
+  <strong>Attention :</strong> Les produits chimiques utilisés en plomberie et chauffage (détartrants, dégraissants, inhibiteurs de corrosion, antigels) peuvent être dangereux : corrosifs, irritants, toxiques ou inflammables. Toujours lire les fiches de données de sécurité (FDS) et porter les EPI adaptés.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Lire les pictogrammes de danger</h3>
+  <p>Un détartrant affiche les pictogrammes suivants : flamme (inflammable), losange rouge (oxydant), point d'exclamation (irritant). Expliquer les précautions à prendre lors de son utilisation.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ul>
+      <li><strong>Inflammable</strong> : éloigner des sources d'ignition (flamme nue, étincelles), ne pas fumer, stocker loin de la chaleur.</li>
+      <li><strong>Oxydant</strong> : ne pas mélanger avec des matières combustibles, risque d'incendie ou d'explosion.</li>
+      <li><strong>Irritant</strong> : porter des gants, lunettes de protection, travailler dans un espace ventilé, éviter le contact avec la peau et les yeux.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Risque de mélange de produits</h3>
+  <p>Un technicien dégraisse un circuit avec un produit basique (pH = 12), puis rince insuffisamment avant d'appliquer un détartrant acide (pH = 2).</p>
+  <p>a) Quelle réaction chimique peut se produire lors du mélange acide-base ?</p>
+  <p>b) Quels risques cela peut-il entraîner ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Une réaction de <strong>neutralisation acide-base</strong>, accompagnée d'un dégagement de chaleur (réaction exothermique).</p>
+    <p>b) Risques : projection du liquide bouillant ou en ébullition, dégagement de vapeurs irritantes voire toxiques (selon les produits), augmentation de pression dans un circuit fermé.</p>
+    <p>Bonne pratique : toujours rincer abondamment entre les traitements.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Stockage et élimination des produits</h3>
+  <p>Un plombier chauffagiste utilise des produits de traitement d'eau (inhibiteur, antigel). Citer quatre règles à respecter pour leur stockage et leur élimination.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Stocker dans les emballages d'origine, fermés hermétiquement, loin de la chaleur et des sources d'ignition.</li>
+      <li>Ne jamais mélanger des produits de nature différente dans un même récipient.</li>
+      <li>Ne pas jeter dans les eaux usées sans traitement : certains antigels sont polluants et nécessitent une collecte spécialisée.</li>
+      <li>Conserver les fiches de données de sécurité (FDS) accessibles sur le lieu de stockage.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – EPI adaptés</h3>
+  <p>Un technicien doit vider et nettoyer un circuit de chauffage avec un détartrant acide (pH = 1,5).</p>
+  <p>Citer et justifier les équipements de protection individuelle (EPI) nécessaires.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ul>
+      <li><strong>Gants résistants aux acides</strong> (nitrile ou néoprène) → protéger les mains contre les brûlures chimiques.</li>
+      <li><strong>Lunettes de protection étanches</strong> → protéger les yeux des projections d'acide.</li>
+      <li><strong>Tablier ou combinaison résistante aux acides</strong> → protéger le corps et les vêtements.</li>
+      <li><strong>Chaussures de sécurité</strong> → protéger les pieds des projections.</li>
+      <li><strong>Masque ou travail dans un espace ventilé</strong> → éviter l'inhalation de vapeurs acides irritantes.</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch09 – Exercices par capacités – Caractéristiques d'un son – 2nde Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 9 – Exercices par capacités</h1>
+  <p class="sous-titre">Caractéristiques d'un son &nbsp;|&nbsp; 2nde Bac Pro &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> — Identifier les caractéristiques d'un son (fréquence, amplitude, timbre)</li>
+    <li><strong>C2</strong> — Calculer la période et la fréquence d'un signal sonore</li>
+    <li><strong>C3</strong> — Distinguer sons audibles, infrasons et ultrasons (20 Hz – 20 kHz)</li>
+    <li><strong>C4</strong> — Calculer une vitesse de propagation \(v = d/t\)</li>
+    <li><strong>C5</strong> — Lire et exploiter un oscillogramme sonore</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-filtre="toutes">Toutes</button>
+  <button class="btn-cap" data-filtre="C1">C1 – Caractéristiques</button>
+  <button class="btn-cap" data-filtre="C2">C2 – Période et fréquence</button>
+  <button class="btn-cap" data-filtre="C3">C3 – Domaines sonores</button>
+  <button class="btn-cap" data-filtre="C4">C4 – Vitesse de propagation</button>
+  <button class="btn-cap" data-filtre="C5">C5 – Oscillogramme</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- ===== C1 ===== -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Identifier les caractéristiques d'un son</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Un son est caractérisé par trois grandeurs :</p>
+  <ul>
+    <li><strong>La fréquence</strong> \(f\) (en Hz) : correspond à la hauteur du son (grave/aigu)</li>
+    <li><strong>L'amplitude</strong> : correspond au niveau sonore (fort/faible), lié à l'intensité</li>
+    <li><strong>Le timbre</strong> : permet de distinguer deux sons de même fréquence et même intensité (ex : même note jouée par un violon et une flûte)</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un technicien acousticien étudie deux sons musicaux. Le son A a une fréquence de 440 Hz et le son B a une fréquence de 880 Hz. Les deux sons ont la même intensité.</p>
+  <ol type="a">
+    <li>Lequel des deux sons est le plus aigu ? Justifier.</li>
+    <li>Que doit-on comparer pour savoir lequel est le plus fort ?</li>
+    <li>Comment appelle-t-on la caractéristique qui permet de distinguer une guitare d'un piano jouant la même note à la même intensité ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Le son B (880 Hz) est le plus aigu car sa fréquence est plus élevée. Plus la fréquence est grande, plus le son est aigu.</li>
+      <li>Pour comparer l'intensité (le volume sonore), on compare les <strong>amplitudes</strong> des signaux sur un oscillogramme.</li>
+      <li>On appelle cette caractéristique le <strong>timbre</strong>. Il dépend de la forme du signal (contenu en harmoniques).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un installateur de systèmes audio règle une enceinte dans un atelier. Il observe sur un oscilloscope deux signaux : le signal A a une amplitude de 2 V et le signal B une amplitude de 0,5 V. Les deux signaux ont la même fréquence de 1 000 Hz.</p>
+  <ol type="a">
+    <li>Quel signal correspond au son le plus fort ?</li>
+    <li>Les deux sons ont-ils la même hauteur ? Justifier.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Le signal A est le plus fort car son amplitude (2 V) est plus grande.</li>
+      <li>Oui, les deux sons ont la même hauteur car ils ont la même fréquence (1 000 Hz).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Associer chaque caractéristique à sa grandeur physique correspondante :</p>
+  <table style="border-collapse:collapse;width:100%">
+    <tr style="background:var(--p-bg)"><th style="padding:6px;border:1px solid var(--p-border)">Caractéristique perçue</th><th style="padding:6px;border:1px solid var(--p-border)">Grandeur physique</th></tr>
+    <tr><td style="padding:6px;border:1px solid var(--p-border)">Hauteur (grave / aigu)</td><td style="padding:6px;border:1px solid var(--p-border)"> ?</td></tr>
+    <tr><td style="padding:6px;border:1px solid var(--p-border)">Intensité (fort / faible)</td><td style="padding:6px;border:1px solid var(--p-border)"> ?</td></tr>
+    <tr><td style="padding:6px;border:1px solid var(--p-border)">Timbre (couleur sonore)</td><td style="padding:6px;border:1px solid var(--p-border)"> ?</td></tr>
+  </table>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>Hauteur → <strong>Fréquence</strong> \(f\) (en Hz)</li>
+      <li>Intensité → <strong>Amplitude</strong> du signal</li>
+      <li>Timbre → <strong>Forme du signal</strong> (contenu harmonique)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Un menuisier utilise une scie circulaire qui émet un son très fort et aigu. Expliquer, en utilisant les termes scientifiques appropriés, ce que signifient « fort » et « aigu » pour ce son.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Fort</strong> signifie que le son a une grande <strong>amplitude</strong> : le niveau d'intensité sonore est élevé (en dB).</p>
+    <p><strong>Aigu</strong> signifie que le son a une <strong>fréquence élevée</strong> : la lame tourne très vite et produit des vibrations à haute fréquence.</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C2 ===== -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Calculer la période et la fréquence d'un signal sonore</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>La <strong>période</strong> \(T\) est la durée d'un motif qui se répète. Elle s'exprime en secondes (s).</p>
+  <p>La <strong>fréquence</strong> \(f\) est le nombre de fois que le motif se répète par seconde :</p>
+  <p>\[f = \frac{1}{T} \qquad \text{et} \qquad T = \frac{1}{f}\]</p>
+  <p>avec \(f\) en Hz et \(T\) en s.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 5</h3>
+  <p>Un oscilloscope affiche un signal sonore. On mesure que la période est \(T = 5 \times 10^{-3}\ \text{s}\).</p>
+  <ol type="a">
+    <li>Calculer la fréquence de ce son.</li>
+    <li>Ce son est-il grave ou aigu ? Justifier.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(f = \frac{1}{T} = \frac{1}{5 \times 10^{-3}} = \mathbf{200\ \text{Hz}}\)</li>
+      <li>200 Hz est dans le bas du spectre audible. Ce son est relativement <strong>grave</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 6</h3>
+  <p>Une alarme de chantier émet un son à \(f = 2\ 500\ \text{Hz}\). Calculer sa période.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(T = \frac{1}{f} = \frac{1}{2\,500} = \mathbf{4{,}0 \times 10^{-4}\ \text{s}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 7</h3>
+  <p>Sur un oscillogramme affiché avec une échelle de temps de 2 ms/division, on compte que 4 divisions correspondent à une période complète.</p>
+  <ol type="a">
+    <li>Calculer la période \(T\) en ms puis en s.</li>
+    <li>Calculer la fréquence \(f\) correspondante.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(T = 4 \times 2 = 8\ \text{ms} = 8 \times 10^{-3}\ \text{s}\)</li>
+      <li>\(f = \frac{1}{T} = \frac{1}{8 \times 10^{-3}} = \mathbf{125\ \text{Hz}}\)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 8</h3>
+  <p>Le « la » de référence en musique a une fréquence de 440 Hz. La note suivante, une octave au-dessus, a une fréquence double.</p>
+  <ol type="a">
+    <li>Calculer la période du « la » à 440 Hz.</li>
+    <li>Calculer la fréquence de la note une octave au-dessus, puis sa période.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(T_1 = \frac{1}{440} \approx \mathbf{2{,}27 \times 10^{-3}\ \text{s}}\)</li>
+      <li>\(f_2 = 2 \times 440 = 880\ \text{Hz}\), donc \(T_2 = \frac{1}{880} \approx \mathbf{1{,}14 \times 10^{-3}\ \text{s}}\)</li>
+    </ol>
+  </div>
+</div>
+</div>
+
+<!-- ===== C3 ===== -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Distinguer sons audibles, infrasons et ultrasons</h2>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <p>L'oreille humaine perçoit les sons dont la fréquence est comprise entre <strong>20 Hz et 20 kHz</strong> (20 000 Hz).</p>
+  <ul>
+    <li><strong>Infrasons</strong> : \(f < 20\ \text{Hz}\) — non perceptibles par l'oreille humaine</li>
+    <li><strong>Sons audibles</strong> : \(20\ \text{Hz} \leq f \leq 20\ 000\ \text{Hz}\)</li>
+    <li><strong>Ultrasons</strong> : \(f > 20\ 000\ \text{Hz}\) — non perceptibles par l'oreille humaine</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 9</h3>
+  <p>Classer les signaux suivants en « infrason », « son audible » ou « ultrason » :</p>
+  <ol type="a">
+    <li>\(f = 10\ \text{Hz}\)</li>
+    <li>\(f = 1\ 000\ \text{Hz}\)</li>
+    <li>\(f = 40\ 000\ \text{Hz}\)</li>
+    <li>\(f = 18\ \text{Hz}\)</li>
+    <li>\(f = 20\ \text{kHz}\)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>10 Hz : <strong>infrason</strong> (inférieur à 20 Hz)</li>
+      <li>1 000 Hz : <strong>son audible</strong></li>
+      <li>40 000 Hz : <strong>ultrason</strong> (supérieur à 20 000 Hz)</li>
+      <li>18 Hz : <strong>infrason</strong> (inférieur à 20 Hz)</li>
+      <li>20 kHz = 20 000 Hz : <strong>limite supérieure du domaine audible</strong> (son audible, à la limite des ultrasons)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 10</h3>
+  <p>Un technicien de maintenance utilise un détecteur de fuites à ultrasons fonctionnant à 40 kHz. Une chauve-souris perçoit les ultrasons jusqu'à 100 kHz.</p>
+  <ol type="a">
+    <li>Convertir 40 kHz et 100 kHz en Hz.</li>
+    <li>Ces fréquences sont-elles audibles pour un être humain ?</li>
+    <li>Pourquoi utilise-t-on des ultrasons pour détecter des fuites ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(40\ \text{kHz} = 40\,000\ \text{Hz}\) ; \(100\ \text{kHz} = 100\,000\ \text{Hz}\)</li>
+      <li>Non, ces fréquences sont supérieures à 20 000 Hz : elles ne sont <strong>pas audibles</strong> par l'oreille humaine.</li>
+      <li>Les ultrasons se propagent et peuvent traverser les parois ou être réfléchis par les défauts. Ils permettent de détecter des fuites sans interférence avec les bruits ambiants audibles.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 11</h3>
+  <p>Des chercheurs étudient les infrasons émis par les séismes. Un tremblement de terre produit un signal de période \(T = 0{,}1\ \text{s}\).</p>
+  <ol type="a">
+    <li>Calculer la fréquence de ce signal.</li>
+    <li>S'agit-il d'un infrason ? Justifier.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(f = \frac{1}{T} = \frac{1}{0{,}1} = \mathbf{10\ \text{Hz}}\)</li>
+      <li>Oui, 10 Hz &lt; 20 Hz : il s'agit bien d'un <strong>infrason</strong>, non perceptible par l'oreille humaine.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 12</h3>
+  <p>Un médecin réalise une échographie en utilisant des ultrasons à \(f = 5\ \text{MHz}\). Justifier que cette fréquence est bien dans le domaine des ultrasons, et calculer la période correspondante.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(f = 5\ \text{MHz} = 5 \times 10^6\ \text{Hz}\). Or \(5 \times 10^6 \gg 20\,000\ \text{Hz}\) : il s'agit bien d'un <strong>ultrason</strong>.</p>
+    <p>\(T = \frac{1}{f} = \frac{1}{5 \times 10^6} = \mathbf{2 \times 10^{-7}\ \text{s}}\)</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C4 ===== -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Calculer une vitesse de propagation (\(v = d/t\))</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>La vitesse de propagation d'un son est la distance parcourue par le son par unité de temps :</p>
+  <p>\[v = \frac{d}{t}\]</p>
+  <p>avec \(d\) en mètres (m) et \(t\) en secondes (s), donc \(v\) en m/s.</p>
+  <p>Dans l'air à 20 °C, la vitesse du son est approximativement \(v \approx 340\ \text{m/s}\).</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 13</h3>
+  <p>Un technicien acousticien mesure le temps que met un signal sonore pour traverser un mur de 0,30 m. Il mesure \(t = 1{,}5 \times 10^{-4}\ \text{s}\). Calculer la vitesse du son dans ce matériau.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(v = \frac{d}{t} = \frac{0{,}30}{1{,}5 \times 10^{-4}} = \mathbf{2\,000\ \text{m/s}}\)</p>
+    <p>Le son se propage plus vite dans les solides que dans l'air.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 14</h3>
+  <p>On entend le tonnerre 6 s après avoir vu l'éclair. La vitesse du son dans l'air est \(v = 340\ \text{m/s}\). Calculer la distance à laquelle se trouve l'orage.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>On isole \(d\) : \(d = v \times t = 340 \times 6 = \mathbf{2\,040\ \text{m}} \approx 2{,}0\ \text{km}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 15</h3>
+  <p>Un sonar envoie une impulsion sonore qui revient après \(t = 0{,}60\ \text{s}\). La vitesse du son dans l'eau est \(v = 1\,500\ \text{m/s}\). Calculer la profondeur de l'obstacle détecté.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le son fait un aller-retour, donc la distance réelle est la moitié :</p>
+    <p>Distance totale : \(d_{totale} = v \times t = 1\,500 \times 0{,}60 = 900\ \text{m}\)</p>
+    <p>Profondeur : \(d = \frac{900}{2} = \mathbf{450\ \text{m}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 16</h3>
+  <p>Un employé de maintenance vérifie l'isolation phonique d'une cloison. Il génère un signal sonore à \(v = 340\ \text{m/s}\) et mesure qu'il met \(t = 2{,}9 \times 10^{-3}\ \text{s}\) pour traverser la cloison. Calculer l'épaisseur de la cloison.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(d = v \times t = 340 \times 2{,}9 \times 10^{-3} = \mathbf{0{,}987\ \text{m} \approx 1{,}0\ \text{m}}\)</p>
+    <p>La cloison a une épaisseur d'environ 1 m.</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C5 ===== -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Lire et exploiter un oscillogramme sonore</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Un <strong>oscillogramme</strong> est la représentation graphique de l'amplitude d'un signal sonore en fonction du temps. Il permet de lire :</p>
+  <ul>
+    <li>La <strong>période</strong> \(T\) : durée d'un motif complet (en s)</li>
+    <li>L'<strong>amplitude</strong> : valeur maximale du signal (en V sur l'oscilloscope)</li>
+    <li>La <strong>fréquence</strong> : calculée par \(f = 1/T\)</li>
+  </ul>
+  <p>L'échelle de l'axe des temps (sensibilité temporelle) est en ms/div ou µs/div.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 17</h3>
+  <p>Un oscillogramme est affiché avec une sensibilité de 5 ms/division. On observe que la période correspond à 3 divisions.</p>
+  <ol type="a">
+    <li>Calculer la période \(T\) en ms puis en s.</li>
+    <li>En déduire la fréquence \(f\) du son.</li>
+    <li>Ce son est-il audible pour l'oreille humaine ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(T = 3 \times 5 = 15\ \text{ms} = 15 \times 10^{-3}\ \text{s}\)</li>
+      <li>\(f = \frac{1}{T} = \frac{1}{15 \times 10^{-3}} \approx \mathbf{67\ \text{Hz}}\)</li>
+      <li>67 Hz est compris entre 20 Hz et 20 000 Hz : le son est <strong>audible</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 18</h3>
+  <p>On enregistre deux sons A et B sur un oscillogramme avec la même échelle de temps.</p>
+  <ul>
+    <li>Son A : période mesurée = 2 ms, amplitude = 3 V</li>
+    <li>Son B : période mesurée = 6 ms, amplitude = 1 V</li>
+  </ul>
+  <ol type="a">
+    <li>Calculer la fréquence de chaque son.</li>
+    <li>Lequel est le plus aigu ? Lequel est le plus fort ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(f_A = \frac{1}{2 \times 10^{-3}} = 500\ \text{Hz}\) ; \(f_B = \frac{1}{6 \times 10^{-3}} \approx 167\ \text{Hz}\)</li>
+      <li>Le son A est le plus aigu (fréquence plus élevée). Le son A est aussi le plus fort (amplitude 3 V contre 1 V).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 19</h3>
+  <p>Un technicien acousticien affiche un signal sonore avec une sensibilité de 1 ms/division. Il lit les informations suivantes sur l'oscillogramme : une période s'étend sur 4 divisions et l'amplitude maximale est de 2,5 V.</p>
+  <ol type="a">
+    <li>Déterminer la période et la fréquence du signal.</li>
+    <li>À quelle hauteur de son correspond cette fréquence (grave, médium ou aigu) ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(T = 4 \times 1 = 4\ \text{ms} = 4 \times 10^{-3}\ \text{s}\) ; \(f = \frac{1}{4 \times 10^{-3}} = \mathbf{250\ \text{Hz}}\)</li>
+      <li>250 Hz se situe dans le registre <strong>grave à médium</strong> (voix humaine grave).</li>
+    </ol>
+  </div>
+</div>
+</div>
+
+</div>
+
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+<script>
+function toggle(btn){
+  var corr=btn.nextElementSibling;
+  if(corr.style.display==='block'){corr.style.display='none';btn.textContent='Voir la correction';}
+  else{corr.style.display='block';btn.textContent='Masquer la correction';}
+}
+</script>
+</body>
+</html>

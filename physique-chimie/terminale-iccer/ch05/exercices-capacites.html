@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Exercices par capacités – Pression dans un fluide immobile – Terminale Bac Pro ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 5 – Exercices par capacités</h1>
+  <p class="sous-titre">Caractériser la pression dans un fluide immobile &nbsp;|&nbsp; Terminale Bac Pro ICCER &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li>C1 – Calculer la pression absolue et relative (\(p = p_{\text{atm}} + \rho g h\))</li>
+    <li>C2 – Appliquer la loi de Pascal (pression transmise intégralement)</li>
+    <li>C3 – Calculer une force pressante (\(F = pS\))</li>
+    <li>C4 – Interpréter un manomètre</li>
+    <li>C5 – Appliquer dans un circuit hydraulique (chauffage, PAC)</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Calculer la pression absolue et relative</h2>
+
+<div class="retenir">
+  Pression absolue : \(p_{\text{abs}} = p_{\text{atm}} + \rho g h\)<br>
+  Pression relative (manométrique) : \(p_{\text{rel}} = p_{\text{abs}} - p_{\text{atm}} = \rho g h\)<br>
+  \(\rho\) : masse volumique (kg/m³) — \(g \approx 9{,}81\) m/s² — \(h\) : profondeur (m)<br>
+  \(p_{\text{atm}} \approx 10^5\) Pa = 1 bar
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un ballon d'expansion d'un circuit de chauffage est situé à 3 m sous la surface libre de l'eau (\(\rho = 1\,000\) kg/m³). Calculer la pression relative exercée par l'eau à cet endroit.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[p_{\text{rel}} = \rho g h = 1\,000 \times 9{,}81 \times 3 = 29\,430 \text{ Pa} \approx 0{,}29 \text{ bar}\]
+    <strong>p_rel ≈ 29 430 Pa ≈ 0,29 bar.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>En un point d'un circuit de chauffage situé à 5 m de profondeur sous la surface libre, calculer la pression absolue. (\(\rho_{\text{eau}} = 1\,000\) kg/m³, \(p_{\text{atm}} = 1{,}013 \times 10^5\) Pa)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[p_{\text{abs}} = p_{\text{atm}} + \rho g h = 1{,}013 \times 10^5 + 1\,000 \times 9{,}81 \times 5\]
+    \[= 101\,300 + 49\,050 = 150\,350 \text{ Pa} \approx 1{,}50 \text{ bar}\]
+    <strong>p_abs ≈ 150 350 Pa ≈ 1,50 bar.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un circuit de chauffage utilise de l'eau glycolée de masse volumique \(\rho = 1\,050\) kg/m³. La pression est mesurée à 4 m sous la surface libre. Calculer la pression relative.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[p_{\text{rel}} = \rho g h = 1\,050 \times 9{,}81 \times 4 = 41\,202 \text{ Pa} \approx 0{,}41 \text{ bar}\]
+    <strong>p_rel ≈ 41 202 Pa ≈ 0,41 bar.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>La pression absolue dans un ballon est \(p_{\text{abs}} = 3\) bar. Calculer la pression relative sachant que \(p_{\text{atm}} = 1\) bar.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[p_{\text{rel}} = p_{\text{abs}} - p_{\text{atm}} = 3 - 1 = 2 \text{ bar}\]
+    <strong>p_rel = 2 bar.</strong> C'est la valeur lue sur un manomètre (qui mesure la pression relative).
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Appliquer la loi de Pascal</h2>
+
+<div class="retenir">
+  <strong>Loi de Pascal :</strong> toute variation de pression appliquée à un fluide incompressible en équilibre se transmet intégralement en tout point du fluide.<br>
+  Application hydraulique : \(\dfrac{F_1}{S_1} = \dfrac{F_2}{S_2}\)
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un vérin hydraulique a un petit piston de surface \(S_1 = 5\) cm² et un grand piston de surface \(S_2 = 50\) cm². On applique une force \(F_1 = 100\) N sur le petit piston. Calculer la force \(F_2\) développée par le grand piston.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    La pression est identique dans tout le fluide : \(\dfrac{F_1}{S_1} = \dfrac{F_2}{S_2}\)<br>
+    \[F_2 = F_1 \times \frac{S_2}{S_1} = 100 \times \frac{50}{5} = 100 \times 10 = 1\,000 \text{ N}\]
+    <strong>F_2 = 1 000 N.</strong> Le système hydraulique multiplie la force par 10.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un technicien chauffagiste augmente la pression dans un circuit de chauffage fermé en actionnant la pompe de gonflage. Expliquer, grâce à la loi de Pascal, comment cette surpression se propage dans le circuit.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Selon la loi de Pascal, toute augmentation de pression appliquée en un point du circuit (par la pompe) se transmet <strong>instantanément et intégralement</strong> à tous les points du circuit fermé. Ainsi, si la pompe crée une surpression de 0,5 bar, tous les éléments du circuit (radiateurs, vase d'expansion, soupape de sécurité) subissent cette même surpression.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un bras hydraulique de levée de matériaux a un piston principal de surface \(S_2 = 200\) cm². Pour soulever une charge de \(F_2 = 20\,000\) N, quelle force \(F_1\) faut-il exercer sur le petit piston de surface \(S_1 = 10\) cm² ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[F_1 = F_2 \times \frac{S_1}{S_2} = 20\,000 \times \frac{10}{200} = 20\,000 \times 0{,}05 = 1\,000 \text{ N}\]
+    <strong>F_1 = 1 000 N.</strong> Le multiplicateur hydraulique permet de soulever 20 000 N avec seulement 1 000 N.
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Calculer une force pressante</h2>
+
+<div class="retenir">
+  \(F = p \times S\) (en N, si \(p\) en Pa et \(S\) en m²)<br>
+  Attention : 1 bar = 10⁵ Pa ; 1 cm² = 10⁻⁴ m²
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>La pression dans un circuit de chauffage est \(p = 2{,}5\) bar. Calculer la force exercée sur une vanne sphérique de surface d'obturateur \(S = 3\) cm².</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[p = 2{,}5 \times 10^5 \text{ Pa} \quad S = 3 \times 10^{-4} \text{ m}^2\]
+    \[F = p \times S = 2{,}5 \times 10^5 \times 3 \times 10^{-4} = 75 \text{ N}\]
+    <strong>F = 75 N</strong> exercée sur l'obturateur de la vanne.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>La soupape de sécurité d'une installation est calibrée à \(p = 3\) bar et a un clapet de section \(S = 1{,}5\) cm². Calculer la force à partir de laquelle la soupape s'ouvre.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[F = 3 \times 10^5 \times 1{,}5 \times 10^{-4} = 45 \text{ N}\]
+    La soupape s'ouvre quand la force du fluide dépasse <strong>45 N</strong> (valeur exercée par le ressort calibrant la soupape).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un technicien chauffagiste veut vérifier la résistance d'une paroi de chaudière de surface \(S = 0{,}02\) m² soumise à une pression \(p = 5\) bar. Calculer la force totale exercée sur cette paroi.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[F = 5 \times 10^5 \times 0{,}02 = 10\,000 \text{ N} = 10 \text{ kN}\]
+    <strong>F = 10 000 N = 10 kN.</strong> Cette force justifie l'utilisation d'acier épais pour les enceintes sous pression.
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Interpréter un manomètre</h2>
+
+<div class="retenir">
+  Un manomètre mesure la <strong>pression relative</strong> (pression par rapport à la pression atmosphérique).<br>
+  – Pression relative positive : le fluide est sous pression (> pression atmosphérique).<br>
+  – Pression relative nulle : équilibre avec l'atmosphère (circuit vide ou en dépression nulle).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Le manomètre d'un circuit de chauffage affiche 1,5 bar à froid et 2,2 bar en chauffe. Le seuil de déclenchement de la soupape est 3 bar. Interpréter ces valeurs et indiquer si l'installation est conforme.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    – À froid : 1,5 bar de pression relative. C'est la pression de mise en service (souvent entre 1 et 1,5 bar pour un circuit bas du bâtiment).<br>
+    – En chauffe : 2,2 bar. L'eau se dilate et la pression augmente naturellement. La hausse de 0,7 bar est normale.<br>
+    – La soupape se déclenche à 3 bar : la marge est de 3 − 2,2 = 0,8 bar. <strong>L'installation est conforme</strong>, mais en cas de vase d'expansion défaillant, la pression pourrait atteindre 3 bar et ouvrir la soupape.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Le manomètre d'un circuit de chauffage affiche 0,5 bar à froid (valeur normale : 1,5 bar). Quelles causes possibles un technicien chauffagiste doit-il investiguer ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Une pression trop basse à froid peut indiquer :<br>
+    1. Une fuite dans le circuit (joint, radiateur, raccord).<br>
+    2. Un vase d'expansion sous-gonflé ou défectueux.<br>
+    3. Une purge incomplète ayant libéré de l'eau.<br>
+    Le technicien doit vérifier l'étanchéité du circuit, le gonflage du vase d'expansion, et regonfler si nécessaire à la pression de service.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Convertir une pression manométrique de 2,4 bar en pascals et en pression absolue (avec \(p_{\text{atm}} = 1{,}013 \times 10^5\) Pa).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[p_{\text{rel}} = 2{,}4 \text{ bar} = 2{,}4 \times 10^5 = 240\,000 \text{ Pa}\]
+    \[p_{\text{abs}} = p_{\text{rel}} + p_{\text{atm}} = 240\,000 + 101\,300 = 341\,300 \text{ Pa} \approx 3{,}41 \text{ bar}\]
+    <strong>p_rel = 240 000 Pa ; p_abs ≈ 341 300 Pa ≈ 3,41 bar.</strong>
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Appliquer dans un circuit hydraulique de chauffage ou de PAC</h2>
+
+<div class="meth">
+  Dans un circuit de chauffage ou de PAC, la pression varie avec la hauteur d'eau et la température. Le technicien chauffagiste surveille la pression pour garantir la sécurité et le bon fonctionnement.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un circuit de chauffage d'un immeuble de 4 étages alimente des radiateurs situés jusqu'à 12 m de hauteur. La pression en pied de colonne est \(p_0 = 3\) bar. Calculer la pression en haut de la colonne (\(\rho = 1\,000\) kg/m³).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    La pression diminue avec la hauteur : \(p_{\text{haut}} = p_0 - \rho g h\)<br>
+    \[p_{\text{haut}} = 3 \times 10^5 - 1\,000 \times 9{,}81 \times 12 = 300\,000 - 117\,720 = 182\,280 \text{ Pa} \approx 1{,}82 \text{ bar}\]
+    <strong>p_haut ≈ 1,82 bar.</strong> La pression en haut de la colonne est suffisante pour maintenir le circuit en eau.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un technicien chauffagiste vérifie la pression de service d'un circuit de PAC. Le fluide frigorigène liquide (\(\rho = 1\,200\) kg/m³) remonte sur 2 m. La pression à la sortie du compresseur est 18 bar. Calculer la pression en haut de la colonne de fluide.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[p_{\text{haut}} = p_0 - \rho g h = 18 \times 10^5 - 1\,200 \times 9{,}81 \times 2\]
+    \[= 1\,800\,000 - 23\,544 = 1\,776\,456 \text{ Pa} \approx 17{,}76 \text{ bar}\]
+    <strong>p_haut ≈ 17,76 bar.</strong> La chute de pression due à la hauteur est négligeable devant la pression de service élevée du circuit frigorifique.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>La pression minimale de service dans un circuit de chauffage est 1 bar (pour éviter la vaporisation de l'eau). Le point le plus haut est à 8 m au-dessus de la chaudière. Quelle pression minimale faut-il maintenir au niveau de la chaudière ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    La pression au point haut doit être ≥ 1 bar. En pied de chaudière :<br>
+    \[p_{\text{chaudière}} \geq p_{\text{haut}} + \rho g h = 1 \times 10^5 + 1\,000 \times 9{,}81 \times 8 = 100\,000 + 78\,480 = 178\,480 \text{ Pa} \approx 1{,}78 \text{ bar}\]
+    Il faut maintenir une pression d'au moins <strong>1,78 bar ≈ 1,8 bar</strong> au niveau de la chaudière.
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

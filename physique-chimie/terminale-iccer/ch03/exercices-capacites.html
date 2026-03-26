@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch03 – Exercices par capacités – Moteur électrique – Terminale Bac Pro ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 3 – Exercices par capacités</h1>
+  <p class="sous-titre">Obtenir de l'énergie mécanique à l'aide d'un moteur électrique &nbsp;|&nbsp; Terminale Bac Pro ICCER &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li>C1 – Identifier les parties d'un moteur (stator, rotor, inducteur, induit)</li>
+    <li>C2 – Calculer la puissance mécanique (\(P = C\omega\))</li>
+    <li>C3 – Calculer le rendement d'un moteur (\(\eta = P_{\text{mec}} / P_{\text{elec}}\))</li>
+    <li>C4 – Identifier les pertes dans un moteur (Joule, fer, mécaniques)</li>
+    <li>C5 – Appliquer dans le contexte d'une PAC ou d'une VMC</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Identifier les parties d'un moteur électrique</h2>
+
+<div class="retenir">
+  <strong>Stator :</strong> partie fixe du moteur.<br>
+  <strong>Rotor :</strong> partie mobile qui tourne.<br>
+  <strong>Inducteur :</strong> partie qui crée le champ magnétique (souvent le stator).<br>
+  <strong>Induit :</strong> partie dans laquelle le courant produit le couple moteur (souvent le rotor).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Dans un moteur électrique, associer chaque terme à sa définition :</p>
+  <ul>
+    <li>1. Stator — 2. Rotor — 3. Inducteur — 4. Induit</li>
+    <li>A. Partie mobile qui tourne</li>
+    <li>B. Partie fixe du moteur</li>
+    <li>C. Partie où circule le courant qui produit le couple moteur</li>
+    <li>D. Partie qui génère le champ magnétique</li>
+  </ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    1 – B (Stator : partie fixe)<br>
+    2 – A (Rotor : partie mobile)<br>
+    3 – D (Inducteur : génère le champ magnétique)<br>
+    4 – C (Induit : courant → couple moteur)
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Dans une pompe à chaleur, le compresseur est entraîné par un moteur électrique asynchrone triphasé. Indiquer laquelle des parties (stator ou rotor) crée le champ magnétique tournant et laquelle est entraînée mécaniquement.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Dans un moteur asynchrone, le <strong>stator</strong> (inducteur) est alimenté par le courant triphasé et crée le champ magnétique tournant. Ce champ induit des courants dans le <strong>rotor</strong> (induit) qui est alors entraîné mécaniquement en rotation. C'est le rotor qui entraîne le compresseur.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un moteur de VMC comporte un rotor à cage d'écureuil. Expliquer brièvement pourquoi ce type de rotor est robuste et nécessite peu de maintenance.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Le rotor à cage d'écureuil est constitué de barres conductrices en aluminium ou en cuivre reliées par des anneaux, sans balais ni contacts glissants. En l'absence de pièces d'usure par frottement électrique, la maintenance se réduit aux roulements mécaniques. C'est un rotor très robuste, économique et fiable pour les applications continues comme la ventilation.
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Calculer la puissance mécanique \(P = C\omega\)</h2>
+
+<div class="retenir">
+  \(P_{\text{mec}} = C \times \omega\) (en W) où \(C\) : couple (N·m) et \(\omega\) : vitesse angulaire (rad/s)<br>
+  Conversion : \(\omega = \dfrac{2\pi \times n}{60}\) avec \(n\) en tr/min
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un moteur de circulateur de chauffage tourne à \(n = 1\,450\) tr/min et développe un couple \(C = 2\) N·m. Calculer la puissance mécanique fournie.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[\omega = \frac{2\pi \times 1\,450}{60} = \frac{2 \times 3{,}14 \times 1\,450}{60} \approx 151{,}8 \text{ rad/s}\]
+    \[P_{\text{mec}} = C \times \omega = 2 \times 151{,}8 \approx 303{,}6 \text{ W} \approx 304 \text{ W}\]
+    <strong>P_mec ≈ 304 W.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un compresseur de PAC développe \(P_{\text{mec}} = 2\,500\) W à \(n = 3\,000\) tr/min. Calculer le couple développé.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[\omega = \frac{2\pi \times 3\,000}{60} \approx 314{,}2 \text{ rad/s}\]
+    \[C = \frac{P_{\text{mec}}}{\omega} = \frac{2\,500}{314{,}2} \approx 7{,}96 \text{ N·m}\]
+    <strong>C ≈ 7,96 N·m.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un moteur de ventilateur tourne à \(\omega = 100\) rad/s avec \(C = 1{,}5\) N·m. Quelle est sa puissance mécanique ? Convertir la vitesse en tr/min.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[P_{\text{mec}} = 1{,}5 \times 100 = 150 \text{ W}\]
+    \[n = \frac{60 \times \omega}{2\pi} = \frac{60 \times 100}{2\pi} \approx \frac{6\,000}{6{,}28} \approx 955 \text{ tr/min}\]
+    <strong>P_mec = 150 W et n ≈ 955 tr/min.</strong>
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Calculer le rendement d'un moteur</h2>
+
+<div class="retenir">
+  \(\eta = \dfrac{P_{\text{mec}}}{P_{\text{elec}}}\) &nbsp; (sans unité, compris entre 0 et 1)<br>
+  \(\eta\) s'exprime souvent en % : \(\eta (\%) = \dfrac{P_{\text{mec}}}{P_{\text{elec}}} \times 100\)
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un moteur de circulateur absorbe \(P_{\text{elec}} = 400\) W et fournit \(P_{\text{mec}} = 340\) W. Calculer son rendement.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[\eta = \frac{P_{\text{mec}}}{P_{\text{elec}}} = \frac{340}{400} = 0{,}85 = 85\,\%\]
+    <strong>η = 85 %.</strong> 15 % de l'énergie électrique est perdue (chaleur, frottements…).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un moteur de compresseur de PAC a un rendement de 88 % et fournit \(P_{\text{mec}} = 2\,200\) W. Calculer la puissance électrique absorbée.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[\eta = \frac{P_{\text{mec}}}{P_{\text{elec}}} \Rightarrow P_{\text{elec}} = \frac{P_{\text{mec}}}{\eta} = \frac{2\,200}{0{,}88} = 2\,500 \text{ W}\]
+    <strong>P_elec = 2 500 W.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Moteur A : \(P_{\text{elec}} = 1\,000\) W, \(P_{\text{mec}} = 870\) W. Moteur B : \(P_{\text{elec}} = 1\,000\) W, \(P_{\text{mec}} = 920\) W. Calculer les rendements et indiquer lequel choisir.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Moteur A : \(\eta_A = 870/1\,000 = 87\,\%\)<br>
+    Moteur B : \(\eta_B = 920/1\,000 = 92\,\%\)<br>
+    <strong>Choisir le moteur B</strong> : pour la même consommation électrique, il fournit plus de puissance mécanique utile et génère moins de pertes thermiques.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Un moteur de VMC de \(P_{\text{mec}} = 250\) W a un rendement de 82 %. Calculer les pertes totales dans le moteur.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[P_{\text{elec}} = \frac{250}{0{,}82} \approx 304{,}9 \text{ W}\]
+    \[\text{Pertes} = P_{\text{elec}} - P_{\text{mec}} = 304{,}9 - 250 \approx 54{,}9 \text{ W}\]
+    <strong>Pertes ≈ 55 W.</strong>
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Identifier les pertes dans un moteur</h2>
+
+<div class="retenir">
+  Les pertes dans un moteur se répartissent en trois familles :<br>
+  – <strong>Pertes par effet Joule</strong> (cuivre) : \(P_J = RI^2\) dans les enroulements<br>
+  – <strong>Pertes fer</strong> : hystérésis et courants de Foucault dans les tôles magnétiques<br>
+  – <strong>Pertes mécaniques</strong> : frottements des roulements, ventilation
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un moteur présente les pertes suivantes : Joule = 45 W, fer = 20 W, mécaniques = 15 W. La puissance absorbée est \(P_{\text{elec}} = 500\) W. Vérifier que le rendement est bien de 84 %.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Total des pertes : \(45 + 20 + 15 = 80\) W<br>
+    \(P_{\text{mec}} = 500 - 80 = 420\) W<br>
+    \(\eta = 420/500 = 0{,}84 = \mathbf{84\,\%}\) ✓
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Les enroulements du stator d'un moteur ont une résistance totale \(R = 2\) Ω. Le moteur est parcouru par \(I = 5\) A. Calculer les pertes par effet Joule.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[P_J = R \times I^2 = 2 \times 5^2 = 2 \times 25 = 50 \text{ W}\]
+    <strong>Pertes Joule = 50 W.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un technicien de maintenance énergétique veut réduire les pertes d'un moteur de compresseur. Proposer une action pour chaque type de perte (Joule, fer, mécaniques).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    – <strong>Pertes Joule :</strong> utiliser un moteur à haute efficacité (classe IE3 ou IE4), avec des conducteurs de plus grande section et des enroulements en cuivre de meilleure qualité.<br>
+    – <strong>Pertes fer :</strong> choisir un moteur avec des tôles magnétiques de haute qualité (acier à grains orientés) ou utiliser un moteur à aimants permanents.<br>
+    – <strong>Pertes mécaniques :</strong> entretenir les roulements (graissage régulier), remplacer les roulements usés, réduire les vibrations pour limiter les frottements.
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Appliquer dans le contexte d'une PAC ou d'une VMC</h2>
+
+<div class="meth">
+  Dans une <strong>PAC</strong>, le moteur entraîne le compresseur. La puissance mécanique fournie au compresseur détermine la puissance thermique échangée.<br>
+  Dans une <strong>VMC</strong>, le moteur entraîne un ventilateur qui maintient le débit d'air dans le bâtiment.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un technicien chauffagiste installe une PAC dont le compresseur est entraîné par un moteur de \(P_{\text{elec}} = 3\) kW et \(\eta = 90\,\%\). Calculer la puissance mécanique transmise au compresseur.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[P_{\text{mec}} = \eta \times P_{\text{elec}} = 0{,}90 \times 3\,000 = 2\,700 \text{ W} = 2{,}7 \text{ kW}\]
+    <strong>P_mec = 2,7 kW</strong> transmis au compresseur.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un moteur de VMC absorbe \(P_{\text{elec}} = 200\) W avec un rendement de 78 %. Calculer la puissance mécanique fournie au ventilateur et les pertes thermiques dégagées dans le moteur.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[P_{\text{mec}} = 0{,}78 \times 200 = 156 \text{ W}\]
+    \[\text{Pertes} = 200 - 156 = 44 \text{ W}\]
+    <strong>P_mec = 156 W</strong> et <strong>44 W</strong> dissipés en chaleur dans le moteur.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Une PAC a un COP (coefficient de performance) de 3 : pour 1 kW électrique absorbé, elle fournit 3 kW thermiques. Le moteur du compresseur consomme \(P_{\text{elec}} = 1{,}5\) kW. Calculer la puissance thermique fournie par la PAC au circuit de chauffage.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[P_{\text{thermique}} = \text{COP} \times P_{\text{elec}} = 3 \times 1{,}5 = 4{,}5 \text{ kW}\]
+    La PAC fournit <strong>4,5 kW thermiques</strong> au circuit de chauffage pour 1,5 kW électriques consommés.
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

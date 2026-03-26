@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Exercices par capacités – Vitesse et accélération – Terminale Bac Pro ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-erama.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 4 – Exercices par capacités</h1>
+  <p class="sous-titre">Caractériser la vitesse et l'accélération &nbsp;|&nbsp; Terminale Bac Pro ERA-MA &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li>C1 – Calculer vitesse moyenne et instantanée</li>
+    <li>C2 – Calculer une accélération (\(a = \Delta v / \Delta t\))</li>
+    <li>C3 – Interpréter un diagramme \(v(t)\)</li>
+    <li>C4 – Appliquer les équations du MRUA</li>
+    <li>C5 – Appliquer dans un contexte d'atelier (déplacement d'une pièce, convoyeur)</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Calculer vitesse moyenne et instantanée</h2>
+
+<div class="retenir">
+  Vitesse moyenne : \(v_m = \dfrac{\Delta d}{\Delta t} = \dfrac{d_2 - d_1}{t_2 - t_1}\) (en m/s)<br>
+  La vitesse instantanée est la vitesse à un instant précis (pente de la tangente à la courbe d(t)).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un convoyeur d'atelier déplace une planche de 0 à 8 m en 4 secondes. Calculer sa vitesse moyenne.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[v_m = \frac{\Delta d}{\Delta t} = \frac{8 - 0}{4 - 0} = \frac{8}{4} = 2 \text{ m/s}\]
+    <strong>v_m = 2 m/s.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un chariot de défonceuse CNC parcourt 15 cm entre \(t_1 = 2{,}0\) s et \(t_2 = 2{,}5\) s. Calculer la vitesse moyenne sur cet intervalle.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[v_m = \frac{0{,}15}{2{,}5 - 2{,}0} = \frac{0{,}15}{0{,}5} = 0{,}3 \text{ m/s} = 30 \text{ cm/s}\]
+    <strong>v_m = 0,3 m/s = 30 cm/s.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un métreur se déplace de 0 m à 12 m en 6 s, puis de 12 m à 24 m en 4 s. Calculer la vitesse moyenne sur chaque phase et la vitesse moyenne totale.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Phase 1 : \(v_1 = 12/6 = 2\) m/s<br>
+    Phase 2 : \(v_2 = 12/4 = 3\) m/s<br>
+    Total : \(v_{\text{tot}} = (12 + 12)/(6 + 4) = 24/10 = 2{,}4\) m/s<br>
+    <strong>v_1 = 2 m/s, v_2 = 3 m/s, v_tot = 2,4 m/s.</strong>
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Calculer une accélération</h2>
+
+<div class="retenir">
+  \(a = \dfrac{\Delta v}{\Delta t} = \dfrac{v_2 - v_1}{t_2 - t_1}\) (en m/s²)<br>
+  Si \(a > 0\) : accélération (le mobile accélère).<br>
+  Si \(a < 0\) : décélération (le mobile ralentit).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un convoyeur de planches passe de 0 à 1,5 m/s en 3 secondes. Calculer l'accélération.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[a = \frac{v_2 - v_1}{t_2 - t_1} = \frac{1{,}5 - 0}{3 - 0} = 0{,}5 \text{ m/s}^2\]
+    <strong>a = 0,5 m/s².</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Le chariot d'une scie à panneaux roule à 2 m/s puis freine et s'arrête en 4 secondes. Calculer l'accélération (ou décélération).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[a = \frac{0 - 2}{4} = \frac{-2}{4} = -0{,}5 \text{ m/s}^2\]
+    <strong>a = −0,5 m/s².</strong> Le signe négatif indique une décélération.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Une tête de fraisage passe de \(v_1 = 0{,}2\) m/s à \(v_2 = 0{,}8\) m/s en 0,3 s. Calculer l'accélération. La comparer avec l'accélération d'une voiture (de 0 à 100 km/h en 8 s).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Tête de fraisage : \(a = (0{,}8 - 0{,}2)/0{,}3 = 0{,}6/0{,}3 = 2\) m/s²<br>
+    Voiture : \(v = 100 \text{ km/h} = 27{,}8 \text{ m/s}\), \(a = 27{,}8/8 = 3{,}47\) m/s²<br>
+    L'accélération de la tête de fraisage (<strong>2 m/s²</strong>) est comparable à celle d'une voiture normale.
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Interpréter un diagramme v(t)</h2>
+
+<div class="retenir">
+  Sur un graphique v(t) :<br>
+  – Droite horizontale : vitesse constante (MRU), accélération nulle<br>
+  – Droite montante : accélération positive (MRUA)<br>
+  – Droite descendante : décélération (a &lt; 0)<br>
+  – <strong>Aire sous la courbe</strong> = distance parcourue
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un convoyeur a le diagramme v(t) suivant : de t = 0 à t = 2 s, v passe de 0 à 2 m/s ; de t = 2 s à t = 8 s, v = 2 m/s (constante) ; de t = 8 s à t = 10 s, v passe de 2 m/s à 0. Décrire chaque phase du mouvement.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Phase 1 (0→2 s) : MRUA avec \(a = 2/2 = 1\) m/s² — le convoyeur accélère.<br>
+    Phase 2 (2→8 s) : MRU à v = 2 m/s — le convoyeur roule à vitesse constante.<br>
+    Phase 3 (8→10 s) : MRUA avec \(a = (0-2)/2 = -1\) m/s² — le convoyeur freine jusqu'à l'arrêt.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Calculer la distance totale parcourue par le convoyeur de l'exercice précédent en utilisant l'aire sous la courbe v(t).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Phase 1 (triangle) : \(d_1 = \frac{1}{2} \times 2 \times 2 = 2\) m<br>
+    Phase 2 (rectangle) : \(d_2 = 2 \times 6 = 12\) m<br>
+    Phase 3 (triangle) : \(d_3 = \frac{1}{2} \times 2 \times 2 = 2\) m<br>
+    Distance totale : \(d = 2 + 12 + 2 = \mathbf{16 \text{ m}}\)
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Sur un graphique v(t), on lit les valeurs suivantes : t = 0 s → v = 3 m/s ; t = 5 s → v = 3 m/s ; t = 8 s → v = 0 m/s. Calculer l'accélération dans chaque phase et identifier les types de mouvement.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Phase 1 (0→5 s) : \(a = (3 - 3)/5 = 0\) m/s² → <strong>MRU</strong> (vitesse constante).<br>
+    Phase 2 (5→8 s) : \(a = (0 - 3)/3 = -1\) m/s² → <strong>MRUA décéléré</strong> (freinage uniforme).
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Appliquer les équations du MRUA</h2>
+
+<div class="retenir">
+  Mouvement rectiligne uniformément accéléré (MRUA) :<br>
+  \(v(t) = v_0 + a \cdot t\)<br>
+  \(d(t) = v_0 t + \dfrac{1}{2} a t^2\)<br>
+  \(v^2 = v_0^2 + 2 a d\)
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un chariot de raboteuse part du repos (\(v_0 = 0\)) avec une accélération \(a = 0{,}4\) m/s². Calculer sa vitesse après \(t = 5\) s.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[v = v_0 + at = 0 + 0{,}4 \times 5 = 2 \text{ m/s}\]
+    <strong>v = 2 m/s</strong> après 5 secondes.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Le même chariot (\(v_0 = 0\), \(a = 0{,}4\) m/s²) — quelle distance parcourt-il en 5 s ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[d = v_0 t + \frac{1}{2} a t^2 = 0 + \frac{1}{2} \times 0{,}4 \times 5^2 = 0{,}2 \times 25 = 5 \text{ m}\]
+    <strong>d = 5 m</strong> parcourus en 5 secondes.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un convoyeur roule à \(v_0 = 3\) m/s et freine avec \(a = -0{,}6\) m/s². Calculer la distance de freinage jusqu'à l'arrêt complet.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Utiliser \(v^2 = v_0^2 + 2ad\) avec \(v = 0\) :<br>
+    \[0 = 3^2 + 2 \times (-0{,}6) \times d \Rightarrow 1{,}2d = 9 \Rightarrow d = \frac{9}{1{,}2} = 7{,}5 \text{ m}\]
+    <strong>Distance de freinage = 7,5 m.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Un axe de défonceuse CNC accélère de 0 à 1{,}2 m/s en 0{,}4 s. Calculer l'accélération et la distance parcourue pendant cette accélération.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[a = \frac{v - v_0}{t} = \frac{1{,}2 - 0}{0{,}4} = 3 \text{ m/s}^2\]
+    \[d = \frac{1}{2} at^2 = \frac{1}{2} \times 3 \times 0{,}4^2 = 1{,}5 \times 0{,}16 = 0{,}24 \text{ m} = 24 \text{ cm}\]
+    <strong>a = 3 m/s² et d = 24 cm.</strong>
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Appliquer dans un contexte d'atelier</h2>
+
+<div class="meth">
+  Dans un atelier de menuiserie ou d'agencement, les machines déplacent des pièces, des outils ou des chariots. L'analyse du mouvement permet de vérifier les cadences de production et les temps de cycle.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un convoyeur à rouleaux transporte des panneaux de bois de 0 à 6 m à la vitesse constante de 0,5 m/s. Calculer le temps de transit d'un panneau.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[t = \frac{d}{v} = \frac{6}{0{,}5} = 12 \text{ s}\]
+    <strong>t = 12 s</strong> par panneau. Si l'atelier produit un panneau toutes les 30 s, le convoyeur peut transporter en continu sans embouteillage.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un chariot d'optimiseur de découpe (scie à déligner) avance à \(v_0 = 0{,}8\) m/s puis accélère uniformément jusqu'à \(v = 1{,}4\) m/s en 2 s. Calculer l'accélération et la distance parcourue pendant cette phase d'accélération.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[a = \frac{1{,}4 - 0{,}8}{2} = \frac{0{,}6}{2} = 0{,}3 \text{ m/s}^2\]
+    \[d = v_0 t + \frac{1}{2} at^2 = 0{,}8 \times 2 + \frac{1}{2} \times 0{,}3 \times 4 = 1{,}6 + 0{,}6 = 2{,}2 \text{ m}\]
+    <strong>a = 0,3 m/s² et d = 2,2 m.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un élévateur de plateau (table élévatrice) soulève des piles de panneaux de 0 à 1,5 m de hauteur en 6 s, avec une accélération uniforme depuis le repos. Calculer l'accélération et la vitesse en fin de course.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Équation de position : \(d = \dfrac{1}{2}at^2\)<br>
+    \[a = \frac{2d}{t^2} = \frac{2 \times 1{,}5}{6^2} = \frac{3}{36} \approx 0{,}083 \text{ m/s}^2\]
+    \[v = at = 0{,}083 \times 6 \approx 0{,}5 \text{ m/s}\]
+    <strong>a ≈ 0,083 m/s² et v_finale ≈ 0,5 m/s.</strong>
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

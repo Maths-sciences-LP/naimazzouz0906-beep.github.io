@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch01 – Exercices par capacités – Énergie et puissance électrique – 1ère Bac Pro ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-iccer.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 1 – Exercices par capacités</h1>
+  <p class="sous-titre">Distinguer énergie et puissance électrique &nbsp;|&nbsp; 1ère Bac Pro ICCER &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> – Distinguer énergie (\(W = Pt\), en joules ou kWh) et puissance (\(P\), en watts)</li>
+    <li><strong>C2</strong> – Calculer une puissance électrique (\(P = UI\))</li>
+    <li><strong>C3</strong> – Calculer une énergie électrique (\(W = Pt\))</li>
+    <li><strong>C4</strong> – Convertir des unités d'énergie (J ↔ kWh)</li>
+    <li><strong>C5</strong> – Estimer le coût d'une consommation électrique</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Distinguer énergie et puissance</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong> La <strong>puissance</strong> \(P\) (en W) indique la vitesse à laquelle un appareil consomme ou fournit de l'énergie. L'<strong>énergie</strong> \(W\) (en J ou kWh) est la quantité totale d'énergie échangée. On a \(W = P \times t\).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Identifier puissance et énergie</h3>
+  <p>Un installateur thermique lit la plaque signalétique d'un chauffe-eau électrique : « Puissance : 2 000 W » et la facture électrique de l'immeuble : « Énergie consommée : 450 kWh ».</p>
+  <p>a) Laquelle de ces deux grandeurs exprime une vitesse de consommation ?</p>
+  <p>b) Quelle est l'unité de l'énergie dans le système international ?</p>
+  <p>c) Pourquoi les fournisseurs d'électricité utilisent-ils le kWh plutôt que le joule ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) La <strong>puissance</strong> (2 000 W) exprime la vitesse de consommation : combien d'énergie est consommée par seconde.</p>
+    <p>b) L'unité SI de l'énergie est le <strong>joule (J)</strong>.</p>
+    <p>c) Le joule est très petit pour les usages domestiques. 1 kWh = 3 600 000 J. Le kWh est plus pratique pour facturer des consommations de l'ordre de centaines à milliers de joules.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Classer des grandeurs</h3>
+  <p>Voici une liste de grandeurs avec leurs unités. Classer chacune en « puissance » ou « énergie ».</p>
+  <ul>
+    <li>3 500 W</li>
+    <li>180 kWh</li>
+    <li>720 000 J</li>
+    <li>2,5 kW</li>
+    <li>0,5 kWh</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ul>
+      <li>3 500 W → <strong>Puissance</strong></li>
+      <li>180 kWh → <strong>Énergie</strong></li>
+      <li>720 000 J → <strong>Énergie</strong></li>
+      <li>2,5 kW → <strong>Puissance</strong></li>
+      <li>0,5 kWh → <strong>Énergie</strong></li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Sens physique</h3>
+  <p>Un technicien CVC compare deux pompes à chaleur :</p>
+  <ul>
+    <li>Pompe A : puissance électrique absorbée 1 200 W</li>
+    <li>Pompe B : puissance électrique absorbée 800 W</li>
+  </ul>
+  <p>a) Laquelle consomme le plus d'énergie par seconde ?</p>
+  <p>b) Peut-on savoir laquelle a consommé le plus d'énergie au total sur une journée sans information supplémentaire ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) La pompe A consomme le plus d'énergie par seconde (1 200 W > 800 W).</p>
+    <p>b) Non, on ne peut pas savoir sans connaître la durée de fonctionnement de chaque pompe. Si la pompe B fonctionne beaucoup plus longtemps, elle peut avoir consommé plus d'énergie au total. L'énergie dépend à la fois de la puissance ET du temps (\(W = P \times t\)).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Calcul du temps à partir de W et P</h3>
+  <p>Un chauffe-eau électrique de puissance \(P = 3\,000\) W a consommé une énergie de \(W = 54\,000\) J.</p>
+  <p>a) Écrire la relation entre \(W\), \(P\) et \(t\).</p>
+  <p>b) Calculer la durée de fonctionnement \(t\) en secondes, puis en minutes.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(W = P \times t\)</p>
+    <p>b) On isole \(t\) : \(t = \dfrac{W}{P} = \dfrac{54\,000}{3\,000} = 18\) s</p>
+    <p>Soit \(18 \div 60 = \mathbf{0{,}3}\) minute = 18 secondes.</p>
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Calculer une puissance électrique</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> La puissance électrique absorbée par un dipôle est \(P = U \times I\) avec \(U\) en volts (V), \(I\) en ampères (A) et \(P\) en watts (W).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Calcul direct</h3>
+  <p>Un radiateur électrique fonctionne sous une tension de \(U = 230\) V et est traversé par un courant de \(I = 8{,}7\) A.</p>
+  <p>Calculer la puissance électrique absorbée par ce radiateur.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(P = U \times I = 230 \times 8{,}7 = \mathbf{2\,001}\) W \(\approx 2\,000\) W</p>
+    <p>La puissance du radiateur est d'environ <strong>2 000 W = 2 kW</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Trouver l'intensité</h3>
+  <p>Une pompe à chaleur a une puissance de \(P = 3\,500\) W et fonctionne sous \(U = 230\) V.</p>
+  <p>Calculer l'intensité du courant qui la traverse.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>On isole \(I\) dans \(P = U \times I\) :</p>
+    <p>\(I = \dfrac{P}{U} = \dfrac{3\,500}{230} \approx \mathbf{15{,}2}\) A</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Trouver la tension</h3>
+  <p>Un convecteur électrique absorbe une puissance de \(P = 1\,500\) W et est traversé par un courant de \(I = 6{,}52\) A.</p>
+  <p>Calculer la tension d'alimentation.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>On isole \(U\) dans \(P = U \times I\) :</p>
+    <p>\(U = \dfrac{P}{I} = \dfrac{1\,500}{6{,}52} \approx \mathbf{230}\) V</p>
+    <p>C'est bien la tension du réseau domestique français.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Installation avec plusieurs appareils</h3>
+  <p>Un installateur thermique met en service un chantier avec les équipements suivants alimentés en 230 V :</p>
+  <table>
+    <tr><th>Appareil</th><th>Intensité (A)</th></tr>
+    <tr><td>Chauffe-eau</td><td>13,0</td></tr>
+    <tr><td>Pompe de circulation</td><td>2,2</td></tr>
+    <tr><td>Régulateur</td><td>0,5</td></tr>
+  </table>
+  <p>Calculer la puissance de chaque appareil puis la puissance totale de l'installation.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(P_{\text{chauffe-eau}} = 230 \times 13{,}0 = 2\,990\) W</p>
+    <p>\(P_{\text{pompe}} = 230 \times 2{,}2 = 506\) W</p>
+    <p>\(P_{\text{régulateur}} = 230 \times 0{,}5 = 115\) W</p>
+    <p>\(P_{\text{totale}} = 2\,990 + 506 + 115 = \mathbf{3\,611}\) W \(\approx 3{,}6\) kW</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 5 – Comparaison de puissances</h3>
+  <p>Un technicien compare deux modèles de chaudières électriques :</p>
+  <ul>
+    <li>Modèle A : \(U = 400\) V (triphasé), \(I = 14\) A</li>
+    <li>Modèle B : \(U = 230\) V (monophasé), \(I = 26\) A</li>
+  </ul>
+  <p>Calculer la puissance de chaque modèle. Lequel est le plus puissant ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(P_A = 400 \times 14 = 5\,600\) W = 5,6 kW</p>
+    <p>\(P_B = 230 \times 26 = 5\,980\) W \(\approx 6\) kW</p>
+    <p>Le modèle B est légèrement plus puissant (5 980 W > 5 600 W).</p>
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Calculer une énergie électrique</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> L'énergie électrique consommée est \(W = P \times t\), avec \(P\) en watts (W), \(t\) en secondes (s) et \(W\) en joules (J). Si \(P\) est en kilowatts (kW) et \(t\) en heures (h), alors \(W\) est en kilowattheures (kWh).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Calcul en joules</h3>
+  <p>Une résistance chauffante de \(P = 1\,200\) W fonctionne pendant \(t = 300\) s.</p>
+  <p>Calculer l'énergie consommée en joules.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(W = P \times t = 1\,200 \times 300 = \mathbf{360\,000}\) J = 360 kJ</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Calcul en kWh</h3>
+  <p>Un chauffe-eau électrique de \(P = 2{,}5\) kW fonctionne \(t = 4\) h par jour.</p>
+  <p>Calculer l'énergie consommée en kWh par jour.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(W = P \times t = 2{,}5 \times 4 = \mathbf{10}\) kWh par jour</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Énergie mensuelle</h3>
+  <p>Une pompe à chaleur de \(P = 1\,800\) W fonctionne en moyenne \(t = 6\) h par jour pendant 30 jours.</p>
+  <p>a) Calculer l'énergie consommée sur 30 jours en kWh.</p>
+  <p>b) Vérifier votre résultat en convertissant en joules.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) Durée totale : \(t = 6 \times 30 = 180\) h</p>
+    <p>\(P = 1\,800\) W = 1,8 kW</p>
+    <p>\(W = 1{,}8 \times 180 = \mathbf{324}\) kWh</p>
+    <p>b) Vérification : \(324 \text{ kWh} \times 3\,600\,000 = 1{,}1664 \times 10^9\) J</p>
+    <p>Ou directement : \(W = 1\,800 \times (180 \times 3\,600) = 1\,800 \times 648\,000 = 1\,166\,400\,000\) J — cohérent.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Retrouver la puissance</h3>
+  <p>Un compteur enregistre une consommation de \(W = 15\) kWh pour un appareil qui a fonctionné \(t = 5\) h.</p>
+  <p>Calculer la puissance de cet appareil en watts.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>On isole \(P\) dans \(W = P \times t\) :</p>
+    <p>\(P = \dfrac{W}{t} = \dfrac{15}{5} = 3\) kW = <strong>3 000 W</strong></p>
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Convertir des unités d'énergie (J ↔ kWh)</h2>
+
+<div class="retenir">
+  <strong>À retenir :</strong>
+  \[1 \text{ kWh} = 1\,000 \text{ W} \times 3\,600 \text{ s} = 3\,600\,000 \text{ J} = 3{,}6 \times 10^6 \text{ J}\]
+  Pour convertir J → kWh : diviser par \(3{,}6 \times 10^6\). Pour kWh → J : multiplier par \(3{,}6 \times 10^6\).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Conversion kWh → J</h3>
+  <p>Un chauffe-eau a consommé \(W = 5\) kWh.</p>
+  <p>Convertir cette énergie en joules.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(W = 5 \times 3{,}6 \times 10^6 = \mathbf{18 \times 10^6}\) J = 18 MJ</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Conversion J → kWh</h3>
+  <p>Un système de chauffage a fourni \(W = 7\,200\,000\) J.</p>
+  <p>Exprimer cette énergie en kWh.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(W = \dfrac{7\,200\,000}{3\,600\,000} = \mathbf{2}\) kWh</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Double conversion</h3>
+  <p>Une chaudière électrique de \(P = 6\) kW fonctionne \(t = 45\) minutes.</p>
+  <p>a) Calculer l'énergie consommée en kWh.</p>
+  <p>b) Convertir en joules.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(t = 45\) min = 0,75 h</p>
+    <p>\(W = 6 \times 0{,}75 = \mathbf{4{,}5}\) kWh</p>
+    <p>b) \(W = 4{,}5 \times 3{,}6 \times 10^6 = \mathbf{16{,}2 \times 10^6}\) J = 16,2 MJ</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Vérification de facture</h3>
+  <p>Un technicien chauffagiste vérifie la facture d'un client. Le compteur indique une consommation de 1 200 kWh sur le mois.</p>
+  <p>a) Convertir cette énergie en mégajoules (MJ).</p>
+  <p>b) Est-ce cohérent si l'installation de 4 kW a fonctionné environ 10 h par jour pendant 30 jours ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>a) \(1\,200 \text{ kWh} \times 3{,}6 \text{ MJ/kWh} = \mathbf{4\,320}\) MJ</p>
+    <p>b) Énergie théorique : \(W = 4 \times (10 \times 30) = 4 \times 300 = 1\,200\) kWh — c'est cohérent !</p>
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Estimer le coût d'une consommation électrique</h2>
+
+<div class="meth">
+  <strong>Méthode :</strong> Le coût d'une consommation électrique se calcule par :
+  \[\text{Coût} = W \text{ (kWh)} \times \text{prix du kWh (€/kWh)}\]
+  En 2024, le prix moyen du kWh en France est d'environ <strong>0,25 €</strong> (variable selon le contrat et le fournisseur).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1 – Coût journalier</h3>
+  <p>Un chauffe-eau de 2 000 W fonctionne 3 h par jour. Le kWh coûte 0,25 €.</p>
+  <p>Calculer le coût de fonctionnement par jour.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Énergie journalière : \(W = 2 \times 3 = 6\) kWh</p>
+    <p>Coût : \(6 \times 0{,}25 = \mathbf{1{,}50}\) € par jour</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2 – Coût mensuel</h3>
+  <p>Une pompe à chaleur consomme 8 kWh par jour. Le kWh est facturé 0,22 €.</p>
+  <p>Estimer le coût mensuel (30 jours).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Énergie mensuelle : \(W = 8 \times 30 = 240\) kWh</p>
+    <p>Coût : \(240 \times 0{,}22 = \mathbf{52{,}80}\) € par mois</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3 – Comparaison d'appareils</h3>
+  <p>Un installateur conseille un client sur deux options de chauffage d'une pièce (fonctionnement 5 h/jour, 90 jours/an, kWh à 0,25 €) :</p>
+  <ul>
+    <li>Radiateur électrique : 2 000 W</li>
+    <li>Pompe à chaleur : 700 W (pour la même puissance thermique)</li>
+  </ul>
+  <p>Calculer le coût annuel de chaque solution et l'économie réalisée avec la pompe à chaleur.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Durée annuelle : \(t = 5 \times 90 = 450\) h</p>
+    <p>Radiateur : \(W = 2 \times 450 = 900\) kWh → Coût = \(900 \times 0{,}25 = \mathbf{225}\) €</p>
+    <p>PAC : \(W = 0{,}7 \times 450 = 315\) kWh → Coût = \(315 \times 0{,}25 = \mathbf{78{,}75}\) €</p>
+    <p>Économie : \(225 - 78{,}75 = \mathbf{146{,}25}\) € par an</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4 – Retrouver le prix du kWh</h3>
+  <p>Une facture indique une consommation de 350 kWh pour un montant de 87,50 €.</p>
+  <p>Calculer le prix du kWh appliqué par le fournisseur.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\text{prix} = \dfrac{\text{Coût}}{W} = \dfrac{87{,}50}{350} = \mathbf{0{,}25}\) €/kWh</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 5 – Budget annuel de chauffage</h3>
+  <p>Un technicien CVC estime le budget annuel de chauffage d'un appartement. L'installation électrique a une puissance totale de 5 kW et fonctionne en moyenne 8 h par jour pendant 180 jours par an. Le kWh coûte 0,24 €.</p>
+  <p>Calculer le coût annuel de chauffage.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Durée annuelle : \(t = 8 \times 180 = 1\,440\) h</p>
+    <p>Énergie : \(W = 5 \times 1\,440 = 7\,200\) kWh</p>
+    <p>Coût : \(7\,200 \times 0{,}24 = \mathbf{1\,728}\) € par an</p>
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

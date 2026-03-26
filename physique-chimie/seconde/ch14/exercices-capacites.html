@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch14 – Exercices par capacités – Lumière, couleurs et photodétecteurs – 2nde Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 14 – Exercices par capacités</h1>
+  <p class="sous-titre">Lumière, couleurs et photodétecteurs &nbsp;|&nbsp; 2nde Bac Pro &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> — Décomposer la lumière blanche (spectre visible, 380–780 nm)</li>
+    <li><strong>C2</strong> — Associer longueur d'onde et couleur</li>
+    <li><strong>C3</strong> — Identifier absorption et transmission d'un filtre coloré</li>
+    <li><strong>C4</strong> — Distinguer synthèse additive et soustractive</li>
+    <li><strong>C5</strong> — Identifier le principe d'un photodétecteur (photodiode, photorésistance)</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-filtre="toutes">Toutes</button>
+  <button class="btn-cap" data-filtre="C1">C1 – Spectre visible</button>
+  <button class="btn-cap" data-filtre="C2">C2 – Longueur d'onde / couleur</button>
+  <button class="btn-cap" data-filtre="C3">C3 – Filtres colorés</button>
+  <button class="btn-cap" data-filtre="C4">C4 – Synthèse additive/soustractive</button>
+  <button class="btn-cap" data-filtre="C5">C5 – Photodétecteurs</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- ===== C1 ===== -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Décomposer la lumière blanche — Le spectre visible</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>La <strong>lumière blanche</strong> est un mélange de toutes les radiations colorées visibles. Le spectre visible s'étend de <strong>380 nm</strong> (violet) à <strong>780 nm</strong> (rouge).</p>
+  <p>Un prisme ou un réseau décompose la lumière blanche en ses couleurs constitutives : c'est la <strong>dispersion</strong>.</p>
+  <p>L'ordre du spectre, du plus violet au plus rouge : violet – indigo – bleu – vert – jaune – orange – rouge.</p>
+  <p>En dehors du spectre visible :</p>
+  <ul>
+    <li>Ultraviolets (UV) : \(\lambda < 380\ \text{nm}\)</li>
+    <li>Infrarouges (IR) : \(\lambda > 780\ \text{nm}\)</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un électricien fait passer de la lumière blanche à travers un prisme en verre. Il observe un spectre coloré sur un écran. Répondre aux questions :</p>
+  <ol type="a">
+    <li>Citer les couleurs du spectre visible dans l'ordre, du moins réfracté au plus réfracté.</li>
+    <li>Quelle est la plage de longueurs d'onde du spectre visible ?</li>
+    <li>Quelle couleur est associée à la longueur d'onde la plus courte ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Du moins réfracté au plus réfracté : <strong>rouge – orange – jaune – vert – bleu – violet</strong></li>
+      <li>Le spectre visible s'étend de <strong>380 nm</strong> (violet) à <strong>780 nm</strong> (rouge).</li>
+      <li>La longueur d'onde la plus courte correspond au <strong>violet</strong> (\(\lambda \approx 380\ \text{nm}\)).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un installateur de système d'éclairage LED utilise des diodes qui émettent dans l'ultraviolet (\(\lambda = 365\ \text{nm}\)) pour désinfecter des surfaces. Cette lumière est-elle visible ? Justifier en comparant avec le spectre visible.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(365\ \text{nm} < 380\ \text{nm}\) : cette longueur d'onde est en dehors du spectre visible, dans le domaine des <strong>ultraviolets</strong>. Cette lumière est <strong>invisible</strong> à l'œil nu.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Une télécommande de télévision émet dans l'infrarouge à \(\lambda = 940\ \text{nm}\). Comparer cette valeur avec les limites du spectre visible et conclure.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(940\ \text{nm} > 780\ \text{nm}\) : cette longueur d'onde est au-delà du rouge visible, dans le domaine des <strong>infrarouges</strong>. Le signal émis par la télécommande est <strong>invisible</strong> à l'œil humain.</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C2 ===== -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Associer longueur d'onde et couleur</h2>
+
+<div class="retenir">
+  <strong>À retenir — Correspondance longueur d'onde / couleur</strong>
+  <table style="border-collapse:collapse;width:100%;margin:8px 0">
+    <tr style="background:var(--p-bg)">
+      <th style="padding:6px;border:1px solid var(--p-border)">Couleur</th>
+      <th style="padding:6px;border:1px solid var(--p-border)">Longueur d'onde \(\lambda\) (nm)</th>
+    </tr>
+    <tr><td style="padding:6px;border:1px solid var(--p-border)">Violet</td><td style="padding:6px;border:1px solid var(--p-border)">380 – 450</td></tr>
+    <tr><td style="padding:6px;border:1px solid var(--p-border)">Bleu</td><td style="padding:6px;border:1px solid var(--p-border)">450 – 490</td></tr>
+    <tr><td style="padding:6px;border:1px solid var(--p-border)">Vert</td><td style="padding:6px;border:1px solid var(--p-border)">490 – 560</td></tr>
+    <tr><td style="padding:6px;border:1px solid var(--p-border)">Jaune</td><td style="padding:6px;border:1px solid var(--p-border)">560 – 590</td></tr>
+    <tr><td style="padding:6px;border:1px solid var(--p-border)">Orange</td><td style="padding:6px;border:1px solid var(--p-border)">590 – 625</td></tr>
+    <tr><td style="padding:6px;border:1px solid var(--p-border)">Rouge</td><td style="padding:6px;border:1px solid var(--p-border)">625 – 780</td></tr>
+  </table>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Identifier la couleur correspondant à chaque longueur d'onde :</p>
+  <ol type="a">
+    <li>\(\lambda = 650\ \text{nm}\)</li>
+    <li>\(\lambda = 520\ \text{nm}\)</li>
+    <li>\(\lambda = 470\ \text{nm}\)</li>
+    <li>\(\lambda = 580\ \text{nm}\)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>650 nm → <strong>Rouge</strong></li>
+      <li>520 nm → <strong>Vert</strong></li>
+      <li>470 nm → <strong>Bleu</strong></li>
+      <li>580 nm → <strong>Jaune</strong></li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 5</h3>
+  <p>Une LED rouge standard émet à \(\lambda = 660\ \text{nm}\). Une LED bleue émet à \(\lambda = 450\ \text{nm}\). Laquelle a la plus grande énergie par photon ? (Rappel : l'énergie d'un photon est \(E = hc/\lambda\), donc plus \(\lambda\) est petit, plus l'énergie est grande.)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La LED bleue (\(\lambda = 450\ \text{nm}\)) a une longueur d'onde plus courte. Donc chaque photon bleu porte <strong>plus d'énergie</strong> que chaque photon rouge (\(\lambda = 660\ \text{nm}\)).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 6</h3>
+  <p>Un installateur d'enseignes lumineuses utilise des tubes à néon qui émettent principalement à 589 nm et 670 nm. Identifier les couleurs émises.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>589 nm : dans la plage 560–590 nm → <strong>jaune</strong></li>
+      <li>670 nm : dans la plage 625–780 nm → <strong>rouge</strong></li>
+    </ul>
+    <p>L'enseigne émet une lumière jaune-orangée caractéristique des tubes au néon.</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C3 ===== -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Absorption et transmission d'un filtre coloré</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Un <strong>filtre coloré</strong> transmet les radiations de sa propre couleur et absorbe les autres.</p>
+  <ul>
+    <li>Un filtre rouge : transmet le rouge, absorbe le bleu et le vert</li>
+    <li>Un filtre vert : transmet le vert, absorbe le rouge et le bleu</li>
+    <li>Un filtre bleu : transmet le bleu, absorbe le rouge et le vert</li>
+  </ul>
+  <p>Si on superpose deux filtres, seules les radiations transmises par les <strong>deux filtres</strong> passent. Si les filtres sont de couleurs complémentaires, aucune lumière ne passe → noir.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 7</h3>
+  <p>De la lumière blanche traverse un filtre rouge. Décrire ce qui se passe et indiquer la couleur de la lumière transmise.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le filtre rouge <strong>absorbe</strong> les radiations bleues et vertes, et <strong>transmet</strong> uniquement les radiations rouges. La lumière qui ressort est donc de couleur <strong>rouge</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 8</h3>
+  <p>Un photographe superpose un filtre rouge et un filtre vert sur son objectif. Quelle couleur observe-t-il sur la photo ? Justifier.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le filtre rouge ne transmet que le rouge (absorbe bleu et vert). Le filtre vert ne transmet que le vert (absorbe rouge et bleu). En superposant les deux :</p>
+    <ul>
+      <li>Le rouge est absorbé par le filtre vert.</li>
+      <li>Le vert est absorbé par le filtre rouge.</li>
+      <li>Le bleu est absorbé par les deux filtres.</li>
+    </ul>
+    <p>Aucune radiation ne passe : la photo apparaît <strong>noire</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 9</h3>
+  <p>Un menuisier agenceur choisit un éclairage avec un filtre bleu pour illuminer une pièce peinte en blanc. Quelle couleur aura la pièce sous cet éclairage ? Et si la pièce est peinte en rouge ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Pièce blanche</strong> : une surface blanche réfléchit toutes les couleurs. Sous éclairage bleu, seule la lumière bleue est disponible, donc la pièce paraît <strong>bleue</strong>.</p>
+    <p><strong>Pièce rouge</strong> : une surface rouge absorbe le bleu et le vert, et ne réfléchit que le rouge. Sous éclairage bleu, il n'y a pas de rouge à réfléchir : la pièce paraît <strong>noire</strong>.</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C4 ===== -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Distinguer synthèse additive et soustractive</h2>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <div class="grid2" style="gap:12px;margin-top:8px">
+    <div style="background:var(--p-bg);padding:10px;border-radius:6px;border:1px solid var(--p-border)">
+      <strong>Synthèse additive</strong><br>
+      Mélange de lumières colorées<br>
+      Couleurs primaires : <span style="color:#e00">Rouge</span> + <span style="color:#0a0">Vert</span> + <span style="color:#00d">Bleu</span> = Blanc<br>
+      Usage : écrans LED, vidéoprojecteurs, éclairage scénique
+    </div>
+    <div style="background:var(--p-bg);padding:10px;border-radius:6px;border:1px solid var(--p-border)">
+      <strong>Synthèse soustractive</strong><br>
+      Mélange de pigments (peintures, encres)<br>
+      Couleurs primaires : <span style="color:#0aa">Cyan</span> + <span style="color:#a0a">Magenta</span> + <span style="color:#aa0">Jaune</span> = Noir<br>
+      Usage : impression couleur (CMJN), peinture
+    </div>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 10</h3>
+  <p>Un technicien installe un écran de vidéoprojection. L'écran émet de la lumière en mélangeant des pixels rouge, vert et bleu. Quel type de synthèse utilise-t-il ? Quelle couleur apparaît si tous les pixels sont au maximum ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Il s'agit de la <strong>synthèse additive</strong> (mélange de lumières).</p>
+    <p>Rouge + Vert + Bleu au maximum = <strong>blanc</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 11</h3>
+  <p>Un imprimeur utilise des encres cyan, magenta et jaune pour imprimer une affiche. Quel type de synthèse est utilisé ? Quelle couleur obtient-on en mélangeant les trois encres en quantités égales ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Il s'agit de la <strong>synthèse soustractive</strong> (mélange de pigments/encres qui soustraient des couleurs à la lumière blanche).</p>
+    <p>Cyan + Magenta + Jaune = <strong>noir</strong> (en théorie) — en pratique, les encres donnent un brun foncé, d'où l'ajout d'une encre noire (N) dans l'impression CMJN.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 12</h3>
+  <p>En synthèse additive, déterminer la couleur obtenue par les mélanges suivants :</p>
+  <ol type="a">
+    <li>Rouge + Vert (sans bleu)</li>
+    <li>Rouge + Bleu (sans vert)</li>
+    <li>Vert + Bleu (sans rouge)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Rouge + Vert = <strong>Jaune</strong></li>
+      <li>Rouge + Bleu = <strong>Magenta</strong></li>
+      <li>Vert + Bleu = <strong>Cyan</strong></li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 13</h3>
+  <p>Un peintre en bâtiment mélange de la peinture jaune et de la peinture cyan pour obtenir une teinte. Quel type de synthèse réalise-t-il ? Quelle couleur obtient-il ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Il réalise une <strong>synthèse soustractive</strong> (mélange de pigments).</p>
+    <p>Jaune + Cyan = <strong>vert</strong>. (Le jaune absorbe le bleu, le cyan absorbe le rouge : il ne reste que le vert à être réfléchi.)</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C5 ===== -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Principe d'un photodétecteur (photodiode, photorésistance)</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Un <strong>photodétecteur</strong> est un composant électronique qui convertit la lumière en signal électrique.</p>
+  <ul>
+    <li><strong>Photorésistance (LDR)</strong> : résistance qui diminue quand l'éclairement augmente — utilisée dans les systèmes d'éclairage automatique, les détecteurs de lumière du jour</li>
+    <li><strong>Photodiode</strong> : génère un courant électrique proportionnel à la lumière reçue — utilisée dans les télécommandes, les capteurs de lumière précis, les panneaux solaires</li>
+    <li><strong>Cellule solaire (photovoltaïque)</strong> : photodiode à grande surface, convertit la lumière solaire en énergie électrique</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 14</h3>
+  <p>Un installateur de systèmes domotiques utilise une photorésistance pour déclencher l'éclairage extérieur à la tombée de la nuit. La résistance de la LDR est de 100 Ω en plein jour et de 10 MΩ dans l'obscurité.</p>
+  <ol type="a">
+    <li>Comment évolue la résistance d'une photorésistance quand la luminosité diminue ?</li>
+    <li>Grâce à la loi d'Ohm, expliquer comment cette variation peut actionner un relais électrique.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>La résistance d'une LDR <strong>augmente</strong> quand la luminosité diminue (de 100 Ω en plein jour à 10 MΩ dans le noir).</li>
+      <li>D'après la loi d'Ohm \(I = U/R\) : quand \(R\) augmente (nuit), l'intensité \(I\) diminue. Ce changement de courant peut être détecté par un circuit électronique pour déclencher un relais et allumer l'éclairage.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 15</h3>
+  <p>Un électricien installe une télécommande de portail utilisant une photodiode infrarouge. La photodiode reçoit un signal infrarouge à \(\lambda = 940\ \text{nm}\).</p>
+  <ol type="a">
+    <li>La photodiode est-elle visible à l'œil nu ? Justifier.</li>
+    <li>Quel type de signal la photodiode produit-elle lorsqu'elle reçoit de la lumière ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(940\ \text{nm} > 780\ \text{nm}\) : la radiation est dans l'infrarouge, donc <strong>non visible</strong> à l'œil nu.</li>
+      <li>La photodiode produit un <strong>courant électrique</strong> (ou une tension) proportionnel à la puissance lumineuse reçue.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 16</h3>
+  <p>Un installateur de panneaux photovoltaïques explique que des cellules solaires convertissent la lumière du soleil en électricité. Sur quel principe physique repose une cellule solaire ? Préciser le type de photodétecteur utilisé.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Une cellule solaire (ou cellule photovoltaïque) est une <strong>grande photodiode</strong>. Elle repose sur l'<strong>effet photoélectrique</strong> dans un semi-conducteur (le silicium en général) : les photons de la lumière solaire fournissent de l'énergie aux électrons du matériau, créant ainsi un courant électrique continu.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 17</h3>
+  <p>Compléter le tableau suivant en associant chaque capteur à ses caractéristiques :</p>
+  <table style="border-collapse:collapse;width:100%;margin:8px 0">
+    <tr style="background:var(--p-bg)">
+      <th style="padding:6px;border:1px solid var(--p-border)">Capteur</th>
+      <th style="padding:6px;border:1px solid var(--p-border)">Signal produit</th>
+      <th style="padding:6px;border:1px solid var(--p-border)">Application typique</th>
+    </tr>
+    <tr>
+      <td style="padding:6px;border:1px solid var(--p-border)">Photorésistance (LDR)</td>
+      <td style="padding:6px;border:1px solid var(--p-border)"> ?</td>
+      <td style="padding:6px;border:1px solid var(--p-border)"> ?</td>
+    </tr>
+    <tr>
+      <td style="padding:6px;border:1px solid var(--p-border)">Photodiode</td>
+      <td style="padding:6px;border:1px solid var(--p-border)"> ?</td>
+      <td style="padding:6px;border:1px solid var(--p-border)"> ?</td>
+    </tr>
+    <tr>
+      <td style="padding:6px;border:1px solid var(--p-border)">Cellule photovoltaïque</td>
+      <td style="padding:6px;border:1px solid var(--p-border)"> ?</td>
+      <td style="padding:6px;border:1px solid var(--p-border)"> ?</td>
+    </tr>
+  </table>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table style="border-collapse:collapse;width:100%;margin:8px 0">
+      <tr style="background:var(--p-bg)">
+        <th style="padding:6px;border:1px solid var(--p-border)">Capteur</th>
+        <th style="padding:6px;border:1px solid var(--p-border)">Signal produit</th>
+        <th style="padding:6px;border:1px solid var(--p-border)">Application typique</th>
+      </tr>
+      <tr>
+        <td style="padding:6px;border:1px solid var(--p-border)">Photorésistance (LDR)</td>
+        <td style="padding:6px;border:1px solid var(--p-border)">Variation de résistance</td>
+        <td style="padding:6px;border:1px solid var(--p-border)">Éclairage automatique, réveil lumineux</td>
+      </tr>
+      <tr>
+        <td style="padding:6px;border:1px solid var(--p-border)">Photodiode</td>
+        <td style="padding:6px;border:1px solid var(--p-border)">Courant électrique</td>
+        <td style="padding:6px;border:1px solid var(--p-border)">Réception IR (télécommande), fibre optique</td>
+      </tr>
+      <tr>
+        <td style="padding:6px;border:1px solid var(--p-border)">Cellule photovoltaïque</td>
+        <td style="padding:6px;border:1px solid var(--p-border)">Tension et courant électrique</td>
+        <td style="padding:6px;border:1px solid var(--p-border)">Panneau solaire, calculatrice</td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+
+</div>
+
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+<script>
+function toggle(btn){
+  var corr=btn.nextElementSibling;
+  if(corr.style.display==='block'){corr.style.display='none';btn.textContent='Voir la correction';}
+  else{corr.style.display='block';btn.textContent='Masquer la correction';}
+}
+</script>
+</body>
+</html>

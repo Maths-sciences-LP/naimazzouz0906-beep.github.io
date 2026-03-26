@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch13 – Exercices par capacités – Réflexion, réfraction et signaux lumineux – 2nde Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 13 – Exercices par capacités</h1>
+  <p class="sous-titre">Réflexion, réfraction et signaux lumineux &nbsp;|&nbsp; 2nde Bac Pro &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> — Appliquer les lois de la réflexion (angle incident = angle réfléchi)</li>
+    <li><strong>C2</strong> — Appliquer la loi de Snell-Descartes pour la réfraction : \(n_1 \sin i_1 = n_2 \sin i_2\)</li>
+    <li><strong>C3</strong> — Calculer un indice de réfraction</li>
+    <li><strong>C4</strong> — Identifier le phénomène de réflexion totale interne</li>
+    <li><strong>C5</strong> — Reconnaître les applications (fibre optique, miroir, prisme)</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-filtre="toutes">Toutes</button>
+  <button class="btn-cap" data-filtre="C1">C1 – Réflexion</button>
+  <button class="btn-cap" data-filtre="C2">C2 – Loi de Snell-Descartes</button>
+  <button class="btn-cap" data-filtre="C3">C3 – Indice de réfraction</button>
+  <button class="btn-cap" data-filtre="C4">C4 – Réflexion totale interne</button>
+  <button class="btn-cap" data-filtre="C5">C5 – Applications</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- ===== C1 ===== -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Appliquer les lois de la réflexion</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Lors d'une réflexion sur un miroir plan :</p>
+  <ul>
+    <li>Le rayon incident, la normale et le rayon réfléchi sont dans le même plan.</li>
+    <li>L'angle de réflexion est égal à l'angle d'incidence : \(\hat{r} = \hat{i}\)</li>
+    <li>Les angles sont mesurés par rapport à la <strong>normale</strong> à la surface au point d'incidence (pas par rapport à la surface elle-même).</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un rayon lumineux frappe un miroir plan avec un angle d'incidence de 35°. Calculer l'angle de réflexion.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La loi de la réflexion indique que l'angle de réflexion est égal à l'angle d'incidence :</p>
+    <p>\(\hat{r} = \hat{i} = \mathbf{35°}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un menuisier agenceur installe un miroir plan incliné à 30° par rapport à la verticale. Un rayon de lumière horizontal (0° par rapport à l'horizontale) frappe ce miroir.</p>
+  <ol type="a">
+    <li>Calculer l'angle d'incidence par rapport à la normale au miroir.</li>
+    <li>En déduire l'angle de réflexion.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>La normale au miroir est perpendiculaire à sa surface. Si le miroir est à 30° de la verticale, sa normale est à 30° de l'horizontale. L'angle entre le rayon horizontal et la normale est donc \(\hat{i} = 90° - 30° = \mathbf{60°}\).</li>
+      <li>\(\hat{r} = \hat{i} = \mathbf{60°}\)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un rayon lumineux se réfléchit sur un miroir. L'angle entre le rayon incident et le rayon réfléchi est de 80°. Calculer l'angle d'incidence.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>L'angle entre le rayon incident et le rayon réfléchi est \(\hat{i} + \hat{r} = 80°\). Puisque \(\hat{i} = \hat{r}\) :</p>
+    <p>\(2\hat{i} = 80° \Rightarrow \hat{i} = \mathbf{40°}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Un rayon lumineux tombe perpendiculairement sur un miroir plan. Décrire le trajet du rayon réfléchi.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Si le rayon tombe perpendiculairement (angle d'incidence \(\hat{i} = 0°\)), alors \(\hat{r} = 0°\). Le rayon réfléchi repart dans la <strong>direction exactement opposée</strong> au rayon incident, selon la même normale.</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C2 ===== -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Appliquer la loi de Snell-Descartes (réfraction)</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Lors du passage d'un milieu 1 (indice \(n_1\)) vers un milieu 2 (indice \(n_2\)), la loi de Snell-Descartes s'écrit :</p>
+  <p>\[n_1 \sin i_1 = n_2 \sin i_2\]</p>
+  <p>avec \(i_1\) et \(i_2\) les angles par rapport à la normale à la surface.</p>
+  <ul>
+    <li>Si \(n_2 > n_1\) (milieu plus réfringent) : le rayon se rapproche de la normale (\(i_2 < i_1\))</li>
+    <li>Si \(n_2 < n_1\) (milieu moins réfringent) : le rayon s'éloigne de la normale (\(i_2 > i_1\))</li>
+  </ul>
+  <p>Indices courants : air ≈ 1 ; eau ≈ 1,33 ; verre ≈ 1,5.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 5</h3>
+  <p>Un rayon lumineux passe de l'air (\(n_1 = 1{,}0\)) dans de l'eau (\(n_2 = 1{,}33\)) avec un angle d'incidence \(i_1 = 45°\). Calculer l'angle de réfraction \(i_2\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(n_1 \sin i_1 = n_2 \sin i_2\)</p>
+    <p>\(\sin i_2 = \frac{n_1 \sin i_1}{n_2} = \frac{1{,}0 \times \sin 45°}{1{,}33} = \frac{0{,}707}{1{,}33} \approx 0{,}532\)</p>
+    <p>\(i_2 = \arcsin(0{,}532) \approx \mathbf{32{,}1°}\)</p>
+    <p>Le rayon se rapproche de la normale en entrant dans l'eau (32° &lt; 45°).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 6</h3>
+  <p>Un rayon passe de l'eau (\(n_1 = 1{,}33\)) vers le verre (\(n_2 = 1{,}5\)) avec \(i_1 = 30°\). Calculer \(i_2\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(\sin i_2 = \frac{n_1 \sin i_1}{n_2} = \frac{1{,}33 \times \sin 30°}{1{,}5} = \frac{1{,}33 \times 0{,}5}{1{,}5} = \frac{0{,}665}{1{,}5} \approx 0{,}443\)</p>
+    <p>\(i_2 = \arcsin(0{,}443) \approx \mathbf{26{,}3°}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 7</h3>
+  <p>Un rayon passe du verre (\(n_1 = 1{,}5\)) dans l'air (\(n_2 = 1{,}0\)) avec \(i_1 = 20°\). Calculer \(i_2\). Le rayon s'éloigne-t-il ou se rapproche-t-il de la normale ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(\sin i_2 = \frac{n_1 \sin i_1}{n_2} = \frac{1{,}5 \times \sin 20°}{1{,}0} = 1{,}5 \times 0{,}342 = 0{,}513\)</p>
+    <p>\(i_2 = \arcsin(0{,}513) \approx \mathbf{30{,}9°}\)</p>
+    <p>Le rayon <strong>s'éloigne</strong> de la normale (30,9° > 20°) en passant d'un milieu plus réfringent vers un milieu moins réfringent.</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C3 ===== -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Calculer un indice de réfraction</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>L'indice de réfraction d'un milieu \(n\) est défini par :</p>
+  <p>\[n = \frac{c}{v}\]</p>
+  <p>avec \(c = 3 \times 10^8\ \text{m/s}\) (vitesse de la lumière dans le vide) et \(v\) la vitesse de la lumière dans le milieu.</p>
+  <p>On peut aussi déduire \(n\) des angles de réfraction via Snell-Descartes : \(n = \frac{n_1 \sin i_1}{\sin i_2}\)</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 8</h3>
+  <p>La vitesse de la lumière dans un verre est \(v = 2 \times 10^8\ \text{m/s}\). Calculer l'indice de réfraction de ce verre. (\(c = 3 \times 10^8\ \text{m/s}\))</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(n = \frac{c}{v} = \frac{3 \times 10^8}{2 \times 10^8} = \mathbf{1{,}5}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 9</h3>
+  <p>Un rayon passe de l'air (\(n_1 = 1{,}0\)) dans un liquide inconnu avec \(i_1 = 60°\) et \(i_2 = 38°\). Calculer l'indice de réfraction du liquide.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(n_2 = \frac{n_1 \sin i_1}{\sin i_2} = \frac{1{,}0 \times \sin 60°}{\sin 38°} = \frac{0{,}866}{0{,}616} \approx \mathbf{1{,}41}\)</p>
+    <p>Ce liquide est l'eau (indice ≈ 1,33 à 1,41 selon la température et la pureté).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 10</h3>
+  <p>L'indice d'une fibre optique en verre est \(n = 1{,}62\). Calculer la vitesse de la lumière dans cette fibre.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(v = \frac{c}{n} = \frac{3 \times 10^8}{1{,}62} \approx \mathbf{1{,}85 \times 10^8\ \text{m/s}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 11</h3>
+  <p>Un prisme en verre a un indice \(n = 1{,}52\). Un rayon entre dans le prisme depuis l'air (\(n_{air} = 1\)) avec un angle d'incidence \(i_1 = 50°\). Calculer l'angle de réfraction \(i_2\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(\sin i_2 = \frac{n_{air} \sin i_1}{n_{verre}} = \frac{1 \times \sin 50°}{1{,}52} = \frac{0{,}766}{1{,}52} \approx 0{,}504\)</p>
+    <p>\(i_2 = \arcsin(0{,}504) \approx \mathbf{30{,}2°}\)</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C4 ===== -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Identifier le phénomène de réflexion totale interne</h2>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <p>La <strong>réflexion totale interne</strong> se produit lorsqu'un rayon passe d'un milieu dense (grand \(n\)) vers un milieu moins dense (petit \(n\)) et que l'angle d'incidence dépasse l'<strong>angle critique</strong> \(i_c\) :</p>
+  <p>\[\sin i_c = \frac{n_2}{n_1}\]</p>
+  <p>Au-delà de \(i_c\), tout le rayon est réfléchi : il n'y a plus de rayon réfracté. C'est ce phénomène qui permet la transmission de la lumière dans les <strong>fibres optiques</strong>.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 12</h3>
+  <p>Un rayon passe du verre (\(n_1 = 1{,}5\)) vers l'air (\(n_2 = 1{,}0\)). Calculer l'angle critique de réflexion totale interne.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(\sin i_c = \frac{n_2}{n_1} = \frac{1{,}0}{1{,}5} = 0{,}667\)</p>
+    <p>\(i_c = \arcsin(0{,}667) \approx \mathbf{41{,}8°}\)</p>
+    <p>Pour tout angle d'incidence supérieur à 41,8°, le rayon est totalement réfléchi et ne sort pas du verre.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 13</h3>
+  <p>Une fibre optique est constituée d'un cœur de verre (\(n_1 = 1{,}62\)) entouré d'une gaine (\(n_2 = 1{,}52\)). Calculer l'angle critique de réflexion totale interne entre le cœur et la gaine.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(\sin i_c = \frac{n_2}{n_1} = \frac{1{,}52}{1{,}62} \approx 0{,}938\)</p>
+    <p>\(i_c = \arcsin(0{,}938) \approx \mathbf{69{,}6°}\)</p>
+    <p>Tout rayon arrivant sur l'interface cœur/gaine avec un angle supérieur à 69,6° est totalement réfléchi et reste confiné dans le cœur.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 14</h3>
+  <p>Un technicien réseau installe un câble à fibre optique. Il plie légèrement le câble. Expliquer pourquoi, si la courbure est trop importante, le signal peut être perdu.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Dans une fibre optique, la lumière se propage par réflexion totale interne. Si le câble est trop courbé, l'angle d'incidence de certains rayons sur la paroi du cœur devient <strong>inférieur</strong> à l'angle critique. La réflexion totale interne n'a plus lieu : une partie de la lumière s'échappe dans la gaine et le signal est <strong>atténué ou perdu</strong>.</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C5 ===== -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Reconnaître les applications (fibre optique, miroir, prisme)</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <ul>
+    <li><strong>Miroir plan</strong> : réflexion spéculaire — utilisé en optique, dans les systèmes d'éclairage, miroirs rétroviseurs</li>
+    <li><strong>Prisme</strong> : réfraction — dévie et décompose la lumière (spectre), utilisé dans les jumelles, spectromètres</li>
+    <li><strong>Fibre optique</strong> : réflexion totale interne — transmet la lumière sur de longues distances sans perte (télécommunications, endoscopie, capteurs)</li>
+    <li><strong>Lentille</strong> : réfraction — converge ou diverge les rayons (lunettes, appareils photo)</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 15</h3>
+  <p>Associer chaque application à son phénomène physique principal :</p>
+  <ol type="a">
+    <li>Câble de télécommunications internet par fibre optique</li>
+    <li>Miroir de salle de bain</li>
+    <li>Prisme dispersif d'un spectrographe</li>
+    <li>Rétroviseur d'une voiture</li>
+    <li>Endoscope médical</li>
+  </ol>
+  <p>Phénomènes : réflexion — réfraction — réflexion totale interne</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Fibre optique → <strong>Réflexion totale interne</strong></li>
+      <li>Miroir de salle de bain → <strong>Réflexion</strong></li>
+      <li>Prisme dispersif → <strong>Réfraction</strong></li>
+      <li>Rétroviseur → <strong>Réflexion</strong></li>
+      <li>Endoscope → <strong>Réflexion totale interne</strong> (fibres optiques)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 16</h3>
+  <p>Un électricien installe un réseau de fibres optiques dans un bâtiment professionnel. Il sait que la fibre peut transmettre des données sur plusieurs kilomètres sans amplification. Expliquer, en utilisant le phénomène physique adapté, pourquoi la lumière peut parcourir une telle distance dans la fibre.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La fibre optique utilise le phénomène de <strong>réflexion totale interne</strong>. La lumière, confinée dans le cœur de la fibre (indice élevé), se réfléchit complètement à chaque contact avec la gaine (indice plus faible), sans jamais quitter le cœur. Il n'y a donc pratiquement aucune perte d'énergie lumineuse, ce qui permet de transmettre le signal sur de très longues distances.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 17</h3>
+  <p>Un prisme équilatéral (en verre d'indice \(n = 1{,}5\)) est utilisé pour décomposer la lumière blanche en ses couleurs. Expliquer brièvement pourquoi un prisme permet de décomposer la lumière blanche.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>L'indice de réfraction du verre varie légèrement selon la longueur d'onde (couleur) de la lumière : il est légèrement plus élevé pour le violet que pour le rouge. Lors de la réfraction dans le prisme, chaque couleur est déviée d'un angle différent : le violet est le plus dévié, le rouge le moins. La lumière blanche (mélange de toutes les couleurs) est ainsi <strong>dispersée</strong> (décomposée) en un spectre arc-en-ciel.</p>
+  </div>
+</div>
+</div>
+
+</div>
+
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+<script>
+function toggle(btn){
+  var corr=btn.nextElementSibling;
+  if(corr.style.display==='block'){corr.style.display='none';btn.textContent='Voir la correction';}
+  else{corr.style.display='block';btn.textContent='Masquer la correction';}
+}
+</script>
+</body>
+</html>

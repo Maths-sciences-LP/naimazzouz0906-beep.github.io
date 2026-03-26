@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Exercices par capacités – Sources lumineuses – Terminale Bac Pro ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-erama.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 6 – Exercices par capacités</h1>
+  <p class="sous-titre">Choisir une source lumineuse &nbsp;|&nbsp; Terminale Bac Pro ERA-MA &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li>C1 – Comparer les caractéristiques des sources (incandescence, fluo-compact, LED)</li>
+    <li>C2 – Calculer un flux lumineux et une efficacité lumineuse (lm/W)</li>
+    <li>C3 – Identifier la température de couleur (K) et l'IRC</li>
+    <li>C4 – Choisir une source adaptée à un usage (éclairage atelier, vitrine)</li>
+    <li>C5 – Calculer la consommation et le coût d'éclairage</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Comparer les caractéristiques des sources lumineuses</h2>
+
+<div class="retenir">
+  <table style="width:100%;border-collapse:collapse;font-size:0.95em">
+    <tr style="background:var(--p-bg)"><th style="padding:4px;text-align:left">Type</th><th>Efficacité (lm/W)</th><th>Durée de vie</th><th>Coût</th></tr>
+    <tr><td>Incandescence</td><td>10–15</td><td>1 000 h</td><td>Faible</td></tr>
+    <tr><td>Fluo-compact (LBC)</td><td>50–70</td><td>8 000 h</td><td>Moyen</td></tr>
+    <tr><td>LED</td><td>80–150</td><td>25 000–50 000 h</td><td>Plus élevé</td></tr>
+  </table>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Une ampoule à incandescence de 100 W produit 1 400 lm. Une LED équivalente produit le même flux avec 10 W. Calculer l'efficacité lumineuse de chacune.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Incandescence : \(\eta = 1\,400 / 100 = 14\) lm/W<br>
+    LED : \(\eta = 1\,400 / 10 = 140\) lm/W<br>
+    <strong>La LED est 10 fois plus efficace.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un atelier de menuiserie remplace 20 ampoules à incandescence de 60 W par des LED de 8 W équivalentes. Calculer l'économie de puissance électrique.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Puissance initiale : \(20 \times 60 = 1\,200\) W<br>
+    Nouvelle puissance : \(20 \times 8 = 160\) W<br>
+    Économie : \(1\,200 - 160 = \mathbf{1\,040 \text{ W}}\) (réduction de 87 %)
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Comparer les durées de vie en années d'un atelier éclairé 10 h/jour, 220 jours/an avec des ampoules à incandescence (1 000 h) et des LED (25 000 h).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Heures annuelles : \(10 \times 220 = 2\,200\) h/an<br>
+    Incandescence : \(1\,000/2\,200 \approx 0{,}45\) an (5 mois) → remplacement très fréquent<br>
+    LED : \(25\,000/2\,200 \approx 11{,}4\) ans → remplacement rare<br>
+    <strong>La LED dure environ 25 fois plus longtemps dans ce contexte.</strong>
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Calculer un flux lumineux et une efficacité lumineuse</h2>
+
+<div class="retenir">
+  <strong>Flux lumineux</strong> \(\Phi\) : quantité totale de lumière émise (en lumens, lm)<br>
+  <strong>Efficacité lumineuse</strong> : \(\eta = \dfrac{\Phi}{P}\) (en lm/W)<br>
+  Plus \(\eta\) est élevée, plus la source est efficace.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un réglette LED de plan de travail de cuisine consomme \(P = 15\) W et a une efficacité de 100 lm/W. Calculer le flux lumineux émis.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[\Phi = \eta \times P = 100 \times 15 = 1\,500 \text{ lm}\]
+    <strong>Φ = 1 500 lm.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un spot LED pour l'éclairage d'un meuble d'exposition produit \(\Phi = 800\) lm pour \(P = 7\) W. Calculer l'efficacité lumineuse.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[\eta = \frac{\Phi}{P} = \frac{800}{7} \approx 114{,}3 \text{ lm/W}\]
+    <strong>η ≈ 114 lm/W.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un poseur de cuisines doit éclairer un plan de travail nécessitant 500 lm. Il dispose de deux types de spots : Type A (efficacité 90 lm/W, 6 W) et Type B (efficacité 130 lm/W, 4 W). Déterminer combien de spots de chaque type sont nécessaires pour atteindre 500 lm.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Spot A : flux par spot = \(90 \times 6 = 540\) lm → <strong>1 spot suffit</strong> (540 > 500).<br>
+    Spot B : flux par spot = \(130 \times 4 = 520\) lm → <strong>1 spot suffit</strong> également (520 > 500).<br>
+    Le spot B est préférable : même flux avec 4 W au lieu de 6 W.
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Identifier la température de couleur et l'IRC</h2>
+
+<div class="retenir">
+  <strong>Température de couleur</strong> (en kelvins K) :<br>
+  – &lt; 3 000 K : blanc chaud (ambiance cosy, salon)<br>
+  – 3 000 – 4 000 K : blanc neutre (bureaux, ateliers)<br>
+  – &gt; 5 000 K : blanc froid/lumière du jour (précision, postes de contrôle qualité)<br>
+  <strong>IRC (Indice de Rendu des Couleurs) :</strong> de 0 à 100. Plus proche de 100, plus les couleurs sont rendues fidèlement. IRC ≥ 80 recommandé pour les ateliers ; IRC ≥ 90 pour les expositions de meubles.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un menuisier ébéniste polit des meubles haut de gamme. Il doit contrôler les teintes du bois. Quelle température de couleur et quel IRC minimaux sont recommandés ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Pour un contrôle fidèle des teintes, il faut une lumière la plus proche possible de la lumière naturelle :<br>
+    – <strong>Température de couleur :</strong> 5 000 à 6 500 K (blanc froid / lumière du jour).<br>
+    – <strong>IRC ≥ 90</strong> (voire IRC 95 ou 98 pour les finisseurs professionnels).<br>
+    Un IRC élevé garantit que les teintes du bois apparaissent identiques sous la lampe et en lumière naturelle.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un installateur d'agencement propose à un client deux lampes pour son salon :<br>
+  – Lampe A : 2 700 K, IRC 85<br>
+  – Lampe B : 6 000 K, IRC 90<br>
+  Laquelle conseiller pour une atmosphère chaleureuse ? Justifier.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Pour une atmosphère chaleureuse (salon, pièce à vivre), il faut une lumière <strong>blanc chaud</strong>.<br>
+    <strong>Lampe A (2 700 K, IRC 85)</strong> est conseillée. Sa température de couleur basse donne une teinte ambrée proche d'une flamme de bougie, propice à la détente. La lampe B (6 000 K) est trop froide et "clinique" pour un salon.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un magasin d'exposition de cuisines veut mettre en valeur les couleurs des façades de meubles. Donner les caractéristiques (température de couleur, IRC) minimales de l'éclairage à recommander.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Pour une vitrine ou un showroom de meubles :<br>
+    – <strong>Température de couleur :</strong> 3 000 à 4 000 K (blanc chaud à neutre) selon l'ambiance souhaitée. Un blanc chaud (3 000 K) valorise les teintes bois naturel, un blanc neutre (4 000 K) est plus universel.<br>
+    – <strong>IRC ≥ 90</strong> (idéalement IRC ≥ 95) pour que les couleurs des façades soient perçues de manière fidèle, sans distorsion chromatique qui nuirait à l'expérience client.
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Choisir une source adaptée à un usage</h2>
+
+<div class="meth">
+  Critères de choix : efficacité lumineuse, durée de vie, IRC, température de couleur, coût, résistance aux vibrations (atelier).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un atelier de rabotage est éclairé par d'anciennes lampes fluorescentes. L'artisan veut passer aux LED. Donner trois avantages de la LED dans ce contexte industriel.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    1. <strong>Efficacité lumineuse supérieure :</strong> les LED consomment 50 à 70 % de moins pour le même niveau d'éclairement, réduisant la facture électrique.<br>
+    2. <strong>Durée de vie très longue :</strong> 25 000 à 50 000 h contre 8 000 h pour les fluorescentes, ce qui réduit les coûts de maintenance et les interruptions de production.<br>
+    3. <strong>Résistance aux vibrations :</strong> les LED, sans filament ni gaz sous pression, résistent mieux aux vibrations générées par les machines de l'atelier.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Pour une salle d'exposition de meubles haut de gamme, choisir entre :<br>
+  A) LED blanc chaud 2 700 K, IRC 92, 120 lm/W, 8 W<br>
+  B) LED blanc neutre 4 000 K, IRC 75, 140 lm/W, 6 W<br>
+  Justifier le choix.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>Choisir la lampe A.</strong><br>
+    – L'IRC 92 garantit une restitution fidèle des couleurs des bois et des tissus : essentiel pour valoriser des meubles haut de gamme.<br>
+    – La température de couleur 2 700 K crée une ambiance chaleureuse propice à l'achat.<br>
+    La lampe B, bien que plus économe (6 W), a un IRC trop bas (75) pour un espace de vente haut de gamme où la perception des couleurs est cruciale.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un menuisier agenceur doit choisir l'éclairage intégré d'un placard-dressing. Il souhaite un éclairage discret, sans chaleur, et adaptable à toutes les couleurs de vêtements. Proposer un type de source et ses caractéristiques.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>Ruban LED ou spots LED encastrés</strong> avec les caractéristiques suivantes :<br>
+    – Température de couleur : 3 500 – 4 000 K (blanc neutre, universel pour toutes les couleurs de vêtements).<br>
+    – IRC ≥ 90 (pour ne pas fausser la perception des couleurs).<br>
+    – Faible consommation (3 à 6 W par spot) et production de chaleur quasi nulle (pas de risque pour les vêtements).<br>
+    – Forme compacte pour l'intégration discrète dans les tablettes ou les montants du dressing.
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Calculer la consommation et le coût d'éclairage</h2>
+
+<div class="retenir">
+  Énergie : \(W = P \times t\) (kWh si \(P\) en kW et \(t\) en h)<br>
+  Coût : \(\text{Coût} = W \times \text{prix unitaire (€/kWh)}\)
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un atelier est éclairé par 15 spots de 18 W chacun pendant 10 h/jour, 220 jours/an. Calculer la consommation annuelle en kWh.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Puissance totale : \(15 \times 18 = 270\) W = 0,27 kW<br>
+    \[W = 0{,}27 \times (10 \times 220) = 0{,}27 \times 2\,200 = 594 \text{ kWh/an}\]
+    <strong>W = 594 kWh/an.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Le kWh est à 0,20 €. Calculer le coût annuel d'éclairage de cet atelier et comparer avec un remplacement par des LED de 8 W (même nombre, mêmes heures).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Coût actuel (18 W) : \(594 \times 0{,}20 = 118{,}80\) €/an<br>
+    Puissance LED : \(15 \times 8 = 120\) W = 0,12 kW<br>
+    Consommation LED : \(0{,}12 \times 2\,200 = 264\) kWh/an<br>
+    Coût LED : \(264 \times 0{,}20 = 52{,}80\) €/an<br>
+    <strong>Économie : 118,80 − 52,80 = 66 €/an</strong> (économie de 56 %).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un installateur d'agencement remplace l'éclairage d'un showroom. Les LED coûtent 12 € pièce (20 pièces). L'économie annuelle est de 120 €. Calculer le temps de retour sur investissement.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Investissement total : \(20 \times 12 = 240\) €<br>
+    \[T_{\text{retour}} = \frac{240}{120} = 2 \text{ ans}\]
+    <strong>Temps de retour = 2 ans.</strong> Ensuite, les LED génèrent une économie nette de 120 €/an pendant encore 8 à 10 ans.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Une réglette LED de 20 W dans une cuisine aménagée fonctionne 4 h/jour, 365 jours/an. Le kWh est à 0,20 €. Calculer le coût annuel d'utilisation.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[W = 0{,}020 \times (4 \times 365) = 0{,}020 \times 1\,460 = 29{,}2 \text{ kWh/an}\]
+    \[\text{Coût} = 29{,}2 \times 0{,}20 = 5{,}84 \text{ €/an}\]
+    <strong>Coût annuel = 5,84 €.</strong> Le coût d'exploitation d'un éclairage LED intégré est très faible.
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>
