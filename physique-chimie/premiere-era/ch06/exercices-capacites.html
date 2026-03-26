@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Exercices par capacités – Équilibre en rotation – 1ère Bac Pro ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-erama.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 6 – Exercices par capacités</h1>
+  <p class="sous-titre">Équilibre d'un solide en rotation autour d'un axe fixe &nbsp;|&nbsp; 1ère Bac Pro ERA-MA &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> — Définir et calculer un moment de force \(M = F \times d\)</li>
+    <li><strong>C2</strong> — Appliquer la condition d'équilibre \(\sum M = 0\)</li>
+    <li><strong>C3</strong> — Résoudre un problème de levier</li>
+    <li><strong>C4</strong> — Appliquer dans un contexte de menuiserie (couple de serrage, charnière, presse)</li>
+    <li><strong>C5</strong> — Calculer un bras de levier</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-filtre="toutes">Toutes</button>
+  <button class="btn-cap" data-filtre="C1">C1 – Moment de force</button>
+  <button class="btn-cap" data-filtre="C2">C2 – Condition d'équilibre</button>
+  <button class="btn-cap" data-filtre="C3">C3 – Problèmes de levier</button>
+  <button class="btn-cap" data-filtre="C4">C4 – Applications menuiserie</button>
+  <button class="btn-cap" data-filtre="C5">C5 – Bras de levier</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- ===== C1 ===== -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Définir et calculer un moment de force</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Le <strong>moment d'une force</strong> par rapport à un axe est la capacité de cette force à faire tourner un objet autour de cet axe.</p>
+  <p>\(M = F \times d\)</p>
+  <ul>
+    <li>\(M\) : moment en newtons-mètres (N·m)</li>
+    <li>\(F\) : force en newtons (N)</li>
+    <li>\(d\) : bras de levier = distance perpendiculaire entre l'axe et la ligne d'action de la force (en m)</li>
+  </ul>
+  <p>Convention de signe : moment positif (sens trigonométrique/sens inverse des aiguilles) et négatif (sens des aiguilles).</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un menuisier serre une vis avec une clé à molette. Il applique une force de 40 N à l'extrémité de la clé, à une distance de 18 cm de l'axe de la vis. Calculer le moment de la force.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(d = 18 \text{ cm} = 0{,}18 \text{ m}\)<br>
+    \(M = F \times d = 40 \times 0{,}18 = \mathbf{7{,}2}\) N·m
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un artisan agenceur exerce une force de 120 N sur un levier de déplacement. Le bras de levier est de 35 cm. Calculer le moment de la force. Convertir en N·m.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(M = 120 \times 0{,}35 = \mathbf{42}\) N·m
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Compléter le tableau suivant :</p>
+  <table>
+    <tr><th>Force \(F\) (N)</th><th>Bras de levier \(d\) (m)</th><th>Moment \(M\) (N·m)</th></tr>
+    <tr><td>50</td><td>0,20</td><td>…</td></tr>
+    <tr><td>…</td><td>0,30</td><td>15</td></tr>
+    <tr><td>80</td><td>…</td><td>24</td></tr>
+  </table>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Force \(F\) (N)</th><th>Bras de levier \(d\) (m)</th><th>Moment \(M\) (N·m)</th></tr>
+      <tr><td>50</td><td>0,20</td><td>\(50 \times 0{,}20 = \mathbf{10}\) N·m</td></tr>
+      <tr><td>\(15/0{,}30 = \mathbf{50}\) N</td><td>0,30</td><td>15</td></tr>
+      <tr><td>80</td><td>\(24/80 = \mathbf{0{,}30}\) m</td><td>24</td></tr>
+    </table>
+  </div>
+</div>
+</div>
+
+<!-- ===== C2 ===== -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Appliquer la condition d'équilibre \(\sum M = 0\)</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Pour qu'un solide soit en <strong>équilibre en rotation</strong> autour d'un axe fixe, la somme algébrique des moments de toutes les forces par rapport à cet axe doit être nulle :</p>
+  <p>\(\sum M = 0 \quad \Leftrightarrow \quad \sum M_{\text{positifs}} = \sum M_{\text{négatifs}}\)</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Une porte de placard (axe de rotation = charnière) est maintenue ouverte par une force \(F\). Le poids de la porte \(P = 80\) N agit à 40 cm de l'axe. La force \(F\) est appliquée à 70 cm de l'axe. Trouver \(F\) pour que la porte soit en équilibre.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Condition d'équilibre : \(M_F = M_P\)<br>
+    \(F \times 0{,}70 = 80 \times 0{,}40\)<br>
+    \(F = \dfrac{80 \times 0{,}40}{0{,}70} = \dfrac{32}{0{,}70} \approx \mathbf{45{,}7}\) N
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 5</h3>
+  <p>Un abattant de table (axe = charnière à gauche) pèse \(P = 150\) N appliqué à 45 cm de l'axe. Un ressort de rappel applique une force \(F_R\) à 10 cm de l'axe. Calculer la force du ressort nécessaire à l'équilibre.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(F_R \times 0{,}10 = 150 \times 0{,}45\)<br>
+    \(F_R = \dfrac{150 \times 0{,}45}{0{,}10} = \dfrac{67{,}5}{0{,}10} = \mathbf{675}\) N
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 6</h3>
+  <p>Un tiroir de meuble est monté sur un axe central (à 25 cm de chaque côté). À gauche, un objet de poids \(P_1 = 30\) N à 15 cm. À droite, un objet de poids \(P_2\) à 20 cm. Trouver \(P_2\) pour que le tiroir soit en équilibre.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(P_1 \times 0{,}15 = P_2 \times 0{,}20\)<br>
+    \(P_2 = \dfrac{30 \times 0{,}15}{0{,}20} = \dfrac{4{,}5}{0{,}20} = \mathbf{22{,}5}\) N
+  </div>
+</div>
+</div>
+
+<!-- ===== C3 ===== -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Résoudre un problème de levier</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Un <strong>levier</strong> est une barre rigide pouvant pivoter autour d'un axe (le pivot ou point d'appui). Il existe 3 classes de leviers selon la position relative du pivot, de la force motrice et de la charge résistante.</p>
+  <p>Principe : \(F_{\text{motrice}} \times d_{\text{motrice}} = F_{\text{résistante}} \times d_{\text{résistante}}\)</p>
+  <p>Gain mécanique : \(G = \dfrac{F_{\text{résistante}}}{F_{\text{motrice}}} = \dfrac{d_{\text{motrice}}}{d_{\text{résistante}}}\)</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 7</h3>
+  <p>Un menuisier utilise un pied-de-biche (levier) pour déplacer une lourde armoire. La résistance à vaincre est \(F_R = 600\) N à 8 cm du pivot. Le menuisier appuie à 60 cm du pivot. Calculer la force à exercer.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(F_m \times 0{,}60 = 600 \times 0{,}08\)<br>
+    \(F_m = \dfrac{600 \times 0{,}08}{0{,}60} = \dfrac{48}{0{,}60} = \mathbf{80}\) N<br>
+    Le levier multiplie la force par un rapport de \(600/80 = 7{,}5\).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 8</h3>
+  <p>Une presse à bois (levier du 2e genre) a son pivot à gauche. La pièce à comprimer exerce une résistance \(F_R = 2\,000\) N à 15 cm du pivot. L'opérateur appuie à l'extrémité droite du bras, à 80 cm du pivot.</p>
+  <ol type="a">
+    <li>Calculer la force à exercer.</li>
+    <li>Calculer le gain mécanique.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(F_m = \dfrac{2\,000 \times 0{,}15}{0{,}80} = \dfrac{300}{0{,}80} = \mathbf{375}\) N</li>
+      <li>\(G = \dfrac{F_R}{F_m} = \dfrac{2\,000}{375} \approx \mathbf{5{,}33}\)</li>
+    </ol>
+  </div>
+</div>
+</div>
+
+<!-- ===== C4 ===== -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Applications en menuiserie (couple de serrage, charnière, presse)</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Un <strong>couple</strong> est composé de deux forces égales et opposées créant un moment résultant. Le <strong>couple de serrage</strong> est la rotation exercée sur un boulon ou une vis.</p>
+  <p>\(M_{\text{couple}} = F \times d\) (même calcul que le moment de force)</p>
+  <p>Les charnières, presses et serre-joints en menuiserie fonctionnent tous sur le principe de l'équilibre des moments.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 9</h3>
+  <p>Un menuisier agenceur serre un boulon de fixation d'une charnière de porte. Il utilise une clé de 22 cm de long et exerce une force de 60 N à son extrémité. Calculer le couple de serrage.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(M = F \times d = 60 \times 0{,}22 = \mathbf{13{,}2}\) N·m
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 10</h3>
+  <p>Une charnière de meuble doit supporter une porte pesant \(P = 200\) N, dont le centre de gravité est à 30 cm de l'axe. La charnière est fixée à 5 cm du haut de la porte. Calculer le moment de la porte par rapport à l'axe de la charnière.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(M = P \times d = 200 \times 0{,}30 = \mathbf{60}\) N·m<br>
+    Ce moment doit être compensé par la réaction de la charnière pour maintenir l'équilibre.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 11</h3>
+  <p>Un ébéniste utilise un serre-joint à vis. La vis a un pas de 2 mm et le levier de serrage fait 25 cm de rayon. Il applique une force de 30 N à l'extrémité du levier.</p>
+  <ol type="a">
+    <li>Calculer le moment de serrage.</li>
+    <li>Si le rendement du serre-joint est de 30 %, quelle est la force de serrage réellement exercée sur la pièce de bois ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(M = 30 \times 0{,}25 = 7{,}5\) N·m</li>
+      <li>Sans pertes : \(F = M / (e/2\pi) = 7{,}5 / (0{,}002/2\pi) = 7{,}5 \times 2\pi / 0{,}002 \approx 23\,562\) N<br>
+      Avec rendement 30 % : \(F_{\text{réelle}} = 23\,562 \times 0{,}30 \approx \mathbf{7\,069}\) N ≈ 7 kN</li>
+    </ol>
+  </div>
+</div>
+</div>
+
+<!-- ===== C5 ===== -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Calculer un bras de levier</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Le <strong>bras de levier</strong> \(d\) est la distance perpendiculaire entre l'axe de rotation et la droite d'action de la force. Si la force est perpendiculaire au levier, \(d\) est simplement la longueur entre l'axe et le point d'application.</p>
+  <p>Si la force est inclinée d'un angle \(\theta\) par rapport au levier : \(d = L \times \sin\theta\) où \(L\) est la longueur du levier.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 12</h3>
+  <p>Un artisan tire sur une poignée de porte avec une force de 50 N perpendiculaire à la porte. La poignée est à 85 cm de l'axe de la charnière. Calculer le bras de levier et le moment.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    La force est perpendiculaire à la porte → bras de levier = distance entre l'axe et le point d'application.<br>
+    \(d = 0{,}85\) m<br>
+    \(M = 50 \times 0{,}85 = \mathbf{42{,}5}\) N·m
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 13</h3>
+  <p>Un levier de 40 cm de long est incliné à 30° par rapport à la force appliquée. Calculer le bras de levier effectif.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(d = L \times \sin\theta = 0{,}40 \times \sin(30°) = 0{,}40 \times 0{,}5 = \mathbf{0{,}20}\) m = 20 cm<br>
+    Le bras de levier effectif est réduit de moitié par rapport à l'application perpendiculaire.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 14</h3>
+  <p>Un technicien d'agencement visse une équerre avec une visseuse. Le couple maximal recommandé est 12 N·m. La visseuse applique la force à 8 cm de l'axe. Quelle force maximale ne doit-il pas dépasser ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(M = F \times d\) donc \(F = \dfrac{M}{d} = \dfrac{12}{0{,}08} = \mathbf{150}\) N
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

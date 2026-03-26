@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch07 – Exercices par capacités – Pression et force pressante – 1ère Bac Pro ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-erama.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 7 – Exercices par capacités</h1>
+  <p class="sous-titre">Pression et force pressante &nbsp;|&nbsp; 1ère Bac Pro ERA-MA &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> — Définir la pression \(p = F/S\) et ses unités</li>
+    <li><strong>C2</strong> — Calculer une pression</li>
+    <li><strong>C3</strong> — Appliquer la loi hydrostatique \(p = \rho g h\)</li>
+    <li><strong>C4</strong> — Convertir les unités de pression (bar, Pa, hPa, atm)</li>
+    <li><strong>C5</strong> — Appliquer dans un contexte de ponçage, presse, visserie</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-filtre="toutes">Toutes</button>
+  <button class="btn-cap" data-filtre="C1">C1 – Définition pression</button>
+  <button class="btn-cap" data-filtre="C2">C2 – Calcul de pression</button>
+  <button class="btn-cap" data-filtre="C3">C3 – Loi hydrostatique</button>
+  <button class="btn-cap" data-filtre="C4">C4 – Conversions</button>
+  <button class="btn-cap" data-filtre="C5">C5 – Applications pro</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- ===== C1 ===== -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Définir la pression et ses unités</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>La <strong>pression</strong> est la force exercée perpendiculairement par unité de surface :</p>
+  <p>\(p = \dfrac{F}{S}\)</p>
+  <ul>
+    <li>\(p\) : pression en pascals (Pa)</li>
+    <li>\(F\) : force en newtons (N)</li>
+    <li>\(S\) : surface en m²</li>
+  </ul>
+  <p>Autres unités : 1 bar = 100 000 Pa ; 1 atm ≈ 101 325 Pa ; 1 hPa = 100 Pa.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Donner la définition de la pression et son unité légale dans le système international. Pourquoi une force peut-elle avoir des effets très différents selon la surface sur laquelle elle s'exerce ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    La pression est la force exercée perpendiculairement sur une surface, divisée par l'aire de cette surface : \(p = F/S\). Son unité légale est le <strong>pascal (Pa)</strong>.<br>
+    Une même force appliquée sur une grande surface donne une pression faible (peu d'effet), alors que sur une petite surface, la pression est grande (effet concentré). Ex : un clou s'enfonce facilement car la surface de sa pointe est très petite.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Associer chaque valeur de pression à son contexte :</p>
+  <ul>
+    <li>A — 101 325 Pa</li>
+    <li>B — 6 bar</li>
+    <li>C — 200 Pa</li>
+  </ul>
+  <ol type="a">
+    <li>Pression dans un compresseur de chantier</li>
+    <li>Pression atmosphérique au niveau de la mer</li>
+    <li>Pression très légère (légèrement supérieure à rien)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    A → b (pression atmosphérique) ; B → a (compresseur) ; C → c (pression très faible)
+  </div>
+</div>
+</div>
+
+<!-- ===== C2 ===== -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Calculer une pression</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>\(p = \dfrac{F}{S}\) ; \(F = p \times S\) ; \(S = \dfrac{F}{p}\)</p>
+  <p>Attention aux unités : convertir les surfaces en m² et les forces en N.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Une ponceuse à bande exerce une force de 80 N sur une surface de ponçage de 200 cm². Calculer la pression exercée sur le bois.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(S = 200 \text{ cm}^2 = 200 \times 10^{-4} = 0{,}020 \text{ m}^2\)<br>
+    \(p = \dfrac{F}{S} = \dfrac{80}{0{,}020} = \mathbf{4\,000}\) Pa = 4 kPa
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Un vérin hydraulique d'une presse à bois exerce une pression de 50 bar sur un piston de 15 cm de diamètre. Calculer la force exercée sur la pièce de bois.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(p = 50 \text{ bar} = 50 \times 10^5 = 5 \times 10^6\) Pa<br>
+    \(r = 7{,}5 \text{ cm} = 0{,}075 \text{ m}\)<br>
+    \(S = \pi r^2 = \pi \times 0{,}075^2 \approx 0{,}01767 \text{ m}^2\)<br>
+    \(F = p \times S = 5 \times 10^6 \times 0{,}01767 \approx \mathbf{88\,357}\) N ≈ <strong>88,4 kN</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 5</h3>
+  <p>Un menuisier agenceur appuie avec un outil sur une surface de 4 cm × 2 cm avec une force de 60 N. Calculer la pression exercée.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(S = 4 \times 10^{-2} \times 2 \times 10^{-2} = 8 \times 10^{-4}\) m²<br>
+    \(p = \dfrac{60}{8 \times 10^{-4}} = \mathbf{75\,000}\) Pa = 75 kPa = 0,75 bar
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 6</h3>
+  <p>Un serre-joint exerce une pression de 120 000 Pa sur une surface de 6 cm². Calculer la force exercée.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(S = 6 \times 10^{-4}\) m²<br>
+    \(F = p \times S = 120\,000 \times 6 \times 10^{-4} = \mathbf{72}\) N
+  </div>
+</div>
+</div>
+
+<!-- ===== C3 ===== -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Appliquer la loi hydrostatique \(p = \rho g h\)</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Dans un liquide au repos, la pression augmente avec la profondeur :</p>
+  <p>\(p = \rho \cdot g \cdot h\)</p>
+  <ul>
+    <li>\(p\) : pression en Pa</li>
+    <li>\(\rho\) : masse volumique du liquide en kg/m³ (\(\rho_{\text{eau}} = 1\,000\) kg/m³)</li>
+    <li>\(g\) : intensité de pesanteur = 9,81 m/s² (≈ 10 m/s² pour simplifier)</li>
+    <li>\(h\) : profondeur en m</li>
+  </ul>
+  <p>Pression totale à la profondeur \(h\) : \(p_{tot} = p_{atm} + \rho g h\)</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 7</h3>
+  <p>Un bac de trempage du bois est rempli d'eau sur 1,2 m de hauteur. Calculer la pression exercée par l'eau sur le fond du bac. (\(\rho = 1\,000\) kg/m³, \(g = 9{,}81\) m/s²)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(p = \rho g h = 1\,000 \times 9{,}81 \times 1{,}2 = \mathbf{11\,772}\) Pa ≈ 11,8 kPa<br>
+    Pression totale sur le fond = \(101\,325 + 11\,772 = 113\,097\) Pa (pression atmosphérique + pression hydrostatique).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 8</h3>
+  <p>Une cuve contenant un vernis liquide (\(\rho = 1\,200\) kg/m³) est remplie sur 80 cm. Calculer la pression hydrostatique au fond de la cuve. (\(g = 9{,}81\) m/s²)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(p = \rho g h = 1\,200 \times 9{,}81 \times 0{,}80 = \mathbf{9\,418}\) Pa ≈ 9,4 kPa
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 9</h3>
+  <p>À quelle profondeur dans un bac d'eau (\(\rho = 1\,000\) kg/m³, \(g = 10\) m/s²) la pression hydrostatique vaut-elle 5 000 Pa ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(h = \dfrac{p}{\rho g} = \dfrac{5\,000}{1\,000 \times 10} = \dfrac{5\,000}{10\,000} = \mathbf{0{,}5}\) m = 50 cm
+  </div>
+</div>
+</div>
+
+<!-- ===== C4 ===== -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Convertir les unités de pression</h2>
+
+<div class="retenir">
+  <strong>Conversions à connaître</strong>
+  <p>\(1 \text{ bar} = 100\,000 \text{ Pa} = 10^5 \text{ Pa}\)<br>
+  \(1 \text{ atm} = 101\,325 \text{ Pa} \approx 1{,}013 \text{ bar}\)<br>
+  \(1 \text{ hPa} = 100 \text{ Pa}\)<br>
+  \(1 \text{ kPa} = 1\,000 \text{ Pa}\)<br>
+  \(1 \text{ MPa} = 10^6 \text{ Pa} = 10 \text{ bar}\)</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 10</h3>
+  <p>Convertir les pressions suivantes en pascals :</p>
+  <ol type="a">
+    <li>3 bar</li>
+    <li>0,8 bar</li>
+    <li>1 013 hPa (pression atmosphérique standard)</li>
+    <li>0,4 MPa</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(3 \times 10^5 = \mathbf{300\,000}\) Pa</li>
+      <li>\(0{,}8 \times 10^5 = \mathbf{80\,000}\) Pa</li>
+      <li>\(1\,013 \times 100 = \mathbf{101\,300}\) Pa</li>
+      <li>\(0{,}4 \times 10^6 = \mathbf{400\,000}\) Pa = 4 bar</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 11</h3>
+  <p>Un compresseur d'atelier indique 6 bar sur le manomètre. Convertir en Pa, en kPa et en MPa.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(6 \text{ bar} = 6 \times 10^5 \text{ Pa} = \mathbf{600\,000}\) Pa<br>
+    \(= \mathbf{600}\) kPa<br>
+    \(= \mathbf{0{,}6}\) MPa
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 12</h3>
+  <p>Classer les pressions suivantes de la plus petite à la plus grande :<br>
+  0,5 MPa ; 80 kPa ; 3 bar ; 750 hPa</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Conversion en Pa :<br>
+    0,5 MPa = 500 000 Pa<br>
+    80 kPa = 80 000 Pa<br>
+    3 bar = 300 000 Pa<br>
+    750 hPa = 75 000 Pa<br>
+    Ordre croissant : <strong>750 hPa &lt; 80 kPa &lt; 3 bar &lt; 0,5 MPa</strong>
+  </div>
+</div>
+</div>
+
+<!-- ===== C5 ===== -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Applications en menuiserie (ponçage, presse, visserie)</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Les outils pneumatiques (cloueuses, agrafeuses, pistolets à vernis) fonctionnent grâce à de l'air comprimé. La pression de travail typique d'un compresseur d'atelier est entre 4 et 8 bar. La force exercée par un piston dépend de la pression et de la surface du piston.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 13</h3>
+  <p>Une ponceuse orbitale a une semelle circulaire de diamètre 12 cm. Un menuisier exerce une force de 50 N pour appuyer la machine sur le bois. Calculer la pression exercée par la semelle sur la surface.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(r = 6 \text{ cm} = 0{,}06 \text{ m}\)<br>
+    \(S = \pi \times 0{,}06^2 = \pi \times 0{,}0036 \approx 0{,}01131\) m²<br>
+    \(p = \dfrac{50}{0{,}01131} \approx \mathbf{4\,421}\) Pa ≈ 4,4 kPa
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 14</h3>
+  <p>Un cloueur pneumatique fonctionne à 6 bar. Le piston a une surface de 5 cm². Calculer la force exercée sur la tête du clou.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(p = 6 \times 10^5\) Pa ; \(S = 5 \times 10^{-4}\) m²<br>
+    \(F = p \times S = 6 \times 10^5 \times 5 \times 10^{-4} = \mathbf{300}\) N
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 15</h3>
+  <p>Une presse hydraulique est utilisée pour coller des panneaux stratifiés. Elle exerce une pression de 0,8 MPa sur une surface de 50 cm × 120 cm. Calculer la force totale exercée sur le panneau.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(p = 0{,}8 \times 10^6\) Pa<br>
+    \(S = 0{,}50 \times 1{,}20 = 0{,}60\) m²<br>
+    \(F = p \times S = 0{,}8 \times 10^6 \times 0{,}60 = \mathbf{480\,000}\) N = <strong>480 kN</strong>
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch02 – Exercices par capacités – Redressement et onduleur – Terminale Bac Pro ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 2 – Exercices par capacités</h1>
+  <p class="sous-titre">Obtenir un courant continu à partir d'un courant alternatif et inversement &nbsp;|&nbsp; Terminale Bac Pro ICCER &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li>C1 – Distinguer courant alternatif et courant continu</li>
+    <li>C2 – Identifier le schéma d'un redresseur (monoalternance, double alternance)</li>
+    <li>C3 – Calculer la valeur moyenne d'un signal redressé</li>
+    <li>C4 – Identifier le rôle d'un condensateur de filtrage</li>
+    <li>C5 – Reconnaître les applications (alimentation, chargeur, variateur)</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap" data-cap="all">Toutes</button>
+  <button class="btn-cap" data-cap="C1">C1</button>
+  <button class="btn-cap" data-cap="C2">C2</button>
+  <button class="btn-cap" data-cap="C3">C3</button>
+  <button class="btn-cap" data-cap="C4">C4</button>
+  <button class="btn-cap" data-cap="C5">C5</button>
+</div>
+
+<!-- C1 -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Distinguer courant alternatif et courant continu</h2>
+
+<div class="retenir">
+  <strong>Courant alternatif (CA) :</strong> le sens du courant change périodiquement (réseau EDF, 230 V / 50 Hz).<br>
+  <strong>Courant continu (CC) :</strong> le courant circule toujours dans le même sens (batterie, alimentation stabilisée).
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Indiquer si chacun des éléments suivants fonctionne en courant alternatif (CA) ou continu (CC) :</p>
+  <ul>
+    <li>a) Réseau électrique domestique EDF (230 V)</li>
+    <li>b) Batterie de voiture (12 V)</li>
+    <li>c) Moteur CC d'un circulateur de chauffage</li>
+    <li>d) Résistance chauffante d'un chauffe-eau raccordé au réseau</li>
+  </ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    a) CA – le réseau EDF alterne à 50 Hz.<br>
+    b) CC – une batterie fournit une tension constante de même polarité.<br>
+    c) CC – un moteur CC est alimenté en courant continu stabilisé.<br>
+    d) CA – la résistance est directement branchée sur le réseau alternatif.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>La tension du réseau EDF est \(u(t) = 325\sin(2\pi \times 50 \times t)\) V. Donner la valeur efficace \(U\) et la fréquence \(f\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    La valeur maximale (amplitude) est \(U_{\max} = 325\) V.<br>
+    \[U = \frac{U_{\max}}{\sqrt{2}} = \frac{325}{\sqrt{2}} \approx 230 \text{ V}\]
+    La fréquence est \(f = 50\) Hz. <strong>U ≈ 230 V et f = 50 Hz.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un technicien chauffagiste utilise un multimètre sur le mode « V~ » (voltmètre alternatif). Il lit 230 V. Quelle grandeur mesure-t-il ? Quelle est la valeur de crête de cette tension ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Le multimètre en mode « V~ » mesure la <strong>valeur efficace</strong> de la tension alternative : \(U = 230\) V.<br>
+    La valeur de crête est : \(U_{\max} = U \times \sqrt{2} = 230 \times 1{,}414 \approx 325\) V.
+  </div>
+</div>
+</div>
+
+<!-- C2 -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Identifier le schéma d'un redresseur</h2>
+
+<div class="retenir">
+  <strong>Redresseur monoalternance :</strong> 1 diode — ne laisse passer qu'une demi-période.<br>
+  <strong>Redresseur double alternance (pont de Graetz) :</strong> 4 diodes — utilise les deux demi-périodes.<br>
+  La diode est un composant qui ne laisse passer le courant que dans un seul sens.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un schéma de redresseur contient une seule diode en série avec la charge. S'agit-il d'un redresseur monoalternance ou double alternance ? Décrire l'allure du signal de sortie.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Il s'agit d'un <strong>redresseur monoalternance</strong>. La diode bloque les demi-alternances négatives. Le signal de sortie est une succession de demi-sinusoïdes positives séparées par des intervalles nuls (une sur deux).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un pont de Graetz comporte 4 diodes. Expliquer pourquoi ce montage est dit « double alternance ». Décrire l'allure du signal de sortie.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Les 4 diodes sont organisées de façon à ce que, quelle que soit la demi-période (positive ou négative), le courant circule toujours dans le même sens dans la charge.<br>
+    Le signal de sortie est une succession de demi-sinusoïdes toutes positives, sans interruption : <strong>les deux alternances sont utilisées</strong>. La fréquence de la tension redressée est doublée (100 Hz pour une source à 50 Hz).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Dans une alimentation de régulateur de chauffage, on utilise un pont de Graetz plutôt qu'un redresseur monoalternance. Donner deux avantages du pont de Graetz.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    1. <strong>Valeur moyenne plus élevée :</strong> on utilise les deux alternances, donc la tension moyenne est environ deux fois plus grande.<br>
+    2. <strong>Ondulation plus faible :</strong> le signal oscille à 100 Hz (au lieu de 50 Hz), ce qui facilite le filtrage et donne une tension de sortie plus lisse.
+  </div>
+</div>
+</div>
+
+<!-- C3 -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Calculer la valeur moyenne d'un signal redressé</h2>
+
+<div class="retenir">
+  Monoalternance : \(U_{\text{moy}} = \dfrac{U_{\max}}{\pi} \approx 0{,}318 \times U_{\max}\)<br>
+  Double alternance : \(U_{\text{moy}} = \dfrac{2\,U_{\max}}{\pi} \approx 0{,}637 \times U_{\max}\)
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un redresseur monoalternance est alimenté par une tension de valeur maximale \(U_{\max} = 325\) V. Calculer la valeur moyenne de la tension de sortie.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[U_{\text{moy}} = \frac{U_{\max}}{\pi} = \frac{325}{\pi} \approx \frac{325}{3{,}14} \approx 103{,}5 \text{ V}\]
+    <strong>\(U_{\text{moy}} \approx 103{,}5\) V.</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un pont de Graetz est alimenté par la même tension (\(U_{\max} = 325\) V). Calculer la valeur moyenne de la tension redressée double alternance.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[U_{\text{moy}} = \frac{2 \times U_{\max}}{\pi} = \frac{2 \times 325}{\pi} \approx \frac{650}{3{,}14} \approx 207 \text{ V}\]
+    <strong>\(U_{\text{moy}} \approx 207\) V.</strong> La double alternance donne une tension moyenne deux fois plus élevée.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>On souhaite obtenir une tension moyenne de 150 V en sortie d'un pont de Graetz. Quelle doit être la valeur maximale \(U_{\max}\) de la tension d'entrée ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \[U_{\text{moy}} = \frac{2 U_{\max}}{\pi} \Rightarrow U_{\max} = \frac{U_{\text{moy}} \times \pi}{2} = \frac{150 \times \pi}{2} \approx \frac{150 \times 3{,}14}{2} \approx 235{,}5 \text{ V}\]
+    <strong>\(U_{\max} \approx 235{,}5\) V.</strong>
+  </div>
+</div>
+</div>
+
+<!-- C4 -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Identifier le rôle d'un condensateur de filtrage</h2>
+
+<div class="retenir">
+  Le condensateur se charge lors des pics de tension et se décharge entre les pics, « lissant » les ondulations.<br>
+  Plus la capacité est grande, plus le lissage est efficace et la tension de sortie est proche d'une tension continue parfaite.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Après un redresseur double alternance, on observe une tension qui oscille entre 200 V et 207 V. On place un condensateur de grande capacité en parallèle sur la charge. Décrire l'effet sur la tension de sortie.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Le condensateur se charge jusqu'au pic (207 V) puis se décharge lentement dans la charge entre deux pics. Les oscillations (ondulations) sont fortement atténuées : la tension reste proche de 207 V et varie très peu. On obtient ainsi une tension <strong>quasi-continue</strong>.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un installateur thermique remarque que l'alimentation d'un régulateur de chauffage produit une tension avec de fortes ondulations. Il pense à augmenter la capacité du condensateur de filtrage. Justifier cette démarche.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Un condensateur de plus grande capacité stocke plus d'énergie. Entre deux pics, il se décharge plus lentement, maintenant la tension à un niveau plus stable. Les ondulations résiduelles sont plus faibles, ce qui protège les composants électroniques du régulateur contre les variations de tension.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Dans quel cas peut-on se passer de condensateur de filtrage ? Donner un exemple d'application.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    On peut se passer de condensateur si la charge n'est pas sensible aux ondulations, par exemple une résistance chauffante ou un moteur universel qui fonctionnent aussi bien en tension pulsée qu'en tension continue parfaite. En revanche, les circuits électroniques (régulateurs, microcontrôleurs) nécessitent impérativement un filtrage soigné.
+  </div>
+</div>
+</div>
+
+<!-- C5 -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Reconnaître les applications du redressement et de l'onduleur</h2>
+
+<div class="retenir">
+  <strong>Redresseur :</strong> CA → CC (alimentation, chargeur de batterie, variateur de vitesse).<br>
+  <strong>Onduleur :</strong> CC → CA (onduleur photovoltaïque, alimentation secourue, variateur de fréquence).<br>
+  <strong>Variateur de vitesse :</strong> redresse le courant alternatif, puis reconvertit en alternatif à fréquence réglable.
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un technicien de maintenance énergétique intervient sur un chargeur de batterie de pompe de secours. Expliquer pourquoi ce chargeur contient un redresseur.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Une batterie se charge en courant <strong>continu</strong>. Le chargeur prélève le courant alternatif du réseau et le redresse (CA → CC) pour alimenter la batterie dans les bonnes conditions. Sans redresseur, le courant alternatif endommagerait la batterie.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Une installation photovoltaïque produit une tension continue de 400 V. Pour injecter cette énergie sur le réseau à 230 V / 50 Hz, on utilise un onduleur. Expliquer le rôle de l'onduleur.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    L'onduleur convertit la tension <strong>continue</strong> des panneaux solaires en tension <strong>alternative</strong> à 230 V / 50 Hz, compatible avec le réseau EDF. Il synchronise aussi la fréquence et la phase pour permettre l'injection en toute sécurité.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un variateur de vitesse est utilisé pour régler la vitesse d'un circulateur de chauffage. Décrire les deux grandes étapes de conversion électronique dans ce variateur.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Étape 1 — <strong>Redressement :</strong> la tension alternative du réseau (230 V / 50 Hz) est convertie en tension continue (CA → CC) par un pont de diodes.<br>
+    Étape 2 — <strong>Ondulation :</strong> la tension continue est reconvertie en tension alternative à fréquence variable (CC → CA) par un onduleur à transistors. En faisant varier la fréquence de sortie, on fait varier la vitesse du moteur du circulateur.
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

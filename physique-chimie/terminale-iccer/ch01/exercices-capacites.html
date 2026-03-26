@@ -20,11 +20,11 @@
 <div class="objectifs">
   <strong>Capacités et connaissances du programme :</strong>
   <ul>
-    <li><strong>C1</strong> – Calculer la puissance active : \(P = UI\cos\varphi\)</li>
-    <li><strong>C2</strong> – Distinguer puissance active \(P\), réactive \(Q\) et apparente \(S\) (\(S = UI\), \(P = S\cos\varphi\))</li>
-    <li><strong>C3</strong> – Calculer un facteur de puissance \(\cos\varphi\) et l'interpréter</li>
-    <li><strong>C4</strong> – Calculer l'énergie consommée (\(W = Pt\)) et le coût</li>
-    <li><strong>C5</strong> – Identifier les pertes par effet Joule dans une installation</li>
+    <li>C1 – Calculer la puissance active \(P = UI\cos\varphi\)</li>
+    <li>C2 – Distinguer puissance active \(P\), réactive \(Q\) et apparente \(S\) (\(S = UI\), \(P = S\cos\varphi\))</li>
+    <li>C3 – Calculer un facteur de puissance \(\cos\varphi\) et l'interpréter</li>
+    <li>C4 – Calculer l'énergie consommée (\(W = Pt\)) et le coût</li>
+    <li>C5 – Identifier les pertes par effet Joule dans une installation</li>
   </ul>
 </div>
 
@@ -42,102 +42,99 @@
 <h2>C1 — Calculer la puissance active \(P = UI\cos\varphi\)</h2>
 
 <div class="retenir">
-  \(P = UI\cos\varphi\) &nbsp; (en watts, W) <br>
-  avec \(U\) la tension (V), \(I\) l'intensité (A), \(\cos\varphi\) le facteur de puissance (sans unité).
+  \(P = U \cdot I \cdot \cos\varphi\) &nbsp;(en watts, W)<br>
+  \(U\) : tension (V) — \(I\) : intensité (A) — \(\cos\varphi\) : facteur de puissance (sans unité, compris entre 0 et 1)
 </div>
 
 <div class="exo">
-  <h3>Exercice 1 — Chauffe-eau électrique</h3>
-  <p>Un chauffe-eau résistif (purement résistif) est alimenté sous \(U = 230\) V. Il absorbe un courant de \(I = 13{,}0\) A. Calculer sa puissance active.</p>
+  <h3>Exercice 1</h3>
+  <p>Un convecteur électrique fonctionne sous \(U = 230\) V, absorbant un courant \(I = 4{,}35\) A. Son facteur de puissance est \(\cos\varphi = 1\). Calculer la puissance active \(P\).</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>Un appareil purement résistif a un facteur de puissance \(\cos\varphi = 1\).</p>
-    <p>\(P = UI\cos\varphi = 230 \times 13{,}0 \times 1 = 2\,990 \text{ W} \approx 3{,}0 \text{ kW}\)</p>
+    \[P = U \times I \times \cos\varphi = 230 \times 4{,}35 \times 1 \approx 1\,000 \text{ W} = 1 \text{ kW}\]
+    <strong>P ≈ 1 000 W.</strong> Pour un appareil purement résistif (résistance chauffante), \(\cos\varphi = 1\).
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 2 — Moteur de pompe à chaleur</h3>
-  <p>Un compresseur de pompe à chaleur est alimenté sous \(U = 230\) V, absorbe \(I = 8{,}5\) A avec un facteur de puissance \(\cos\varphi = 0{,}82\). Calculer sa puissance active.</p>
+  <h3>Exercice 2</h3>
+  <p>Un moteur de pompe à chaleur est alimenté en 230 V et absorbe \(I = 12\) A avec \(\cos\varphi = 0{,}85\). Calculer la puissance active absorbée.</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>\(P = UI\cos\varphi = 230 \times 8{,}5 \times 0{,}82\)</p>
-    <p>\(P = 1\,601{,}1 \approx 1\,600 \text{ W} = 1{,}6 \text{ kW}\)</p>
+    \[P = 230 \times 12 \times 0{,}85 = 2\,346 \text{ W} \approx 2{,}35 \text{ kW}\]
+    <strong>P ≈ 2 346 W.</strong>
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 3 — Climatiseur</h3>
-  <p>Un technicien en climatisation mesure sur un climatiseur : \(U = 230\) V, \(I = 5{,}2\) A, \(\cos\varphi = 0{,}75\). Calculer la puissance active consommée.</p>
+  <h3>Exercice 3</h3>
+  <p>Un technicien chauffagiste mesure sur une installation triphasée : \(U = 400\) V, \(I = 8\) A, \(\cos\varphi = 0{,}92\). Calculer la puissance active totale en utilisant \(P = \sqrt{3}\,U\,I\cos\varphi\).</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>\(P = 230 \times 5{,}2 \times 0{,}75 = 897 \text{ W} \approx 900 \text{ W}\)</p>
+    \[P = \sqrt{3} \times 400 \times 8 \times 0{,}92 = 1{,}732 \times 400 \times 8 \times 0{,}92 \approx 5\,094 \text{ W} \approx 5{,}1 \text{ kW}\]
+    <strong>P ≈ 5,1 kW.</strong>
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 4 — VMC</h3>
-  <p>Une VMC (ventilation mécanique contrôlée) installée dans un immeuble est alimentée sous \(U = 400\) V (triphasé), absorbe \(I = 3{,}1\) A par phase, avec \(\cos\varphi = 0{,}88\). Calculer la puissance active totale (formule triphasée : \(P = \sqrt{3}\,UI\cos\varphi\)).</p>
+  <h3>Exercice 4</h3>
+  <p>Un chauffe-eau absorbe \(P = 2\,400\) W sous \(U = 230\) V avec \(\cos\varphi = 1\). Calculer l'intensité du courant absorbé.</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>\(P = \sqrt{3} \times U \times I \times \cos\varphi\)</p>
-    <p>\(P = 1{,}732 \times 400 \times 3{,}1 \times 0{,}88 \approx 1\,890 \text{ W} \approx 1{,}9 \text{ kW}\)</p>
+    On isole \(I\) : \(I = \dfrac{P}{U \cdot \cos\varphi} = \dfrac{2\,400}{230 \times 1} \approx 10{,}4\) A.<br>
+    <strong>I ≈ 10,4 A.</strong>
   </div>
 </div>
 </div>
 
 <!-- C2 -->
 <div class="cap-section" data-cap="C2">
-<h2>C2 — Distinguer puissance active, réactive et apparente</h2>
+<h2>C2 — Distinguer puissance active \(P\), réactive \(Q\) et apparente \(S\)</h2>
 
 <div class="retenir">
-  \(S = UI\) (puissance apparente, VA) &nbsp;|&nbsp; \(P = S\cos\varphi\) (puissance active, W) &nbsp;|&nbsp; \(Q = S\sin\varphi\) (puissance réactive, VAR)<br>
-  Relation : \(S^2 = P^2 + Q^2\)
+  \(S = U \cdot I\) (VA) &nbsp;|&nbsp; \(P = S \cdot \cos\varphi\) (W) &nbsp;|&nbsp; \(Q = S \cdot \sin\varphi\) (VAR)<br>
+  Triangle des puissances : \(S^2 = P^2 + Q^2\)
 </div>
 
 <div class="exo">
-  <h3>Exercice 1 — Identification des puissances</h3>
-  <p>Un installateur thermique relève sur un tableau : \(U = 230\) V, \(I = 10\) A, \(\cos\varphi = 0{,}80\).<br>
-  a) Calculer la puissance apparente \(S\).<br>
-  b) Calculer la puissance active \(P\).<br>
-  c) Calculer la puissance réactive \(Q\).</p>
+  <h3>Exercice 1</h3>
+  <p>Un groupe de ventilation absorbe \(U = 230\) V et \(I = 6\) A. Calculer la puissance apparente \(S\).</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>a) \(S = UI = 230 \times 10 = 2\,300 \text{ VA} = 2{,}3 \text{ kVA}\)</p>
-    <p>b) \(P = S\cos\varphi = 2\,300 \times 0{,}80 = 1\,840 \text{ W}\)</p>
-    <p>c) \(\sin\varphi = \sqrt{1 - \cos^2\varphi} = \sqrt{1 - 0{,}64} = \sqrt{0{,}36} = 0{,}60\)<br>
-    \(Q = S\sin\varphi = 2\,300 \times 0{,}60 = 1\,380 \text{ VAR}\)</p>
+    \[S = U \times I = 230 \times 6 = 1\,380 \text{ VA} = 1{,}38 \text{ kVA}\]
+    <strong>S = 1 380 VA.</strong> La puissance apparente représente le « coût » total en courant de l'installation.
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 2 — Triangle des puissances</h3>
-  <p>Un circuit de chauffage électrique a une puissance active \(P = 3\,000\) W et une puissance réactive \(Q = 2\,250\) VAR. Calculer la puissance apparente \(S\).</p>
+  <h3>Exercice 2</h3>
+  <p>Pour ce groupe (\(S = 1\,380\) VA, \(\cos\varphi = 0{,}75\)), calculer la puissance active \(P\) et la puissance réactive \(Q\).</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>\(S = \sqrt{P^2 + Q^2} = \sqrt{3\,000^2 + 2\,250^2} = \sqrt{9\,000\,000 + 5\,062\,500} = \sqrt{14\,062\,500}\)</p>
-    <p>\(S = 3\,750 \text{ VA} = 3{,}75 \text{ kVA}\)</p>
+    \[P = S \cdot \cos\varphi = 1\,380 \times 0{,}75 = 1\,035 \text{ W}\]
+    \[\sin\varphi = \sqrt{1 - 0{,}75^2} = \sqrt{0{,}4375} \approx 0{,}661\]
+    \[Q = S \cdot \sin\varphi = 1\,380 \times 0{,}661 \approx 912 \text{ VAR}\]
+    <strong>P = 1 035 W</strong> (travail utile) et <strong>Q ≈ 912 VAR</strong> (énergie réactive).
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 3 — Comparaison de deux appareils</h3>
-  <p>Appareil A : \(P_A = 1\,500\) W, \(S_A = 1\,875\) VA. Appareil B : \(P_B = 1\,500\) W, \(S_B = 1\,500\) VA.<br>
-  a) Quel appareil est purement résistif ? Justifier.<br>
-  b) Quel appareil impose un courant plus important au réseau pour une même puissance utile ?</p>
+  <h3>Exercice 3</h3>
+  <p>Une installation de chauffage a \(P = 4\,500\) W et \(Q = 3\,000\) VAR. Calculer la puissance apparente \(S\).</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>a) L'appareil B : \(\cos\varphi_B = P_B/S_B = 1\,500/1\,500 = 1\). Un facteur de puissance égal à 1 correspond à un appareil purement résistif (pas de déphasage).</p>
-    <p>b) L'appareil A : \(S = UI\), donc à tension égale, un \(S\) plus grand implique un courant plus grand. L'appareil A, à puissance utile identique, tire davantage de courant du réseau.</p>
+    \[S = \sqrt{P^2 + Q^2} = \sqrt{4\,500^2 + 3\,000^2} = \sqrt{20\,250\,000 + 9\,000\,000} = \sqrt{29\,250\,000} \approx 5\,408 \text{ VA}\]
+    <strong>S ≈ 5 408 VA ≈ 5,41 kVA.</strong>
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 4 — Interprétation physique</h3>
-  <p>Expliquer en une phrase ce que représente la puissance réactive \(Q\) dans un circuit inductif (moteur, transformateur).</p>
+  <h3>Exercice 4</h3>
+  <p>Expliquer pourquoi un installateur thermique doit dimensionner les câbles en fonction de \(S\) et non de \(P\).</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>La puissance réactive \(Q\) représente l'énergie échangée entre le réseau et les éléments inductifs (bobines, moteurs) sans être transformée en énergie utile : elle "circule" dans les câbles et augmente le courant sans produire de travail.</p>
+    Les câbles sont parcourus par l'intensité réelle \(I = S/U\), qui dépend de la puissance <strong>apparente</strong> \(S\).<br>
+    Si \(\cos\varphi\) est faible, \(S \gg P\) : le courant dans les câbles est bien supérieur à ce que la seule puissance active laisserait supposer. Dimensionner uniquement sur \(P\) conduirait à des câbles sous-dimensionnés, source de surcharge et d'incendie.
   </div>
 </div>
 </div>
@@ -147,53 +144,50 @@
 <h2>C3 — Calculer et interpréter le facteur de puissance \(\cos\varphi\)</h2>
 
 <div class="retenir">
-  \(\cos\varphi = \dfrac{P}{S} = \dfrac{P}{UI}\) &nbsp; (sans unité, entre 0 et 1)<br>
-  Un \(\cos\varphi\) proche de 1 est favorable (moins de courant réactif, moins de pertes).
+  \(\cos\varphi = \dfrac{P}{S}\) &nbsp;&nbsp; avec \(0 \leq \cos\varphi \leq 1\)<br>
+  Plus \(\cos\varphi\) est proche de 1, plus l'installation est efficace et moins elle génère de courant réactif.
 </div>
 
 <div class="exo">
-  <h3>Exercice 1 — Calcul direct</h3>
-  <p>Une installation de chauffage consomme \(P = 4\,800\) W sous \(U = 230\) V et \(I = 26\) A. Calculer \(\cos\varphi\).</p>
+  <h3>Exercice 1</h3>
+  <p>Un moteur de VMC présente \(P = 800\) W et \(S = 1\,000\) VA. Calculer \(\cos\varphi\) et interpréter.</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>\(S = UI = 230 \times 26 = 5\,980 \text{ VA}\)</p>
-    <p>\(\cos\varphi = \dfrac{P}{S} = \dfrac{4\,800}{5\,980} \approx 0{,}803 \approx 0{,}80\)</p>
+    \[\cos\varphi = \frac{P}{S} = \frac{800}{1\,000} = 0{,}8\]
+    <strong>\(\cos\varphi = 0{,}8\).</strong> 80 % de la puissance apparente est convertie en travail utile. Ce facteur est correct mais peut être amélioré par compensation capacitive.
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 2 — Interprétation</h3>
-  <p>Un technicien de maintenance mesure \(\cos\varphi = 0{,}60\) sur un circuit.<br>
-  a) Ce facteur de puissance est-il satisfaisant ? (La norme impose \(\cos\varphi \geq 0{,}85\) pour les gros abonnés.)<br>
-  b) Quelle solution peut corriger ce problème ?</p>
+  <h3>Exercice 2</h3>
+  <p>Un technicien de maintenance énergétique mesure \(U = 230\) V, \(I = 10\) A et \(P = 1\,800\) W sur un compresseur de climatisation. Calculer \(\cos\varphi\).</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>a) Non, \(\cos\varphi = 0{,}60\) est nettement inférieur à \(0{,}85\) : le circuit est trop inductif, il consomme beaucoup de puissance réactive inutile.</p>
-    <p>b) On peut installer des condensateurs en parallèle (batterie de condensateurs) pour compenser la puissance réactive et relever le facteur de puissance.</p>
+    \[S = U \times I = 230 \times 10 = 2\,300 \text{ VA}\]
+    \[\cos\varphi = \frac{P}{S} = \frac{1\,800}{2\,300} \approx 0{,}78\]
+    <strong>\(\cos\varphi \approx 0{,}78\).</strong> Ce compresseur tire un courant plus élevé que nécessaire : une compensation est recommandée.
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 3 — À partir des puissances</h3>
-  <p>Une installation a \(P = 6\,000\) W et \(Q = 4\,500\) VAR. Calculer \(\cos\varphi\).</p>
+  <h3>Exercice 3</h3>
+  <p>Un réseau d'éclairage LED affiche \(\cos\varphi = 0{,}97\) et un réseau moteur \(\cos\varphi = 0{,}72\). Lequel nécessite une compensation ? Justifier.</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>\(S = \sqrt{P^2 + Q^2} = \sqrt{6\,000^2 + 4\,500^2} = \sqrt{36\,000\,000 + 20\,250\,000} = \sqrt{56\,250\,000} = 7\,500 \text{ VA}\)</p>
-    <p>\(\cos\varphi = \dfrac{P}{S} = \dfrac{6\,000}{7\,500} = 0{,}80\)</p>
+    Le réseau LED (\(\cos\varphi = 0{,}97\)) est quasiment parfait : pas de compensation nécessaire.<br>
+    Le réseau moteur (\(\cos\varphi = 0{,}72\)) est inférieur au seuil usuel de 0,85 imposé par les fournisseurs d'électricité. Il génère beaucoup d'énergie réactive, ce qui augmente le courant, les pertes Joule et peut entraîner une pénalité financière.<br>
+    <strong>C'est le réseau moteur qui nécessite une compensation capacitive.</strong>
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 4 — Courant selon \(\cos\varphi\)</h3>
-  <p>Un technicien CVC doit alimenter un moteur de \(P = 2\,200\) W sous \(U = 230\) V.<br>
-  a) Calculer le courant si \(\cos\varphi = 1{,}00\).<br>
-  b) Calculer le courant si \(\cos\varphi = 0{,}70\).<br>
-  c) Conclure sur l'intérêt d'un bon facteur de puissance.</p>
+  <h3>Exercice 4</h3>
+  <p>Un technicien CVC relève \(P = 3\,600\) W et \(Q = 2\,700\) VAR sur une installation. Calculer \(S\) puis \(\cos\varphi\).</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>a) \(I = \dfrac{P}{U\cos\varphi} = \dfrac{2\,200}{230 \times 1{,}00} \approx 9{,}57 \text{ A}\)</p>
-    <p>b) \(I = \dfrac{2\,200}{230 \times 0{,}70} \approx 13{,}66 \text{ A}\)</p>
-    <p>c) Un mauvais \(\cos\varphi\) augmente le courant circulant dans les câbles, ce qui accroît les pertes par effet Joule et nécessite des câbles de plus grosse section.</p>
+    \[S = \sqrt{3\,600^2 + 2\,700^2} = \sqrt{12\,960\,000 + 7\,290\,000} = \sqrt{20\,250\,000} = 4\,500 \text{ VA}\]
+    \[\cos\varphi = \frac{P}{S} = \frac{3\,600}{4\,500} = 0{,}8\]
+    <strong>\(\cos\varphi = 0{,}8\).</strong>
   </div>
 </div>
 </div>
@@ -203,62 +197,60 @@
 <h2>C4 — Calculer l'énergie consommée et le coût</h2>
 
 <div class="retenir">
-  \(W = P \times t\) &nbsp; (en Wh ou kWh si \(t\) en heures, en J si \(t\) en secondes)<br>
-  \(\text{Coût} = W_{\text{kWh}} \times \text{prix du kWh}\)
+  \(W = P \times t\) &nbsp; (joules si \(t\) en secondes ; kWh si \(P\) en kW et \(t\) en heures)<br>
+  Coût = \(W_{\text{kWh}} \times \text{prix unitaire (€/kWh)}\)
 </div>
 
 <div class="exo">
-  <h3>Exercice 1 — Chauffe-eau</h3>
-  <p>Un chauffe-eau de \(P = 3\,000\) W fonctionne \(t = 2\) h par jour. Calculer l'énergie consommée en une semaine (en kWh).</p>
+  <h3>Exercice 1</h3>
+  <p>Une chaudière électrique de \(P = 6\) kW fonctionne 4 h par jour. Calculer l'énergie consommée en une journée.</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>Durée sur 7 jours : \(t = 2 \times 7 = 14 \text{ h}\)</p>
-    <p>\(W = P \times t = 3\,000 \times 14 = 42\,000 \text{ Wh} = 42 \text{ kWh}\)</p>
+    \[W = P \times t = 6 \times 4 = 24 \text{ kWh}\]
+    <strong>W = 24 kWh par jour.</strong>
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 2 — Coût de chauffage</h3>
-  <p>Une chaudière électrique de \(P = 8\) kW fonctionne \(t = 6\) h par jour pendant 30 jours. Le kWh coûte \(0{,}2276\) €. Calculer le coût mensuel.</p>
+  <h3>Exercice 2</h3>
+  <p>Le kWh est facturé 0,18 €. Calculer le coût journalier de cette chaudière.</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>\(W = P \times t = 8 \times (6 \times 30) = 8 \times 180 = 1\,440 \text{ kWh}\)</p>
-    <p>\(\text{Coût} = 1\,440 \times 0{,}2276 = 327{,}74 \text{ €}\)</p>
+    \[\text{Coût} = W \times \text{prix} = 24 \times 0{,}18 = 4{,}32 \text{ €/jour}\]
+    <strong>Coût = 4,32 € par jour.</strong>
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 3 — Conversion d'unités</h3>
-  <p>Un compresseur fonctionne pendant \(t = 30\) min avec une puissance active \(P = 1\,500\) W. Exprimer l'énergie consommée en joules et en kWh.</p>
+  <h3>Exercice 3</h3>
+  <p>Un technicien chauffagiste installe une pompe à chaleur consommant \(P = 1{,}2\) kW. Elle fonctionne 8 h/jour pendant 180 jours/an. Le kWh coûte 0,18 €. Calculer le coût annuel en électricité.</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>\(t = 30 \text{ min} = 1\,800 \text{ s}\)</p>
-    <p>\(W = 1\,500 \times 1\,800 = 2\,700\,000 \text{ J} = 2\,700 \text{ kJ}\)</p>
-    <p>\(t = 0{,}5 \text{ h} \Rightarrow W = 1{,}5 \times 0{,}5 = 0{,}75 \text{ kWh}\)</p>
+    \[W_{\text{an}} = 1{,}2 \times (8 \times 180) = 1{,}2 \times 1\,440 = 1\,728 \text{ kWh}\]
+    \[\text{Coût} = 1\,728 \times 0{,}18 = 311{,}04 \text{ €/an}\]
+    <strong>Coût annuel ≈ 311 €.</strong>
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 4 — Comparaison de solutions</h3>
-  <p>Un installateur compare deux systèmes de chauffage pour une durée de 1 000 h par an :<br>
-  - Système A (résistif) : \(P_A = 2\,000\) W<br>
-  - Système B (pompe à chaleur, COP = 3) : \(P_B = 667\) W pour le même apport de chaleur<br>
-  Calculer la consommation annuelle de chaque système (en kWh) et l'économie réalisée avec B au prix de \(0{,}23\) €/kWh.</p>
+  <h3>Exercice 4</h3>
+  <p>Convertir \(W = 7{,}2 \times 10^6\) J en kWh. (Rappel : 1 kWh = 3,6 × 10⁶ J)</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>\(W_A = 2{,}000 \times 1\,000 = 2\,000 \text{ kWh}\)</p>
-    <p>\(W_B = 0{,}667 \times 1\,000 = 667 \text{ kWh}\)</p>
-    <p>Économie : \(\Delta W = 2\,000 - 667 = 1\,333 \text{ kWh}\)</p>
-    <p>Gain financier : \(1\,333 \times 0{,}23 \approx 306{,}6 \text{ €/an}\)</p>
+    \[W = \frac{7{,}2 \times 10^6}{3{,}6 \times 10^6} = 2 \text{ kWh}\]
+    <strong>W = 2 kWh.</strong>
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 5 — Puissance à partir de l'énergie</h3>
-  <p>Un compteur électrique indique qu'une installation a consommé \(W = 15\) kWh en \(t = 5\) h. Calculer la puissance moyenne consommée.</p>
+  <h3>Exercice 5</h3>
+  <p>Une installation de climatisation consomme 4 500 kWh/an à 0,20 €/kWh. Un nouveau modèle consomme 30 % de moins. Calculer le coût actuel, le nouveau coût et l'économie annuelle.</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>\(P = \dfrac{W}{t} = \dfrac{15}{5} = 3 \text{ kW} = 3\,000 \text{ W}\)</p>
+    Coût actuel : \(4\,500 \times 0{,}20 = 900\) €/an<br>
+    Nouvelle consommation : \(4\,500 \times 0{,}70 = 3\,150\) kWh<br>
+    Nouveau coût : \(3\,150 \times 0{,}20 = 630\) €/an<br>
+    Économie : \(900 - 630 = \mathbf{270 \text{ €/an}}\)
   </div>
 </div>
 </div>
@@ -268,60 +260,48 @@
 <h2>C5 — Identifier les pertes par effet Joule dans une installation</h2>
 
 <div class="retenir">
-  Pertes par effet Joule dans un conducteur de résistance \(R\) :<br>
-  \(P_J = RI^2\) &nbsp; (en watts)<br>
-  Plus le courant est grand, plus les pertes sont importantes.
+  Pertes par effet Joule : \(P_J = R \cdot I^2\)<br>
+  Chaleur dissipée dans les conducteurs, non productive. Dépend du <strong>carré</strong> de l'intensité.
 </div>
 
 <div class="exo">
-  <h3>Exercice 1 — Câble d'alimentation</h3>
-  <p>Un câble d'alimentation d'une installation de chauffage a une résistance totale \(R = 0{,}5\) Ω. Le courant circulant est \(I = 20\) A. Calculer les pertes par effet Joule.</p>
+  <h3>Exercice 1</h3>
+  <p>Un câble alimentant un chauffe-eau a une résistance \(R = 0{,}5\) Ω et est parcouru par \(I = 10\) A. Calculer les pertes par effet Joule.</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>\(P_J = RI^2 = 0{,}5 \times 20^2 = 0{,}5 \times 400 = 200 \text{ W}\)</p>
-    <p>200 W sont dissipés en chaleur dans les câbles, ce qui représente une perte d'énergie.</p>
+    \[P_J = R \times I^2 = 0{,}5 \times 10^2 = 0{,}5 \times 100 = 50 \text{ W}\]
+    <strong>P_J = 50 W</strong> dissipés en chaleur dans le câble, sans chauffer l'eau.
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 2 — Influence du courant</h3>
-  <p>Un câble a une résistance \(R = 0{,}3\) Ω.<br>
-  a) Calculer les pertes pour \(I = 10\) A.<br>
-  b) Calculer les pertes pour \(I = 20\) A.<br>
-  c) Que conclure lorsqu'on double le courant ?</p>
+  <h3>Exercice 2</h3>
+  <p>Un technicien CVC double l'intensité dans un câble. Par quel facteur les pertes Joule sont-elles multipliées ? Expliquer.</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>a) \(P_{J1} = 0{,}3 \times 10^2 = 30 \text{ W}\)</p>
-    <p>b) \(P_{J2} = 0{,}3 \times 20^2 = 120 \text{ W}\)</p>
-    <p>c) Quand le courant double, les pertes sont multipliées par \(2^2 = 4\). Les pertes par effet Joule varient au carré du courant.</p>
+    \(P_J = RI^2\) : si \(I\) est multiplié par 2, alors \(I^2\) est multiplié par \(2^2 = 4\).<br>
+    <strong>Les pertes sont multipliées par 4.</strong> Un mauvais facteur de puissance augmente \(I\) inutilement, aggravant fortement les pertes Joule.
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 3 — Rendement de ligne</h3>
-  <p>Une ligne alimente un appareil de \(P_{\text{utile}} = 4\,000\) W. Les pertes dans les câbles sont \(P_J = 200\) W. Calculer le rendement de la ligne.</p>
+  <h3>Exercice 3</h3>
+  <p>Une ligne PAC a une résistance totale \(R = 1{,}2\) Ω et un courant \(I = 8\) A. Calculer les pertes Joule. Après amélioration du facteur de puissance, \(I\) passe à 6 A. Quelle est la nouvelle valeur des pertes ?</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>Puissance totale fournie : \(P_{\text{tot}} = P_{\text{utile}} + P_J = 4\,000 + 200 = 4\,200 \text{ W}\)</p>
-    <p>\(\eta = \dfrac{P_{\text{utile}}}{P_{\text{tot}}} = \dfrac{4\,000}{4\,200} \approx 0{,}952 = 95{,}2\%\)</p>
+    Avant : \(P_{J1} = 1{,}2 \times 8^2 = 1{,}2 \times 64 = 76{,}8\) W<br>
+    Après : \(P_{J2} = 1{,}2 \times 6^2 = 1{,}2 \times 36 = 43{,}2\) W<br>
+    <strong>Gain : 76,8 − 43,2 = 33,6 W</strong> de pertes supprimées.
   </div>
 </div>
 
 <div class="exo">
-  <h3>Exercice 4 — Choix de câble</h3>
-  <p>Un technicien chauffagiste doit alimenter un appareil de \(P = 5\) kW sous \(U = 230\) V (\(\cos\varphi = 1\)). La longueur du câble est \(L = 20\) m. La résistivité du cuivre est \(\rho = 1{,}7 \times 10^{-8}\) Ω·m. On propose deux sections : \(S_1 = 2{,}5\) mm² et \(S_2 = 4\) mm².<br>
-  Pour chaque section, calculer \(R\) (aller-retour : \(2L\)) et les pertes \(P_J\). Conclure.</p>
+  <h3>Exercice 4</h3>
+  <p>Un câble de section 2,5 mm² (limite : 16 A) a une résistance \(R = 0{,}8\) Ω et est parcouru par \(I = 15\) A. Calculer les pertes Joule et évaluer la situation.</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>\(I = \dfrac{P}{U} = \dfrac{5\,000}{230} \approx 21{,}7 \text{ A}\)</p>
-    <p>Longueur aller-retour : \(l = 2 \times 20 = 40 \text{ m}\)</p>
-    <p>Pour \(S_1 = 2{,}5 \text{ mm}^2 = 2{,}5 \times 10^{-6} \text{ m}^2\) :<br>
-    \(R_1 = \dfrac{\rho \times l}{S_1} = \dfrac{1{,}7 \times 10^{-8} \times 40}{2{,}5 \times 10^{-6}} = \dfrac{6{,}8 \times 10^{-7}}{2{,}5 \times 10^{-6}} = 0{,}272 \text{ Ω}\)<br>
-    \(P_{J1} = 0{,}272 \times 21{,}7^2 \approx 128 \text{ W}\)</p>
-    <p>Pour \(S_2 = 4 \text{ mm}^2 = 4 \times 10^{-6} \text{ m}^2\) :<br>
-    \(R_2 = \dfrac{1{,}7 \times 10^{-8} \times 40}{4 \times 10^{-6}} = 0{,}17 \text{ Ω}\)<br>
-    \(P_{J2} = 0{,}17 \times 21{,}7^2 \approx 80 \text{ W}\)</p>
-    <p>La section 4 mm² réduit les pertes : elle est préférable pour limiter l'échauffement des câbles et les pertes d'énergie.</p>
+    \[P_J = 0{,}8 \times 15^2 = 0{,}8 \times 225 = 180 \text{ W}\]
+    Le câble dissipe <strong>180 W</strong> sous forme de chaleur. Avec 15 A pour un câble limité à 16 A, on est proche du maximum admissible. Tout ajout de charge pourrait endommager l'isolation. Il faut vérifier la section du câble ou améliorer le facteur de puissance pour réduire \(I\).
   </div>
 </div>
 </div>

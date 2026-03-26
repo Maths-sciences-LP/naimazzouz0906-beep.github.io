@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch08 – Exercices par capacités – Solutions aqueuses – 1ère Bac Pro ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-erama.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 8 – Exercices par capacités</h1>
+  <p class="sous-titre">Solutions aqueuses et concentration &nbsp;|&nbsp; 1ère Bac Pro ERA-MA &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> — Calculer une concentration massique \(c_m = m/V\)</li>
+    <li><strong>C2</strong> — Calculer une concentration molaire \(c = n/V\)</li>
+    <li><strong>C3</strong> — Réaliser une dilution \(c_1 V_1 = c_2 V_2\)</li>
+    <li><strong>C4</strong> — Mesurer un pH et interpréter (acide, basique, neutre)</li>
+    <li><strong>C5</strong> — Identifier les risques des produits chimiques en menuiserie (solvants, vernis, décapants)</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-filtre="toutes">Toutes</button>
+  <button class="btn-cap" data-filtre="C1">C1 – Concentration massique</button>
+  <button class="btn-cap" data-filtre="C2">C2 – Concentration molaire</button>
+  <button class="btn-cap" data-filtre="C3">C3 – Dilution</button>
+  <button class="btn-cap" data-filtre="C4">C4 – pH</button>
+  <button class="btn-cap" data-filtre="C5">C5 – Risques chimiques</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- ===== C1 ===== -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Calculer une concentration massique</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>La <strong>concentration massique</strong> d'une solution est la masse de soluté dissoute par litre de solution :</p>
+  <p>\(c_m = \dfrac{m}{V}\)</p>
+  <ul>
+    <li>\(c_m\) : concentration massique en g/L (ou g/mL)</li>
+    <li>\(m\) : masse de soluté en g</li>
+    <li>\(V\) : volume de solution en L</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un menuisier prépare une solution de nettoyage en dissolvant 25 g de cristaux de soude dans 500 mL d'eau. Calculer la concentration massique de la solution.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(V = 500 \text{ mL} = 0{,}5 \text{ L}\)<br>
+    \(c_m = \dfrac{25}{0{,}5} = \mathbf{50}\) g/L
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un produit de traitement du bois contient 12 g de principe actif par litre de solution. Quelle masse de principe actif trouve-t-on dans 750 mL de ce produit ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(m = c_m \times V = 12 \times 0{,}750 = \mathbf{9}\) g
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Une solution de décapant contient 80 g de solvant actif. Sa concentration massique est de 200 g/L. Calculer le volume de solution.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(V = \dfrac{m}{c_m} = \dfrac{80}{200} = \mathbf{0{,}4}\) L = 400 mL
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Un vernis en phase aqueuse contient 18 % en masse de résine (c'est-à-dire 18 g de résine pour 100 g de solution). La masse volumique du vernis est de 1 050 g/L. Calculer la concentration massique en résine.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Masse de résine dans 1 L : \(m = 18\% \times 1\,050 = 0{,}18 \times 1\,050 = \mathbf{189}\) g<br>
+    \(c_m = 189\) g/L
+  </div>
+</div>
+</div>
+
+<!-- ===== C2 ===== -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Calculer une concentration molaire</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>La <strong>concentration molaire</strong> est le nombre de moles de soluté par litre de solution :</p>
+  <p>\(c = \dfrac{n}{V}\) avec \(n = \dfrac{m}{M}\)</p>
+  <ul>
+    <li>\(c\) : concentration molaire en mol/L</li>
+    <li>\(n\) : quantité de matière en mol</li>
+    <li>\(M\) : masse molaire en g/mol</li>
+  </ul>
+  <p>Masses molaires utiles : NaOH : 40 g/mol ; HCl : 36,5 g/mol ; NaCl : 58,5 g/mol ; Na₂CO₃ : 106 g/mol.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 5</h3>
+  <p>On dissout 4 g de soude (NaOH, \(M = 40\) g/mol) dans 500 mL d'eau pour préparer un nettoyant dégraissant. Calculer la concentration molaire de la solution.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(n = \dfrac{m}{M} = \dfrac{4}{40} = 0{,}1\) mol<br>
+    \(V = 0{,}500\) L<br>
+    \(c = \dfrac{n}{V} = \dfrac{0{,}1}{0{,}500} = \mathbf{0{,}2}\) mol/L
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 6</h3>
+  <p>Une solution d'acide chlorhydrique (HCl, \(M = 36{,}5\) g/mol) a une concentration molaire de 0,5 mol/L. Calculer la masse de HCl dissoute dans 200 mL de solution.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(n = c \times V = 0{,}5 \times 0{,}200 = 0{,}1\) mol<br>
+    \(m = n \times M = 0{,}1 \times 36{,}5 = \mathbf{3{,}65}\) g
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 7</h3>
+  <p>Un technicien prépare 1 L d'une solution de carbonate de sodium (Na₂CO₃, \(M = 106\) g/mol) à 0,1 mol/L pour décaper du bois. Quelle masse de Na₂CO₃ doit-il peser ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(n = c \times V = 0{,}1 \times 1 = 0{,}1\) mol<br>
+    \(m = n \times M = 0{,}1 \times 106 = \mathbf{10{,}6}\) g
+  </div>
+</div>
+</div>
+
+<!-- ===== C3 ===== -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Réaliser une dilution</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Lors d'une dilution, la quantité de soluté est conservée :</p>
+  <p>\(c_1 \times V_1 = c_2 \times V_2\)</p>
+  <ul>
+    <li>\(c_1\), \(V_1\) : concentration et volume de la solution mère (avant dilution)</li>
+    <li>\(c_2\), \(V_2\) : concentration et volume de la solution fille (après dilution)</li>
+  </ul>
+  <p>Facteur de dilution : \(f = \dfrac{c_1}{c_2} = \dfrac{V_2}{V_1}\)</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 8</h3>
+  <p>Un nettoyant bois concentré s'utilise dilué 10 fois. On dispose de 200 mL de solution concentrée à 5 mol/L. Calculer la concentration de la solution diluée.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Facteur de dilution 10 : \(c_2 = c_1 / 10 = 5 / 10 = \mathbf{0{,}5}\) mol/L<br>
+    Vérification : \(V_2 = 10 \times V_1 = 10 \times 200 = 2\,000\) mL ; \(c_1 V_1 = 5 \times 0{,}2 = 1\) mol ; \(c_2 V_2 = 0{,}5 \times 2 = 1\) mol ✓
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 9</h3>
+  <p>Un vernis est vendu concentré à \(c_1 = 800\) g/L. On souhaite préparer 2 L de vernis prêt à l'emploi à \(c_2 = 200\) g/L. Quel volume de vernis concentré utiliser ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(V_1 = \dfrac{c_2 \times V_2}{c_1} = \dfrac{200 \times 2}{800} = \dfrac{400}{800} = \mathbf{0{,}5}\) L = 500 mL<br>
+    On ajoute ensuite \(2 - 0{,}5 = 1{,}5\) L d'eau.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 10</h3>
+  <p>Un décapant est dilué avec de l'eau dans un rapport 1 volume pour 4 volumes d'eau (soit 5 volumes au total). La solution mère a une concentration de 2 mol/L. Calculer la concentration de la solution diluée.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Facteur de dilution : \(f = 5\) (1 + 4)<br>
+    \(c_2 = \dfrac{c_1}{f} = \dfrac{2}{5} = \mathbf{0{,}4}\) mol/L
+  </div>
+</div>
+</div>
+
+<!-- ===== C4 ===== -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Mesurer un pH et interpréter</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Le <strong>pH</strong> mesure l'acidité ou la basicité d'une solution :</p>
+  <ul>
+    <li>pH &lt; 7 : solution <strong>acide</strong></li>
+    <li>pH = 7 : solution <strong>neutre</strong></li>
+    <li>pH &gt; 7 : solution <strong>basique</strong> (alcaline)</li>
+  </ul>
+  <p>Mesure : papier pH (précision ±1), pH-mètre (précision ±0,1). Plus le pH est faible, plus la solution est acide. Les solutions acides et basiques concentrées sont corrosives.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 11</h3>
+  <p>Classer les solutions suivantes du plus acide au plus basique :</p>
+  <ul>
+    <li>Vinaigre blanc : pH = 2,5</li>
+    <li>Eau pure : pH = 7</li>
+    <li>Décapant bois (soude) : pH = 13</li>
+    <li>Solvant de nettoyage : pH = 5</li>
+    <li>Neutralisant de surface : pH = 9</li>
+  </ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Du plus acide au plus basique :<br>
+    <strong>Vinaigre (2,5) &lt; Solvant (5) &lt; Eau pure (7) &lt; Neutralisant (9) &lt; Décapant soude (13)</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 12</h3>
+  <p>Après décapage d'un meuble à la soude (pH 13), un ébéniste rince la surface puis mesure le pH du rinçage : il lit pH = 9. La surface est-elle neutralisée ? Que doit-il faire ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    pH = 9 &gt; 7 : la surface est encore <strong>basique</strong>, pas encore neutre. Il doit poursuivre le rinçage à l'eau claire jusqu'à obtenir un pH proche de 7, puis éventuellement neutraliser avec un produit légèrement acide (vinaigre dilué) avant la finition.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 13</h3>
+  <p>Un menuisier agenceur mesure le pH de trois produits de traitement :</p>
+  <ul>
+    <li>Produit A : pH = 1,5</li>
+    <li>Produit B : pH = 6,8</li>
+    <li>Produit C : pH = 11</li>
+  </ul>
+  <ol type="a">
+    <li>Identifier la nature (acide, neutre, basique) de chaque produit.</li>
+    <li>Lesquels nécessitent le port de gants et lunettes de protection ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>A (pH 1,5) : très acide ; B (pH 6,8) : quasi neutre ; C (pH 11) : basique fort.</li>
+      <li>Les produits <strong>A et C</strong> sont corrosifs (pH très éloigné de 7) → port obligatoire de gants résistants aux produits chimiques et de lunettes de protection.</li>
+    </ol>
+  </div>
+</div>
+</div>
+
+<!-- ===== C5 ===== -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Risques des produits chimiques en menuiserie</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Les produits chimiques utilisés en menuiserie (solvants, vernis, décapants, colles, produits de traitement) comportent des risques :</p>
+  <ul>
+    <li><strong>Toxicité</strong> : absorption par inhalation, ingestion ou contact cutané.</li>
+    <li><strong>Inflammabilité</strong> : les solvants organiques s'enflamment facilement.</li>
+    <li><strong>Corrosivité</strong> : les acides et les bases fortes attaquent la peau et les matériaux.</li>
+    <li><strong>CMR</strong> : certains produits sont cancérigènes, mutagènes ou reprotoxiques.</li>
+  </ul>
+  <p>Pictogrammes de danger (GHS) à connaître : flamme, crâne, point d'exclamation, corrosion, santé.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 14</h3>
+  <p>Un atelier de menuiserie utilise les produits suivants. Identifier les risques principaux de chacun et les équipements de protection individuelle (EPI) nécessaires :</p>
+  <ol type="a">
+    <li>White-spirit (solvant organique)</li>
+    <li>Soude caustique en solution (décapant)</li>
+    <li>Vernis polyuréthane bicomposant (contient des isocyanates)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li><strong>White-spirit</strong> : inflammable, nocif par inhalation. EPI : gants nitrile, lunettes, dans un local ventilé, loin des sources d'ignition.</li>
+      <li><strong>Soude caustique</strong> : corrosif (pH très élevé), brûlures cutanées et oculaires. EPI : gants résistants aux produits chimiques, lunettes de protection, tablier.</li>
+      <li><strong>Vernis polyuréthane</strong> : les isocyanates sont sensibilisants respiratoires et CMR (cancérigènes possibles). EPI : masque respiratoire à cartouche, gants, lunettes, bonne ventilation ou cabin de peinture.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 15</h3>
+  <p>Lire les pictogrammes GHS sur une étiquette de vernis et indiquer ce qu'ils signifient :</p>
+  <ul>
+    <li>Flamme orange</li>
+    <li>Point d'exclamation noir</li>
+    <li>Silhouette d'homme avec étoile (santé)</li>
+  </ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li><strong>Flamme</strong> : produit inflammable ou extrêmement inflammable.</li>
+      <li><strong>Point d'exclamation</strong> : irritant, nocif, sensibilisant cutané ou respiratoire.</li>
+      <li><strong>Silhouette / santé</strong> : danger grave pour la santé (CMR, atteinte organique, sensibilisant respiratoire).</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 16</h3>
+  <p>Un menuisier dispose d'une fiche de données de sécurité (FDS) d'un vernis. Elle indique : « VLE 400 ppm, court terme 500 ppm ». Que signifient ces informations ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li><strong>VLE (Valeur Limite d'Exposition)</strong> = 400 ppm : la concentration dans l'air de l'atelier ne doit pas dépasser 400 parties par million en exposition de longue durée (8 h/jour).</li>
+      <li><strong>Court terme</strong> = 500 ppm : la concentration maximale tolérée pendant 15 minutes en situation accidentelle.</li>
+      <li>Au-delà de ces seuils, les risques pour la santé (irritation, toxicité) deviennent inacceptables. Il faut ventiler le local ou porter un appareil de protection respiratoire adapté.</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>

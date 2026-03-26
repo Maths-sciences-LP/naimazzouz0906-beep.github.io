@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Exercices par capacités – Minimiser les transferts thermiques – 1ère Bac Pro ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-erama.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 5 – Exercices par capacités</h1>
+  <p class="sous-titre">Minimiser les transferts thermiques pour économiser l'énergie &nbsp;|&nbsp; 1ère Bac Pro ERA-MA &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> — Calculer le coefficient de transmission thermique \(U\) d'une paroi multicouche</li>
+    <li><strong>C2</strong> — Comparer l'isolation de parois (fenêtre simple/double vitrage, mur)</li>
+    <li><strong>C3</strong> — Calculer les déperditions thermiques d'un bâtiment</li>
+    <li><strong>C4</strong> — Identifier les matériaux isolants et leurs propriétés (laine de roche, polystyrène)</li>
+    <li><strong>C5</strong> — Estimer les économies d'énergie liées à une amélioration d'isolation</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-filtre="toutes">Toutes</button>
+  <button class="btn-cap" data-filtre="C1">C1 – Coefficient U</button>
+  <button class="btn-cap" data-filtre="C2">C2 – Comparaison de parois</button>
+  <button class="btn-cap" data-filtre="C3">C3 – Déperditions thermiques</button>
+  <button class="btn-cap" data-filtre="C4">C4 – Matériaux isolants</button>
+  <button class="btn-cap" data-filtre="C5">C5 – Économies d'énergie</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- ===== C1 ===== -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Calculer le coefficient de transmission thermique \(U\)</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Le <strong>coefficient de transmission thermique</strong> \(U\) (en W/(m²·K)) caractérise les pertes thermiques par unité de surface et par degré d'écart. Plus \(U\) est faible, meilleure est l'isolation.</p>
+  <p>\(U = \dfrac{1}{R_T}\) avec \(R_T = R_{si} + \sum \dfrac{e_i}{\lambda_i} + R_{se}\)</p>
+  <p>Résistances superficielles standards : \(R_{si} = 0{,}13\) m²·K/W (intérieur) ; \(R_{se} = 0{,}04\) m²·K/W (extérieur).</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Calculer le coefficient \(U\) d'une paroi composée de :</p>
+  <ul>
+    <li>Panneaux de bois : \(e = 20\) mm, \(\lambda = 0{,}15\) W/(m·K)</li>
+    <li>Laine de roche : \(e = 100\) mm, \(\lambda = 0{,}036\) W/(m·K)</li>
+  </ul>
+  <p>Ne pas oublier les résistances superficielles (\(R_{si} = 0{,}13\), \(R_{se} = 0{,}04\) m²·K/W).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(R_{\text{bois}} = \dfrac{0{,}020}{0{,}15} = 0{,}133\) m²·K/W<br>
+    \(R_{\text{laine}} = \dfrac{0{,}100}{0{,}036} = 2{,}78\) m²·K/W<br>
+    \(R_T = 0{,}13 + 0{,}133 + 2{,}78 + 0{,}04 = 3{,}08\) m²·K/W<br>
+    \(U = \dfrac{1}{3{,}08} \approx \mathbf{0{,}325}\) W/(m²·K)
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un vitrage simple (\(e = 4\) mm, \(\lambda = 1{,}0\) W/(m·K)). Calculer son \(U\) en incluant les résistances superficielles.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(R_{\text{verre}} = \dfrac{0{,}004}{1{,}0} = 0{,}004\) m²·K/W<br>
+    \(R_T = 0{,}13 + 0{,}004 + 0{,}04 = 0{,}174\) m²·K/W<br>
+    \(U = \dfrac{1}{0{,}174} \approx \mathbf{5{,}75}\) W/(m²·K)<br>
+    <em>Un \(U\) de 5,75 est très élevé : le vitrage simple isole très mal.</em>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un double vitrage est composé de : verre 4 mm (\(\lambda = 1\)) + lame d'argon 16 mm (\(\lambda = 0{,}018\)) + verre 4 mm (\(\lambda = 1\)). Calculer \(U\) avec résistances superficielles.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(R_{\text{verre×2}} = 2 \times \dfrac{0{,}004}{1} = 0{,}008\) m²·K/W<br>
+    \(R_{\text{argon}} = \dfrac{0{,}016}{0{,}018} = 0{,}889\) m²·K/W<br>
+    \(R_T = 0{,}13 + 0{,}008 + 0{,}889 + 0{,}04 = 1{,}067\) m²·K/W<br>
+    \(U = \dfrac{1}{1{,}067} \approx \mathbf{0{,}94}\) W/(m²·K)<br>
+    <em>Bien meilleur que le simple vitrage (5,75) : l'isolation est améliorée d'un facteur 6.</em>
+  </div>
+</div>
+</div>
+
+<!-- ===== C2 ===== -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Comparer l'isolation de parois</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Pour comparer des parois : calculer ou lire leur \(U\) et comparer. Les seuils réglementaires (RE2020) :</p>
+  <ul>
+    <li>Mur extérieur : \(U \leq 0{,}36\) W/(m²·K)</li>
+    <li>Toiture : \(U \leq 0{,}20\) W/(m²·K)</li>
+    <li>Fenêtre : \(U \leq 1{,}3\) W/(m²·K)</li>
+  </ul>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Comparer les trois fenêtres suivantes et indiquer laquelle respecte la réglementation (\(U \leq 1{,}3\) W/(m²·K)) :</p>
+  <ul>
+    <li>Fenêtre A : simple vitrage, \(U = 5{,}7\) W/(m²·K)</li>
+    <li>Fenêtre B : double vitrage air, \(U = 2{,}8\) W/(m²·K)</li>
+    <li>Fenêtre C : double vitrage argon faible émissivité, \(U = 1{,}1\) W/(m²·K)</li>
+  </ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Seule la <strong>fenêtre C</strong> (\(U = 1{,}1\) W/(m²·K)) est inférieure au seuil de 1,3 W/(m²·K). Les fenêtres A et B ne respectent pas la réglementation.
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 5</h3>
+  <p>Un menuisier agenceur compare deux panneaux de cloison :</p>
+  <ul>
+    <li>Panneau A : \(R_T = 1{,}8\) m²·K/W</li>
+    <li>Panneau B : \(R_T = 0{,}6\) m²·K/W</li>
+  </ul>
+  <ol type="a">
+    <li>Calculer \(U_A\) et \(U_B\).</li>
+    <li>Lequel isole le mieux ?</li>
+    <li>Le flux perdu par le panneau B est-il 2, 3 ou 6 fois plus grand que celui du panneau A (pour même surface et même \(\Delta T\)) ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(U_A = 1/1{,}8 \approx 0{,}556\) W/(m²·K) ; \(U_B = 1/0{,}6 \approx 1{,}667\) W/(m²·K)</li>
+      <li>Le <strong>panneau A</strong> isole mieux (U plus faible).</li>
+      <li>\(\varphi \propto U\), donc ratio = \(U_B / U_A = 1{,}667 / 0{,}556 = 3\). Le panneau B perd <strong>3 fois</strong> plus de chaleur.</li>
+    </ol>
+  </div>
+</div>
+</div>
+
+<!-- ===== C3 ===== -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Calculer les déperditions thermiques d'un bâtiment</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Le <strong>flux de déperdition thermique</strong> par une paroi est : \(\varphi = U \times S \times \Delta T\) (en watts)</p>
+  <p>Pour un bâtiment, on additionne les flux de toutes les parois : \(\varphi_{total} = \sum U_i \times S_i \times \Delta T\)</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 6</h3>
+  <p>Un atelier de menuiserie perd de la chaleur par ses parois. \(\Delta T = 20\) K (intérieur 18°C, extérieur −2°C).</p>
+  <ul>
+    <li>Mur : \(S = 80\) m², \(U = 0{,}40\) W/(m²·K)</li>
+    <li>Toiture : \(S = 60\) m², \(U = 0{,}22\) W/(m²·K)</li>
+    <li>Fenêtres : \(S = 12\) m², \(U = 1{,}2\) W/(m²·K)</li>
+  </ul>
+  <p>Calculer le flux de déperdition par chaque paroi et le total.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Mur : \(\varphi_1 = 0{,}40 \times 80 \times 20 = 640\) W<br>
+    Toiture : \(\varphi_2 = 0{,}22 \times 60 \times 20 = 264\) W<br>
+    Fenêtres : \(\varphi_3 = 1{,}2 \times 12 \times 20 = 288\) W<br>
+    Total : \(\varphi_{total} = 640 + 264 + 288 = \mathbf{1\,192}\) W \(\approx\) 1,2 kW
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 7</h3>
+  <p>Les déperditions d'un chalet bois s'élèvent à 4 500 W pour \(\Delta T = 25\) K. Si l'on maintient cette température 24 h/j pendant 120 jours de chauffage, calculer l'énergie totale perdue (en kWh).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Durée = \(24 \times 120 = 2\,880\) h<br>
+    Énergie = \(P \times t = 4{,}5 \text{ kW} \times 2\,880 \text{ h} = \mathbf{12\,960}\) kWh
+  </div>
+</div>
+</div>
+
+<!-- ===== C4 ===== -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Matériaux isolants et leurs propriétés</h2>
+
+<div class="retenir">
+  <strong>Propriétés des isolants courants</strong>
+  <table>
+    <tr><th>Matériau</th><th>\(\lambda\) (W/(m·K))</th><th>Avantages</th><th>Inconvénients</th></tr>
+    <tr><td>Laine de roche</td><td>0,032–0,040</td><td>Incombustible, bon acoustique</td><td>Irritant, capte l'humidité</td></tr>
+    <tr><td>Laine de verre</td><td>0,032–0,044</td><td>Léger, économique</td><td>Irritant, tassement possible</td></tr>
+    <tr><td>Polystyrène expansé (PSE)</td><td>0,030–0,040</td><td>Léger, imputrescible</td><td>Combustible, peu résistant</td></tr>
+    <tr><td>Polyuréthane (PUR)</td><td>0,022–0,028</td><td>Très isolant, faible épaisseur</td><td>Combustible, dégagement de gaz toxiques</td></tr>
+    <tr><td>Fibre de bois</td><td>0,038–0,055</td><td>Naturel, régulation hygrométrique</td><td>Plus lourd, plus cher</td></tr>
+  </table>
+</div>
+
+<div class="exo">
+  <h3>Exercice 8</h3>
+  <p>Un artisan menuisier souhaite isoler le toit de son atelier par l'intérieur. Il veut une épaisseur maximale de 80 mm. Calculer la résistance thermique surfacique de chaque isolant (80 mm) et classer du plus au moins isolant :</p>
+  <ul>
+    <li>Laine de roche : \(\lambda = 0{,}036\) W/(m·K)</li>
+    <li>Polystyrène expansé : \(\lambda = 0{,}035\) W/(m·K)</li>
+    <li>Polyuréthane : \(\lambda = 0{,}025\) W/(m·K)</li>
+    <li>Fibre de bois : \(\lambda = 0{,}045\) W/(m·K)</li>
+  </ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(R = e/\lambda\) pour \(e = 0{,}08\) m :<br>
+    Laine de roche : \(R = 0{,}08/0{,}036 = 2{,}22\) m²·K/W<br>
+    PSE : \(R = 0{,}08/0{,}035 = 2{,}29\) m²·K/W<br>
+    PUR : \(R = 0{,}08/0{,}025 = \mathbf{3{,}20}\) m²·K/W<br>
+    Fibre de bois : \(R = 0{,}08/0{,}045 = 1{,}78\) m²·K/W<br>
+    Ordre (du plus au moins isolant) : <strong>PUR > PSE > Laine de roche > Fibre de bois</strong>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 9</h3>
+  <p>Un menuisier doit isoler un panneau de porte en respectant une épaisseur maximale de 30 mm. Quel isolant choisir pour obtenir \(R \geq 1\) m²·K/W ? Justifier.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Il faut \(\lambda \leq e/R = 0{,}030/1{,}0 = 0{,}030\) W/(m·K).<br>
+    Seul le <strong>polyuréthane</strong> (\(\lambda \approx 0{,}025\)) permet d'atteindre cette résistance en 30 mm.<br>
+    Vérification : \(R_{PUR} = 0{,}030/0{,}025 = 1{,}20\) m²·K/W ✓
+  </div>
+</div>
+</div>
+
+<!-- ===== C5 ===== -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Estimer les économies d'énergie liées à une amélioration d'isolation</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Les économies réalisées = différence de déperditions entre avant et après isolation, sur une saison de chauffage.</p>
+  <p>\(\Delta\varphi = (\varphi_{\text{avant}} - \varphi_{\text{après}}) \times t\) → énergie économisée (Wh ou kWh)</p>
+  <p>Économie financière = Énergie économisée (kWh) × Prix du kWh (€)</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 10</h3>
+  <p>Un artisan remplace les fenêtres simples vitrage (\(U = 5{,}7\) W/(m²·K)) par du double vitrage (\(U = 1{,}1\) W/(m²·K)). Surface totale des fenêtres : 8 m², \(\Delta T = 18\) K en moyenne.</p>
+  <ol type="a">
+    <li>Calculer le flux de déperdition avant et après remplacement.</li>
+    <li>Calculer l'énergie économisée sur 2 000 h de chauffage.</li>
+    <li>Calculer l'économie en euros (0,2516 €/kWh).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Avant : \(\varphi_1 = 5{,}7 \times 8 \times 18 = 820{,}8\) W<br>
+      Après : \(\varphi_2 = 1{,}1 \times 8 \times 18 = 158{,}4\) W</li>
+      <li>\(\Delta\varphi = 820{,}8 - 158{,}4 = 662{,}4\) W<br>
+      Énergie économisée = \(662{,}4 \times 2\,000 = 1\,324\,800\) Wh = <strong>1 324,8 kWh</strong></li>
+      <li>Économie = \(1\,324{,}8 \times 0{,}2516 \approx \mathbf{333{,}3}\) €/an</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 11</h3>
+  <p>Avant isolation d'un mur, les déperditions s'élèvent à 1 200 W. Après isolation avec 120 mm de laine de roche (\(\lambda = 0{,}036\)), le nouveau \(U = 0{,}28\) W/(m²·K) pour \(S = 40\) m².</p>
+  <ol type="a">
+    <li>Calculer les déperditions après isolation (\(\Delta T = 20\) K).</li>
+    <li>Calculer le gain en pourcentage.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(\varphi_{\text{après}} = 0{,}28 \times 40 \times 20 = \mathbf{224}\) W</li>
+      <li>Gain = \(\dfrac{1\,200 - 224}{1\,200} \times 100 = \dfrac{976}{1\,200} \times 100 \approx \mathbf{81{,}3}\)\%<br>
+      L'isolation réduit les pertes thermiques de ce mur de plus de 80 %.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 12</h3>
+  <p>Un technicien d'agencement réalise une rénovation thermique. Il compare deux scénarios d'isolation des murs d'un chalet (\(S = 120\) m²) :</p>
+  <ul>
+    <li>Scénario 1 : 80 mm de PSE → \(U = 0{,}38\) W/(m²·K)</li>
+    <li>Scénario 2 : 160 mm de PSE → \(U = 0{,}20\) W/(m²·K)</li>
+  </ul>
+  <p>Pour \(\Delta T = 20\) K et 2 200 h de chauffage à 0,2516 €/kWh, calculer la différence de coût annuel entre les deux scénarios.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Scénario 1 : \(\varphi_1 = 0{,}38 \times 120 \times 20 = 912\) W → \(W_1 = 0{,}912 \times 2\,200 = 2\,006\) kWh → coût = \(2\,006 \times 0{,}2516 \approx 504{,}7\) €<br>
+    Scénario 2 : \(\varphi_2 = 0{,}20 \times 120 \times 20 = 480\) W → \(W_2 = 0{,}480 \times 2\,200 = 1\,056\) kWh → coût = \(1\,056 \times 0{,}2516 \approx 265{,}7\) €<br>
+    Différence de coût : \(504{,}7 - 265{,}7 = \mathbf{239}\) €/an en faveur du scénario 2.
+  </div>
+</div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+</body>
+</html>
