@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Lecture d'une Fiche de Donn&eacute;es de S&eacute;curit&eacute; (FDS) — Co-intervention MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9;--s-bg:#e0f2fe;--s-border:#7dd3fc}
+.picto-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.8rem;margin:1rem 0}
+.picto-card{border:1px solid #ddd;border-radius:6px;padding:.7rem;text-align:center;font-size:.82rem}
+.picto-card svg{display:block;margin:0 auto .4rem}
+.fds-extract{border:2px solid #333;border-radius:8px;padding:1.2rem;margin:1rem 0;background:#fefefe;font-size:.88rem}
+.fds-extract h4{margin:0 0 .3rem;font-size:.95rem;color:#333;border-bottom:1px solid #ccc;padding-bottom:.2rem}
+.fds-extract ul{margin:.3rem 0 .8rem;padding-left:1.2rem}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="index.html" class="nb">&larr; Retour &agrave; l'index co-intervention</a>
+
+<header>
+  <h1>Lecture d'une Fiche de Donn&eacute;es de S&eacute;curit&eacute; (FDS)</h1>
+  <p class="sous-titre">Co-intervention Maths-Sciences | Seconde Bac Pro MAMA | S&eacute;curit&eacute; chimique</p>
+</header>
+
+<div class="objectifs">
+  <strong>Objectifs</strong>
+  <ul>
+    <li>Identifier les 9 pictogrammes de danger SGH/CLP</li>
+    <li>Lire et interpr&eacute;ter les rubriques essentielles d'une FDS</li>
+    <li>D&eacute;coder les phrases de danger (H) et de pr&eacute;caution (P)</li>
+    <li>Associer les risques identifi&eacute;s aux &Eacute;quipements de Protection Individuelle (EPI) adapt&eacute;s</li>
+  </ul>
+</div>
+
+<!-- BADGE -->
+<div style="border:1px solid var(--s-border);background:var(--s-bg);border-radius:8px;padding:1rem;margin:1rem 0;font-size:.9rem">
+  <strong>Identification de la ressource</strong>
+  <ul style="margin:.5rem 0 0">
+    <li><strong>Savoir professionnel :</strong> S9.5 (ERA) / S8.52 (MA) &mdash; Risques sp&eacute;cifiques, s&eacute;curit&eacute; chimique</li>
+    <li><strong>Notions sciences :</strong> Chimie des produits, &eacute;tiquetage, pictogrammes SGH/CLP</li>
+    <li><strong>Niveau :</strong> Seconde Bac Pro MAMA</li>
+  </ul>
+</div>
+
+<!-- MISE EN SITUATION -->
+<h2>1. Mise en situation professionnelle</h2>
+
+<div class="situation">
+  <strong>Contexte professionnel &mdash; Atelier de finition</strong><br><br>
+  Vous &ecirc;tes apprenti menuisier dans un atelier de fabrication de mobilier. Le chef d'atelier vous confie l'application d'un vernis polyur&eacute;thane sur des &eacute;l&eacute;ments d'agencement en ch&ecirc;ne.<br><br>
+  Avant d'ouvrir le pot, il vous dit : <em>&laquo;&nbsp;Avant de commencer, tu me lis la FDS du produit et tu me dis quels EPI tu dois porter. C'est la r&egrave;gle, pas d'improvisation avec les produits chimiques.&nbsp;&raquo;</em><br><br>
+  Le bidon porte les pictogrammes suivants sur son &eacute;tiquette et mentionne : <em>&laquo;&nbsp;Contient du white-spirit (naphta hydrod&eacute;sulfur&eacute;). Consulter la Fiche de Donn&eacute;es de S&eacute;curit&eacute; avant utilisation.&nbsp;&raquo;</em>
+</div>
+
+<!-- PICTOGRAMMES -->
+<h2>2. Les 9 pictogrammes de danger SGH/CLP</h2>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Syst&egrave;me SGH/CLP</span><br>
+  Le <strong>SGH</strong> (Syst&egrave;me G&eacute;n&eacute;ral Harmonis&eacute;) est un syst&egrave;me international d'&eacute;tiquetage des produits chimiques. En Europe, il est appliqu&eacute; via le r&egrave;glement <strong>CLP</strong> (Classification, Labelling, Packaging).<br><br>
+  Chaque pictogramme est un <strong>losange &agrave; bord rouge</strong> sur fond blanc avec un symbole noir.
+</div>
+
+<div class="picto-grid">
+  <div class="picto-card">
+    <svg width="60" height="60" viewBox="0 0 60 60"><polygon points="30,2 58,30 30,58 2,30" fill="#fff" stroke="#e53e3e" stroke-width="3"/><text x="30" y="28" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">&#x1F4A5;</text><text x="30" y="42" text-anchor="middle" font-size="8" fill="#333">explosion</text></svg>
+    <strong>GHS01</strong><br>Explosif
+  </div>
+  <div class="picto-card">
+    <svg width="60" height="60" viewBox="0 0 60 60"><polygon points="30,2 58,30 30,58 2,30" fill="#fff" stroke="#e53e3e" stroke-width="3"/><text x="30" y="28" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">&#x1F525;</text><text x="30" y="42" text-anchor="middle" font-size="8" fill="#333">flamme</text></svg>
+    <strong>GHS02</strong><br>Inflammable
+  </div>
+  <div class="picto-card">
+    <svg width="60" height="60" viewBox="0 0 60 60"><polygon points="30,2 58,30 30,58 2,30" fill="#fff" stroke="#e53e3e" stroke-width="3"/><text x="30" y="28" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">&#x1F525;</text><text x="30" y="42" text-anchor="middle" font-size="8" fill="#333">+rond</text></svg>
+    <strong>GHS03</strong><br>Comburant
+  </div>
+  <div class="picto-card">
+    <svg width="60" height="60" viewBox="0 0 60 60"><polygon points="30,2 58,30 30,58 2,30" fill="#fff" stroke="#e53e3e" stroke-width="3"/><text x="30" y="28" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">&#x26A0;</text><text x="30" y="42" text-anchor="middle" font-size="8" fill="#333">bouteille</text></svg>
+    <strong>GHS04</strong><br>Gaz sous pression
+  </div>
+  <div class="picto-card">
+    <svg width="60" height="60" viewBox="0 0 60 60"><polygon points="30,2 58,30 30,58 2,30" fill="#fff" stroke="#e53e3e" stroke-width="3"/><text x="30" y="28" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">&#x2620;</text><text x="30" y="42" text-anchor="middle" font-size="8" fill="#333">corrosion</text></svg>
+    <strong>GHS05</strong><br>Corrosif
+  </div>
+  <div class="picto-card">
+    <svg width="60" height="60" viewBox="0 0 60 60"><polygon points="30,2 58,30 30,58 2,30" fill="#fff" stroke="#e53e3e" stroke-width="3"/><text x="30" y="28" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">&#x2620;</text><text x="30" y="42" text-anchor="middle" font-size="8" fill="#333">t&ecirc;te mort</text></svg>
+    <strong>GHS06</strong><br>Toxique aigu
+  </div>
+  <div class="picto-card">
+    <svg width="60" height="60" viewBox="0 0 60 60"><polygon points="30,2 58,30 30,58 2,30" fill="#fff" stroke="#e53e3e" stroke-width="3"/><text x="30" y="28" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">!</text><text x="30" y="42" text-anchor="middle" font-size="8" fill="#333">exclamation</text></svg>
+    <strong>GHS07</strong><br>Irritant / nocif
+  </div>
+  <div class="picto-card">
+    <svg width="60" height="60" viewBox="0 0 60 60"><polygon points="30,2 58,30 30,58 2,30" fill="#fff" stroke="#e53e3e" stroke-width="3"/><text x="30" y="28" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">&#x2695;</text><text x="30" y="42" text-anchor="middle" font-size="8" fill="#333">sant&eacute;</text></svg>
+    <strong>GHS08</strong><br>Danger sant&eacute;
+  </div>
+  <div class="picto-card">
+    <svg width="60" height="60" viewBox="0 0 60 60"><polygon points="30,2 58,30 30,58 2,30" fill="#fff" stroke="#e53e3e" stroke-width="3"/><text x="30" y="28" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">&#x1F333;</text><text x="30" y="42" text-anchor="middle" font-size="8" fill="#333">environ.</text></svg>
+    <strong>GHS09</strong><br>Environnement
+  </div>
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Tableau r&eacute;capitulatif des pictogrammes</span><br>
+  <table style="border-collapse:collapse;width:100%;font-size:.88rem;margin-top:.5rem">
+    <thead>
+      <tr style="background:var(--p-bg)">
+        <th style="border:1px solid var(--p-border);padding:.4rem">Code</th>
+        <th style="border:1px solid var(--p-border);padding:.4rem">Symbole</th>
+        <th style="border:1px solid var(--p-border);padding:.4rem">Signification</th>
+        <th style="border:1px solid var(--p-border);padding:.4rem">Exemples en menuiserie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">GHS02</td><td style="border:1px solid var(--p-border);padding:.35rem;text-align:center">Flamme</td><td style="border:1px solid var(--p-border);padding:.35rem">Liquide ou gaz inflammable</td><td style="border:1px solid var(--p-border);padding:.35rem">White-spirit, diluants, vernis</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">GHS05</td><td style="border:1px solid var(--p-border);padding:.35rem;text-align:center">Corrosion</td><td style="border:1px solid var(--p-border);padding:.35rem">Corrosif pour la peau ou les m&eacute;taux</td><td style="border:1px solid var(--p-border);padding:.35rem">D&eacute;capants, d&eacute;graissants acides</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">GHS07</td><td style="border:1px solid var(--p-border);padding:.35rem;text-align:center">Point d'exclamation</td><td style="border:1px solid var(--p-border);padding:.35rem">Irritant, sensibilisant cutan&eacute;, nocif</td><td style="border:1px solid var(--p-border);padding:.35rem">Colles, certains vernis, teintes</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">GHS08</td><td style="border:1px solid var(--p-border);padding:.35rem;text-align:center">Silhouette alt&eacute;r&eacute;e</td><td style="border:1px solid var(--p-border);padding:.35rem">Danger grave pour la sant&eacute; (canc&eacute;rog&egrave;ne, mutagène)</td><td style="border:1px solid var(--p-border);padding:.35rem">Poussi&egrave;res de bois dur, certains solvants</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">GHS09</td><td style="border:1px solid var(--p-border);padding:.35rem;text-align:center">Arbre et poisson</td><td style="border:1px solid var(--p-border);padding:.35rem">Dangereux pour l'environnement aquatique</td><td style="border:1px solid var(--p-border);padding:.35rem">Produits de traitement du bois</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- STRUCTURE FDS -->
+<h2>3. Structure d'une Fiche de Donn&eacute;es de S&eacute;curit&eacute;</h2>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; FDS</span><br>
+  La <strong>Fiche de Donn&eacute;es de S&eacute;curit&eacute;</strong> (FDS) est un document de 16 rubriques fourni par le fabricant du produit chimique. Elle est <strong>obligatoire</strong> pour tout produit dangereux utilis&eacute; en milieu professionnel.
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Les 16 rubriques d'une FDS</span><br>
+  <table style="border-collapse:collapse;width:100%;font-size:.88rem;margin-top:.5rem">
+    <thead>
+      <tr style="background:var(--p-bg)">
+        <th style="border:1px solid var(--p-border);padding:.35rem;width:3rem">N&deg;</th>
+        <th style="border:1px solid var(--p-border);padding:.35rem">Rubrique</th>
+        <th style="border:1px solid var(--p-border);padding:.35rem">Int&eacute;r&ecirc;t pour l'op&eacute;rateur</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background:#f0fff4"><td style="border:1px solid var(--p-border);padding:.35rem;font-weight:bold">1</td><td style="border:1px solid var(--p-border);padding:.35rem">Identification du produit</td><td style="border:1px solid var(--p-border);padding:.35rem">Nom, usage pr&eacute;vu, fournisseur</td></tr>
+      <tr style="background:#f0fff4"><td style="border:1px solid var(--p-border);padding:.35rem;font-weight:bold">2</td><td style="border:1px solid var(--p-border);padding:.35rem">Identification des dangers</td><td style="border:1px solid var(--p-border);padding:.35rem"><strong>Pictogrammes, phrases H et P</strong></td></tr>
+      <tr style="background:#f0fff4"><td style="border:1px solid var(--p-border);padding:.35rem;font-weight:bold">3</td><td style="border:1px solid var(--p-border);padding:.35rem">Composition / informations</td><td style="border:1px solid var(--p-border);padding:.35rem">Substances dangereuses contenues</td></tr>
+      <tr style="background:#f0fff4"><td style="border:1px solid var(--p-border);padding:.35rem;font-weight:bold">4</td><td style="border:1px solid var(--p-border);padding:.35rem">Premiers secours</td><td style="border:1px solid var(--p-border);padding:.35rem"><strong>Que faire en cas d'accident</strong></td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">5</td><td style="border:1px solid var(--p-border);padding:.35rem">Lutte contre l'incendie</td><td style="border:1px solid var(--p-border);padding:.35rem">Agents d'extinction adapt&eacute;s</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">6</td><td style="border:1px solid var(--p-border);padding:.35rem">Mesures en cas de d&eacute;versement</td><td style="border:1px solid var(--p-border);padding:.35rem">Proc&eacute;dure de nettoyage</td></tr>
+      <tr style="background:#f0fff4"><td style="border:1px solid var(--p-border);padding:.35rem;font-weight:bold">7</td><td style="border:1px solid var(--p-border);padding:.35rem">Manipulation et stockage</td><td style="border:1px solid var(--p-border);padding:.35rem"><strong>Ventilation, temp&eacute;rature de stockage</strong></td></tr>
+      <tr style="background:#f0fff4"><td style="border:1px solid var(--p-border);padding:.35rem;font-weight:bold">8</td><td style="border:1px solid var(--p-border);padding:.35rem">Contr&ocirc;les d'exposition / EPI</td><td style="border:1px solid var(--p-border);padding:.35rem"><strong>VME, EPI &agrave; porter</strong></td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">9</td><td style="border:1px solid var(--p-border);padding:.35rem">Propri&eacute;t&eacute;s physico-chimiques</td><td style="border:1px solid var(--p-border);padding:.35rem">Point &eacute;clair, densit&eacute;, volatilit&eacute;</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">10&ndash;16</td><td style="border:1px solid var(--p-border);padding:.35rem">Stabilit&eacute;, toxicologie, &eacute;cologie, &eacute;limination, transport, r&eacute;glementation, autres</td><td style="border:1px solid var(--p-border);padding:.35rem">Informations compl&eacute;mentaires</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:.5rem;font-size:.85rem"><strong>Rubriques prioritaires pour l'op&eacute;rateur</strong> : 2 (dangers), 4 (premiers secours), 7 (manipulation), 8 (EPI).</p>
+</div>
+
+<!-- PHRASES H ET P -->
+<h2>4. Phrases de danger (H) et de pr&eacute;caution (P)</h2>
+
+<div class="def">
+  <span class="label label-def">Phrases H &mdash; Hazard (danger)</span><br>
+  Les phrases H d&eacute;crivent la <strong>nature du danger</strong>. Elles sont cod&eacute;es selon le type de risque :
+  <ul>
+    <li><strong>H2xx</strong> : dangers <strong>physiques</strong> (inflammabilit&eacute;, explosion)</li>
+    <li><strong>H3xx</strong> : dangers pour la <strong>sant&eacute;</strong> (irritation, toxicit&eacute;, canc&eacute;rog&eacute;nicit&eacute;)</li>
+    <li><strong>H4xx</strong> : dangers pour l'<strong>environnement</strong></li>
+  </ul>
+</div>
+
+<div class="ex">
+  <span class="label label-def">Exemples de phrases H courantes en menuiserie</span><br>
+  <table style="border-collapse:collapse;width:100%;font-size:.88rem;margin-top:.3rem">
+    <tr><td style="border:1px solid var(--p-border);padding:.3rem;font-weight:bold;width:5rem">H226</td><td style="border:1px solid var(--p-border);padding:.3rem">Liquide et vapeurs inflammables</td></tr>
+    <tr><td style="border:1px solid var(--p-border);padding:.3rem;font-weight:bold">H304</td><td style="border:1px solid var(--p-border);padding:.3rem">Peut &ecirc;tre mortel en cas d'ingestion et de p&eacute;n&eacute;tration dans les voies respiratoires</td></tr>
+    <tr><td style="border:1px solid var(--p-border);padding:.3rem;font-weight:bold">H315</td><td style="border:1px solid var(--p-border);padding:.3rem">Provoque une irritation cutan&eacute;e</td></tr>
+    <tr><td style="border:1px solid var(--p-border);padding:.3rem;font-weight:bold">H336</td><td style="border:1px solid var(--p-border);padding:.3rem">Peut provoquer somnolence ou vertiges</td></tr>
+    <tr><td style="border:1px solid var(--p-border);padding:.3rem;font-weight:bold">H372</td><td style="border:1px solid var(--p-border);padding:.3rem">Risque av&eacute;r&eacute; d'effets graves pour les organes</td></tr>
+    <tr><td style="border:1px solid var(--p-border);padding:.3rem;font-weight:bold">H411</td><td style="border:1px solid var(--p-border);padding:.3rem">Toxique pour les organismes aquatiques, effets &agrave; long terme</td></tr>
+  </table>
+</div>
+
+<div class="def">
+  <span class="label label-def">Phrases P &mdash; Precaution (pr&eacute;caution)</span><br>
+  Les phrases P indiquent les <strong>mesures de pr&eacute;vention</strong> :
+  <ul>
+    <li><strong>P2xx</strong> : <strong>pr&eacute;vention</strong> (avant utilisation)</li>
+    <li><strong>P3xx</strong> : <strong>intervention</strong> (en cas d'accident)</li>
+    <li><strong>P4xx</strong> : <strong>stockage</strong></li>
+    <li><strong>P5xx</strong> : <strong>&eacute;limination</strong></li>
+  </ul>
+</div>
+
+<!-- EPI -->
+<h2>5. &Eacute;quipements de Protection Individuelle (EPI)</h2>
+
+<div class="meth">
+  <span class="label label-meth">M&eacute;thode &mdash; Associer danger &rarr; EPI</span><br>
+  <table style="border-collapse:collapse;width:100%;font-size:.88rem;margin-top:.5rem">
+    <thead>
+      <tr style="background:var(--p-bg)">
+        <th style="border:1px solid var(--p-border);padding:.4rem">Danger identifi&eacute;</th>
+        <th style="border:1px solid var(--p-border);padding:.4rem">EPI adapt&eacute;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">Irritant cutan&eacute; (H315)</td><td style="border:1px solid var(--p-border);padding:.35rem"><strong>Gants de protection</strong> (nitrile ou n&eacute;opr&egrave;ne)</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">Vapeurs nocives (H336)</td><td style="border:1px solid var(--p-border);padding:.35rem"><strong>Masque &agrave; cartouche filtrante A</strong> (vapeurs organiques)</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">Projections (H318, H319)</td><td style="border:1px solid var(--p-border);padding:.35rem"><strong>Lunettes de protection</strong></td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">Inflammable (H226)</td><td style="border:1px solid var(--p-border);padding:.35rem">Pas de flamme nue, ventilation, <strong>extincteur</strong> &agrave; proximit&eacute;</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">Poussi&egrave;res de bois</td><td style="border:1px solid var(--p-border);padding:.35rem"><strong>Masque FFP2</strong>, aspiration &agrave; la source</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention &mdash; Poussi&egrave;res de bois</span><br>
+  Les poussi&egrave;res de bois sont class&eacute;es <strong>canc&eacute;rog&egrave;nes</strong> (groupe 1 par le CIRC). La Valeur Moyenne d'Exposition (VME) est fix&eacute;e &agrave; <strong>1 mg/m&sup3;</strong> sur 8 heures.<br>
+  L'aspiration &agrave; la source et le port d'un masque FFP2 sont <strong>obligatoires</strong> lors de toute op&eacute;ration g&eacute;n&eacute;rant des poussi&egrave;res (pon&ccedil;age, sciage, d&eacute;fon&ccedil;age).
+</div>
+
+<!-- EXEMPLE FDS -->
+<h2>6. Exemple &mdash; Extrait de FDS d'un solvant de vernis</h2>
+
+<div class="fds-extract">
+  <div style="text-align:center;font-weight:bold;font-size:1rem;margin-bottom:.8rem;border-bottom:2px solid #333;padding-bottom:.4rem">FICHE DE DONN&Eacute;ES DE S&Eacute;CURIT&Eacute;<br><span style="font-size:.85rem;font-weight:normal">Conform&eacute;ment au r&egrave;glement (CE) n&deg; 1907/2006 (REACH)</span></div>
+
+  <h4>Rubrique 1 &mdash; Identification</h4>
+  <ul>
+    <li><strong>Nom du produit :</strong> White-spirit d&eacute;sodoris&eacute; &mdash; Solvant de nettoyage</li>
+    <li><strong>Utilisation :</strong> Diluant pour peintures et vernis, nettoyage des outils</li>
+    <li><strong>Fournisseur :</strong> SOLVANTS PRO SAS &mdash; T&eacute;l. urgence : 01 45 42 59 59</li>
+  </ul>
+
+  <h4>Rubrique 2 &mdash; Identification des dangers</h4>
+  <ul>
+    <li><strong>Pictogrammes :</strong> GHS02 (inflammable), GHS07 (irritant), GHS08 (danger sant&eacute;), GHS09 (environnement)</li>
+    <li><strong>Mention d'avertissement :</strong> DANGER</li>
+    <li><strong>Phrases H :</strong> H226, H304, H315, H336, H372, H411</li>
+    <li><strong>Phrases P :</strong> P210, P261, P271, P280, P301+P310, P331, P501</li>
+  </ul>
+
+  <h4>Rubrique 4 &mdash; Premiers secours</h4>
+  <ul>
+    <li><strong>Inhalation :</strong> Transporter &agrave; l'air libre. Si malaise, appeler le 15 (SAMU).</li>
+    <li><strong>Contact cutan&eacute; :</strong> Laver abondamment &agrave; l'eau et au savon pendant 15 min.</li>
+    <li><strong>Ingestion :</strong> NE PAS faire vomir. Appeler le centre antipoison.</li>
+    <li><strong>Contact oculaire :</strong> Rincer &agrave; l'eau 15 min, paupi&egrave;res ouvertes. Consulter un ophtalmologue.</li>
+  </ul>
+
+  <h4>Rubrique 7 &mdash; Manipulation et stockage</h4>
+  <ul>
+    <li>Utiliser uniquement dans des zones bien ventil&eacute;es ou en cabine d'aspiration</li>
+    <li>&Eacute;viter toute source d'ignition : flamme, &eacute;tincelle, surface chaude</li>
+    <li>Conserver entre 5 &deg;C et 30 &deg;C, &agrave; l'abri du soleil, dans un local ventil&eacute;</li>
+    <li>Refermer le r&eacute;cipient apr&egrave;s usage</li>
+  </ul>
+
+  <h4>Rubrique 8 &mdash; EPI recommand&eacute;s</h4>
+  <ul>
+    <li><strong>Gants :</strong> nitrile, &eacute;paisseur &ge; 0,4 mm</li>
+    <li><strong>Protection respiratoire :</strong> masque &agrave; cartouche A (vapeurs organiques)</li>
+    <li><strong>Lunettes :</strong> lunettes de s&eacute;curit&eacute; &agrave; coques lat&eacute;rales</li>
+    <li><strong>V&ecirc;tements :</strong> combinaison ou tablier de protection</li>
+    <li><strong>VME :</strong> 100 ppm (525 mg/m&sup3;) sur 8 h</li>
+  </ul>
+
+  <h4>Rubrique 9 &mdash; Propri&eacute;t&eacute;s physico-chimiques</h4>
+  <ul>
+    <li>Point &eacute;clair : 38 &deg;C &mdash; Temp&eacute;rature d'auto-inflammation : 230 &deg;C</li>
+    <li>Densit&eacute; : 0,77 &agrave; 20 &deg;C</li>
+    <li>&Eacute;tat physique : liquide incolore, l&eacute;g&egrave;re odeur de p&eacute;trole</li>
+  </ul>
+</div>
+
+<!-- À RETENIR -->
+<div class="retenir">
+  <strong>&Agrave; retenir</strong>
+  <ul>
+    <li>La <strong>FDS</strong> est le document de r&eacute;f&eacute;rence pour conna&icirc;tre les dangers d'un produit chimique</li>
+    <li>9 pictogrammes SGH/CLP &mdash; losange rouge, symbole noir sur fond blanc</li>
+    <li>Phrases <strong>H</strong> = nature du danger &mdash; Phrases <strong>P</strong> = mesures de pr&eacute;caution</li>
+    <li>Rubriques prioritaires : <strong>2</strong> (dangers), <strong>4</strong> (premiers secours), <strong>7</strong> (manipulation), <strong>8</strong> (EPI)</li>
+    <li>Poussi&egrave;res de bois : VME = <strong>1 mg/m&sup3;</strong> &mdash; class&eacute;es canc&eacute;rog&egrave;nes &mdash; masque FFP2 obligatoire</li>
+  </ul>
+</div>
+
+<!-- ==================== EXERCICES ==================== -->
+<h2>Exercices</h2>
+
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 1</span>
+    <span class="exo-title">Identifier les pictogrammes (guid&eacute;)</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  L'&eacute;tiquette d'un pot de vernis porte les codes suivants : <strong>GHS02, GHS07</strong>.<br><br>
+  <strong>1.</strong> &Agrave; quel symbole correspond GHS02 ? (flamme / t&ecirc;te de mort / point d'exclamation)<br>
+  <strong>2.</strong> Que signifie GHS07 ?<br>
+  <strong>3.</strong> Cocher les EPI n&eacute;cessaires :<br>
+  &#x25A1; Gants &emsp; &#x25A1; Masque &emsp; &#x25A1; Lunettes &emsp; &#x25A1; Casque de chantier<br>
+  <strong>4.</strong> Peut-on utiliser ce vernis pr&egrave;s d'une source de chaleur ? Pourquoi ?
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. GHS02 = <strong>flamme</strong> &rarr; produit inflammable.<br>
+    2. GHS07 = <strong>point d'exclamation</strong> &rarr; produit irritant ou nocif.<br>
+    3. &#x2611; Gants (irritant) &emsp; &#x2611; Masque (vapeurs) &emsp; &#x2611; Lunettes (projections) &emsp; &#x2610; Casque (pas de risque de chute d'objet).<br>
+    4. <strong>Non</strong>, car GHS02 indique que le produit est inflammable &rarr; risque d'incendie ou d'explosion.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">D&eacute;coder les phrases H (guid&eacute;)</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  Une colle &agrave; bois sp&eacute;ciale porte les mentions suivantes : <strong>H315, H319, H335</strong>.<br><br>
+  Relier chaque phrase &agrave; sa signification :<br><br>
+  <table style="border-collapse:collapse;font-size:.9rem">
+    <tr><td style="border:1px solid var(--p-border);padding:.4rem;font-weight:bold">H315</td><td style="border:1px solid var(--p-border);padding:.4rem">a) Peut irriter les voies respiratoires</td></tr>
+    <tr><td style="border:1px solid var(--p-border);padding:.4rem;font-weight:bold">H319</td><td style="border:1px solid var(--p-border);padding:.4rem">b) Provoque une irritation cutan&eacute;e</td></tr>
+    <tr><td style="border:1px solid var(--p-border);padding:.4rem;font-weight:bold">H335</td><td style="border:1px solid var(--p-border);padding:.4rem">c) Provoque une s&eacute;v&egrave;re irritation des yeux</td></tr>
+  </table><br>
+  Quel(s) EPI faut-il porter pour utiliser cette colle ?
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    H315 &rarr; <strong>b)</strong> irritation cutan&eacute;e &rarr; <strong>gants</strong><br>
+    H319 &rarr; <strong>c)</strong> irritation des yeux &rarr; <strong>lunettes</strong><br>
+    H335 &rarr; <strong>a)</strong> irritation voies respiratoires &rarr; <strong>masque</strong> (ou ventilation)<br><br>
+    EPI n&eacute;cessaires : <strong>gants + lunettes + masque</strong> (ou travail en zone ventil&eacute;e).
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">Analyser un extrait de FDS</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  &Agrave; partir de l'extrait de FDS du white-spirit pr&eacute;sent&eacute; dans le cours (section 6), r&eacute;pondre aux questions suivantes :<br><br>
+  <strong>1.</strong> Combien de pictogrammes figurent sur l'&eacute;tiquette ? Lesquels ?<br>
+  <strong>2.</strong> Le produit est class&eacute; &laquo;&nbsp;DANGER&nbsp;&raquo; et non &laquo;&nbsp;ATTENTION&nbsp;&raquo;. Qu'est-ce que cela signifie ?<br>
+  <strong>3.</strong> La phrase H304 dit : &laquo;&nbsp;Peut &ecirc;tre mortel en cas d'ingestion&nbsp;&raquo;. Quelle est la conduite &agrave; tenir selon la rubrique 4 si un coll&egrave;gue en avale accidentellement ?<br>
+  <strong>4.</strong> Le point &eacute;clair est de 38 &deg;C. Peut-on utiliser ce produit en &eacute;t&eacute; dans un atelier non climatis&eacute; o&ugrave; la temp&eacute;rature atteint 35 &deg;C ? Quelles pr&eacute;cautions prendre ?
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. <strong>4 pictogrammes</strong> : GHS02 (inflammable), GHS07 (irritant), GHS08 (danger sant&eacute;), GHS09 (environnement).<br>
+    2. &laquo;&nbsp;DANGER&nbsp;&raquo; est la mention la plus grave (niveau sup&eacute;rieur &agrave; &laquo;&nbsp;ATTENTION&nbsp;&raquo;). Elle indique un danger <strong>s&eacute;v&egrave;re</strong>.<br>
+    3. <strong>NE PAS faire vomir</strong> (risque de fausse route vers les poumons). Appeler imm&eacute;diatement le centre antipoison ou le SAMU (15).<br>
+    4. &Agrave; 35 &deg;C, on est tr&egrave;s proche du point &eacute;clair (38 &deg;C). Les vapeurs pourraient s'enflammer au contact d'une &eacute;tincelle. <strong>Pr&eacute;cautions</strong> : ventilation renforc&eacute;e, aucune source d'ignition, quantit&eacute; minimale sur le poste de travail, extincteur &agrave; proximit&eacute;.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Choisir les EPI pour un poste de vernissage</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  Un menuisier doit appliquer un vernis polyur&eacute;thane au pistolet en cabine de finition. La FDS du vernis mentionne :<br>
+  &bull; GHS02, GHS07, GHS08<br>
+  &bull; H226, H315, H336, H373<br><br>
+  <strong>1.</strong> Pour chaque phrase H, indiquer le type de danger.<br>
+  <strong>2.</strong> &Eacute;tablir la liste compl&egrave;te des EPI &agrave; porter.<br>
+  <strong>3.</strong> Pourquoi la cabine de finition doit-elle &ecirc;tre ventil&eacute;e m&eacute;caniquement ? Quel est le lien avec H336 ?<br>
+  <strong>4.</strong> Le produit porte la phrase P210 : &laquo;&nbsp;Tenir &agrave; l'&eacute;cart de la chaleur, des &eacute;tincelles, des flammes nues.&nbsp;&raquo; Pourquoi un pistolet &eacute;lectrostatique pose-t-il un probl&egrave;me potentiel ?
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1.<br>
+    &bull; H226 : liquide et vapeurs <strong>inflammables</strong> (danger physique)<br>
+    &bull; H315 : <strong>irritation cutan&eacute;e</strong> (danger sant&eacute;)<br>
+    &bull; H336 : peut provoquer <strong>somnolence ou vertiges</strong> (danger sant&eacute; &mdash; vapeurs)<br>
+    &bull; H373 : risque pr&eacute;sum&eacute; d'effets graves pour les organes en cas d'<strong>exposition prolong&eacute;e</strong><br><br>
+    2. EPI : <strong>gants nitrile</strong> (H315) + <strong>masque &agrave; cartouche A</strong> (H336, H373) + <strong>lunettes de protection</strong> (projections) + <strong>combinaison de protection</strong> (application au pistolet).<br><br>
+    3. La ventilation m&eacute;canique &eacute;vacue les vapeurs de solvant. Sans ventilation, les vapeurs s'accumulent &rarr; risque de somnolence/vertiges (H336) et risque d'incendie (H226).<br><br>
+    4. Un pistolet &eacute;lectrostatique g&eacute;n&egrave;re des charges &eacute;lectriques (&eacute;tincelles possibles). Avec un produit inflammable (H226, P210), il y a un <strong>risque d'inflammation des vapeurs</strong>. Il faut utiliser un pistolet agr&eacute;&eacute; ATEX.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Comparer deux produits de finition</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  Un artisan menuisier h&eacute;site entre deux produits pour vernir un parquet en ch&ecirc;ne :<br><br>
+  <table style="border-collapse:collapse;width:100%;font-size:.88rem">
+    <thead><tr style="background:var(--p-bg)">
+      <th style="border:1px solid var(--p-border);padding:.4rem"></th>
+      <th style="border:1px solid var(--p-border);padding:.4rem">Vernis A (solvant&eacute;)</th>
+      <th style="border:1px solid var(--p-border);padding:.4rem">Vernis B (phase aqueuse)</th>
+    </tr></thead>
+    <tbody>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem;font-weight:bold">Pictogrammes</td><td style="border:1px solid var(--p-border);padding:.35rem">GHS02, GHS07, GHS08</td><td style="border:1px solid var(--p-border);padding:.35rem">GHS07</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem;font-weight:bold">Phrases H</td><td style="border:1px solid var(--p-border);padding:.35rem">H226, H304, H315, H336, H411</td><td style="border:1px solid var(--p-border);padding:.35rem">H319</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem;font-weight:bold">Point &eacute;clair</td><td style="border:1px solid var(--p-border);padding:.35rem">38 &deg;C</td><td style="border:1px solid var(--p-border);padding:.35rem">Non applicable</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem;font-weight:bold">VME solvant</td><td style="border:1px solid var(--p-border);padding:.35rem">100 ppm</td><td style="border:1px solid var(--p-border);padding:.35rem">&mdash;</td></tr>
+    </tbody>
+  </table><br>
+  <strong>1.</strong> Combien de dangers suppl&eacute;mentaires pr&eacute;sente le vernis A par rapport au vernis B ?<br>
+  <strong>2.</strong> Pour chaque vernis, lister les EPI n&eacute;cessaires.<br>
+  <strong>3.</strong> Expliquer pourquoi le vernis B n'a pas de point &eacute;clair.<br>
+  <strong>4.</strong> Du point de vue de la s&eacute;curit&eacute; et de l'environnement, quel produit recommanderiez-vous ? Justifier.
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. Vernis A : 3 pictogrammes, 5 phrases H. Vernis B : 1 pictogramme, 1 phrase H. Le vernis A pr&eacute;sente <strong>4 dangers suppl&eacute;mentaires</strong> (inflammable, mortel si ingestion, irritant cutan&eacute;, somnolence, environnement).<br><br>
+    2. Vernis A : gants nitrile + masque cartouche A + lunettes + combinaison + ventilation + extincteur.<br>
+    Vernis B : lunettes de protection (H319 = irritation des yeux). Gants recommand&eacute;s par pr&eacute;caution.<br><br>
+    3. Le vernis B est en <strong>phase aqueuse</strong> (le solvant est l'eau). L'eau n'est pas inflammable, donc il n'y a pas de point &eacute;clair.<br><br>
+    4. Le <strong>vernis B</strong> est nettement pr&eacute;f&eacute;rable : moins d'EPI n&eacute;cessaires, pas de risque d'incendie, pas de danger pour l'environnement (pas de H411), pas de solvant volatil. Il est plus s&ucirc;r pour l'op&eacute;rateur et plus respectueux de l'environnement.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">V&eacute;rification de la VME &mdash; poussi&egrave;res de bois</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  Un contr&ocirc;leur de la CARSAT mesure la concentration en poussi&egrave;res de bois dans un atelier de menuiserie. Il place un capteur pendant 8 heures de travail et rel&egrave;ve les valeurs suivantes :<br><br>
+  <table style="border-collapse:collapse;font-size:.9rem">
+    <thead><tr style="background:var(--p-bg)">
+      <th style="border:1px solid var(--p-border);padding:.4rem">P&eacute;riode</th>
+      <th style="border:1px solid var(--p-border);padding:.4rem">Dur&eacute;e (h)</th>
+      <th style="border:1px solid var(--p-border);padding:.4rem">Concentration (mg/m&sup3;)</th>
+    </tr></thead>
+    <tbody>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">Matin &mdash; sciage</td><td style="border:1px solid var(--p-border);padding:.35rem;text-align:center">3</td><td style="border:1px solid var(--p-border);padding:.35rem;text-align:center">1,8</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">Matin &mdash; assemblage</td><td style="border:1px solid var(--p-border);padding:.35rem;text-align:center">1</td><td style="border:1px solid var(--p-border);padding:.35rem;text-align:center">0,3</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">Apr&egrave;s-midi &mdash; pon&ccedil;age</td><td style="border:1px solid var(--p-border);padding:.35rem;text-align:center">2</td><td style="border:1px solid var(--p-border);padding:.35rem;text-align:center">2,5</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem">Apr&egrave;s-midi &mdash; finition</td><td style="border:1px solid var(--p-border);padding:.35rem;text-align:center">2</td><td style="border:1px solid var(--p-border);padding:.35rem;text-align:center">0,4</td></tr>
+    </tbody>
+  </table><br>
+  <strong>1.</strong> Calculer la VME (moyenne pond&eacute;r&eacute;e sur 8 h) avec la formule :<br>
+  \(\text{VME} = \dfrac{C_1 \times t_1 + C_2 \times t_2 + C_3 \times t_3 + C_4 \times t_4}{t_1 + t_2 + t_3 + t_4}\)<br><br>
+  <strong>2.</strong> La VME r&eacute;glementaire est de 1 mg/m&sup3;. L'atelier est-il conforme ?<br>
+  <strong>3.</strong> Quelle op&eacute;ration g&eacute;n&egrave;re le plus de poussi&egrave;res ? Proposer deux mesures pour r&eacute;duire l'exposition.
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. \(\text{VME} = \dfrac{1{,}8 \times 3 + 0{,}3 \times 1 + 2{,}5 \times 2 + 0{,}4 \times 2}{3 + 1 + 2 + 2}\)<br>
+    \(= \dfrac{5{,}4 + 0{,}3 + 5{,}0 + 0{,}8}{8} = \dfrac{11{,}5}{8} = 1{,}44\) mg/m&sup3;<br><br>
+    2. \(1{,}44 > 1\) mg/m&sup3; &rarr; <strong>l'atelier n'est PAS conforme</strong>. La VME r&eacute;glementaire est d&eacute;pass&eacute;e.<br><br>
+    3. Le <strong>pon&ccedil;age</strong> (2,5 mg/m&sup3;) g&eacute;n&egrave;re le plus de poussi&egrave;res, suivi du sciage (1,8 mg/m&sup3;).<br>
+    Mesures : (1) am&eacute;liorer l'<strong>aspiration &agrave; la source</strong> sur la ponceuse (captage plus efficace) ; (2) installer un <strong>syst&egrave;me de filtration g&eacute;n&eacute;rale</strong> de l'air de l'atelier ; (3) porter syst&eacute;matiquement un masque <strong>FFP2</strong> pendant le pon&ccedil;age et le sciage.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+</div>
+<script src="../nav.js"></script>
+<script src="../diff.js"></script>
+<script>
+function toggle(btn){
+  const c=btn.previousElementSibling;
+  if(c.style.display==='none'||!c.style.display){c.style.display='block';btn.textContent='Masquer la correction';}
+  else{c.style.display='none';btn.textContent='Voir la correction';}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Masse d'un panneau — Masse volumique — Co-intervention MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9;--s-bg:#e0f2fe;--s-border:#7dd3fc}</style>
+</head>
+<body>
+<div class="c">
+<a href="index.html" class="nb">&larr; Retour &agrave; l'index co-intervention</a>
+
+<header>
+  <h1>Masse d'un panneau &mdash; Masse volumique</h1>
+  <p class="sous-titre">Co-intervention Maths-Sciences | Seconde Bac Pro MAMA | Mat&eacute;riaux et masse volumique</p>
+</header>
+
+<div class="objectifs">
+  <strong>Objectifs</strong>
+  <ul>
+    <li>Conna&icirc;tre la d&eacute;finition de la masse volumique \(\rho\)</li>
+    <li>Calculer le volume d'un panneau rectangulaire \(V = L \times l \times e\)</li>
+    <li>Appliquer la relation \(m = \rho \times V\) pour d&eacute;terminer la masse d'un &eacute;l&eacute;ment</li>
+    <li>Convertir les unit&eacute;s (mm &rarr; m, kg &rarr; t) pour obtenir un r&eacute;sultat coh&eacute;rent</li>
+  </ul>
+</div>
+
+<!-- BADGE -->
+<div style="border:1px solid var(--s-border);background:var(--s-bg);border-radius:8px;padding:1rem;margin:1rem 0;font-size:.9rem">
+  <strong>Identification de la ressource</strong>
+  <ul style="margin:.5rem 0 0">
+    <li><strong>Savoir professionnel :</strong> S7.1 (ERA) / S6.1 (MA) &mdash; Mat&eacute;riaux, masse volumique</li>
+    <li><strong>Notions math&eacute;matiques :</strong> Multiplication, conversions d'unit&eacute;s (mm &rarr; m), volumes, formule litt&eacute;rale</li>
+    <li><strong>Niveau :</strong> Seconde Bac Pro MAMA</li>
+  </ul>
+</div>
+
+<!-- MISE EN SITUATION -->
+<h2>1. Mise en situation professionnelle</h2>
+
+<div class="situation">
+  <strong>Contexte professionnel &mdash; Pr&eacute;paration d'une livraison de panneaux</strong><br><br>
+  Vous &ecirc;tes apprenti dans un atelier de fabrication de cuisines sur mesure. Le chef d'atelier vous demande de pr&eacute;parer le chargement d'un utilitaire pour livrer une cuisine chez un client.<br><br>
+  La commande comprend :
+  <ul>
+    <li>6 panneaux de MDF m&eacute;lamin&eacute; (2&nbsp;500 &times; 600 &times; 19&nbsp;mm)</li>
+    <li>2 plans de travail en agglom&eacute;r&eacute; stratifi&eacute; (3&nbsp;000 &times; 650 &times; 38&nbsp;mm)</li>
+    <li>4 portes en ch&ecirc;ne massif (700 &times; 400 &times; 22&nbsp;mm)</li>
+  </ul>
+  Le chef d'atelier vous demande : <em>&laquo;&nbsp;Calcule-moi le poids total de ces panneaux. L'utilitaire supporte 750 kg de charge utile, est-ce qu'on passe&nbsp;?&nbsp;&raquo;</em>
+</div>
+
+<!-- SVG -->
+<div class="svg-wrap" style="margin:1rem 0">
+<svg width="400" height="200" viewBox="0 0 400 200" style="max-width:100%;font-family:sans-serif;font-size:13px">
+  <!-- panneau 3D -->
+  <polygon points="50,120 280,120 280,140 50,140" fill="#f0fff4" stroke="#2da44e" stroke-width="2"/>
+  <polygon points="280,120 330,80 330,100 280,140" fill="#d1fae5" stroke="#2da44e" stroke-width="2"/>
+  <polygon points="50,120 100,80 330,80 280,120" fill="#ecfdf5" stroke="#2da44e" stroke-width="2"/>
+  <!-- cotes L -->
+  <line x1="50" y1="155" x2="280" y2="155" stroke="#0ea5e9" stroke-width="1.5"/>
+  <line x1="50" y1="150" x2="50" y2="160" stroke="#0ea5e9" stroke-width="1.5"/>
+  <line x1="280" y1="150" x2="280" y2="160" stroke="#0ea5e9" stroke-width="1.5"/>
+  <text x="165" y="172" text-anchor="middle" fill="#0ea5e9" font-weight="bold">L (longueur)</text>
+  <!-- cotes l -->
+  <line x1="305" y1="80" x2="355" y2="80" stroke="#e65100" stroke-width="1.5"/>
+  <line x1="305" y1="140" x2="355" y2="140" stroke="#e65100" stroke-width="1.5"/>
+  <line x1="350" y1="80" x2="350" y2="140" stroke="#e65100" stroke-width="1.5"/>
+  <text x="372" y="114" text-anchor="middle" fill="#e65100" font-weight="bold">l</text>
+  <text x="372" y="128" text-anchor="middle" fill="#e65100" font-size="11">(largeur)</text>
+  <!-- cotes e -->
+  <line x1="30" y1="120" x2="30" y2="140" stroke="#d32f2f" stroke-width="1.5"/>
+  <line x1="25" y1="120" x2="35" y2="120" stroke="#d32f2f" stroke-width="1.5"/>
+  <line x1="25" y1="140" x2="35" y2="140" stroke="#d32f2f" stroke-width="1.5"/>
+  <text x="18" y="134" text-anchor="middle" fill="#d32f2f" font-weight="bold" font-size="12">e</text>
+  <!-- titre -->
+  <text x="190" y="30" text-anchor="middle" fill="#333" font-size="13">Volume du panneau : V = L &times; l &times; e</text>
+</svg>
+</div>
+
+<!-- COURS -->
+<h2>2. Masse volumique</h2>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Masse volumique &rho;</span><br>
+  La <strong>masse volumique</strong> d'un mat&eacute;riau est la masse d'un m&egrave;tre cube de ce mat&eacute;riau :
+  \[ \rho = \frac{m}{V} \]
+  <ul>
+    <li>\(\rho\) (rh&ocirc;) : masse volumique en <strong>kg/m&sup3;</strong></li>
+    <li>\(m\) : masse en <strong>kg</strong></li>
+    <li>\(V\) : volume en <strong>m&sup3;</strong></li>
+  </ul>
+  Plus \(\rho\) est grand, plus le mat&eacute;riau est <strong>lourd</strong> &agrave; volume &eacute;gal.
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Formules d&eacute;riv&eacute;es</span><br>
+  \[ m = \rho \times V \qquad \text{et} \qquad V = \frac{m}{\rho} \]
+</div>
+
+<h2>3. Volume d'un panneau rectangulaire</h2>
+
+<div class="prop">
+  <span class="label label-prop">Formule du volume</span><br>
+  Pour un panneau rectangulaire :
+  \[ V = L \times l \times e \]
+  <ul>
+    <li>\(L\) : longueur, \(l\) : largeur, \(e\) : &eacute;paisseur</li>
+    <li>Toutes les dimensions doivent &ecirc;tre en <strong>m&egrave;tres</strong> pour obtenir V en m&sup3;</li>
+  </ul>
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention &mdash; Conversion mm &rarr; m</span><br>
+  En atelier, les dimensions sont toujours donn&eacute;es en <strong>millim&egrave;tres</strong>. Il faut les convertir en m&egrave;tres avant de calculer le volume :<br>
+  <strong>Diviser par 1&nbsp;000</strong><br>
+  Exemples : 2&nbsp;500 mm = 2,500 m &nbsp;|&nbsp; 600 mm = 0,600 m &nbsp;|&nbsp; 19 mm = 0,019 m
+</div>
+
+<div class="ex">
+  <span class="label label-def">Exemple &mdash; Panneau de MDF m&eacute;lamin&eacute;</span><br>
+  Dimensions : 2&nbsp;500 &times; 600 &times; 19 mm &nbsp;|&nbsp; Masse volumique du MDF : \(\rho = 750\) kg/m&sup3;<br><br>
+  <strong>1. Conversion en m&egrave;tres :</strong><br>
+  \(L = 2{,}500\) m &emsp; \(l = 0{,}600\) m &emsp; \(e = 0{,}019\) m<br><br>
+  <strong>2. Volume :</strong><br>
+  \(V = 2{,}500 \times 0{,}600 \times 0{,}019 = 0{,}0285\) m&sup3;<br><br>
+  <strong>3. Masse :</strong><br>
+  \(m = \rho \times V = 750 \times 0{,}0285 = 21{,}4\) kg
+</div>
+
+<!-- TABLEAU -->
+<h2>4. Masses volumiques des mat&eacute;riaux courants en menuiserie</h2>
+
+<div class="prop">
+  <span class="label label-prop">Tableau &mdash; Masses volumiques</span><br>
+  <table style="border-collapse:collapse;width:100%;font-size:.9rem;margin-top:.5rem">
+    <thead>
+      <tr style="background:var(--p-bg)">
+        <th style="border:1px solid var(--p-border);padding:.4rem .7rem;text-align:left">Mat&eacute;riau</th>
+        <th style="border:1px solid var(--p-border);padding:.4rem .7rem">&rho; (kg/m&sup3;)</th>
+        <th style="border:1px solid var(--p-border);padding:.4rem .7rem">Caract&eacute;ristique</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .7rem">Sapin / &Eacute;pic&eacute;a</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">450</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem">R&eacute;sineux l&eacute;ger, charpente</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .7rem">Pin maritime</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">530</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem">R&eacute;sineux, menuiserie courante</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .7rem">Agglom&eacute;r&eacute; m&eacute;lamin&eacute;</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">650</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem">Panneau de particules rev&ecirc;tu</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .7rem">Contreplaqu&eacute; bouleau</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">680</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem">Multi-plis, r&eacute;sistant</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .7rem">H&ecirc;tre</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">690</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem">Feuillu dur, escaliers</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .7rem">Ch&ecirc;ne</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">720</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem">Feuillu dur, agencement haut de gamme</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .7rem">MDF</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">750</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem">Panneau de fibres, surfaces lisses</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">M&eacute;thode &mdash; Calculer la masse d'un panneau</span><br>
+  <ol>
+    <li>Relever les dimensions L, l, e en mm</li>
+    <li>Convertir chaque dimension en m&egrave;tres (÷ 1&nbsp;000)</li>
+    <li>Calculer le volume : \(V = L \times l \times e\) en m&sup3;</li>
+    <li>Lire la masse volumique \(\rho\) du mat&eacute;riau dans le tableau</li>
+    <li>Calculer la masse : \(m = \rho \times V\) en kg</li>
+  </ol>
+</div>
+
+<!-- À RETENIR -->
+<div class="retenir">
+  <strong>&Agrave; retenir</strong>
+  <ul>
+    <li>\(\rho = m / V\) &mdash; masse volumique en kg/m&sup3;</li>
+    <li>\(m = \rho \times V\) &mdash; masse en kg</li>
+    <li>\(V = L \times l \times e\) &mdash; volume d'un panneau en m&sup3;</li>
+    <li><strong>Toujours convertir les mm en m</strong> avant de calculer le volume</li>
+    <li>Bois l&eacute;ger (sapin &asymp; 450 kg/m&sup3;) &mdash; bois lourd (ch&ecirc;ne &asymp; 720 kg/m&sup3;) &mdash; MDF &asymp; 750 kg/m&sup3;</li>
+  </ul>
+</div>
+
+<!-- ==================== EXERCICES ==================== -->
+<h2>Exercices</h2>
+
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 1</span>
+    <span class="exo-title">Masse d'une &eacute;tag&egrave;re en MDF (guid&eacute;)</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  Une &eacute;tag&egrave;re en MDF mesure 800 &times; 300 &times; 19 mm. La masse volumique du MDF est \(\rho = 750\) kg/m&sup3;.<br><br>
+  <strong>&Eacute;tape 1 :</strong> Convertir les dimensions en m&egrave;tres.<br>
+  \(L = 800 \div 1\,000 = \ldots\) m &emsp; \(l = 300 \div 1\,000 = \ldots\) m &emsp; \(e = 19 \div 1\,000 = \ldots\) m<br><br>
+  <strong>&Eacute;tape 2 :</strong> Calculer le volume.<br>
+  \(V = \ldots \times \ldots \times \ldots = \ldots\) m&sup3;<br><br>
+  <strong>&Eacute;tape 3 :</strong> Calculer la masse.<br>
+  \(m = \rho \times V = 750 \times \ldots = \ldots\) kg
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    &Eacute;tape 1 : \(L = 0{,}800\) m &emsp; \(l = 0{,}300\) m &emsp; \(e = 0{,}019\) m<br>
+    &Eacute;tape 2 : \(V = 0{,}800 \times 0{,}300 \times 0{,}019 = 0{,}00456\) m&sup3;<br>
+    &Eacute;tape 3 : \(m = 750 \times 0{,}00456 = 3{,}42\) kg
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Comparer deux panneaux (guid&eacute;)</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  On dispose de deux panneaux de m&ecirc;mes dimensions : 1&nbsp;200 &times; 600 &times; 18 mm.<br>
+  &bull; Panneau A : agglom&eacute;r&eacute; m&eacute;lamin&eacute; (\(\rho = 650\) kg/m&sup3;)<br>
+  &bull; Panneau B : MDF (\(\rho = 750\) kg/m&sup3;)<br><br>
+  <strong>1.</strong> Convertir les dimensions en m et calculer le volume (identique pour les deux).<br>
+  <strong>2.</strong> Calculer la masse de chaque panneau.<br>
+  <strong>3.</strong> Quel est le panneau le plus lourd ? De combien de kg ?
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. \(V = 1{,}200 \times 0{,}600 \times 0{,}018 = 0{,}01296\) m&sup3;<br>
+    2. Panneau A : \(m = 650 \times 0{,}01296 = 8{,}42\) kg<br>
+    Panneau B : \(m = 750 \times 0{,}01296 = 9{,}72\) kg<br>
+    3. Le panneau B (MDF) est plus lourd de \(9{,}72 - 8{,}42 = 1{,}30\) kg.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">Chargement d'un utilitaire</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  Un menuisier doit transporter dans son utilitaire (charge utile : 750 kg) :<br>
+  &bull; 8 panneaux d'agglom&eacute;r&eacute; m&eacute;lamin&eacute; de 2&nbsp;800 &times; 2&nbsp;070 &times; 19 mm (\(\rho = 650\) kg/m&sup3;)<br>
+  &bull; 4 panneaux de contreplaqu&eacute; de 2&nbsp;500 &times; 1&nbsp;220 &times; 15 mm (\(\rho = 680\) kg/m&sup3;)<br><br>
+  <strong>1.</strong> Calculer la masse d'un panneau d'agglom&eacute;r&eacute; puis la masse totale des 8 panneaux.<br>
+  <strong>2.</strong> Calculer la masse d'un panneau de contreplaqu&eacute; puis la masse totale des 4 panneaux.<br>
+  <strong>3.</strong> La charge utile de l'utilitaire est-elle suffisante ? Justifier.
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. Agglom&eacute;r&eacute; : \(V = 2{,}800 \times 2{,}070 \times 0{,}019 = 0{,}1101\) m&sup3;<br>
+    \(m_1 = 650 \times 0{,}1101 = 71{,}6\) kg &rarr; 8 panneaux : \(8 \times 71{,}6 = 572{,}5\) kg<br><br>
+    2. Contreplaqu&eacute; : \(V = 2{,}500 \times 1{,}220 \times 0{,}015 = 0{,}04575\) m&sup3;<br>
+    \(m_1 = 680 \times 0{,}04575 = 31{,}1\) kg &rarr; 4 panneaux : \(4 \times 31{,}1 = 124{,}4\) kg<br><br>
+    3. Masse totale : \(572{,}5 + 124{,}4 = 696{,}9\) kg &lt; 750 kg &rarr; <strong>la charge utile est suffisante</strong>, mais il reste tr&egrave;s peu de marge (53 kg) pour le reste du chargement (quincaillerie, outils).
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Masse d'un meuble &agrave; assembler</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  Un meuble bas de cuisine est compos&eacute; des &eacute;l&eacute;ments suivants, tous en agglom&eacute;r&eacute; m&eacute;lamin&eacute; (\(\rho = 650\) kg/m&sup3;) :<br>
+  &bull; 2 joues (c&ocirc;t&eacute;s) : 720 &times; 560 &times; 16 mm<br>
+  &bull; 1 fond : 600 &times; 560 &times; 8 mm<br>
+  &bull; 1 dessus : 600 &times; 560 &times; 16 mm<br>
+  &bull; 1 plinthe : 600 &times; 150 &times; 16 mm<br><br>
+  <strong>1.</strong> Calculer la masse de chaque &eacute;l&eacute;ment.<br>
+  <strong>2.</strong> Calculer la masse totale du meuble (sans la quincaillerie).
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1.<br>
+    &bull; Joue : \(V = 0{,}720 \times 0{,}560 \times 0{,}016 = 0{,}006451\) m&sup3; &rarr; \(m = 650 \times 0{,}006451 = 4{,}19\) kg &rarr; 2 joues : 8,38 kg<br>
+    &bull; Fond : \(V = 0{,}600 \times 0{,}560 \times 0{,}008 = 0{,}002688\) m&sup3; &rarr; \(m = 650 \times 0{,}002688 = 1{,}75\) kg<br>
+    &bull; Dessus : \(V = 0{,}600 \times 0{,}560 \times 0{,}016 = 0{,}005376\) m&sup3; &rarr; \(m = 650 \times 0{,}005376 = 3{,}49\) kg<br>
+    &bull; Plinthe : \(V = 0{,}600 \times 0{,}150 \times 0{,}016 = 0{,}001440\) m&sup3; &rarr; \(m = 650 \times 0{,}001440 = 0{,}94\) kg<br><br>
+    2. Masse totale : \(8{,}38 + 1{,}75 + 3{,}49 + 0{,}94 = 14{,}56\) kg
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Choix du mat&eacute;riau pour un plan de travail</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  Un client h&eacute;site entre deux plans de travail de cuisine de dimensions 3&nbsp;000 &times; 650 &times; 38 mm :<br>
+  &bull; Option A : agglom&eacute;r&eacute; stratifi&eacute; (\(\rho = 650\) kg/m&sup3;) &mdash; prix : 85 &euro;<br>
+  &bull; Option B : ch&ecirc;ne massif (\(\rho = 720\) kg/m&sup3;) &mdash; prix : 320 &euro;<br><br>
+  <strong>1.</strong> Calculer la masse de chaque plan de travail.<br>
+  <strong>2.</strong> Le meuble support admet une charge maximale de 60 kg. Les deux plans de travail sont-ils compatibles ?<br>
+  <strong>3.</strong> Calculer le prix au kilogramme pour chaque option. Commenter.
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. Volume commun : \(V = 3{,}000 \times 0{,}650 \times 0{,}038 = 0{,}07410\) m&sup3;<br>
+    Option A : \(m = 650 \times 0{,}07410 = 48{,}2\) kg<br>
+    Option B : \(m = 720 \times 0{,}07410 = 53{,}4\) kg<br><br>
+    2. Les deux sont inf&eacute;rieurs &agrave; 60 kg &rarr; <strong>les deux sont compatibles</strong>. Le ch&ecirc;ne laisse seulement 6,6 kg de marge (ustensiles, &eacute;lectrom&eacute;nager pos&eacute;).<br><br>
+    3. Option A : \(85 / 48{,}2 = 1{,}76\) &euro;/kg<br>
+    Option B : \(320 / 53{,}4 = 5{,}99\) &euro;/kg<br>
+    Le ch&ecirc;ne massif co&ucirc;te environ <strong>3,4 fois plus cher au kg</strong> que l'agglom&eacute;r&eacute;.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">Probl&egrave;me inverse &mdash; retrouver une &eacute;paisseur</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  Un panneau de MDF (\(\rho = 750\) kg/m&sup3;) mesure 2&nbsp;440 &times; 1&nbsp;220 mm. Un op&eacute;rateur le p&egrave;se sur une balance industrielle : la balance affiche <strong>33,4 kg</strong>.<br><br>
+  <strong>1.</strong> Calculer la surface S du panneau en m&sup2;.<br>
+  <strong>2.</strong> En d&eacute;duire le volume V du panneau &agrave; partir de sa masse et de sa masse volumique.<br>
+  <strong>3.</strong> Retrouver l'&eacute;paisseur e du panneau en m&egrave;tres, puis en mm.<br>
+  <strong>4.</strong> Parmi les &eacute;paisseurs commerciales (10, 12, 16, 19, 22 mm), laquelle correspond ?
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. \(S = 2{,}440 \times 1{,}220 = 2{,}977\) m&sup2;<br>
+    2. \(V = m / \rho = 33{,}4 / 750 = 0{,}04453\) m&sup3;<br>
+    3. \(e = V / S = 0{,}04453 / 2{,}977 = 0{,}01496\) m = <strong>14,96 mm</strong><br>
+    4. Aucune &eacute;paisseur commerciale ne correspond exactement. La plus proche est <strong>16 mm</strong>. L'&eacute;cart peut s'expliquer par un panneau l&eacute;g&egrave;rement sous-densifi&eacute; (\(\rho\) r&eacute;el un peu inf&eacute;rieur &agrave; 750) ou des tol&eacute;rances d'usinage. En v&eacute;rifiant avec un pied &agrave; coulisse, on trouverait vraisemblablement <strong>16 mm</strong>.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+</div>
+<script src="../nav.js"></script>
+<script src="../diff.js"></script>
+<script>
+function toggle(btn){
+  const c=btn.previousElementSibling;
+  if(c.style.display==='none'||!c.style.display){c.style.display='block';btn.textContent='Masquer la correction';}
+  else{c.style.display='none';btn.textContent='Voir la correction';}
+}
+</script>
+</body>
+</html>

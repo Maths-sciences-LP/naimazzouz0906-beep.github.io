@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Vitesse de coupe d'une scie circulaire — Co-intervention MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9;--s-bg:#e0f2fe;--s-border:#7dd3fc}</style>
+</head>
+<body>
+<div class="c">
+<a href="index.html" class="nb">&larr; Retour &agrave; l'index co-intervention</a>
+
+<header>
+  <h1>Vitesse de coupe d'une scie circulaire</h1>
+  <p class="sous-titre">Co-intervention Maths-Sciences | Seconde Bac Pro MAMA | Cin&eacute;matique de la coupe</p>
+</header>
+
+<div class="objectifs">
+  <strong>Objectifs</strong>
+  <ul>
+    <li>Conna&icirc;tre la relation entre vitesse de coupe, diam&egrave;tre et fr&eacute;quence de rotation</li>
+    <li>Appliquer la formule \(V_c = \dfrac{\pi \times D \times n}{1\,000}\)</li>
+    <li>Calculer la fr&eacute;quence de rotation adapt&eacute;e &agrave; un outil et un mat&eacute;riau</li>
+    <li>Choisir la vitesse de rotation d'une machine &agrave; partir d'un tableau de donn&eacute;es</li>
+  </ul>
+</div>
+
+<!-- BADGE -->
+<div style="border:1px solid var(--s-border);background:var(--s-bg);border-radius:8px;padding:1rem;margin:1rem 0;font-size:.9rem">
+  <strong>Identification de la ressource</strong>
+  <ul style="margin:.5rem 0 0">
+    <li><strong>Savoir professionnel :</strong> S8.3 (ERA) / S7.3 (MA) &mdash; Cin&eacute;matique de la coupe</li>
+    <li><strong>Notions math&eacute;matiques :</strong> Formule litt&eacute;rale, \(\pi\), division, conversions d'unit&eacute;s (m/min, m/s, tr/min)</li>
+    <li><strong>Niveau :</strong> Seconde Bac Pro MAMA</li>
+  </ul>
+</div>
+
+<!-- MISE EN SITUATION -->
+<h2>1. Mise en situation professionnelle</h2>
+
+<div class="situation">
+  <strong>Contexte professionnel &mdash; R&eacute;glage d'une scie circulaire &agrave; format</strong><br><br>
+  Vous &ecirc;tes apprenti menuisier dans un atelier de fabrication de mobilier sur mesure. Le chef d'atelier vous demande de d&eacute;biter des panneaux de MDF de 19&nbsp;mm d'&eacute;paisseur &agrave; la scie &agrave; format.<br><br>
+  La machine est &eacute;quip&eacute;e d'une lame carbure de <strong>diam&egrave;tre D = 300&nbsp;mm</strong>. Le fabricant de la lame recommande une vitesse de coupe \(V_c\) comprise entre <strong>50 et 70&nbsp;m/s</strong> pour le MDF.<br><br>
+  Le chef d'atelier vous demande : <em>&laquo;&nbsp;Calcule-moi la fr&eacute;quence de rotation &agrave; r&eacute;gler sur la machine pour &ecirc;tre dans la bonne plage de vitesse.&nbsp;&raquo;</em>
+</div>
+
+<!-- SCHÉMA SVG -->
+<h2>2. La lame en rotation</h2>
+
+<div class="svg-wrap" style="margin:1rem 0">
+<svg width="360" height="280" viewBox="0 0 360 280" style="max-width:100%;font-family:sans-serif;font-size:13px">
+  <!-- lame -->
+  <circle cx="180" cy="140" r="100" fill="none" stroke="#2da44e" stroke-width="3"/>
+  <circle cx="180" cy="140" r="12" fill="#2da44e" stroke="#1a7a34" stroke-width="2"/>
+  <!-- dents -->
+  <polygon points="280,140 288,134 288,146" fill="#333"/>
+  <polygon points="180,40 174,32 186,32" fill="#333"/>
+  <polygon points="80,140 72,134 72,146" fill="#333"/>
+  <polygon points="180,240 174,248 186,248" fill="#333"/>
+  <!-- diamètre -->
+  <line x1="80" y1="140" x2="280" y2="140" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="180" y="158" text-anchor="middle" fill="#0ea5e9" font-weight="bold">D = 300 mm</text>
+  <!-- flèche rotation -->
+  <defs><marker id="arr" markerWidth="8" markerHeight="6" refX="6" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#e65100"/></marker></defs>
+  <path d="M 230,60 A 70,70 0 0,1 260,110" fill="none" stroke="#e65100" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="268" y="78" fill="#e65100" font-weight="bold">n (tr/min)</text>
+  <!-- Vc tangente -->
+  <line x1="280" y1="140" x2="280" y2="80" stroke="#d32f2f" stroke-width="2" marker-end="url(#arr2)"/>
+  <defs><marker id="arr2" markerWidth="8" markerHeight="6" refX="6" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#d32f2f"/></marker></defs>
+  <text x="298" y="106" fill="#d32f2f" font-weight="bold">V<tspan baseline-shift="sub" font-size="10">c</tspan></text>
+  <!-- légende -->
+  <text x="180" y="272" text-anchor="middle" fill="#555" font-size="12">La vitesse de coupe V<tspan baseline-shift="sub" font-size="9">c</tspan> est la vitesse du bord de la lame</text>
+</svg>
+</div>
+
+<!-- COURS -->
+<h2>3. Vitesse de coupe et fr&eacute;quence de rotation</h2>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition &mdash; Vitesse de coupe V<sub>c</sub></span><br>
+  La <strong>vitesse de coupe</strong> est la vitesse lin&eacute;aire du bord de la lame (ou de la fraise). C'est la vitesse &agrave; laquelle les dents attaquent le mat&eacute;riau.<br><br>
+  Elle d&eacute;pend du <strong>diam&egrave;tre D</strong> de l'outil et de sa <strong>fr&eacute;quence de rotation n</strong>.
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Formule fondamentale</span><br>
+  \[ V_c = \frac{\pi \times D \times n}{1\,000} \]
+  <ul>
+    <li>\(V_c\) : vitesse de coupe en <strong>m/min</strong></li>
+    <li>\(D\) : diam&egrave;tre de l'outil en <strong>mm</strong></li>
+    <li>\(n\) : fr&eacute;quence de rotation en <strong>tr/min</strong></li>
+    <li>\(\pi \approx 3{,}14\)</li>
+  </ul>
+  Le facteur 1&nbsp;000 sert &agrave; convertir les mm en m.
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Formule inverse &mdash; Trouver n</span><br>
+  Pour r&eacute;gler la machine, on a souvent besoin de calculer la fr&eacute;quence de rotation :
+  \[ n = \frac{1\,000 \times V_c}{\pi \times D} \]
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention &mdash; Unit&eacute;s de V<sub>c</sub></span><br>
+  Les fabricants de lames donnent parfois \(V_c\) en <strong>m/s</strong> et parfois en <strong>m/min</strong>.<br>
+  <strong>Conversion :</strong> 1&nbsp;m/s = 60&nbsp;m/min<br>
+  Exemple : \(V_c = 60\) m/s = \(60 \times 60 = 3\,600\) m/min
+</div>
+
+<div class="ex">
+  <span class="label label-def">Exemple &mdash; Scie &agrave; format, lame &oslash;&nbsp;300&nbsp;mm, MDF</span><br>
+  Le fabricant recommande \(V_c = 60\) m/s = 3&nbsp;600 m/min pour le MDF.<br>
+  \[ n = \frac{1\,000 \times 3\,600}{\pi \times 300} = \frac{3\,600\,000}{942{,}5} \approx 3\,820 \text{ tr/min} \]
+  On r&eacute;glera la machine sur la vitesse la plus proche : <strong>4&nbsp;000 tr/min</strong>.
+</div>
+
+<!-- TABLEAU -->
+<h2>4. Vitesses de coupe recommand&eacute;es (lames carbure)</h2>
+
+<div class="prop">
+  <span class="label label-prop">Tableau &mdash; V<sub>c</sub> selon le mat&eacute;riau</span><br>
+  <table style="border-collapse:collapse;width:100%;font-size:.9rem;margin-top:.5rem">
+    <thead>
+      <tr style="background:var(--p-bg)">
+        <th style="border:1px solid var(--p-border);padding:.4rem .7rem;text-align:left">Mat&eacute;riau</th>
+        <th style="border:1px solid var(--p-border);padding:.4rem .7rem">V<sub>c</sub> (m/s)</th>
+        <th style="border:1px solid var(--p-border);padding:.4rem .7rem">V<sub>c</sub> (m/min)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .7rem">Bois massif r&eacute;sineux (sapin, &eacute;pic&eacute;a)</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">50 &ndash; 70</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">3 000 &ndash; 4 200</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .7rem">Bois massif feuillu (ch&ecirc;ne, h&ecirc;tre)</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">40 &ndash; 60</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">2 400 &ndash; 3 600</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .7rem">MDF</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">50 &ndash; 70</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">3 000 &ndash; 4 200</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .7rem">Contreplaqu&eacute;</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">50 &ndash; 70</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">3 000 &ndash; 4 200</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .7rem">Agglom&eacute;r&eacute; m&eacute;lamin&eacute;</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">40 &ndash; 60</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">2 400 &ndash; 3 600</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .7rem">Stratifi&eacute; HPL</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">30 &ndash; 50</td><td style="border:1px solid var(--p-border);padding:.35rem .7rem;text-align:center">1 800 &ndash; 3 000</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">M&eacute;thode &mdash; R&eacute;gler la machine</span><br>
+  <ol>
+    <li>Identifier le mat&eacute;riau &agrave; usiner et lire \(V_c\) dans le tableau</li>
+    <li>Convertir \(V_c\) en m/min si n&eacute;cessaire (\(\times 60\))</li>
+    <li>Mesurer ou lire le diam&egrave;tre D de la lame (en mm)</li>
+    <li>Calculer \(n = \dfrac{1\,000 \times V_c}{\pi \times D}\)</li>
+    <li>R&eacute;gler la machine sur la vitesse disponible la plus proche</li>
+  </ol>
+</div>
+
+<!-- À RETENIR -->
+<div class="retenir">
+  <strong>&Agrave; retenir</strong>
+  <ul>
+    <li>\(V_c = \dfrac{\pi \times D \times n}{1\,000}\) &mdash; vitesse de coupe en m/min</li>
+    <li>\(n = \dfrac{1\,000 \times V_c}{\pi \times D}\) &mdash; fr&eacute;quence de rotation en tr/min</li>
+    <li>Conversion : <strong>1 m/s = 60 m/min</strong></li>
+    <li>V<sub>c</sub> trop &eacute;lev&eacute;e &rarr; &eacute;chauffement, usure rapide de la lame, risque de br&ucirc;lure du bois</li>
+    <li>V<sub>c</sub> trop faible &rarr; mauvais &eacute;tat de surface, effort de coupe excessif</li>
+  </ul>
+</div>
+
+<!-- ==================== EXERCICES ==================== -->
+<h2>Exercices</h2>
+
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 1</span>
+    <span class="exo-title">Calculer une vitesse de coupe (guid&eacute;)</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  Une scie circulaire est &eacute;quip&eacute;e d'une lame de diam&egrave;tre D = 250 mm. Elle tourne &agrave; n = 4&nbsp;000 tr/min.<br><br>
+  <strong>&Eacute;tape 1 :</strong> &Eacute;crire la formule de la vitesse de coupe.<br>
+  \(V_c = \dfrac{\pi \times \ldots \times \ldots}{\ldots}\)<br><br>
+  <strong>&Eacute;tape 2 :</strong> Remplacer par les valeurs num&eacute;riques.<br>
+  \(V_c = \dfrac{3{,}14 \times \ldots \times \ldots}{1\,000} = \ldots\) m/min<br><br>
+  <strong>&Eacute;tape 3 :</strong> Convertir en m/s (diviser par 60).<br>
+  \(V_c = \dfrac{\ldots}{60} = \ldots\) m/s
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    &Eacute;tape 1 : \(V_c = \dfrac{\pi \times D \times n}{1\,000}\)<br>
+    &Eacute;tape 2 : \(V_c = \dfrac{3{,}14 \times 250 \times 4\,000}{1\,000} = \dfrac{3\,140\,000}{1\,000} = 3\,140\) m/min<br>
+    &Eacute;tape 3 : \(V_c = \dfrac{3\,140}{60} \approx 52{,}3\) m/s
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Trouver la fr&eacute;quence de rotation (guid&eacute;)</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  Un menuisier doit d&eacute;biter du contreplaqu&eacute; avec une scie &agrave; format. La lame a un diam&egrave;tre D = 300&nbsp;mm. Le fabricant recommande \(V_c = 3\,600\) m/min.<br><br>
+  <strong>&Eacute;tape 1 :</strong> &Eacute;crire la formule de n.<br>
+  \(n = \dfrac{1\,000 \times \ldots}{\pi \times \ldots}\)<br><br>
+  <strong>&Eacute;tape 2 :</strong> Remplacer par les valeurs.<br>
+  \(n = \dfrac{1\,000 \times \ldots}{3{,}14 \times \ldots} = \dfrac{\ldots}{\ldots} = \ldots\) tr/min<br><br>
+  <strong>&Eacute;tape 3 :</strong> La machine propose 3&nbsp;000, 4&nbsp;000 ou 5&nbsp;000 tr/min. Quelle vitesse choisir ?
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    &Eacute;tape 1 : \(n = \dfrac{1\,000 \times V_c}{\pi \times D}\)<br>
+    &Eacute;tape 2 : \(n = \dfrac{1\,000 \times 3\,600}{3{,}14 \times 300} = \dfrac{3\,600\,000}{942} \approx 3\,822\) tr/min<br>
+    &Eacute;tape 3 : On choisit <strong>4&nbsp;000 tr/min</strong> (valeur la plus proche au-dessus).
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">Changement de lame</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  Un artisan menuisier poss&egrave;de deux lames pour sa scie &agrave; format :<br>
+  &bull; Lame A : D = 250 mm<br>
+  &bull; Lame B : D = 350 mm<br><br>
+  Il doit d&eacute;biter des panneaux de ch&ecirc;ne massif. La vitesse de coupe recommand&eacute;e est \(V_c = 50\) m/s.<br><br>
+  <strong>1.</strong> Convertir \(V_c\) en m/min.<br>
+  <strong>2.</strong> Calculer la fr&eacute;quence de rotation n pour chaque lame.<br>
+  <strong>3.</strong> La machine peut tourner entre 3&nbsp;000 et 6&nbsp;000 tr/min. Quelle lame permet un r&eacute;glage dans cette plage ?
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. \(V_c = 50 \times 60 = 3\,000\) m/min<br><br>
+    2. Lame A : \(n = \dfrac{1\,000 \times 3\,000}{3{,}14 \times 250} = \dfrac{3\,000\,000}{785} \approx 3\,822\) tr/min<br>
+    Lame B : \(n = \dfrac{1\,000 \times 3\,000}{3{,}14 \times 350} = \dfrac{3\,000\,000}{1\,099} \approx 2\,730\) tr/min<br><br>
+    3. La lame A n&eacute;cessite 3&nbsp;822 tr/min &rarr; <strong>dans la plage</strong>.<br>
+    La lame B n&eacute;cessite 2&nbsp;730 tr/min &rarr; <strong>hors plage</strong> (en dessous de 3&nbsp;000 tr/min).<br>
+    On utilisera la <strong>lame A (250 mm)</strong>.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">D&eacute;fonceuse &mdash; fraise &agrave; profiler</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  Un menuisier utilise une d&eacute;fonceuse portative pour r&eacute;aliser un profil sur un chant de h&ecirc;tre. La fraise carbure a un diam&egrave;tre D = 40 mm. La vitesse de coupe recommand&eacute;e pour le h&ecirc;tre est \(V_c = 50\) m/s.<br><br>
+  <strong>1.</strong> Convertir \(V_c\) en m/min.<br>
+  <strong>2.</strong> Calculer la fr&eacute;quence de rotation n n&eacute;cessaire.<br>
+  <strong>3.</strong> La d&eacute;fonceuse peut tourner entre 10&nbsp;000 et 30&nbsp;000 tr/min. Le r&eacute;glage est-il possible ?<br>
+  <strong>4.</strong> Si l'on augmente la vitesse &agrave; 28&nbsp;000 tr/min, quelle serait la vitesse de coupe obtenue ? Est-ce acceptable ?
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. \(V_c = 50 \times 60 = 3\,000\) m/min<br>
+    2. \(n = \dfrac{1\,000 \times 3\,000}{3{,}14 \times 40} = \dfrac{3\,000\,000}{125{,}6} \approx 23\,885\) tr/min<br>
+    3. 23&nbsp;885 tr/min est bien dans la plage 10&nbsp;000 &ndash; 30&nbsp;000 tr/min &rarr; <strong>oui</strong>, on r&egrave;gle sur ~24&nbsp;000 tr/min.<br>
+    4. &Agrave; 28&nbsp;000 tr/min : \(V_c = \dfrac{3{,}14 \times 40 \times 28\,000}{1\,000} = 3\,517\) m/min = 58,6 m/s.<br>
+    58,6 m/s est dans la plage 40&ndash;60 m/s du h&ecirc;tre &rarr; <strong>acceptable</strong>, mais proche de la limite haute.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Tableau comparatif &mdash; trois mat&eacute;riaux</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  Un atelier de menuiserie doit usiner trois mat&eacute;riaux diff&eacute;rents avec la m&ecirc;me scie &agrave; format (&eacute;quip&eacute;e d'une lame carbure D = 300 mm). La machine propose les vitesses : 3&nbsp;000, 4&nbsp;000, 5&nbsp;000 et 6&nbsp;000 tr/min.<br><br>
+  <table style="border-collapse:collapse;width:100%;font-size:.9rem">
+    <thead><tr style="background:var(--p-bg)">
+      <th style="border:1px solid var(--p-border);padding:.4rem">Mat&eacute;riau</th>
+      <th style="border:1px solid var(--p-border);padding:.4rem">V<sub>c</sub> recommand&eacute;e (m/s)</th>
+      <th style="border:1px solid var(--p-border);padding:.4rem">n calcul&eacute;e (tr/min)</th>
+      <th style="border:1px solid var(--p-border);padding:.4rem">n r&eacute;gl&eacute;e</th>
+    </tr></thead>
+    <tbody>
+      <tr><td style="border:1px solid var(--p-border);padding:.4rem">Ch&ecirc;ne massif</td><td style="border:1px solid var(--p-border);padding:.4rem;text-align:center">50</td><td style="border:1px solid var(--p-border);padding:.4rem;text-align:center">&hellip;</td><td style="border:1px solid var(--p-border);padding:.4rem;text-align:center">&hellip;</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.4rem">MDF 19 mm</td><td style="border:1px solid var(--p-border);padding:.4rem;text-align:center">60</td><td style="border:1px solid var(--p-border);padding:.4rem;text-align:center">&hellip;</td><td style="border:1px solid var(--p-border);padding:.4rem;text-align:center">&hellip;</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.4rem">Stratifi&eacute; HPL</td><td style="border:1px solid var(--p-border);padding:.4rem;text-align:center">40</td><td style="border:1px solid var(--p-border);padding:.4rem;text-align:center">&hellip;</td><td style="border:1px solid var(--p-border);padding:.4rem;text-align:center">&hellip;</td></tr>
+    </tbody>
+  </table><br>
+  <strong>1.</strong> Compl&eacute;ter le tableau (convertir V<sub>c</sub> en m/min, puis calculer n).<br>
+  <strong>2.</strong> Le menuisier r&egrave;gle la machine sur 5&nbsp;000 tr/min pour les trois mat&eacute;riaux sans changer la vitesse. Calculer la V<sub>c</sub> r&eacute;elle pour chaque mat&eacute;riau. Quels risques cela repr&eacute;sente-t-il ?
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1.<br>
+    Ch&ecirc;ne : \(V_c = 50 \times 60 = 3\,000\) m/min &rarr; \(n = \dfrac{3\,000\,000}{942} = 3\,185\) tr/min &rarr; r&eacute;glage <strong>3&nbsp;000 tr/min</strong><br>
+    MDF : \(V_c = 60 \times 60 = 3\,600\) m/min &rarr; \(n = \dfrac{3\,600\,000}{942} = 3\,822\) tr/min &rarr; r&eacute;glage <strong>4&nbsp;000 tr/min</strong><br>
+    Stratifi&eacute; : \(V_c = 40 \times 60 = 2\,400\) m/min &rarr; \(n = \dfrac{2\,400\,000}{942} = 2\,548\) tr/min &rarr; r&eacute;glage <strong>3&nbsp;000 tr/min</strong> (la plus proche)<br><br>
+    2. &Agrave; 5&nbsp;000 tr/min pour D = 300 mm :<br>
+    \(V_c = \dfrac{3{,}14 \times 300 \times 5\,000}{1\,000} = 4\,710\) m/min = 78,5 m/s<br>
+    &bull; Ch&ecirc;ne (recommand&eacute; 40&ndash;60 m/s) : <strong>78,5 m/s est trop &eacute;lev&eacute;</strong> &rarr; risque de br&ucirc;lure du bois, usure acc&eacute;l&eacute;r&eacute;e de la lame.<br>
+    &bull; MDF (recommand&eacute; 50&ndash;70 m/s) : <strong>78,5 m/s est trop &eacute;lev&eacute;</strong> &rarr; &eacute;chauffement, poussi&egrave;res fines excessives.<br>
+    &bull; Stratifi&eacute; (recommand&eacute; 30&ndash;50 m/s) : <strong>78,5 m/s est beaucoup trop &eacute;lev&eacute;</strong> &rarr; risque d'&eacute;clats, casse de la lame.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">Probl&egrave;me ouvert &mdash; Choix d'une lame</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  Un fabricant de mobilier doit acheter une nouvelle lame pour sa scie &agrave; format. La machine tourne &agrave; une vitesse fixe de <strong>4&nbsp;500 tr/min</strong>. Il usine principalement du MDF (\(V_c\) recommand&eacute;e : 50 &agrave; 70 m/s) et du ch&ecirc;ne massif (\(V_c\) recommand&eacute;e : 40 &agrave; 60 m/s).<br><br>
+  Le catalogue propose des lames de diam&egrave;tres : 200 mm, 250 mm, 300 mm, 350 mm.<br><br>
+  <strong>1.</strong> Pour chaque diam&egrave;tre, calculer la vitesse de coupe obtenue &agrave; 4&nbsp;500 tr/min.<br>
+  <strong>2.</strong> Quel(s) diam&egrave;tre(s) convien(nen)t pour le MDF ?<br>
+  <strong>3.</strong> Quel(s) diam&egrave;tre(s) convien(nen)t pour le ch&ecirc;ne ?<br>
+  <strong>4.</strong> Quel diam&egrave;tre de lame permet de travailler les deux mat&eacute;riaux avec la m&ecirc;me machine, sans changer de vitesse ? Justifier.
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. \(V_c = \dfrac{\pi \times D \times 4\,500}{1\,000 \times 60}\) (en m/s) :<br>
+    &bull; D = 200 mm : \(V_c = \dfrac{3{,}14 \times 200 \times 4\,500}{60\,000} = 47{,}1\) m/s<br>
+    &bull; D = 250 mm : \(V_c = \dfrac{3{,}14 \times 250 \times 4\,500}{60\,000} = 58{,}9\) m/s<br>
+    &bull; D = 300 mm : \(V_c = \dfrac{3{,}14 \times 300 \times 4\,500}{60\,000} = 70{,}7\) m/s<br>
+    &bull; D = 350 mm : \(V_c = \dfrac{3{,}14 \times 350 \times 4\,500}{60\,000} = 82{,}5\) m/s<br><br>
+    2. MDF (50&ndash;70 m/s) : <strong>250 mm</strong> (58,9) et <strong>300 mm</strong> (70,7 &mdash; juste &agrave; la limite).<br>
+    3. Ch&ecirc;ne (40&ndash;60 m/s) : <strong>200 mm</strong> (47,1) et <strong>250 mm</strong> (58,9).<br>
+    4. Le <strong>diam&egrave;tre 250 mm</strong> est le seul qui convient aux deux mat&eacute;riaux : 58,9 m/s est dans la plage du MDF (50&ndash;70) et dans celle du ch&ecirc;ne (40&ndash;60).
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+</div>
+<script src="../nav.js"></script>
+<script src="../diff.js"></script>
+<script>
+function toggle(btn){
+  const c=btn.previousElementSibling;
+  if(c.style.display==='none'||!c.style.display){c.style.display='block';btn.textContent='Masquer la correction';}
+  else{c.style.display='none';btn.textContent='Voir la correction';}
+}
+</script>
+</body>
+</html>
