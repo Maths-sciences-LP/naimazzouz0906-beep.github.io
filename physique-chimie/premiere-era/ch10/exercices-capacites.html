@@ -25,6 +25,7 @@
     <li><strong>C3</strong> — Calculer la vitesse de propagation du son \(v = d/t\)</li>
     <li><strong>C4</strong> — Interpréter un niveau sonore en dB et évaluer les risques auditifs</li>
     <li><strong>C5</strong> — Appliquer dans un contexte d'atelier bois (bruit des machines)</li>
+    <li><strong>C6</strong> — Exploiter la relation \(\lambda = c \times T\) (longueur d'onde sonore)</li>
   </ul>
 </div>
 
@@ -35,6 +36,7 @@
   <button class="btn-cap" data-filtre="C3">C3 – Vitesse de propagation</button>
   <button class="btn-cap" data-filtre="C4">C4 – Niveau sonore en dB</button>
   <button class="btn-cap" data-filtre="C5">C5 – Atelier bois</button>
+  <button class="btn-cap" data-filtre="C6">C6 – λ = c × T</button>
 </div>
 <p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
 
@@ -317,7 +319,54 @@
 </div>
 </div>
 
+<!-- ===== C6 ===== -->
+<div class="cap-section" data-cap="C6">
+<h2>C6 — Longueur d'onde sonore : \(\lambda = c \times T\)</h2>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <p>La <strong>longueur d'onde</strong> \(\lambda\) (en m) est la distance parcourue par le son pendant une période :\[\lambda = c \times T = \frac{c}{f}\]avec \(c\) la vitesse du son (340 m/s dans l'air) et \(f\) la fréquence (en Hz).<br>
+  Plus la fréquence est élevée (aigu), plus la longueur d'onde est courte.</p>
 </div>
+
+<div class="exo">
+  <h3>Exercice 16</h3>
+  <p>Calculer la longueur d'onde dans l'air (\(c = 340\) m/s) pour :</p>
+  <ol type="a">
+    <li>Un son grave de fréquence 100 Hz</li>
+    <li>Un son aigu de fréquence 4 000 Hz</li>
+    <li>Un ultrason de fréquence 40 kHz (contrôle non destructif du bois)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(\lambda = \frac{340}{100} = \mathbf{3{,}4\ \text{m}}\) — comparable à la taille d'une pièce</li>
+      <li>\(\lambda = \frac{340}{4\,000} = \mathbf{0{,}085\ \text{m}} = 8{,}5\ \text{cm}\)</li>
+      <li>\(\lambda = \frac{340}{40\,000} = \mathbf{0{,}0085\ \text{m}} = 8{,}5\ \text{mm}\) — très courte, permet de détecter de petits défauts dans le bois</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 17</h3>
+  <p>Une scie circulaire émet un bruit à 2 500 Hz. Le son se propage dans le bois à 4 000 m/s.</p>
+  <ol type="a">
+    <li>Calculer la longueur d'onde dans l'air.</li>
+    <li>Calculer la longueur d'onde dans le bois.</li>
+    <li>Pourquoi la longueur d'onde est-elle plus grande dans le bois ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(\lambda_{\text{air}} = \frac{340}{2\,500} = \mathbf{0{,}136\ \text{m}} = 13{,}6\ \text{cm}\)</li>
+      <li>\(\lambda_{\text{bois}} = \frac{4\,000}{2\,500} = \mathbf{1{,}6\ \text{m}}\)</li>
+      <li>La fréquence ne change pas en changeant de milieu, mais la vitesse augmente (4 000 vs 340 m/s). Comme \(\lambda = c/f\), une vitesse plus grande donne une longueur d'onde plus grande.</li>
+    </ol>
+  </div>
+</div>
+</div>
+</div><!-- fin .c -->
+
 <script src="../../../nav.js"></script>
 <script src="../../../comp.js"></script>
 </body>
