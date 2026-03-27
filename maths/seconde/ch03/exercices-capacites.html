@@ -25,6 +25,7 @@
     <li><strong>C3</strong> — Déterminer les quartiles Q1 et Q3 ; calculer l'écart interquartile</li>
     <li><strong>C4</strong> — Calculer l'étendue d'une série</li>
     <li><strong>C5</strong> — Construire et interpréter une boîte à moustaches (diagramme en boîte)</li>
+    <li><strong>C6</strong> — Déterminer le mode (ou la classe modale) et calculer l'écart type</li>
   </ul>
 </div>
 
@@ -35,6 +36,7 @@
   <button class="btn-cap" data-filtre="C3">C3 – Quartiles / IQR</button>
   <button class="btn-cap" data-filtre="C4">C4 – Étendue</button>
   <button class="btn-cap" data-filtre="C5">C5 – Boîte à moustaches</button>
+  <button class="btn-cap" data-filtre="C6">C6 – Mode et écart type</button>
 </div>
 <p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
 
@@ -317,6 +319,76 @@
     Q3 : médiane des 5 dernières (30 ; 32 ; 35 ; 40 ; 45) = 35 min<br>
     Étendue = 27 min ; IQR = 13 min<br>
     <strong>Boîte à moustaches :</strong> moustache gauche [18 ; 22], boîte [22 ; 35] avec médiane à 29, moustache droite [35 ; 45].
+  </div>
+</div>
+</div>
+
+<!-- ===== C6 ===== -->
+<div class="cap-section" data-cap="C6">
+<h2>C6 — Déterminer le mode (ou la classe modale) et calculer l'écart type</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Le <strong>mode</strong> est la valeur qui a le plus grand effectif. Pour des données groupées en classes, la <strong>classe modale</strong> est la classe de plus grand effectif.<br>
+  L'<strong>écart type</strong> \(\sigma\) mesure la dispersion autour de la moyenne : plus il est grand, plus les valeurs sont dispersées. Il se calcule avec la calculatrice ou un tableur : \(\sigma = \sqrt{\frac{1}{N}\sum n_i(x_i - \bar{x})^2}\).</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 18</h3>
+  <p>Un atelier mesure le diamètre (en mm) de 20 pièces usinées :</p>
+  <table>
+    <tr><th>Diamètre (mm)</th><td>49,8</td><td>49,9</td><td>50,0</td><td>50,1</td><td>50,2</td></tr>
+    <tr><th>Effectif</th><td>2</td><td>5</td><td>8</td><td>3</td><td>2</td></tr>
+  </table>
+  <ol type="a">
+    <li>Déterminer le mode de cette série.</li>
+    <li>Calculer la moyenne.</li>
+    <li>L'écart type vaut \(\sigma \approx 0{,}11\) mm. Interpréter ce résultat dans le contexte du contrôle qualité.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Le <strong>mode</strong> est <strong>50,0 mm</strong> (effectif le plus grand : 8).</li>
+      <li>\(\bar{x} = \frac{2 \times 49{,}8 + 5 \times 49{,}9 + 8 \times 50{,}0 + 3 \times 50{,}1 + 2 \times 50{,}2}{20} = \frac{999{,}8}{20} = 49{,}99\) mm</li>
+      <li>Un écart type de 0,11 mm signifie que la plupart des pièces ont un diamètre compris entre \(49{,}99 - 0{,}11 = 49{,}88\) mm et \(49{,}99 + 0{,}11 = 50{,}10\) mm. La production est <strong>régulière</strong> (faible dispersion).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 19</h3>
+  <p>Les durées d'intervention (en min) sont regroupées en classes :</p>
+  <table>
+    <tr><th>Durée (min)</th><td>[0 ; 15[</td><td>[15 ; 30[</td><td>[30 ; 45[</td><td>[45 ; 60[</td></tr>
+    <tr><th>Effectif</th><td>4</td><td>12</td><td>8</td><td>6</td></tr>
+  </table>
+  <ol type="a">
+    <li>Déterminer la classe modale.</li>
+    <li>Calculer la moyenne en utilisant le centre de chaque classe.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>La <strong>classe modale</strong> est <strong>[15 ; 30[</strong> (effectif le plus grand : 12).</li>
+      <li>Centres : 7,5 ; 22,5 ; 37,5 ; 52,5.<br>
+      \(\bar{x} = \frac{4 \times 7{,}5 + 12 \times 22{,}5 + 8 \times 37{,}5 + 6 \times 52{,}5}{30} = \frac{30 + 270 + 300 + 315}{30} = \frac{915}{30} = 30{,}5\) min</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 20</h3>
+  <p>Deux machines produisent des vis. La longueur cible est 25 mm. Voici les résultats :</p>
+  <table>
+    <tr><th>Machine</th><th>Moyenne (mm)</th><th>Écart type (mm)</th></tr>
+    <tr><td>Machine A</td><td>25,02</td><td>0,08</td></tr>
+    <tr><td>Machine B</td><td>24,98</td><td>0,25</td></tr>
+  </table>
+  <p>Les deux machines ont une moyenne proche de 25 mm. Laquelle est la plus fiable ? Justifier.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    La <strong>machine A</strong> est plus fiable car son écart type (0,08 mm) est nettement inférieur à celui de la machine B (0,25 mm).<br>
+    Cela signifie que les vis produites par A sont plus régulières (moins dispersées autour de la moyenne). Avec B, on risque davantage de pièces hors tolérance.
   </div>
 </div>
 </div>

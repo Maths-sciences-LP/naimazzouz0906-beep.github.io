@@ -25,6 +25,7 @@
     <li><strong>C3</strong> — Utiliser les règles de calcul : événement contraire, réunion, intersection</li>
     <li><strong>C4</strong> — Distinguer fréquence observée et probabilité théorique</li>
     <li><strong>C5</strong> — Comprendre et illustrer la stabilisation des fréquences (loi des grands nombres)</li>
+    <li><strong>C6</strong> — Dénombrer à l'aide d'un arbre ou d'un tableau à double entrée</li>
   </ul>
 </div>
 
@@ -35,6 +36,7 @@
   <button class="btn-cap" data-filtre="C3">C3 – Calcul de probabilités</button>
   <button class="btn-cap" data-filtre="C4">C4 – Fréquence vs probabilité</button>
   <button class="btn-cap" data-filtre="C5">C5 – Stabilisation des fréquences</button>
+  <button class="btn-cap" data-filtre="C6">C6 – Arbres et tableaux</button>
 </div>
 <p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
 
@@ -288,6 +290,88 @@
   <div class="corr">
     Non, ce n'est pas surprenant : avec \(p = 0{,}03\) et \(n = 10\), on s'attend à \(0{,}03 \times 10 = 0{,}3\) pot défectueux en moyenne → il est tout à fait possible de n'en observer aucun sur seulement 10 pots.<br>
     Pour améliorer l'estimation : il faut <strong>augmenter la taille de l'échantillon</strong> (100, 500, 1000 pots), car la fréquence se stabilise autour de la vraie probabilité quand \(n\) est grand.
+  </div>
+</div>
+</div>
+
+<!-- ===== C6 ===== -->
+<div class="cap-section" data-cap="C6">
+<h2>C6 — Dénombrer à l'aide d'un arbre ou d'un tableau à double entrée</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Pour dénombrer les issues d'une expérience aléatoire composée de plusieurs étapes, on peut utiliser un <strong>arbre</strong> (chaque branche = une issue à chaque étape) ou un <strong>tableau à double entrée</strong> (chaque case = un couple d'issues). Le nombre total d'issues est le nombre de chemins (arbre) ou de cases (tableau).</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 16</h3>
+  <p>Un menuisier choisit au hasard une essence de bois (chêne, hêtre, pin) et une finition (vernis, huile). Construire un arbre pour lister toutes les combinaisons possibles.</p>
+  <ol type="a">
+    <li>Dessiner l'arbre des possibilités.</li>
+    <li>Combien y a-t-il d'issues au total ?</li>
+    <li>Quelle est la probabilité de choisir « chêne + huile » (équiprobabilité) ?</li>
+  </ol>
+  <figure class="schema" style="text-align:center;margin:12px 0">
+    <svg width="280" height="170" viewBox="0 0 280 170" aria-label="Arbre : 3 essences × 2 finitions">
+      <rect width="280" height="170" fill="#f8fafc" rx="6"/>
+      <circle cx="20" cy="85" r="4" fill="#333"/>
+      <!-- Branches essences -->
+      <line x1="20" y1="85" x2="100" y2="30" stroke="#0056b3" stroke-width="2"/>
+      <line x1="20" y1="85" x2="100" y2="85" stroke="#0056b3" stroke-width="2"/>
+      <line x1="20" y1="85" x2="100" y2="140" stroke="#0056b3" stroke-width="2"/>
+      <text x="102" y="28" font-size="11" fill="#0056b3" font-weight="bold">Chêne</text>
+      <text x="102" y="88" font-size="11" fill="#0056b3" font-weight="bold">Hêtre</text>
+      <text x="102" y="143" font-size="11" fill="#0056b3" font-weight="bold">Pin</text>
+      <!-- Sous-branches finitions -->
+      <line x1="140" y1="30" x2="220" y2="15" stroke="#c53030" stroke-width="1.5"/>
+      <line x1="140" y1="30" x2="220" y2="45" stroke="#c53030" stroke-width="1.5"/>
+      <text x="222" y="15" font-size="10" fill="#c53030">Vernis</text>
+      <text x="222" y="48" font-size="10" fill="#c53030">Huile</text>
+      <line x1="130" y1="85" x2="220" y2="70" stroke="#c53030" stroke-width="1.5"/>
+      <line x1="130" y1="85" x2="220" y2="100" stroke="#c53030" stroke-width="1.5"/>
+      <text x="222" y="72" font-size="10" fill="#c53030">Vernis</text>
+      <text x="222" y="103" font-size="10" fill="#c53030">Huile</text>
+      <line x1="122" y1="140" x2="220" y2="125" stroke="#c53030" stroke-width="1.5"/>
+      <line x1="122" y1="140" x2="220" y2="155" stroke="#c53030" stroke-width="1.5"/>
+      <text x="222" y="127" font-size="10" fill="#c53030">Vernis</text>
+      <text x="222" y="158" font-size="10" fill="#c53030">Huile</text>
+    </svg>
+  </figure>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>L'arbre a 3 branches au 1er niveau (essences) et 2 sous-branches à chaque fois (finitions).</li>
+      <li>Nombre total d'issues : \(3 \times 2 = \mathbf{6}\).</li>
+      <li>\(P(\text{chêne + huile}) = \dfrac{1}{6}\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 17</h3>
+  <p>On lance un dé à 6 faces et une pièce de monnaie. Construire un tableau à double entrée pour lister toutes les issues.</p>
+  <table>
+    <tr><th></th><th>Pile</th><th>Face</th></tr>
+    <tr><th>1</th><td></td><td></td></tr>
+    <tr><th>2</th><td></td><td></td></tr>
+    <tr><th>3</th><td></td><td></td></tr>
+    <tr><th>4</th><td></td><td></td></tr>
+    <tr><th>5</th><td></td><td></td></tr>
+    <tr><th>6</th><td></td><td></td></tr>
+  </table>
+  <ol type="a">
+    <li>Combien y a-t-il d'issues au total ?</li>
+    <li>Calculer \(P(\text{obtenir un nombre pair ET Pile})\).</li>
+    <li>Calculer \(P(\text{obtenir un 6 OU Face})\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(6 \times 2 = \mathbf{12}\) issues.</li>
+      <li>Issues favorables : (2;P), (4;P), (6;P) → 3 issues. \(P = \dfrac{3}{12} = \dfrac{1}{4}\).</li>
+      <li>Issues « 6 » : (6;P) et (6;F) = 2. Issues « Face » : (1;F)…(6;F) = 6. Mais (6;F) est compté deux fois.<br>
+      \(P = \dfrac{2 + 6 - 1}{12} = \dfrac{7}{12}\).</li>
+    </ol>
   </div>
 </div>
 </div>

@@ -25,6 +25,7 @@
     <li><strong>C3</strong> — Convertir des unités de volume</li>
     <li><strong>C4</strong> — Calculer un volume par décomposition en solides simples</li>
     <li><strong>C5</strong> — Résoudre des problèmes de volume en contexte professionnel</li>
+    <li><strong>C6</strong> — Déterminer l'effet d'un agrandissement ou d'une réduction sur les aires et les volumes</li>
   </ul>
 </div>
 
@@ -35,6 +36,7 @@
   <button class="btn-cap" data-filtre="C3">C3 – Conversions de volume</button>
   <button class="btn-cap" data-filtre="C4">C4 – Décomposition</button>
   <button class="btn-cap" data-filtre="C5">C5 – Problèmes pro</button>
+  <button class="btn-cap" data-filtre="C6">C6 – Agrandissement / réduction</button>
 </div>
 <p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
 
@@ -451,6 +453,82 @@
     Volume d'un pied : \(\pi r^2 h = 3{,}14 \times 6^2 \times 30 = 3{,}14 \times 36 \times 30 = 3\,391{,}2\) cm³<br>
     Volume total : \(6 \times 3\,391{,}2 = 20\,347{,}2\) cm³<br>
     Coût : \(20\,347{,}2 \times 0{,}05 = \mathbf{1\,017{,}36}\) €
+  </div>
+</div>
+</div>
+
+<!-- ===== C6 ===== -->
+<div class="cap-section" data-cap="C6">
+<h2>C6 — Effet d'un agrandissement ou d'une réduction sur les aires et volumes</h2>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <p>Si on multiplie toutes les dimensions d'une figure par un coefficient \(k\) :</p>
+  <ul>
+    <li>Les <strong>longueurs</strong> sont multipliées par \(k\)</li>
+    <li>Les <strong>aires</strong> sont multipliées par \(k^2\)</li>
+    <li>Les <strong>volumes</strong> sont multipliés par \(k^3\)</li>
+  </ul>
+  <p>Exemple : si on double les dimensions (\(k = 2\)) → l'aire est multipliée par 4, le volume par 8.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 16</h3>
+  <p>Un cube a une arête de 3 cm. On construit un second cube dont l'arête est le triple (9 cm).</p>
+  <ol type="a">
+    <li>Calculer le volume du petit cube et du grand cube.</li>
+    <li>Par quel nombre le volume a-t-il été multiplié ?</li>
+    <li>Vérifier que ce nombre est bien \(k^3\) avec \(k = 3\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Petit : \(3^3 = 27\) cm³. Grand : \(9^3 = 729\) cm³.</li>
+      <li>\(\dfrac{729}{27} = \mathbf{27}\).</li>
+      <li>\(k^3 = 3^3 = 27\) ✔ Le volume est bien multiplié par \(k^3\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 17</h3>
+  <p>Une maquette de meuble est réalisée à l'échelle \(\dfrac{1}{5}\). Le meuble réel mesure 1 m × 0,5 m × 0,8 m.</p>
+  <ol type="a">
+    <li>Quelles sont les dimensions de la maquette ?</li>
+    <li>Quel est le rapport des aires entre la maquette et le meuble réel ?</li>
+    <li>Quel est le rapport des volumes ?</li>
+    <li>Si le meuble réel a un volume de 400 dm³, quel est le volume de la maquette en cm³ ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Dimensions : \(20 \times 10 \times 16\) cm (tout divisé par 5).</li>
+      <li>Rapport des aires : \(k^2 = \left(\dfrac{1}{5}\right)^2 = \dfrac{1}{25}\). L'aire de la maquette est 25 fois plus petite.</li>
+      <li>Rapport des volumes : \(k^3 = \left(\dfrac{1}{5}\right)^3 = \dfrac{1}{125}\).</li>
+      <li>\(V_{\text{maquette}} = \dfrac{400}{125} = 3{,}2\) dm³ \(= 3\,200\) cm³.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 18</h3>
+  <p>Un cylindre a un rayon de 4 cm et une hauteur de 10 cm. On réduit toutes ses dimensions de moitié (\(k = 0{,}5\)).</p>
+  <ol type="a">
+    <li>Calculer l'aire latérale du cylindre original puis du réduit. Vérifier le rapport \(k^2\).</li>
+    <li>Calculer le volume du cylindre original puis du réduit. Vérifier le rapport \(k^3\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Aire latérale = \(2\pi r h\).<br>
+      Original : \(2 \times 3{,}14 \times 4 \times 10 = 251{,}2\) cm².<br>
+      Réduit (\(r=2\), \(h=5\)) : \(2 \times 3{,}14 \times 2 \times 5 = 62{,}8\) cm².<br>
+      Rapport : \(\dfrac{62{,}8}{251{,}2} = 0{,}25 = 0{,}5^2 = k^2\) ✔</li>
+      <li>Volume = \(\pi r^2 h\).<br>
+      Original : \(3{,}14 \times 16 \times 10 = 502{,}4\) cm³.<br>
+      Réduit : \(3{,}14 \times 4 \times 5 = 62{,}8\) cm³.<br>
+      Rapport : \(\dfrac{62{,}8}{502{,}4} = 0{,}125 = 0{,}5^3 = k^3\) ✔</li>
+    </ol>
   </div>
 </div>
 </div>
