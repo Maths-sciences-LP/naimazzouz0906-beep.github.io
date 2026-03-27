@@ -237,7 +237,35 @@
     <strong>M&eacute;thode :</strong> Un arbre de probabilit&eacute;s repr&eacute;sente toutes les issues. On &eacute;crit les probabilit&eacute;s sur chaque branche. Pour obtenir la probabilit&eacute; d&rsquo;un chemin, on <strong>multiplie</strong> les probabilit&eacute;s le long des branches.
   </div>
   <div class="enonce">
-    Un sac contient <strong>3 boules rouges</strong> et <strong>2 boules bleues</strong>. On tire une boule au hasard, on note sa couleur, puis on la remet dans le sac et on tire une deuxi&egrave;me boule.<br><br>
+    Un sac contient <strong>3 boules rouges</strong> et <strong>2 boules bleues</strong>.
+    <figure class="schema" style="text-align:center;margin:10px 0">
+      <svg width="280" height="160" viewBox="0 0 280 160">
+        <rect width="280" height="160" fill="#f8fafc" rx="6"/>
+        <circle cx="25" cy="80" r="4" fill="#333"/>
+        <!-- 1er tirage -->
+        <line x1="25" y1="80" x2="100" y2="35" stroke="#c53030" stroke-width="2"/>
+        <text x="50" y="45" font-size="10" fill="#c53030">3/5</text>
+        <text x="102" y="32" font-size="11" fill="#c53030" font-weight="bold">R</text>
+        <line x1="25" y1="80" x2="100" y2="125" stroke="#0056b3" stroke-width="2"/>
+        <text x="50" y="115" font-size="10" fill="#0056b3">2/5</text>
+        <text x="102" y="128" font-size="11" fill="#0056b3" font-weight="bold">B</text>
+        <!-- 2e tirage depuis R -->
+        <line x1="110" y1="35" x2="210" y2="15" stroke="#c53030" stroke-width="1.5"/>
+        <text x="150" y="18" font-size="9" fill="#c53030">3/5</text>
+        <text x="215" y="15" font-size="10" fill="#333">RR</text>
+        <line x1="110" y1="35" x2="210" y2="50" stroke="#0056b3" stroke-width="1.5"/>
+        <text x="150" y="48" font-size="9" fill="#0056b3">2/5</text>
+        <text x="215" y="52" font-size="10" fill="#333">RB</text>
+        <!-- 2e tirage depuis B -->
+        <line x1="110" y1="125" x2="210" y2="110" stroke="#c53030" stroke-width="1.5"/>
+        <text x="150" y="112" font-size="9" fill="#c53030">3/5</text>
+        <text x="215" y="112" font-size="10" fill="#333">BR</text>
+        <line x1="110" y1="125" x2="210" y2="145" stroke="#0056b3" stroke-width="1.5"/>
+        <text x="150" y="145" font-size="9" fill="#0056b3">2/5</text>
+        <text x="215" y="148" font-size="10" fill="#333">BB</text>
+      </svg>
+      <figcaption style="font-size:.85em;color:#555;margin-top:2px">Arbre de probabilités — 2 tirages avec remise</figcaption>
+    </figure> On tire une boule au hasard, on note sa couleur, puis on la remet dans le sac et on tire une deuxi&egrave;me boule.<br><br>
     <strong>a)</strong> Compl&egrave;te l&rsquo;arbre ci-dessous&nbsp;:<br>
     1<sup>er</sup> tirage&nbsp;: P(Rouge) = \(\dfrac{3}{\ldots}\) = &hellip;&hellip; &nbsp;&nbsp; P(Bleue) = \(\dfrac{\ldots}{\ldots}\) = &hellip;&hellip;<br><br>
     <strong>b)</strong> Pour le 2<sup>e</sup> tirage (avec remise), les probabilit&eacute;s sont-elles les m&ecirc;mes&nbsp;? &hellip;&hellip;<br><br>
@@ -335,6 +363,25 @@
     <span class="tag-socle">Socle</span>
   </div>
   <div class="enonce">
+    <figure class="schema" style="text-align:center;margin:10px 0">
+      <svg width="140" height="140" viewBox="0 0 140 140">
+        <circle cx="70" cy="70" r="60" fill="#ebf5ff" stroke="#0056b3" stroke-width="2"/>
+        <!-- 8 secteurs: 3R(rouge), 2B(bleu), 2V(vert), 1J(jaune) -->
+        <!-- Secteur = 45° chacun -->
+        <path d="M70,70 L130,70 A60,60 0 0,1 112.4,112.4 Z" fill="#fee2e2"/>
+        <path d="M70,70 L112.4,112.4 A60,60 0 0,1 70,130 Z" fill="#fee2e2"/>
+        <path d="M70,70 L70,130 A60,60 0 0,1 27.6,112.4 Z" fill="#fee2e2"/>
+        <path d="M70,70 L27.6,112.4 A60,60 0 0,1 10,70 Z" fill="#dbeafe"/>
+        <path d="M70,70 L10,70 A60,60 0 0,1 27.6,27.6 Z" fill="#dbeafe"/>
+        <path d="M70,70 L27.6,27.6 A60,60 0 0,1 70,10 Z" fill="#d1fae5"/>
+        <path d="M70,70 L70,10 A60,60 0 0,1 112.4,27.6 Z" fill="#d1fae5"/>
+        <path d="M70,70 L112.4,27.6 A60,60 0 0,1 130,70 Z" fill="#fef3c7"/>
+        <text x="95" y="95" font-size="10" fill="#c53030" font-weight="bold">R</text>
+        <text x="40" y="95" font-size="10" fill="#0056b3" font-weight="bold">B</text>
+        <text x="40" y="50" font-size="10" fill="#2f855a" font-weight="bold">V</text>
+        <text x="95" y="45" font-size="10" fill="#d97706" font-weight="bold">J</text>
+      </svg>
+    </figure>
     Une roue est divis&eacute;e en <strong>8 secteurs &eacute;gaux</strong>&nbsp;: 3 secteurs rouges, 2 secteurs bleus, 2 secteurs verts et 1 secteur jaune. On fait tourner la roue et on note la couleur obtenue.<br><br>
     <strong>a)</strong> Combien y a-t-il d&rsquo;issues&nbsp;? &hellip;&hellip;<br><br>
     <strong>b)</strong> Calculer la probabilit&eacute; de chaque couleur (compl&egrave;te)&nbsp;:<br>
