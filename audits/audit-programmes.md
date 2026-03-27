@@ -1,7 +1,7 @@
 # Audit de couverture des programmes officiels
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-03-16
+**Dernière mise à jour** : 2026-03-27 (audit conformité exercices-capacités + correction groupement B)
 **Périmètre** : conformité du contenu avec les programmes Bac Pro (BO 2019 Seconde, BO 2020 Première/Terminale)
 **Méthode** : lecture des 6 PDF officiels dans `/pdf/`, inventaire des `lecon.html` par section, comparaison module par module.
 
@@ -88,8 +88,9 @@
 **Couverture : 100 %** (programme principal + programme complémentaire complet)
 
 **Remarques :**
-- Vecteurs (groupement B) et Trigonométrie (groupement A) sont proposés à tous — approche superset cohérente avec la poursuite d'études.
+- **Correction 2026-03-27 :** ICCER, ERA et TMA sont en **groupement B** (vecteurs dans l'espace), pas groupement A (trigonométrie). Ch06 (vecteurs) couvre le programme principal groupement B. Ch07 (trigonométrie/Fresnel) est signalé comme hors programme groupement B, proposé en complément pour la poursuite d'études.
 - Les 4 modules du programme complémentaire sont tous couverts.
+- **Audit conformité exercices-capacités (2026-03-27) :** conformité maths Terminale passée de 5.1/10 à ~8.5/10. Toutes les capacités du programme sont maintenant couvertes dans les exercices-capacités.
 
 ---
 

@@ -1,7 +1,7 @@
 # Audit Terminale Bac Pro — Maths & Physique-Chimie
 
 **Date** : 2026-03-22
-**Derniere mise a jour** : 2026-03-22
+**Derniere mise a jour** : 2026-03-27 (audit conformité programme + SVG + capacités manquantes + correction groupement B)
 
 Audit des 3 sections Terminale :
 - Mathematiques Terminale (11 chapitres)
@@ -245,23 +245,45 @@ Les textes du bouton retour varient d'un chapitre a l'autre :
 
 ---
 
+## Ameliorations realisees (2026-03-27)
+
+### Conformite programme (audit complet exercices-capacites vs BO 2020)
+
+**Maths Terminale :** conformité 5.1/10 → **~8.5/10**
+- 22 exercices ajoutés couvrant toutes les capacités manquantes
+- Capacités ajoutées : indépendance (ch02), nuage de points (ch03), fonction cube + f(x)=c (ch04), inéquations exp/log (ch05), vecteurs 3D (ch06), équations trigo + Fresnel (ch07), linéarité primitives (ch08), passage ln↔exp (ch09), argument + forme trigo (ch10), 3e expression PS (ch11)
+- Correction groupement : **ICCER/ERA/TMA = groupement B** (vecteurs dans l'espace, pas trigonométrie)
+- Note dans ch07 : Fresnel signalé comme hors programme groupement B
+
+**PC Terminale ICCER :** conformité 6.6/10 → **~8/10**
+- Classification électrochimique ajoutée (ch07, 2 exos)
+- SVG Bernoulli + débit ajoutés (ch06)
+
+**PC Terminale ERA :** conformité 6.6/10 → **~8/10**
+- Laser (propriétés, classes, dangers) ajouté (ch06, 2 exos)
+- Classification électrochimique ajoutée (ch05, 2 exos)
+- SVG échelle dB + cloison + isolation vs absorption ajoutés (ch08, 3 SVG)
+
+### Figures SVG
+- ~15 figures SVG ajoutées dans exercices-capacités Terminale (maths + PC)
+- Courbes (polynôme degré 3, 2^x/(0.5)^x, ln/exp), vecteurs, plan complexe, arbre probas, Fresnel, Bernoulli, échelle dB, cloison acoustique
+
+### Bug conteneur C6
+- 29 fichiers corrigés (sections C6/C7 hors du div .c → invisible à l'impression)
+
+---
+
 ## Ameliorations restantes
 
-### Priorite critique
-- [x] ~~Ajouter MathJax dans `maths/terminale/ch09/lecon.html`~~ (corrige 2026-03-22)
-- [x] ~~Ajouter section Approfondissement dans `physique-chimie/terminale-era/ch07/ds.html`~~ (corrige 2026-03-22)
-
 ### Priorite haute
-- [x] ~~Corriger le sous-titre de `physique-chimie/terminale-iccer/ch01/lecon.html`~~ (corrige 2026-03-22)
+- [ ] Audit conformité programme Première (maths + PC) — pas encore fait
+- [ ] Figures SVG dans exercices.html PC Terminale (beaucoup de chapitres à 0 figure)
 
 ### Priorite moyenne
-- [x] ~~Developper le DS de `physique-chimie/terminale-iccer/ch03/ds.html`~~ (verifie 2026-03-22 : deja complet)
-- [ ] Harmoniser le mecanisme de corrections en Maths Terminale (details/summary vs boutons .bc) — optionnel si coherence souhaitee
-- [ ] Verifier que les lecons PC ERA ne sont pas trop courtes par rapport a celles de PC ICCER (comparer le contenu pedagogique)
+- [ ] Harmoniser le mecanisme de corrections en Maths Terminale (details/summary vs boutons .bc)
+- [ ] Verifier que les lecons PC ERA ne sont pas trop courtes par rapport a celles de PC ICCER
 
 ### Priorite basse
-- [x] ~~Remplacer commentaires `<!-- APPLICATION ERA-MA -->`~~ (corrige 2026-03-22)
-- [x] ~~Standardiser les textes de navigation maths terminale~~ (corrige 2026-03-22)
-- [ ] Envisager la factorisation du CSS inline volumineux (ch04, ch05 maths ; ch06, ch07 ICCER) dans styles.css
-- [ ] Generaliser l'utilisation de `qcm.js` dans tous les QCM (au lieu du JS inline)
-- [ ] Creer des simulations interactives pour les chapitres qui s'y pretent (mecanique, ondes, fonctions)
+- [ ] Factorisation du CSS inline volumineux dans styles.css
+- [ ] Generaliser l'utilisation de `qcm.js` dans tous les QCM
+- [ ] Creer des simulations interactives

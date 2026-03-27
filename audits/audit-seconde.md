@@ -1,7 +1,7 @@
 # Audit Seconde Bac Pro — Analyse complète
 
 **Date** : 2026-03-21
-**Dernière mise à jour** : 2026-03-27 (ajout figures SVG dans exercices-capacités maths)
+**Dernière mise à jour** : 2026-03-27 (audit conformité programme + SVG + capacités manquantes + erreurs scientifiques)
 **Périmètre** : maths/seconde (14 chapitres) + physique-chimie/seconde (14 chapitres)
 
 ---
@@ -46,9 +46,15 @@ Thème CSS : `--p:#0056b3` `--p-bg:#ebf5ff` `--p-border:#bee3f8`
 | 13 | Théorème de Thalès | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | ~90 % |
 | 14 | Solides, volumes, agrandissement | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | ~90 % |
 
-**Note pédagogique : 4/5** — Progression exemplaire, illustrations interactives riches (Chart.js, SVG, Canvas), différenciation systématique.
+**Note pédagogique : 4.5/5** — Progression exemplaire, illustrations SVG et Chart.js, différenciation systématique.
 
-**Figures SVG dans exercices-capacités (2026-03-27) :** ajout de ~20 figures SVG inline dans les chapitres ch02, ch09, ch10, ch11, ch12, ch13, ch14 (diagrammes statistiques, graphiques de fonctions, triangles de Pythagore/Thalès, solides en perspective).
+**Améliorations 2026-03-27 :**
+- **Conformité programme (BO 2019) :** audit complet des exercices-capacités vs programme officiel. Conformité maths : 6.5/10 → **~9/10**. 18 capacités manquantes ajoutées (mode/écart type, arbres dénombrement, y=f(x), résolution graphique, droites parallèles, somme des angles, agrandissement k²/k³).
+- **Conformité programme PC :** audit complet. Conformité : 5.6/10 → **~8/10**. Capacités ajoutées : pH, décibels/seuils, sécurité électrique, dangers laser/UV, fréquence rotation, modèle œil, E=hc/λ.
+- **Figures SVG :** ~35 figures ajoutées dans exercices-capacités (maths + PC) et ~15 dans exercices.html (triangles, oscillogrammes, forces, diagrammes T(t), réflexion, échelles pH/dB, arbre probas, parabole...).
+- **Erreurs scientifiques corrigées :** vitesse son cloison (340→3400 m/s), indice eau (1,41→éthanol), raie sodium/néon, volume eau/solution.
+- **Bug conteneur C6 :** 29 fichiers corrigés (sections C6/C7 hors du div .c).
+- **print.css :** ajouté dans 20 fiche.html manquantes (couverture 100%).
 
 ### Physique-Chimie Seconde
 
