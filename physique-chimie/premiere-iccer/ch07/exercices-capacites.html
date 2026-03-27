@@ -25,6 +25,7 @@
     <li><strong>C3</strong> – Appliquer la loi hydrostatique (\(p = \rho g h\))</li>
     <li><strong>C4</strong> – Convertir entre unités de pression (bar, Pa, mbar, mmHg)</li>
     <li><strong>C5</strong> – Appliquer dans le contexte des circuits hydrauliques (chauffage, plomberie)</li>
+    <li><strong>C6</strong> – Vérifier la loi de Boyle-Mariotte (\(PV = \text{cste}\) à température constante)</li>
   </ul>
 </div>
 
@@ -35,6 +36,7 @@
   <button class="btn-cap" data-cap="C3">C3</button>
   <button class="btn-cap" data-cap="C4">C4</button>
   <button class="btn-cap" data-cap="C5">C5</button>
+  <button class="btn-cap" data-cap="C6">C6 – Boyle-Mariotte</button>
 </div>
 <p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
 
@@ -330,7 +332,52 @@
 </div>
 </div>
 
+<!-- ===== C6 ===== -->
+<div class="cap-section" data-cap="C6">
+<h2>C6 — Loi de Boyle-Mariotte</h2>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <p>À <strong>température constante</strong>, pour une quantité de gaz donnée :<br>
+  \(P \times V = \text{constante}\) ou \(P_1 V_1 = P_2 V_2\)<br>
+  Si on comprime un gaz (V diminue), sa pression augmente. Si on le détend (V augmente), sa pression diminue.</p>
 </div>
+
+<div class="exo">
+  <h3>Exercice 16</h3>
+  <p>Un vase d'expansion de chauffage contient de l'air à \(P_1 = 1{,}5\) bar pour un volume \(V_1 = 8\) L. Lorsque l'eau chauffe, le volume d'air est comprimé à \(V_2 = 5\) L. Calculer la nouvelle pression.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    \(P_1 V_1 = P_2 V_2\) → \(P_2 = \frac{P_1 V_1}{V_2} = \frac{1{,}5 \times 8}{5} = \mathbf{2{,}4\ \text{bar}}\)<br>
+    La pression augmente car le volume diminue (compression).
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 17</h3>
+  <p>Un technicien vérifie la loi de Boyle-Mariotte avec un cylindre à piston :</p>
+  <table>
+    <tr><th>V (mL)</th><td>100</td><td>80</td><td>60</td><td>50</td><td>40</td></tr>
+    <tr><th>P (kPa)</th><td>100</td><td>125</td><td>167</td><td>200</td><td>250</td></tr>
+    <tr><th>P×V</th><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td></tr>
+  </table>
+  <ol type="a">
+    <li>Compléter la ligne P×V. Que constate-t-on ?</li>
+    <li>La loi de Boyle-Mariotte est-elle vérifiée ? Justifier.</li>
+    <li>Si on comprime à V = 25 mL, prévoir la pression.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>P×V : 10 000 ; 10 000 ; 10 020 ; 10 000 ; 10 000. Le produit P×V est <strong>constant</strong> (~10 000).</li>
+      <li><strong>Oui</strong>, la loi est vérifiée : P×V = constante à température constante.</li>
+      <li>\(P = \frac{10\,000}{25} = \mathbf{400\ \text{kPa}} = 4\ \text{bar}\)</li>
+    </ol>
+  </div>
+</div>
+</div>
+</div><!-- fin .c -->
+
 <script src="../../../nav.js"></script>
 <script src="../../../comp.js"></script>
 </body>

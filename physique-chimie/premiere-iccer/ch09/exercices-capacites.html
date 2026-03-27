@@ -25,6 +25,7 @@
     <li><strong>C3</strong> – Réaliser une dilution (\(C_1 V_1 = C_2 V_2\))</li>
     <li><strong>C4</strong> – Mesurer et interpréter un pH</li>
     <li><strong>C5</strong> – Identifier les risques liés aux produits chimiques ménagers/professionnels</li>
+    <li><strong>C6</strong> – Déterminer une quantité de matière par titrage (repérage de l'équivalence)</li>
   </ul>
 </div>
 
@@ -35,6 +36,7 @@
   <button class="btn-cap" data-cap="C3">C3</button>
   <button class="btn-cap" data-cap="C4">C4</button>
   <button class="btn-cap" data-cap="C5">C5</button>
+  <button class="btn-cap" data-cap="C6">C6 – Titrage</button>
 </div>
 <p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
 
@@ -332,7 +334,54 @@
 </div>
 </div>
 
+<!-- ===== C6 ===== -->
+<div class="cap-section" data-cap="C6">
+<h2>C6 — Titrage : repérage de l'équivalence</h2>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <p>Le <strong>titrage</strong> consiste à verser progressivement une solution titrante (de concentration connue) dans une solution titrée (de concentration inconnue) jusqu'au point d'<strong>équivalence</strong> : le moment où les réactifs sont dans les proportions stœchiométriques.<br>
+  Le repérage de l'équivalence se fait par un <strong>changement de couleur</strong> (indicateur coloré) ou un <strong>changement brutal de pH</strong>.</p>
 </div>
+
+<div class="exo">
+  <h3>Exercice 16</h3>
+  <p>On titre 20 mL d'une solution d'acide chlorhydrique (HCl) par une solution de soude (NaOH) de concentration \(C_B = 0{,}10\) mol/L. L'équivalence est atteinte pour un volume versé \(V_{eq} = 15{,}0\) mL.</p>
+  <ol type="a">
+    <li>Écrire l'équation de la réaction acide-base.</li>
+    <li>À l'équivalence, quelle relation lie les quantités de matière ?</li>
+    <li>Calculer la concentration de l'acide.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(\text{HCl} + \text{NaOH} \to \text{NaCl} + \text{H}_2\text{O}\)</li>
+      <li>À l'équivalence : \(n_{\text{acide}} = n_{\text{base}}\) soit \(C_A \times V_A = C_B \times V_{eq}\).</li>
+      <li>\(C_A = \frac{C_B \times V_{eq}}{V_A} = \frac{0{,}10 \times 15{,}0}{20{,}0} = \mathbf{0{,}075\ \text{mol/L}}\)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 17</h3>
+  <p>Un technicien titre 25 mL d'un produit détartrant (acide) avec de la soude à 0,20 mol/L. Il ajoute un indicateur coloré (phénolphtaléine). La solution reste incolore puis vire au rose pour \(V_{eq} = 12{,}5\) mL.</p>
+  <ol type="a">
+    <li>Pourquoi la solution vire-t-elle au rose à l'équivalence ?</li>
+    <li>Calculer la concentration de l'acide dans le détartrant.</li>
+    <li>Si le flacon contient 500 mL de produit, quelle masse totale d'acide contient-il ? (Masse molaire HCl = 36,5 g/mol)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>La phénolphtaléine est <strong>incolore en milieu acide</strong> et <strong>rose en milieu basique</strong>. Le virage au rose indique que tout l'acide a réagi et qu'on commence à avoir un excès de base → c'est l'équivalence.</li>
+      <li>\(C_A = \frac{0{,}20 \times 12{,}5}{25{,}0} = \mathbf{0{,}10\ \text{mol/L}}\)</li>
+      <li>\(n = C \times V = 0{,}10 \times 0{,}500 = 0{,}050\) mol. \(m = n \times M = 0{,}050 \times 36{,}5 = \mathbf{1{,}83\ \text{g}}\)</li>
+    </ol>
+  </div>
+</div>
+</div>
+</div><!-- fin .c -->
+
 <script src="../../../nav.js"></script>
 <script src="../../../comp.js"></script>
 </body>
