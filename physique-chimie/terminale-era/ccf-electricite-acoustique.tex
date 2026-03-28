@@ -1,0 +1,289 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=1.5cm,bottom=2cm}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+% Couleurs
+\definecolor{vertpro}{HTML}{2da44e}
+\definecolor{orange}{HTML}{d97706}
+\definecolor{bleu}{HTML}{0056b3}
+\definecolor{rouge}{HTML}{c53030}
+\definecolor{gris}{HTML}{718096}
+
+% En-tête / pied de page
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small CCF Physique-Chimie — Terminale ERA-MA}
+\rhead{\small Électricité \& Acoustique}
+\cfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\usepackage{lastpage}
+
+% Boîtes
+\tcbuselibrary{skins,breakable}
+
+\newtcolorbox{formulairebox}{
+  colback=yellow!5,
+  colframe=orange,
+  title={\textbf{FORMULAIRE — Rappels de cours}},
+  fonttitle=\large\bfseries,
+  breakable
+}
+
+\newtcolorbox{contextebox}{
+  colback=green!3,
+  colframe=vertpro,
+  leftrule=4pt,
+  rightrule=0pt,
+  toprule=0pt,
+  bottomrule=0pt,
+  boxsep=4pt,
+  left=8pt
+}
+
+\newtcolorbox{reponsebox}[1][4cm]{
+  colback=white,
+  colframe=gris!40,
+  boxrule=0.5pt,
+  arc=3pt,
+  height=#1,
+  valign=top,
+  before skip=4pt,
+  after skip=8pt
+}
+
+% Commandes
+\newcommand{\pts}[1]{\hfill\textcolor{gris}{\small\textbf{#1}}}
+\newcommand{\comp}[1]{\colorbox{blue!10}{\scriptsize\textbf{#1}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\begin{document}
+
+% ===== PAGE DE GARDE =====
+\begin{center}
+{\LARGE\bfseries\color{vertpro} Contrôle en Cours de Formation}\\[8pt]
+{\large Physique-Chimie — Terminale Bac Pro ERA-MA — Groupement 3}\\[12pt]
+{\Large\bfseries Transporter l'énergie électrique \& Atténuer une onde sonore}\\[20pt]
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\textbf{Durée :} 45 minutes & \textbf{Barème :} /10 points \\
+\hline
+\textbf{Documents :} Calculatrice autorisée & \textbf{Formulaire :} ci-dessous \\
+\hline
+\textbf{Nom :} \dotfill & \textbf{Prénom :} \dotfill \\
+\hline
+\textbf{Classe :} \dotfill & \textbf{Date :} \dotfill \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{10pt}
+
+% ===== FORMULAIRE =====
+\begin{formulairebox}
+
+\subsection*{Électricité — Transport de l'énergie}
+
+\begin{tabular}{>{\bfseries}p{4.5cm} p{5.5cm} p{4cm}}
+\toprule
+\textbf{Grandeur} & \textbf{Formule} & \textbf{Unités} \\
+\midrule
+Puissance électrique & $P = U \times I$ & W, V, A \\[4pt]
+Pertes par effet Joule & $P_J = R \times I^2$ & W, $\Omega$, A \\[4pt]
+Énergie dissipée & $E = P \times t$ & J, W, s \quad (ou kWh) \\[4pt]
+Loi d'Ohm & $U = R \times I$ & V, $\Omega$, A \\[4pt]
+Résistance d'un câble & $R = \rho \times \dfrac{L}{S}$ & $\Omega$, $\Omega\cdot$m, m, m² \\[6pt]
+Rapport transformateur & $\dfrac{U_2}{U_1} = \dfrac{N_2}{N_1}$ & V, spires \\[6pt]
+\bottomrule
+\end{tabular}
+
+\smallskip
+\textbf{Intérêt de la haute tension :} À puissance constante, $I = P/U$. Si $U$ augmente, $I$ diminue $\Rightarrow$ $P_J = RI^2$ diminue fortement.
+
+\subsection*{Acoustique — Atténuation sonore}
+
+\begin{tabular}{>{\bfseries}p{4.5cm} p{5.5cm} p{4cm}}
+\toprule
+\textbf{Grandeur} & \textbf{Formule} & \textbf{Unités} \\
+\midrule
+Niveau sonore & $L = 10\log\!\left(\dfrac{I}{I_0}\right)$ & dB \quad ($I_0 = 10^{-12}$ W/m²) \\[6pt]
+Affaiblissement & $L_{\text{transmis}} = L_{\text{incident}} - R$ & dB \\[4pt]
+Seuil de dangerosité & $L \geq 85$ dB $\Rightarrow$ protections obligatoires & \\[4pt]
+Seuil de douleur & $L \geq 120$ dB & \\[4pt]
+\bottomrule
+\end{tabular}
+
+\smallskip
+\textbf{Isolation :} empêche le son de traverser (masse, double paroi). \quad \textbf{Absorption :} réduit l'écho (matériaux poreux).
+
+\end{formulairebox}
+
+\newpage
+
+% ===== EXERCICE 1 =====
+\section*{Exercice 1 — Alimentation électrique d'un atelier de menuiserie \pts{5 points}}
+
+\begin{contextebox}
+Un atelier de menuiserie-agencement est alimenté par le réseau EDF. L'électricité arrive au poste de transformation du quartier sous une tension de $U_1 = 20\,000$ V. Un transformateur abaisse cette tension à $U_2 = 400$ V pour alimenter le tableau électrique de l'atelier.
+
+L'atelier consomme une puissance totale de $P = 15$ kW. Les câbles entre le transformateur et l'atelier ont une résistance totale de $R = 0{,}1\;\Omega$ (aller-retour).
+\end{contextebox}
+
+% Schéma
+\begin{center}
+\begin{tikzpicture}[scale=0.9, every node/.style={font=\small}]
+  % Poste transfo
+  \draw[fill=yellow!15, rounded corners] (0,0) rectangle (2.5,1.5);
+  \node[align=center] at (1.25,1) {\textbf{Transfo}};
+  \node[align=center] at (1.25,0.4) {20 kV $\to$ 400 V};
+  % Câbles
+  \draw[thick, rouge] (2.5,1) -- (6,1) node[midway, above] {Câble $R = 0{,}1\;\Omega$};
+  \draw[thick, rouge] (2.5,0.5) -- (6,0.5) node[midway, below] {$L = 50$ m (aller)};
+  % Atelier
+  \draw[fill=green!10, rounded corners] (6,0) rectangle (9,1.5);
+  \node[align=center] at (7.5,1) {\textbf{Atelier}};
+  \node[align=center] at (7.5,0.4) {$P = 15$ kW};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Q1} \comp{APP} — Citer le rôle du transformateur. Est-il élévateur ou abaisseur ? \pts{1 pt}
+
+\begin{reponsebox}[2.5cm]
+\end{reponsebox}
+
+\textbf{Q2} \comp{REA} — Calculer le rapport de transformation $U_2/U_1$. Si le primaire a $N_1 = 1\,000$ spires, combien de spires a le secondaire ? \pts{1 pt}
+
+\begin{reponsebox}[3cm]
+\vspace{2pt}
+$\dfrac{N_2}{N_1} = \dfrac{U_2}{U_1} = \dfrac{\phantom{00000}}{\phantom{00000}} = $ \dotfill
+
+\vspace{6pt}
+$N_2 = $ \dotfill
+\end{reponsebox}
+
+\textbf{Q3} \comp{REA} — Calculer l'intensité du courant dans les câbles côté atelier (400 V). \pts{1 pt}
+
+\begin{reponsebox}[2.5cm]
+$I = \dfrac{P}{U_2} = \dfrac{\phantom{00000}}{\phantom{00000}} = $ \dotfill A
+\end{reponsebox}
+
+\textbf{Q4} \comp{REA} — Calculer les pertes par effet Joule dans les câbles. \pts{1 pt}
+
+\begin{reponsebox}[2.5cm]
+$P_J = R \times I^2 = \phantom{0000} \times (\phantom{0000})^2 = $ \dotfill W
+\end{reponsebox}
+
+\textbf{Q5} \comp{ANA} — Si l'atelier était alimenté directement en 20\,000 V, quelle serait l'intensité ? Calculer les pertes. Comparer et conclure sur l'intérêt du transport en haute tension. \pts{1 pt}
+
+\begin{reponsebox}[4.5cm]
+$I' = \dfrac{P}{U_1} = \dfrac{\phantom{00000}}{\phantom{00000}} = $ \dotfill A
+
+\vspace{6pt}
+$P'_J = R \times I'^2 = $ \dotfill W
+
+\vspace{6pt}
+Comparaison et conclusion : \dotfill
+
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\newpage
+
+% ===== EXERCICE 2 =====
+\section*{Exercice 2 — Isolation acoustique d'un atelier d'agencement \pts{5 points}}
+
+\begin{contextebox}
+Un menuisier-agenceur travaille dans un atelier jouxtant un bureau. Les machines de l'atelier produisent un niveau sonore de $L_1 = 95$ dB. La cloison entre l'atelier et le bureau a un affaiblissement acoustique $R = 40$ dB. La réglementation impose un niveau maximal de 50 dB dans un bureau.
+\end{contextebox}
+
+% Schéma
+\begin{center}
+\begin{tikzpicture}[scale=0.9, every node/.style={font=\small}]
+  % Atelier
+  \draw[fill=red!8, rounded corners] (0,0) rectangle (3.5,2.5);
+  \node[align=center, font=\small\bfseries] at (1.75,2) {ATELIER};
+  \node at (1.75,1.2) {$L_1 = 95$ dB};
+  \node[font=\scriptsize, color=rouge] at (1.75,0.5) {Scie, défonceuse...};
+  % Cloison
+  \fill[gray!30] (3.5,0) rectangle (4.2,2.5);
+  \node[rotate=90, font=\small\bfseries] at (3.85,1.25) {Cloison};
+  \draw (3.5,0) -- (3.5,2.5);
+  \draw (4.2,0) -- (4.2,2.5);
+  \node[below, font=\scriptsize] at (3.85,-0.2) {$R = 40$ dB};
+  % Bureau
+  \draw[fill=blue!5, rounded corners] (4.2,0) rectangle (7.7,2.5);
+  \node[align=center, font=\small\bfseries] at (5.95,2) {BUREAU};
+  \node at (5.95,1.2) {$L_2 = \;?$ dB};
+  \node[font=\scriptsize, color=bleu] at (5.95,0.5) {Réglementation : $\leq 50$ dB};
+  % Onde
+  \draw[->, thick, decorate, decoration={snake, amplitude=2pt, segment length=8pt}] (1,1.2) -- (3.3,1.2);
+  \draw[->, thick, decorate, decoration={snake, amplitude=1pt, segment length=8pt}, color=gris] (4.4,1.2) -- (5.2,1.2);
+\end{tikzpicture}
+\end{center}
+
+\textbf{Q1} \comp{APP} — Le niveau de 95 dB dépasse-t-il le seuil de dangerosité ? Quel EPI est obligatoire dans l'atelier ? \pts{1 pt}
+
+\begin{reponsebox}[2.5cm]
+\end{reponsebox}
+
+\textbf{Q2} \comp{REA} — Calculer le niveau sonore dans le bureau. \pts{1 pt}
+
+\begin{reponsebox}[2.5cm]
+$L_2 = L_1 - R = \phantom{0000} - \phantom{0000} = $ \dotfill dB
+\end{reponsebox}
+
+\textbf{Q3} \comp{VAL} — La cloison actuelle est-elle suffisante pour respecter la réglementation (max 50 dB) ? Justifier. \pts{1 pt}
+
+\begin{reponsebox}[2.5cm]
+\end{reponsebox}
+
+\textbf{Q4} \comp{ANA} — Le menuisier envisage d'ajouter une couche d'isolant qui apporte un affaiblissement supplémentaire de 10 dB. Quel serait alors le niveau dans le bureau ? Est-ce suffisant ? \pts{1 pt}
+
+\begin{reponsebox}[3cm]
+$L_2' = L_1 - (R + 10) = $ \dotfill dB
+
+\vspace{6pt}
+Conclusion : \dotfill
+
+\dotfill
+\end{reponsebox}
+
+\textbf{Q5} \comp{COM} — Le client se plaint aussi de l'écho dans le bureau (réverbération). L'agenceur propose de poser des panneaux en laine de roche sur les murs intérieurs du bureau. S'agit-il d'isolation ou d'absorption acoustique ? Expliquer la différence. \pts{1 pt}
+
+\begin{reponsebox}[4cm]
+\end{reponsebox}
+
+\vfill
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Exercice} & \textbf{Thème} & \textbf{Questions} & \textbf{Points} \\
+\hline
+1 & Électricité (transformateur, effet Joule) & Q1 à Q5 & /5 \\
+\hline
+2 & Acoustique (atténuation, isolation) & Q1 à Q5 & /5 \\
+\hline
+\multicolumn{3}{|r|}{\textbf{Total}} & \textbf{/10} \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}

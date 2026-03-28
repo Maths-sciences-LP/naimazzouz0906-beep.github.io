@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CCF Physique-Chimie – Électricité et Acoustique – Terminale ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../print.css" media="print">
+<style>
+:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:#2d3748;line-height:1.7;margin:0;padding:20px}
+.c{max-width:860px;margin:auto;background:#fff;padding:35px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+header{text-align:center;border-bottom:3px solid var(--p);margin-bottom:25px;padding-bottom:15px}
+h1{margin:0 0 6px;color:var(--p);font-size:1.5em}
+h2{font-size:1.15em;color:var(--p);border-left:4px solid var(--p);padding-left:12px;margin-top:30px}
+h3{font-size:1em;margin-top:20px}
+
+.ccf-info{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;background:#f0fff4;border:1px solid #c6f6d5;border-radius:8px;padding:14px 20px;margin-bottom:20px;font-size:.92em}
+.ccf-info strong{color:var(--p)}
+
+.formulaire{background:#fffbeb;border:2px solid #fde68a;border-radius:10px;padding:20px;margin-bottom:28px}
+.formulaire h2{border-left-color:#d97706;color:#92400e;margin-top:10px}
+.formulaire table{width:100%;border-collapse:collapse;font-size:.9em;margin:10px 0}
+.formulaire th{background:#fef3c7;padding:6px 10px;text-align:left;border:1px solid #fde68a;font-weight:700;color:#92400e}
+.formulaire td{padding:6px 10px;border:1px solid #fde68a}
+
+.bareme{background:#f0f7ff;border:1px solid #bfdbfe;border-radius:8px;padding:12px 18px;margin-bottom:20px;font-size:.9em}
+
+.exo{border:1px solid #e2e8f0;border-radius:10px;padding:20px;margin:20px 0;background:#fff}
+.exo-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.exo-num{background:var(--p);color:#fff;font-weight:700;font-size:.9em;padding:4px 12px;border-radius:20px}
+.exo-title{font-weight:600;font-size:1.05em}
+.pts{font-size:.85em;color:#718096;font-weight:600;margin-left:auto}
+
+.q{margin:12px 0 6px;padding-left:4px}
+.rep-zone{border:1px dashed #cbd5e0;border-radius:6px;min-height:50px;margin:6px 0 14px;padding:8px;background:#fafafa;font-size:.85em;color:#a0aec0}
+.rep-zone-big{min-height:80px}
+.rep-zone-xl{min-height:120px}
+
+.comp{font-size:.72em;padding:2px 7px;border-radius:4px;font-weight:700}
+.comp-app{background:#dbeafe;color:#1d4ed8}
+.comp-ana{background:#fef3c7;color:#b45309}
+.comp-rea{background:#d1fae5;color:#065f46}
+.comp-val{background:#ede9fe;color:#6d28d9}
+.comp-com{background:#cffafe;color:#0e7490}
+
+.intro-box{background:#f0fff4;border-left:4px solid var(--p);padding:12px 16px;border-radius:0 8px 8px 0;margin-bottom:16px;font-size:.93em}
+
+@media print{
+  .nb{display:none}
+  body{padding:0}
+  .c{box-shadow:none;border:none;padding:20px}
+  .rep-zone{background:#fff}
+  .formulaire{page-break-after:always}
+}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../pc-term-erama.html" class="nb">&larr; Retour au sommaire</a>
+
+<header>
+  <h1>Contrôle en Cours de Formation</h1>
+  <p style="color:#718096;font-size:.95em;margin:4px 0">Physique-Chimie &nbsp;|&nbsp; Terminale Bac Pro ERA-MA &nbsp;|&nbsp; Groupement 3</p>
+  <p style="font-size:1.1em;font-weight:700;color:var(--p);margin:8px 0">Transporter l'énergie électrique &amp; Atténuer une onde sonore</p>
+</header>
+
+<div class="ccf-info">
+  <span><strong>Durée :</strong> 45 minutes</span>
+  <span><strong>Barème :</strong> /10 points</span>
+  <span><strong>Documents :</strong> Calculatrice autorisée — Formulaire ci-dessous</span>
+  <span><strong>Nom :</strong> ________________________ <strong>Classe :</strong> ________</span>
+</div>
+
+<!-- ===== FORMULAIRE ===== -->
+<div class="formulaire">
+  <h2>Formulaire — Rappels de cours</h2>
+
+  <h3>Électricité — Transport de l'énergie</h3>
+  <table>
+    <tr><th>Grandeur</th><th>Formule</th><th>Unités</th></tr>
+    <tr><td>Puissance électrique</td><td>\(P = U \times I\)</td><td>W, V, A</td></tr>
+    <tr><td>Pertes par effet Joule</td><td>\(P_J = R \times I^2\)</td><td>W, Ω, A</td></tr>
+    <tr><td>Énergie dissipée</td><td>\(E = P \times t\)</td><td>J, W, s &nbsp;(ou kWh, kW, h)</td></tr>
+    <tr><td>Loi d'Ohm</td><td>\(U = R \times I\)</td><td>V, Ω, A</td></tr>
+    <tr><td>Résistance d'un câble</td><td>\(R = \rho \times \dfrac{L}{S}\)</td><td>Ω, Ω·m, m, m²</td></tr>
+    <tr><td>Rapport transformateur</td><td>\(\dfrac{U_2}{U_1} = \dfrac{N_2}{N_1}\)</td><td>V, spires</td></tr>
+    <tr><td>Intérêt de la haute tension</td><td colspan="2">À puissance constante : \(I = P/U\). Si \(U\) augmente, \(I\) diminue → \(P_J = RI^2\) diminue fortement.</td></tr>
+  </table>
+
+  <h3>Acoustique — Atténuation sonore</h3>
+  <table>
+    <tr><th>Grandeur</th><th>Formule</th><th>Unités</th></tr>
+    <tr><td>Niveau sonore</td><td>\(L = 10\log\!\left(\dfrac{I}{I_0}\right)\)</td><td>dB, W/m², \(I_0 = 10^{-12}\) W/m²</td></tr>
+    <tr><td>Affaiblissement acoustique</td><td>\(L_{\text{transmis}} = L_{\text{incident}} - R\)</td><td>dB</td></tr>
+    <tr><td>Loi de masse (simplifiée)</td><td>Doubler la masse surfacique → \(R\) augmente de ~5 à 6 dB</td><td></td></tr>
+    <tr><td>Seuil de dangerosité</td><td colspan="2">\(L \geq 85\) dB → port de protections auditives <strong>obligatoire</strong></td></tr>
+    <tr><td>Seuil de douleur</td><td colspan="2">\(L \geq 120\) dB</td></tr>
+    <tr><td>Isolation acoustique</td><td colspan="2">Empêche le son de traverser une paroi (masse, double paroi, désolidarisation)</td></tr>
+    <tr><td>Absorption acoustique</td><td colspan="2">Réduit la réverbération à l'intérieur d'une pièce (matériaux poreux)</td></tr>
+  </table>
+</div>
+
+<!-- ===== EXERCICE 1 ===== -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 1</span>
+    <span class="exo-title">Alimentation électrique d'un atelier de menuiserie</span>
+    <span class="pts">5 points</span>
+  </div>
+
+  <div class="intro-box">
+    Un atelier de menuiserie-agencement est alimenté par le réseau EDF. L'électricité arrive au poste de transformation du quartier sous une tension de \(U_1 = 20\,000\) V. Un transformateur abaisse cette tension à \(U_2 = 400\) V pour alimenter le tableau électrique de l'atelier.<br><br>
+    L'atelier consomme une puissance totale de \(P = 15\) kW. Les câbles entre le transformateur et l'atelier mesurent \(L = 50\) m (aller) et ont une résistance totale de \(R = 0{,}1\;\Omega\) (aller-retour).
+  </div>
+
+  <div class="q"><strong>Q1</strong> <span class="comp comp-app">APP</span> — Citer le rôle du transformateur dans cette installation. Est-il élévateur ou abaisseur ? <span class="pts">1 pt</span></div>
+  <div class="rep-zone">
+    ……………………………………………………………………………………
+  </div>
+
+  <div class="q"><strong>Q2</strong> <span class="comp comp-rea">REA</span> — Calculer le rapport de transformation \(N_2/N_1 = U_2/U_1\). Si le primaire a \(N_1 = 1\,000\) spires, combien de spires a le secondaire ? <span class="pts">1 pt</span></div>
+  <div class="rep-zone">
+    ……………………………………………………………………………………
+  </div>
+
+  <div class="q"><strong>Q3</strong> <span class="comp comp-rea">REA</span> — Calculer l'intensité du courant dans les câbles côté atelier (400 V). <span class="pts">1 pt</span></div>
+  <div class="rep-zone">
+    \(I = \dfrac{P}{U_2} = \dfrac{\ldots\ldots}{\ldots\ldots} = \) ……… A
+  </div>
+
+  <div class="q"><strong>Q4</strong> <span class="comp comp-rea">REA</span> — Calculer les pertes par effet Joule dans les câbles. <span class="pts">1 pt</span></div>
+  <div class="rep-zone">
+    \(P_J = R \times I^2 = \ldots \times (\ldots)^2 = \) ……… W
+  </div>
+
+  <div class="q"><strong>Q5</strong> <span class="comp comp-ana">ANA</span> — Si l'atelier était alimenté directement en 20 000 V (sans abaissement), quelle serait l'intensité ? Calculer alors les pertes. Comparer et conclure sur l'intérêt du transport en haute tension. <span class="pts">1 pt</span></div>
+  <div class="rep-zone rep-zone-big">
+    ……………………………………………………………………………………<br>
+    ……………………………………………………………………………………<br>
+    Conclusion : ……………………………………………………………………
+  </div>
+</div>
+
+<!-- ===== EXERCICE 2 ===== -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Isolation acoustique d'un atelier d'agencement</span>
+    <span class="pts">5 points</span>
+  </div>
+
+  <div class="intro-box">
+    Un menuisier-agenceur travaille dans un atelier jouxtant un bureau. Les machines de l'atelier produisent un niveau sonore de \(L_1 = 95\) dB. La cloison entre l'atelier et le bureau a un affaiblissement acoustique \(R = 40\) dB. La réglementation impose un niveau maximal de 50 dB dans un bureau.
+  </div>
+
+  <div class="q"><strong>Q1</strong> <span class="comp comp-app">APP</span> — Le niveau de 95 dB dépasse-t-il le seuil de dangerosité ? Quel EPI est obligatoire dans l'atelier ? <span class="pts">1 pt</span></div>
+  <div class="rep-zone">
+    ……………………………………………………………………………………
+  </div>
+
+  <div class="q"><strong>Q2</strong> <span class="comp comp-rea">REA</span> — Calculer le niveau sonore dans le bureau. <span class="pts">1 pt</span></div>
+  <div class="rep-zone">
+    \(L_2 = L_1 - R = \ldots - \ldots = \) ……… dB
+  </div>
+
+  <div class="q"><strong>Q3</strong> <span class="comp comp-val">VAL</span> — La cloison actuelle est-elle suffisante pour respecter la réglementation ? Justifier. <span class="pts">1 pt</span></div>
+  <div class="rep-zone">
+    ……………………………………………………………………………………
+  </div>
+
+  <div class="q"><strong>Q4</strong> <span class="comp comp-ana">ANA</span> — Le menuisier envisage d'ajouter une couche d'isolant qui apporte un affaiblissement supplémentaire de 10 dB. Quel serait alors le niveau dans le bureau ? Est-ce suffisant ? <span class="pts">1 pt</span></div>
+  <div class="rep-zone">
+    ……………………………………………………………………………………
+  </div>
+
+  <div class="q"><strong>Q5</strong> <span class="comp comp-com">COM</span> — Le client se plaint aussi de l'écho dans le bureau (réverbération). L'agenceur propose de poser des panneaux en laine de roche sur les murs intérieurs du bureau. S'agit-il d'isolation ou d'absorption acoustique ? Expliquer la différence. <span class="pts">1 pt</span></div>
+  <div class="rep-zone rep-zone-big">
+    ……………………………………………………………………………………<br>
+    ……………………………………………………………………………………<br>
+    ……………………………………………………………………………………
+  </div>
+</div>
+
+<div class="bareme">
+  <strong>Barème récapitulatif :</strong><br>
+  Exercice 1 (Électricité) : Q1 (1 pt) + Q2 (1 pt) + Q3 (1 pt) + Q4 (1 pt) + Q5 (1 pt) = <strong>5 points</strong><br>
+  Exercice 2 (Acoustique) : Q1 (1 pt) + Q2 (1 pt) + Q3 (1 pt) + Q4 (1 pt) + Q5 (1 pt) = <strong>5 points</strong><br>
+  <strong>Total : 10 points</strong>
+</div>
+
+</div>
+</body>
+</html>
