@@ -1,0 +1,302 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=1.5cm,bottom=2cm}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usepackage{lastpage}
+
+% Couleurs
+\definecolor{vertpro}{HTML}{2da44e}
+\definecolor{orange}{HTML}{d97706}
+\definecolor{bleu}{HTML}{0056b3}
+\definecolor{rouge}{HTML}{c53030}
+\definecolor{gris}{HTML}{718096}
+
+% En-tête
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small CCF Physique-Chimie — \textbf{CORRECTION}}
+\rhead{\small Terminale ERA-MA}
+\cfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% Boîtes
+\tcbuselibrary{skins,breakable}
+
+\newtcolorbox{corrbox}{
+  colback=green!3,
+  colframe=vertpro,
+  title={\textbf{Correction}},
+  fonttitle=\bfseries,
+  breakable
+}
+
+\newtcolorbox{contextebox}{
+  colback=green!3,
+  colframe=vertpro,
+  leftrule=4pt,
+  rightrule=0pt,
+  toprule=0pt,
+  bottomrule=0pt,
+  boxsep=4pt,
+  left=8pt
+}
+
+\newcommand{\pts}[1]{\hfill\textcolor{gris}{\small\textbf{#1}}}
+\newcommand{\comp}[1]{\colorbox{blue!10}{\scriptsize\textbf{#1}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{rouge} CORRECTION — CCF Physique-Chimie}\\[8pt]
+{\large Terminale Bac Pro ERA-MA — Groupement 3}\\[8pt]
+{\Large\bfseries Transporter l'énergie électrique \& Atténuer une onde sonore}\\[12pt]
+\textcolor{rouge}{\rule{12cm}{1pt}}
+\end{center}
+
+\vspace{10pt}
+
+% ================================================================
+\section*{Exercice 1 — Alimentation électrique d'un atelier de menuiserie \pts{5 points}}
+% ================================================================
+
+\begin{contextebox}
+\textbf{Données :} $U_1 = 20\,000$ V \quad $U_2 = 400$ V \quad $P = 15$ kW $= 15\,000$ W \quad $R = 0{,}1\;\Omega$ \quad $N_1 = 1\,000$ spires
+\end{contextebox}
+
+\vspace{6pt}
+
+% --- Q1 ---
+\textbf{Q1} \comp{APP} — Citer le rôle du transformateur. Est-il élévateur ou abaisseur ? \pts{1 pt}
+
+\begin{corrbox}
+Le transformateur sert à \textbf{modifier la tension} (l'adapter au besoin du consommateur) sans changer la fréquence du courant.
+
+Ici, la tension passe de $U_1 = 20\,000$ V à $U_2 = 400$ V : la tension \textbf{diminue}.
+
+$\Rightarrow$ C'est un transformateur \textbf{abaisseur}.
+
+\smallskip
+\textit{Barème : 0,5 pt pour le rôle + 0,5 pt pour ``abaisseur''.}
+\end{corrbox}
+
+% --- Q2 ---
+\textbf{Q2} \comp{REA} — Calculer le rapport de transformation. Si $N_1 = 1\,000$ spires, combien de spires a le secondaire ? \pts{1 pt}
+
+\begin{corrbox}
+\textbf{Rapport de transformation :}
+\[
+\frac{N_2}{N_1} = \frac{U_2}{U_1} = \frac{400}{20\,000} = \boxed{0{,}02}
+\]
+
+\textbf{Nombre de spires au secondaire :}
+\[
+N_2 = N_1 \times \frac{U_2}{U_1} = 1\,000 \times 0{,}02 = \boxed{20 \text{ spires}}
+\]
+
+\textit{Vérification :} $\frac{20}{1\,000} = 0{,}02$ et $0{,}02 \times 20\,000 = 400$ V \checkmark
+
+\smallskip
+\textit{Barème : 0,5 pt pour le rapport + 0,5 pt pour $N_2$.}
+\end{corrbox}
+
+% --- Q3 ---
+\textbf{Q3} \comp{REA} — Calculer l'intensité du courant dans les câbles côté atelier (400 V). \pts{1 pt}
+
+\begin{corrbox}
+On utilise la formule $P = U \times I$ du formulaire, d'où :
+\[
+I = \frac{P}{U_2} = \frac{15\,000}{400} = \boxed{37{,}5 \text{ A}}
+\]
+
+\textit{Barème : 0,5 pt pour la formule posée + 0,5 pt pour le résultat avec unité.}
+\end{corrbox}
+
+% --- Q4 ---
+\textbf{Q4} \comp{REA} — Calculer les pertes par effet Joule dans les câbles. \pts{1 pt}
+
+\begin{corrbox}
+On utilise la formule $P_J = R \times I^2$ du formulaire :
+\[
+P_J = R \times I^2 = 0{,}1 \times (37{,}5)^2 = 0{,}1 \times 1\,406{,}25 = \boxed{140{,}6 \text{ W}}
+\]
+
+Ces pertes représentent $\frac{140{,}6}{15\,000} \times 100 \approx 0{,}94\%$ de la puissance totale.
+
+\smallskip
+\textit{Barème : 0,5 pt pour la formule posée + 0,5 pt pour le résultat avec unité.}
+\end{corrbox}
+
+% --- Q5 ---
+\textbf{Q5} \comp{ANA} — Comparaison haute tension / basse tension. \pts{1 pt}
+
+\begin{corrbox}
+\textbf{Si le transport se faisait en 20\,000 V} (sans abaissement) :
+\[
+I' = \frac{P}{U_1} = \frac{15\,000}{20\,000} = \boxed{0{,}75 \text{ A}}
+\]
+
+Les pertes seraient alors :
+\[
+P'_J = R \times I'^2 = 0{,}1 \times (0{,}75)^2 = 0{,}1 \times 0{,}5625 = \boxed{0{,}056 \text{ W}}
+\]
+
+\textbf{Comparaison :}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+& \textbf{Basse tension (400 V)} & \textbf{Haute tension (20 kV)} \\
+\midrule
+Intensité & 37,5 A & 0,75 A \\
+Pertes Joule & 140,6 W & 0,056 W \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Le rapport est : $\frac{140{,}6}{0{,}056} \approx 2\,500$. Les pertes en basse tension sont \textbf{2\,500 fois plus élevées} qu'en haute tension !
+
+\textbf{Conclusion :} Transporter l'électricité en \textbf{haute tension} permet de réduire considérablement les pertes par effet Joule. C'est pour cette raison que le réseau EDF transporte l'électricité en 400\,000 V et utilise des transformateurs pour abaisser la tension près des consommateurs.
+
+\smallskip
+\textit{Barème : 0,25 pt calcul $I'$ + 0,25 pt calcul $P'_J$ + 0,5 pt comparaison et conclusion.}
+\end{corrbox}
+
+\newpage
+
+% ================================================================
+\section*{Exercice 2 — Isolation acoustique d'un atelier d'agencement \pts{5 points}}
+% ================================================================
+
+\begin{contextebox}
+\textbf{Données :} $L_1 = 95$ dB \quad $R = 40$ dB \quad Réglementation bureau : $\leq 50$ dB \quad Seuil dangerosité : 85 dB
+\end{contextebox}
+
+% Schéma
+\begin{center}
+\begin{tikzpicture}[scale=0.85, every node/.style={font=\small}]
+  \draw[fill=red!8, rounded corners] (0,0) rectangle (3.5,2.5);
+  \node[font=\small\bfseries] at (1.75,2) {ATELIER};
+  \node at (1.75,1.2) {$L_1 = 95$ dB};
+  \fill[gray!30] (3.5,0) rectangle (4.2,2.5);
+  \node[rotate=90, font=\small\bfseries] at (3.85,1.25) {Cloison};
+  \node[below, font=\scriptsize] at (3.85,-0.2) {$R = 40$ dB};
+  \draw[fill=blue!5, rounded corners] (4.2,0) rectangle (7.7,2.5);
+  \node[font=\small\bfseries] at (5.95,2) {BUREAU};
+  \node[color=vertpro, font=\bfseries] at (5.95,1.2) {$L_2 = 55$ dB};
+  \draw[->, thick, decorate, decoration={snake, amplitude=2pt, segment length=8pt}] (1,1.2) -- (3.3,1.2);
+  \draw[->, thick, decorate, decoration={snake, amplitude=1pt, segment length=8pt}, color=gris] (4.4,1.2) -- (5.2,1.2);
+\end{tikzpicture}
+\end{center}
+
+\vspace{6pt}
+
+% --- Q1 ---
+\textbf{Q1} \comp{APP} — Le niveau de 95 dB dépasse-t-il le seuil de dangerosité ? Quel EPI est obligatoire ? \pts{1 pt}
+
+\begin{corrbox}
+Le seuil de dangerosité est \textbf{85 dB} (voir formulaire).
+
+$95 > 85$ $\Rightarrow$ \textbf{Oui}, le niveau dépasse le seuil de dangerosité.
+
+L'EPI obligatoire est le \textbf{casque anti-bruit} (ou bouchons d'oreilles).
+
+\smallskip
+\textit{Barème : 0,5 pt pour la comparaison avec le seuil + 0,5 pt pour l'EPI.}
+\end{corrbox}
+
+% --- Q2 ---
+\textbf{Q2} \comp{REA} — Calculer le niveau sonore dans le bureau. \pts{1 pt}
+
+\begin{corrbox}
+On utilise la formule $L_{\text{transmis}} = L_{\text{incident}} - R$ du formulaire :
+\[
+L_2 = L_1 - R = 95 - 40 = \boxed{55 \text{ dB}}
+\]
+
+\textit{Barème : 0,5 pt pour la formule posée + 0,5 pt pour le résultat avec unité.}
+\end{corrbox}
+
+% --- Q3 ---
+\textbf{Q3} \comp{VAL} — La cloison est-elle suffisante ? \pts{1 pt}
+
+\begin{corrbox}
+La réglementation impose $L \leq 50$ dB dans un bureau.
+
+Or $L_2 = 55$ dB $> 50$ dB.
+
+$\Rightarrow$ \textbf{Non}, la cloison actuelle n'est \textbf{pas suffisante}. Il manque $55 - 50 = 5$ dB d'affaiblissement.
+
+\smallskip
+\textit{Barème : 0,5 pt pour la comparaison + 0,5 pt pour la conclusion justifiée.}
+\end{corrbox}
+
+% --- Q4 ---
+\textbf{Q4} \comp{ANA} — Ajout d'un isolant supplémentaire (+10 dB). \pts{1 pt}
+
+\begin{corrbox}
+Avec l'isolant supplémentaire, l'affaiblissement total devient :
+\[
+R_{\text{total}} = 40 + 10 = 50 \text{ dB}
+\]
+
+Le nouveau niveau dans le bureau :
+\[
+L_2' = L_1 - R_{\text{total}} = 95 - 50 = \boxed{45 \text{ dB}}
+\]
+
+$45 < 50$ $\Rightarrow$ \textbf{Oui}, c'est suffisant. La réglementation est respectée avec une marge de 5 dB.
+
+\smallskip
+\textit{Barème : 0,5 pt pour le calcul + 0,5 pt pour la conclusion.}
+\end{corrbox}
+
+% --- Q5 ---
+\textbf{Q5} \comp{COM} — Isolation ou absorption ? Expliquer la différence. \pts{1 pt}
+
+\begin{corrbox}
+Poser des panneaux de laine de roche \textbf{sur les murs intérieurs} du bureau est de l'\textbf{absorption acoustique} (pas de l'isolation).
+
+\textbf{Différence :}
+\begin{itemize}[nosep]
+  \item \textbf{Isolation acoustique} : empêche le son de \textbf{traverser} une paroi (d'une pièce à l'autre). On agit sur la cloison séparative. Moyens : masse importante, double paroi, désolidarisation.
+  \item \textbf{Absorption acoustique} : réduit la \textbf{réverbération} (l'écho) \textbf{à l'intérieur} d'une pièce. On pose des matériaux poreux sur les surfaces intérieures. Moyens : laine minérale, mousse, panneaux perforés, tissu.
+\end{itemize}
+
+Ici, le client se plaint de l'écho dans le bureau $\Rightarrow$ c'est bien un problème de réverbération interne $\Rightarrow$ la solution proposée (\textbf{absorption}) est adaptée.
+
+\smallskip
+\textit{Barème : 0,5 pt pour identifier ``absorption'' + 0,5 pt pour expliquer la différence.}
+\end{corrbox}
+
+\vfill
+
+% ================================================================
+\begin{center}
+\textcolor{rouge}{\rule{12cm}{1pt}}\\[8pt]
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Exercice} & \textbf{Thème} & \textbf{Questions} & \textbf{Points} \\
+\hline
+1 & Électricité (transformateur, effet Joule) & Q1 à Q5 & \textbf{/5} \\
+\hline
+2 & Acoustique (atténuation, isolation) & Q1 à Q5 & \textbf{/5} \\
+\hline
+\multicolumn{3}{|r|}{\textbf{Total}} & \textbf{/10} \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}
