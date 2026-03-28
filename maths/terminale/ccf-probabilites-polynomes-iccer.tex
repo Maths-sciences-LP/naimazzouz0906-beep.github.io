@@ -73,7 +73,7 @@
 % ===== PAGE DE GARDE =====
 \begin{center}
 {\LARGE\bfseries\color{bleupro} Contrôle en Cours de Formation}\\[8pt]
-{\large Mathématiques — Terminale Bac Pro — ERA-TMA / ICCER}\\[12pt]
+{\large Mathématiques — Terminale Bac Pro — ICCER}\\[12pt]
 {\Large\bfseries Probabilités \& Fonctions polynômes de degré 3}\\[20pt]
 
 \begin{tabular}{|p{6cm}|p{6cm}|}
@@ -133,26 +133,26 @@ Nombre de solutions & Exploiter le tableau de variations pour $f(x) = c$ \\[4pt]
 \newpage
 
 % ================================================================
-\section*{Exercice 1 — Contrôle qualité en menuiserie \pts{5 points}}
+\section*{Exercice 1 — Contrôle qualité en génie climatique \pts{5 points}}
 % ================================================================
 
 \begin{contextebox}
-Un atelier de menuiserie fabrique des panneaux d'agencement. Chaque panneau passe deux contrôles successifs.
+Une entreprise de génie climatique fabrique des raccords en cuivre pour circuits de chauffage. Chaque raccord passe deux contrôles successifs.
 
-\textbf{Contrôle 1 — Dimensions :} 8\% des panneaux ont un défaut de dimensions.
+\textbf{Contrôle 1 — Étanchéité :} 10\% des raccords présentent un défaut d'étanchéité.
 
-\textbf{Contrôle 2 — Surface :}
+\textbf{Contrôle 2 — Filetage :}
 \begin{itemize}[nosep]
-  \item Si le panneau a un défaut de dimensions, la probabilité d'avoir aussi un défaut de surface est 0,3.
-  \item Si le panneau n'a pas de défaut de dimensions, la probabilité d'avoir un défaut de surface est 0,05.
+  \item Si le raccord a un défaut d'étanchéité, la probabilité d'avoir aussi un défaut de filetage est 0,25.
+  \item Si le raccord n'a pas de défaut d'étanchéité, la probabilité d'avoir un défaut de filetage est 0,04.
 \end{itemize}
 
-On note : $D$ = ``le panneau a un défaut de dimensions'' et $S$ = ``le panneau a un défaut de surface''.
+On note : $E$ = ``le raccord a un défaut d'étanchéité'' et $F$ = ``le raccord a un défaut de filetage''.
 \end{contextebox}
 
 \vspace{6pt}
 
-\textbf{Q1} \comp{APP} — Traduire les données de l'énoncé en probabilités : donner les valeurs de $P(D)$, $P(\overline{D})$, $P_D(S)$ et $P_{\overline{D}}(S)$. \pts{1 pt}
+\textbf{Q1} \comp{APP} — Traduire les données de l'énoncé en probabilités : donner les valeurs de $P(E)$, $P(\overline{E})$, $P_E(F)$ et $P_{\overline{E}}(F)$. \pts{1 pt}
 
 \begin{reponsebox}[3cm]
 \dotfill
@@ -169,24 +169,24 @@ On note : $D$ = ``le panneau a un défaut de dimensions'' et $S$ = ``le panneau 
   % Racine
   \node[circle, fill=black, inner sep=1.5pt] (R) at (0,0) {};
   % Niveau 1
-  \node (D) at (3,1.5) {$D$};
-  \node (Db) at (3,-1.5) {$\overline{D}$};
+  \node (D) at (3,1.5) {$E$};
+  \node (Db) at (3,-1.5) {$\overline{E}$};
   \draw[-] (R) -- (D) node[midway, above, sloped] {\dotfill};
   \draw[-] (R) -- (Db) node[midway, below, sloped] {\dotfill};
   % Niveau 2 depuis D
-  \node (DS) at (6.5,2.3) {$S$};
-  \node (DSb) at (6.5,0.7) {$\overline{S}$};
+  \node (DS) at (6.5,2.3) {$F$};
+  \node (DSb) at (6.5,0.7) {$\overline{F}$};
   \draw[-] (D) -- (DS) node[midway, above, sloped] {\dotfill};
   \draw[-] (D) -- (DSb) node[midway, below, sloped] {\dotfill};
   % Niveau 2 depuis Db
-  \node (DbS) at (6.5,-0.7) {$S$};
-  \node (DbSb) at (6.5,-2.3) {$\overline{S}$};
+  \node (DbS) at (6.5,-0.7) {$F$};
+  \node (DbSb) at (6.5,-2.3) {$\overline{F}$};
   \draw[-] (Db) -- (DbS) node[midway, above, sloped] {\dotfill};
   \draw[-] (Db) -- (DbSb) node[midway, below, sloped] {\dotfill};
 \end{tikzpicture}
 \end{center}
 
-\textbf{Q3} \comp{REA} — Calculer $P(D \cap S)$ et $P(\overline{D} \cap S)$. \pts{1 pt}
+\textbf{Q3} \comp{REA} — Calculer $P(E \cap F)$ et $P(\overline{E} \cap F)$. \pts{1 pt}
 
 \begin{reponsebox}[3cm]
 \dotfill
@@ -196,7 +196,7 @@ On note : $D$ = ``le panneau a un défaut de dimensions'' et $S$ = ``le panneau 
 \dotfill
 \end{reponsebox}
 
-\textbf{Q4} \comp{ANA} — En utilisant la formule des probabilités totales, calculer la probabilité qu'un panneau pris au hasard ait un défaut de surface. \pts{1 pt}
+\textbf{Q4} \comp{ANA} — En utilisant la formule des probabilités totales, calculer la probabilité qu'un raccord pris au hasard ait un défaut de filetage. \pts{1 pt}
 
 \begin{reponsebox}[3cm]
 \dotfill
@@ -206,7 +206,7 @@ On note : $D$ = ``le panneau a un défaut de dimensions'' et $S$ = ``le panneau 
 \dotfill
 \end{reponsebox}
 
-\textbf{Q5} \comp{ANA} — Sur une production de 500 panneaux, combien peut-on s'attendre à avoir avec un défaut de surface ? Le responsable qualité considère que le taux est acceptable si moins de 5\% des panneaux sont défectueux en surface. Est-ce le cas ? \pts{1 pt}
+\textbf{Q5} \comp{ANA} — Sur une production de 500 raccords, combien peut-on s'attendre à avoir avec un défaut de filetage ? Le responsable qualité considère que le taux est acceptable si moins de 5\% des raccords sont défectueux en filetage. Est-ce le cas ? \pts{1 pt}
 
 \begin{reponsebox}[3cm]
 \dotfill
@@ -223,7 +223,7 @@ On note : $D$ = ``le panneau a un défaut de dimensions'' et $S$ = ``le panneau 
 % ================================================================
 
 \begin{contextebox}
-Un menuisier fabrique un bac de rangement ouvert à partir d'une plaque carrée de tôle de 30 cm de côté. Il découpe un carré de côté $x$ (en cm) à chaque coin, puis plie les bords vers le haut.
+Un installateur thermique fabrique un bac de récupération des condensats à partir d'une plaque carrée de zinc de 30 cm de côté. Il découpe un carré de côté $x$ (en cm) à chaque coin, puis plie les bords vers le haut.
 
 Le volume du bac obtenu est :
 \[V(x) = x(30 - 2x)^2 = 4x^3 - 120x^2 + 900x \quad \text{pour } x \in \;]0\,;\,15[\]
@@ -332,7 +332,7 @@ Valeur exacte du maximum : $V(\ldots\ldots) = $ \dotfill
 \vspace{4pt}
 Confirmation lecture graphique : \dotfill
 
-\textbf{Q5} \comp{COM} — Conclure : donner la valeur de $x$ qui maximise le volume, le volume maximal, et les dimensions du bac (longueur, largeur, hauteur). Le menuisier a besoin d'un bac d'au moins 1\,500 cm$^3$. La contrainte est-elle respectée ? \pts{1 pt}
+\textbf{Q5} \comp{COM} — Conclure : donner la valeur de $x$ qui maximise le volume, le volume maximal, et les dimensions du bac (longueur, largeur, hauteur). L'installateur a besoin d'un bac d'au moins 1\,500 cm$^3$ pour récupérer les condensats. La contrainte est-elle respectée ? \pts{1 pt}
 
 \begin{reponsebox}[4cm]
 \dotfill

@@ -1,0 +1,315 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=1.5cm,bottom=2cm}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{lastpage}
+
+% Couleurs
+\definecolor{bleupro}{HTML}{0969da}
+\definecolor{orange}{HTML}{d97706}
+\definecolor{vertpro}{HTML}{2f855a}
+\definecolor{rouge}{HTML}{c53030}
+\definecolor{gris}{HTML}{718096}
+
+% En-tête
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small CCF Physique-Chimie — Terminale ICCER}
+\rhead{\small Fluides \& Courant alternatif}
+\cfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% Boîtes
+\tcbuselibrary{skins,breakable}
+
+\newtcolorbox{formulairebox}{
+  colback=yellow!5,
+  colframe=orange,
+  title={\textbf{FORMULAIRE — Rappels de cours}},
+  fonttitle=\large\bfseries,
+  breakable
+}
+
+\newtcolorbox{contextebox}{
+  colback=blue!3,
+  colframe=bleupro,
+  leftrule=4pt,
+  rightrule=0pt,
+  toprule=0pt,
+  bottomrule=0pt,
+  boxsep=4pt,
+  left=8pt
+}
+
+\newtcolorbox{reponsebox}[1][4cm]{
+  colback=white,
+  colframe=gris!40,
+  boxrule=0.5pt,
+  arc=3pt,
+  height=#1,
+  valign=top,
+  before skip=4pt,
+  after skip=8pt
+}
+
+\newcommand{\pts}[1]{\hfill\textcolor{gris}{\small\textbf{#1}}}
+\newcommand{\comp}[1]{\colorbox{blue!10}{\scriptsize\textbf{#1}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\begin{document}
+
+% ===== PAGE DE GARDE =====
+\begin{center}
+{\LARGE\bfseries\color{bleupro} Contrôle en Cours de Formation}\\[8pt]
+{\large Physique-Chimie — Terminale Bac Pro ICCER — Groupement 1}\\[12pt]
+{\Large\bfseries Débit de fluide \& Puissance en régime sinusoïdal}\\[20pt]
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\textbf{Durée :} 45 minutes & \textbf{Barème :} /10 points \\
+\hline
+\textbf{Documents :} Calculatrice autorisée & \textbf{Formulaire :} ci-dessous \\
+\hline
+\textbf{Nom :} \dotfill & \textbf{Prénom :} \dotfill \\
+\hline
+\textbf{Classe :} \dotfill & \textbf{Date :} \dotfill \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{10pt}
+
+% ===== FORMULAIRE =====
+\begin{formulairebox}
+
+\subsection*{Débit et transport de fluide}
+
+\begin{tabular}{>{\bfseries}p{4.5cm} p{5.5cm} p{4cm}}
+\toprule
+\textbf{Grandeur} & \textbf{Formule} & \textbf{Unités} \\
+\midrule
+Débit volumique & $Q_v = S \times v$ & m³/s, m², m/s \\[4pt]
+Débit massique & $Q_m = \rho \times Q_v$ & kg/s \\[4pt]
+Équation de continuité & $S_1 \times v_1 = S_2 \times v_2$ & \\[4pt]
+Section d'un tuyau & $S = \pi \times \left(\dfrac{d}{2}\right)^2$ & m² \\[6pt]
+Conversions & 1 m³/h $= \dfrac{1}{3\,600}$ m³/s & \\[4pt]
+\bottomrule
+\end{tabular}
+
+\smallskip
+$\rho_{\text{eau}} = 1\,000$ kg/m³ \quad Vitesse recommandée dans les canalisations : entre 0,5 et 1,5 m/s
+
+\subsection*{Puissance en régime sinusoïdal}
+
+\begin{tabular}{>{\bfseries}p{4.5cm} p{5.5cm} p{4cm}}
+\toprule
+\textbf{Grandeur} & \textbf{Formule} & \textbf{Unités} \\
+\midrule
+Puissance active & $P = U \times I \times \cos\varphi$ & W \\[4pt]
+Puissance apparente & $S = U \times I$ & VA \\[4pt]
+Puissance réactive & $Q = U \times I \times \sin\varphi$ & VAR \\[4pt]
+Facteur de puissance & $\cos\varphi = \dfrac{P}{S}$ & (sans unité) \\[6pt]
+Énergie & $E = P \times t$ & J (ou kWh) \\[4pt]
+\bottomrule
+\end{tabular}
+
+\smallskip
+\textbf{Triangle des puissances :} $S^2 = P^2 + Q^2$. Un $\cos\varphi$ proche de 1 est souhaitable (moins de pertes réactives).
+
+\end{formulairebox}
+
+\newpage
+
+% ================================================================
+\section*{Exercice 1 — TP numérique : dimensionner un réseau de chauffage \pts{5 points}}
+% ================================================================
+
+\begin{contextebox}
+Un installateur thermique doit dimensionner le réseau d'eau chaude d'un bâtiment. Il dispose d'une \textbf{simulation numérique} pour tester différentes configurations avant de commander les canalisations.
+
+\medskip
+\textbf{Accès à la simulation :} \texttt{https://maths-sciences-lp.github.io/simulations/debit-fluide.html}
+
+\medskip
+\textbf{Rappel professionnel :} la vitesse de l'eau doit rester entre \textbf{0,5 m/s} (sinon dépôts) et \textbf{1,5 m/s} (sinon bruit et érosion).
+\end{contextebox}
+
+\vspace{6pt}
+\textbf{Q1} \comp{APP} — \textbf{Manipulation :} ouvrir la simulation. Régler le débit à $Q_v = 1{,}8$ m³/h et le diamètre principal à $d_1 = 40$ mm. Relever les valeurs affichées et compléter le tableau. \pts{1 pt}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|>{\centering\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{4cm}|}
+\hline
+\textbf{Grandeur} & \textbf{Valeur lue} \\
+\hline
+Section $S_1$ & \dotfill \\
+\hline
+Vitesse $v_1$ & \dotfill \\
+\hline
+Norme respectée ? & \dotfill \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{center}
+
+\textbf{Q2} \comp{REA} — \textbf{Vérification par le calcul :} retrouver la valeur de $v_1$ à partir de la formule $Q_v = S \times v$. Détailler les étapes. \pts{1 pt}
+
+\begin{reponsebox}[3.5cm]
+\dotfill
+
+\dotfill
+
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\textbf{Q3} \comp{ANA} — \textbf{Manipulation :} régler le diamètre des branches à $d_2 = 25$ mm. Relever la vitesse $v_2$ dans chaque branche. La norme est-elle respectée dans les branches ? \pts{1 pt}
+
+\begin{reponsebox}[2.5cm]
+$v_2$ lue dans la simulation = \dotfill m/s
+
+Norme respectée ? \dotfill
+\end{reponsebox}
+
+\textbf{Q4} \comp{ANA} — \textbf{Manipulation :} la vitesse $v_1$ dans la canalisation principale est trop faible. En utilisant la simulation, faire \textbf{varier le diamètre $d_1$} jusqu'à obtenir une vitesse $v_1$ comprise entre 0,5 et 1,5 m/s. Compléter le tableau ci-dessous avec 3 essais. \pts{1 pt}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|}
+\hline
+\textbf{Essai} & \textbf{Diamètre $d_1$} & \textbf{Vitesse $v_1$} & \textbf{Conforme ?} \\
+\hline
+1 & 40 mm & \ldots\ldots m/s & \ldots\ldots \\
+\hline
+2 & \ldots\ldots mm & \ldots\ldots m/s & \ldots\ldots \\
+\hline
+3 & \ldots\ldots mm & \ldots\ldots m/s & \ldots\ldots \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{center}
+
+\textbf{Q5} \comp{COM} — Quel diamètre $d_1$ choisissez-vous pour la canalisation principale ? Justifier votre choix en tenant compte de la norme de vitesse et du coût (un tuyau plus petit coûte moins cher). \pts{1 pt}
+
+\begin{reponsebox}[3.5cm]
+Diamètre choisi : $d_1$ = \dotfill mm
+
+Justification : \dotfill
+
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\newpage
+
+% ================================================================
+\section*{Exercice 2 — Dimensionnement électrique d'une PAC \pts{5 points}}
+% ================================================================
+
+\begin{contextebox}
+Un technicien installe une pompe à chaleur (PAC) air/eau pour chauffer un immeuble. La PAC est alimentée en monophasé 230 V / 50 Hz. D'après la plaque signalétique :
+\begin{itemize}[nosep]
+  \item Puissance active : $P = 3\,200$ W
+  \item Facteur de puissance : $\cos\varphi = 0{,}85$
+\end{itemize}
+La PAC fonctionne 10 heures par jour pendant 180 jours (saison de chauffe). Le prix du kWh est 0,20 €.
+\end{contextebox}
+
+% Schéma triangle des puissances
+\begin{center}
+\begin{tikzpicture}[scale=0.6, every node/.style={font=\small}]
+  \draw[thick, bleupro] (0,0) -- (7,0) node[midway, below=4pt] {$P$ (W) — active};
+  \draw[thick, rouge] (7,0) -- (7,3.5) node[midway, right=4pt] {$Q$ (VAR)};
+  \draw[thick, vertpro] (0,0) -- (7,3.5) node[midway, above=4pt, sloped] {$S$ (VA) — apparente};
+  % Angle
+  \draw (1.5,0) arc[start angle=0, end angle=26.6, radius=1.5];
+  \node at (2,0.5) {$\varphi$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Q1} \comp{REA} — Calculer la puissance apparente $S$ de la PAC. \pts{1 pt}
+
+\begin{reponsebox}[3cm]
+\dotfill
+
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\textbf{Q2} \comp{REA} — Calculer l'intensité du courant $I$ absorbée par la PAC. \pts{1 pt}
+
+\begin{reponsebox}[3cm]
+\dotfill
+
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\textbf{Q3} \comp{ANA} — Le disjoncteur de la ligne est calibré à 20 A. Est-il correctement dimensionné ? Justifier. \pts{1 pt}
+
+\begin{reponsebox}[2.5cm]
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\textbf{Q4} \comp{REA} — Calculer l'énergie consommée par la PAC sur une saison de chauffe (en kWh). En déduire le coût annuel. \pts{1 pt}
+
+\begin{reponsebox}[3.5cm]
+\dotfill
+
+\dotfill
+
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\textbf{Q5} \comp{COM} — Le propriétaire demande pourquoi sa facture est élevée. Le technicien remarque que le $\cos\varphi$ est de 0,85 au lieu de 0,95 (valeur idéale). Expliquer en quoi un mauvais facteur de puissance augmente l'intensité appelée, et pourquoi c'est un problème. \pts{1 pt}
+
+\begin{reponsebox}[4cm]
+\dotfill
+
+\dotfill
+
+\dotfill
+
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\vfill
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Exercice} & \textbf{Thème} & \textbf{Questions} & \textbf{Points} \\
+\hline
+1 & Débit de fluide (réseau chauffage) & Q1 à Q5 & /5 \\
+\hline
+2 & Puissance en régime sinusoïdal (PAC) & Q1 à Q5 & /5 \\
+\hline
+\multicolumn{3}{|r|}{\textbf{Total}} & \textbf{/10} \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}

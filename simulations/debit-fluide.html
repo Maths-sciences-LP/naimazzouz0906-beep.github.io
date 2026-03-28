@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Simulation – Débit et vitesse d'un fluide dans une canalisation</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../print.css" media="print">
+<style>
+:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.sim-container{max-width:700px;margin:20px auto;padding:20px}
+.controls{background:#f0f7ff;border:1px solid var(--p-border);border-radius:10px;padding:20px;margin:16px 0}
+.control-row{display:flex;align-items:center;gap:14px;margin:12px 0;flex-wrap:wrap}
+.control-row label{min-width:180px;font-weight:600;font-size:.95em}
+.control-row input[type=range]{flex:1;min-width:150px;accent-color:var(--p)}
+.control-row .value{min-width:120px;font-weight:700;color:var(--p);font-size:1.1em}
+.results{background:#f0fff4;border:2px solid #86efac;border-radius:10px;padding:20px;margin:16px 0}
+.results h3{margin:0 0 12px;color:#2f855a}
+.result-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #d1fae5;font-size:.95em}
+.result-row:last-child{border:none}
+.result-label{color:#555}
+.result-value{font-weight:700;font-size:1.05em}
+.result-ok{color:#2f855a}
+.result-warn{color:#d97706}
+.result-bad{color:#c53030}
+.tuyau-svg{display:block;margin:16px auto}
+.norme-box{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:12px;margin:12px 0;font-size:.9em}
+.norme-box strong{color:#92400e}
+.branch-section{margin-top:20px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:16px}
+.branch-section h3{color:var(--p);margin:0 0 10px}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../simulations.html" class="nb">← Retour aux simulations</a>
+
+<header>
+  <h1>Simulation — Débit et vitesse d'un fluide</h1>
+  <p class="sous-titre">Mécanique des fluides &nbsp;|&nbsp; Terminale Bac Pro ICCER &nbsp;|&nbsp; Q = S × v</p>
+</header>
+
+<div class="norme-box">
+  <strong>Règle professionnelle :</strong> dans un circuit de chauffage, la vitesse de l'eau doit rester entre <strong>0,5 m/s</strong> (minimum, pour éviter les dépôts) et <strong>1,5 m/s</strong> (maximum, pour limiter bruit et érosion).
+</div>
+
+<!-- ===== CANALISATION PRINCIPALE ===== -->
+<div class="controls">
+  <h3 style="margin:0 0 10px;color:var(--p)">Canalisation principale</h3>
+
+  <div class="control-row">
+    <label for="debit">Débit volumique Q<sub>v</sub> :</label>
+    <input type="range" id="debit" min="0.5" max="5" step="0.1" value="1.8">
+    <span class="value" id="debit-val">1,8 m³/h</span>
+  </div>
+
+  <div class="control-row">
+    <label for="diametre">Diamètre d<sub>1</sub> :</label>
+    <input type="range" id="diametre" min="15" max="80" step="1" value="40">
+    <span class="value" id="diam-val">40 mm</span>
+  </div>
+</div>
+
+<!-- Schéma SVG animé -->
+<svg class="tuyau-svg" width="600" height="120" viewBox="0 0 600 120">
+  <rect width="600" height="120" fill="#f8fafc" rx="8"/>
+  <!-- Tuyau principal -->
+  <rect id="tuyau-rect" x="50" y="30" width="500" height="60" rx="10" fill="#dbeafe" stroke="#0969da" stroke-width="2"/>
+  <!-- Flèches de flux -->
+  <g id="flux-arrows">
+    <polygon points="120,60 135,50 135,55 160,55 160,65 135,65 135,70" fill="#0969da" opacity="0.6"/>
+    <polygon points="250,60 265,50 265,55 290,55 290,65 265,65 265,70" fill="#0969da" opacity="0.6"/>
+    <polygon points="380,60 395,50 395,55 420,55 420,65 395,65 395,70" fill="#0969da" opacity="0.6"/>
+  </g>
+  <!-- Labels -->
+  <text id="svg-debit" x="300" y="18" text-anchor="middle" font-size="13" fill="#0969da" font-weight="bold">Q = 1,8 m³/h</text>
+  <text id="svg-vitesse" x="300" y="108" text-anchor="middle" font-size="13" fill="#2f855a" font-weight="bold">v = 0,40 m/s</text>
+  <text id="svg-diam" x="560" y="65" font-size="11" fill="#555" text-anchor="middle">d = 40 mm</text>
+</svg>
+
+<div class="results">
+  <h3>Résultats — Canalisation principale</h3>
+  <div class="result-row">
+    <span class="result-label">Débit Q<sub>v</sub></span>
+    <span class="result-value" id="res-debit">5,00 × 10⁻⁴ m³/s</span>
+  </div>
+  <div class="result-row">
+    <span class="result-label">Section S<sub>1</sub> = π(d/2)²</span>
+    <span class="result-value" id="res-section">12,57 cm²</span>
+  </div>
+  <div class="result-row">
+    <span class="result-label">Vitesse v<sub>1</sub> = Q<sub>v</sub> / S<sub>1</sub></span>
+    <span class="result-value" id="res-vitesse">0,40 m/s</span>
+  </div>
+  <div class="result-row">
+    <span class="result-label">Norme (0,5 – 1,5 m/s)</span>
+    <span class="result-value" id="res-norme">—</span>
+  </div>
+</div>
+
+<!-- ===== DIVISION EN 2 BRANCHES ===== -->
+<div class="branch-section">
+  <h3>Division en 2 branches identiques</h3>
+
+  <div class="control-row">
+    <label for="diametre2">Diamètre d<sub>2</sub> de chaque branche :</label>
+    <input type="range" id="diametre2" min="10" max="50" step="1" value="25">
+    <span class="value" id="diam2-val">25 mm</span>
+  </div>
+
+  <div class="results" style="background:#f0f7ff;border-color:#93c5fd">
+    <h3 style="color:var(--p)">Résultats — Chaque branche</h3>
+    <div class="result-row">
+      <span class="result-label">Débit par branche Q<sub>v2</sub> = Q<sub>v</sub> / 2</span>
+      <span class="result-value" id="res-debit2">2,50 × 10⁻⁴ m³/s</span>
+    </div>
+    <div class="result-row">
+      <span class="result-label">Section S<sub>2</sub></span>
+      <span class="result-value" id="res-section2">4,91 cm²</span>
+    </div>
+    <div class="result-row">
+      <span class="result-label">Vitesse v<sub>2</sub> = Q<sub>v2</sub> / S<sub>2</sub></span>
+      <span class="result-value" id="res-vitesse2">0,51 m/s</span>
+    </div>
+    <div class="result-row">
+      <span class="result-label">Norme (0,5 – 1,5 m/s)</span>
+      <span class="result-value" id="res-norme2">—</span>
+    </div>
+    <div class="result-row">
+      <span class="result-label">Vérification continuité : S<sub>1</sub>v<sub>1</sub> = 2 × S<sub>2</sub>v<sub>2</sub> ?</span>
+      <span class="result-value" id="res-continuite">—</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var debitSlider = document.getElementById('debit');
+  var diamSlider = document.getElementById('diametre');
+  var diam2Slider = document.getElementById('diametre2');
+
+  function fmt(n, dec) { return n.toFixed(dec).replace('.', ','); }
+  function sci(n) {
+    var exp = Math.floor(Math.log10(Math.abs(n)));
+    var mantissa = n / Math.pow(10, exp);
+    return fmt(mantissa, 2) + ' × 10' + (exp < 0 ? '⁻' : '') + String(Math.abs(exp)).replace(/\d/g, function(d) {
+      return '⁰¹²³⁴⁵⁶⁷⁸⁹'[d];
+    });
+  }
+
+  function normeLabel(v) {
+    if (v < 0.5) return { text: '⚠ Trop lent (< 0,5 m/s)', cls: 'result-bad' };
+    if (v > 1.5) return { text: '⚠ Trop rapide (> 1,5 m/s)', cls: 'result-bad' };
+    return { text: '✓ Conforme', cls: 'result-ok' };
+  }
+
+  function update() {
+    var Qv_h = parseFloat(debitSlider.value);
+    var d1_mm = parseFloat(diamSlider.value);
+    var d2_mm = parseFloat(diam2Slider.value);
+
+    var Qv = Qv_h / 3600; // m³/s
+    var d1 = d1_mm / 1000; // m
+    var d2 = d2_mm / 1000;
+    var S1 = Math.PI * Math.pow(d1/2, 2);
+    var S2 = Math.PI * Math.pow(d2/2, 2);
+    var v1 = Qv / S1;
+
+    var Qv2 = Qv / 2;
+    var v2 = Qv2 / S2;
+
+    // Affichage sliders
+    document.getElementById('debit-val').textContent = fmt(Qv_h, 1) + ' m³/h';
+    document.getElementById('diam-val').textContent = d1_mm + ' mm';
+    document.getElementById('diam2-val').textContent = d2_mm + ' mm';
+
+    // Résultats canalisation principale
+    document.getElementById('res-debit').textContent = sci(Qv) + ' m³/s';
+    document.getElementById('res-section').textContent = fmt(S1 * 1e4, 2) + ' cm²';
+    document.getElementById('res-vitesse').textContent = fmt(v1, 2) + ' m/s';
+    var n1 = normeLabel(v1);
+    var el1 = document.getElementById('res-norme');
+    el1.textContent = n1.text;
+    el1.className = 'result-value ' + n1.cls;
+
+    // Résultats branches
+    document.getElementById('res-debit2').textContent = sci(Qv2) + ' m³/s';
+    document.getElementById('res-section2').textContent = fmt(S2 * 1e4, 2) + ' cm²';
+    document.getElementById('res-vitesse2').textContent = fmt(v2, 2) + ' m/s';
+    var n2 = normeLabel(v2);
+    var el2 = document.getElementById('res-norme2');
+    el2.textContent = n2.text;
+    el2.className = 'result-value ' + n2.cls;
+
+    // Vérification continuité
+    var gauche = S1 * v1;
+    var droite = 2 * S2 * v2;
+    var ecart = Math.abs(gauche - droite) / gauche * 100;
+    document.getElementById('res-continuite').textContent = sci(gauche) + ' ≈ ' + sci(droite) + ' ✓';
+
+    // SVG
+    document.getElementById('svg-debit').textContent = 'Q = ' + fmt(Qv_h, 1) + ' m³/h';
+    document.getElementById('svg-vitesse').textContent = 'v = ' + fmt(v1, 2) + ' m/s';
+    document.getElementById('svg-diam').textContent = 'd = ' + d1_mm + ' mm';
+
+    // Taille du tuyau SVG proportionnelle au diamètre
+    var h = Math.max(20, Math.min(80, d1_mm * 1.2));
+    var tuyau = document.getElementById('tuyau-rect');
+    tuyau.setAttribute('y', 60 - h/2);
+    tuyau.setAttribute('height', h);
+
+    // Couleur selon norme
+    tuyau.setAttribute('fill', v1 < 0.5 || v1 > 1.5 ? '#fee2e2' : '#dbeafe');
+    tuyau.setAttribute('stroke', v1 < 0.5 || v1 > 1.5 ? '#c53030' : '#0969da');
+  }
+
+  debitSlider.addEventListener('input', update);
+  diamSlider.addEventListener('input', update);
+  diam2Slider.addEventListener('input', update);
+
+  update();
+})();
+</script>
+
+<script src="../nav.js"></script>
+</body>
+</html>
