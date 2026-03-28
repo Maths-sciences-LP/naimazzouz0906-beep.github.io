@@ -1,7 +1,7 @@
 # Audit complet — Mathématiques Première Bac Pro
 
 **Date** : 2026-03-22
-**Dernière mise à jour** : 2026-03-22 (v2 — après corrections priorités hautes)
+**Dernière mise à jour** : 2026-03-28 (v3 — création exercices-capacités + audit conformité programme)
 **Périmètre** : Tous les fichiers de `maths/premiere/` (ch01 à ch09)
 **Méthode** : Lecture intégrale de tous les fichiers, audit structurel, pédagogique et technique
 
@@ -12,8 +12,8 @@
 | Indicateur | Valeur |
 |---|---|
 | Chapitres | 9 (ch01 à ch09) |
-| Fichiers attendus (6 par chapitre) | 54 |
-| Fichiers présents | **54 / 54 (100 %)** |
+| Fichiers attendus (7 par chapitre) | 63 |
+| Fichiers présents | **63 / 63 (100 %)** |
 | Fichiers stubs / vides | **0** |
 | Note globale | **4 / 5** |
 
@@ -27,6 +27,9 @@
 | `fiche.html` | 9/9 ✅ | 9/9 ✅ | N/A |
 | `qcm.html` | 9/9 ✅ | 9/9 ✅ | ✅ 9/9 (3 niveaux, 45 questions) |
 | `interro.html` | 9/9 ✅ | 9/9 ✅ | ✅ 9/9 (3 niveaux, /20) |
+| `exercices-capacites.html` | 9/9 ✅ | 9/9 ✅ | N/A (pas de diff, filtrage comp.js) |
+
+**Ajout 2026-03-28 :** création des 9 pages `exercices-capacites.html` (~115 exercices, ~30 SVG). Conformité programme BO 2020 vérifiée. Capacités extraites du fichier `programme_maths_premiere_bacpro.md`.
 
 ---
 
