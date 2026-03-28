@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch14 &ndash; Activit&eacute; &ndash; Lumi&egrave;re, couleurs et photod&eacute;tecteurs &ndash; 2nde Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">&larr; Retour au sommaire</a>
+<header>
+  <h1>Activit&eacute; &ndash; Lumi&egrave;re, couleurs et photod&eacute;tecteurs</h1>
+  <p class="sous-titre">Chapitre 14 | Physique-Chimie | 2nde Bac Pro | &#9201; 30 min</p>
+</header>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>D&eacute;couvrir les diff&eacute;rentes sources lumineuses et leurs caract&eacute;ristiques (temp&eacute;rature de couleur, spectre).</li>
+    <li>Comprendre la diff&eacute;rence entre un spectre continu et un spectre de raies.</li>
+    <li>Calculer l&rsquo;efficacit&eacute; lumineuse d&rsquo;une source.</li>
+    <li>D&eacute;couvrir le fonctionnement d&rsquo;un photod&eacute;tecteur (LDR).</li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- DOCUMENT D'ACCROCHE -->
+<!-- ============================================================ -->
+<div class="situation">
+  <h2>Situation professionnelle</h2>
+  <p><em>Contexte : Marc, technicien &eacute;clairagiste, intervient dans un showroom de meubles &agrave; Lyon pour installer un nouvel &eacute;clairage. Le responsable du magasin souhaite mettre en valeur les teintes naturelles du bois (ch&ecirc;ne, noyer, h&ecirc;tre) tout en limitant la consommation &eacute;lectrique.</em></p>
+  <p>Marc dispose de trois types de sources lumineuses. Il utilise un <strong>spectroscope</strong> pour observer le spectre de chaque lampe et un <strong>luxm&egrave;tre</strong> pour mesurer l&rsquo;&eacute;clairement au niveau des meubles expos&eacute;s.</p>
+
+  <h3>Document 1 &ndash; Caract&eacute;ristiques des sources lumineuses</h3>
+  <table>
+    <tr>
+      <th>Source lumineuse</th>
+      <th>Temp&eacute;rature de couleur (K)</th>
+      <th>Flux lumineux (lm)</th>
+      <th>Puissance (W)</th>
+      <th>Type de spectre</th>
+    </tr>
+    <tr>
+      <td>LED blanc chaud</td>
+      <td>2 700</td>
+      <td>1 050</td>
+      <td>10</td>
+      <td>Continu</td>
+    </tr>
+    <tr>
+      <td>LED blanc froid</td>
+      <td>6 000</td>
+      <td>1 300</td>
+      <td>12</td>
+      <td>Continu</td>
+    </tr>
+    <tr>
+      <td>Halog&egrave;ne</td>
+      <td>3 000</td>
+      <td>750</td>
+      <td>50</td>
+      <td>Continu</td>
+    </tr>
+  </table>
+
+  <h3>Document 2 &ndash; Mesures au luxm&egrave;tre</h3>
+  <p>Marc place le luxm&egrave;tre &agrave; 1,5&nbsp;m sous chaque source et rel&egrave;ve l&rsquo;&eacute;clairement sur la surface d&rsquo;un meuble :</p>
+  <table>
+    <tr>
+      <th>Source lumineuse</th>
+      <th>&Eacute;clairement mesur&eacute; (lux)</th>
+    </tr>
+    <tr>
+      <td>LED blanc chaud</td>
+      <td>420</td>
+    </tr>
+    <tr>
+      <td>LED blanc froid</td>
+      <td>520</td>
+    </tr>
+    <tr>
+      <td>Halog&egrave;ne</td>
+      <td>300</td>
+    </tr>
+  </table>
+
+  <h3>Document 3 &ndash; Mesures avec une LDR (photor&eacute;sistance)</h3>
+  <p>Marc utilise &eacute;galement une LDR branch&eacute;e &agrave; un ohm&egrave;tre pour v&eacute;rifier ses mesures. La LDR est plac&eacute;e &agrave; c&ocirc;t&eacute; du luxm&egrave;tre, &agrave; 1,5&nbsp;m de chaque source :</p>
+  <table>
+    <tr>
+      <th>Source lumineuse</th>
+      <th>&Eacute;clairement (lux)</th>
+      <th>R&eacute;sistance de la LDR (k&Omega;)</th>
+    </tr>
+    <tr>
+      <td>LED blanc chaud</td>
+      <td>420</td>
+      <td>2,8</td>
+    </tr>
+    <tr>
+      <td>LED blanc froid</td>
+      <td>520</td>
+      <td>1,9</td>
+    </tr>
+    <tr>
+      <td>Halog&egrave;ne</td>
+      <td>300</td>
+      <td>4,5</td>
+    </tr>
+    <tr>
+      <td>Obscurit&eacute;</td>
+      <td>0</td>
+      <td>850</td>
+    </tr>
+  </table>
+
+  <h3>Document 4 &ndash; Observations au spectroscope</h3>
+  <p>Marc observe chaque source avec un spectroscope &agrave; r&eacute;seau :</p>
+  <ul>
+    <li><strong>LED blanc chaud :</strong> spectre continu, toutes les couleurs de l&rsquo;arc-en-ciel sont pr&eacute;sentes, avec une dominante jaune-orang&eacute;e.</li>
+    <li><strong>LED blanc froid :</strong> spectre continu, toutes les couleurs sont pr&eacute;sentes, avec une dominante bleut&eacute;e.</li>
+    <li><strong>Halog&egrave;ne :</strong> spectre continu, arc-en-ciel complet, forte composante rouge-orang&eacute;e.</li>
+  </ul>
+  <p><em>Pour comparaison, Marc observe aussi une lampe &agrave; vapeur de sodium (lampadaire ext&eacute;rieur) : le spectre est form&eacute; de quelques raies jaunes isol&eacute;es sur fond noir.</em></p>
+</div>
+
+<!-- ============================================================ -->
+<!-- QUESTIONS -->
+<!-- ============================================================ -->
+
+<div class="exo">
+<h2>Question 1 <span class="badge-green">APP</span></h2>
+<p>&Agrave; partir du document 1, <strong>identifier</strong> les trois sources lumineuses utilis&eacute;es par Marc et indiquer pour chacune sa temp&eacute;rature de couleur.</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p>Les trois sources lumineuses sont :</p>
+<ul>
+  <li><strong>LED blanc chaud</strong> : temp&eacute;rature de couleur = 2 700 K</li>
+  <li><strong>LED blanc froid</strong> : temp&eacute;rature de couleur = 6 000 K</li>
+  <li><strong>Halog&egrave;ne</strong> : temp&eacute;rature de couleur = 3 000 K</li>
+</ul>
+</div>
+</div>
+
+<div class="exo">
+<h2>Question 2 <span class="badge-blue">ANA</span></h2>
+<p>La temp&eacute;rature de couleur permet de distinguer une lumi&egrave;re &laquo;&nbsp;chaude&nbsp;&raquo; d&rsquo;une lumi&egrave;re &laquo;&nbsp;froide&nbsp;&raquo;.</p>
+<p>a) Parmi les trois sources, laquelle &eacute;met la lumi&egrave;re la plus &laquo;&nbsp;chaude&nbsp;&raquo; (jaun&acirc;tre) ? Justifier &agrave; l&rsquo;aide de la temp&eacute;rature de couleur.</p>
+<p>b) Laquelle &eacute;met la lumi&egrave;re la plus &laquo;&nbsp;froide&nbsp;&raquo; (bleut&eacute;e) ? Justifier.</p>
+<p>c) En d&eacute;duire la r&egrave;gle : comment &eacute;volue l&rsquo;apparence de la lumi&egrave;re quand la temp&eacute;rature de couleur augmente ?</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p><strong>a)</strong> La LED blanc chaud (2 700 K) &eacute;met la lumi&egrave;re la plus chaude. C&rsquo;est la source avec la temp&eacute;rature de couleur la plus basse : une temp&eacute;rature basse correspond &agrave; une lumi&egrave;re jaun&acirc;tre, dite &laquo;&nbsp;chaude&nbsp;&raquo;.</p>
+<p><strong>b)</strong> La LED blanc froid (6 000 K) &eacute;met la lumi&egrave;re la plus froide. C&rsquo;est la source avec la temp&eacute;rature de couleur la plus &eacute;lev&eacute;e : elle produit une lumi&egrave;re bleut&eacute;e, dite &laquo;&nbsp;froide&nbsp;&raquo;.</p>
+<p><strong>c)</strong> R&egrave;gle : plus la temp&eacute;rature de couleur augmente (en Kelvin), plus la lumi&egrave;re appara&icirc;t &laquo;&nbsp;froide&nbsp;&raquo; et bleut&eacute;e. Inversement, plus elle est basse, plus la lumi&egrave;re est &laquo;&nbsp;chaude&nbsp;&raquo; et jaun&acirc;tre.</p>
+</div>
+</div>
+
+<div class="exo">
+<h2>Question 3 <span class="badge-blue">ANA</span></h2>
+<p>&Agrave; partir du document 4, <strong>expliquer</strong> la diff&eacute;rence entre un spectre continu et un spectre de raies.</p>
+<p>a) Qu&rsquo;observe-t-on avec le spectroscope pour les trois sources install&eacute;es par Marc ?</p>
+<p>b) Qu&rsquo;observe-t-on pour la lampe &agrave; vapeur de sodium ?</p>
+<p>c) R&eacute;diger en une ou deux phrases la diff&eacute;rence entre spectre continu et spectre de raies.</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p><strong>a)</strong> Pour les trois sources (LED blanc chaud, LED blanc froid, halog&egrave;ne), on observe un spectre continu : toutes les couleurs de l&rsquo;arc-en-ciel sont pr&eacute;sentes, sans interruption.</p>
+<p><strong>b)</strong> Pour la lampe &agrave; vapeur de sodium, on observe un spectre de raies : seules quelques raies color&eacute;es (jaunes) apparaissent sur un fond noir. Les autres couleurs sont absentes.</p>
+<p><strong>c)</strong> Un <strong>spectre continu</strong> contient toutes les couleurs du visible sans interruption (arc-en-ciel complet). Un <strong>spectre de raies</strong> ne pr&eacute;sente que quelques raies color&eacute;es isol&eacute;es sur fond noir, caract&eacute;ristiques de l&rsquo;&eacute;l&eacute;ment chimique pr&eacute;sent dans la source (ici le sodium).</p>
+</div>
+</div>
+
+<div class="exo">
+<h2>Question 4 <span class="badge-green">APP</span></h2>
+<p>&Agrave; partir du document 2, <strong>relever</strong> les valeurs d&rsquo;&eacute;clairement mesur&eacute;es par le luxm&egrave;tre pour chaque source &agrave; 1,5&nbsp;m de distance.</p>
+<p>Quelle source produit l&rsquo;&eacute;clairement le plus &eacute;lev&eacute; ? Quelle source produit l&rsquo;&eacute;clairement le plus faible ?</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p>Valeurs relev&eacute;es &agrave; 1,5&nbsp;m :</p>
+<ul>
+  <li>LED blanc chaud : 420 lux</li>
+  <li>LED blanc froid : 520 lux</li>
+  <li>Halog&egrave;ne : 300 lux</li>
+</ul>
+<p>La <strong>LED blanc froid</strong> produit l&rsquo;&eacute;clairement le plus &eacute;lev&eacute; (520 lux). L&rsquo;<strong>halog&egrave;ne</strong> produit l&rsquo;&eacute;clairement le plus faible (300 lux).</p>
+</div>
+</div>
+
+<div class="exo">
+<h2>Question 5 <span class="badge-yellow">REA</span></h2>
+<p>L&rsquo;<strong>efficacit&eacute; lumineuse</strong> d&rsquo;une source se calcule par la formule :</p>
+<p style="text-align:center">\( \eta = \dfrac{\Phi}{P} \)</p>
+<p>o&ugrave; \(\Phi\) est le flux lumineux en lumens (lm) et \(P\) la puissance &eacute;lectrique en watts (W).</p>
+<p><strong>Calculer</strong> l&rsquo;efficacit&eacute; lumineuse de chaque source et compl&eacute;ter le tableau ci-dessous :</p>
+<table>
+  <tr>
+    <th>Source</th>
+    <th>Flux lumineux (lm)</th>
+    <th>Puissance (W)</th>
+    <th>Efficacit&eacute; lumineuse (lm/W)</th>
+  </tr>
+  <tr>
+    <td>LED blanc chaud</td>
+    <td>1 050</td>
+    <td>10</td>
+    <td>...</td>
+  </tr>
+  <tr>
+    <td>LED blanc froid</td>
+    <td>1 300</td>
+    <td>12</td>
+    <td>...</td>
+  </tr>
+  <tr>
+    <td>Halog&egrave;ne</td>
+    <td>750</td>
+    <td>50</td>
+    <td>...</td>
+  </tr>
+</table>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<table>
+  <tr>
+    <th>Source</th>
+    <th>Flux lumineux (lm)</th>
+    <th>Puissance (W)</th>
+    <th>Efficacit&eacute; lumineuse (lm/W)</th>
+  </tr>
+  <tr>
+    <td>LED blanc chaud</td>
+    <td>1 050</td>
+    <td>10</td>
+    <td>\( \dfrac{1\,050}{10} = \textbf{105 lm/W} \)</td>
+  </tr>
+  <tr>
+    <td>LED blanc froid</td>
+    <td>1 300</td>
+    <td>12</td>
+    <td>\( \dfrac{1\,300}{12} \approx \textbf{108 lm/W} \)</td>
+  </tr>
+  <tr>
+    <td>Halog&egrave;ne</td>
+    <td>750</td>
+    <td>50</td>
+    <td>\( \dfrac{750}{50} = \textbf{15 lm/W} \)</td>
+  </tr>
+</table>
+<p>On divise le flux lumineux par la puissance &eacute;lectrique pour obtenir l&rsquo;efficacit&eacute; lumineuse. Plus cette valeur est grande, plus la source convertit efficacement l&rsquo;&eacute;nergie &eacute;lectrique en lumi&egrave;re.</p>
+</div>
+</div>
+
+<div class="exo">
+<h2>Question 6 <span class="badge-yellow">REA</span></h2>
+<p>&Agrave; partir des r&eacute;sultats de la question pr&eacute;c&eacute;dente, <strong>classer</strong> les trois sources de la plus efficace &agrave; la moins efficace.</p>
+<p>Quel facteur s&eacute;pare environ l&rsquo;efficacit&eacute; des LED de celle de l&rsquo;halog&egrave;ne ?</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p>Classement de la plus efficace &agrave; la moins efficace :</p>
+<ol>
+  <li><strong>LED blanc froid</strong> : environ 108 lm/W</li>
+  <li><strong>LED blanc chaud</strong> : 105 lm/W</li>
+  <li><strong>Halog&egrave;ne</strong> : 15 lm/W</li>
+</ol>
+<p>Les LED sont environ <strong>7 fois plus efficaces</strong> que l&rsquo;halog&egrave;ne (\(105 \div 15 = 7\)). Pour produire la m&ecirc;me quantit&eacute; de lumi&egrave;re, l&rsquo;halog&egrave;ne consomme 7 fois plus d&rsquo;&eacute;nergie &eacute;lectrique.</p>
+</div>
+</div>
+
+<div class="exo">
+<h2>Question 7 <span class="badge-blue">ANA</span></h2>
+<p>Le document 3 pr&eacute;sente les mesures r&eacute;alis&eacute;es avec une LDR (photor&eacute;sistance).</p>
+<p>a) Qu&rsquo;est-ce qu&rsquo;une LDR ? <strong>Expliquer</strong> en une phrase son principe de fonctionnement.</p>
+<p>b) Comment varie la r&eacute;sistance de la LDR lorsque l&rsquo;&eacute;clairement augmente ? Justifier &agrave; l&rsquo;aide des valeurs du document 3.</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p><strong>a)</strong> Une LDR (<em>Light Dependent Resistor</em> ou photor&eacute;sistance) est un composant &eacute;lectronique dont la <strong>r&eacute;sistance varie en fonction de la lumi&egrave;re re&ccedil;ue</strong>. C&rsquo;est un type de photod&eacute;tecteur : il convertit un signal lumineux en variation de r&eacute;sistance &eacute;lectrique.</p>
+<p><strong>b)</strong> La r&eacute;sistance de la LDR <strong>diminue</strong> lorsque l&rsquo;&eacute;clairement augmente :</p>
+<ul>
+  <li>En obscurit&eacute; (0 lux) : R = 850 k&Omega; (tr&egrave;s &eacute;lev&eacute;e)</li>
+  <li>Halog&egrave;ne (300 lux) : R = 4,5 k&Omega;</li>
+  <li>LED blanc chaud (420 lux) : R = 2,8 k&Omega;</li>
+  <li>LED blanc froid (520 lux) : R = 1,9 k&Omega;</li>
+</ul>
+<p>Plus l&rsquo;&eacute;clairement augmente, plus la r&eacute;sistance diminue. La LDR est donc un capteur de lumi&egrave;re : beaucoup de lumi&egrave;re = faible r&eacute;sistance ; peu de lumi&egrave;re = forte r&eacute;sistance.</p>
+</div>
+</div>
+
+<div class="exo">
+<h2>Question 8 <span class="badge-green">VAL</span></h2>
+<p>&Agrave; partir du document 3, <strong>v&eacute;rifier</strong> que les mesures de la LDR sont coh&eacute;rentes avec celles du luxm&egrave;tre.</p>
+<p>a) Classer les trois sources par &eacute;clairement croissant (d&rsquo;apr&egrave;s le luxm&egrave;tre).</p>
+<p>b) Classer les trois sources par r&eacute;sistance LDR d&eacute;croissante.</p>
+<p>c) Les deux classements sont-ils coh&eacute;rents ? Justifier.</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p><strong>a)</strong> Classement par &eacute;clairement croissant (luxm&egrave;tre) :</p>
+<ol>
+  <li>Halog&egrave;ne : 300 lux</li>
+  <li>LED blanc chaud : 420 lux</li>
+  <li>LED blanc froid : 520 lux</li>
+</ol>
+<p><strong>b)</strong> Classement par r&eacute;sistance LDR d&eacute;croissante :</p>
+<ol>
+  <li>Halog&egrave;ne : 4,5 k&Omega;</li>
+  <li>LED blanc chaud : 2,8 k&Omega;</li>
+  <li>LED blanc froid : 1,9 k&Omega;</li>
+</ol>
+<p><strong>c)</strong> Oui, les deux classements sont parfaitement coh&eacute;rents. La source qui produit le plus de lux (LED blanc froid, 520 lux) correspond &agrave; la r&eacute;sistance LDR la plus faible (1,9 k&Omega;). Cela confirme le principe : <strong>plus l&rsquo;&eacute;clairement est &eacute;lev&eacute;, plus la r&eacute;sistance de la LDR est faible</strong>. Les mesures de la LDR et du luxm&egrave;tre sont donc coh&eacute;rentes entre elles.</p>
+</div>
+</div>
+
+<div class="exo">
+<h2>Question 9 <span class="badge-yellow">COM</span></h2>
+<p>Le responsable du showroom demande &agrave; Marc de lui <strong>recommander</strong> le meilleur &eacute;clairage pour mettre en valeur les meubles en bois, tout en limitant la consommation &eacute;lectrique.</p>
+<p>En vous appuyant sur l&rsquo;ensemble des documents et de vos r&eacute;ponses pr&eacute;c&eacute;dentes, <strong>r&eacute;diger</strong> un court paragraphe (4 &agrave; 6 lignes) de conseil professionnel en justifiant votre choix. Vous devez prendre en compte :</p>
+<ul>
+  <li>la temp&eacute;rature de couleur (rendu des teintes du bois) ;</li>
+  <li>l&rsquo;efficacit&eacute; lumineuse (consommation &eacute;lectrique) ;</li>
+  <li>l&rsquo;&eacute;clairement produit.</li>
+</ul>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p><em>Exemple de r&eacute;ponse :</em></p>
+<p>Pour un showroom de meubles en bois, je recommande la <strong>LED blanc chaud (2 700 K)</strong>. Sa temp&eacute;rature de couleur basse produit une lumi&egrave;re jaun&acirc;tre qui met en valeur les teintes chaudes du bois (ch&ecirc;ne, noyer, h&ecirc;tre) et cr&eacute;e une ambiance accueillante pour le client. Son efficacit&eacute; lumineuse est excellente (105 lm/W), soit <strong>7 fois sup&eacute;rieure</strong> &agrave; celle de l&rsquo;halog&egrave;ne, ce qui permet de r&eacute;duire consid&eacute;rablement la facture &eacute;lectrique du magasin. Elle produit un &eacute;clairement de 420 lux &agrave; 1,5 m, suffisant pour un espace d&rsquo;exposition. L&rsquo;halog&egrave;ne est &agrave; &eacute;carter en raison de sa tr&egrave;s faible efficacit&eacute; (15 lm/W) et de sa consommation &eacute;lev&eacute;e (50 W). La LED blanc froid (6 000 K), bien qu&rsquo;efficace, donnerait une lumi&egrave;re trop bleut&eacute;e qui d&eacute;naturerait les teintes naturelles du bois.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SYNTHÈSE -->
+<!-- ============================================================ -->
+<div class="retenir">
+  <strong>&Agrave; retenir</strong>
+  <ul>
+    <li>La <strong>lumi&egrave;re blanche</strong> est la superposition de toutes les couleurs du spectre visible (du violet au rouge, de 380 nm &agrave; 780 nm).</li>
+    <li>Un <strong>spectre continu</strong> contient toutes les couleurs sans interruption (lampe &agrave; incandescence, halog&egrave;ne, LED). Un <strong>spectre de raies</strong> ne pr&eacute;sente que quelques raies color&eacute;es isol&eacute;es sur fond noir (lampe &agrave; vapeur de sodium, n&eacute;on).</li>
+    <li>La <strong>temp&eacute;rature de couleur</strong> (en Kelvin) caract&eacute;rise la teinte de la lumi&egrave;re : basse (2 700 K) = lumi&egrave;re chaude jaun&acirc;tre ; &eacute;lev&eacute;e (6 000 K) = lumi&egrave;re froide bleut&eacute;e.</li>
+    <li>L&rsquo;<strong>efficacit&eacute; lumineuse</strong> \(\eta = \Phi / P\) (en lm/W) mesure la performance &eacute;nerg&eacute;tique d&rsquo;une source.</li>
+    <li>Un <strong>photod&eacute;tecteur</strong> (comme la LDR) convertit un signal lumineux en signal &eacute;lectrique. Pour la LDR : plus l&rsquo;&eacute;clairement est fort, plus la r&eacute;sistance est faible.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

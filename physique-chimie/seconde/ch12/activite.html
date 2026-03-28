@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch12 &ndash; Activit&eacute; &ndash; Changements d&apos;&eacute;tat et &eacute;nergie thermique &ndash; 2nde Bac Pro</title>
+<script>
+MathJax = {tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">&larr; Retour au sommaire</a>
+<header>
+  <h1>Activit&eacute; &ndash; Changements d&apos;&eacute;tat et &eacute;nergie thermique</h1>
+  <p class="sous-titre">Chapitre 12 | Physique-Chimie | 2<sup>nde</sup> Bac Pro | &9201; 35 min</p>
+</header>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>D&eacute;couvrir les changements d&apos;&eacute;tat &agrave; partir d&apos;une courbe de chauffage</li>
+    <li>Comprendre pourquoi la temp&eacute;rature reste constante pendant un changement d&apos;&eacute;tat</li>
+    <li>Calculer l&apos;&eacute;nergie thermique re&ccedil;ue par l&apos;eau lors du chauffage</li>
+    <li>Identifier et nommer les six changements d&apos;&eacute;tat de la mati&egrave;re</li>
+  </ul>
+</div>
+
+<!-- ===== SITUATION PROFESSIONNELLE ===== -->
+<div class="situation">
+  <h2>Situation professionnelle</h2>
+  <p><em>Lucas est technicien chauffagiste dans l&apos;entreprise &laquo;&nbsp;Thermconfort&nbsp;&raquo; &agrave; Strasbourg. Il intervient sur une chaudi&egrave;re industrielle qui produit de la vapeur d&apos;eau pour alimenter un r&eacute;seau de chauffage. Lors d&apos;un contr&ocirc;le de mise en service, il place une sonde de temp&eacute;rature dans le r&eacute;servoir d&apos;eau de la chaudi&egrave;re et enregistre la temp&eacute;rature au cours du temps pendant que l&apos;eau est chauff&eacute;e de 20&nbsp;&deg;C jusqu&apos;au-del&agrave; de 100&nbsp;&deg;C.</em></p>
+
+  <p>Voici les relev&eacute;s de Lucas :</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Temps <em>t</em> (min)</th>
+        <th>0</th><th>2</th><th>4</th><th>6</th><th>8</th><th>10</th><th>12</th><th>14</th><th>16</th><th>18</th><th>20</th><th>22</th><th>24</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Temp&eacute;rature <em>T</em> (&deg;C)</th>
+        <td>20</td><td>30</td><td>40</td><td>50</td><td>60</td><td>70</td><td>80</td><td>90</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Donn&eacute;es :</strong></p>
+  <ul>
+    <li>Masse d&apos;eau dans le r&eacute;servoir : \(m = 5\) kg</li>
+    <li>Capacit&eacute; thermique massique de l&apos;eau : \(c = 4\,180\) J/(kg&middot;&deg;C)</li>
+    <li>Formule de l&apos;&eacute;nergie thermique : \(Q = m \times c \times \Delta T\)</li>
+  </ul>
+
+  <!-- GRAPHIQUE SVG -->
+  <h3>Courbe de chauffage enregistr&eacute;e</h3>
+  <div class="svg-wrap">
+    <svg width="100%" viewBox="0 0 560 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Courbe de chauffage de l&apos;eau : temp&eacute;rature en fonction du temps" style="max-width:560px;height:auto">
+      <!-- Fond -->
+      <rect width="560" height="340" fill="#f8fafc" rx="10"/>
+
+      <!-- Axes -->
+      <line x1="70" y1="280" x2="530" y2="280" stroke="#334155" stroke-width="2"/>
+      <line x1="70" y1="280" x2="70" y2="30" stroke="#334155" stroke-width="2"/>
+
+      <!-- Fl&egrave;ches -->
+      <polygon points="530,275 540,280 530,285" fill="#334155"/>
+      <polygon points="65,30 70,20 75,30" fill="#334155"/>
+
+      <!-- Titre axes -->
+      <text x="300" y="320" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="13" fill="#334155">Temps <tspan font-style="italic">t</tspan> (min)</text>
+      <text x="22" y="160" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="13" fill="#334155" transform="rotate(-90,22,160)">Temp&eacute;rature <tspan font-style="italic">T</tspan> (&deg;C)</text>
+
+      <!-- Graduations axe X -->
+      <line x1="70" y1="280" x2="70" y2="285" stroke="#334155" stroke-width="1.5"/>
+      <text x="70" y="298" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">0</text>
+      <line x1="108.3" y1="280" x2="108.3" y2="285" stroke="#334155" stroke-width="1.5"/>
+      <text x="108.3" y="298" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">2</text>
+      <line x1="146.7" y1="280" x2="146.7" y2="285" stroke="#334155" stroke-width="1.5"/>
+      <text x="146.7" y="298" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">4</text>
+      <line x1="185" y1="280" x2="185" y2="285" stroke="#334155" stroke-width="1.5"/>
+      <text x="185" y="298" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">6</text>
+      <line x1="223.3" y1="280" x2="223.3" y2="285" stroke="#334155" stroke-width="1.5"/>
+      <text x="223.3" y="298" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">8</text>
+      <line x1="261.7" y1="280" x2="261.7" y2="285" stroke="#334155" stroke-width="1.5"/>
+      <text x="261.7" y="298" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">10</text>
+      <line x1="300" y1="280" x2="300" y2="285" stroke="#334155" stroke-width="1.5"/>
+      <text x="300" y="298" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">12</text>
+      <line x1="338.3" y1="280" x2="338.3" y2="285" stroke="#334155" stroke-width="1.5"/>
+      <text x="338.3" y="298" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">14</text>
+      <line x1="376.7" y1="280" x2="376.7" y2="285" stroke="#334155" stroke-width="1.5"/>
+      <text x="376.7" y="298" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">16</text>
+      <line x1="415" y1="280" x2="415" y2="285" stroke="#334155" stroke-width="1.5"/>
+      <text x="415" y="298" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">18</text>
+      <line x1="453.3" y1="280" x2="453.3" y2="285" stroke="#334155" stroke-width="1.5"/>
+      <text x="453.3" y="298" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">20</text>
+      <line x1="491.7" y1="280" x2="491.7" y2="285" stroke="#334155" stroke-width="1.5"/>
+      <text x="491.7" y="298" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">22</text>
+      <line x1="530" y1="280" x2="530" y2="285" stroke="#334155" stroke-width="1.5"/>
+      <text x="530" y="298" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">24</text>
+
+      <!-- Graduations axe Y -->
+      <line x1="65" y1="280" x2="70" y2="280" stroke="#334155" stroke-width="1.5"/>
+      <text x="58" y="284" text-anchor="end" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">0</text>
+      <line x1="65" y1="230" x2="70" y2="230" stroke="#334155" stroke-width="1.5"/>
+      <text x="58" y="234" text-anchor="end" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">20</text>
+      <line x1="65" y1="205" x2="70" y2="205" stroke="#334155" stroke-width="1.5"/>
+      <text x="58" y="209" text-anchor="end" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">30</text>
+      <line x1="65" y1="180" x2="70" y2="180" stroke="#334155" stroke-width="1.5"/>
+      <text x="58" y="184" text-anchor="end" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">40</text>
+      <line x1="65" y1="155" x2="70" y2="155" stroke="#334155" stroke-width="1.5"/>
+      <text x="58" y="159" text-anchor="end" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">50</text>
+      <line x1="65" y1="130" x2="70" y2="130" stroke="#334155" stroke-width="1.5"/>
+      <text x="58" y="134" text-anchor="end" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">60</text>
+      <line x1="65" y1="105" x2="70" y2="105" stroke="#334155" stroke-width="1.5"/>
+      <text x="58" y="109" text-anchor="end" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">70</text>
+      <line x1="65" y1="80" x2="70" y2="80" stroke="#334155" stroke-width="1.5"/>
+      <text x="58" y="84" text-anchor="end" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">80</text>
+      <line x1="65" y1="55" x2="70" y2="55" stroke="#334155" stroke-width="1.5"/>
+      <text x="58" y="59" text-anchor="end" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">90</text>
+      <line x1="65" y1="30" x2="70" y2="30" stroke="#334155" stroke-width="1.5"/>
+      <text x="58" y="34" text-anchor="end" font-family="Segoe UI,sans-serif" font-size="11" fill="#64748b">100</text>
+
+      <!-- Lignes de grille horizontales -->
+      <line x1="70" y1="230" x2="530" y2="230" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="4,4"/>
+      <line x1="70" y1="180" x2="530" y2="180" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="4,4"/>
+      <line x1="70" y1="130" x2="530" y2="130" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="4,4"/>
+      <line x1="70" y1="80" x2="530" y2="80" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="4,4"/>
+      <line x1="70" y1="30" x2="530" y2="30" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+      <!-- Courbe T(t) : phase chauffage (mont&eacute;e lin&eacute;aire de 20 &agrave; 100&deg;C) puis palier -->
+      <!-- Points : (0,20) (2,30) (4,40) (6,50) (8,60) (10,70) (12,80) (14,90) (16,100) (18,100) (20,100) (22,100) (24,100) -->
+      <!-- Conversion : x = 70 + t*19.17, y = 280 - T*2.5 -->
+      <polyline
+        points="70,230 108.3,205 146.7,180 185,155 223.3,130 261.7,105 300,80 338.3,55 376.7,30 415,30 453.3,30 491.7,30 530,30"
+        fill="none" stroke="#6f42c1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- Points de donn&eacute;es -->
+      <circle cx="70" cy="230" r="4" fill="#6f42c1"/>
+      <circle cx="108.3" cy="205" r="4" fill="#6f42c1"/>
+      <circle cx="146.7" cy="180" r="4" fill="#6f42c1"/>
+      <circle cx="185" cy="155" r="4" fill="#6f42c1"/>
+      <circle cx="223.3" cy="130" r="4" fill="#6f42c1"/>
+      <circle cx="261.7" cy="105" r="4" fill="#6f42c1"/>
+      <circle cx="300" cy="80" r="4" fill="#6f42c1"/>
+      <circle cx="338.3" cy="55" r="4" fill="#6f42c1"/>
+      <circle cx="376.7" cy="30" r="4" fill="#6f42c1"/>
+      <circle cx="415" cy="30" r="4" fill="#6f42c1"/>
+      <circle cx="453.3" cy="30" r="4" fill="#6f42c1"/>
+      <circle cx="491.7" cy="30" r="4" fill="#6f42c1"/>
+      <circle cx="530" cy="30" r="4" fill="#6f42c1"/>
+
+      <!-- Annotations -->
+      <!-- Zone chauffage -->
+      <rect x="90" y="140" width="250" height="22" fill="#fff8e1" rx="4" opacity="0.9"/>
+      <text x="215" y="156" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#92400e" font-weight="bold">Phase de chauffage (T augmente)</text>
+
+      <!-- Zone palier -->
+      <rect x="385" y="42" width="140" height="22" fill="#ede9fe" rx="4" opacity="0.9"/>
+      <text x="455" y="58" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#6f42c1" font-weight="bold">Palier &agrave; 100&nbsp;&deg;C</text>
+
+      <!-- Ligne pointill&eacute;e palier -->
+      <line x1="70" y1="30" x2="376.7" y2="30" stroke="#6f42c1" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+    </svg>
+    <p style="font-size:.82em;color:#718096;margin-top:4px">Figure &mdash; Courbe de chauffage de l&apos;eau enregistr&eacute;e par Lucas</p>
+  </div>
+</div>
+
+<!-- ===== QUESTIONS ===== -->
+
+<!-- QUESTION 1 -->
+<div class="exo">
+<h2>Question 1 <span class="badge-green">APP</span></h2>
+<p>&Agrave; partir du tableau de mesures, <strong>identifier</strong> :</p>
+<p>a) La temp&eacute;rature initiale de l&apos;eau au d&eacute;but de l&apos;exp&eacute;rience (\(t = 0\) min).</p>
+<p>b) La temp&eacute;rature maximale atteinte par l&apos;eau.</p>
+<p>c) La dur&eacute;e totale de l&apos;enregistrement.</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p>a) &Agrave; \(t = 0\) min, la temp&eacute;rature initiale est \(T_i = 20\)&nbsp;&deg;C.</p>
+<p>b) La temp&eacute;rature maximale atteinte est \(T = 100\)&nbsp;&deg;C. Elle est atteinte &agrave; \(t = 16\) min et ne d&eacute;passe plus cette valeur.</p>
+<p>c) La dur&eacute;e totale de l&apos;enregistrement est de 24 minutes (de \(t = 0\) &agrave; \(t = 24\) min).</p>
+</div>
+</div>
+
+<!-- QUESTION 2 -->
+<div class="exo">
+<h2>Question 2 <span class="badge-green">APP</span></h2>
+<p>En observant la courbe de chauffage, <strong>d&eacute;crire</strong> l&apos;&eacute;volution de la temp&eacute;rature en deux phases distinctes :</p>
+<p>a) Que se passe-t-il entre \(t = 0\) min et \(t = 16\) min ?</p>
+<p>b) Que se passe-t-il entre \(t = 16\) min et \(t = 24\) min ?</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p>a) <strong>Phase 1 (0 &agrave; 16 min) :</strong> la temp&eacute;rature augmente r&eacute;guli&egrave;rement de 20&nbsp;&deg;C &agrave; 100&nbsp;&deg;C. L&apos;eau liquide se r&eacute;chauffe.</p>
+<p>b) <strong>Phase 2 (16 &agrave; 24 min) :</strong> la temp&eacute;rature reste constante &agrave; 100&nbsp;&deg;C. C&apos;est un <strong>palier de temp&eacute;rature</strong>. L&apos;eau continue de recevoir de l&apos;&eacute;nergie mais sa temp&eacute;rature ne change plus.</p>
+</div>
+</div>
+
+<!-- QUESTION 3 -->
+<div class="exo">
+<h2>Question 3 <span class="badge-green">APP</span></h2>
+<p><strong>Rep&eacute;rer</strong> sur la courbe la zone o&ugrave; la temp&eacute;rature reste constante (le palier).</p>
+<p>a) &Agrave; quelle temp&eacute;rature se situe ce palier ?</p>
+<p>b) Quelle est la dur&eacute;e de ce palier ?</p>
+<p>c) L&apos;eau re&ccedil;oit-elle encore de l&apos;&eacute;nergie de la chaudi&egrave;re pendant ce palier ?</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p>a) Le palier se situe &agrave; \(T = 100\)&nbsp;&deg;C.</p>
+<p>b) Le palier dure de \(t = 16\) min &agrave; \(t = 24\) min, soit <strong>8 minutes</strong>.</p>
+<p>c) Oui, la chaudi&egrave;re continue de chauffer l&apos;eau pendant le palier. L&apos;&eacute;nergie est toujours fournie, mais elle ne sert plus &agrave; augmenter la temp&eacute;rature.</p>
+</div>
+</div>
+
+<!-- QUESTION 4 -->
+<div class="exo">
+<h2>Question 4 <span class="badge-blue">ANA</span></h2>
+<p>Pendant le palier &agrave; 100&nbsp;&deg;C, Lucas observe que des bulles se forment dans l&apos;eau et que de la vapeur s&apos;&eacute;chappe du r&eacute;servoir.</p>
+<p>a) Quel ph&eacute;nom&egrave;ne physique se produit &agrave; 100&nbsp;&deg;C ? <strong>Nommer</strong> le changement d&apos;&eacute;tat correspondant.</p>
+<p>b) Pr&eacute;ciser le passage d&apos;un &eacute;tat &agrave; un autre (par exemple : &laquo;&nbsp;solide &rarr; liquide&nbsp;&raquo;).</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p>a) Le ph&eacute;nom&egrave;ne est l&apos;<strong>&eacute;bullition</strong>. Le changement d&apos;&eacute;tat correspondant est la <strong>vaporisation</strong> (passage de l&apos;&eacute;tat liquide &agrave; l&apos;&eacute;tat gazeux).</p>
+<p>b) Liquide &rarr; Gaz (l&apos;eau liquide se transforme en vapeur d&apos;eau).</p>
+</div>
+</div>
+
+<!-- QUESTION 5 -->
+<div class="exo">
+<h2>Question 5 <span class="badge-blue">ANA</span></h2>
+<p>Pendant le palier, la chaudi&egrave;re fournit de l&apos;&eacute;nergie &agrave; l&apos;eau mais la temp&eacute;rature ne monte pas.</p>
+<p><strong>Expliquer</strong> &agrave; quoi sert l&apos;&eacute;nergie fournie pendant le palier de temp&eacute;rature.</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p>Pendant le palier, toute l&apos;&eacute;nergie fournie par la chaudi&egrave;re est utilis&eacute;e pour <strong>transformer l&apos;eau liquide en vapeur d&apos;eau</strong> (changement d&apos;&eacute;tat). L&apos;&eacute;nergie ne sert plus &agrave; augmenter la temp&eacute;rature : elle sert &agrave; rompre les liaisons entre les mol&eacute;cules d&apos;eau pour les faire passer de l&apos;&eacute;tat liquide &agrave; l&apos;&eacute;tat gazeux.</p>
+<p>C&apos;est pourquoi la temp&eacute;rature reste constante &agrave; 100&nbsp;&deg;C tant que le changement d&apos;&eacute;tat n&apos;est pas termin&eacute;.</p>
+</div>
+</div>
+
+<!-- QUESTION 6 -->
+<div class="exo">
+<h2>Question 6 <span class="badge-yellow">REA</span></h2>
+<p>Pendant la phase de chauffage (de 20&nbsp;&deg;C &agrave; 100&nbsp;&deg;C), l&apos;eau absorbe de l&apos;&eacute;nergie thermique.</p>
+<p><strong>Calculer</strong> l&apos;&eacute;nergie thermique \(Q\) re&ccedil;ue par l&apos;eau en utilisant la formule :</p>
+\[Q = m \times c \times \Delta T\]
+<p>avec \(m = 5\) kg, \(c = 4\,180\) J/(kg&middot;&deg;C), et \(\Delta T = T_{\text{finale}} - T_{\text{initiale}}\).</p>
+<p>a) Calculer la variation de temp&eacute;rature \(\Delta T\).</p>
+<p>b) Calculer l&apos;&eacute;nergie thermique \(Q\) en joules.</p>
+<p>c) Convertir le r&eacute;sultat en kilojoules (1 kJ = 1&nbsp;000 J).</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p>a) Variation de temp&eacute;rature :</p>
+\[\Delta T = T_{\text{finale}} - T_{\text{initiale}} = 100 - 20 = 80 \text{ &deg;C}\]
+<p>b) &Eacute;nergie thermique :</p>
+\[Q = m \times c \times \Delta T = 5 \times 4\,180 \times 80\]
+\[Q = 1\,672\,000 \text{ J}\]
+<p>c) Conversion en kilojoules :</p>
+\[Q = \frac{1\,672\,000}{1\,000} = 1\,672 \text{ kJ}\]
+<p>L&apos;eau a re&ccedil;u <strong>1&nbsp;672 kJ</strong> d&apos;&eacute;nergie thermique pour passer de 20&nbsp;&deg;C &agrave; 100&nbsp;&deg;C.</p>
+</div>
+</div>
+
+<!-- QUESTION 7 -->
+<div class="exo">
+<h2>Question 7 <span class="badge-blue">ANA</span></h2>
+<p>Il existe <strong>six changements d&apos;&eacute;tat</strong> de la mati&egrave;re. <strong>Compl&eacute;ter</strong> le tableau suivant en indiquant le nom de chaque changement d&apos;&eacute;tat et la transition correspondante :</p>
+<table>
+  <thead>
+    <tr>
+      <th>N&deg;</th>
+      <th>Nom du changement d&apos;&eacute;tat</th>
+      <th>Transition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>..................</td><td>Solide &rarr; Liquide</td></tr>
+    <tr><td>2</td><td>..................</td><td>Liquide &rarr; Solide</td></tr>
+    <tr><td>3</td><td>..................</td><td>Liquide &rarr; Gaz</td></tr>
+    <tr><td>4</td><td>..................</td><td>Gaz &rarr; Liquide</td></tr>
+    <tr><td>5</td><td>..................</td><td>Solide &rarr; Gaz</td></tr>
+    <tr><td>6</td><td>..................</td><td>Gaz &rarr; Solide</td></tr>
+  </tbody>
+</table>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<table>
+  <thead>
+    <tr>
+      <th>N&deg;</th>
+      <th>Nom du changement d&apos;&eacute;tat</th>
+      <th>Transition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td><strong>Fusion</strong></td><td>Solide &rarr; Liquide</td></tr>
+    <tr><td>2</td><td><strong>Solidification</strong></td><td>Liquide &rarr; Solide</td></tr>
+    <tr><td>3</td><td><strong>Vaporisation</strong></td><td>Liquide &rarr; Gaz</td></tr>
+    <tr><td>4</td><td><strong>Condensation</strong> (ou liqu&eacute;faction)</td><td>Gaz &rarr; Liquide</td></tr>
+    <tr><td>5</td><td><strong>Sublimation</strong></td><td>Solide &rarr; Gaz</td></tr>
+    <tr><td>6</td><td><strong>Condensation solide</strong></td><td>Gaz &rarr; Solide</td></tr>
+  </tbody>
+</table>
+<p><strong>Remarques :</strong></p>
+<ul>
+  <li>La <em>fusion</em> et la <em>solidification</em> sont des changements inverses.</li>
+  <li>La <em>vaporisation</em> et la <em>condensation</em> sont des changements inverses.</li>
+  <li>La <em>sublimation</em> et la <em>condensation solide</em> sont des changements inverses.</li>
+</ul>
+</div>
+</div>
+
+<!-- QUESTION 8 -->
+<div class="exo">
+<h2>Question 8 <span class="badge-green">VAL</span></h2>
+<p>Apr&egrave;s la mise en service, Lucas &eacute;teint la chaudi&egrave;re et enregistre la courbe de <strong>refroidissement</strong> de la vapeur d&apos;eau. Il observe le relev&eacute; suivant :</p>
+<table>
+  <thead>
+    <tr>
+      <th>Temps <em>t</em> (min)</th>
+      <th>0</th><th>2</th><th>4</th><th>6</th><th>8</th><th>10</th><th>12</th><th>14</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Temp&eacute;rature <em>T</em> (&deg;C)</th>
+      <td>100</td><td>100</td><td>100</td><td>90</td><td>80</td><td>70</td><td>60</td><td>50</td>
+    </tr>
+  </tbody>
+</table>
+<p>a) <strong>Identifier</strong> le palier de temp&eacute;rature sur cette courbe de refroidissement. &Agrave; quelle temp&eacute;rature se situe-t-il ?</p>
+<p>b) Quel changement d&apos;&eacute;tat se produit pendant ce palier ? <strong>Nommer</strong>-le.</p>
+<p>c) Ce r&eacute;sultat est-il <strong>coh&eacute;rent</strong> avec ce que vous avez observ&eacute; lors du chauffage ? Justifier.</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p>a) Le palier se situe &agrave; \(T = 100\)&nbsp;&deg;C, entre \(t = 0\) min et \(t = 4\) min (dur&eacute;e : 4 min).</p>
+<p>b) Pendant le refroidissement, la vapeur d&apos;eau (gaz) se transforme en eau liquide. Ce changement d&apos;&eacute;tat s&apos;appelle la <strong>condensation</strong> (ou liqu&eacute;faction). C&apos;est le passage de l&apos;&eacute;tat gazeux &agrave; l&apos;&eacute;tat liquide.</p>
+<p>c) Oui, c&apos;est coh&eacute;rent. Lors du chauffage, le palier &agrave; 100&nbsp;&deg;C correspondait &agrave; la <strong>vaporisation</strong> (liquide &rarr; gaz). Lors du refroidissement, le palier &agrave; 100&nbsp;&deg;C correspond &agrave; la <strong>condensation</strong> (gaz &rarr; liquide), qui est le changement d&apos;&eacute;tat inverse. La temp&eacute;rature du palier est la m&ecirc;me dans les deux cas : c&apos;est la temp&eacute;rature de changement d&apos;&eacute;tat de l&apos;eau.</p>
+</div>
+</div>
+
+<!-- QUESTION 9 -->
+<div class="exo">
+<h2>Question 9 <span class="badge-blue">ANA</span></h2>
+<p>Lucas se demande pourquoi la chaudi&egrave;re doit fournir beaucoup d&apos;&eacute;nergie pour transformer l&apos;eau en vapeur, m&ecirc;me si la temp&eacute;rature ne change pas.</p>
+<p>En vous appuyant sur vos r&eacute;ponses pr&eacute;c&eacute;dentes, <strong>expliquer</strong> en quelques phrases la diff&eacute;rence entre :</p>
+<ul>
+  <li>l&apos;&eacute;nergie utilis&eacute;e pour <em>chauffer</em> l&apos;eau (augmenter sa temp&eacute;rature) ;</li>
+  <li>l&apos;&eacute;nergie utilis&eacute;e pour <em>changer l&apos;&eacute;tat</em> de l&apos;eau (vaporisation).</li>
+</ul>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p>Lorsqu&apos;on chauffe l&apos;eau de 20&nbsp;&deg;C &agrave; 100&nbsp;&deg;C, l&apos;&eacute;nergie fournie sert &agrave; <strong>augmenter la temp&eacute;rature</strong> de l&apos;eau. L&apos;agitation des mol&eacute;cules augmente et on peut calculer cette &eacute;nergie avec \(Q = m \times c \times \Delta T\).</p>
+<p>Lorsque l&apos;eau bout &agrave; 100&nbsp;&deg;C, l&apos;&eacute;nergie fournie ne sert plus &agrave; augmenter la temp&eacute;rature : elle sert &agrave; <strong>rompre les liaisons entre les mol&eacute;cules</strong> pour les faire passer de l&apos;&eacute;tat liquide &agrave; l&apos;&eacute;tat gazeux. C&apos;est pourquoi la temp&eacute;rature reste constante pendant le changement d&apos;&eacute;tat.</p>
+<p>Ces deux types d&apos;&eacute;nergie sont de natures diff&eacute;rentes : l&apos;un modifie la temp&eacute;rature, l&apos;autre modifie l&apos;&eacute;tat physique.</p>
+</div>
+</div>
+
+<!-- QUESTION 10 -->
+<div class="exo">
+<h2>Question 10 <span class="badge-yellow">COM</span></h2>
+<p><strong>R&eacute;diger</strong> un court bilan (3 &agrave; 5 phrases) r&eacute;sumant ce que vous avez appris dans cette activit&eacute;. Votre bilan doit mentionner :</p>
+<ul>
+  <li>le palier de temp&eacute;rature et sa signification ;</li>
+  <li>le nom du changement d&apos;&eacute;tat &agrave; 100&nbsp;&deg;C ;</li>
+  <li>la formule \(Q = m \times c \times \Delta T\) ;</li>
+  <li>le nombre total de changements d&apos;&eacute;tat.</li>
+</ul>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p><strong>Exemple de bilan :</strong></p>
+<p>Lors du chauffage de l&apos;eau, la temp&eacute;rature augmente r&eacute;guli&egrave;rement jusqu&apos;&agrave; 100&nbsp;&deg;C, puis reste constante : c&apos;est le <strong>palier de temp&eacute;rature</strong>. Ce palier correspond &agrave; un changement d&apos;&eacute;tat appel&eacute; <strong>vaporisation</strong> (passage de l&apos;&eacute;tat liquide &agrave; l&apos;&eacute;tat gazeux). Pendant le palier, l&apos;&eacute;nergie fournie sert &agrave; transformer l&apos;eau en vapeur, pas &agrave; augmenter la temp&eacute;rature. L&apos;&eacute;nergie n&eacute;cessaire pour chauffer l&apos;eau se calcule avec la formule \(Q = m \times c \times \Delta T\). Il existe au total <strong>six changements d&apos;&eacute;tat</strong> : fusion, solidification, vaporisation, condensation, sublimation et condensation solide.</p>
+</div>
+</div>
+
+<!-- ===== &Agrave; RETENIR ===== -->
+<div class="retenir">
+  <strong>&Agrave; retenir</strong>
+  <ul>
+    <li>Il existe <strong>six changements d&apos;&eacute;tat</strong> :
+      <ul>
+        <li><strong>Fusion</strong> : solide &rarr; liquide</li>
+        <li><strong>Solidification</strong> : liquide &rarr; solide</li>
+        <li><strong>Vaporisation</strong> : liquide &rarr; gaz</li>
+        <li><strong>Condensation</strong> (liqu&eacute;faction) : gaz &rarr; liquide</li>
+        <li><strong>Sublimation</strong> : solide &rarr; gaz</li>
+        <li><strong>Condensation solide</strong> : gaz &rarr; solide</li>
+      </ul>
+    </li>
+    <li>Lors d&apos;un changement d&apos;&eacute;tat d&apos;un corps pur, la <strong>temp&eacute;rature reste constante</strong> : c&apos;est le <strong>palier de temp&eacute;rature</strong>. Toute l&apos;&eacute;nergie fournie sert au changement d&apos;&eacute;tat.</li>
+    <li>L&apos;&eacute;nergie thermique n&eacute;cessaire pour chauffer un corps se calcule avec : \[Q = m \times c \times \Delta T\] o&ugrave; \(m\) est la masse (kg), \(c\) la capacit&eacute; thermique massique (J/(kg&middot;&deg;C)) et \(\Delta T\) la variation de temp&eacute;rature (&deg;C).</li>
+    <li>La courbe de temp&eacute;rature en fonction du temps \(T(t)\) permet d&apos;identifier les changements d&apos;&eacute;tat gr&acirc;ce aux <strong>paliers</strong> (zones horizontales).</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

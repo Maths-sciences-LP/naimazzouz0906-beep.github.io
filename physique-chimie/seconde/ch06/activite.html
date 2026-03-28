@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 &ndash; Activit&eacute; &ndash; Forces et &eacute;quilibre &ndash; 2nde Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">&larr; Retour au sommaire</a>
+<header>
+  <h1>Activit&eacute; &mdash; Forces et &eacute;quilibre d&rsquo;une &eacute;tag&egrave;re</h1>
+  <p class="sous-titre">Chapitre 6 &nbsp;|&nbsp; 2<sup>de</sup> Bac Pro &nbsp;|&nbsp; Physique-Chimie &nbsp;|&nbsp; &#9201; 35 min</p>
+</header>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>D&eacute;couvrir les forces qui s&rsquo;exercent sur un objet au repos.</li>
+    <li>Calculer le poids d&rsquo;un objet &agrave; partir de sa masse.</li>
+    <li>Comprendre la condition d&rsquo;&eacute;quilibre : la somme des forces est nulle.</li>
+    <li>Repr&eacute;senter les forces par des vecteurs sur un sch&eacute;ma.</li>
+  </ul>
+</div>
+
+<!-- ===== SITUATION PROFESSIONNELLE ===== -->
+<div class="situation">
+  <h2>Situation professionnelle</h2>
+  <p><em>Contexte : Vous &ecirc;tes installateur d&rsquo;agencement dans l&rsquo;entreprise <strong>Atelier Boisvert</strong>, &agrave; Lyon. Un client vous demande de fixer une &eacute;tag&egrave;re murale lourde dans son salon pour y poser des livres et des objets de d&eacute;coration.</em></p>
+  <p>L&rsquo;&eacute;tag&egrave;re est une planche en ch&ecirc;ne massif de <strong>masse \(m = 15 \text{ kg}\)</strong>. Elle sera fix&eacute;e au mur &agrave; l&rsquo;aide de <strong>deux &eacute;querres m&eacute;talliques</strong> (appel&eacute;es aussi supports ou consoles), pos&eacute;es &agrave; &eacute;gale distance des extr&eacute;mit&eacute;s.</p>
+
+  <p><strong>Donn&eacute;es :</strong></p>
+  <table>
+    <tr><th>Grandeur</th><th>Valeur</th></tr>
+    <tr><td>Masse de l&rsquo;&eacute;tag&egrave;re</td><td>\(m = 15 \text{ kg}\)</td></tr>
+    <tr><td>Intensit&eacute; de la pesanteur</td><td>\(g = 9{,}81 \text{ N/kg}\)</td></tr>
+    <tr><td>Nombre d&rsquo;&eacute;querres</td><td>2 (sym&eacute;triques)</td></tr>
+  </table>
+
+  <p style="margin-top:14px;">L&rsquo;&eacute;tag&egrave;re est immobile une fois fix&eacute;e : elle est en <strong>&eacute;quilibre</strong>. Votre objectif est de comprendre pourquoi elle ne tombe pas et quelles forces la maintiennent en place.</p>
+
+  <!-- SVG : schéma de l'étagère avec forces -->
+  <div class="svg-wrap" style="margin-top:18px;">
+    <svg width="100%" viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sch&eacute;ma de l&rsquo;&eacute;tag&egrave;re fix&eacute;e au mur avec les forces" style="max-width:640px;height:auto">
+      <title>&Eacute;tag&egrave;re murale avec forces : poids et r&eacute;actions des &eacute;querres</title>
+      <defs>
+        <marker id="arr-red" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+          <path d="M0,0 L10,5 L0,10 Z" fill="#c53030"/>
+        </marker>
+        <marker id="arr-blue" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+          <path d="M0,0 L10,5 L0,10 Z" fill="#1d4ed8"/>
+        </marker>
+        <marker id="arr-green" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+          <path d="M0,0 L10,5 L0,10 Z" fill="#15803d"/>
+        </marker>
+      </defs>
+
+      <!-- Mur -->
+      <rect x="40" y="20" width="30" height="300" fill="#d6d3d1" stroke="#78716c" stroke-width="1.5" rx="2"/>
+      <!-- Hachures mur -->
+      <line x1="40" y1="40" x2="70" y2="20" stroke="#a8a29e" stroke-width="1"/>
+      <line x1="40" y1="70" x2="70" y2="50" stroke="#a8a29e" stroke-width="1"/>
+      <line x1="40" y1="100" x2="70" y2="80" stroke="#a8a29e" stroke-width="1"/>
+      <line x1="40" y1="130" x2="70" y2="110" stroke="#a8a29e" stroke-width="1"/>
+      <line x1="40" y1="160" x2="70" y2="140" stroke="#a8a29e" stroke-width="1"/>
+      <line x1="40" y1="190" x2="70" y2="170" stroke="#a8a29e" stroke-width="1"/>
+      <line x1="40" y1="220" x2="70" y2="200" stroke="#a8a29e" stroke-width="1"/>
+      <line x1="40" y1="250" x2="70" y2="230" stroke="#a8a29e" stroke-width="1"/>
+      <line x1="40" y1="280" x2="70" y2="260" stroke="#a8a29e" stroke-width="1"/>
+      <line x1="40" y1="310" x2="70" y2="290" stroke="#a8a29e" stroke-width="1"/>
+      <text x="55" y="336" text-anchor="middle" font-size="11" font-family="Segoe UI,sans-serif" fill="#78716c" font-weight="600">Mur</text>
+
+      <!-- Équerre gauche -->
+      <rect x="70" y="140" width="10" height="60" fill="#a3a3a3" stroke="#525252" stroke-width="1.5" rx="1"/>
+      <rect x="70" y="140" width="80" height="10" fill="#a3a3a3" stroke="#525252" stroke-width="1.5" rx="1"/>
+      <line x1="80" y1="150" x2="80" y2="200" stroke="#525252" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="110" y="175" text-anchor="middle" font-size="10" font-family="Segoe UI,sans-serif" fill="#525252">&Eacute;querre A</text>
+
+      <!-- Équerre droite -->
+      <rect x="70" y="140" width="10" height="60" fill="#a3a3a3" stroke="#525252" stroke-width="0" rx="1" transform="translate(380,0)"/>
+      <rect x="450" y="140" width="10" height="60" fill="#a3a3a3" stroke="#525252" stroke-width="1.5" rx="1"/>
+      <rect x="390" y="140" width="70" height="10" fill="#a3a3a3" stroke="#525252" stroke-width="1.5" rx="1"/>
+      <line x1="450" y1="150" x2="450" y2="200" stroke="#525252" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="420" y="175" text-anchor="middle" font-size="10" font-family="Segoe UI,sans-serif" fill="#525252">&Eacute;querre B</text>
+
+      <!-- Étagère (planche) -->
+      <rect x="70" y="125" width="400" height="18" fill="#deb887" stroke="#8b6914" stroke-width="2" rx="3"/>
+      <text x="270" y="120" text-anchor="middle" font-size="12" font-family="Segoe UI,sans-serif" fill="#8b6914" font-weight="600">&Eacute;tag&egrave;re (m = 15 kg)</text>
+
+      <!-- Point G (centre de gravité) -->
+      <circle cx="270" cy="134" r="5" fill="#6f42c1"/>
+      <text x="270" y="113" text-anchor="middle" font-size="11" font-family="Segoe UI,sans-serif" fill="#6f42c1" font-weight="bold">G</text>
+
+      <!-- Vecteur Poids P vers le bas (rouge) -->
+      <line x1="270" y1="143" x2="270" y2="265" stroke="#c53030" stroke-width="3.5" marker-end="url(#arr-red)"/>
+      <text x="285" y="220" font-size="15" font-family="Segoe UI,sans-serif" font-weight="bold" fill="#c53030">\(\vec{P}\)</text>
+      <text x="285" y="240" font-size="10" font-family="Segoe UI,sans-serif" fill="#c53030">Poids</text>
+      <text x="285" y="255" font-size="10" font-family="Segoe UI,sans-serif" fill="#c53030">147,15 N</text>
+
+      <!-- Vecteur Réaction équerre A vers le haut (bleu) -->
+      <line x1="150" y1="125" x2="150" y2="55" stroke="#1d4ed8" stroke-width="3" marker-end="url(#arr-blue)"/>
+      <text x="130" y="50" font-size="14" font-family="Segoe UI,sans-serif" font-weight="bold" fill="#1d4ed8">\(\vec{R_A}\)</text>
+      <text x="115" y="68" font-size="10" font-family="Segoe UI,sans-serif" fill="#1d4ed8">R&eacute;action A</text>
+
+      <!-- Vecteur Réaction équerre B vers le haut (vert) -->
+      <line x1="390" y1="125" x2="390" y2="55" stroke="#15803d" stroke-width="3" marker-end="url(#arr-green)"/>
+      <text x="400" y="50" font-size="14" font-family="Segoe UI,sans-serif" font-weight="bold" fill="#15803d">\(\vec{R_B}\)</text>
+      <text x="400" y="68" font-size="10" font-family="Segoe UI,sans-serif" fill="#15803d">R&eacute;action B</text>
+
+      <!-- Légende -->
+      <rect x="80" y="280" width="380" height="48" fill="#fffbeb" rx="5" stroke="#d97706" stroke-width="1"/>
+      <text x="270" y="298" text-anchor="middle" font-size="11" font-family="Segoe UI,sans-serif" fill="#92400e" font-weight="600">
+        3 forces sur l&rsquo;&eacute;tag&egrave;re :
+      </text>
+      <text x="270" y="318" text-anchor="middle" font-size="11" font-family="Segoe UI,sans-serif" fill="#92400e">
+        \(\vec{P}\) (poids, rouge) &mdash; \(\vec{R_A}\) (r&eacute;action &eacute;querre A, bleu) &mdash; \(\vec{R_B}\) (r&eacute;action &eacute;querre B, vert)
+      </text>
+    </svg>
+    <p style="font-size:.85em;color:#718096;margin-top:6px;">Sch&eacute;ma de l&rsquo;&eacute;tag&egrave;re fix&eacute;e au mur. Le poids \(\vec{P}\) s&rsquo;applique au centre de gravit&eacute; G, vers le bas. Les &eacute;querres A et B exercent des r&eacute;actions \(\vec{R_A}\) et \(\vec{R_B}\) vers le haut.</p>
+  </div>
+</div>
+
+<!-- ===== QUESTIONS ===== -->
+
+<!-- Question 1 -->
+<div class="exo">
+  <h2>Question 1 &mdash; Identifier le syst&egrave;me &eacute;tudi&eacute; <span class="badge-green">APP</span></h2>
+  <p>a) Quel est l&rsquo;objet &eacute;tudi&eacute; (le &laquo;&nbsp;syst&egrave;me&nbsp;&raquo;) dans cette situation ?</p>
+  <p>b) L&rsquo;&eacute;tag&egrave;re est-elle en mouvement ou au repos ? Comment appelle-t-on cet &eacute;tat ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Le syst&egrave;me &eacute;tudi&eacute; est <strong>l&rsquo;&eacute;tag&egrave;re</strong> (la planche en ch&ecirc;ne de 15 kg).</p>
+    <p><strong>b)</strong> L&rsquo;&eacute;tag&egrave;re est <strong>au repos</strong> (immobile). On dit qu&rsquo;elle est en <strong>&eacute;quilibre</strong>.</p>
+  </div>
+</div>
+
+<!-- Question 2 -->
+<div class="exo">
+  <h2>Question 2 &mdash; Recenser les forces <span class="badge-green">APP</span></h2>
+  <p>En observant le sch&eacute;ma ci-dessus, identifiez les forces qui s&rsquo;exercent sur l&rsquo;&eacute;tag&egrave;re. Pour chaque force, indiquez :</p>
+  <ul>
+    <li>son nom ;</li>
+    <li>l&rsquo;objet qui l&rsquo;exerce ;</li>
+    <li>l&rsquo;objet qui la subit.</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Trois forces s&rsquo;exercent sur l&rsquo;&eacute;tag&egrave;re :</p>
+    <table>
+      <tr><th>Force</th><th>Exerc&eacute;e par</th><th>Subie par</th></tr>
+      <tr><td>Poids \(\vec{P}\)</td><td>La Terre (attraction gravitationnelle)</td><td>L&rsquo;&eacute;tag&egrave;re</td></tr>
+      <tr><td>R&eacute;action \(\vec{R_A}\)</td><td>L&rsquo;&eacute;querre A (via le mur)</td><td>L&rsquo;&eacute;tag&egrave;re</td></tr>
+      <tr><td>R&eacute;action \(\vec{R_B}\)</td><td>L&rsquo;&eacute;querre B (via le mur)</td><td>L&rsquo;&eacute;tag&egrave;re</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Question 3 -->
+<div class="exo">
+  <h2>Question 3 &mdash; Calculer le poids de l&rsquo;&eacute;tag&egrave;re <span class="badge-blue">REA</span></h2>
+  <p>Calculez le poids \(P\) de l&rsquo;&eacute;tag&egrave;re en utilisant la formule \(P = m \times g\).</p>
+  <p><strong>Donn&eacute;es :</strong> \(m = 15 \text{ kg}\) et \(g = 9{,}81 \text{ N/kg}\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Formule :</strong> \(P = m \times g\)</p>
+    <p><strong>Application num&eacute;rique :</strong></p>
+    <p>\(P = 15 \times 9{,}81 = 147{,}15 \text{ N}\)</p>
+    <p><strong>Le poids de l&rsquo;&eacute;tag&egrave;re est de 147,15 N.</strong></p>
+  </div>
+</div>
+
+<!-- Question 4 -->
+<div class="exo">
+  <h2>Question 4 &mdash; Caract&eacute;ristiques du poids <span class="badge-blue">ANA</span></h2>
+  <p>Compl&eacute;tez le tableau des 4 caract&eacute;ristiques de la force &laquo;&nbsp;poids&nbsp;&raquo; \(\vec{P}\) :</p>
+  <table>
+    <tr><th>Caract&eacute;ristique</th><th>R&eacute;ponse</th></tr>
+    <tr><td>Point d&rsquo;application</td><td>...</td></tr>
+    <tr><td>Direction</td><td>...</td></tr>
+    <tr><td>Sens</td><td>...</td></tr>
+    <tr><td>Valeur (intensit&eacute;)</td><td>...</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Caract&eacute;ristique</th><th>R&eacute;ponse</th></tr>
+      <tr><td>Point d&rsquo;application</td><td>Centre de gravit&eacute; G de l&rsquo;&eacute;tag&egrave;re</td></tr>
+      <tr><td>Direction</td><td>Verticale</td></tr>
+      <tr><td>Sens</td><td>Vers le bas</td></tr>
+      <tr><td>Valeur (intensit&eacute;)</td><td>\(P = 147{,}15 \text{ N}\)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Question 5 -->
+<div class="exo">
+  <h2>Question 5 &mdash; Direction et sens des r&eacute;actions <span class="badge-blue">ANA</span></h2>
+  <p>Les &eacute;querres A et B exercent chacune une force de r&eacute;action sur l&rsquo;&eacute;tag&egrave;re.</p>
+  <p>a) Quelle est la direction de ces forces de r&eacute;action ?</p>
+  <p>b) Quel est le sens de ces forces ?</p>
+  <p>c) Pourquoi ces forces sont-elles dirig&eacute;es vers le haut et non vers le bas ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Les forces de r&eacute;action \(\vec{R_A}\) et \(\vec{R_B}\) ont une direction <strong>verticale</strong>.</p>
+    <p><strong>b)</strong> Leur sens est <strong>vers le haut</strong>.</p>
+    <p><strong>c)</strong> Ces forces s&rsquo;opposent au poids qui tire l&rsquo;&eacute;tag&egrave;re vers le bas. Les &eacute;querres, fix&eacute;es au mur, <strong>emp&ecirc;chent l&rsquo;&eacute;tag&egrave;re de tomber</strong> en exer&ccedil;ant une force vers le haut. C&rsquo;est le mur, par l&rsquo;interm&eacute;diaire des &eacute;querres, qui &laquo;&nbsp;r&eacute;agit&nbsp;&raquo; au poids.</p>
+  </div>
+</div>
+
+<!-- Question 6 -->
+<div class="exo">
+  <h2>Question 6 &mdash; Condition d&rsquo;&eacute;quilibre <span class="badge-blue">ANA</span></h2>
+  <p>L&rsquo;&eacute;tag&egrave;re est immobile (en &eacute;quilibre). Sachant que les deux &eacute;querres sont identiques et sym&eacute;triques :</p>
+  <p>a) Que vaut la somme des forces de r&eacute;action \(R_A + R_B\) si l&rsquo;&eacute;tag&egrave;re est en &eacute;quilibre ?</p>
+  <p>b) D&eacute;duisez-en la valeur de chaque r&eacute;action \(R_A\) et \(R_B\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Pour que l&rsquo;&eacute;tag&egrave;re soit en &eacute;quilibre, les forces vers le haut doivent compenser exactement le poids vers le bas :</p>
+    <p>\(R_A + R_B = P = 147{,}15 \text{ N}\)</p>
+    <p><strong>b)</strong> Les deux &eacute;querres sont identiques et sym&eacute;triques, donc elles supportent chacune la moiti&eacute; du poids :</p>
+    <p>\(R_A = R_B = \dfrac{P}{2} = \dfrac{147{,}15}{2} \approx 73{,}6 \text{ N}\)</p>
+    <p>Chaque &eacute;querre exerce une r&eacute;action d&rsquo;environ <strong>73,6 N</strong> vers le haut.</p>
+  </div>
+</div>
+
+<!-- Question 7 -->
+<div class="exo">
+  <h2>Question 7 &mdash; V&eacute;rifier la somme des forces <span class="badge-green">VAL</span></h2>
+  <p>V&eacute;rifiez que la somme vectorielle des forces exerc&eacute;es sur l&rsquo;&eacute;tag&egrave;re est bien nulle.</p>
+  <p><em>Rappel : en projection sur l&rsquo;axe vertical (positif vers le haut), une force vers le haut est positive et une force vers le bas est n&eacute;gative.</em></p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>On projette les forces sur l&rsquo;axe vertical (vers le haut = positif) :</p>
+    <ul>
+      <li>R&eacute;action A : \(+R_A = +73{,}575 \text{ N}\)</li>
+      <li>R&eacute;action B : \(+R_B = +73{,}575 \text{ N}\)</li>
+      <li>Poids : \(-P = -147{,}15 \text{ N}\)</li>
+    </ul>
+    <p><strong>Somme des forces :</strong></p>
+    <p>\(+R_A + R_B - P = 73{,}575 + 73{,}575 - 147{,}15 = 0 \text{ N}\)</p>
+    <p>La somme des forces est bien &eacute;gale &agrave; z&eacute;ro : \(\vec{R_A} + \vec{R_B} + \vec{P} = \vec{0}\).</p>
+    <p>Cela confirme que l&rsquo;&eacute;tag&egrave;re est en &eacute;quilibre.</p>
+  </div>
+</div>
+
+<!-- Question 8 -->
+<div class="exo">
+  <h2>Question 8 &mdash; Que se passe-t-il si une &eacute;querre c&egrave;de ? <span class="badge-blue">ANA</span></h2>
+  <p>Imaginons que l&rsquo;&eacute;querre B se d&eacute;tache du mur.</p>
+  <p>a) Combien de forces s&rsquo;exercent alors sur l&rsquo;&eacute;tag&egrave;re ? Lesquelles ?</p>
+  <p>b) La somme des forces est-elle encore nulle ? Justifiez.</p>
+  <p>c) Que va-t-il se passer concr&egrave;tement ? Pourquoi ?</p>
+
+  <div class="att" style="margin-top:10px;">
+    <span class="label label-att">S&eacute;curit&eacute; en atelier</span><br>
+    C&rsquo;est pour cette raison qu&rsquo;un installateur d&rsquo;agencement doit v&eacute;rifier la solidit&eacute; de chaque fixation et utiliser des chevilles adapt&eacute;es au type de mur (b&eacute;ton, placo, brique).
+  </div>
+
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Il ne reste que <strong>deux forces</strong> :</p>
+    <ul>
+      <li>Le poids \(\vec{P} = 147{,}15 \text{ N}\) vers le bas ;</li>
+      <li>La r&eacute;action de l&rsquo;&eacute;querre A, \(\vec{R_A}\), vers le haut.</li>
+    </ul>
+    <p><strong>b)</strong> Non, la somme des forces n&rsquo;est plus nulle. L&rsquo;&eacute;querre A seule ne peut pas compenser tout le poids (elle supportait seulement 73,6 N sur les 147,15 N n&eacute;cessaires). La r&eacute;sultante des forces est dirig&eacute;e <strong>vers le bas</strong>.</p>
+    <p><strong>c)</strong> L&rsquo;&eacute;tag&egrave;re va <strong>basculer et tomber</strong> du c&ocirc;t&eacute; o&ugrave; l&rsquo;&eacute;querre manque. L&rsquo;&eacute;quilibre est rompu car la condition &laquo;&nbsp;somme des forces &eacute;gale z&eacute;ro&nbsp;&raquo; n&rsquo;est plus respect&eacute;e.</p>
+  </div>
+</div>
+
+<!-- Question 9 -->
+<div class="exo">
+  <h2>Question 9 &mdash; Charge maximale <span class="badge-green">VAL</span></h2>
+  <p>Le fabricant indique que chaque &eacute;querre supporte une charge maximale de <strong>100 N</strong>.</p>
+  <p>a) Quelle est la charge maximale totale que les deux &eacute;querres peuvent supporter ?</p>
+  <p>b) Quelle masse maximale \(m_{\text{max}}\) peut-on poser sur l&rsquo;&eacute;tag&egrave;re (en plus de la masse propre de l&rsquo;&eacute;tag&egrave;re) ?</p>
+  <p><em>Indication : la charge totale doit rester inf&eacute;rieure ou &eacute;gale &agrave; la capacit&eacute; des deux &eacute;querres.</em></p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> La charge maximale totale est :</p>
+    <p>\(R_{\text{max}} = 2 \times 100 = 200 \text{ N}\)</p>
+    <p><strong>b)</strong> Le poids total ne doit pas d&eacute;passer 200 N :</p>
+    <p>\(P_{\text{total}} \leq 200 \text{ N}\)</p>
+    <p>Or le poids de l&rsquo;&eacute;tag&egrave;re seule est de 147,15 N. Il reste donc :</p>
+    <p>\(P_{\text{objets}} \leq 200 - 147{,}15 = 52{,}85 \text{ N}\)</p>
+    <p>La masse maximale des objets &agrave; poser est :</p>
+    <p>\(m_{\text{max}} = \dfrac{P_{\text{objets}}}{g} = \dfrac{52{,}85}{9{,}81} \approx 5{,}4 \text{ kg}\)</p>
+    <p><strong>On peut poser environ 5,4 kg d&rsquo;objets sur l&rsquo;&eacute;tag&egrave;re</strong> (livres, cadres, etc.).</p>
+  </div>
+</div>
+
+<!-- Question 10 -->
+<div class="exo">
+  <h2>Question 10 &mdash; Formuler le principe d&rsquo;&eacute;quilibre <span class="badge-yellow">COM</span></h2>
+  <p>En vous appuyant sur tout ce que vous avez d&eacute;couvert dans cette activit&eacute;, r&eacute;digez en une ou deux phrases le <strong>principe d&rsquo;&eacute;quilibre</strong> d&rsquo;un objet soumis &agrave; plusieurs forces.</p>
+  <p><em>Compl&eacute;tez : &laquo;&nbsp;Un objet est en &eacute;quilibre lorsque ...&nbsp;&raquo;</em></p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Un objet est en &eacute;quilibre lorsque la somme de toutes les forces qui s&rsquo;exercent sur lui est &eacute;gale au vecteur nul :</strong></p>
+    <div class="formule-box">
+      <p>\(\sum \vec{F} = \vec{0}\) &nbsp; &nbsp; soit &nbsp; &nbsp; \(\vec{F_1} + \vec{F_2} + \vec{F_3} + \ldots = \vec{0}\)</p>
+    </div>
+    <p>Cela signifie que les forces se compensent exactement : ce qui tire vers le bas est exactement compens&eacute; par ce qui pousse vers le haut (et de m&ecirc;me dans toutes les directions).</p>
+  </div>
+</div>
+
+<!-- ===== À RETENIR ===== -->
+<div class="retenir">
+  <strong>&Agrave; retenir</strong>
+  <ul>
+    <li>Une <strong>force</strong> est caract&eacute;ris&eacute;e par 4 &eacute;l&eacute;ments : <strong>point d&rsquo;application</strong>, <strong>direction</strong>, <strong>sens</strong> et <strong>valeur</strong> (intensit&eacute; en Newtons).</li>
+    <li>Le <strong>poids</strong> d&rsquo;un objet se calcule avec la formule :
+      <div class="formule-box" style="margin:8px 0;">
+        \(P = m \times g\)
+        <br><small>\(P\) en N &nbsp;&mdash;&nbsp; \(m\) en kg &nbsp;&mdash;&nbsp; \(g = 9{,}81 \text{ N/kg}\)</small>
+      </div>
+    </li>
+    <li>Le poids s&rsquo;applique au centre de gravit&eacute;, verticalement, vers le bas.</li>
+    <li>Un objet est en <strong>&eacute;quilibre</strong> lorsque la somme de toutes les forces est nulle :
+      <div class="formule-box" style="margin:8px 0;">
+        \(\sum \vec{F} = \vec{0}\)
+      </div>
+    </li>
+    <li>Si l&rsquo;&eacute;quilibre est rompu (une force dispara&icirc;t ou change), l&rsquo;objet se met en mouvement.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script>
+document.querySelectorAll('.bc').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var c=this.nextElementSibling;
+    c.style.display=c.style.display==='block'?'none':'block';
+    this.textContent=c.style.display==='block'?'Masquer la correction':'Voir la correction';
+  });
+});
+</script>
+</body>
+</html>

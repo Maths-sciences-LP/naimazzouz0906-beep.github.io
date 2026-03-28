@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 &ndash; Activit&eacute; &ndash; Signaux &eacute;lectriques alternatifs &ndash; 2nde Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">&larr; Retour au sommaire</a>
+<header>
+  <h1>Activit&eacute; &mdash; L&rsquo;alimentation &eacute;lectrique de l&rsquo;atelier</h1>
+  <p class="sous-titre">Chapitre 4 &bull; Physique-Chimie &bull; 2nde Bac Pro &bull; &#9201; 35 min</p>
+</header>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>D&eacute;couvrir les caract&eacute;ristiques d&rsquo;un signal &eacute;lectrique alternatif sinuso&iuml;dal</li>
+    <li>Lire un oscillogramme pour d&eacute;terminer la p&eacute;riode T et l&rsquo;amplitude U<sub>max</sub></li>
+    <li>Calculer la fr&eacute;quence f &agrave; partir de la p&eacute;riode</li>
+    <li>Distinguer courant continu et courant alternatif</li>
+  </ul>
+</div>
+
+<!-- ==================== SITUATION PROFESSIONNELLE ==================== -->
+<div class="situation">
+  <h2>Situation professionnelle</h2>
+  <p><em>Un &eacute;lectricien de maintenance intervient dans un atelier de menuiserie pour v&eacute;rifier l&rsquo;alimentation &eacute;lectrique des machines. Il branche un oscilloscope sur une prise du r&eacute;seau &eacute;lectrique de l&rsquo;atelier et obtient l&rsquo;oscillogramme suivant.</em></p>
+
+  <p><strong>R&eacute;glages de l&rsquo;oscilloscope :</strong></p>
+  <ul>
+    <li>&Eacute;chelle horizontale (base de temps) : <strong>5 ms/div</strong></li>
+    <li>&Eacute;chelle verticale (sensibilit&eacute;) : <strong>100 V/div</strong></li>
+  </ul>
+
+  <!-- SVG Oscillogramme -->
+  <figure style="margin:18px auto;text-align:center">
+    <svg width="100%" viewBox="0 0 520 360" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;font-family:sans-serif;background:#1a1a2e;border-radius:10px;border:3px solid #444">
+      <!-- Fond quadrillage -->
+      <rect x="40" y="20" width="450" height="300" fill="#0d0d1a" rx="4"/>
+
+      <!-- Quadrillage fin (subdivisions) -->
+      <g stroke="#1a2a3a" stroke-width="0.5">
+        <!-- Verticales fines (chaque 9px = 1/5 de division) -->
+        <line x1="49" y1="20" x2="49" y2="320"/><line x1="58" y1="20" x2="58" y2="320"/>
+        <line x1="67" y1="20" x2="67" y2="320"/><line x1="76" y1="20" x2="76" y2="320"/>
+        <line x1="94" y1="20" x2="94" y2="320"/><line x1="103" y1="20" x2="103" y2="320"/>
+        <line x1="112" y1="20" x2="112" y2="320"/><line x1="121" y1="20" x2="121" y2="320"/>
+        <line x1="139" y1="20" x2="139" y2="320"/><line x1="148" y1="20" x2="148" y2="320"/>
+        <line x1="157" y1="20" x2="157" y2="320"/><line x1="166" y1="20" x2="166" y2="320"/>
+        <line x1="184" y1="20" x2="184" y2="320"/><line x1="193" y1="20" x2="193" y2="320"/>
+        <line x1="202" y1="20" x2="202" y2="320"/><line x1="211" y1="20" x2="211" y2="320"/>
+        <line x1="229" y1="20" x2="229" y2="320"/><line x1="238" y1="20" x2="238" y2="320"/>
+        <line x1="247" y1="20" x2="247" y2="320"/><line x1="256" y1="20" x2="256" y2="320"/>
+        <line x1="274" y1="20" x2="274" y2="320"/><line x1="283" y1="20" x2="283" y2="320"/>
+        <line x1="292" y1="20" x2="292" y2="320"/><line x1="301" y1="20" x2="301" y2="320"/>
+        <line x1="319" y1="20" x2="319" y2="320"/><line x1="328" y1="20" x2="328" y2="320"/>
+        <line x1="337" y1="20" x2="337" y2="320"/><line x1="346" y1="20" x2="346" y2="320"/>
+        <line x1="364" y1="20" x2="364" y2="320"/><line x1="373" y1="20" x2="373" y2="320"/>
+        <line x1="382" y1="20" x2="382" y2="320"/><line x1="391" y1="20" x2="391" y2="320"/>
+        <line x1="409" y1="20" x2="409" y2="320"/><line x1="418" y1="20" x2="418" y2="320"/>
+        <line x1="427" y1="20" x2="427" y2="320"/><line x1="436" y1="20" x2="436" y2="320"/>
+        <line x1="454" y1="20" x2="454" y2="320"/><line x1="463" y1="20" x2="463" y2="320"/>
+        <line x1="472" y1="20" x2="472" y2="320"/><line x1="481" y1="20" x2="481" y2="320"/>
+        <!-- Horizontales fines -->
+        <line x1="40" y1="50" x2="490" y2="50"/><line x1="40" y1="80" x2="490" y2="80"/>
+        <line x1="40" y1="110" x2="490" y2="110"/><line x1="40" y1="140" x2="490" y2="140"/>
+        <line x1="40" y1="200" x2="490" y2="200"/><line x1="40" y1="230" x2="490" y2="230"/>
+        <line x1="40" y1="260" x2="490" y2="260"/><line x1="40" y1="290" x2="490" y2="290"/>
+      </g>
+
+      <!-- Quadrillage principal (divisions) -->
+      <g stroke="#2a4a6a" stroke-width="1">
+        <!-- Verticales (10 divisions de 45px chacune) -->
+        <line x1="85" y1="20" x2="85" y2="320"/>
+        <line x1="130" y1="20" x2="130" y2="320"/>
+        <line x1="175" y1="20" x2="175" y2="320"/>
+        <line x1="220" y1="20" x2="220" y2="320"/>
+        <line x1="310" y1="20" x2="310" y2="320"/>
+        <line x1="355" y1="20" x2="355" y2="320"/>
+        <line x1="400" y1="20" x2="400" y2="320"/>
+        <line x1="445" y1="20" x2="445" y2="320"/>
+        <!-- Horizontales (6 divisions de 50px) -->
+        <line x1="40" y1="20" x2="490" y2="20"/>
+        <line x1="40" y1="320" x2="490" y2="320"/>
+      </g>
+
+      <!-- Axes principaux (plus lumineux) -->
+      <line x1="40" y1="170" x2="490" y2="170" stroke="#4a8aba" stroke-width="1.5"/>
+      <line x1="265" y1="20" x2="265" y2="320" stroke="#4a8aba" stroke-width="1.5"/>
+
+      <!-- Signal sinusoidal : U_max = 325 V, T = 20 ms -->
+      <!-- Echelle : 100 V/div = 50px => 325V = 3.25 div = 162.5px -->
+      <!-- Echelle : 5 ms/div = 45px => T = 20 ms = 4 div = 180px -->
+      <!-- Centre vertical = y=170, amplitude = 146.25px (~3.25 * 45) -->
+      <!-- On utilise 45px/div pour la grille -->
+      <!-- Recalcul : 1 div vertical = (320-20)/6 = 50px, donc 325V = 3.25*50 = 162.5px -->
+      <!-- 1 div horizontal = 45px, T=4div = 180px -->
+      <path d="M40,170
+        C51,170 56,120 62,80 C68,40 73,7.5 85,7.5
+        C97,7.5 102,40 108,80 C114,120 119,170 130,170
+        C141,170 146,220 152,260 C158,300 163,332.5 175,332.5
+        C187,332.5 192,300 198,260 C204,220 209,170 220,170
+        C231,170 236,120 242,80 C248,40 253,7.5 265,7.5
+        C277,7.5 282,40 288,80 C294,120 299,170 310,170
+        C321,170 326,220 332,260 C338,300 343,332.5 355,332.5
+        C367,332.5 372,300 378,260 C384,220 389,170 400,170
+        C411,170 416,120 422,80 C428,40 433,7.5 445,7.5
+        C457,7.5 462,40 468,80 C474,120 479,170 490,170"
+        fill="none" stroke="#00ff88" stroke-width="2.5"/>
+
+      <!-- Etiquettes echelles -->
+      <text x="15" y="175" font-size="10" fill="#aaa" text-anchor="middle">0</text>
+      <text x="15" y="25" font-size="10" fill="#aaa" text-anchor="middle">+3</text>
+      <text x="15" y="75" font-size="10" fill="#aaa" text-anchor="middle">+2</text>
+      <text x="15" y="125" font-size="10" fill="#aaa" text-anchor="middle">+1</text>
+      <text x="15" y="225" font-size="10" fill="#aaa" text-anchor="middle">-1</text>
+      <text x="15" y="275" font-size="10" fill="#aaa" text-anchor="middle">-2</text>
+      <text x="15" y="325" font-size="10" fill="#aaa" text-anchor="middle">-3</text>
+
+      <!-- Etiquettes temps (en divisions depuis le centre) -->
+      <text x="265" y="345" font-size="10" fill="#aaa" text-anchor="middle">0</text>
+      <text x="310" y="345" font-size="10" fill="#aaa" text-anchor="middle">1</text>
+      <text x="355" y="345" font-size="10" fill="#aaa" text-anchor="middle">2</text>
+      <text x="400" y="345" font-size="10" fill="#aaa" text-anchor="middle">3</text>
+      <text x="445" y="345" font-size="10" fill="#aaa" text-anchor="middle">4</text>
+      <text x="220" y="345" font-size="10" fill="#aaa" text-anchor="middle">-1</text>
+      <text x="175" y="345" font-size="10" fill="#aaa" text-anchor="middle">-2</text>
+      <text x="130" y="345" font-size="10" fill="#aaa" text-anchor="middle">-3</text>
+      <text x="85" y="345" font-size="10" fill="#aaa" text-anchor="middle">-4</text>
+
+      <!-- Labels -->
+      <text x="505" y="175" font-size="9" fill="#4a8aba">div</text>
+      <text x="265" y="356" font-size="9" fill="#4a8aba">div</text>
+
+      <!-- Cadre info en bas -->
+      <rect x="42" y="300" width="130" height="18" fill="#0d0d1a" fill-opacity="0.8" rx="2"/>
+      <text x="48" y="313" font-size="10" fill="#ffcc00">5 ms/div</text>
+      <text x="105" y="313" font-size="10" fill="#ffcc00">100 V/div</text>
+    </svg>
+    <figcaption style="font-size:.82em;color:#718096;margin-top:6px">
+      Oscillogramme observ&eacute; par l&rsquo;&eacute;lectricien sur la prise de l&rsquo;atelier
+    </figcaption>
+  </figure>
+</div>
+
+<!-- ==================== QUESTIONS ==================== -->
+
+<!-- QUESTION 1 -->
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Observer l&rsquo;oscillogramme. <strong>D&eacute;crire</strong> la forme du signal affich&eacute; &agrave; l&rsquo;&eacute;cran. Le signal est-il constant au cours du temps&nbsp;?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le signal n&rsquo;est <strong>pas constant</strong> : il oscille r&eacute;guli&egrave;rement de part et d&rsquo;autre de l&rsquo;axe horizontal (axe du z&eacute;ro). La courbe a une forme arrondie et r&eacute;guli&egrave;re : c&rsquo;est un <strong>signal sinuso&iuml;dal</strong>.</p>
+    <p>La tension prend alternativement des valeurs positives (au-dessus de l&rsquo;axe) et n&eacute;gatives (en dessous de l&rsquo;axe).</p>
+  </div>
+</div>
+
+<!-- QUESTION 2 -->
+<div class="exo">
+  <h2>Question 2 <span class="badge-green">APP</span></h2>
+  <p>Sur l&rsquo;oscillogramme, <strong>rep&eacute;rer</strong> la valeur maximale (le sommet le plus haut) du signal. Combien de <strong>divisions verticales</strong> s&eacute;parent l&rsquo;axe horizontal (z&eacute;ro) du sommet du signal&nbsp;?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le sommet du signal se situe &agrave; <strong>3,25 divisions</strong> au-dessus de l&rsquo;axe horizontal (axe du z&eacute;ro).</p>
+  </div>
+</div>
+
+<!-- QUESTION 3 -->
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">REA</span></h2>
+  <p>L&rsquo;&eacute;chelle verticale est r&eacute;gl&eacute;e &agrave; <strong>100 V/div</strong>. <strong>Calculer</strong> la tension maximale U<sub>max</sub> du signal.</p>
+  <div class="formule-box">
+    \[ U_{\max} = \text{nombre de divisions verticales} \times \text{sensibilit&eacute; (V/div)} \]
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>On applique la formule :</p>
+    \[ U_{\max} = 3{,}25 \times 100 = \mathbf{325\ V} \]
+    <p>La tension maximale (amplitude) du signal est <strong>U<sub>max</sub> = 325 V</strong>.</p>
+  </div>
+</div>
+
+<!-- QUESTION 4 -->
+<div class="exo">
+  <h2>Question 4 <span class="badge-green">APP</span></h2>
+  <p>On appelle <strong>p&eacute;riode T</strong> la dur&eacute;e d&rsquo;un cycle complet du signal (un motif qui se r&eacute;p&egrave;te). Sur l&rsquo;oscillogramme, <strong>rep&eacute;rer</strong> deux sommets cons&eacute;cutifs du signal et <strong>compter</strong> le nombre de divisions horizontales qui les s&eacute;parent.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Deux sommets cons&eacute;cutifs du signal sont s&eacute;par&eacute;s par <strong>4 divisions horizontales</strong>.</p>
+    <p>On peut aussi rep&eacute;rer un cycle complet entre deux passages par z&eacute;ro cons&eacute;cutifs dans le m&ecirc;me sens (montant &rarr; montant) : on retrouve &eacute;galement 4 divisions.</p>
+  </div>
+</div>
+
+<!-- QUESTION 5 -->
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">REA</span></h2>
+  <p>La base de temps est r&eacute;gl&eacute;e &agrave; <strong>5 ms/div</strong>. <strong>Calculer</strong> la p&eacute;riode T du signal en millisecondes, puis la convertir en secondes.</p>
+  <div class="formule-box">
+    \[ T = \text{nombre de divisions horizontales} \times \text{base de temps (ms/div)} \]
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>On applique la formule :</p>
+    \[ T = 4 \times 5 = 20\ \text{ms} \]
+    <p>Conversion en secondes : <strong>T = 20 ms = 0,020 s</strong>.</p>
+  </div>
+</div>
+
+<!-- QUESTION 6 -->
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">REA</span></h2>
+  <p>La <strong>fr&eacute;quence f</strong> est le nombre de cycles effectu&eacute;s par le signal en une seconde. Elle se calcule &agrave; partir de la p&eacute;riode. <strong>Calculer</strong> la fr&eacute;quence f du signal en hertz (Hz).</p>
+  <div class="formule-box">
+    \[ f = \dfrac{1}{T} \]
+    <small>avec T en secondes et f en hertz (Hz)</small>
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>On applique la formule avec T = 0,020 s :</p>
+    \[ f = \frac{1}{0{,}020} = \mathbf{50\ Hz} \]
+    <p>La fr&eacute;quence du signal est <strong>f = 50 Hz</strong>, ce qui signifie que le signal effectue 50 cycles complets par seconde.</p>
+  </div>
+</div>
+
+<!-- QUESTION 7 -->
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>L&rsquo;&eacute;lectricien dispose &eacute;galement d&rsquo;une pile de 9&nbsp;V. S&rsquo;il branche l&rsquo;oscilloscope sur cette pile, il observe une <strong>ligne horizontale</strong> &agrave; 9&nbsp;V au-dessus de l&rsquo;axe z&eacute;ro.</p>
+  <ol type="a">
+    <li><strong>Expliquer</strong> la diff&eacute;rence entre le signal de la pile et le signal du secteur observ&eacute; pr&eacute;c&eacute;demment.</li>
+    <li><strong>Identifier</strong> lequel de ces deux signaux est un courant continu (CC) et lequel est un courant alternatif (CA).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Le signal de la pile est <strong>constant</strong> : la tension ne varie pas au cours du temps, elle reste toujours &eacute;gale &agrave; +9 V. Le signal du secteur, lui, <strong>oscille</strong> r&eacute;guli&egrave;rement entre +325 V et &minus;325 V : la tension change de signe p&eacute;riodiquement.</li>
+      <li>
+        <ul>
+          <li>La pile d&eacute;livre un <strong>courant continu (CC)</strong> : le sens du courant ne change pas.</li>
+          <li>Le secteur d&eacute;livre un <strong>courant alternatif (CA)</strong> : le sens du courant s&rsquo;inverse p&eacute;riodiquement (la tension change de signe).</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<!-- QUESTION 8 -->
+<div class="exo">
+  <h2>Question 8 <span class="badge-green">VAL</span></h2>
+  <p>En France, le r&eacute;seau &eacute;lectrique domestique fonctionne &agrave; une fr&eacute;quence de <strong>50 Hz</strong> et d&eacute;livre une tension efficace de <strong>230 V</strong>.</p>
+  <ol type="a">
+    <li><strong>Comparer</strong> la fr&eacute;quence trouv&eacute;e &agrave; la question 6 avec la valeur th&eacute;orique du r&eacute;seau fran&ccedil;ais. Que peut-on conclure&nbsp;?</li>
+    <li>La tension maximale du r&eacute;seau vaut environ 325 V. <strong>V&eacute;rifier</strong> que cette valeur est coh&eacute;rente avec la valeur lue sur l&rsquo;oscillogramme.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>La fr&eacute;quence trouv&eacute;e (f = 50 Hz) correspond <strong>exactement</strong> &agrave; la fr&eacute;quence du r&eacute;seau &eacute;lectrique fran&ccedil;ais. L&rsquo;oscillogramme montre bien le signal du secteur EDF.</li>
+      <li>On a trouv&eacute; U<sub>max</sub> = 325 V &agrave; la question 3. C&rsquo;est <strong>coh&eacute;rent</strong> avec la valeur th&eacute;orique du r&eacute;seau (U<sub>max</sub> = 230 &times; &radic;2 &asymp; 325 V). Les r&eacute;glages de l&rsquo;oscilloscope et nos mesures sont donc corrects.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention &mdash; S&eacute;curit&eacute;</span><br>
+  La tension maximale du secteur atteint <strong>325 V</strong>, bien que l&rsquo;on parle couramment de &laquo;&nbsp;230 V&nbsp;&raquo; (valeur efficace). Le secteur est <strong>dangereux et potentiellement mortel</strong>. Dans un atelier, les interventions sur les installations &eacute;lectriques sont r&eacute;serv&eacute;es aux personnels habilit&eacute;s.
+</div>
+
+<!-- QUESTION 9 -->
+<div class="exo">
+  <h2>Question 9 <span class="badge-blue">ANA</span></h2>
+  <p>L&rsquo;&eacute;lectricien explique que les machines de l&rsquo;atelier (scie circulaire, toupie, ponceuse &agrave; bande) fonctionnent gr&acirc;ce &agrave; des moteurs &agrave; courant alternatif.</p>
+  <p><strong>Expliquer</strong> pourquoi il est important de conna&icirc;tre la fr&eacute;quence du r&eacute;seau &eacute;lectrique pour le bon fonctionnement des moteurs de l&rsquo;atelier.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La <strong>vitesse de rotation des moteurs</strong> &agrave; courant alternatif d&eacute;pend directement de la <strong>fr&eacute;quence</strong> du signal &eacute;lectrique qui les alimente. Si la fr&eacute;quence change, la vitesse du moteur change &eacute;galement.</p>
+    <p>Conna&icirc;tre la fr&eacute;quence du r&eacute;seau (50 Hz en France) permet de s&rsquo;assurer que les moteurs tournent &agrave; la vitesse pr&eacute;vue par le constructeur. C&rsquo;est essentiel pour la <strong>qualit&eacute; de l&rsquo;usinage</strong> et la <strong>s&eacute;curit&eacute;</strong> des op&eacute;rateurs.</p>
+  </div>
+</div>
+
+<!-- QUESTION 10 -->
+<div class="exo">
+  <h2>Question 10 <span class="badge-yellow">COM</span></h2>
+  <p><strong>R&eacute;diger</strong> un court compte-rendu (3 &agrave; 5 phrases) destin&eacute; au chef d&rsquo;atelier, r&eacute;sumant les r&eacute;sultats de la v&eacute;rification de l&rsquo;&eacute;lectricien. Pr&eacute;ciser :</p>
+  <ul>
+    <li>le type de signal observ&eacute; (CC ou CA),</li>
+    <li>les valeurs de T, f et U<sub>max</sub> mesur&eacute;es,</li>
+    <li>si l&rsquo;alimentation est conforme au r&eacute;seau fran&ccedil;ais.</li>
+  </ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><em>Exemple de compte-rendu :</em></p>
+    <p>&laquo;&nbsp;La v&eacute;rification de l&rsquo;alimentation &eacute;lectrique de l&rsquo;atelier montre que le signal est un <strong>courant alternatif sinuso&iuml;dal</strong>. La p&eacute;riode mesur&eacute;e est T = 20 ms, soit une fr&eacute;quence f = 50 Hz. L&rsquo;amplitude maximale est U<sub>max</sub> = 325 V. Ces valeurs correspondent aux caract&eacute;ristiques normales du r&eacute;seau &eacute;lectrique fran&ccedil;ais (50 Hz, 230 V efficaces). L&rsquo;alimentation de l&rsquo;atelier est <strong>conforme</strong>.&nbsp;&raquo;</p>
+  </div>
+</div>
+
+<!-- ==================== A RETENIR ==================== -->
+<div class="retenir">
+  <span class="label label-ret">&Agrave; retenir</span>
+  <ul>
+    <li>Un signal <strong>alternatif sinuso&iuml;dal</strong> oscille r&eacute;guli&egrave;rement autour de z&eacute;ro. Un signal <strong>continu</strong> reste constant.</li>
+    <li>La <strong>p&eacute;riode T</strong> (en secondes) est la dur&eacute;e d&rsquo;un cycle complet du signal.</li>
+    <li>La <strong>fr&eacute;quence f</strong> (en hertz) est le nombre de cycles par seconde :
+      \[ f = \dfrac{1}{T} \quad \text{et} \quad T = \dfrac{1}{f} \]
+    </li>
+    <li>L&rsquo;<strong>amplitude U<sub>max</sub></strong> (en volts) est la valeur maximale de la tension.</li>
+    <li>Le <strong>r&eacute;seau &eacute;lectrique fran&ccedil;ais</strong> d&eacute;livre un signal alternatif sinuso&iuml;dal : <strong>f = 50 Hz</strong>, <strong>T = 20 ms</strong>, <strong>U<sub>eff</sub> = 230 V</strong>, <strong>U<sub>max</sub> &asymp; 325 V</strong>.</li>
+  </ul>
+</div>
+
+</div><!-- fin .c -->
+<script>
+function toggle(btn){
+  var c=btn.nextElementSibling;
+  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
+  else{c.style.display='block';btn.textContent='Masquer la correction';}
+}
+</script>
+<script src="../../../nav.js"></script>
+</body>
+</html>

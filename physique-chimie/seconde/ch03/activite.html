@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch03 &ndash; Activit&eacute; &ndash; Loi d&apos;Ohm &ndash; 2nde Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">&larr; Retour au sommaire</a>
+<header>
+  <h1>Activit&eacute; &mdash; D&eacute;couvrir la loi d&apos;Ohm</h1>
+  <p class="sous-titre">Chapitre 3 &nbsp;|&nbsp; 2<sup>de</sup> Bac Pro &nbsp;|&nbsp; Physique-Chimie &nbsp;|&nbsp; &#9201; 35 min</p>
+</header>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>D&eacute;couvrir la relation entre tension, intensit&eacute; et r&eacute;sistance &agrave; partir de mesures exp&eacute;rimentales</li>
+    <li>Tracer la caract&eacute;ristique tension-courant U(I) d&apos;un dip&ocirc;le ohmique</li>
+    <li>Formuler la loi d&apos;Ohm : \(U = R \times I\)</li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- SITUATION PROFESSIONNELLE -->
+<!-- ============================================================ -->
+<div class="situation">
+  <h2>Situation professionnelle</h2>
+  <p><em>Marc est technicien de maintenance dans l&apos;entreprise <strong>Confort Thermique</strong> &agrave; Limoges. Il teste deux r&eacute;sistances chauffantes destin&eacute;es &agrave; un chauffage d&apos;atelier avant de les installer. Pour v&eacute;rifier leur bon fonctionnement, il branche chaque r&eacute;sistance &agrave; une alimentation r&eacute;glable et rel&egrave;ve la tension \(U\) aux bornes et l&apos;intensit&eacute; \(I\) du courant qui la traverse.</em></p>
+
+  <h3>R&eacute;sistance R<sub>1</sub></h3>
+  <table>
+    <thead>
+      <tr><th>Mesure</th><th>Tension \(U\) (V)</th><th>Intensit&eacute; \(I\) (A)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>0</td><td>0</td></tr>
+      <tr><td>2</td><td>3,0</td><td>0,15</td></tr>
+      <tr><td>3</td><td>6,0</td><td>0,30</td></tr>
+      <tr><td>4</td><td>9,0</td><td>0,45</td></tr>
+      <tr><td>5</td><td>12,0</td><td>0,60</td></tr>
+      <tr><td>6</td><td>15,0</td><td>0,75</td></tr>
+    </tbody>
+  </table>
+
+  <h3>R&eacute;sistance R<sub>2</sub></h3>
+  <table>
+    <thead>
+      <tr><th>Mesure</th><th>Tension \(U\) (V)</th><th>Intensit&eacute; \(I\) (A)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>0</td><td>0</td></tr>
+      <tr><td>2</td><td>3,0</td><td>0,10</td></tr>
+      <tr><td>3</td><td>6,0</td><td>0,20</td></tr>
+      <tr><td>4</td><td>9,0</td><td>0,30</td></tr>
+      <tr><td>5</td><td>12,0</td><td>0,40</td></tr>
+      <tr><td>6</td><td>15,0</td><td>0,50</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Instruments utilis&eacute;s :</strong> alimentation r&eacute;glable 0-20 V, multim&egrave;tre en mode voltm&egrave;tre (V) et amp&egrave;rem&egrave;tre (A).</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- QUESTIONS -->
+<!-- ============================================================ -->
+
+<!-- Q1 — APP -->
+<div class="exo">
+<h2>Question 1 <span class="badge-green">APP</span></h2>
+<p>a) Quelles sont les deux grandeurs physiques mesur&eacute;es par Marc ?</p>
+<p>b) Quelles sont leurs unit&eacute;s respectives et les instruments de mesure utilis&eacute;s ?</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p><strong>a)</strong> Les deux grandeurs mesur&eacute;es sont :</p>
+<ul>
+  <li>la <strong>tension &eacute;lectrique</strong> \(U\), aux bornes de la r&eacute;sistance ;</li>
+  <li>l&apos;<strong>intensit&eacute; du courant</strong> \(I\), qui traverse la r&eacute;sistance.</li>
+</ul>
+<p><strong>b)</strong></p>
+<ul>
+  <li>La tension \(U\) se mesure en <strong>volts (V)</strong> avec un <strong>voltm&egrave;tre</strong> branch&eacute; en d&eacute;rivation (en parall&egrave;le).</li>
+  <li>L&apos;intensit&eacute; \(I\) se mesure en <strong>amp&egrave;res (A)</strong> avec un <strong>amp&egrave;rem&egrave;tre</strong> branch&eacute; en s&eacute;rie.</li>
+</ul>
+</div>
+</div>
+
+<!-- Q2 — APP -->
+<div class="exo">
+<h2>Question 2 <span class="badge-green">APP</span></h2>
+<p>Pour la r&eacute;sistance R<sub>1</sub>, relever la valeur de la tension \(U\) lorsque l&apos;intensit&eacute; vaut \(I = 0{,}30\) A. Puis relever la valeur de l&apos;intensit&eacute; lorsque la tension vaut \(U = 15{,}0\) V.</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p>D&apos;apr&egrave;s le tableau de R<sub>1</sub> :</p>
+<ul>
+  <li>Lorsque \(I = 0{,}30\) A, la tension vaut \(U = \mathbf{6{,}0}\) <strong>V</strong>.</li>
+  <li>Lorsque \(U = 15{,}0\) V, l&apos;intensit&eacute; vaut \(I = \mathbf{0{,}75}\) <strong>A</strong>.</li>
+</ul>
+</div>
+</div>
+
+<!-- Q3 — REA -->
+<div class="exo">
+<h2>Question 3 <span class="badge-blue">REA</span></h2>
+<p>Pour chaque mesure de R<sub>1</sub> (sauf la mesure 1), calculer le rapport \(\dfrac{U}{I}\). Compl&eacute;ter le tableau ci-dessous.</p>
+<table>
+  <thead>
+    <tr><th>Mesure</th><th>\(U\) (V)</th><th>\(I\) (A)</th><th>\(\dfrac{U}{I}\)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>2</td><td>3,0</td><td>0,15</td><td>......</td></tr>
+    <tr><td>3</td><td>6,0</td><td>0,30</td><td>......</td></tr>
+    <tr><td>4</td><td>9,0</td><td>0,45</td><td>......</td></tr>
+    <tr><td>5</td><td>12,0</td><td>0,60</td><td>......</td></tr>
+    <tr><td>6</td><td>15,0</td><td>0,75</td><td>......</td></tr>
+  </tbody>
+</table>
+<p>Que constatez-vous ?</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<table>
+  <thead>
+    <tr><th>Mesure</th><th>\(U\) (V)</th><th>\(I\) (A)</th><th>\(\dfrac{U}{I}\)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>2</td><td>3,0</td><td>0,15</td><td>\(\frac{3{,}0}{0{,}15} = \mathbf{20}\)</td></tr>
+    <tr><td>3</td><td>6,0</td><td>0,30</td><td>\(\frac{6{,}0}{0{,}30} = \mathbf{20}\)</td></tr>
+    <tr><td>4</td><td>9,0</td><td>0,45</td><td>\(\frac{9{,}0}{0{,}45} = \mathbf{20}\)</td></tr>
+    <tr><td>5</td><td>12,0</td><td>0,60</td><td>\(\frac{12{,}0}{0{,}60} = \mathbf{20}\)</td></tr>
+    <tr><td>6</td><td>15,0</td><td>0,75</td><td>\(\frac{15{,}0}{0{,}75} = \mathbf{20}\)</td></tr>
+  </tbody>
+</table>
+<p><strong>Constat :</strong> Le rapport \(\dfrac{U}{I}\) est <strong>constant</strong> et &eacute;gal &agrave; <strong>20</strong> pour toutes les mesures. La tension est donc <strong>proportionnelle</strong> &agrave; l&apos;intensit&eacute;.</p>
+</div>
+</div>
+
+<!-- Q4 — ANA -->
+<div class="exo">
+<h2>Question 4 <span class="badge-blue">ANA</span></h2>
+<p>a) Le rapport \(\dfrac{U}{I}\) est constant. Quelle grandeur physique ce rapport repr&eacute;sente-t-il ? Dans quelle unit&eacute; s&apos;exprime-t-il ?</p>
+<p>b) En d&eacute;duire la valeur de la r&eacute;sistance R<sub>1</sub>.</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p><strong>a)</strong> Le rapport \(\dfrac{U}{I}\) repr&eacute;sente la <strong>r&eacute;sistance &eacute;lectrique</strong> \(R\) du composant. Elle s&apos;exprime en <strong>ohms</strong> (symbole : &Omega;).</p>
+<p><strong>b)</strong> On en d&eacute;duit :</p>
+\[ R_1 = \frac{U}{I} = \mathbf{20\;\Omega} \]
+</div>
+</div>
+
+<!-- Q5 — REA -->
+<div class="exo">
+<h2>Question 5 <span class="badge-blue">REA</span></h2>
+<p>Sur le quadrillage ci-dessous, tracer la caract&eacute;ristique \(U(I)\) de la r&eacute;sistance R<sub>1</sub> : placer les 6 points de mesure puis les relier.</p>
+<p><em>Axe horizontal : intensit&eacute; \(I\) en A &nbsp;&mdash;&nbsp; Axe vertical : tension \(U\) en V</em></p>
+
+<div class="svg-wrap">
+<svg viewBox="-40 -20 420 320" width="100%" style="max-width:520px;background:#fff;border:1px solid #e2e8f0;border-radius:8px">
+  <!-- Grille -->
+  <defs>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#e2e8f0" stroke-width="0.8"/>
+    </pattern>
+    <pattern id="subgrid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#f1f5f9" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="380" height="280" fill="url(#subgrid)"/>
+  <rect x="0" y="0" width="380" height="280" fill="url(#grid)"/>
+
+  <!-- Axes -->
+  <line x1="0" y1="280" x2="380" y2="280" stroke="#1e293b" stroke-width="1.5"/>
+  <line x1="0" y1="0" x2="0" y2="280" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Fl&egrave;ches -->
+  <polygon points="380,280 372,276 372,284" fill="#1e293b"/>
+  <polygon points="0,0 -4,8 4,8" fill="#1e293b"/>
+
+  <!-- Graduations axe I (horizontal) : 0,1 A par carreau de 50px -->
+  <text x="0" y="296" text-anchor="middle" font-size="11" fill="#475569">0</text>
+  <text x="50" y="296" text-anchor="middle" font-size="11" fill="#475569">0,1</text>
+  <text x="100" y="296" text-anchor="middle" font-size="11" fill="#475569">0,2</text>
+  <text x="150" y="296" text-anchor="middle" font-size="11" fill="#475569">0,3</text>
+  <text x="200" y="296" text-anchor="middle" font-size="11" fill="#475569">0,4</text>
+  <text x="250" y="296" text-anchor="middle" font-size="11" fill="#475569">0,5</text>
+  <text x="300" y="296" text-anchor="middle" font-size="11" fill="#475569">0,6</text>
+  <text x="350" y="296" text-anchor="middle" font-size="11" fill="#475569">0,7</text>
+  <text x="370" y="296" text-anchor="middle" font-size="11" fill="#475569">0,8</text>
+
+  <!-- Titre axe I -->
+  <text x="350" y="270" text-anchor="end" font-size="12" font-style="italic" fill="#6f42c1">I (A)</text>
+
+  <!-- Graduations axe U (vertical) : 3 V par carreau de 50px (invers&eacute;) -->
+  <text x="-8" y="284" text-anchor="end" font-size="11" fill="#475569">0</text>
+  <text x="-8" y="234" text-anchor="end" font-size="11" fill="#475569">3</text>
+  <text x="-8" y="184" text-anchor="end" font-size="11" fill="#475569">6</text>
+  <text x="-8" y="134" text-anchor="end" font-size="11" fill="#475569">9</text>
+  <text x="-8" y="84" text-anchor="end" font-size="11" fill="#475569">12</text>
+  <text x="-8" y="34" text-anchor="end" font-size="11" fill="#475569">15</text>
+
+  <!-- Titre axe U -->
+  <text x="10" y="16" text-anchor="start" font-size="12" font-style="italic" fill="#6f42c1">U (V)</text>
+</svg>
+</div>
+
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p>Les points &agrave; placer sont :</p>
+<ul>
+  <li>(0 ; 0) &mdash; (0,15 ; 3,0) &mdash; (0,30 ; 6,0) &mdash; (0,45 ; 9,0) &mdash; (0,60 ; 12,0) &mdash; (0,75 ; 15,0)</li>
+</ul>
+<div class="svg-wrap">
+<svg viewBox="-40 -20 420 320" width="100%" style="max-width:520px;background:#fff;border:1px solid #e2e8f0;border-radius:8px">
+  <defs>
+    <pattern id="grid2" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#e2e8f0" stroke-width="0.8"/>
+    </pattern>
+    <pattern id="subgrid2" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#f1f5f9" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="380" height="280" fill="url(#subgrid2)"/>
+  <rect x="0" y="0" width="380" height="280" fill="url(#grid2)"/>
+  <line x1="0" y1="280" x2="380" y2="280" stroke="#1e293b" stroke-width="1.5"/>
+  <line x1="0" y1="0" x2="0" y2="280" stroke="#1e293b" stroke-width="1.5"/>
+  <polygon points="380,280 372,276 372,284" fill="#1e293b"/>
+  <polygon points="0,0 -4,8 4,8" fill="#1e293b"/>
+  <text x="0" y="296" text-anchor="middle" font-size="11" fill="#475569">0</text>
+  <text x="50" y="296" text-anchor="middle" font-size="11" fill="#475569">0,1</text>
+  <text x="100" y="296" text-anchor="middle" font-size="11" fill="#475569">0,2</text>
+  <text x="150" y="296" text-anchor="middle" font-size="11" fill="#475569">0,3</text>
+  <text x="200" y="296" text-anchor="middle" font-size="11" fill="#475569">0,4</text>
+  <text x="250" y="296" text-anchor="middle" font-size="11" fill="#475569">0,5</text>
+  <text x="300" y="296" text-anchor="middle" font-size="11" fill="#475569">0,6</text>
+  <text x="350" y="296" text-anchor="middle" font-size="11" fill="#475569">0,7</text>
+  <text x="370" y="296" text-anchor="middle" font-size="11" fill="#475569">0,8</text>
+  <text x="350" y="270" text-anchor="end" font-size="12" font-style="italic" fill="#6f42c1">I (A)</text>
+  <text x="-8" y="284" text-anchor="end" font-size="11" fill="#475569">0</text>
+  <text x="-8" y="234" text-anchor="end" font-size="11" fill="#475569">3</text>
+  <text x="-8" y="184" text-anchor="end" font-size="11" fill="#475569">6</text>
+  <text x="-8" y="134" text-anchor="end" font-size="11" fill="#475569">9</text>
+  <text x="-8" y="84" text-anchor="end" font-size="11" fill="#475569">12</text>
+  <text x="-8" y="34" text-anchor="end" font-size="11" fill="#475569">15</text>
+  <text x="10" y="16" text-anchor="start" font-size="12" font-style="italic" fill="#6f42c1">U (V)</text>
+
+  <!-- Droite R1 -->
+  <line x1="0" y1="280" x2="375" y2="0" stroke="#6f42c1" stroke-width="2"/>
+
+  <!-- Points -->
+  <circle cx="0" cy="280" r="4" fill="#6f42c1"/>
+  <circle cx="75" cy="230" r="4" fill="#6f42c1"/>
+  <circle cx="150" cy="180" r="4" fill="#6f42c1"/>
+  <circle cx="225" cy="130" r="4" fill="#6f42c1"/>
+  <circle cx="300" cy="80" r="4" fill="#6f42c1"/>
+  <circle cx="375" cy="30" r="4" fill="#6f42c1"/>
+</svg>
+</div>
+<p>On obtient une <strong>droite passant par l&apos;origine</strong>. Les points sont parfaitement align&eacute;s car la tension est proportionnelle &agrave; l&apos;intensit&eacute;.</p>
+</div>
+</div>
+
+<!-- Q6 — ANA -->
+<div class="exo">
+<h2>Question 6 <span class="badge-blue">ANA</span></h2>
+<p>a) Quelle est la forme de la courbe obtenue pour R<sub>1</sub> ?</p>
+<p>b) Cette courbe passe-t-elle par l&apos;origine du rep&egrave;re ? Pourquoi est-ce logique physiquement ?</p>
+<p>c) En d&eacute;duire la relation math&eacute;matique entre \(U\) et \(I\) pour cette r&eacute;sistance.</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p><strong>a)</strong> La courbe est une <strong>droite</strong>.</p>
+<p><strong>b)</strong> Oui, la droite passe par l&apos;origine (0 ; 0). C&apos;est logique : si aucun courant ne circule (\(I = 0\)), alors la tension aux bornes de la r&eacute;sistance est nulle (\(U = 0\)).</p>
+<p><strong>c)</strong> Puisque la courbe est une droite passant par l&apos;origine, \(U\) est <strong>proportionnelle</strong> &agrave; \(I\). Le coefficient de proportionnalit&eacute; est la pente de la droite, soit \(R_1 = 20\) :</p>
+\[ U = 20 \times I \]
+<p>Plus g&eacute;n&eacute;ralement : \(U = R_1 \times I\).</p>
+</div>
+</div>
+
+<!-- Q7 — REA -->
+<div class="exo">
+<h2>Question 7 <span class="badge-blue">REA</span></h2>
+<p>Effectuer le m&ecirc;me calcul du rapport \(\dfrac{U}{I}\) pour la r&eacute;sistance R<sub>2</sub> (mesures 2 &agrave; 6). Quelle est la valeur de R<sub>2</sub> ?</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<table>
+  <thead>
+    <tr><th>Mesure</th><th>\(U\) (V)</th><th>\(I\) (A)</th><th>\(\dfrac{U}{I}\)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>2</td><td>3,0</td><td>0,10</td><td>\(\frac{3{,}0}{0{,}10} = \mathbf{30}\)</td></tr>
+    <tr><td>3</td><td>6,0</td><td>0,20</td><td>\(\frac{6{,}0}{0{,}20} = \mathbf{30}\)</td></tr>
+    <tr><td>4</td><td>9,0</td><td>0,30</td><td>\(\frac{9{,}0}{0{,}30} = \mathbf{30}\)</td></tr>
+    <tr><td>5</td><td>12,0</td><td>0,40</td><td>\(\frac{12{,}0}{0{,}40} = \mathbf{30}\)</td></tr>
+    <tr><td>6</td><td>15,0</td><td>0,50</td><td>\(\frac{15{,}0}{0{,}50} = \mathbf{30}\)</td></tr>
+  </tbody>
+</table>
+<p>Le rapport \(\dfrac{U}{I}\) est constant et vaut <strong>30</strong>. Donc :</p>
+\[ R_2 = \mathbf{30\;\Omega} \]
+</div>
+</div>
+
+<!-- Q8 — VAL -->
+<div class="exo">
+<h2>Question 8 <span class="badge-yellow">VAL</span></h2>
+<p>Marc effectue une mesure suppl&eacute;mentaire sur R<sub>1</sub> : il r&egrave;gle l&apos;alimentation sur \(U = 10{,}0\) V et lit \(I = 0{,}50\) A sur l&apos;amp&egrave;rem&egrave;tre.</p>
+<p>a) Calculer le rapport \(\dfrac{U}{I}\) pour cette nouvelle mesure.</p>
+<p>b) Ce r&eacute;sultat est-il coh&eacute;rent avec la valeur de R<sub>1</sub> trouv&eacute;e pr&eacute;c&eacute;demment ? Justifier.</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p><strong>a)</strong></p>
+\[ \frac{U}{I} = \frac{10{,}0}{0{,}50} = \mathbf{20} \]
+<p><strong>b)</strong> Oui, le r&eacute;sultat est parfaitement coh&eacute;rent : on retrouve \(\dfrac{U}{I} = 20\;\Omega\), soit la m&ecirc;me valeur de R<sub>1</sub> que pr&eacute;c&eacute;demment. Cela <strong>confirme</strong> que le rapport \(\dfrac{U}{I}\) est bien constant pour cette r&eacute;sistance, quelle que soit la tension appliqu&eacute;e.</p>
+</div>
+</div>
+
+<!-- Q9 — ANA -->
+<div class="exo">
+<h2>Question 9 <span class="badge-blue">ANA</span></h2>
+<p>Comparer les valeurs de R<sub>1</sub> et R<sub>2</sub>. Si l&apos;on tra&ccedil;ait la caract&eacute;ristique \(U(I)\) de R<sub>2</sub> sur le m&ecirc;me graphique que R<sub>1</sub>, la droite serait-elle plus inclin&eacute;e ou moins inclin&eacute;e ? Expliquer.</p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p>On a \(R_1 = 20\;\Omega\) et \(R_2 = 30\;\Omega\). La r&eacute;sistance R<sub>2</sub> est plus grande que R<sub>1</sub>.</p>
+<p>La pente de la droite \(U(I)\) est &eacute;gale &agrave; la valeur de la r&eacute;sistance \(R\). Donc la droite de R<sub>2</sub> serait <strong>plus inclin&eacute;e</strong> (plus pentue) que celle de R<sub>1</sub>.</p>
+<p>Physiquement : pour une m&ecirc;me intensit&eacute; \(I\), la tension \(U\) est plus grande aux bornes de R<sub>2</sub> car \(R_2 > R_1\). Par exemple, pour \(I = 0{,}30\) A : \(U_1 = 6{,}0\) V mais \(U_2 = 9{,}0\) V.</p>
+</div>
+</div>
+
+<!-- Q10 — COM -->
+<div class="exo">
+<h2>Question 10 <span class="badge-yellow">COM</span></h2>
+<p>En vous appuyant sur l&apos;ensemble de vos observations, compl&eacute;ter les phrases suivantes pour formuler la <strong>loi d&apos;Ohm</strong> :</p>
+<p><em>&laquo; Pour un dip&ocirc;le ohmique, la tension \(U\) &agrave; ses bornes est .................... &agrave; l&apos;intensit&eacute; \(I\) du courant qui le traverse. La constante de proportionnalit&eacute; est la .................... not&eacute;e \(R\), exprim&eacute;e en .................... La relation s&apos;&eacute;crit : \(U = \ldots \times \ldots\) &raquo;</em></p>
+<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="corr">
+<p>&laquo; Pour un dip&ocirc;le ohmique, la tension \(U\) &agrave; ses bornes est <strong>proportionnelle</strong> &agrave; l&apos;intensit&eacute; \(I\) du courant qui le traverse. La constante de proportionnalit&eacute; est la <strong>r&eacute;sistance</strong> not&eacute;e \(R\), exprim&eacute;e en <strong>ohms (&Omega;)</strong>. La relation s&apos;&eacute;crit : \(U = R \times I\) &raquo;</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ATTENTION -->
+<!-- ============================================================ -->
+<div class="att">
+  <span class="label label-att">Attention &mdash; Unit&eacute;s</span><br>
+  Avant tout calcul avec la loi d&apos;Ohm, v&eacute;rifier que :<br>
+  &bull; \(U\) est en <strong>volts</strong> (V) &mdash; pas en mV<br>
+  &bull; \(I\) est en <strong>amp&egrave;res</strong> (A) &mdash; pas en mA<br>
+  &bull; \(R\) est en <strong>ohms</strong> (&Omega;) &mdash; pas en k&Omega;
+</div>
+
+<!-- ============================================================ -->
+<!-- A RETENIR -->
+<!-- ============================================================ -->
+<div class="retenir">
+  <strong>&Agrave; retenir &mdash; Loi d&apos;Ohm</strong>
+  <div class="formule-box">
+    \[ U = R \times I \]
+  </div>
+  <ul>
+    <li>\(U\) : tension aux bornes du dip&ocirc;le, en <strong>volts</strong> (V)</li>
+    <li>\(R\) : r&eacute;sistance du dip&ocirc;le, en <strong>ohms</strong> (&Omega;)</li>
+    <li>\(I\) : intensit&eacute; du courant, en <strong>amp&egrave;res</strong> (A)</li>
+  </ul>
+  <p>La caract&eacute;ristique \(U(I)\) d&apos;un dip&ocirc;le ohmique est une <strong>droite passant par l&apos;origine</strong>. La pente de cette droite est &eacute;gale &agrave; la r&eacute;sistance \(R\).</p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script>document.querySelectorAll('.bc').forEach(function(b){b.addEventListener('click',function(){var c=this.nextElementSibling;c.style.display=c.style.display==='block'?'none':'block'})});</script>
+</body>
+</html>
