@@ -1,0 +1,316 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=1.5cm,bottom=2cm}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{lastpage}
+
+% Couleurs
+\definecolor{bleupro}{HTML}{0969da}
+\definecolor{orange}{HTML}{d97706}
+\definecolor{vertpro}{HTML}{2f855a}
+\definecolor{rouge}{HTML}{c53030}
+\definecolor{gris}{HTML}{718096}
+
+% En-tête
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small CCF Physique-Chimie — Terminale ICCER}
+\rhead{\small Fluides \& Courant alternatif}
+\cfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% Boîtes
+\tcbuselibrary{skins,breakable}
+
+\newtcolorbox{formulairebox}{
+  colback=yellow!5,
+  colframe=orange,
+  title={\textbf{FORMULAIRE — Rappels de cours}},
+  fonttitle=\large\bfseries,
+  breakable
+}
+
+\newtcolorbox{contextebox}{
+  colback=blue!3,
+  colframe=bleupro,
+  leftrule=4pt,
+  rightrule=0pt,
+  toprule=0pt,
+  bottomrule=0pt,
+  boxsep=4pt,
+  left=8pt
+}
+
+\newtcolorbox{reponsebox}[1][4cm]{
+  colback=white,
+  colframe=gris!40,
+  boxrule=0.5pt,
+  arc=3pt,
+  height=#1,
+  valign=top,
+  before skip=4pt,
+  after skip=8pt
+}
+
+\newcommand{\pts}[1]{\hfill\textcolor{gris}{\small\textbf{#1}}}
+\newcommand{\comp}[1]{\colorbox{blue!10}{\scriptsize\textbf{#1}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\begin{document}
+
+% ===== PAGE DE GARDE =====
+\begin{center}
+{\LARGE\bfseries\color{bleupro} Contrôle en Cours de Formation}\\[8pt]
+{\large Physique-Chimie — Terminale Bac Pro ICCER — Groupement 1}\\[12pt]
+{\Large\bfseries Pression dans un fluide \& Puissance en régime sinusoïdal}\\[20pt]
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\textbf{Durée :} 45 minutes & \textbf{Barème :} /10 points \\
+\hline
+\textbf{Documents :} Calculatrice autorisée & \textbf{Formulaire :} ci-dessous \\
+\hline
+\textbf{Nom :} \dotfill & \textbf{Prénom :} \dotfill \\
+\hline
+\textbf{Classe :} \dotfill & \textbf{Date :} \dotfill \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{10pt}
+
+% ===== FORMULAIRE =====
+\begin{formulairebox}
+
+\subsection*{Pression dans un fluide}
+
+\begin{tabular}{>{\bfseries}p{4.5cm} p{5.5cm} p{4cm}}
+\toprule
+\textbf{Grandeur} & \textbf{Formule} & \textbf{Unités} \\
+\midrule
+Pression & $P = \dfrac{F}{S}$ & Pa, N, m² \\[6pt]
+Pression hydrostatique & $\Delta P = \rho \times g \times \Delta h$ & Pa, kg/m³, m/s², m \\[4pt]
+Presse hydraulique & $\dfrac{F_1}{S_1} = \dfrac{F_2}{S_2}$ & N, m² \\[6pt]
+Conversions & 1 bar $= 10^5$ Pa & \\[4pt]
+\bottomrule
+\end{tabular}
+
+\smallskip
+$\rho_{\text{eau}} = 1\,000$ kg/m³ \quad $g = 9{,}81$ m/s² \quad $P_{\text{atm}} = 1{,}013 \times 10^5$ Pa $= 1{,}013$ bar
+
+\subsection*{Puissance en régime sinusoïdal}
+
+\begin{tabular}{>{\bfseries}p{4.5cm} p{5.5cm} p{4cm}}
+\toprule
+\textbf{Grandeur} & \textbf{Formule} & \textbf{Unités} \\
+\midrule
+Puissance active & $P = U \times I \times \cos\varphi$ & W \\[4pt]
+Puissance apparente & $S = U \times I$ & VA \\[4pt]
+Puissance réactive & $Q = U \times I \times \sin\varphi$ & VAR \\[4pt]
+Facteur de puissance & $\cos\varphi = \dfrac{P}{S}$ & (sans unité) \\[6pt]
+Énergie & $E = P \times t$ & J (ou kWh) \\[4pt]
+\bottomrule
+\end{tabular}
+
+\smallskip
+\textbf{Triangle des puissances :} $S^2 = P^2 + Q^2$. Un $\cos\varphi$ proche de 1 est souhaitable (moins de pertes réactives).
+
+\end{formulairebox}
+
+\newpage
+
+% ================================================================
+\section*{Exercice 1 — Circuit de chauffage d'un immeuble \pts{5 points}}
+% ================================================================
+
+\begin{contextebox}
+Un installateur thermique intervient sur le circuit de chauffage d'un immeuble de 4 étages. Le circuit est rempli d'eau ($\rho = 1\,000$ kg/m³). La chaufferie est au sous-sol. Le point le plus haut du circuit se trouve au 4\up{e} étage, à une hauteur $h = 12$ m au-dessus de la chaufferie.
+
+La pression au niveau de la chaufferie est $P_{\text{bas}} = 2{,}5$ bar. Le manomètre du vase d'expansion indique la pression relative (pression au-dessus de la pression atmosphérique).
+\end{contextebox}
+
+% Schéma
+\begin{center}
+\begin{tikzpicture}[scale=0.7, every node/.style={font=\small}]
+  % Immeuble
+  \draw[thick] (0,0) rectangle (4,6);
+  \draw[thin] (0,1.5) -- (4,1.5);
+  \draw[thin] (0,3) -- (4,3);
+  \draw[thin] (0,4.5) -- (4,4.5);
+  \node[right] at (4,0.75) {RDC};
+  \node[right] at (4,2.25) {1\up{er}};
+  \node[right] at (4,3.75) {2\up{e}};
+  \node[right] at (4,5.25) {4\up{e}};
+  % Chaufferie
+  \draw[fill=red!10, thick] (-1,-1) rectangle (5,0);
+  \node at (2,-0.5) {\textbf{Chaufferie}};
+  % Circuit
+  \draw[thick, bleupro] (1,-0.5) -- (1,5.5);
+  \draw[thick, bleupro] (3,-0.5) -- (3,5.5);
+  \draw[thick, bleupro] (1,5.5) -- (3,5.5);
+  % Hauteur
+  \draw[<->, thick, rouge] (5.5,0) -- (5.5,6) node[midway, right] {$h = 12$ m};
+  % Pressions
+  \node[left, bleupro] at (-0.5,-0.5) {$P_{\text{bas}}$};
+  \node[left, rouge] at (-0.5,5.5) {$P_{\text{haut}} = \;?$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Q1} \comp{APP} — Convertir la pression $P_{\text{bas}} = 2{,}5$ bar en pascals. \pts{1 pt}
+
+\begin{reponsebox}[2.5cm]
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\textbf{Q2} \comp{REA} — Calculer la différence de pression $\Delta P$ entre la chaufferie et le 4\up{e} étage due à la colonne d'eau. \pts{1 pt}
+
+\begin{reponsebox}[3cm]
+\dotfill
+
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\textbf{Q3} \comp{REA} — En déduire la pression $P_{\text{haut}}$ au 4\up{e} étage (en Pa puis en bar). \pts{1 pt}
+
+\begin{reponsebox}[3cm]
+\dotfill
+
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\textbf{Q4} \comp{VAL} — Le technicien sait que la pression minimale au point haut doit être de 0,5 bar pour éviter la cavitation (bulles d'air). La pression obtenue est-elle suffisante ? \pts{1 pt}
+
+\begin{reponsebox}[2.5cm]
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\textbf{Q5} \comp{ANA} — Si l'immeuble avait 8 étages ($h = 24$ m) au lieu de 4, quelle pression minimale faudrait-il en chaufferie pour maintenir 0,5 bar au point haut ? \pts{1 pt}
+
+\begin{reponsebox}[3.5cm]
+\dotfill
+
+\dotfill
+
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\newpage
+
+% ================================================================
+\section*{Exercice 2 — Dimensionnement électrique d'une PAC \pts{5 points}}
+% ================================================================
+
+\begin{contextebox}
+Un technicien installe une pompe à chaleur (PAC) air/eau pour chauffer un immeuble. La PAC est alimentée en monophasé 230 V / 50 Hz. D'après la plaque signalétique :
+\begin{itemize}[nosep]
+  \item Puissance active : $P = 3\,200$ W
+  \item Facteur de puissance : $\cos\varphi = 0{,}85$
+\end{itemize}
+La PAC fonctionne 10 heures par jour pendant 180 jours (saison de chauffe). Le prix du kWh est 0,20 €.
+\end{contextebox}
+
+% Schéma triangle des puissances
+\begin{center}
+\begin{tikzpicture}[scale=0.6, every node/.style={font=\small}]
+  \draw[thick, bleupro] (0,0) -- (7,0) node[midway, below=4pt] {$P$ (W) — active};
+  \draw[thick, rouge] (7,0) -- (7,3.5) node[midway, right=4pt] {$Q$ (VAR)};
+  \draw[thick, vertpro] (0,0) -- (7,3.5) node[midway, above=4pt, sloped] {$S$ (VA) — apparente};
+  % Angle
+  \draw (1.5,0) arc[start angle=0, end angle=26.6, radius=1.5];
+  \node at (2,0.5) {$\varphi$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Q1} \comp{REA} — Calculer la puissance apparente $S$ de la PAC. \pts{1 pt}
+
+\begin{reponsebox}[3cm]
+\dotfill
+
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\textbf{Q2} \comp{REA} — Calculer l'intensité du courant $I$ absorbée par la PAC. \pts{1 pt}
+
+\begin{reponsebox}[3cm]
+\dotfill
+
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\textbf{Q3} \comp{ANA} — Le disjoncteur de la ligne est calibré à 20 A. Est-il correctement dimensionné ? Justifier. \pts{1 pt}
+
+\begin{reponsebox}[2.5cm]
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\textbf{Q4} \comp{REA} — Calculer l'énergie consommée par la PAC sur une saison de chauffe (en kWh). En déduire le coût annuel. \pts{1 pt}
+
+\begin{reponsebox}[3.5cm]
+\dotfill
+
+\dotfill
+
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\textbf{Q5} \comp{COM} — Le propriétaire demande pourquoi sa facture est élevée. Le technicien remarque que le $\cos\varphi$ est de 0,85 au lieu de 0,95 (valeur idéale). Expliquer en quoi un mauvais facteur de puissance augmente l'intensité appelée, et pourquoi c'est un problème. \pts{1 pt}
+
+\begin{reponsebox}[4cm]
+\dotfill
+
+\dotfill
+
+\dotfill
+
+\dotfill
+
+\dotfill
+\end{reponsebox}
+
+\vfill
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Exercice} & \textbf{Thème} & \textbf{Questions} & \textbf{Points} \\
+\hline
+1 & Pression dans un fluide (circuit chauffage) & Q1 à Q5 & /5 \\
+\hline
+2 & Puissance en régime sinusoïdal (PAC) & Q1 à Q5 & /5 \\
+\hline
+\multicolumn{3}{|r|}{\textbf{Total}} & \textbf{/10} \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}
