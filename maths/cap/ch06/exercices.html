@@ -7,7 +7,7 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#b45309;--p-bg:#fffbeb;--p-border:#fde68a}</style>
+.corr{display:none}<style>:root{--p:#b45309;--p-bg:#fffbeb;--p-border:#fde68a}</style>
 </head>
 <body>
 <div class="c">
@@ -45,7 +45,7 @@
   <p>b) Un rectangle de longueur 8 m et de largeur 3,5 m.</p>
   <p>c) Un cercle de rayon 7 cm. (Arrondir au dixi&egrave;me.)</p>
   <p>d) Un triangle dont les c&ocirc;t&eacute;s mesurent 5 cm, 7 cm et 9 cm.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\mathcal{P} = 4 \times 15 = 60\) cm.</p>
     <p><strong>b)</strong> \(\mathcal{P} = 2(8 + 3{,}5) = 2 \times 11{,}5 = 23\) m.</p>
@@ -64,7 +64,7 @@
   <p>a) Calculer le p&eacute;rim&egrave;tre du panneau.</p>
   <p>b) La baguette est vendue en barres de 2,50 m. Combien de barres doit-il acheter ?</p>
   <p>c) Quelle longueur de baguette restera-t-il en chute ?</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\mathcal{P} = 2(1{,}40 + 0{,}90) = 2 \times 2{,}30 = 4{,}60\) m.</p>
     <p><strong>b)</strong> \(\dfrac{4{,}60}{2{,}50} = 1{,}84\). Il faut donc <strong>2 barres</strong> (on arrondit au-dessus car on ne peut pas acheter 1,84 barre).</p>
@@ -83,7 +83,7 @@
   <p>b) Un rectangle de 2,5 m &times; 1,8 m.</p>
   <p>c) Un triangle de base 10 cm et de hauteur 6 cm.</p>
   <p>d) Un disque de rayon 5 m. (Arrondir au dixi&egrave;me.)</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\mathcal{A} = 12^2 = 144\) cm&sup2;.</p>
     <p><strong>b)</strong> \(\mathcal{A} = 2{,}5 \times 1{,}8 = 4{,}5\) m&sup2;.</p>
@@ -102,7 +102,7 @@
   <p>a) Calculer l'aire d'une face du plateau en cm&sup2;, puis en m&sup2;.</p>
   <p>b) Calculer la surface totale &agrave; vernir (deux faces).</p>
   <p>c) Un pot de vernis couvre 12 m&sup2; par litre. Quel volume de vernis (en litres) faut-il pour deux couches ?</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\mathcal{A} = 160 \times 90 = 14\,400\) cm&sup2; = \(1{,}44\) m&sup2;.</p>
     <p><strong>b)</strong> Surface totale : \(2 \times 1{,}44 = 2{,}88\) m&sup2;.</p>
@@ -121,7 +121,7 @@
   <p>a) Calculer le rayon du tuyau.</p>
   <p>b) Calculer la surface lat&eacute;rale &agrave; isoler en m&sup2;. (Arrondir au centi&egrave;me.)</p>
   <p>c) Le manchon isolant co&ucirc;te 8 &euro; le m&sup2;. Quel est le co&ucirc;t de l'isolation ?</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> Rayon : \(r = \dfrac{6}{2} = 3\) cm = 0,03 m.</p>
     <p><strong>b)</strong> \(\mathcal{A}_{\text{lat}} = 2\pi \times 0{,}03 \times 3 = 0{,}18\pi \approx 0{,}57\) m&sup2;.</p>
@@ -144,7 +144,7 @@
   <p>b) Un pav&eacute; droit de dimensions 30 cm &times; 20 cm &times; 15 cm.</p>
   <p>c) Un cylindre de rayon 10 cm et de hauteur 25 cm. (Arrondir &agrave; l'unit&eacute;.)</p>
   <p>d) Une boule de rayon 6 cm. (Arrondir &agrave; l'unit&eacute;.)</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(V = 8^3 = 512\) cm&sup3;.</p>
     <p><strong>b)</strong> \(V = 30 \times 20 \times 15 = 9\,000\) cm&sup3;.</p>
@@ -164,7 +164,7 @@
   <p>b) Calculer le volume du ballon en m&sup3;. (Arrondir au milli&egrave;me.)</p>
   <p>c) Convertir ce volume en litres.</p>
   <p>d) Ce ballon convient-il pour une famille de 4 personnes (besoin estim&eacute; : 150 L) ?</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> Rayon : \(r = \dfrac{45}{2} = 22{,}5\) cm = 0,225 m.</p>
     <p><strong>b)</strong> \(V = \pi \times 0{,}225^2 \times 1{,}10 = \pi \times 0{,}050625 \times 1{,}10 = \pi \times 0{,}0556875 \approx 0{,}175\) m&sup3;.</p>
@@ -183,7 +183,7 @@
   <p>a) Calculer le volume int&eacute;rieur du tiroir en cm&sup3;.</p>
   <p>b) Convertir en dm&sup3;, puis en litres.</p>
   <p>c) Le client souhaite un tiroir pouvant contenir au moins 20 litres. Ce tiroir convient-il ?</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(V = 50 \times 35 \times 10 = 17\,500\) cm&sup3;.</p>
     <p><strong>b)</strong> \(17\,500 \text{ cm}^3 = 17{,}5 \text{ dm}^3 = 17{,}5\) L (car \(1\text{ dm}^3 = 1\text{ L}\)).</p>
@@ -201,7 +201,7 @@
   <p>a) Calculer le volume total de l'aquarium en cm&sup3;, puis en litres.</p>
   <p>b) On le remplit aux \(\dfrac{4}{5}\) de sa hauteur. Quel volume d'eau (en litres) faut-il ?</p>
   <p>c) L'eau du robinet coule &agrave; 12 litres par minute. Combien de temps faut-il pour le remplir ?</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(V = 80 \times 40 \times 50 = 160\,000\) cm&sup3; \(= 160\) L.</p>
     <p><strong>b)</strong> Hauteur d'eau : \(\dfrac{4}{5} \times 50 = 40\) cm. Volume d'eau : \(80 \times 40 \times 40 = 128\,000\) cm&sup3; \(= 128\) L.</p>
@@ -223,7 +223,7 @@
   <p>a) Quel est le c&ocirc;t&eacute; le plus long (l'hypot&eacute;nuse) ?</p>
   <p>b) &Eacute;crire l'&eacute;galit&eacute; de Pythagore.</p>
   <p>c) Calculer la longueur \(AB\).</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> L'hypot&eacute;nuse est \([AB]\) (c&ocirc;t&eacute; oppos&eacute; &agrave; l'angle droit en \(C\)).</p>
     <p><strong>b)</strong> \(AB^2 = AC^2 + BC^2\).</p>
@@ -240,7 +240,7 @@
   <p>Un menuisier v&eacute;rifie qu'une planche rectangulaire est bien d'&eacute;querre. Il mesure les deux c&ocirc;t&eacute;s : 90 cm et 120 cm, puis la diagonale : 150 cm.</p>
   <p>a) Si la planche est d'&eacute;querre, que doit v&eacute;rifier le triangle form&eacute; par les deux c&ocirc;t&eacute;s et la diagonale ?</p>
   <p>b) V&eacute;rifier par le calcul que la planche est bien d'&eacute;querre (r&eacute;ciproque de Pythagore).</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> Si la planche est d'&eacute;querre, le triangle form&eacute; est rectangle. On doit avoir : (diagonale)&sup2; = (c&ocirc;t&eacute; 1)&sup2; + (c&ocirc;t&eacute; 2)&sup2;.</p>
     <p><strong>b)</strong> \(150^2 = 22\,500\). \(90^2 + 120^2 = 8\,100 + 14\,400 = 22\,500\).</p>
@@ -257,7 +257,7 @@
   <p>Un plombier chauffagiste doit faire passer un tuyau en diagonale dans un local technique rectangulaire de 2,40 m de long et 1,80 m de large (au sol).</p>
   <p>a) Calculer la longueur du tuyau (diagonale du rectangle au sol). Arrondir au centi&egrave;me de m&egrave;tre.</p>
   <p>b) Le tuyau est vendu en barres de 3 m. Une barre suffit-elle ?</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(d^2 = 2{,}40^2 + 1{,}80^2 = 5{,}76 + 3{,}24 = 9\), donc \(d = \sqrt{9} = 3\) m.</p>
     <p><strong>b)</strong> La diagonale mesure exactement 3 m. Une barre de 3 m suffit juste (sans raccord).</p>
@@ -273,7 +273,7 @@
   <p>Un triangle \(RST\) est rectangle en \(S\). On sait que \(RT = 13\) cm et \(RS = 5\) cm.</p>
   <p>a) &Eacute;crire l'&eacute;galit&eacute; de Pythagore (attention : \(RT\) est l'hypot&eacute;nuse).</p>
   <p>b) Calculer la longueur \(ST\).</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(RT^2 = RS^2 + ST^2\), donc \(ST^2 = RT^2 - RS^2\).</p>
     <p><strong>b)</strong> \(ST^2 = 13^2 - 5^2 = 169 - 25 = 144\), donc \(ST = \sqrt{144} = 12\) cm.</p>
@@ -294,7 +294,7 @@
   <p>On donne : \(AM = 4\) cm, \(AB = 10\) cm, \(BC = 15\) cm.</p>
   <p>a) &Eacute;crire les rapports du th&eacute;or&egrave;me de Thal&egrave;s.</p>
   <p>b) Calculer la longueur \(MN\).</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\dfrac{AM}{AB} = \dfrac{AN}{AC} = \dfrac{MN}{BC}\).</p>
     <p><strong>b)</strong> \(\dfrac{MN}{BC} = \dfrac{AM}{AB}\), donc \(\dfrac{MN}{15} = \dfrac{4}{10}\). Par produit en croix : \(MN = \dfrac{4 \times 15}{10} = 6\) cm.</p>
@@ -312,7 +312,7 @@
   <p>a) Calculer \(AB\).</p>
   <p>b) Calculer \(NC\) en utilisant le th&eacute;or&egrave;me de Thal&egrave;s.</p>
   <p>c) En d&eacute;duire \(AC\).</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(AB = AM + MB = 3 + 2 = 5\) cm.</p>
     <p><strong>b)</strong> Par Thal&egrave;s : \(\dfrac{AM}{AB} = \dfrac{AN}{AC}\), donc \(\dfrac{3}{5} = \dfrac{4{,}5}{AC}\). Par produit en croix : \(AC = \dfrac{4{,}5 \times 5}{3} = 7{,}5\) cm.</p>
@@ -334,7 +334,7 @@
   <p>Les rayons du soleil sont parall&egrave;les, on peut utiliser le th&eacute;or&egrave;me de Thal&egrave;s.</p>
   <p>a) &Eacute;crire les rapports de proportionnalit&eacute;.</p>
   <p>b) Calculer la hauteur \(H\) du poteau.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\dfrac{\text{hauteur du piquet}}{\text{ombre du piquet}} = \dfrac{\text{hauteur du poteau}}{\text{ombre du poteau}}\), soit \(\dfrac{1{,}50}{2} = \dfrac{H}{8}\).</p>
     <p><strong>b)</strong> \(H = \dfrac{1{,}50 \times 8}{2} = \dfrac{12}{2} = 6\) m. Le poteau mesure 6 m.</p>
@@ -358,7 +358,7 @@
   <p>d) 2 m&sup2; = ... cm&sup2; &emsp; e) 50 000 cm&sup2; = ... m&sup2;</p>
   <p><strong>Volumes :</strong></p>
   <p>f) 0,5 m&sup3; = ... L &emsp; g) 3 500 cm&sup3; = ... L &emsp; h) 25 L = ... m&sup3;</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(3{,}5\) m \(= 350\) cm.</p>
     <p><strong>b)</strong> \(450\) mm \(= 0{,}45\) m.</p>
@@ -386,7 +386,7 @@
   <p>b) Convertir l'&eacute;paisseur en m&egrave;tres.</p>
   <p>c) Calculer le volume de b&eacute;ton n&eacute;cessaire en m&sup3;.</p>
   <p>d) Le b&eacute;ton est vendu 90 &euro; le m&sup3;. Calculer le co&ucirc;t du b&eacute;ton.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\mathcal{A} = 4 \times 3 = 12\) m&sup2;.</p>
     <p><strong>b)</strong> \(12\) cm \(= 0{,}12\) m.</p>
@@ -405,7 +405,7 @@
   <p>a) Calculer la longueur du c&ocirc;t&eacute; visible (hypot&eacute;nuse de la section triangulaire).</p>
   <p>b) Calculer l'aire de la section triangulaire.</p>
   <p>c) Calculer le volume de rangement de l'&eacute;tag&egrave;re (en cm&sup3;, puis en litres).</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(c^2 = 40^2 + 30^2 = 1\,600 + 900 = 2\,500\), donc \(c = \sqrt{2\,500} = 50\) cm.</p>
     <p><strong>b)</strong> \(\mathcal{A} = \dfrac{40 \times 30}{2} = 600\) cm&sup2;.</p>
@@ -425,7 +425,7 @@
   <p>c) Un radiateur fournit 1 500 W. Combien de radiateurs faut-il installer ?</p>
   <p>d) La pi&egrave;ce a deux fen&ecirc;tres rectangulaires de 1,20 m &times; 1,00 m. Calculer l'aire totale des vitres.</p>
   <p>e) Un vitrier veut aussi v&eacute;rifier la diagonale d'une fen&ecirc;tre (pour le transport). Calculer cette diagonale. Arrondir au centi&egrave;me.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(V = 5 \times 4 \times 2{,}50 = 50\) m&sup3;.</p>
     <p><strong>b)</strong> Puissance : \(50 \times 40 = 2\,000\) W.</p>
@@ -437,5 +437,17 @@
 
 </div>
 <script src="../../../nav.js"></script>
-</body>
+<script>
+function toggle(btn) {
+  var corr = btn.previousElementSibling || btn.nextElementSibling;
+  if (!corr || !corr.classList.contains("corr")) {
+    corr = btn.parentElement.querySelector(".corr");
+  }
+  if (corr) {
+    var vis = corr.style.display === "block";
+    corr.style.display = vis ? "none" : "block";
+    btn.textContent = vis ? "Voir la correction" : "Masquer la correction";
+  }
+}
+</script></body>
 </html>

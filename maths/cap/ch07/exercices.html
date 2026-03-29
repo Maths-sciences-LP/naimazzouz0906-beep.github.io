@@ -7,7 +7,7 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#b45309;--p-bg:#fffbeb;--p-border:#fde68a}</style>
+.corr{display:none}<style>:root{--p:#b45309;--p-bg:#fffbeb;--p-border:#fde68a}</style>
 </head>
 <body>
 <div class="c">
@@ -42,7 +42,7 @@
   </div>
   <p>Calculer :</p>
   <p>a) \(\dfrac{2}{7} + \dfrac{3}{7}\) &emsp; b) \(\dfrac{5}{9} + \dfrac{1}{9}\) &emsp; c) \(\dfrac{7}{12} - \dfrac{3}{12}\) &emsp; d) \(\dfrac{11}{8} - \dfrac{5}{8}\)</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\dfrac{2}{7} + \dfrac{3}{7} = \dfrac{5}{7}\)</p>
     <p><strong>b)</strong> \(\dfrac{5}{9} + \dfrac{1}{9} = \dfrac{6}{9} = \dfrac{2}{3}\)</p>
@@ -59,7 +59,7 @@
   </div>
   <p>Calculer en mettant au m&ecirc;me d&eacute;nominateur :</p>
   <p>a) \(\dfrac{1}{2} + \dfrac{1}{3}\) &emsp; b) \(\dfrac{3}{4} + \dfrac{1}{6}\) &emsp; c) \(\dfrac{2}{5} + \dfrac{1}{3}\) &emsp; d) \(\dfrac{5}{6} - \dfrac{1}{4}\)</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\dfrac{1}{2} + \dfrac{1}{3} = \dfrac{3}{6} + \dfrac{2}{6} = \dfrac{5}{6}\)</p>
     <p><strong>b)</strong> \(\dfrac{3}{4} + \dfrac{1}{6} = \dfrac{9}{12} + \dfrac{2}{12} = \dfrac{11}{12}\)</p>
@@ -78,7 +78,7 @@
   <p>a) Quelle fraction de la planche a-t-il utilis&eacute;e au total ?</p>
   <p>b) Quelle fraction reste-t-il ?</p>
   <p>c) Si la planche mesure 2 m, quelle longueur reste-t-il (en cm) ?</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\dfrac{2}{5} + \dfrac{1}{4} = \dfrac{8}{20} + \dfrac{5}{20} = \dfrac{13}{20}\).</p>
     <p><strong>b)</strong> \(1 - \dfrac{13}{20} = \dfrac{20}{20} - \dfrac{13}{20} = \dfrac{7}{20}\).</p>
@@ -94,7 +94,7 @@
   </div>
   <p>Calculer :</p>
   <p>a) \(\dfrac{2}{3} \times \dfrac{5}{4}\) &emsp; b) \(\dfrac{3}{7} \times \dfrac{7}{9}\) &emsp; c) \(\dfrac{4}{5} \div \dfrac{2}{3}\) &emsp; d) \(\dfrac{3}{8} \div 6\)</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\dfrac{2}{3} \times \dfrac{5}{4} = \dfrac{10}{12} = \dfrac{5}{6}\)</p>
     <p><strong>b)</strong> \(\dfrac{3}{7} \times \dfrac{7}{9} = \dfrac{21}{63} = \dfrac{1}{3}\)</p>
@@ -113,7 +113,7 @@
   <p>a) Calculer le volume total du m&eacute;lange.</p>
   <p>b) Le pot de m&eacute;lange a une capacit&eacute; de 1,5 L. Le m&eacute;lange tient-il dans le pot ?</p>
   <p>c) Quelle fraction du pot est remplie ?</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\dfrac{3}{4} + \dfrac{1}{3} = \dfrac{9}{12} + \dfrac{4}{12} = \dfrac{13}{12}\) L \(\approx 1{,}08\) L.</p>
     <p><strong>b)</strong> Oui, \(\dfrac{13}{12} \approx 1{,}08\) L &lt; 1,5 L. Le m&eacute;lange tient dans le pot.</p>
@@ -137,7 +137,7 @@
   <p>c) \(C = (7 + 3) \times (8 - 5)\)</p>
   <p>d) \(D = 20 - 4 \times 2 + 6 \div 3\)</p>
   <p>e) \(E = 3 \times (5 + 2) - 4 \times 3\)</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(A = 5 + 3 \times 4 = 5 + 12 = 17\)</p>
     <p><strong>b)</strong> \(B = 12 - 2 \times 3 + 1 = 12 - 6 + 1 = 7\)</p>
@@ -162,7 +162,7 @@
   <p>a) &Eacute;crire le calcul du montant total sous forme d'une expression math&eacute;matique.</p>
   <p>b) Calculer le montant total en respectant les priorit&eacute;s.</p>
   <p>c) Le client a un bon de r&eacute;duction de 15 &euro;. Quel est le montant final ?</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(M = 3 \times 45 + 2 \times 8{,}50 + 12\).</p>
     <p><strong>b)</strong> \(M = 135 + 17 + 12 = 164\) &euro;.</p>
@@ -185,7 +185,7 @@
   <p>a) &Eacute;crire le calcul du total sous forme d'expression.</p>
   <p>b) Calculer le total HT (hors taxes).</p>
   <p>c) Calculer le total TTC avec une TVA de 10 % (multiplier le HT par 1,10).</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\text{Total HT} = 30 + 2{,}5 \times 42 + 3 \times 4{,}50 + 28\).</p>
     <p><strong>b)</strong> \(\text{Total HT} = 30 + 105 + 13{,}50 + 28 = 176{,}50\) &euro;.</p>
@@ -205,7 +205,7 @@
   </div>
   <p>Calculer et donner le r&eacute;sultat sous forme d'une puissance de 10 :</p>
   <p>a) \(10^3 \times 10^4\) &emsp; b) \(10^5 \times 10^{-2}\) &emsp; c) \(\dfrac{10^6}{10^2}\) &emsp; d) \(\dfrac{10^3}{10^7}\) &emsp; e) \((10^2)^3\)</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(10^3 \times 10^4 = 10^{3+4} = 10^7\)</p>
     <p><strong>b)</strong> \(10^5 \times 10^{-2} = 10^{5+(-2)} = 10^3\)</p>
@@ -223,7 +223,7 @@
   </div>
   <p>&Eacute;crire les nombres suivants en &eacute;criture scientifique :</p>
   <p>a) 45 000 &emsp; b) 720 &emsp; c) 0,0035 &emsp; d) 0,0000012 &emsp; e) 8 300 000 &emsp; f) 0,56</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(45\,000 = 4{,}5 \times 10^4\)</p>
     <p><strong>b)</strong> \(720 = 7{,}2 \times 10^2\)</p>
@@ -245,7 +245,7 @@
   <p>b) Diam&egrave;tre d'un tuyau de cuivre : 22 mm.</p>
   <p>c) Longueur d'un chantier : 15 km.</p>
   <p>d) &Eacute;paisseur d'un joint : 0,05 mm.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> 0,8 mm = 0,0008 m = \(8 \times 10^{-4}\) m.</p>
     <p><strong>b)</strong> 22 mm = 0,022 m = \(2{,}2 \times 10^{-2}\) m.</p>
@@ -262,7 +262,7 @@
   </div>
   <p>&Eacute;crire les nombres suivants en &eacute;criture d&eacute;cimale :</p>
   <p>a) \(3{,}7 \times 10^3\) &emsp; b) \(6{,}02 \times 10^{-2}\) &emsp; c) \(1{,}5 \times 10^5\) &emsp; d) \(9{,}81 \times 10^{-1}\)</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(3{,}7 \times 10^3 = 3\,700\)</p>
     <p><strong>b)</strong> \(6{,}02 \times 10^{-2} = 0{,}0602\)</p>
@@ -281,7 +281,7 @@
   <p>a) \((3 \times 10^4) \times (2 \times 10^3)\)</p>
   <p>b) \(\dfrac{8 \times 10^5}{4 \times 10^2}\)</p>
   <p>c) \((5 \times 10^{-3}) \times (4 \times 10^6)\)</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \((3 \times 2) \times (10^4 \times 10^3) = 6 \times 10^7\).</p>
     <p><strong>b)</strong> \(\dfrac{8}{4} \times \dfrac{10^5}{10^2} = 2 \times 10^3\).</p>
@@ -306,7 +306,7 @@
   <p>d) \(12{,}985\) au dixi&egrave;me.</p>
   <p>e) \(0{,}0473\) au centi&egrave;me.</p>
   <p>f) \(149{,}5\) &agrave; l'unit&eacute;.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(7{,}346 \approx 7\) (car \(3 < 5\)).</p>
     <p><strong>b)</strong> \(7{,}346 \approx 7{,}3\) (car \(4 < 5\)).</p>
@@ -327,7 +327,7 @@
   <p>b) Un devis affiche un total de 1 247,836 &euro;. Arrondir au centime d'euro pr&egrave;s.</p>
   <p>c) Un plombier calcule le diam&egrave;tre id&eacute;al d'un tuyau : 18,74 mm. Il doit choisir parmi les diam&egrave;tres normalis&eacute;s : 16, 18, 20, 22 mm. Lequel choisir ? Justifier.</p>
   <p>d) La temp&eacute;rature de sortie d'une chaudi&egrave;re est de 64,38 &deg;C. Arrondir &agrave; l'unit&eacute;.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(1{,}237\) m (d&eacute;j&agrave; au mm pr&egrave;s, 3 d&eacute;cimales). Le millim&egrave;tre est le troisi&egrave;me chiffre apr&egrave;s la virgule en m&egrave;tres : 1,237 m = 1 237 mm.</p>
     <p><strong>b)</strong> \(1\,247{,}84\) &euro; (car \(6 \geqslant 5\)).</p>
@@ -345,7 +345,7 @@
   <p>Donner l'ordre de grandeur de chaque nombre :</p>
   <p>a) 4 200 &emsp; b) 780 000 &emsp; c) 0,0038 &emsp; d) 62</p>
   <p>e) Un &eacute;b&eacute;niste ach&egrave;te 47 planches &agrave; 18,50 &euro; pi&egrave;ce. Estimer le co&ucirc;t total par un calcul d'ordre de grandeur, puis calculer le co&ucirc;t exact.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(4\,200 = 4{,}2 \times 10^3\). Comme \(4{,}2 < 5\), l'ordre de grandeur est \(10^3\).</p>
     <p><strong>b)</strong> \(780\,000 = 7{,}8 \times 10^5\). Comme \(7{,}8 \geqslant 5\), l'ordre de grandeur est \(10^6\).</p>
@@ -374,7 +374,7 @@
   <p>b) Calculer la longueur n&eacute;cessaire pour la salle de bain (en m).</p>
   <p>c) Calculer la longueur totale n&eacute;cessaire.</p>
   <p>d) Peut-il se contenter d'une seule barre de 6 m ? Justifier.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\dfrac{3}{4} \times 6 = \dfrac{18}{4} = 4{,}5\) m.</p>
     <p><strong>b)</strong> \(\dfrac{1}{3} \times 6 = 2\) m.</p>
@@ -398,7 +398,7 @@
   <p>a) Calculer le volume total de la boisson.</p>
   <p>b) On veut remplir des bouteilles de \(\dfrac{1}{3}\) de litre. Combien de bouteilles peut-on remplir ?</p>
   <p>c) Exprimer le volume restant sous forme de fraction.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\dfrac{3}{4} + \dfrac{1}{2} = \dfrac{3}{4} + \dfrac{2}{4} = \dfrac{5}{4}\) L \(= 1{,}25\) L.</p>
     <p><strong>b)</strong> \(\dfrac{5/4}{1/3} = \dfrac{5}{4} \times \dfrac{3}{1} = \dfrac{15}{4} = 3{,}75\). On peut remplir <strong>3 bouteilles</strong> compl&egrave;tes.</p>
@@ -420,7 +420,7 @@
     <li>\(D = 5 \times 10^{-4}\) m (&eacute;paisseur d'un placage)</li>
     <li>\(E = 4{,}5 \times 10^{-1}\) m (largeur d'une &eacute;tag&egrave;re)</li>
   </ul>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p>Conversion en &eacute;criture d&eacute;cimale :</p>
     <ul class="styled">
@@ -445,7 +445,7 @@
   <p>b) Surface d'un panneau solaire : \(1{,}65 \times 0{,}99\) m&sup2;. Arrondir au dixi&egrave;me.</p>
   <p>c) Volume d'un vase d'expansion : \(\dfrac{4}{3} \times 3{,}14 \times 0{,}15^3\) m&sup3;. Donner le r&eacute;sultat en &eacute;criture scientifique (arrondi au dixi&egrave;me du coefficient).</p>
   <p>d) Puissance d'une pompe &agrave; chaleur : \(3 \times (25 - 7) \times 4{,}18 \times \dfrac{200}{3\,600}\) kW. Arrondir au dixi&egrave;me.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\dfrac{3}{4} \times 12 + 2{,}5 = 9 + 2{,}5 = 11{,}5\) L/min. Arrondi &agrave; l'unit&eacute; : <strong>12</strong> L/min.</p>
     <p><strong>b)</strong> \(1{,}65 \times 0{,}99 = 1{,}6335\) m&sup2;. Arrondi au dixi&egrave;me : <strong>1,6</strong> m&sup2;.</p>
@@ -456,5 +456,17 @@
 
 </div>
 <script src="../../../nav.js"></script>
-</body>
+<script>
+function toggle(btn) {
+  var corr = btn.previousElementSibling || btn.nextElementSibling;
+  if (!corr || !corr.classList.contains("corr")) {
+    corr = btn.parentElement.querySelector(".corr");
+  }
+  if (corr) {
+    var vis = corr.style.display === "block";
+    corr.style.display = vis ? "none" : "block";
+    btn.textContent = vis ? "Voir la correction" : "Masquer la correction";
+  }
+}
+</script></body>
 </html>
