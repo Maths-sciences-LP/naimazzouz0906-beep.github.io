@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch01 – Statistiques à une variable – CAP</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#b45309;--p-bg:#fffbeb;--p-border:#fde68a}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-cap.html" class="nb">&larr; Retour au sommaire CAP</a>
+
+<header>
+  <h1>Chapitre 1 &ndash; Statistiques &agrave; une variable</h1>
+  <p class="sous-titre">CAP &nbsp;|&nbsp; Math&eacute;matiques &nbsp;|&nbsp; Module 1</p>
+</header>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>1. Introduction &mdash; Pourquoi les statistiques&nbsp;?</h2>
+
+<div class="situation">
+  <h3>Situation professionnelle &mdash; Contr&ocirc;le qualit&eacute; en menuiserie</h3>
+  <p>
+    Un artisan menuisier fabrique des pi&egrave;ces de bois pour des placards sur mesure.
+    Apr&egrave;s d&eacute;coupe, il mesure la longueur de 10 pi&egrave;ces (en cm)&nbsp;:
+  </p>
+  <p style="text-align:center;font-size:1.1em;font-weight:600">
+    45,2 &nbsp;&ndash;&nbsp; 45,0 &nbsp;&ndash;&nbsp; 45,3 &nbsp;&ndash;&nbsp; 45,1 &nbsp;&ndash;&nbsp; 45,0 &nbsp;&ndash;&nbsp; 45,2 &nbsp;&ndash;&nbsp; 45,2 &nbsp;&ndash;&nbsp; 45,1 &nbsp;&ndash;&nbsp; 45,3 &nbsp;&ndash;&nbsp; 45,1
+  </p>
+  <p>
+    Il souhaite savoir&nbsp;: quelle est la longueur moyenne&nbsp;? Quelle valeur revient le plus souvent&nbsp;?
+    Les statistiques permettent de r&eacute;pondre &agrave; ces questions.
+  </p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>2. Vocabulaire des statistiques</h2>
+
+<div class="def">
+  <span class="label-def">D&eacute;finition</span>
+  <strong>S&eacute;rie statistique :</strong><br>
+  Une <strong>s&eacute;rie statistique</strong> est un ensemble de donn&eacute;es recueillies lors d'une &eacute;tude.<br><br>
+  <ul class="styled">
+    <li>La <strong>population</strong> est l'ensemble des individus &eacute;tudi&eacute;s.</li>
+    <li>Le <strong>caract&egrave;re</strong> est la propri&eacute;t&eacute; observ&eacute;e (longueur, temp&eacute;rature, note, etc.).</li>
+    <li>Les <strong>valeurs</strong> sont les r&eacute;sultats possibles du caract&egrave;re.</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <strong>Exemple :</strong> Un installateur thermique rel&egrave;ve la temp&eacute;rature de 8 radiateurs (en &deg;C)&nbsp;:
+  55, 58, 55, 60, 58, 55, 62, 58.
+  <ul class="styled">
+    <li><strong>Population :</strong> les 8 radiateurs</li>
+    <li><strong>Caract&egrave;re :</strong> la temp&eacute;rature en &deg;C</li>
+    <li><strong>Valeurs :</strong> 55, 58, 60, 62</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>3. Effectifs et fr&eacute;quences</h2>
+
+<div class="def">
+  <span class="label-def">D&eacute;finition</span>
+  <strong>Effectif :</strong><br>
+  L'<strong>effectif</strong> d'une valeur est le nombre de fois o&ugrave; cette valeur appara&icirc;t dans la s&eacute;rie.<br>
+  L'<strong>effectif total</strong> est le nombre total de donn&eacute;es (not&eacute; \(N\)).
+</div>
+
+<div class="def">
+  <span class="label-def">D&eacute;finition</span>
+  <strong>Fr&eacute;quence :</strong><br>
+  La <strong>fr&eacute;quence</strong> d'une valeur est la proportion de cette valeur par rapport au total&nbsp;:
+  \[\text{Fr&eacute;quence} = \frac{\text{Effectif de la valeur}}{\text{Effectif total}}\]
+  La fr&eacute;quence s'exprime en <strong>fraction</strong>, en <strong>nombre d&eacute;cimal</strong> ou en <strong>pourcentage</strong>.
+</div>
+
+<div class="prop">
+  <span class="label-prop">Propri&eacute;t&eacute;</span>
+  <ul class="styled">
+    <li>La somme de tous les effectifs est &eacute;gale &agrave; l'effectif total \(N\).</li>
+    <li>La somme de toutes les fr&eacute;quences est &eacute;gale &agrave; <strong>1</strong> (soit 100&nbsp;%).</li>
+  </ul>
+</div>
+
+<div class="meth">
+  <span class="label-meth">M&eacute;thode</span>
+  <strong>Construire un tableau d'effectifs et de fr&eacute;quences</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Lister toutes les valeurs diff&eacute;rentes de la s&eacute;rie.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Compter combien de fois chaque valeur appara&icirc;t &rarr; c'est l'<strong>effectif</strong>.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>Calculer chaque fr&eacute;quence en divisant l'effectif par \(N\).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">4</div>
+    <div>V&eacute;rifier&nbsp;: la somme des effectifs donne \(N\) et la somme des fr&eacute;quences donne 1.</div>
+  </div>
+</div>
+
+<div class="ex">
+  <strong>Exemple d&eacute;taill&eacute; :</strong> Reprenons les temp&eacute;ratures des radiateurs (55, 58, 55, 60, 58, 55, 62, 58).
+  <br>Effectif total \(N = 8\).
+  <table class="full">
+    <tr>
+      <th>Temp&eacute;rature (&deg;C)</th><td>55</td><td>58</td><td>60</td><td>62</td><td><strong>Total</strong></td>
+    </tr>
+    <tr>
+      <th>Effectif</th><td>3</td><td>3</td><td>1</td><td>1</td><td><strong>8</strong></td>
+    </tr>
+    <tr>
+      <th>Fr&eacute;quence</th>
+      <td>\(\frac{3}{8} = 0{,}375\)</td>
+      <td>\(\frac{3}{8} = 0{,}375\)</td>
+      <td>\(\frac{1}{8} = 0{,}125\)</td>
+      <td>\(\frac{1}{8} = 0{,}125\)</td>
+      <td><strong>1</strong></td>
+    </tr>
+    <tr>
+      <th>Fr&eacute;quence en %</th><td>37,5 %</td><td>37,5 %</td><td>12,5 %</td><td>12,5 %</td><td><strong>100 %</strong></td>
+    </tr>
+  </table>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>4. Repr&eacute;sentations graphiques</h2>
+
+<h3>4.1 Diagramme en b&acirc;tons</h3>
+
+<div class="def">
+  <span class="label-def">D&eacute;finition</span>
+  Un <strong>diagramme en b&acirc;tons</strong> repr&eacute;sente chaque valeur par un b&acirc;ton vertical dont la hauteur est proportionnelle &agrave; l'effectif (ou &agrave; la fr&eacute;quence).
+</div>
+
+<div class="meth">
+  <span class="label-meth">M&eacute;thode</span>
+  <strong>Tracer un diagramme en b&acirc;tons</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Tracer un axe horizontal avec les valeurs du caract&egrave;re.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Tracer un axe vertical gradu&eacute; pour les effectifs.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>Dessiner un b&acirc;ton vertical pour chaque valeur, de hauteur &eacute;gale &agrave; l'effectif.</div>
+  </div>
+</div>
+
+<div class="ex">
+  <strong>Exemple :</strong> Un atelier de signal&eacute;tique produit des panneaux. On relève le nombre de d&eacute;fauts par lot sur 20 lots&nbsp;:
+
+  <table class="full">
+    <tr><th>Nombre de d&eacute;fauts</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+    <tr><th>Effectif (nb de lots)</th><td>6</td><td>7</td><td>4</td><td>2</td><td>1</td></tr>
+  </table>
+
+  <p>Le diagramme en b&acirc;tons aura 5 b&acirc;tons&nbsp;: le plus haut pour la valeur 1 (7 lots).</p>
+</div>
+
+<h3>4.2 Diagramme circulaire</h3>
+
+<div class="def">
+  <span class="label-def">D&eacute;finition</span>
+  Un <strong>diagramme circulaire</strong> (ou &laquo;&nbsp;camembert&nbsp;&raquo;) repr&eacute;sente chaque valeur par un secteur dont l'angle est proportionnel &agrave; l'effectif.
+</div>
+
+<div class="meth">
+  <span class="label-meth">M&eacute;thode</span>
+  <strong>Calculer l'angle d'un secteur</strong><br>
+  L'angle d'un secteur se calcule avec la formule&nbsp;:
+  \[\text{Angle} = \text{Fr&eacute;quence} \times 360°\]
+  ou de mani&egrave;re &eacute;quivalente&nbsp;:
+  \[\text{Angle} = \frac{\text{Effectif}}{\text{Effectif total}} \times 360°\]
+</div>
+
+<div class="ex">
+  <strong>Exemple :</strong> Calculons les angles pour les temp&eacute;ratures des radiateurs&nbsp;:
+  <table class="full">
+    <tr><th>Temp&eacute;rature</th><td>55 &deg;C</td><td>58 &deg;C</td><td>60 &deg;C</td><td>62 &deg;C</td><td><strong>Total</strong></td></tr>
+    <tr><th>Effectif</th><td>3</td><td>3</td><td>1</td><td>1</td><td><strong>8</strong></td></tr>
+    <tr>
+      <th>Angle</th>
+      <td>\(\frac{3}{8} \times 360 = 135°\)</td>
+      <td>\(\frac{3}{8} \times 360 = 135°\)</td>
+      <td>\(\frac{1}{8} \times 360 = 45°\)</td>
+      <td>\(\frac{1}{8} \times 360 = 45°\)</td>
+      <td><strong>360&deg;</strong></td>
+    </tr>
+  </table>
+  <p>V&eacute;rification&nbsp;: \(135 + 135 + 45 + 45 = 360°\) &check;</p>
+</div>
+
+<div class="att">
+  <span class="label-att">Attention</span>
+  <ul class="styled">
+    <li>La somme de tous les angles doit toujours faire <strong>360&deg;</strong>. Si ce n'est pas le cas, il y a une erreur de calcul.</li>
+    <li>Ne pas confondre diagramme en b&acirc;tons (pour des donn&eacute;es discr&egrave;tes) et histogramme (pour des donn&eacute;es regroup&eacute;es en classes &mdash; hors programme CAP).</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>5. La moyenne</h2>
+
+<div class="def">
+  <span class="label-def">D&eacute;finition</span>
+  <strong>Moyenne :</strong><br>
+  La <strong>moyenne</strong> d'une s&eacute;rie statistique est&nbsp;:
+  \[\bar{x} = \frac{\text{Somme de toutes les valeurs}}{\text{Effectif total}}\]
+  Quand on a un tableau d'effectifs, la formule devient&nbsp;:
+  \[\bar{x} = \frac{n_1 \times v_1 + n_2 \times v_2 + \cdots + n_k \times v_k}{N}\]
+  o&ugrave; \(v_i\) sont les valeurs et \(n_i\) les effectifs correspondants.
+</div>
+
+<div class="meth">
+  <span class="label-meth">M&eacute;thode</span>
+  <strong>Calculer une moyenne &agrave; partir d'un tableau</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Pour chaque valeur, calculer le produit <strong>valeur &times; effectif</strong>.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Additionner tous ces produits.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>Diviser par l'effectif total \(N\).</div>
+  </div>
+</div>
+
+<div class="ex">
+  <strong>Exemple d&eacute;taill&eacute; :</strong> Calculons la temp&eacute;rature moyenne des 8 radiateurs.
+  <table class="full">
+    <tr><th>Temp&eacute;rature \(v_i\)</th><td>55</td><td>58</td><td>60</td><td>62</td></tr>
+    <tr><th>Effectif \(n_i\)</th><td>3</td><td>3</td><td>1</td><td>1</td></tr>
+    <tr><th>\(v_i \times n_i\)</th><td>\(55 \times 3 = 165\)</td><td>\(58 \times 3 = 174\)</td><td>\(60 \times 1 = 60\)</td><td>\(62 \times 1 = 62\)</td></tr>
+  </table>
+  <p>Somme des produits&nbsp;: \(165 + 174 + 60 + 62 = 461\)</p>
+  <p>
+    \[\bar{x} = \frac{461}{8} = 57{,}625\,°\text{C}\]
+  </p>
+  <p>La temp&eacute;rature moyenne des radiateurs est d'environ <strong>57,6 &deg;C</strong>.</p>
+</div>
+
+<div class="ex">
+  <strong>Exemple professionnel :</strong> Un graphiste en signal&eacute;tique r&eacute;alise 5 panneaux dans la journ&eacute;e. Les temps de r&eacute;alisation (en minutes) sont&nbsp;: 35, 42, 38, 40, 35.
+  <p>
+    \[\bar{x} = \frac{35 + 42 + 38 + 40 + 35}{5} = \frac{190}{5} = 38\text{ min}\]
+  </p>
+  <p>En moyenne, il met <strong>38 minutes</strong> par panneau.</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>6. Lire et interpr&eacute;ter un graphique</h2>
+
+<div class="meth">
+  <span class="label-meth">M&eacute;thode</span>
+  <strong>Lire un diagramme en b&acirc;tons</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Rep&eacute;rer la grandeur sur l'axe horizontal (les valeurs) et l'axe vertical (les effectifs).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Pour conna&icirc;tre l'effectif d'une valeur&nbsp;: lire la hauteur du b&acirc;ton correspondant.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>L'effectif total est la somme des hauteurs de tous les b&acirc;tons.</div>
+  </div>
+</div>
+
+<div class="ex">
+  <strong>Exemple :</strong> Un installateur thermique rel&egrave;ve le nombre de pannes par mois sur 12 mois.
+  Le diagramme montre&nbsp;: 2 pannes (3 mois), 3 pannes (5 mois), 4 pannes (3 mois), 5 pannes (1 mois).
+  <ul class="styled">
+    <li>Effectif total&nbsp;: \(3 + 5 + 3 + 1 = 12\) mois</li>
+    <li>Valeur la plus fr&eacute;quente&nbsp;: 3 pannes (5 mois sur 12)</li>
+    <li>Moyenne&nbsp;: \(\frac{2 \times 3 + 3 \times 5 + 4 \times 3 + 5 \times 1}{12} = \frac{6 + 15 + 12 + 5}{12} = \frac{38}{12} \approx 3{,}2\) pannes/mois</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>7. &Agrave; retenir</h2>
+
+<div class="retenir">
+  <strong>&Agrave; retenir :</strong>
+  <ul class="styled">
+    <li>L'<strong>effectif</strong> d'une valeur = nombre de fois o&ugrave; elle appara&icirc;t.</li>
+    <li>La <strong>fr&eacute;quence</strong> = effectif divis&eacute; par l'effectif total. Toujours entre 0 et 1 (ou 0&nbsp;% et 100&nbsp;%).</li>
+    <li>Le <strong>diagramme en b&acirc;tons</strong>&nbsp;: hauteur = effectif.</li>
+    <li>Le <strong>diagramme circulaire</strong>&nbsp;: angle = fr&eacute;quence &times; 360&deg;.</li>
+    <li>La <strong>moyenne</strong> = somme de (valeur &times; effectif) divis&eacute;e par l'effectif total.</li>
+    <li>V&eacute;rifications&nbsp;: somme des effectifs = \(N\), somme des fr&eacute;quences = 1, somme des angles = 360&deg;.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

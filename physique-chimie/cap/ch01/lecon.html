@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch01 – Sécurité – CAP Physique-Chimie</title>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}
+/* Pictogrammes */
+.picto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.picto-card{background:#fff;border:2px solid #e2e8f0;border-radius:10px;padding:14px 10px;text-align:center;transition:border-color .2s}
+.picto-card:hover{border-color:var(--p)}
+.picto-diamond{width:64px;height:64px;background:#fff;border:3px solid #c53030;transform:rotate(45deg);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;border-radius:4px}
+.picto-diamond span{transform:rotate(-45deg);font-size:1.6em;line-height:1}
+.picto-name{font-size:.82em;font-weight:700;color:#2d3748;margin-bottom:2px}
+.picto-desc{font-size:.75em;color:#718096}
+/* EPI grid */
+.epi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0}
+.epi-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px 14px;display:flex;align-items:flex-start;gap:10px}
+.epi-icon{font-size:1.8em;flex-shrink:0;line-height:1}
+.epi-text .epi-nom{font-weight:700;font-size:.9em;color:var(--p)}
+.epi-text .epi-role{font-size:.82em;color:#4a5568}
+/* Dispositifs électriques */
+.elec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0}
+.elec-card{background:#faf5ff;border:1px solid #c4b5fd;border-radius:8px;padding:12px 14px}
+.elec-card .ec-titre{font-weight:700;color:var(--p);font-size:.9em;margin-bottom:4px}
+.elec-card .ec-desc{font-size:.82em;color:#4a5568}
+/* Laser classes */
+.laser-table td:first-child{font-weight:700;text-align:center}
+@media(max-width:600px){
+  .picto-grid{grid-template-columns:repeat(2,1fr)}
+  .epi-grid,.elec-grid{grid-template-columns:1fr}
+}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-cap.html" class="nb">&larr; Retour au sommaire CAP</a>
+
+<header>
+  <h1>Chapitre 1 &mdash; S&eacute;curit&eacute; en laboratoire et en atelier</h1>
+  <p class="sous-titre">CAP &nbsp;|&nbsp; Physique-Chimie &nbsp;|&nbsp; Module 1 &mdash; S&eacute;curit&eacute;</p>
+</header>
+
+<div class="objectifs">
+  <strong>&#127919; Objectifs du chapitre</strong>
+  <ul>
+    <li>Identifier les pictogrammes de danger sur les produits chimiques</li>
+    <li>Conna&icirc;tre et utiliser les &eacute;quipements de protection individuelle (EPI)</li>
+    <li>Justifier les dispositifs de protection &eacute;lectrique (fusible, disjoncteur, diff&eacute;rentiel)</li>
+    <li>Identifier les dangers d&rsquo;une source laser et les classes de lasers</li>
+    <li>Utiliser les protections adapt&eacute;es &agrave; l&rsquo;environnement sonore</li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<h2>1. Pourquoi la s&eacute;curit&eacute; est-elle essentielle ?</h2>
+
+<p>
+  En atelier comme en laboratoire, vous &ecirc;tes expos&eacute;s &agrave; des risques vari&eacute;s :
+  produits chimiques, machines &eacute;lectriques, sources lumineuses et sonores.
+  Conna&icirc;tre ces risques et savoir s&rsquo;en prot&eacute;ger est une comp&eacute;tence professionnelle fondamentale.
+</p>
+
+<div class="ex">
+  <span class="label label-ex">Exemples de risques selon le m&eacute;tier</span>
+  <ul>
+    <li><strong>Atelier menuiserie</strong> : poussi&egrave;res de bois (irritation respiratoire), bruit des machines (scie circulaire &agrave; 100 dB), vernis et colles (vapeurs toxiques)</li>
+    <li><strong>Installation thermique</strong> : &eacute;lectrocution lors du raccordement, br&ucirc;lures (soudure, brasage), produits chimiques (flux de brasage)</li>
+    <li><strong>Atelier signal&eacute;tique</strong> : d&eacute;coupe laser (risque oculaire), solvants d&rsquo;impression (vapeurs nocives), encres UV</li>
+  </ul>
+</div>
+
+<div class="retenir">
+  <strong>&Agrave; retenir</strong><br>
+  La s&eacute;curit&eacute; repose sur trois r&eacute;flexes : <strong>lire les &eacute;tiquettes</strong>,
+  <strong>porter les &eacute;quipements de protection</strong> et <strong>appliquer les consignes</strong>.
+</div>
+
+<!-- ============================================================ -->
+<h2>2. Les pictogrammes de danger</h2>
+
+<p>
+  Les pictogrammes de danger sont des symboles normalis&eacute;s (syst&egrave;me SGH/CLP) figurant
+  sur les &eacute;tiquettes des produits chimiques. Ils se pr&eacute;sentent sous forme d&rsquo;un
+  <strong>losange blanc &agrave; bord rouge</strong> avec un symbole noir.
+</p>
+
+<div class="picto-grid">
+  <div class="picto-card">
+    <div class="picto-diamond"><span>&#128165;</span></div>
+    <div class="picto-name">Explosif</div>
+    <div class="picto-desc">Risque d&rsquo;explosion au choc ou &agrave; la chaleur</div>
+  </div>
+  <div class="picto-card">
+    <div class="picto-diamond"><span>&#128293;</span></div>
+    <div class="picto-name">Inflammable</div>
+    <div class="picto-desc">S&rsquo;enflamme facilement (solvants, alcool...)</div>
+  </div>
+  <div class="picto-card">
+    <div class="picto-diamond"><span>&#9763;</span></div>
+    <div class="picto-name">Comburant</div>
+    <div class="picto-desc">Active la combustion d&rsquo;autres substances</div>
+  </div>
+  <div class="picto-card">
+    <div class="picto-diamond"><span>&#128684;</span></div>
+    <div class="picto-name">Gaz sous pression</div>
+    <div class="picto-desc">Risque d&rsquo;&eacute;clatement du r&eacute;cipient</div>
+  </div>
+  <div class="picto-card">
+    <div class="picto-diamond"><span>&#9760;</span></div>
+    <div class="picto-name">Toxique</div>
+    <div class="picto-desc">Dangereux m&ecirc;me en petite quantit&eacute;</div>
+  </div>
+  <div class="picto-card">
+    <div class="picto-diamond"><span>&#9888;</span></div>
+    <div class="picto-name">Nocif / Irritant</div>
+    <div class="picto-desc">Peut causer irritations, allergies</div>
+  </div>
+  <div class="picto-card">
+    <div class="picto-diamond"><span>&#129408;</span></div>
+    <div class="picto-name">Corrosif</div>
+    <div class="picto-desc">Br&ucirc;le la peau, les yeux, les mat&eacute;riaux</div>
+  </div>
+  <div class="picto-card">
+    <div class="picto-diamond"><span>&#128308;</span></div>
+    <div class="picto-name">Danger pour la sant&eacute;</div>
+    <div class="picto-desc">Effets graves sur les organes (CMR...)</div>
+  </div>
+  <div class="picto-card">
+    <div class="picto-diamond"><span>&#127807;</span></div>
+    <div class="picto-name">Danger environnement</div>
+    <div class="picto-desc">Toxique pour les organismes aquatiques</div>
+  </div>
+</div>
+
+<div class="def">
+  <span class="label label-def">Phrases H et phrases P</span><br>
+  <strong>Phrases H (Hazard)</strong> : indiquent la nature du danger
+  (ex. : H225 = liquide et vapeurs tr&egrave;s inflammables).<br>
+  <strong>Phrases P (Precaution)</strong> : indiquent les pr&eacute;cautions &agrave; prendre
+  (ex. : P210 = tenir &agrave; l&rsquo;&eacute;cart des sources d&rsquo;ignition).<br>
+  Ces phrases figurent obligatoirement sur l&rsquo;&eacute;tiquette, &agrave; c&ocirc;t&eacute; des pictogrammes.
+</div>
+
+<div class="meth">
+  <span class="label label-meth">M&eacute;thode &mdash; Lire une &eacute;tiquette de produit chimique</span>
+  <ol style="margin:8px 0 0;padding-left:20px">
+    <li>Rep&eacute;rer les <strong>pictogrammes</strong> : identifier le type de danger</li>
+    <li>Lire les <strong>phrases H</strong> : comprendre le risque pr&eacute;cis</li>
+    <li>Lire les <strong>phrases P</strong> : appliquer les pr&eacute;cautions (EPI, ventilation...)</li>
+    <li>Consulter la <strong>Fiche de Donn&eacute;es de S&eacute;curit&eacute; (FDS)</strong> si n&eacute;cessaire</li>
+  </ol>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple &mdash; &Eacute;tiquette d&rsquo;un vernis utilis&eacute; en menuiserie</span><br>
+  Un vernis polyur&eacute;thane porte les pictogrammes <strong>Inflammable</strong> et <strong>Nocif/Irritant</strong>.
+  Les phrases H indiquent : H226 (liquide inflammable), H336 (peut provoquer somnolence).
+  Les phrases P pr&eacute;cisent : P210 (tenir &agrave; l&rsquo;&eacute;cart des flammes), P261 (&eacute;viter de respirer les vapeurs).
+  <br><strong>Action</strong> : travailler avec ventilation, porter un masque et des gants.
+</div>
+
+<!-- ============================================================ -->
+<h2>3. Les &Eacute;quipements de Protection Individuelle (EPI)</h2>
+
+<div class="def">
+  <span class="label label-def">D&eacute;finition</span><br>
+  Un <strong>EPI</strong> (Equipement de Protection Individuelle) est un &eacute;quipement port&eacute;
+  par une personne pour se prot&eacute;ger contre un ou plusieurs risques.
+  Son port est <strong>obligatoire</strong> d&egrave;s qu&rsquo;un risque identifi&eacute; existe.
+</div>
+
+<h3>En chimie et en atelier</h3>
+<div class="epi-grid">
+  <div class="epi-card">
+    <div class="epi-icon">&#129529;</div>
+    <div class="epi-text">
+      <div class="epi-nom">Blouse de laboratoire</div>
+      <div class="epi-role">Prot&egrave;ge les v&ecirc;tements et la peau des projections de produits chimiques</div>
+    </div>
+  </div>
+  <div class="epi-card">
+    <div class="epi-icon">&#129495;</div>
+    <div class="epi-text">
+      <div class="epi-nom">Lunettes de protection</div>
+      <div class="epi-role">Prot&egrave;gent les yeux des projections, &eacute;claboussures et vapeurs</div>
+    </div>
+  </div>
+  <div class="epi-card">
+    <div class="epi-icon">&#129510;</div>
+    <div class="epi-text">
+      <div class="epi-nom">Gants de protection</div>
+      <div class="epi-role">Prot&egrave;gent les mains des produits corrosifs, toxiques ou irritants</div>
+    </div>
+  </div>
+  <div class="epi-card">
+    <div class="epi-icon">&#128084;</div>
+    <div class="epi-text">
+      <div class="epi-nom">Masque respiratoire</div>
+      <div class="epi-role">Filtre les vapeurs toxiques et poussi&egrave;res fines (pon&ccedil;age, peinture...)</div>
+    </div>
+  </div>
+</div>
+
+<h3>Protection auditive</h3>
+<div class="epi-grid">
+  <div class="epi-card">
+    <div class="epi-icon">&#127911;</div>
+    <div class="epi-text">
+      <div class="epi-nom">Casque antibruit (coquilles)</div>
+      <div class="epi-role">R&eacute;duit le niveau sonore de 25 &agrave; 35 dB &mdash; obligatoire au-del&agrave; de 85 dB</div>
+    </div>
+  </div>
+  <div class="epi-card">
+    <div class="epi-icon">&#128083;</div>
+    <div class="epi-text">
+      <div class="epi-nom">Bouchons d&rsquo;oreilles</div>
+      <div class="epi-role">Protection jetable &mdash; att&eacute;nuation de 20 &agrave; 30 dB</div>
+    </div>
+  </div>
+</div>
+
+<h3>Protection contre les sources lumineuses</h3>
+<div class="epi-grid">
+  <div class="epi-card">
+    <div class="epi-icon">&#128064;</div>
+    <div class="epi-text">
+      <div class="epi-nom">Lunettes anti-laser</div>
+      <div class="epi-role">Filtrent la longueur d&rsquo;onde du laser &mdash; obligatoires en classe 3 et 4</div>
+    </div>
+  </div>
+  <div class="epi-card">
+    <div class="epi-icon">&#9728;</div>
+    <div class="epi-text">
+      <div class="epi-nom">Lunettes anti-UV</div>
+      <div class="epi-role">Prot&egrave;gent contre les rayonnements ultraviolets (lampes UV, soudure)</div>
+    </div>
+  </div>
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention</span><br>
+  Un EPI n&rsquo;est efficace que s&rsquo;il est <strong>bien port&eacute;</strong> et <strong>adapt&eacute; au risque</strong>.
+  Les lunettes de vue ne remplacent pas les lunettes de protection certifi&eacute;es.
+</div>
+
+<!-- ============================================================ -->
+<h2>4. S&eacute;curit&eacute; &eacute;lectrique &mdash; Les dispositifs de protection</h2>
+
+<p>
+  Les installations &eacute;lectriques comportent plusieurs dispositifs qui prot&egrave;gent
+  les <strong>appareils</strong> et les <strong>personnes</strong>.
+</p>
+
+<div class="elec-grid">
+  <div class="elec-card">
+    <div class="ec-titre">&#9889; Fusible</div>
+    <div class="ec-desc">Fil conducteur qui fond si l&rsquo;intensit&eacute; d&eacute;passe un seuil. Prot&egrave;ge les c&acirc;bles contre les surcharges. Doit &ecirc;tre remplac&eacute; apr&egrave;s d&eacute;clenchement.</div>
+  </div>
+  <div class="elec-card">
+    <div class="ec-titre">&#9889; Disjoncteur</div>
+    <div class="ec-desc">Interrupteur automatique qui coupe le courant en cas de surcharge ou de court-circuit. Se r&eacute;arme manuellement (r&eacute;utilisable).</div>
+  </div>
+  <div class="elec-card">
+    <div class="ec-titre">&#10003; Disjoncteur diff&eacute;rentiel</div>
+    <div class="ec-desc">D&eacute;tecte un d&eacute;faut d&rsquo;isolation (courant de fuite passant par une personne). Se d&eacute;clenche en 30 ms. <strong>Prot&egrave;ge les personnes</strong> contre l&rsquo;&eacute;lectrocution.</div>
+  </div>
+  <div class="elec-card">
+    <div class="ec-titre">&#128101; Mise &agrave; la terre</div>
+    <div class="ec-desc">Relie les carcasses m&eacute;talliques des appareils &agrave; la terre. En cas de d&eacute;faut, le courant s&rsquo;&eacute;coule dans la terre au lieu de traverser la personne.</div>
+  </div>
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Cha&icirc;ne de protection d&rsquo;une installation</span><br>
+  Dans une installation conforme, le courant traverse successivement :
+  <strong>disjoncteur g&eacute;n&eacute;ral</strong> &rarr; <strong>disjoncteur diff&eacute;rentiel 30 mA</strong> &rarr;
+  <strong>disjoncteur de circuit</strong> (ou fusible) &rarr; <strong>appareil</strong> (reli&eacute; &agrave; la terre).
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple &mdash; Atelier d&rsquo;installation thermique</span><br>
+  Un installateur thermique raccorde une chaudi&egrave;re &eacute;lectrique. L&rsquo;installation comprend
+  un disjoncteur diff&eacute;rentiel 30 mA et un disjoncteur 20 A sur le circuit.
+  Si un d&eacute;faut d&rsquo;isolation appara&icirc;t, le diff&eacute;rentiel coupe le courant en quelques millisecondes,
+  avant que le technicien ne soit &eacute;lectrocut&eacute;.
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention</span><br>
+  Ne jamais <strong>court-circuiter un fusible</strong> ni condamner un disjoncteur.
+  Ces dispositifs prot&egrave;gent les personnes &mdash; les contourner peut &ecirc;tre mortel.
+</div>
+
+<!-- ============================================================ -->
+<h2>5. S&eacute;curit&eacute; face aux sources lumineuses &mdash; Les lasers</h2>
+
+<div class="def">
+  <span class="label label-def">Laser</span><br>
+  Un laser &eacute;met un <strong>faisceau lumineux tr&egrave;s concentr&eacute;</strong>, caract&eacute;ris&eacute; par :
+  <ul style="margin:6px 0 0;padding-left:20px">
+    <li><strong>Monochromaticit&eacute;</strong> : une seule longueur d&rsquo;onde (une seule couleur)</li>
+    <li><strong>Puissance concentr&eacute;e</strong> : &eacute;nergie focalis&eacute;e sur une tr&egrave;s petite surface</li>
+    <li><strong>Faible divergence</strong> : le faisceau reste fin sur de longues distances</li>
+  </ul>
+</div>
+
+<h3>Classes de lasers</h3>
+<table class="laser-table">
+  <thead>
+    <tr><th>Classe</th><th>Description</th><th>Exemples</th><th>Risque</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Sans danger en utilisation normale</td>
+      <td>Lecteur CD, imprimante laser</td>
+      <td style="color:#2f855a">&#9679; Nul</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Visible &mdash; le r&eacute;flexe de clignement prot&egrave;ge</td>
+      <td>Pointeur laser de pr&eacute;sentation</td>
+      <td style="color:#d97706">&#9679; Faible</td>
+    </tr>
+    <tr>
+      <td>3R / 3B</td>
+      <td>Danger si regard direct dans le faisceau</td>
+      <td>Lasers de laboratoire, scanners</td>
+      <td style="color:#e65c00">&#9679; Mod&eacute;r&eacute;</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Danger m&ecirc;me par r&eacute;flexion sur une surface</td>
+      <td>Lasers industriels de d&eacute;coupe</td>
+      <td style="color:#c53030">&#9679; &Eacute;lev&eacute;</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="att">
+  <span class="label label-att">R&egrave;gles absolues face &agrave; un laser</span>
+  <ul style="margin:6px 0 0;padding-left:20px">
+    <li><strong>Ne jamais regarder directement</strong> dans le faisceau</li>
+    <li>Toujours porter les <strong>lunettes de protection adapt&eacute;es</strong></li>
+    <li>Ne jamais diriger le faisceau vers une personne</li>
+    <li>&Eacute;teindre le laser lorsqu&rsquo;il n&rsquo;est pas utilis&eacute;</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple &mdash; Atelier signal&eacute;tique</span><br>
+  En atelier de signal&eacute;tique, une machine de d&eacute;coupe laser (classe 4) d&eacute;coupe du vinyle
+  et du plexiglas. Le technicien doit porter des lunettes anti-laser adapt&eacute;es &agrave; la longueur d&rsquo;onde
+  du laser CO&#8322; (10,6 &mu;m) et ne jamais ouvrir le capot pendant le fonctionnement.
+</div>
+
+<!-- ============================================================ -->
+<h2>6. S&eacute;curit&eacute; acoustique &mdash; Prot&eacute;ger son audition</h2>
+
+<p>
+  L&rsquo;intensit&eacute; sonore se mesure en <strong>d&eacute;cibels (dB)</strong>.
+  Une exposition prolong&eacute;e &agrave; des niveaux &eacute;lev&eacute;s provoque des l&eacute;sions
+  <em>irr&eacute;versibles</em> de l&rsquo;audition.
+</p>
+
+<div class="prop">
+  <span class="label label-prop">Seuils importants</span>
+  <ul style="margin:6px 0 0;padding-left:20px">
+    <li><strong>0 dB</strong> : seuil d&rsquo;audibilit&eacute;</li>
+    <li><strong>85 dB</strong> : seuil de danger en exposition prolong&eacute;e (8h/jour)</li>
+    <li><strong>120 dB</strong> : seuil de douleur</li>
+    <li><strong>&gt; 130 dB</strong> : risque de l&eacute;sion imm&eacute;diate</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemples de niveaux sonores en atelier</span>
+  <ul>
+    <li>Conversation normale : environ 60 dB</li>
+    <li>Scie circulaire : 100 &agrave; 105 dB</li>
+    <li>D&eacute;fonceuse, toupie : 95 &agrave; 100 dB</li>
+    <li>Marteau piqueur : 110 &agrave; 115 dB</li>
+  </ul>
+</div>
+
+<div class="att">
+  <span class="label label-att">En atelier de menuiserie</span><br>
+  Une scie circulaire produit environ <strong>100 &agrave; 105 dB</strong>, soit 15 &agrave; 20 dB au-dessus du seuil de danger.
+  Le port des protections auditives (casque antibruit ou bouchons) est <strong>obligatoire</strong>
+  d&egrave;s que le niveau d&eacute;passe <strong>85 dB</strong>.
+</div>
+
+<!-- ============================================================ -->
+<h2>7. Tri s&eacute;lectif des d&eacute;chets chimiques</h2>
+
+<p>
+  Les produits chimiques utilis&eacute;s en atelier ou en laboratoire ne doivent <strong>jamais</strong>
+  &ecirc;tre jet&eacute;s dans les poubelles ordinaires ni vers&eacute;s dans l&rsquo;&eacute;vier.
+</p>
+
+<div class="def">
+  <span class="label label-def">D&eacute;chets Dangereux Sp&eacute;cifiques (DDS)</span><br>
+  Ce sont des d&eacute;chets qui pr&eacute;sentent des risques pour la sant&eacute; ou l&rsquo;environnement :
+  solvants, peintures, vernis, huiles, piles, produits corrosifs.
+</div>
+
+<table>
+  <thead>
+    <tr><th>Type de d&eacute;chet</th><th>O&ugrave; le mettre ?</th><th>Exemples en atelier</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Solvants organiques</td>
+      <td>Bidon sp&eacute;cifique solvants</td>
+      <td>White-spirit, ac&eacute;tone, diluants</td>
+    </tr>
+    <tr>
+      <td>Produits corrosifs</td>
+      <td>Bidon sp&eacute;cifique acides/bases</td>
+      <td>D&eacute;capants, flux de brasage</td>
+    </tr>
+    <tr>
+      <td>Emballages souill&eacute;s</td>
+      <td>Collecte DDS</td>
+      <td>Bidons de vernis vides, chiffons impr&eacute;gn&eacute;s</td>
+    </tr>
+    <tr>
+      <td>Piles et batteries</td>
+      <td>Borne de collecte piles</td>
+      <td>Piles d&rsquo;outillage sans fil</td>
+    </tr>
+    <tr>
+      <td>D&eacute;chets banals</td>
+      <td>Poubelle ordinaire</td>
+      <td>Papier, carton non souill&eacute;</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="retenir">
+  <strong>&Agrave; retenir &mdash; Les 5 r&egrave;gles d&rsquo;or de la s&eacute;curit&eacute;</strong>
+  <ol style="margin:8px 0 0;padding-left:20px">
+    <li><strong>Lire les &eacute;tiquettes</strong> avant toute manipulation</li>
+    <li><strong>Porter les EPI adapt&eacute;s</strong> au risque identifi&eacute;</li>
+    <li><strong>V&eacute;rifier les dispositifs &eacute;lectriques</strong> avant de brancher un appareil</li>
+    <li><strong>Ne jamais regarder</strong> directement un faisceau laser</li>
+    <li><strong>Prot&eacute;ger son audition</strong> d&egrave;s que le bruit d&eacute;passe 85 dB</li>
+  </ol>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

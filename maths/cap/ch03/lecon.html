@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch03 – Proportionnalit&eacute; et pourcentages – CAP</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#b45309;--p-bg:#fffbeb;--p-border:#fde68a}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-cap.html" class="nb">&larr; Retour au sommaire CAP</a>
+
+<header>
+  <h1>Chapitre 3 &ndash; Proportionnalit&eacute; et pourcentages</h1>
+  <p class="sous-titre">CAP &nbsp;|&nbsp; Math&eacute;matiques &nbsp;|&nbsp; Module 3</p>
+</header>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>1. Introduction &mdash; La proportionnalit&eacute; au quotidien</h2>
+
+<div class="situation">
+  <h3>Situation professionnelle &mdash; Devis en menuiserie</h3>
+  <p>
+    Un menuisier agenceur doit r&eacute;aliser un devis pour la pose de plinthes dans un appartement.
+    Les plinthes co&ucirc;tent <strong>4,80 &euro; le m&egrave;tre lin&eacute;aire</strong>.
+    L'appartement n&eacute;cessite 35 m de plinthes.
+  </p>
+  <p>Quel est le co&ucirc;t total des plinthes&nbsp;?</p>
+  <p>
+    \[\text{Prix} = 4{,}80 \times 35 = 168\,\text{&euro;}\]
+  </p>
+  <p>
+    Le prix est <strong>proportionnel</strong> &agrave; la longueur&nbsp;: si on double la longueur, on double le prix.
+    Le coefficient de proportionnalit&eacute; est 4,80&nbsp;&euro;/m.
+  </p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>2. Suites proportionnelles</h2>
+
+<div class="def">
+  <span class="label-def">D&eacute;finition</span>
+  <strong>Suites proportionnelles :</strong><br>
+  Deux suites de nombres sont <strong>proportionnelles</strong> quand on passe de l'une &agrave; l'autre en multipliant toujours par le m&ecirc;me nombre, appel&eacute; <strong>coefficient de proportionnalit&eacute;</strong>.
+</div>
+
+<div class="ex">
+  <strong>Exemple :</strong> Un fournisseur de bois vend des tasseaux &agrave; 2,50 &euro; pi&egrave;ce.
+  <table class="full">
+    <tr><th>Nombre de tasseaux</th><td>1</td><td>2</td><td>5</td><td>10</td></tr>
+    <tr><th>Prix (&euro;)</th><td>2,50</td><td>5,00</td><td>12,50</td><td>25,00</td></tr>
+  </table>
+  <p>
+    V&eacute;rification&nbsp;: \(\dfrac{2{,}50}{1} = \dfrac{5{,}00}{2} = \dfrac{12{,}50}{5} = \dfrac{25{,}00}{10} = 2{,}50\)
+  </p>
+  <p>Tous les quotients sont &eacute;gaux &agrave; 2,50&nbsp;: les suites sont <strong>proportionnelles</strong>.</p>
+</div>
+
+<div class="meth">
+  <span class="label-meth">M&eacute;thode</span>
+  <strong>V&eacute;rifier si deux suites sont proportionnelles</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Calculer le quotient \(\dfrac{\text{valeur du bas}}{\text{valeur du haut}}\) pour chaque colonne.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Si tous les quotients sont <strong>&eacute;gaux</strong> &rarr; les suites sont proportionnelles.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>Si un quotient est <strong>diff&eacute;rent</strong> &rarr; les suites ne sont <strong>pas</strong> proportionnelles.</div>
+  </div>
+</div>
+
+<div class="ex">
+  <strong>Contre-exemple :</strong> Un artisan facture un d&eacute;placement de 30 &euro; + 25 &euro;/heure.
+  <table class="full">
+    <tr><th>Heures</th><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+    <tr><th>Co&ucirc;t total (&euro;)</th><td>55</td><td>80</td><td>105</td><td>130</td></tr>
+  </table>
+  <p>
+    Quotients&nbsp;: \(\dfrac{55}{1} = 55\), \(\dfrac{80}{2} = 40\), \(\dfrac{105}{3} = 35\), \(\dfrac{130}{4} = 32{,}5\)
+  </p>
+  <p>Les quotients sont <strong>diff&eacute;rents</strong> &rarr; ce n'est <strong>pas</strong> proportionnel (il y a un co&ucirc;t fixe de d&eacute;placement).</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>3. Quatri&egrave;me proportionnelle</h2>
+
+<div class="def">
+  <span class="label-def">D&eacute;finition</span>
+  <strong>Quatri&egrave;me proportionnelle :</strong><br>
+  Dans un tableau de proportionnalit&eacute; o&ugrave; trois valeurs sont connues, la quatri&egrave;me se calcule par un <strong>produit en croix</strong>.
+</div>
+
+<div class="meth">
+  <span class="label-meth">M&eacute;thode</span>
+  <strong>Calculer une quatri&egrave;me proportionnelle (r&egrave;gle de trois)</strong><br>
+  Si on sait que \(a\) correspond &agrave; \(b\), on cherche la valeur \(x\) qui correspond &agrave; \(c\)&nbsp;:
+
+  <table class="full" style="max-width:300px">
+    <tr><td>\(a\)</td><td>\(b\)</td></tr>
+    <tr><td>\(c\)</td><td>\(x = ?\)</td></tr>
+  </table>
+
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Multiplier les deux nombres en diagonale connue&nbsp;: \(b \times c\).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Diviser par le nombre restant&nbsp;: \(x = \dfrac{b \times c}{a}\).</div>
+  </div>
+</div>
+
+<div class="ex">
+  <strong>Exemple :</strong> Un installateur thermique sait que 3 m de tuyau de cuivre co&ucirc;tent 18 &euro;.
+  Combien co&ucirc;tent 7 m de ce m&ecirc;me tuyau&nbsp;?
+
+  <table class="full" style="max-width:300px">
+    <tr><th>Longueur (m)</th><th>Prix (&euro;)</th></tr>
+    <tr><td>3</td><td>18</td></tr>
+    <tr><td>7</td><td>\(x = ?\)</td></tr>
+  </table>
+
+  <p>
+    \[x = \frac{18 \times 7}{3} = \frac{126}{3} = 42\,\text{&euro;}\]
+  </p>
+  <p>7 m de tuyau co&ucirc;tent <strong>42 &euro;</strong>.</p>
+</div>
+
+<div class="ex">
+  <strong>Exemple :</strong> Pour pr&eacute;parer un mortier, il faut 5 kg de ciment pour 20 litres de sable.
+  Combien de kg de ciment faut-il pour 12 litres de sable&nbsp;?
+
+  <table class="full" style="max-width:300px">
+    <tr><th>Sable (L)</th><th>Ciment (kg)</th></tr>
+    <tr><td>20</td><td>5</td></tr>
+    <tr><td>12</td><td>\(x = ?\)</td></tr>
+  </table>
+
+  <p>
+    \[x = \frac{5 \times 12}{20} = \frac{60}{20} = 3\,\text{kg}\]
+  </p>
+  <p>Il faut <strong>3 kg</strong> de ciment pour 12 litres de sable.</p>
+</div>
+
+<div class="att">
+  <span class="label-att">Attention</span>
+  <strong>Avant d'utiliser le produit en croix</strong>, v&eacute;rifiez toujours que la situation est bien une situation de <strong>proportionnalit&eacute;</strong>.
+  <ul class="styled">
+    <li>Proportionnel&nbsp;: prix au kilo, m&eacute;lange, &eacute;chelle, vitesse constante.</li>
+    <li>Non proportionnel&nbsp;: tarifs avec forfait, r&eacute;ductions par palier, port offert &agrave; partir d'un montant.</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>4. Pourcentages</h2>
+
+<div class="def">
+  <span class="label-def">D&eacute;finition</span>
+  <strong>Pourcentage :</strong><br>
+  Un pourcentage est une proportion exprim&eacute;e <strong>pour 100</strong>.<br>
+  Dire &laquo;&nbsp;25&nbsp;%&nbsp;&raquo; signifie &laquo;&nbsp;25 pour 100&nbsp;&raquo;, c'est-&agrave;-dire \(\dfrac{25}{100} = 0{,}25\).
+</div>
+
+<div class="meth">
+  <span class="label-meth">M&eacute;thode</span>
+  <strong>Calculer un pourcentage d'une quantit&eacute;</strong><br>
+  Pour calculer \(t\,\%\) d'une quantit&eacute; \(Q\)&nbsp;:
+  \[\text{R&eacute;sultat} = Q \times \frac{t}{100}\]
+</div>
+
+<div class="ex">
+  <strong>Exemple 1 :</strong> Un devis de plinthes est de 168 &euro; HT. La TVA est de 10&nbsp;%.
+  <p>
+    \[\text{TVA} = 168 \times \frac{10}{100} = 168 \times 0{,}10 = 16{,}80\,\text{&euro;}\]
+  </p>
+  <p>
+    \[\text{Prix TTC} = 168 + 16{,}80 = 184{,}80\,\text{&euro;}\]
+  </p>
+</div>
+
+<div class="ex">
+  <strong>Exemple 2 :</strong> Un magasin de bricolage propose une r&eacute;duction de 15&nbsp;% sur un lot de vis &agrave; 24 &euro;.
+  <p>
+    \[\text{R&eacute;duction} = 24 \times \frac{15}{100} = 24 \times 0{,}15 = 3{,}60\,\text{&euro;}\]
+  </p>
+  <p>
+    \[\text{Prix apr&egrave;s r&eacute;duction} = 24 - 3{,}60 = 20{,}40\,\text{&euro;}\]
+  </p>
+</div>
+
+<div class="meth">
+  <span class="label-meth">M&eacute;thode</span>
+  <strong>Coefficient multiplicateur</strong><br>
+  <ul class="styled">
+    <li>Augmenter de \(t\,\%\) revient &agrave; <strong>multiplier par \(1 + \dfrac{t}{100}\)</strong>.</li>
+    <li>Diminuer de \(t\,\%\) revient &agrave; <strong>multiplier par \(1 - \dfrac{t}{100}\)</strong>.</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <strong>Exemples avec coefficient multiplicateur :</strong>
+  <table class="full">
+    <tr><th>Op&eacute;ration</th><th>Coefficient</th><th>Calcul</th></tr>
+    <tr><td>Augmenter de 10&nbsp;%</td><td>\(\times\, 1{,}10\)</td><td>\(168 \times 1{,}10 = 184{,}80\,\text{&euro;}\)</td></tr>
+    <tr><td>Diminuer de 15&nbsp;%</td><td>\(\times\, 0{,}85\)</td><td>\(24 \times 0{,}85 = 20{,}40\,\text{&euro;}\)</td></tr>
+    <tr><td>Augmenter de 20&nbsp;%</td><td>\(\times\, 1{,}20\)</td><td>\(500 \times 1{,}20 = 600\,\text{&euro;}\)</td></tr>
+    <tr><td>Diminuer de 5&nbsp;%</td><td>\(\times\, 0{,}95\)</td><td>\(200 \times 0{,}95 = 190\,\text{&euro;}\)</td></tr>
+  </table>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>5. &Eacute;chelles</h2>
+
+<div class="def">
+  <span class="label-def">D&eacute;finition</span>
+  <strong>&Eacute;chelle :</strong><br>
+  L'<strong>&eacute;chelle</strong> d'un plan est le coefficient de proportionnalit&eacute; entre les dimensions sur le plan et les dimensions r&eacute;elles&nbsp;:
+  \[\text{&Eacute;chelle} = \frac{\text{Dimension sur le plan}}{\text{Dimension r&eacute;elle}}\]
+  Les deux dimensions doivent &ecirc;tre dans la <strong>m&ecirc;me unit&eacute;</strong>.
+</div>
+
+<div class="meth">
+  <span class="label-meth">M&eacute;thode</span>
+  <strong>Utiliser une &eacute;chelle</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Convertir les mesures dans la m&ecirc;me unit&eacute; (souvent en cm).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Appliquer la proportionnalit&eacute;&nbsp;: plan &times; &eacute;chelle = r&eacute;el (ou inversement).</div>
+  </div>
+</div>
+
+<div class="ex">
+  <strong>Exemple :</strong> Sur un plan &agrave; l'&eacute;chelle \(\dfrac{1}{50}\), une pi&egrave;ce mesure 8 cm de long.
+  Quelle est la longueur r&eacute;elle&nbsp;?
+  <p>
+    \[\text{Longueur r&eacute;elle} = 8 \times 50 = 400\,\text{cm} = 4\,\text{m}\]
+  </p>
+  <p>La pi&egrave;ce mesure <strong>4 m</strong> en r&eacute;alit&eacute;.</p>
+</div>
+
+<div class="ex">
+  <strong>Exemple :</strong> Une cuisine fait 3,5 m de long en r&eacute;alit&eacute;.
+  Combien mesure-t-elle sur un plan &agrave; l'&eacute;chelle \(\dfrac{1}{20}\)&nbsp;?
+  <p>
+    Conversion&nbsp;: 3,5 m = 350 cm<br>
+    \[\text{Sur le plan} = 350 \times \frac{1}{20} = \frac{350}{20} = 17{,}5\,\text{cm}\]
+  </p>
+</div>
+
+<div class="att">
+  <span class="label-att">Attention</span>
+  <strong>Unit&eacute;s&nbsp;!</strong> Avant tout calcul d'&eacute;chelle, convertir les deux mesures dans la <strong>m&ecirc;me unit&eacute;</strong>. On ne peut pas diviser des cm par des m&egrave;tres.
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>6. &Agrave; retenir</h2>
+
+<div class="retenir">
+  <strong>&Agrave; retenir :</strong>
+  <ul class="styled">
+    <li><strong>Proportionnalit&eacute; :</strong> deux suites sont proportionnelles si les quotients correspondants sont tous &eacute;gaux.</li>
+    <li><strong>Quatri&egrave;me proportionnelle :</strong> \(x = \dfrac{b \times c}{a}\) (produit en croix).</li>
+    <li><strong>Pourcentage de \(Q\) :</strong> \(Q \times \dfrac{t}{100}\).</li>
+    <li><strong>Augmentation de \(t\,\%\) :</strong> multiplier par \(1 + \dfrac{t}{100}\).</li>
+    <li><strong>Diminution de \(t\,\%\) :</strong> multiplier par \(1 - \dfrac{t}{100}\).</li>
+    <li><strong>&Eacute;chelle :</strong> \(\dfrac{\text{plan}}{\text{r&eacute;el}}\). Toujours convertir dans la m&ecirc;me unit&eacute;.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

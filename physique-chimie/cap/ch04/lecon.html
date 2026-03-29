@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Chimie – CAP Physique-Chimie</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}
+.particule-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.particule-card{background:#fff;border:2px solid #e2e8f0;border-radius:10px;padding:14px;text-align:center;transition:border-color .2s}
+.particule-card:hover{border-color:var(--p)}
+.particule-card .pc-icon{font-size:2.2em;margin-bottom:6px}
+.particule-card .pc-nom{font-weight:700;color:var(--p);font-size:.95em}
+.particule-card .pc-desc{font-size:.82em;color:#4a5568;margin-top:4px}
+.ph-scale{display:flex;align-items:stretch;height:40px;border-radius:8px;overflow:hidden;margin:14px 0;font-size:.75em;font-weight:700;color:#fff}
+.ph-scale div{flex:1;display:flex;align-items:center;justify-content:center}
+@media(max-width:600px){.particule-grid{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-cap.html" class="nb">&larr; Retour au sommaire CAP</a>
+
+<header>
+  <h1>Chapitre 4 &mdash; Chimie</h1>
+  <p class="sous-titre">CAP &nbsp;|&nbsp; Physique-Chimie &nbsp;|&nbsp; Module 4 &mdash; Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>&#127919; Objectifs du chapitre</strong>
+  <ul>
+    <li>Distinguer atome, ion et mol&eacute;cule</li>
+    <li>Associer des &eacute;l&eacute;ments &agrave; leur symbole chimique</li>
+    <li>Interpr&eacute;ter une formule chimique en termes d&rsquo;atomes</li>
+    <li>Reconna&icirc;tre le caract&egrave;re acide, basique ou neutre d&rsquo;une solution (pH)</li>
+    <li>R&eacute;aliser une dilution et conna&icirc;tre ses effets sur le pH</li>
+    <li>Calculer une concentration massique</li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<h2>1. La mati&egrave;re &agrave; l&rsquo;&eacute;chelle microscopique</h2>
+
+<h3>1.1 Atomes, ions et mol&eacute;cules</h3>
+
+<div class="particule-grid">
+  <div class="particule-card">
+    <div class="pc-icon">&#9898;</div>
+    <div class="pc-nom">Atome</div>
+    <div class="pc-desc">Particule de base de la mati&egrave;re, &eacute;lectriquement neutre. Constitu&eacute; d&rsquo;un noyau (protons + neutrons) et d&rsquo;&eacute;lectrons.</div>
+  </div>
+  <div class="particule-card">
+    <div class="pc-icon">&#9889;</div>
+    <div class="pc-nom">Ion</div>
+    <div class="pc-desc">Atome (ou groupe d&rsquo;atomes) ayant gagn&eacute; ou perdu un ou plusieurs &eacute;lectrons. Il porte une <strong>charge &eacute;lectrique</strong> (+ ou &minus;).</div>
+  </div>
+  <div class="particule-card">
+    <div class="pc-icon">&#128300;</div>
+    <div class="pc-nom">Mol&eacute;cule</div>
+    <div class="pc-desc">Assemblage de plusieurs atomes li&eacute;s entre eux. La mol&eacute;cule est &eacute;lectriquement neutre.</div>
+  </div>
+</div>
+
+<div class="def">
+  <span class="label label-def">Diff&eacute;rence fondamentale</span><br>
+  <ul style="margin:6px 0 0;padding-left:20px">
+    <li>Un <strong>atome</strong> est neutre (autant de protons que d&rsquo;&eacute;lectrons)</li>
+    <li>Un <strong>ion positif (cation)</strong> a perdu des &eacute;lectrons : ex. Na<sup>+</sup>, Ca<sup>2+</sup></li>
+    <li>Un <strong>ion n&eacute;gatif (anion)</strong> a gagn&eacute; des &eacute;lectrons : ex. Cl<sup>&minus;</sup>, OH<sup>&minus;</sup></li>
+    <li>Une <strong>mol&eacute;cule</strong> est un assemblage d&rsquo;atomes : ex. H&#8322;O, CO&#8322;</li>
+  </ul>
+</div>
+
+<h3>1.2 Symboles chimiques et classification p&eacute;riodique</h3>
+
+<p>
+  Chaque &eacute;l&eacute;ment chimique est repr&eacute;sent&eacute; par un <strong>symbole</strong> d&rsquo;une ou deux lettres
+  (la premi&egrave;re en majuscule). Ces symboles sont regroup&eacute;s dans la
+  <strong>classification p&eacute;riodique des &eacute;l&eacute;ments</strong>.
+</p>
+
+<table>
+  <thead>
+    <tr><th>&Eacute;l&eacute;ment</th><th>Symbole</th><th>Pr&eacute;sence courante</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Hydrog&egrave;ne</td><td>H</td><td>Eau, acides, mati&egrave;re organique</td></tr>
+    <tr><td>Carbone</td><td>C</td><td>Bois, plastiques, CO&#8322;</td></tr>
+    <tr><td>Azote</td><td>N</td><td>Air (78 %), engrais</td></tr>
+    <tr><td>Oxyg&egrave;ne</td><td>O</td><td>Air (21 %), eau, combustion</td></tr>
+    <tr><td>Sodium</td><td>Na</td><td>Sel de cuisine (NaCl)</td></tr>
+    <tr><td>Chlore</td><td>Cl</td><td>Eau de Javel, sel</td></tr>
+    <tr><td>Calcium</td><td>Ca</td><td>Calcaire, pl&acirc;tre</td></tr>
+    <tr><td>Fer</td><td>Fe</td><td>Acier, outils</td></tr>
+    <tr><td>Cuivre</td><td>Cu</td><td>C&acirc;bles &eacute;lectriques, tuyauterie</td></tr>
+  </tbody>
+</table>
+
+<h3>1.3 Formules chimiques</h3>
+
+<div class="def">
+  <span class="label label-def">Formule chimique</span><br>
+  La <strong>formule chimique</strong> d&rsquo;une mol&eacute;cule indique :
+  <ul style="margin:6px 0 0;padding-left:20px">
+    <li>la nature des atomes qui la composent (symboles)</li>
+    <li>le nombre de chaque type d&rsquo;atome (indice en bas &agrave; droite)</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemples de formules chimiques</span>
+  <table style="margin:10px 0">
+    <thead>
+      <tr><th>Formule</th><th>Nom</th><th>Composition</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>H&#8322;O</td><td>Eau</td><td>2 atomes d&rsquo;hydrog&egrave;ne + 1 atome d&rsquo;oxyg&egrave;ne</td></tr>
+      <tr><td>CO&#8322;</td><td>Dioxyde de carbone</td><td>1 atome de carbone + 2 atomes d&rsquo;oxyg&egrave;ne</td></tr>
+      <tr><td>NaCl</td><td>Chlorure de sodium (sel)</td><td>1 atome de sodium + 1 atome de chlore</td></tr>
+      <tr><td>C&#8322;H&#8326;O</td><td>&Eacute;thanol</td><td>2 C + 6 H + 1 O</td></tr>
+      <tr><td>CH&#8322;O</td><td>Formald&eacute;hyde</td><td>1 C + 2 H + 1 O (pr&eacute;sent dans certaines colles &agrave; bois)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">M&eacute;thode &mdash; Interpr&eacute;ter une formule chimique</span>
+  <ol style="margin:8px 0 0;padding-left:20px">
+    <li>Identifier chaque symbole d&rsquo;&eacute;l&eacute;ment (majuscule = nouvel &eacute;l&eacute;ment)</li>
+    <li>Lire l&rsquo;indice en bas &agrave; droite de chaque symbole (pas d&rsquo;indice = 1 atome)</li>
+    <li>Compter le nombre total d&rsquo;atomes dans la mol&eacute;cule</li>
+  </ol>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple &mdash; Produit utilis&eacute; en atelier</span><br>
+  L&rsquo;ac&eacute;tone, utilis&eacute;e comme solvant de nettoyage, a pour formule C&#8323;H&#8326;O.
+  <br>Elle contient : 3 atomes de carbone, 6 atomes d&rsquo;hydrog&egrave;ne et 1 atome d&rsquo;oxyg&egrave;ne,
+  soit <strong>10 atomes</strong> au total.
+</div>
+
+<!-- ============================================================ -->
+<h2>2. Le pH &mdash; Acide, basique ou neutre ?</h2>
+
+<div class="def">
+  <span class="label label-def">pH (potentiel Hydrog&egrave;ne)</span><br>
+  Le <strong>pH</strong> est un nombre sans unit&eacute;, compris entre 0 et 14, qui indique le caract&egrave;re
+  acide, neutre ou basique d&rsquo;une solution aqueuse.
+</div>
+
+<div class="ph-scale">
+  <div style="background:#dc2626">0</div>
+  <div style="background:#e53e3e">1</div>
+  <div style="background:#ed8936">2</div>
+  <div style="background:#f6ad55">3</div>
+  <div style="background:#ecc94b">4</div>
+  <div style="background:#d69e2e">5</div>
+  <div style="background:#b7791f">6</div>
+  <div style="background:#38a169">7</div>
+  <div style="background:#2f855a">8</div>
+  <div style="background:#2b6cb0">9</div>
+  <div style="background:#3182ce">10</div>
+  <div style="background:#2b6cb0">11</div>
+  <div style="background:#553c9a">12</div>
+  <div style="background:#44337a">13</div>
+  <div style="background:#322659">14</div>
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Interpr&eacute;tation du pH</span>
+  <table style="margin:10px 0">
+    <thead>
+      <tr><th>Valeur du pH</th><th>Caract&egrave;re</th><th>Exemples</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>pH &lt; 7</strong></td>
+        <td style="color:#dc2626"><strong>Acide</strong></td>
+        <td>Vinaigre (pH &asymp; 3), jus de citron (pH &asymp; 2), d&eacute;capant acide</td>
+      </tr>
+      <tr>
+        <td><strong>pH = 7</strong></td>
+        <td style="color:#38a169"><strong>Neutre</strong></td>
+        <td>Eau pure</td>
+      </tr>
+      <tr>
+        <td><strong>pH &gt; 7</strong></td>
+        <td style="color:#2b6cb0"><strong>Basique</strong></td>
+        <td>Eau de Javel (pH &asymp; 12), savon (pH &asymp; 9), soude</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">M&eacute;thode &mdash; Mesurer un pH</span>
+  <ol style="margin:8px 0 0;padding-left:20px">
+    <li><strong>Papier pH</strong> : tremper une bandelette dans la solution, comparer la couleur avec l&rsquo;&eacute;chelle</li>
+    <li><strong>pH-m&egrave;tre</strong> : plonger la sonde dans la solution, lire la valeur affich&eacute;e (plus pr&eacute;cis)</li>
+  </ol>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple &mdash; Solutions utilis&eacute;es en atelier</span>
+  <table style="margin:10px 0">
+    <thead>
+      <tr><th>Produit</th><th>pH approx.</th><th>Caract&egrave;re</th><th>Usage</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>D&eacute;capant pour bois</td><td>1 &agrave; 2</td><td>Tr&egrave;s acide</td><td>Retrait de vernis, teinture</td></tr>
+      <tr><td>Eau distill&eacute;e</td><td>7</td><td>Neutre</td><td>Rin&ccedil;age, dilution</td></tr>
+      <tr><td>Nettoyant multi-usage</td><td>8 &agrave; 9</td><td>Basique</td><td>Nettoyage des surfaces</td></tr>
+      <tr><td>Soude caustique</td><td>13 &agrave; 14</td><td>Tr&egrave;s basique</td><td>D&eacute;bouchage, d&eacute;graissage industriel</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention</span><br>
+  Les solutions tr&egrave;s acides (pH &lt; 2) et tr&egrave;s basiques (pH &gt; 12) sont <strong>corrosives</strong>.
+  Elles br&ucirc;lent la peau et les yeux. Port des gants et lunettes <strong>obligatoire</strong>.
+</div>
+
+<!-- ============================================================ -->
+<h2>3. La dilution</h2>
+
+<div class="def">
+  <span class="label label-def">Dilution</span><br>
+  <strong>Diluer</strong> une solution, c&rsquo;est ajouter du <strong>solvant</strong> (g&eacute;n&eacute;ralement de l&rsquo;eau)
+  pour obtenir une solution <strong>moins concentr&eacute;e</strong>. La quantit&eacute; de solut&eacute; ne change pas,
+  seul le volume augmente.
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Effet de la dilution sur le pH</span><br>
+  <ul style="margin:6px 0 0;padding-left:20px">
+    <li>Si la solution est <strong>acide</strong> (pH &lt; 7) : la dilution fait <strong>augmenter le pH</strong> (vers 7)</li>
+    <li>Si la solution est <strong>basique</strong> (pH &gt; 7) : la dilution fait <strong>diminuer le pH</strong> (vers 7)</li>
+    <li>Dans les deux cas, le pH se rapproche de <strong>7 (neutralit&eacute;)</strong></li>
+  </ul>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">M&eacute;thode &mdash; R&eacute;aliser une dilution</span>
+  <ol style="margin:8px 0 0;padding-left:20px">
+    <li>Pr&eacute;lever le <strong>volume de solution m&egrave;re</strong> souhait&eacute; avec une pipette gradu&eacute;e</li>
+    <li>Le verser dans une <strong>fiole jaug&eacute;e</strong> contenant un peu d&rsquo;eau distill&eacute;e</li>
+    <li>Compl&eacute;ter avec de l&rsquo;eau distill&eacute;e jusqu&rsquo;au <strong>trait de jauge</strong></li>
+    <li>Boucher et agiter par retournements</li>
+  </ol>
+</div>
+
+<div class="att">
+  <span class="label label-att">R&egrave;gle de s&eacute;curit&eacute; absolue</span><br>
+  Lors d&rsquo;une dilution d&rsquo;acide : toujours verser <strong>l&rsquo;acide dans l&rsquo;eau</strong>,
+  jamais l&rsquo;inverse. La r&eacute;action est exothermique (d&eacute;gage de la chaleur)
+  et peut provoquer des projections si l&rsquo;on verse l&rsquo;eau dans l&rsquo;acide.
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple &mdash; Dilution d&rsquo;un nettoyant d&rsquo;atelier</span><br>
+  Un nettoyant concentr&eacute; a un pH de 12 (basique). Apr&egrave;s dilution dans 10 fois son volume d&rsquo;eau,
+  son pH passe &agrave; environ 9. Il est toujours basique mais beaucoup moins agressif.
+</div>
+
+<!-- ============================================================ -->
+<h2>4. La concentration massique</h2>
+
+<div class="def">
+  <span class="label label-def">Concentration massique</span><br>
+  La <strong>concentration massique</strong> \(C_m\) d&rsquo;un solut&eacute; dans une solution est la masse de solut&eacute;
+  dissoute par litre de solution.
+</div>
+
+<div class="formule-box">
+  <strong>Concentration massique</strong>
+  $$C_m = \frac{m}{V}$$
+  <ul style="margin:6px 0 0;padding-left:20px">
+    <li>\(C_m\) : concentration massique, en grammes par litre (g/L)</li>
+    <li>\(m\) : masse de solut&eacute; dissous, en grammes (g)</li>
+    <li>\(V\) : volume de la solution, en litres (L)</li>
+  </ul>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">M&eacute;thode &mdash; Pr&eacute;parer une solution par dissolution</span>
+  <ol style="margin:8px 0 0;padding-left:20px">
+    <li>Calculer la masse de solut&eacute; n&eacute;cessaire : \(m = C_m \times V\)</li>
+    <li>Peser le solut&eacute; sur une balance</li>
+    <li>Le verser dans une fiole jaug&eacute;e contenant un peu d&rsquo;eau distill&eacute;e</li>
+    <li>Agiter pour dissoudre compl&egrave;tement</li>
+    <li>Compl&eacute;ter avec de l&rsquo;eau jusqu&rsquo;au trait de jauge</li>
+  </ol>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple &mdash; Pr&eacute;paration d&rsquo;une solution de nettoyage</span><br>
+  On veut pr&eacute;parer 2 L de solution de nettoyage &agrave; la concentration massique
+  \(C_m = 15\) g/L. Quelle masse de produit faut-il peser ?
+  <div class="corr">
+    \(m = C_m \times V = 15 \times 2 = 30\) g.
+    <br>Il faut peser 30 g de produit et les dissoudre dans l&rsquo;eau pour obtenir 2 L de solution.
+  </div>
+  <button class="bc">Voir la correction</button>
+</div>
+
+<div class="ex">
+  <span class="label label-ex">Exemple &mdash; Calculer la concentration d&rsquo;une solution</span><br>
+  On dissout 12 g de sel dans 0,5 L d&rsquo;eau. Quelle est la concentration massique ?
+  <div class="corr">
+    \(C_m = \dfrac{m}{V} = \dfrac{12}{0{,}5} = 24\) g/L.
+  </div>
+  <button class="bc">Voir la correction</button>
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Effet de la dilution sur la concentration</span><br>
+  Lors d&rsquo;une dilution, la masse de solut&eacute; \(m\) reste <strong>identique</strong> mais le volume \(V\) augmente.
+  Donc la concentration \(C_m = \dfrac{m}{V}\) <strong>diminue</strong>.
+</div>
+
+<!-- ============================================================ -->
+
+<div class="retenir">
+  <strong>&Agrave; retenir &mdash; L&rsquo;essentiel du chapitre</strong>
+  <ul style="margin:8px 0 0;padding-left:20px">
+    <li>La mati&egrave;re est constitu&eacute;e d&rsquo;<strong>atomes</strong>, qui forment des <strong>ions</strong> (charg&eacute;s) ou des <strong>mol&eacute;cules</strong> (neutres)</li>
+    <li>Chaque &eacute;l&eacute;ment a un <strong>symbole chimique</strong> (H, C, O, Na...)</li>
+    <li>La <strong>formule chimique</strong> indique la nature et le nombre d&rsquo;atomes dans une mol&eacute;cule</li>
+    <li>Le <strong>pH</strong> : acide &lt; 7 &lt; basique (neutre = 7)</li>
+    <li>La <strong>dilution</strong> rapproche le pH de 7 et diminue la concentration</li>
+    <li>La <strong>concentration massique</strong> : \(C_m = \dfrac{m}{V}\) en g/L</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

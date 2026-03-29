@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – &Eacute;quations du premier degr&eacute; – CAP</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#b45309;--p-bg:#fffbeb;--p-border:#fde68a}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-cap.html" class="nb">&larr; Retour au sommaire CAP</a>
+
+<header>
+  <h1>Chapitre 4 &ndash; &Eacute;quations du premier degr&eacute;</h1>
+  <p class="sous-titre">CAP &nbsp;|&nbsp; Math&eacute;matiques &nbsp;|&nbsp; Module 4</p>
+</header>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>1. Introduction &mdash; &Agrave; quoi servent les &eacute;quations&nbsp;?</h2>
+
+<div class="situation">
+  <h3>Situation professionnelle &mdash; Calcul de longueur</h3>
+  <p>
+    Un menuisier doit d&eacute;couper une planche de 2,40 m en 3 morceaux de m&ecirc;me longueur,
+    avec un trait de scie de 3 mm entre chaque morceau. Quelle est la longueur de chaque morceau&nbsp;?
+  </p>
+  <p>
+    Notons \(x\) la longueur d'un morceau (en m). Il y a 3 morceaux et 2 traits de scie (3 mm = 0,003 m).
+  </p>
+  <p>
+    \[3x + 2 \times 0{,}003 = 2{,}40\]
+    \[3x + 0{,}006 = 2{,}40\]
+    \[3x = 2{,}40 - 0{,}006 = 2{,}394\]
+    \[x = \frac{2{,}394}{3} = 0{,}798\,\text{m}\]
+  </p>
+  <p>Chaque morceau mesure <strong>0,798 m</strong> soit environ <strong>79,8 cm</strong>.</p>
+  <p>L'&eacute;quation permet de trouver une valeur inconnue &agrave; partir de donn&eacute;es connues.</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>2. Qu'est-ce qu'une &eacute;quation&nbsp;?</h2>
+
+<div class="def">
+  <span class="label-def">D&eacute;finition</span>
+  <strong>&Eacute;quation :</strong><br>
+  Une <strong>&eacute;quation</strong> est une &eacute;galit&eacute; contenant un nombre inconnu, g&eacute;n&eacute;ralement not&eacute; \(x\).<br><br>
+  <strong>R&eacute;soudre</strong> une &eacute;quation, c'est trouver la valeur de \(x\) qui rend l'&eacute;galit&eacute; vraie. Cette valeur s'appelle la <strong>solution</strong>.
+</div>
+
+<div class="ex">
+  <strong>Exemples :</strong>
+  <ul class="styled">
+    <li>\(2x + 5 = 11\) est une &eacute;quation. Sa solution est \(x = 3\) car \(2 \times 3 + 5 = 11\) &check;</li>
+    <li>\(4x - 7 = 13\) est une &eacute;quation. Sa solution est \(x = 5\) car \(4 \times 5 - 7 = 13\) &check;</li>
+  </ul>
+</div>
+
+<div class="meth">
+  <span class="label-meth">M&eacute;thode</span>
+  <strong>V&eacute;rifier si un nombre est solution d'une &eacute;quation</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Remplacer \(x\) par le nombre propos&eacute; dans le <strong>membre de gauche</strong>.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Calculer le r&eacute;sultat.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>Comparer avec le <strong>membre de droite</strong>&nbsp;: si c'est &eacute;gal, le nombre est solution.</div>
+  </div>
+</div>
+
+<div class="ex">
+  <strong>Exemple :</strong> Est-ce que \(x = 4\) est solution de \(3x + 2 = 15\)&nbsp;?
+  <p>Remplacement&nbsp;: \(3 \times 4 + 2 = 12 + 2 = 14\).</p>
+  <p>Or \(14 \neq 15\), donc \(x = 4\) n'est <strong>pas</strong> solution.</p>
+  <p>Essayons \(x = \dfrac{13}{3}\)&nbsp;: \(3 \times \dfrac{13}{3} + 2 = 13 + 2 = 15\) &check;</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>3. R&egrave;gles de r&eacute;solution</h2>
+
+<div class="prop">
+  <span class="label-prop">Propri&eacute;t&eacute;</span>
+  <strong>R&egrave;gles fondamentales :</strong><br>
+  On peut transformer une &eacute;quation sans changer sa solution en&nbsp;:
+  <ul class="styled">
+    <li><strong>Ajoutant</strong> ou <strong>soustrayant</strong> le m&ecirc;me nombre <strong>des deux c&ocirc;t&eacute;s</strong>.</li>
+    <li><strong>Multipliant</strong> ou <strong>divisant</strong> les deux c&ocirc;t&eacute;s par un <strong>m&ecirc;me nombre non nul</strong>.</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <strong>Illustration :</strong> Pensez &agrave; une balance en &eacute;quilibre.
+  Si on ajoute le m&ecirc;me poids des deux c&ocirc;t&eacute;s, la balance reste en &eacute;quilibre.
+  Si on retire le m&ecirc;me poids des deux c&ocirc;t&eacute;s, elle reste aussi en &eacute;quilibre.
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>4. R&eacute;soudre une &eacute;quation du type \(ax + b = c\)</h2>
+
+<div class="meth">
+  <span class="label-meth">M&eacute;thode</span>
+  <strong>R&eacute;soudre \(ax + b = c\)</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div><strong>Isoler le terme en \(x\) :</strong> soustraire \(b\) des deux c&ocirc;t&eacute;s &rarr; \(ax = c - b\).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div><strong>Isoler \(x\) :</strong> diviser les deux c&ocirc;t&eacute;s par \(a\) &rarr; \(x = \dfrac{c - b}{a}\).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div><strong>V&eacute;rifier :</strong> remplacer \(x\) par la valeur trouv&eacute;e dans l'&eacute;quation de d&eacute;part.</div>
+  </div>
+</div>
+
+<div class="ex">
+  <strong>Exemple 1 :</strong> R&eacute;soudre \(5x + 3 = 28\).
+
+  <p><strong>&Eacute;tape 1 :</strong> On soustrait 3 des deux c&ocirc;t&eacute;s.</p>
+  <p>\[5x + 3 - 3 = 28 - 3\]</p>
+  <p>\[5x = 25\]</p>
+
+  <p><strong>&Eacute;tape 2 :</strong> On divise les deux c&ocirc;t&eacute;s par 5.</p>
+  <p>\[x = \frac{25}{5} = 5\]</p>
+
+  <p><strong>V&eacute;rification :</strong> \(5 \times 5 + 3 = 25 + 3 = 28\) &check;</p>
+</div>
+
+<div class="ex">
+  <strong>Exemple 2 :</strong> R&eacute;soudre \(3x - 7 = 20\).
+
+  <p><strong>&Eacute;tape 1 :</strong> On ajoute 7 des deux c&ocirc;t&eacute;s.</p>
+  <p>\[3x - 7 + 7 = 20 + 7\]</p>
+  <p>\[3x = 27\]</p>
+
+  <p><strong>&Eacute;tape 2 :</strong> On divise par 3.</p>
+  <p>\[x = \frac{27}{3} = 9\]</p>
+
+  <p><strong>V&eacute;rification :</strong> \(3 \times 9 - 7 = 27 - 7 = 20\) &check;</p>
+</div>
+
+<div class="ex">
+  <strong>Exemple 3 :</strong> R&eacute;soudre \(4x + 1{,}5 = 9{,}5\).
+
+  <p>\[4x = 9{,}5 - 1{,}5 = 8\]</p>
+  <p>\[x = \frac{8}{4} = 2\]</p>
+
+  <p><strong>V&eacute;rification :</strong> \(4 \times 2 + 1{,}5 = 8 + 1{,}5 = 9{,}5\) &check;</p>
+</div>
+
+<div class="att">
+  <span class="label-att">Attention</span>
+  <strong>Erreurs fr&eacute;quentes :</strong>
+  <ul class="styled">
+    <li>Ne pas oublier de <strong>changer le signe</strong> quand on d&eacute;place un terme&nbsp;: si on a \(+3\) &agrave; gauche, on soustrait 3 des deux c&ocirc;t&eacute;s (le 3 &laquo;&nbsp;passe &agrave; droite avec un moins&nbsp;&raquo;).</li>
+    <li><strong>On divise par le coefficient de \(x\)</strong>, pas par \(x\) lui-m&ecirc;me.</li>
+    <li>Toujours <strong>v&eacute;rifier</strong> en rempla&ccedil;ant dans l'&eacute;quation de d&eacute;part&nbsp;!</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>5. R&eacute;soudre une &eacute;quation du type \(ax + b = cx + d\)</h2>
+
+<div class="meth">
+  <span class="label-meth">M&eacute;thode</span>
+  <strong>R&eacute;soudre \(ax + b = cx + d\)</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div><strong>Regrouper les termes en \(x\)</strong> d'un c&ocirc;t&eacute; et les nombres de l'autre.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Simplifier pour obtenir une &eacute;quation du type \(Ax = B\).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>Diviser par \(A\) et v&eacute;rifier.</div>
+  </div>
+</div>
+
+<div class="ex">
+  <strong>Exemple :</strong> R&eacute;soudre \(7x + 4 = 3x + 20\).
+
+  <p><strong>&Eacute;tape 1 :</strong> On regroupe les \(x\) &agrave; gauche (soustraire \(3x\)) et les nombres &agrave; droite (soustraire 4).</p>
+  <p>\[7x - 3x = 20 - 4\]</p>
+  <p>\[4x = 16\]</p>
+
+  <p><strong>&Eacute;tape 2 :</strong> On divise par 4.</p>
+  <p>\[x = \frac{16}{4} = 4\]</p>
+
+  <p><strong>V&eacute;rification :</strong></p>
+  <ul class="styled">
+    <li>Membre de gauche&nbsp;: \(7 \times 4 + 4 = 28 + 4 = 32\)</li>
+    <li>Membre de droite&nbsp;: \(3 \times 4 + 20 = 12 + 20 = 32\)</li>
+    <li>\(32 = 32\) &check;</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>6. Mod&eacute;liser un probl&egrave;me par une &eacute;quation</h2>
+
+<div class="meth">
+  <span class="label-meth">M&eacute;thode</span>
+  <strong>R&eacute;soudre un probl&egrave;me avec une &eacute;quation</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div><strong>Choisir l'inconnue :</strong> d&eacute;finir ce que repr&eacute;sente \(x\) (avec son unit&eacute;).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div><strong>Traduire l'&eacute;nonc&eacute;</strong> en une &eacute;quation math&eacute;matique.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div><strong>R&eacute;soudre</strong> l'&eacute;quation.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">4</div>
+    <div><strong>V&eacute;rifier</strong> et <strong>r&eacute;diger</strong> la r&eacute;ponse avec l'unit&eacute;.</div>
+  </div>
+</div>
+
+<div class="ex">
+  <strong>Probl&egrave;me 1 &mdash; Co&ucirc;t d'un chantier :</strong><br>
+  Un installateur thermique facture 45 &euro; de l'heure plus 80 &euro; de d&eacute;placement.
+  Le client a pay&eacute; 305 &euro; au total. Combien d'heures a dur&eacute; l'intervention&nbsp;?
+
+  <p><strong>&Eacute;tape 1 :</strong> Soit \(x\) le nombre d'heures d'intervention.</p>
+  <p><strong>&Eacute;tape 2 :</strong> Le co&ucirc;t total est \(45x + 80\). On sait qu'il vaut 305 &euro;.</p>
+  <p>\[45x + 80 = 305\]</p>
+  <p><strong>&Eacute;tape 3 :</strong></p>
+  <p>\[45x = 305 - 80 = 225\]</p>
+  <p>\[x = \frac{225}{45} = 5\]</p>
+  <p><strong>&Eacute;tape 4 :</strong> V&eacute;rification&nbsp;: \(45 \times 5 + 80 = 225 + 80 = 305\) &euro; &check;</p>
+  <p><strong>R&eacute;ponse :</strong> L'intervention a dur&eacute; <strong>5 heures</strong>.</p>
+</div>
+
+<div class="ex">
+  <strong>Probl&egrave;me 2 &mdash; D&eacute;coupe de panneau :</strong><br>
+  Un &eacute;b&eacute;niste d&eacute;coupe un panneau de 120 cm de large en deux parties.
+  La partie gauche mesure 15 cm de plus que la partie droite.
+  Quelles sont les dimensions des deux parties&nbsp;?
+
+  <p><strong>&Eacute;tape 1 :</strong> Soit \(x\) la largeur de la partie droite (en cm).</p>
+  <p>La partie gauche mesure \(x + 15\) cm.</p>
+  <p><strong>&Eacute;tape 2 :</strong></p>
+  <p>\[x + (x + 15) = 120\]</p>
+  <p>\[2x + 15 = 120\]</p>
+  <p><strong>&Eacute;tape 3 :</strong></p>
+  <p>\[2x = 120 - 15 = 105\]</p>
+  <p>\[x = \frac{105}{2} = 52{,}5\]</p>
+  <p><strong>&Eacute;tape 4 :</strong> V&eacute;rification&nbsp;: \(52{,}5 + 67{,}5 = 120\) cm &check;</p>
+  <p><strong>R&eacute;ponse :</strong> La partie droite mesure <strong>52,5 cm</strong> et la partie gauche mesure <strong>67,5 cm</strong>.</p>
+</div>
+
+<div class="ex">
+  <strong>Probl&egrave;me 3 &mdash; Comparaison de tarifs :</strong><br>
+  Deux fournisseurs proposent des tasseaux de bois&nbsp;:
+  <ul class="styled">
+    <li>Fournisseur A&nbsp;: 2 &euro; le tasseau + 30 &euro; de livraison.</li>
+    <li>Fournisseur B&nbsp;: 3,50 &euro; le tasseau, livraison gratuite.</li>
+  </ul>
+  &Agrave; partir de combien de tasseaux le fournisseur A est-il plus avantageux&nbsp;?
+
+  <p><strong>&Eacute;tape 1 :</strong> Soit \(x\) le nombre de tasseaux.</p>
+  <p><strong>&Eacute;tape 2 :</strong> Les co&ucirc;ts sont&nbsp;:</p>
+  <ul class="styled">
+    <li>Fournisseur A&nbsp;: \(2x + 30\)</li>
+    <li>Fournisseur B&nbsp;: \(3{,}5x\)</li>
+  </ul>
+  <p>On cherche quand les deux co&ucirc;ts sont &eacute;gaux&nbsp;:</p>
+  <p>\[2x + 30 = 3{,}5x\]</p>
+  <p><strong>&Eacute;tape 3 :</strong></p>
+  <p>\[30 = 3{,}5x - 2x = 1{,}5x\]</p>
+  <p>\[x = \frac{30}{1{,}5} = 20\]</p>
+  <p><strong>&Eacute;tape 4 :</strong> V&eacute;rification&nbsp;: A = \(2 \times 20 + 30 = 70\) &euro;, B = \(3{,}5 \times 20 = 70\) &euro; &check;</p>
+  <p><strong>R&eacute;ponse :</strong> &Agrave; partir de <strong>21 tasseaux</strong>, le fournisseur A est moins cher.</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>7. &Agrave; retenir</h2>
+
+<div class="retenir">
+  <strong>&Agrave; retenir :</strong>
+  <ul class="styled">
+    <li>Une <strong>&eacute;quation</strong> est une &eacute;galit&eacute; avec une inconnue \(x\). La <strong>solution</strong> est la valeur de \(x\) qui v&eacute;rifie l'&eacute;galit&eacute;.</li>
+    <li>Pour r&eacute;soudre \(ax + b = c\)&nbsp;:
+      <ol>
+        <li>Soustraire \(b\) des deux c&ocirc;t&eacute;s &rarr; \(ax = c - b\)</li>
+        <li>Diviser par \(a\) &rarr; \(x = \dfrac{c-b}{a}\)</li>
+      </ol>
+    </li>
+    <li>Pour r&eacute;soudre \(ax + b = cx + d\)&nbsp;: regrouper les \(x\) d'un c&ocirc;t&eacute; et les nombres de l'autre.</li>
+    <li><strong>Toujours v&eacute;rifier</strong> en rempla&ccedil;ant \(x\) dans l'&eacute;quation de d&eacute;part.</li>
+    <li>Pour mod&eacute;liser un probl&egrave;me&nbsp;: d&eacute;finir \(x\), traduire en &eacute;quation, r&eacute;soudre, v&eacute;rifier, r&eacute;pondre.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
