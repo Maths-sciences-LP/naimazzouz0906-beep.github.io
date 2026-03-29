@@ -104,7 +104,7 @@
     <tr><td>Resistance d'appoint</td><td>...</td><td>2 001</td></tr>
   </tbody>
 </table>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <table>
     <thead>
@@ -124,7 +124,7 @@
 <div class="exo">
 <h2>Question 2 <span class="badge-blue">ANA</span></h2>
 <p>Comparer, pour chaque equipement, la puissance apparente S et la puissance active P. Pour quels appareils observe-t-on un ecart ? Pour lesquels S = P ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <ul>
     <li><strong>Groupe exterieur :</strong> S = 3 220 VA &ne; P = 2 380 W &rarr; ecart important.</li>
@@ -141,7 +141,7 @@
 <h2>Question 3 <span class="badge-blue">ANA</span></h2>
 <p>Les appareils pour lesquels S &ne; P contiennent des <strong>moteurs electriques</strong> (compresseur, pompe). Les appareils pour lesquels S = P sont des <strong>charges resistives</strong>.</p>
 <p>D'apres vous, quelle est la cause physique de cet ecart entre S et P ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>L'ecart est du au <strong>dephasage</strong> entre la tension u(t) et le courant i(t). Dans un moteur (charge inductive), le courant est en retard sur la tension. Ce decalage fait que le produit U &times; I ne donne pas directement la puissance reellement consommee.</p>
   <p>Pour une charge purement resistive, tension et courant sont en phase (&phi; = 0), donc S = P.</p>
@@ -152,7 +152,7 @@
 <h2>Question 4 <span class="badge-green">REA</span></h2>
 <p>Le <strong>facteur de puissance</strong> est defini par : \(\cos\varphi = \dfrac{P}{S} = \dfrac{P}{U \times I}\)</p>
 <p>Calculer cos&thinsp;&phi; pour chaque equipement. Arrondir au centieme.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <table>
     <thead>
@@ -173,7 +173,7 @@
 <h2>Question 5 <span class="badge-blue">ANA</span></h2>
 <p>a) Que vaut cos&thinsp;&phi; pour une charge purement resistive ? Justifier.</p>
 <p>b) Quel equipement presente le cos&thinsp;&phi; le plus faible ? Que signifie cette valeur pour le dimensionnement du disjoncteur ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> Pour une charge purement resistive, &phi; = 0, donc cos&thinsp;&phi; = cos(0) = <strong>1</strong>. Toute la puissance apparente est convertie en puissance active.</p>
   <p><strong>b)</strong> Le <strong>groupe exterieur</strong> a le cos&thinsp;&phi; le plus faible (0,74). Cela signifie que le courant appele (14 A) est bien superieur a ce que la puissance active seule laisserait penser. Le disjoncteur et les cables doivent etre dimensionnes sur la puissance apparente S = 3 220 VA (soit le courant reel I = 14 A), et non sur P = 2 380 W.</p>
@@ -187,7 +187,7 @@
 <p>Pour le groupe exterieur (cos&thinsp;&phi; = 0,74) :</p>
 <p>a) Calculer l'angle &phi; en degres a l'aide de la touche cos<sup>-1</sup> de la calculatrice.</p>
 <p>b) En deduire sin&thinsp;&phi;, puis la puissance reactive Q.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> \(\varphi = \cos^{-1}(0{,}74) \approx 42{,}3°\)</p>
   <p><strong>b)</strong> \(\sin(42{,}3°) \approx 0{,}673\)</p>
@@ -205,7 +205,7 @@
   <li>Le cote vertical Q (puissance reactive)</li>
   <li>L'angle &phi;</li>
 </ul>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <div class="svg-wrap">
     <svg viewBox="0 0 380 230" width="100%" style="max-width:380px;height:auto" font-family="Segoe UI,sans-serif" font-size="13">
@@ -228,7 +228,7 @@
 <p>Le fournisseur d'electricite facture l'energie sur la base de la puissance <strong>active</strong> P. Cependant, si le facteur de puissance de l'installation est trop faible (cos&thinsp;&phi; &lt; 0,85), des penalites tarifaires s'appliquent.</p>
 <p>a) Le cos&thinsp;&phi; global du groupe exterieur (0,74) respecte-t-il ce seuil ?</p>
 <p>b) Proposer une solution technique pour ameliorer le facteur de puissance d'une installation.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> Non : cos&thinsp;&phi; = 0,74 &lt; 0,85. Le restaurant risque des penalites tarifaires.</p>
   <p><strong>b)</strong> On installe des <strong>condensateurs de compensation</strong> (batteries de condensateurs) en parallele sur l'installation. Les condensateurs fournissent de l'energie reactive et font remonter le facteur de puissance vers 1.</p>
@@ -241,7 +241,7 @@
 <p>a) Calculer la puissance active totale P<sub>totale</sub> de l'installation.</p>
 <p>b) Calculer l'energie consommee par mois en kWh.</p>
 <p>c) En deduire le cout mensuel.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> \(P_{\text{totale}} = 2\,380 + 552 + 414 + 180 + 2\,001 = \mathbf{5\,527 \text{ W}} = 5{,}527 \text{ kW}\)</p>
   <p><strong>b)</strong> Duree mensuelle : 10 &times; 26 = 260 h</p>
@@ -258,7 +258,7 @@
   <li>pourquoi le produit U &times; I ne donne pas toujours la puissance reellement consommee,</li>
   <li>pourquoi c'est important pour le dimensionnement de l'installation electrique.</li>
 </ul>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><em>Exemple de reponse :</em></p>
   <p>Le facteur de puissance cos&thinsp;&phi; indique quelle part de l'electricite fournie par le reseau est reellement transformee en travail utile (chauffage, compression, ventilation). Plus cos&thinsp;&phi; est proche de 1, plus l'installation est efficace. Quand cos&thinsp;&phi; est faible, le courant qui circule dans les cables est plus eleve que necessaire : il faut des cables plus gros et des disjoncteurs plus puissants, et le fournisseur d'electricite peut appliquer des penalites. C'est pourquoi on installe parfois des condensateurs pour corriger le facteur de puissance.</p>

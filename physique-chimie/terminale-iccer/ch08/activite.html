@@ -81,7 +81,7 @@
   <p>a) A quelle distance le niveau sonore de la PAC est-il le plus eleve ? Quelle est sa valeur ?</p>
   <p>b) Les frequences de 250 Hz et 1 000 Hz sont-elles dans le domaine audible par l'oreille humaine ? Justifier.</p>
   <p>c) Expliquer avec vos mots ce que signifie l'<strong>emergence</strong> d'un bruit.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> Le niveau sonore est le plus eleve a 1 m de la PAC : <strong>62 dB(A)</strong>.</p>
     <p><strong>b)</strong> Oui, les deux frequences sont dans le domaine audible (20 Hz &ndash; 20 000 Hz). 250 Hz est un son grave et 1 000 Hz est un son medium.</p>
@@ -94,7 +94,7 @@
   <p>Observer le tableau de mesures et repondre :</p>
   <p>a) De combien de dB le niveau sonore diminue-t-il quand on passe de 1 m a 2 m ? De 2 m a 4 m ? De 4 m a 8 m ?</p>
   <p>b) Que constatez-vous ? Formuler la regle d'attenuation en une phrase.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong></p>
     <ul>
@@ -110,7 +110,7 @@
   <h2>Question 3 <span class="badge-yellow">REA</span></h2>
   <p>La cloture du voisin est a 5 m de la PAC. Par interpolation, estimer le niveau sonore de la PAC a cette distance.</p>
   <p><em>Aide : 5 m est entre 4 m (50 dB) et 8 m (44 dB). On peut aussi utiliser la regle : \(L(d) = L(1\,\text{m}) - 20 \times \log\!\left(\dfrac{d}{1}\right)\).</em></p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>Avec la formule : \(L(5) = 62 - 20 \times \log(5) = 62 - 20 \times 0{,}699 = 62 - 14{,}0 = 48{,}0\) dB</p>
     <p>Le niveau sonore a 5 m est d'environ <strong>48 dB(A)</strong>.</p>
@@ -123,7 +123,7 @@
   <p>a) Calculer l'<strong>emergence</strong> (difference entre le bruit total et le bruit de fond).</p>
   <p>b) L'emergence est-elle conforme a la reglementation de <strong>jour</strong> (limite : 5 dB) ?</p>
   <p>c) L'emergence est-elle conforme a la reglementation de <strong>nuit</strong> (limite : 3 dB) ?</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> Emergence = 48 &minus; 35 = <strong>13 dB(A)</strong>.</p>
     <p><strong>b)</strong> 13 dB &gt; 5 dB : l'emergence depasse largement la limite de jour. <strong>Non conforme.</strong></p>
@@ -136,7 +136,7 @@
   <p>Pour respecter la reglementation de jour (emergence &le; 5 dB), le niveau sonore a la cloture ne doit pas depasser \(35 + 5 = 40\) dB(A).</p>
   <p>a) A quelle distance minimale de la PAC faudrait-il placer la cloture pour respecter cette limite ? Utiliser le tableau de mesures.</p>
   <p>b) En mode nuit (52 dB a 1 m), calculer le niveau sonore a 5 m et verifier si la limite nocturne de 38 dB(A) est respectee.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> D'apres le tableau, le niveau est de 38 dB a 16 m. A 8 m, il est de 44 dB (trop fort). Il faudrait une distance d'environ <strong>12 a 16 m</strong> pour respecter la limite de 40 dB.</p>
     <p>Plus precisement : \(40 = 62 - 20 \times \log(d)\), donc \(\log(d) = \dfrac{62 - 40}{20} = 1{,}1\), soit \(d = 10^{1,1} \approx 12{,}6\) m.</p>
@@ -151,7 +151,7 @@
   <p>a) Rappeler la relation entre la longueur d'onde \(\lambda\), la vitesse du son \(c_\text{son}\) et la frequence \(f\).</p>
   <p>b) Calculer \(\lambda\) pour \(f = 250\) Hz dans l'air a 20 &deg;C.</p>
   <p>c) Calculer \(\lambda\) pour la frequence du compresseur (\(f = 1\,000\) Hz).</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\lambda = \dfrac{c_\text{son}}{f}\)</p>
     <p><strong>b)</strong> \(\lambda = \dfrac{340}{250} = 1{,}36\) m</p>
@@ -166,7 +166,7 @@
   <p>Nadia envisage d'installer un <strong>ecran acoustique</strong> (mur anti-bruit) entre la PAC et la cloture du voisin. Ce type d'ecran est efficace pour attenuer les sons dont la longueur d'onde est <strong>inferieure</strong> a la dimension de l'ecran. Les sons dont la longueur d'onde est superieure a l'ecran le contournent par diffraction.</p>
   <p>a) L'ecran prevu mesure 1,80 m de haut et 2,00 m de large. Sera-t-il efficace pour attenuer le bruit du ventilateur (250 Hz, &lambda; = 1,36 m) ? Et celui du compresseur (1 000 Hz, &lambda; = 0,34 m) ?</p>
   <p>b) Proposer une solution complementaire pour le bruit grave du ventilateur.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong></p>
     <ul>
@@ -182,7 +182,7 @@
   <p>Nadia entend le bruit de la PAC depuis la fenetre de la maison du voisin, situee a 10 m. Elle chronometre un echo contre le mur du fond du jardin (aller-retour de 40 m) et mesure un delai de 0,12 s.</p>
   <p>a) En deduire la vitesse du son experimentale : \(c_\text{son} = \dfrac{d_\text{aller-retour}}{\Delta t}\).</p>
   <p>b) Comparer cette valeur a la vitesse theorique (340 m/s). Calculer l'ecart relatif en pourcentage.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(c_\text{son} = \dfrac{40}{0{,}12} = 333\) m/s</p>
     <p><strong>b)</strong> Ecart relatif : \(\dfrac{|340 - 333|}{340} \times 100 = \dfrac{7}{340} \times 100 \approx 2{,}1\) %</p>
@@ -198,7 +198,7 @@
     <li>Les solutions preconisees pour la rendre conforme.</li>
     <li>L'interet de connaitre la longueur d'onde pour choisir une protection acoustique.</li>
   </ul>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>En fonctionnement normal, la pompe a chaleur produit une emergence de 13 dB a la cloture du voisin, ce qui depasse largement les limites reglementaires de 5 dB le jour et 3 dB la nuit. Le mode nuit (52 dB a 1 m) permet de respecter de justesse la limite nocturne. Pour le fonctionnement de jour, il est necessaire d'installer un ecran acoustique et d'eloigner la PAC a au moins 12 m de la cloture. La connaissance de la longueur d'onde est essentielle : un ecran est efficace pour les sons dont la longueur d'onde est inferieure a ses dimensions, ce qui guide le choix de la taille et du type de protection.</p>
   </div>

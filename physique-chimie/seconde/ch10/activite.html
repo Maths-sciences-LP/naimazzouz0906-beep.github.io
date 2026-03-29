@@ -99,7 +99,7 @@
 <div class="exo">
 <h2>Question 1 <span class="badge-green">APP</span></h2>
 <p>&Agrave; partir du document&nbsp;1, relever la temp&eacute;rature mesur&eacute;e et la temp&eacute;rature de consigne pour chaque pi&egrave;ce. Quelle pi&egrave;ce pr&eacute;sente la temp&eacute;rature la plus &eacute;lev&eacute;e&nbsp;? Quelle pi&egrave;ce pr&eacute;sente la temp&eacute;rature la plus basse&nbsp;?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Les temp&eacute;ratures mesur&eacute;es sont :</p>
 <ul>
@@ -130,7 +130,7 @@ La pi&egrave;ce la plus froide est le <strong>local technique ventilation</stron
   <tr><td>Local technique</td><td>&minus;5</td><td>&hellip;</td></tr>
   <tr><td>Salle de r&eacute;union</td><td>19</td><td>&hellip;</td></tr>
 </table>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>On applique \( T(\text{K}) = \theta(\text{&deg;C}) + 273{,}15 \) :</p>
 <table>
@@ -152,7 +152,7 @@ La pi&egrave;ce la plus froide est le <strong>local technique ventilation</stron
 <div class="exo">
 <h2>Question 3 <span class="badge-blue">ANA</span></h2>
 <p>&Agrave; partir du document&nbsp;2, identifier pour chaque capteur la plage de temp&eacute;ratures qu&rsquo;il peut mesurer. Quel capteur couvre la plage la plus &eacute;tendue&nbsp;? Lequel est le plus pr&eacute;cis&nbsp;?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ul>
   <li><strong>Thermocouple type&nbsp;K :</strong> de &minus;200&nbsp;&deg;C &agrave; +1&nbsp;200&nbsp;&deg;C, soit une &eacute;tendue de 1&nbsp;400&nbsp;&deg;C. Pr&eacute;cision : &plusmn;&nbsp;2&nbsp;&deg;C.</li>
@@ -182,7 +182,7 @@ Le capteur le plus pr&eacute;cis est la <strong>sonde Pt100</strong> (&plusmn;&n
   <tr><td>Local technique</td><td>&minus;5</td><td>&minus;2</td><td>&hellip;</td></tr>
   <tr><td>Salle de r&eacute;union</td><td>19</td><td>20</td><td>&hellip;</td></tr>
 </table>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <table>
   <tr>
@@ -204,7 +204,7 @@ Le capteur le plus pr&eacute;cis est la <strong>sonde Pt100</strong> (&plusmn;&n
 <div class="exo">
 <h2>Question 5 <span class="badge-green">VAL</span></h2>
 <p>En consid&eacute;rant qu&rsquo;une pi&egrave;ce est &agrave; la bonne temp&eacute;rature si l&rsquo;&eacute;cart avec la consigne est compris entre &minus;1&nbsp;&deg;C et +1&nbsp;&deg;C, d&eacute;terminer quelles pi&egrave;ces sont conformes et lesquelles n&eacute;cessitent un r&eacute;glage.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ul>
   <li><strong>Bureau :</strong> \(\Delta\theta = +1\)&nbsp;&deg;C &rarr; &eacute;cart dans la tol&eacute;rance &rarr; <strong>conforme</strong>.</li>
@@ -223,7 +223,7 @@ Le capteur le plus pr&eacute;cis est la <strong>sonde Pt100</strong> (&plusmn;&n
 <p>a) &Agrave; quelle temp&eacute;rature en &deg;C correspond le z&eacute;ro absolu&nbsp;?</p>
 <p>b) &Agrave; quelle valeur en Kelvin correspond-il&nbsp;?</p>
 <p>c) Expliquer, en une ou deux phrases, pourquoi on ne peut pas descendre en dessous du z&eacute;ro absolu.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>a) Le z&eacute;ro absolu correspond &agrave; <strong>&minus;273,15&nbsp;&deg;C</strong> (souvent arrondi &agrave; &minus;273&nbsp;&deg;C).</p>
 <p>b) Il correspond &agrave; <strong>0&nbsp;K</strong> (z&eacute;ro Kelvin).</p>
@@ -234,7 +234,7 @@ Le capteur le plus pr&eacute;cis est la <strong>sonde Pt100</strong> (&plusmn;&n
 <div class="exo">
 <h2>Question 7 <span class="badge-blue">REA</span></h2>
 <p>Pour chaque pi&egrave;ce du b&acirc;timent, choisir le capteur le mieux adapt&eacute; parmi les trois du document&nbsp;2. Justifier chaque choix en v&eacute;rifiant que la temp&eacute;rature mesur&eacute;e est bien dans la plage du capteur et en tenant compte de la pr&eacute;cision souhait&eacute;e.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <table>
   <tr>
@@ -286,7 +286,7 @@ Le capteur le plus pr&eacute;cis est la <strong>sonde Pt100</strong> (&plusmn;&n
   <li>les pi&egrave;ces &agrave; r&eacute;gler en priorit&eacute; ;</li>
   <li>le type de capteur install&eacute; dans chaque pi&egrave;ce.</li>
 </ul>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p><em>Exemple de compte rendu :</em></p>
 <p>&laquo;&nbsp;Suite &agrave; l&rsquo;intervention du 15 janvier, le relev&eacute; de temp&eacute;ratures montre que <strong>2 pi&egrave;ces sur 5 sont conformes</strong> (bureau et salle de r&eacute;union). Trois pi&egrave;ces n&eacute;cessitent un r&eacute;glage : l&rsquo;atelier est trop froid de 2&nbsp;&deg;C, la chaufferie est trop chaude de 5&nbsp;&deg;C et le local technique est trop froid de 3&nbsp;&deg;C. Le r&eacute;glage de la chaufferie est prioritaire car l&rsquo;&eacute;cart est le plus important.</p>
@@ -313,8 +313,5 @@ Le capteur le plus pr&eacute;cis est la <strong>sonde Pt100</strong> (&plusmn;&n
 
 </div>
 <script src="../../../nav.js"></script>
-<script>
-document.querySelectorAll('.bc').forEach(function(b){b.addEventListener('click',function(){var c=this.nextElementSibling;c.style.display=c.style.display==='block'?'none':'block';this.textContent=c.style.display==='block'?'Masquer la correction':'Voir la correction'})});
-</script>
 </body>
 </html>

@@ -77,7 +77,7 @@
 <h2>Question 1 <span class="badge-green">APP</span></h2>
 <p>a) Quel instrument permet a Mathieu de lire la pression dans la cuve du compresseur ?</p>
 <p>b) Quelle est la pression actuellement lue sur cet instrument ? La cloueuse peut-elle fonctionner correctement ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>a) L'instrument qui permet de lire la pression dans la cuve est un <strong>manometre</strong>.</p>
   <p>b) La pression lue est de <strong>6 bar</strong>. La plage de travail recommandee pour la cloueuse est de 5 a 7 bar. Comme 6 bar est compris entre 5 et 7 bar, la cloueuse <strong>peut fonctionner correctement</strong>.</p>
@@ -88,7 +88,7 @@
 <h2>Question 2 <span class="badge-yellow">REA</span></h2>
 <p>Convertir la pression lue sur le manometre (6 bar) en pascals (Pa).</p>
 <p><em>Rappel : \(1 \text{ bar} = 10^5 \text{ Pa}\)</em></p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>\(P = 6 \text{ bar} = 6 \times 10^5 \text{ Pa} = 600\,000 \text{ Pa}\)</p>
   <p>La pression dans la cuve est de <strong>600 000 Pa</strong> (soit 600 kPa).</p>
@@ -100,7 +100,7 @@
 <p>L'air comprime dans la cuve pousse sur le piston de la cloueuse. La surface du piston est \(S = 4 \times 10^{-4}\) m².</p>
 <p>a) Quelle formule relie la pression \(P\), la force pressante \(F\) et la surface \(S\) ?</p>
 <p>b) Calculer la force pressante \(F\) exercee par l'air comprime sur le piston de la cloueuse lorsque la pression est de 6 bar.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>a) La formule est : \(P = \dfrac{F}{S}\), donc \(F = P \times S\).</p>
   <p>b) On utilise la pression en pascals : \(P = 6 \times 10^5\) Pa.</p>
@@ -112,7 +112,7 @@
 <div class="exo">
 <h2>Question 4 <span class="badge-blue">ANA</span></h2>
 <p>Si Mathieu augmente la pression du compresseur a 7 bar (la valeur maximale de la cloueuse), la force sur le piston sera-t-elle plus grande ou plus petite ? Justifier sans calculer.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>D'apres la formule \(F = P \times S\), si la pression \(P\) augmente et que la surface \(S\) reste la meme, alors la force \(F\) <strong>augmente</strong>.</p>
   <p>Plus la pression est elevee, plus la force exercee sur le piston est grande. C'est ainsi que la pression transmet une force : <strong>la pression se propage dans tout le gaz et s'exerce sur chaque surface en contact</strong>.</p>
@@ -122,7 +122,7 @@
 <div class="exo">
 <h2>Question 5 <span class="badge-yellow">REA</span></h2>
 <p>Calculer la force pressante sur le piston a 7 bar, puis comparer avec le resultat obtenu a la question 3.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>\(P = 7 \text{ bar} = 7 \times 10^5\) Pa</p>
   <p>\(F = P \times S = 7 \times 10^5 \times 4 \times 10^{-4} = 280\) N</p>
@@ -134,7 +134,7 @@
 <h2>Question 6 <span class="badge-blue">ANA</span></h2>
 <p>Mathieu explique a un apprenti : <em>« Dans le compresseur, l'air est comprime dans la cuve. Cette pression se transmet par le tuyau jusqu'au piston de la cloueuse. C'est comme ca que l'air pousse le clou. »</em></p>
 <p>Expliquer avec vos propres mots comment la pression dans la cuve du compresseur se transforme en force sur le clou. Utiliser les mots : <strong>pression</strong>, <strong>surface</strong>, <strong>force pressante</strong>.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>L'air est comprime dans la cuve du compresseur, ce qui cree une <strong>pression</strong> elevee. Cette pression se propage dans le tuyau jusqu'a la cloueuse. Dans la cloueuse, l'air comprime pousse sur la <strong>surface</strong> du piston. Cela cree une <strong>force pressante</strong> sur le piston, qui propulse le clou dans le bois.</p>
   <p>La pression est la meme dans tout le circuit d'air comprime (cuve, tuyau, cloueuse). C'est la surface du piston qui determine la force obtenue : \(F = P \times S\).</p>
@@ -144,7 +144,7 @@
 <div class="exo">
 <h2>Question 7 <span class="badge-green">VAL</span></h2>
 <p>Verification : un clou de menuiserie s'enfonce dans du bois tendre lorsque la force depasse environ 200 N. D'apres vos calculs, la cloueuse a 6 bar peut-elle enfoncer un clou ? Et a 5 bar (la pression minimale recommandee) ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>A 6 bar :</strong> \(F = 240\) N > 200 N → la cloueuse peut enfoncer le clou. ✓</p>
   <p><strong>A 5 bar :</strong> \(F = 5 \times 10^5 \times 4 \times 10^{-4} = 200\) N. La force est juste egale au seuil : le clou s'enfonce tout juste. C'est coherent avec le fait que 5 bar est la pression <strong>minimale</strong> recommandee.</p>
@@ -155,7 +155,7 @@
 <div class="exo">
 <h2>Question 8 <span class="badge-red">COM</span></h2>
 <p>Mathieu forme un nouvel apprenti a l'utilisation du compresseur et de la cloueuse. Rediger 3 recommandations de securite concernant la pression de l'air comprime en atelier.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>Exemples de recommandations de securite :</p>
   <ol>

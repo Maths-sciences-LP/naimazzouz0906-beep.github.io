@@ -95,7 +95,7 @@
 <h2>Question 1 <span class="badge-green">APP</span></h2>
 <p>a) Convertir les temperatures de surface en kelvins : T(K) = T(&deg;C) + 273. Completer la colonne &laquo; Temperature (K) &raquo; du tableau.</p>
 <p>b) Rappeler ce qu'est le rayonnement thermique. Tout corps emet-il un rayonnement ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong></p>
   <ul>
@@ -114,7 +114,7 @@
 <p>a) Le ballon ECS non isole (T = 328 K).</p>
 <p>b) La surface du Soleil (T = 5 780 K).</p>
 <p>\[ \lambda_{\max} = \frac{2{,}898 \times 10^{-3}}{T} \]</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> \(\lambda_{\max} = \dfrac{2{,}898 \times 10^{-3}}{328} = 8{,}84 \times 10^{-6} \text{ m} \approx \mathbf{8{,}8 \; \mu m}\)</p>
   <p>Ce rayonnement est dans l'<strong>infrarouge moyen</strong> (3 a 15 &mu;m), invisible a l'oeil nu mais detectable par la camera thermique.</p>
@@ -128,7 +128,7 @@
 <p>La camera infrarouge de Sofia detecte les rayonnements dans la bande 8&ndash;14 &mu;m.</p>
 <p>a) Le pic d'emission du ballon ECS (8,8 &mu;m) est-il dans la bande de detection de la camera ?</p>
 <p>b) Pourquoi la camera ne detecte-t-elle pas directement le rayonnement solaire ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> Oui : 8,8 &mu;m est dans la bande 8&ndash;14 &mu;m. La camera detecte parfaitement le rayonnement du ballon.</p>
   <p><strong>b)</strong> Le pic d'emission du Soleil est a 0,50 &mu;m (visible), tres loin de la bande 8&ndash;14 &mu;m de la camera. Le rayonnement solaire est principalement visible et proche infrarouge, pas dans l'infrarouge moyen.</p>
@@ -140,7 +140,7 @@
 <p>Calculer la <strong>puissance rayonnee</strong> par le ballon ECS <strong>non isole</strong> a l'aide de la loi de Stefan-Boltzmann :</p>
 <p>\[ P = \varepsilon \times \sigma \times A \times T^4 \]</p>
 <p>Donnees : &epsilon; = 0,90 ; A = 2,4 m&sup2; ; T = 328 K ; &sigma; = 5,67 &times; 10<sup>-8</sup> W&sdot;m<sup>-2</sup>&sdot;K<sup>-4</sup>.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>\(T^4 = 328^4\)</p>
   <p>Calcul intermediaire : \(328^2 = 107\,584\), puis \(328^4 = 107\,584^2 = 1{,}158 \times 10^{10}\)</p>
@@ -154,7 +154,7 @@
 <div class="exo">
 <h2>Question 5 <span class="badge-green">REA</span></h2>
 <p>Calculer de meme la puissance rayonnee par le ballon <strong>avec calorifuge</strong> (&epsilon; = 0,25 ; A = 2,6 m&sup2; ; T = 301 K).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>\(T^4 = 301^4\)</p>
   <p>\(301^2 = 90\,601\), puis \(301^4 = 90\,601^2 = 8{,}209 \times 10^{9}\)</p>
@@ -168,7 +168,7 @@
 <h2>Question 6 <span class="badge-green">VAL</span></h2>
 <p>a) Calculer la reduction de puissance rayonnee grace au calorifuge (en watts et en pourcentage).</p>
 <p>b) Si l'electricite coute 0,22 &euro;/kWh et que le ballon fonctionne 8 000 heures par an, estimer l'economie annuelle en euros realisee grace au calorifuge.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> Reduction : \(1\,418 - 303 = \mathbf{1\,115 \text{ W}}\)</p>
   <p>En pourcentage : \(\dfrac{1\,115}{1\,418} \times 100 \approx \mathbf{78{,}6\,\%}\)</p>
@@ -197,7 +197,7 @@
 </table>
 <p>a) Pourquoi le calorifuge du ballon est-il recouvert d'aluminium ?</p>
 <p>b) Si le ballon non isole etait en acier inoxydable poli au lieu d'etre peint, sa puissance rayonnee serait-elle plus faible ou plus elevee ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> L'aluminium a une tres faible emissivite (&epsilon; = 0,05 a 0,25). En recouvrant le calorifuge d'aluminium, on reduit fortement l'emission de rayonnement thermique vers l'exterieur. C'est le meme principe que les couvertures de survie.</p>
   <p><strong>b)</strong> Si le ballon etait en inox poli (&epsilon; = 0,15 au lieu de 0,90), la puissance rayonnee serait <strong>beaucoup plus faible</strong> : environ 6 fois moins (rapport 0,90/0,15 = 6). Cependant, les ballons sont souvent peints pour des raisons de protection anticorrosion, ce qui augmente leur emissivite.</p>
@@ -250,7 +250,7 @@
 
 <p>a) Pourquoi le rayonnement solaire (visible) traverse-t-il l'atmosphere alors que le rayonnement infrarouge emis par la Terre est en partie absorbe ?</p>
 <p>b) Quel est l'effet de cette absorption sur la temperature terrestre ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> L'atmosphere est <strong>transparente au rayonnement visible</strong> (courtes longueurs d'onde, &lambda; &asymp; 0,5 &mu;m) mais <strong>opaque au rayonnement infrarouge</strong> (grandes longueurs d'onde, &lambda; &asymp; 10 &mu;m). Les gaz a effet de serre (CO<sub>2</sub>, H<sub>2</sub>O, CH<sub>4</sub>) absorbent le rayonnement IR emis par la surface terrestre.</p>
   <p><strong>b)</strong> L'energie IR absorbee par l'atmosphere est en partie reemise vers le sol, ce qui le rechauffe davantage. C'est l'<strong>effet de serre</strong>. Sans lui, la temperature moyenne de la Terre serait d'environ &minus;18 &deg;C au lieu de +15 &deg;C.</p>
@@ -262,7 +262,7 @@
 <p>Les panneaux solaires thermiques de l'immeuble utilisent l'effet de serre de maniere volontaire : une vitre transparente laisse entrer le rayonnement visible du Soleil, qui chauffe un absorbeur noir. L'absorbeur reemet de l'infrarouge, que la vitre bloque (comme l'atmosphere).</p>
 <p>a) Pourquoi l'absorbeur est-il peint en noir mat ?</p>
 <p>b) Citer deux gaz a effet de serre et une activite humaine qui contribue a l'augmentation de leur concentration.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> Un corps noir mat a une <strong>emissivite proche de 1</strong> (&epsilon; &asymp; 0,95). Par reciprocite, il <strong>absorbe</strong> aussi tres efficacement le rayonnement incident. L'absorbeur noir capte le maximum d'energie solaire et s'echauffe fortement.</p>
   <p><strong>b)</strong></p>
@@ -282,7 +282,7 @@
   <li>l'interet du calorifuge,</li>
   <li>le lien entre les installations thermiques et l'effet de serre.</li>
 </ul>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><em>Exemple de reponse :</em></p>
   <p>Le diagnostic thermique a revele que votre ballon d'eau chaude, non isole, perd environ 1 400 watts par rayonnement infrarouge, c'est-a-dire qu'il chauffe le local technique au lieu de conserver la chaleur de l'eau. L'installation d'un calorifuge (isolant recouvert d'aluminium) reduirait ces pertes de pres de 80 %, soit une economie estimee a environ 2 000 euros par an sur votre facture d'electricite. Par ailleurs, reduire les pertes thermiques diminue la consommation d'energie et donc les emissions de CO<sub>2</sub>, principal gaz a effet de serre responsable du rechauffement climatique. Vos panneaux solaires thermiques exploitent d'ailleurs ce meme phenomene de rayonnement pour capter l'energie du Soleil de maniere renouvelable.</p>

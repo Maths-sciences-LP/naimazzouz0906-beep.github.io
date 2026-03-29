@@ -91,7 +91,7 @@
 <h2>Question 1 <span class="badge-green">APP</span></h2>
 <p>a) En lisant le tableau, identifier l'équipement le <strong>plus puissant</strong> et l'équipement le <strong>moins puissant</strong>.</p>
 <p>b) Quel est le rôle du <strong>disjoncteur 16 A</strong> dans le circuit ? Que se passe-t-il si l'intensité dépasse 16 A ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>a) L'équipement le plus puissant est le <strong>four encastrable</strong> (2 500 W). Le moins puissant est la <strong>hotte aspirante</strong> (180 W).</p>
 <p>b) Le disjoncteur de 16 A est un dispositif de <strong>protection</strong>. Il coupe automatiquement le courant lorsque l'intensité totale du circuit dépasse 16 A. Cela protège les câbles contre la surchauffe et prévient les risques d'incendie.</p>
@@ -102,7 +102,7 @@
 <h2>Question 2 <span class="badge-blue">REA</span></h2>
 <p>Calculer la <strong>puissance totale</strong> si tous les équipements fonctionnent en même temps.</p>
 <p>Additionner les puissances de tous les appareils du tableau.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 \[ P_{\text{total}} = 350 + 230 + 2\,300 + 2\,500 + 180 + 1\,800 + 1\,500 = 8\,860 \text{ W} = 8{,}86 \text{ kW} \]
 <p>Si tous les appareils fonctionnent simultanément, la puissance totale demandée est de <strong>8 860 W</strong>.</p>
@@ -112,7 +112,7 @@
 <div class="exo">
 <h2>Question 3 <span class="badge-blue">REA</span></h2>
 <p>Calculer la <strong>puissance maximale</strong> que le circuit peut fournir, en utilisant la formule \(P = U \times I\) avec les caractéristiques du disjoncteur (\(U = 230\) V, \(I_{\max} = 16\) A).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 \[ P_{\max} = U \times I_{\max} = 230 \times 16 = 3\,680 \text{ W} = 3{,}68 \text{ kW} \]
 <p>Le circuit peut fournir au maximum <strong>3 680 W</strong> avant que le disjoncteur ne se déclenche.</p>
@@ -123,7 +123,7 @@
 <h2>Question 4 <span class="badge-blue">ANA</span></h2>
 <p>a) Comparer la puissance totale des équipements (question 2) avec la puissance maximale du circuit (question 3).</p>
 <p>b) Que se passera-t-il si Mme Lefèvre branche tous les appareils en même temps ? Expliquer.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>a) La puissance totale demandée (8 860 W) est très largement <strong>supérieure</strong> à la puissance maximale du circuit (3 680 W). Le rapport est : \(\frac{8\,860}{3\,680} \approx 2{,}4\). On dépasse la capacité du circuit de plus du double.</p>
 <p>b) Le disjoncteur va <strong>se déclencher immédiatement</strong> (coupure du courant). L'intensité totale serait de \(\frac{8\,860}{230} \approx 38{,}5\) A, soit plus de 2 fois la limite de 16 A. C'est une situation de <strong>surcharge</strong>.</p>
@@ -136,7 +136,7 @@
 <p>a) Calculer l'intensité totale si elle branche : éclairage LED + écran + plaque de cuisson + hotte.</p>
 <p>b) Le disjoncteur va-t-il supporter cette combinaison ?</p>
 <p>c) Proposer une autre combinaison d'appareils qui reste sous la limite de 16 A et qui inclut le four.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>a) Intensité totale de la combinaison :</p>
 \[ I = 1{,}5 + 1{,}0 + 10{,}0 + 0{,}8 = 13{,}3 \text{ A} \]
@@ -155,7 +155,7 @@
 <p>a) Calculer la puissance totale de ces trois appareils.</p>
 <p>b) Calculer l'énergie consommée en kWh.</p>
 <p>c) Calculer le coût de cette journée au tarif de 0,18 €/kWh.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>a) \(P = 350 + 230 + 180 = 760\) W = 0,76 kW</p>
 <p>b) \(E = P \times t = 0{,}76 \times 8 = 6{,}08\) kWh</p>
@@ -168,7 +168,7 @@
 <p>Un wattmètre branché sur le circuit du showroom indique une puissance de <strong>3 520 W</strong> alors que Mme Lefèvre pense n'avoir branché que l'éclairage (350 W), la plaque (2 300 W) et la hotte (180 W), soit 2 830 W théoriques.</p>
 <p>a) L'écart est-il normal ? Proposer une explication.</p>
 <p>b) Calculer l'intensité réelle correspondant à 3 520 W sous 230 V. Le disjoncteur est-il proche de sa limite ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>a) L'écart est de \(3\,520 - 2\,830 = 690\) W. Ce n'est pas normal si elle n'a branché que ces trois appareils. Explication possible : un autre appareil est resté branché sans qu'elle s'en rende compte (radiateur d'appoint oublié, par exemple). Il faut vérifier tous les branchements.</p>
 <p>b) \(I = \dfrac{P}{U} = \dfrac{3\,520}{230} = 15{,}3\) A. Le disjoncteur est à \(\dfrac{15{,}3}{16} = 96\%\) de sa capacité. Il est <strong>très proche de la limite</strong> : le moindre appareil supplémentaire déclenchera la protection.</p>
@@ -182,7 +182,7 @@
   <li>pourquoi un seul circuit de 16 A est insuffisant pour le showroom ;</li>
   <li>quelle solution vous recommandez (avec un chiffre de puissance).</li>
 </ul>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Exemple de note :</p>
 <p><em>Madame Lefèvre, le circuit actuel protégé par un disjoncteur de 16 A ne peut fournir qu'une puissance maximale de 3 680 W. Or, la puissance totale de vos équipements atteint 8 860 W, soit plus du double de la capacité du circuit. Il est impossible de faire fonctionner tous les appareils simultanément sur un seul circuit.</em></p>

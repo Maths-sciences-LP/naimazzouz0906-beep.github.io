@@ -60,7 +60,7 @@
 <h2>Question 1 <span class="badge-green">APP</span></h2>
 <p>a) Combien de panneaux au total présentent un défaut ?</p>
 <p>b) Calculer la fréquence de chaque type de défaut dans ce lot. Donner les résultats sous forme de fractions, puis de nombres décimaux.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> Nombre de panneaux avec un défaut : \(18 + 12 + 10 = 40\) panneaux.</p>
   <p><strong>b)</strong> Fréquences de chaque type de défaut :</p>
@@ -81,7 +81,7 @@
   <li>\(V\) : « le panneau présente un voilage »</li>
   <li>\(C\) : « le panneau a une cote hors tolérance »</li>
 </ul>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>Lorsqu'on dispose d'un grand nombre d'observations, la fréquence observée donne une bonne estimation de la probabilité. On a donc :</p>
   \[P(N) = \frac{18}{200} = 0{,}09 \qquad P(V) = \frac{12}{200} = 0{,}06 \qquad P(C) = \frac{10}{200} = 0{,}05\]
@@ -92,7 +92,7 @@
 <h2>Question 3 <span class="badge-blue">ANA</span></h2>
 <p>a) Pourquoi peut-on utiliser la fréquence observée comme estimation de la probabilité dans cette situation ?</p>
 <p>b) Cette estimation serait-elle aussi fiable si on n'avait contrôlé que 10 panneaux ? Justifier.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> Le lot est suffisamment grand (200 panneaux). Lorsque le nombre d'observations est élevé, la fréquence observée se stabilise et donne une bonne estimation de la probabilité. C'est la <strong>loi des grands nombres</strong>.</p>
   <p><strong>b)</strong> Non, avec seulement 10 panneaux, l'estimation serait beaucoup moins fiable. Le nombre d'observations serait trop faible pour que la fréquence soit représentative de la probabilité réelle. Par exemple, on pourrait avoir 0 défaut sur 10 panneaux alors que le taux réel est de 20 %.</p>
@@ -103,7 +103,7 @@
 <h2>Question 4 <span class="badge-green">REA</span></h2>
 <p>Calculer la probabilité de l'événement \(D\) : « le panneau présente un défaut (quel qu'il soit) ».</p>
 <p><em>Indication : les trois types de défauts sont incompatibles (un panneau ne peut avoir qu'un seul type de défaut).</em></p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>Les événements \(N\), \(V\) et \(C\) sont incompatibles, donc :</p>
   \[P(D) = P(N) + P(V) + P(C) = 0{,}09 + 0{,}06 + 0{,}05 = 0{,}20\]
@@ -114,7 +114,7 @@
 <div class="exo">
 <h2>Question 5 <span class="badge-green">REA</span></h2>
 <p>En déduire la probabilité de l'événement contraire \(\bar{D}\) : « le panneau est conforme (aucun défaut) ».</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>L'événement \(\bar{D}\) est le contraire de \(D\), donc :</p>
   \[P(\bar{D}) = 1 - P(D) = 1 - 0{,}20 = 0{,}80\]
@@ -174,7 +174,7 @@
 </svg>
 </div>
 <p>b) Calculer la probabilité de chacun des quatre chemins de l'arbre.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a) et b)</strong> On applique la <strong>règle du chemin</strong> : on multiplie les probabilités le long de chaque branche.</p>
   <ul>
@@ -190,7 +190,7 @@
 <h2>Question 7 <span class="badge-green">REA</span></h2>
 <p>Calculer la probabilité que la machine rejette un panneau (événement \(R\)).</p>
 <p><em>Indication : un panneau peut être rejeté soit parce qu'il est défectueux, soit parce qu'il est conforme mais mal détecté. Utiliser la règle de la somme des chemins.</em></p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>L'événement \(R\) correspond à deux chemins de l'arbre : \(D \cap R\) et \(\bar{D} \cap R\).</p>
   \[P(R) = P(D \cap R) + P(\bar{D} \cap R) = 0{,}190 + 0{,}016 = 0{,}206\]
@@ -201,7 +201,7 @@
 <div class="exo">
 <h2>Question 8 <span class="badge-green">VAL</span></h2>
 <p>Vérifier que la somme des probabilités des quatre chemins de l'arbre est bien égale à 1.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   \[P(D \cap R) + P(D \cap \bar{R}) + P(\bar{D} \cap R) + P(\bar{D} \cap \bar{R})\]
   \[= 0{,}190 + 0{,}010 + 0{,}016 + 0{,}784 = 1{,}000\]
@@ -214,7 +214,7 @@
 <p>Le responsable qualité constate que certains panneaux conformes sont rejetés par la machine, et que certains panneaux défectueux passent le contrôle.</p>
 <p>a) Quelle est la probabilité qu'un panneau défectueux passe le contrôle sans être détecté ?</p>
 <p>b) Sur un lot de 1 000 panneaux, combien de panneaux défectueux échapperaient en moyenne au contrôle ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> Il s'agit du chemin \(D \cap \bar{R}\) :</p>
   \[P(D \cap \bar{R}) = 0{,}010\]
@@ -231,7 +231,7 @@
   <li>l'efficacité de la machine de contrôle ;</li>
   <li>une recommandation pour améliorer la qualité.</li>
 </ul>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><em>Exemple de rédaction :</em></p>
   <p>Le contrôle du lot révèle un taux de défaut de 20 %, ce qui est élevé pour une production de panneaux destinés à l'ameublement. Le défaut le plus fréquent est le noeud apparent (9 % des panneaux). La machine de calibrage est efficace : elle détecte 95 % des panneaux défectueux. Toutefois, 1 % des panneaux livrés seraient défectueux malgré le contrôle. Il serait recommandé d'améliorer le tri des bois en amont pour réduire le taux de noeuds apparents, qui représente à lui seul près de la moitié des défauts.</p>

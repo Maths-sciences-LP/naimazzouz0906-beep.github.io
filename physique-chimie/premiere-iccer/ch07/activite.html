@@ -62,7 +62,7 @@
 <h2>Question 1 <span class="badge-green">APP</span></h2>
 <p><strong>a)</strong> Relever la pression mesurée par Mehdi au rez-de-chaussée.</p>
 <p><strong>b)</strong> Relever la pression au 3e étage. À quel étage la pression est-elle la plus élevée ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p><strong>a)</strong> Au rez-de-chaussée, le manomètre indique \(P_{\text{RDC}} = 3{,}00 \text{ bar}\).</p>
 <p><strong>b)</strong> Au 3e étage : \(P_3 = 2{,}12 \text{ bar}\). La pression est la plus élevée au rez-de-chaussée (3,00 bar). Elle diminue quand on monte.</p>
@@ -74,7 +74,7 @@
 <h2>Question 2 <span class="badge-yellow">REA</span></h2>
 <p>Convertir la pression au rez-de-chaussée (3,0 bar) en pascal (Pa).</p>
 <p><em>Rappel : \(1 \text{ bar} = 10^5 \text{ Pa}\)</em></p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>\(P_{\text{RDC}} = 3{,}0 \text{ bar} = 3{,}0 \times 10^5 = 300\,000 \text{ Pa}\)</p>
 <p>La pression au rez-de-chaussée vaut 300 000 Pa.</p>
@@ -85,7 +85,7 @@
 <div class="exo">
 <h2>Question 3 <span class="badge-blue">ANA</span></h2>
 <p>Observer les valeurs de pression du tableau. De combien la pression diminue-t-elle entre chaque étage (tous les 3 m) ? Que peut-on en déduire ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Calcul de la diminution entre chaque étage :</p>
 <ul>
@@ -104,7 +104,7 @@
 <p>La pression hydrostatique exercée par une colonne d'eau de hauteur \(h\) vaut :</p>
 \[P_{\text{hydro}} = \rho \times g \times h\]
 <p>Calculer la perte de pression due à une colonne d'eau de 3 m de hauteur (un étage). Exprimer le résultat en Pa, puis en bar.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>\(P_{\text{hydro}} = \rho \times g \times h = 1\,000 \times 9{,}81 \times 3 = 29\,430 \text{ Pa}\)</p>
 <p>Conversion en bar : \(\dfrac{29\,430}{100\,000} \approx 0{,}294 \text{ bar} \approx 0{,}29 \text{ bar}\)</p>
@@ -117,7 +117,7 @@
 <h2>Question 5 <span class="badge-yellow">REA</span></h2>
 <p>Calculer la pression attendue au 5e étage (hauteur : 15 m au-dessus du RDC).</p>
 <p><em>Méthode : \(P_{5} = P_{\text{RDC}} - \rho \times g \times h\)</em></p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Perte de pression sur 15 m :</p>
 \[P_{\text{hydro}} = 1\,000 \times 9{,}81 \times 15 = 147\,150 \text{ Pa} = 1{,}47 \text{ bar}\]
@@ -131,7 +131,7 @@
 <div class="exo">
 <h2>Question 6 <span class="badge-blue">ANA</span></h2>
 <p>Expliquer en une ou deux phrases pourquoi les locataires des étages supérieurs se plaignent d'un débit d'eau plus faible que ceux du rez-de-chaussée.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Plus on monte dans l'immeuble, plus l'eau doit vaincre la pesanteur. La pression diminue avec la hauteur car le poids de la colonne d'eau au-dessus du point de mesure diminue. Avec une pression plus faible, le débit aux robinets est réduit : l'eau coule moins fort aux étages élevés qu'au rez-de-chaussée.</p>
 </div>
@@ -143,7 +143,7 @@
 <p>Mehdi souhaite connaître la force exercée par l'eau sur la section intérieure d'un tuyau de cuivre au rez-de-chaussée.</p>
 <p><strong>a)</strong> Calculer la surface intérieure du tuyau (section circulaire de diamètre \(d = 20 \text{ mm}\)). Exprimer le résultat en m².</p>
 <p><strong>b)</strong> En utilisant la relation \(F = P \times S\), calculer la force pressante exercée par l'eau sur cette section.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p><strong>a)</strong> Le rayon vaut : \(r = \dfrac{d}{2} = \dfrac{20}{2} = 10 \text{ mm} = 0{,}010 \text{ m}\)</p>
 \[S = \pi \times r^2 = \pi \times (0{,}010)^2 = 3{,}14 \times 10^{-4} \text{ m}^2\]
@@ -158,7 +158,7 @@
 <div class="exo">
 <h2>Question 8 <span class="badge-green">VAL</span></h2>
 <p>Vérifier que les valeurs de pression calculées avec la formule \(P = P_{\text{RDC}} - \rho g h\) sont cohérentes avec les relevés du manomètre au 1er et au 4e étage.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p><strong>1er étage</strong> (\(h = 3 \text{ m}\)) :</p>
 \[P_1 = 3{,}00 - \frac{1\,000 \times 9{,}81 \times 3}{10^5} = 3{,}00 - 0{,}294 = 2{,}71 \text{ bar}\]
@@ -176,7 +176,7 @@
 <p>La pression minimale recommandée pour un bon fonctionnement des robinets est de <strong>1,0 bar</strong>. Mehdi doit rédiger un avis technique pour le syndic de l'immeuble.</p>
 <p><strong>a)</strong> Calculer la hauteur maximale à laquelle la pression reste supérieure ou égale à 1,0 bar.</p>
 <p><strong>b)</strong> Recommander l'installation d'un surpresseur si nécessaire. Justifier.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p><strong>a)</strong> On cherche \(h_{\max}\) tel que \(P_{\text{RDC}} - \rho g h_{\max} = 1{,}0 \text{ bar}\).</p>
 \[\rho g h_{\max} = P_{\text{RDC}} - 1{,}0 = 3{,}0 - 1{,}0 = 2{,}0 \text{ bar} = 2{,}0 \times 10^5 \text{ Pa}\]
