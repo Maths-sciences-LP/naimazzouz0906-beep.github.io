@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CCF Maths — Optimisation du bac de rangement</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0f4f8;color:#1a202c;line-height:1.5}
+header{background:linear-gradient(135deg,#0969da,#1565c0);color:#fff;padding:22px 20px 18px;text-align:center}
+header h1{font-size:1.35em;margin-bottom:4px}
+header p{opacity:.85;font-size:.9em}
+.btn-back{position:absolute;left:15px;top:15px;background:rgba(255,255,255,.2);color:#fff;text-decoration:none;padding:5px 12px;border-radius:5px;font-size:.85em}
+.btn-back:hover{background:rgba(255,255,255,.35)}
+
+.main{max-width:960px;margin:20px auto;padding:0 14px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:680px){.main{grid-template-columns:1fr}}
+
+.card{background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:18px}
+.card h2{font-size:1em;font-weight:700;color:#0969da;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid #dbeafe}
+
+/* Slider */
+.slider-wrap{margin:14px 0 8px}
+.slider-wrap label{display:flex;justify-content:space-between;align-items:center;font-size:.9em;font-weight:600;margin-bottom:6px}
+.slider-wrap label span{font-size:1.1em;color:#0969da;font-weight:700;min-width:60px;text-align:right}
+input[type=range]{width:100%;accent-color:#0969da;height:6px;cursor:pointer}
+
+/* Volume display */
+.vol-display{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.vol-card{background:#f0f7ff;border:2px solid #93c5fd;border-radius:8px;padding:10px 12px;text-align:center}
+.vol-card.max-zone{border-color:#16a34a;background:#f0fdf4}
+.vol-card .label{font-size:.75em;color:#64748b;margin-bottom:2px}
+.vol-card .value{font-size:1.3em;font-weight:700;color:#0969da}
+.vol-card.max-zone .value{color:#16a34a}
+
+/* Dimensions box */
+.dims{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.dim-tag{background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:4px 10px;font-size:.82em;color:#1e40af}
+.dim-tag strong{display:block;font-size:.75em;color:#93a3b8;font-weight:600;text-transform:uppercase}
+
+/* Toggle */
+.toggle-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+.toggle-row label{display:flex;align-items:center;gap:6px;font-size:.85em;font-weight:600;cursor:pointer}
+.toggle-row input[type=checkbox]{accent-color:#0969da;width:16px;height:16px}
+
+/* Canvas */
+canvas{display:block;border-radius:8px;border:1px solid #e2e8f0}
+
+/* Alert */
+.alert{margin-top:10px;padding:8px 12px;border-radius:6px;font-size:.85em;font-weight:600;display:none}
+.alert.ok{background:#f0fdf4;color:#15803d;border:1px solid #86efac;display:block}
+.alert.warn{background:#fff7ed;color:#c2410c;border:1px solid #fed7aa;display:block}
+.alert.danger{background:#fef2f2;color:#dc2626;border:1px solid #fca5a5;display:block}
+
+/* Info panel */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.info-item{background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:8px 10px;font-size:.83em}
+.info-item .k{color:#64748b;font-size:.75em;text-transform:uppercase;font-weight:600}
+.info-item .v{font-weight:700;color:#1e293b;margin-top:1px}
+
+.full-width{grid-column:1/-1}
+.question-hint{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:12px;margin-top:14px;font-size:.85em}
+.question-hint strong{color:#92400e}
+</style>
+</head>
+<body>
+<header style="position:relative">
+  <a href="../simulations.html" class="btn-back">&larr; Retour</a>
+  <h1>Optimisation — Bac de rangement</h1>
+  <p>CCF Mathématiques &middot; Terminale Bac Pro &middot; Polynôme de degré 3</p>
+</header>
+
+<div class="main">
+
+  <!-- Panneau gauche : schéma + contrôles -->
+  <div>
+    <div class="card">
+      <h2>Schéma de la plaque (vue de dessus)</h2>
+      <canvas id="plaque" width="320" height="320" style="width:100%;max-width:320px"></canvas>
+
+      <div class="slider-wrap" style="margin-top:14px">
+        <label>Côté du carré découpé x (cm) <span id="xVal">5</span></label>
+        <input type="range" id="slider" min="0.5" max="14.5" step="0.5" value="5">
+      </div>
+
+      <div class="dims" id="dims"></div>
+
+      <div class="alert" id="alertBox"></div>
+
+      <div class="question-hint">
+        <strong>Pour le CCF :</strong> Faire varier x et observer comment le volume évolue. Trouver la valeur de x qui donne le volume maximal.
+      </div>
+    </div>
+  </div>
+
+  <!-- Panneau droit : graphe -->
+  <div>
+    <div class="card">
+      <h2>Courbe de V(x) = x(30 − 2x)²</h2>
+      <canvas id="graph" width="400" height="300" style="width:100%"></canvas>
+
+      <div class="toggle-row">
+        <label><input type="checkbox" id="showDeriv" onchange="update()"> Afficher V'(x)</label>
+        <label><input type="checkbox" id="showMax" checked onchange="update()"> Marquer le maximum</label>
+      </div>
+
+      <div class="vol-display">
+        <div class="vol-card">
+          <div class="label">Volume actuel V(x)</div>
+          <div class="value" id="volVal">—</div>
+        </div>
+        <div class="vol-card max-zone">
+          <div class="label">Volume maximum</div>
+          <div class="value">2 000 cm³</div>
+        </div>
+      </div>
+
+      <div class="info-grid" id="infoGrid"></div>
+    </div>
+  </div>
+
+  <!-- Aide pédagogique pleine largeur -->
+  <div class="card full-width">
+    <h2>Aide — Rappel des formules</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;font-size:.88em">
+      <div style="background:#f0f7ff;border-radius:8px;padding:12px">
+        <strong style="color:#0969da">Fonction volume</strong><br>
+        V(x) = x(30 − 2x)²<br>
+        V(x) = 4x³ − 120x² + 900x<br>
+        pour x ∈ ]0 ; 15[
+      </div>
+      <div style="background:#f0fdf4;border-radius:8px;padding:12px">
+        <strong style="color:#16a34a">Dérivée</strong><br>
+        V'(x) = 12x² − 240x + 900<br>
+        V'(x) = 12(x − 5)(x − 15)<br>
+        V'(x) = 0 pour x = 5 ou x = 15
+      </div>
+      <div style="background:#fffbeb;border-radius:8px;padding:12px">
+        <strong style="color:#b45309">Maximum</strong><br>
+        V'(x) &gt; 0 sur ]0 ; 5[ → croissant<br>
+        V'(x) &lt; 0 sur ]5 ; 15[ → décroissant<br>
+        Maximum en x = 5 : V(5) = 2 000 cm³
+      </div>
+      <div style="background:#fdf2f8;border-radius:8px;padding:12px">
+        <strong style="color:#9333ea">Dimensions du bac</strong><br>
+        Hauteur : x = 5 cm<br>
+        Longueur = Largeur : 30 − 2×5 = 20 cm<br>
+        Volume : 5 × 20 × 20 = 2 000 cm³
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const slider = document.getElementById('slider');
+const xValEl = document.getElementById('xVal');
+const volValEl = document.getElementById('volVal');
+const alertBox = document.getElementById('alertBox');
+const dimsEl = document.getElementById('dims');
+const infoGridEl = document.getElementById('infoGrid');
+
+const plaque = document.getElementById('plaque');
+const pCtx = plaque.getContext('2d');
+const graph = document.getElementById('graph');
+const gCtx = graph.getContext('2d');
+
+function V(x) { return x * Math.pow(30 - 2*x, 2); }
+function Vp(x) { return 12*x*x - 240*x + 900; }
+
+function drawPlaque(x) {
+  const W = plaque.width, H = plaque.height;
+  const PAD = 30;
+  const scale = (W - 2*PAD) / 30;
+  pCtx.clearRect(0, 0, W, H);
+
+  const ox = PAD, oy = PAD;
+  const side = 30 * scale;
+  const cut = x * scale;
+  const fold = (30 - 2*x) * scale;
+
+  // Plaque entière fond
+  pCtx.fillStyle = '#dbeafe';
+  pCtx.fillRect(ox, oy, side, side);
+
+  // Carrés découpés (coins)
+  pCtx.fillStyle = '#fca5a5';
+  [[0,0],[side-cut,0],[0,side-cut],[side-cut,side-cut]].forEach(([cx,cy])=>{
+    pCtx.fillRect(ox+cx, oy+cy, cut, cut);
+  });
+
+  // Lignes de pliage (tiretées)
+  pCtx.strokeStyle = '#0969da';
+  pCtx.lineWidth = 1.5;
+  pCtx.setLineDash([5,4]);
+  // verticales
+  pCtx.beginPath(); pCtx.moveTo(ox+cut,oy); pCtx.lineTo(ox+cut,oy+side); pCtx.stroke();
+  pCtx.beginPath(); pCtx.moveTo(ox+side-cut,oy); pCtx.lineTo(ox+side-cut,oy+side); pCtx.stroke();
+  // horizontales
+  pCtx.beginPath(); pCtx.moveTo(ox,oy+cut); pCtx.lineTo(ox+side,oy+cut); pCtx.stroke();
+  pCtx.beginPath(); pCtx.moveTo(ox,oy+side-cut); pCtx.lineTo(ox+side,oy+side-cut); pCtx.stroke();
+  pCtx.setLineDash([]);
+
+  // Contour plaque
+  pCtx.strokeStyle = '#1e40af';
+  pCtx.lineWidth = 2;
+  pCtx.strokeRect(ox, oy, side, side);
+
+  // Croix sur coins découpés
+  pCtx.strokeStyle = '#dc2626';
+  pCtx.lineWidth = 1.5;
+  [[0,0],[side-cut,0],[0,side-cut],[side-cut,side-cut]].forEach(([cx,cy])=>{
+    pCtx.beginPath();
+    pCtx.moveTo(ox+cx+2,oy+cy+2); pCtx.lineTo(ox+cx+cut-2,oy+cy+cut-2);
+    pCtx.moveTo(ox+cx+cut-2,oy+cy+2); pCtx.lineTo(ox+cx+2,oy+cy+cut-2);
+    pCtx.stroke();
+  });
+
+  // Cotes
+  pCtx.fillStyle = '#1e40af';
+  pCtx.font = `bold ${Math.max(10,Math.round(cut*0.55))}px Segoe UI`;
+  pCtx.textAlign = 'center';
+  pCtx.textBaseline = 'middle';
+  if (cut > 14) pCtx.fillText('x', ox+cut/2, oy+cut/2);
+
+  pCtx.fillStyle = '#0969da';
+  pCtx.font = `bold ${Math.max(10,Math.round(fold*0.12))}px Segoe UI`;
+  if (fold*scale > 40) {
+    pCtx.fillText(`${30-2*x} cm`, ox+cut+fold/2, oy+side+14);
+  }
+
+  // Légende x
+  pCtx.fillStyle = '#dc2626';
+  pCtx.font = 'bold 11px Segoe UI';
+  pCtx.textAlign = 'left';
+  pCtx.fillText(`x = ${x} cm`, ox, oy-10);
+}
+
+function drawGraph(x) {
+  const W = graph.width, H = graph.height;
+  const PAD = {top:20, right:20, bottom:40, left:52};
+  const gW = W - PAD.left - PAD.right;
+  const gH = H - PAD.top - PAD.bottom;
+  const xMin=0, xMax=15, yMin=0, yMax=2200;
+
+  function tx(v){ return PAD.left + (v-xMin)/(xMax-xMin)*gW; }
+  function ty(v){ return PAD.top + gH - (v-yMin)/(yMax-yMin)*gH; }
+
+  gCtx.clearRect(0,0,W,H);
+
+  // Fond
+  gCtx.fillStyle='#fff'; gCtx.fillRect(0,0,W,H);
+
+  // Grille
+  gCtx.strokeStyle='#f1f5f9'; gCtx.lineWidth=1;
+  for(let i=0;i<=15;i+=5){
+    gCtx.beginPath(); gCtx.moveTo(tx(i),PAD.top); gCtx.lineTo(tx(i),PAD.top+gH); gCtx.stroke();
+  }
+  for(let v=0;v<=2000;v+=500){
+    gCtx.beginPath(); gCtx.moveTo(PAD.left,ty(v)); gCtx.lineTo(PAD.left+gW,ty(v)); gCtx.stroke();
+  }
+
+  // Axes
+  gCtx.strokeStyle='#94a3b8'; gCtx.lineWidth=2;
+  gCtx.beginPath(); gCtx.moveTo(PAD.left,PAD.top); gCtx.lineTo(PAD.left,PAD.top+gH); gCtx.stroke();
+  gCtx.beginPath(); gCtx.moveTo(PAD.left,PAD.top+gH); gCtx.lineTo(PAD.left+gW,PAD.top+gH); gCtx.stroke();
+
+  // Labels axes
+  gCtx.fillStyle='#64748b'; gCtx.font='11px Segoe UI'; gCtx.textAlign='center';
+  [0,5,10,15].forEach(v=>{ gCtx.fillText(v, tx(v), PAD.top+gH+16); });
+  gCtx.textAlign='right';
+  [0,500,1000,1500,2000].forEach(v=>{ gCtx.fillText(v, PAD.left-5, ty(v)+4); });
+  gCtx.textAlign='center';
+  gCtx.fillText('x (cm)', PAD.left+gW/2, H-4);
+
+  // Maximum vertical (optionnel)
+  if(document.getElementById('showMax').checked){
+    gCtx.strokeStyle='#16a34a'; gCtx.lineWidth=1.5; gCtx.setLineDash([6,4]);
+    gCtx.beginPath(); gCtx.moveTo(tx(5),ty(0)); gCtx.lineTo(tx(5),ty(2000)); gCtx.stroke();
+    gCtx.beginPath(); gCtx.moveTo(tx(0),ty(2000)); gCtx.lineTo(tx(5),ty(2000)); gCtx.stroke();
+    gCtx.setLineDash([]);
+    gCtx.fillStyle='#16a34a'; gCtx.font='bold 11px Segoe UI';
+    gCtx.textAlign='left';
+    gCtx.fillText('max 2000', tx(5)+4, ty(2000)-4);
+  }
+
+  // V'(x)
+  if(document.getElementById('showDeriv').checked){
+    gCtx.strokeStyle='#dc2626'; gCtx.lineWidth=2; gCtx.setLineDash([6,4]);
+    gCtx.beginPath();
+    let started=false;
+    for(let xi=xMin;xi<=xMax;xi+=0.05){
+      const vp=Vp(xi);
+      const px=tx(xi), py=ty(vp);
+      if(py<PAD.top-20||py>PAD.top+gH+20){started=false;continue;}
+      if(!started){gCtx.moveTo(px,py);started=true;}else gCtx.lineTo(px,py);
+    }
+    gCtx.stroke(); gCtx.setLineDash([]);
+
+    // Zéro de V' à x=5
+    gCtx.fillStyle='#dc2626';
+    gCtx.beginPath(); gCtx.arc(tx(5),ty(0),5,0,2*Math.PI); gCtx.fill();
+    gCtx.font='11px Segoe UI'; gCtx.textAlign='center';
+    gCtx.fillText("V'(5)=0", tx(5), ty(0)+18);
+  }
+
+  // Courbe V(x)
+  gCtx.strokeStyle='#0969da'; gCtx.lineWidth=3; gCtx.setLineDash([]);
+  gCtx.beginPath();
+  let started=false;
+  for(let xi=0.01;xi<=14.99;xi+=0.05){
+    const px=tx(xi), py=ty(V(xi));
+    if(!started){gCtx.moveTo(px,py);started=true;}else gCtx.lineTo(px,py);
+  }
+  gCtx.stroke();
+
+  // Point courant
+  const cx=tx(x), cy=ty(V(x));
+  gCtx.fillStyle='#f97316'; gCtx.strokeStyle='#fff'; gCtx.lineWidth=2;
+  gCtx.beginPath(); gCtx.arc(cx,cy,7,0,2*Math.PI); gCtx.fill(); gCtx.stroke();
+
+  // Projection point courant
+  gCtx.strokeStyle='#f9731650'; gCtx.lineWidth=1; gCtx.setLineDash([4,3]);
+  gCtx.beginPath(); gCtx.moveTo(cx,cy); gCtx.lineTo(cx,ty(0)); gCtx.stroke();
+  gCtx.beginPath(); gCtx.moveTo(cx,cy); gCtx.lineTo(tx(0),cy); gCtx.stroke();
+  gCtx.setLineDash([]);
+}
+
+function update(){
+  const x = parseFloat(slider.value);
+  xValEl.textContent = x;
+
+  const vol = Math.round(V(x));
+  const vp = Math.round(Vp(x));
+  const lon = 30 - 2*x;
+
+  volValEl.textContent = vol.toLocaleString('fr') + ' cm³';
+
+  // Alert norme
+  const pct = Math.round(vol/2000*100);
+  if(x === 5){
+    alertBox.className='alert ok';
+    alertBox.textContent = `✓ Volume maximal atteint (${vol.toLocaleString('fr')} cm³) — x = 5 cm est optimal !`;
+  } else if(vol >= 1500){
+    alertBox.className='alert ok';
+    alertBox.textContent = `✓ Volume suffisant (${pct}% du maximum). La contrainte ≥ 1 500 cm³ est respectée.`;
+  } else {
+    alertBox.className='alert warn';
+    alertBox.textContent = `✗ Volume insuffisant (${vol.toLocaleString('fr')} cm³ < 1 500 cm³). Modifier x.`;
+  }
+
+  // Dimensions
+  dimsEl.innerHTML = `
+    <div class="dim-tag"><strong>Hauteur</strong>${x} cm</div>
+    <div class="dim-tag"><strong>Longueur</strong>${lon} cm</div>
+    <div class="dim-tag"><strong>Largeur</strong>${lon} cm</div>
+    <div class="dim-tag"><strong>Volume</strong>${vol.toLocaleString('fr')} cm³</div>
+  `;
+
+  // Info grid
+  infoGridEl.innerHTML = `
+    <div class="info-item"><div class="k">V'(x) en x=${x}</div><div class="v">${vp} ${vp>0?'→ V croissante':vp<0?'→ V décroissante':'→ extremum'}</div></div>
+    <div class="info-item"><div class="k">Distance au maximum</div><div class="v">${Math.abs(x-5).toFixed(1)} cm de x = 5</div></div>
+  `;
+
+  drawPlaque(x);
+  drawGraph(x);
+}
+
+slider.addEventListener('input', update);
+document.getElementById('showDeriv').addEventListener('change', update);
+document.getElementById('showMax').addEventListener('change', update);
+
+update();
+</script>
+</body>
+</html>
