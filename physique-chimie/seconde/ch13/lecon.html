@@ -368,42 +368,50 @@ MathJax = {tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};
 </table>
 
 <!-- ===== SECTION 6 ===== -->
-<h2>6. Applications en atelier de menuiserie</h2>
+<h2>6. Applications</h2>
 
-<div class="prop">
-  <span class="label label-prop">1. Vernis brillant et mat &mdash; r&eacute;flexion et diffusion</span><br>
-  Un bois poli au grain 400 puis verni cr&eacute;e une <strong>r&eacute;flexion sp&eacute;culaire</strong> (angle sortant = angle entrant) &rarr; aspect brillant tr&egrave;s marqu&eacute;. Une surface rugueuse ou mate diffuse la lumi&egrave;re dans toutes les directions (&laquo;&nbsp;r&eacute;flexion diffuse&nbsp;&raquo;) : pas de reflet net. Le choix du niveau de brillance (mat 5&ndash;10&deg;, satin 20&deg;, brillant 85&deg;) d&eacute;pend du cahier des charges client et de la classe d&apos;usage (PEFC, NF Ameublement). En atelier, la mesure du brillant se fait au <strong>glossm&egrave;tre</strong> (unit&eacute; : GU &mdash; Gloss Unit).
+<div class="situation">
+  <h3>Atelier de fabrication</h3>
+  <div class="prop">
+    <span class="label label-prop">Vernis brillant et mat &mdash; r&eacute;flexion et diffusion</span><br>
+    Un bois poli au grain 400 puis verni cr&eacute;e une <strong>r&eacute;flexion sp&eacute;culaire</strong> (angle sortant = angle entrant) &rarr; aspect brillant. Une surface rugueuse diffuse la lumi&egrave;re dans toutes les directions : pas de reflet net. En atelier, la mesure du brillant se fait au <strong>glossm&egrave;tre</strong> (unit&eacute; : GU &mdash; Gloss Unit).
+  </div>
+  <div class="prop">
+    <span class="label label-prop">Capteur de pr&eacute;sence &agrave; photodiode &mdash; r&eacute;flexion infrarouge</span><br>
+    Les machines &agrave; bois modernes int&egrave;grent des <strong>capteurs &agrave; r&eacute;flexion infrarouge</strong> : une LED IR &eacute;met un faisceau qui se r&eacute;fl&eacute;chit sur la pi&egrave;ce et revient sur une photodiode. Si la pi&egrave;ce est absente, aucun signal n&apos;est re&ccedil;u &rarr; la machine s&apos;arr&ecirc;te.
+  </div>
+  <div class="prop">
+    <span class="label label-prop">Laser de d&eacute;coupe &mdash; guidage par r&eacute;flexion sur miroirs</span><br>
+    Dans une machine de d&eacute;coupe laser, le faisceau est guid&eacute; jusqu&apos;au mat&eacute;riau par un syst&egrave;me de <strong>miroirs orientables</strong>. Une lentille focalisante concentre ensuite la lumi&egrave;re, portant la temp&eacute;rature locale &agrave; plusieurs centaines de degr&eacute;s.
+  </div>
 </div>
 
-<div class="prop">
-  <span class="label label-prop">2. Capteur de pr&eacute;sence &agrave; photodiode &mdash; r&eacute;flexion infrarouge</span><br>
-  Les machines &agrave; bois modernes (platines d&apos;usinage, convoyeurs) int&egrave;grent des <strong>capteurs &agrave; r&eacute;flexion infrarouge</strong> : une LED IR &eacute;met un faisceau qui se r&eacute;fl&eacute;chit sur la pi&egrave;ce et revient sur une photodiode. Si la pi&egrave;ce est absente, aucun signal n&apos;est re&ccedil;u &rarr; la machine s&apos;arr&ecirc;te. Ce principe exploite directement la loi de r&eacute;flexion (angle incident = angle r&eacute;fl&eacute;chi). Le r&eacute;glage de la distance de d&eacute;tection d&eacute;pend de l&apos;angle d&apos;installation du capteur.
+<div class="situation">
+  <h3>T&eacute;l&eacute;communications &mdash; fibre optique</h3>
+  <p>La <strong>fibre optique</strong> exploite la r&eacute;flexion totale interne pour transmettre des donn&eacute;es num&eacute;riques (internet, t&eacute;l&eacute;phonie) sur des milliers de kilom&egrave;tres avec une perte de signal minimale. Chaque imp&ocirc;t internet &agrave; tr&egrave;s haut d&eacute;bit (FTTH) repose sur ce principe.</p>
+  <p>Dans les machines CNC, des liaisons en fibre optique transmettent les signaux de commande entre le calculateur et les servomoteurs, immunis&eacute;es contre les perturbations &eacute;lectromagn&eacute;tiques des moteurs.</p>
 </div>
 
-<div class="prop">
-  <span class="label label-prop">3. Fibre optique dans les machines CNC &mdash; r&eacute;flexion totale interne</span><br>
-  Les centres d&apos;usinage CNC pour le bois et l&apos;aluminium utilisent des <strong>liaisons en fibre optique</strong> pour transmettre les signaux de commande num&eacute;rique entre le pupitre, le calculateur et les servomoteurs. La r&eacute;flexion totale interne garantit :<br>
-  &bull; Aucune perte de signal li&eacute;e aux perturbations &eacute;lectromagn&eacute;tiques des moteurs et variateurs.<br>
-  &bull; Une transmission &agrave; tr&egrave;s haute vitesse pour les cycles d&apos;interpolation (G01, G02) en temps r&eacute;el.<br>
-  &bull; Une fiabilit&eacute; accrue en environnement d&apos;atelier (poussi&egrave;re, huile, vibrations).
-</div>
-
-<div class="prop">
-  <span class="label label-prop">4. Laser de d&eacute;coupe bois &mdash; guidage par r&eacute;flexion sur miroirs</span><br>
-  Dans une machine de d&eacute;coupe ou gravure laser (CO&#8322;, fibre), le faisceau laser est produit dans un tube fixe puis guid&eacute; jusqu&apos;au mat&eacute;riau par un syst&egrave;me de <strong>miroirs orientables</strong>. Chaque miroir exploite la loi de r&eacute;flexion pour d&eacute;vier le faisceau avec pr&eacute;cision (tol&eacute;rance &lt; 0,1 mm). Une lentille focalisante concentre ensuite la lumi&egrave;re sur le bois, portant la temp&eacute;rature locale &agrave; plusieurs centaines de degr&eacute;s. En atelier de menuiserie, ces machines permettent la d&eacute;coupe de contr&eplaqu&eacute;, MDF, acrylique, et la gravure de motifs d&eacute;coratifs sans contact.
+<div class="situation">
+  <h3>M&eacute;decine et vision</h3>
+  <p>L&rsquo;<strong>endoscope</strong> est un instrument m&eacute;dical qui utilise des fibres optiques pour &eacute;clairer et visualiser l&rsquo;int&eacute;rieur du corps sans op&eacute;ration. La lumi&egrave;re (et l&rsquo;image) se propage par r&eacute;flexion totale interne tout au long de la fibre flexible.</p>
+  <p>Les <strong>lunettes correctrices</strong> et les <strong>loupes</strong> exploitent la r&eacute;fraction pour corriger les d&eacute;fauts de vision (myopie, hyperm&eacute;tropie) : le verre d&eacute;vie les rayons lumineux avant qu&rsquo;ils atteignent la r&eacute;tine.</p>
+  <p>La <strong>chirurgie laser</strong> (correction de la myopie) utilise un laser UV guid&eacute; par miroirs pour remodeler la corn&eacute;e avec une pr&eacute;cision de quelques microm&egrave;tres.</p>
 </div>
 
 <div class="ex">
-  <span class="label label-ex">Tableau r&eacute;capitulatif &mdash; Applications en atelier</span><br>
+  <span class="label label-ex">Tableau r&eacute;capitulatif &mdash; Applications optiques</span><br>
   <table>
     <thead>
-      <tr><th>Application</th><th>Ph&eacute;nom&egrave;ne optique</th><th>Principe cl&eacute;</th></tr>
+      <tr><th>Application</th><th>Ph&eacute;nom&egrave;ne optique</th><th>Domaine</th></tr>
     </thead>
     <tbody>
-      <tr><td>Vernis brillant / mat</td><td>R&eacute;flexion sp&eacute;culaire ou diffuse</td><td>Surface lisse &rarr; angle r&eacute;fl&eacute;chi = angle incident</td></tr>
-      <tr><td>Capteur photodiode IR</td><td>R&eacute;flexion infrarouge</td><td>D&eacute;tection de pi&egrave;ces sur convoyeur</td></tr>
-      <tr><td>Commande CNC par fibre</td><td>R&eacute;flexion totale interne</td><td>Signal sans perte &eacute;lectromagn&eacute;tique</td></tr>
-      <tr><td>Laser de d&eacute;coupe</td><td>R&eacute;flexion sur miroirs orientables</td><td>Guidage pr&eacute;cis du faisceau</td></tr>
+      <tr><td>Vernis brillant / mat</td><td>R&eacute;flexion sp&eacute;culaire ou diffuse</td><td>Fabrication / agencement</td></tr>
+      <tr><td>Capteur photodiode IR</td><td>R&eacute;flexion infrarouge</td><td>Industrie / s&eacute;curit&eacute; machines</td></tr>
+      <tr><td>Laser de d&eacute;coupe</td><td>R&eacute;flexion sur miroirs orientables</td><td>Fabrication / industrie</td></tr>
+      <tr><td>Fibre optique internet</td><td>R&eacute;flexion totale interne</td><td>T&eacute;l&eacute;communications</td></tr>
+      <tr><td>Endoscope m&eacute;dical</td><td>R&eacute;flexion totale interne</td><td>M&eacute;decine</td></tr>
+      <tr><td>Lunettes correctrices</td><td>R&eacute;fraction</td><td>Vision / sant&eacute;</td></tr>
     </tbody>
   </table>
 </div>

@@ -135,6 +135,31 @@
 <div class="meth">
   <strong>Rappel de cours</strong>
   <p>Le coefficient de proportionnalité est calculé par \(k = \frac{y}{x}\). Une fois \(k\) connu, on peut trouver toute valeur manquante : si on connaît \(x\), alors \(y = k \times x\) ; si on connaît \(y\), alors \(x = \frac{y}{k}\).</p>
+  <figure class="schema" style="text-align:center;margin:12px 0">
+    <svg width="300" height="80" viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+      <defs><marker id="arr-c2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#0056b3"/></marker>
+      <marker id="arr-c2b" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#c53030"/></marker></defs>
+      <!-- Boîte x -->
+      <rect x="10" y="25" width="70" height="32" rx="6" fill="#ebf5ff" stroke="#0056b3" stroke-width="2"/>
+      <text x="45" y="46" font-size="13" fill="#0056b3" text-anchor="middle" font-weight="bold">x</text>
+      <!-- Flèche × k -->
+      <line x1="82" y1="41" x2="138" y2="41" stroke="#0056b3" stroke-width="2" marker-end="url(#arr-c2)"/>
+      <text x="110" y="34" font-size="11" fill="#0056b3" text-anchor="middle" font-weight="bold">× k</text>
+      <!-- Boîte y -->
+      <rect x="140" y="25" width="70" height="32" rx="6" fill="#ebf5ff" stroke="#0056b3" stroke-width="2"/>
+      <text x="175" y="46" font-size="13" fill="#0056b3" text-anchor="middle" font-weight="bold">y = k·x</text>
+      <!-- Flèche ÷ k retour -->
+      <path d="M140,52 C110,70 80,70 80,52" fill="none" stroke="#c53030" stroke-width="1.5" marker-end="url(#arr-c2b)"/>
+      <text x="110" y="73" font-size="11" fill="#c53030" text-anchor="middle" font-weight="bold">÷ k</text>
+      <!-- Séparateur -->
+      <line x1="230" y1="15" x2="230" y2="65" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+      <!-- Exemple -->
+      <text x="245" y="32" font-size="10" fill="#555">k = 3,50 €/m</text>
+      <text x="245" y="46" font-size="10" fill="#555">x = 5 m</text>
+      <text x="245" y="60" font-size="10" fill="#555">y = 17,50 €</text>
+    </svg>
+    <figcaption style="font-size:.85em;color:#555;margin-top:4px">Utiliser le coefficient : multiplier pour trouver y, diviser pour retrouver x</figcaption>
+  </figure>
 </div>
 
 <div class="exo">
@@ -150,6 +175,27 @@
 <div class="exo">
   <h3>Exercice 5</h3>
   <p>Sur un plan au 1/50, une cloison mesure 6,4 cm. Sachant que le coefficient est 50 (rapport de réduction), calculer la longueur réelle de la cloison.</p>
+  <figure class="schema" style="text-align:center;margin:10px 0">
+    <svg width="300" height="75" viewBox="0 0 300 75" xmlns="http://www.w3.org/2000/svg">
+      <defs><marker id="arr-plan" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#0056b3"/></marker></defs>
+      <!-- Plan -->
+      <rect x="10" y="10" width="80" height="30" rx="4" fill="#fffbe6" stroke="#d97706" stroke-width="1.5"/>
+      <line x1="20" y1="25" x2="80" y2="25" stroke="#d97706" stroke-width="2"/>
+      <text x="50" y="20" font-size="10" fill="#d97706" text-anchor="middle">Plan 1/50</text>
+      <text x="50" y="36" font-size="11" fill="#d97706" text-anchor="middle" font-weight="bold">6,4 cm</text>
+      <!-- Flèche × 50 -->
+      <line x1="95" y1="25" x2="185" y2="25" stroke="#0056b3" stroke-width="2" marker-end="url(#arr-plan)"/>
+      <text x="140" y="18" font-size="11" fill="#0056b3" text-anchor="middle" font-weight="bold">× 50</text>
+      <!-- Réel -->
+      <rect x="190" y="10" width="100" height="30" rx="4" fill="#ebf5ff" stroke="#0056b3" stroke-width="1.5"/>
+      <line x1="200" y1="25" x2="280" y2="25" stroke="#0056b3" stroke-width="2"/>
+      <text x="240" y="20" font-size="10" fill="#0056b3" text-anchor="middle">Réalité</text>
+      <text x="240" y="36" font-size="11" fill="#0056b3" text-anchor="middle" font-weight="bold">? cm</text>
+      <!-- Labels bas -->
+      <text x="50" y="60" font-size="10" fill="#555" text-anchor="middle">mesure sur plan</text>
+      <text x="240" y="60" font-size="10" fill="#555" text-anchor="middle">longueur réelle</text>
+    </svg>
+  </figure>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     Longueur réelle \(= 6{,}4 \times 50 = 320\) cm \(= \mathbf{3{,}20}\) m<br>
@@ -239,6 +285,34 @@
 <div class="retenir">
   <strong>À retenir</strong>
   <p>Augmentation de \(t\,\%\) : nouvelle valeur \(= V \times (1 + \frac{t}{100})\). Réduction de \(t\,\%\) : nouvelle valeur \(= V \times (1 - \frac{t}{100})\). Taux d'évolution : \(\tau = \frac{V_{\text{finale}} - V_{\text{initiale}}}{V_{\text{initiale}}} \times 100\).</p>
+  <figure class="schema" style="text-align:center;margin:12px 0">
+    <svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr-aug" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#2da44e"/></marker>
+        <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#c53030"/></marker>
+      </defs>
+      <!-- Vi -->
+      <rect x="10" y="35" width="65" height="30" rx="6" fill="#ebf5ff" stroke="#0056b3" stroke-width="2"/>
+      <text x="42" y="55" font-size="12" fill="#0056b3" text-anchor="middle" font-weight="bold">V_i</text>
+      <!-- Flèche augmentation -->
+      <line x1="78" y1="43" x2="148" y2="43" stroke="#2da44e" stroke-width="2" marker-end="url(#arr-aug)"/>
+      <text x="113" y="37" font-size="10" fill="#2da44e" text-anchor="middle" font-weight="bold">× (1 + t/100)</text>
+      <text x="113" y="28" font-size="10" fill="#2da44e" text-anchor="middle">Augmentation</text>
+      <!-- Flèche réduction -->
+      <line x1="78" y1="57" x2="148" y2="57" stroke="#c53030" stroke-width="2" marker-end="url(#arr-red)"/>
+      <text x="113" y="70" font-size="10" fill="#c53030" text-anchor="middle" font-weight="bold">× (1 − t/100)</text>
+      <text x="113" y="80" font-size="10" fill="#c53030" text-anchor="middle">Réduction / Remise</text>
+      <!-- Vf -->
+      <rect x="150" y="35" width="65" height="30" rx="6" fill="#ebf5ff" stroke="#0056b3" stroke-width="2"/>
+      <text x="182" y="55" font-size="12" fill="#0056b3" text-anchor="middle" font-weight="bold">V_f</text>
+      <!-- Exemple -->
+      <line x1="230" y1="15" x2="230" y2="90" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="248" y="32" font-size="10" fill="#2da44e">+8% : × 1,08</text>
+      <text x="248" y="46" font-size="10" fill="#555">100 → 108</text>
+      <text x="248" y="62" font-size="10" fill="#c53030">−12% : × 0,88</text>
+      <text x="248" y="76" font-size="10" fill="#555">100 → 88</text>
+    </svg>
+  </figure>
 </div>
 
 <div class="exo">
@@ -288,6 +362,28 @@
 <div class="meth">
   <strong>Rappel de cours</strong>
   <p>Si on connaît la valeur finale \(V_f\) et le coefficient multiplicateur \(c\) (ex. : \(c = 0{,}80\) pour −20 %), la valeur initiale est \(V_i = \frac{V_f}{c}\). On divise par le coefficient multiplicateur (on ne soustrait pas le taux directement).</p>
+  <figure class="schema" style="text-align:center;margin:12px 0">
+    <svg width="300" height="85" viewBox="0 0 300 85" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr-fwd" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#0056b3"/></marker>
+        <marker id="arr-bck" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#c53030"/></marker>
+      </defs>
+      <!-- Vi -->
+      <rect x="15" y="28" width="70" height="30" rx="6" fill="#ebf5ff" stroke="#0056b3" stroke-width="2"/>
+      <text x="50" y="48" font-size="12" fill="#0056b3" text-anchor="middle" font-weight="bold">V_i = ?</text>
+      <!-- Flèche aller × c -->
+      <line x1="88" y1="36" x2="198" y2="36" stroke="#0056b3" stroke-width="2" marker-end="url(#arr-fwd)"/>
+      <text x="143" y="28" font-size="11" fill="#0056b3" text-anchor="middle" font-weight="bold">× c</text>
+      <!-- Flèche retour ÷ c -->
+      <line x1="198" y1="50" x2="88" y2="50" stroke="#c53030" stroke-width="2" marker-end="url(#arr-bck)"/>
+      <text x="143" y="65" font-size="11" fill="#c53030" text-anchor="middle" font-weight="bold">÷ c  (= V_f ÷ c)</text>
+      <!-- Vf -->
+      <rect x="200" y="28" width="70" height="30" rx="6" fill="#e6ffe6" stroke="#2da44e" stroke-width="2"/>
+      <text x="235" y="48" font-size="12" fill="#2da44e" text-anchor="middle" font-weight="bold">V_f connu</text>
+      <!-- Note -->
+      <text x="143" y="82" font-size="10" fill="#555" text-anchor="middle">Ex. : −20% → c = 0,80 · V_f = 320 → V_i = 320 ÷ 0,80 = 400</text>
+    </svg>
+  </figure>
 </div>
 
 <div class="exo">
