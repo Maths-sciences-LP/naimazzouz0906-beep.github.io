@@ -130,7 +130,7 @@
   document.body.appendChild(sb);
 
   var sbc = document.createElement('style');
-  sbc.textContent = '#ft-sbtn{position:fixed;bottom:70px;right:20px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#fff;font-size:1.3rem;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:999;transition:transform .2s}#ft-sbtn:hover{transform:scale(1.1)}body.dark #ft-sbtn{background:#7c3aed}';
+  sbc.textContent = '#ft-sbtn{position:fixed;bottom:80px;right:20px;width:48px;height:48px;border-radius:50%;border:none;background:#2563eb;color:#fff;font-size:1.3rem;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:999;transition:transform .2s}#ft-sbtn:hover{transform:scale(1.1)}body.dark #ft-sbtn{background:#7c3aed}';
   document.head.appendChild(sbc);
 
   /* ══════════════════════════════════════════════════════════════════
@@ -164,7 +164,7 @@
   document.body.appendChild(db);
 
   var dbc = document.createElement('style');
-  dbc.textContent = '#ft-dark{position:fixed;bottom:130px;right:20px;width:48px;height:48px;border-radius:50%;border:none;background:#f1f5f9;font-size:1.3rem;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:999;transition:transform .2s}#ft-dark:hover{transform:scale(1.1)}body.dark #ft-dark{background:#334155}';
+  dbc.textContent = '#ft-dark{position:fixed;bottom:140px;right:20px;width:48px;height:48px;border-radius:50%;border:none;background:#f1f5f9;font-size:1.3rem;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:999;transition:transform .2s}#ft-dark:hover{transform:scale(1.1)}body.dark #ft-dark{background:#334155}';
   document.head.appendChild(dbc);
 
   /* ══════════════════════════════════════════════════════════════════
