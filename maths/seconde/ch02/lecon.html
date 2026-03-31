@@ -28,13 +28,12 @@ td.tl{text-align:left}
 <div class="objectifs">
   <h3>Objectifs du chapitre</h3>
   <ul>
-    <li>Recueillir et organiser des données statistiques</li>
-    <li>Construire un tableau de fréquences</li>
-    <li>Représenter une série statistique (diagrammes)</li>
-    <li>Calculer moyenne, médiane, mode</li>
-    <li>Calculer et interpréter étendue et écart interquartile</li>
-    <li>Construire et interpréter un diagramme en boîte</li>
+    <li>Recueillir et organiser des données statistiques en tableau</li>
+    <li>Calculer et interpréter effectifs et fréquences</li>
+    <li>Choisir et construire la représentation graphique adaptée</li>
+    <li>Identifier le mode d'une série statistique</li>
   </ul>
+  <p style="font-size:.88em;color:#4a5568;margin-top:8px"><strong>→ Chapitre 3</strong> : moyenne, médiane, quartiles, étendue, boîte à moustaches</p>
 </div>
 
 <!-- Situation professionnelle -->
@@ -226,17 +225,44 @@ td.tl{text-align:left}
 </div>
 
 
-<div style="background:#eff6ff;border-left:5px solid #0056b3;border-radius:0 10px 10px 0;padding:16px 20px;margin:24px 0">
-  <strong style="color:#0056b3">&#128209; Suite dans le Chapitre 3</strong><br>
-  Les <strong>indicateurs de position</strong> (mode, classe modale, moyenne, m&eacute;diane, quartiles) et les <strong>indicateurs de dispersion</strong> (&eacute;tendue, &eacute;cart-type, IQR, bo&icirc;te &agrave; moustaches) sont enti&egrave;rement trait&eacute;s dans le
-  <a href="../ch03/lecon.html" style="color:#0056b3;font-weight:700">Chapitre 3 &rarr; Indicateurs statistiques</a>.
+<!-- ============================================================ -->
+<!--  SECTION 4 – MODE                                            -->
+<!-- ============================================================ -->
+<h2>4. Premier indicateur — Le mode</h2>
+
+<div class="def">
+  <strong>Mode :</strong> la valeur (ou la classe) qui apparaît le plus souvent dans la série, c'est-à-dire celle qui a l'<strong>effectif le plus grand</strong>.<br>
+  On le lit directement dans le tableau des effectifs ou sur le diagramme en colonnes.
 </div>
 
-<!-- GRAPHIQUES ET ANIMATIONS -->
-<h2>Graphique — Diagramme en barres des fréquences</h2>
+<div class="ex">
+  <strong>Exemple — Liteaux :</strong> dans le tableau de la section 2, la longueur 50 cm a l'effectif le plus grand (\(n = 7\)).<br>
+  → Le <strong>mode est 50 cm</strong>.<br><br>
+  <em>Interprétation :</em> la longueur la plus fréquente est 50 cm. Si la cote visée est 50 cm, la production est globalement correcte.
+</div>
+
+<div class="prop">
+  <strong>Mode et classe modale :</strong>
+  <ul>
+    <li>Pour des <strong>données discrètes</strong> : le mode est la valeur d'effectif maximal.</li>
+    <li>Pour des <strong>données regroupées par classes</strong> : on parle de <strong>classe modale</strong> — c'est la classe d'effectif le plus grand. (→ Ch03)</li>
+    <li>Une série peut avoir <strong>plusieurs modes</strong> si deux valeurs ont le même effectif maximal.</li>
+  </ul>
+</div>
+
+<div class="att">
+  <strong>Limite du mode :</strong> le mode indique la valeur la plus fréquente, mais ne renseigne pas sur la répartition globale. Deux séries peuvent avoir le même mode et des distributions très différentes. → La <strong>moyenne</strong>, la <strong>médiane</strong> et les indicateurs de dispersion complètent l'analyse (Chapitre 3).
+</div>
+
+<!-- ============================================================ -->
+<!--  SECTION 5 – EXEMPLES D'APPLICATION                         -->
+<!-- ============================================================ -->
+<h2>5. Exemples d'application</h2>
+
+<h3>5.1 Lecture graphique des fréquences</h3>
 
 <p>
-  Voici les notes obtenues par 20 élèves d'une classe de 2nde Pro à un DS de maths. Le diagramme ci-dessous représente la distribution des fréquences.
+  Voici les notes obtenues par 20 élèves d'une classe de 2nde Pro à un DS de maths. Le diagramme représente la distribution des effectifs et des fréquences.
 </p>
 
 <div class="chart-wrapper">
@@ -276,9 +302,9 @@ td.tl{text-align:left}
 
 <p style="font-size:.9em;color:#718096;text-align:center">Les barres montrent les effectifs (axe gauche), la courbe verte montre les fréquences en % (axe droit).</p>
 
-<h2>Animation — Calculatrice de moyenne et médiane</h2>
+<h3>5.2 Calculatrice statistique interactive</h3>
 
-<p style="font-size:.9em;color:#718096">Saisis des valeurs séparées par des virgules pour calculer automatiquement moyenne, médiane, étendue et quartiles.</p>
+<p style="font-size:.9em;color:#718096">Saisis des valeurs séparées par des virgules pour calculer automatiquement moyenne, médiane, étendue et quartiles. Ces indicateurs seront étudiés en détail au Chapitre 3.</p>
 
 <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:18px;margin:16px 0">
   <div class="ctrl-vis">
@@ -317,6 +343,19 @@ function calcStats(){
 }
 calcStats();
 </script>
+
+<!-- Renvoi Ch03 -->
+<div class="retenir">
+  <strong>&#128209; La suite au Chapitre 3</strong><br>
+  Ce chapitre t'a appris &agrave; <strong>organiser et repr&eacute;senter</strong> une s&eacute;rie statistique, et &agrave; rep&eacute;rer le <strong>mode</strong>.<br><br>
+  Le <strong>Chapitre 3</strong> complète l'analyse avec :
+  <ul>
+    <li><strong>Indicateurs de position :</strong> moyenne, médiane, quartiles Q1 et Q3</li>
+    <li><strong>Indicateurs de dispersion :</strong> étendue, écart interquartile, écart-type</li>
+    <li><strong>Boîte à moustaches</strong> (box plot) pour comparer des séries</li>
+  </ul>
+  <a href="../ch03/lecon.html" style="color:var(--p);font-weight:700">→ Chapitre 3 : Indicateurs statistiques</a>
+</div>
 
 <!-- Navigation bas de page -->
 <div class="nav-footer">
