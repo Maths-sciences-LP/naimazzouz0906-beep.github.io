@@ -97,6 +97,16 @@
   <br>Conversion : \(1 \text{ cm}^2 = 10^{-4} \text{ m}^2\) et \(1 \text{ m}^2 = 10\,000 \text{ cm}^2\).
 </div>
 
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un technicien CVC appuie sur le piston d'une pompe à main. La surface du piston est de 5 cm² et la force appliquée est de 150 N. Calculer la pression en Pa puis en bar.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Conversion : \(S = 5 \text{ cm}^2 = 5 \times 10^{-4} \text{ m}^2\)</p>
+    <p>\(P = \dfrac{F}{S} = \dfrac{150}{5 \times 10^{-4}} = 300\,000 \text{ Pa} = 3 \text{ bar}\)</p>
+  </div>
+</div>
+
 <!-- ===== II. UNITÉS DE PRESSION ===== -->
 <h2>II. Les unités de pression</h2>
 
@@ -173,6 +183,17 @@
 <div class="att">
   <span class="label label-att">Attention</span>
   Les manomètres de chauffage affichent généralement une <strong>pression relative</strong> (aussi appelée pression manométrique). La zone verte du cadran indique la plage de fonctionnement normal (souvent 1 à 2 bar). Si l'aiguille passe dans la zone rouge, le circuit est en surpression : danger !
+</div>
+
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Le manomètre d'un circuit de chauffage indique 2,3 bar. Convertir cette valeur en Pa. Calculer la pression absolue en bar (pression atmosphérique = 1 bar).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Conversion : \(2{,}3 \text{ bar} = 2{,}3 \times 10^5 = 230\,000 \text{ Pa}\)</p>
+    <p>Pression absolue : \(P_{\text{absolue}} = 2{,}3 + 1{,}0 = 3{,}3 \text{ bar}\)</p>
+    <p>Le manomètre affiche la pression relative ; la pression absolue réelle dans le circuit est de <strong>3,3 bar</strong>.</p>
+  </div>
 </div>
 
 <h3>2. Où mesure-t-on la pression ?</h3>
@@ -255,6 +276,17 @@
   </ol>
 </div>
 
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un vase d'expansion contient un volume de gaz de 10 L sous une pression de 1 bar. La pression monte à 2 bar en régime de fonctionnement (température constante). Calculer le nouveau volume de gaz.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Données : \(P_1 = 1 \text{ bar}\), \(V_1 = 10 \text{ L}\), \(P_2 = 2 \text{ bar}\).</p>
+    <p>\(V_2 = \dfrac{P_1 \times V_1}{P_2} = \dfrac{1 \times 10}{2} = 5 \text{ L}\)</p>
+    <p>Le volume de gaz a diminué de moitié : il est passé de <strong>10 L à 5 L</strong>. Les 5 L restants ont été remplis par l'eau de dilatation du circuit.</p>
+  </div>
+</div>
+
 <!-- ===== VI. APPLICATION PROFESSIONNELLE ===== -->
 <h2>VI. Application : le vase d'expansion</h2>
 
@@ -303,6 +335,33 @@
     <li><strong>Loi de Boyle-Mariotte</strong> : à température constante, \(P_1 V_1 = P_2 V_2\).</li>
     <li>Si la pression augmente, le volume diminue (et inversement).</li>
   </ul>
+</div>
+
+<!-- ===== VII. ERREURS FRÉQUENTES ===== -->
+<h2>VII. Erreurs fréquentes</h2>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 1</span>
+  <strong>Oublier de convertir cm² en m² avant le calcul</strong>
+  <p>Dans la formule \(P = F/S\), la surface doit être en m². Si l'énoncé donne des cm², il faut convertir : \(1 \text{ cm}^2 = 10^{-4} \text{ m}^2\). Utiliser des cm² dans la formule donne une pression 10 000 fois trop grande.</p>
+</div>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 2</span>
+  <strong>Confondre pression relative et pression absolue</strong>
+  <p>Le manomètre d'un circuit de chauffage indique une pression <em>relative</em> (par rapport à l'atmosphère). La pression absolue vaut \(P_{\text{abs}} = P_{\text{rel}} + P_{\text{atm}}\). Pour la loi de Boyle-Mariotte, il faut utiliser des pressions absolues si les deux états ont des pressions de nature différente.</p>
+</div>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 3</span>
+  <strong>Mélanger les unités dans la loi de Boyle-Mariotte</strong>
+  <p>Dans \(P_1 V_1 = P_2 V_2\), les unités doivent être homogènes : même unité de pression des deux côtés (tout en Pa ou tout en bar) et même unité de volume (tout en L ou tout en m³). Mélanger des bar et des Pa conduit à un résultat faux d'un facteur \(10^5\).</p>
+</div>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 4</span>
+  <strong>Appliquer Boyle-Mariotte à une situation avec changement de température</strong>
+  <p>La loi \(P_1 V_1 = P_2 V_2\) n'est valable qu'à <strong>température constante</strong>. Si la température change en même temps que la pression et le volume (cas d'un gaz chauffé), il faut utiliser la loi des gaz parfaits complète : \(\dfrac{P_1 V_1}{T_1} = \dfrac{P_2 V_2}{T_2}\).</p>
 </div>
 
 <footer>

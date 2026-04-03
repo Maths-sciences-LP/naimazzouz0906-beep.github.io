@@ -114,6 +114,16 @@
   </ul>
 </div>
 
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un flotteur de volume 80 cm³ est totalement immergé dans l'eau (\(\rho = 1\,000 \text{ kg/m}^3\)). Calculer la force d'Archimède qui lui est appliquée. On prendra \(g = 9{,}81 \text{ N/kg}\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Conversion : \(V = 80 \text{ cm}^3 = 80 \times 10^{-6} = 8 \times 10^{-5} \text{ m}^3\)</p>
+    <p>\(F_A = \rho_{\text{eau}} \times g \times V = 1\,000 \times 9{,}81 \times 8 \times 10^{-5} = 0{,}785 \text{ N}\)</p>
+  </div>
+</div>
+
 <h3>Paramètres influençant la force d'Archimède</h3>
 
 <p>La formule \(F_A = \rho \cdot g \cdot V\) montre que la poussée d'Archimède dépend de :</p>
@@ -197,6 +207,16 @@
   <br>Le bloc de bois est immergé à 60 % et dépasse de 40 % hors de l'eau.
 </div>
 
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un antigel (\(\rho = 1\,110 \text{ kg/m}^3\)) et de l'huile (\(\rho = 880 \text{ kg/m}^3\)) sont mélangés dans un récipient. Prévoir lequel des deux liquides se trouve en surface. Justifier en comparant les masses volumiques à celle de l'eau.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>L'huile (\(\rho = 880 \text{ kg/m}^3\)) est moins dense que l'antigel (\(\rho = 1\,110 \text{ kg/m}^3\)).</p>
+    <p>Dans un mélange, les liquides se stratifient par densité croissante de haut en bas. L'huile (plus légère) se retrouvera en surface, l'antigel (plus lourd) se retrouvera en dessous.</p>
+  </div>
+</div>
+
 <!-- ===== IV. MASSES VOLUMIQUES ===== -->
 <h2>IV. Masses volumiques de référence</h2>
 
@@ -263,6 +283,19 @@
   </ol>
 </div>
 
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un technicien chauffagiste plonge un composant en acier (\(\rho = 7\,800 \text{ kg/m}^3\), volume = 20 cm³) dans un ballon rempli d'eau. Calculer la force d'Archimède et le poids du composant. Conclure sur le comportement (flotte ou coule).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Volume : \(V = 20 \text{ cm}^3 = 2 \times 10^{-5} \text{ m}^3\)</p>
+    <p>Force d'Archimède : \(F_A = 1\,000 \times 9{,}81 \times 2 \times 10^{-5} = 0{,}196 \text{ N}\)</p>
+    <p>Masse : \(m = 7\,800 \times 2 \times 10^{-5} = 0{,}156 \text{ kg}\)</p>
+    <p>Poids : \(P = 0{,}156 \times 9{,}81 = 1{,}53 \text{ N}\)</p>
+    <p>Comme \(P = 1{,}53 \text{ N} > F_A = 0{,}196 \text{ N}\), le composant en acier <strong>coule</strong>.</p>
+  </div>
+</div>
+
 <!-- ===== RETENIR ===== -->
 <div class="retenir">
   <strong>L'essentiel à retenir</strong>
@@ -274,6 +307,33 @@
     <li>À l'équilibre d'un corps flottant : \(P = F_A\).</li>
     <li>Fraction immergée : \(\dfrac{V_{\text{imm}}}{V_{\text{total}}} = \dfrac{\rho_{\text{objet}}}{\rho_{\text{fluide}}}\)</li>
   </ul>
+</div>
+
+<!-- ===== VI. ERREURS FRÉQUENTES ===== -->
+<h2>VI. Erreurs fréquentes</h2>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 1</span>
+  <strong>Utiliser la masse volumique de l'objet au lieu de celle du fluide</strong>
+  <p>Dans la formule \(F_A = \rho_{\text{fluide}} \times g \times V_{\text{immergé}}\), c'est toujours la masse volumique du <em>fluide</em> qui intervient, pas celle de l'objet. La poussée d'Archimède est le poids du fluide déplacé, pas le poids de l'objet.</p>
+</div>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 2</span>
+  <strong>Confondre le volume total et le volume immergé</strong>
+  <p>Si un objet n'est qu'en partie immergé (par exemple un bouchon flottant dont seule la moitié est dans l'eau), on utilise le volume immergé, pas le volume total. Pour un objet complètement plongé dans le fluide, les deux coïncident.</p>
+</div>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 3</span>
+  <strong>Croire que la forme de l'objet change la poussée d'Archimède</strong>
+  <p>À volume immergé égal et dans le même fluide, la poussée d'Archimède est la même quelle que soit la forme. Une boule de métal et un cube de métal du même volume subissent la même poussée. Ce qui détermine si l'objet flotte, c'est la comparaison des masses volumiques.</p>
+</div>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 4</span>
+  <strong>Oublier de convertir cm³ en m³</strong>
+  <p>Le volume doit être en m³ pour que la formule donne \(F_A\) en newtons. La conversion : \(1 \text{ cm}^3 = 10^{-6} \text{ m}^3\) et \(1 \text{ L} = 10^{-3} \text{ m}^3\). Utiliser des cm³ directement conduit à une force un million de fois trop grande.</p>
 </div>
 
 <footer>

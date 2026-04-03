@@ -28,6 +28,11 @@
   </ul>
 </div>
 
+<div class="situation">
+  <h3>Situation professionnelle — Réglage d'un compresseur d'atelier</h3>
+  <p>Dans un atelier de fabrication de meubles, un ébéniste utilise un compresseur d'air pour alimenter sa cloueuse pneumatique et son pistolet à vernis. La cloueuse nécessite une pression de 6 bar et le pistolet de 2,5 bar. Il doit savoir lire le manomètre, régler la pression et comprendre pourquoi la pression varie quand l'air se détend dans les outils.</p>
+</div>
+
 <!-- ========== SITUATION PRO ========== -->
 <h2>1. Situation professionnelle</h2>
 
@@ -86,6 +91,17 @@
     <li>La surface \(S\) doit être en <strong>m²</strong>, pas en cm² ! Conversion : \(1 \text{ m}^2 = 10\,000 \text{ cm}^2\)</li>
     <li>Ne pas confondre la pression (grandeur scalaire, en Pa) avec la force (grandeur vectorielle, en N)</li>
   </ul>
+</div>
+
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un meuble de 500 N repose sur 4 patins carrés de 5 cm de côté. Calculer la pression exercée sur le sol en Pa et en bar.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Surface d'un patin : \(S_1 = 0{,}05 \times 0{,}05 = 0{,}0025\) m².</p>
+    <p>Surface totale : \(S = 4 \times 0{,}0025 = 0{,}010\) m².</p>
+    <p>\(P = F/S = 500 / 0{,}010 = 50\,000\) Pa = 0,50 bar.</p>
+  </div>
 </div>
 
 <h3>2.4. Unités de pression</h3>
@@ -193,6 +209,16 @@
 <div class="prop">
   <span class="label label-prop">Propriété</span>
   À <strong>température constante</strong>, pour une quantité de gaz donnée, le produit de la pression par le volume reste constant.
+</div>
+
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un fabricant de meubles règle son compresseur : la cuve de 25 L est à 8 bar. Il utilise la cloueuse qui vide l'air jusqu'à ce que la pression descende à 2 bar. Quel volume d'air (à la pression atmosphérique de 1 bar) a été consommé ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Air restant dans la cuve : \(P_1 V_1 = P_2 V_2 \Rightarrow V_2 = \dfrac{P_1 \times V_1}{P_2} = \dfrac{8 \times 25}{2} = 100\) L à 2 bar.</p>
+    <p>Air utilisé (à 1 bar) : initialement \(8 \times 25 = 200\) L (à 1 bar), reste \(2 \times 25 = 50\) L (à 1 bar). Utilisé = 200 - 50 = <strong>150 L</strong> d'air à pression atmosphérique.</p>
+  </div>
 </div>
 
 <div class="formule-box">
@@ -328,6 +354,44 @@
       <td style="padding:8px;border:1px solid #e2e8f0">\(1 \text{ bar} = 1\,000 \text{ hPa}\)</td>
     </tr>
   </table>
+</div>
+
+<h2>7. Erreurs fréquentes</h2>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Utiliser la surface en cm² au lieu de m²</strong><br>
+    Calculer \(P = F/S\) avec S en cm² donne une pression en N/cm², pas en pascals. Le résultat serait 10 000 fois trop grand.<br>
+    <em>Conseil : toujours convertir la surface en m² avant de calculer (1 cm = 0,01 m, donc 1 cm² = 0,0001 m²).</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Confondre pression absolue et pression relative</strong><br>
+    Un manomètre indique souvent une pression relative (par rapport à la pression atmosphérique). La pression absolue = pression lue + pression atmosphérique.<br>
+    <em>Conseil : en Boyle-Mariotte, utiliser des pressions absolues (toujours ajouter 1 bar si la pression est lue sur un manomètre relatif).</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Mélanger les unités dans Boyle-Mariotte</strong><br>
+    Utiliser P<sub>1</sub> en Pa et P<sub>2</sub> en bar dans \(P_1 V_1 = P_2 V_2\) donne un résultat faux. Les deux pressions doivent être dans la même unité.<br>
+    <em>Conseil : choisir une unité (bar ou Pa) et tout convertir dans cette unité avant d'appliquer la loi.</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Appliquer Boyle-Mariotte sans vérifier la condition de température constante</strong><br>
+    La loi \(P_1 V_1 = P_2 V_2\) n'est valide qu'à température constante. Si la compression est rapide et chauffe le gaz, le résultat sera différent.<br>
+    <em>Conseil : vérifier que le problème précise une transformation isotherme (température constante) avant d'appliquer la loi.</em>
+  </div>
 </div>
 
 <footer>

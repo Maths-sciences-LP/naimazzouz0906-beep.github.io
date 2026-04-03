@@ -29,6 +29,11 @@
   </ul>
 </div>
 
+<div class="situation">
+  <h3>Situation professionnelle — Dimensionnement électrique d'un atelier d'agencement</h3>
+  <p>Un technicien d'agencement remarque que le disjoncteur général de l'atelier se déclenche fréquemment alors que la somme des puissances des machines semble acceptable. En courant alternatif, les moteurs créent un déphasage entre tension et courant : la puissance réellement consommée est inférieure à la puissance apparente, mais le courant circulant dans les câbles reste élevé. Comprendre le facteur de puissance est indispensable pour dimensionner correctement l'installation.</p>
+</div>
+
 <!-- ========== SITUATION PRO ========== -->
 <h2>1. Situation professionnelle – L'atelier d'agencement</h2>
 
@@ -78,6 +83,17 @@
     <li><strong>Pour une résistance</strong> (radiateur, lampe) : \(u(t)\) et \(i(t)\) sont en phase (\(\varphi = 0\)). Le produit \(p(t)\) est toujours positif.</li>
     <li><strong>Pour un moteur</strong> (aspiration, toupie) : \(i(t)\) est en retard sur \(u(t)\) (\(\varphi \neq 0\)). Le produit \(p(t)\) peut devenir négatif.</li>
   </ul>
+</div>
+
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un radiateur électrique d'atelier et le moteur de la toupie sont tous deux branchés sous 230 V et consomment chacun 10 A. Le moteur a un \(\cos \varphi = 0{,}80\). Quel appareil consomme le plus de puissance active ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Radiateur (résistance) : \(P = 230 \times 10 \times 1 = 2\,300\) W.</p>
+    <p>Moteur : \(P = 230 \times 10 \times 0{,}80 = 1\,840\) W.</p>
+    <p>Le radiateur consomme plus de puissance active (2 300 W contre 1 840 W), même si les deux appareils consomment le même courant.</p>
+  </div>
 </div>
 
 <!-- ========== GRAPHIQUE ========== -->
@@ -191,6 +207,17 @@
   </ul>
 </div>
 
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Sur l'oscilloscope d'un atelier de menuiserie, on mesure un décalage \(\Delta t = 4\) ms entre la tension et le courant du moteur de l'aspiration centralisée (\(f = 50\) Hz). Calculer le déphasage \(\varphi\) en degrés.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(T = 1/50 = 20\) ms.</p>
+    <p>\(\varphi = \dfrac{\Delta t}{T} \times 360° = \dfrac{4}{20} \times 360° = 72°\).</p>
+    <p>Le courant est en retard de 72° sur la tension.</p>
+  </div>
+</div>
+
 <div class="prop">
   <span class="label label-prop">Propriété – Valeurs typiques de cos φ</span><br>
   <table>
@@ -216,6 +243,16 @@
 
 <!-- ========== PUISSANCE ACTIVE ========== -->
 <h2>6. La puissance active : \(P = U \cdot I \cdot \cos \varphi\)</h2>
+
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un menuisier agenceur consulte la plaque signalétique d'un compresseur d'atelier : 230 V, 12 A, \(\cos \varphi = 0{,}78\). Calculer la puissance apparente S et la puissance active P.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Puissance apparente : \(S = U \times I = 230 \times 12 = 2\,760\) VA.</p>
+    <p>Puissance active : \(P = S \times \cos \varphi = 2\,760 \times 0{,}78 = 2\,153\) W \(\approx 2{,}15\) kW.</p>
+  </div>
+</div>
 
 <div class="def">
   <span class="label label-def">Définition – Puissance active</span><br>
@@ -401,6 +438,53 @@
   <ul style="list-style:none;padding:0;margin:0">
     <li style="margin:.4em 0"><a href="../../../simulations/puissance.html" target="_blank" style="color:var(--p);font-weight:600;text-decoration:underline">Puissance électrique</a></li>
   </ul>
+</div>
+
+<h2>11. Erreurs fréquentes</h2>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Oublier le facteur cos φ pour les moteurs</strong><br>
+    Calculer \(P = U \times I\) sans multiplier par \(\cos \varphi\) donne la puissance apparente S (en VA), pas la puissance active P (en W). Pour une résistance pure seulement, \(\cos \varphi = 1\) et les deux valeurs sont égales.<br>
+    <em>Conseil : identifier d'abord si l'appareil est résistif (radiateur, ampoule) ou inductif (moteur, bobine) avant de choisir la formule.</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Confondre watts (W) et voltampères (VA)</strong><br>
+    La puissance active se mesure en W, la puissance apparente en VA. Ce ne sont pas des unités interchangeables.<br>
+    <em>Conseil : P (active) en W, S (apparente) en VA — toujours préciser l'unité dans le résultat.</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Trouver un cos φ supérieur à 1</strong><br>
+    Le facteur de puissance est compris entre 0 et 1. Si le calcul donne \(\cos \varphi > 1\), c'est qu'une erreur a été commise (unités, grandeurs inversées).<br>
+    <em>Conseil : vérifier que P (en W) est toujours inférieur ou égal à S = U × I (en VA).</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Confondre le déphasage (angle) et le décalage temporel (temps)</strong><br>
+    \(\Delta t\) est un temps en secondes ou millisecondes ; \(\varphi\) est un angle en degrés ou radians. Il faut convertir via \(\varphi = \Delta t / T \times 360°\).<br>
+    <em>Conseil : noter \(T = 1/f = 20\) ms pour 50 Hz et appliquer la formule avant toute utilisation de \(\varphi\).</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Négliger l'effet du facteur de puissance sur le câblage</strong><br>
+    Même si la puissance active est faible, l'intensité réelle (et donc le courant dans les câbles) dépend de la puissance apparente. Un moteur à faible \(\cos \varphi\) impose un courant élevé pouvant déclencher les protections.<br>
+    <em>Conseil : toujours calculer l'intensité à partir de \(I = S / U = P / (U \times \cos \varphi)\) pour dimensionner les câbles et disjoncteurs.</em>
+  </div>
 </div>
 
 </div>

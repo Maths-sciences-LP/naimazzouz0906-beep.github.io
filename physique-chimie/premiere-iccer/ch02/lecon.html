@@ -87,6 +87,15 @@
   La tension est <strong>élevée</strong> en sortie de centrale pour le transport, puis <strong>abaissée</strong> par étapes jusqu'à l'utilisateur. Chaque changement de tension est réalisé par un <strong>transformateur</strong>.
 </div>
 
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un installateur thermique relève sur un site industriel les niveaux de tension suivants : 400 kV (transport THT), 20 kV (distribution MT), 400 V (livraison BT). À quel niveau de tension la PAC de 3 000 W sera-t-elle raccordée ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>La PAC sera raccordée à la <strong>basse tension : 400 V</strong>. C'est le niveau de livraison aux usages industriels et domestiques. Les niveaux 400 kV et 20 kV sont réservés au transport et à la distribution sur de grandes distances.</p>
+  </div>
+</div>
+
 <!-- ===== 2. EFFET JOULE ET PERTES EN LIGNE ===== -->
 <h2>2. L'effet Joule et les pertes en ligne</h2>
 
@@ -133,6 +142,17 @@
 <div class="att">
   <span class="label label-att">Attention</span>
   La formule \(P_J = R \times I^2\) montre que les pertes dépendent du <strong>carré</strong> de l'intensité. Si le courant double, les pertes sont multipliées par 4. C'est un point essentiel pour comprendre l'intérêt du transport en haute tension.
+</div>
+
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un câble d'alimentation d'une chaudière a une résistance de 0,8 Ω. Le courant qui le traverse est de 10 A. Calculer la puissance dissipée par effet Joule. Que se passe-t-il si le courant passe à 20 A ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Avec \(I = 10\) A : \(P_J = R \times I^2 = 0{,}8 \times 10^2 = 80 \text{ W}\)</p>
+    <p>Avec \(I = 20\) A : \(P_J = 0{,}8 \times 20^2 = 0{,}8 \times 400 = 320 \text{ W}\)</p>
+    <p>En doublant le courant, les pertes sont multipliées par <strong>4</strong> (de 80 W à 320 W). C'est l'effet du carré dans la formule.</p>
+  </div>
 </div>
 
 <!-- ===== 3. INTÉRÊT DU TRANSPORT EN HAUTE TENSION ===== -->
@@ -232,6 +252,19 @@
   </p>
 </div>
 
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un transformateur alimentant un immeuble reçoit une tension de 20 000 V au primaire et délivre 230 V au secondaire. Calculer le rapport de transformation et préciser s'il s'agit d'un transformateur élévateur ou abaisseur. Si le courant au secondaire est de 40 A, quel est le courant au primaire ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(m = \dfrac{U_2}{U_1} = \dfrac{230}{20\,000} = 0{,}0115\)</p>
+    <p>Comme \(m < 1\), c'est un transformateur <strong>abaisseur</strong>.</p>
+    <p>Conservation de la puissance : \(U_1 \times I_1 = U_2 \times I_2\)</p>
+    <p>\(I_1 = \dfrac{U_2 \times I_2}{U_1} = \dfrac{230 \times 40}{20\,000} = \dfrac{9\,200}{20\,000} = 0{,}46 \text{ A}\)</p>
+    <p>Le courant au primaire est <strong>0,46 A</strong>, bien inférieur au courant au secondaire.</p>
+  </div>
+</div>
+
 <!-- ===== 5. APPLICATIONS ===== -->
 <h2>5. Applications professionnelles</h2>
 
@@ -277,6 +310,33 @@
     <li>Les <strong>transformateurs</strong> élèvent la tension en sortie de centrale et l'abaissent avant distribution.</li>
     <li>Pour un transformateur idéal : \(U_1 \times I_1 = U_2 \times I_2\) (conservation de la puissance).</li>
   </ul>
+</div>
+
+<!-- ===== 6. ERREURS FRÉQUENTES ===== -->
+<h2>6. Erreurs fréquentes</h2>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 1</span>
+  <strong>Confondre \(P_J = R \times I^2\) et \(P = U \times I\)</strong>
+  <p>La formule \(P = U \times I\) donne la puissance fournie à un appareil (ou la puissance totale transportée). La formule \(P_J = R \times I^2\) donne la puissance <em>perdue</em> sous forme de chaleur dans un conducteur. Ces deux formules s'utilisent dans des contextes différents.</p>
+</div>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 2</span>
+  <strong>Penser que doubler la tension double les pertes Joule</strong>
+  <p>C'est l'inverse : doubler la tension permet de réduire le courant de moitié (à puissance transportée constante), et comme les pertes dépendent de \(I^2\), elles sont divisées par 4. La haute tension <em>réduit</em> les pertes.</p>
+</div>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 3</span>
+  <strong>Inverser \(U_1\) et \(U_2\) dans le rapport de transformation</strong>
+  <p>Par convention, \(m = \dfrac{U_2}{U_1}\) avec \(U_1\) la tension au primaire (entrée) et \(U_2\) la tension au secondaire (sortie). Si \(m > 1\) : transformateur élévateur ; si \(m < 1\) : abaisseur. Ne pas confondre primaire et secondaire.</p>
+</div>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 4</span>
+  <strong>Croire que le transformateur fonctionne en courant continu</strong>
+  <p>Un transformateur classique ne fonctionne qu'en <strong>courant alternatif</strong>. Il exploite les variations du champ magnétique créé par le courant alternatif. En courant continu (continu parfait), il n'y a pas de variation et donc pas de transfert d'énergie entre primaire et secondaire.</p>
 </div>
 
 <footer>

@@ -85,6 +85,12 @@
   - `<details class="corr-wrap">` → `.bc` + `.corr` (maths seconde)
   - Résultat : 2 à 7 mini-exo distribués par leçon, 0 section groupée résiduelle
 
+### Session 3 avril 2026 (Première Bac Pro)
+- **Mini-exercices** dans les 28 leçons Première (9 maths + 10 PC ICCER + 9 PC ERA) — 3 à 5 par leçon, distribués après chaque notion
+- **Erreurs fréquentes** (`.erreur-item`) dans les 28 leçons — 4 à 5 erreurs par chapitre
+- **`.situation`** dans les leçons maths + PC ERA qui en manquaient (ICCER déjà fait)
+- **Problématiques** ajoutées dans les 28 activités Première (9 maths + 10 ICCER + 9 ERA)
+
 ### Session 3 avril 2026 (fin)
 - **Diversification contextes PC Seconde** : +3 exercices sport/santé/énergie/environnement dans ch03, ch06, ch08, ch10, ch11, ch12 — ratio menuiserie réduit dans les 6 chapitres à 73–83%
 - **`.situation` dans les 14 leçons PC Seconde** : 1 bloc par leçon ajouté (ch01–ch14), scénarios pro réels (menuisier, technicien, installateur)

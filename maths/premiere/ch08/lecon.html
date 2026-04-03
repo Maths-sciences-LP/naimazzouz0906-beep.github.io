@@ -94,6 +94,17 @@
   Le vecteur \(\vec{AB}\) a pour coordonnées \((5\,;\,-2)\).
 </div>
 
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un installateur d'agencement déplace un meuble du point \(P(3\,;\,1)\) au point \(Q(7\,;\,5)\).</p>
+  <p>1. Calculer les coordonnées du vecteur \(\overrightarrow{PQ}\). 2. Quelle est la signification physique de ces coordonnées ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>1. \(\overrightarrow{PQ} \begin{pmatrix} 7-3 \\ 5-1 \end{pmatrix} = \begin{pmatrix} 4 \\ 4 \end{pmatrix}\).</p>
+    <p>2. Le meuble est déplacé de 4 unités vers la droite et de 4 unités vers le haut (par rapport à l'axe horizontal du plan).</p>
+  </div>
+</div>
+
 <!-- ══════════════════════════════════════════════════════ -->
 <h2>3. Égalité de vecteurs</h2>
 
@@ -223,6 +234,16 @@
   <p>
     \(PQ = \sqrt{(8-2)^2 + (9-1)^2} = \sqrt{36 + 64} = \sqrt{100} = 10\) m.
   </p>
+</div>
+
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Sur un plan d'agencement, deux coins d'une pièce sont placés en \(A(1\,;\,4)\) et \(B(7\,;\,9)\). Calculer la distance \(AB\) (en unités du repère) pour estimer la longueur d'une barre d'étagère diagonale.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\overrightarrow{AB} = \begin{pmatrix} 7-1 \\ 9-4 \end{pmatrix} = \begin{pmatrix} 6 \\ 5 \end{pmatrix}\).</p>
+    <p>\(AB = \|\overrightarrow{AB}\| = \sqrt{6^2 + 5^2} = \sqrt{36 + 25} = \sqrt{61} \approx 7{,}81\) unités.</p>
+  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════ -->
@@ -409,6 +430,46 @@
     <li><strong>Milieu</strong> : \(M\left(\dfrac{x_A+x_B}{2}\,;\,\dfrac{y_A+y_B}{2}\right)\).</li>
     <li><strong>Colinéarité</strong> : \(\vec{u}\) et \(\vec{v}\) colinéaires \(\Leftrightarrow xy'-x'y = 0\).</li>
   </ul>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>10. Erreurs fréquentes</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Confondre le vecteur \(\overrightarrow{AB}\) et le vecteur \(\overrightarrow{BA}\)</strong><br>
+    \(\overrightarrow{AB}\) va de A vers B ; \(\overrightarrow{BA}\) va de B vers A. Ces deux vecteurs ont la même norme mais des directions opposées : \(\overrightarrow{BA} = -\overrightarrow{AB}\).<br>
+    <em>Conseil : lire toujours le vecteur dans le sens de la flèche : de la lettre du bas (origine) vers la lettre du haut (extrémité).</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Calculer les coordonnées dans le mauvais sens</strong><br>
+    Les coordonnées du vecteur \(\overrightarrow{AB}\) sont \(\binom{x_B - x_A}{y_B - y_A}\), pas \(\binom{x_A - x_B}{y_A - y_B}\). Inverser les termes donne le vecteur opposé.<br>
+    <em>Conseil : toujours faire (point d'arrivée) − (point de départ), c'est-à-dire B − A pour \(\overrightarrow{AB}\).</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Oublier la racine carrée pour la norme</strong><br>
+    La norme d'un vecteur est \(\|\vec{u}\| = \sqrt{x^2+y^2}\), pas \(x^2+y^2\). Oublier la racine carrée donne un résultat sans unité cohérente (une surface au lieu d'une longueur).<br>
+    <em>Conseil : la norme est une longueur, donc elle doit s'exprimer en cm, m, etc. — penser à prendre la racine carrée.</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Tester la colinéarité par les normes plutôt que par le déterminant</strong><br>
+    Deux vecteurs peuvent avoir la même norme sans être colinéaires. La condition de colinéarité est \(x \cdot y' - x' \cdot y = 0\), pas \(\|\vec{u}\| = \|\vec{v}\|\).<br>
+    <em>Conseil : utiliser toujours la formule du déterminant \(xy' - x'y\) pour tester la colinéarité.</em>
+  </div>
 </div>
 
 <!-- Simulations interactives -->
