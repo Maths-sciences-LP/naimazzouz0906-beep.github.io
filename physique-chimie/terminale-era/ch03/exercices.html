@@ -79,6 +79,97 @@
 </svg>
 </div>
 
+<!-- ===== SVG EFFET DE SERRE ===== -->
+<h2>Schéma de l'effet de serre</h2>
+<div class="svg-wrap">
+<svg width="560" height="280" viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" aria-label="Schéma simplifié de l'effet de serre : rayonnements entrant et sortant" style="max-width:100%;height:auto">
+  <!-- Fond ciel -->
+  <rect x="0" y="0" width="560" height="280" fill="#e0f2fe" rx="8"/>
+  <!-- Terre -->
+  <rect x="0" y="220" width="560" height="60" fill="#86efac" rx="0"/>
+  <text x="280" y="255" text-anchor="middle" font-size="16" font-weight="bold" fill="#166534">TERRE</text>
+  <!-- Atmosphère (couche CO₂) -->
+  <rect x="0" y="120" width="560" height="50" fill="#fde68a" opacity="0.55" rx="4"/>
+  <text x="280" y="142" text-anchor="middle" font-size="13" fill="#92400e" font-weight="bold">Atmosphère (CO₂, H₂O, CH₄)</text>
+  <text x="280" y="158" text-anchor="middle" font-size="11" fill="#92400e" font-style="italic">absorbe le rayonnement infrarouge émis par la Terre</text>
+  <!-- Soleil -->
+  <circle cx="60" cy="50" r="30" fill="#fbbf24" opacity="0.9"/>
+  <text x="60" y="55" text-anchor="middle" font-size="14" font-weight="bold" fill="#78350f">☀</text>
+  <text x="60" y="95" text-anchor="middle" font-size="11" fill="#92400e">~6000 K</text>
+  <!-- Flèche rayonnement solaire entrant (visible, traverse atm) -->
+  <line x1="88" y1="65" x2="200" y2="212" stroke="#fbbf24" stroke-width="3"/>
+  <polygon points="200,212 192,200 208,200" fill="#fbbf24"/>
+  <text x="115" y="130" font-size="11" fill="#78350f" font-weight="bold">Visible + UV</text>
+  <text x="115" y="143" font-size="10" fill="#78350f">(traverse l'atm)</text>
+  <!-- Flèche IR Terre vers atmosphère (réémission) -->
+  <line x1="300" y1="218" x2="300" y2="175" stroke="#dc2626" stroke-width="2.5"/>
+  <polygon points="300,175 294,185 306,185" fill="#dc2626"/>
+  <text x="315" y="200" font-size="11" fill="#dc2626" font-weight="bold">IR émis</text>
+  <text x="315" y="213" font-size="11" fill="#dc2626">par la Terre</text>
+  <!-- Flèche rétention (retour vers Terre) -->
+  <line x1="340" y1="170" x2="390" y2="218" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <polygon points="390,218 380,208 396,208" fill="#dc2626"/>
+  <text x="395" y="198" font-size="11" fill="#dc2626" font-weight="bold">Rétention</text>
+  <text x="395" y="211" font-size="11" fill="#dc2626">→ réchauffement</text>
+  <!-- Flèche IR qui échappe (vers espace) -->
+  <line x1="260" y1="120" x2="260" y2="65" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
+  <polygon points="260,65 254,75 266,75" fill="#dc2626" opacity="0.5"/>
+  <text x="210" y="85" font-size="10" fill="#7f1d1d" opacity="0.8">Faible part</text>
+  <text x="210" y="97" font-size="10" fill="#7f1d1d" opacity="0.8">s'échappe</text>
+</svg>
+<p style="text-align:center;font-size:.85em;color:#666;margin-top:4px"><em>Figure 2 — L'effet de serre : le rayonnement solaire (visible) traverse l'atmosphère, la Terre réémet dans l'IR, les gaz à effet de serre en retiennent une partie</em></p>
+</div>
+
+<!-- ===== SVG COURBES CORPS NOIR ===== -->
+<h2>Rayonnement du corps noir selon la température</h2>
+<div class="meth">
+  <strong>Méthode :</strong> Plus la température est élevée, plus le pic d'émission se déplace vers les courtes longueurs d'onde (loi de Wien). Le Soleil (~6000 K) émet surtout dans le visible ; un bâtiment (~300 K) émet dans l'IR lointain, invisible à l'œil nu mais détectable avec une caméra thermique.
+</div>
+<div class="svg-wrap">
+<svg width="520" height="270" viewBox="0 0 520 270" xmlns="http://www.w3.org/2000/svg" aria-label="Courbes de rayonnement du corps noir à 3000 K, 5000 K et 6000 K" style="max-width:100%;height:auto">
+  <!-- Fond -->
+  <rect x="0" y="0" width="520" height="270" fill="#fafafa" rx="8"/>
+  <!-- Axes -->
+  <line x1="55" y1="220" x2="490" y2="220" stroke="#374151" stroke-width="2"/>
+  <line x1="55" y1="10"  x2="55"  y2="220" stroke="#374151" stroke-width="2"/>
+  <polygon points="490,216 500,220 490,224" fill="#374151"/>
+  <polygon points="51,10 55,2 59,10" fill="#374151"/>
+  <text x="505" y="224" font-size="12" fill="#374151">λ (nm)</text>
+  <text x="8"  y="14"  font-size="12" fill="#374151">I</text>
+  <!-- Graduations λ -->
+  <line x1="120" y1="215" x2="120" y2="225" stroke="#9ca3af" stroke-width="1"/>
+  <text x="120" y="238" font-size="10" text-anchor="middle" fill="#555">300</text>
+  <line x1="195" y1="215" x2="195" y2="225" stroke="#9ca3af" stroke-width="1"/>
+  <text x="195" y="238" font-size="10" text-anchor="middle" fill="#555">500</text>
+  <line x1="270" y1="215" x2="270" y2="225" stroke="#9ca3af" stroke-width="1"/>
+  <text x="270" y="238" font-size="10" text-anchor="middle" fill="#555">700</text>
+  <line x1="380" y1="215" x2="380" y2="225" stroke="#9ca3af" stroke-width="1"/>
+  <text x="380" y="238" font-size="10" text-anchor="middle" fill="#555">1000</text>
+  <line x1="460" y1="215" x2="460" y2="225" stroke="#9ca3af" stroke-width="1"/>
+  <text x="460" y="238" font-size="10" text-anchor="middle" fill="#555">1200</text>
+  <!-- Zone visible -->
+  <rect x="120" y="10" width="75" height="210" fill="#ede9fe" opacity="0.3"/>
+  <text x="157" y="258" font-size="10" text-anchor="middle" fill="#6d28d9">Visible</text>
+  <!-- Courbe T=3000 K (pic vers ~1000 nm) rouge/orange -->
+  <polyline points="55,220 90,218 120,210 160,185 200,165 260,140 320,125 380,115 430,112 480,112"
+    fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="482" y="110" font-size="11" fill="#dc2626">3000 K</text>
+  <!-- Courbe T=5000 K (pic vers ~580 nm) vert -->
+  <polyline points="55,220 90,215 110,195 130,160 155,100 180,55 210,30 250,22 290,25 350,40 400,60 460,80 490,90"
+    fill="none" stroke="#2da44e" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="492" y="88" font-size="11" fill="#2da44e">5000 K</text>
+  <!-- Courbe T=6000 K (pic vers ~480 nm) bleu -->
+  <polyline points="55,220 80,210 100,180 120,125 145,55 165,22 185,14 210,20 240,34 280,55 330,80 390,105 450,120 490,130"
+    fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="492" y="128" font-size="11" fill="#2563eb">6000 K</text>
+  <!-- Flèche déplacement du pic -->
+  <line x1="210" y1="28" x2="165" y2="22" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="215" y="20" font-size="10" fill="#374151">pic se déplace</text>
+  <text x="215" y="31" font-size="10" fill="#374151">vers les λ courtes</text>
+</svg>
+<p style="text-align:center;font-size:.85em;color:#666;margin-top:4px"><em>Figure 3 — Rayonnement du corps noir : plus T est élevée, plus le pic d'émission se déplace vers les courtes longueurs d'onde (loi de Wien)</em></p>
+</div>
+
 <!-- ===== SOCLE ===== -->
 <h2>Exercices guidés pas à pas</h2>
 

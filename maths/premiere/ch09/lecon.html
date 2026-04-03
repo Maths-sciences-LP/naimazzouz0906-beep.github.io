@@ -31,6 +31,11 @@
   </ul>
 </div>
 
+<div class="situation">
+  <h3>Situation professionnelle — Menuisier agenceur</h3>
+  <p>Un menuisier doit installer une rampe d'accès inclinée à 30° sur une hauteur de 1,5 m. Pour commander la bonne longueur de bois, il doit calculer la longueur de la rampe (l'hypoténuse du triangle rectangle formé). La trigonométrie est l'outil mathématique qui permet ce type de calcul à partir d'un angle et d'un seul côté connu.</p>
+</div>
+
 <!-- ══════════════════════════════════════════════════════ -->
 <h2>1. Rappels — Le triangle rectangle</h2>
 
@@ -146,6 +151,17 @@
     <li>\(\tan \alpha = \dfrac{\sin \alpha}{\cos \alpha}\)</li>
     <li>\(\cos^2 \alpha + \sin^2 \alpha = 1\)</li>
   </ul>
+</div>
+
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Dans un triangle rectangle, l'angle aigu \(\alpha\) vérifie \(\sin \alpha = 0{,}6\). Calculer \(\cos \alpha\) à l'aide de la relation fondamentale \(\cos^2 \alpha + \sin^2 \alpha = 1\), puis vérifier avec la calculatrice.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\cos^2 \alpha = 1 - \sin^2 \alpha = 1 - 0{,}36 = 0{,}64\).</p>
+    <p>\(\cos \alpha = \sqrt{0{,}64} = 0{,}8\) (positif car \(\alpha\) est aigu).</p>
+    <p>Vérification calculatrice : \(\alpha = \sin^{-1}(0{,}6) \approx 36{,}87°\), puis \(\cos(36{,}87°) \approx 0{,}80\) ✓.</p>
+  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════ -->
@@ -463,6 +479,29 @@
   </ul>
 </div>
 
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un menuisier installe une rampe d'accès pour PMR (personnes à mobilité réduite). La rampe fait un angle de 8° avec le sol. La longueur de la rampe est de 3,5 m. Calculer la hauteur \(h\) que cette rampe permet de gravir.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>La hauteur est le côté opposé à l'angle de 8°, et la rampe est l'hypoténuse.</p>
+    <p>\(\sin(8°) = \dfrac{h}{3{,}5}\), donc \(h = 3{,}5 \times \sin(8°) = 3{,}5 \times 0{,}1392 \approx 0{,}49\) m.</p>
+    <p>La rampe permet de gravir environ <strong>49 cm</strong> de hauteur.</p>
+  </div>
+</div>
+
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un technicien d'agencement mesure qu'une cloison fait un angle inconnu \(\beta\) avec le sol. Le pied de la cloison est à 1,2 m du mur et la cloison mesure 2,8 m de long. Calculer l'angle \(\beta\) en degrés.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Le côté adjacent est 1,2 m et l'hypoténuse est 2,8 m. On utilise le cosinus :</p>
+    <p>\(\cos \beta = \dfrac{1{,}2}{2{,}8} \approx 0{,}4286\)</p>
+    <p>\(\beta = \cos^{-1}(0{,}4286) \approx 64{,}6°\)</p>
+    <p>La cloison fait environ <strong>64,6°</strong> avec le sol.</p>
+  </div>
+</div>
+
 <!-- ══════════════════════════════════════════════════════ -->
 <h2>8. Applications professionnelles</h2>
 
@@ -747,6 +786,45 @@
     <li>Pour <strong>trouver un angle</strong> : calculer le rapport puis utiliser la touche inverse (\(\cos^{-1}\), \(\sin^{-1}\), \(\tan^{-1}\)).</li>
     <li>Les fonctions sinus et cosinus sont <strong>périodiques de période \(2\pi\)</strong> et prennent des valeurs entre \(-1\) et \(1\).</li>
   </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>14. Erreurs fréquentes</h2>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Inverser les côtés opposé et adjacent</strong><br>
+    Le côté opposé à l'angle \(\alpha\) est en face de cet angle ; le côté adjacent est à côté de l'angle (mais différent de l'hypoténuse). Se tromper entraîne l'utilisation du mauvais rapport.<br>
+    <em>Conseil : identifier d'abord l'hypoténuse (face à l'angle droit), puis les côtés opposé et adjacent par rapport à l'angle donné.</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Calculatrice en mode RAD au lieu de DEG</strong><br>
+    Travailler avec une calculatrice en mode radians quand on calcule en degrés donne des résultats totalement faux. Par exemple, \(\sin(30)\) en mode RAD donne 0,988 au lieu de 0,5.<br>
+    <em>Conseil : toujours vérifier le mode de la calculatrice avant tout calcul trigonométrique. Changer via le menu ou la touche DRG/MODE.</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Confondre \(\sin^{-1}\) et \(\frac{1}{\sin}\)</strong><br>
+    La notation \(\sin^{-1}(\ldots)\) désigne la <em>fonction arcsinus</em> (inverse de sin), pas l'inverse multiplicatif \(\frac{1}{\sin(\ldots)}\).<br>
+    <em>Conseil : pour trouver un angle, utiliser la touche \(\sin^{-1}\) (ou ASIN/arcsin) de la calculatrice, pas \(1/\sin\).</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Arrondir les valeurs intermédiaires</strong><br>
+    Arrondir à chaque étape accumule des erreurs et peut donner un résultat final incorrect. Par exemple, arrondir \(\sin(35°) = 0{,}57\) au lieu de \(0{,}5736\) introduit une erreur.<br>
+    <em>Conseil : conserver toutes les décimales sur la calculatrice jusqu'à la toute dernière étape, puis arrondir uniquement le résultat final.</em>
+  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════ -->

@@ -54,6 +54,17 @@
   </ul>
 </div>
 
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un atelier de menuiserie fabrique des étagères. On choisit une étagère au hasard dans le lot. Les défauts possibles sont : nœud (N), voilage (V), cote hors tolérance (C), ou aucun défaut (OK).</p>
+  <p>1. Quel est l'univers \(\Omega\) ? 2. Écrire l'événement A = « l'étagère est défectueuse ».</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>1. \(\Omega = \{N\,;\,V\,;\,C\,;\,OK\}\).</p>
+    <p>2. \(A = \{N\,;\,V\,;\,C\}\) (tous les défauts, sauf « aucun défaut »).</p>
+  </div>
+</div>
+
 <div class="ex">
   <h4>Exemple 1</h4>
   <p>On lance un dé à 6 faces équilibré.</p>
@@ -107,6 +118,16 @@
   <p>L'événement A = « obtenir un nombre pair » = \(\{2\,;\, 4\,;\, 6\}\) contient 3 issues favorables sur 6 issues possibles.</p>
   \[P(A) = \frac{3}{6} = \frac{1}{2} = 0{,}5\]
   <p>La probabilité d'obtenir un nombre pair est de \(0{,}5\), soit 50 %.</p>
+</div>
+
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un artisan fabricant de mobilier produit 150 portes. 9 portes sont défectueuses. On choisit une porte au hasard. Calculer la probabilité qu'elle soit défectueuse, puis la probabilité qu'elle soit conforme.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(P(\text{défaut}) = \dfrac{9}{150} = 0{,}06 = 6\,\%\).</p>
+    <p>\(P(\text{conforme}) = 1 - 0{,}06 = 0{,}94 = 94\,\%\).</p>
+  </div>
 </div>
 
 <div class="situation">
@@ -236,6 +257,18 @@
     <li>\(P(\text{Ligne A}) = \dfrac{100}{200} = 0{,}5\)</li>
     <li>\(P(\text{Chêne et Ligne A}) = \dfrac{70}{200} = 0{,}35\)</li>
   </ul>
+</div>
+
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Dans un atelier de menuiserie, 120 panneaux ont été produits : 80 en chêne et 40 en hêtre. Parmi les panneaux en chêne, 8 sont défectueux. Parmi les panneaux en hêtre, 4 sont défectueux.</p>
+  <p>On choisit un panneau au hasard. Calculer \(P(\text{chêne})\), \(P(\text{défaut})\) et \(P(\text{chêne} \cap \text{défaut})\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(P(\text{chêne}) = \dfrac{80}{120} = \dfrac{2}{3} \approx 0{,}667\).</p>
+    <p>Nombre de panneaux défectueux : \(8 + 4 = 12\). \(P(\text{défaut}) = \dfrac{12}{120} = 0{,}1 = 10\,\%\).</p>
+    <p>\(P(\text{chêne} \cap \text{défaut}) = \dfrac{8}{120} = \dfrac{1}{15} \approx 0{,}067\).</p>
+  </div>
 </div>
 
 <h3>Introduction aux probabilités conditionnelles</h3>
@@ -401,6 +434,46 @@
     \[P(M) = 0{,}6 \times 0{,}04 + 0{,}4 \times 0{,}07 = 0{,}024 + 0{,}028 = 0{,}052\]
     <p>La probabilité que le sachet soit mal fermé est \(0{,}052\), soit 5,2 %.</p>
     <p><strong>3.</strong> \(P(\bar{M}) = 1 - 0{,}052 = 0{,}948 = 94{,}8\,\%\).</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<h2>VIII – Erreurs fréquentes</h2>
+<!-- ════════════════════════════════════════ -->
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Additionner des probabilités d'événements non incompatibles</strong><br>
+    Si A et B ont des issues en commun, \(P(A \cup B) \neq P(A) + P(B)\). Il faut utiliser \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\).<br>
+    <em>Conseil : vérifier d'abord si les deux événements peuvent se réaliser en même temps avant d'additionner.</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Oublier que la somme des probabilités des branches d'un nœud vaut 1</strong><br>
+    Dans un arbre, la somme des probabilités de toutes les branches issues d'un même nœud doit valoir exactement 1. Une somme différente de 1 signale une erreur.<br>
+    <em>Conseil : toujours vérifier la somme sur chaque nœud avant de calculer les chemins.</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Multiplier au lieu d'additionner pour la règle de la somme</strong><br>
+    La probabilité d'un événement obtenu par plusieurs chemins est la <em>somme</em> des probabilités de ces chemins (et non leur produit).<br>
+    <em>Conseil : on multiplie le long d'un chemin (règle du produit), on additionne entre plusieurs chemins (règle de la somme).</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Confondre probabilité et fréquence</strong><br>
+    La probabilité est une valeur théorique (calculée). La fréquence observée lors d'une expérience peut s'en éloigner, surtout pour un petit nombre de tirages.<br>
+    <em>Conseil : plus le nombre d'essais est grand, plus la fréquence observée se rapproche de la probabilité théorique.</em>
   </div>
 </div>
 

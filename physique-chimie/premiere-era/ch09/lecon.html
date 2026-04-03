@@ -28,6 +28,11 @@
   </ul>
 </div>
 
+<div class="situation">
+  <h3>Situation professionnelle — Séchage UV et éclairage LED dans l'atelier</h3>
+  <p>Un menuisier agenceur utilise deux technologies dans son atelier : une lampe UV pour le séchage rapide de vernis en 3 secondes et des LED pour l'éclairage. Ces deux sources émettent des ondes électromagnétiques de longueurs d'onde très différentes. Comprendre le spectre électromagnétique permet de choisir les bons équipements, d'utiliser les protections adaptées et d'intégrer des solutions domotiques (capteurs IR, Wi-Fi) dans les projets d'agencement.</p>
+</div>
+
 <!-- ========== SITUATION PRO ========== -->
 <h2>1. Situation professionnelle</h2>
 
@@ -92,6 +97,17 @@
     <li>Les longueurs d'onde sont souvent exprimées en nanomètres (nm) pour le domaine visible : \(1 \text{ nm} = 10^{-9}\) m</li>
     <li>Les fréquences peuvent être très grandes : on utilise les préfixes kHz (\(10^3\)), MHz (\(10^6\)), GHz (\(10^9\)), THz (\(10^{12}\))</li>
   </ul>
+</div>
+
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Une lampe UV utilisée pour le séchage de vernis en atelier émet des rayons de longueur d'onde 365 nm. Calculer la fréquence de ces rayons (\(c = 3 \times 10^8\) m/s).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>Convertir : \(\lambda = 365 \text{ nm} = 365 \times 10^{-9}\) m.</p>
+    <p>\(f = \dfrac{c}{\lambda} = \dfrac{3 \times 10^8}{365 \times 10^{-9}} = 8{,}22 \times 10^{14}\) Hz = 822 THz.</p>
+    <p>Cette fréquence est dans le domaine UV, juste au-delà du violet visible (400 nm).</p>
+  </div>
 </div>
 
 <div class="ex">
@@ -337,6 +353,16 @@
 <!-- ========== MÉTHODE ========== -->
 <h2>6. Méthode de calcul</h2>
 
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un aménageur d'intérieur installe un détecteur infrarouge de mouvement (\(\lambda = 10\) µm = \(10 \times 10^{-6}\) m). Dans quel domaine du spectre se situe cette onde ? Calculer sa fréquence.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\lambda = 10 \text{ µm} = 10 \times 10^{-6}\) m = \(10^{-5}\) m. C'est dans le domaine <strong>infrarouge</strong> (entre 800 nm et 1 mm).</p>
+    <p>\(f = c/\lambda = 3 \times 10^8 / 10^{-5} = 3 \times 10^{13}\) Hz = 30 THz.</p>
+  </div>
+</div>
+
 <div class="meth">
   <span class="label label-meth">Méthode</span>
   <strong>Calculer λ, f ou c</strong><br>
@@ -383,6 +409,44 @@
       <td style="padding:8px;border:1px solid #e2e8f0">s</td>
     </tr>
   </table>
+</div>
+
+<h2>8. Erreurs fréquentes</h2>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Oublier de convertir les nanomètres en mètres</strong><br>
+    Calculer \(f = c/\lambda\) avec \(\lambda\) en nm au lieu de m donne un résultat milliards de fois trop petit. Il faut \(\lambda\) en mètres.<br>
+    <em>Conseil : 1 nm = 10<sup>-9</sup> m. Toujours convertir avant de calculer.</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Confondre longueur d'onde et fréquence</strong><br>
+    Plus la longueur d'onde est grande, plus la fréquence est petite (et inversement). Les ondes radio ont une grande longueur d'onde et une basse fréquence ; les rayons gamma ont une très petite longueur d'onde et une très haute fréquence.<br>
+    <em>Conseil : \(\lambda\) et \(f\) sont inversement proportionnels (\(\lambda = c/f\)) — l'un augmente quand l'autre diminue.</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Situer incorrectement le domaine visible</strong><br>
+    Le domaine visible s'étend de 400 nm (violet) à environ 800 nm (rouge). Ce n'est qu'une toute petite partie du spectre électromagnétique total.<br>
+    <em>Conseil : retenir violet = 400 nm = fréquence haute, rouge = 800 nm = fréquence basse. Au-delà du rouge : infrarouge (invisible).</em>
+  </div>
+</div>
+
+<div class="erreur-item">
+  <div class="ico">❌</div>
+  <div class="txt">
+    <strong>Croire que les ondes EM nécessitent un support matériel</strong><br>
+    Contrairement aux ondes sonores ou aux vagues, les ondes électromagnétiques se propagent dans le vide (c'est ainsi que la lumière du Soleil nous parvient).<br>
+    <em>Conseil : seules les ondes mécaniques (son, vague) ont besoin d'un support — les ondes EM se propagent dans le vide.</em>
+  </div>
 </div>
 
 <footer>

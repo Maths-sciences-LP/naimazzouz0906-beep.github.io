@@ -72,6 +72,15 @@
   Ne jamais confondre tension et intensité. Un voltmètre se branche toujours <strong>en dérivation</strong> (en parallèle) et un ampèremètre toujours <strong>en série</strong>. Inverser les branchements peut endommager les appareils de mesure.
 </div>
 
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un technicien chauffagiste mesure la tension aux bornes d'un circulateur et trouve 230 V. L'ampèremètre indique 1,8 A. Identifier les deux grandeurs mesurées et préciser quel appareil est utilisé pour chacune.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>230 V est la <strong>tension</strong> (différence de potentiel), mesurée par un <strong>voltmètre branché en dérivation</strong> aux bornes du circulateur. 1,8 A est l'<strong>intensité</strong> du courant, mesurée par un <strong>ampèremètre branché en série</strong> dans le circuit.</p>
+  </div>
+</div>
+
 <!-- ===== 2. PUISSANCE ÉLECTRIQUE ===== -->
 <h2>2. La puissance électrique</h2>
 
@@ -134,6 +143,16 @@
 <div class="att">
   <span class="label label-att">Attention</span>
   La puissance indiquée sur la plaque signalétique d'un appareil est sa <strong>puissance nominale</strong> : c'est la puissance pour laquelle il a été conçu pour fonctionner de manière optimale. Un fonctionnement à une tension différente modifie la puissance réellement reçue.
+</div>
+
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un plancher chauffant électrique est alimenté sous 230 V. Son intensité nominale est de 5,2 A. Calculer sa puissance nominale.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(P = U \times I = 230 \times 5{,}2 = 1\,196 \text{ W} \approx 1\,200 \text{ W}\)</p>
+    <p>Le plancher chauffant a une puissance nominale d'environ <strong>1 200 W</strong>.</p>
+  </div>
 </div>
 
 <!-- ===== 3. ÉNERGIE ÉLECTRIQUE ===== -->
@@ -217,6 +236,18 @@
   </p>
 </div>
 
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Un sèche-serviettes de 500 W fonctionne 3 heures par jour. Calculer l'énergie consommée en 30 jours, d'abord en kWh, puis estimer le coût au tarif de 0,20 €/kWh.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(P = 500 \text{ W} = 0{,}5 \text{ kW}\)</p>
+    <p>\(E = P \times t = 0{,}5 \times (3 \times 30) = 0{,}5 \times 90 = 45 \text{ kWh}\)</p>
+    <p>Coût = \(45 \times 0{,}20 = 9{,}00 \text{ €}\)</p>
+    <p>Ce sèche-serviettes coûte <strong>9 €</strong> par mois à faire fonctionner.</p>
+  </div>
+</div>
+
 <!-- ===== 4. MESURER LA PUISSANCE ET L'ÉNERGIE ===== -->
 <h2>4. Mesurer la puissance et l'énergie</h2>
 
@@ -255,6 +286,17 @@
 <div class="att">
   <span class="label label-att">Attention</span>
   Aucun appareil n'a un rendement de 100 %. Une partie de l'énergie est toujours dissipée sous forme de chaleur (effet Joule), de bruit ou de vibrations.
+</div>
+
+<div class="mini-exo">
+  <strong>Application</strong>
+  <p>Une chaudière à condensation consomme 4 200 W de puissance thermique et fournit 3 990 W de chaleur utile au circuit de chauffage. Calculer son rendement en pourcentage.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <p>\(\eta = \dfrac{P_{\text{utile}}}{P_{\text{totale}}} = \dfrac{3\,990}{4\,200} \approx 0{,}95\)</p>
+    <p>Le rendement de la chaudière est de <strong>95 %</strong>.</p>
+    <p>5 % de l'énergie consommée est perdue (fumées, parois, etc.).</p>
+  </div>
 </div>
 
 <div class="ex">
@@ -351,6 +393,40 @@
 </div>
 
 </div>
+
+<!-- ===== 7. ERREURS FRÉQUENTES ===== -->
+<h2>7. Erreurs fréquentes</h2>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 1</span>
+  <strong>Confondre puissance et énergie</strong>
+  <p>La puissance (\(P\), en watts) indique la vitesse à laquelle l'énergie est consommée. L'énergie (\(E\), en joules ou kWh) est la quantité totale consommée sur une durée. Un radiateur de 2 000 W ne consomme pas "2 000 kWh" : il faut multiplier par la durée de fonctionnement.</p>
+</div>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 2</span>
+  <strong>Oublier de convertir les unités avant le calcul</strong>
+  <p>Dans \(E = P \times t\), la puissance doit être en W et le temps en secondes pour obtenir des joules. Si l'on veut des kWh, il faut exprimer \(P\) en kW et \(t\) en heures. Mélanger les unités (ex. : W et heures) donne un résultat faux.</p>
+</div>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 3</span>
+  <strong>Brancher l'ampèremètre en dérivation</strong>
+  <p>Un ampèremètre doit toujours être branché en série dans le circuit. Le brancher en dérivation revient à court-circuiter le dipôle : cela peut griller l'ampèremètre ou endommager l'installation.</p>
+</div>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 4</span>
+  <strong>Croire que le rendement d'une PAC ne peut pas dépasser 1</strong>
+  <p>Le coefficient de performance (COP) d'une pompe à chaleur peut être supérieur à 1 (souvent entre 3 et 5), car la PAC puise de l'énergie dans l'environnement (air, sol) en plus de l'énergie électrique qu'elle consomme. Cela ne viole pas les lois de la thermodynamique.</p>
+</div>
+
+<div class="erreur-item">
+  <span class="label label-att">Erreur 5</span>
+  <strong>Confondre puissance nominale et puissance réelle</strong>
+  <p>La puissance nominale indiquée sur la plaque signalétique est la puissance de fonctionnement optimal. En pratique, si la tension du réseau est légèrement différente ou si l'appareil vieillit, la puissance réelle peut différer. Pour les calculs de dimensionnement, on utilise la puissance nominale avec un facteur de sécurité.</p>
+</div>
+
 <script src="../../../nav.js"></script>
 </body>
 </html>

@@ -93,6 +93,131 @@
   <canvas id="chartSon" height="260"></canvas>
 </div>
 
+<!-- ===== SVG COURBE ATTÉNUATION VS FRÉQUENCE ===== -->
+<h2>Affaiblissement acoustique R en fonction de la fréquence</h2>
+<div class="meth">
+  <strong>Méthode :</strong> L'indice d'affaiblissement acoustique R d'une paroi n'est pas identique à toutes les fréquences. En général, R augmente avec la fréquence (les sons aigus sont mieux atténués que les graves). La loi de masse prédit R ≈ 20 log(f) + 20 log(m) − 47.
+</div>
+<div class="svg-wrap">
+<svg width="540" height="270" viewBox="0 0 540 270" xmlns="http://www.w3.org/2000/svg" aria-label="Courbe d'affaiblissement acoustique R en dB en fonction de la fréquence en Hz, avec zones graves, médium et aigus" style="max-width:100%;height:auto">
+  <!-- Fond -->
+  <rect x="0" y="0" width="540" height="270" fill="#f9fafb" rx="8"/>
+  <!-- Zones fréquences -->
+  <rect x="60" y="20" width="120" height="190" fill="#fee2e2" opacity="0.4" rx="4"/>
+  <text x="120" y="15" text-anchor="middle" font-size="12" fill="#dc2626" font-weight="bold">Graves</text>
+  <text x="120" y="222" text-anchor="middle" font-size="10" fill="#dc2626">63–250 Hz</text>
+  <rect x="180" y="20" width="160" height="190" fill="#fef9c3" opacity="0.5" rx="4"/>
+  <text x="260" y="15" text-anchor="middle" font-size="12" fill="#92400e" font-weight="bold">Médium</text>
+  <text x="260" y="222" text-anchor="middle" font-size="10" fill="#92400e">500–2 000 Hz</text>
+  <rect x="340" y="20" width="150" height="190" fill="#d1fae5" opacity="0.4" rx="4"/>
+  <text x="415" y="15" text-anchor="middle" font-size="12" fill="#065f46" font-weight="bold">Aigus</text>
+  <text x="415" y="222" text-anchor="middle" font-size="10" fill="#065f46">4 000–8 000 Hz</text>
+  <!-- Axes -->
+  <line x1="60" y1="210" x2="500" y2="210" stroke="#374151" stroke-width="2"/>
+  <line x1="60" y1="20"  x2="60"  y2="210" stroke="#374151" stroke-width="2"/>
+  <polygon points="500,206 510,210 500,214" fill="#374151"/>
+  <polygon points="56,20 60,12 64,20" fill="#374151"/>
+  <text x="515" y="214" font-size="11" fill="#374151">f (Hz)</text>
+  <text x="10"  y="18"  font-size="11" fill="#374151">R (dB)</text>
+  <!-- Graduations Y -->
+  <line x1="55" y1="185" x2="65" y2="185" stroke="#9ca3af" stroke-width="1"/>
+  <text x="50" y="189" text-anchor="end" font-size="10" fill="#555">10</text>
+  <line x1="55" y1="155" x2="65" y2="155" stroke="#9ca3af" stroke-width="1"/>
+  <text x="50" y="159" text-anchor="end" font-size="10" fill="#555">20</text>
+  <line x1="55" y1="120" x2="65" y2="120" stroke="#9ca3af" stroke-width="1"/>
+  <text x="50" y="124" text-anchor="end" font-size="10" fill="#555">33</text>
+  <line x1="55" y1="90" x2="65" y2="90" stroke="#9ca3af" stroke-width="1"/>
+  <text x="50" y="94" text-anchor="end" font-size="10" fill="#555">43</text>
+  <line x1="55" y1="60" x2="65" y2="60" stroke="#9ca3af" stroke-width="1"/>
+  <text x="50" y="64" text-anchor="end" font-size="10" fill="#555">53</text>
+  <!-- Graduations X (log) -->
+  <line x1="90" y1="205" x2="90" y2="215" stroke="#9ca3af" stroke-width="1"/>
+  <text x="90" y="228" text-anchor="middle" font-size="10" fill="#555">63</text>
+  <line x1="130" y1="205" x2="130" y2="215" stroke="#9ca3af" stroke-width="1"/>
+  <text x="130" y="228" text-anchor="middle" font-size="10" fill="#555">125</text>
+  <line x1="180" y1="205" x2="180" y2="215" stroke="#9ca3af" stroke-width="1"/>
+  <text x="180" y="228" text-anchor="middle" font-size="10" fill="#555">250</text>
+  <line x1="260" y1="205" x2="260" y2="215" stroke="#9ca3af" stroke-width="1"/>
+  <text x="260" y="228" text-anchor="middle" font-size="10" fill="#555">1 000</text>
+  <line x1="340" y1="205" x2="340" y2="215" stroke="#9ca3af" stroke-width="1"/>
+  <text x="340" y="228" text-anchor="middle" font-size="10" fill="#555">2 000</text>
+  <line x1="420" y1="205" x2="420" y2="215" stroke="#9ca3af" stroke-width="1"/>
+  <text x="420" y="228" text-anchor="middle" font-size="10" fill="#555">4 000</text>
+  <line x1="480" y1="205" x2="480" y2="215" stroke="#9ca3af" stroke-width="1"/>
+  <text x="480" y="228" text-anchor="middle" font-size="10" fill="#555">8 000</text>
+  <!-- Courbe paroi légère (m = 10 kg/m²) — R faible, monte régulièrement -->
+  <polyline points="90,200 130,190 180,180 260,155 340,135 420,110 480,95"
+    fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="482" y="92" font-size="10" fill="#f59e0b">Cloison légère</text>
+  <text x="482" y="104" font-size="10" fill="#f59e0b">(m ≈ 10 kg/m²)</text>
+  <!-- Courbe paroi lourde (m = 50 kg/m²) — R plus élevé -->
+  <polyline points="90,185 130,170 180,155 260,120 340,93 420,65 480,48"
+    fill="none" stroke="#2da44e" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="482" y="45" font-size="10" fill="#2da44e">Paroi lourde</text>
+  <text x="482" y="57" font-size="10" fill="#2da44e">(m ≈ 50 kg/m²)</text>
+  <!-- Annotation coïncidence (creux) -->
+  <circle cx="290" cy="126" r="5" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="290" y="112" text-anchor="middle" font-size="10" fill="#dc2626">Creux</text>
+  <text x="290" y="103" text-anchor="middle" font-size="10" fill="#dc2626">coïncidence</text>
+  <!-- Texte bas -->
+  <text x="270" y="248" text-anchor="middle" font-size="11" fill="#374151">R augmente avec f → les graves traversent mieux les parois que les aigus</text>
+</svg>
+<p style="text-align:center;font-size:.85em;color:#666;margin-top:4px"><em>Figure 2 — Affaiblissement acoustique R en fonction de la fréquence : une paroi lourde atténue davantage, mais les sons graves restent difficiles à isoler</em></p>
+</div>
+
+<!-- ===== SVG NIVEAUX SONORES COURANTS ===== -->
+<h2>Niveaux sonores courants – Comparaison visuelle</h2>
+<div class="svg-wrap">
+<svg width="500" height="230" viewBox="0 0 500 230" xmlns="http://www.w3.org/2000/svg" aria-label="Comparaison des niveaux sonores en décibels pour des situations courantes en atelier" style="max-width:100%;height:auto">
+  <!-- Fond -->
+  <rect x="0" y="0" width="500" height="230" fill="#fafafa" rx="8"/>
+  <!-- Axe X -->
+  <line x1="140" y1="195" x2="470" y2="195" stroke="#374151" stroke-width="2"/>
+  <polygon points="470,191 480,195 470,199" fill="#374151"/>
+  <text x="485" y="199" font-size="11" fill="#374151">dB</text>
+  <!-- Graduations -->
+  <line x1="140" y1="190" x2="140" y2="200" stroke="#9ca3af" stroke-width="1"/>
+  <text x="140" y="210" text-anchor="middle" font-size="10" fill="#555">0</text>
+  <line x1="206" y1="190" x2="206" y2="200" stroke="#9ca3af" stroke-width="1"/>
+  <text x="206" y="210" text-anchor="middle" font-size="10" fill="#555">20</text>
+  <line x1="272" y1="190" x2="272" y2="200" stroke="#9ca3af" stroke-width="1"/>
+  <text x="272" y="210" text-anchor="middle" font-size="10" fill="#555">40</text>
+  <line x1="338" y1="190" x2="338" y2="200" stroke="#9ca3af" stroke-width="1"/>
+  <text x="338" y="210" text-anchor="middle" font-size="10" fill="#555">60</text>
+  <line x1="404" y1="190" x2="404" y2="200" stroke="#9ca3af" stroke-width="1"/>
+  <text x="404" y="210" text-anchor="middle" font-size="10" fill="#2da44e" font-weight="bold">80</text>
+  <line x1="457" y1="190" x2="457" y2="200" stroke="#9ca3af" stroke-width="1"/>
+  <text x="457" y="210" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">97</text>
+  <!-- Ligne seuil danger 85 dB -->
+  <line x1="424" y1="5" x2="424" y2="195" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.7"/>
+  <text x="425" y="5" font-size="10" fill="#dc2626" font-weight="bold">85 dB (danger)</text>
+  <!-- Barres horizontales -->
+  <!-- Silence -->
+  <rect x="140" y="15" width="10" height="15" rx="2" fill="#d1d5db"/>
+  <text x="138" y="27" text-anchor="end" font-size="11" fill="#374151">Silence</text>
+  <text x="155" y="27" font-size="10" fill="#6b7280">~3 dB</text>
+  <!-- Conversation -->
+  <rect x="140" y="35" width="200" height="15" rx="2" fill="#60a5fa"/>
+  <text x="138" y="47" text-anchor="end" font-size="11" fill="#374151">Conversation</text>
+  <text x="344" y="47" font-size="10" fill="#2563eb">~60 dB</text>
+  <!-- Scie circulaire -->
+  <rect x="140" y="55" width="280" height="15" rx="2" fill="#f59e0b"/>
+  <text x="138" y="67" text-anchor="end" font-size="11" fill="#374151">Scie circulaire</text>
+  <text x="424" y="67" font-size="10" fill="#78350f">~85 dB</text>
+  <!-- Défonceuse -->
+  <rect x="140" y="75" width="300" height="15" rx="2" fill="#f97316"/>
+  <text x="138" y="87" text-anchor="end" font-size="11" fill="#374151">Défonceuse</text>
+  <text x="444" y="87" font-size="10" fill="#9a3412">~91 dB</text>
+  <!-- Machine CNC -->
+  <rect x="140" y="95" width="317" height="15" rx="2" fill="#dc2626"/>
+  <text x="138" y="107" text-anchor="end" font-size="11" fill="#374151">Machine CNC</text>
+  <text x="461" y="107" font-size="10" fill="#7f1d1d">~97 dB</text>
+  <!-- Seuil audibilité -->
+  <text x="270" y="225" text-anchor="middle" font-size="11" fill="#374151">EPI obligatoires à partir de 85 dB (Code du travail)</text>
+</svg>
+<p style="text-align:center;font-size:.85em;color:#666;margin-top:4px"><em>Figure 3 — Niveaux sonores en atelier de menuiserie/agencement : les équipements de protection individuelle (bouchons, casques) sont obligatoires au-delà de 85 dB</em></p>
+</div>
+
 <!-- ============================================ -->
 <!-- BLOC SOCLE — Exercices très guidés          -->
 <!-- ============================================ -->
