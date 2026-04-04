@@ -1,0 +1,117 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[margin=2cm]{geometry}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+% Couleurs
+\definecolor{bleu}{HTML}{1e3a5f}
+\definecolor{bleuclair}{HTML}{eff6ff}
+\definecolor{gris}{HTML}{64748b}
+
+% Pas de numéro de page
+\pagestyle{empty}
+
+% Commande pour une convocation
+\newcommand{\convocation}[1]{%
+\begin{center}
+
+% En-tête
+{\Large\bfseries\color{bleu}\MakeUppercase{Lycée des Métiers Eugène Hénaff}}\\[4pt]
+{\color{gris} Bagnolet}\\[2pt]
+{\color{gris} Année scolaire 2025\,--\,2026}\\[12pt]
+
+% Ligne de séparation
+\noindent\rule{\textwidth}{1.5pt}\\[14pt]
+
+% Titre
+{\LARGE\bfseries\color{bleu}\MakeUppercase{Convocation CCF -- Mathématiques}}\\[18pt]
+
+\end{center}
+
+% Bloc élève
+\begin{center}
+\colorbox{bleuclair}{%
+  \parbox{0.85\textwidth}{%
+    \centering\vspace{8pt}
+    {\Large\bfseries\color{bleu} #1}\\[4pt]
+    {\color{gris} Classe : Terminale ICCER}
+    \vspace{8pt}
+  }%
+}
+\end{center}
+
+\vspace{16pt}
+
+% Informations de l'épreuve
+\renewcommand{\arraystretch}{1.8}
+\noindent
+\begin{tabular}{@{}>{\bfseries}l@{\hspace{8pt}}p{10cm}@{}}
+Discipline :          & Mathématiques \\
+Sous-épreuve :        & \dotfill \\
+Date :                & \dotfill \\
+Heure de convocation :& \dotfill \\
+Durée :               & 45 min \\
+Salle :               & \dotfill \\
+Matériel autorisé :   & Calculatrice, règle, matériel de géométrie \\
+Examinateur :         & \dotfill \\
+\end{tabular}
+
+\vspace{20pt}
+
+% Note
+\noindent\rule{\textwidth}{0.4pt}\\[6pt]
+{\small\itshape\color{gris}%
+La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.}
+
+\vfill
+
+% Signatures
+\noindent
+\begin{minipage}[t]{0.45\textwidth}
+\centering
+Le chef d'établissement\\[30pt]
+\rule{5cm}{0.4pt}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\centering
+Signature de l'élève\\[30pt]
+\rule{5cm}{0.4pt}
+\end{minipage}
+
+\newpage
+}
+
+\begin{document}
+
+\convocation{BENOMARI Adame}
+\convocation{CORBO Jacopo}
+\convocation{DIABATE Hadi}
+\convocation{EJAZ Aswad}
+\convocation{GHERAB Mohamed-Rayen}
+\convocation{JABOU Mouhanad}
+\convocation{JALLED Wassim}
+\convocation{KAHLOUCHE Rayan}
+\convocation{KAMISSOKO Abdallaye}
+\convocation{KOITA Hadio}
+\convocation{KOITA Moussa}
+\convocation{MANSIATIMA Eli}
+\convocation{MITACHE Yanis}
+\convocation{NEHASSE Ali}
+\convocation{NIANGANE Makhan}
+\convocation{OLIVEIRA Alexandre}
+\convocation{PEREIRA MARQUES Adriano}
+\convocation{RAT Sebastian}
+\convocation{SHTEFANESA Kristin}
+\convocation{SYLLA Mohamed}
+\convocation{TRAORE Ibrahima}
+\convocation{TRAORE Segbe}
+\convocation{TURKI Naïm}
+
+\end{document}

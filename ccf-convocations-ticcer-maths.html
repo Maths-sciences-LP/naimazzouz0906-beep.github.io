@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Convocations CCF Maths – T ICCER 2025-2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #fff; color: #1e293b; line-height: 1.6; }
+
+.convocation {
+  border: 2px solid #1e293b;
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin: 16px auto;
+  max-width: 720px;
+  page-break-inside: avoid;
+}
+.convoc-header {
+  text-align: center;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #1e293b;
+}
+.convoc-etab {
+  font-size: .88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.convoc-annee {
+  font-size: .78rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+.convoc-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+.convoc-student {
+  background: #f0f0f0;
+  border: 1.5px solid #999;
+  border-radius: 6px;
+  padding: 10px 16px;
+  margin: 14px 0;
+  text-align: center;
+}
+.convoc-student-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+.convoc-student-class {
+  font-size: .82rem;
+  color: #64748b;
+}
+.convoc-body {
+  font-size: .88rem;
+  line-height: 1.8;
+}
+.field { margin-bottom: 4px; }
+.field-label { font-weight: 700; color: #334155; }
+.field-blank {
+  display: inline-block;
+  min-width: 200px;
+  border-bottom: 1px solid #94a3b8;
+  margin-left: 4px;
+}
+.convoc-note {
+  font-size: .78rem;
+  color: #64748b;
+  font-style: italic;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #e2e8f0;
+}
+.convoc-signature {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  font-size: .82rem;
+  color: #475569;
+}
+.convoc-signature div { text-align: center; }
+.sig-line {
+  display: block;
+  width: 160px;
+  border-bottom: 1px solid #94a3b8;
+  margin: 28px auto 4px;
+}
+
+/* Impression : 2 convocations par page A4 */
+@media print {
+  body { margin: 0; padding: 0; }
+  .no-print { display: none !important; }
+  .convocation {
+    margin: 10px auto;
+    padding: 18px 22px;
+    max-width: 100%;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  /* Forcer 2 par page */
+  .convocation:nth-child(odd) { page-break-before: auto; }
+  .convocation:nth-child(even) { page-break-after: always; }
+}
+
+/* Écran : bouton imprimer */
+.print-bar {
+  max-width: 720px;
+  margin: 20px auto;
+  text-align: center;
+}
+.btn-print {
+  padding: 12px 28px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-weight: 700;
+  font-size: .95rem;
+  cursor: pointer;
+}
+.btn-print:hover { background: #1d4ed8; }
+.print-info {
+  font-size: .85rem;
+  color: #64748b;
+  margin-top: 8px;
+}
+</style>
+</head>
+<body>
+
+<div class="print-bar no-print">
+  <button class="btn-print" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+  <p class="print-info">23 convocations – T ICCER – Mathématiques – CCF 2025-2026</p>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">BENOMARI Adame</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">CORBO Jacopo</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">DIABATE Hadi</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">EJAZ Aswad</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">GHERAB Mohamed-Rayen</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">JABOU Mouhanad</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">JALLED Wassim</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">KAHLOUCHE Rayan</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">KAMISSOKO Abdallaye</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">KOITA Hadio</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">KOITA Moussa</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">MANSIATIMA Eli</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">MITACHE Yanis</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">NEHASSE Ali</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">NIANGANE Makhan</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">OLIVEIRA Alexandre</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">PEREIRA MARQUES Adriano</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">RAT Sebastian</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">SHTEFANESA Kristin</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">SYLLA Mohamed</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">TRAORE Ibrahima</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">TRAORE Segbe</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="convocation">
+  <div class="convoc-header">
+    <div class="convoc-etab">Lycée des Métiers Eugène Hénaff</div>
+    <div class="convoc-annee">Bagnolet</div>
+    <div class="convoc-annee">Année scolaire 2025 – 2026</div>
+    <div class="convoc-title">Convocation CCF – Mathématiques</div>
+  </div>
+  <div class="convoc-student">
+    <div class="convoc-student-name">TURKI Naïm</div>
+    <div class="convoc-student-class">Classe : Terminale ICCER</div>
+  </div>
+  <div class="convoc-body">
+    <div class="field"><span class="field-label">Discipline :</span> Mathématiques</div>
+    <div class="field"><span class="field-label">Sous-épreuve :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Date :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Heure de convocation :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Durée :</span> 45 min</div>
+    <div class="field"><span class="field-label">Salle :</span> <span class="field-blank"></span></div>
+    <div class="field"><span class="field-label">Matériel autorisé :</span> Calculatrice, règle, matériel de géométrie</div>
+    <div class="field"><span class="field-label">Examinateur :</span> <span class="field-blank"></span></div>
+    <div class="convoc-note">La présence à cette épreuve est obligatoire. En cas d'absence non justifiée, la note de zéro sera attribuée. Tout retard pourra entraîner le refus d'accès à la salle d'examen.</div>
+    <div class="convoc-signature">
+      <div>Le chef d'établissement<span class="sig-line"></span></div>
+      <div>Signature de l'élève<span class="sig-line"></span></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

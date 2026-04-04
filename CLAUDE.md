@@ -285,6 +285,8 @@ Avant de générer du contenu, consulter les fichiers dans `/prompts/` :
 | `prompts/prompt-filiere-eeb-tgt.md` | Contextes pro EEB / TGT (bâtiment, géomètre) |
 | `prompts/prompt-filiere-mee.md` | Contextes pro MEE (maintenance énergétique) |
 | `prompts/prompt-bts.md` | Structure et règles pour les pages BTS maths |
+| `prompts/prompt-cours-universel.md` | Prompt LaTeX universel pour générer un livret de cours (Overleaf) |
+| `prompts/prompt-exercices-universel.md` | Prompt LaTeX universel pour générer un livret d'exercices avec corrections (Overleaf) |
 
 ### Règles contextes professionnels
 
