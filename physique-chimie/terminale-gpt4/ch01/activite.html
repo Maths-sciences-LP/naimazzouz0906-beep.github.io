@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch01 – Image en couleur – Activité | Terminale Grpt 4</title>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#7c3aed;--p-bg:#f5f3ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../groupements.html" class="nb">← Retour aux groupements</a>
+<header>
+  <h1>Chapitre 1 – Produire une image en couleur — Activité de découverte</h1>
+  <p class="sous-titre">Terminale Bac Pro | Physique-Chimie | Groupement 4</p>
+</header>
+
+<div class="situation">
+  <h3>Situation professionnelle — Préparation d'un catalogue publicitaire</h3>
+  <p>
+    Vous travaillez dans le studio de création de l'agence <strong>PixelPrint</strong>. Le directeur artistique vous confie la préparation d'un catalogue publicitaire pour un client. Les fichiers reçus sont de qualités très variées : certaines images ont été capturées avec un smartphone, d'autres avec un appareil professionnel, et certaines ont été téléchargées depuis Internet.
+  </p>
+  <p>
+    Vous devez vérifier que chaque image est utilisable pour l'impression, la corriger si nécessaire, et estimer les tailles de fichiers pour planifier le stockage.
+  </p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Comment évaluer si une image numérique est adaptée à l'impression professionnelle, et comment estimer les ressources informatiques nécessaires ?
+</div>
+
+<div class="objectifs">
+  <strong>Capacités travaillées</strong>
+  <ul>
+    <li>Calculer la résolution en dpi d'une image</li>
+    <li>Estimer la taille d'un fichier image</li>
+    <li>Interpréter le codage RVB d'une couleur</li>
+    <li>Choisir le format de fichier adapté à l'usage</li>
+  </ul>
+</div>
+
+<!-- ===== PARTIE A ===== -->
+<h2>Partie A — Analyse des images reçues</h2>
+
+<h3>Document 1 — Inventaire des images</h3>
+<table>
+  <thead><tr><th>Image</th><th>Dimensions (pixels)</th><th>Utilisation prévue</th><th>Format</th></tr></thead>
+  <tbody>
+    <tr><td>Photo produit A</td><td>3000 × 2000</td><td>Pleine page A4 (21 × 29,7 cm)</td><td>JPEG</td></tr>
+    <tr><td>Logo vectoriel B</td><td>500 × 500</td><td>Vignette 5 × 5 cm</td><td>PNG</td></tr>
+    <tr><td>Illustration C</td><td>800 × 600</td><td>Demi-page A4 (21 × 14,8 cm)</td><td>BMP</td></tr>
+    <tr><td>Photo ambiance D</td><td>6000 × 4000</td><td>Double page A3 (42 × 29,7 cm)</td><td>RAW</td></tr>
+  </tbody>
+</table>
+<p>Pour l'impression offset professionnelle, la résolution minimale recommandée est <strong>300 dpi</strong>. (1 pouce = 2,54 cm)</p>
+
+<div class="exo">
+  <strong>Questions A1 — Vérification des résolutions</strong>
+  <ol>
+    <li>Pour la <strong>photo A</strong> (3000 × 2000 px, pleine page A4 largeur 21 cm) : calcule la résolution en dpi (largeur en pouces = 21/2,54 ≈ 8,27 pouces).</li>
+    <li>La résolution est-elle suffisante pour l'impression (≥ 300 dpi) ?</li>
+    <li>Pour l'<strong>illustration C</strong> (800 × 600 px, demi-page 21 cm de large) : calcule la résolution. Est-elle utilisable ?</li>
+    <li>Pour le <strong>logo B</strong> (500 × 500 px, 5 cm × 5 cm) : calcule la résolution. Est-il utilisable pour cette vignette ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Photo A : largeur en pouces = 8,27 po. Résolution = 3000/8,27 ≈ <strong>363 dpi</strong>.</li>
+      <li>363 dpi > 300 dpi → <strong>utilisable</strong>.</li>
+      <li>Illustration C : 800/8,27 ≈ <strong>97 dpi</strong> < 300 dpi → <strong>non utilisable</strong> pour l'impression professionnelle.</li>
+      <li>Logo B : 5 cm = 5/2,54 ≈ 1,97 pouces. Résolution = 500/1,97 ≈ <strong>254 dpi</strong> < 300 dpi → limite, acceptable pour une vignette de faible taille mais à risque.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== PARTIE B ===== -->
+<h2>Partie B — Gestion des fichiers et du stockage</h2>
+
+<div class="exo">
+  <strong>Questions B1 — Tailles des fichiers</strong>
+  <ol>
+    <li>Calcule la taille non compressée de la <strong>photo A</strong> (3000 × 2000 px, RVB, 3 octets/pixel) en Mo.</li>
+    <li>Calcule la taille non compressée de la <strong>photo D</strong> (6000 × 4000 px, RAW sur 12 bits/canal). En RAW : 3 canaux × 12 bits = 4,5 octets/pixel.</li>
+    <li>Le catalogue contient 48 images de la qualité de la photo A. Quel espace de stockage faut-il prévoir (non compressé) en Go ?</li>
+    <li>Après compression JPEG à 80 % (taille réduite à 15 % de l'original), calcule l'espace final nécessaire.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Photo A : \(3000 \times 2000 \times 3 = 18\,000\,000\) octets = <strong>18 Mo</strong>.</li>
+      <li>Photo D : \(6000 \times 4000 \times 4{,}5 = 108\,000\,000\) octets = <strong>108 Mo</strong>.</li>
+      <li>48 × 18 = 864 Mo ≈ <strong>0,84 Go</strong>.</li>
+      <li>Après JPEG : \(864 \times 0{,}15 \approx 130\) Mo ≈ <strong>0,13 Go</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== PARTIE C ===== -->
+<h2>Partie C — Codes couleur et corrections</h2>
+
+<h3>Document 2 — Couleurs du logo du client</h3>
+<p>Le client fournit la charte graphique de son logo avec les couleurs en code hexadécimal :</p>
+<ul>
+  <li>Bleu corporate : <strong>#003D7A</strong></li>
+  <li>Or doré : <strong>#C8A000</strong></li>
+  <li>Blanc : <strong>#FFFFFF</strong></li>
+</ul>
+
+<div class="exo">
+  <strong>Questions C1 — Décodage des couleurs</strong>
+  <ol>
+    <li>Décode le bleu corporate #003D7A en valeurs décimales (R, V, B). (Rappel : 3D₁₆ = 3×16+13 = 61 ; 7A₁₆ = 7×16+10 = 122)</li>
+    <li>Ce bleu est-il plus fort en rouge, en vert ou en bleu ?</li>
+    <li>Décode l'or doré #C8A000. (C8₁₆ = 12×16+8 = 200 ; A0₁₆ = 10×16+0 = 160)</li>
+    <li>Comment appelle-t-on la couleur obtenue quand R=V=B ? Quelle nuance serait (128, 128, 128) ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>#003D7A → R=0, V=61, B=122.</li>
+      <li>Le bleu est dominant (B=122 > V=61 > R=0).</li>
+      <li>#C8A000 → R=200, V=160, B=0. Couleur or/jaune (rouge et vert forts, sans bleu).</li>
+      <li>Quand R=V=B, la couleur est un <strong>niveau de gris</strong>. (128, 128, 128) est un <strong>gris moyen</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== BILAN ===== -->
+<h2>Bilan de l'activité</h2>
+
+<div class="exo">
+  <strong>Synthèse — Rapport au directeur artistique</strong>
+  <p>Rédige un compte rendu (8–10 lignes) à l'intention du directeur artistique :</p>
+  <ul>
+    <li>Quelles images sont conformes pour l'impression ?</li>
+    <li>Que recommandes-tu pour l'illustration C ?</li>
+    <li>Quel espace de stockage est nécessaire pour le catalogue (compressé) ?</li>
+    <li>Quel format recommandes-tu pour l'archivage final du catalogue ?</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir un exemple de réponse</button>
+  <div class="corr" style="display:none">
+    <p>Après analyse des fichiers reçus, la <strong>photo produit A</strong> (363 dpi) et la <strong>photo ambiance D</strong> (RAW haute résolution) sont conformes aux exigences d'impression à 300 dpi. Le <strong>logo B</strong> est à la limite (254 dpi) : utilisable en vignette mais il serait préférable de demander la version vectorielle au client. <strong>L'illustration C</strong> (97 dpi) est inexploitable pour l'impression ; il faut demander au client une version haute résolution (au moins 2480 × 1750 px pour une demi-page A4 à 300 dpi). Pour le stockage du catalogue (48 images en JPEG 80 % qualité), environ <strong>130 Mo</strong> suffisent. Pour l'archivage définitif, je recommande le format <strong>TIFF sans compression</strong> pour conserver toute la qualité, et JPEG pour la diffusion numérique.</p>
+  </div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

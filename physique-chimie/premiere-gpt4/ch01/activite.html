@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch01 – Lentilles – Activité | Première Grpt 4</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#7c3aed;--p-bg:#f5f3ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../groupements.html" class="nb">← Retour aux groupements</a>
+<header>
+  <h1>Chapitre 1 – Lentilles convergentes et divergentes — Activité de découverte</h1>
+  <p class="sous-titre">Première Bac Pro | Physique-Chimie | Groupement 4</p>
+</header>
+
+<div class="situation">
+  <h3>Situation professionnelle — Contrôle qualité optique</h3>
+  <p>
+    Vous effectuez un stage dans l'entreprise <strong>OptiPrecis</strong>, spécialisée dans la fabrication de systèmes d'imagerie industrielle. Votre mission est de caractériser une lentille inconnue reçue d'un fournisseur : vérifier sa distance focale et déterminer les conditions d'utilisation optimales pour le système de contrôle qualité de l'atelier.
+  </p>
+  <p>
+    Le responsable technique vous donne accès à un banc optique, une source lumineuse, un écran et des cibles graduées.
+  </p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Comment déterminer expérimentalement la distance focale d'une lentille inconnue, et dans quelles conditions forme-t-elle une image nette sur un capteur ?
+</div>
+
+<div class="objectifs">
+  <strong>Capacités travaillées</strong>
+  <ul>
+    <li>Identifier une lentille convergente ou divergente</li>
+    <li>Appliquer la relation de conjugaison</li>
+    <li>Calculer le grandissement et interpréter l'image</li>
+    <li>Exploiter des données expérimentales</li>
+  </ul>
+</div>
+
+<!-- ===== PARTIE A ===== -->
+<h2>Partie A — Identification de la lentille</h2>
+
+<h3>Document 1 — Méthode d'identification visuelle</h3>
+<p>Pour identifier rapidement une lentille :</p>
+<ul>
+  <li><strong>Lentille convergente :</strong> plus épaisse au centre qu'aux bords ; un objet vu à travers apparaît agrandi (si objet proche)</li>
+  <li><strong>Lentille divergente :</strong> plus mince au centre qu'aux bords ; un objet vu à travers apparaît réduit</li>
+</ul>
+
+<div class="exo">
+  <strong>Questions A1</strong>
+  <ol>
+    <li>En regardant à travers la lentille inconnue, vous voyez le texte d'une étiquette agrandi et à l'endroit. De quel type de lentille s'agit-il ? Justifie.</li>
+    <li>Un faisceau de lumière parallèle (lampe de poche lointaine) traverse la lentille. Les rayons convergent en un point derrière la lentille. Confirme-t-on le type de lentille ?</li>
+    <li>Décris la différence entre un foyer objet et un foyer image pour cette lentille.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>C'est une lentille <strong>convergente</strong> : elle forme une image virtuelle agrandie et droite quand l'objet est entre O et F (usage en loupe).</li>
+      <li>Oui : les rayons parallèles convergent vers le foyer image F' → lentille convergente confirmée.</li>
+      <li>Le foyer <strong>image F'</strong> est là où convergent les rayons parallèles à l'axe (côté sortant). Le foyer <strong>objet F</strong> est son symétrique par rapport à O (côté entrant) : un objet placé en F donne des rayons parallèles après la lentille.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== PARTIE B ===== -->
+<h2>Partie B — Mesure de la distance focale</h2>
+
+<h3>Document 2 — Protocole de mesure</h3>
+<p>Pour mesurer \(f'\) sur banc optique :</p>
+<ol>
+  <li>Placer l'objet lumineux (flèche éclairée) à une distance \(p\) mesurable.</li>
+  <li>Déplacer l'écran jusqu'à obtenir une image nette.</li>
+  <li>Lire la distance image \(p'\).</li>
+  <li>Appliquer : \(\dfrac{1}{f'} = \dfrac{1}{p'} + \dfrac{1}{p}\) (attention aux signes : \(p = |\overline{OA}|\) et \(p' = |\overline{OA'}|\) pour un objet réel et une image réelle).</li>
+</ol>
+
+<h3>Document 3 — Résultats expérimentaux</h3>
+<table>
+  <thead><tr><th>Essai</th><th>Distance objet \(p\) (cm)</th><th>Distance image \(p'\) (cm)</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>30</td><td>60</td></tr>
+    <tr><td>2</td><td>40</td><td>40</td></tr>
+    <tr><td>3</td><td>50</td><td>33,3</td></tr>
+    <tr><td>4</td><td>20</td><td>∞ (image à l'infini)</td></tr>
+  </tbody>
+</table>
+
+<div class="exo">
+  <strong>Questions B1</strong>
+  <ol>
+    <li>Pour l'essai 1 (\(p = 30\) cm, \(p' = 60\) cm), applique la relation de conjugaison pour calculer \(f'\). On rappelle : \(\dfrac{1}{f'} = \dfrac{1}{p'} - \dfrac{1}{(-p)} = \dfrac{1}{p'} + \dfrac{1}{p}\).</li>
+    <li>Refais le calcul pour les essais 2 et 3. Sont-ils cohérents ?</li>
+    <li>L'essai 4 montre que l'image est à l'infini quand \(p = 20\) cm. Qu'est-ce que cela signifie pour la position de l'objet ?</li>
+    <li>Quelle est la valeur de \(f'\) mesurée ? Calcule la vergence correspondante.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(\dfrac{1}{f'} = \dfrac{1}{60} + \dfrac{1}{30} = \dfrac{1+2}{60} = \dfrac{3}{60} = \dfrac{1}{20}\), donc \(f' = 20\) cm.</li>
+      <li>Essai 2 : \(1/40 + 1/40 = 2/40 = 1/20\), donc \(f' = 20\) cm ✓. Essai 3 : \(1/33{,}3 + 1/50 = 0{,}03 + 0{,}02 = 0{,}05 = 1/20\) cm ✓. Tous cohérents.</li>
+      <li>L'image à l'infini signifie que l'objet est exactement au foyer objet F, donc à \(f' = 20\) cm de la lentille. Les rayons issus de cet objet ressortent parallèles.</li>
+      <li>\(f' = 20\) cm. Vergence : \(V = 1/0{,}20 = +5\) dioptries.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== PARTIE C ===== -->
+<h2>Partie C — Caractérisation de l'image</h2>
+
+<div class="exo">
+  <strong>Questions C1 — Grandissement et utilisation</strong>
+  <p>La lentille (\(f' = 20\) cm) est utilisée dans un système de contrôle qualité. La pièce à inspecter est placée à \(p = 30\) cm et le capteur CCD est à \(p' = 60\) cm.</p>
+  <ol>
+    <li>Calcule le grandissement \(G = -p'/p = -60/30\).</li>
+    <li>L'image est-elle à l'endroit ou à l'envers sur le capteur ? Le logiciel de traitement d'image doit-il effectuer une rotation de 180° pour afficher l'image à l'endroit ?</li>
+    <li>La pièce à inspecter mesure 5 mm. Quelle est la taille de son image sur le capteur ?</li>
+    <li>Le capteur fait 10 mm × 10 mm. La pièce peut-elle être entièrement inspectée en une seule image ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(G = -60/30 = -2\).</li>
+      <li>G < 0 → image <strong>renversée</strong>. Oui, le logiciel devra retourner l'image pour l'afficher dans le bon sens.</li>
+      <li>Taille image = |G| × taille objet = 2 × 5 mm = <strong>10 mm</strong>.</li>
+      <li>L'image (10 mm) occupe exactement le capteur (10 mm × 10 mm). Inspection complète possible.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== BILAN ===== -->
+<h2>Bilan de l'activité</h2>
+
+<div class="exo">
+  <strong>Synthèse — Rapport technique</strong>
+  <p>Rédige un court rapport pour le responsable technique (8 à 10 lignes) :</p>
+  <ul>
+    <li>Nature et distance focale de la lentille identifiée</li>
+    <li>Conditions de mise au point pour une pièce à 30 cm</li>
+    <li>Grandissement et taille de l'image sur le capteur</li>
+    <li>Recommandation sur l'orientation de la pièce dans le système</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir un exemple de réponse</button>
+  <div class="corr" style="display:none">
+    <p>La lentille testée est une lentille <strong>convergente</strong> de distance focale \(f' = 20\) cm (vergence = +5 dioptries), ce qui correspond aux spécifications du fournisseur. Pour inspecter une pièce placée à 30 cm de la lentille, le capteur CCD doit être positionné à <strong>60 cm</strong> derrière la lentille pour obtenir une image nette. Le grandissement est de −2 : l'image est renversée et 2 fois plus grande que la pièce. Pour une pièce de 5 mm, l'image sur le capteur est de 10 mm, ce qui remplit exactement notre capteur 10 × 10 mm. Il faudra configurer le logiciel de traitement d'image pour effectuer une rotation de 180° et afficher la pièce dans le bon sens.</p>
+  </div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

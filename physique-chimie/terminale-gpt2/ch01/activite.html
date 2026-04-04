@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch01 – Induction électromagnétique – Activité | Terminale Gpt 2</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../groupements.html" class="nb">← Retour aux groupements</a>
+<header>
+  <h1>Chapitre 1 – L'induction électromagnétique — Activité de découverte</h1>
+  <p class="sous-titre">Terminale Bac Pro | Physique-Chimie | Groupement 2</p>
+</header>
+
+<div class="situation">
+  <h3>Situation professionnelle — L'éolienne communautaire</h3>
+  <p>
+    La commune de Beauvent vient d'installer une éolienne de 10 kW sur un terrain communal. Vous êtes technicien en énergies renouvelables et vous êtes chargé de <strong>mettre en service l'alternateur</strong> de cette éolienne et de vérifier ses performances électriques lors de la journée inaugurale.
+  </p>
+  <p>
+    Le fabricant a fourni la fiche technique de l'alternateur et vous devez valider que l'installation est conforme aux attentes avant de raccorder l'éolienne au réseau électrique du village.
+  </p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Comment l'éolienne convertit-elle l'énergie du vent en énergie électrique, et comment vérifier que le rendement est conforme aux spécifications du fabricant ?
+</div>
+
+<div class="objectifs">
+  <strong>Capacités travaillées</strong>
+  <ul>
+    <li>Identifier le phénomène physique à l'origine de la production d'électricité</li>
+    <li>Appliquer la loi de Lenz pour déterminer le sens du courant induit</li>
+    <li>Calculer le rendement d'un alternateur</li>
+    <li>Exploiter des données d'une fiche technique</li>
+  </ul>
+</div>
+
+<!-- ===== PARTIE A ===== -->
+<h2>Partie A — Principe de fonctionnement de l'alternateur</h2>
+
+<h3>Document 1 — Schéma simplifié de l'alternateur</h3>
+<p>L'alternateur de l'éolienne est constitué de :</p>
+<ul>
+  <li>Un <strong>rotor</strong> : aimants permanents solidaires de l'axe de rotation (tourne avec les pales)</li>
+  <li>Un <strong>stator</strong> : bobines fixes enroulées autour d'un noyau ferromagnétique</li>
+</ul>
+<p>Quand les pales tournent, les aimants du rotor tournent aussi, et le champ magnétique à travers les bobines du stator varie continuellement.</p>
+
+<div class="exo">
+  <strong>Questions A1</strong>
+  <ol>
+    <li>Quel est le phénomène physique qui crée la tension électrique dans les bobines du stator ?</li>
+    <li>Quelle est la condition nécessaire pour que ce phénomène se produise ?</li>
+    <li>Si l'éolienne ne tourne pas (vent nul), y a-t-il production d'électricité ? Justifie.</li>
+    <li>Identifie le type de situation d'induction (circuit fixe/champ variable ou circuit mobile/champ constant).</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>C'est le phénomène d'<strong>induction électromagnétique</strong> (découvert par Faraday en 1831).</li>
+      <li>Il faut une <strong>variation du champ magnétique</strong> (ou du flux) à travers les bobines.</li>
+      <li>Non. Si les pales ne tournent pas, les aimants sont fixes, le champ ne varie pas → pas d'induction → pas de tension.</li>
+      <li>Les bobines (stator) sont fixes ; les aimants (rotor) tournent → champ variable dans les circuits fixes : c'est la situation <strong>circuit fixe / champ variable</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== PARTIE B ===== -->
+<h2>Partie B — La loi de Lenz</h2>
+
+<h3>Document 2 — Modèle simplifié d'une spire</h3>
+<p>Pour comprendre le sens du courant induit, on modélise une spire de l'alternateur. À l'instant t₁, le pôle Nord d'un aimant s'approche de la face gauche de la spire.</p>
+
+<div class="exo">
+  <strong>Questions B1</strong>
+  <ol>
+    <li>Le flux magnétique à travers la spire augmente-t-il ou diminue-t-il quand le pôle Nord s'approche ?</li>
+    <li>D'après la loi de Lenz, le courant induit s'oppose-t-il à cette augmentation ? Comment ?</li>
+    <li>La face gauche de la spire doit-elle se comporter comme un pôle Nord ou un pôle Sud pour s'opposer à l'approche de l'aimant ? Justifie.</li>
+    <li>À l'instant t₂, le pôle Nord s'éloigne. Décris ce qui se passe pour le sens du courant induit.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Le flux <strong>augmente</strong> (l'aimant se rapproche, plus de lignes de champ traversent la spire).</li>
+      <li>Oui. Selon Lenz, le courant induit crée un champ qui s'oppose à l'augmentation → il crée un champ de sens opposé au champ de l'aimant dans la spire.</li>
+      <li>Pôle <strong>Nord</strong> : pour repousser le pôle Nord qui arrive, la face gauche doit être un pôle Nord (pôles identiques = répulsion).</li>
+      <li>Quand le pôle Nord s'éloigne, le flux diminue. Lenz : le courant induit s'oppose à la diminution → face gauche devient pôle <strong>Sud</strong> pour attirer l'aimant qui s'éloigne. Le sens du courant s'est <strong>inversé</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== PARTIE C ===== -->
+<h2>Partie C — Bilan énergétique de l'alternateur</h2>
+
+<h3>Document 3 — Fiche technique de l'alternateur</h3>
+<table>
+  <thead><tr><th>Paramètre</th><th>Valeur</th></tr></thead>
+  <tbody>
+    <tr><td>Puissance nominale électrique</td><td>10 kW</td></tr>
+    <tr><td>Rendement garanti par le fabricant</td><td>≥ 92 %</td></tr>
+    <tr><td>Vitesse de rotation nominale</td><td>200 tr/min</td></tr>
+    <tr><td>Tension de sortie (efficace)</td><td>400 V triphasé</td></tr>
+    <tr><td>Pertes totales à pleine charge</td><td>≤ 880 W</td></tr>
+  </tbody>
+</table>
+
+<h3>Document 4 — Mesures lors de la mise en service</h3>
+<table>
+  <thead><tr><th>Grandeur mesurée</th><th>Valeur mesurée</th></tr></thead>
+  <tbody>
+    <tr><td>Puissance mécanique reçue (courantomètre sur turbine)</td><td>10,8 kW</td></tr>
+    <tr><td>Puissance électrique délivrée (analyseur réseau)</td><td>10,0 kW</td></tr>
+    <tr><td>Tension de sortie</td><td>401 V</td></tr>
+  </tbody>
+</table>
+
+<div class="exo">
+  <strong>Questions C1</strong>
+  <ol>
+    <li>Calcule le rendement mesuré lors de la mise en service : \(\eta = P_{\text{élec}} / P_{\text{méc}}\).</li>
+    <li>Ce rendement est-il conforme aux spécifications du fabricant (≥ 92 %) ?</li>
+    <li>Calcule les pertes réelles. Sont-elles inférieures au maximum garanti (880 W) ?</li>
+    <li>Sur une journée de vent fort (10 h à pleine charge), calcule l'énergie électrique produite en kWh.</li>
+    <li>Si cette énergie est valorisée à 0,15 €/kWh (contrat de rachat), calcule le revenu journalier.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(\eta = \dfrac{10{,}0}{10{,}8} \approx 0{,}926\) soit <strong>92,6 %</strong>.</li>
+      <li>Oui : 92,6 % ≥ 92 %. L'alternateur est conforme.</li>
+      <li>Pertes = 10 800 − 10 000 = <strong>800 W</strong>. 800 W < 880 W : conforme.</li>
+      <li>\(E = P \times t = 10{,}0 \times 10 = 100\) kWh.</li>
+      <li>Revenu = \(100 \times 0{,}15 = 15\) €.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== BILAN ===== -->
+<h2>Bilan de l'activité</h2>
+
+<div class="exo">
+  <strong>Synthèse — Rapport de mise en service</strong>
+  <p>Rédige un court rapport de mise en service (8 à 10 lignes) répondant aux questions suivantes :</p>
+  <ul>
+    <li>Quel phénomène physique permet à l'éolienne de produire de l'électricité ?</li>
+    <li>L'alternateur est-il conforme aux spécifications du fabricant ? (rendement et pertes)</li>
+    <li>Quelle est l'énergie produite sur une journée typique (10 h) ?</li>
+    <li>Une recommandation pour maximiser la production.</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir un exemple de réponse</button>
+  <div class="corr" style="display:none">
+    <p>L'éolienne produit de l'électricité grâce au phénomène d'<strong>induction électromagnétique</strong> : la rotation des aimants du rotor crée une variation du champ magnétique dans les bobines du stator, ce qui génère une tension alternative sinusoïdale. Lors de la mise en service, le rendement mesuré est de 92,6 %, ce qui est conforme à la garantie fabricant (≥ 92 %). Les pertes de 800 W sont inférieures au maximum garanti de 880 W. Sur une journée de vent fort (10 h), l'éolienne produit 100 kWh, soit un revenu de 15 € au tarif de rachat. Pour maximiser la production, il est recommandé d'optimiser l'orientation des pales en fonction de la direction du vent (système de girouette automatique).</p>
+  </div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

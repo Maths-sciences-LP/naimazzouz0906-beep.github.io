@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch01 – Image en couleur – Exercices | Terminale Grpt 4</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#7c3aed;--p-bg:#f5f3ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../groupements.html" class="nb">← Retour aux groupements</a>
+<header>
+  <h1>Chapitre 1 – Produire une image en couleur — Exercices</h1>
+  <p class="sous-titre">Terminale Bac Pro | Physique-Chimie | Groupement 4</p>
+</header>
+
+<!-- ===== SOCLE ===== -->
+<h2>Niveau Socle</h2>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 1 — Pixel et image numérique</strong>
+  <p>Un technicien en imprimerie numérique prépare une image pour affichage sur écran.</p>
+  <ol>
+    <li>Qu'est-ce qu'un pixel ?</li>
+    <li>Une image fait 1920 × 1080 pixels. Calcule le nombre total de pixels.</li>
+    <li>Qu'est-ce que la résolution d'un écran (en pixels par pouce, ppi) ?</li>
+    <li>Un écran 4K a une résolution de 3840 × 2160. A-t-il plus ou moins de pixels que l'écran 1080p ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Un <strong>pixel</strong> (contraction de "picture element") est le plus petit élément d'une image numérique, correspondant à un point de couleur.</li>
+      <li>\(1920 \times 1080 = \mathbf{2\,073\,600}\) pixels ≈ 2 Mpixels.</li>
+      <li>La résolution indique le nombre de pixels par pouce (ppi) : plus elle est élevée, plus l'image est fine et détaillée.</li>
+      <li>4K : \(3840 \times 2160 = 8{,}3\) Mpixels > 2 Mpixels. L'écran 4K a 4 fois plus de pixels.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 2 — Synthèse additive RVB</strong>
+  <p>Sur un écran numérique, les couleurs sont produites par synthèse additive RVB (Rouge, Vert, Bleu).</p>
+  <ol>
+    <li>Complète : Rouge + Vert = __________ ; Rouge + Bleu = __________ ; Vert + Bleu = __________</li>
+    <li>Que produit la combinaison Rouge + Vert + Bleu à leur maximum ?</li>
+    <li>Que produit l'absence des trois composantes (R=0, V=0, B=0) ?</li>
+    <li>Un pixel a les valeurs (R=255, V=0, B=0). De quelle couleur est-il ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>R + V = <strong>Jaune</strong> ; R + B = <strong>Magenta</strong> ; V + B = <strong>Cyan</strong>.</li>
+      <li>R + V + B (maximum) = <strong>Blanc</strong>.</li>
+      <li>R=V=B=0 → <strong>Noir</strong>.</li>
+      <li>Rouge pur (R=255, V=0, B=0).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 3 — Codage sur 8 bits</strong>
+  <p>Chaque composante de couleur est codée sur 8 bits.</p>
+  <ol>
+    <li>Combien de valeurs différentes peut prendre une composante codée sur 8 bits ?</li>
+    <li>Quelle est la valeur minimale ? La valeur maximale ?</li>
+    <li>Un pixel RVB est codé sur 3 × 8 = 24 bits. Combien de couleurs différentes peut-on représenter ?</li>
+    <li>Un pixel (R=128, V=128, B=128) correspond à quelle couleur ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(2^8 = \mathbf{256}\) valeurs (de 0 à 255).</li>
+      <li>Minimum : <strong>0</strong> (absence de couleur) ; Maximum : <strong>255</strong> (couleur maximale).</li>
+      <li>\(256^3 = 2^{24} \approx \mathbf{16{,}7\text{ millions}}\) de couleurs.</li>
+      <li>Les trois composantes sont égales (R=V=B) → couleur <strong>grise</strong> (gris moyen).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 4 — Taille d'une image</strong>
+  <p>Un technicien calcule la taille de différentes images non compressées :</p>
+  <p>Formule : taille (octets) = largeur × hauteur × profondeur couleur (octets/pixel)</p>
+  <ol>
+    <li>Une image 800 × 600 pixels en niveaux de gris (1 octet/pixel) : calcule la taille en octets et en kilo-octets.</li>
+    <li>Une image 1024 × 768 pixels en RVB (3 octets/pixel) : calcule la taille en Mo.</li>
+    <li>Pourquoi les fichiers JPEG sont-ils beaucoup plus petits que les fichiers BMP ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Taille = \(800 \times 600 \times 1 = 480\,000\) octets = <strong>480 ko</strong>.</li>
+      <li>Taille = \(1024 \times 768 \times 3 = 2\,359\,296\) octets ≈ <strong>2,25 Mo</strong>.</li>
+      <li>Le format JPEG utilise une <strong>compression avec pertes</strong> qui réduit la taille du fichier en supprimant des informations jugées peu perceptibles par l'œil humain.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 5 — Niveaux de gris</strong>
+  <p>En niveaux de gris, chaque pixel est codé sur 8 bits, de 0 (noir) à 255 (blanc).</p>
+  <ol>
+    <li>Quelle est la valeur d'un pixel gris à 50 % de blanc ?</li>
+    <li>Une image 640 × 480 en niveaux de gris sur 8 bits : calcule sa taille en Mo.</li>
+    <li>Pour convertir une image RVB en niveaux de gris, on calcule la moyenne des 3 composantes. Calcule la valeur de gris d'un pixel (R=150, V=90, B=60).</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>50 % de 255 ≈ <strong>128</strong> (valeur 127 ou 128 selon arrondi).</li>
+      <li>Taille = \(640 \times 480 \times 1 = 307\,200\) octets ≈ <strong>0,293 Mo</strong> ≈ 300 ko.</li>
+      <li>Niveau de gris = \((150 + 90 + 60)/3 = 300/3 = \mathbf{100}\).</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== STANDARD ===== -->
+<h2>Niveau Standard</h2>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 6 — Résolution et impression</strong>
+  <p>Un technicien en imprimerie grand format doit imprimer une affiche de 100 cm × 70 cm à une résolution de 150 dpi (points par pouce, 1 pouce = 2,54 cm).</p>
+  <ol>
+    <li>Calcule le nombre de pixels par centimètre (150 dpi ÷ 2,54).</li>
+    <li>Calcule le nombre de pixels nécessaires en largeur et en hauteur.</li>
+    <li>Calcule le nombre total de pixels de l'image.</li>
+    <li>La taille du fichier RVB non compressé est-elle raisonnable pour un travail d'impression professionnel ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(150/2{,}54 \approx 59{,}1\) pixels/cm.</li>
+      <li>Largeur : \(100 \times 59{,}1 \approx 5910\) pixels. Hauteur : \(70 \times 59{,}1 \approx 4137\) pixels.</li>
+      <li>\(5910 \times 4137 \approx 24{,}5\) Mpixels.</li>
+      <li>Taille RVB = \(24{,}5 \times 10^6 \times 3 \approx 73{,}5\) Mo. C'est un fichier volumineux mais gérable pour un poste professionnel (utilisation du format TIFF ou JPEG haute qualité).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 7 — Capteur et dématriçage</strong>
+  <p>Un capteur CMOS de 12 Mpixels utilise un filtre de Bayer : les pixels sont disposés en R, V, V, B dans des carrés de 2×2.</p>
+  <ol>
+    <li>Dans un carré de 2×2 pixels du filtre de Bayer, combien y a-t-il de pixels rouges, verts, bleus ?</li>
+    <li>Pourquoi y a-t-il deux fois plus de pixels verts que de rouges ou bleus ?</li>
+    <li>Qu'est-ce que le dématriçage ?</li>
+    <li>Après dématriçage, un fichier RAW de 12 Mpixels non compressé sur 12 bits par composante : calcule sa taille en Mo.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>1 rouge, 2 verts, 1 bleu.</li>
+      <li>L'œil humain est plus sensible au vert. Plus de pixels verts améliore la perception de la luminosité et de la finesse de l'image.</li>
+      <li>Le dématriçage est l'algorithme qui reconstitue la couleur complète (R, V, B) de chaque pixel à partir de ses voisins sur le capteur.</li>
+      <li>12 Mpixels × 3 composantes × 12 bits = 12 × 10⁶ × 3 × 1,5 octets = 54 Mo.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 8 — Codage hexadécimal des couleurs</strong>
+  <p>En conception graphique, les couleurs sont souvent codées en hexadécimal (#RRGGBB).</p>
+  <ol>
+    <li>La couleur #FF0000 : identifie R, V, B en décimal. De quelle couleur s'agit-il ?</li>
+    <li>La couleur #FFFFFF : quelle couleur ?</li>
+    <li>La couleur #000000 : quelle couleur ?</li>
+    <li>Un bleu de valeur décimale (R=0, V=102, B=204) : convertis chaque composante en hexadécimal. (Rappel : 102 = 6×16+6 = 66₁₆ ; 204 = 12×16+12 = CC₁₆)</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>#FF0000 → R=255, V=0, B=0 → <strong>Rouge pur</strong>.</li>
+      <li>#FFFFFF → R=255, V=255, B=255 → <strong>Blanc</strong>.</li>
+      <li>#000000 → R=0, V=0, B=0 → <strong>Noir</strong>.</li>
+      <li>R=0 → 00 ; V=102 → 66 ; B=204 → CC → code : <strong>#0066CC</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 9 — Transfert de fichiers</strong>
+  <p>Un technicien en imprimerie envoie un fichier image de 500 Mo via le réseau de l'entreprise.</p>
+  <ol>
+    <li>La vitesse de transfert est de 100 Mbit/s. Calcule le temps de transfert (attention : 1 octet = 8 bits).</li>
+    <li>En Wi-Fi (débit réel estimé : 25 Mbit/s), recalcule le temps de transfert.</li>
+    <li>En fibre optique (débit théorique : 1 Gbit/s, débit réel : 800 Mbit/s), calcule le temps.</li>
+    <li>Justifie le choix de la fibre optique pour ce transfert.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>500 Mo = 500 × 8 = 4000 Mbit. Temps = 4000/100 = <strong>40 s</strong>.</li>
+      <li>Temps Wi-Fi = 4000/25 = <strong>160 s</strong> ≈ 2,7 min.</li>
+      <li>Temps fibre = 4000/800 = <strong>5 s</strong>.</li>
+      <li>La fibre est 8 fois plus rapide que le réseau filaire à 100 Mbit/s et 32 fois plus rapide que le Wi-Fi, ce qui est décisif pour des fichiers professionnels volumineux.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 10 — Impression et résolution</strong>
+  <p>Un technicien reçoit deux images pour impression sur une bannière 200 cm × 100 cm :</p>
+  <ul>
+    <li>Image A : 2362 × 1181 pixels (30 dpi)</li>
+    <li>Image B : 7874 × 3937 pixels (100 dpi)</li>
+  </ul>
+  <ol>
+    <li>Calcule la résolution en dpi de l'image A (en sachant que l'impression est à 200 cm = 78,7 pouces).</li>
+    <li>Pour une impression de qualité acceptable, 50 dpi minimum sont recommandés. Quelle image convient ?</li>
+    <li>Quelle est la taille du fichier RVB non compressé pour l'image B ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Image A : 2362 pixels pour 78,7 pouces → \(2362/78{,}7 \approx 30\) dpi. Résolution trop faible.</li>
+      <li>Image B : \(7874/78{,}7 = 100\) dpi ≥ 50 dpi : l'<strong>image B</strong> convient.</li>
+      <li>Taille = \(7874 \times 3937 \times 3 \approx 92{,}9\) Mo.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 11 — Synthèse soustractive vs additive</strong>
+  <p>Un technicien travaille alternativement sur écran (synthèse additive) et en impression (synthèse soustractive CMJN).</p>
+  <ol>
+    <li>En impression CMJN, quelles sont les couleurs primaires ?</li>
+    <li>En synthèse soustractive, que donne Cyan + Magenta ?</li>
+    <li>Pourquoi utilise-t-on CMJN (avec le Noir) et non CMJ seulement ?</li>
+    <li>Un fichier préparé pour l'écran (RVB) doit être converti pour l'impression (CMJN). Pourquoi les couleurs peuvent-elles paraître différentes ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>CMJN : <strong>Cyan, Magenta, Jaune, Noir</strong>.</li>
+      <li>Cyan + Magenta = <strong>Bleu</strong>.</li>
+      <li>C + M + J théoriquement = noir, mais en pratique donne un brun foncé imparfait. On ajoute le Noir (N) pour des noirs francs et pour économiser les encres colorées.</li>
+      <li>Les espaces colorimétriques RVB (lumière) et CMJN (encres) ne couvrent pas les mêmes gammes de couleurs. Certaines couleurs vives à l'écran sont impossibles à reproduire avec des encres.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 12 — Bilan d'un projet d'impression</strong>
+  <p>Un technicien en imprimerie numérique prépare un catalogue de 48 pages A4. Chaque page contient une image RVB de 2480 × 3508 pixels (300 dpi pour impression A4).</p>
+  <ol>
+    <li>Calcule la taille d'une image non compressée (3 octets/pixel) en Mo.</li>
+    <li>Calcule la taille totale du catalogue (48 pages) en Go.</li>
+    <li>Le responsable de production demande que les images soient compressées en JPEG à 80 % de qualité, ce qui réduit la taille à 10 % de l'original. Calcule la taille finale.</li>
+    <li>Cette résolution (300 dpi) est-elle adaptée à l'impression A4 professionnelle ? Justifie.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Taille = \(2480 \times 3508 \times 3 = 26\,099\,520\) octets ≈ <strong>24,9 Mo</strong>.</li>
+      <li>Total = \(48 \times 24{,}9 \approx 1195\) Mo ≈ <strong>1,2 Go</strong>.</li>
+      <li>Après compression : \(1195 \times 0{,}10 \approx 119{,}5\) Mo ≈ <strong>120 Mo</strong>.</li>
+      <li>300 dpi est la résolution standard pour l'impression professionnelle offset et numérique. Elle garantit un rendu net à la distance de lecture normale (30-40 cm).</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== APPROFONDISSEMENT ===== -->
+<h2>Niveau Approfondissement</h2>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <strong>Exercice 13 — Traitement d'image : histogramme</strong>
+  <p>Un technicien en imagerie médicale analyse l'histogramme d'une image en niveaux de gris. L'histogramme représente la distribution des valeurs de pixels (0 à 255).</p>
+  <ol>
+    <li>Une image dont les valeurs de pixels sont concentrées entre 180 et 255 est-elle plutôt sombre, normale ou surexposée ?</li>
+    <li>Pour corriger une image sombre (valeurs concentrées entre 0 et 80), on applique : \(p' = p \times 255/80\). Que devient un pixel de valeur 40 ?</li>
+    <li>Cette transformation est-elle linéaire ? Quelles en sont les limites ?</li>
+    <li>Pourquoi cette correction par histogramme est-elle utile en imagerie médicale (radiographie, IRM) ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Image <strong>surexposée</strong> (trop lumineuse).</li>
+      <li>\(p' = 40 \times 255/80 \approx 128\). Le pixel passe de sombre (40) à gris moyen (128).</li>
+      <li>Oui, la transformation est <strong>linéaire</strong>. Limite : les pixels > 80 dépassent 255 et sont écrêtés (perte d'information dans les hautes lumières).</li>
+      <li>Un mauvais contraste peut masquer des détails anatomiques importants (tumeurs, calcifications). L'ajustement d'histogramme permet de révéler des structures que l'œil ne distingue pas sans traitement.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <strong>Exercice 14 — Compression JPEG et artefacts</strong>
+  <p>La compression JPEG divise l'image en blocs de 8×8 pixels et applique une transformée en cosinus discrète (DCT) pour éliminer les fréquences peu visibles.</p>
+  <ol>
+    <li>Un bloc de 8×8 pixels en RVB non compressé : calcule sa taille en octets.</li>
+    <li>Après compression JPEG à faible qualité (taux 10:1), quelle est la taille de ce bloc ?</li>
+    <li>Qu'appelle-t-on les "artefacts de compression" JPEG ? Dans quel contexte sont-ils problématiques ?</li>
+    <li>Pour une image médicale destinée au diagnostic, vaut-il mieux utiliser un format sans perte (PNG/TIFF) ou avec perte (JPEG) ? Justifie.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Taille = \(8 \times 8 \times 3 = 192\) octets.</li>
+      <li>Taille compressée = \(192/10 \approx 19\) octets.</li>
+      <li>Les artefacts JPEG sont des dégradations visibles de l'image : carrés (contours de blocs 8×8), flou des détails fins, halos autour des contours. Problématiques en imagerie médicale, scientifique ou pour l'impression grand format haute qualité.</li>
+      <li>Sans perte (PNG/TIFF) : tout pixel est identique à l'original. En diagnostic médical, une erreur introduite par la compression pourrait fausser l'interprétation d'une tumeur ou d'une anomalie. La norme DICOM (imagerie médicale) impose des formats sans perte ou avec compression réversible.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <strong>Exercice 15 — Bilan d'un studio d'impression</strong>
+  <p>Un studio d'impression numérique traite quotidiennement 200 images. Le tableau suivant récapitule la production :</p>
+  <table>
+    <thead><tr><th>Type de production</th><th>Résolution</th><th>Format</th><th>Nombre</th></tr></thead>
+    <tbody>
+      <tr><td>Affiches A2 (42×59 cm)</td><td>150 dpi</td><td>RVB non compressé</td><td>50</td></tr>
+      <tr><td>Cartes de visite (9×5 cm)</td><td>300 dpi</td><td>CMJN TIFF</td><td>100</td></tr>
+      <tr><td>Bannières (200×80 cm)</td><td>72 dpi</td><td>RVB JPEG (8:1)</td><td>50</td></tr>
+    </tbody>
+  </table>
+  <ol>
+    <li>Calcule le nombre de pixels pour une affiche A2 à 150 dpi (1 pouce = 2,54 cm).</li>
+    <li>Calcule la taille d'une affiche A2 RVB non compressée en Mo.</li>
+    <li>Calcule la taille totale de stockage journalier pour les affiches A2 (50 fichiers).</li>
+    <li>Quelle capacité de stockage minimale faut-il prévoir pour 1 mois (22 jours ouvrés) en Go ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Pixels/cm = 150/2,54 ≈ 59,1 ppc. Largeur : \(42 \times 59{,}1 \approx 2482\) px. Hauteur : \(59 \times 59{,}1 \approx 3487\) px.</li>
+      <li>Taille = \(2482 \times 3487 \times 3 \approx 25{,}97\) Mo ≈ <strong>26 Mo</strong>.</li>
+      <li>50 affiches × 26 Mo = <strong>1300 Mo</strong> ≈ 1,3 Go/jour.</li>
+      <li>22 jours × 1,3 Go ≈ <strong>28,6 Go</strong>. Prévoir au minimum 30 Go pour ce seul type de production.</li>
+    </ol>
+  </div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

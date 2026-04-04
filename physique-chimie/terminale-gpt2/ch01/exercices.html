@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch01 – Induction électromagnétique – Exercices | Terminale Gpt 2</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../groupements.html" class="nb">← Retour aux groupements</a>
+<header>
+  <h1>Chapitre 1 – L'induction électromagnétique — Exercices</h1>
+  <p class="sous-titre">Terminale Bac Pro | Physique-Chimie | Groupement 2</p>
+</header>
+
+<!-- ===== SOCLE ===== -->
+<h2>Niveau Socle</h2>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 1 — Comprendre l'induction</strong>
+  <p>Un apprenti électricien réalise l'expérience suivante : il approche un aimant d'une bobine reliée à un galvanomètre.</p>
+  <ol>
+    <li>Que lit-il sur le galvanomètre quand l'aimant s'approche ?</li>
+    <li>Que lit-il quand l'aimant est immobile près de la bobine ?</li>
+    <li>Que lit-il quand l'aimant s'éloigne ?</li>
+    <li>Complète : pour qu'il y ait induction, il faut que le champ magnétique soit ____________.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>L'aiguille du galvanomètre <strong>dévie</strong> dans un sens : il y a un courant induit.</li>
+      <li>L'aiguille est à <strong>zéro</strong> : pas de variation de champ, pas de courant induit.</li>
+      <li>L'aiguille dévie dans le sens <strong>opposé</strong>.</li>
+      <li>Pour qu'il y ait induction, il faut que le champ magnétique soit <strong>variable</strong> (en cours de variation).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 2 — Loi de Lenz (sens du courant induit)</strong>
+  <p>Un technicien en génie électrique approche le pôle Nord d'un aimant vers la face gauche d'une bobine.</p>
+  <ol>
+    <li>Le flux magnétique à travers la bobine augmente-t-il ou diminue-t-il ?</li>
+    <li>D'après la loi de Lenz, le courant induit s'oppose-t-il à cette variation ?</li>
+    <li>La face gauche de la bobine devient-elle un pôle Nord ou un pôle Sud ? Justifie.</li>
+    <li>Si on éloigne l'aimant, que devient la face gauche de la bobine ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Le flux <strong>augmente</strong> car l'aimant se rapproche.</li>
+      <li>Oui, d'après Lenz, le courant induit <strong>s'oppose</strong> à l'augmentation du flux.</li>
+      <li>La face gauche devient un pôle <strong>Nord</strong> pour repousser l'aimant qui arrive (opposition).</li>
+      <li>En éloignant l'aimant, le flux diminue. La face gauche devient un pôle <strong>Sud</strong> pour attirer l'aimant et s'opposer à la diminution.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 3 — L'alternateur</strong>
+  <p>Sofia visite une centrale électrique. Le technicien lui explique qu'un alternateur transforme l'énergie mécanique en énergie électrique.</p>
+  <ol>
+    <li>Quel est le principe physique utilisé dans un alternateur ?</li>
+    <li>Quel type de tension produit un alternateur : continue ou alternative ?</li>
+    <li>Le rendement d'un alternateur industriel est de 95 %. Que signifie cette valeur ?</li>
+    <li>Pour produire 950 W électriques, quelle puissance mécanique doit-on fournir ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>L'alternateur utilise le phénomène d'<strong>induction électromagnétique</strong>.</li>
+      <li>Un alternateur produit une tension <strong>alternative</strong> sinusoïdale.</li>
+      <li>95 % signifie que 95 % de la puissance mécanique fournie est convertie en puissance électrique ; 5 % est perdue (échauffement, frottements).</li>
+      <li>\(P_{\text{méc}} = \dfrac{P_{\text{élec}}}{\eta} = \dfrac{950}{0{,}95} = 1000\) W = 1 kW.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 4 — Vrai ou faux</strong>
+  <p>Indique si chaque affirmation est vraie ou fausse, et corrige les erreurs :</p>
+  <ol>
+    <li>Un courant induit apparaît même si le champ magnétique est constant.</li>
+    <li>La loi de Lenz dit que le courant induit s'oppose à la cause qui lui a donné naissance.</li>
+    <li>Un alternateur convertit l'énergie électrique en énergie mécanique.</li>
+    <li>Le rendement d'un alternateur peut être supérieur à 1.</li>
+    <li>Plus la variation de champ magnétique est rapide, plus la tension induite est grande.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li><strong>Faux.</strong> Il faut une <em>variation</em> du champ pour qu'il y ait induction.</li>
+      <li><strong>Vrai.</strong></li>
+      <li><strong>Faux.</strong> L'alternateur convertit l'énergie mécanique en énergie électrique (c'est la dynamo/générateur, pas le moteur).</li>
+      <li><strong>Faux.</strong> Le rendement est toujours \(\leq 1\) (conservation de l'énergie).</li>
+      <li><strong>Vrai.</strong> La tension induite est proportionnelle à la vitesse de variation du flux.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 5 — Calcul de rendement</strong>
+  <p>L'alternateur d'une éolienne reçoit une puissance mécanique \(P_{\text{méc}} = 2{,}5\) kW et délivre une puissance électrique \(P_{\text{élec}} = 2{,}1\) kW.</p>
+  <ol>
+    <li>Calcule le rendement \(\eta = P_{\text{élec}} / P_{\text{méc}}\) (en %).</li>
+    <li>Quelle puissance est perdue sous forme de chaleur ?</li>
+    <li>Si la vitesse du vent double, la puissance mécanique passe à 5 kW. Calcule la puissance électrique en supposant le même rendement.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(\eta = \dfrac{2{,}1}{2{,}5} = 0{,}84\) soit <strong>84 %</strong>.</li>
+      <li>\(P_{\text{perdue}} = 2500 - 2100 = 400\) W = <strong>0,4 kW</strong>.</li>
+      <li>\(P_{\text{élec}} = 0{,}84 \times 5000 = 4200\) W = <strong>4,2 kW</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== STANDARD ===== -->
+<h2>Niveau Standard</h2>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 6 — Les deux situations d'induction</strong>
+  <p>Un installateur électrique observe deux montages :</p>
+  <ul>
+    <li>Montage A : une bobine fixe est entourée d'un champ magnétique qui varie car l'électroaimant qui le produit est alimenté par un courant alternatif.</li>
+    <li>Montage B : une bobine mobile tourne entre les pôles d'un aimant permanent fixe.</li>
+  </ul>
+  <ol>
+    <li>Identifie pour chaque montage la situation d'induction (circuit fixe/champ variable ou circuit mobile/champ constant).</li>
+    <li>Dans les deux cas, y a-t-il une tension induite ? Justifie.</li>
+    <li>Quel montage est utilisé dans un alternateur de véhicule ? Justifie.</li>
+    <li>Quel principe est utilisé dans un transformateur électrique ? Lequel des deux montages correspond ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Montage A : circuit fixe, champ variable. Montage B : circuit mobile, champ constant.</li>
+      <li>Dans les deux cas, oui, il y a induction car dans les deux situations il y a une variation du flux magnétique traversant la bobine.</li>
+      <li>Montage B : dans un alternateur, c'est le rotor (bobine) qui tourne dans le champ des aimants fixes (stator).</li>
+      <li>Le transformateur utilise le principe du <strong>montage A</strong> : un courant alternatif dans le primaire crée un champ variable qui induit une tension dans le secondaire fixe.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 7 — Alternateur d'éolienne</strong>
+  <p>Une éolienne produit une tension sinusoïdale de valeur maximale \(U_{\max} = 325\) V à une fréquence \(f = 50\) Hz.</p>
+  <ol>
+    <li>Calcule la valeur efficace \(U_{\text{eff}} = U_{\max} / \sqrt{2}\).</li>
+    <li>Calcule la période \(T\) du signal.</li>
+    <li>La puissance électrique délivrée est \(P = 800\) W sous cette tension efficace. Calcule l'intensité efficace du courant \(I = P / U_{\text{eff}}\).</li>
+    <li>Le rendement de l'alternateur est 92 %. Calcule la puissance mécanique nécessaire.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(U_{\text{eff}} = \dfrac{325}{\sqrt{2}} \approx 230\) V.</li>
+      <li>\(T = \dfrac{1}{f} = \dfrac{1}{50} = 0{,}02\) s = 20 ms.</li>
+      <li>\(I = \dfrac{800}{230} \approx 3{,}5\) A.</li>
+      <li>\(P_{\text{méc}} = \dfrac{P_{\text{élec}}}{\eta} = \dfrac{800}{0{,}92} \approx 870\) W.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 8 — Application de la loi de Lenz</strong>
+  <p>Un technicien fait tourner une spire rectangulaire dans un champ magnétique uniforme \(B = 0{,}2\) T. La spire a une surface \(S = 50\) cm².</p>
+  <ol>
+    <li>Calcule le flux maximum \(\Phi_{\max} = B \times S\) lorsque la spire est perpendiculaire au champ.</li>
+    <li>Le flux est nul lorsque la spire est parallèle au champ. Entre ces deux positions, le flux varie. Y a-t-il induction ? Justifie.</li>
+    <li>D'après Lenz, si le flux augmente dans un sens, le courant induit créera-t-il un champ magnétique dans le même sens ou en sens opposé ?</li>
+    <li>Quel dispositif réel fonctionne selon ce principe ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(\Phi_{\max} = 0{,}2 \times 50 \times 10^{-4} = 10^{-3}\) Wb = <strong>1 mWb</strong>.</li>
+      <li>Oui, il y a induction car le flux <strong>varie</strong> continuellement pendant la rotation.</li>
+      <li>En sens <strong>opposé</strong> (loi de Lenz : le courant induit s'oppose à la variation qui lui donne naissance).</li>
+      <li>L'<strong>alternateur</strong> (ou dynamo).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 9 — Freinage par induction</strong>
+  <p>Un technicien en maintenance utilise le freinage par induction (courants de Foucault) pour ralentir des machines industrielles sans contact mécanique. Quand un disque conducteur tourne dans un champ magnétique, des courants induits apparaissent et créent un couple résistant.</p>
+  <ol>
+    <li>Quel phénomène physique est à l'origine des courants de Foucault ?</li>
+    <li>D'après la loi de Lenz, le couple résistant s'oppose-t-il ou favorise-t-il la rotation ?</li>
+    <li>Ce système produit-il de la chaleur ? D'où vient cette énergie ?</li>
+    <li>Cite un avantage du freinage par induction par rapport au freinage mécanique.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Les courants de Foucault sont dus au phénomène d'<strong>induction électromagnétique</strong> : la rotation du disque entraîne une variation du flux magnétique qui induit des courants.</li>
+      <li>Le couple résistant s'<strong>oppose</strong> à la rotation (loi de Lenz).</li>
+      <li>Oui, il produit de la chaleur. Cette énergie provient de l'<strong>énergie cinétique</strong> du disque (converti en énergie thermique).</li>
+      <li>Aucune usure mécanique (pas de friction, pas de pièces à remplacer), fonctionnement silencieux.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 10 — Bilan énergétique d'un alternateur</strong>
+  <p>L'alternateur d'une centrale hydraulique reçoit une puissance mécanique de l'eau de 500 kW. Son rendement est 96 %.</p>
+  <ol>
+    <li>Calcule la puissance électrique produite.</li>
+    <li>Calcule les pertes (chaleur + frottements).</li>
+    <li>Sur 24 h de fonctionnement, quelle énergie électrique est produite (en kWh) ?</li>
+    <li>Si cette énergie est vendue 0,12 €/kWh, quel est le revenu journalier ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(P_{\text{élec}} = 0{,}96 \times 500 = 480\) kW.</li>
+      <li>\(P_{\text{pertes}} = 500 - 480 = 20\) kW.</li>
+      <li>\(E = 480 \times 24 = 11\,520\) kWh.</li>
+      <li>Revenu = \(11\,520 \times 0{,}12 = 1382{,}4\) €/jour.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 11 — Transformateur et induction</strong>
+  <p>Un transformateur abaisseur a un primaire de 2 200 spires sous 220 V et un secondaire de 110 spires.</p>
+  <ol>
+    <li>Rappelle le phénomène d'induction à l'origine du fonctionnement d'un transformateur.</li>
+    <li>Calcule la tension au secondaire en utilisant : \(\dfrac{U_2}{U_1} = \dfrac{n_2}{n_1}\).</li>
+    <li>Ce transformateur est-il abaisseur ou élévateur ? Justifie.</li>
+    <li>La puissance transmise est 1 kW (rendement = 100 %). Calcule l'intensité au secondaire.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Le courant alternatif du primaire crée un champ magnétique <strong>variable</strong> dans le noyau, ce qui induit une tension dans le secondaire par induction électromagnétique.</li>
+      <li>\(U_2 = U_1 \times \dfrac{n_2}{n_1} = 220 \times \dfrac{110}{2200} = 11\) V.</li>
+      <li>Abaisseur : la tension secondaire (11 V) est plus petite que la tension primaire (220 V).</li>
+      <li>\(I_2 = \dfrac{P}{U_2} = \dfrac{1000}{11} \approx 90{,}9\) A.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 12 — Situations d'induction au quotidien</strong>
+  <p>Un installateur électrique identifie dans son travail plusieurs appareils fonctionnant grâce à l'induction. Pour chacun, identifie la situation d'induction et explique brièvement :</p>
+  <ol>
+    <li>La plaque de cuisson à induction (bobine fixe sous la plaque, casserole métallique).</li>
+    <li>Le chargeur à induction pour smartphone.</li>
+    <li>L'alternateur de voiture.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Plaque induction : circuit fixe (bobine), champ variable (courant haute fréquence). Des courants de Foucault sont induits dans la casserole, qui chauffe.</li>
+      <li>Chargeur à induction : même principe — bobine émettrice alimente par courant alternatif, bobine réceptrice dans le téléphone reçoit l'énergie par induction.</li>
+      <li>Alternateur voiture : circuit mobile (rotor), champ quasi-constant (stator). La rotation produit une tension alternative redressée en courant continu pour la batterie.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== APPROFONDISSEMENT ===== -->
+<h2>Niveau Approfondissement</h2>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <strong>Exercice 13 — Alternateur éolien : étude complète</strong>
+  <p>Un technicien en énergies renouvelables analyse une éolienne domestique. Son alternateur a les caractéristiques suivantes :</p>
+  <ul>
+    <li>Tension à vide à 300 tr/min : \(U_0 = 48\) V (valeur efficace)</li>
+    <li>Résistance interne du bobinage : \(r = 2\) Ω</li>
+    <li>Intensité nominale : \(I_n = 8\) A</li>
+  </ul>
+  <ol>
+    <li>Calcule la tension aux bornes de la charge sous courant nominal : \(U = U_0 - r \times I_n\).</li>
+    <li>Calcule la puissance utile \(P_u = U \times I_n\) et les pertes Joule \(P_J = r \times I_n^2\).</li>
+    <li>Calcule le rendement \(\eta = P_u / (P_u + P_J)\).</li>
+    <li>La vitesse de rotation double (600 tr/min) : la tension à vide double aussi. Recalcule les 3 points précédents.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(U = 48 - 2 \times 8 = 48 - 16 = 32\) V.</li>
+      <li>\(P_u = 32 \times 8 = 256\) W ; \(P_J = 2 \times 8^2 = 128\) W.</li>
+      <li>\(\eta = \dfrac{256}{256 + 128} = \dfrac{256}{384} \approx 0{,}667\) soit <strong>66,7 %</strong>.</li>
+      <li>À 600 tr/min : \(U_0 = 96\) V. \(U = 96 - 16 = 80\) V. \(P_u = 80 \times 8 = 640\) W. \(P_J = 128\) W (inchangé). \(\eta = 640/768 \approx 83{,}3\) %. Le rendement s'améliore à plus haute vitesse.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <strong>Exercice 14 — Loi de Faraday</strong>
+  <p>La tension induite est donnée par la loi de Faraday : \(e = -N \dfrac{\Delta\Phi}{\Delta t}\) où \(N\) est le nombre de spires et \(\Delta\Phi / \Delta t\) la vitesse de variation du flux.</p>
+  <p>Un technicien bobine un capteur avec \(N = 500\) spires. Le flux varie de 0 à \(\Phi_{\max} = 2 \times 10^{-4}\) Wb en \(\Delta t = 5\) ms.</p>
+  <ol>
+    <li>Calcule la variation de flux \(\Delta\Phi\).</li>
+    <li>Calcule la tension induite \(|e|\).</li>
+    <li>Si la variation est 10 fois plus rapide (\(\Delta t = 0{,}5\) ms), calcule la nouvelle tension induite.</li>
+    <li>Que peut-on conclure sur l'influence de la vitesse de variation du flux sur la tension induite ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(\Delta\Phi = 2 \times 10^{-4} - 0 = 2 \times 10^{-4}\) Wb.</li>
+      <li>\(|e| = N \dfrac{\Delta\Phi}{\Delta t} = 500 \times \dfrac{2 \times 10^{-4}}{5 \times 10^{-3}} = 500 \times 0{,}04 = 20\) V.</li>
+      <li>\(|e'| = 500 \times \dfrac{2 \times 10^{-4}}{0{,}5 \times 10^{-3}} = 500 \times 0{,}4 = 200\) V.</li>
+      <li>La tension induite est <strong>proportionnelle à la vitesse de variation du flux</strong> : plus la variation est rapide, plus la tension est grande.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <strong>Exercice 15 — Comparaison de sources d'énergie</strong>
+  <p>Un technicien compare trois sources de production d'électricité, toutes basées sur l'induction :</p>
+  <table>
+    <thead><tr><th>Source</th><th>Puissance mécanique (kW)</th><th>Rendement</th></tr></thead>
+    <tbody>
+      <tr><td>Éolienne offshore</td><td>3 000</td><td>92 %</td></tr>
+      <tr><td>Turbine hydraulique</td><td>10 000</td><td>95 %</td></tr>
+      <tr><td>Turbine à vapeur</td><td>8 000</td><td>88 %</td></tr>
+    </tbody>
+  </table>
+  <ol>
+    <li>Calcule la puissance électrique produite par chaque source.</li>
+    <li>Calcule les pertes pour chaque source.</li>
+    <li>Sur une année (8 760 h), calcule l'énergie électrique produite par la turbine hydraulique en GWh.</li>
+    <li>Explique pourquoi toutes ces sources utilisent le même principe physique (induction) mais ont des rendements différents.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Éolienne : \(3000 \times 0{,}92 = 2760\) kW. Hydraulique : \(10000 \times 0{,}95 = 9500\) kW. Vapeur : \(8000 \times 0{,}88 = 7040\) kW.</li>
+      <li>Éolienne : 240 kW. Hydraulique : 500 kW. Vapeur : 960 kW.</li>
+      <li>\(E = 9500 \times 8760 / 10^6 \approx 83{,}2\) GWh.</li>
+      <li>Les pertes dépendent des frottements mécaniques, des résistances des bobinages et des pertes dans le noyau magnétique : ces caractéristiques varient selon la conception et la technologie de chaque alternateur.</li>
+    </ol>
+  </div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

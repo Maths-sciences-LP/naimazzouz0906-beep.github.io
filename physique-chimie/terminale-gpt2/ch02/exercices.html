@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch02 – Réseau triphasé – Exercices | Terminale Gpt 2</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../groupements.html" class="nb">← Retour aux groupements</a>
+<header>
+  <h1>Chapitre 2 – Le réseau triphasé — Exercices</h1>
+  <p class="sous-titre">Terminale Bac Pro | Physique-Chimie | Groupement 2</p>
+</header>
+
+<!-- ===== SOCLE ===== -->
+<h2>Niveau Socle</h2>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 1 — Monophasé ou triphasé ?</strong>
+  <p>Un apprenti électricien identifie les installations électriques d'un atelier.</p>
+  <ol>
+    <li>Combien de conducteurs de phase y a-t-il dans un réseau monophasé ? Dans un réseau triphasé ?</li>
+    <li>Quelle est la tension entre phase et neutre en France (réseau monophasé) ?</li>
+    <li>Quelle est la tension entre deux phases en réseau triphasé (tension composée) ?</li>
+    <li>Donne deux exemples d'appareils fonctionnant en monophasé et deux en triphasé.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Monophasé : <strong>1 phase + 1 neutre</strong>. Triphasé : <strong>3 phases</strong> (+ éventuellement le neutre).</li>
+      <li>Tension simple : <strong>230 V</strong>.</li>
+      <li>Tension composée : <strong>400 V</strong>.</li>
+      <li>Monophasé : lampe, four, réfrigérateur. Triphasé : moteur industriel, compresseur d'atelier.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 2 — Code couleur des conducteurs</strong>
+  <p>Complète le tableau des conducteurs d'un câble triphasé :</p>
+  <table>
+    <thead><tr><th>Conducteur</th><th>Symbole</th><th>Couleur</th></tr></thead>
+    <tbody>
+      <tr><td>Phase 1</td><td>L1</td><td>__________</td></tr>
+      <tr><td>Phase 2</td><td>L2</td><td>__________</td></tr>
+      <tr><td>Phase 3</td><td>L3</td><td>__________</td></tr>
+      <tr><td>Neutre</td><td>N</td><td>__________</td></tr>
+      <tr><td>Terre</td><td>PE</td><td>__________</td></tr>
+    </tbody>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <table>
+      <thead><tr><th>Conducteur</th><th>Symbole</th><th>Couleur</th></tr></thead>
+      <tbody>
+        <tr><td>Phase 1</td><td>L1</td><td><strong>Marron</strong></td></tr>
+        <tr><td>Phase 2</td><td>L2</td><td><strong>Noir</strong></td></tr>
+        <tr><td>Phase 3</td><td>L3</td><td><strong>Gris</strong></td></tr>
+        <tr><td>Neutre</td><td>N</td><td><strong>Bleu</strong></td></tr>
+        <tr><td>Terre</td><td>PE</td><td><strong>Vert-jaune</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 3 — Relation \(U = \sqrt{3} \times V\)</strong>
+  <p>Sur un réseau triphasé, la tension simple est \(V = 230\) V. On rappelle que \(\sqrt{3} \approx 1{,}73\).</p>
+  <ol>
+    <li>Calcule la tension composée \(U = \sqrt{3} \times V\).</li>
+    <li>Dans l'autre sens : si \(U = 400\) V, calcule \(V = U / \sqrt{3}\).</li>
+    <li>Pourquoi y a-t-il deux valeurs de tension sur un réseau triphasé ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(U = 1{,}73 \times 230 \approx \mathbf{400}\) V.</li>
+      <li>\(V = 400 / 1{,}73 \approx \mathbf{231}\) V ≈ 230 V.</li>
+      <li>Il y a deux valeurs car on peut mesurer la tension entre une phase et le neutre (tension simple = 230 V) ou entre deux phases (tension composée = 400 V).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 4 — Couplage étoile ou triangle ?</strong>
+  <p>Un électricien raccorde un moteur triphasé. Il lit sur la plaque du moteur : « 230/400 V Δ/Y ».</p>
+  <ol>
+    <li>Que signifient les symboles Δ (triangle) et Y (étoile) ?</li>
+    <li>La tension du réseau est 400 V. Quel couplage faut-il choisir ?</li>
+    <li>Si le réseau était 230 V triphasé, quel couplage faudrait-il ?</li>
+    <li>Quelle tension reçoit chaque bobine du moteur en couplage étoile sur un réseau 400 V ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Δ = couplage <strong>triangle</strong> ; Y = couplage <strong>étoile</strong>.</li>
+      <li>Sur réseau 400 V, on choisit le couplage <strong>étoile (Y)</strong> : chaque bobine reçoit 400/√3 ≈ 230 V.</li>
+      <li>Sur réseau 230 V, on choisit le couplage <strong>triangle (Δ)</strong> : chaque bobine reçoit directement 230 V.</li>
+      <li>En étoile sur 400 V : \(V_{\text{bobine}} = 400/\sqrt{3} \approx 230\) V.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 5 — Lecture d'une armoire électrique</strong>
+  <p>Un apprenti électricien observe dans une armoire de distribution industrielle :</p>
+  <ul>
+    <li>3 fils de couleurs marron, noir et gris arrivant d'EDF</li>
+    <li>1 fil bleu</li>
+    <li>1 fil vert-jaune</li>
+  </ul>
+  <ol>
+    <li>Identifie chaque conducteur.</li>
+    <li>Combien de tensions différentes peut-on mesurer ? Lesquelles ?</li>
+    <li>Pourquoi est-il dangereux de toucher un conducteur de phase sans protection ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Marron/Noir/Gris = phases L1, L2, L3. Bleu = Neutre. Vert-jaune = Terre (protection).</li>
+      <li>On peut mesurer 6 tensions : 3 tensions simples (230 V entre chaque phase et le neutre) et 3 tensions composées (400 V entre chaque paire de phases).</li>
+      <li>Un conducteur de phase est à 230 V par rapport au potentiel du corps humain (mis à la terre). Un courant de quelques dizaines de mA peut être mortel par fibrillation cardiaque.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== STANDARD ===== -->
+<h2>Niveau Standard</h2>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 6 — Calculs de tensions</strong>
+  <p>Un atelier de menuiserie est alimenté en triphasé. Mesure les tensions dans les situations suivantes (\(\sqrt{3} = 1{,}732\)) :</p>
+  <ol>
+    <li>Tension composée si la tension simple est \(V = 127\) V.</li>
+    <li>Tension simple si la tension composée est \(U = 690\) V (réseau haute tension industrielle).</li>
+    <li>Un technicien mesure 395 V entre deux phases. Calcule la tension simple correspondante.</li>
+    <li>Un moteur est prévu pour fonctionner sous 380 V composé. Le réseau délivre 400 V. Quel est l'écart relatif en % ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(U = 1{,}732 \times 127 \approx 220\) V.</li>
+      <li>\(V = 690 / 1{,}732 \approx 398\) V.</li>
+      <li>\(V = 395 / 1{,}732 \approx 228\) V ≈ 230 V (réseau légèrement sous-tension).</li>
+      <li>Écart = \(\dfrac{400 - 380}{380} \times 100 \approx 5{,}3\)%. Cet écart est acceptable pour la plupart des moteurs.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 7 — Courant de ligne et courant de branche</strong>
+  <p>Un moteur triphasé est couplé en triangle. Chaque branche (bobine) du moteur est parcourue par un courant de branche \(I_b = 8\) A.</p>
+  <ol>
+    <li>Rappelle la relation entre courant de ligne \(I_l\) et courant de branche \(I_b\) en couplage triangle.</li>
+    <li>Calcule le courant de ligne \(I_l\).</li>
+    <li>Si le même moteur est recouplé en étoile, le courant de branche devient \(I_b' = 4{,}6\) A. Calcule le nouveau courant de ligne.</li>
+    <li>Quel couplage consomme plus de courant sur le réseau ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>En triangle : \(I_l = \sqrt{3} \times I_b\).</li>
+      <li>\(I_l = 1{,}732 \times 8 \approx 13{,}9\) A.</li>
+      <li>En étoile : \(I_l = I_b = 4{,}6\) A (courant de ligne = courant de branche).</li>
+      <li>Le couplage <strong>triangle</strong> consomme plus de courant (13,9 A contre 4,6 A).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 8 — Déphasage des tensions triphasées</strong>
+  <p>Les trois tensions d'un réseau triphasé ont la même fréquence \(f = 50\) Hz et la même amplitude \(U_{\max} = 325\) V.</p>
+  <ol>
+    <li>De quel angle sont-elles déphasées les unes par rapport aux autres ?</li>
+    <li>Calcule la période \(T\) du signal.</li>
+    <li>Calcule la valeur efficace \(U_{\text{eff}} = U_{\max}/\sqrt{2}\).</li>
+    <li>Le déphasage de 120° correspond à combien de millisecondes de décalage temporel ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Les trois tensions sont déphasées de <strong>120°</strong> (soit 2π/3 rad).</li>
+      <li>\(T = 1/f = 1/50 = 20\) ms.</li>
+      <li>\(U_{\text{eff}} = 325/\sqrt{2} \approx 230\) V.</li>
+      <li>120° correspond à 1/3 de période : \(\Delta t = T/3 = 20/3 \approx 6{,}67\) ms.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 9 — Démarrage étoile-triangle</strong>
+  <p>Un technicien électricien raccorde un moteur de scie à panneaux par démarrage étoile-triangle. En étoile (démarrage), le courant de ligne est \(I_Y = 12\) A. En triangle (régime établi), le courant de ligne est \(I_\Delta\).</p>
+  <ol>
+    <li>Pourquoi démarre-t-on en étoile ? (indice : courant absorbé)</li>
+    <li>La relation théorique donne \(I_\Delta = 3 \times I_Y\). Calcule \(I_\Delta\).</li>
+    <li>La protection magnéto-thermique est réglée à 30 A. Est-elle correctement dimensionnée ?</li>
+    <li>Cite un avantage du démarrage étoile-triangle pour le réseau électrique.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>En étoile, la tension aux bornes de chaque bobine est divisée par √3, ce qui réduit le courant d'appel au démarrage.</li>
+      <li>\(I_\Delta = 3 \times 12 = 36\) A.</li>
+      <li>Non : 36 A > 30 A. La protection est sous-dimensionnée pour le régime triangle. Il faut une protection d'au moins 40 A.</li>
+      <li>Le démarrage étoile-triangle réduit les chutes de tension sur le réseau au moment du démarrage, ce qui évite de perturber les autres appareils alimentés.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 10 — Puissance en triphasé</strong>
+  <p>La puissance active d'un circuit triphasé équilibré est \(P = \sqrt{3} \times U \times I \times \cos\varphi\).</p>
+  <p>Un moteur triphasé fonctionne sous \(U = 400\) V, avec \(I = 10\) A et \(\cos\varphi = 0{,}85\).</p>
+  <ol>
+    <li>Calcule la puissance active \(P\) (en W).</li>
+    <li>Quelle est la puissance mécanique si le rendement du moteur est 90 % ?</li>
+    <li>Ce moteur peut-il entraîner une machine qui nécessite 4 kW mécaniques ?</li>
+    <li>Calcule le courant absorbé si on double la puissance demandée (même tension et facteur de puissance).</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(P = 1{,}732 \times 400 \times 10 \times 0{,}85 \approx 5884\) W ≈ <strong>5,9 kW</strong>.</li>
+      <li>\(P_{\text{méc}} = 0{,}90 \times 5884 \approx 5296\) W ≈ <strong>5,3 kW</strong>.</li>
+      <li>Oui : 5,3 kW > 4 kW. Le moteur peut entraîner la machine.</li>
+      <li>Si \(P' = 2 \times 5884 = 11768\) W, alors \(I' = P' / (\sqrt{3} \times U \times \cos\varphi) = 11768 / (1{,}732 \times 400 \times 0{,}85) \approx 20\) A.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 11 — Vérification d'une installation</strong>
+  <p>Un électricien réalise des mesures dans un tableau triphasé d'un atelier :</p>
+  <ul>
+    <li>\(U_{L1-L2} = 402\) V ; \(U_{L2-L3} = 399\) V ; \(U_{L3-L1} = 401\) V</li>
+    <li>\(V_{L1-N} = 232\) V ; \(V_{L2-N} = 230\) V ; \(V_{L3-N} = 231\) V</li>
+  </ul>
+  <ol>
+    <li>Ces valeurs sont-elles dans la tolérance (± 10 % autour des valeurs nominales 400 V / 230 V) ?</li>
+    <li>Calcule la valeur attendue de \(V\) à partir de \(U = 401\) V.</li>
+    <li>Le déséquilibre maximal entre phases est de 3 V. Ce réseau est-il correctement équilibré ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Toutes les valeurs sont comprises entre 360–440 V et 207–253 V. <strong>Oui</strong>, les valeurs sont dans la tolérance.</li>
+      <li>\(V = 401/1{,}732 \approx 231{,}5\) V ≈ 232 V : cohérent avec la mesure.</li>
+      <li>L'écart maximal est 3 V pour des tensions de 400 V, soit 0,75 %. Le réseau est <strong>bien équilibré</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 12 — Rôle du neutre</strong>
+  <p>Dans un réseau triphasé 4 fils (3 phases + neutre), un électricien branche des charges monophasées sur différentes phases.</p>
+  <ol>
+    <li>A quoi sert le conducteur neutre dans un réseau triphasé ?</li>
+    <li>Si les charges sur les 3 phases sont identiques, le courant dans le neutre est-il nul ou non ? Justifie.</li>
+    <li>Si une phase est surchargée, que se passe-t-il dans le neutre ?</li>
+    <li>Pourquoi ne faut-il pas couper le neutre d'une installation triphasée avec neutres ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Le neutre permet de raccorder des charges monophasées (230 V) et de renvoyer les courants de déséquilibre vers le transformateur.</li>
+      <li>En cas d'équilibre parfait, le courant dans le neutre est <strong>nul</strong> (les courants se compensent vectoriellement).</li>
+      <li>Un courant non nul circule dans le neutre : il est égal au déséquilibre entre les phases.</li>
+      <li>Couper le neutre crée un déséquilibre de tensions : certains appareils recevraient plus de 230 V et pourraient être détruits.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== APPROFONDISSEMENT ===== -->
+<h2>Niveau Approfondissement</h2>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <strong>Exercice 13 — Étude d'un atelier industriel</strong>
+  <p>Un atelier de menuiserie industrielle dispose d'un réseau triphasé 400 V / 230 V. Le tableau électrique alimente :</p>
+  <ul>
+    <li>3 moteurs de machines-outils triphasés, chacun : \(P = 4\) kW, \(\eta = 88\%\), \(\cos\varphi = 0{,}82\)</li>
+    <li>1 compresseur d'air triphasé : \(P = 7{,}5\) kW, \(\cos\varphi = 0{,}78\)</li>
+    <li>Éclairage monophasé : 3 kW répartis sur les 3 phases</li>
+  </ul>
+  <ol>
+    <li>Calcule la puissance active totale absorbée par les moteurs des machines-outils (puissance électrique).</li>
+    <li>Calcule le courant de ligne absorbé par un moteur de machine-outil (\(I = P / (\sqrt{3} \times U \times \cos\varphi)\)).</li>
+    <li>Calcule la puissance totale de l'atelier (moteurs + compresseur + éclairage).</li>
+    <li>Le disjoncteur général est calibré à 63 A. Est-il suffisant ? (Calcule le courant total.)</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Puissance électrique d'un moteur : \(P_{\text{élec}} = P_{\text{méc}} / \eta = 4000/0{,}88 \approx 4545\) W. Pour 3 moteurs : \(3 \times 4545 \approx 13\,636\) W ≈ 13,6 kW.</li>
+      <li>\(I = \dfrac{4545}{\sqrt{3} \times 400 \times 0{,}82} \approx \dfrac{4545}{692{,}8} \approx 6{,}6\) A par moteur.</li>
+      <li>\(P_{\text{totale}} = 13636 + 7500 + 3000 = 24\,136\) W ≈ 24,1 kW.</li>
+      <li>\(I_{\text{total}} \approx \dfrac{24136}{1{,}732 \times 400 \times 0{,}80} \approx \dfrac{24136}{554{,}2} \approx 43{,}5\) A < 63 A. Le disjoncteur est suffisant.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <strong>Exercice 14 — Choix du couplage et démarrage</strong>
+  <p>Un moteur porte la plaque signalétique : 230/400 V – Δ/Y – 18 A / 10,4 A – 6 kW – cos φ = 0,85.</p>
+  <ol>
+    <li>Sur un réseau 400 V triphasé, quel couplage doit-on utiliser ? Quel courant de ligne est indiqué ?</li>
+    <li>Vérifie que ce courant est cohérent avec la puissance : \(P = \sqrt{3} \times U \times I \times \cos\varphi\).</li>
+    <li>Au démarrage direct en étoile, le courant d'appel est 6 fois le courant nominal. Calcule ce courant de pointe.</li>
+    <li>Un démarrage étoile-triangle réduit ce courant d'appel à 1/3. Calcule le nouveau courant de démarrage et commente l'intérêt.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Sur réseau 400 V → couplage <strong>étoile (Y)</strong>, courant de ligne nominal = <strong>10,4 A</strong>.</li>
+      <li>\(P = 1{,}732 \times 400 \times 10{,}4 \times 0{,}85 \approx 6107\) W ≈ 6 kW. Cohérent.</li>
+      <li>Courant d'appel direct = \(6 \times 10{,}4 = 62{,}4\) A.</li>
+      <li>Démarrage Δ/Y : courant de démarrage = \(62{,}4 / 3 = 20{,}8\) A. Intérêt : réduit les perturbations sur le réseau et les contraintes mécaniques au démarrage.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <strong>Exercice 15 — Dimensionnement d'une installation industrielle</strong>
+  <p>Un technicien doit concevoir l'alimentation électrique d'un nouvel atelier. Il dispose d'un réseau triphasé 400 V. Les charges sont :</p>
+  <table>
+    <thead><tr><th>Charge</th><th>Puissance active (kW)</th><th>cos φ</th></tr></thead>
+    <tbody>
+      <tr><td>Moteur tour numérique</td><td>5,5</td><td>0,84</td></tr>
+      <tr><td>Moteur fraiseuse</td><td>4,0</td><td>0,82</td></tr>
+      <tr><td>Compresseur</td><td>3,0</td><td>0,78</td></tr>
+      <tr><td>Éclairage LED</td><td>1,5</td><td>1,00</td></tr>
+    </tbody>
+  </table>
+  <ol>
+    <li>Calcule la puissance active totale.</li>
+    <li>Calcule la puissance apparente totale en supposant un cos φ moyen de 0,83.</li>
+    <li>Calcule le courant de ligne total : \(I = S / (\sqrt{3} \times U)\).</li>
+    <li>Choisis le calibre standard du disjoncteur général parmi : 32 A, 40 A, 63 A, 80 A. Justifie ton choix (coefficient de foisonnement 0,8).</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(P_{\text{totale}} = 5{,}5 + 4{,}0 + 3{,}0 + 1{,}5 = 14\) kW.</li>
+      <li>\(S = P / \cos\varphi = 14000 / 0{,}83 \approx 16867\) VA ≈ 16,9 kVA.</li>
+      <li>\(I = 16867 / (1{,}732 \times 400) \approx 24{,}3\) A.</li>
+      <li>Avec foisonnement : \(I_{\text{réel}} = 0{,}8 \times 24{,}3 \approx 19{,}5\) A. On choisit le calibre <strong>25 A ou 32 A</strong> selon le standard. Pour avoir une marge de sécurité, on prend <strong>32 A</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

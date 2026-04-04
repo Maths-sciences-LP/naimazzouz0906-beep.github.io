@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch02 – Diffraction – Activité | Terminale Grpt 4</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#7c3aed;--p-bg:#f5f3ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../groupements.html" class="nb">← Retour aux groupements</a>
+<header>
+  <h1>Chapitre 2 – Diffraction — Activité de découverte</h1>
+  <p class="sous-titre">Terminale Bac Pro | Physique-Chimie | Groupement 4</p>
+</header>
+
+<div class="situation">
+  <h3>Situation professionnelle — Contrôle dimensionnel par laser</h3>
+  <p>
+    Vous êtes technicien en microtechniques optiques dans le laboratoire de contrôle qualité de la société <strong>MicroGrav</strong>. Votre mission consiste à mesurer la largeur de fentes gravées sur des pièces métalliques de précision, destinées à des systèmes d'injection de carburant.
+  </p>
+  <p>
+    La méthode de mesure par contact (micromètre, palpeur) est trop imprécise pour ces fentes micrométriques. Votre responsable vous propose d'utiliser la <strong>diffraction laser</strong> pour mesurer ces fentes sans contact.
+  </p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Comment utiliser le phénomène de diffraction pour mesurer des fentes micrométriques sans contact, et quelles sont les précisions atteignables ?
+</div>
+
+<div class="objectifs">
+  <strong>Capacités travaillées</strong>
+  <ul>
+    <li>Décrire le phénomène de diffraction et ses paramètres</li>
+    <li>Appliquer la formule \(L = 2\lambda D / a\)</li>
+    <li>Mesurer une grandeur microscopique par une méthode indirecte</li>
+    <li>Estimer l'incertitude de mesure</li>
+  </ul>
+</div>
+
+<!-- ===== PARTIE A ===== -->
+<h2>Partie A — Principe de la méthode</h2>
+
+<h3>Document 1 — Dispositif expérimental</h3>
+<p>Le dispositif comprend :</p>
+<ul>
+  <li>Un laser rouge de longueur d'onde \(\lambda = 650\) nm</li>
+  <li>La pièce à mesurer avec sa fente de largeur \(a\) inconnue</li>
+  <li>Un écran blanc à une distance \(D = 1{,}00\) m</li>
+  <li>Une règle graduée pour mesurer la largeur de la tache</li>
+</ul>
+
+<div class="exo">
+  <strong>Questions A1</strong>
+  <ol>
+    <li>Rappelle le phénomène physique observé lorsque la lumière traverse la fente. Décris ce qu'on observe sur l'écran.</li>
+    <li>La condition de diffraction est \(a \approx \lambda\). Pour \(\lambda = 650\) nm et une fente de 100 µm, le rapport \(a/\lambda = 100\,000/650 \approx 154\). La diffraction sera-t-elle notable ou négligeable ? Justifie.</li>
+    <li>Écris la formule liant \(L\), \(\lambda\), \(D\) et \(a\). Isole \(a\) pour exprimer la largeur de la fente en fonction des grandeurs mesurables.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>La lumière se diffracte à travers la fente. Sur l'écran, on observe une figure de diffraction : une tache centrale large et lumineuse, entourée de taches secondaires plus faibles de part et d'autre.</li>
+      <li>Le rapport est 154 >> 1 : la fente est beaucoup plus grande que λ. La diffraction sera <strong>peu marquée</strong> (tache pas très large). Mais la méthode reste utilisable pour mesurer avec précision.</li>
+      <li>\(L = 2\lambda D / a\), donc \(a = 2\lambda D / L\).</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== PARTIE B ===== -->
+<h2>Partie B — Mesures et calculs</h2>
+
+<h3>Document 2 — Résultats des mesures</h3>
+<p>Trois pièces sont à contrôler. Les mesures de la tache centrale donnent :</p>
+<table>
+  <thead><tr><th>Pièce</th><th>\(L\) mesuré (cm)</th><th>Spécification (µm)</th><th>Tolérance (µm)</th></tr></thead>
+  <tbody>
+    <tr><td>P1</td><td>1,30</td><td>100</td><td>± 5</td></tr>
+    <tr><td>P2</td><td>1,35</td><td>100</td><td>± 5</td></tr>
+    <tr><td>P3</td><td>1,15</td><td>100</td><td>± 5</td></tr>
+  </tbody>
+</table>
+
+<div class="exo">
+  <strong>Questions B1</strong>
+  <ol>
+    <li>Calcule la largeur de fente \(a\) pour chaque pièce en µm (\(\lambda = 650\) nm, \(D = 1\) m).</li>
+    <li>Chaque pièce est-elle dans la tolérance (100 ± 5 µm) ?</li>
+    <li>Calcule l'incertitude relative sur \(a\) si \(L\) peut être mesuré à ±1 mm près : \(\Delta a / a = \Delta L / L\). Calcule \(\Delta a\) pour P1.</li>
+    <li>Avec cette incertitude, peut-on distinguer une pièce à 98 µm d'une pièce à 100 µm ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>P1 : \(a = 2 \times 650 \times 10^{-9} \times 1 / (1{,}30 \times 10^{-2}) = 1300 \times 10^{-9} / 0{,}013 = 10^{-4}\) m = <strong>100 µm</strong>. P2 : \(a = 1300 \times 10^{-9} / 0{,}0135 \approx 96{,}3\) µm. P3 : \(a = 1300 \times 10^{-9} / 0{,}0115 \approx 113\) µm.</li>
+      <li>P1 : 100 µm ✓ (dans [95, 105]). P2 : 96,3 µm ✗ (hors tolérance, trop petite). P3 : 113 µm ✗ (hors tolérance, trop grande).</li>
+      <li>P1 : incertitude relative = \(\Delta L/L = 1/13 = 7{,}7\%\). \(\Delta a = 7{,}7\% \times 100 \approx 7{,}7\) µm.</li>
+      <li>L'incertitude de ±7,7 µm est supérieure à l'écart de 2 µm (98 vs 100). On <strong>ne peut pas</strong> distinguer les deux avec cette précision de mesure.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== PARTIE C ===== -->
+<h2>Partie C — Amélioration de la méthode</h2>
+
+<div class="exo">
+  <strong>Questions C1 — Optimisation</strong>
+  <ol>
+    <li>Pour réduire l'incertitude sur \(a\) à ±2 µm, quelle incertitude relative maximale faut-il sur \(L\) ?</li>
+    <li>Pour une pièce P1 (\(L = 1{,}30\) cm), quelle précision de mesure de \(L\) cela implique-t-il en mm ?</li>
+    <li>Une solution est d'augmenter \(D\) pour avoir une tache plus grande. Si \(D = 3\) m, calcule la taille de la tache pour P1. La mesure est-elle plus précise ?</li>
+    <li>Cite un autre moyen d'augmenter la précision de la mesure de \(L\) sans changer le montage.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Incertitude relative max = \(\Delta a / a = 2/100 = 2\%\).</li>
+      <li>\(\Delta L = 2\% \times 13\) mm = <strong>0,26 mm</strong>. Il faudrait mesurer L avec une précision de mieux que 0,3 mm, ce qui nécessite un instrument plus précis (règle milli ou caméra).</li>
+      <li>À \(D = 3\) m : \(L = 2 \times 650 \times 10^{-9} \times 3 / 10^{-4} = 3{,}9 \times 10^{-2}\) m = 3,9 cm. Avec ±1 mm d'incertitude : \(\Delta a/a = 1/39 = 2{,}6\%\). Meilleure précision qu'à 1 m.</li>
+      <li>Mesurer \(L\) avec un capteur de position numérique ou un appareil photo + traitement d'image, qui permet une résolution sub-millimétrique.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== BILAN ===== -->
+<h2>Bilan de l'activité</h2>
+
+<div class="exo">
+  <strong>Synthèse — Rapport de contrôle qualité</strong>
+  <p>Rédige le rapport de contrôle à destination du responsable qualité (10 lignes) :</p>
+  <ul>
+    <li>Méthode de mesure utilisée et principe physique</li>
+    <li>Résultats pour les trois pièces (valeurs mesurées et conformité)</li>
+    <li>Incertitude de mesure et ses conséquences</li>
+    <li>Recommandation pour améliorer la précision</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir un exemple de réponse</button>
+  <div class="corr" style="display:none">
+    <p>Le contrôle dimensionnel a été réalisé par la méthode de <strong>diffraction laser</strong> : un laser rouge (λ = 650 nm) éclaire la fente et on mesure la largeur de la tache de diffraction sur un écran (D = 1 m). La largeur de fente est calculée par \(a = 2\lambda D/L\). Résultats : <strong>P1 = 100 µm</strong> (conforme), <strong>P2 = 96 µm</strong> (non conforme, trop étroite), <strong>P3 = 113 µm</strong> (non conforme, trop large). L'incertitude de mesure est de ±7,7 µm, ce qui est légèrement supérieur à la tolérance de ±5 µm. Pour améliorer la précision, il est recommandé d'augmenter la distance écran à 3 m ou d'utiliser une caméra avec traitement d'image pour mesurer L avec une résolution de 0,1 mm. Les pièces P2 et P3 doivent être mises en rebut.</p>
+  </div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

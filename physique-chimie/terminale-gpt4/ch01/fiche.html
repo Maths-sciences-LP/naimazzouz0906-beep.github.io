@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch01 – Image en couleur – Fiche de révision | Terminale Grpt 4</title>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#7c3aed;--p-bg:#f5f3ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../groupements.html" class="nb">← Retour aux groupements</a>
+<header>
+  <h1>Chapitre 1 – Produire une image en couleur — Fiche de révision</h1>
+  <p class="sous-titre">Terminale Bac Pro | Physique-Chimie | Groupement 4</p>
+</header>
+
+<div class="retenir">
+  <strong>À retenir — L'essentiel</strong>
+  <p>Une image numérique est une grille de pixels. Chaque pixel code sa couleur en RVB (Rouge, Vert, Bleu) sur 3 × 8 bits = 24 bits, soit plus de 16 millions de couleurs possibles.</p>
+</div>
+
+<!-- ===== CAPTEUR ===== -->
+<h2>1. Capteur d'images</h2>
+
+<div class="def">
+  <span class="label label-def">Définition</span>
+  Un <strong>capteur d'images</strong> est une matrice de pixels photosensibles convertissant la lumière en signal électrique. Le signal est numérisé (converti en nombre) pour chaque pixel.
+</div>
+
+<table>
+  <thead><tr><th>Capteur</th><th>Technologie</th><th>Utilisation</th></tr></thead>
+  <tbody>
+    <tr><td>CCD</td><td>Charge Coupled Device</td><td>Appareils photo pro, astronomie</td></tr>
+    <tr><td>CMOS</td><td>Complementary Metal Oxide Semiconductor</td><td>Smartphones, webcams</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== RVB ===== -->
+<h2>2. Synthèse additive RVB</h2>
+
+<div class="prop">
+  <span class="label label-prop">Synthèse additive</span>
+  <p>Les écrans produisent les couleurs en combinant trois couleurs primaires émises par les sous-pixels :</p>
+  <ul>
+    <li>R + V = <strong>Jaune</strong></li>
+    <li>R + B = <strong>Magenta</strong></li>
+    <li>V + B = <strong>Cyan</strong></li>
+    <li>R + V + B (maximum) = <strong>Blanc</strong></li>
+    <li>R = V = B = 0 = <strong>Noir</strong></li>
+  </ul>
+</div>
+
+<!-- ===== CODAGE ===== -->
+<h2>3. Codage des couleurs</h2>
+
+<div class="formule-box">
+  <strong>Codage sur 8 bits par composante :</strong>
+  <ul>
+    <li>Valeurs possibles : 0 à 255 (2⁸ = 256 niveaux)</li>
+    <li>Image RVB (24 bits) : \(256^3 \approx 16{,}7\) millions de couleurs</li>
+    <li>Niveaux de gris (8 bits) : 256 niveaux, R = V = B</li>
+  </ul>
+  <strong>Taille d'une image non compressée :</strong>
+  \[ \text{Taille (octets)} = \text{largeur} \times \text{hauteur} \times \text{profondeur (octets/pixel)} \]
+  <p>RVB : 3 octets/pixel | Niveaux de gris : 1 octet/pixel</p>
+</div>
+
+<!-- ===== RÉSOLUTION ===== -->
+<h2>4. Résolution et pixellisation</h2>
+
+<div class="def">
+  <span class="label label-def">Résolution</span>
+  La résolution exprime le nombre de pixels par unité de longueur : <strong>dpi</strong> (dots per inch) ou <strong>ppi</strong> (pixels per inch). 1 pouce = 2,54 cm.
+</div>
+
+<table>
+  <thead><tr><th>Usage</th><th>Résolution recommandée</th></tr></thead>
+  <tbody>
+    <tr><td>Écran web</td><td>72–96 dpi</td></tr>
+    <tr><td>Impression standard</td><td>150–200 dpi</td></tr>
+    <tr><td>Impression offset professionnelle</td><td>300 dpi</td></tr>
+  </tbody>
+</table>
+
+<div class="att">
+  <span class="label label-att">Attention</span>
+  Une image à faible résolution agrandie pour l'impression donnera une image pixellisée (floue). On ne peut pas inventer des pixels : il faut la bonne résolution dès la capture.
+</div>
+
+<!-- ===== FORMATS ===== -->
+<h2>5. Formats de fichiers</h2>
+
+<table>
+  <thead><tr><th>Format</th><th>Compression</th><th>Usage</th></tr></thead>
+  <tbody>
+    <tr><td>BMP</td><td>Aucune</td><td>Stockage brut Windows</td></tr>
+    <tr><td>PNG</td><td>Sans perte</td><td>Web, graphisme avec transparence</td></tr>
+    <tr><td>JPEG</td><td>Avec perte</td><td>Photos, web, impression courante</td></tr>
+    <tr><td>TIFF</td><td>Sans perte</td><td>Impression professionnelle, archivage</td></tr>
+    <tr><td>RAW</td><td>Sans traitement</td><td>Photo pro (données brutes du capteur)</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== AUTO-ÉVALUATION ===== -->
+<h2>6. Auto-évaluation rapide</h2>
+
+<div class="exo">
+  <strong>Questions flash</strong>
+  <ol>
+    <li>Combien de couleurs peut-on coder avec 3 × 8 bits ?</li>
+    <li>Quelle est la couleur d'un pixel (R=0, V=255, B=0) ?</li>
+    <li>Une image 1920 × 1080 en RVB : calcule sa taille non compressée en Mo.</li>
+    <li>Quel format est adapté à l'archivage sans perte d'une photo professionnelle ?</li>
+    <li>Qu'est-ce que la pixellisation ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir les réponses</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(256^3 = 2^{24} \approx \mathbf{16{,}7\text{ millions}}\) de couleurs.</li>
+      <li><strong>Vert pur</strong>.</li>
+      <li>\(1920 \times 1080 \times 3 = 6\,220\,800\) octets ≈ <strong>5,93 Mo</strong> ≈ 6 Mo.</li>
+      <li><strong>TIFF</strong> ou <strong>PNG</strong> (sans perte).</li>
+      <li>La pixellisation est l'apparition de carrés (pixels) visibles lors d'un agrandissement excessif d'une image à faible résolution.</li>
+    </ol>
+  </div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

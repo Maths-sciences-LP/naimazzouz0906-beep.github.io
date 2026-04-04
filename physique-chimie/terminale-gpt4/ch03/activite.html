@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch03 – Transmission d'informations – Activité | Terminale Grpt 4</title>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#7c3aed;--p-bg:#f5f3ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../groupements.html" class="nb">← Retour aux groupements</a>
+<header>
+  <h1>Chapitre 3 – Chaîne de transmission d'informations — Activité de découverte</h1>
+  <p class="sous-titre">Terminale Bac Pro | Physique-Chimie | Groupement 4</p>
+</header>
+
+<div class="situation">
+  <h3>Situation professionnelle — Extension du réseau informatique d'un studio d'impression</h3>
+  <p>
+    Vous êtes technicien en systèmes de communication dans l'entreprise <strong>PrintConnect</strong>. La direction vous confie la mission de relier deux bâtiments du studio d'impression numérique : le studio de création (bâtiment A) et l'atelier d'impression grand format (bâtiment B), distants de 600 m.
+  </p>
+  <p>
+    Le studio A génère des fichiers volumineux (images haute résolution, fichiers vidéo pour signalétique) qui doivent être transmis à l'atelier B en moins de 20 secondes. Deux solutions sont à l'étude : une liaison Wi-Fi pont ou une liaison fibre optique.
+  </p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quelle technologie de transmission choisir pour relier deux bâtiments industriels en garantissant le débit et la fiabilité nécessaires à l'activité du studio d'impression ?
+</div>
+
+<div class="objectifs">
+  <strong>Capacités travaillées</strong>
+  <ul>
+    <li>Identifier les éléments d'une chaîne de transmission</li>
+    <li>Calculer un débit nécessaire et un temps de transfert</li>
+    <li>Comparer les performances des différentes technologies</li>
+    <li>Justifier un choix technique par des arguments physiques et économiques</li>
+  </ul>
+</div>
+
+<!-- ===== PARTIE A ===== -->
+<h2>Partie A — Analyse des besoins</h2>
+
+<h3>Document 1 — Fichiers types échangés</h3>
+<table>
+  <thead><tr><th>Type de fichier</th><th>Taille typique</th><th>Fréquence</th></tr></thead>
+  <tbody>
+    <tr><td>Image RVB grande affiche (300 dpi, 120×180 cm)</td><td>~400 Mo</td><td>10/heure</td></tr>
+    <tr><td>Fichier vidéo signalétique (MP4, 1080p, 1 min)</td><td>~200 Mo</td><td>2/heure</td></tr>
+    <tr><td>PDF catalogue (48 pages, 150 Mo)</td><td>150 Mo</td><td>3/heure</td></tr>
+  </tbody>
+</table>
+
+<div class="exo">
+  <strong>Questions A1</strong>
+  <ol>
+    <li>Calcule le volume total de données échangées par heure (en Mo).</li>
+    <li>Convertis en bits par heure, puis calcule le débit moyen nécessaire en Mbit/s.</li>
+    <li>Le cahier des charges impose de transférer un fichier de 400 Mo en moins de 20 s. Calcule le débit minimal pour ce transfert.</li>
+    <li>Schématise la chaîne de transmission pour ce réseau inter-bâtiments en identifiant modulateur, canal et démodulateur.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Volume horaire : \(10 \times 400 + 2 \times 200 + 3 \times 150 = 4000 + 400 + 450 = 4850\) Mo/heure.</li>
+      <li>\(4850 \times 8 = 38\,800\) Mbit/heure. Débit moyen = \(38\,800 / 3600 \approx 10{,}8\) Mbit/s.</li>
+      <li>400 Mo = 3200 Mbit. Débit min = \(3200/20 = 160\) Mbit/s.</li>
+      <li>Modulateur = carte réseau du poste créatif. Canal = air (Wi-Fi) ou fibre optique. Démodulateur = carte réseau du poste d'impression.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== PARTIE B ===== -->
+<h2>Partie B — Comparaison des technologies</h2>
+
+<h3>Document 2 — Caractéristiques des solutions</h3>
+<table>
+  <thead><tr><th>Critère</th><th>Wi-Fi pont 802.11ac</th><th>Fibre monomode (1550 nm)</th></tr></thead>
+  <tbody>
+    <tr><td>Débit théorique</td><td>1,3 Gbit/s</td><td>10 Gbit/s</td></tr>
+    <tr><td>Débit réel estimé</td><td>300 Mbit/s</td><td>9 Gbit/s</td></tr>
+    <tr><td>Distance max</td><td>1 km (LOS)</td><td>10 km (sans amplificateur)</td></tr>
+    <tr><td>Affaiblissement</td><td>Dépend des obstacles</td><td>0,2 dB/km</td></tr>
+    <tr><td>Sensibilité EM</td><td>Sensible (interférences Wi-Fi voisins)</td><td>Insensible</td></tr>
+    <tr><td>Coût équipement</td><td>~2 000 €</td><td>~15 000 € (pose incluse)</td></tr>
+    <tr><td>Maintenance</td><td>Faible</td><td>Très faible (durée de vie 30 ans)</td></tr>
+  </tbody>
+</table>
+
+<div class="exo">
+  <strong>Questions B1</strong>
+  <ol>
+    <li>Avec le Wi-Fi (débit réel 300 Mbit/s), calcule le temps de transfert d'un fichier de 400 Mo. Respecte-t-on le cahier des charges (< 20 s) ?</li>
+    <li>Avec la fibre (débit réel 9 Gbit/s), calcule le temps de transfert du même fichier.</li>
+    <li>La fibre a un affaiblissement de 0,2 dB/km. Sur 600 m, calcule l'affaiblissement total.</li>
+    <li>Pourquoi la fibre est-elle insensible aux interférences électromagnétiques générées par les machines d'impression ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>400 Mo = 3200 Mbit. Temps Wi-Fi = \(3200/300 \approx 10{,}7\) s < 20 s : le cahier des charges est <strong>respecté</strong>.</li>
+      <li>Temps fibre = \(3200/(9000) \approx 0{,}36\) s ≈ <strong>0,4 s</strong>. Très rapide.</li>
+      <li>Affaiblissement = \(0{,}2 \times 0{,}6 = 0{,}12\) dB. Très faible, négligeable.</li>
+      <li>La fibre optique transporte de la <strong>lumière</strong>, non pas un signal électrique. Les champs électromagnétiques des machines (moteurs, arcs électriques) n'influencent pas la propagation optique.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== PARTIE C ===== -->
+<h2>Partie C — Décision et justification</h2>
+
+<div class="exo">
+  <strong>Questions C1 — Analyse économique</strong>
+  <ol>
+    <li>Le Wi-Fi coûte 2 000 € à l'installation. La fibre coûte 15 000 €. Calcule le surcoût de la fibre.</li>
+    <li>En supposant une durée de vie de 10 ans pour les deux solutions, calcule le coût annuel de chaque solution.</li>
+    <li>Si une panne de Wi-Fi (due aux interférences) entraîne une heure d'arrêt production valorisée à 500 €, et qu'on estime 5 pannes par an, quel est le coût indirect annuel du Wi-Fi ?</li>
+    <li>En intégrant les pannes, quelle solution est la plus économique sur 10 ans ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Surcoût fibre = 15 000 − 2 000 = <strong>13 000 €</strong>.</li>
+      <li>Wi-Fi : 2 000/10 = 200 €/an. Fibre : 15 000/10 = 1 500 €/an.</li>
+      <li>Coût indirect Wi-Fi = 5 × 500 = <strong>2 500 €/an</strong>.</li>
+      <li>Wi-Fi total/an = 200 + 2 500 = 2 700 €/an → sur 10 ans : 27 000 €. Fibre : 15 000 € (pas de panne). La <strong>fibre</strong> est moins chère sur 10 ans malgré le coût initial plus élevé.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== BILAN ===== -->
+<h2>Bilan de l'activité</h2>
+
+<div class="exo">
+  <strong>Synthèse — Note de recommandation technique</strong>
+  <p>Rédige une note de recommandation (10–12 lignes) à destination du directeur de PrintConnect :</p>
+  <ul>
+    <li>Rappel du besoin (débit, contraintes)</li>
+    <li>Comparaison des deux solutions sur les critères clés</li>
+    <li>Recommandation argumentée</li>
+    <li>Précision du principe physique utilisé par la solution retenue</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir un exemple de réponse</button>
+  <div class="corr" style="display:none">
+    <p>Notre studio d'impression doit transférer des fichiers allant jusqu'à 400 Mo en moins de 20 secondes entre les deux bâtiments, ce qui nécessite un débit minimal de 160 Mbit/s. Les deux solutions étudiées satisfont techniquement à cette exigence : le Wi-Fi pont (300 Mbit/s réel) permet le transfert en ~10 s, la fibre optique (9 Gbit/s réel) en moins d'une seconde. Cependant, le Wi-Fi est sensible aux interférences électromagnétiques générées par nos machines d'impression (moteurs, variateurs de vitesse), ce qui entraîne des pannes estimées à 5 par an. Sur 10 ans, le coût total du Wi-Fi (installation + pertes de production) s'élève à 27 000 €, contre 15 000 € pour la fibre. <strong>Je recommande la fibre optique</strong> : elle repose sur la propagation de la lumière par réflexion totale interne dans un cœur en silice, ce qui la rend totalement insensible aux perturbations électriques de l'atelier, garantit un débit 30 fois supérieur et une durée de vie de 30 ans.</p>
+  </div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

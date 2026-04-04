@@ -85,6 +85,11 @@
   - `<details class="corr-wrap">` → `.bc` + `.corr` (maths seconde)
   - Résultat : 2 à 7 mini-exo distribués par leçon, 0 section groupée résiduelle
 
+### Session 3 avril 2026 (Groupements PC)
+- **42 nouveaux fichiers** pour les 14 chapitres gpt 2/4/5/6 : exercices.html + fiche.html + activite.html par chapitre
+- **6 pages sommaire** créées : pc-1ere-gpt2, pc-term-gpt2, pc-1ere-gpt4, pc-term-gpt4, pc-term-gpt5, pc-1ere-gpt6
+- **groupements.html** mis à jour avec liens vers les nouvelles pages sommaire
+
 ### Session 3 avril 2026 (CAP)
 - **56 nouveaux fichiers CAP** : ds.html, interro.html, activite.html, exercices-capacites.html pour les 7 chapitres maths + 7 chapitres PC CAP → chaque chapitre passe à 8/8 fichiers
 - **Leçons CAP améliorées** : mini-exo (3–4 par leçon) + erreurs fréquentes (3–4 items) dans les 14 leçons
@@ -165,8 +170,8 @@
 - [x] ~~Activités (14 fichiers)~~ ✅ créés
 
 ### Priorité 3 — 6 groupements PC
-- [ ] Exercices pour 14 nouveaux chapitres (gpt 2/4/5/6)
-- [ ] Pages sommaire par groupement (12 pages)
+- [x] ~~Exercices pour 14 nouveaux chapitres (gpt 2/4/5/6)~~ ✅ exercices.html + fiche.html + activite.html créés
+- [x] ~~Pages sommaire par groupement~~ ✅ 6 pages créées (pc-1ere/term-gpt2/4/5/6) + groupements.html mis à jour
 
 ### Priorité 4 — BTS
 - [ ] Compléter ch19-25 (exercices, DS)

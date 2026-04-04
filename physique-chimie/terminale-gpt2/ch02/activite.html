@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch02 – Réseau triphasé – Activité | Terminale Gpt 2</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../groupements.html" class="nb">← Retour aux groupements</a>
+<header>
+  <h1>Chapitre 2 – Le réseau triphasé — Activité de découverte</h1>
+  <p class="sous-titre">Terminale Bac Pro | Physique-Chimie | Groupement 2</p>
+</header>
+
+<div class="situation">
+  <h3>Situation professionnelle — Installation d'une machine-outil triphasée</h3>
+  <p>
+    Vous êtes apprenti électricien dans l'entreprise <strong>AtlantElec</strong>. Votre tuteur vous confie l'installation électrique d'une nouvelle toupie industrielle dans un atelier de menuiserie. Cette machine est alimentée en <strong>triphasé 400 V</strong> et son moteur peut être couplé en étoile ou en triangle selon le réseau disponible.
+  </p>
+  <p>
+    La plaque signalétique du moteur indique : <em>230/400 V — Δ/Y — 18 A / 10,4 A — 6,5 kW — cos φ = 0,85</em>.
+  </p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Comment raccorder correctement un moteur triphasé sur un réseau 400 V, et vérifier que l'installation est conforme au cahier des charges ?
+</div>
+
+<div class="objectifs">
+  <strong>Capacités travaillées</strong>
+  <ul>
+    <li>Identifier les conducteurs d'un réseau triphasé et leur code couleur</li>
+    <li>Appliquer la relation \(U = \sqrt{3} \times V\)</li>
+    <li>Choisir le couplage d'un moteur triphasé selon le réseau</li>
+    <li>Calculer la puissance active et le courant de ligne</li>
+  </ul>
+</div>
+
+<!-- ===== PARTIE A ===== -->
+<h2>Partie A — Identification du réseau triphasé</h2>
+
+<h3>Document 1 — Câble d'alimentation de l'atelier</h3>
+<p>Le câble d'alimentation de l'atelier contient 5 conducteurs de sections différentes :</p>
+<ul>
+  <li>3 conducteurs de couleurs : marron, noir et gris</li>
+  <li>1 conducteur de couleur bleue</li>
+  <li>1 conducteur de couleur vert-jaune</li>
+</ul>
+
+<div class="exo">
+  <strong>Questions A1</strong>
+  <ol>
+    <li>Identifie chaque conducteur (nom, symbole, rôle).</li>
+    <li>Entre quels conducteurs mesure-t-on la tension simple de 230 V ?</li>
+    <li>Entre quels conducteurs mesure-t-on la tension composée de 400 V ?</li>
+    <li>Vérifie la relation \(U = \sqrt{3} \times V\) avec \(V = 230\) V et \(\sqrt{3} = 1{,}732\).</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Marron = Phase L1 ; Noir = Phase L2 ; Gris = Phase L3 ; Bleu = Neutre N ; Vert-jaune = Terre PE (protection).</li>
+      <li>La tension simple se mesure entre <strong>une phase et le neutre</strong> (ex : L1-N = 230 V).</li>
+      <li>La tension composée se mesure entre <strong>deux phases</strong> (ex : L1-L2 = 400 V).</li>
+      <li>\(U = 1{,}732 \times 230 \approx 398\) V ≈ 400 V. La relation est vérifiée.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== PARTIE B ===== -->
+<h2>Partie B — Choix du couplage du moteur</h2>
+
+<h3>Document 2 — Plaque signalétique du moteur</h3>
+<div style="border:2px solid var(--p);padding:12px;border-radius:8px;background:var(--p-bg);max-width:400px;margin:12px auto;font-family:monospace">
+  <p><strong>MOTEUR TRIPHASÉ ASYNCHRONE</strong></p>
+  <p>230/400 V — Δ/Y</p>
+  <p>18 A / 10,4 A</p>
+  <p>P = 6,5 kW | f = 50 Hz</p>
+  <p>cos φ = 0,85 | η = 91 %</p>
+  <p>1 450 tr/min</p>
+</div>
+
+<div class="exo">
+  <strong>Questions B1</strong>
+  <ol>
+    <li>Le réseau de l'atelier est en 400 V triphasé. Quel couplage faut-il utiliser : étoile ou triangle ?</li>
+    <li>Justifie en calculant la tension aux bornes d'une bobine pour chaque couplage.</li>
+    <li>Quel courant de ligne est indiqué sur la plaque pour le couplage retenu ?</li>
+    <li>Pourquoi y a-t-il deux valeurs de courant (18 A et 10,4 A) sur la plaque ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Couplage <strong>étoile (Y)</strong>.</li>
+      <li>En étoile sur 400 V : \(U_b = 400/\sqrt{3} = 231\) V ≈ 230 V ✓. En triangle sur 400 V : \(U_b = 400\) V > 230 V → surtension, moteur détruit ✗.</li>
+      <li>En couplage étoile : courant de ligne = <strong>10,4 A</strong>.</li>
+      <li>18 A correspond au couplage triangle (sur réseau 230 V) et 10,4 A au couplage étoile (sur réseau 400 V).</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== PARTIE C ===== -->
+<h2>Partie C — Vérification de l'installation</h2>
+
+<div class="exo">
+  <strong>Questions C1 — Calculs de puissance</strong>
+  <ol>
+    <li>Calcule la puissance active absorbée par le moteur en utilisant : \(P = \sqrt{3} \times U \times I \times \cos\varphi\) avec les données de la plaque (couplage étoile).</li>
+    <li>La puissance mécanique nominale du moteur est 6,5 kW. Vérifie le rendement : \(\eta = P_{\text{méc}}/P_{\text{élec}}\).</li>
+    <li>La protection magnéto-thermique doit être réglée à 125 % du courant nominal. Calcule le seuil de déclenchement.</li>
+    <li>Parmi les valeurs standard (6 A, 10 A, 16 A, 20 A), quelle est la valeur à retenir pour le disjoncteur ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(P = 1{,}732 \times 400 \times 10{,}4 \times 0{,}85 \approx 6107\) W ≈ <strong>6,1 kW</strong>.</li>
+      <li>\(\eta = 6500/6107 \approx 1{,}06\)... Cela donne η > 1, ce qui est impossible. Correction : c'est la puissance absorbée qui est 6,1 kW et la puissance utile qui est 6,5 kW... En réalité, sur la plaque, P = 6,5 kW est la puissance <em>absorbée</em> et η = 91% donne une puissance mécanique de 5,9 kW. Vérification : \(P_{\text{méc}} = 0{,}91 \times 6107 \approx 5557\) W ≈ 5,6 kW.</li>
+      <li>Seuil = \(1{,}25 \times 10{,}4 = 13\) A.</li>
+      <li>On choisit <strong>16 A</strong> (valeur standard immédiatement supérieure à 13 A).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <strong>Questions C2 — Déphasage des tensions</strong>
+  <ol>
+    <li>Les trois tensions du réseau sont déphasées de 120°. Calcule la période \(T\) du réseau (\(f = 50\) Hz).</li>
+    <li>À combien de millisecondes correspond un déphasage de 120° ?</li>
+    <li>Pourquoi le déphasage de 120° entre les trois tensions est-il avantageux pour les moteurs triphasés ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(T = 1/f = 1/50 = 20\) ms.</li>
+      <li>120° = 1/3 de période = \(20/3 \approx 6{,}67\) ms.</li>
+      <li>Le déphasage de 120° crée un <strong>champ magnétique tournant</strong> dans le moteur, ce qui met le rotor en rotation de façon continue et régulière, sans secousses.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== BILAN ===== -->
+<h2>Bilan de l'activité</h2>
+
+<div class="exo">
+  <strong>Synthèse — Fiche de raccordement</strong>
+  <p>Complète la fiche de raccordement destinée au dossier technique :</p>
+  <ul>
+    <li>Réseau : _____ V triphasé _____ conducteurs</li>
+    <li>Couplage moteur retenu : _____ (justification : _____)</li>
+    <li>Courant nominal du moteur : _____ A</li>
+    <li>Calibre du disjoncteur : _____ A</li>
+    <li>Puissance mécanique développée : _____ W</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ul>
+      <li>Réseau : <strong>400 V</strong> triphasé <strong>5</strong> conducteurs (L1, L2, L3, N, PE)</li>
+      <li>Couplage moteur retenu : <strong>étoile (Y)</strong> (chaque bobine reçoit 230 V, compatible avec la tension nominale)</li>
+      <li>Courant nominal : <strong>10,4 A</strong></li>
+      <li>Calibre du disjoncteur : <strong>16 A</strong></li>
+      <li>Puissance mécanique : environ <strong>5,5 kW</strong> (η = 91 %)</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

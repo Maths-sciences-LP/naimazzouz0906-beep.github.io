@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch02 – Réseau triphasé – Fiche de révision | Terminale Gpt 2</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../groupements.html" class="nb">← Retour aux groupements</a>
+<header>
+  <h1>Chapitre 2 – Le réseau triphasé — Fiche de révision</h1>
+  <p class="sous-titre">Terminale Bac Pro | Physique-Chimie | Groupement 2</p>
+</header>
+
+<div class="retenir">
+  <strong>À retenir — L'essentiel</strong>
+  <p>Le réseau triphasé transporte <strong>3 tensions sinusoïdales</strong> de même fréquence, même amplitude, déphasées de <strong>120°</strong>. En France : tension simple 230 V, tension composée 400 V.</p>
+</div>
+
+<!-- ===== MONOPHASÉ / TRIPHASÉ ===== -->
+<h2>1. Monophasé et triphasé</h2>
+
+<div class="grid2">
+<div class="def">
+  <span class="label label-def">Réseau monophasé</span>
+  <ul>
+    <li>2 fils : une phase (L) + un neutre (N)</li>
+    <li>Tension phase-neutre : <strong>230 V</strong></li>
+    <li>Usages : appareils domestiques, éclairage</li>
+  </ul>
+</div>
+<div class="def">
+  <span class="label label-def">Réseau triphasé</span>
+  <ul>
+    <li>3 phases (L1, L2, L3) + neutre (N) + terre (PE)</li>
+    <li>Tensions déphasées de <strong>120°</strong></li>
+    <li>Usages : moteurs industriels, machines-outils</li>
+  </ul>
+</div>
+</div>
+
+<!-- ===== CODE COULEUR ===== -->
+<h2>2. Code couleur des conducteurs (NF C 15-100)</h2>
+
+<table>
+  <thead><tr><th>Conducteur</th><th>Couleur</th></tr></thead>
+  <tbody>
+    <tr><td>Phase L1</td><td>Marron</td></tr>
+    <tr><td>Phase L2</td><td>Noir</td></tr>
+    <tr><td>Phase L3</td><td>Gris</td></tr>
+    <tr><td>Neutre N</td><td>Bleu</td></tr>
+    <tr><td>Terre PE</td><td>Vert-jaune</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== RELATION U / V ===== -->
+<h2>3. Relation tension composée / tension simple</h2>
+
+<div class="formule-box">
+  \[ U = \sqrt{3} \times V \approx 1{,}732 \times V \]
+  <p>Soit :</p>
+  \[ V = \frac{U}{\sqrt{3}} \approx \frac{U}{1{,}732} \]
+  <p><strong>En France :</strong> \(U = 400\) V et \(V = 230\) V</p>
+</div>
+
+<div class="att">
+  <span class="label label-att">Attention</span>
+  La tension <strong>composée</strong> (phase-phase) = <strong>400 V</strong>. La tension <strong>simple</strong> (phase-neutre) = <strong>230 V</strong>.
+  Ne pas les confondre lors des calculs.
+</div>
+
+<!-- ===== COUPLAGES ===== -->
+<h2>4. Couplages étoile et triangle</h2>
+
+<div class="grid2">
+<div class="prop">
+  <span class="label label-prop">Couplage étoile (Y)</span>
+  <ul>
+    <li>Un point commun relié au neutre</li>
+    <li>Tension aux bornes de chaque bobine : \(U_b = V = U/\sqrt{3}\)</li>
+    <li>Courant de ligne = courant de branche : \(I_l = I_b\)</li>
+    <li>Utilisé si la tension nominale de bobine = <strong>tension simple</strong></li>
+  </ul>
+</div>
+<div class="prop">
+  <span class="label label-prop">Couplage triangle (Δ)</span>
+  <ul>
+    <li>Pas de point commun, bouclage sur lui-même</li>
+    <li>Tension aux bornes de chaque bobine : \(U_b = U\) (tension composée)</li>
+    <li>Courant de ligne = √3 × courant de branche : \(I_l = \sqrt{3} \times I_b\)</li>
+    <li>Utilisé si la tension nominale de bobine = <strong>tension composée</strong></li>
+  </ul>
+</div>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Choisir le couplage</span>
+  <p>Sur la plaque du moteur : <em>230/400 V – Δ/Y</em></p>
+  <ol>
+    <li>Si réseau 400 V → couplage <strong>étoile (Y)</strong> : chaque bobine reçoit 400/√3 ≈ 230 V ✓</li>
+    <li>Si réseau 230 V → couplage <strong>triangle (Δ)</strong> : chaque bobine reçoit 230 V ✓</li>
+  </ol>
+</div>
+
+<!-- ===== PUISSANCE ===== -->
+<h2>5. Puissance en triphasé</h2>
+
+<div class="formule-box">
+  <strong>Puissance active :</strong>
+  \[ P = \sqrt{3} \times U \times I \times \cos\varphi \]
+  <p>où \(U\) = tension composée, \(I\) = courant de ligne, \(\cos\varphi\) = facteur de puissance.</p>
+</div>
+
+<!-- ===== DÉMARRAGE ÉTOILE-TRIANGLE ===== -->
+<h2>6. Démarrage étoile-triangle</h2>
+
+<div class="meth">
+  <span class="label label-meth">Méthode</span>
+  <ul>
+    <li><strong>Phase 1 – Démarrage en étoile (Y) :</strong> courant d'appel réduit (÷3 par rapport au triangle)</li>
+    <li><strong>Phase 2 – Passage en triangle (Δ) :</strong> une fois le moteur en vitesse, on commute → pleine puissance</li>
+    <li>Avantage : limite les perturbations sur le réseau au démarrage</li>
+  </ul>
+</div>
+
+<!-- ===== AUTO-ÉVALUATION ===== -->
+<h2>7. Auto-évaluation rapide</h2>
+
+<div class="exo">
+  <strong>Questions flash</strong>
+  <ol>
+    <li>De quel angle sont déphasées les 3 tensions d'un réseau triphasé ?</li>
+    <li>Quelle est la tension composée si \(V = 230\) V ?</li>
+    <li>Un moteur porte 230/400 V Δ/Y. Sur réseau 400 V, quel couplage ?</li>
+    <li>En couplage triangle, quelle relation lie \(I_l\) et \(I_b\) ?</li>
+    <li>Quelle couleur identifie le neutre ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir les réponses</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li><strong>120°</strong></li>
+      <li>\(U = \sqrt{3} \times 230 \approx 400\) V.</li>
+      <li>Couplage <strong>étoile (Y)</strong>.</li>
+      <li>\(I_l = \sqrt{3} \times I_b\)</li>
+      <li>Le neutre est de couleur <strong>bleu</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

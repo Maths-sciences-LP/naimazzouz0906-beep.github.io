@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch01 – Masse volumique et dilatation thermique – Activité | PC Bac Pro</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#b45309;--p-bg:#fffbeb;--p-border:#fde68a}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../groupements.html" class="nb">← Retour aux groupements</a>
+<header>
+  <h1>Chapitre 1 – Masse volumique et dilatation thermique — Activité de découverte</h1>
+  <p class="sous-titre">Première Bac Pro | Physique-Chimie | Groupement 6 (Matériaux)</p>
+</header>
+
+<div class="situation">
+  <strong>Situation professionnelle — Dimensionnement d'une passerelle piétonne</strong>
+  <p>
+    Elias est technicien en topographie en stage au sein d'un bureau d'études pour la ville de Bordeaux. Il participe au projet de construction d'une passerelle piétonne en acier enjambant un canal urbain.
+  </p>
+  <p>
+    Son tuteur lui explique : « La passerelle fait 60 m de long. À Bordeaux, la température peut varier de −5 °C en hiver à +42 °C lors des canicules. Si on ne prévoit pas les joints de dilatation, la structure va se déformer. Pour concevoir ces joints, nous devons calculer l'allongement de la structure et vérifier que les matériaux choisis correspondent bien aux plans du bureau d'architecture. »
+  </p>
+  <p>
+    Il donne à Elias trois tâches :
+  </p>
+  <ul>
+    <li>Calculer la dilatation de la passerelle</li>
+    <li>Vérifier la masse des éléments métalliques pour le calcul de charge</li>
+    <li>Comparer deux matériaux possibles : acier ou aluminium</li>
+  </ul>
+  <p><strong>Problématique :</strong> Comment les phénomènes de masse volumique et de dilatation thermique influencent-ils le dimensionnement d'un ouvrage métallique ?</p>
+</div>
+
+<h2>Partie 1 – Dilatation thermique de la passerelle</h2>
+
+<p>Données : L₀ = 60 m, α_acier = 12 × 10⁻⁶ °C⁻¹, T_min = −5 °C, T_max = +42 °C.</p>
+
+<div class="exo">
+  <strong>Questions 1 à 4</strong>
+  <ol>
+    <li>Calculer la variation de température ΔT entre l'état le plus froid et l'état le plus chaud.</li>
+    <li>Calculer l'allongement ΔL de la passerelle en acier entre ces deux températures extrêmes.</li>
+    <li>Exprimer ΔL en cm. Est-ce une valeur négligeable pour un ingénieur ?</li>
+    <li>Le bureau d'études prévoit 2 joints de dilatation (un à chaque extrémité). Quelle doit être la largeur minimale de chaque joint pour absorber la totalité de l'allongement ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\Delta T = 42 - (-5) = \mathbf{47}\) °C.</li>
+      <li>\(\Delta L = 12 \times 10^{-6} \times 60 \times 47 = 33{,}84 \times 10^{-3}\) m ≈ <strong>33,8 mm</strong>.</li>
+      <li>ΔL ≈ 3,38 cm. Ce n'est <strong>pas négligeable</strong> : sur 60 m, 3,4 cm peut provoquer des déformations importantes, voire des ruptures dans la structure si rien n'est prévu.</li>
+      <li>Avec 2 joints : largeur minimale par joint = ΔL/2 ≈ 16,9 mm → arrondi à <strong>20 mm</strong> minimum (avec marge de sécurité).</li>
+    </ol>
+  </div>
+</div>
+
+<h2>Partie 2 – Calcul de masse des éléments</h2>
+
+<p>La passerelle est composée de deux types d'éléments :</p>
+<ul>
+  <li>2 poutres principales en acier : chacune de volume V₁ = 0,024 m³</li>
+  <li>Tablier (plancher) en aluminium : volume V₂ = 0,18 m³</li>
+</ul>
+<p>Données : ρ_acier = 7 800 kg/m³, ρ_aluminium = 2 700 kg/m³.</p>
+
+<div class="exo">
+  <strong>Questions 5 à 7</strong>
+  <ol start="5">
+    <li>Calculer la masse de chaque poutre principale en acier, puis la masse totale des 2 poutres.</li>
+    <li>Calculer la masse du tablier en aluminium.</li>
+    <li>Calculer la masse totale de la structure métallique. Le bureau d'études avait estimé une masse de 1 000 kg. L'estimation est-elle proche ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <ol start="5">
+      <li>Masse d'une poutre = \(7\,800 \times 0{,}024 = 187{,}2\) kg. Masse des 2 poutres = \(2 \times 187{,}2 = \mathbf{374{,}4}\) kg.</li>
+      <li>Masse tablier alu = \(2\,700 \times 0{,}18 = \mathbf{486}\) kg.</li>
+      <li>Masse totale = 374,4 + 486 = <strong>860,4 kg</strong>. L'estimation de 1 000 kg est raisonnable (différence de ~16 %). En pratique, il faudra ajouter les éléments de fixation, garde-corps, etc.</li>
+    </ol>
+  </div>
+</div>
+
+<h2>Partie 3 – Comparaison acier / aluminium pour les poutres principales</h2>
+
+<p>Le bureau d'architecture propose de remplacer les poutres acier par des poutres en aluminium de même volume (V₁ = 0,024 m³). α_alu = 23 × 10⁻⁶ °C⁻¹.</p>
+
+<div class="exo">
+  <strong>Questions 8 à 10</strong>
+  <ol start="8">
+    <li>Calculer la masse de chaque poutre si elle était en aluminium. Quel serait le gain de masse par rapport à l'acier ?</li>
+    <li>Calculer la dilatation d'une poutre de 60 m en aluminium pour ΔT = 47 °C. Comparer avec l'acier.</li>
+    <li>Élias doit rédiger une comparaison pour le bureau d'études. Compléter le tableau bilan :</li>
+  </ol>
+  <table>
+    <thead><tr><th>Critère</th><th>Poutres en acier</th><th>Poutres en aluminium</th></tr></thead>
+    <tbody>
+      <tr><td>Masse des 2 poutres</td><td>…</td><td>…</td></tr>
+      <tr><td>Dilatation ΔL (ΔT = 47 °C)</td><td>…</td><td>…</td></tr>
+      <tr><td>Résistance mécanique</td><td>Élevée</td><td>Bonne (mais inférieure à l'acier)</td></tr>
+      <tr><td>Coût relatif</td><td>Moins cher</td><td>Plus cher</td></tr>
+    </tbody>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr">
+    <ol start="8">
+      <li>Masse poutre alu = \(2\,700 \times 0{,}024 = 64{,}8\) kg. Gain par poutre = 187,2 − 64,8 = 122,4 kg. Gain pour 2 poutres = <strong>244,8 kg</strong>.</li>
+      <li>ΔL_alu = \(23 \times 10^{-6} \times 60 \times 47 = 64{,}86 \times 10^{-3}\) m ≈ <strong>64,9 mm</strong>. Soit presque le double de l'acier (33,8 mm). Les joints devront être plus larges.</li>
+      <li>
+        <table>
+          <thead><tr><th>Critère</th><th>Acier</th><th>Aluminium</th></tr></thead>
+          <tbody>
+            <tr><td>Masse des 2 poutres</td><td>374,4 kg</td><td>129,6 kg</td></tr>
+            <tr><td>Dilatation ΔL</td><td>33,8 mm</td><td>64,9 mm</td></tr>
+            <tr><td>Résistance</td><td>Élevée</td><td>Bonne</td></tr>
+            <tr><td>Coût</td><td>Moins cher</td><td>Plus cher</td></tr>
+          </tbody>
+        </table>
+        <p>Conclusion : l'aluminium est plus léger (intéressant pour réduire les charges sur les fondations) mais se dilate davantage (joints plus larges). Le choix dépend des contraintes dominantes du projet.</p>
+      </li>
+    </ol>
+  </div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

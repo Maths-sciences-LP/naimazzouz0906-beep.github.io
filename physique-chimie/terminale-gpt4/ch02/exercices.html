@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch02 – Diffraction – Exercices | Terminale Grpt 4</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#7c3aed;--p-bg:#f5f3ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../groupements.html" class="nb">← Retour aux groupements</a>
+<header>
+  <h1>Chapitre 2 – Diffraction — Exercices</h1>
+  <p class="sous-titre">Terminale Bac Pro | Physique-Chimie | Groupement 4</p>
+</header>
+
+<!-- ===== SOCLE ===== -->
+<h2>Niveau Socle</h2>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 1 — Comprendre la diffraction</strong>
+  <p>Un technicien en microtechniques optiques fait passer un laser rouge à travers une fente fine.</p>
+  <ol>
+    <li>En optique géométrique (lumière rectiligne), que verrait-on sur l'écran ?</li>
+    <li>En réalité, on observe une figure de diffraction. Décris-la.</li>
+    <li>Complète : « La diffraction est un phénomène qui se produit quand une onde traverse une ouverture dont la taille est ________ de sa ________ d'onde. »</li>
+    <li>La diffraction prouve-t-elle que la lumière a un caractère corpusculaire ou ondulatoire ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>En optique géométrique, on verrait un simple trait lumineux de la même largeur que la fente.</li>
+      <li>On observe une tache centrale large et lumineuse, entourée de taches secondaires de plus en plus faibles, séparées par des zones sombres.</li>
+      <li>« … du même ordre de grandeur que sa <strong>longueur</strong> d'onde. »</li>
+      <li>La diffraction est une preuve du caractère <strong>ondulatoire</strong> de la lumière.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 2 — Influence de la largeur de la fente</strong>
+  <p>Un technicien fait varier la largeur \(a\) d'une fente éclairée par un laser. Il observe la figure de diffraction sur un écran distant.</p>
+  <ol>
+    <li>Quand la fente devient plus étroite (\(a\) diminue), la tache centrale devient-elle plus large ou plus étroite ?</li>
+    <li>Quand la fente est très large, la figure de diffraction disparaît-elle ? Pourquoi ?</li>
+    <li>Complète la phrase : « Plus la fente est étroite, plus la lumière se ________ en passant. »</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>La tache centrale devient plus <strong>large</strong> (étalement plus important).</li>
+      <li>Oui, la diffraction devient négligeable quand \(a \gg \lambda\) : la lumière se propage en ligne droite (limite de l'optique géométrique).</li>
+      <li>« Plus la lumière se <strong>diffracte</strong> en passant. »</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 3 — Longueurs d'onde visibles</strong>
+  <p>Le spectre visible s'étend de 380 nm (violet) à 780 nm (rouge). 1 nm = 10⁻⁹ m.</p>
+  <ol>
+    <li>Convertis 650 nm en mètres (longueur d'onde d'un laser rouge).</li>
+    <li>Convertis 532 nm en mètres (laser vert).</li>
+    <li>Laquelle des deux longueurs d'onde donne une figure de diffraction plus large pour la même fente ?</li>
+    <li>Complète : La figure de diffraction est d'autant plus large que la longueur d'onde est ________.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(650 \times 10^{-9}\) m = <strong>6,5 × 10⁻⁷ m</strong>.</li>
+      <li>\(532 \times 10^{-9}\) m = <strong>5,32 × 10⁻⁷ m</strong>.</li>
+      <li>Le laser rouge (650 nm > 532 nm) donne une figure <strong>plus large</strong>.</li>
+      <li>« …que la longueur d'onde est <strong>grande</strong>. »</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 4 — Formule de diffraction</strong>
+  <p>On rappelle : \(\sin\theta = \lambda/a\) (premier minimum de diffraction), avec \(\theta\) en radians pour les petits angles : \(\sin\theta \approx \tan\theta = L/(2D)\) où \(L\) est la largeur de la tache centrale et \(D\) la distance fente-écran.</p>
+  <p>On en déduit : \(L = 2 \times \lambda \times D / a\).</p>
+  <p>Un laser rouge (\(\lambda = 650\) nm) éclaire une fente de largeur \(a = 0{,}1\) mm = 10⁻⁴ m. L'écran est à \(D = 2\) m.</p>
+  <ol>
+    <li>Calcule la largeur de la tache centrale \(L\) en cm.</li>
+    <li>Si on double la distance D, que devient L ?</li>
+    <li>Si on double la largeur de la fente a, que devient L ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(L = \dfrac{2 \times 650 \times 10^{-9} \times 2}{10^{-4}} = \dfrac{2600 \times 10^{-9}}{10^{-4}} = 2{,}6 \times 10^{-2}\) m = <strong>2,6 cm</strong>.</li>
+      <li>Si \(D' = 2D\), alors \(L' = 2L = 5{,}2\) cm (L proportionnel à D).</li>
+      <li>Si \(a' = 2a\), alors \(L' = L/2 = 1{,}3\) cm (L inversement proportionnel à a).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-socle">
+  <span class="tag-socle">Socle</span>
+  <strong>Exercice 5 — Vrai ou faux</strong>
+  <ol>
+    <li>La diffraction s'observe uniquement avec la lumière visible.</li>
+    <li>La tache centrale de diffraction est plus lumineuse que les taches secondaires.</li>
+    <li>Quand la fente est large devant λ, la diffraction est négligeable.</li>
+    <li>Plus la longueur d'onde est grande, plus la tache est petite.</li>
+    <li>La diffraction est une preuve du caractère ondulatoire de la lumière.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li><strong>Faux.</strong> La diffraction concerne toutes les ondes (son, eau, radio, X, etc.).</li>
+      <li><strong>Vrai.</strong> La tache centrale reçoit la majeure partie de l'énergie.</li>
+      <li><strong>Vrai.</strong> On retrouve l'optique géométrique quand \(a \gg \lambda\).</li>
+      <li><strong>Faux.</strong> Plus λ est grande, plus la tache est <em>grande</em>.</li>
+      <li><strong>Vrai.</strong></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== STANDARD ===== -->
+<h2>Niveau Standard</h2>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 6 — Mesure d'une fente par diffraction</strong>
+  <p>Un technicien en contrôle qualité utilise un laser vert (\(\lambda = 532\) nm) pour mesurer la largeur d'une fente gravée sur une pièce. Il observe la figure de diffraction sur un écran à \(D = 1{,}5\) m et mesure une tache centrale de largeur \(L = 1{,}6\) cm.</p>
+  <ol>
+    <li>Rappelle la formule donnant L en fonction de λ, D et a.</li>
+    <li>Calcule la largeur de la fente \(a = 2\lambda D / L\).</li>
+    <li>Exprime le résultat en µm. La valeur est-elle cohérente avec une fente de précision ?</li>
+    <li>Quelle précision de mesure peut-on espérer si on peut mesurer L à ±0,5 mm près ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(L = 2\lambda D / a\).</li>
+      <li>\(a = \dfrac{2 \times 532 \times 10^{-9} \times 1{,}5}{1{,}6 \times 10^{-2}} = \dfrac{1596 \times 10^{-9}}{1{,}6 \times 10^{-2}} = 9{,}975 \times 10^{-5}\) m ≈ <strong>100 µm</strong>.</li>
+      <li>100 µm = 0,1 mm : cohérent avec une fente de précision (ordre de grandeur du cheveu humain).</li>
+      <li>Incertitude relative : \(\Delta L/L = 0{,}5/16 \approx 3{,}1\%\), donc \(\Delta a \approx 3\%\) de 100 µm ≈ 3 µm. Méthode très précise.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 7 — Influence de la longueur d'onde</strong>
+  <p>Un laboratoire compare la diffraction de quatre sources lumineuses sur la même fente (\(a = 0{,}2\) mm) à la même distance (\(D = 1\) m) :</p>
+  <table>
+    <thead><tr><th>Source</th><th>λ (nm)</th><th>\(L\) (cm)</th></tr></thead>
+    <tbody>
+      <tr><td>Laser violet</td><td>405</td><td>?</td></tr>
+      <tr><td>Laser vert</td><td>532</td><td>?</td></tr>
+      <tr><td>Laser rouge</td><td>650</td><td>?</td></tr>
+      <tr><td>Lumière blanche</td><td>400–700</td><td>?</td></tr>
+    </tbody>
+  </table>
+  <ol>
+    <li>Calcule \(L\) pour les trois lasers (en cm, avec \(a = 2 \times 10^{-4}\) m, \(D = 1\) m).</li>
+    <li>Quelle longueur d'onde donne la tache la plus large ?</li>
+    <li>Que se passe-t-il avec la lumière blanche ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Violet : \(L = 2 \times 405 \times 10^{-9} \times 1 / (2 \times 10^{-4}) = 4{,}05 \times 10^{-3}\) m = 0,405 cm. Vert : 0,532 cm. Rouge : 0,65 cm.</li>
+      <li>Le laser <strong>rouge</strong> donne la tache la plus large.</li>
+      <li>Avec lumière blanche : chaque longueur d'onde se diffracte différemment → la tache centrale est blanche (toutes les λ) mais les taches secondaires sont irisées (arc-en-ciel), le violet étant le plus proche du centre.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 8 — Réseau de diffraction</strong>
+  <p>Un réseau de diffraction est un ensemble de fentes régulièrement espacées. Il sépare la lumière blanche en ses composantes spectrales. Un réseau de 500 traits/mm est éclairé en lumière blanche.</p>
+  <ol>
+    <li>Calcule le pas du réseau \(d = 1/500\) mm (en µm).</li>
+    <li>Un technicien observe que le rouge est dévié à un angle plus grand que le violet. Est-ce cohérent avec ce qu'on sait de la diffraction ?</li>
+    <li>Un spectrographe utilise un réseau pour analyser la lumière émise par un matériau chauffé. À quoi sert-il professionnellement ?</li>
+    <li>Quel est l'objet du quotidien qui produit un arc-en-ciel par diffraction sur un réseau ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(d = 1/500 = 0{,}002\) mm = <strong>2 µm</strong>.</li>
+      <li>Oui : le rouge (λ grande) est plus dévié que le violet (λ petite), ce qui est conforme à la loi de diffraction.</li>
+      <li>En spectroscopie : identifier les éléments chimiques d'un matériau, analyser la composition d'alliages, contrôler des sources lumineuses (LEDs, lasers).</li>
+      <li>Le <strong>CD ou DVD</strong> (les pistes forment un réseau avec un pas de ~1,6 µm).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 9 — Limite de résolution d'un objectif</strong>
+  <p>La diffraction limite la capacité d'un objectif photographique à distinguer deux points proches. La limite de résolution angulaire est \(\theta_{\min} = 1{,}22 \lambda / D\) où \(D\) est le diamètre de l'ouverture.</p>
+  <p>Un objectif a un diamètre d'ouverture \(D = 50\) mm et utilise une lumière de longueur d'onde \(\lambda = 550\) nm.</p>
+  <ol>
+    <li>Calcule \(\theta_{\min}\) en radians.</li>
+    <li>À \(d = 10\) m, calcule la plus petite distance \(\delta = \theta_{\min} \times d\) que l'objectif peut résoudre.</li>
+    <li>Pour diviser \(\theta_{\min}\) par 2 (meilleure résolution), comment faut-il modifier D ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(\theta_{\min} = \dfrac{1{,}22 \times 550 \times 10^{-9}}{50 \times 10^{-3}} = \dfrac{671 \times 10^{-9}}{5 \times 10^{-2}} = 1{,}342 \times 10^{-5}\) rad.</li>
+      <li>\(\delta = 1{,}342 \times 10^{-5} \times 10 = 1{,}342 \times 10^{-4}\) m ≈ <strong>0,13 mm</strong>.</li>
+      <li>Pour diviser θ par 2 → il faut doubler D : \(D' = 100\) mm.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 10 — Diffraction acoustique</strong>
+  <p>La diffraction n'est pas propre à la lumière : les ondes sonores se diffractent aussi. Une onde sonore de fréquence \(f = 340\) Hz (la = 340 Hz) se propage dans un couloir de largeur \(a = 1\) m. Vitesse du son : \(v = 340\) m/s.</p>
+  <ol>
+    <li>Calcule la longueur d'onde sonore \(\lambda = v/f\).</li>
+    <li>Calcule le rapport \(\lambda/a\). La diffraction est-elle importante ?</li>
+    <li>Pour une fréquence de 3400 Hz, recalcule λ et le rapport λ/a. La diffraction est-elle plus ou moins importante ?</li>
+    <li>Pourquoi entend-on un son qui vient du couloir perpendiculaire même sans le voir directement ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(\lambda = 340/340 = 1\) m.</li>
+      <li>\(\lambda/a = 1/1 = 1\) : les deux sont du même ordre de grandeur → diffraction <strong>très importante</strong>.</li>
+      <li>À 3400 Hz : λ = 0,1 m. Rapport = 0,1/1 = 0,1 : la diffraction est <strong>moins importante</strong> (fréquences aiguës se propagent plus en ligne droite).</li>
+      <li>Parce que les ondes sonores, de longueur d'onde comparable aux ouvertures du bâtiment, se diffractent au niveau du couloir et se propagent dans toutes les directions.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 11 — Mesure pratique</strong>
+  <p>Lors d'un TP, un technicien mesure : \(\lambda = 650\) nm, \(D = 80\) cm, \(a = ?\) inconnue. Il mesure la tache centrale et trouve \(L = 4{,}2\) cm.</p>
+  <ol>
+    <li>Calcule \(a\) en µm.</li>
+    <li>Calcule l'angle \(\theta\) (en radians) tel que \(\tan\theta = L/(2D)\).</li>
+    <li>L'expérience est refaite avec un laser bleu (\(\lambda = 445\) nm) et la même fente. Calcule la nouvelle taille de tache.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(a = \dfrac{2 \times 650 \times 10^{-9} \times 0{,}80}{4{,}2 \times 10^{-2}} = \dfrac{1040 \times 10^{-9}}{4{,}2 \times 10^{-2}} \approx 2{,}48 \times 10^{-5}\) m ≈ <strong>24,8 µm</strong>.</li>
+      <li>\(\tan\theta = L/(2D) = 0{,}042/(2 \times 0{,}80) = 0{,}02625\) rad ≈ 0,026 rad (petit angle).</li>
+      <li>\(L' = \dfrac{2 \times 445 \times 10^{-9} \times 0{,}80}{2{,}48 \times 10^{-5}} \approx \dfrac{712 \times 10^{-9}}{2{,}48 \times 10^{-5}} \approx 2{,}87 \times 10^{-2}\) m ≈ <strong>2,87 cm</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-standard">
+  <span class="tag-standard">Standard</span>
+  <strong>Exercice 12 — Applications industrielles</strong>
+  <p>Donne pour chacune des applications suivantes le rôle de la diffraction :</p>
+  <ol>
+    <li>Lecteur CD/DVD : le faisceau laser lit les données gravées sur le disque (pistes espacées de 1,6 µm).</li>
+    <li>Diffractomètre à rayons X : des rayons X de λ ≈ 0,1 nm sont diffractés par un cristal (espacement atomique ≈ 0,3 nm).</li>
+    <li>Fibre optique monomode : le cœur de la fibre a un diamètre proche de λ de la lumière.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>Les pistes du CD forment un réseau de diffraction. Le faisceau laser est diffracté différemment selon la présence de creux (pits) ou de plats (lands), ce qui code l'information binaire.</li>
+      <li>Les rayons X sont diffractés par le réseau atomique du cristal : l'analyse de la figure de diffraction donne la structure cristalline et les distances interatomiques (cristallographie).</li>
+      <li>Dans une fibre monomode, le cœur est si étroit (≈ 8 µm) que la lumière est guidée par les effets ondulatoires (un seul mode de propagation), ce qui réduit la dispersion du signal.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== APPROFONDISSEMENT ===== -->
+<h2>Niveau Approfondissement</h2>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <strong>Exercice 13 — Mesure par diffraction : analyse d'incertitudes</strong>
+  <p>Un technicien mesure la largeur d'une fente par diffraction. Il répète l'expérience 5 fois avec un laser rouge (\(\lambda = 650\) nm, \(D = 1\) m) :</p>
+  <table>
+    <thead><tr><th>Mesure</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
+    <tbody>
+      <tr><td>\(L\) (cm)</td><td>3,2</td><td>3,1</td><td>3,3</td><td>3,2</td><td>3,2</td></tr>
+    </tbody>
+  </table>
+  <ol>
+    <li>Calcule la valeur moyenne \(\bar{L}\).</li>
+    <li>Calcule l'écart-type (simplifié : écart max / 2) pour estimer l'incertitude.</li>
+    <li>Calcule la largeur de fente \(a\) à partir de \(\bar{L}\).</li>
+    <li>Calcule l'incertitude relative sur \(a\) et l'incertitude absolue \(\Delta a\).</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(\bar{L} = (3{,}2 + 3{,}1 + 3{,}3 + 3{,}2 + 3{,}2)/5 = 16/5 = 3{,}2\) cm.</li>
+      <li>Écart max : 3,3 − 3,1 = 0,2 cm. Incertitude ≈ 0,2/2 = ±0,1 cm.</li>
+      <li>\(a = 2\lambda D / \bar{L} = 2 \times 650 \times 10^{-9} \times 1 / (3{,}2 \times 10^{-2}) \approx 4{,}06 \times 10^{-5}\) m ≈ 40,6 µm.</li>
+      <li>Incertitude relative : \(\Delta L / \bar{L} = 0{,}1/3{,}2 \approx 3{,}1\%\). \(\Delta a = 3{,}1\% \times 40{,}6 \approx 1{,}3\) µm. Résultat : \(a = (40{,}6 \pm 1{,}3)\) µm.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <strong>Exercice 14 — Diffraction et lithographie laser</strong>
+  <p>La lithographie laser est utilisée pour graver des circuits imprimés. La résolution minimale (plus petite structure gravable) est limitée par la diffraction : \(R_{\min} \approx \lambda / (2 \times NA)\) où \(NA\) est l'ouverture numérique du système optique.</p>
+  <ol>
+    <li>Pour un laser UV (\(\lambda = 248\) nm) et \(NA = 0{,}6\), calcule \(R_{\min}\).</li>
+    <li>Pour un laser à ArF (\(\lambda = 193\) nm) et \(NA = 0{,}85\), calcule \(R_{\min}\). Quel système est meilleur ?</li>
+    <li>Les processeurs modernes ont des transistors de 3 nm. Peut-on les faire avec un laser 193 nm ? Que faut-il faire ?</li>
+    <li>Explique pourquoi la résolution des microscopes optiques est limitée à environ λ/2.</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(R_{\min} = 248/(2 \times 0{,}6) \approx 207\) nm.</li>
+      <li>\(R_{\min} = 193/(2 \times 0{,}85) \approx 113\) nm. Le laser ArF est meilleur (résolution 2 fois plus fine).</li>
+      <li>Non : 113 nm >> 3 nm. On utilise des techniques avancées comme l'EUV (Extreme UV, λ = 13,5 nm) et la lithographie multipasses pour atteindre des résolutions nanométriques.</li>
+      <li>La diffraction au niveau de l'objectif du microscope empêche de distinguer deux points séparés de moins de λ/2. C'est la limite d'Abbe : même avec un objectif parfait, la physique ondulatoire limite la résolution.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo diff-appro">
+  <span class="tag-appro">Approfondissement</span>
+  <strong>Exercice 15 — Étude d'un spectromètre industriel</strong>
+  <p>Un spectromètre industriel utilise un réseau de diffraction de 1200 traits/mm pour analyser la composition d'alliages métalliques. La formule du réseau : \(d \sin\theta = n\lambda\) où \(n\) est l'ordre de diffraction.</p>
+  <ol>
+    <li>Calcule le pas du réseau \(d\) en nm.</li>
+    <li>Pour \(n=1\) et \(\lambda = 589\) nm (raie jaune du sodium), calcule \(\sin\theta\), puis θ en degrés.</li>
+    <li>Pour \(n=1\) et \(\lambda = 486\) nm (raie bleue de l'hydrogène), calcule θ. Les deux raies sont-elles séparées ?</li>
+    <li>Pourquoi les spectromètres à réseau sont-ils préférés aux prismes pour l'analyse industrielle ?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <div class="corr" style="display:none">
+    <ol>
+      <li>\(d = 1/1200\) mm = \(8{,}33 \times 10^{-4}\) mm = <strong>833 nm</strong>.</li>
+      <li>\(\sin\theta = n\lambda/d = 1 \times 589/833 = 0{,}707\). \(\theta = \arcsin(0{,}707) = 45°\).</li>
+      <li>\(\sin\theta = 486/833 = 0{,}583\). \(\theta = 35{,}7°\). Les raies sont séparées de 45° − 35,7° = 9,3° : bonne séparation.</li>
+      <li>Les réseaux ont une dispersion angulaire quasi-linéaire et constante sur tout le spectre ; leur résolution spectrale peut être très élevée ; ils sont insensibles à la température (contrairement au prisme en verre). Ils permettent aussi de travailler en UV et IR.</li>
+    </ol>
+  </div>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>
