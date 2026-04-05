@@ -1,5 +1,11 @@
 # Prompt de référence — Génération des Devoirs Surveillés (ds.html)
 
+> ⚠ **Interdits absolus** (→ détails dans [`regles-communes.md`](regles-communes.md)) :
+> 1. Les visuels montrent uniquement les données brutes — jamais l'équation, la solution, le point d'intersection
+> 2. Toute référence "le graphique ci-dessous" exige une figure présente dans la page
+> 3. Canvas animé interdit — SVG statique ou Chart.js (rendu une fois) uniquement
+> 4. Dès 3 valeurs numériques → `<table class="full">` avant les questions
+
 Guide de référence pour la création des pages `ds.html` dans chaque chapitre du site.
 
 ---
@@ -294,37 +300,7 @@ Chaque question doit être taguée avec la compétence qu'elle évalue. Distribu
 
 ## Figures et visuels dans les DS
 
-### Règle fondamentale — données uniquement
-
-**Un visuel dans un DS montre uniquement les données brutes fournies à l'élève.**
-
-Il ne doit **jamais** :
-- Montrer l'équation à construire
-- Afficher la valeur inconnue ou la solution
-- Tracer une droite que l'élève doit tracer lui-même
-- Indiquer un point d'intersection que l'élève doit déterminer
-
-Il doit **toujours** servir de support de compréhension, pas de support de correction.
-
-> **Règle mnémotechnique :** *"Ce que l'élève a le droit de voir sur sa copie, et rien de plus."*
-
-### Quand ajouter un tableau de données
-
-**Règle systématique :** dès qu'un exercice présente des valeurs numériques (prix, mesures, quantités, résultats), les regrouper dans un tableau avant les questions — même si le texte les cite déjà.
-
-```html
-<!-- Avant les questions, dans la situation -->
-<table class="full" style="margin:8px 0 14px;font-size:.92em;max-width:360px">
-  <thead><tr><th>Donnée</th><th>Valeur</th></tr></thead>
-  <tbody>
-    <tr><td>Puissance du radiateur</td><td>2 000 W</td></tr>
-    <tr><td>Durée de fonctionnement</td><td>8 h</td></tr>
-    <tr><td>Prix du kWh</td><td>0,18 €</td></tr>
-  </tbody>
-</table>
-```
-
-**Ne jamais ajouter** de ligne "Résultat", "Énergie = ?", "Coût à calculer" — ce sont les questions.
+→ Règles visuels complètes dans [`regles-communes.md`](regles-communes.md)
 
 ### Quand ajouter un schéma SVG
 
@@ -360,15 +336,6 @@ Il doit **toujours** servir de support de compréhension, pas de support de corr
 | PC Seconde | `#f5f0ff` | `#6f42c1` | `#c53030` italique |
 | Maths Première/Terminale | `#dbeafe` | `#0969da` | `#c53030` italique |
 | PC Première | `#dbeafe` ou `#f0fff4` | selon filière | `#c53030` italique |
-
-### Visuels dans les DS — statiques uniquement
-
-Toutes les pages du site fonctionnent en ligne et à l'impression. Dans les DS :
-- **SVG statique** ✓ — format privilégié
-- **Chart.js** ✓ — acceptable si rendu une seule fois (pas d'animation)
-- **Canvas animé** ✗ — réservé aux leçons et simulations
-
-L'élève observe et lit les figures — il ne les manipule pas.
 
 ### Repère vierge (graphique à compléter)
 

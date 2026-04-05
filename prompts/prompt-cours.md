@@ -1,5 +1,10 @@
 # Prompt de référence — Génération de pages de cours
 
+> ⚠ **Interdits absolus** (→ détails dans [`regles-communes.md`](regles-communes.md)) :
+> 1. Toute référence "le graphique ci-dessous" exige une figure présente dans la page
+> 2. Canvas animé autorisé en petite quantité (1-2 par leçon, rôle pédagogique clair)
+> 3. Pas de `diff.js` ni de blocs `diff-*` dans les leçons
+
 Je veux que tu rédiges une page de cours complète, très pédagogique et bien structurée, destinée à des élèves de lycée professionnel.
 
 Objectif : produire une page HTML prête à être intégrée dans un site pédagogique.
@@ -44,7 +49,7 @@ Avant de générer le cours, lire le fichier programme (`.md` dans `/pdf/`) pour
 | "réaliser un schéma / montage" | SVG du schéma normalisé |
 | "identifier (à partir d'un enregistrement / schéma)" | SVG de l'enregistrement ou du schéma |
 
-Utiliser `python3 scripts/check_visuals.py` pour vérifier la couverture graphique après génération.
+→ Conventions SVG détaillées dans [`regles-communes.md`](regles-communes.md).
 
 #### Interactivité dans les leçons
 
@@ -190,7 +195,7 @@ Les exercices d'application doivent être **distribués dans le déroulé de la 
 - [ ] Canvas pour les animations pédagogiques pertinentes
 - [ ] Aucune figure décrite uniquement par du texte quand un schéma est nécessaire
 - [ ] Légendes (`<figcaption>`) sur chaque figure
-- [ ] `check_visuals.py` lancé pour vérifier les références orphelines
+- [ ] Aucune référence orpheline ("le graphique ci-dessous" sans figure)
 
 ### Technique
 - [ ] MathJax inclus si formules
