@@ -58,6 +58,12 @@
 /* SVG mini courbes */
 .mini-chart-wrap{background:#fafafa;border:1px solid #e2e8f0;border-radius:8px;padding:8px;margin:12px 0;text-align:center}
 .mini-chart-wrap figcaption{font-size:.75rem;color:#666;margin-top:4px}
+/* Styles SVG communs (tous niveaux) */
+.svg-it .curve-ctn{stroke:#7c3aed;stroke-width:2.2;fill:none;stroke-linejoin:round}
+.svg-it .curve-t{stroke:#7c3aed;stroke-width:2.2;fill:none;stroke-linejoin:round}
+.svg-it .pt-ctn,.svg-it .pt-t{fill:#7c3aed}
+.svg-it .seuil-line{stroke:#e53e3e;stroke-width:1.5;stroke-dasharray:5,3}
+.svg-it .readoff-h,.svg-it .readoff-v{stroke:#2563eb;stroke-width:1;stroke-dasharray:3,2}
 
 /* Impression */
 @media print{
@@ -139,19 +145,51 @@
 </div>
 
 <div class="exo">
-  <h2>Question 3 <span class="pts">4 pts</span></h2>
-  <div class="meth"><strong>Rappel :</strong> CTN = résistance <em>diminue</em> quand T augmente. CTP = résistance <em>augmente fortement</em> au-delà d'un seuil.</div>
+  <h2>Question 3 <span class="pts">5 pts</span></h2>
+  <div class="meth"><strong>Rappel :</strong> CTN = résistance <em>diminue</em> quand T augmente. CTP = résistance <em>augmente fortement</em> au-delà d'un seuil. Thermocouple → tension Seebeck (grande plage). LM35 → tension linéaire (10 mV/°C).</div>
   <p>On dispose d'une CTN. Un ohmmètre mesure les résistances suivantes :</p>
   <table class="it">
     <thead><tr><th>T (°C)</th><th>0</th><th>20</th><th>40</th><th>60</th><th>80</th></tr></thead>
     <tbody><tr><th>R (kΩ)</th><td>32,7</td><td>12,0</td><td>4,9</td><td>2,2</td><td>1,1</td></tr></tbody>
   </table>
+  <svg class="svg-it" viewBox="0 0 300 160" style="width:100%;max-width:300px;display:block;margin:.5em auto 0" aria-label="Caractéristique R(T) de la CTN — Sujet A">
+    <defs>
+      <marker id="arrSocA" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 Z" fill="#718096"/>
+      </marker>
+    </defs>
+    <text x="150" y="11" text-anchor="middle" font-size="9" fill="#4c1d95" font-weight="bold">Caractéristique R(T) — CTN (Sujet A)</text>
+    <line x1="50" y1="135" x2="278" y2="135" stroke="#718096" stroke-width="1.5" marker-end="url(#arrSocA)"/>
+    <line x1="50" y1="15" x2="50" y2="135" stroke="#718096" stroke-width="1.5" marker-end="url(#arrSocA)"/>
+    <text x="282" y="138" font-size="8" fill="#718096">T (°C)</text>
+    <text x="35" y="13" font-size="8" fill="#718096">R (kΩ)</text>
+    <line x1="50" y1="133" x2="50" y2="138" stroke="#718096"/><text x="50" y="147" text-anchor="middle" font-size="8" fill="#666">0</text>
+    <line x1="104" y1="133" x2="104" y2="138" stroke="#718096"/><text x="104" y="147" text-anchor="middle" font-size="8" fill="#666">20</text>
+    <line x1="157" y1="133" x2="157" y2="138" stroke="#718096"/><text x="157" y="147" text-anchor="middle" font-size="8" fill="#666">40</text>
+    <line x1="211" y1="133" x2="211" y2="138" stroke="#718096"/><text x="211" y="147" text-anchor="middle" font-size="8" fill="#666">60</text>
+    <line x1="265" y1="133" x2="265" y2="138" stroke="#718096"/><text x="265" y="147" text-anchor="middle" font-size="8" fill="#666">80</text>
+    <line x1="48" y1="24" x2="53" y2="24" stroke="#718096"/><text x="44" y="27" text-anchor="end" font-size="8" fill="#666">32</text>
+    <line x1="48" y1="91" x2="53" y2="91" stroke="#718096"/><text x="44" y="94" text-anchor="end" font-size="8" fill="#666">12</text>
+    <line x1="48" y1="114" x2="53" y2="114" stroke="#718096"/><text x="44" y="117" text-anchor="end" font-size="8" fill="#666">5</text>
+    <polyline class="curve-ctn" points="50,24 104,91 157,114 211,123 265,126"/>
+    <circle class="pt-ctn" cx="50" cy="24" r="3.5"/>
+    <circle class="pt-ctn" cx="104" cy="91" r="3.5"/>
+    <circle class="pt-ctn" cx="157" cy="114" r="3.5"/>
+    <circle class="pt-ctn" cx="211" cy="123" r="3.5"/>
+    <circle class="pt-ctn" cx="265" cy="126" r="3.5"/>
+    <line class="readoff-h" x1="50" y1="114" x2="157" y2="114"/>
+    <line class="readoff-v" x1="157" y1="114" x2="157" y2="135"/>
+    <text x="55" y="112" font-size="7.5" fill="#2563eb">4,9 kΩ</text>
+    <text x="157" y="131" text-anchor="middle" font-size="7.5" fill="#2563eb">40 °C</text>
+  </svg>
   <p><strong>a)</strong> On mesure \(R = 12{,}0 \text{ kΩ}\). Quelle est la température ?</p>
   <p><strong>b)</strong> La résistance augmente-t-elle ou diminue-t-elle quand la température monte ?</p>
+  <p><strong>c)</strong> Lire sur le graphe : quelle résistance correspond à T = 40 °C ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(R = 12{,}0 \text{ kΩ}\) correspond à \(\mathbf{T = 20\ °\text{C}}\).</p>
     <p><strong>b)</strong> La résistance <strong>diminue</strong> quand la température augmente. Comportement d'une <strong>CTN</strong> (Coefficient de Température Négatif).</p>
+    <p><strong>c)</strong> La lecture graphique donne \(R \approx \mathbf{4{,}9\ \text{kΩ}}\) pour T = 40 °C.</p>
   </div>
 </div>
 
@@ -183,7 +221,7 @@
 </div>
 
 <div class="exo">
-  <h2>Question 5 <span class="pts">4 pts</span></h2>
+  <h2>Question 5 <span class="pts">3 pts</span></h2>
   <div class="meth"><strong>Rappel :</strong> En atelier : CTN pour les étuves, CTP pour la protection des moteurs, thermocouple pour les paliers.</div>
   <p>Un menuisier utilise une étuve de séchage du bois réglée à 80 °C. Une CTN mesure la température pour la réguler.</p>
   <p><strong>a)</strong> D'après le tableau de la question 3, quelle résistance la CTN affiche-t-elle à 80 °C ?</p>
@@ -243,19 +281,51 @@
 </div>
 
 <div class="exo">
-  <h2>Question 3 <span class="pts">4 pts</span></h2>
-  <div class="meth"><strong>Rappel :</strong> CTN = résistance <em>diminue</em> quand T augmente. CTP = résistance <em>augmente fortement</em> au-delà d'un seuil.</div>
+  <h2>Question 3 <span class="pts">5 pts</span></h2>
+  <div class="meth"><strong>Rappel :</strong> CTN = résistance <em>diminue</em> quand T augmente. CTP = résistance <em>augmente fortement</em> au-delà d'un seuil. Thermocouple → tension Seebeck (grande plage). LM35 → tension linéaire (10 mV/°C).</div>
   <p>On dispose d'une CTN. Un ohmmètre mesure les résistances suivantes :</p>
   <table class="it">
     <thead><tr><th>T (°C)</th><th>10</th><th>25</th><th>40</th><th>55</th><th>70</th></tr></thead>
     <tbody><tr><th>R (kΩ)</th><td>19,9</td><td>10,0</td><td>5,3</td><td>3,0</td><td>1,8</td></tr></tbody>
   </table>
+  <svg class="svg-it" viewBox="0 0 300 160" style="width:100%;max-width:300px;display:block;margin:.5em auto 0" aria-label="Caractéristique R(T) de la CTN — Sujet B">
+    <defs>
+      <marker id="arrSocB" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 Z" fill="#718096"/>
+      </marker>
+    </defs>
+    <text x="150" y="11" text-anchor="middle" font-size="9" fill="#4c1d95" font-weight="bold">Caractéristique R(T) — CTN (Sujet B)</text>
+    <line x1="50" y1="135" x2="278" y2="135" stroke="#718096" stroke-width="1.5" marker-end="url(#arrSocB)"/>
+    <line x1="50" y1="15" x2="50" y2="135" stroke="#718096" stroke-width="1.5" marker-end="url(#arrSocB)"/>
+    <text x="282" y="138" font-size="8" fill="#718096">T (°C)</text>
+    <text x="35" y="13" font-size="8" fill="#718096">R (kΩ)</text>
+    <line x1="50" y1="133" x2="50" y2="138" stroke="#718096"/><text x="50" y="147" text-anchor="middle" font-size="8" fill="#666">10</text>
+    <line x1="104" y1="133" x2="104" y2="138" stroke="#718096"/><text x="104" y="147" text-anchor="middle" font-size="8" fill="#666">25</text>
+    <line x1="157" y1="133" x2="157" y2="138" stroke="#718096"/><text x="157" y="147" text-anchor="middle" font-size="8" fill="#666">40</text>
+    <line x1="211" y1="133" x2="211" y2="138" stroke="#718096"/><text x="211" y="147" text-anchor="middle" font-size="8" fill="#666">55</text>
+    <line x1="265" y1="133" x2="265" y2="138" stroke="#718096"/><text x="265" y="147" text-anchor="middle" font-size="8" fill="#666">70</text>
+    <line x1="48" y1="26" x2="53" y2="26" stroke="#718096"/><text x="44" y="29" text-anchor="end" font-size="8" fill="#666">20</text>
+    <line x1="48" y1="78" x2="53" y2="78" stroke="#718096"/><text x="44" y="81" text-anchor="end" font-size="8" fill="#666">10</text>
+    <line x1="48" y1="102" x2="53" y2="102" stroke="#718096"/><text x="44" y="105" text-anchor="end" font-size="8" fill="#666">5</text>
+    <polyline class="curve-ctn" points="50,26 104,78 157,102 211,114 265,121"/>
+    <circle class="pt-ctn" cx="50" cy="26" r="3.5"/>
+    <circle class="pt-ctn" cx="104" cy="78" r="3.5"/>
+    <circle class="pt-ctn" cx="157" cy="102" r="3.5"/>
+    <circle class="pt-ctn" cx="211" cy="114" r="3.5"/>
+    <circle class="pt-ctn" cx="265" cy="121" r="3.5"/>
+    <line class="readoff-h" x1="50" y1="102" x2="157" y2="102"/>
+    <line class="readoff-v" x1="157" y1="102" x2="157" y2="135"/>
+    <text x="55" y="100" font-size="7.5" fill="#2563eb">5,3 kΩ</text>
+    <text x="157" y="131" text-anchor="middle" font-size="7.5" fill="#2563eb">40 °C</text>
+  </svg>
   <p><strong>a)</strong> On mesure \(R = 5{,}3 \text{ kΩ}\). Quelle est la température ?</p>
   <p><strong>b)</strong> La résistance augmente-t-elle ou diminue-t-elle quand la température monte ?</p>
+  <p><strong>c)</strong> Lire sur le graphe : quelle résistance correspond à T = 40 °C ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(R = 5{,}3 \text{ kΩ}\) correspond à \(\mathbf{T = 40\ °\text{C}}\).</p>
     <p><strong>b)</strong> La résistance <strong>diminue</strong> quand la température augmente. Comportement d'une <strong>CTN</strong> (Coefficient de Température Négatif).</p>
+    <p><strong>c)</strong> La lecture graphique donne \(R \approx \mathbf{5{,}3\ \text{kΩ}}\) pour T = 40 °C.</p>
   </div>
 </div>
 
@@ -287,7 +357,7 @@
 </div>
 
 <div class="exo">
-  <h2>Question 5 <span class="pts">4 pts</span></h2>
+  <h2>Question 5 <span class="pts">3 pts</span></h2>
   <div class="meth"><strong>Rappel :</strong> En atelier : CTN pour les étuves, CTP pour la protection des moteurs, thermocouple pour les paliers.</div>
   <p>Un artisan menuisier utilise un four de traitement thermique du bois réglé à 70 °C. Une CTN surveille la température.</p>
   <p><strong>a)</strong> D'après le tableau de la question 3, quelle résistance la CTN affiche-t-elle à 70 °C ?</p>
@@ -350,7 +420,7 @@
 </div>
 
 <div class="exo">
-  <h2>Question 3 <span class="pts">5 pts</span></h2>
+  <h2>Question 3 <span class="pts">4 pts</span></h2>
   <p>Pour chaque application en atelier de menuiserie, choisir le capteur le plus adapté parmi : thermocouple, CTN, CTP, LM35. Justifier brièvement.</p>
   <p><strong>a)</strong> Mesurer la température d'un palier de machine à bois pouvant atteindre 400 °C.</p>
   <p><strong>b)</strong> Réguler finement la température d'une étuve de séchage à 75 °C.</p>
@@ -366,18 +436,53 @@
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="pts">4 pts</span></h2>
+  <h2>Question 4 <span class="pts">5 pts</span></h2>
   <p>Dans une étuve de séchage du bois, une CTN est reliée à un régulateur. La consigne est fixée à 75 °C. Le tableau de correspondance donne :</p>
   <table class="it">
     <thead><tr><th>T (°C)</th><th>60</th><th>65</th><th>70</th><th>75</th><th>80</th></tr></thead>
     <tbody><tr><th>R (kΩ)</th><td>2,2</td><td>1,8</td><td>1,5</td><td>1,3</td><td>1,1</td></tr></tbody>
   </table>
+  <svg class="svg-it" viewBox="0 0 300 160" style="width:100%;max-width:300px;display:block;margin:.5em auto 0" aria-label="Caractéristique R(T) de la CTN — Standard Sujet A">
+    <defs>
+      <marker id="arrStA" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 Z" fill="#718096"/>
+      </marker>
+    </defs>
+    <text x="150" y="11" text-anchor="middle" font-size="9" fill="#4c1d95" font-weight="bold">Caractéristique R(T) — CTN étuve (Sujet A)</text>
+    <line x1="50" y1="135" x2="278" y2="135" stroke="#718096" stroke-width="1.5" marker-end="url(#arrStA)"/>
+    <line x1="50" y1="15" x2="50" y2="135" stroke="#718096" stroke-width="1.5" marker-end="url(#arrStA)"/>
+    <text x="282" y="138" font-size="8" fill="#718096">T (°C)</text>
+    <text x="35" y="13" font-size="8" fill="#718096">R (kΩ)</text>
+    <line x1="50" y1="133" x2="50" y2="138" stroke="#718096"/><text x="50" y="147" text-anchor="middle" font-size="8" fill="#666">60</text>
+    <line x1="104" y1="133" x2="104" y2="138" stroke="#718096"/><text x="104" y="147" text-anchor="middle" font-size="8" fill="#666">65</text>
+    <line x1="157" y1="133" x2="157" y2="138" stroke="#718096"/><text x="157" y="147" text-anchor="middle" font-size="8" fill="#666">70</text>
+    <line x1="211" y1="133" x2="211" y2="138" stroke="#718096"/><text x="211" y="147" text-anchor="middle" font-size="8" fill="#666">75</text>
+    <line x1="265" y1="133" x2="265" y2="138" stroke="#718096"/><text x="265" y="147" text-anchor="middle" font-size="8" fill="#666">80</text>
+    <line x1="48" y1="36" x2="53" y2="36" stroke="#718096"/><text x="44" y="39" text-anchor="end" font-size="8" fill="#666">2,2</text>
+    <line x1="48" y1="67" x2="53" y2="67" stroke="#718096"/><text x="44" y="70" text-anchor="end" font-size="8" fill="#666">1,8</text>
+    <line x1="48" y1="91" x2="53" y2="91" stroke="#718096"/><text x="44" y="94" text-anchor="end" font-size="8" fill="#666">1,5</text>
+    <!-- Seuil R=1,5 kΩ -->
+    <line class="seuil-line" x1="50" y1="91" x2="265" y2="91"/>
+    <text x="267" y="90" font-size="7.5" fill="#e53e3e">1,5 kΩ</text>
+    <polyline class="curve-ctn" points="50,36 104,67 157,91 211,106 265,122"/>
+    <circle class="pt-ctn" cx="50" cy="36" r="3.5"/>
+    <circle class="pt-ctn" cx="104" cy="67" r="3.5"/>
+    <circle class="pt-ctn" cx="157" cy="91" r="3.5"/>
+    <circle class="pt-ctn" cx="211" cy="106" r="3.5"/>
+    <circle class="pt-ctn" cx="265" cy="122" r="3.5"/>
+    <!-- Lignes de lecture à R=1,5 → T=70°C -->
+    <line class="readoff-h" x1="50" y1="91" x2="157" y2="91"/>
+    <line class="readoff-v" x1="157" y1="91" x2="157" y2="135"/>
+    <text x="157" y="131" text-anchor="middle" font-size="7.5" fill="#2563eb">70 °C</text>
+  </svg>
   <p><strong>a)</strong> Quelle résistance correspond à la consigne de 75 °C ?</p>
   <p><strong>b)</strong> L'ohmmètre affiche 1,8 kΩ. Quelle est la température réelle ? Faut-il chauffer davantage ?</p>
+  <p><strong>c)</strong> Pour quelles températures la résistance de la CTN est-elle inférieure à 1,5 kΩ ? (Lire sur le graphe.)</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> À 75 °C : \(R = \mathbf{1{,}3\ \text{kΩ}}\).</p>
     <p><strong>b)</strong> \(R = 1{,}8\ \text{kΩ}\) correspond à <strong>65 °C</strong>. La température est <strong>inférieure à la consigne</strong>. Il faut <strong>augmenter</strong> le chauffage.</p>
+    <p><strong>c)</strong> La ligne en tirets rouge montre \(R = 1{,}5\ \text{kΩ}\) à T = 70 °C. La CTN a \(R &lt; 1{,}5\ \text{kΩ}\) pour \(\mathbf{T &gt; 70\ °\text{C}}\).</p>
   </div>
 </div>
 
@@ -430,7 +535,7 @@
 </div>
 
 <div class="exo">
-  <h2>Question 3 <span class="pts">5 pts</span></h2>
+  <h2>Question 3 <span class="pts">4 pts</span></h2>
   <p>Pour chaque situation professionnelle, choisir le capteur le plus adapté parmi : thermocouple, CTN, CTP, LM35. Justifier brièvement.</p>
   <p><strong>a)</strong> Surveiller la température d'un moule d'injection plastique à 250 °C.</p>
   <p><strong>b)</strong> Réguler un bain de traitement de surface à 55 °C.</p>
@@ -446,18 +551,53 @@
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="pts">4 pts</span></h2>
+  <h2>Question 4 <span class="pts">5 pts</span></h2>
   <p>Dans un local de stockage, une CTN est reliée à un régulateur de chauffage. La consigne est fixée à 60 °C. Le tableau de correspondance donne :</p>
   <table class="it">
     <thead><tr><th>T (°C)</th><th>40</th><th>50</th><th>60</th><th>70</th><th>80</th></tr></thead>
     <tbody><tr><th>R (kΩ)</th><td>4,7</td><td>3,1</td><td>2,1</td><td>1,5</td><td>1,1</td></tr></tbody>
   </table>
+  <svg class="svg-it" viewBox="0 0 300 160" style="width:100%;max-width:300px;display:block;margin:.5em auto 0" aria-label="Caractéristique R(T) de la CTN — Standard Sujet B">
+    <defs>
+      <marker id="arrStB" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 Z" fill="#718096"/>
+      </marker>
+    </defs>
+    <text x="150" y="11" text-anchor="middle" font-size="9" fill="#4c1d95" font-weight="bold">Caractéristique R(T) — CTN stockage (Sujet B)</text>
+    <line x1="50" y1="135" x2="278" y2="135" stroke="#718096" stroke-width="1.5" marker-end="url(#arrStB)"/>
+    <line x1="50" y1="15" x2="50" y2="135" stroke="#718096" stroke-width="1.5" marker-end="url(#arrStB)"/>
+    <text x="282" y="138" font-size="8" fill="#718096">T (°C)</text>
+    <text x="35" y="13" font-size="8" fill="#718096">R (kΩ)</text>
+    <line x1="50" y1="133" x2="50" y2="138" stroke="#718096"/><text x="50" y="147" text-anchor="middle" font-size="8" fill="#666">40</text>
+    <line x1="104" y1="133" x2="104" y2="138" stroke="#718096"/><text x="104" y="147" text-anchor="middle" font-size="8" fill="#666">50</text>
+    <line x1="157" y1="133" x2="157" y2="138" stroke="#718096"/><text x="157" y="147" text-anchor="middle" font-size="8" fill="#666">60</text>
+    <line x1="211" y1="133" x2="211" y2="138" stroke="#718096"/><text x="211" y="147" text-anchor="middle" font-size="8" fill="#666">70</text>
+    <line x1="265" y1="133" x2="265" y2="138" stroke="#718096"/><text x="265" y="147" text-anchor="middle" font-size="8" fill="#666">80</text>
+    <line x1="48" y1="28" x2="53" y2="28" stroke="#718096"/><text x="44" y="31" text-anchor="end" font-size="8" fill="#666">4,7</text>
+    <line x1="48" y1="72" x2="53" y2="72" stroke="#718096"/><text x="44" y="75" text-anchor="end" font-size="8" fill="#666">3,1</text>
+    <line x1="48" y1="116" x2="53" y2="116" stroke="#718096"/><text x="44" y="119" text-anchor="end" font-size="8" fill="#666">1,5</text>
+    <!-- Seuil R=1,5 kΩ -->
+    <line class="seuil-line" x1="50" y1="116" x2="265" y2="116"/>
+    <text x="267" y="115" font-size="7.5" fill="#e53e3e">1,5 kΩ</text>
+    <polyline class="curve-ctn" points="50,28 104,72 157,100 211,116 265,127"/>
+    <circle class="pt-ctn" cx="50" cy="28" r="3.5"/>
+    <circle class="pt-ctn" cx="104" cy="72" r="3.5"/>
+    <circle class="pt-ctn" cx="157" cy="100" r="3.5"/>
+    <circle class="pt-ctn" cx="211" cy="116" r="3.5"/>
+    <circle class="pt-ctn" cx="265" cy="127" r="3.5"/>
+    <!-- Lignes de lecture à R=1,5 → T=70°C -->
+    <line class="readoff-h" x1="50" y1="116" x2="211" y2="116"/>
+    <line class="readoff-v" x1="211" y1="116" x2="211" y2="135"/>
+    <text x="211" y="131" text-anchor="middle" font-size="7.5" fill="#2563eb">70 °C</text>
+  </svg>
   <p><strong>a)</strong> Quelle résistance correspond à la consigne de 60 °C ?</p>
   <p><strong>b)</strong> L'ohmmètre affiche 1,5 kΩ. Quelle est la température réelle ? Faut-il réduire le chauffage ?</p>
+  <p><strong>c)</strong> Pour quelles températures la résistance de la CTN est-elle inférieure à 1,5 kΩ ? (Lire sur le graphe.)</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> À 60 °C : \(R = \mathbf{2{,}1\ \text{kΩ}}\).</p>
     <p><strong>b)</strong> \(R = 1{,}5\ \text{kΩ}\) correspond à <strong>70 °C</strong>. La température est <strong>supérieure à la consigne</strong>. Il faut <strong>réduire</strong> le chauffage.</p>
+    <p><strong>c)</strong> La ligne en tirets rouge montre \(R = 1{,}5\ \text{kΩ}\) à T = 70 °C. La CTN a \(R &lt; 1{,}5\ \text{kΩ}\) pour \(\mathbf{T &gt; 70\ °\text{C}}\).</p>
   </div>
 </div>
 
@@ -507,12 +647,12 @@
     <p><strong>a)</strong> \(T_0 = 25 + 273 = 298\ \text{K}\). \(T = 60 + 273 = 333\ \text{K}\).</p>
     <p><strong>b)</strong> \(\dfrac{1}{333} - \dfrac{1}{298} = 0{,}003003 - 0{,}003356 = -0{,}000353\ \text{K}^{-1}\)</p>
     <p><strong>c)</strong> \(B \times \left(\dfrac{1}{T} - \dfrac{1}{T_0}\right) = 3\,950 \times (-0{,}000353) = -1{,}394\)</p>
-    <p>\(R = 10\,000 \times e^{-1{,}394} = 10\,000 \times 0{,}248 \approx \mathbf{2{,}48\ \text{kΩ}}\)</p>
+    <p>\(R = 10\,000 \times e^{-1{,}394} = 10\,000 \times 0{,}2481 \approx \mathbf{2{,}48\ \text{kΩ}}\)</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 2 <span class="pts">5 pts</span></h2>
+  <h2>Question 2 <span class="pts">6 pts</span></h2>
   <p>Un technicien de maintenance surveille l'échauffement des paliers d'une scie à ruban. Un thermocouple de type K est fixé sur le palier. Les mesures relevées sont :</p>
   <table class="it">
     <thead><tr><th>Temps (min)</th><th>0</th><th>10</th><th>20</th><th>30</th><th>40</th></tr></thead>
@@ -530,7 +670,7 @@
       <!-- y = 140 - (T-20)/95*120 : T=20→140, T=115→20 -->
       <!-- T=22→137.5, T=35→121.3, T=52→101.1, T=78→71.6, T=110→35.8 -->
       <!-- seuil 90: y=140-70/95*120=140-88.4=51.6 ≈ 52 -->
-      <svg viewBox="0 0 340 160" width="320" aria-label="Évolution de la température du palier en fonction du temps">
+      <svg class="svg-it" viewBox="0 0 340 160" style="width:100%;max-width:380px" aria-label="Évolution de la température du palier en fonction du temps">
         <defs>
           <marker id="arrT" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
             <path d="M0,0 L6,3 L0,6 Z" fill="#718096"/>
@@ -566,13 +706,19 @@
         <!-- Zone rouge au-delà du seuil -->
         <rect x="205" y="51" width="110" height="3" fill="#fecaca" opacity="0.6"/>
         <text x="170" y="45" font-size="8" fill="#e53e3e">Seuil dépassé entre 30 et 40 min</text>
+        <!-- Lignes de lecture à t=20 min, T=52°C → point (170,101) -->
+        <line stroke="#2563eb" stroke-width="1" stroke-dasharray="3,2" x1="40" y1="101" x2="170" y2="101"/>
+        <line stroke="#2563eb" stroke-width="1" stroke-dasharray="3,2" x1="170" y1="101" x2="170" y2="140"/>
+        <text x="43" y="99" font-size="7.5" fill="#2563eb">52 °C</text>
+        <text x="170" y="136" text-anchor="middle" font-size="7.5" fill="#2563eb">20 min</text>
       </svg>
-      <figcaption>Courbe T(t) — seuil max à 90 °C (ligne rouge)</figcaption>
+      <figcaption>Courbe T(t) — seuil max à 90 °C (ligne rouge) — lignes bleues : lecture à t = 20 min</figcaption>
     </figure>
   </div>
   <p><strong>a)</strong> Convertir toutes les températures en Kelvin.</p>
   <p><strong>b)</strong> La température maximale admissible pour le palier est 90 °C. À quel moment environ ce seuil est-il dépassé ?</p>
   <p><strong>c)</strong> Que doit faire le technicien ? Proposer une action corrective.</p>
+  <p><strong>d)</strong> Lire sur le graphe : estimer la température du palier à t = 20 min.</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
     <table>
@@ -581,6 +727,7 @@
     </table>
     <p><strong>b)</strong> Entre 30 min (78 °C) et 40 min (110 °C), le seuil de 90 °C est dépassé. Estimation : vers <strong>33–34 minutes</strong>.</p>
     <p><strong>c)</strong> Le technicien doit <strong>arrêter la machine immédiatement</strong>. Action corrective : vérifier le graissage du roulement — un palier qui chauffe anormalement indique un roulement usé ou mal lubrifié.</p>
+    <p><strong>d)</strong> La lecture graphique à t = 20 min donne \(T \approx \mathbf{52\ °\text{C}}\) (point sur la courbe, confirmé par le tableau).</p>
   </div>
 </div>
 
@@ -617,7 +764,7 @@
 </div>
 
 <div class="exo">
-  <h2>Question 5 <span class="pts">3 pts</span></h2>
+  <h2>Question 5 <span class="pts">2 pts</span></h2>
   <p>Le séchage du bois en étuve nécessite un contrôle précis de la température. Expliquer pourquoi une température trop basse est inefficace et une température trop haute est dangereuse pour le bois. Quel capteur et quel type de régulation proposez-vous ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
@@ -651,12 +798,12 @@
     <p><strong>a)</strong> \(T_0 = 20 + 273 = 293\ \text{K}\). \(T = 50 + 273 = 323\ \text{K}\).</p>
     <p><strong>b)</strong> \(\dfrac{1}{323} - \dfrac{1}{293} = 0{,}003096 - 0{,}003413 = -0{,}000317\ \text{K}^{-1}\)</p>
     <p><strong>c)</strong> \(B \times \left(\dfrac{1}{T} - \dfrac{1}{T_0}\right) = 3\,800 \times (-0{,}000317) = -1{,}205\)</p>
-    <p>\(R = 12\,000 \times e^{-1{,}205} = 12\,000 \times 0{,}300 \approx \mathbf{3{,}59\ \text{kΩ}}\)</p>
+    <p>\(R = 12\,000 \times e^{-1{,}205} = 12\,000 \times 0{,}2998 \approx \mathbf{3{,}60\ \text{kΩ}}\)</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 2 <span class="pts">5 pts</span></h2>
+  <h2>Question 2 <span class="pts">6 pts</span></h2>
   <p>Un technicien de maintenance surveille la température d'un moteur de ponceuse industrielle. Un thermocouple de type K est fixé sur le carter. Les mesures relevées sont :</p>
   <table class="it">
     <thead><tr><th>Temps (min)</th><th>0</th><th>5</th><th>10</th><th>15</th><th>20</th></tr></thead>
@@ -668,7 +815,7 @@
       <!-- x(t) = 45 + t/20*260 ; y(T) = 138 - (T-20)/105*118 -->
       <!-- T=25→132.4, T=40→120.6, T=58→107.8, T=85→87.1, T=120→59.5 -->
       <!-- seuil 100°C : y=138-80/105*118=138-89.9=48.1 ≈ 48 -->
-      <svg viewBox="0 0 340 160" width="320" aria-label="Évolution de la température du carter en fonction du temps">
+      <svg class="svg-it" viewBox="0 0 340 160" style="width:100%;max-width:380px" aria-label="Évolution de la température du carter en fonction du temps">
         <defs>
           <marker id="arrT2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
             <path d="M0,0 L6,3 L0,6 Z" fill="#718096"/>
@@ -701,13 +848,19 @@
         <circle cx="235" cy="87" r="4" fill="#7c3aed"/>
         <circle cx="300" cy="60" r="4" fill="#7c3aed"/>
         <text x="160" y="43" font-size="8" fill="#e53e3e">Seuil dépassé entre 15 et 20 min</text>
+        <!-- Lignes de lecture à t=10 min, T=58°C → point (170,108) -->
+        <line stroke="#2563eb" stroke-width="1" stroke-dasharray="3,2" x1="40" y1="108" x2="170" y2="108"/>
+        <line stroke="#2563eb" stroke-width="1" stroke-dasharray="3,2" x1="170" y1="108" x2="170" y2="140"/>
+        <text x="43" y="106" font-size="7.5" fill="#2563eb">58 °C</text>
+        <text x="170" y="136" text-anchor="middle" font-size="7.5" fill="#2563eb">10 min</text>
       </svg>
-      <figcaption>Courbe T(t) — seuil max à 100 °C (ligne rouge)</figcaption>
+      <figcaption>Courbe T(t) — seuil max à 100 °C (ligne rouge) — lignes bleues : lecture à t = 10 min</figcaption>
     </figure>
   </div>
   <p><strong>a)</strong> Convertir toutes les températures en Kelvin.</p>
   <p><strong>b)</strong> La température maximale admissible pour le carter est 100 °C. À quel moment environ ce seuil est-il dépassé ?</p>
   <p><strong>c)</strong> Que doit faire le technicien ? Proposer une action corrective.</p>
+  <p><strong>d)</strong> Lire sur le graphe : estimer la température du carter à t = 10 min.</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
     <table>
@@ -716,6 +869,7 @@
     </table>
     <p><strong>b)</strong> Entre 15 min (85 °C) et 20 min (120 °C), le seuil de 100 °C est dépassé. Estimation : vers <strong>17 minutes</strong>.</p>
     <p><strong>c)</strong> Le technicien doit <strong>arrêter la machine</strong> pour éviter la surchauffe du moteur. Action corrective : vérifier le système de ventilation du moteur (filtre encrassé, ailettes bouchées) et contrôler la charge mécanique.</p>
+    <p><strong>d)</strong> La lecture graphique à t = 10 min donne \(T \approx \mathbf{58\ °\text{C}}\) (point sur la courbe, confirmé par le tableau).</p>
   </div>
 </div>
 
@@ -747,12 +901,12 @@
   <div class="corr">
     <p><strong>a)</strong> La <strong>CTN</strong> offre une meilleure sensibilité dans la plage 25–45 °C : sa résistance varie de plusieurs kΩ pour quelques degrés, contre quelques dizaines de mV pour le LM35.</p>
     <p><strong>b)</strong> Le <strong>LM35</strong> a une relation <strong>linéaire</strong> entre la tension et la température — pas besoin de table de correspondance, intégration simple dans un régulateur.</p>
-    <p><strong>c)</strong> Le <strong>LM35</strong> est recommandé : la plage 25–45 °C est modeste et la linéarité facilite l'intégration dans un système de régulation automatique.</p>
+    <p><strong>c)</strong> Le <strong>LM35</strong> est recommandé : la plage 25–45 °C est modeste (20 °C d'écart seulement) et la <strong>linéarité</strong> de sa sortie facilite l'intégration dans un système de régulation automatique, sans table de correspondance. La sensibilité supérieure de la CTN dans cette plage ne suffit pas à compenser la complexité de sa conversion R → T non linéaire.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 5 <span class="pts">3 pts</span></h2>
+  <h2>Question 5 <span class="pts">2 pts</span></h2>
   <p>La cuisson de certaines colles à bois nécessite un maintien précis à 120 °C pendant 30 minutes. Expliquer pourquoi un thermocouple serait préférable à une CTN pour cette application. Quel type de régulation proposez-vous ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
