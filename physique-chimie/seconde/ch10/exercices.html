@@ -8,15 +8,60 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}
-.section-intro{background:#f8f4ff;border-radius:8px;padding:10px 16px;margin-bottom:18px;font-size:.92em;color:#4a1d96;border:1px solid #ddd6fe}
+<style>
+:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}
+
+/* Tables dans les exercices */
+.exo table,.corr table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.88rem}
+.exo table th,.corr table th{background:var(--p-bg);color:var(--p);padding:8px 11px;border:1px solid var(--p-border);font-weight:700;text-align:center}
+.exo table td,.corr table td{padding:7px 11px;border:1px solid var(--p-border);text-align:center;vertical-align:middle}
+.exo table tbody tr:nth-child(even){background:#faf7ff}
+.exo table thead th:first-child,.exo table tbody th{text-align:left}
+.corr table tbody tr:nth-child(even){background:#f0fff4}
+.corr table td strong{color:#065f46}
+
+/* Bandeau de section parcours */
+.parcours-banner{display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-radius:10px;margin:30px 0 16px}
+.parcours-banner .pb-icon{font-size:1.5rem;line-height:1;flex-shrink:0;margin-top:2px}
+.parcours-banner .pb-body h2{margin:0 0 3px;font-size:1.05rem;font-weight:700}
+.parcours-banner .pb-body p{margin:0;font-size:.83rem;opacity:.9}
+.pb-guides{background:#f0fdf4;border:1.5px solid #10b981;color:#064e3b}
+.pb-appli{background:#eff6ff;border:1.5px solid #3b82f6;color:#1e3a8a}
+.pb-appro{background:#faf5ff;border:1.5px solid #7c3aed;color:#4c1d95}
+
+/* Nav rapide */
+.nav-rapide{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 24px}
+.nav-rapide a{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;border-radius:20px;font-size:.82rem;font-weight:600;text-decoration:none;border:1px solid;transition:opacity .15s}
+.nav-rapide a:hover{opacity:.8}
+.nra-g{background:#f0fdf4;color:#064e3b;border-color:#10b981}
+.nra-a{background:#eff6ff;color:#1e3a8a;border-color:#3b82f6}
+.nra-p{background:#faf5ff;color:#4c1d95;border-color:#7c3aed}
+
+/* Amélioration intro-box */
+.intro-box{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;background:var(--p-bg);border:1px solid var(--p-border);border-radius:10px;padding:12px 16px;margin-bottom:20px}
+.intro-item{font-size:.86rem;line-height:1.5}
+.intro-item strong{display:block;color:var(--p);font-size:.78rem;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px}
+
+/* Zone de réponse (feuille élève) */
+.zone-rep{border:1.5px dashed #c4b5fd;border-radius:6px;padding:10px 14px;margin:10px 0;min-height:60px;background:#fefefe;font-size:.85rem;color:#6b7280}
+
+/* Chart */
 .chart-container{max-width:600px;margin:20px auto;padding:10px}
 svg text{font-family:'Segoe UI',sans-serif}
 .niveau-header h2{margin:0;font-size:1.1em;color:inherit}
 .niveau-1{background:#f5f0ff;border-left:5px solid var(--p);color:#4a1d96}
 .niveau-2{background:#f0fff4;border-left:5px solid #10b981;color:#065f46}
 .niveau-3{background:#fffbeb;border-left:5px solid #f59e0b;color:#92400e}
-.niveau-4{background:#fff5f5;border-left:5px solid #ef4444;color:#991b1b}</style>
+.niveau-4{background:#fff5f5;border-left:5px solid #ef4444;color:#991b1b}
+
+/* Bilan des compétences */
+.bilan-box{background:var(--p-bg);border-radius:10px;padding:18px 22px;margin:32px 0;border:1px solid var(--p-border)}
+.bilan-box h3{color:#4a1d96;margin:0 0 12px;font-size:.95rem;text-transform:uppercase;letter-spacing:.5px}
+.bilan-box table{width:100%;border-collapse:collapse;font-size:.84rem}
+.bilan-box table th{background:var(--p);color:#fff;padding:7px 11px;text-align:left;border:1px solid var(--p-border)}
+.bilan-box table td{padding:6px 11px;border:1px solid var(--p-border)}
+.bilan-box table tbody tr:nth-child(even){background:#fff}
+</style>
 </head>
 <body>
 <div class="c">
@@ -28,13 +73,24 @@ svg text{font-family:'Segoe UI',sans-serif}
 </header>
 
 <div class="intro-box">
-  <strong>Rappel des relations clés :</strong><br>
-  Conversion : \( T(\text{K}) = T(°\text{C}) + 273 \) &nbsp;|&nbsp;
-  CTN : Coefficient de Température <strong>Négatif</strong> → R <strong>diminue</strong> quand T augmente &nbsp;|&nbsp;
-  Lecture sur courbe R(T) : T → R ou R → T
+  <div class="intro-item"><strong>Conversion °C ↔ K</strong>\( T(\text{K}) = \theta(°\text{C}) + 273 \) &nbsp;•&nbsp; \( \theta(°\text{C}) = T(\text{K}) - 273 \)</div>
+  <div class="intro-item"><strong>CTN (Coefficient Température Négatif)</strong>R <strong>diminue</strong> quand T augmente — courbe R(T) décroissante</div>
+  <div class="intro-item"><strong>Lecture courbe d'étalonnage</strong>Mesurer R → reporter sur l'axe → lire T (ou interpoler linéairement)</div>
 </div>
 
-<h2 style="color:#059669;border-left:4px solid #059669;padding-left:10px">Exercices guidés pas à pas</h2>
+<nav class="nav-rapide" aria-label="Navigation rapide">
+  <a href="#sec-guides" class="nra-g">Exercices guidés (Ex 1–13)</a>
+  <a href="#sec-appli" class="nra-a">Exercices d'application (Ex 14–25 + 34–36)</a>
+  <a href="#sec-appro" class="nra-p">Approfondissement (Ex 26–33)</a>
+</nav>
+
+<div id="sec-guides" class="parcours-banner pb-guides">
+  <div class="pb-icon">🟢</div>
+  <div class="pb-body">
+    <h2>Exercices guidés pas à pas</h2>
+    <p>Tronc commun (Ex 1–3) puis exercices socle avec étapes détaillées, tableaux pré-remplis et cases à compléter. Idéal pour démarrer et consolider les bases.</p>
+  </div>
+</div>
 
 <!-- EXO 1 -->
 <div class="exo">
@@ -57,13 +113,18 @@ svg text{font-family:'Segoe UI',sans-serif}
   </div>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>a)</strong></p>
-      <p>- 20 °C → <strong>293 K</strong></p>
-      <p>- 373 K → <strong>100 °C</strong> (ébullition eau)</p>
-      <p>- −40 °C → <strong>233 K</strong></p>
-      <p>- 0 K → <strong>−273 °C</strong> (zéro absolu)</p>
-      <p>- 87 °C → <strong>360 K</strong></p>
-      <p><strong>b)</strong> L'échelle Kelvin est une échelle absolue qui commence à zéro (pas de valeurs négatives). Elle est pratique en physique et en thermodynamique (lois des gaz parfaits, calculs de rendement) car elle simplifie les formules.</p>
+    <p><strong>a)</strong> Tableau complété :</p>
+    <table>
+      <thead><tr><th>Température (°C)</th><th>Température (K)</th><th>Situation</th></tr></thead>
+      <tbody>
+        <tr><td>20 °C</td><td><strong>293 K</strong></td><td>Température ambiante</td></tr>
+        <tr><td><strong>100 °C</strong></td><td>373 K</td><td>Ébullition de l'eau</td></tr>
+        <tr><td>−40 °C</td><td><strong>233 K</strong></td><td>Grand froid hivernal</td></tr>
+        <tr><td><strong>−273 °C</strong></td><td>0 K</td><td>Zéro absolu</td></tr>
+        <tr><td>87 °C</td><td><strong>360 K</strong></td><td>Température d'étuve de séchage</td></tr>
+      </tbody>
+    </table>
+    <p><strong>b)</strong> L'échelle Kelvin est une échelle absolue qui commence à zéro (pas de valeurs négatives). Elle est pratique en physique et en thermodynamique (lois des gaz parfaits, calculs de rendement) car elle simplifie les formules.</p>
   </div>
 </div>
 
@@ -94,11 +155,16 @@ svg text{font-family:'Segoe UI',sans-serif}
   </div>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>- Sonde d'étuve : <strong>CTN</strong> → signal électrique intégrable dans le régulateur, très sensible dans la plage 0–150 °C, faible coût.</p>
-    <p>- Régulateur industriel de précision : <strong>Pt100</strong> → relation quasi linéaire, très précise (±0,1 °C), référence industrielle pour les régulateurs exigeants.</p>
-    <p>- Four de vernissage (haute température) : <strong>Thermocouple</strong> → seul capteur résistant aux très hautes températures (jusqu'à +1 000 °C).</p>
-    <p>- Lame de scie en rotation : <strong>Thermomètre infrarouge</strong> → mesure sans contact, impossible d'apposer un capteur sur une pièce mobile.</p>
-    <p>- Température ambiante (affichage simple) : <strong>Cristaux liquides</strong> → lecture visuelle directe sans électronique, suffisant pour un affichage indicatif.</p>
+    <table>
+      <thead><tr><th>Application</th><th>Plage T</th><th>Capteur choisi</th><th>Justification</th></tr></thead>
+      <tbody>
+        <tr><td>Sonde d'étuve de séchage du bois</td><td>0 à 150 °C</td><td><strong>CTN</strong></td><td>Signal électrique intégrable, très sensible dans la plage 0–150 °C, faible coût</td></tr>
+        <tr><td>Régulateur industriel de précision</td><td>0 à 400 °C</td><td><strong>Pt100</strong></td><td>Quasi linéaire, très précise (±0,1 °C), référence industrielle</td></tr>
+        <tr><td>Température brûleur four de vernissage</td><td>200 à 900 °C</td><td><strong>Thermocouple</strong></td><td>Seul capteur résistant à 900 °C, type K ou N</td></tr>
+        <tr><td>Lame de scie en rotation</td><td>20 à 200 °C</td><td><strong>Infrarouge</strong></td><td>Mesure sans contact, indispensable pour une pièce mobile</td></tr>
+        <tr><td>Affichage température ambiante</td><td>0 à 50 °C</td><td><strong>Cristaux liquides</strong></td><td>Lecture visuelle directe, sans électronique ni alimentation</td></tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
@@ -116,39 +182,69 @@ svg text{font-family:'Segoe UI',sans-serif}
       <tr><th>Résistance R (kΩ)</th><td>10</td><td>6</td><td>3,5</td><td>2</td><td>0,8</td></tr>
     </table>
 
-    <!-- SVG R(T) CTN schéma -->
-    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:400px;margin:16px auto;display:block;background:#fafafa;border:1px solid #e2e8f0;border-radius:8px">
-      <text x="200" y="18" text-anchor="middle" font-size="13" fill="#4a1d96" font-weight="bold">Courbe R(T) – CTN (schéma)</text>
-      <line x1="50" y1="185" x2="370" y2="185" stroke="#555" stroke-width="2"/>
-      <line x1="50" y1="30" x2="50" y2="185" stroke="#555" stroke-width="2"/>
-      <text x="210" y="205" text-anchor="middle" font-size="11" fill="#555">T (°C) →</text>
-      <text x="15" y="110" font-size="11" fill="#555" transform="rotate(-90,15,110)">R (kΩ) →</text>
-      <text x="75" y="198" text-anchor="middle" font-size="10" fill="#666">0</text>
-      <text x="130" y="198" text-anchor="middle" font-size="10" fill="#666">20</text>
-      <text x="185" y="198" text-anchor="middle" font-size="10" fill="#666">40</text>
-      <text x="240" y="198" text-anchor="middle" font-size="10" fill="#666">60</text>
-      <text x="295" y="198" text-anchor="middle" font-size="10" fill="#666">80</text>
-      <text x="350" y="198" text-anchor="middle" font-size="10" fill="#666">100</text>
-      <text x="42" y="183" text-anchor="end" font-size="10" fill="#666">0</text>
-      <text x="42" y="150" text-anchor="end" font-size="10" fill="#666">2</text>
-      <text x="42" y="118" text-anchor="end" font-size="10" fill="#666">4</text>
-      <text x="42" y="86" text-anchor="end" font-size="10" fill="#666">8</text>
-      <text x="42" y="54" text-anchor="end" font-size="10" fill="#666">12</text>
-      <path d="M75,38 C100,42 120,55 130,72 C150,105 175,125 185,135 C210,148 240,155 295,162 C320,165 340,170 350,172"
-            stroke="#6f42c1" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <circle cx="130" cy="72" r="5" fill="#e11d48"/>
-      <text x="135" y="68" font-size="10" fill="#e11d48">20°C / 10kΩ</text>
-      <circle cx="185" cy="135" r="5" fill="#e11d48"/>
-      <text x="190" y="131" font-size="10" fill="#e11d48">60°C / 3,5kΩ</text>
-      <circle cx="295" cy="162" r="5" fill="#e11d48"/>
-      <text x="300" y="158" font-size="10" fill="#e11d48">100°C / 0,8kΩ</text>
-      <path d="M 320 55 L 340 75" stroke="#d97706" stroke-width="2" marker-end="url(#arr2)"/>
-      <text x="310" y="50" font-size="10" fill="#d97706" font-weight="bold">R diminue</text>
+    <!-- SVG R(T) CTN amélioré avec interpolation annotée -->
+    <!-- x(T) = 50 + T/100*320 ; y(R) = 185 - R/10*150 -->
+    <!-- Points: T=20 R=10 → (114,35) ; T=40 R=6 → (178,95) ; T=60 R=3.5 → (242,132.5) ; T=80 R=2 → (306,155) ; T=100 R=0.8 → (370,173) -->
+    <svg viewBox="0 0 410 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:460px;margin:16px auto;display:block;background:#fafafa;border:1px solid #e2e8f0;border-radius:10px">
       <defs>
-        <marker id="arr2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-          <path d="M0,0 L6,3 L0,6 Z" fill="#d97706"/>
+        <marker id="arrTC" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+          <path d="M0,0 L7,3.5 L0,7 Z" fill="#718096"/>
+        </marker>
+        <marker id="arrInt" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="#e53e3e"/>
         </marker>
       </defs>
+      <!-- Titre -->
+      <text x="205" y="18" text-anchor="middle" font-size="12" fill="#4a1d96" font-weight="bold">Courbe R(T) d'une CTN — Sonde d'étuve</text>
+      <!-- Axes -->
+      <line x1="50" y1="195" x2="390" y2="195" stroke="#718096" stroke-width="1.8" marker-end="url(#arrTC)"/>
+      <line x1="50" y1="25" x2="50" y2="195" stroke="#718096" stroke-width="1.8" marker-end="url(#arrTC)"/>
+      <!-- Libellés axes -->
+      <text x="395" y="199" font-size="10" fill="#718096">T (°C)</text>
+      <text x="14" y="22" font-size="10" fill="#718096">R (kΩ)</text>
+      <!-- Ticks X : 0,20,40,60,80,100 -->
+      <line x1="50" y1="193" x2="50" y2="198" stroke="#718096" stroke-width="1"/><text x="50" y="208" text-anchor="middle" font-size="9.5" fill="#666">0</text>
+      <line x1="114" y1="193" x2="114" y2="198" stroke="#718096" stroke-width="1"/><text x="114" y="208" text-anchor="middle" font-size="9.5" fill="#666">20</text>
+      <line x1="178" y1="193" x2="178" y2="198" stroke="#718096" stroke-width="1"/><text x="178" y="208" text-anchor="middle" font-size="9.5" fill="#666">40</text>
+      <line x1="242" y1="193" x2="242" y2="198" stroke="#718096" stroke-width="1"/><text x="242" y="208" text-anchor="middle" font-size="9.5" fill="#666">60</text>
+      <line x1="306" y1="193" x2="306" y2="198" stroke="#718096" stroke-width="1"/><text x="306" y="208" text-anchor="middle" font-size="9.5" fill="#666">80</text>
+      <line x1="370" y1="193" x2="370" y2="198" stroke="#718096" stroke-width="1"/><text x="370" y="208" text-anchor="middle" font-size="9.5" fill="#666">100</text>
+      <!-- Ticks Y : 0,2,4,6,8,10 -->
+      <line x1="48" y1="195" x2="53" y2="195" stroke="#718096" stroke-width="1"/><text x="44" y="198" text-anchor="end" font-size="9.5" fill="#666">0</text>
+      <line x1="48" y1="165" x2="53" y2="165" stroke="#718096" stroke-width="1"/><text x="44" y="168" text-anchor="end" font-size="9.5" fill="#666">2</text>
+      <line x1="48" y1="135" x2="53" y2="135" stroke="#718096" stroke-width="1"/><text x="44" y="138" text-anchor="end" font-size="9.5" fill="#666">4</text>
+      <line x1="48" y1="105" x2="53" y2="105" stroke="#718096" stroke-width="1"/><text x="44" y="108" text-anchor="end" font-size="9.5" fill="#666">6</text>
+      <line x1="48" y1="75" x2="53" y2="75" stroke="#718096" stroke-width="1"/><text x="44" y="78" text-anchor="end" font-size="9.5" fill="#666">8</text>
+      <line x1="48" y1="45" x2="53" y2="45" stroke="#718096" stroke-width="1"/><text x="44" y="48" text-anchor="end" font-size="9.5" fill="#666">10</text>
+      <!-- Grille légère -->
+      <line x1="51" y1="165" x2="370" y2="165" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="51" y1="135" x2="370" y2="135" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="51" y1="105" x2="370" y2="105" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="51" y1="75" x2="370" y2="75" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="51" y1="45" x2="370" y2="45" stroke="#e2e8f0" stroke-width="1"/>
+      <!-- Courbe CTN -->
+      <!-- y = 195 - R*15 : R=10→45, R=6→105, R=3.5→142.5, R=2→165, R=0.8→183 -->
+      <path d="M114,45 C140,70 160,100 178,105 C205,120 225,138 242,142.5 C270,150 290,162 306,165 C335,170 355,181 370,183"
+            stroke="#6f42c1" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+      <!-- Points de mesure -->
+      <circle cx="114" cy="45" r="5" fill="#6f42c1"/>
+      <circle cx="178" cy="105" r="5" fill="#6f42c1"/>
+      <circle cx="242" cy="142" r="5" fill="#6f42c1"/>
+      <circle cx="306" cy="165" r="5" fill="#6f42c1"/>
+      <circle cx="370" cy="183" r="5" fill="#6f42c1"/>
+      <!-- Étiquettes points clés -->
+      <text x="118" y="41" font-size="9" fill="#4a1d96">20°C / 10 kΩ</text>
+      <text x="182" y="101" font-size="9" fill="#4a1d96">40°C / 6 kΩ</text>
+      <text x="246" y="139" font-size="9" fill="#4a1d96">60°C / 3,5 kΩ</text>
+      <text x="310" y="162" font-size="9" fill="#4a1d96">80°C / 2 kΩ</text>
+      <!-- Lecture graphique question c : R=3.5kΩ → 60°C (droites pointillées rouges) -->
+      <line x1="50" y1="142" x2="242" y2="142" stroke="#e53e3e" stroke-width="1.2" stroke-dasharray="4,3"/>
+      <line x1="242" y1="142" x2="242" y2="195" stroke="#e53e3e" stroke-width="1.2" stroke-dasharray="4,3"/>
+      <text x="55" y="139" font-size="8.5" fill="#e53e3e">R=3,5kΩ</text>
+      <text x="247" y="193" font-size="8.5" fill="#e53e3e">→ 60°C</text>
+      <!-- Flèche "R diminue" -->
+      <text x="295" y="55" font-size="9.5" fill="#d97706" font-weight="bold">R diminue ↓</text>
+      <text x="295" y="68" font-size="8.5" fill="#d97706">quand T augmente →</text>
     </svg>
 
     <p class="q"><strong>a)</strong> Cette sonde est-elle bien une CTN ? Justifier à partir du tableau.</p>
@@ -333,19 +429,29 @@ svg text{font-family:'Segoe UI',sans-serif}
       <tr><td>Journée d'hiver</td><td>−5 °C</td></tr>
       <tr><td>Corps humain</td><td>310 K</td></tr>
     </table>
-    <p><strong>Étape 1 :</strong> Convertir les températures en Kelvin vers °C.<br>
-    77 K → …… °C &nbsp;|&nbsp; 353 K → …… °C &nbsp;|&nbsp; 310 K → …… °C</p>
-    <p><strong>Étape 2 :</strong> Classer de la plus froide à la plus chaude :<br>
-    …… &lt; …… &lt; …… &lt; …… &lt; ……</p>
+    <table>
+      <thead><tr><th>Situation</th><th>Température donnée</th><th>Conversion en °C</th><th>Rang (1=plus froide)</th></tr></thead>
+      <tbody>
+        <tr><td>Eau du robinet</td><td>15 °C</td><td>15 °C</td><td>…</td></tr>
+        <tr><td>Azote liquide</td><td>77 K</td><td>…… °C</td><td>…</td></tr>
+        <tr><td>Étuve de séchage</td><td>353 K</td><td>…… °C</td><td>…</td></tr>
+        <tr><td>Journée d'hiver</td><td>−5 °C</td><td>−5 °C</td><td>…</td></tr>
+        <tr><td>Corps humain</td><td>310 K</td><td>…… °C</td><td>…</td></tr>
+      </tbody>
+    </table>
   </div>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>Étape 1 :</strong><br>
-      77 K → \( 77 - 273 = \mathbf{-196 \text{ °C}} \) (azote liquide)<br>
-      353 K → \( 353 - 273 = \mathbf{80 \text{ °C}} \) (étuve)<br>
-      310 K → \( 310 - 273 = \mathbf{37 \text{ °C}} \) (corps humain)</p>
-      <p><strong>Étape 2 :</strong> Classement :<br>
-      Azote liquide (−196 °C) &lt; Journée d'hiver (−5 °C) &lt; Eau du robinet (15 °C) &lt; Corps humain (37 °C) &lt; Étuve de séchage (80 °C)</p>
+    <table>
+      <thead><tr><th>Situation</th><th>Température donnée</th><th>Conversion en °C</th><th>Rang</th></tr></thead>
+      <tbody>
+        <tr><td>Azote liquide</td><td>77 K</td><td><strong>−196 °C</strong> (\(77-273\))</td><td><strong>1</strong> (plus froide)</td></tr>
+        <tr><td>Journée d'hiver</td><td>−5 °C</td><td>−5 °C</td><td><strong>2</strong></td></tr>
+        <tr><td>Eau du robinet</td><td>15 °C</td><td>15 °C</td><td><strong>3</strong></td></tr>
+        <tr><td>Corps humain</td><td>310 K</td><td><strong>37 °C</strong> (\(310-273\))</td><td><strong>4</strong></td></tr>
+        <tr><td>Étuve de séchage</td><td>353 K</td><td><strong>80 °C</strong> (\(353-273\))</td><td><strong>5</strong> (plus chaude)</td></tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
@@ -493,7 +599,13 @@ svg text{font-family:'Segoe UI',sans-serif}
 
 
 
-<h2 style="color:#1d4ed8;border-left:4px solid #1d4ed8;padding-left:10px">Exercices d'application</h2>
+<div id="sec-appli" class="parcours-banner pb-appli">
+  <div class="pb-icon">🔵</div>
+  <div class="pb-body">
+    <h2>Exercices d'application</h2>
+    <p>Exercices standard sans étapes prédécoupées. Contextes professionnels variés : régulation d'étuve, alarme machine, thermocouple, LM35, CTP. La rédaction complète est attendue.</p>
+  </div>
+</div>
 
 <!-- EXO ST1 -->
 <div class="exo diff-standard">
@@ -752,14 +864,16 @@ svg text{font-family:'Segoe UI',sans-serif}
   </div>
   <div class="mama-tag">Contexte technique</div>
   <div class="enonce">
-    <p>Compléter le tableau comparatif des capteurs de température :</p>
+    <p>Compléter le tableau comparatif des capteurs de température (utiliser la fiche de cours et les exercices précédents) :</p>
     <div style="overflow-x:auto">
-    <table>
-      <tr><th>Critère</th><th>CTN</th><th>Pt100</th><th>Thermocouple</th><th>CTP</th><th>IR</th><th>Cristaux liquides</th></tr>
-      <tr><td>Grandeur de sortie</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
-      <tr><td>Plage de mesure</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
-      <tr><td>Relation avec T</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
-      <tr><td>Application typique</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
+    <table style="min-width:600px">
+      <thead><tr><th style="width:130px">Critère</th><th>CTN</th><th>Pt100</th><th>Thermocouple</th><th>CTP</th><th>IR</th><th>Cristaux liquides</th></tr></thead>
+      <tbody>
+        <tr><td>Grandeur de sortie</td><td style="color:#bbb">R (……)</td><td style="color:#bbb">R (……)</td><td style="color:#bbb">U (……)</td><td style="color:#bbb">R (……)</td><td style="color:#bbb">……</td><td style="color:#bbb">……</td></tr>
+        <tr><td>Plage de mesure</td><td style="color:#bbb">…… à ……</td><td style="color:#bbb">…… à ……</td><td style="color:#bbb">…… à ……</td><td style="color:#bbb">seuil ≈ ……</td><td style="color:#bbb">…… à ……</td><td style="color:#bbb">…… à ……</td></tr>
+        <tr><td>Relation avec T</td><td style="color:#bbb">R …… (non linéaire)</td><td style="color:#bbb">R …… (quasi linéaire)</td><td style="color:#bbb">U ∝ ……</td><td style="color:#bbb">R …… au seuil</td><td style="color:#bbb">……</td><td style="color:#bbb">……</td></tr>
+        <tr><td>Application typique</td><td style="color:#bbb">……</td><td style="color:#bbb">……</td><td style="color:#bbb">……</td><td style="color:#bbb">……</td><td style="color:#bbb">……</td><td style="color:#bbb">……</td></tr>
+      </tbody>
     </table>
     </div>
   </div>
@@ -829,7 +943,13 @@ svg text{font-family:'Segoe UI',sans-serif}
       <p><strong>d)</strong> \( T_{\text{Mars}} = -60 + 273 = \mathbf{213 \text{ K}} \). Mars est plus froide car elle est plus éloignée du Soleil et possède une atmosphère très mince qui ne retient pas la chaleur (effet de serre quasi inexistant).</p>
   </div>
 </div>
-<h2 style="color:#7c3aed;border-left:4px solid #7c3aed;padding-left:10px">Exercices d'approfondissement</h2>
+<div id="sec-appro" class="parcours-banner pb-appro">
+  <div class="pb-icon">🟣</div>
+  <div class="pb-body">
+    <h2>Exercices d'approfondissement</h2>
+    <p>Exercices ouverts : diagnostic de panne, analyse comparative, pont diviseur, métrologie, projet Arduino. Questions type BTS. Autonomie et raisonnement avancé requis.</p>
+  </div>
+</div>
 
 <!-- EXO A1 -->
 <div class="exo diff-appro">
@@ -1147,18 +1267,20 @@ svg text{font-family:'Segoe UI',sans-serif}
   </div>
 </div>
 
-<div style="background:#f5f0ff;border-radius:10px;padding:18px 22px;margin:32px 0;border:1px solid #c4b5fd">
-  <strong style="color:#4a1d96">Bilan des compétences travaillées</strong>
-  <table style="margin:12px 0">
-    <tr><th>Compétence</th><th>Exercices</th></tr>
-    <tr><td>Convertir °C ↔ K</td><td>Ex 1, 7, 8, 10, 12, 13, 14, 21, 22, 24</td></tr>
-    <tr><td>Choisir un capteur adapté</td><td>Ex 2, 9, 11, 16, 17, 19</td></tr>
-    <tr><td>Lire un tableau R(T) de CTN</td><td>Ex 3, 4, 5, 6, 15, 18, 25</td></tr>
-    <tr><td>Exploiter le capteur LM35</td><td>Ex 14, 27</td></tr>
-    <tr><td>Analyser le fonctionnement d'un régulateur CTN</td><td>Ex 5, 6, 7, 20, 26</td></tr>
-    <tr><td>Diagnostiquer une panne de capteur</td><td>Ex 6, 8, 9, 26</td></tr>
-    <tr><td>Calculer avec la loi de la CTN</td><td>Ex 22, 23</td></tr>
-    <tr><td>Applications énergie et climat</td><td>Ex 21, 24</td></tr>
+<div class="bilan-box">
+  <h3>Bilan des compétences travaillées</h3>
+  <table>
+    <thead><tr><th>Compétence</th><th>Exercices guidés</th><th>Application</th><th>Approfondissement</th></tr></thead>
+    <tbody>
+      <tr><td>Convertir °C ↔ K</td><td>Ex 1, 7, 8, 10, 12, 13</td><td>Ex 14, 21, 22, 24, 25, 34, 35, 36</td><td>Ex 26, 28, 30</td></tr>
+      <tr><td>Choisir un capteur adapté</td><td>Ex 2, 9, 11</td><td>Ex 16, 17, 19, 23</td><td>Ex 28</td></tr>
+      <tr><td>Lire un tableau R(T) de CTN</td><td>Ex 3, 4, 5</td><td>Ex 15, 18, 19, 22, 24</td><td>Ex 27, 31</td></tr>
+      <tr><td>Analyser un régulateur CTN</td><td>Ex 4, 5</td><td>Ex 16, 18, 19, 20, 24</td><td>Ex 27, 32</td></tr>
+      <tr><td>Diagnostiquer une panne</td><td>Ex 6</td><td>—</td><td>Ex 26, 27</td></tr>
+      <tr><td>Exploiter un thermocouple / LM35</td><td>—</td><td>Ex 18, 21, 23</td><td>Ex 29, 33</td></tr>
+      <tr><td>Pont diviseur / calcul électronique</td><td>—</td><td>—</td><td>Ex 29, 33</td></tr>
+      <tr><td>Énergie, climat, chaîne du froid</td><td>—</td><td>Ex 25, 34–36</td><td>Ex 30</td></tr>
+    </tbody>
   </table>
 </div>
 <script>

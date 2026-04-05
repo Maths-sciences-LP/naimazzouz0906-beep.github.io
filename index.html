@@ -340,6 +340,26 @@
     }
     .encours-link:hover { text-decoration: underline; }
 
+    /* ── Hero stats ── */
+    .hero-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:22px}
+    .hero-stat{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.28);border-radius:20px;padding:4px 14px;font-size:.8rem;font-weight:600;color:#fff}
+
+    /* ── Group label (Accès par classe) ── */
+    .group-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:#64748b;margin:24px 0 12px;display:flex;align-items:center;gap:10px}
+    .group-label::after{content:'';flex:1;height:1px;background:#e2e8f0}
+    .group-label:first-child{margin-top:0}
+
+    /* ── Level label (carte PC) ── */
+    .level-label{font-size:.72rem;color:#64748b;margin:10px 0 5px;font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+
+    /* ── Encours quick links ── */
+    .encours-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+    .etag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:.73rem;font-weight:600;text-decoration:none;transition:background .15s,color .15s;border:1px solid}
+    .etag-m{background:#eff6ff;color:#2563eb;border-color:#bfdbfe}
+    .etag-m:hover{background:#2563eb;color:#fff;border-color:transparent}
+    .etag-pc{background:#faf5ff;color:#6d28d9;border-color:#ddd6fe}
+    .etag-pc:hover{background:#7c3aed;color:#fff;border-color:transparent}
+
     /* ── Footer ── */
     footer {
       background: #1e3a5f;
@@ -360,6 +380,8 @@
       <li><a href="#disciplines">Physique-Chimie</a></li>
       <li><a href="#classes">Par classe</a></li>
       <li><a href="simulations.html">Simulations</a></li>
+      <li><a href="automatismes/index.html">Automatismes</a></li>
+      <li><a href="co-intervention/index.html">Co-intervention</a></li>
     </ul>
   </nav>
 
@@ -368,6 +390,13 @@
     <h1>Maths – Sciences en Lycée Professionnel</h1>
     <p class="sub">Bac Pro &middot; CAP &middot; BTS &middot; 6 groupements PC</p>
     <p class="credit">M. Azzouz &middot; Lycée Eugène Hénaff &middot; Bagnolet &middot; Académie de Créteil</p>
+    <div class="hero-stats">
+      <span class="hero-stat">📘 Maths &mdash; 2nde · 1ère · Tle · CAP · BTS</span>
+      <span class="hero-stat">⚗️ PC &mdash; 6 groupements</span>
+      <span class="hero-stat">🧪 69 simulations</span>
+      <span class="hero-stat">⚡ 22 automatismes</span>
+      <span class="hero-stat">🔓 Accès libre &amp; gratuit</span>
+    </div>
   </header>
 
   <main>
@@ -384,12 +413,22 @@
             <span class="encours-badge badge-m">Maths</span>
             <span class="encours-ch">Ch05 – Équations du premier degré</span>
           </div>
-          <a href="maths/seconde/ch05/lecon.html" class="encours-link">Voir le cours</a>
-          <div class="encours-matiere" style="margin-top:10px">
+          <div class="encours-tags">
+            <a href="maths/seconde/ch05/lecon.html" class="etag etag-m">Cours</a>
+            <a href="maths/seconde/ch05/exercices.html" class="etag etag-m">Exercices</a>
+            <a href="maths/seconde/ch05/fiche.html" class="etag etag-m">Fiche</a>
+            <a href="maths/seconde/ch05/qcm.html" class="etag etag-m">QCM</a>
+          </div>
+          <div class="encours-matiere" style="margin-top:12px">
             <span class="encours-badge badge-pc">PC</span>
             <span class="encours-ch">Ch07 – Atomes, molécules et ions</span>
           </div>
-          <a href="physique-chimie/seconde/ch07/lecon.html" class="encours-link">Voir le cours</a>
+          <div class="encours-tags">
+            <a href="physique-chimie/seconde/ch07/lecon.html" class="etag etag-pc">Cours</a>
+            <a href="physique-chimie/seconde/ch07/exercices.html" class="etag etag-pc">Exercices</a>
+            <a href="physique-chimie/seconde/ch07/fiche.html" class="etag etag-pc">Fiche</a>
+            <a href="physique-chimie/seconde/ch07/qcm.html" class="etag etag-pc">QCM</a>
+          </div>
         </div>
 
         <div class="encours-card" style="border-color:#7c3aed">
@@ -398,12 +437,22 @@
             <span class="encours-badge badge-m">Maths</span>
             <span class="encours-ch">Ch04 – Fonctions polynômes de degré 3</span>
           </div>
-          <a href="maths/terminale/ch04/lecon.html" class="encours-link">Voir le cours</a>
-          <div class="encours-matiere" style="margin-top:10px">
+          <div class="encours-tags">
+            <a href="maths/terminale/ch04/lecon.html" class="etag etag-m">Cours</a>
+            <a href="maths/terminale/ch04/exercices.html" class="etag etag-m">Exercices</a>
+            <a href="maths/terminale/ch04/fiche.html" class="etag etag-m">Fiche</a>
+            <a href="maths/terminale/ch04/qcm.html" class="etag etag-m">QCM</a>
+          </div>
+          <div class="encours-matiere" style="margin-top:12px">
             <span class="encours-badge badge-pc">PC</span>
             <span class="encours-ch">Ch08 – Caractériser la propagation d'un signal sonore</span>
           </div>
-          <a href="physique-chimie/terminale-iccer/ch08/lecon.html" class="encours-link">Voir le cours</a>
+          <div class="encours-tags">
+            <a href="physique-chimie/terminale-iccer/ch08/lecon.html" class="etag etag-pc">Cours</a>
+            <a href="physique-chimie/terminale-iccer/ch08/exercices.html" class="etag etag-pc">Exercices</a>
+            <a href="physique-chimie/terminale-iccer/ch08/fiche.html" class="etag etag-pc">Fiche</a>
+            <a href="physique-chimie/terminale-iccer/ch08/qcm.html" class="etag etag-pc">QCM</a>
+          </div>
         </div>
 
         <div class="encours-card" style="border-color:#ea580c">
@@ -412,12 +461,22 @@
             <span class="encours-badge badge-m">Maths</span>
             <span class="encours-ch">Ch04 – Fonctions polynômes de degré 3</span>
           </div>
-          <a href="maths/terminale/ch04/lecon.html" class="encours-link">Voir le cours</a>
-          <div class="encours-matiere" style="margin-top:10px">
+          <div class="encours-tags">
+            <a href="maths/terminale/ch04/lecon.html" class="etag etag-m">Cours</a>
+            <a href="maths/terminale/ch04/exercices.html" class="etag etag-m">Exercices</a>
+            <a href="maths/terminale/ch04/fiche.html" class="etag etag-m">Fiche</a>
+            <a href="maths/terminale/ch04/qcm.html" class="etag etag-m">QCM</a>
+          </div>
+          <div class="encours-matiere" style="margin-top:12px">
             <span class="encours-badge badge-pc">PC</span>
             <span class="encours-ch">Ch08 – Atténuer une onde sonore par transmission</span>
           </div>
-          <a href="physique-chimie/terminale-era/ch08/lecon.html" class="encours-link">Voir le cours</a>
+          <div class="encours-tags">
+            <a href="physique-chimie/terminale-era/ch08/lecon.html" class="etag etag-pc">Cours</a>
+            <a href="physique-chimie/terminale-era/ch08/exercices.html" class="etag etag-pc">Exercices</a>
+            <a href="physique-chimie/terminale-era/ch08/fiche.html" class="etag etag-pc">Fiche</a>
+            <a href="physique-chimie/terminale-era/ch08/qcm.html" class="etag etag-pc">QCM</a>
+          </div>
         </div>
 
       </div>
@@ -425,7 +484,7 @@
 
     <!-- ── Bac Pro ── -->
     <section id="disciplines">
-      <h2 class="section-title">Bac Professionnel</h2>
+      <h2 class="section-title">🎒 Bac Professionnel</h2>
       <div class="disciplines">
 
         <div class="card card-maths">
@@ -458,12 +517,12 @@
             <div class="btn-group">
               <a href="pc-2nde-pro.html" class="btn btn-pc">2nde Pro (commun)</a>
             </div>
-            <p style="font-size:.78rem;color:#64748b;margin:12px 0 6px;font-weight:700">PREMIÈRE — par groupement :</p>
+            <p class="level-label">Première — par groupement :</p>
             <div class="btn-group">
               <a href="pc-1ere-iccer.html" class="btn btn-pc">1ère — Gpt 1 (ICCER / MEE)</a>
               <a href="pc-1ere-erama.html" class="btn btn-pc">1ère — Gpt 3 (ERA / TMA / EEB)</a>
             </div>
-            <p style="font-size:.78rem;color:#64748b;margin:12px 0 6px;font-weight:700">TERMINALE — par groupement :</p>
+            <p class="level-label">Terminale — par groupement :</p>
             <div class="btn-group">
               <a href="pc-term-iccer.html" class="btn btn-pc">Tle — Gpt 1 (ICCER / MEE)</a>
               <a href="pc-term-erama.html" class="btn btn-pc">Tle — Gpt 3 (ERA / TMA / EEB)</a>
@@ -572,9 +631,9 @@
 
     <!-- ── Classes ── -->
     <section id="classes">
-      <h2 class="section-title">Accès par classe</h2>
+      <h2 class="section-title">📋 Accès par classe</h2>
 
-      <p style="font-size:.82rem;color:#64748b;margin-bottom:16px;font-weight:600">BAC PROFESSIONNEL</p>
+      <p class="group-label">Bac Professionnel</p>
       <div class="classes-grid">
 
         <div class="classe-card classe-2nde">
@@ -634,7 +693,7 @@
 
       </div>
 
-      <p style="font-size:.82rem;color:#64748b;margin:24px 0 16px;font-weight:600">CAP &amp; BTS</p>
+      <p class="group-label">CAP &amp; BTS</p>
       <div class="classes-grid">
 
         <div class="classe-card" style="border-color:#b45309">
@@ -656,7 +715,7 @@
 
       </div>
 
-      <p style="font-size:.82rem;color:#64748b;margin:24px 0 16px;font-weight:600">LYCÉE GÉNÉRAL</p>
+      <p class="group-label">Lycée Général</p>
       <div class="classes-grid">
 
         <div class="classe-card" style="border-color:#4f46e5">
@@ -672,7 +731,7 @@
 
     <!-- ── À propos ── -->
     <section>
-      <h2 class="section-title">À propos du site</h2>
+      <h2 class="section-title">ℹ️ À propos du site</h2>
       <div class="about-box">
         <span class="about-icon">ℹ️</span>
         <div class="about-text">
@@ -750,7 +809,7 @@
     })();
 
     // Date chapitres en cours — mettre à jour manuellement quand les chapitres changent
-    document.getElementById('encours-date').textContent = 'Mars 2026';
+    document.getElementById('encours-date').textContent = 'Avril 2026';
   </script>
   <script src="nav.js"></script>
 

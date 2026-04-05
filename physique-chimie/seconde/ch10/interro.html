@@ -7,522 +7,763 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}</style>
+<style>
+:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}
+
+/* Bandeau de niveau */
+.level-banner{display:flex;align-items:flex-start;gap:14px;padding:14px 20px;border-radius:10px;margin:32px 0 16px;border-width:2px;border-style:solid}
+.level-banner .lb-icon{font-size:1.5rem;line-height:1;flex-shrink:0;margin-top:1px}
+.level-banner .lb-body h2{margin:0 0 3px;font-size:1.05rem;font-weight:700}
+.level-banner .lb-body p{margin:0;font-size:.82rem;opacity:.9}
+.lb-socle{background:#f0fdf4;border-color:#10b981;color:#064e3b}
+.lb-standard{background:#eff6ff;border-color:#3b82f6;color:#1e3a8a}
+.lb-appro{background:#f5f0ff;border-color:var(--p);color:#4c1d95}
+
+/* Bloc sujet (A / B) */
+.sujet-wrap{border:1px solid var(--p-border);border-radius:10px;margin-bottom:20px;overflow:hidden}
+.sujet-header{display:flex;align-items:center;justify-content:space-between;background:var(--p);color:#fff;padding:10px 16px}
+.sujet-header .sh-title{font-weight:700;font-size:.97rem;letter-spacing:.3px}
+.sujet-header .sh-meta{font-size:.82rem;opacity:.9}
+.sujet-body{padding:14px 18px}
+
+/* Méta d'interrogation */
+.interro-meta{display:flex;gap:14px;flex-wrap:wrap;background:var(--p-bg);border:1px solid var(--p-border);border-radius:8px;padding:10px 16px;margin-bottom:22px;font-size:.85rem}
+.interro-meta-item{display:flex;align-items:center;gap:5px;color:#333}
+.interro-meta-item strong{color:var(--p)}
+
+/* Questions */
+.exo{margin-bottom:16px;padding-bottom:12px;border-bottom:1px dashed var(--p-border)}
+.exo:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.exo h2{display:flex;align-items:center;gap:8px;font-size:.92rem;color:var(--p);margin:0 0 6px;font-weight:700}
+.pts{display:inline-block;background:var(--p);color:#fff;border-radius:10px;padding:1px 9px;font-size:.75rem;font-weight:600}
+
+/* Tables */
+.it{width:100%;border-collapse:collapse;margin:10px 0;font-size:.87rem}
+.it thead th{background:var(--p-bg);color:var(--p);padding:7px 12px;border:1px solid var(--p-border);font-weight:700;text-align:center}
+.it tbody th{background:var(--p-bg);color:var(--p);padding:7px 12px;border:1px solid var(--p-border);font-weight:700;text-align:left;white-space:nowrap}
+.it tbody td{padding:7px 12px;border:1px solid var(--p-border);text-align:center}
+.it tbody tr:nth-child(even) td{background:#faf7ff}
+/* Table relier */
+.it.relier td:first-child{font-weight:600}
+.it.relier td:last-child{font-style:italic;color:#444}
+.it.relier .ans{background:#fff9e6;color:#888;font-size:.8rem;width:40px;text-align:center}
+
+/* Corrections */
+.corr{background:#f0fff4;border-left:3px solid #10b981;border-radius:0 8px 8px 0;padding:10px 14px;margin-top:8px;display:none}
+.corr p,.corr li{font-size:.87rem;margin:3px 0;line-height:1.5}
+.corr table{width:100%;border-collapse:collapse;font-size:.85rem;margin:6px 0}
+.corr table th{background:#dcfce7;color:#065f46;padding:5px 10px;border:1px solid #86efac;font-weight:700;text-align:center}
+.corr table td{padding:5px 10px;border:1px solid #86efac;text-align:center}
+
+/* SVG mini courbes */
+.mini-chart-wrap{background:#fafafa;border:1px solid #e2e8f0;border-radius:8px;padding:8px;margin:12px 0;text-align:center}
+.mini-chart-wrap figcaption{font-size:.75rem;color:#666;margin-top:4px}
+
+/* Impression */
+@media print{
+  .nb,.bc{display:none}
+  .corr{display:block!important}
+  .sujet-wrap{break-inside:avoid}
+  .level-banner{break-before:page}
+}
+</style>
 </head>
 <body>
 <div class="c">
-<a href="../../../pc-2nde-pro.html" class="nb">← RETOUR SOMMAIRE</a>
+<a href="../../../pc-2nde-pro.html" class="nb">← Retour au sommaire</a>
 
 <header>
   <h1>Chapitre 10 – Interrogation écrite</h1>
   <p class="sous-titre">Température et capteurs thermiques — Physique-Chimie — Seconde Bac Pro</p>
 </header>
 
-<div class="dh">
-  <p><strong>Durée :</strong> 10-15 min | <strong>Calculatrice autorisée</strong></p>
+<div class="interro-meta">
+  <div class="interro-meta-item"><strong>Durée :</strong> 10–15 minutes</div>
+  <div class="interro-meta-item"><strong>Calculatrice :</strong> autorisée</div>
+  <div class="interro-meta-item"><strong>Barème :</strong> /20 points par sujet</div>
+  <div class="interro-meta-item"><strong>Niveaux :</strong> Socle · Standard · Approfondissement</div>
 </div>
 
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
-<span class="tag-socle">Socle</span>
+
+<div class="level-banner lb-socle">
+  <div class="lb-icon">🟢</div>
+  <div class="lb-body">
+    <h2>Niveau Socle</h2>
+    <p>5 questions guidées — rappels fournis — tableaux de lecture directe — réponses courtes</p>
+  </div>
+</div>
+
+<!-- SOCLE SUJET A -->
 <div class="sujet-a">
-<h3 class="sujet-header">Sujet A</h3>
-<p><strong>Barème :</strong> 20 points</p>
+<div class="sujet-wrap">
+<div class="sujet-header">
+  <span class="sh-title">Sujet A</span>
+  <span class="sh-meta">Barème : /20 pts — Durée 10–15 min</span>
+</div>
+<div class="sujet-body">
 
 <div class="exo">
-  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <h2>Question 1 <span class="pts">4 pts</span></h2>
   <div class="meth"><strong>Rappel :</strong> \(T(\text{K}) = \theta(\text{°C}) + 273\). Le zéro absolu est 0 K = −273 °C.</div>
   <p>Convertir les températures suivantes :</p>
-  <p>a) Un four de séchage du bois à 80 °C → \(T = 80 + 273 = ...\) K</p>
-  <p>b) L'eau bouillante à 100 °C → \(T = ...\) K</p>
-  <p>c) Une température de 353 K → \(\theta = 353 - 273 = ...\) °C</p>
-  <p>d) Le zéro absolu → \(\theta = ...\) °C</p>
+  <p><strong>a)</strong> Un four de séchage du bois à 80 °C → \(T = 80 + 273 = \ldots\) K</p>
+  <p><strong>b)</strong> L'eau bouillante à 100 °C → \(T = \ldots\) K</p>
+  <p><strong>c)</strong> Une température de 353 K → \(\theta = 353 - 273 = \ldots\) °C</p>
+  <p><strong>d)</strong> Le zéro absolu → \(\theta = \ldots\) °C</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) \(T = 80 + 273 = \mathbf{353 \text{ K}}\)</p>
-    <p>b) \(T = 100 + 273 = \mathbf{373 \text{ K}}\)</p>
-    <p>c) \(\theta = 353 - 273 = \mathbf{80 \text{ °C}}\)</p>
-    <p>d) \(\theta = 0 - 273 = \mathbf{-273 \text{ °C}}\)</p>
+    <p><strong>a)</strong> \(T = 80 + 273 = \mathbf{353 \text{ K}}\)</p>
+    <p><strong>b)</strong> \(T = 100 + 273 = \mathbf{373 \text{ K}}\)</p>
+    <p><strong>c)</strong> \(\theta = 353 - 273 = \mathbf{80 \text{ °C}}\)</p>
+    <p><strong>d)</strong> \(\theta = 0 - 273 = \mathbf{-273 \text{ °C}}\)</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <h2>Question 2 <span class="pts">4 pts</span></h2>
   <div class="meth"><strong>Rappel :</strong> La température mesure l'agitation thermique des particules. Plus les particules s'agitent, plus la température est élevée.</div>
-  <p>Répondre par vrai ou faux. Justifier si c'est faux.</p>
-  <p>a) On peut atteindre une température de −300 °C.</p>
-  <p>b) Une différence de 20 °C est égale à une différence de 20 K.</p>
-  <p>c) Le Kelvin et le degré Celsius ont la même taille d'échelon.</p>
-  <p>d) La température de l'eau bouillante est 373 K.</p>
+  <p>Répondre par <strong>vrai</strong> ou <strong>faux</strong>. Justifier si c'est faux.</p>
+  <p><strong>a)</strong> On peut atteindre une température de −300 °C.</p>
+  <p><strong>b)</strong> Une différence de 20 °C est égale à une différence de 20 K.</p>
+  <p><strong>c)</strong> Le Kelvin et le degré Celsius ont la même taille d'échelon.</p>
+  <p><strong>d)</strong> La température de l'eau bouillante est 373 K.</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) <strong>FAUX</strong> — Le zéro absolu est −273 °C. On ne peut pas descendre en dessous.</p>
-    <p>b) <strong>VRAI</strong> — Les différences de température sont identiques en °C et en K.</p>
-    <p>c) <strong>VRAI</strong> — 1 K = 1 °C en termes d'intervalle.</p>
-    <p>d) <strong>VRAI</strong> — \(100 + 273 = 373 \text{ K}\).</p>
+    <p><strong>a)</strong> <strong>FAUX</strong> — Le zéro absolu est −273 °C. On ne peut pas descendre en dessous.</p>
+    <p><strong>b)</strong> <strong>VRAI</strong> — Les différences de température sont identiques en °C et en K.</p>
+    <p><strong>c)</strong> <strong>VRAI</strong> — 1 K = 1 °C en termes d'intervalle.</p>
+    <p><strong>d)</strong> <strong>VRAI</strong> — \(100 + 273 = 373 \text{ K}\).</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 3 <span class="pts">(4 points)</span></h2>
-  <div class="meth"><strong>Rappel :</strong> CTN = résistance diminue quand T augmente. CTP = résistance augmente fortement au-delà d'un seuil.</div>
+  <h2>Question 3 <span class="pts">4 pts</span></h2>
+  <div class="meth"><strong>Rappel :</strong> CTN = résistance <em>diminue</em> quand T augmente. CTP = résistance <em>augmente fortement</em> au-delà d'un seuil.</div>
   <p>On dispose d'une CTN. Un ohmmètre mesure les résistances suivantes :</p>
-  <table>
-    <tr><th>T (°C)</th><th>0</th><th>20</th><th>40</th><th>60</th><th>80</th></tr>
-    <tr><td><strong>R (kΩ)</strong></td><td>32,7</td><td>12,0</td><td>4,9</td><td>2,2</td><td>1,1</td></tr>
+  <table class="it">
+    <thead><tr><th>T (°C)</th><th>0</th><th>20</th><th>40</th><th>60</th><th>80</th></tr></thead>
+    <tbody><tr><th>R (kΩ)</th><td>32,7</td><td>12,0</td><td>4,9</td><td>2,2</td><td>1,1</td></tr></tbody>
   </table>
-  <p>a) On mesure \(R = 12{,}0 \text{ kΩ}\). Quelle est la température ?</p>
-  <p>b) La résistance augmente-t-elle ou diminue-t-elle quand la température monte ?</p>
+  <p><strong>a)</strong> On mesure \(R = 12{,}0 \text{ kΩ}\). Quelle est la température ?</p>
+  <p><strong>b)</strong> La résistance augmente-t-elle ou diminue-t-elle quand la température monte ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) \(R = 12{,}0 \text{ kΩ}\) correspond à \(\mathbf{T = 20 \text{ °C}}\).</p>
-    <p>b) La résistance <strong>diminue</strong> quand la température augmente. C'est le comportement d'une <strong>CTN</strong> (Coefficient de Température Négatif).</p>
+    <p><strong>a)</strong> \(R = 12{,}0 \text{ kΩ}\) correspond à \(\mathbf{T = 20\ °\text{C}}\).</p>
+    <p><strong>b)</strong> La résistance <strong>diminue</strong> quand la température augmente. Comportement d'une <strong>CTN</strong> (Coefficient de Température Négatif).</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="pts">(4 points)</span></h2>
-  <div class="meth"><strong>Rappel :</strong> Les principaux capteurs : thermocouple (grande plage), CTN (sensible 0-100 °C), CTP (protection), LM35 (linéaire).</div>
-  <p>Relier chaque capteur à sa caractéristique principale :</p>
-  <table>
-    <tr><th>Capteur</th><th>Caractéristique</th></tr>
-    <tr><td>1. Thermocouple</td><td>A. Résistance diminue quand T augmente</td></tr>
-    <tr><td>2. CTN</td><td>B. Tension proportionnelle à T</td></tr>
-    <tr><td>3. CTP</td><td>C. Tension produite par deux métaux différents</td></tr>
-    <tr><td>4. LM35</td><td>D. Résistance augmente fortement au-delà d'un seuil</td></tr>
+  <h2>Question 4 <span class="pts">4 pts</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Thermocouple → grande plage, CTN → sensible 0–100 °C, CTP → protection surchauffe, LM35 → tension linéaire.</div>
+  <p>Relier chaque capteur à sa caractéristique principale (écrire la lettre dans la colonne du milieu) :</p>
+  <table class="it relier">
+    <thead><tr><th>N°</th><th>Capteur</th><th class="ans">→</th><th>Caractéristique</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Thermocouple</td><td class="ans">…</td><td>A. Résistance diminue quand T augmente</td></tr>
+      <tr><td>2</td><td>CTN</td><td class="ans">…</td><td>B. Tension proportionnelle à T</td></tr>
+      <tr><td>3</td><td>CTP</td><td class="ans">…</td><td>C. Tension produite par deux métaux différents</td></tr>
+      <tr><td>4</td><td>LM35</td><td class="ans">…</td><td>D. Résistance augmente fortement au-delà d'un seuil</td></tr>
+    </tbody>
   </table>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>1 → <strong>C</strong> (thermocouple : tension Seebeck)</p>
-    <p>2 → <strong>A</strong> (CTN : résistance diminue)</p>
-    <p>3 → <strong>D</strong> (CTP : résistance augmente au seuil)</p>
-    <p>4 → <strong>B</strong> (LM35 : tension proportionnelle)</p>
+    <table>
+      <thead><tr><th>N°</th><th>Capteur</th><th>→</th><th>Caractéristique</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Thermocouple</td><td><strong>C</strong></td><td>Tension Seebeck (deux métaux différents)</td></tr>
+        <tr><td>2</td><td>CTN</td><td><strong>A</strong></td><td>Résistance diminue avec T</td></tr>
+        <tr><td>3</td><td>CTP</td><td><strong>D</strong></td><td>Résistance explose au seuil</td></tr>
+        <tr><td>4</td><td>LM35</td><td><strong>B</strong></td><td>Tension proportionnelle à T</td></tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <h2>Question 5 <span class="pts">4 pts</span></h2>
   <div class="meth"><strong>Rappel :</strong> En atelier : CTN pour les étuves, CTP pour la protection des moteurs, thermocouple pour les paliers.</div>
   <p>Un menuisier utilise une étuve de séchage du bois réglée à 80 °C. Une CTN mesure la température pour la réguler.</p>
-  <p>a) D'après le tableau de la question 3, quelle résistance la CTN affiche-t-elle à 80 °C ?</p>
-  <p>b) Si l'ohmmètre affiche 2,2 kΩ, la température est-elle trop haute ou trop basse par rapport à la consigne ?</p>
+  <p><strong>a)</strong> D'après le tableau de la question 3, quelle résistance la CTN affiche-t-elle à 80 °C ?</p>
+  <p><strong>b)</strong> Si l'ohmmètre affiche 2,2 kΩ, la température est-elle trop haute ou trop basse par rapport à la consigne ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) À 80 °C, la CTN affiche \(R = \mathbf{1{,}1 \text{ kΩ}}\).</p>
-    <p>b) \(R = 2{,}2 \text{ kΩ}\) correspond à 60 °C. La température est <strong>trop basse</strong> (60 °C au lieu de 80 °C). Il faut augmenter le chauffage.</p>
+    <p><strong>a)</strong> À 80 °C, la CTN affiche \(R = \mathbf{1{,}1 \text{ kΩ}}\).</p>
+    <p><strong>b)</strong> \(R = 2{,}2 \text{ kΩ}\) correspond à 60 °C. La température est <strong>trop basse</strong> (60 °C au lieu de 80 °C). Le chauffage doit être augmenté.</p>
   </div>
 </div>
 
-</div>
+</div><!-- fin sujet-body -->
+</div><!-- fin sujet-wrap -->
+</div><!-- fin sujet-a -->
+
+<!-- SOCLE SUJET B -->
 <div class="sujet-b">
-<h3 class="sujet-header">Sujet B</h3>
-<p><strong>Barème :</strong> 20 points</p>
+<div class="sujet-wrap">
+<div class="sujet-header">
+  <span class="sh-title">Sujet B</span>
+  <span class="sh-meta">Barème : /20 pts — Durée 10–15 min</span>
+</div>
+<div class="sujet-body">
 
 <div class="exo">
-  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <h2>Question 1 <span class="pts">4 pts</span></h2>
   <div class="meth"><strong>Rappel :</strong> \(T(\text{K}) = \theta(\text{°C}) + 273\). Le zéro absolu est 0 K = −273 °C.</div>
   <p>Convertir les températures suivantes :</p>
-  <p>a) La température d'un atelier chauffé à 20 °C → \(T = 20 + 273 = ...\) K</p>
-  <p>b) Un fer à souder à 350 °C → \(T = ...\) K</p>
-  <p>c) Une température de 310 K → \(\theta = 310 - 273 = ...\) °C</p>
-  <p>d) La température de fusion de la glace en Kelvin → \(T = ...\) K</p>
+  <p><strong>a)</strong> La température d'un atelier chauffé à 20 °C → \(T = 20 + 273 = \ldots\) K</p>
+  <p><strong>b)</strong> Un fer à souder à 350 °C → \(T = \ldots\) K</p>
+  <p><strong>c)</strong> Une température de 310 K → \(\theta = 310 - 273 = \ldots\) °C</p>
+  <p><strong>d)</strong> La température de fusion de la glace en Kelvin → \(T = \ldots\) K</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) \(T = 20 + 273 = \mathbf{293 \text{ K}}\)</p>
-    <p>b) \(T = 350 + 273 = \mathbf{623 \text{ K}}\)</p>
-    <p>c) \(\theta = 310 - 273 = \mathbf{37 \text{ °C}}\)</p>
-    <p>d) \(T = 0 + 273 = \mathbf{273 \text{ K}}\)</p>
+    <p><strong>a)</strong> \(T = 20 + 273 = \mathbf{293 \text{ K}}\)</p>
+    <p><strong>b)</strong> \(T = 350 + 273 = \mathbf{623 \text{ K}}\)</p>
+    <p><strong>c)</strong> \(\theta = 310 - 273 = \mathbf{37 \text{ °C}}\)</p>
+    <p><strong>d)</strong> \(T = 0 + 273 = \mathbf{273 \text{ K}}\)</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <h2>Question 2 <span class="pts">4 pts</span></h2>
   <div class="meth"><strong>Rappel :</strong> La température mesure l'agitation thermique des particules. Plus les particules s'agitent, plus la température est élevée.</div>
-  <p>Répondre par vrai ou faux. Justifier si c'est faux.</p>
-  <p>a) Le zéro absolu correspond à −273 °C.</p>
-  <p>b) Une température de 200 K est plus froide qu'une température de −100 °C.</p>
-  <p>c) Une différence de 10 K est égale à une différence de 10 °C.</p>
-  <p>d) Il est possible d'atteindre une température de −280 °C.</p>
+  <p>Répondre par <strong>vrai</strong> ou <strong>faux</strong>. Justifier si c'est faux.</p>
+  <p><strong>a)</strong> Le zéro absolu correspond à −273 °C.</p>
+  <p><strong>b)</strong> Une température de 200 K est plus froide qu'une température de −100 °C.</p>
+  <p><strong>c)</strong> Une différence de 10 K est égale à une différence de 10 °C.</p>
+  <p><strong>d)</strong> Il est possible d'atteindre une température de −280 °C.</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) <strong>VRAI</strong> — Le zéro absolu est 0 K = −273 °C.</p>
-    <p>b) <strong>FAUX</strong> — 200 K = −73 °C. Or −73 °C > −100 °C. Donc 200 K est <strong>plus chaud</strong> que −100 °C.</p>
-    <p>c) <strong>VRAI</strong> — Les différences de température sont identiques en °C et en K.</p>
-    <p>d) <strong>FAUX</strong> — Le zéro absolu est −273 °C. On ne peut pas descendre en dessous.</p>
+    <p><strong>a)</strong> <strong>VRAI</strong> — Le zéro absolu est 0 K = −273 °C.</p>
+    <p><strong>b)</strong> <strong>FAUX</strong> — 200 K = −73 °C. Or −73 °C > −100 °C → 200 K est <strong>plus chaud</strong> que −100 °C.</p>
+    <p><strong>c)</strong> <strong>VRAI</strong> — Les différences de température sont identiques en °C et en K.</p>
+    <p><strong>d)</strong> <strong>FAUX</strong> — Le zéro absolu est −273 °C. On ne peut pas descendre en dessous.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 3 <span class="pts">(4 points)</span></h2>
-  <div class="meth"><strong>Rappel :</strong> CTN = résistance diminue quand T augmente. CTP = résistance augmente fortement au-delà d'un seuil.</div>
+  <h2>Question 3 <span class="pts">4 pts</span></h2>
+  <div class="meth"><strong>Rappel :</strong> CTN = résistance <em>diminue</em> quand T augmente. CTP = résistance <em>augmente fortement</em> au-delà d'un seuil.</div>
   <p>On dispose d'une CTN. Un ohmmètre mesure les résistances suivantes :</p>
-  <table>
-    <tr><th>T (°C)</th><th>10</th><th>25</th><th>40</th><th>55</th><th>70</th></tr>
-    <tr><td><strong>R (kΩ)</strong></td><td>19,9</td><td>10,0</td><td>5,3</td><td>3,0</td><td>1,8</td></tr>
+  <table class="it">
+    <thead><tr><th>T (°C)</th><th>10</th><th>25</th><th>40</th><th>55</th><th>70</th></tr></thead>
+    <tbody><tr><th>R (kΩ)</th><td>19,9</td><td>10,0</td><td>5,3</td><td>3,0</td><td>1,8</td></tr></tbody>
   </table>
-  <p>a) On mesure \(R = 5{,}3 \text{ kΩ}\). Quelle est la température ?</p>
-  <p>b) La résistance augmente-t-elle ou diminue-t-elle quand la température monte ?</p>
+  <p><strong>a)</strong> On mesure \(R = 5{,}3 \text{ kΩ}\). Quelle est la température ?</p>
+  <p><strong>b)</strong> La résistance augmente-t-elle ou diminue-t-elle quand la température monte ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) \(R = 5{,}3 \text{ kΩ}\) correspond à \(\mathbf{T = 40 \text{ °C}}\).</p>
-    <p>b) La résistance <strong>diminue</strong> quand la température augmente. C'est le comportement d'une <strong>CTN</strong> (Coefficient de Température Négatif).</p>
+    <p><strong>a)</strong> \(R = 5{,}3 \text{ kΩ}\) correspond à \(\mathbf{T = 40\ °\text{C}}\).</p>
+    <p><strong>b)</strong> La résistance <strong>diminue</strong> quand la température augmente. Comportement d'une <strong>CTN</strong> (Coefficient de Température Négatif).</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="pts">(4 points)</span></h2>
-  <div class="meth"><strong>Rappel :</strong> Les principaux capteurs : thermocouple (grande plage), CTN (sensible 0-100 °C), CTP (protection), LM35 (linéaire).</div>
-  <p>Relier chaque capteur à son application :</p>
-  <table>
-    <tr><th>Capteur</th><th>Application</th></tr>
-    <tr><td>1. CTN</td><td>A. Mesurer une température très élevée (jusqu'à 1 200 °C)</td></tr>
-    <tr><td>2. CTP</td><td>B. Afficher la température sur un écran numérique</td></tr>
-    <tr><td>3. Thermocouple</td><td>C. Réguler la température d'un four entre 60 et 90 °C</td></tr>
-    <tr><td>4. LM35</td><td>D. Couper le courant si un moteur surchauffe</td></tr>
+  <h2>Question 4 <span class="pts">4 pts</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Thermocouple → grande plage, CTN → sensible 0–100 °C, CTP → protection surchauffe, LM35 → tension linéaire.</div>
+  <p>Relier chaque capteur à son application (écrire la lettre dans la colonne du milieu) :</p>
+  <table class="it relier">
+    <thead><tr><th>N°</th><th>Capteur</th><th class="ans">→</th><th>Application</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>CTN</td><td class="ans">…</td><td>A. Mesurer une température très élevée (jusqu'à 1 200 °C)</td></tr>
+      <tr><td>2</td><td>CTP</td><td class="ans">…</td><td>B. Afficher la température sur un écran numérique</td></tr>
+      <tr><td>3</td><td>Thermocouple</td><td class="ans">…</td><td>C. Réguler la température d'un four entre 60 et 90 °C</td></tr>
+      <tr><td>4</td><td>LM35</td><td class="ans">…</td><td>D. Couper le courant si un moteur surchauffe</td></tr>
+    </tbody>
   </table>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>1 → <strong>C</strong> (CTN : très sensible dans la plage 0-100 °C)</p>
-    <p>2 → <strong>D</strong> (CTP : résistance augmente au seuil, coupe le circuit)</p>
-    <p>3 → <strong>A</strong> (thermocouple : grande plage de températures)</p>
-    <p>4 → <strong>B</strong> (LM35 : tension proportionnelle, lecture directe)</p>
+    <table>
+      <thead><tr><th>N°</th><th>Capteur</th><th>→</th><th>Application</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>CTN</td><td><strong>C</strong></td><td>Très sensible dans la plage 0–100 °C</td></tr>
+        <tr><td>2</td><td>CTP</td><td><strong>D</strong></td><td>Résistance explose au seuil, coupe le circuit</td></tr>
+        <tr><td>3</td><td>Thermocouple</td><td><strong>A</strong></td><td>Grande plage de températures</td></tr>
+        <tr><td>4</td><td>LM35</td><td><strong>B</strong></td><td>Tension proportionnelle, lecture directe</td></tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <h2>Question 5 <span class="pts">4 pts</span></h2>
   <div class="meth"><strong>Rappel :</strong> En atelier : CTN pour les étuves, CTP pour la protection des moteurs, thermocouple pour les paliers.</div>
   <p>Un artisan menuisier utilise un four de traitement thermique du bois réglé à 70 °C. Une CTN surveille la température.</p>
-  <p>a) D'après le tableau de la question 3, quelle résistance la CTN affiche-t-elle à 70 °C ?</p>
-  <p>b) Si l'ohmmètre affiche 3,0 kΩ, la température est-elle trop haute ou trop basse par rapport à la consigne ?</p>
+  <p><strong>a)</strong> D'après le tableau de la question 3, quelle résistance la CTN affiche-t-elle à 70 °C ?</p>
+  <p><strong>b)</strong> Si l'ohmmètre affiche 3,0 kΩ, la température est-elle trop haute ou trop basse par rapport à la consigne ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) À 70 °C, la CTN affiche \(R = \mathbf{1{,}8 \text{ kΩ}}\).</p>
-    <p>b) \(R = 3{,}0 \text{ kΩ}\) correspond à 55 °C. La température est <strong>trop basse</strong> (55 °C au lieu de 70 °C). Il faut augmenter le chauffage.</p>
+    <p><strong>a)</strong> À 70 °C, la CTN affiche \(R = \mathbf{1{,}8 \text{ kΩ}}\).</p>
+    <p><strong>b)</strong> \(R = 3{,}0 \text{ kΩ}\) correspond à 55 °C. La température est <strong>trop basse</strong> (55 °C au lieu de 70 °C). Il faut augmenter le chauffage.</p>
   </div>
 </div>
-</div>
 
-</div>
+</div></div>
+</div><!-- fin sujet-b -->
+</div><!-- fin diff-socle -->
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
-<span class="tag-standard">Standard</span>
+
+<div class="level-banner lb-standard">
+  <div class="lb-icon">🔵</div>
+  <div class="lb-body">
+    <h2>Niveau Standard</h2>
+    <p>5 questions sans étapes prédécoupées — LM35, CTN, choix de capteur — rédaction attendue</p>
+  </div>
+</div>
+
+<!-- STANDARD SUJET A -->
 <div class="sujet-a">
-<h3 class="sujet-header">Sujet A</h3>
-<p><strong>Barème :</strong> 20 points</p>
+<div class="sujet-wrap">
+<div class="sujet-header">
+  <span class="sh-title">Sujet A</span>
+  <span class="sh-meta">Barème : /20 pts — Durée 10–15 min</span>
+</div>
+<div class="sujet-body">
 
 <div class="exo">
-  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <h2>Question 1 <span class="pts">4 pts</span></h2>
   <p>Convertir les températures suivantes et donner leur contexte :</p>
-  <p>a) La température d'application d'une colle thermofusible est 180 °C. L'exprimer en Kelvin.</p>
-  <p>b) L'azote liquide bout à 77 K. L'exprimer en °C.</p>
-  <p>c) Quelle est la différence de température en Kelvin entre un atelier à 20 °C et une étuve à 85 °C ?</p>
+  <p><strong>a)</strong> La température d'application d'une colle thermofusible est 180 °C. L'exprimer en Kelvin.</p>
+  <p><strong>b)</strong> L'azote liquide bout à 77 K. L'exprimer en °C.</p>
+  <p><strong>c)</strong> Quelle est la différence de température en Kelvin entre un atelier à 20 °C et une étuve à 85 °C ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) \(T = 180 + 273 = \mathbf{453 \text{ K}}\)</p>
-    <p>b) \(\theta = 77 - 273 = \mathbf{-196 \text{ °C}}\)</p>
-    <p>c) \(\Delta T = 85 - 20 = \mathbf{65 \text{ K}}\) (la différence est la même en °C et en K).</p>
+    <p><strong>a)</strong> \(T = 180 + 273 = \mathbf{453 \text{ K}}\)</p>
+    <p><strong>b)</strong> \(\theta = 77 - 273 = \mathbf{-196 \text{ °C}}\)</p>
+    <p><strong>c)</strong> \(\Delta T = 85 - 20 = \mathbf{65 \text{ K}}\) (la différence est identique en °C et en K).</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 2 <span class="pts">(4 points)</span></h2>
-  <p>Un capteur LM35 fournit une tension de sortie proportionnelle à la température : \(V_{\text{out}} = 10 \text{ mV/°C} \times \theta\).</p>
-  <p>a) Calculer la tension de sortie pour une température de 25 °C.</p>
-  <p>b) On mesure \(V_{\text{out}} = 650 \text{ mV}\). Quelle est la température ?</p>
+  <h2>Question 2 <span class="pts">4 pts</span></h2>
+  <p>Un capteur LM35 fournit une tension de sortie proportionnelle à la température : \(V_{\text{out}} = 10\ \text{mV/°C} \times \theta\).</p>
+  <p><strong>a)</strong> Calculer la tension de sortie pour une température de 25 °C.</p>
+  <p><strong>b)</strong> On mesure \(V_{\text{out}} = 650\ \text{mV}\). Quelle est la température ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) \(V_{\text{out}} = 10 \times 25 = \mathbf{250 \text{ mV}}\)</p>
-    <p>b) \(\theta = \dfrac{V_{\text{out}}}{10} = \dfrac{650}{10} = \mathbf{65 \text{ °C}}\)</p>
+    <p><strong>a)</strong> \(V_{\text{out}} = 10 \times 25 = \mathbf{250\ \text{mV}}\)</p>
+    <p><strong>b)</strong> \(\theta = \dfrac{V_{\text{out}}}{10} = \dfrac{650}{10} = \mathbf{65\ \text{°C}}\)</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <h2>Question 3 <span class="pts">5 pts</span></h2>
   <p>Pour chaque application en atelier de menuiserie, choisir le capteur le plus adapté parmi : thermocouple, CTN, CTP, LM35. Justifier brièvement.</p>
-  <p>a) Mesurer la température d'un palier de machine à bois pouvant atteindre 400 °C.</p>
-  <p>b) Réguler finement la température d'une étuve de séchage à 75 °C.</p>
-  <p>c) Protéger le moteur d'une raboteuse contre les surchauffes.</p>
-  <p>d) Afficher la température de l'atelier sur un écran numérique relié à un Arduino.</p>
+  <p><strong>a)</strong> Mesurer la température d'un palier de machine à bois pouvant atteindre 400 °C.</p>
+  <p><strong>b)</strong> Réguler finement la température d'une étuve de séchage à 75 °C.</p>
+  <p><strong>c)</strong> Protéger le moteur d'une raboteuse contre les surchauffes.</p>
+  <p><strong>d)</strong> Afficher la température de l'atelier sur un écran numérique relié à un Arduino.</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) <strong>Thermocouple</strong> : seul capteur couvrant des températures jusqu'à 400 °C et au-delà.</p>
-    <p>b) <strong>CTN</strong> : très sensible dans la plage 0-100 °C, idéale pour la régulation fine.</p>
-    <p>c) <strong>CTP</strong> : sa résistance augmente brutalement au-delà d'un seuil, ce qui coupe automatiquement le circuit et protège le moteur.</p>
-    <p>d) <strong>LM35</strong> : sortie en tension linéaire, directement lisible par l'entrée analogique d'un Arduino.</p>
+    <p><strong>a)</strong> <strong>Thermocouple</strong> : seul capteur couvrant des températures jusqu'à 400 °C et au-delà.</p>
+    <p><strong>b)</strong> <strong>CTN</strong> : très sensible dans la plage 0–100 °C, idéale pour la régulation fine.</p>
+    <p><strong>c)</strong> <strong>CTP</strong> : sa résistance augmente brutalement au-delà d'un seuil, coupant automatiquement le circuit.</p>
+    <p><strong>d)</strong> <strong>LM35</strong> : sortie en tension linéaire, directement lisible par l'entrée analogique d'un Arduino.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <h2>Question 4 <span class="pts">4 pts</span></h2>
   <p>Dans une étuve de séchage du bois, une CTN est reliée à un régulateur. La consigne est fixée à 75 °C. Le tableau de correspondance donne :</p>
-  <table>
-    <tr><th>T (°C)</th><th>60</th><th>65</th><th>70</th><th>75</th><th>80</th></tr>
-    <tr><td><strong>R (kΩ)</strong></td><td>2,2</td><td>1,8</td><td>1,5</td><td>1,3</td><td>1,1</td></tr>
+  <table class="it">
+    <thead><tr><th>T (°C)</th><th>60</th><th>65</th><th>70</th><th>75</th><th>80</th></tr></thead>
+    <tbody><tr><th>R (kΩ)</th><td>2,2</td><td>1,8</td><td>1,5</td><td>1,3</td><td>1,1</td></tr></tbody>
   </table>
-  <p>a) Quelle résistance correspond à la consigne de 75 °C ?</p>
-  <p>b) L'ohmmètre affiche 1,8 kΩ. Quelle est la température réelle ? Faut-il chauffer davantage ?</p>
+  <p><strong>a)</strong> Quelle résistance correspond à la consigne de 75 °C ?</p>
+  <p><strong>b)</strong> L'ohmmètre affiche 1,8 kΩ. Quelle est la température réelle ? Faut-il chauffer davantage ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) À 75 °C : \(R = \mathbf{1{,}3 \text{ kΩ}}\).</p>
-    <p>b) \(R = 1{,}8 \text{ kΩ}\) correspond à <strong>65 °C</strong>. La température est <strong>inférieure à la consigne</strong>. Il faut <strong>augmenter</strong> le chauffage pour atteindre 75 °C.</p>
+    <p><strong>a)</strong> À 75 °C : \(R = \mathbf{1{,}3\ \text{kΩ}}\).</p>
+    <p><strong>b)</strong> \(R = 1{,}8\ \text{kΩ}\) correspond à <strong>65 °C</strong>. La température est <strong>inférieure à la consigne</strong>. Il faut <strong>augmenter</strong> le chauffage.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <h2>Question 5 <span class="pts">3 pts</span></h2>
   <p>Expliquer la différence entre une CTN et une CTP en termes de comportement de la résistance en fonction de la température. Donner une application industrielle pour chacune.</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p><strong>CTN</strong> : la résistance <strong>diminue</strong> quand la température augmente (relation exponentielle décroissante). Application : <strong>régulation de la température d'une étuve de séchage</strong>.</p>
-    <p><strong>CTP</strong> : la résistance <strong>augmente fortement</strong> au-delà d'un seuil critique de température. Application : <strong>protection thermique des moteurs de machines à bois</strong> (la montée de résistance coupe le circuit).</p>
+    <p><strong>CTN</strong> : la résistance <strong>diminue</strong> quand la température augmente (décroissance exponentielle). Application : <strong>régulation de la température d'une étuve de séchage</strong>.</p>
+    <p><strong>CTP</strong> : la résistance <strong>augmente fortement</strong> au-delà d'un seuil critique. Application : <strong>protection thermique des moteurs de machines à bois</strong> (la montée de résistance coupe le circuit).</p>
   </div>
 </div>
 
-</div>
+</div></div>
+</div><!-- fin sujet-a standard -->
+
+<!-- STANDARD SUJET B -->
 <div class="sujet-b">
-<h3 class="sujet-header">Sujet B</h3>
-<p><strong>Barème :</strong> 20 points</p>
+<div class="sujet-wrap">
+<div class="sujet-header">
+  <span class="sh-title">Sujet B</span>
+  <span class="sh-meta">Barème : /20 pts — Durée 10–15 min</span>
+</div>
+<div class="sujet-body">
 
 <div class="exo">
-  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <h2>Question 1 <span class="pts">4 pts</span></h2>
   <p>Convertir les températures suivantes et donner leur contexte :</p>
-  <p>a) Un panneau solaire atteint 65 °C en été. L'exprimer en Kelvin.</p>
-  <p>b) L'hélium liquide bout à 4 K. L'exprimer en °C.</p>
-  <p>c) Quelle est la différence de température en Kelvin entre un local à 22 °C et un four à 90 °C ?</p>
+  <p><strong>a)</strong> Un panneau solaire atteint 65 °C en été. L'exprimer en Kelvin.</p>
+  <p><strong>b)</strong> L'hélium liquide bout à 4 K. L'exprimer en °C.</p>
+  <p><strong>c)</strong> Quelle est la différence de température en Kelvin entre un local à 22 °C et un four à 90 °C ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) \(T = 65 + 273 = \mathbf{338 \text{ K}}\)</p>
-    <p>b) \(\theta = 4 - 273 = \mathbf{-269 \text{ °C}}\)</p>
-    <p>c) \(\Delta T = 90 - 22 = \mathbf{68 \text{ K}}\) (la différence est la même en °C et en K).</p>
+    <p><strong>a)</strong> \(T = 65 + 273 = \mathbf{338\ \text{K}}\)</p>
+    <p><strong>b)</strong> \(\theta = 4 - 273 = \mathbf{-269\ \text{°C}}\)</p>
+    <p><strong>c)</strong> \(\Delta T = 90 - 22 = \mathbf{68\ \text{K}}\) (la différence est identique en °C et en K).</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 2 <span class="pts">(4 points)</span></h2>
-  <p>Un capteur LM35 fournit une tension de sortie proportionnelle à la température : \(V_{\text{out}} = 10 \text{ mV/°C} \times \theta\).</p>
-  <p>a) Calculer la tension de sortie pour une température de 40 °C.</p>
-  <p>b) On mesure \(V_{\text{out}} = 820 \text{ mV}\). Quelle est la température ?</p>
+  <h2>Question 2 <span class="pts">4 pts</span></h2>
+  <p>Un capteur LM35 fournit une tension de sortie proportionnelle à la température : \(V_{\text{out}} = 10\ \text{mV/°C} \times \theta\).</p>
+  <p><strong>a)</strong> Calculer la tension de sortie pour une température de 40 °C.</p>
+  <p><strong>b)</strong> On mesure \(V_{\text{out}} = 820\ \text{mV}\). Quelle est la température ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) \(V_{\text{out}} = 10 \times 40 = \mathbf{400 \text{ mV}}\)</p>
-    <p>b) \(\theta = \dfrac{V_{\text{out}}}{10} = \dfrac{820}{10} = \mathbf{82 \text{ °C}}\)</p>
+    <p><strong>a)</strong> \(V_{\text{out}} = 10 \times 40 = \mathbf{400\ \text{mV}}\)</p>
+    <p><strong>b)</strong> \(\theta = \dfrac{V_{\text{out}}}{10} = \dfrac{820}{10} = \mathbf{82\ \text{°C}}\)</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <h2>Question 3 <span class="pts">5 pts</span></h2>
   <p>Pour chaque situation professionnelle, choisir le capteur le plus adapté parmi : thermocouple, CTN, CTP, LM35. Justifier brièvement.</p>
-  <p>a) Surveiller la température d'un moule d'injection plastique à 250 °C.</p>
-  <p>b) Réguler un bain de traitement de surface à 55 °C.</p>
-  <p>c) Protéger le moteur d'une toupie contre les échauffements.</p>
-  <p>d) Mesurer la température ambiante avec un microcontrôleur.</p>
+  <p><strong>a)</strong> Surveiller la température d'un moule d'injection plastique à 250 °C.</p>
+  <p><strong>b)</strong> Réguler un bain de traitement de surface à 55 °C.</p>
+  <p><strong>c)</strong> Protéger le moteur d'une toupie contre les échauffements.</p>
+  <p><strong>d)</strong> Mesurer la température ambiante avec un microcontrôleur.</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) <strong>Thermocouple</strong> : seul capteur adapté aux températures élevées (250 °C et au-delà).</p>
-    <p>b) <strong>CTN</strong> : très sensible dans la plage 0-100 °C, idéale pour la régulation fine autour de 55 °C.</p>
-    <p>c) <strong>CTP</strong> : sa résistance augmente brusquement au-delà d'un seuil, déclenchant la coupure du circuit pour protéger le moteur.</p>
-    <p>d) <strong>LM35</strong> : sortie en tension linéaire, directement lisible par un microcontrôleur.</p>
+    <p><strong>a)</strong> <strong>Thermocouple</strong> : seul capteur adapté aux températures élevées (250 °C et au-delà).</p>
+    <p><strong>b)</strong> <strong>CTN</strong> : très sensible dans la plage 0–100 °C, idéale pour la régulation fine autour de 55 °C.</p>
+    <p><strong>c)</strong> <strong>CTP</strong> : sa résistance augmente brusquement au-delà d'un seuil, déclenchant la coupure du circuit.</p>
+    <p><strong>d)</strong> <strong>LM35</strong> : sortie en tension linéaire, directement lisible par un microcontrôleur.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <h2>Question 4 <span class="pts">4 pts</span></h2>
   <p>Dans un local de stockage, une CTN est reliée à un régulateur de chauffage. La consigne est fixée à 60 °C. Le tableau de correspondance donne :</p>
-  <table>
-    <tr><th>T (°C)</th><th>40</th><th>50</th><th>60</th><th>70</th><th>80</th></tr>
-    <tr><td><strong>R (kΩ)</strong></td><td>4,7</td><td>3,1</td><td>2,1</td><td>1,5</td><td>1,1</td></tr>
+  <table class="it">
+    <thead><tr><th>T (°C)</th><th>40</th><th>50</th><th>60</th><th>70</th><th>80</th></tr></thead>
+    <tbody><tr><th>R (kΩ)</th><td>4,7</td><td>3,1</td><td>2,1</td><td>1,5</td><td>1,1</td></tr></tbody>
   </table>
-  <p>a) Quelle résistance correspond à la consigne de 60 °C ?</p>
-  <p>b) L'ohmmètre affiche 1,5 kΩ. Quelle est la température réelle ? Faut-il réduire le chauffage ?</p>
+  <p><strong>a)</strong> Quelle résistance correspond à la consigne de 60 °C ?</p>
+  <p><strong>b)</strong> L'ohmmètre affiche 1,5 kΩ. Quelle est la température réelle ? Faut-il réduire le chauffage ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) À 60 °C : \(R = \mathbf{2{,}1 \text{ kΩ}}\).</p>
-    <p>b) \(R = 1{,}5 \text{ kΩ}\) correspond à <strong>70 °C</strong>. La température est <strong>supérieure à la consigne</strong>. Il faut <strong>réduire</strong> le chauffage pour redescendre à 60 °C.</p>
+    <p><strong>a)</strong> À 60 °C : \(R = \mathbf{2{,}1\ \text{kΩ}}\).</p>
+    <p><strong>b)</strong> \(R = 1{,}5\ \text{kΩ}\) correspond à <strong>70 °C</strong>. La température est <strong>supérieure à la consigne</strong>. Il faut <strong>réduire</strong> le chauffage.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <h2>Question 5 <span class="pts">3 pts</span></h2>
   <p>Expliquer la différence entre un thermocouple et un capteur LM35 en termes de principe de fonctionnement et de plage de mesure. Donner une application professionnelle pour chacun.</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p><strong>Thermocouple</strong> : produit une tension (effet Seebeck) à la jonction de deux métaux différents. Plage très large (−200 °C à plus de 1 200 °C). Application : <strong>surveillance des paliers de machines industrielles</strong>.</p>
-    <p><strong>LM35</strong> : circuit intégré qui fournit une tension proportionnelle à la température (10 mV/°C). Plage limitée (−55 °C à 150 °C). Application : <strong>affichage de la température d'un atelier sur un écran numérique</strong>.</p>
+    <p><strong>Thermocouple</strong> : produit une tension (effet Seebeck) à la jonction de deux métaux différents. Plage très large (−200 °C à +1 200 °C). Application : <strong>surveillance des paliers de machines industrielles</strong>.</p>
+    <p><strong>LM35</strong> : circuit intégré, tension proportionnelle à la température (10 mV/°C). Plage limitée (−55 °C à 150 °C). Application : <strong>affichage de la température d'un atelier sur écran numérique</strong>.</p>
   </div>
 </div>
-</div>
 
-</div>
+</div></div>
+</div><!-- fin sujet-b standard -->
+</div><!-- fin diff-standard -->
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
-<span class="tag-appro">Approfondissement</span>
+
+<div class="level-banner lb-appro">
+  <div class="lb-icon">🟣</div>
+  <div class="lb-body">
+    <h2>Niveau Approfondissement</h2>
+    <p>5 questions ouvertes — formule exponentielle CTN, Arduino, analyse de surchauffe, comparaison de capteurs</p>
+  </div>
+</div>
+
+<!-- APPRO SUJET A -->
 <div class="sujet-a">
-<h3 class="sujet-header">Sujet A</h3>
-<p><strong>Barème :</strong> 20 points</p>
+<div class="sujet-wrap">
+<div class="sujet-header">
+  <span class="sh-title">Sujet A</span>
+  <span class="sh-meta">Barème : /20 pts — Durée 10–15 min</span>
+</div>
+<div class="sujet-body">
 
 <div class="exo">
-  <h2>Question 1 <span class="pts">(4 points)</span></h2>
-  <p>Une CTN a une résistance \(R_0 = 10 \text{ kΩ}\) à \(T_0 = 25 \text{ °C}\) et une constante \(B = 3\,950 \text{ K}\). La formule est :</p>
+  <h2>Question 1 <span class="pts">4 pts</span></h2>
+  <p>Une CTN a une résistance \(R_0 = 10\ \text{kΩ}\) à \(T_0 = 25\ \text{°C}\) et une constante \(B = 3\,950\ \text{K}\). La formule est :</p>
   <p>\[ R = R_0 \times e^{B\left(\frac{1}{T} - \frac{1}{T_0}\right)} \]</p>
-  <p>a) Convertir \(T_0 = 25 \text{ °C}\) et \(T = 60 \text{ °C}\) en Kelvin.</p>
-  <p>b) Calculer \(\dfrac{1}{T} - \dfrac{1}{T_0}\).</p>
-  <p>c) En déduire la résistance \(R\) à 60 °C.</p>
+  <p><strong>a)</strong> Convertir \(T_0 = 25\ \text{°C}\) et \(T = 60\ \text{°C}\) en Kelvin.</p>
+  <p><strong>b)</strong> Calculer \(\dfrac{1}{T} - \dfrac{1}{T_0}\).</p>
+  <p><strong>c)</strong> En déduire la résistance \(R\) à 60 °C.</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) \(T_0 = 25 + 273 = 298 \text{ K}\). \(T = 60 + 273 = 333 \text{ K}\).</p>
-    <p>b) \(\dfrac{1}{333} - \dfrac{1}{298} = 0{,}003003 - 0{,}003356 = -0{,}000353 \text{ K}^{-1}\)</p>
-    <p>c) \(B \times \left(\dfrac{1}{T} - \dfrac{1}{T_0}\right) = 3\,950 \times (-0{,}000353) = -1{,}394\)</p>
-    <p>\(R = 10\,000 \times e^{-1{,}394} = 10\,000 \times 0{,}248 \approx \mathbf{2{,}48 \text{ kΩ}}\)</p>
+    <p><strong>a)</strong> \(T_0 = 25 + 273 = 298\ \text{K}\). \(T = 60 + 273 = 333\ \text{K}\).</p>
+    <p><strong>b)</strong> \(\dfrac{1}{333} - \dfrac{1}{298} = 0{,}003003 - 0{,}003356 = -0{,}000353\ \text{K}^{-1}\)</p>
+    <p><strong>c)</strong> \(B \times \left(\dfrac{1}{T} - \dfrac{1}{T_0}\right) = 3\,950 \times (-0{,}000353) = -1{,}394\)</p>
+    <p>\(R = 10\,000 \times e^{-1{,}394} = 10\,000 \times 0{,}248 \approx \mathbf{2{,}48\ \text{kΩ}}\)</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 2 <span class="pts">(5 points)</span></h2>
-  <p>Un technicien de maintenance surveille l'échauffement des paliers d'une scie à ruban. Un thermocouple de type K est fixé sur le palier. Les mesures suivantes sont relevées :</p>
-  <table>
-    <tr><th>Temps (min)</th><th>0</th><th>10</th><th>20</th><th>30</th><th>40</th></tr>
-    <tr><td><strong>T (°C)</strong></td><td>22</td><td>35</td><td>52</td><td>78</td><td>110</td></tr>
+  <h2>Question 2 <span class="pts">5 pts</span></h2>
+  <p>Un technicien de maintenance surveille l'échauffement des paliers d'une scie à ruban. Un thermocouple de type K est fixé sur le palier. Les mesures relevées sont :</p>
+  <table class="it">
+    <thead><tr><th>Temps (min)</th><th>0</th><th>10</th><th>20</th><th>30</th><th>40</th></tr></thead>
+    <tbody><tr><th>T (°C)</th><td>22</td><td>35</td><td>52</td><td>78</td><td>110</td></tr></tbody>
   </table>
-  <p>a) Convertir toutes les températures en Kelvin.</p>
-  <p>b) La température maximale admissible pour le palier est 90 °C. À quel moment environ ce seuil est-il dépassé ?</p>
-  <p>c) Que doit faire le technicien ? Proposer une action corrective.</p>
+  <!-- Mini SVG courbe T(t) avec seuil 90°C -->
+  <div class="mini-chart-wrap">
+    <figure style="margin:0">
+      <!-- x(t) = 45 + t/40*260 ; y(T) = 130 - (T-20)/100*110 -->
+      <!-- t=0→45, 10→110, 20→175, 30→240, 40→305 -->
+      <!-- T=22→127.8, T=35→116.5, T=52→103.8, T=78→85.2, T=110→64 -->
+      <!-- seuil 90°C → y=130-70/100*110=130-77=53 ... let me redo -->
+      <!-- y = 130 - (T-20)*1.1 : T=22→127.8, T=35→116.5, T=52→103.2, T=78→84.2, T=110→53 -->
+      <!-- seuil 90°C → y=130-70*1.1=130-77=53... same as T=110. Let me use different scale -->
+      <!-- y = 140 - (T-20)/95*120 : T=20→140, T=115→20 -->
+      <!-- T=22→137.5, T=35→121.3, T=52→101.1, T=78→71.6, T=110→35.8 -->
+      <!-- seuil 90: y=140-70/95*120=140-88.4=51.6 ≈ 52 -->
+      <svg viewBox="0 0 340 160" width="320" aria-label="Évolution de la température du palier en fonction du temps">
+        <defs>
+          <marker id="arrT" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="#718096"/>
+          </marker>
+        </defs>
+        <text x="170" y="12" text-anchor="middle" font-size="9.5" fill="#4c1d95" font-weight="bold">Température du palier — Scie à ruban (Sujet A)</text>
+        <line x1="40" y1="140" x2="318" y2="140" stroke="#718096" stroke-width="1.5" marker-end="url(#arrT)"/>
+        <line x1="40" y1="20" x2="40" y2="140" stroke="#718096" stroke-width="1.5" marker-end="url(#arrT)"/>
+        <text x="322" y="143" font-size="8" fill="#718096">t (min)</text>
+        <text x="25" y="18" font-size="8" fill="#718096">T (°C)</text>
+        <!-- Ticks X -->
+        <line x1="40" y1="138" x2="40" y2="143" stroke="#718096"/><text x="40" y="151" text-anchor="middle" font-size="8" fill="#666">0</text>
+        <line x1="105" y1="138" x2="105" y2="143" stroke="#718096"/><text x="105" y="151" text-anchor="middle" font-size="8" fill="#666">10</text>
+        <line x1="170" y1="138" x2="170" y2="143" stroke="#718096"/><text x="170" y="151" text-anchor="middle" font-size="8" fill="#666">20</text>
+        <line x1="235" y1="138" x2="235" y2="143" stroke="#718096"/><text x="235" y="151" text-anchor="middle" font-size="8" fill="#666">30</text>
+        <line x1="300" y1="138" x2="300" y2="143" stroke="#718096"/><text x="300" y="151" text-anchor="middle" font-size="8" fill="#666">40</text>
+        <!-- Ticks Y -->
+        <line x1="38" y1="138" x2="43" y2="138" stroke="#718096"/><text x="34" y="141" text-anchor="end" font-size="8" fill="#666">20</text>
+        <line x1="38" y1="105" x2="43" y2="105" stroke="#718096"/><text x="34" y="108" text-anchor="end" font-size="8" fill="#666">50</text>
+        <line x1="38" y1="72" x2="43" y2="72" stroke="#718096"/><text x="34" y="75" text-anchor="end" font-size="8" fill="#666">80</text>
+        <line x1="38" y1="39" x2="43" y2="39" stroke="#718096"/><text x="34" y="42" text-anchor="end" font-size="8" fill="#666">110</text>
+        <!-- Seuil 90°C → y=138-(90-20)/95*118=138-86.9=51.1 ≈ 51 -->
+        <line x1="40" y1="51" x2="310" y2="51" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="312" y="53" font-size="8" fill="#e53e3e">90 °C</text>
+        <!-- Courbe : points calculés y=138-(T-20)/95*118 -->
+        <!-- T=22→135.5, T=35→120.7, T=52→100.6, T=78→70.1, T=110→34.2 -->
+        <polyline points="40,136 105,121 170,101 235,70 300,34" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-linejoin="round"/>
+        <circle cx="40" cy="136" r="4" fill="#7c3aed"/>
+        <circle cx="105" cy="121" r="4" fill="#7c3aed"/>
+        <circle cx="170" cy="101" r="4" fill="#7c3aed"/>
+        <circle cx="235" cy="70" r="4" fill="#7c3aed"/>
+        <circle cx="300" cy="34" r="4" fill="#7c3aed"/>
+        <!-- Zone rouge au-delà du seuil -->
+        <rect x="205" y="51" width="110" height="3" fill="#fecaca" opacity="0.6"/>
+        <text x="170" y="45" font-size="8" fill="#e53e3e">Seuil dépassé entre 30 et 40 min</text>
+      </svg>
+      <figcaption>Courbe T(t) — seuil max à 90 °C (ligne rouge)</figcaption>
+    </figure>
+  </div>
+  <p><strong>a)</strong> Convertir toutes les températures en Kelvin.</p>
+  <p><strong>b)</strong> La température maximale admissible pour le palier est 90 °C. À quel moment environ ce seuil est-il dépassé ?</p>
+  <p><strong>c)</strong> Que doit faire le technicien ? Proposer une action corrective.</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) 295 K, 308 K, 325 K, 351 K, 383 K.</p>
-    <p>b) Entre 30 min (78 °C) et 40 min (110 °C), le seuil de 90 °C est dépassé. Estimation : vers <strong>33-34 minutes</strong>.</p>
-    <p>c) Le technicien doit <strong>arrêter la machine</strong> immédiatement pour éviter la dégradation du palier. Action corrective : <strong>vérifier le graissage du roulement</strong> et le remplacer si nécessaire. Un palier qui chauffe anormalement peut indiquer un roulement usé ou mal lubrifié.</p>
+    <table>
+      <thead><tr><th>t (min)</th><th>0</th><th>10</th><th>20</th><th>30</th><th>40</th></tr></thead>
+      <tbody><tr><th>T (K)</th><td>295</td><td>308</td><td>325</td><td>351</td><td>383</td></tr></tbody>
+    </table>
+    <p><strong>b)</strong> Entre 30 min (78 °C) et 40 min (110 °C), le seuil de 90 °C est dépassé. Estimation : vers <strong>33–34 minutes</strong>.</p>
+    <p><strong>c)</strong> Le technicien doit <strong>arrêter la machine immédiatement</strong>. Action corrective : vérifier le graissage du roulement — un palier qui chauffe anormalement indique un roulement usé ou mal lubrifié.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 3 <span class="pts">(4 points)</span></h2>
-  <p>Un système Arduino est équipé d'un capteur LM35 pour surveiller la température d'un atelier. Le convertisseur analogique-numérique (CAN) de l'Arduino fonctionne sur 10 bits (valeurs de 0 à 1 023) avec une tension de référence de 5 V.</p>
-  <p>a) Quelle est la résolution en tension du CAN (tension par pas) ?</p>
-  <p>b) Le LM35 donne 10 mV/°C. En déduire la résolution en température du système.</p>
-  <p>c) Le CAN affiche la valeur numérique 150. Quelle est la température mesurée ?</p>
+  <h2>Question 3 <span class="pts">4 pts</span></h2>
+  <p>Un système Arduino est équipé d'un capteur LM35 pour surveiller la température d'un atelier. Le convertisseur analogique-numérique (CAN) fonctionne sur 10 bits (0 à 1 023) avec \(V_{\text{ref}} = 5\ \text{V}\).</p>
+  <p><strong>a)</strong> Quelle est la résolution en tension du CAN (tension par pas) ?</p>
+  <p><strong>b)</strong> Le LM35 donne 10 mV/°C. En déduire la résolution en température du système.</p>
+  <p><strong>c)</strong> Le CAN affiche la valeur numérique 150. Quelle est la température mesurée ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) Résolution = \(\dfrac{5}{1\,023} \approx \mathbf{4{,}89 \text{ mV}}\) par pas.</p>
-    <p>b) Résolution en température = \(\dfrac{4{,}89}{10} \approx \mathbf{0{,}49 \text{ °C}}\) par pas.</p>
-    <p>c) Tension : \(V = 150 \times 4{,}89 = 733{,}5 \text{ mV}\). Température : \(\theta = \dfrac{733{,}5}{10} \approx \mathbf{73{,}4 \text{ °C}}\).</p>
+    <p><strong>a)</strong> Résolution = \(\dfrac{5}{1\,023} \approx \mathbf{4{,}89\ \text{mV}}\) par pas.</p>
+    <p><strong>b)</strong> Résolution en température = \(\dfrac{4{,}89}{10} \approx \mathbf{0{,}49\ \text{°C}}\) par pas.</p>
+    <p><strong>c)</strong> Tension : \(V = 150 \times 4{,}89 = 733{,}5\ \text{mV}\). Température : \(\theta = \dfrac{733{,}5}{10} \approx \mathbf{73{,}4\ \text{°C}}\).</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="pts">(4 points)</span></h2>
-  <p>Un ingénieur thermicien compare les performances de deux capteurs pour la régulation d'une étuve industrielle entre 50 et 90 °C :</p>
+  <h2>Question 4 <span class="pts">4 pts</span></h2>
+  <p>Un ingénieur thermicien compare deux capteurs pour la régulation d'une étuve industrielle entre 50 et 90 °C :</p>
   <ul>
-    <li>Capteur A : CTN, \(R_0 = 10 \text{ kΩ}\) à 25 °C, \(B = 3\,950 \text{ K}\)</li>
+    <li>Capteur A : CTN, \(R_0 = 10\ \text{kΩ}\) à 25 °C, \(B = 3\,950\ \text{K}\)</li>
     <li>Capteur B : thermocouple type K, sensibilité 41 µV/°C</li>
   </ul>
-  <p>a) Quel capteur offre la meilleure sensibilité dans cette plage de température ? Justifier.</p>
-  <p>b) Quel inconvénient majeur a la CTN pour une mesure précise ?</p>
-  <p>c) Lequel recommanderiez-vous pour cette application ? Justifier.</p>
+  <p><strong>a)</strong> Quel capteur offre la meilleure sensibilité dans cette plage de température ? Justifier.</p>
+  <p><strong>b)</strong> Quel inconvénient majeur a la CTN pour une mesure précise ?</p>
+  <p><strong>c)</strong> Lequel recommanderiez-vous pour cette application ? Justifier.</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) La <strong>CTN</strong> offre une meilleure sensibilité dans la plage 50-90 °C car sa résistance varie de plusieurs kΩ pour quelques degrés, tandis que le thermocouple ne varie que de quelques millivolts.</p>
-    <p>b) La CTN a une relation <strong>non linéaire</strong> (exponentielle) entre R et T, ce qui rend la conversion R → T plus complexe et nécessite un étalonnage ou une table de correspondance.</p>
-    <p>c) La <strong>CTN</strong> est recommandée car la plage 50-90 °C est bien dans sa zone de sensibilité maximale, et la non-linéarité peut être corrigée par le régulateur électronique. Le thermocouple serait surdimensionné pour cette plage modeste.</p>
+    <p><strong>a)</strong> La <strong>CTN</strong> offre une meilleure sensibilité dans la plage 50–90 °C : sa résistance varie de plusieurs kΩ pour quelques degrés, contre quelques millivolts pour le thermocouple.</p>
+    <p><strong>b)</strong> La CTN a une relation <strong>non linéaire</strong> (exponentielle) entre R et T, ce qui rend la conversion R → T plus complexe.</p>
+    <p><strong>c)</strong> La <strong>CTN</strong> est recommandée : la plage 50–90 °C est dans sa zone de sensibilité maximale. La non-linéarité est corrigée par le régulateur électronique. Le thermocouple serait surdimensionné pour cette plage modeste.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <h2>Question 5 <span class="pts">3 pts</span></h2>
   <p>Le séchage du bois en étuve nécessite un contrôle précis de la température. Expliquer pourquoi une température trop basse est inefficace et une température trop haute est dangereuse pour le bois. Quel capteur et quel type de régulation proposez-vous ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>Si la température est <strong>trop basse</strong>, l'évaporation de l'eau est lente et le séchage prend trop de temps, ce qui est inefficace et coûteux.</p>
-    <p>Si la température est <strong>trop haute</strong> (au-delà de 90 °C environ), les fibres du bois se dégradent : le bois peut se fendre, se déformer ou perdre ses propriétés mécaniques.</p>
-    <p>On utilise une <strong>CTN</strong> (très sensible dans la plage 60-90 °C) reliée à un <strong>régulateur</strong> qui ajuste automatiquement le chauffage pour maintenir la température à la consigne. Ce système forme une <strong>boucle de régulation</strong> en température.</p>
+    <p>Si la température est <strong>trop basse</strong>, l'évaporation de l'eau est lente → séchage inefficace et coûteux en temps.</p>
+    <p>Si la température est <strong>trop haute</strong> (&gt; 90 °C environ), les fibres du bois se dégradent : fissures, déformations, perte de propriétés mécaniques.</p>
+    <p>→ On utilise une <strong>CTN</strong> (très sensible en 60–90 °C) reliée à un <strong>régulateur tout-ou-rien</strong> qui ajuste automatiquement le chauffage pour maintenir la consigne. Ce système forme une <strong>boucle de régulation</strong> en température.</p>
   </div>
 </div>
 
-</div>
+</div></div>
+</div><!-- fin sujet-a appro -->
+
+<!-- APPRO SUJET B -->
 <div class="sujet-b">
-<h3 class="sujet-header">Sujet B</h3>
-<p><strong>Barème :</strong> 20 points</p>
+<div class="sujet-wrap">
+<div class="sujet-header">
+  <span class="sh-title">Sujet B</span>
+  <span class="sh-meta">Barème : /20 pts — Durée 10–15 min</span>
+</div>
+<div class="sujet-body">
 
 <div class="exo">
-  <h2>Question 1 <span class="pts">(4 points)</span></h2>
-  <p>Une CTN a une résistance \(R_0 = 12 \text{ kΩ}\) à \(T_0 = 20 \text{ °C}\) et une constante \(B = 3\,800 \text{ K}\). La formule est :</p>
+  <h2>Question 1 <span class="pts">4 pts</span></h2>
+  <p>Une CTN a une résistance \(R_0 = 12\ \text{kΩ}\) à \(T_0 = 20\ \text{°C}\) et une constante \(B = 3\,800\ \text{K}\). La formule est :</p>
   <p>\[ R = R_0 \times e^{B\left(\frac{1}{T} - \frac{1}{T_0}\right)} \]</p>
-  <p>a) Convertir \(T_0 = 20 \text{ °C}\) et \(T = 50 \text{ °C}\) en Kelvin.</p>
-  <p>b) Calculer \(\dfrac{1}{T} - \dfrac{1}{T_0}\).</p>
-  <p>c) En déduire la résistance \(R\) à 50 °C.</p>
+  <p><strong>a)</strong> Convertir \(T_0 = 20\ \text{°C}\) et \(T = 50\ \text{°C}\) en Kelvin.</p>
+  <p><strong>b)</strong> Calculer \(\dfrac{1}{T} - \dfrac{1}{T_0}\).</p>
+  <p><strong>c)</strong> En déduire la résistance \(R\) à 50 °C.</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) \(T_0 = 20 + 273 = 293 \text{ K}\). \(T = 50 + 273 = 323 \text{ K}\).</p>
-    <p>b) \(\dfrac{1}{323} - \dfrac{1}{293} = 0{,}003096 - 0{,}003413 = -0{,}000317 \text{ K}^{-1}\)</p>
-    <p>c) \(B \times \left(\dfrac{1}{T} - \dfrac{1}{T_0}\right) = 3\,800 \times (-0{,}000317) = -1{,}205\)</p>
-    <p>\(R = 12\,000 \times e^{-1{,}205} = 12\,000 \times 0{,}300 \approx \mathbf{3{,}59 \text{ kΩ}}\)</p>
+    <p><strong>a)</strong> \(T_0 = 20 + 273 = 293\ \text{K}\). \(T = 50 + 273 = 323\ \text{K}\).</p>
+    <p><strong>b)</strong> \(\dfrac{1}{323} - \dfrac{1}{293} = 0{,}003096 - 0{,}003413 = -0{,}000317\ \text{K}^{-1}\)</p>
+    <p><strong>c)</strong> \(B \times \left(\dfrac{1}{T} - \dfrac{1}{T_0}\right) = 3\,800 \times (-0{,}000317) = -1{,}205\)</p>
+    <p>\(R = 12\,000 \times e^{-1{,}205} = 12\,000 \times 0{,}300 \approx \mathbf{3{,}59\ \text{kΩ}}\)</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <h2>Question 2 <span class="pts">5 pts</span></h2>
   <p>Un technicien de maintenance surveille la température d'un moteur de ponceuse industrielle. Un thermocouple de type K est fixé sur le carter. Les mesures relevées sont :</p>
-  <table>
-    <tr><th>Temps (min)</th><th>0</th><th>5</th><th>10</th><th>15</th><th>20</th></tr>
-    <tr><td><strong>T (°C)</strong></td><td>25</td><td>40</td><td>58</td><td>85</td><td>120</td></tr>
+  <table class="it">
+    <thead><tr><th>Temps (min)</th><th>0</th><th>5</th><th>10</th><th>15</th><th>20</th></tr></thead>
+    <tbody><tr><th>T (°C)</th><td>25</td><td>40</td><td>58</td><td>85</td><td>120</td></tr></tbody>
   </table>
-  <p>a) Convertir toutes les températures en Kelvin.</p>
-  <p>b) La température maximale admissible pour le carter est 100 °C. À quel moment environ ce seuil est-il dépassé ?</p>
-  <p>c) Que doit faire le technicien ? Proposer une action corrective.</p>
+  <!-- Mini SVG courbe T(t) sujet B -->
+  <div class="mini-chart-wrap">
+    <figure style="margin:0">
+      <!-- x(t) = 45 + t/20*260 ; y(T) = 138 - (T-20)/105*118 -->
+      <!-- T=25→132.4, T=40→120.6, T=58→107.8, T=85→87.1, T=120→59.5 -->
+      <!-- seuil 100°C : y=138-80/105*118=138-89.9=48.1 ≈ 48 -->
+      <svg viewBox="0 0 340 160" width="320" aria-label="Évolution de la température du carter en fonction du temps">
+        <defs>
+          <marker id="arrT2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="#718096"/>
+          </marker>
+        </defs>
+        <text x="170" y="12" text-anchor="middle" font-size="9.5" fill="#4c1d95" font-weight="bold">Température du carter — Ponceuse (Sujet B)</text>
+        <line x1="40" y1="140" x2="318" y2="140" stroke="#718096" stroke-width="1.5" marker-end="url(#arrT2)"/>
+        <line x1="40" y1="20" x2="40" y2="140" stroke="#718096" stroke-width="1.5" marker-end="url(#arrT2)"/>
+        <text x="322" y="143" font-size="8" fill="#718096">t (min)</text>
+        <text x="25" y="18" font-size="8" fill="#718096">T (°C)</text>
+        <!-- Ticks X -->
+        <line x1="40" y1="138" x2="40" y2="143" stroke="#718096"/><text x="40" y="151" text-anchor="middle" font-size="8" fill="#666">0</text>
+        <line x1="105" y1="138" x2="105" y2="143" stroke="#718096"/><text x="105" y="151" text-anchor="middle" font-size="8" fill="#666">5</text>
+        <line x1="170" y1="138" x2="170" y2="143" stroke="#718096"/><text x="170" y="151" text-anchor="middle" font-size="8" fill="#666">10</text>
+        <line x1="235" y1="138" x2="235" y2="143" stroke="#718096"/><text x="235" y="151" text-anchor="middle" font-size="8" fill="#666">15</text>
+        <line x1="300" y1="138" x2="300" y2="143" stroke="#718096"/><text x="300" y="151" text-anchor="middle" font-size="8" fill="#666">20</text>
+        <!-- Ticks Y -->
+        <line x1="38" y1="138" x2="43" y2="138" stroke="#718096"/><text x="34" y="141" text-anchor="end" font-size="8" fill="#666">20</text>
+        <line x1="38" y1="100" x2="43" y2="100" stroke="#718096"/><text x="34" y="103" text-anchor="end" font-size="8" fill="#666">65</text>
+        <line x1="38" y1="62" x2="43" y2="62" stroke="#718096"/><text x="34" y="65" text-anchor="end" font-size="8" fill="#666">110</text>
+        <!-- Seuil 100°C : y=138-80/105*118=48 -->
+        <line x1="40" y1="48" x2="310" y2="48" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="312" y="50" font-size="8" fill="#e53e3e">100 °C</text>
+        <!-- Courbe : y=138-(T-20)/105*118 -->
+        <!-- T=25→132.4, T=40→120.6, T=58→107.8, T=85→87.1, T=120→59.5 -->
+        <polyline points="40,132 105,121 170,108 235,87 300,60" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-linejoin="round"/>
+        <circle cx="40" cy="132" r="4" fill="#7c3aed"/>
+        <circle cx="105" cy="121" r="4" fill="#7c3aed"/>
+        <circle cx="170" cy="108" r="4" fill="#7c3aed"/>
+        <circle cx="235" cy="87" r="4" fill="#7c3aed"/>
+        <circle cx="300" cy="60" r="4" fill="#7c3aed"/>
+        <text x="160" y="43" font-size="8" fill="#e53e3e">Seuil dépassé entre 15 et 20 min</text>
+      </svg>
+      <figcaption>Courbe T(t) — seuil max à 100 °C (ligne rouge)</figcaption>
+    </figure>
+  </div>
+  <p><strong>a)</strong> Convertir toutes les températures en Kelvin.</p>
+  <p><strong>b)</strong> La température maximale admissible pour le carter est 100 °C. À quel moment environ ce seuil est-il dépassé ?</p>
+  <p><strong>c)</strong> Que doit faire le technicien ? Proposer une action corrective.</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) 298 K, 313 K, 331 K, 358 K, 393 K.</p>
-    <p>b) Entre 15 min (85 °C) et 20 min (120 °C), le seuil de 100 °C est dépassé. Estimation : vers <strong>17 minutes</strong>.</p>
-    <p>c) Le technicien doit <strong>arrêter la machine</strong> pour éviter la surchauffe du moteur. Action corrective : <strong>vérifier le système de ventilation</strong> du moteur (filtre encrassé, ailettes de refroidissement bouchées) et contrôler la charge mécanique.</p>
+    <table>
+      <thead><tr><th>t (min)</th><th>0</th><th>5</th><th>10</th><th>15</th><th>20</th></tr></thead>
+      <tbody><tr><th>T (K)</th><td>298</td><td>313</td><td>331</td><td>358</td><td>393</td></tr></tbody>
+    </table>
+    <p><strong>b)</strong> Entre 15 min (85 °C) et 20 min (120 °C), le seuil de 100 °C est dépassé. Estimation : vers <strong>17 minutes</strong>.</p>
+    <p><strong>c)</strong> Le technicien doit <strong>arrêter la machine</strong> pour éviter la surchauffe du moteur. Action corrective : vérifier le système de ventilation du moteur (filtre encrassé, ailettes bouchées) et contrôler la charge mécanique.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 3 <span class="pts">(4 points)</span></h2>
-  <p>Un système Arduino est équipé d'un capteur LM35 pour réguler la température d'un séchoir. Le convertisseur analogique-numérique (CAN) de l'Arduino fonctionne sur 10 bits (valeurs de 0 à 1 023) avec une tension de référence de 5 V.</p>
-  <p>a) Quelle est la résolution en tension du CAN (tension par pas) ?</p>
-  <p>b) Le LM35 donne 10 mV/°C. En déduire la résolution en température du système.</p>
-  <p>c) Le CAN affiche la valeur numérique 180. Quelle est la température mesurée ?</p>
+  <h2>Question 3 <span class="pts">4 pts</span></h2>
+  <p>Un système Arduino est équipé d'un capteur LM35 pour réguler la température d'un séchoir. Le CAN fonctionne sur 10 bits (0 à 1 023) avec \(V_{\text{ref}} = 5\ \text{V}\).</p>
+  <p><strong>a)</strong> Quelle est la résolution en tension du CAN (tension par pas) ?</p>
+  <p><strong>b)</strong> Le LM35 donne 10 mV/°C. En déduire la résolution en température du système.</p>
+  <p><strong>c)</strong> Le CAN affiche la valeur numérique 180. Quelle est la température mesurée ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) Résolution = \(\dfrac{5}{1\,023} \approx \mathbf{4{,}89 \text{ mV}}\) par pas.</p>
-    <p>b) Résolution en température = \(\dfrac{4{,}89}{10} \approx \mathbf{0{,}49 \text{ °C}}\) par pas.</p>
-    <p>c) Tension : \(V = 180 \times 4{,}89 = 880{,}2 \text{ mV}\). Température : \(\theta = \dfrac{880{,}2}{10} \approx \mathbf{88{,}0 \text{ °C}}\).</p>
+    <p><strong>a)</strong> Résolution = \(\dfrac{5}{1\,023} \approx \mathbf{4{,}89\ \text{mV}}\) par pas.</p>
+    <p><strong>b)</strong> Résolution en température = \(\dfrac{4{,}89}{10} \approx \mathbf{0{,}49\ \text{°C}}\) par pas.</p>
+    <p><strong>c)</strong> Tension : \(V = 180 \times 4{,}89 = 880{,}2\ \text{mV}\). Température : \(\theta = \dfrac{880{,}2}{10} \approx \mathbf{88{,}0\ \text{°C}}\).</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <h2>Question 4 <span class="pts">4 pts</span></h2>
   <p>Un installateur thermique compare deux capteurs pour surveiller la température d'un plancher chauffant entre 25 et 45 °C :</p>
   <ul>
-    <li>Capteur A : CTN, \(R_0 = 15 \text{ kΩ}\) à 25 °C, \(B = 4\,100 \text{ K}\)</li>
+    <li>Capteur A : CTN, \(R_0 = 15\ \text{kΩ}\) à 25 °C, \(B = 4\,100\ \text{K}\)</li>
     <li>Capteur B : LM35, sensibilité 10 mV/°C</li>
   </ul>
-  <p>a) Quel capteur offre la meilleure sensibilité dans cette plage de température ? Justifier.</p>
-  <p>b) Quel avantage principal a le LM35 par rapport à la CTN ?</p>
-  <p>c) Lequel recommanderiez-vous pour cette application ? Justifier.</p>
+  <p><strong>a)</strong> Quel capteur offre la meilleure sensibilité dans cette plage de température ? Justifier.</p>
+  <p><strong>b)</strong> Quel avantage principal a le LM35 par rapport à la CTN ?</p>
+  <p><strong>c)</strong> Lequel recommanderiez-vous pour cette application ? Justifier.</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>a) La <strong>CTN</strong> offre une meilleure sensibilité dans la plage 25-45 °C car sa résistance varie de plusieurs kΩ pour quelques degrés, tandis que le LM35 ne varie que de quelques dizaines de millivolts.</p>
-    <p>b) Le <strong>LM35</strong> a une relation <strong>linéaire</strong> entre la tension et la température, ce qui simplifie le traitement par le régulateur (pas besoin de table de correspondance).</p>
-    <p>c) Le <strong>LM35</strong> est recommandé car la plage 25-45 °C est modeste et la linéarité facilite l'intégration dans un système de régulation automatique. La CTN serait préférable si une sensibilité maximale était nécessaire.</p>
+    <p><strong>a)</strong> La <strong>CTN</strong> offre une meilleure sensibilité dans la plage 25–45 °C : sa résistance varie de plusieurs kΩ pour quelques degrés, contre quelques dizaines de mV pour le LM35.</p>
+    <p><strong>b)</strong> Le <strong>LM35</strong> a une relation <strong>linéaire</strong> entre la tension et la température — pas besoin de table de correspondance, intégration simple dans un régulateur.</p>
+    <p><strong>c)</strong> Le <strong>LM35</strong> est recommandé : la plage 25–45 °C est modeste et la linéarité facilite l'intégration dans un système de régulation automatique.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <h2>Question 5 <span class="pts">3 pts</span></h2>
   <p>La cuisson de certaines colles à bois nécessite un maintien précis à 120 °C pendant 30 minutes. Expliquer pourquoi un thermocouple serait préférable à une CTN pour cette application. Quel type de régulation proposez-vous ?</p>
   <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
   <div class="corr">
-    <p>La température de 120 °C est en limite haute de la zone optimale d'une CTN (sensibilité décroissante au-delà de 100 °C). Un <strong>thermocouple</strong> de type K est plus adapté car sa plage de mesure couvre largement cette température et il reste précis.</p>
-    <p>On propose une <strong>boucle de régulation</strong> : le thermocouple mesure la température, le régulateur compare à la consigne de 120 °C et ajuste la puissance de chauffage. Un minuteur coupe le chauffage après 30 minutes. Ce système garantit une polymérisation homogène de la colle.</p>
+    <p>La température de 120 °C est en limite haute de la zone optimale d'une CTN (sensibilité décroissante au-delà de 100 °C). Un <strong>thermocouple de type K</strong> est plus adapté : sa plage couvre largement cette température et il reste précis.</p>
+    <p>→ <strong>Boucle de régulation</strong> : le thermocouple mesure la température, le régulateur compare à la consigne de 120 °C et ajuste la puissance de chauffage. Un minuteur coupe le chauffage après 30 minutes pour garantir une polymérisation homogène de la colle.</p>
   </div>
 </div>
-</div>
 
-</div>
+</div></div>
+</div><!-- fin sujet-b appro -->
+</div><!-- fin diff-appro -->
 
 </div><!-- fin .c -->
 <script src="../../../nav.js"></script>
