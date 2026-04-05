@@ -9,27 +9,71 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>
 :root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}
-.fiche{max-width:780px;margin:0 auto}
+.fiche{max-width:820px;margin:0 auto}
 .fiche h1{font-size:1.3rem;text-align:center;margin-bottom:4px}
-.fiche .sous-titre{text-align:center;margin-bottom:16px}
-.fiche-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.fiche .sous-titre{text-align:center;margin-bottom:20px}
+
+/* Section titles */
+.fiche-section{margin:20px 0 10px;display:flex;align-items:center;gap:10px}
+.fiche-section-title{font-size:.78rem;font-weight:700;color:var(--p);text-transform:uppercase;letter-spacing:.8px;white-space:nowrap}
+.fiche-section hr{flex:1;border:none;border-top:2px solid var(--p-border)}
+
+/* Grid layout */
+.fiche-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
 @media(max-width:600px){.fiche-grid{grid-template-columns:1fr}}
-.fiche-card{background:#fff;border:1px solid var(--p-border);border-radius:8px;padding:12px 14px}
-.fiche-card h3{font-size:.82rem;color:var(--p);margin:0 0 6px;text-transform:uppercase;letter-spacing:.5px}
-.fiche-card p,.fiche-card li{font-size:.84rem;line-height:1.5}
+
+/* Cards */
+.fiche-card{background:#fff;border:1px solid var(--p-border);border-radius:10px;padding:14px 16px}
+.fiche-card.full{grid-column:1/-1}
+.fiche-card h3{font-size:.78rem;color:var(--p);margin:0 0 8px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--p-border);padding-bottom:5px}
+.fiche-card p,.fiche-card li{font-size:.84rem;line-height:1.55}
 .fiche-card ul{padding-left:16px;margin:0}
 .fiche-card li{margin-bottom:3px}
-.fiche-card.full{grid-column:1/-1}
-.fiche-formula{background:var(--p-bg);border-radius:6px;padding:8px 12px;margin:6px 0;text-align:center;font-size:.92rem}
-.piege{border-left:3px solid #e53e3e;background:#fff5f5;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
-.piege strong{color:#e53e3e}
-.astuce{border-left:3px solid #16a34a;background:#f0fff4;border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;font-size:.82rem}
-.astuce strong{color:#16a34a}
+.fiche-card.accent{border-top:3px solid var(--p)}
+
+/* Formule */
+.fiche-formula{background:var(--p-bg);border:1px solid var(--p-border);border-radius:8px;padding:10px 14px;margin:8px 0;text-align:center;font-size:.95rem}
+.fiche-formula small{display:block;font-size:.78rem;color:#666;margin-top:4px}
+
+/* Tableau comparatif */
+.capteur-table{width:100%;border-collapse:collapse;font-size:.8rem;margin:0}
+.capteur-table th{background:var(--p-bg);color:var(--p);padding:8px 10px;border:1px solid var(--p-border);font-weight:700;text-align:left}
+.capteur-table td{padding:7px 10px;border:1px solid var(--p-border);vertical-align:top}
+.capteur-table tr:hover td{background:#faf7ff}
+.capteur-name{font-weight:700;color:#2d3748}
+.badge-capteur{display:inline-block;font-size:.7rem;padding:1px 6px;border-radius:10px;font-weight:600}
+.badge-R-dec{background:#fee2e2;color:#991b1b}
+.badge-R-inc{background:#dcfce7;color:#166534}
+.badge-U{background:#dbeafe;color:#1e40af}
+.badge-vis{background:#fef3c7;color:#92400e}
+.badge-IR{background:#f3e8ff;color:#6b21a8}
+
+/* Mini CTN SVG */
+.ctn-mini-wrap{background:#faf7ff;border:1px solid var(--p-border);border-radius:8px;padding:10px;margin-top:10px;text-align:center}
+.ctn-mini-wrap figcaption{font-size:.75rem;color:#666;margin-top:4px}
+
+/* Pièges & astuces */
+.piege{border-left:3px solid #e53e3e;background:#fff5f5;border-radius:0 8px 8px 0;padding:9px 13px;margin:7px 0;font-size:.83rem}
+.piege strong{color:#c53030}
+.astuce{border-left:3px solid #16a34a;background:#f0fff4;border-radius:0 8px 8px 0;padding:9px 13px;margin:7px 0;font-size:.83rem}
+.astuce strong{color:#15803d}
+
+/* Méthode steps */
+.methode-steps{counter-reset:step;list-style:none;padding:0;margin:0}
+.methode-steps li{counter-increment:step;display:flex;gap:10px;align-items:flex-start;margin-bottom:7px;font-size:.84rem}
+.methode-steps li::before{content:counter(step);background:var(--p);color:#fff;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:1px}
+
+/* Températures repères */
+.temp-repere{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px dotted var(--p-border);font-size:.83rem}
+.temp-repere:last-child{border-bottom:none}
+.temp-pill{background:var(--p-bg);color:var(--p);border-radius:6px;padding:2px 8px;font-weight:700;font-size:.78rem;min-width:90px;text-align:center}
+
 @media print{
-  body{font-size:11pt}
+  body{font-size:10.5pt}
   .fiche{max-width:100%}
   .nb,.nav-footer{display:none}
   .fiche-card{break-inside:avoid;border:1px solid #ccc}
+  .capteur-table tr:hover td{background:none}
 }
 </style>
 </head>
@@ -38,81 +82,202 @@
 <a href="../../../pc-2nde-pro.html" class="nb">← Retour au sommaire</a>
 <div class="fiche">
 <h1>Fiche résumé — Température et capteurs thermiques</h1>
-<p class="sous-titre">Chapitre 10 | Seconde Bac Pro | Physique-Chimie</p>
+<p class="sous-titre">Chapitre 10 &nbsp;|&nbsp; Seconde Bac Pro &nbsp;|&nbsp; Physique-Chimie</p>
 
+<!-- ─── SECTION 1 : TEMPÉRATURE ─── -->
+<div class="fiche-section"><span class="fiche-section-title">Température et échelles</span><hr></div>
 <div class="fiche-grid">
 
-  <div class="fiche-card">
-    <h3>La température</h3>
-    <ul>
-      <li>Mesure l'<strong>agitation thermique</strong> des particules</li>
-      <li>Deux échelles : <strong>Celsius</strong> (°C) et <strong>Kelvin</strong> (K)</li>
-      <li>Zéro absolu : 0 K = -273 °C (agitation nulle)</li>
-    </ul>
-    <div class="fiche-formula">\( T(\text{K}) = \theta(\text{°C}) + 273 \)</div>
+  <div class="fiche-card accent">
+    <h3>Formule de conversion</h3>
+    <div class="fiche-formula">
+      \( T(\text{K}) = \theta(°\text{C}) + 273 \)
+      <small>et réciproquement : \(\theta(°\text{C}) = T(\text{K}) - 273\)</small>
+    </div>
+    <p style="font-size:.8rem;color:#555;margin:6px 0 0">Le <strong>zéro absolu</strong> (0 K = −273 °C) est la température physiquement la plus basse possible : l'agitation thermique y est nulle. \(\Delta T\) est identique en °C et en K.</p>
   </div>
 
   <div class="fiche-card">
     <h3>Températures repères</h3>
-    <ul>
-      <li>Glace fondante : 0 °C = 273 K</li>
-      <li>Atelier confortable : 20 °C = 293 K</li>
-      <li>Four de séchage du bois : 80 °C = 353 K</li>
-      <li>Eau bouillante : 100 °C = 373 K</li>
-      <li>Colle thermofusible : ~180 °C = 453 K</li>
-    </ul>
+    <div class="temp-repere"><span class="temp-pill">−273 °C = 0 K</span><span>Zéro absolu</span></div>
+    <div class="temp-repere"><span class="temp-pill">0 °C = 273 K</span><span>Glace fondante</span></div>
+    <div class="temp-repere"><span class="temp-pill">20 °C = 293 K</span><span>Atelier confortable</span></div>
+    <div class="temp-repere"><span class="temp-pill">80 °C = 353 K</span><span>Four de séchage du bois</span></div>
+    <div class="temp-repere"><span class="temp-pill">100 °C = 373 K</span><span>Eau bouillante</span></div>
+    <div class="temp-repere"><span class="temp-pill">~180 °C = 453 K</span><span>Colle thermofusible</span></div>
+  </div>
+
+</div>
+
+<!-- ─── SECTION 2 : TABLEAU COMPARATIF ─── -->
+<div class="fiche-section"><span class="fiche-section-title">Capteurs thermiques — comparatif</span><hr></div>
+<div class="fiche-card full" style="padding:10px 12px">
+  <table class="capteur-table">
+    <thead>
+      <tr>
+        <th>Capteur</th>
+        <th>Principe physique</th>
+        <th>Signal de sortie</th>
+        <th>Plage typique</th>
+        <th>Usage typique en atelier</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="capteur-name">Thermocouple</span><br><span style="font-size:.73rem;color:#666">type K, J, T…</span></td>
+        <td>Effet <strong>Seebeck</strong> : deux métaux différents soudés génèrent une tension \(U\) proportionnelle à \(\Delta T\)</td>
+        <td><span class="badge-capteur badge-U">Tension (mV)</span></td>
+        <td>−200 à +1 300 °C</td>
+        <td>Four de forge, chaudière, mesure haute température</td>
+      </tr>
+      <tr>
+        <td><span class="capteur-name">CTN</span><br><span style="font-size:.73rem;color:#666">Coeff. Température Négatif</span></td>
+        <td>Semi-conducteur : résistance <em>décroît</em> quand T augmente (loi exponentielle)</td>
+        <td><span class="badge-capteur badge-R-dec">R décroît (kΩ→Ω)</span></td>
+        <td>−50 à +150 °C</td>
+        <td>Régulation étuve à bois, climatisation, chauffage</td>
+      </tr>
+      <tr>
+        <td><span class="capteur-name">Pt100</span><br><span style="font-size:.73rem;color:#666">Résistance platine</span></td>
+        <td>Platine : résistance <em>croît</em> quasi linéairement avec T (100 Ω à 0 °C, +0,385 Ω/°C)</td>
+        <td><span class="badge-capteur badge-R-inc">R croît (Ω)</span></td>
+        <td>−200 à +850 °C</td>
+        <td>Mesure précise en industrie, laboratoire, agroalimentaire</td>
+      </tr>
+      <tr>
+        <td><span class="capteur-name">CTP</span><br><span style="font-size:.73rem;color:#666">Coeff. Température Positif</span></td>
+        <td>Semi-conducteur : résistance <em>explose</em> brusquement au-delà d'un seuil critique</td>
+        <td><span class="badge-capteur badge-R-inc">R croît brutalement</span></td>
+        <td>Seuil ~120 °C</td>
+        <td>Protection anti-surchauffe de moteurs de machines à bois</td>
+      </tr>
+      <tr>
+        <td><span class="capteur-name">Infrarouge</span><br><span style="font-size:.73rem;color:#666">Thermomètre IR / caméra</span></td>
+        <td>Détection du rayonnement infrarouge émis par tout corps chaud (loi de Planck)</td>
+        <td><span class="badge-capteur badge-IR">Tension / image</span></td>
+        <td>−50 à +1 000 °C</td>
+        <td>Mesure sans contact : lames de scie, bandes de placage, bâtiment</td>
+      </tr>
+      <tr>
+        <td><span class="capteur-name">Cristaux liquides</span></td>
+        <td>Changement de structure moléculaire → changement de couleur visible</td>
+        <td><span class="badge-capteur badge-vis">Couleur (visuel)</span></td>
+        <td>0 à ~50 °C</td>
+        <td>Étiquettes de sécurité, vérification surfacique rapide</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ─── SECTION 3 : CTN EN DÉTAIL ─── -->
+<div class="fiche-section"><span class="fiche-section-title">La CTN en détail</span><hr></div>
+<div class="fiche-grid">
+
+  <div class="fiche-card">
+    <h3>Caractéristique R(T) de la CTN</h3>
+    <p style="font-size:.82rem;margin-bottom:8px">La résistance suit une <strong>loi exponentielle décroissante</strong>. On exploite la <strong>table de correspondance</strong> ou la courbe du fabricant : mesurer R à l'ohmmètre → lire T.</p>
+    <div class="ctn-mini-wrap">
+      <figure style="margin:0">
+        <!-- Mini courbe R(T) CTN — données : T=[0,20,40,60,80]°C, R=[32.7,12.0,4.9,2.2,1.1] kΩ -->
+        <!-- Viewport 220×120 ; x(T)=20+T/80*180 ; y(R)=105-R/35*95 -->
+        <svg viewBox="0 0 220 120" width="200" aria-label="Courbe R(T) d'une CTN">
+          <!-- Axes -->
+          <line x1="20" y1="10" x2="20" y2="105" stroke="#718096" stroke-width="1.5"/>
+          <line x1="20" y1="105" x2="210" y2="105" stroke="#718096" stroke-width="1.5"/>
+          <polygon points="210,102 218,105 210,108" fill="#718096"/>
+          <polygon points="17,10 20,2 23,10" fill="#718096"/>
+          <!-- Ticks X -->
+          <line x1="20" y1="103" x2="20" y2="107" stroke="#718096" stroke-width="1"/>
+          <text x="20" y="114" text-anchor="middle" font-size="7" fill="#718096">0</text>
+          <line x1="65" y1="103" x2="65" y2="107" stroke="#718096" stroke-width="1"/>
+          <text x="65" y="114" text-anchor="middle" font-size="7" fill="#718096">20</text>
+          <line x1="110" y1="103" x2="110" y2="107" stroke="#718096" stroke-width="1"/>
+          <text x="110" y="114" text-anchor="middle" font-size="7" fill="#718096">40</text>
+          <line x1="155" y1="103" x2="155" y2="107" stroke="#718096" stroke-width="1"/>
+          <text x="155" y="114" text-anchor="middle" font-size="7" fill="#718096">60</text>
+          <line x1="200" y1="103" x2="200" y2="107" stroke="#718096" stroke-width="1"/>
+          <text x="200" y="114" text-anchor="middle" font-size="7" fill="#718096">80</text>
+          <!-- Ticks Y (kΩ) -->
+          <line x1="18" y1="16" x2="22" y2="16" stroke="#718096" stroke-width="1"/>
+          <text x="15" y="19" text-anchor="end" font-size="7" fill="#718096">32</text>
+          <line x1="18" y1="72" x2="22" y2="72" stroke="#718096" stroke-width="1"/>
+          <text x="15" y="75" text-anchor="end" font-size="7" fill="#718096">4</text>
+          <!-- Courbe CTN : points (20,16) (65,72) (110,91) (155,99) (200,102) -->
+          <!-- y = 105 - R/35*95 : R=32.7→16.4 R=12→72.4 R=4.9→91.7 R=2.2→98.0 R=1.1→102 -->
+          <polyline points="20,16 65,72 110,92 155,99 200,102" fill="none" stroke="#6f42c1" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Points -->
+          <circle cx="20" cy="16" r="3.5" fill="#6f42c1"/>
+          <circle cx="65" cy="72" r="3.5" fill="#6f42c1"/>
+          <circle cx="110" cy="92" r="3.5" fill="#6f42c1"/>
+          <circle cx="155" cy="99" r="3.5" fill="#6f42c1"/>
+          <circle cx="200" cy="102" r="3.5" fill="#6f42c1"/>
+          <!-- Légende interpolation : R=4900Ω → T=40°C -->
+          <line x1="20" y1="92" x2="110" y2="92" stroke="#e53e3e" stroke-width="1" stroke-dasharray="3,2"/>
+          <line x1="110" y1="92" x2="110" y2="105" stroke="#e53e3e" stroke-width="1" stroke-dasharray="3,2"/>
+          <text x="23" y="90" font-size="6.5" fill="#e53e3e">R mesurée</text>
+          <text x="104" y="113" text-anchor="middle" font-size="6.5" fill="#e53e3e">→ T lue</text>
+          <!-- Étiquettes axes -->
+          <text x="213" y="108" font-size="7" fill="#718096">°C</text>
+          <text x="5" y="8" font-size="7" fill="#718096">kΩ</text>
+        </svg>
+        <figcaption>Courbe R(T) d'une CTN — mesurer R → lire T</figcaption>
+      </figure>
+    </div>
   </div>
 
   <div class="fiche-card">
-    <h3>Les capteurs principaux</h3>
-    <ul>
-      <li><strong>Thermocouple</strong> : tension Seebeck entre deux métaux, plage −200 à +1 000 °C</li>
-      <li><strong>CTN</strong> : R diminue quand T augmente, très sensible 0–100 °C</li>
-      <li><strong>Pt100</strong> : R platine croît de façon linéaire, 100 Ω à 0 °C, très précis</li>
-      <li><strong>CTP</strong> : R explose au-delà d'un seuil, protection moteurs</li>
-      <li><strong>Infrarouge</strong> : mesure sans contact, capte le rayonnement thermique émis</li>
-      <li><strong>Cristaux liquides</strong> : changement de couleur, lecture visuelle directe</li>
+    <h3>Pt100 et CTP</h3>
+    <p style="font-size:.82rem;font-weight:600;color:var(--p);margin:0 0 4px">Pt100</p>
+    <ul style="margin:0 0 10px">
+      <li>Résistance de <strong>platine</strong> : vaut exactement 100 Ω à 0 °C</li>
+      <li>Variation <strong>quasi linéaire</strong> : +0,385 Ω par °C</li>
+      <li>Très précis, stable dans le temps — référence industrielle</li>
+      <li>À 100 °C : R ≈ 138,5 Ω</li>
     </ul>
-  </div>
-
-  <div class="fiche-card">
-    <h3>CTN et Pt100 — caractéristiques</h3>
-    <ul>
-      <li><strong>CTN</strong> : R décroît de façon non linéaire quand T augmente</li>
-      <li>Exploiter la <strong>table de correspondance</strong> ou la courbe R(T) du fabricant</li>
-      <li><strong>Pt100</strong> : R croît quasi linéairement, vaut 100 Ω à 0 °C</li>
-    </ul>
-    <div class="fiche-formula">Méthode CTN / Pt100 : mesurer R → lire T sur la table</div>
-  </div>
-
-  <div class="fiche-card full">
-    <h3>Applications en atelier</h3>
-    <ul>
-      <li><strong>Étuves de séchage du bois</strong> : CTN ou Pt100 + régulateur maintient 70–85 °C</li>
-      <li><strong>Colle thermofusible</strong> : CTP coupe l'alimentation si T > 200 °C</li>
-      <li><strong>Paliers de machines</strong> : thermocouple détecte les échauffements anormaux</li>
-      <li><strong>Surfaces en mouvement</strong> : thermomètre infrarouge pour mesure sans contact (lame de scie, bande de placage)</li>
+    <p style="font-size:.82rem;font-weight:600;color:var(--p);margin:0 0 4px">CTP (protection moteur)</p>
+    <ul style="margin:0">
+      <li>Résistance <strong>stable</strong> en dessous du seuil (~120 °C)</li>
+      <li>Au-delà du seuil : R <strong>explose</strong> (quelques Ω → centaines de kΩ)</li>
+      <li>Le circuit se coupe automatiquement → protection anti-surchauffe</li>
+      <li>Utilisé sur les moteurs de toupie, raboteuse, scie à ruban…</li>
     </ul>
   </div>
 
 </div>
 
-<div class="piege"><strong>Piège 1 :</strong> Confondre CTN et CTP. CTN : résistance <em>diminue</em> avec T (Négatif). CTP : résistance <em>augmente</em> brutalement (Positif).</div>
-<div class="piege"><strong>Piège 2 :</strong> Confondre CTN et Pt100. La CTN a une résistance qui <em>diminue</em> avec T (Négatif) et est non linéaire ; la Pt100 a une résistance qui <em>augmente</em> de façon quasi linéaire.</div>
-<div class="piege"><strong>Piège 3 :</strong> Penser que la différence de température change entre °C et K. En réalité, \(\Delta T\) est le même en °C et en K (seul le zéro est décalé).</div>
+<!-- ─── SECTION 4 : APPLICATIONS ─── -->
+<div class="fiche-section"><span class="fiche-section-title">Applications en atelier</span><hr></div>
+<div class="fiche-card full">
+  <h3>Exemples professionnels</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 20px">
+    <div style="font-size:.83rem"><strong>Étuve de séchage du bois</strong><br>CTN ou Pt100 + régulateur électronique maintient 70–85 °C. R mesurée → comparée à la consigne → chauffage ON/OFF.</div>
+    <div style="font-size:.83rem"><strong>Colle thermofusible (pistolet)</strong><br>CTP intégré : si T dépasse ~200 °C, la résistance explose et l'alimentation est coupée automatiquement.</div>
+    <div style="font-size:.83rem"><strong>Paliers de machines-outils</strong><br>Thermocouple soudé sur le palier : détecte un échauffement anormal (défaut de lubrification, surcharge).</div>
+    <div style="font-size:.83rem"><strong>Surfaces en mouvement</strong><br>Thermomètre infrarouge (sans contact) : mesure la lame de scie, la bande de placage ou une pièce en rotation.</div>
+  </div>
+</div>
 
-<div class="astuce"><strong>Astuce :</strong> Pour choisir le bon capteur, retenir : grande plage = thermocouple, haute précision industrielle = Pt100, régulation courante = CTN, protection moteur = CTP, mesure sans contact = infrarouge.</div>
-<div class="astuce"><strong>Astuce :</strong> Pour lire une courbe R(T) de CTN : on mesure R à l'ohmmètre, on reporte sur l'axe vertical, on lit la température en face sur l'axe horizontal.</div>
+<!-- ─── SECTION 5 : PIÈGES ─── -->
+<div class="fiche-section"><span class="fiche-section-title">Pièges fréquents</span><hr></div>
+<div class="piege"><strong>Piège 1 — CTN vs CTP :</strong> CTN → R <em>diminue</em> avec T (Négatif). CTP → R <em>augmente brutalement</em> au-delà d'un seuil (Positif). Ces deux capteurs ne sont pas interchangeables.</div>
+<div class="piege"><strong>Piège 2 — CTN vs Pt100 :</strong> La CTN est non linéaire et sa résistance diminue ; la Pt100 est quasi linéaire et sa résistance augmente. Ne pas confondre les deux comportements.</div>
+<div class="piege"><strong>Piège 3 — ΔT en °C et en K :</strong> Une <em>différence</em> de température est la même en °C et en K. Seul le zéro est décalé. \(\Delta T = 20\ °\text{C} = 20\ \text{K}\).</div>
+<div class="piege"><strong>Piège 4 — Thermocouple :</strong> Il mesure une <em>différence</em> de température entre la jonction chaude et la jonction de référence (froide). Si \(\Delta T = 0\), la tension est nulle.</div>
 
-<div class="fiche-grid">
+<!-- ─── SECTION 6 : ASTUCES & MÉTHODE ─── -->
+<div class="fiche-section"><span class="fiche-section-title">Astuces et méthode</span><hr></div>
+<div class="astuce"><strong>Choisir le bon capteur :</strong> grande plage → thermocouple · haute précision → Pt100 · régulation courante 0–120 °C → CTN · protection surchauffe → CTP · mesure sans contact → infrarouge.</div>
+<div class="astuce"><strong>Lire une courbe R(T) de CTN :</strong> mesurer R à l'ohmmètre → reporter sur l'axe vertical → lire T sur l'axe horizontal. Si la valeur est entre deux points, interpoler linéairement.</div>
+
+<div class="fiche-grid" style="margin-top:12px">
   <div class="fiche-card full">
     <h3>Résumé express — Méthode type</h3>
-    <ol style="padding-left:18px;margin:0">
-      <li>Identifier l'application : mesure précise, protection ou affichage.</li>
-      <li>Choisir le capteur adapté à la plage de température et au besoin.</li>
-      <li>Pour une conversion °C/K : \(T = \theta + 273\) ou \(\theta = T - 273\).</li>
-      <li>Pour exploiter une CTN : mesurer R, reporter sur la courbe R(T) ou utiliser la table du fabricant.</li>
-      <li>Vérifier la cohérence : R élevée = température basse (CTN), R qui explose = surchauffe (CTP).</li>
+    <ol class="methode-steps">
+      <li>Identifier l'application : quelle plage de température ? Quelle précision ? Contact ou sans contact ?</li>
+      <li>Choisir le capteur adapté (voir tableau comparatif ci-dessus).</li>
+      <li>Conversion °C ↔ K : appliquer \(T = \theta + 273\) ou \(\theta = T - 273\).</li>
+      <li>Exploiter la courbe d'étalonnage CTN : mesurer R à l'ohmmètre → reporter sur la courbe → lire T (ou interpoler entre deux points).</li>
+      <li>Vérifier la cohérence : R élevée = T basse (CTN) · R qui explose = surchauffe dépassée (CTP) · tension mV = thermocouple.</li>
     </ol>
   </div>
 </div>
