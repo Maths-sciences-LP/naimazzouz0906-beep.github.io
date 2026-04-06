@@ -6,10 +6,30 @@
 /section-audit <chemin-section>
 ```
 
-Exemples :
-- `/section-audit physique-chimie/seconde`
-- `/section-audit maths/terminale`
-- `/section-audit physique-chimie/premiere-iccer`
+Exemple : `/section-audit physique-chimie/seconde`
+
+### Sections disponibles
+
+| Section | Chemin | Chapitres | Diff |
+|---|---|---|---|
+| Maths Seconde | `maths/seconde` | 14 | oui |
+| Maths Première | `maths/premiere` | 9 | oui |
+| Maths Terminale | `maths/terminale` | 11 | oui |
+| Maths LGT Terminale | `maths/lgt-terminale` | 15 | non |
+| Maths CAP | `maths/cap` | 7 | non |
+| Maths BTS | `maths/bts` | 25 | non |
+| PC Seconde | `physique-chimie/seconde` | 14 | oui |
+| PC Première ICCER | `physique-chimie/premiere-iccer` | 10 | oui |
+| PC Première ERA | `physique-chimie/premiere-era` | 10 | oui |
+| PC Première GPT2 | `physique-chimie/premiere-gpt2` | 1 | non |
+| PC Première GPT4 | `physique-chimie/premiere-gpt4` | 1 | non |
+| PC Première GPT6 | `physique-chimie/premiere-gpt6` | 2 | non |
+| PC Terminale ICCER | `physique-chimie/terminale-iccer` | 8 | oui |
+| PC Terminale ERA | `physique-chimie/terminale-era` | 8 | oui |
+| PC Terminale GPT2 | `physique-chimie/terminale-gpt2` | 2 | non |
+| PC Terminale GPT4 | `physique-chimie/terminale-gpt4` | 3 | non |
+| PC Terminale GPT5 | `physique-chimie/terminale-gpt5` | 5 | non |
+| PC CAP | `physique-chimie/cap` | 7 | non |
 
 ---
 
