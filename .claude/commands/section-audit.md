@@ -6,10 +6,30 @@
 /section-audit <chemin-section>
 ```
 
-Exemples :
-- `/section-audit physique-chimie/seconde`
-- `/section-audit maths/terminale`
-- `/section-audit physique-chimie/premiere-iccer`
+Exemple : `/section-audit physique-chimie/seconde`
+
+### Sections disponibles
+
+| Section | Chemin | Chapitres | Diff |
+|---|---|---|---|
+| Maths Seconde | `maths/seconde` | 14 | oui |
+| Maths Première | `maths/premiere` | 9 | oui |
+| Maths Terminale | `maths/terminale` | 11 | oui |
+| Maths LGT Terminale | `maths/lgt-terminale` | 15 | non |
+| Maths CAP | `maths/cap` | 7 | non |
+| Maths BTS | `maths/bts` | 25 | non |
+| PC Seconde | `physique-chimie/seconde` | 14 | oui |
+| PC Première ICCER | `physique-chimie/premiere-iccer` | 10 | oui |
+| PC Première ERA | `physique-chimie/premiere-era` | 10 | oui |
+| PC Première GPT2 | `physique-chimie/premiere-gpt2` | 1 | non |
+| PC Première GPT4 | `physique-chimie/premiere-gpt4` | 1 | non |
+| PC Première GPT6 | `physique-chimie/premiere-gpt6` | 2 | non |
+| PC Terminale ICCER | `physique-chimie/terminale-iccer` | 8 | oui |
+| PC Terminale ERA | `physique-chimie/terminale-era` | 8 | oui |
+| PC Terminale GPT2 | `physique-chimie/terminale-gpt2` | 2 | non |
+| PC Terminale GPT4 | `physique-chimie/terminale-gpt4` | 3 | non |
+| PC Terminale GPT5 | `physique-chimie/terminale-gpt5` | 5 | non |
+| PC CAP | `physique-chimie/cap` | 7 | non |
 
 ---
 
@@ -44,6 +64,9 @@ Vérifier la présence de chaque fichier attendu :
 | `fiche.html` | Recommandé |
 | `qcm.html` | Recommandé |
 | `interro.html` | Recommandé |
+| `activite.html` | Recommandé |
+| `exercices-capacites.html` | Recommandé |
+| `simulation.html` | Optionnel (info) |
 
 #### 2b. Visuels dans les pages d'exercices
 
@@ -77,9 +100,9 @@ Afficher un tableau synthétique, une ligne par chapitre :
 
 | Ch | Titre | Fichiers | Visuels exo | Diff | Sigles | Vide | Priorité |
 |---|---|---|---|---|---|---|---|
-| ch01 | Mesures et incertitudes | 6/6 ✅ | 2/8 ✅ | ✅ | ✅ | — | 🟢 |
-| ch02 | Signaux et images | 5/6 ⚠ fiche | 0/6 🔴 | ✅ | ✅ | — | 🔴 |
-| ch03 | Énergie | 6/6 ✅ | 1/10 🟡 | ⚠ | ✅ | — | 🟡 |
+| ch01 | Mesures et incertitudes | 8/8 ✅ | 2/8 ✅ | ✅ | ✅ | — | 🟢 |
+| ch02 | Signaux et images | 5/8 ⚠ fiche, activite, exo-cap | 0/6 🔴 | ✅ | ✅ | — | 🔴 |
+| ch03 | Énergie | 8/8 ✅ | 1/10 🟡 | ⚠ | ✅ | — | 🟡 |
 | ch04 | ... | ... | ... | ... | ... | ... | ... |
 ...
 
@@ -91,8 +114,9 @@ Afficher un tableau synthétique, une ligne par chapitre :
 ```
 
 #### Colonne "Fichiers"
-- Format : `X/6` (nombre de fichiers recommandés présents sur 6)
-- Indiquer lequel manque si < 6
+- Format : `X/8` (nombre de fichiers obligatoires + recommandés présents sur 8)
+- Indiquer lequel manque si < 8
+- `simulation.html` (optionnel) n'est pas compté dans le total mais signalé si présent
 
 #### Colonne "Visuels exo"
 - Format : `nb_visuels/nb_exercices`
