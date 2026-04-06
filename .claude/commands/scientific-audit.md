@@ -163,6 +163,18 @@ Si des corrections ont déjà été appliquées lors d'une session précédente,
 
 ---
 
+## Étape 5 — Mettre à jour le journal des audits
+
+Après avoir affiché le rapport, mettre à jour `audits/audit-log.md` :
+
+1. Identifier le chapitre parent du fichier audité (ex: `physique-chimie/seconde/ch11`)
+2. Chercher si ce chapitre a déjà une ligne dans le tableau
+3. Si oui : mettre à jour la colonne `/scientific-audit` avec la date du jour (format `YYYY-MM-DD`) et le résultat (🔴 / 🟡 / 🟢)
+4. Si non : ajouter une nouvelle ligne
+5. Mettre à jour la date `Dernière mise à jour` en haut du fichier
+
+---
+
 ## Règles
 
 - **Ne jamais modifier le fichier audité** — seulement analyser et rapporter

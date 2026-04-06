@@ -143,6 +143,17 @@ Pour un audit détaillé d'un chapitre spécifique :
 
 ---
 
+## Étape 5 — Mettre à jour le journal des audits
+
+Après avoir affiché le rapport, mettre à jour `audits/audit-log.md` :
+
+1. Pour chaque chapitre analysé, chercher s'il a déjà une ligne dans le tableau
+2. Si oui : mettre à jour la colonne `/section-audit` avec la date du jour (format `YYYY-MM-DD`) et le résultat (🔴 / 🟡 / 🟢)
+3. Si non : ajouter une nouvelle ligne pour chaque chapitre
+4. Mettre à jour la date `Dernière mise à jour` en haut du fichier
+
+---
+
 ## Règles
 
 - Ne PAS modifier les fichiers — seulement analyser et rapporter

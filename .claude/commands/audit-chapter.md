@@ -81,8 +81,20 @@ Rappel des formulations correctes : installateur thermique, menuisier agenceur, 
 
 ---
 
+## Étape 5 — Mettre à jour le journal des audits
+
+Après avoir affiché le rapport, mettre à jour `audits/audit-log.md` :
+
+1. Chercher si le chapitre a déjà une ligne dans le tableau
+2. Si oui : mettre à jour la colonne `/audit-chapter` avec la date du jour (format `YYYY-MM-DD`) et le résultat (🔴 / 🟡 / 🟢)
+3. Si non : ajouter une nouvelle ligne
+4. Mettre à jour la date `Dernière mise à jour` en haut du fichier
+
+---
+
 ## Règles
 
-- Ne PAS modifier les fichiers — seulement analyser et rapporter
+- Ne PAS modifier les fichiers audités — seulement analyser et rapporter
 - Signaler les problèmes par ordre de gravité : critique > haute > moyenne > basse
 - Toujours terminer en suggérant `/check-quality` pour la suite
+- Toujours mettre à jour `audits/audit-log.md` en fin d'exécution
