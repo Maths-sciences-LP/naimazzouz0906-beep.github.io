@@ -428,6 +428,7 @@ Les fichiers dans `.claude/commands/` définissent des skills invocables via `/n
 | `/update-audit` | Mettre à jour un fichier d'audit |
 | `/css-cleanup` | Nettoyer les styles CSS inline |
 | `/check-sigles` | Vérifier les sigles de filière interdits |
+| `/scientific-audit` | Audit scientifique d'une page : valeurs numériques, formules, ordres de grandeur, modèles, réglementation |
 
 ---
 
