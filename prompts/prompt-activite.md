@@ -171,6 +171,7 @@ Chaque question :
 - Est auto-suffisante (ne dépend pas d'une réponse précédente non guidée)
 - Utilise un verbe de consigne précis : *identifier, calculer, compléter, expliquer, déduire, conclure*
 - Porte le badge de compétence quand c'est pertinent
+- **Dispose d'une zone de réponse** (lignes pointillées pour écrire — OBLIGATOIRE)
 - Dispose d'une correction cachée (bouton "Voir la correction")
 
 ### 4. Synthèse — "À retenir"
@@ -179,6 +180,29 @@ La dernière question (ou un encadré dédié) formalise la notion :
 - L'élève rédige la définition ou la propriété à partir de ce qu'il a découvert
 - Ou l'encadré `.retenir` est donné à compléter (blancs à remplir)
 - Ou la synthèse est affichée directement (si l'activité précède immédiatement le cours)
+
+---
+
+## Zones de réponse (OBLIGATOIRE)
+
+**Chaque question doit être suivie d'une zone de réponse** avec des lignes pointillées, permettant à l'élève d'écrire sa réponse (sur papier imprimé ou à l'écran).
+
+```html
+<div class="zone-rep">
+  <label>Ma réponse :</label>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+</div>
+```
+
+### Règles
+
+- **2 lignes** pour les questions courtes (lecture, identification, réponse en un mot)
+- **3 lignes** pour les questions de calcul ou de rédaction courte
+- **4 lignes** pour les questions d'analyse ou de synthèse
+- Le label est `Ma réponse :` pour les questions textuelles, `Mes calculs :` pour les questions de calcul
+- La zone de réponse se place **après l'énoncé** et **avant le bouton correction**
+- Ne pas utiliser `zone-reponse-courte/moyenne/longue` (réservé aux interros)
 
 ---
 
@@ -244,14 +268,24 @@ Utiliser les classes `.diff-socle`, `.diff-standard`, `.diff-appro` et `diff.js`
 <div class="exo">
 <h2>Question 1 <span class="badge-blue">APP</span></h2>
 <p>Consigne...</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="zone-rep">
+  <label>Ma réponse :</label>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+</div>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">Correction...</div>
 </div>
 
 <div class="exo">
 <h2>Question 2 <span class="badge-blue">ANA</span></h2>
 <p>Consigne...</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+<div class="zone-rep">
+  <label>Ma réponse :</label>
+  <span class="answer-line"></span>
+  <span class="answer-line"></span>
+</div>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">Correction...</div>
 </div>
 
@@ -280,6 +314,8 @@ Utiliser les classes `.diff-socle`, `.diff-standard`, `.diff-appro` et `diff.js`
 | `.objectifs` | Bloc objectifs de l'activité |
 | `.exo` | Bloc question |
 | `.corr` | Correction cachée (display:none) |
+| `.zone-rep` | Zone de réponse avec lignes pointillées (OBLIGATOIRE après chaque question) |
+| `.answer-line` | Ligne pointillée dans la zone de réponse (2 à 4 par question) |
 | `.bc` | Bouton "Voir la correction" |
 | `.retenir` | Encadré synthèse finale |
 | `.meth` | Rappel de méthode (aide pour le socle) |
@@ -418,6 +454,7 @@ Conventions : fill `#ebf5ff`, stroke `#0056b3`, labels `#555`, axes `#333`, inco
 - [ ] Objectifs formulés
 - [ ] Questions numérotées, progressives, avec verbe de consigne précis
 - [ ] Badges de compétence sur les questions structurantes
+- [ ] **Zone de réponse** (`.zone-rep` + `.answer-line`) après chaque question — 2 lignes min, 4 pour les calculs
 - [ ] Correction complète pour chaque question (bouton "Voir la correction")
 - [ ] Encadré "À retenir" aligné avec `lecon.html`
 - [ ] Aucun sigle de filière dans le contenu (voir CLAUDE.md)
