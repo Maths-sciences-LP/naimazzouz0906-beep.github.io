@@ -124,16 +124,20 @@ Le régulateur du séchoir doit donc commuter le chauffage lorsque la résistanc
 
 \item \textbf{Résistance intermédiaire $R = 3\,500\ \Omega$.}
 
-\textbf{a.} \hfill\textit{\small(1 pt)}\\
-$3\,500\ \Omega$ est compris entre $R_1 = 5\,000\ \Omega$ (à $40\ ^\circ$C) et $R_2 = 2\,000\ \Omega$ (à $60\ ^\circ$C). \\
-La température $\theta$ est donc comprise entre $\mathbf{40\ ^\circ\text{C}}$ et $\mathbf{60\ ^\circ\text{C}}$.
+Données : $R_1 = 5\,000\ \Omega$ (à $\theta_1 = 40\ ^\circ$C) et $R_2 = 2\,000\ \Omega$ (à $\theta_2 = 60\ ^\circ$C).
 
-\textbf{b.} Interpolation linéaire. \hfill\textit{\small(2,5 pt)}\\
-On applique la formule de l'interpolation linéaire :
-\[ \theta = \theta_1 + \frac{R - R_1}{R_2 - R_1}\,(\theta_2 - \theta_1) \]
-\[ \theta = 40 + \frac{3\,500 - 5\,000}{2\,000 - 5\,000}\times(60 - 40)
-          = 40 + \frac{-1\,500}{-3\,000}\times 20 \]
-\[ \theta = 40 + 0{,}5 \times 20 = \mathbf{50\ ^\circ\text{C}}. \]
+\textbf{a.} Variation totale de résistance. \hfill\textit{\small(0,5 pt)}
+\[ \Delta R_{\text{tot}} = R_1 - R_2 = 5\,000 - 2\,000 = \mathbf{3\,000\ \Omega} \]
+
+\textbf{b.} Variation partielle (de $R_1$ à la valeur mesurée). \hfill\textit{\small(0,5 pt)}
+\[ \Delta R = R_1 - R = 5\,000 - 3\,500 = \mathbf{1\,500\ \Omega} \]
+
+\textbf{c.} Coefficient multiplicateur. \hfill\textit{\small(1 pt)}
+\[ k = \frac{\Delta R}{\Delta R_{\text{tot}}} = \frac{1\,500}{3\,000} = \mathbf{0{,}5} \]
+
+\textbf{d.} Température mesurée. \hfill\textit{\small(1,5 pt)}
+\[ \Delta\theta = k \times (\theta_2 - \theta_1) = 0{,}5 \times (60 - 40) = 0{,}5 \times 20 = \mathbf{10\ ^\circ\text{C}} \]
+\[ \theta = \theta_1 + \Delta\theta = 40 + 10 = \mathbf{50\ ^\circ\text{C}} \]
 
 \end{enumerate}
 
