@@ -401,6 +401,7 @@ Une simulation doit toujours servir à :
 7. **Chart.js** : `<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>` si graphiques
 8. **MathJax** : inclure le script si la page contient des formules mathématiques
 9. **Exercices d'application dans les leçons** : utiliser la classe `.mini-exo` pour les exercices courts intégrés dans le déroulé du cours — 3 à 6 par chapitre, répartis après les définitions/propriétés/méthodes, avec correction `.bc` obligatoire. Ne pas regrouper en fin de leçon.
+10. **Timestamp « Dernière mise à jour »** : à chaque modification d'une page, ajouter/mettre à jour une ligne `<p class="maj">Dernière mise à jour : J mois AAAA, HH:MM</p>` à l'intérieur du `<header>`, juste après le dernier `<p class="sous-titre">`. Format français, date et heure locale au moment de l'édition. La classe `.maj` est déjà définie dans `styles.css` (petit, gris, italique, centré). Sert au suivi du travail.
 
 ### Scripts de maintenance
 
