@@ -1,8 +1,8 @@
 # Audit Simulations Interactives
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-04-05 (métadonnées complétées, orphelines référencées)
-**Périmètre** : dossier `simulations/` — 70 fichiers HTML
+**Dernière mise à jour** : 2026-04-17 (vérification couverture maths/première et PC/première-ERA : 100%)
+**Périmètre** : dossier `simulations/` — 72 fichiers HTML
 **Méthode** : Lecture et analyse de l'ensemble des simulations, vérification du référencement depuis les pages de cours, analyse de la couverture par chapitre, audit technique approfondi (autonomie, responsive, accessibilité, qualité JS).
 
 ---
@@ -298,6 +298,7 @@ Simulations corrigées :
 - **2026-03-17** : Audit technique approfondi des simulations PC Seconde et page simulations — corrections de l'inventaire : 17 simulations rattachées à PC Seconde (pas 11), 13/14 chapitres couverts, toutes référencées depuis les cours. Reclassement des 6 simulations "sans niveau". Identification d'un nouveau problème d'accessibilité (aria-label manquants). Confirmation que toutes les simulations PC Seconde utilisent le template moderne et sont responsives (sauf modeles-atome.html).
 - **2026-03-19** : Bilan Seconde — 32 simulations couvrent la Seconde (15 maths + 17 PC), couvrant 27/28 chapitres (seul PC ch01 Sécurité sans simulation). En plus, maths/seconde/ch05 et ch06 disposent de simulation.html intégrées dans le chapitre.
 - **2026-03-31** : Audit approfondi de `trigonometrie.html` (Maths Terminale Ch07) — 7 corrections : ajout `</head>` manquant (HTML invalide), correction arc d'angle pour α > 180°, correction bug marqueurs Chart.js (points invisibles car format `{x,y}` incompatible avec axe catégoriel), ajout aria-label sur canvas et `for` sur labels, extension affichage symbolique radians (17 angles remarquables au lieu de 5), surbrillance dynamique du tableau des angles remarquables, repositionnement labels sin/cos selon le quadrant.
+- **2026-04-17** : Vérification de la couverture par chapitre — **9/9 chapitres maths/première** et **10/10 chapitres PC/première-ERA** sont en réalité déjà liés à une simulation depuis leur `lecon.html`. Les deux tâches « Créer des simulations pour… » étaient donc obsolètes. Tâches cochées dans la priorité moyenne.
 - **2026-04-05** : Audit complet des 70 simulations par chapitre. Métadonnées (niveau + chapitre) ajoutées dans 11 simulations : `atome-couches`, `atome`, `concentration`, `equations`, `melangeur`, `modeles-atome`, `ohm`, `refraction`, `signal-alternatif`, `traceur`, `attenuation-sonore`. Simulations orphelines liées depuis les leçons : `balance.html` → maths/seconde/ch05 ; `debit-fluide.html` → pc/terminale-iccer/ch06 ; `chaleur.html` → pc/premiere-iccer/ch04 + premiere-era/ch04 ; `gaz.html` + `boyle-mariotte.html` → pc/premiere-iccer/ch07 + premiere-era/ch07 ; `attenuation-sonore.html` → pc/terminale-era/ch08. Périmètre mis à jour : 70 simulations (vs 64 à la dernière mise à jour). (Maths Terminale Ch07) — 7 corrections : ajout `</head>` manquant (HTML invalide), correction arc d'angle pour α > 180°, correction bug marqueurs Chart.js (points invisibles car format `{x,y}` incompatible avec axe catégoriel), ajout aria-label sur canvas et `for` sur labels, extension affichage symbolique radians (17 angles remarquables au lieu de 5), surbrillance dynamique du tableau des angles remarquables, repositionnement labels sin/cos selon le quadrant.
 
 ---
@@ -314,8 +315,8 @@ Simulations corrigées :
 - [x] Retirer `nav.js` des 26 simulations non conformes (2026-03-16)
 - [ ] Ajouter des `aria-label` sur les canvas/SVG et associer les sliders à des `<label>` (accessibilité — 64 simulations)
 - [ ] Ajouter des media queries aux 8 simulations non responsives (dont `modeles-atome.html` pour PC Seconde)
-- [ ] Créer des simulations pour maths/première (1 seule pour 9 chapitres)
-- [ ] Créer des simulations pour PC/première-ERA (1 seule pour 10 chapitres)
+- [x] ~~Créer des simulations pour maths/première (1 seule pour 9 chapitres)~~ — **9/9 chapitres déjà liés** (2026-04-17) : ch01→stats-2var, ch02→probabilites, ch03→suites, ch04→graphe-equation, ch05→traceur, ch06→derivee, ch07→solides, ch08→vecteurs, ch09→trigonometrie
+- [x] ~~Créer des simulations pour PC/première-ERA (1 seule pour 10 chapitres)~~ — **10/10 chapitres déjà liés** (2026-04-17) : ch01/ch02→puissance, ch03→combustion, ch04→chaleur+conductance-thermique, ch05→conductance-thermique, ch06→moments, ch07→boyle-mariotte+gaz+pression, ch08→concentration, ch09→ondes-em, ch10→son
 
 ### Priorité basse
 - [ ] Vérifier et migrer les simulations hors PC Seconde avec ancien template (liste initiale surévaluée — les 14 PC Seconde sont déjà modernes)
