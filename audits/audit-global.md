@@ -1,8 +1,8 @@
 # Audit Global du Site Pédagogique
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-04-06
-**Note** : compteur simulations corrigé (63 → 70) le 2026-04-06
+**Dernière mise à jour** : 2026-04-17
+**Note** : compteur simulations corrigé (63 → 72) le 2026-04-17
 **Périmètre** : ensemble du site maths-sciences-lp.github.io
 
 ---
@@ -14,10 +14,10 @@
 | Pages HTML (chapitres) | **504** |
 | Sections (matière/niveau) | 8 (+1 BTS) |
 | Chapitres couverts | **84** |
-| Simulations interactives | 70 |
+| Simulations interactives | 72 |
 | Complétude structurelle | **100 %** (504/504 fichiers) |
 | Stubs détectés | **0** |
-| Sigles interdits (contenu) | ~90 occurrences |
+| Sigles interdits (contenu visible) | 0 occurrences |
 
 ### Couverture par section
 
@@ -107,9 +107,9 @@ La majorité des occurrences sont dans des **commentaires HTML** et des **footer
 
 ## Problemes identifies
 
-1. **Sigles interdits (~90 occurrences)** : commentaires HTML, footers et identifiants Canvas contiennent ICCER/ERA-MA/MAMA dans ~30 fichiers. À nettoyer.
+1. ~~**Sigles interdits (~90 occurrences)**~~ — **CORRIGÉ 2026-04-17** : 5 vraies violations en contenu visible corrigées (contexte ICCER, exemples ICCER dans commentaires). 24 commentaires HTML/JS descripteurs de contexte nettoyés. Les identifications de classe (footers, badges, nav, formulaires) sont acceptables.
 
-2. ~~**Chapitres manquants en terminale ICCER**~~ : CLAUDE.md indiquait ch01-ch11, mais seuls ch01-ch08 existent. Le programme réel couvre 8 chapitres. **CLAUDE.md à mettre à jour.**
+2. ~~**Chapitres manquants en terminale ICCER**~~ — **CORRIGÉ** : CLAUDE.md indique bien ch01-ch08.
 
 3. ~~**Chemins absolus cassés**~~ — **CORRIGÉ 2026-03-16** : 104 chemins corrigés.
 
@@ -129,6 +129,7 @@ La majorité des occurrences sont dans des **commentaires HTML** et des **footer
 
 ## Corrections realisees
 
+- **2026-04-17** : Nettoyage sigles interdits — 5 violations en contenu visible (ch10 qcm "Contexte ICCER" → "Contexte professionnel", 4 commentaires "EXEMPLE ICCER" → "EXEMPLE PROFESSIONNEL") + 24 commentaires HTML/JS descripteurs (APPLICATIONS ERA-MA, SITUATION ICCER, CONTEXTUALISÉ ERA-MA, etc.). Nettoyage nav.js dans 2 simulations (attenuation-sonore.html, debit-fluide.html). Centralisation CSS QCM : 70 fichiers qcm.html nettoyés (duplicats .qcm-header/.q-block/.options/.btn-valider/.score-box supprimés), ajout des classes CAP (.q-num, .q-text, .q-options) dans styles.css. Liaison de la simulation orpheline ccf-bac-rangement.html à maths/terminale/ch04 et simulations.html.
 - **2026-03-21** : Audit global automatisé — inventaire 504 fichiers, vérifications techniques, recherche sigles interdits. Mise à jour complète du tableau de bord.
 - **2026-04-06** : Création `prompts/prompt-ds.md` (prompt complet pour les devoirs surveillés). Mise à jour de 4 prompts existants (`prompt-exercices.md`, `prompt-cours.md`, `prompt-qcm-interro.md`, `prompt-exercices-capacites.md`) : ajout règle "données uniquement", tableaux de données proactifs, références orphelines, règle animations Canvas. Skill `/check-quality` réécrit en revue IA pure (suppression des scripts `check_visuals.py`, `check_chapter_quality.py`, `count_svg.py`). Fix lien retour sommaire `physique-chimie/seconde/ch11/interro.html`.
 - **2026-03-21** : Vérification exhaustive des 28 chapitres exercices Seconde (maths + PC) — 0 erreur, 100 % corrections présentes.
@@ -143,11 +144,12 @@ La majorité des occurrences sont dans des **commentaires HTML** et des **footer
 ## Ameliorations restantes
 
 ### Priorité moyenne
-- [ ] Corriger les ~90 sigles interdits dans les commentaires HTML et footers → `/check-sigles`
-- [ ] Clarifier le nombre de chapitres en physique-chimie/terminale-iccer (mettre à jour CLAUDE.md : ch01-ch08)
+- [x] ~~Corriger les ~90 sigles interdits dans les commentaires HTML et footers~~ — fait 2026-04-17
+- [x] ~~Clarifier le nombre de chapitres en physique-chimie/terminale-iccer (mettre à jour CLAUDE.md : ch01-ch08)~~ — déjà fait
 
 ### Priorité basse
-- [ ] Nettoyer les styles CSS inline → `/css-cleanup`
+- [x] ~~Nettoyer les styles CSS inline (QCM)~~ — fait 2026-04-17 (70 fichiers)
+- [ ] Autres styles CSS inline à extraire → `/css-cleanup`
 - [ ] Standardiser le format `<title>` sur l'ensemble du site
 - [ ] Ajouter le balisage `.situation` aux contextes professionnels en PC/seconde
 - [ ] Corriger `.niv1/.niv2` → `.niveau-1/.niveau-2` dans maths/seconde/ch03/exercices.html

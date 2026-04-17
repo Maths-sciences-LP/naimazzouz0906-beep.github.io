@@ -1,8 +1,9 @@
 # Audit Simulations Interactives
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-04-05 (métadonnées complétées, orphelines référencées)
-**Périmètre** : dossier `simulations/` — 70 fichiers HTML
+**Dernière mise à jour** : 2026-04-17 (simulations autonomes, ccf-bac-rangement liée)
+**Périmètre** : dossier `simulations/` — 72 fichiers HTML
+**Statut** : 72/72 simulations autonomes (plus aucune inclusion de nav.js), 71/72 référencées depuis au moins un lecon.html, 72/72 listées dans `simulations.html`.
 **Méthode** : Lecture et analyse de l'ensemble des simulations, vérification du référencement depuis les pages de cours, analyse de la couverture par chapitre, audit technique approfondi (autonomie, responsive, accessibilité, qualité JS).
 
 ---

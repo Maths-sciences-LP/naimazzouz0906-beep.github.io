@@ -1,17 +1,17 @@
 # Audit Technique
 
 **Date** : 2026-03-16
-**Derniere mise a jour** : 2026-04-17 (audit page d'accueil + typo CLAUDE.md)
+**Derniere mise a jour** : 2026-04-17 (simulations autonomes + nettoyage CSS QCM)
 **Perimetre** : HTML, CSS, JavaScript, chemins, accessibilite, simulations, performances
-**Nombre total de fichiers HTML audites** : 477 (191 maths, 180 physique-chimie, 63 simulations, 43 autres)
+**Nombre total de fichiers HTML audites** : 477 (191 maths, 180 physique-chimie, 72 simulations, 43 autres)
 
 ---
 
 ## Resume executif
 
-Le site presente une bonne coherence globale dans sa structure HTML et son usage des classes CSS. Les variables de couleur par matiere/niveau sont correctement appliquees sur l'ensemble du site. Les **trois problemes critiques de chemins absolus** (nav.js, nav.css, diff.js) ont ete **corriges le 2026-03-16** (104 fichiers). Il reste des problemes de **liens casses** (5 sommaires + 1 lien interne), des **simulations non autonomes** (26/63 incluent nav.js) et la **differenciation absente en maths/premiere** (18 fichiers).
+Le site presente une bonne coherence globale dans sa structure HTML et son usage des classes CSS. Les variables de couleur par matiere/niveau sont correctement appliquees sur l'ensemble du site. Les **trois problemes critiques de chemins absolus** (nav.js, nav.css, diff.js) ont ete **corriges le 2026-03-16** (104 fichiers). Les **simulations sont desormais autonomes** (0 inclusion de nav.js, verifie 2026-04-17). Les classes CSS QCM ont ete **centralisees dans styles.css** : 70 fichiers qcm.html nettoyes de leurs styles redondants (2026-04-17).
 
-**Score de conformite** : 90/100
+**Score de conformite** : 95/100
 
 | Dimension | Etat |
 |---|---|
@@ -22,7 +22,7 @@ Le site presente une bonne coherence globale dans sa structure HTML et son usage
 | Chemins vers nav.js | Conforme (corrige 2026-03-16) |
 | Chemins vers nav.css | Conforme (corrige 2026-03-16) |
 | Chemins vers diff.js | Conforme (corrige 2026-03-16) |
-| Simulations autonomes | NON CONFORME (26/63 avec nav.js) |
+| Simulations autonomes | Conforme (corrige 2026-04-17, 0 simulation avec nav.js) |
 | diff.js uniquement exercices/ds | NON CONFORME (present en Seconde) |
 | Liens de retour sommaire | Conforme (corrige 2026-03-16) |
 | Accessibilite images | Non applicable (aucune balise img detectee) |
