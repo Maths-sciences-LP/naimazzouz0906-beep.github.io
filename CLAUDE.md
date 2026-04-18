@@ -45,14 +45,21 @@ Ce fichier est lu automatiquement par Claude Code à chaque session.
 ├── automatismes/               ← Exercices d'entraînement rapide par thème — 22 pages
 ├── co-intervention/            ← Séances de co-intervention maths/sciences (38 pages, ICCER/ERA-MA)
 ├── prompts/                    ← Prompts pédagogiques de référence
-├── pdf/                        ← Programmes officiels Bac Pro & BTS
+├── pdf/                        ← Programmes officiels, référentiels, extractions .md
 ├── audits/                     ← Audits qualité (documents vivants)
+├── latex/                      ← Sources LaTeX (local, gitignored) — livrets, DS, co-intervention
+│   ├── seconde/                ← Livrets, DS, co-intervention Seconde
+│   ├── cap/                    ← Cours CAP
+│   ├── terminale/              ← Cours Terminale
+│   ├── ccf/                    ← Convocations CCF
+│   └── livre-caplp/            ← Préparation CAPLP
 ├── scripts/                    ← Outils de maintenance
 │   ├── extract_css.py          ← Nettoyage CSS doublons
 │   ├── add_print_css.py        ← Ajout automatique de print.css aux pages
 │   ├── generate-pdf.js         ← Génération PDF des cours
 │   ├── link_simulations.py     ← Liaison simulations ↔ chapitres
-│   └── check_chapters.py       ← Vérification complétude des chapitres
+│   ├── check_chapters.py       ← Vérification complétude des chapitres
+│   └── telecharger_pdfs.py     ← Téléchargement des PDF programmes
 └── .claude/commands/           ← Commandes personnalisées Claude Code (skills)
 ```
 
