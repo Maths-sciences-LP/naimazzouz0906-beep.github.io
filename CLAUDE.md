@@ -31,21 +31,24 @@ Ce fichier est lu automatiquement par Claude Code à chaque session.
 │   ├── seconde/ch01..ch14/
 │   ├── premiere-iccer/ch01..ch10/  ← groupement 1 (ICCER)
 │   ├── premiere-era/ch01..ch10/    ← groupement 3 (ERA-MA)
-│   ├── premiere-gpt2/ch01../       ← groupement 2 (en construction)
-│   ├── premiere-gpt4/ch01../       ← groupement 4 (en construction)
-│   ├── premiere-gpt6/ch01../       ← groupement 6 (en construction)
+│   ├── premiere-gpt2/ch01/         ← groupement 2 (en construction, 1 chapitre)
+│   ├── premiere-gpt4/ch01/         ← groupement 4 (en construction, 1 chapitre)
+│   ├── premiere-gpt6/ch01..ch02/   ← groupement 6 (en construction, 2 chapitres)
 │   ├── terminale-iccer/ch01..ch08/
 │   ├── terminale-era/ch01..ch08/
-│   ├── terminale-gpt2/ch01../      ← groupement 2 (en construction)
-│   ├── terminale-gpt4/ch01../      ← groupement 4 (en construction)
-│   ├── terminale-gpt5/ch01../      ← groupement 5 (en construction)
+│   ├── terminale-gpt2/ch01..ch02/  ← groupement 2 (en construction, 2 chapitres)
+│   ├── terminale-gpt4/ch01..ch03/  ← groupement 4 (en construction, 3 chapitres)
+│   ├── terminale-gpt5/ch01..ch05/  ← groupement 5 (en cours, 5 chapitres)
 │   └── cap/ch01..ch07/             ← CAP physique-chimie (programme commun)
-├── simulations/                ← Pages interactives (Canvas/SVG/JS) — 70 simulations
+├── simulations/                ← Pages interactives (Canvas/SVG/JS) — 72 simulations
 ├── automatismes/               ← Exercices d'entraînement rapide par thème — 22 pages
 ├── co-intervention/            ← Séances de co-intervention maths/sciences (38 pages, ICCER/ERA-MA)
 ├── prompts/                    ← Prompts pédagogiques de référence
-├── pdf/                        ← Programmes officiels Bac Pro & BTS
+├── pdf/                        ← Programmes officiels Bac Pro, CAP, BMA, BTS + CAPLP
+├── latex/                      ← Sources LaTeX (livrets cours, convocations CCF)
 ├── audits/                     ← Audits qualité (documents vivants)
+├── JOURNAL.md                  ← Journal de bord du projet (indicateurs globaux)
+├── programme_*.md              ← Transcriptions markdown des programmes officiels
 ├── scripts/                    ← Outils de maintenance
 │   ├── extract_css.py          ← Nettoyage CSS doublons
 │   ├── add_print_css.py        ← Ajout automatique de print.css aux pages
@@ -97,11 +100,15 @@ Les pages sommaire existantes :
 Autres pages utilitaires à la racine :
 - `simulations.html` — Index des simulations interactives
 - `groupements.html` — Groupements de filières Bac Pro
-- `ccf-convocations.html` — Convocations CCF
+- `ccf-convocations.html` / `ccf-convocations-standalone.html` / `ccf-convocations-ticcer-maths.html` — Convocations CCF
 - `cv-eleve.html` — Générateur de CV élève
 - `lettre-motivation-parcoursup.html` — Aide à la rédaction Parcoursup
 - `python.html` — Fragment Python (inclus dans les sommaires maths)
 - `logique.html` — Fragment Logique (inclus dans les sommaires maths)
+- `conseils-figures.html` — Conseils pour la réalisation de figures
+- `cours-solutions.html` — Page dédiée aux solutions (chimie)
+- `sujet.js` — Script partagé pour les pages de sujets
+- `instructions-co-intervention-*.md` — Instructions pédagogiques co-intervention (ERA, ICCER, MA)
 
 ### Section BTS (`maths/bts/`)
 
@@ -309,6 +316,7 @@ Avant de générer du contenu, consulter les fichiers dans `/prompts/` :
 | `prompts/prompt-simulation.md` | Structure d'une simulation interactive (4 types) |
 | `prompts/prompt-superviseur.md` | Prompt de supervision globale du projet |
 | `prompts/prompt-filiere-2mama.md` | Contextes pro Seconde MAMA (menuiserie/agencement) |
+| `prompts/prompt-filiere-2tne.md` | Contextes pro Seconde TNE (transition numérique et énergétique) |
 | `prompts/prompt-filiere-premiere-era.md` | Contextes pro Première ERA-MA (bois/agencement) |
 | `prompts/prompt-filiere-premiere-iccer.md` | Contextes pro Première ICCER (chauffage/énergie) |
 | `prompts/prompt-filiere-era-ma.md` | Contextes pro Terminale ERA/MA (agencement/bois) |
@@ -323,6 +331,10 @@ Avant de générer du contenu, consulter les fichiers dans `/prompts/` :
 | `prompts/prompt-bts.md` | Structure et règles pour les pages BTS maths |
 | `prompts/prompt-cours-universel.md` | Prompt LaTeX universel pour générer un livret de cours (Overleaf) |
 | `prompts/prompt-exercices-universel.md` | Prompt LaTeX universel pour générer un livret d'exercices avec corrections (Overleaf) |
+| `prompts/prompt-caplp-cours.md` | Prompt LaTeX livret de cours CAPLP Maths-PC (préparation concours session 2026) |
+| `prompts/instructions-co-intervention-ERA.md` | Instructions co-intervention filière ERA |
+| `prompts/instructions-co-intervention-ICCER.md` | Instructions co-intervention filière ICCER |
+| `prompts/instructions-co-intervention-MA.md` | Instructions co-intervention filière MA |
 
 ### Règles contextes professionnels
 
@@ -361,7 +373,46 @@ Ces sigles sont des noms de formations scolaires, pas des métiers réels. Ils n
 
 ## PROGRAMMES OFFICIELS
 
-Les PDF des programmes Bac Pro sont dans `/pdf/`.
+Les PDF des programmes sont dans `/pdf/` et leurs transcriptions markdown à la racine et dans `/pdf/`. Tous les programmes ci-dessous sont ceux **en vigueur en avril 2026**.
+
+| Niveau / diplôme | Maths | Physique-chimie | Source officielle |
+|---|---|---|---|
+| **Seconde Bac Pro** | `programme_bacpro_seconde_maths_-_2019.pdf` | `programme_bacpro_seconde_sciences_-_2019-2.pdf` | BO 2019 |
+| **Première Bac Pro** | `programme_bacpro_premiere_maths_-_2020.pdf` | `programme_bacpro_premiere_sciences_-_2020-2.pdf` | BO 2020 |
+| **Terminale Bac Pro** | `programme_bacpro_terminale_maths_-_2020.pdf` | `programme_bacpro_terminale_sciences_-_2020.pdf` | BO 2020 |
+| **CAP** | `programme_cap_maths_-_2019-2.pdf` | `programme_cap_sciences_-_2019-2.pdf` | BO 2019 |
+| **BMA** | `programme-bma-maths-2021.pdf` | `programme-bma-physique-chimie-2021.pdf` | 2021 |
+| **BTS** | `BTS_ProgrammeMathematiques.pdf` + `tableau_programmes_bts.pdf` | — | En vigueur |
+| **CAPLP (concours)** | `caplp-externe-bac-3-section-math-matiques---programme-de-la-session-2026-16825.pdf` | — | Session 2026 |
+
+**Référentiels et documents associés** dans `/pdf/` :
+- `13436-referentiel-bcp-iccer-2.pdf` — Référentiel Bac Pro ICCER
+- `13440-referentiel-bcp-mee.pdf` — Référentiel Bac Pro MEE
+- `13761-joe-20180510-0107-0029-cap-mit.pdf` — Arrêté CAP MIT
+- `referentiel-cap-enseigne-signaletique-2007.pdf` — Référentiel CAP SDG
+- `Arrêté du 7 mars 2024 — Bac Pro Géomètre.pdf`
+- `vademecum-famille-des-metiers-de-l-agencement...` — Vademecum famille MAMA
+- `vademecum-famille-des-metiers-des-etudes-et-de-la-modelisation-numerique-du-batiment...` — Vademecum EEB/TGT
+- `16056-vademecum-seconde-famille-metiers2.docx` — Vademecum Seconde familles de métiers
+- `grille-ccf-maths-physique.pdf` — Grille CCF officielle
+- `liste_groupements_bac_pro_.xlsx` — Liste officielle des groupements Bac Pro
+
+**Transcriptions markdown à la racine** (à jour avec les PDF officiels) :
+- `programme-maths-2nde-bac-pro.md`, `programme-physique-chimie-2nde-bac-pro.md`
+- `programme_maths_premiere_bacpro.md`, `programme_pc_premiere_bacpro.md`
+- `programme-maths-terminale-bac-pro.md`, `programme-physique-chimie-terminale-bac-pro.md`
+
+**Transcriptions dans `/pdf/`** :
+- `programme_cap_maths.md`, `programme_cap_sciences.md`
+- `programme_bma_maths.md`, `programme_bma_physique_chimie.md`
+- `programme_bts_maths.md`
+- `programme_physique_chimie_seconde.md`
+- `programme_physique_chimie_premiere_6groupements.md`, `programme_physique_chimie_premiere_groupement6.md`
+- `programme_physique_chimie_terminale_6groupements.md`
+- `programmes_pc_6_groupements_synthese.md`
+
+> **Important :** la structure des dossiers `premiere-gpt2/4/6` et `terminale-gpt2/4/5` reflète la nouvelle organisation en **6 groupements de spécialités** pour la physique-chimie. La priorité actuelle porte sur les groupements 1 (ICCER) et 3 (ERA-MA) qui sont complets ; les autres groupements sont en construction.
+
 Vérifier les notions avant de créer du contenu : respecter les capacités attendues et ne pas introduire de hors-programme.
 
 ---
@@ -495,9 +546,14 @@ Les audits dans `/audits/` sont le **tableau de bord central du projet**. Ils ne
 | `audits/audit-pedagogique-maths.md` | Détail pédagogique — cours de mathématiques |
 | `audits/audit-pedagogique-pc.md` | Détail pédagogique — cours de physique-chimie |
 | `audits/audit-exercices.md` | Corrections, DS, complétude, qualité |
+| `audits/audit-interros.md` | Interrogations écrites (qualité, barème, différenciation) |
 | `audits/audit-simulations.md` | Simulations interactives, ancrage pédagogique |
 | `audits/audit-uniformisation.md` | Uniformisation des formats et conventions |
+| `audits/audit-seconde.md` | Audit détaillé Seconde Bac Pro (maths + PC) |
+| `audits/audit-premiere-maths.md` | Audit détaillé Première Bac Pro maths |
+| `audits/audit-terminale.md` | Audit détaillé Terminale Bac Pro |
 | `audits/plan-amelioration-seconde.md` | Plan d'amélioration spécifique Seconde |
+| `audits/audit-log.md` | Journal des exécutions de skills d'audit (mis à jour automatiquement) |
 
 ### Règle de mise à jour obligatoire
 
