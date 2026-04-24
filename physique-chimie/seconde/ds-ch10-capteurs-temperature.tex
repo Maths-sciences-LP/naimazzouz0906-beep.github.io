@@ -11,7 +11,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
 \usepackage{geometry}
-\geometry{left=2cm,right=2cm,top=1.8cm,bottom=2cm}
+\geometry{left=1.8cm,right=1.8cm,top=1.6cm,bottom=1.8cm}
 \usepackage{amsmath,amssymb}
 \usepackage{enumitem}
 \usepackage{array}
@@ -76,7 +76,8 @@
 %===============================================================
 \begin{center}
 {\LARGE\bfseries\color{violet} Devoir Surveillé — Physique-Chimie}\\[4pt]
-{\large\bfseries Chapitre 10 — Température et capteurs thermiques}\\[6pt]
+{\large\bfseries Chapitre 10 — Température et capteurs thermiques}\\[4pt]
+{\normalsize\itshape Atelier de menuiserie — Filière bois}\\[6pt]
 {\normalsize Seconde Baccalauréat Professionnel — Durée : \textbf{30 minutes} — Barème : \textbf{/20}}
 \end{center}
 
@@ -102,8 +103,9 @@
         \quad et \quad $\theta\,(^\circ\text{C}) = T\,(\text{K}) - 273$
   \item \textbf{Zéro absolu :} $0$\,K $= -273\ ^\circ$C (température la plus basse possible).
   \item \textbf{Courbe d'étalonnage :} relie la grandeur électrique mesurée (résistance $R$ en $\Omega$, tension $U$ en mV) à la température réelle.
-  \item \textbf{Interpolation linéaire} entre deux points $(T_1,y_1)$ et $(T_2,y_2)$ :
-        \[ y = y_1 + \frac{T - T_1}{T_2 - T_1}\,(y_2 - y_1) \]
+  \item \textbf{Valeur intermédiaire par proportionnalité :} entre deux points d'un tableau, on calcule le \textbf{coefficient multiplicateur}
+        \[ k = \dfrac{\text{variation partielle}}{\text{variation totale}} \]
+        puis on l'applique à l'intervalle de température : $\Delta\theta = k\times (\theta_2 - \theta_1)$.
 \end{itemize}
 \end{rappel}
 
@@ -114,24 +116,24 @@
 \noindent{\large\bfseries\color{violet}Exercice 1 — Du Celsius au Kelvin et inversement \pt{6}}
 
 \begin{enonce}
-Un technicien d'atelier travaille sur une étuve de séchage du bois. Il doit remplir une fiche de maintenance dans laquelle les températures doivent être exprimées en Kelvin, alors que ses instruments affichent des degrés Celsius (et inversement).
+Dans un atelier de menuiserie, un technicien intervient sur plusieurs équipements qui nécessitent un contrôle précis de la température : séchoir à bois, local de stockage des colles, chaudière à copeaux\ldots{} Il doit remplir une fiche de maintenance dans laquelle les températures doivent être exprimées en Kelvin, alors que ses instruments affichent des degrés Celsius (et inversement).
 \end{enonce}
 
 \begin{enumerate}[label=\textbf{\arabic*.},leftmargin=*,itemsep=4pt]
 
-\item L'étuve de séchage est réglée sur la consigne $\theta = 65\ ^\circ$C. Exprimer cette température en Kelvin. \pt{1}
+\item Le séchoir à bois est réglé sur la consigne $\theta = 65\ ^\circ$C pour le séchage de planches de chêne. Exprimer cette température en Kelvin. \pt{1}
 
 \vspace{1.2cm}
 
-\item La température ambiante de l'atelier est $\theta = 18\ ^\circ$C. Convertir cette température en Kelvin. \pt{1}
+\item La température ambiante de l'atelier de menuiserie est $\theta = 18\ ^\circ$C. Convertir cette température en Kelvin. \pt{1}
 
 \vspace{1.2cm}
 
-\item Une sonde Pt100 indique $T = 313$\,K à la sortie d'un four. Exprimer cette température en degrés Celsius. \pt{1}
+\item Une sonde Pt100 placée dans le conduit de sortie d'une \textbf{chaudière à copeaux de bois} indique $T = 313$\,K. Exprimer cette température en degrés Celsius. \pt{1}
 
 \vspace{1.2cm}
 
-\item Un entrepôt frigorifique de stockage de colles est maintenu à $T = 268$\,K. Convertir cette température en degrés Celsius. \pt{1}
+\item Le local de stockage des \textbf{colles vinyliques} pour panneaux de menuiserie est maintenu à $T = 268$\,K afin de préserver leur qualité. Convertir cette température en degrés Celsius. \pt{1}
 
 \vspace{1.2cm}
 
@@ -152,7 +154,7 @@ $T\ $(K) & \rule{1.3cm}{0.3pt} & \rule{1.3cm}{0.3pt} & $293$ & \rule{1.3cm}{0.3p
 
 \vspace{4pt}
 
-\item \textbf{Justifier} pourquoi il est impossible de mesurer une température de $-10$\,K dans l'atelier. \pt{0,5}
+\item \textbf{Justifier} pourquoi il est impossible de mesurer une température de $-10$\,K dans l'atelier de menuiserie. \pt{0,5}
 
 \vspace{1.2cm}
 \end{enumerate}
@@ -162,10 +164,10 @@ $T\ $(K) & \rule{1.3cm}{0.3pt} & \rule{1.3cm}{0.3pt} & $293$ & \rule{1.3cm}{0.3p
 %===============================================================
 % EXERCICE 2 — EXPLOITATION COURBE CTN
 %===============================================================
-\noindent{\large\bfseries\color{violet}Exercice 2 — Exploitation d'une courbe d'étalonnage d'une CTN \pt{9}}
+\noindent{\large\bfseries\color{violet}Exercice 2 — Courbe d'étalonnage de la CTN d'un séchoir à bois \pt{9}}
 
 \begin{enonce}
-Dans une étuve de séchage du bois, la température est mesurée par une \textbf{thermistance CTN}. Le tableau et la courbe d'étalonnage ci-dessous donnent la résistance $R$ de la CTN en fonction de la température $\theta$.
+Dans un \textbf{séchoir à bois} d'un atelier de menuiserie, la température est mesurée par une \textbf{thermistance CTN} afin de réguler le chauffage et obtenir un séchage homogène des planches. Le tableau et la courbe d'étalonnage ci-dessous donnent la résistance $R$ de la CTN en fonction de la température $\theta$ à l'intérieur du séchoir.
 \end{enonce}
 
 \begin{center}
@@ -184,37 +186,52 @@ $R\ (\Omega)$ & $10\,000$ & $5\,000$ & $2\,000$ & $1\,000$ & $500$ \\
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[
-  width=13.5cm, height=7.5cm,
-  xlabel={Température $\theta$ (en $^\circ$C)},
-  ylabel={Résistance $R$ (en $\Omega$)},
+  width=17cm, height=12cm,
+  xlabel={\textbf{Température $\theta$ (en $^\circ$C)}},
+  ylabel={\textbf{Résistance $R$ (en $\Omega$)}},
+  xlabel style={font=\small},
+  ylabel style={font=\small},
   xmin=10, xmax=110,
   ymin=0, ymax=11000,
-  xtick={20,30,40,50,60,70,80,90,100},
-  ytick={0,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000},
+  xtick={10,20,30,40,50,60,70,80,90,100,110},
+  minor x tick num=4,
+  ytick={0,500,1000,1500,2000,2500,3000,3500,4000,4500,5000,5500,6000,6500,7000,7500,8000,8500,9000,9500,10000,10500,11000},
+  yticklabel style={font=\footnotesize},
+  xticklabel style={font=\footnotesize},
+  scaled y ticks=false,
+  y tick label style={/pgf/number format/fixed,/pgf/number format/use comma},
+  minor y tick num=4,
   grid=both,
-  major grid style={line width=.4pt,draw=gray!40},
-  minor grid style={line width=.2pt,draw=gray!20},
-  title={\textbf{Courbe d'étalonnage de la CTN}},
-  every axis plot/.append style={thick},
+  major grid style={line width=.5pt,draw=gray!55},
+  minor grid style={line width=.25pt,draw=gray!25},
+  title={\textbf{Courbe d'étalonnage de la CTN du séchoir à bois}},
+  title style={font=\small},
+  every axis plot/.append style={very thick},
 ]
-\addplot[violet,mark=*,mark size=2.2pt,mark options={fill=violet}]
+\addplot[violet,smooth,mark=*,mark size=2.6pt,mark options={fill=violet}]
   coordinates {(20,10000) (40,5000) (60,2000) (80,1000) (100,500)};
 \end{axis}
 \end{tikzpicture}
 \end{center}
 
 \vspace{2pt}
+\begin{center}\small\itshape Utiliser la courbe ci-dessus pour répondre aux questions suivantes (lecture graphique).\end{center}
+
+\newpage
+\noindent{\bfseries\color{violet}Exercice 2 (suite) — Questions}
+
+\vspace{4pt}
 \begin{enumerate}[label=\textbf{\arabic*.},leftmargin=*,itemsep=4pt]
 
 \item Comment évolue la résistance $R$ de la CTN lorsque la température $\theta$ augmente ? En déduire la signification du sigle \textbf{CTN}. \pt{1,5}
 
 \vspace{1.4cm}
 
-\item L'ohmmètre branché sur la CTN affiche $R = 5\,000\ \Omega$. En utilisant la courbe d'étalonnage, déterminer la température $\theta$ dans l'étuve. \pt{1,5}
+\item L'ohmmètre branché sur la CTN affiche $R = 5\,000\ \Omega$. En utilisant la courbe d'étalonnage, déterminer la température $\theta$ à l'intérieur du séchoir à bois. \pt{1,5}
 
 \vspace{1.4cm}
 
-\item La consigne de séchage du bois est fixée à $\theta = 80\ ^\circ$C. Quelle est la valeur de la résistance $R$ que doit détecter le régulateur de l'étuve ? \pt{1,5}
+\item La consigne de séchage pour des planches de hêtre est fixée à $\theta = 80\ ^\circ$C. Quelle est la valeur de la résistance $R$ que doit détecter le régulateur du séchoir ? \pt{1,5}
 
 \vspace{1.4cm}
 
@@ -222,34 +239,43 @@ $R\ (\Omega)$ & $10\,000$ & $5\,000$ & $2\,000$ & $1\,000$ & $500$ \\
 
 \vspace{1.2cm}
 
-\item On mesure maintenant une résistance $R = 3\,500\ \Omega$. Cette valeur ne figure pas dans le tableau.\par
-\textbf{a.} Entre quelles deux valeurs de température se situe $\theta$ ? \pt{1}
+\item Pendant un cycle de séchage, on mesure une résistance $R = 3\,500\ \Omega$. Cette valeur ne figure pas dans le tableau : elle est comprise entre $R_1 = 5\,000\ \Omega$ (à $\theta_1 = 40\ ^\circ$C) et $R_2 = 2\,000\ \Omega$ (à $\theta_2 = 60\ ^\circ$C).\par
+\vspace{4pt}
+\textbf{a.} Calculer la variation totale de résistance $\Delta R_{\text{tot}} = R_1 - R_2$ entre $40\ ^\circ$C et $60\ ^\circ$C. \pt{0,5}
 
 \vspace{1.2cm}
 
-\textbf{b.} En utilisant l'\textbf{interpolation linéaire} entre $\theta_1 = 40\ ^\circ$C ($R_1 = 5\,000\ \Omega$) et $\theta_2 = 60\ ^\circ$C ($R_2 = 2\,000\ \Omega$), calculer la valeur de la température mesurée. \pt{2,5}
+\textbf{b.} Calculer la variation partielle $\Delta R = R_1 - R$ (de $R_1 = 5\,000\ \Omega$ jusqu'à la valeur mesurée). \pt{0,5}
 
-\vspace{2.2cm}
+\vspace{1.2cm}
+
+\textbf{c.} En déduire le \textbf{coefficient multiplicateur} $k = \dfrac{\Delta R}{\Delta R_{\text{tot}}}$. \pt{1}
+
+\vspace{1.2cm}
+
+\textbf{d.} Calculer la variation de température $\Delta\theta = k \times (\theta_2 - \theta_1)$, puis en déduire la température mesurée $\theta = \theta_1 + \Delta\theta$. \pt{1,5}
+
+\vspace{2cm}
 \end{enumerate}
 
 \newpage
 %===============================================================
 % EXERCICE 3 — THERMOCOUPLE
 %===============================================================
-\noindent{\large\bfseries\color{violet}Exercice 3 — Thermocouple type K dans un four industriel \pt{5}}
+\noindent{\large\bfseries\color{violet}Exercice 3 — Thermocouple dans une chaudière à copeaux \pt{5}}
 
 \begin{enonce}
-Dans un four de traitement thermique, la température est mesurée par un \textbf{thermocouple de type K}. La tension $U$ délivrée (en mV) est proportionnelle à la température $\theta$ (en $^\circ$C), selon la relation :
+L'atelier de menuiserie est chauffé par une \textbf{chaudière à copeaux de bois} qui brûle les déchets issus des machines (scie à panneaux, raboteuse, dégauchisseuse). Dans la chambre de combustion, la température est mesurée par un \textbf{thermocouple de type K}. La tension $U$ délivrée (en mV) est proportionnelle à la température $\theta$ (en $^\circ$C), selon la relation :
 \[ U\ (\text{mV}) = 0{,}04 \times \theta\ (^\circ\text{C}) \]
 \end{enonce}
 
 \begin{enumerate}[label=\textbf{\arabic*.},leftmargin=*,itemsep=4pt]
 
-\item Calculer la tension $U$ délivrée par le thermocouple pour $\theta = 250\ ^\circ$C. \pt{1,5}
+\item Au démarrage de la chaudière, la température dans la chambre de combustion est $\theta = 250\ ^\circ$C. Calculer la tension $U$ délivrée par le thermocouple. \pt{1,5}
 
 \vspace{1.6cm}
 
-\item À la sortie du four, le voltmètre affiche $U = 16$\,mV. En déduire la valeur de la température $\theta$ en degrés Celsius. \pt{1,5}
+\item En régime de fonctionnement normal, le voltmètre branché sur le thermocouple affiche $U = 16$\,mV. En déduire la valeur de la température $\theta$ dans la chambre de combustion, en degrés Celsius. \pt{1,5}
 
 \vspace{1.6cm}
 
@@ -257,7 +283,7 @@ Dans un four de traitement thermique, la température est mesurée par un \textb
 
 \vspace{1.2cm}
 
-\item Parmi les capteurs suivants : \emph{CTN}, \emph{Pt100}, \emph{thermocouple type K}, lequel est le plus adapté pour mesurer une température élevée de $900\ ^\circ$C dans un four ? Justifier brièvement. \pt{1}
+\item En pleine combustion, la chambre peut atteindre $900\ ^\circ$C. Parmi les capteurs suivants : \emph{CTN}, \emph{Pt100}, \emph{thermocouple type K}, lequel est le plus adapté pour mesurer une telle température ? Justifier brièvement. \pt{1}
 
 \vspace{1.6cm}
 \end{enumerate}
@@ -265,59 +291,5 @@ Dans un four de traitement thermique, la température est mesurée par un \textb
 \vspace{4pt}
 \hrulefill\\[2pt]
 \hfill\textit{\small Fin du sujet — Vérifier ses réponses avant de rendre la copie.}
-
-%===============================================================
-% CORRECTION (page séparée)
-%===============================================================
-\newpage
-\begin{center}
-{\Large\bfseries\color{violet} Correction — DS Chapitre 10}\\[2pt]
-{\small Température et capteurs thermiques}
-\end{center}
-
-\vspace{4pt}
-\noindent{\bfseries\color{violet}Exercice 1 — Conversions} \hfill\textit{\small(/6 pt)}
-\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=*,itemsep=2pt]
-\item $T = 65 + 273 = \mathbf{338\ \text{K}}$
-\item $T = 18 + 273 = \mathbf{291\ \text{K}}$
-\item $\theta = 313 - 273 = \mathbf{40\ ^\circ\text{C}}$
-\item $\theta = 268 - 273 = \mathbf{-5\ ^\circ\text{C}}$ (congélation)
-\item Tableau complété :
-\begin{center}
-\renewcommand{\arraystretch}{1.25}
-\begin{tabular}{|>{\columncolor{violetclair}}c|c|c|c|c|c|}
-\hline
-\rowcolor{violetclair}
-$\theta\ (^\circ$C) & $-273$ & $0$ & $\mathbf{20}$ & $100$ & $\mathbf{300}$ \\
-\hline
-$T\ $(K) & $\mathbf{0}$ & $\mathbf{273}$ & $293$ & $\mathbf{373}$ & $573$ \\
-\hline
-\end{tabular}
-\end{center}
-\item Le zéro absolu vaut $0$\,K : il est impossible d'atteindre une température négative en Kelvin. $-10$\,K n'a donc pas de sens physique.
-\end{enumerate}
-
-\vspace{6pt}
-\noindent{\bfseries\color{violet}Exercice 2 — Courbe d'étalonnage de la CTN} \hfill\textit{\small(/9 pt)}
-\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=*,itemsep=2pt]
-\item Lorsque $\theta$ augmente, $R$ \textbf{diminue} (de $10\,000\ \Omega$ à $500\ \Omega$). D'où le nom \textbf{CTN} : Coefficient de Température \textbf{Négatif}.
-\item Lecture graphique ou dans le tableau : $R = 5\,000\ \Omega \Rightarrow \mathbf{\theta = 40\ ^\circ\text{C}}$.
-\item Pour $\theta = 80\ ^\circ$C : $\mathbf{R = 1\,000\ \Omega}$.
-\item $T = 80 + 273 = \mathbf{353\ \text{K}}$.
-\item \textbf{a.} $R = 3\,500\ \Omega$ est compris entre $R_1 = 5\,000\ \Omega$ ($40\ ^\circ$C) et $R_2 = 2\,000\ \Omega$ ($60\ ^\circ$C), donc $\theta$ est entre $\mathbf{40\ ^\circ\text{C}}$ et $\mathbf{60\ ^\circ\text{C}}$.\par
-\textbf{b.} Interpolation linéaire :
-\[ \theta = \theta_1 + \frac{R - R_1}{R_2 - R_1}(\theta_2 - \theta_1)
-  = 40 + \frac{3\,500 - 5\,000}{2\,000 - 5\,000}\times(60 - 40) \]
-\[ \theta = 40 + \frac{-1\,500}{-3\,000}\times 20 = 40 + 0{,}5\times 20 = \mathbf{50\ ^\circ\text{C}}. \]
-\end{enumerate}
-
-\vspace{6pt}
-\noindent{\bfseries\color{violet}Exercice 3 — Thermocouple type K} \hfill\textit{\small(/5 pt)}
-\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=*,itemsep=2pt]
-\item $U = 0{,}04 \times 250 = \mathbf{10\ \text{mV}}$.
-\item $\theta = \dfrac{U}{0{,}04} = \dfrac{16}{0{,}04} = \mathbf{400\ ^\circ\text{C}}$.
-\item $T = 400 + 273 = \mathbf{673\ \text{K}}$.
-\item Le \textbf{thermocouple type K} : seul capteur de la liste capable de mesurer des températures aussi élevées (plage jusqu'à environ $1\,000\ ^\circ$C). La CTN ($\leq 150\ ^\circ$C) et la Pt100 (précise mais plutôt utilisée jusqu'à $\sim 850\ ^\circ$C) sont moins adaptées ou en limite de plage.
-\end{enumerate}
 
 \end{document}

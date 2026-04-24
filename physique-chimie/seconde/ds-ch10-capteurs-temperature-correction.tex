@@ -1,0 +1,180 @@
+% !TEX program = pdflatex
+% Correction — DS Physique-Chimie — 2nde Bac Pro — Chapitre 10
+% Température et capteurs thermiques — Filière bois (atelier de menuiserie)
+
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=1.8cm,bottom=2cm}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\tcbuselibrary{skins,breakable}
+
+% Couleurs (identiques au sujet)
+\definecolor{violet}{HTML}{6f42c1}
+\definecolor{violetclair}{HTML}{f5f0ff}
+\definecolor{orange}{HTML}{d97706}
+\definecolor{bleu}{HTML}{0056b3}
+\definecolor{vert}{HTML}{2da44e}
+\definecolor{gris}{HTML}{718096}
+
+% En-tête / pied
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Correction DS Physique-Chimie — 2nde Bac Pro}
+\rhead{\small Ch.\,10 — Température et capteurs}
+\cfoot{\thepage\,/\,\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\newtcolorbox{bareme}{
+  colback=violetclair,
+  colframe=violet,
+  leftrule=4pt,
+  rightrule=0pt,toprule=0pt,bottomrule=0pt,
+  boxsep=4pt,left=8pt,right=6pt
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{violet} Correction — Devoir Surveillé}\\[4pt]
+{\large\bfseries Chapitre 10 — Température et capteurs thermiques}\\[4pt]
+{\normalsize\itshape Atelier de menuiserie — Filière bois}\\[4pt]
+{\normalsize Seconde Baccalauréat Professionnel — Barème : \textbf{/20}}
+\end{center}
+
+\vspace{6pt}
+\begin{bareme}
+\textbf{Barème global :} Exercice 1 (/6) — Exercice 2 (/9) — Exercice 3 (/5) — \textbf{Total : /20}
+\end{bareme}
+
+%===============================================================
+% EXERCICE 1
+%===============================================================
+\vspace{6pt}
+\noindent{\large\bfseries\color{violet}Exercice 1 — Du Celsius au Kelvin et inversement} \hfill\textit{\small(/6 pt)}
+
+\vspace{2pt}
+\textit{Formules utilisées :} $\ T\,(\text{K}) = \theta\,(^\circ\text{C}) + 273\ $ et $\ \theta\,(^\circ\text{C}) = T\,(\text{K}) - 273$.
+
+\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=*,itemsep=4pt]
+
+\item \textbf{Séchoir à bois à $65\ ^\circ$C.} \hfill\textit{\small(1 pt)}
+\[ T = 65 + 273 = \mathbf{338\ \text{K}} \]
+
+\item \textbf{Atelier de menuiserie à $18\ ^\circ$C.} \hfill\textit{\small(1 pt)}
+\[ T = 18 + 273 = \mathbf{291\ \text{K}} \]
+
+\item \textbf{Conduit de chaudière à copeaux, $T = 313$\,K.} \hfill\textit{\small(1 pt)}
+\[ \theta = 313 - 273 = \mathbf{40\ ^\circ\text{C}} \]
+
+\item \textbf{Local de stockage des colles vinyliques, $T = 268$\,K.} \hfill\textit{\small(1 pt)}
+\[ \theta = 268 - 273 = \mathbf{-5\ ^\circ\text{C}} \]
+Il s'agit bien d'un stockage au \emph{froid} : les colles vinyliques doivent être maintenues à basse température pour conserver leurs propriétés.
+
+\item \textbf{Tableau de correspondance.} \hfill\textit{\small(1,5 pt)}
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|>{\columncolor{violetclair}}c|c|c|c|c|c|}
+\hline
+\rowcolor{violetclair}
+$\theta\ (^\circ$C) & $-273$ & $0$ & $\mathbf{20}$ & $100$ & $\mathbf{300}$ \\
+\hline
+$T\ $(K) & $\mathbf{0}$ & $\mathbf{273}$ & $293$ & $\mathbf{373}$ & $573$ \\
+\hline
+\end{tabular}
+\end{center}
+\textit{Calculs :} $\theta = 293 - 273 = 20\ ^\circ$C ; $T = 0 + 273 = 273$\,K ; $T = 100 + 273 = 373$\,K ; $\theta = 573 - 273 = 300\ ^\circ$C ; $T = -273 + 273 = 0$\,K.
+
+\item \textbf{Impossibilité de $-10$\,K.} \hfill\textit{\small(0,5 pt)}\\
+Le \textbf{zéro absolu} vaut $0$\,K : c'est la température la plus basse qui existe dans l'Univers (aucune agitation thermique). \textbf{Aucune température ne peut être négative en Kelvin}, donc $-10$\,K n'a pas de sens physique.
+
+\end{enumerate}
+
+%===============================================================
+% EXERCICE 2
+%===============================================================
+\vspace{10pt}
+\noindent{\large\bfseries\color{violet}Exercice 2 — Courbe d'étalonnage de la CTN d'un séchoir à bois} \hfill\textit{\small(/9 pt)}
+
+\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=*,itemsep=4pt]
+
+\item \textbf{Sens de variation et nom du capteur.} \hfill\textit{\small(1,5 pt)}\\
+Quand la température $\theta$ augmente (de $20$ à $100\ ^\circ$C), la résistance $R$ \textbf{diminue} (de $10\,000\ \Omega$ à $500\ \Omega$). \\
+C'est bien le comportement d'une \textbf{CTN} : \textbf{C}oefficient de \textbf{T}empérature \textbf{N}égatif (la résistance décroît quand la température augmente).
+
+\item \textbf{Lecture : $R = 5\,000\ \Omega$.} \hfill\textit{\small(1,5 pt)}\\
+Par lecture directe du tableau ou de la courbe : $R = 5\,000\ \Omega \ \Rightarrow\ \mathbf{\theta = 40\ ^\circ\text{C}}$.
+
+\item \textbf{Consigne $\theta = 80\ ^\circ$C.} \hfill\textit{\small(1,5 pt)}\\
+Par lecture du tableau : $\theta = 80\ ^\circ\text{C}\ \Rightarrow\ \mathbf{R = 1\,000\ \Omega}$.\\
+Le régulateur du séchoir doit donc commuter le chauffage lorsque la résistance passe sous $1\,000\ \Omega$.
+
+\item \textbf{Conversion de la consigne en Kelvin.} \hfill\textit{\small(1 pt)}
+\[ T = 80 + 273 = \mathbf{353\ \text{K}} \]
+
+\item \textbf{Résistance intermédiaire $R = 3\,500\ \Omega$.}
+
+Données : $R_1 = 5\,000\ \Omega$ (à $\theta_1 = 40\ ^\circ$C) et $R_2 = 2\,000\ \Omega$ (à $\theta_2 = 60\ ^\circ$C).
+
+\textbf{a.} Variation totale de résistance. \hfill\textit{\small(0,5 pt)}
+\[ \Delta R_{\text{tot}} = R_1 - R_2 = 5\,000 - 2\,000 = \mathbf{3\,000\ \Omega} \]
+
+\textbf{b.} Variation partielle (de $R_1$ à la valeur mesurée). \hfill\textit{\small(0,5 pt)}
+\[ \Delta R = R_1 - R = 5\,000 - 3\,500 = \mathbf{1\,500\ \Omega} \]
+
+\textbf{c.} Coefficient multiplicateur. \hfill\textit{\small(1 pt)}
+\[ k = \frac{\Delta R}{\Delta R_{\text{tot}}} = \frac{1\,500}{3\,000} = \mathbf{0{,}5} \]
+
+\textbf{d.} Température mesurée. \hfill\textit{\small(1,5 pt)}
+\[ \Delta\theta = k \times (\theta_2 - \theta_1) = 0{,}5 \times (60 - 40) = 0{,}5 \times 20 = \mathbf{10\ ^\circ\text{C}} \]
+\[ \theta = \theta_1 + \Delta\theta = 40 + 10 = \mathbf{50\ ^\circ\text{C}} \]
+
+\end{enumerate}
+
+%===============================================================
+% EXERCICE 3
+%===============================================================
+\vspace{10pt}
+\noindent{\large\bfseries\color{violet}Exercice 3 — Thermocouple dans une chaudière à copeaux} \hfill\textit{\small(/5 pt)}
+
+\vspace{2pt}
+\textit{Relation donnée :} $\ U\,(\text{mV}) = 0{,}04 \times \theta\,(^\circ\text{C})$.
+
+\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=*,itemsep=4pt]
+
+\item \textbf{Tension à $\theta = 250\ ^\circ$C.} \hfill\textit{\small(1,5 pt)}
+\[ U = 0{,}04 \times 250 = \mathbf{10\ \text{mV}} \]
+
+\item \textbf{Température pour $U = 16$\,mV.} \hfill\textit{\small(1,5 pt)}\\
+On isole $\theta$ dans la relation :
+\[ \theta = \frac{U}{0{,}04} = \frac{16}{0{,}04} = \mathbf{400\ ^\circ\text{C}} \]
+
+\item \textbf{Conversion en Kelvin.} \hfill\textit{\small(1 pt)}
+\[ T = 400 + 273 = \mathbf{673\ \text{K}} \]
+
+\item \textbf{Choix du capteur pour $900\ ^\circ$C.} \hfill\textit{\small(1 pt)}\\
+Comparaison des plages :
+\begin{itemize}[leftmargin=*,itemsep=1pt,topsep=2pt]
+  \item \textbf{CTN} : $-50\ ^\circ$C à $+150\ ^\circ$C $\Rightarrow$ \textcolor{gris}{\emph{détruite bien avant $900\ ^\circ$C}}.
+  \item \textbf{Pt100} : $-200\ ^\circ$C à $+850\ ^\circ$C $\Rightarrow$ \textcolor{gris}{\emph{en limite de plage, non adaptée}}.
+  \item \textbf{Thermocouple type K} : $-200\ ^\circ$C à $+1\,000\ ^\circ$C $\Rightarrow$ \textbf{parfaitement adapté}.
+\end{itemize}
+\textbf{Conclusion :} on choisit le \textbf{thermocouple type K} pour mesurer la température de la chambre de combustion de la chaudière à copeaux.
+
+\end{enumerate}
+
+\vspace{10pt}
+\hrulefill\\[2pt]
+\hfill\textit{\small Fin de la correction.}
+
+\end{document}
