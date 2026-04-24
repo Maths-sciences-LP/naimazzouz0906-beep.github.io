@@ -96,7 +96,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 1</span>
 <p>Soit \(X\) une v.a. avec \(E(X)=50\) et \(V(X)=9\). Majorer \(P(|X-50|\geqslant 6)\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>\(P(|X-50|\geqslant 6)\leqslant\frac{9}{36}=\frac{1}{4}=0{,}25\).</p>
 </div>
@@ -105,7 +105,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 2</span>
 <p>Soit \(X\sim\mathcal{B}(100;0{,}5)\). En utilisant Bienaymé-Tchebychev, majorer \(P(|X-50|\geqslant 10)\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>\(\mu=50\), \(V=100\times 0{,}5\times 0{,}5=25\).</p>
 <p>\(P(|X-50|\geqslant 10)\leqslant\frac{25}{100}=0{,}25\).</p>
@@ -131,7 +131,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 3</span>
 <p>On mesure la masse de pièces (\(\mu=10\) g, \(\sigma=0{,}5\) g). Quelle taille d'échantillon garantit que \(P(|M_n-10|\geqslant 0{,}1)\leqslant 0{,}05\) ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>\(\frac{V}{n\delta^2}\leqslant 0{,}05\), soit \(\frac{0{,}25}{n\times 0{,}01}\leqslant 0{,}05\), \(\frac{25}{n}\leqslant 0{,}05\), \(n\geqslant 500\).</p>
 </div>
@@ -165,7 +165,7 @@
   <li>Exprimer \(E(F_n)\) et \(V(F_n)\).</li>
   <li>En utilisant l'inégalité de concentration, déterminer \(n\) pour que \(P(|F_n-0{,}5|\geqslant 0{,}01)\leqslant 0{,}01\).</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\(F_n=\frac{X}{n}\) avec \(X\sim\mathcal{B}(n,0{,}5)\). \(E(F_n)=0{,}5\). \(V(F_n)=\frac{0{,}25}{n}\).</li>
@@ -183,7 +183,7 @@
   <li>En utilisant le fait que \(p(1-p)\leqslant\frac{1}{4}\), donner un intervalle de confiance pour la vraie proportion \(p\) au risque \(\alpha = 0{,}05\).</li>
   <li>Le projet est-il soutenu par une majorité de la population ?</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\(P(|F_n - p|\geqslant\delta)\leqslant\frac{p(1-p)}{n\delta^2}\leqslant\frac{1}{4n\delta^2}\).</li>
@@ -208,7 +208,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 6</span>
 <p>On veut estimer la proportion d'électeurs favorables à un candidat avec une précision de 2 % et un risque de 5 %. Quelle taille d'échantillon faut-il ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>\(n\geqslant\frac{1}{4\times 0{,}05\times 0{,}02^2}=\frac{1}{4\times 0{,}05\times 0{,}0004}=\frac{1}{0{,}00008}=12\,500\).</p>
 <p>Il faut interroger au moins <strong>12 500 personnes</strong>.</p>
@@ -223,7 +223,7 @@
   <li>Justifier que \(F_n\) converge vers \(\frac{\pi}{4}\) par la loi des grands nombres.</li>
   <li>En utilisant l'inégalité de concentration, combien de points faut-il pour que \(P\left(\left|F_n-\frac{\pi}{4}\right|\geqslant 0{,}001\right)\leqslant 0{,}01\) ?</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>Chaque point est dans le quart de disque avec probabilité \(p=\frac{\pi}{4}\). Les tirages sont indépendants. Par la loi des grands nombres, \(F_n\to p=\frac{\pi}{4}\).</li>
@@ -244,7 +244,7 @@
   <li>On souhaite que \(P(|F_n-p|\geqslant 0{,}02)\leqslant 0{,}05\). Déterminer la taille minimale de l'échantillon.</li>
   <li>On souhaite maintenant que \(P(|F_n-p|\geqslant 0{,}01)\leqslant 0{,}01\). Déterminer \(n\). Commenter.</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\(E(F_n) = p\) et \(V(F_n)=\frac{p(1-p)}{n}\).</li>

@@ -68,7 +68,7 @@
   <strong>Application</strong>
   <p>Un artisan menuisier note le nombre de planches découpées chaque heure : 12, 15, 18, 21, 24.</p>
   <p>1. S'agit-il d'une suite ? Quel est le terme initial ? 2. Peut-on prévoir la valeur à la 6e heure ?</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none">
     <p>1. Oui, c'est une liste ordonnée de termes : \(u_1 = 12\), \(u_2 = 15\), \(u_3 = 18\), \(u_4 = 21\), \(u_5 = 24\).</p>
     <p>2. La différence entre deux termes consécutifs est constante : \(15-12 = 18-15 = 3\). Donc \(u_6 = 24 + 3 = 27\) planches.</p>
@@ -125,7 +125,7 @@
     <li>Combien de planches contient la 8e rangée (rang 7) ?</li>
     <li>À partir de quelle rangée n'y a-t-il plus de planches ?</li>
   </ol>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>On retire 2 planches à chaque rangée : \(u_{n+1} = u_n - 2\). C'est une suite arithmétique de premier terme \(u_0 = 20\) et de raison \(r = -2\).</li>
@@ -139,7 +139,7 @@
 <div class="mini-exo">
   <strong>Application</strong>
   <p>Le salaire mensuel d'un menuisier agenceur débute à 1 600 € et augmente de 30 € par an. Écrire la formule explicite \(u_n\) du salaire après \(n\) années. Calculer son salaire après 8 ans.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none">
     <p>Suite arithmétique : \(u_0 = 1\,600\), \(r = 30\). Formule : \(u_n = 1\,600 + 30n\).</p>
     <p>Après 8 ans : \(u_8 = 1\,600 + 30 \times 8 = 1\,600 + 240 = 1\,840\) €.</p>
@@ -195,7 +195,7 @@
     <li>Combien pose-t-il de radiateurs au 5e étage ?</li>
     <li>Combien de radiateurs pose-t-il au total dans l'immeuble (du RDC au 5e étage) ?</li>
   </ol>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>\(u_n = 8 + 2n\) (suite arithmétique, \(u_0 = 8\), \(r = 2\)).</li>
@@ -209,7 +209,7 @@
 <div class="mini-exo">
   <strong>Application</strong>
   <p>Un ébéniste produit 5 tables par mois la première année. Sa production augmente chaque mois de 2 tables. Calculer le total de tables produites sur les 12 premiers mois (de \(u_1 = 5\) à \(u_{12}\)).</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none">
     <p>Suite arithmétique : \(u_1 = 5\), \(r = 2\). Terme du 12e mois : \(u_{12} = 5 + 2 \times 11 = 27\).</p>
     <p>Somme de \(u_1\) à \(u_{12}\) : 12 termes. \(S = \dfrac{12 \times (5 + 27)}{2} = \dfrac{12 \times 32}{2} = 192\) tables.</p>
@@ -286,7 +286,7 @@
     <li>Quel est le rendement après 5 ans ? (Arrondir à 0,1 %)</li>
     <li>Au bout de combien d'années le rendement passe-t-il sous 50 % ? (Tester des valeurs)</li>
   </ol>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>Le rendement est multiplié par \(1 - 0{,}08 = 0{,}92\) chaque année. C'est une suite géométrique avec \(u_0 = 95\) et \(q = 0{,}92\).</li>
@@ -370,7 +370,7 @@
     <li>Exprimer la valeur résiduelle \(v_n\) après \(n\) années.</li>
     <li>Quelle est la valeur résiduelle après 5 ans ?</li>
   </ol>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>Perte annuelle : \(\dfrac{12\,000}{8} = 1\,500\) &euro; par an.</li>
@@ -388,7 +388,7 @@
     <li>Calculer le capital après 3 ans (arrondir au centime).</li>
     <li>Au bout de combien d'années le capital dépasse-t-il 3 500 &euro; ? (Tester des valeurs)</li>
   </ol>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>\(c_n = 3\,000 \times 1{,}025^n\) (suite géométrique, \(c_0 = 3\,000\), \(q = 1{,}025\)).</li>
@@ -434,7 +434,7 @@
     <li>Calculer le salaire proposé par chaque offre après 10 ans.</li>
     <li>À partir de quelle année l'offre B devient-elle plus avantageuse ?</li>
   </ol>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1.</strong></p>
     <ul>

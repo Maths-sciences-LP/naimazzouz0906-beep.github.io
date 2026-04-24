@@ -97,7 +97,7 @@
   <li>\(\displaystyle\int_0^1 e^x\,\mathrm{d}x\)</li>
   <li>\(\displaystyle\int_1^4 \frac{1}{\sqrt{x}}\,\mathrm{d}x\)</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\([x^3-x^2+x]_0^2 = (8-4+2)-(0) = 6\).</li>
@@ -140,7 +140,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 2</span>
 <p>Calculer l'aire entre la courbe de \(f(x)=x^2-1\) et l'axe des abscisses sur \([-1;2]\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>\(f(x)=0\) pour \(x=\pm 1\). \(f<0\) sur \([-1;1]\) et \(f>0\) sur \([1;2]\).</p>
 <p>\(\displaystyle\int_{-1}^{1}(x^2-1)\,\mathrm{d}x = \left[\frac{x^3}{3}-x\right]_{-1}^{1} = (\frac{1}{3}-1)-(-\frac{1}{3}+1) = -\frac{4}{3}\).</p>
@@ -162,7 +162,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 3</span>
 <p>Calculer la valeur moyenne de \(f(x)=\sin x\) sur \([0;\pi]\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>\(\mu = \frac{1}{\pi}\int_0^{\pi}\sin x\,\mathrm{d}x = \frac{1}{\pi}[-\cos x]_0^{\pi} = \frac{1}{\pi}(1+1) = \frac{2}{\pi}\approx 0{,}637\).</p>
 </div>
@@ -202,7 +202,7 @@
   <li>\(\displaystyle\int_1^e x\ln x\,\mathrm{d}x\)</li>
   <li>\(\displaystyle\int_0^{\pi} x\sin x\,\mathrm{d}x\)</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\(v = \ln x\), \(v'=\frac{1}{x}\), \(u'=x\), \(u=\frac{x^2}{2}\).
@@ -254,7 +254,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 5</span>
 <p>Calculer l'aire entre les courbes de \(f(x)=x^2\) et \(g(x)=x\) sur \([0;1]\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Sur \([0;1]\), \(g(x)-f(x)=x-x^2\geqslant 0\) (car \(x(1-x)\geqslant 0\)).</p>
 <p>\(\mathcal{A}=\int_0^1(x-x^2)\,\mathrm{d}x=\left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1=\frac{1}{2}-\frac{1}{3}=\frac{1}{6}\).</p>
@@ -264,7 +264,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 6</span>
 <p>Calculer l'aire entre les courbes de \(f(x)=e^x\) et \(g(x)=e^{-x}\) sur \([0;1]\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Sur \([0;1]\), \(e^x \geqslant e^{-x}\) (car \(e^x\) croissante et \(e^0=e^{-0}=1\)).</p>
 <p>\(\mathcal{A}=\int_0^1(e^x-e^{-x})\,\mathrm{d}x=[e^x+e^{-x}]_0^1=(e+e^{-1})-(1+1)=e+\frac{1}{e}-2\approx 1{,}09\).</p>
@@ -279,7 +279,7 @@
 <span class="exo-num">Exercice 7</span>
 <p class="exo-titre">Encadrement d'une intégrale</p>
 <p>Montrer que \(\displaystyle\frac{1}{2}\leqslant\int_0^1\frac{1}{1+x^2}\,\mathrm{d}x\leqslant 1\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Sur \([0;1]\) : \(1\leqslant 1+x^2\leqslant 2\), donc \(\frac{1}{2}\leqslant\frac{1}{1+x^2}\leqslant 1\).</p>
 <p>Par intégration : \(\int_0^1\frac{1}{2}\,\mathrm{d}x\leqslant\int_0^1\frac{1}{1+x^2}\,\mathrm{d}x\leqslant\int_0^1 1\,\mathrm{d}x\), soit \(\frac{1}{2}\leqslant I\leqslant 1\). □</p>
@@ -296,7 +296,7 @@
   <li>Montrer par IPP que \(I_n = e - nI_{n-1}\) pour \(n\geqslant 1\).</li>
   <li>En déduire \(I_1\) et \(I_2\).</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\(I_0=\int_0^1 e^x\,\mathrm{d}x=[e^x]_0^1=e-1\).</li>
@@ -316,7 +316,7 @@
   <li>En déduire la valeur moyenne de \(\ln\) sur \([1;e]\).</li>
   <li>Montrer que \(\displaystyle\int_1^e (\ln x)^2\,\mathrm{d}x = e-2\).</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>IPP : \(v=\ln x\), \(v'=\frac{1}{x}\), \(u'=1\), \(u=x\).

@@ -63,7 +63,7 @@
     <li>Pour l'<strong>illustration C</strong> (800 × 600 px, demi-page 21 cm de large) : calcule la résolution. Est-elle utilisable ?</li>
     <li>Pour le <strong>logo B</strong> (500 × 500 px, 5 cm × 5 cm) : calcule la résolution. Est-il utilisable pour cette vignette ?</li>
   </ol>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none">
     <ol>
       <li>Photo A : largeur en pouces = 8,27 po. Résolution = 3000/8,27 ≈ <strong>363 dpi</strong>.</li>
@@ -85,7 +85,7 @@
     <li>Le catalogue contient 48 images de la qualité de la photo A. Quel espace de stockage faut-il prévoir (non compressé) en Go ?</li>
     <li>Après compression JPEG à 80 % (taille réduite à 15 % de l'original), calcule l'espace final nécessaire.</li>
   </ol>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none">
     <ol>
       <li>Photo A : \(3000 \times 2000 \times 3 = 18\,000\,000\) octets = <strong>18 Mo</strong>.</li>
@@ -115,7 +115,7 @@
     <li>Décode l'or doré #C8A000. (C8₁₆ = 12×16+8 = 200 ; A0₁₆ = 10×16+0 = 160)</li>
     <li>Comment appelle-t-on la couleur obtenue quand R=V=B ? Quelle nuance serait (128, 128, 128) ?</li>
   </ol>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none">
     <ol>
       <li>#003D7A → R=0, V=61, B=122.</li>
@@ -138,7 +138,7 @@
     <li>Quel espace de stockage est nécessaire pour le catalogue (compressé) ?</li>
     <li>Quel format recommandes-tu pour l'archivage final du catalogue ?</li>
   </ul>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir un exemple de réponse</button>
+  <button class="bc" onclick="toggle(this)">Voir un exemple de réponse</button>
   <div class="corr" style="display:none">
     <p>Après analyse des fichiers reçus, la <strong>photo produit A</strong> (363 dpi) et la <strong>photo ambiance D</strong> (RAW haute résolution) sont conformes aux exigences d'impression à 300 dpi. Le <strong>logo B</strong> est à la limite (254 dpi) : utilisable en vignette mais il serait préférable de demander la version vectorielle au client. <strong>L'illustration C</strong> (97 dpi) est inexploitable pour l'impression ; il faut demander au client une version haute résolution (au moins 2480 × 1750 px pour une demi-page A4 à 300 dpi). Pour le stockage du catalogue (48 images en JPEG 80 % qualité), environ <strong>130 Mo</strong> suffisent. Pour l'archivage définitif, je recommande le format <strong>TIFF sans compression</strong> pour conserver toute la qualité, et JPEG pour la diffusion numérique.</p>
   </div>

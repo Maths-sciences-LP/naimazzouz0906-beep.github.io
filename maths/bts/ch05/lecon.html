@@ -186,7 +186,7 @@
   <span class="exo-num">Mini-exercice 1</span>
   <p class="exo-titre">Résoudre une ED du 1er ordre</p>
   <p>Résoudre l'équation différentielle \(2y' + 4y = 12\) avec la condition initiale \(y(0) = 1\).</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>Homogène :</strong> \(2y' + 4y = 0 \Rightarrow y_H = C\,e^{-2t}\).</p>
     <p><strong>Particulière :</strong> \(y_P = \alpha\), \(4\alpha = 12\), \(\alpha = 3\).</p>
@@ -201,7 +201,7 @@
   <span class="exo-num">Mini-exercice 2</span>
   <p class="exo-titre">Second membre polynomial</p>
   <p>Résoudre \(y' - y = 2t\) avec \(y(0) = 3\).</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>Homogène :</strong> \(y' - y = 0 \Rightarrow y_H = C\,e^{t}\).</p>
     <p><strong>Particulière :</strong> on cherche \(y_P = \alpha t + \beta\). Alors \(y_P' = \alpha\).</p>
@@ -314,7 +314,7 @@
   <span class="exo-num">Mini-exercice 3</span>
   <p class="exo-titre">Résoudre dans \(\mathbb{C}\)</p>
   <p>Résoudre l'équation \(r^2 + 4r + 13 = 0\).</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>\(\Delta = 16 - 52 = -36 < 0\), \(\Delta' = 36\), \(\sqrt{\Delta'} = 6\).</p>
     <p>\(r_1 = \dfrac{-4 + 6j}{2} = -2 + 3j\) et \(r_2 = -2 - 3j\).</p>
@@ -472,7 +472,7 @@
   <p class="exo-titre">Équation caractéristique et solution homogène</p>
   <p>Pour chaque équation, déterminer la nature des racines et écrire la solution homogène :</p>
   <p>1) \(y'' + 3y' + 2y = 0\) &emsp; 2) \(y'' + 6y' + 9y = 0\) &emsp; 3) \(y'' + y' + y = 0\)</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1)</strong> \(r^2 + 3r + 2 = 0\), \(\Delta = 9 - 8 = 1 > 0\), \(r_1 = -2\), \(r_2 = -1\). Solution : \(y = A\,e^{-2t} + B\,e^{-t}\).</p>
     <p><strong>2)</strong> \(r^2 + 6r + 9 = 0\), \(\Delta = 36 - 36 = 0\), \(r_0 = -3\). Solution : \(y = (A + Bt)\,e^{-3t}\).</p>
@@ -526,7 +526,7 @@
   <span class="exo-num">Mini-exercice 5</span>
   <p class="exo-titre">Décharge d'un condensateur</p>
   <p>On décharge le condensateur précédent (initialement chargé à 12 V) à travers la même résistance (sans source de tension). L'équation devient \(u_C' + u_C = 0\) avec \(u_C(0) = 12\). Déterminer \(u_C(t)\).</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>Équation homogène : \(u_C' + u_C = 0\), solution : \(u_C(t) = K\,e^{-t}\).</p>
     <p>\(u_C(0) = K = 12\).</p>
@@ -617,7 +617,7 @@
   <span class="exo-num">Mini-exercice 6</span>
   <p class="exo-titre">Amortisseur critique</p>
   <p>Quelle valeur du coefficient de frottement \(f\) rend le système précédent (\(m = 1\;\text{kg}\), \(k = 5\;\text{N/m}\)) critique ?</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>L'équation caractéristique est \(r^2 + fr + 5 = 0\). Pour le régime critique, \(\Delta = 0\) :</p>
     <p>\(f^2 - 4 \times 1 \times 5 = 0 \Rightarrow f^2 = 20 \Rightarrow f = 2\sqrt{5} \approx 4{,}47\;\text{N.s/m}\).</p>

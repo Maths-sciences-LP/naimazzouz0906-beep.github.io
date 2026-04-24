@@ -141,7 +141,7 @@ ol.steps{list-style:none;counter-reset:step;padding:0;margin:8px 0}</style>
 <div class="mini-exo">
   <strong>Application</strong>
   <p>Dans un circuit, une diode est reliée à une source de 12 V. Dans le sens A→K, le courant peut-il circuler ? Et dans le sens K→A ?</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none"><p>Dans le sens A→K : la diode est <strong>passante</strong> → le courant circule (clapet ouvert).<br>Dans le sens K→A : la diode est <strong>bloquée</strong> → aucun courant (clapet fermé). C'est la propriété fondamentale d'unidirectionnalité de la diode.</p></div>
 </div>
 
@@ -208,7 +208,7 @@ ol.steps{list-style:none;counter-reset:step;padding:0;margin:8px 0}</style>
 <div class="mini-exo">
   <strong>Application</strong>
   <p>Le réseau 230 V a une amplitude \(U_{max} = 230\sqrt{2} \approx 325 \text{ V}\). Calculer la valeur moyenne obtenue après redressement simple alternance.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none"><p>\(\overline{U} = \dfrac{U_{max}}{\pi} = \dfrac{325}{3{,}14} \approx \mathbf{103 \text{ V}}\). Cette valeur est faible par rapport à 325 V : le redressement simple alternance est peu efficace car il n'exploite qu'une alternance sur deux.</p></div>
 </div>
 
@@ -312,7 +312,7 @@ ol.steps{list-style:none;counter-reset:step;padding:0;margin:8px 0}</style>
 <div class="mini-exo">
   <strong>Application</strong>
   <p>Avec le même réseau 230 V (\(U_{max} \approx 325\) V), calculer la valeur moyenne après redressement double alternance (pont de Graetz) et comparer avec le simple alternance.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none"><p>\(\overline{U}_{DA} = \dfrac{2 \times 325}{\pi} = \dfrac{650}{3{,}14} \approx \mathbf{207 \text{ V}}\). C'est le double de la valeur simple alternance (103 V). Le pont de Graetz exploite les deux alternances → tension moyenne bien plus élevée, plus facile à filtrer.</p></div>
 </div>
 
@@ -398,7 +398,7 @@ ol.steps{list-style:none;counter-reset:step;padding:0;margin:8px 0}</style>
 <div class="mini-exo">
   <strong>Application</strong>
   <p>Une alimentation utilise un condensateur de filtrage C = 2 200 μF et une résistance de charge R = 68 Ω. Calculer la constante de temps τ et vérifier si le filtrage est satisfaisant (réseau 50 Hz → T/2 = 10 ms).</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none"><p>\(\tau = R \times C = 68 \times 2200 \times 10^{-6} = 68 \times 0{,}0022 = \mathbf{0{,}1496 \text{ s}} \approx 150 \text{ ms}\)</p><p>Condition : τ = 150 ms ≫ T/2 = 10 ms → <strong>oui, le filtrage est efficace</strong>. Le condensateur se décharge peu entre deux impulsions.</p></div>
 </div>
 

@@ -61,7 +61,7 @@
     <li>Le cahier des charges impose de transférer un fichier de 400 Mo en moins de 20 s. Calcule le débit minimal pour ce transfert.</li>
     <li>Schématise la chaîne de transmission pour ce réseau inter-bâtiments en identifiant modulateur, canal et démodulateur.</li>
   </ol>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none">
     <ol>
       <li>Volume horaire : \(10 \times 400 + 2 \times 200 + 3 \times 150 = 4000 + 400 + 450 = 4850\) Mo/heure.</li>
@@ -97,7 +97,7 @@
     <li>La fibre a un affaiblissement de 0,2 dB/km. Sur 600 m, calcule l'affaiblissement total.</li>
     <li>Pourquoi la fibre est-elle insensible aux interférences électromagnétiques générées par les machines d'impression ?</li>
   </ol>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none">
     <ol>
       <li>400 Mo = 3200 Mbit. Temps Wi-Fi = \(3200/300 \approx 10{,}7\) s < 20 s : le cahier des charges est <strong>respecté</strong>.</li>
@@ -119,7 +119,7 @@
     <li>Si une panne de Wi-Fi (due aux interférences) entraîne une heure d'arrêt production valorisée à 500 €, et qu'on estime 5 pannes par an, quel est le coût indirect annuel du Wi-Fi ?</li>
     <li>En intégrant les pannes, quelle solution est la plus économique sur 10 ans ?</li>
   </ol>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none">
     <ol>
       <li>Surcoût fibre = 15 000 − 2 000 = <strong>13 000 €</strong>.</li>
@@ -142,7 +142,7 @@
     <li>Recommandation argumentée</li>
     <li>Précision du principe physique utilisé par la solution retenue</li>
   </ul>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir un exemple de réponse</button>
+  <button class="bc" onclick="toggle(this)">Voir un exemple de réponse</button>
   <div class="corr" style="display:none">
     <p>Notre studio d'impression doit transférer des fichiers allant jusqu'à 400 Mo en moins de 20 secondes entre les deux bâtiments, ce qui nécessite un débit minimal de 160 Mbit/s. Les deux solutions étudiées satisfont techniquement à cette exigence : le Wi-Fi pont (300 Mbit/s réel) permet le transfert en ~10 s, la fibre optique (9 Gbit/s réel) en moins d'une seconde. Cependant, le Wi-Fi est sensible aux interférences électromagnétiques générées par nos machines d'impression (moteurs, variateurs de vitesse), ce qui entraîne des pannes estimées à 5 par an. Sur 10 ans, le coût total du Wi-Fi (installation + pertes de production) s'élève à 27 000 €, contre 15 000 € pour la fibre. <strong>Je recommande la fibre optique</strong> : elle repose sur la propagation de la lumière par réflexion totale interne dans un cœur en silice, ce qui la rend totalement insensible aux perturbations électriques de l'atelier, garantit un débit 30 fois supérieur et une durée de vie de 30 ans.</p>
   </div>

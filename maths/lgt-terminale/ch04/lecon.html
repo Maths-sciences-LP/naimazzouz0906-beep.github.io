@@ -87,7 +87,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 1</span>
 <p>Déterminer une représentation paramétrique de la droite \(d\) passant par \(A(3;-1;2)\) et \(B(1;3;0)\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>\(\vec{AB} = (-2;4;-2)\). On peut simplifier : \(\vec{u} = (-1;2;-1)\).</p>
 \[\begin{cases} x = 3 - t \\ y = -1 + 2t \\ z = 2 - t \end{cases} \quad t \in \mathbb{R}\]
@@ -112,7 +112,7 @@
   <li>\(\begin{cases} x = 2 + 3t \\ y = -t \\ z = 1 + 2t \end{cases}\)</li>
   <li>\(\begin{cases} x = -1 \\ y = 3 + t \\ z = 2 - 4t \end{cases}\)</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>Point : \((2;0;1)\). Vecteur directeur : \(\vec{u}(3;-1;2)\).</li>
@@ -131,7 +131,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 3</span>
 <p>Soit \(d\) : \(\begin{cases} x = 1 + 2t \\ y = -1 + t \\ z = 3 - t \end{cases}\). Les points \(M(5;1;1)\) et \(N(3;1;2)\) appartiennent-ils à \(d\) ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p><strong>Point \(M\) :</strong> \(5 = 1+2t \Rightarrow t=2\). \(y = -1+2 = 1\) ✓. \(z = 3-2 = 1\) ✓. \(M \in d\).</p>
 <p><strong>Point \(N\) :</strong> \(3 = 1+2t \Rightarrow t=1\). \(y = -1+1 = 0 \neq 1\). \(N \notin d\).</p>
@@ -207,7 +207,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 4</span>
 <p>Déterminer une équation cartésienne du plan \(\mathcal{P}\) passant par \(A(3;1;-2)\) de vecteur normal \(\vec{n}(2;-3;1)\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>\(2(x-3)+(-3)(y-1)+1(z+2) = 0\), soit \(2x-3y+z-1=0\).</p>
 </div>
@@ -216,7 +216,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 5</span>
 <p>Déterminer une équation cartésienne du plan passant par \(A(2;1;0)\), \(B(0;-1;1)\) et \(C(1;0;3)\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>\(\vec{AB}(-2;-2;1)\), \(\vec{AC}(-1;-1;3)\).</p>
 <p>On cherche \(\vec{n}(a;b;c)\) : \(-2a-2b+c=0\) et \(-a-b+3c=0\).</p>
@@ -279,7 +279,7 @@
   <li>\(\mathcal{P}_1 : x-y+z-1=0\) et \(\mathcal{P}_2 : 2x+y-z+3=0\)</li>
   <li>\(\mathcal{P}_1 : 3x-6y+9z-12=0\) et \(\mathcal{P}_2 : x-2y+3z-4=0\)</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\(\vec{n_1}(1;2;-1)\), \(\vec{n_2}(2;4;-2) = 2\vec{n_1}\) : colinéaires. On vérifie : \(\mathcal{P}_2\) est \(2x+4y-2z-1=0\), tandis que \(2\mathcal{P}_1\) donne \(2x+4y-2z+6=0\). \(-1 \neq 6\) : plans <strong>strictement parallèles</strong>.</li>
@@ -308,7 +308,7 @@
   <li>Déterminer l'intersection de \(d\) et \(\mathcal{P}\).</li>
   <li>Même question avec \(\mathcal{P'}\) : \(x-y-2z+7=0\).</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\((1+t)+(2-t)+(3+2t)-6 = 0\), soit \(2t = 0\), \(t=0\). Point d'intersection : \((1;2;3)\). La droite est <strong>sécante</strong>.</li>
@@ -328,7 +328,7 @@
 <span class="exo-num">Exercice 8</span>
 <p>Déterminer une représentation paramétrique de la droite d'intersection des plans :</p>
 <p>\(\mathcal{P}_1 : x+y+z-1=0\) et \(\mathcal{P}_2 : x-y+z-3=0\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Système : \(\begin{cases} x+y+z=1 \\ x-y+z=3 \end{cases}\)</p>
 <p>En additionnant : \(2x+2z=4\), soit \(x = 2-z\). En soustrayant : \(2y=-2\), soit \(y=-1\).</p>
@@ -358,7 +358,7 @@
 <span class="exo-num">Exercice 9</span>
 <p>Déterminer l'intersection des trois plans :</p>
 <p>\(\mathcal{P}_1 : x+y+z=3\), \(\mathcal{P}_2 : 2x-y+z=1\), \(\mathcal{P}_3 : x+2y-z=2\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>\(\mathcal{P}_1 + \mathcal{P}_2\) : \(3x+2z=4\). \(\mathcal{P}_1 + \mathcal{P}_3\) : \(2x+3y=5\). \(\mathcal{P}_2 + \mathcal{P}_3\) : \(3x+y=3\).</p>
 <p>De \(3x+y=3\) : \(y=3-3x\). Dans \(2x+3y=5\) : \(2x+9-9x=5\), \(-7x=-4\), \(x=\frac{4}{7}\).</p>
@@ -379,7 +379,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 10</span>
 <p>Les vecteurs \(\vec{u}(1;2;-1)\), \(\vec{v}(2;1;3)\), \(\vec{w}(1;-1;4)\) forment-ils une base ? Si oui, déterminer les coordonnées de \(\vec{t}(5;3;6)\) dans cette base.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>On résout \(\alpha\vec{u}+\beta\vec{v}+\gamma\vec{w}=\vec{0}\) :</p>
 \[\begin{cases} \alpha + 2\beta + \gamma = 0 \\ 2\alpha + \beta - \gamma = 0 \\ -\alpha + 3\beta + 4\gamma = 0 \end{cases}\]
@@ -401,7 +401,7 @@
   <li>Déterminer le projeté orthogonal \(H\) de \(M\) sur \(\mathcal{P}\).</li>
   <li>Calculer \(MH\).</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\(\vec{n}(2;-1;2)\) est le vecteur directeur de \(\Delta\). \(\Delta\) : \(\begin{cases} x=3+2t \\ y=1-t \\ z=-2+2t \end{cases}\).</li>
@@ -421,7 +421,7 @@
   <li>Déterminer l'intersection de \(d\) et \(\mathcal{P}\).</li>
   <li>Déterminer l'angle entre la droite \(d\) et le plan \(\mathcal{P}\).</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\((2+t)+2(-1+3t)-(1-t)+4=0\), soit \(2+t-2+6t-1+t+4=0\), \(8t+3=0\), \(t=-\frac{3}{8}\).
@@ -442,7 +442,7 @@
   <li>Déterminer une représentation paramétrique de la droite \((AG)\).</li>
   <li>Déterminer le point d'intersection de \((AG)\) et du plan \((BIJ)\).</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Coordonnées : \(B(1;0;0)\), \(I\left(\frac{1}{2};0;1\right)\), \(J\left(1;1;\frac{1}{2}\right)\).</p>
 <ol>
@@ -464,7 +464,7 @@
   <li>Déterminer le projeté orthogonal \(H\) de \(M\) sur \(\mathcal{P}\).</li>
   <li>En déduire le symétrique \(M'\) de \(M\) par rapport au plan \(\mathcal{P}\).</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>Droite perpendiculaire : \(\begin{cases} x=1+t \\ y=2+t \\ z=1+t \end{cases}\). Dans \(\mathcal{P}\) : \(1+t+2+t+1+t-6=0\), \(3t-2=0\), \(t=\frac{2}{3}\).

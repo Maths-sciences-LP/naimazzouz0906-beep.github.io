@@ -64,7 +64,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 1</span>
 <p>La fonction \(f\) définie par \(f(x) = \frac{x^2-4}{x-2}\) pour \(x\neq 2\) et \(f(2) = 3\) est-elle continue en 2 ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Pour \(x\neq 2\) : \(f(x)=\frac{(x-2)(x+2)}{x-2}=x+2\). Donc \(\lim_{x\to 2}f(x)=4\).</p>
 <p>Or \(f(2)=3\neq 4\). La fonction n'est <strong>pas continue</strong> en 2.</p>
@@ -158,7 +158,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 2</span>
 <p>Montrer que l'équation \(e^x = 3-x\) admet au moins une solution dans \([0;2]\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>On pose \(g(x) = e^x - 3 + x\). \(g\) est continue sur \([0;2]\) (somme de fonctions continues).</p>
 <p>\(g(0) = 1-3+0 = -2 < 0\). \(g(2) = e^2-3+2 = e^2-1 \approx 6{,}39 > 0\).</p>
@@ -188,7 +188,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 3</span>
 <p>Soit \(f(x) = x^3 + x - 1\). Montrer que l'équation \(f(x) = 0\) admet une unique solution \(\alpha\) dans \(\mathbb{R}\), et encadrer \(\alpha\) à \(0{,}1\) près.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>\(f'(x) = 3x^2+1 > 0\) pour tout \(x\). Donc \(f\) est <strong>strictement croissante</strong> sur \(\mathbb{R}\).</p>
 <p>\(\lim_{-\infty}f = -\infty\), \(\lim_{+\infty}f = +\infty\). Par le TVI (version bijection), l'équation \(f(x)=0\) admet une <strong>unique solution</strong> \(\alpha \in \mathbb{R}\).</p>
@@ -201,7 +201,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 4</span>
 <p>Montrer que l'équation \(\ln x = 2-x\) admet exactement une solution sur \(]0;+\infty[\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>On pose \(g(x) = \ln x - 2 + x\). \(g\) est continue sur \(]0;+\infty[\).</p>
 <p>\(g'(x) = \frac{1}{x}+1 > 0\) pour tout \(x>0\). \(g\) est <strong>strictement croissante</strong>.</p>
@@ -229,7 +229,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 5</span>
 <p>Appliquer 4 étapes de dichotomie pour approcher la solution de \(x^3+x-1=0\) dans \([0;1]\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Étape 1 : \(c=0{,}5\), \(f(0{,}5)=0{,}125+0{,}5-1=-0{,}375<0\). \(\alpha \in [0{,}5;1]\).</p>
 <p>Étape 2 : \(c=0{,}75\), \(f(0{,}75)=0{,}422+0{,}75-1=0{,}172>0\). \(\alpha \in [0{,}5;0{,}75]\).</p>
@@ -405,7 +405,7 @@
   <li>Montrer que \((u_n)\) est croissante.</li>
   <li>Conclure.</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\(u_1 = \sqrt{2}\approx 1{,}41\), \(u_2 = \sqrt{2+\sqrt{2}}\approx 1{,}85\), \(u_3\approx 1{,}96\).</li>
@@ -425,7 +425,7 @@
   <li>Montrer que l'équation \(f(x) = 0{,}4\) admet exactement deux solutions dans \([0;2]\).</li>
   <li>Encadrer chaque solution à \(0{,}5\) près.</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\(g(x) = f(x)-0{,}4 = x-\frac{x^3}{6}-0{,}4\). \(g'(x)=1-\frac{x^2}{2}\). \(g'=0\) pour \(x=\sqrt{2}\approx 1{,}41\).

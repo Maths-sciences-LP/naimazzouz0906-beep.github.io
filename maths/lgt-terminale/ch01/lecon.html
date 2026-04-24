@@ -70,7 +70,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 1</span>
 <p>Dans une classe de 35 élèves, 20 font de l'anglais, 18 font de l'espagnol et 8 font les deux langues. Combien d'élèves font de l'anglais ou de l'espagnol ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>On note \(A\) l'ensemble des élèves faisant de l'anglais et \(B\) celui de l'espagnol.</p>
 <p>\(\text{card}(A \cup B) = \text{card}(A) + \text{card}(B) - \text{card}(A \cap B) = 20 + 18 - 8 = 30\)</p>
@@ -165,7 +165,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 2</span>
 <p>On lance un dé à 6 faces trois fois de suite. Combien de résultats différents peut-on obtenir ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Un résultat est un triplet \((d_1, d_2, d_3)\) avec \(d_i \in \{1, 2, 3, 4, 5, 6\}\). C'est un 3-uplet d'un ensemble à 6 éléments.</p>
 <p>Nombre de résultats : \(6^3 = 216\).</p>
@@ -175,7 +175,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 3</span>
 <p>On considère un alphabet de 26 lettres. Combien de mots de 3 lettres peut-on former (les lettres peuvent être répétées) ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Chaque mot est un 3-uplet de l'alphabet à 26 lettres.</p>
 <p>Nombre de mots : \(26^3 = 17\,576\).</p>
@@ -254,7 +254,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 4</span>
 <p>Un restaurant propose 5 garnitures optionnelles pour un plat. Un client peut choisir n'importe quelle combinaison de garnitures (y compris aucune). Combien de choix possibles a-t-il ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Chaque choix correspond à une partie de l'ensemble des 5 garnitures.</p>
 <p>Nombre de choix : \(2^5 = 32\).</p>
@@ -333,7 +333,7 @@
   <li>Combien de podiums différents sont possibles ?</li>
   <li>Combien de résultats complets (classement de tous les concurrents) sont possibles ?</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>Un podium est un 3-uplet d'éléments distincts parmi 10 : \(10 \times 9 \times 8 = 720\) podiums.</li>
@@ -345,7 +345,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 6</span>
 <p>Combien d'anagrammes (mots formés en réarrangeant les lettres) peut-on former avec le mot MATHS ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Le mot MATHS contient 5 lettres toutes distinctes. Le nombre d'anagrammes est le nombre de permutations de 5 lettres :</p>
 <p>\(5! = 120\) anagrammes.</p>
@@ -410,7 +410,7 @@
   <li>\(\displaystyle\binom{9}{1}\)</li>
   <li>\(\displaystyle\binom{12}{5}\)</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\(\displaystyle\binom{6}{2} = \frac{6 \times 5}{2!} = \frac{30}{2} = 15\)</li>
@@ -459,7 +459,7 @@
   <li>Combien de comités différents peut-on former ?</li>
   <li>Si un candidat particulier (le président) doit obligatoirement faire partie du comité, combien de comités sont possibles ?</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\(\displaystyle\binom{9}{4} = \frac{9 \times 8 \times 7 \times 6}{4!} = \frac{3024}{24} = 126\) comités.</li>
@@ -526,7 +526,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 9</span>
 <p>Compléter la ligne \(n = 6\) du triangle de Pascal.</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>En utilisant la relation de Pascal avec la ligne \(n=5\) : \(1,\ 5,\ 10,\ 10,\ 5,\ 1\) :</p>
 <p>\(\binom{6}{0}=1,\quad \binom{6}{1}=1+5=6,\quad \binom{6}{2}=5+10=15,\quad \binom{6}{3}=10+10=20\)</p>
@@ -539,7 +539,7 @@
 <div class="exo">
 <span class="exo-num">Exercice 10</span>
 <p>Démontrer par dénombrement que \(\displaystyle\sum_{k=0}^{n} \binom{n}{k} = 2^n\).</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Soit \(E\) un ensemble à \(n\) éléments. On compte l'ensemble \(\mathcal{P}(E)\) de toutes les parties de \(E\) de deux façons :</p>
 <ul>
@@ -626,7 +626,7 @@
   <li>Combien d'équipes différentes peut-on former ?</li>
   <li>Si le gardien est imposé (il y a un seul gardien dans l'effectif), combien d'équipes peut-on former ?</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>On choisit 7 joueurs parmi 12, l'ordre ne compte pas : \(\displaystyle\binom{12}{7} = \binom{12}{5} = \frac{12 \times 11 \times 10 \times 9 \times 8}{120} = 792\).</li>
@@ -642,7 +642,7 @@
   <li>Combien de tirages ordonnés (le 1<sup>er</sup>, le 2<sup>e</sup>, le 3<sup>e</sup> tirage sont distingués) sont possibles ?</li>
   <li>Combien de tirages non ordonnés (on s'intéresse uniquement aux boules obtenues) sont possibles ?</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>Tirages ordonnés = arrangements de 3 parmi 10 : \(10 \times 9 \times 8 = 720\).</li>
@@ -658,7 +658,7 @@
   <li>Combien de grilles différentes existe-t-il ?</li>
   <li>Quelle est la probabilité de trouver les 5 bons numéros ?</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\(\displaystyle\binom{49}{5} = \frac{49 \times 48 \times 47 \times 46 \times 45}{120} = 1\,906\,884\) grilles.</li>
@@ -671,7 +671,7 @@
 <span class="exo-num">Exercice 14</span>
 <p>Une plaque d'immatriculation est composée de 2 lettres, 3 chiffres puis 2 lettres (format AA-123-BB). L'alphabet utilisé compte 26 lettres et les chiffres vont de 0 à 9. Les répétitions sont autorisées.</p>
 <p>Combien de plaques d'immatriculation différentes ce système permet-il ?</p>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <p>Par le principe multiplicatif :</p>
 <p>\(26^2 \times 10^3 \times 26^2 = 676 \times 1000 \times 676 = 456\,976\,000\)</p>
@@ -688,7 +688,7 @@
   <li>Combien de mains contiennent exactement 2 as ?</li>
   <li>Combien de mains sont composées de 5 cartes de la même couleur (« couleur ») ?</li>
 </ol>
-<button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
 <ol>
   <li>\(\displaystyle\binom{52}{5} = \frac{52 \times 51 \times 50 \times 49 \times 48}{120} = 2\,598\,960\) mains.</li>
