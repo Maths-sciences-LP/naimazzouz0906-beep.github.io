@@ -255,7 +255,7 @@
       <strong>Forces sur le panneau :</strong><br>
       • <em>Poids \(\vec{P}\)</em> : exercé par la Terre, vertical vers le bas, \(P = 12 \times 10 = 120 \text{ N}\).<br>
       • <em>Réaction de la table \(\vec{R}\)</em> : exercée par la table, verticale vers le haut.<br><br>
-      <strong>Equilibre :</strong> Le panneau est immobile. Les deux forces sont sur la même droite (verticale), de même valeur (120 N) et de sens opposés. Donc \(\vec{P} + \vec{R} = \vec{0}\) : le panneau est bien en équilibre.
+      <strong>Équilibre :</strong> Le panneau est immobile. Les deux forces sont sur la même droite (verticale), de même valeur (120 N) et de sens opposés. Donc \(\vec{P} + \vec{R} = \vec{0}\) : le panneau est bien en équilibre.
   </div>
 </div>
 
@@ -352,7 +352,7 @@
     <!-- Légende haut -->
     <rect x="10" y="4" width="260" height="28" fill="#f0fff4" rx="4" stroke="#2f855a" stroke-width="1"/>
     <text x="140" y="22" text-anchor="middle" font-size="11" font-family="Segoe UI,sans-serif" fill="#2f855a" font-weight="600">
-      Equilibre : P + R = 0 (même valeur, sens opposés)
+      Équilibre : P + R = 0 (même valeur, sens opposés)
     </text>
   </svg>
   <p style="font-size:.85em;color:#718096;margin-top:6px;">Bloc en équilibre : le poids \(\vec{P}\) (rouge, vers le bas) et la réaction \(\vec{R}\) (vert, vers le haut) ont la même valeur et des sens opposés.</p>
@@ -541,6 +541,14 @@
     <li>Sur un <strong>plan incliné</strong>, l’objet glisse si la composante du poids parallèle au plan dépasse la force de frottement maximale. Plus l’angle est grand, plus le risque de glissement est élevé.</li>
     <li>En atelier de menuiserie, toujours vérifier que les <strong>fixations et supports</strong> peuvent résister aux forces exercées. Pour les charges lourdes (&gt; 25 kg), utiliser un <strong>engin de levage</strong>.</li>
   </ol>
+</div>
+
+<!-- Simulations interactives -->
+<div class="retenir" style="border-color:var(--p);background:var(--p-bg)">
+  <h3>Simulation interactive</h3>
+  <ul style="list-style:none;padding:0;margin:0">
+    <li style="margin:.4em 0"><a href="../../../simulations/forces.html" target="_blank" style="color:var(--p);font-weight:600;text-decoration:underline">Forces et équilibre</a></li>
+  </ul>
 </div>
 
 </div>
@@ -775,7 +783,7 @@
     var fColor = isEquilibre ? '#d97706' : '#f87171';
     // Direction montant le long du plan
     var fDirX = -Math.cos(angleRad);
-    var fDirY = Math.sin(angleRad);
+    var fDirY = -Math.sin(angleRad);
     drawArrow(ctx, cubeCx, cubeCy, cubeCx + fDirX * fScale, cubeCy + fDirY * fScale, fColor, 'f\u20D7', 'above');
 
     // Texte statut
@@ -795,7 +803,7 @@
     if (isEquilibre) {
       label.innerHTML = 'Angle : <strong>' + angleDeg + '°</strong> — Statut : <strong style="color:#15803d">En équilibre</strong>';
     } else {
-      label.innerHTML = 'Angle : <strong>' + angleDeg + '°</strong> — Statut : <strong style="color:#c53030">L\'objet glisse !</strong> (angle limit : ~' + angleLimit.toFixed(1) + '°)';
+      label.innerHTML = 'Angle : <strong>' + angleDeg + '°</strong> — Statut : <strong style="color:#c53030">L\'objet glisse !</strong> (angle limite : ~' + angleLimit.toFixed(1) + '°)';
     }
   }
 
@@ -812,14 +820,6 @@
 </script>
 
 <script src="../../../nav.js"></script>
-
-<!-- Simulations interactives -->
-<div class="retenir" style="border-color:var(--p);background:var(--p-bg)">
-  <h3>Simulation interactive</h3>
-  <ul style="list-style:none;padding:0;margin:0">
-    <li style="margin:.4em 0"><a href="../../../simulations/forces.html" target="_blank" style="color:var(--p);font-weight:600;text-decoration:underline">Forces et équilibre</a></li>
-  </ul>
-</div>
 
 </body>
 </html>
