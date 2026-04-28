@@ -273,6 +273,11 @@ Simulations corrigées :
 
 **Fichiers concernés** : 73 simulations sur 78 (problème transversal). Seule `trigonometrie.html` (corrigée 2026-03-31) possède des `aria-label`. Les 11 nouvelles simulations 2026-04-28 sont également concernées.
 
+**Actions recommandées** :
+- Ajouter `aria-label` sur chaque `<canvas>` et `<svg>` (description du contenu visuel)
+- Associer les sliders à des `<label for="...">` ou `aria-labelledby`
+- Ajouter un texte alternatif `<desc>` dans les SVG
+
 ### 8. Nouvelles simulations 2026-04-28 partiellement intégrées (NOUVEAU)
 
 **Gravité : MOYENNE**
@@ -296,10 +301,55 @@ Simulations corrigées :
 1. Ajouter les 9 simulations manquantes (toutes sauf les 2 CTN) dans `simulations.html` avec catégorisation appropriée.
 2. Référencer les 7 orphelines depuis les pages `lecon.html` correspondantes au niveau/chapitre identifié.
 
-**Actions recommandées** :
-- Ajouter `aria-label` sur chaque `<canvas>` et `<svg>` (description du contenu visuel)
-- Associer les sliders à des `<label for="...">` ou `aria-labelledby`
-- Ajouter un texte alternatif `<desc>` dans les SVG
+---
+
+## Audit pédagogique des 11 nouvelles simulations (2026-04-28)
+
+**Méthode** : pour chaque simulation, évaluation sur 4 critères — (A) ancrage programme, (B) qualité didactique, (C) contexte professionnel, (D) verdict global. Aucun sigle de filière interdit (ICCER, ERA-MA, MAMA, TICCER) n'a été détecté dans les 11 fichiers ✓.
+
+### Synthèse par simulation
+
+| # | Simulation | Niveau visé | Ancrage | Didactique | Contexte pro | Note |
+|---|---|---|---|---|---|---|
+| 1 | `comparateur-vitrages.html` | 2nde Bac Pro Ch11 | ✓ Excellent (RE 2020, U, Φ) | ✓ Formules, ROI 20 ans, badge dynamique | ✓ Menuisier conseille client | **5/5** |
+| 2 | `ctn-etuve-regulation.html` | 2nde Bac Pro Ch10 | ✓ Excellent (Steinhart-Hart, R(T)) | ✓ Multi-feedback (LED, courbe, table) | ✓ Séchoir bois en atelier | **5/5** |
+| 3 | `eclairage-atelier.html` | 2nde Bac Pro | ✓ Excellent (NF EN 12464-1) | ✓ E = Φ/S, normes par zone, coût annuel | ✓ Installateur, dimensionnement | **5/5** |
+| 4 | `anisotropie-bois.html` | 1ère ICCER/ERA | ✓ Excellent (mouvements hygroscopiques) | ✓ Coefficients α réels, double vue | ✓ Menuisier choix débit dosse/quartier | **4.5/5** |
+| 5 | `dilatation-parquet.html` | 1ère ICCER/ERA | ✓ Excellent (ΔL = α L₀ ΔT, jeu 8 mm) | ✓ Alerte couleurs, gondolage visuel | ✓ Pose parquet saisonnière | **4.5/5** |
+| 6 | `escalier-blondel.html` | 2nde Bac Pro | ✓ Excellent (loi 2h+g, 600-660) | ✓ Validation multi-critères, dessin animé | ✓ Conception agencement | **4.5/5** |
+| 7 | `paroi-multicouche.html` | 2nde Bac Pro Ch11 | ✓ Excellent (R = e/λ, RE 2020) | ✓ 14 matériaux, 3 presets, graphe contributions | ✓ Conception cloison isolée | **4.5/5** |
+| 8 | `calepinage.html` | 2nde Bac Pro agencement | ✓ Bon (optimisation découpe) | ⚠ Manque formule explicite | ✓ Menuisier minimisation chutes | **4/5** |
+| 9 | `ctn-pt100-comparaison.html` | 2nde Bac Pro Ch10 | ✓ Excellent (linéarité, Steinhart) | ✓ Comparaison superposée, 5 questions | ⚠ Contexte implicite seulement | **4/5** |
+| 10 | `ccf-bac-rangement.html` | Tle Bac Pro CCF Maths | ✓ Excellent (V(x), V'(x), polynôme deg.3) | ✓ 3 affichages, contrainte V≥1500 | ❌ **Pas de contexte pro** | **3.5/5** |
+| 11 | `presse-hydraulique.html` | Bac Pro (mécanique fluides) | ⚠ Ancrage programme imprécis | ✓ Formules p, F₂/F₁, valeurs réalistes | ⚠ Manque relation volumique | **3.5/5** |
+
+**Note moyenne : 4.3/5** — très bon niveau pédagogique global.
+
+### Points forts transversaux
+
+1. **Formules et unités systématiquement explicitées** dans 10/11 simulations
+2. **Données numériques réalistes** (coefficients α du bois, λ matériaux, U vitrages, normes NF/RE 2020)
+3. **Contextes professionnels concrets** (menuiserie, agencement, atelier) — pas de sigle interdit
+4. **Feedback dynamique** : badges conformité, alertes couleur, observations contextuelles
+5. **Ancrage programme officiel solide** sauf pour `presse-hydraulique`
+
+### Points faibles à corriger
+
+1. **`ccf-bac-rangement.html`** : énoncé purement mathématique, pas de contexte LP visible. À enrichir avec scénario professionnel (« optimiser bac de rangement pour atelier menuiserie »).
+2. **`presse-hydraulique.html`** : ancrage Bac Pro à clarifier (quel chapitre exact ?), ajouter la relation volumique d₁²·Δh₁ = d₂²·Δh₂ et une 2e application.
+3. **`ctn-pt100-comparaison.html`** : ajouter un cas d'usage explicite menuiserie/agencement.
+4. **`calepinage.html`** : afficher la formule mathématique du nombre de pièces.
+5. **Transversal** : aucune simulation ne propose de bloc « Pour approfondir » avec lien vers la leçon, fiche métier ou normes officielles.
+
+### Conformité aux règles CLAUDE.md
+
+| Règle | Résultat |
+|---|---|
+| Pas de sigle ICCER/ERA-MA/MAMA dans le contenu | ✅ 11/11 conformes |
+| Métiers réels utilisés (menuisier, installateur thermique, etc.) | ✅ Conformes (sauf `ccf-bac-rangement` et `ctn-pt100` sans contexte explicite) |
+| Ancrage chapitre/programme officiel | ✅ 10/11 (sauf `presse-hydraulique`) |
+| Notion au programme du niveau visé | ✅ 11/11 |
+| Autonomie (pas de dépendance styles.css/nav.js) | ✅ 11/11 |
 
 ---
 
@@ -348,6 +398,7 @@ Simulations corrigées :
 - **2026-03-31** : Audit approfondi de `trigonometrie.html` (Maths Terminale Ch07) — 7 corrections : ajout `</head>` manquant (HTML invalide), correction arc d'angle pour α > 180°, correction bug marqueurs Chart.js (points invisibles car format `{x,y}` incompatible avec axe catégoriel), ajout aria-label sur canvas et `for` sur labels, extension affichage symbolique radians (17 angles remarquables au lieu de 5), surbrillance dynamique du tableau des angles remarquables, repositionnement labels sin/cos selon le quadrant.
 - **2026-04-05** : Audit complet des 70 simulations par chapitre. Métadonnées (niveau + chapitre) ajoutées dans 11 simulations : `atome-couches`, `atome`, `concentration`, `equations`, `melangeur`, `modeles-atome`, `ohm`, `refraction`, `signal-alternatif`, `traceur`, `attenuation-sonore`. Simulations orphelines liées depuis les leçons : `balance.html` → maths/seconde/ch05 ; `debit-fluide.html` → pc/terminale-iccer/ch06 ; `chaleur.html` → pc/premiere-iccer/ch04 + premiere-era/ch04 ; `gaz.html` + `boyle-mariotte.html` → pc/premiere-iccer/ch07 + premiere-era/ch07 ; `attenuation-sonore.html` → pc/terminale-era/ch08. Périmètre mis à jour : 70 simulations (vs 64 à la dernière mise à jour). (Maths Terminale Ch07) — 7 corrections : ajout `</head>` manquant (HTML invalide), correction arc d'angle pour α > 180°, correction bug marqueurs Chart.js (points invisibles car format `{x,y}` incompatible avec axe catégoriel), ajout aria-label sur canvas et `for` sur labels, extension affichage symbolique radians (17 angles remarquables au lieu de 5), surbrillance dynamique du tableau des angles remarquables, repositionnement labels sin/cos selon le quadrant.
 - **2026-04-28** : Audit des 11 nouvelles simulations ajoutées depuis le 2026-04-05 (`anisotropie-bois`, `calepinage`, `ccf-bac-rangement`, `comparateur-vitrages`, `ctn-etuve-regulation`, `ctn-pt100-comparaison`, `dilatation-parquet`, `eclairage-atelier`, `escalier-blondel`, `paroi-multicouche`, `presse-hydraulique`). Constats : 11/11 autonomes (pas de nav.js/styles.css), 11/11 responsives (`@media`), 0/11 avec `aria-label`. Référencement : 2 pleinement intégrées (CTN), 2 référencées en cours sans être listées (comparateur-vitrages, paroi-multicouche), 7 totalement orphelines. Périmètre mis à jour : 78 simulations (vs 70 au 2026-04-05).
+- **2026-04-28** : Audit pédagogique des 11 nouvelles simulations. Note moyenne 4.3/5. Aucun sigle de filière interdit (ICCER/ERA-MA/MAMA) détecté. 3 simulations à 5/5 (`comparateur-vitrages`, `ctn-etuve-regulation`, `eclairage-atelier`), 4 à 4.5/5 (`anisotropie-bois`, `dilatation-parquet`, `escalier-blondel`, `paroi-multicouche`), 2 à 4/5 (`calepinage`, `ctn-pt100-comparaison`), 2 à 3.5/5 (`ccf-bac-rangement` sans contexte pro, `presse-hydraulique` ancrage à clarifier).
 
 ---
 
@@ -360,6 +411,8 @@ Simulations corrigées :
 - [x] Vérifier `simulations.html` — les 70 simulations y sont déjà toutes listées (2026-04-05)
 - [ ] **Lier les 7 nouvelles simulations orphelines** (2026-04-28) à leurs leçons : `anisotropie-bois` (1ère ICCER/ERA menuiserie), `dilatation-parquet` (1ère ICCER/ERA menuiserie), `calepinage` (2nde Bac Pro agencement), `escalier-blondel` (2nde Bac Pro agencement), `eclairage-atelier` (2nde Bac Pro), `presse-hydraulique` (Bac Pro mécanique des fluides), `ccf-bac-rangement` (Tle Bac Pro CCF Maths)
 - [ ] **Ajouter les 9 nouvelles simulations dans `simulations.html`** : `anisotropie-bois`, `calepinage`, `ccf-bac-rangement`, `comparateur-vitrages`, `dilatation-parquet`, `eclairage-atelier`, `escalier-blondel`, `paroi-multicouche`, `presse-hydraulique`
+- [ ] **Enrichir `ccf-bac-rangement.html`** avec un contexte professionnel (LP, scénario menuiserie ou industrie)
+- [ ] **Clarifier l'ancrage programme de `presse-hydraulique.html`** et ajouter la relation volumique (déplacements pistons réciproques)
 
 ### Priorité moyenne
 - [x] Retirer `nav.js` des 26 simulations non conformes (2026-03-16)
@@ -372,6 +425,9 @@ Simulations corrigées :
 - [ ] Vérifier et migrer les simulations hors PC Seconde avec ancien template (liste initiale surévaluée — les 14 PC Seconde sont déjà modernes)
 - [x] Évaluer la pertinence de `melangeur.html` → rattachée à Ch14 PC Seconde (synthèse additive)
 - [ ] Généraliser le format quiz adaptatif (`entrainement.html`) à d'autres chapitres
+- [ ] Ajouter un cas d'usage menuiserie/agencement dans `ctn-pt100-comparaison.html`
+- [ ] Afficher la formule mathématique de découpe dans `calepinage.html`
+- [ ] Ajouter un bloc « Pour approfondir » (lien leçon + fiche métier + normes) dans les nouvelles simulations
 
 ---
 

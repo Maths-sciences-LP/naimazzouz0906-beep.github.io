@@ -1,7 +1,7 @@
 # Audit Pedagogique Global
 
 **Date** : 2026-03-16
-**Derniere mise a jour** : 2026-03-19 (verification detaillee Seconde)
+**Derniere mise a jour** : 2026-04-28 (audit pédagogique des 11 nouvelles simulations — voir `audit-simulations.md`)
 **Perimetre** : qualite des cours, clarte pedagogique, coherence inter-niveaux, progression 2nde-1ere-Tle, exemples, contextes professionnels
 **Methode** : lecture integrale ou partielle de 50+ fichiers lecon.html, analyses statistiques CSS, comparaison inter-sections
 **Rapports detailles** : `audit-pedagogique-maths.md`, `audit-pedagogique-pc.md`
