@@ -202,6 +202,40 @@ details[open] summary::before{content:'▾'}
 
       <div class="exo">
         <p class="exo-q"><span class="num">Q2.</span> Sur le graphique ci-dessous, une parabole coupe l'axe des abscisses en \(x=1\) et \(x=4\). Quelles sont les racines de la fonction ?</p>
+        <div style="text-align:center;margin:10px 0">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" width="240" height="180" style="max-width:100%;height:auto" font-family="sans-serif" font-size="11">
+<!-- grid -->
+<g stroke="#e2e8f0" stroke-width="0.5">
+<line x1="30" y1="10" x2="30" y2="160"/><line x1="70" y1="10" x2="70" y2="160"/><line x1="110" y1="10" x2="110" y2="160"/><line x1="150" y1="10" x2="150" y2="160"/><line x1="190" y1="10" x2="190" y2="160"/><line x1="230" y1="10" x2="230" y2="160"/>
+<line x1="10" y1="30" x2="230" y2="30"/><line x1="10" y1="60" x2="230" y2="60"/><line x1="10" y1="90" x2="230" y2="90"/><line x1="10" y1="120" x2="230" y2="120"/><line x1="10" y1="150" x2="230" y2="150"/>
+</g>
+<!-- axes -->
+<line x1="10" y1="120" x2="230" y2="120" stroke="#2d3748" stroke-width="1.5"/>
+<line x1="30" y1="10" x2="30" y2="160" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="230,120 224,117 224,123" fill="#2d3748"/>
+<polygon points="30,10 27,16 33,16" fill="#2d3748"/>
+<!-- axis labels -->
+<text x="225" y="135" fill="#2d3748" font-size="10">x</text>
+<text x="15" y="18" fill="#2d3748" font-size="10">y</text>
+<!-- tick labels -->
+<text x="68" y="135" text-anchor="middle" fill="#2d3748" font-size="9">1</text>
+<text x="110" y="135" text-anchor="middle" fill="#2d3748" font-size="9">2</text>
+<text x="150" y="135" text-anchor="middle" fill="#2d3748" font-size="9">3</text>
+<text x="190" y="135" text-anchor="middle" fill="#2d3748" font-size="9">4</text>
+<!-- parabola y = (x-1)(x-4) scaled: x: 30+40*x, y: 120-10*y -->
+<path d="M50,100 Q70,120 70,120 Q90,132 110,130 Q110,130 130,120 Q150,100 170,68 Q180,48 190,120 " fill="none" stroke="#7c3aed" stroke-width="0"/>
+<!-- accurate parabola: y=(x-1)(x-4)=x^2-5x+4, vertex at (2.5,-2.25) -->
+<!-- x=0:y=4, x=1:y=0, x=2:y=-2, x=2.5:y=-2.25, x=3:y=-2, x=4:y=0, x=5:y=4 -->
+<!-- mapped: px_x=30+40*x, px_y=120-13.3*y -->
+<path d="M30,66.8 C50,40 55,110 70,120 Q90,149.7 110,146.6 Q130,149.7 150,120 C165,110 170,40 190,66.8" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round"/>
+<!-- roots as red dots -->
+<circle cx="70" cy="120" r="4" fill="#dc2626"/>
+<circle cx="190" cy="120" r="4" fill="#dc2626"/>
+<!-- vertex dot -->
+<circle cx="130" cy="150" r="3" fill="#7c3aed"/>
+<text x="130" y="165" text-anchor="middle" fill="#7c3aed" font-size="9">S(2,5)</text>
+</svg>
+        </div>
         <div class="qcm-opts">
           <button class="qo" onclick="qcm(this,true,'Les racines sont les abscisses des points d\'intersection avec l\'axe des abscisses : x = 1 et x = 4.')">A) \(x=1\) et \(x=4\)</button>
           <button class="qo" onclick="qcm(this,false,'')">B) \(x=0\) et \(x=5\)</button>
@@ -356,6 +390,46 @@ details[open] summary::before{content:'▾'}
 
       <div class="exo">
         <p class="exo-q"><span class="num">Q6.</span> La trajectoire d'un ballon est mod&eacute;lis&eacute;e par \(h(t)=-5t^2+20t\). La hauteur maximale est atteinte &agrave; \(t=\ldots\)</p>
+        <div style="text-align:center;margin:10px 0">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" width="240" height="160" style="max-width:100%;height:auto" font-family="sans-serif" font-size="11">
+<!-- grid -->
+<g stroke="#e2e8f0" stroke-width="0.5">
+<line x1="40" y1="10" x2="40" y2="140"/><line x1="85" y1="10" x2="85" y2="140"/><line x1="130" y1="10" x2="130" y2="140"/><line x1="175" y1="10" x2="175" y2="140"/><line x1="220" y1="10" x2="220" y2="140"/>
+<line x1="25" y1="140" x2="230" y2="140"/><line x1="25" y1="110" x2="230" y2="110"/><line x1="25" y1="80" x2="230" y2="80"/><line x1="25" y1="50" x2="230" y2="50"/><line x1="25" y1="20" x2="230" y2="20"/>
+</g>
+<!-- axes -->
+<line x1="25" y1="140" x2="230" y2="140" stroke="#2d3748" stroke-width="1.5"/>
+<line x1="40" y1="10" x2="40" y2="145" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="230,140 224,137 224,143" fill="#2d3748"/>
+<polygon points="40,10 37,16 43,16" fill="#2d3748"/>
+<!-- axis labels -->
+<text x="222" y="155" fill="#2d3748" font-size="10">t (s)</text>
+<text x="8" y="16" fill="#2d3748" font-size="10">h (m)</text>
+<!-- tick labels -->
+<text x="40" y="153" text-anchor="middle" fill="#2d3748" font-size="9">0</text>
+<text x="85" y="153" text-anchor="middle" fill="#2d3748" font-size="9">1</text>
+<text x="130" y="153" text-anchor="middle" fill="#2d3748" font-size="9">2</text>
+<text x="175" y="153" text-anchor="middle" fill="#2d3748" font-size="9">3</text>
+<text x="220" y="153" text-anchor="middle" fill="#2d3748" font-size="9">4</text>
+<!-- y ticks -->
+<text x="33" y="113" text-anchor="end" fill="#2d3748" font-size="9">5</text>
+<text x="33" y="83" text-anchor="end" fill="#2d3748" font-size="9">10</text>
+<text x="33" y="53" text-anchor="end" fill="#2d3748" font-size="9">15</text>
+<text x="33" y="23" text-anchor="end" fill="#2d3748" font-size="9">20</text>
+<!-- parabola h(t)=-5t^2+20t: t=0:h=0, t=1:h=15, t=2:h=20, t=3:h=15, t=4:h=0 -->
+<!-- mapped: px_t=40+45*t, px_h=140-6*h -->
+<path d="M40,140 C60,100 85,50 85,50 C95,30 115,20 130,20 C145,20 165,30 175,50 C175,50 200,100 220,140" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round"/>
+<!-- key points -->
+<circle cx="40" cy="140" r="4" fill="#dc2626"/>
+<circle cx="220" cy="140" r="4" fill="#dc2626"/>
+<circle cx="130" cy="20" r="4" fill="#dc2626"/>
+<!-- vertex label -->
+<text x="138" y="16" fill="#7c3aed" font-size="9">S(2 ; 20)</text>
+<!-- dashed lines to vertex -->
+<line x1="130" y1="20" x2="130" y2="140" stroke="#7c3aed" stroke-width="0.8" stroke-dasharray="4,3"/>
+<line x1="40" y1="20" x2="130" y2="20" stroke="#7c3aed" stroke-width="0.8" stroke-dasharray="4,3"/>
+</svg>
+        </div>
         <div class="qcm-opts">
           <button class="qo" onclick="qcm(this,false,'')">A) \(t=1\) s</button>
           <button class="qo" onclick="qcm(this,true,'t_S = &minus;b / (2a) = &minus;20 / (2 &times; (&minus;5)) = &minus;20 / (&minus;10) = 2 s.')">B) \(t=2\) s</button>
