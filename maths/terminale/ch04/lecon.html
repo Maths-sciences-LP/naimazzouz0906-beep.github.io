@@ -544,7 +544,7 @@ details p,details li{margin:5px 0;color:#4a5568}
     <p style="margin:0 0 10px 0;font-weight:600;">Choisir un exemple prédéfini :</p>
     <button onclick="predef(1)">Exemple 1 : x&sup3;−3x&sup2;−9x+2</button>
     <button onclick="predef(2)">Exemple 2 : −x&sup3;+3x+1</button>
-    <button onclick="predef(3)">Exemple 3 : Volume boîte menuiserie</button>
+    <button onclick="predef(3)">Exemple 3 : 4x³−14x²+12x (boîte 4×3 dm)</button>
     <button onclick="predef(4)">Exemple 4 : Énergie — chauffage</button>
 
     <div style="margin-top:14px;background:#fff;border-radius:8px;padding:14px;text-align:left;border:1px solid #e2e8f0">
@@ -634,14 +634,14 @@ details p,details li{margin:5px 0;color:#4a5568}
   <p><strong>Étape 1 — Balayage au pas 0,5 sur \([0\,;\,2]\) :</strong></p>
   <table style="font-size:.88em">
     <tr><th>\(x\)</th><td>0,0</td><td>0,5</td><td>1,0</td><td>1,5</td><td>2,0</td></tr>
-    <tr><th>\(f(x)\)</th><td>2</td><td>−2,6</td><td>−9</td><td>−16,1</td><td>−20</td></tr>
+    <tr><th>\(f(x)\)</th><td>2</td><td>−3,1</td><td>−9</td><td>−14,9</td><td>−20</td></tr>
   </table>
-  <p>On voit que \(f(0{,}5) \approx -2{,}6 > -10\) et \(f(1{,}0) = -9 > -10\) et \(f(1{,}5) \approx -16{,}1 < -10\).<br>
+  <p>On voit que \(f(0{,}5) \approx -3{,}1 > -10\) et \(f(1{,}0) = -9 > -10\) et \(f(1{,}5) \approx -14{,}9 < -10\).<br>
   La solution est donc dans \([1{,}0\,;\,1{,}5]\).</p>
   <p><strong>Étape 2 — Balayage au pas 0,1 sur \([1{,}0\,;\,1{,}5]\) :</strong></p>
   <table style="font-size:.88em">
     <tr><th>\(x\)</th><td>1,0</td><td>1,1</td><td>1,2</td><td>1,3</td><td>1,4</td><td>1,5</td></tr>
-    <tr><th>\(f(x)\)</th><td>−9</td><td>−9,8</td><td>−10,6</td><td>−11,4</td><td>−12,3</td><td>−13,1</td></tr>
+    <tr><th>\(f(x)\)</th><td>−9</td><td>−10,2</td><td>−11,4</td><td>−12,6</td><td>−13,7</td><td>−14,9</td></tr>
   </table>
   <p>→ Solution approchée : <strong>\(x \approx 1{,}1\)</strong> (au dixième).</p>
 </div>
@@ -650,7 +650,7 @@ details p,details li{margin:5px 0;color:#4a5568}
   <span class="label label-meth">Méthode — Avec la calculatrice TI ou Casio</span>
   <ol style="margin:8px 0 0;padding-left:22px">
     <li>Entrer \(Y_1 = f(x)\) et \(Y_2 = c\) (valeur constante).</li>
-    <li>Afficher le graphique et utiliser la fonction <strong>Intersection</strong> (<kbd>Calc</kbd> → <kbd>Intersect</kbd> ou <kbd>Gû👁</kbd>).</li>
+    <li>Afficher le graphique et utiliser la fonction <strong>Intersection</strong> (<kbd>Calc</kbd> → <kbd>Intersect</kbd> ou <kbd>G-Solv</kbd>).</li>
     <li>La calculatrice donne directement la valeur approchée.</li>
   </ol>
 </div>
@@ -789,18 +789,18 @@ details p,details li{margin:5px 0;color:#4a5568}
       <th>\(C(t)\) (MWh)</th>
       <td class="tv-val">30</td>
       <td><span class="tv-arrow-down">↘</span></td>
-      <td class="tv-val"><strong>10</strong><br><em style="font-size:.8em;font-weight:400">(minimum)</em></td>
+      <td class="tv-val"><strong>14</strong><br><em style="font-size:.8em;font-weight:400">(minimum local)</em></td>
       <td><span class="tv-arrow-up">↗</span></td>
-      <td class="tv-val"><strong>42</strong><br><em style="font-size:.8em;font-weight:400">(maximum)</em></td>
+      <td class="tv-val"><strong>30</strong><br><em style="font-size:.8em;font-weight:400">(maximum local)</em></td>
       <td><span class="tv-arrow-down">↘</span></td>
-      <td class="tv-val">22</td>
+      <td class="tv-val">14</td>
     </tr>
   </table>
 
   <div class="retenir">
     <strong>Interprétation :</strong>
-    La consommation est minimale en <strong>mars (\(t=2\))</strong> avec 10 MWh,
-    et maximale en <strong>juillet (\(t=6\))</strong> avec 42 MWh.
+    La consommation atteint un <strong>minimum local en mars</strong> (\(t=2\)) avec 14 MWh,
+    et un <strong>maximum local en juillet</strong> (\(t=6\)) avec 30 MWh.
     La courbe présente une forme caractéristique d'un modèle saisonnier d'énergie.
   </div>
 
@@ -845,7 +845,7 @@ details p,details li{margin:5px 0;color:#4a5568}
       <td><span class="tv-arrow-up">↗</span></td>
       <td class="tv-val"><strong>32</strong><br><em style="font-size:.8em;font-weight:400">(maximum)</em></td>
       <td><span class="tv-arrow-down">↘</span></td>
-      <td class="tv-val">14</td>
+      <td class="tv-val">0</td>
     </tr>
   </table>
 
