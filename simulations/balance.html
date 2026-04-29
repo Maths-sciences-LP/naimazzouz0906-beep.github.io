@@ -12,9 +12,16 @@
   --n-bg:#fef3c7; --n-col:#92400e;
 }
 body { font-family:'Segoe UI',system-ui,sans-serif; background:#f8fafc; color:var(--t); line-height:1.7; margin:0; padding:20px; }
-.c  { max-width:860px; margin:auto; background:#fff; padding:35px; border-radius:12px; border:1px solid #e2e8f0; box-shadow:0 2px 8px rgba(0,0,0,.06); }
+.c  { max-width:860px; margin:auto; background:#fff; padding:0 0 30px; border-radius:12px; border:1px solid #e2e8f0; box-shadow:0 2px 8px rgba(0,0,0,.06); overflow:hidden; }
+.body-wrap { padding:25px 30px; }
 
-header { text-align:center; border-bottom:3px solid var(--p); margin-bottom:22px; padding-bottom:14px; }
+header { background:linear-gradient(135deg, var(--p), #003d80); color:#fff; padding:25px 25px 22px; text-align:center; position:relative; }
+header h1 { color:#fff; margin:0 0 4px; font-size:1.5em; }
+header .sous-titre { color:rgba(255,255,255,0.92); margin:0; font-size:0.95em; }
+.btn-back { position:absolute; left:15px; top:15px; background:rgba(255,255,255,0.2); color:#fff; text-decoration:none; padding:5px 12px; border-radius:5px; font-size:0.85em; transition:background 0.2s; }
+.btn-back:hover { background:rgba(255,255,255,0.35); }
+.intro-box { background:#dbeafe; border-left:4px solid var(--p); padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:18px; font-size:.95em; line-height:1.5; }
+.intro-box strong { color:#0a4f9c; }
 h1 { margin:0 0 4px; color:var(--p); font-size:1.55em; }
 .sous-titre { color:#718096; font-size:.9em; margin:0; }
 
@@ -86,16 +93,21 @@ button.ctrl-new:hover { background:#b45309; }
 </style>
 <body>
 <div class="c">
-<a href="../maths/seconde/ch05/lecon.html" class="nb">← Retour au cours – Ch05</a>
 
 <header>
+  <a href="../simulations.html" class="btn-back">← Retour</a>
   <h1>⚖️ La balance des équations</h1>
-  <p class="sous-titre">Simulation interactive – Résolution du premier degré – 2nde Bac Pro MAMA</p>
+  <p class="sous-titre">2nde Bac Pro · Résolution d'équations du premier degré</p>
 </header>
 
+<div class="body-wrap">
+
+<div class="intro-box">
+  <strong>À explorer :</strong> une équation, c'est comme une balance en équilibre. Pour la résoudre, applique la <em>même opération aux deux côtés</em> (ajouter, soustraire, multiplier, diviser). La balance reste en équilibre tant que tu fais la même chose des deux côtés. Le but : isoler \(x\) sur l'un des deux plateaux.
+</div>
+
 <div class="objectifs">
-  <strong>Objectif :</strong> Une équation, c'est comme une balance — les deux membres sont toujours en équilibre.
-  Pour la résoudre, toute opération doit être appliquée <em>aux deux côtés à la fois</em>.
+  <strong>Comment ça fonctionne :</strong>
   <ul>
     <li>Les boutons <strong style="color:var(--p)">bleus</strong> te suggèrent la bonne étape à faire</li>
     <li>Les boutons <strong>gris</strong> te permettent d'explorer librement</li>
@@ -159,7 +171,8 @@ button.ctrl-new:hover { background:#b45309; }
   <a href="../maths/seconde/ch05/lecon.html" class="nav-btn">← Cours Ch05</a>
   <a href="../maths/seconde/ch05/exercices.html" class="nav-btn">Exercices Ch05 →</a>
 </div>
-</div><!-- fin .c -->
+</div><!-- /.body-wrap -->
+</div><!-- /.c -->
 
 <script>
 /* ============================================================

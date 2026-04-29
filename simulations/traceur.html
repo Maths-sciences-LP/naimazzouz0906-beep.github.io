@@ -5,27 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulation - Fonction du Second Degré</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; text-align: center; background-color: #f4f4f9; margin: 0; padding: 20px; }
-        .sim-container { max-width: 500px; margin: 20px auto; background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h2 { color: #0969da; margin-top: 0; }
-        canvas { background: #fff; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 20px; width: 100%; max-width: 400px; height: auto;}
-        
-        .control-group { margin-bottom: 15px; display: flex; align-items: center; justify-content: center; }
-        label { width: 40px; font-weight: bold; color: #333; font-size: 1.2em;}
-        input[type=range] { width: 200px; margin: 0 15px; accent-color: #0969da;}
-        .val-display { font-family: monospace; font-size: 1.2em; width: 40px; text-align: left; color: #0969da; font-weight: bold;}
-        
-        .equation { font-size: 1.5em; color: #333; margin: 15px 0; font-weight: bold; background: #e1effe; padding: 10px; border-radius: 8px;}
-        
-        .btn-back { position: absolute; left: 15px; top: 15px; background: rgba(255,255,255,0.2); color: white; text-decoration: none; padding: 5px 12px; border-radius: 5px; font-size: 0.85em; }
-        .btn-back:hover { color: #fff; background: rgba(255,255,255,0.35); }
+        *{box-sizing:border-box;margin:0;padding:0}
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: #f4f4f9; color:#333; margin: 0; padding: 20px; line-height:1.55; }
+        header { max-width:540px; margin:0 auto 18px; background: linear-gradient(135deg, #1976d2, #0a4f9c); color: #fff; padding: 25px 25px 22px; border-radius: 10px; text-align: center; position: relative; }
+        header h1 { color: #fff; font-size: 1.4em; margin: 0 0 4px; }
+        header p { opacity: 0.92; font-size: 0.92em; margin: 0; }
+        .btn-back { position: absolute; left: 15px; top: 15px; background: rgba(255,255,255,0.2); color: #fff; text-decoration: none; padding: 5px 12px; border-radius: 5px; font-size: 0.85em; transition: background 0.2s; }
+        .btn-back:hover { background: rgba(255,255,255,0.35); }
+        .sim-container { max-width: 540px; margin: 0 auto; background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); text-align: center; }
+        .intro { background: #dbeafe; border-left: 4px solid #1976d2; padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 0.92em; margin-bottom: 16px; line-height: 1.5; text-align: left; }
+        .intro strong { color: #0a4f9c; }
+        canvas { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 18px; width: 100%; max-width: 400px; height: auto; }
+        .control-group { margin-bottom: 14px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        label { width: 36px; font-weight: bold; color: #0a4f9c; font-size: 1.1em; }
+        input[type=range] { flex: 1; min-width: 0; max-width: 260px; accent-color: #1976d2; }
+        .val-display { font-family: monospace; font-size: 1em; width: 40px; text-align: center; color: #fff; background: #1976d2; padding: 3px 8px; border-radius: 5px; font-weight: bold; }
+        .equation { font-size: 1.3em; color: #0a4f9c; margin: 12px 0 16px; font-weight: bold; background: #dbeafe; padding: 12px; border-radius: 8px; border: 1.5px solid #93c5fd; }
+        .presets { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 14px; }
+        .preset-btn { background: #fff; color: #1976d2; border: 1.5px solid #93c5fd; padding: 5px 12px; border-radius: 18px; cursor: pointer; font-size: 0.83em; font-weight: 600; transition: all 0.15s; }
+        .preset-btn:hover { background: #dbeafe; transform: translateY(-1px); }
     </style>
 <body>
+    <header>
+        <a href="../simulations.html" class="btn-back">← Retour</a>
+        <h1>📉 Traceur de parabole</h1>
+        <p>2nde / 1ère Bac Pro · y = ax² + bx + c</p>
+    </header>
+
     <div class="sim-container">
-        <h2>Traceur de Parabole</h2>
-        <p style="margin:0 0 8px 0;opacity:0.85;font-size:0.9em;color:#64748b;">2nde / 1&egrave;re Bac Pro &middot; Ch05-10 &middot; Traceur de fonctions</p>
-        <p>Modifiez les coefficients pour observer l'évolution de la courbe.</p>
-        
+        <div class="intro">
+            <strong>À explorer :</strong> manipule les trois coefficients \( a, b, c \) et observe leur effet sur la parabole. <em>a</em> contrôle l'orientation et l'ouverture (a&gt;0 ouvert vers le haut, a&lt;0 vers le bas). <em>b</em> décale horizontalement. <em>c</em> est l'ordonnée à l'origine. Le sommet est en \( x_S = -b/(2a) \).
+        </div>
+
         <div class="equation" id="equation-display">f(x) = 1x² + 0x + 0</div>
 
         <canvas aria-label="Tracé d'une fonction du second degré avec sommet et axe de symétrie" id="graphCanvas" width="400" height="400"></canvas>
@@ -46,7 +57,13 @@
             <span id="val-c" class="val-display">0</span>
         </div>
 
-        <a href="../simulations.html" class="btn-back">← Retour à la galerie</a>
+        <div class="presets">
+            <button class="preset-btn" onclick="setABC(1,0,0)">x²</button>
+            <button class="preset-btn" onclick="setABC(-1,0,0)">−x²</button>
+            <button class="preset-btn" onclick="setABC(1,-2,1)">x²−2x+1 = (x−1)²</button>
+            <button class="preset-btn" onclick="setABC(0.5,2,3)">parabole décalée</button>
+            <button class="preset-btn" onclick="setABC(-2,4,3)">tir parabolique</button>
+        </div>
     </div>
 
     <script>
@@ -111,6 +128,13 @@
                 else ctx.lineTo(px, py);
             }
             ctx.stroke();
+        }
+
+        function setABC(a, b, c) {
+            document.getElementById('param-a').value = a;
+            document.getElementById('param-b').value = b;
+            document.getElementById('param-c').value = c;
+            updateGraph();
         }
 
         // Lance le premier dessin au chargement de la page
