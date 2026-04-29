@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Probabilités conditionnelles — Arbre pondéré</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f4f9;color:#333;padding:20px;min-height:100vh}
+.container{max-width:920px;margin:0 auto}
+header{background:linear-gradient(135deg,#0969da,#0a4f9c);color:#fff;padding:25px 25px 22px;border-radius:10px 10px 0 0;position:relative;text-align:center}
+header h1{font-size:1.5em;margin-bottom:4px}
+header p{opacity:.92;font-size:.95em}
+.btn-back{position:absolute;left:15px;top:15px;background:rgba(255,255,255,.2);color:#fff;text-decoration:none;padding:5px 12px;border-radius:5px;font-size:.85em;transition:background .2s}
+.btn-back:hover{background:rgba(255,255,255,.35)}
+.card{background:#fff;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:25px;margin-bottom:20px}
+.card.standalone{border-radius:10px;margin-top:20px}
+.intro{background:#dbeafe;border-left:4px solid #0969da;padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:20px;font-size:.95em;line-height:1.55}
+.intro strong{color:#0a4f9c}
+.scenarios{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.scenario-btn{background:#fff;border:1.5px solid #93c5fd;color:#0969da;padding:8px 14px;border-radius:20px;cursor:pointer;font-size:.88em;font-weight:600;transition:all .15s}
+.scenario-btn:hover{background:#dbeafe}
+.scenario-btn.active{background:#0969da;color:#fff;border-color:#0a4f9c}
+.scenario-context{background:#f5f3ff;border-left:4px solid #7c3aed;padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:18px;font-size:.95em;color:#4c1d95}
+.scenario-context strong{color:#6d28d9}
+.controls{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px;margin-bottom:18px}
+.control-row{display:flex;align-items:center;gap:10px;margin:8px 0;flex-wrap:wrap}
+.control-row label{font-weight:600;min-width:160px;font-size:.93em}
+.control-row input[type=range]{flex:1;min-width:140px;accent-color:#0969da}
+.control-row .val{min-width:60px;text-align:center;font-weight:700;color:#0969da;font-family:monospace;background:#dbeafe;padding:3px 10px;border-radius:4px}
+.tree-container{overflow-x:auto;padding:10px 0}
+svg.tree{display:block;margin:0 auto;min-width:600px}
+.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:18px}
+.result-box{background:#dbeafe;border:2px solid #93c5fd;border-radius:8px;padding:12px}
+.result-box .lbl{font-size:.8em;color:#0a4f9c;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}
+.result-box .val{font-size:1.1em;font-weight:700;color:#0a4f9c;font-family:monospace}
+.result-box.highlight{background:#fef3c7;border-color:#fcd34d}
+.result-box.highlight .lbl,.result-box.highlight .val{color:#78350f}
+.tip{background:#dcfce7;border-left:4px solid #16a34a;padding:12px 16px;border-radius:0 8px 8px 0;margin-top:14px;font-size:.92em}
+.tip strong{color:#15803d}
+.formula-list{background:#eef2ff;border:1px solid #c7d2fe;border-radius:8px;padding:14px 18px;margin-top:14px;font-size:.92em;line-height:1.7}
+.formula-list strong{color:#3730a3}
+@media(max-width:600px){
+  .container{padding:0}
+  header h1{font-size:1.25em}
+  .control-row{flex-direction:column;align-items:flex-start;gap:4px}
+  .control-row label{min-width:auto}
+  .control-row input[type=range]{width:100%}
+  svg.tree{min-width:500px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <a href="../simulations.html" class="btn-back">← Retour</a>
+  <h1>Probabilités conditionnelles — Arbre pondéré</h1>
+  <p>1ère / Terminale / BTS · Probabilités</p>
+</header>
+
+<div class="card">
+  <div class="intro">
+    <strong>À explorer :</strong> manipule un arbre pondéré à 2 niveaux. Le 1er niveau représente une 1ère expérience aléatoire (événements A, B), le 2ème niveau un test conditionnel sachant le résultat de la 1ère. La simulation calcule en temps réel les probabilités intersection et utilise la formule des probabilités totales.
+  </div>
+
+  <div class="scenarios">
+    <button class="scenario-btn active" onclick="loadScenario('test')">🧪 Test médical</button>
+    <button class="scenario-btn" onclick="loadScenario('qualite')">🏭 Contrôle qualité</button>
+    <button class="scenario-btn" onclick="loadScenario('urne')">🎯 Urnes de boules</button>
+    <button class="scenario-btn" onclick="loadScenario('custom')">⚙️ Personnalisé</button>
+  </div>
+
+  <div class="scenario-context" id="ctx"></div>
+
+  <div class="controls">
+    <div class="control-row">
+      <label id="lblA">P(A)</label>
+      <input type="range" id="pA" min="0.01" max="0.99" value="0.05" step="0.01" oninput="update()">
+      <span class="val" id="vA">0,05</span>
+    </div>
+    <div class="control-row">
+      <label id="lblBA">P(T | A)</label>
+      <input type="range" id="pBA" min="0.01" max="0.99" value="0.95" step="0.01" oninput="update()">
+      <span class="val" id="vBA">0,95</span>
+    </div>
+    <div class="control-row">
+      <label id="lblBnA">P(T | non A)</label>
+      <input type="range" id="pBnA" min="0.01" max="0.99" value="0.05" step="0.01" oninput="update()">
+      <span class="val" id="vBnA">0,05</span>
+    </div>
+  </div>
+
+  <div class="tree-container">
+    <svg class="tree" viewBox="0 0 700 360" aria-label="Arbre pondéré à deux niveaux">
+      <!-- Nœud racine -->
+      <circle cx="60" cy="180" r="22" fill="#0969da" />
+      <text x="60" y="186" text-anchor="middle" fill="#fff" font-weight="700">Ω</text>
+
+      <!-- Branches niveau 1 -->
+      <line x1="82" y1="170" x2="245" y2="80" stroke="#0969da" stroke-width="2"/>
+      <line x1="82" y1="190" x2="245" y2="280" stroke="#0969da" stroke-width="2"/>
+
+      <!-- Étiquettes branches niveau 1 -->
+      <text x="135" y="115" fill="#0a4f9c" font-weight="700" font-size="14" id="lab-pA">P(A)</text>
+      <text x="135" y="240" fill="#0a4f9c" font-weight="700" font-size="14" id="lab-pnA">P(¬A)</text>
+
+      <!-- Nœuds niveau 1 -->
+      <circle cx="270" cy="80" r="22" fill="#0a4f9c" id="node-A"/>
+      <text x="270" y="86" text-anchor="middle" fill="#fff" font-weight="700" id="lab-A">A</text>
+      <circle cx="270" cy="280" r="22" fill="#94a3b8" id="node-nA"/>
+      <text x="270" y="286" text-anchor="middle" fill="#fff" font-weight="700">¬A</text>
+
+      <!-- Branches niveau 2 - depuis A -->
+      <line x1="292" y1="70" x2="445" y2="40" stroke="#16a34a" stroke-width="2"/>
+      <line x1="292" y1="90" x2="445" y2="120" stroke="#dc2626" stroke-width="2"/>
+
+      <!-- Étiquettes niveau 2 - depuis A -->
+      <text x="335" y="40" fill="#15803d" font-weight="700" font-size="13" id="lab-pBA">P(T|A)</text>
+      <text x="335" y="125" fill="#991b1b" font-weight="700" font-size="13" id="lab-pnBA">P(¬T|A)</text>
+
+      <!-- Branches niveau 2 - depuis ¬A -->
+      <line x1="292" y1="270" x2="445" y2="240" stroke="#16a34a" stroke-width="2"/>
+      <line x1="292" y1="290" x2="445" y2="320" stroke="#dc2626" stroke-width="2"/>
+
+      <!-- Étiquettes niveau 2 - depuis ¬A -->
+      <text x="335" y="240" fill="#15803d" font-weight="700" font-size="13" id="lab-pBnA">P(T|¬A)</text>
+      <text x="335" y="325" fill="#991b1b" font-weight="700" font-size="13" id="lab-pnBnA">P(¬T|¬A)</text>
+
+      <!-- Nœuds niveau 2 -->
+      <rect x="450" y="20" width="240" height="40" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="570" y="38" text-anchor="middle" font-weight="700" fill="#15803d" font-size="13" id="branch-AT">A ∩ T</text>
+      <text x="570" y="54" text-anchor="middle" fill="#15803d" font-size="11" id="prob-AT">P = …</text>
+
+      <rect x="450" y="100" width="240" height="40" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="570" y="118" text-anchor="middle" font-weight="700" fill="#991b1b" font-size="13" id="branch-AnT">A ∩ ¬T</text>
+      <text x="570" y="134" text-anchor="middle" fill="#991b1b" font-size="11" id="prob-AnT">P = …</text>
+
+      <rect x="450" y="220" width="240" height="40" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="570" y="238" text-anchor="middle" font-weight="700" fill="#15803d" font-size="13" id="branch-nAT">¬A ∩ T</text>
+      <text x="570" y="254" text-anchor="middle" fill="#15803d" font-size="11" id="prob-nAT">P = …</text>
+
+      <rect x="450" y="300" width="240" height="40" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="570" y="318" text-anchor="middle" font-weight="700" fill="#991b1b" font-size="13" id="branch-nAnT">¬A ∩ ¬T</text>
+      <text x="570" y="334" text-anchor="middle" fill="#991b1b" font-size="11" id="prob-nAnT">P = …</text>
+    </svg>
+  </div>
+
+  <div class="results-grid">
+    <div class="result-box highlight">
+      <div class="lbl" id="lbl-pT">P(T) — probabilité totale</div>
+      <div class="val" id="res-pT">…</div>
+    </div>
+    <div class="result-box highlight">
+      <div class="lbl" id="lbl-pAB">P(A | T) — formule de Bayes</div>
+      <div class="val" id="res-pAB">…</div>
+    </div>
+    <div class="result-box">
+      <div class="lbl">Vérification : somme totale</div>
+      <div class="val" id="res-sum">…</div>
+    </div>
+  </div>
+
+  <div class="formula-list">
+    <strong>📐 Formules utilisées :</strong><br>
+    • <strong>Probabilité totale :</strong> \( P(T) = P(A) \cdot P(T|A) + P(\bar A) \cdot P(T|\bar A) \)<br>
+    • <strong>Probabilité conjointe :</strong> \( P(A \cap T) = P(A) \cdot P(T|A) \)<br>
+    • <strong>Formule de Bayes :</strong> \( P(A|T) = \dfrac{P(A \cap T)}{P(T)} = \dfrac{P(A) \cdot P(T|A)}{P(T)} \)
+  </div>
+
+  <div class="tip" id="tip-text"></div>
+</div>
+
+</div>
+
+<script>
+const scenarios = {
+  test: {
+    name: 'Test médical',
+    context: '<strong>Test médical :</strong> dans une population, 5 % des personnes sont malades (événement A). Le test donne un résultat positif (T) chez 95 % des malades (sensibilité), et chez 5 % des non-malades (faux positif). <em>Question paradoxale :</em> si ton test est positif, quelle est la probabilité que tu sois réellement malade ?',
+    pA: 0.05, pBA: 0.95, pBnA: 0.05,
+    labels: { A: 'Malade', notA: 'Sain', T: 'Test +', notT: 'Test −' },
+    tip: '💡 <strong>Le résultat surprend !</strong> Même avec un test fiable à 95 %, P(Malade | Test+) reste faible (~50 %) car la maladie est rare. C\'est le piège classique des probabilités conditionnelles.'
+  },
+  qualite: {
+    name: 'Contrôle qualité',
+    context: '<strong>Contrôle qualité :</strong> un atelier produit des pièces. 3 % sont défectueuses (D). Le contrôle qualité détecte 98 % des pièces défectueuses (alerte +) mais déclenche aussi une fausse alerte sur 2 % des pièces conformes.',
+    pA: 0.03, pBA: 0.98, pBnA: 0.02,
+    labels: { A: 'Défaut', notA: 'OK', T: 'Alerte', notT: 'Pas alerte' },
+    tip: '💡 <strong>Application industrielle :</strong> ces probabilités servent à décider si on rejette ou on accepte un lot. Plus le contrôle est fiable, mieux on évite les faux positifs (rejet inutile) et faux négatifs (pièce défectueuse vendue).'
+  },
+  urne: {
+    name: 'Urnes de boules',
+    context: '<strong>Urnes A et B :</strong> on choisit l\'urne A avec une probabilité de 40 %, puis on tire une boule. L\'urne A contient 70 % de boules rouges, l\'urne B contient 30 % de boules rouges. Quelle est la probabilité de tirer une boule rouge ?',
+    pA: 0.4, pBA: 0.7, pBnA: 0.3,
+    labels: { A: 'Urne A', notA: 'Urne B', T: 'Rouge', notT: 'Autre' },
+    tip: '💡 <strong>Application :</strong> base de la classification statistique (ML, diagnostic, segmentation client). Si on tire une boule rouge, on peut estimer dans quelle urne elle a été tirée avec Bayes.'
+  },
+  custom: {
+    name: 'Personnalisé',
+    context: '<strong>Personnalisé :</strong> ajuste librement les trois probabilités avec les curseurs. Observe comment varie la probabilité totale et la probabilité de Bayes inverse.',
+    pA: 0.5, pBA: 0.5, pBnA: 0.5,
+    labels: { A: 'A', notA: '¬A', T: 'T', notT: '¬T' },
+    tip: '💡 <strong>À tester :</strong> quand pose-t-on \\(P(A|T) > 0{,}5\\) ? Si \\(P(A) = 0{,}5\\) alors c\'est facile. Si \\(P(A)\\) est petit, il faut un test très précis pour que P(A|T) dépasse 50 %.'
+  }
+};
+
+let current = 'test';
+
+function loadScenario(name) {
+  current = name;
+  const s = scenarios[name];
+  document.querySelectorAll('.scenario-btn').forEach((b, i) => {
+    const names = ['test', 'qualite', 'urne', 'custom'];
+    b.classList.toggle('active', names[i] === name);
+  });
+  document.getElementById('ctx').innerHTML = s.context;
+
+  // Update labels
+  document.getElementById('lblA').innerHTML = `P(${s.labels.A})`;
+  document.getElementById('lblBA').innerHTML = `P(${s.labels.T} | ${s.labels.A})`;
+  document.getElementById('lblBnA').innerHTML = `P(${s.labels.T} | ${s.labels.notA})`;
+
+  document.getElementById('lab-A').textContent = s.labels.A.length > 5 ? 'A' : s.labels.A;
+  document.getElementById('node-nA').setAttribute('aria-label', s.labels.notA);
+
+  document.getElementById('lab-pA').textContent = `P(${s.labels.A})`;
+  document.getElementById('lab-pnA').textContent = `P(${s.labels.notA})`;
+  document.getElementById('lab-pBA').textContent = `P(${s.labels.T}|${s.labels.A})`;
+  document.getElementById('lab-pnBA').textContent = `P(${s.labels.notT}|${s.labels.A})`;
+  document.getElementById('lab-pBnA').textContent = `P(${s.labels.T}|${s.labels.notA})`;
+  document.getElementById('lab-pnBnA').textContent = `P(${s.labels.notT}|${s.labels.notA})`;
+
+  document.getElementById('branch-AT').textContent = `${s.labels.A} ∩ ${s.labels.T}`;
+  document.getElementById('branch-AnT').textContent = `${s.labels.A} ∩ ${s.labels.notT}`;
+  document.getElementById('branch-nAT').textContent = `${s.labels.notA} ∩ ${s.labels.T}`;
+  document.getElementById('branch-nAnT').textContent = `${s.labels.notA} ∩ ${s.labels.notT}`;
+
+  document.getElementById('lbl-pT').innerHTML = `P(${s.labels.T}) — probabilité totale`;
+  document.getElementById('lbl-pAB').innerHTML = `P(${s.labels.A} | ${s.labels.T}) — formule de Bayes`;
+
+  document.getElementById('tip-text').innerHTML = s.tip;
+
+  document.getElementById('pA').value = s.pA;
+  document.getElementById('pBA').value = s.pBA;
+  document.getElementById('pBnA').value = s.pBnA;
+
+  if (window.MathJax) MathJax.typesetPromise();
+  update();
+}
+
+function fmt(p) {
+  if (p < 0.0001) return p.toExponential(2);
+  return (p * 100).toFixed(2).replace('.', ',') + ' %';
+}
+
+function update() {
+  const pA = parseFloat(document.getElementById('pA').value);
+  const pBA = parseFloat(document.getElementById('pBA').value);
+  const pBnA = parseFloat(document.getElementById('pBnA').value);
+
+  document.getElementById('vA').textContent = pA.toFixed(2).replace('.', ',');
+  document.getElementById('vBA').textContent = pBA.toFixed(2).replace('.', ',');
+  document.getElementById('vBnA').textContent = pBnA.toFixed(2).replace('.', ',');
+
+  const pnA = 1 - pA;
+  const pnBA = 1 - pBA;
+  const pnBnA = 1 - pBnA;
+
+  const pAT = pA * pBA;
+  const pAnT = pA * pnBA;
+  const pnAT = pnA * pBnA;
+  const pnAnT = pnA * pnBnA;
+
+  const pT = pAT + pnAT;
+  const pAgivenT = pT > 0 ? pAT / pT : 0;
+
+  document.getElementById('prob-AT').textContent = `P = ${fmt(pAT)}`;
+  document.getElementById('prob-AnT').textContent = `P = ${fmt(pAnT)}`;
+  document.getElementById('prob-nAT').textContent = `P = ${fmt(pnAT)}`;
+  document.getElementById('prob-nAnT').textContent = `P = ${fmt(pnAnT)}`;
+
+  document.getElementById('res-pT').textContent = fmt(pT);
+  document.getElementById('res-pAB').textContent = fmt(pAgivenT);
+  document.getElementById('res-sum').textContent = fmt(pAT + pAnT + pnAT + pnAnT) + ' (= 100 %)';
+}
+
+window.addEventListener('DOMContentLoaded', () => loadScenario('test'));
+</script>
+</body>
+</html>

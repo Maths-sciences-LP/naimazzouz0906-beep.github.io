@@ -497,6 +497,32 @@ SIMULATIONS = {
         "description": "Dimensionne un escalier (giron, hauteur de marche, échappée) en respectant la formule de Blondel : 2h + g ≈ 64 cm. Vérifie la conformité aux normes de construction.",
         "tags": ["Blondel", "Giron", "Marches"],
     },
+
+    # ─── PHASE 2 — Nouvelles simulations (2026-04-29) ────────────────────────
+    "calculs-numeriques.html": {
+        "title": "Calculs numériques",
+        "icon": "🧮",
+        "description": "Quatre outils : conversions d'unités (longueur, masse, volume, temps), notation scientifique, priorités opératoires, arrondi avec décimales ou chiffres significatifs. Chaque outil affiche les étapes pour comprendre le raisonnement.",
+        "tags": ["Conversions", "Notation scientifique", "Arrondi"],
+    },
+    "combinatoire.html": {
+        "title": "Combinatoire et dénombrement",
+        "icon": "🔢",
+        "description": "Calcule des factorielles, arrangements (avec ordre) et combinaisons (sans ordre). Visualise le triangle de Pascal interactif avec mise en évidence du coefficient binomial sélectionné.",
+        "tags": ["Permutations", "Combinaisons", "Triangle de Pascal"],
+    },
+    "probabilites-conditionnelles.html": {
+        "title": "Probabilités conditionnelles — Arbre pondéré",
+        "icon": "🌳",
+        "description": "Arbre pondéré à 2 niveaux avec 4 scénarios (test médical, contrôle qualité, urnes, personnalisé). Calcule en temps réel les probabilités jointes, la probabilité totale et applique la formule de Bayes.",
+        "tags": ["Arbre pondéré", "Bayes", "Probabilités totales"],
+    },
+    "matrices.html": {
+        "title": "Matrices et systèmes linéaires",
+        "icon": "🔲",
+        "description": "Trois outils : addition et multiplication de matrices (dimensions modifiables), calcul de déterminant 2×2, résolution d'un système 2×2 par la méthode de Cramer avec affichage des étapes.",
+        "tags": ["Opérations", "Déterminant", "Cramer"],
+    },
 }
 
 
@@ -1016,9 +1042,10 @@ CHAPTER_SIMS = {
 
     # ─── MATHS PREMIÈRE — Chapitres complétés ──────────────────────────
     "maths/premiere/ch02": {
-        "sims": ["probabilites.html"],
+        "sims": ["probabilites.html", "probabilites-conditionnelles.html"],
         "pedagogy": {
             "probabilites.html": "Réutilise la simulation des probabilités vue en Seconde pour explorer la loi des grands nombres et fluctuation des fréquences. Sert de base avant d'aborder les arbres de probabilités et les événements composés.",
+            "probabilites-conditionnelles.html": "Construit un arbre pondéré et applique la formule des probabilités totales — capacité explicitement au programme de 1ère Bac Pro.",
         },
     },
     "maths/premiere/ch07": {
@@ -1036,9 +1063,10 @@ CHAPTER_SIMS = {
 
     # ─── MATHS TERMINALE — Chapitre 02 manquant ─────────────────────────
     "maths/terminale/ch02": {
-        "sims": ["probabilites.html"],
+        "sims": ["probabilites.html", "probabilites-conditionnelles.html"],
         "pedagogy": {
             "probabilites.html": "Travaille la fluctuation des fréquences avant d'introduire les probabilités conditionnelles, la formule de Bayes et les arbres pondérés. La loi des grands nombres reste la base de l'inférence.",
+            "probabilites-conditionnelles.html": "Manipule l'arbre pondéré et applique la formule de Bayes sur des scénarios concrets (test médical, contrôle qualité). Indispensable pour les exercices de probabilités composées en Terminale.",
         },
     },
 
@@ -1185,9 +1213,11 @@ CHAPTER_SIMS = {
         },
     },
     "maths/lgt-terminale/ch13": {
-        "sims": ["probabilites.html"],
+        "sims": ["probabilites.html", "probabilites-conditionnelles.html", "combinatoire.html"],
         "pedagogy": {
             "probabilites.html": "Lance une expérience de Bernoulli un grand nombre de fois et observe la fluctuation. Base pour comprendre la loi binomiale (somme d'épreuves indépendantes).",
+            "probabilites-conditionnelles.html": "Étudie l'indépendance et les probabilités conditionnelles avant la loi binomiale (qui suppose des épreuves indépendantes).",
+            "combinatoire.html": "Calcule les coefficients binomiaux \(C_n^k\) qui apparaissent dans la formule de la loi binomiale \(P(X=k) = C_n^k \cdot p^k \cdot (1-p)^{n-k}\).",
         },
     },
     "maths/lgt-terminale/ch15": {
@@ -1218,9 +1248,10 @@ CHAPTER_SIMS = {
         },
     },
     "maths/bts/ch08": {
-        "sims": ["probabilites.html"],
+        "sims": ["probabilites.html", "probabilites-conditionnelles.html"],
         "pedagogy": {
             "probabilites.html": "Reprends la base : fréquence vs probabilité, loi des grands nombres. Avant d'introduire les variables aléatoires et leurs lois en BTS.",
+            "probabilites-conditionnelles.html": "Manipule l'arbre pondéré pour comprendre les probabilités conditionnelles et la formule de Bayes — outils incontournables en BTS pour le contrôle qualité et la fiabilité.",
         },
     },
     "maths/bts/ch10": {
@@ -1255,4 +1286,46 @@ CHAPTER_SIMS = {
             "scalaire.html": "Produit scalaire pour calculer angles, projections, et orthogonalité. Application directe en énergie/travail (W = F⃗·d⃗).",
         },
     },
+
+    # ═══════════════════════════════════════════════════════════════════
+    # PHASE 2 — Nouvelles simulations créées (2026-04-29)
+    # ═══════════════════════════════════════════════════════════════════
+
+    # Maths CAP ch07 — débloque la couverture CAP à 100%
+    "maths/cap/ch07": {
+        "sims": ["calculs-numeriques.html"],
+        "pedagogy": {
+            "calculs-numeriques.html": "Quatre outils essentiels pour la calculatrice et les estimations en atelier : convertir des unités (m, kg, L, h…), passer en notation scientifique pour les très grands ou très petits nombres, appliquer les priorités opératoires, et arrondir avec le bon nombre de chiffres significatifs.",
+        },
+    },
+
+    # Maths LGT Terminale ch01 — combinatoire
+    "maths/lgt-terminale/ch01": {
+        "sims": ["combinatoire.html"],
+        "pedagogy": {
+            "combinatoire.html": "Calcul de factorielles, arrangements et combinaisons sur des cas concrets (podium d'athlètes, mains de poker, tirages Loto). Exploration interactive du triangle de Pascal et de la relation \\(C_n^k = C_{n-1}^{k-1} + C_{n-1}^k\\).",
+        },
+    },
+
+    # Maths BTS ch09 — Probabilités 2 (conditionnelles)
+    "maths/bts/ch09": {
+        "sims": ["probabilites-conditionnelles.html"],
+        "pedagogy": {
+            "probabilites-conditionnelles.html": "Manipule un arbre pondéré à 2 niveaux et applique la formule de Bayes. Le scénario « test médical » illustre le paradoxe classique : même un test fiable à 95 % donne P(malade | test+) faible si la maladie est rare.",
+        },
+    },
+
+    # Maths BTS ch16 — Matrices et systèmes
+    "maths/bts/ch16": {
+        "sims": ["matrices.html"],
+        "pedagogy": {
+            "matrices.html": "Manipule des matrices de dimensions variables : addition, multiplication, déterminant 2×2, résolution de système 2×2 par la méthode de Cramer avec affichage de toutes les étapes intermédiaires.",
+        },
+    },
+
+    # Maths LGT Terminale ch13 — Loi binomiale (compléter avec proba conditionnelles)
+    # [déjà présent avec probabilites.html — on l'enrichit]
+
+    # Maths Terminale ch02 (déjà mappé à probabilites.html — on l'enrichit avec conditionnelles)
+    # [voir mise à jour ci-dessous]
 }

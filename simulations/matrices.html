@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Matrices et systèmes linéaires — Simulation</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f4f9;color:#333;padding:20px;min-height:100vh}
+.container{max-width:880px;margin:0 auto}
+header{background:linear-gradient(135deg,#0969da,#0a4f9c);color:#fff;padding:25px 25px 22px;border-radius:10px 10px 0 0;position:relative;text-align:center}
+header h1{font-size:1.5em;margin-bottom:4px}
+header p{opacity:.92;font-size:.95em}
+.btn-back{position:absolute;left:15px;top:15px;background:rgba(255,255,255,.2);color:#fff;text-decoration:none;padding:5px 12px;border-radius:5px;font-size:.85em;transition:background .2s}
+.btn-back:hover{background:rgba(255,255,255,.35)}
+.card{background:#fff;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:25px;margin-bottom:20px}
+.card.standalone{border-radius:10px;margin-top:20px}
+.intro{background:#dbeafe;border-left:4px solid #0969da;padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:20px;font-size:.95em;line-height:1.55}
+.intro strong{color:#0a4f9c}
+.tabs{display:flex;gap:0;margin-bottom:20px;border-bottom:2px solid #93c5fd;flex-wrap:wrap}
+.tab{flex:1;min-width:140px;padding:10px 14px;cursor:pointer;border:none;background:none;font-size:.93em;color:#0a4f9c;font-weight:600;border-bottom:3px solid transparent;transition:all .2s}
+.tab.active{color:#0969da;border-bottom-color:#0969da;background:#dbeafe}
+.tab:hover{background:#eff6ff}
+.tool{display:none}
+.tool.active{display:block}
+.dim-row{display:flex;gap:14px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+.dim-row label{font-weight:600;color:#0a4f9c}
+.dim-row input{width:60px;padding:6px;border:2px solid #93c5fd;border-radius:5px;text-align:center;font-size:.95em}
+.matrices-row{display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center;margin:18px 0}
+.matrix-block{display:flex;flex-direction:column;align-items:center;gap:6px}
+.matrix-block .name{font-weight:700;color:#0a4f9c;font-size:1.1em}
+.matrix{display:inline-grid;gap:4px;padding:10px;border-radius:8px;background:#f8fafc;border:1.5px solid #93c5fd;position:relative}
+.matrix::before,.matrix::after{content:'';position:absolute;top:0;bottom:0;width:3px;background:#0969da}
+.matrix::before{left:-2px;border-top-left-radius:6px;border-bottom-left-radius:6px}
+.matrix::after{right:-2px;border-top-right-radius:6px;border-bottom-right-radius:6px}
+.matrix input{width:48px;padding:5px;border:1px solid #cbd5e1;border-radius:4px;text-align:center;font-size:.9em;font-family:monospace}
+.matrix input:focus{border-color:#0969da;outline:none}
+.matrix input.result{background:#fef3c7;border-color:#fcd34d;color:#78350f;font-weight:700;cursor:default}
+.op-symbol{font-size:1.6em;color:#0969da;font-weight:700}
+.btn-go{background:#0969da;color:#fff;border:none;padding:9px 20px;border-radius:6px;cursor:pointer;font-weight:600;font-size:.95em;margin:6px 4px 0 0}
+.btn-go:hover{background:#0a4f9c}
+.btn-secondary{background:#fff;color:#0969da;border:1.5px solid #93c5fd;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:600;font-size:.9em;margin:6px 4px 0 0}
+.btn-secondary:hover{background:#dbeafe}
+.error{color:#dc2626;text-align:center;padding:10px;background:#fee2e2;border-radius:8px;margin-top:10px;font-weight:600}
+.steps{background:#eff6ff;border-left:4px solid #0969da;padding:12px 16px;border-radius:0 8px 8px 0;margin-top:14px;font-size:.92em;font-family:monospace}
+.steps .step{padding:3px 0}
+.steps .step strong{color:#0a4f9c;font-family:'Segoe UI',sans-serif}
+.tip{background:#dcfce7;border-left:4px solid #16a34a;padding:12px 16px;border-radius:0 8px 8px 0;margin-top:14px;font-size:.92em}
+.tip strong{color:#15803d}
+.system-display{background:#fef3c7;border:2px solid #fcd34d;border-radius:8px;padding:16px;text-align:center;font-size:1.1em;color:#78350f;font-family:monospace;line-height:1.8;margin-top:14px}
+@media(max-width:600px){
+  .container{padding:0}
+  header h1{font-size:1.25em}
+  .matrix input{width:42px;font-size:.82em;padding:4px}
+  .matrices-row{gap:10px}
+  .op-symbol{font-size:1.3em}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <a href="../simulations.html" class="btn-back">← Retour</a>
+  <h1>Matrices et systèmes linéaires</h1>
+  <p>BTS · Ch16 · Opérations matricielles et résolution de systèmes</p>
+</header>
+
+<div class="card">
+  <div class="intro">
+    <strong>À quoi ça sert ?</strong> Les matrices encodent et manipulent des données structurées (systèmes d'équations, transformations géométriques, traitement de signal). Cette simulation propose 3 outils : addition/multiplication de matrices, calcul du déterminant 2×2, et résolution d'un système 2×2 par la méthode de Cramer.
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-tab="ops" onclick="setTab('ops')">➕ Opérations</button>
+    <button class="tab" data-tab="det" onclick="setTab('det')">| | Déterminant</button>
+    <button class="tab" data-tab="sys" onclick="setTab('sys')">⚖️ Système 2×2</button>
+  </div>
+
+  <!-- ── 1. Opérations ─────────────────────────────────── -->
+  <div class="tool active" id="tool-ops">
+    <div class="dim-row">
+      <label>Dimensions A : </label>
+      <input type="number" id="mA-rows" value="2" min="1" max="4"> ×
+      <input type="number" id="mA-cols" value="2" min="1" max="4">
+      <label style="margin-left:14px">Dimensions B : </label>
+      <input type="number" id="mB-rows" value="2" min="1" max="4"> ×
+      <input type="number" id="mB-cols" value="2" min="1" max="4">
+      <button class="btn-secondary" onclick="rebuildMatrices()">Reconstruire</button>
+    </div>
+
+    <div class="matrices-row">
+      <div class="matrix-block">
+        <div class="name">A</div>
+        <div class="matrix" id="matA"></div>
+      </div>
+      <div class="op-symbol" id="op-symbol">×</div>
+      <div class="matrix-block">
+        <div class="name">B</div>
+        <div class="matrix" id="matB"></div>
+      </div>
+      <div class="op-symbol">=</div>
+      <div class="matrix-block">
+        <div class="name" id="result-name">A × B</div>
+        <div class="matrix" id="matResult"></div>
+      </div>
+    </div>
+
+    <div style="text-align:center">
+      <button class="btn-go" onclick="doOp('add')">A + B</button>
+      <button class="btn-go" onclick="doOp('mul')">A × B</button>
+      <button class="btn-secondary" onclick="randomFill()">Remplir aléatoirement</button>
+      <button class="btn-secondary" onclick="clearMatrices()">Effacer</button>
+    </div>
+
+    <div id="ops-result"></div>
+
+    <div class="tip">
+      <strong>💡 Règles :</strong> A + B nécessite que A et B aient les <em>mêmes dimensions</em>. A × B nécessite que <em>nb colonnes de A = nb lignes de B</em>. Le résultat A × B a alors la dimension (lignes A) × (colonnes B).
+    </div>
+  </div>
+
+  <!-- ── 2. Déterminant 2x2 ─────────────────────────── -->
+  <div class="tool" id="tool-det">
+    <p style="font-size:.92em;color:#475569;margin:8px 0;line-height:1.5">Pour une matrice carrée 2×2, le <strong>déterminant</strong> donne une mesure de son « volume » et permet de savoir si elle est inversible (det ≠ 0).</p>
+
+    <div class="matrices-row">
+      <div class="matrix-block">
+        <div class="name">M</div>
+        <div class="matrix" id="matDet" style="grid-template-columns:repeat(2,1fr)">
+          <input type="number" id="det-a" value="3" step="any">
+          <input type="number" id="det-b" value="2" step="any">
+          <input type="number" id="det-c" value="1" step="any">
+          <input type="number" id="det-d" value="4" step="any">
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center">
+      <button class="btn-go" onclick="runDet()">Calculer det(M)</button>
+    </div>
+
+    <div id="det-result"></div>
+
+    <div class="tip">
+      <strong>💡 Formule 2×2 :</strong> \(\det(M) = ad - bc\) pour \(M = \begin{pmatrix}a & b \\ c & d\end{pmatrix}\). Si \(\det(M) \neq 0\), la matrice est inversible et le système associé a une solution unique.
+    </div>
+  </div>
+
+  <!-- ── 3. Système 2x2 (Cramer) ──────────────────── -->
+  <div class="tool" id="tool-sys">
+    <p style="font-size:.92em;color:#475569;margin:8px 0;line-height:1.5">Résolution d'un système linéaire à 2 inconnues par la <strong>méthode de Cramer</strong>. Matrice associée \(M\), vecteur des seconds membres \(B\).</p>
+
+    <div style="text-align:center;margin:14px 0">
+      <div class="system-display" id="sys-display">a₁₁·x + a₁₂·y = b₁<br>a₂₁·x + a₂₂·y = b₂</div>
+    </div>
+
+    <div class="matrices-row">
+      <div class="matrix-block">
+        <div class="name">Coefficients</div>
+        <div class="matrix" id="matSys" style="grid-template-columns:repeat(3,1fr)">
+          <input type="number" id="sys-a11" value="2" step="any">
+          <input type="number" id="sys-a12" value="3" step="any">
+          <input type="number" id="sys-b1" value="13" step="any" style="background:#fef3c7">
+          <input type="number" id="sys-a21" value="1" step="any">
+          <input type="number" id="sys-a22" value="-1" step="any">
+          <input type="number" id="sys-b2" value="1" step="any" style="background:#fef3c7">
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center">
+      <button class="btn-go" onclick="runSys()">Résoudre par Cramer</button>
+    </div>
+
+    <div id="sys-result"></div>
+
+    <div class="tip">
+      <strong>💡 Méthode de Cramer :</strong> si \(\det(M) \neq 0\), on a \(x = \dfrac{\det(M_x)}{\det(M)}\), \(y = \dfrac{\det(M_y)}{\det(M)}\) où \(M_x\) et \(M_y\) sont obtenues en remplaçant respectivement la 1ère / 2ème colonne de M par le vecteur B.
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function setTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === name));
+  document.querySelectorAll('.tool').forEach(s => s.classList.toggle('active', s.id === 'tool-' + name));
+  if (window.MathJax) MathJax.typesetPromise();
+}
+
+// Build a matrix UI
+function buildMatrix(parentId, rows, cols, prefix, readonly = false) {
+  const parent = document.getElementById(parentId);
+  parent.innerHTML = '';
+  parent.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
+      const inp = document.createElement('input');
+      inp.type = 'number';
+      inp.step = 'any';
+      inp.id = `${prefix}-${i}-${j}`;
+      inp.value = i === j ? '1' : '0';
+      if (readonly) {
+        inp.readOnly = true;
+        inp.classList.add('result');
+      }
+      parent.appendChild(inp);
+    }
+  }
+}
+
+let dimA = [2, 2], dimB = [2, 2];
+
+function rebuildMatrices() {
+  dimA = [
+    Math.max(1, Math.min(4, parseInt(document.getElementById('mA-rows').value) || 2)),
+    Math.max(1, Math.min(4, parseInt(document.getElementById('mA-cols').value) || 2))
+  ];
+  dimB = [
+    Math.max(1, Math.min(4, parseInt(document.getElementById('mB-rows').value) || 2)),
+    Math.max(1, Math.min(4, parseInt(document.getElementById('mB-cols').value) || 2))
+  ];
+  document.getElementById('mA-rows').value = dimA[0];
+  document.getElementById('mA-cols').value = dimA[1];
+  document.getElementById('mB-rows').value = dimB[0];
+  document.getElementById('mB-cols').value = dimB[1];
+  buildMatrix('matA', dimA[0], dimA[1], 'A');
+  buildMatrix('matB', dimB[0], dimB[1], 'B');
+  buildMatrix('matResult', 1, 1, 'R', true);
+  document.getElementById('matResult').innerHTML = '<input class="result" readonly value="?">';
+  document.getElementById('ops-result').innerHTML = '';
+}
+
+function readMatrix(prefix, rows, cols) {
+  const m = [];
+  for (let i = 0; i < rows; i++) {
+    const row = [];
+    for (let j = 0; j < cols; j++) {
+      const v = parseFloat(document.getElementById(`${prefix}-${i}-${j}`).value);
+      row.push(isNaN(v) ? 0 : v);
+    }
+    m.push(row);
+  }
+  return m;
+}
+
+function fmt(n) {
+  return parseFloat(n.toFixed(4)).toString();
+}
+
+function showResultMatrix(parentId, m) {
+  const parent = document.getElementById(parentId);
+  const rows = m.length, cols = m[0].length;
+  parent.innerHTML = '';
+  parent.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
+      const inp = document.createElement('input');
+      inp.type = 'text';
+      inp.readOnly = true;
+      inp.classList.add('result');
+      inp.value = fmt(m[i][j]);
+      parent.appendChild(inp);
+    }
+  }
+}
+
+function doOp(op) {
+  const A = readMatrix('A', dimA[0], dimA[1]);
+  const B = readMatrix('B', dimB[0], dimB[1]);
+  const resDiv = document.getElementById('ops-result');
+  document.getElementById('op-symbol').textContent = op === 'add' ? '+' : '×';
+  document.getElementById('result-name').textContent = op === 'add' ? 'A + B' : 'A × B';
+
+  if (op === 'add') {
+    if (dimA[0] !== dimB[0] || dimA[1] !== dimB[1]) {
+      resDiv.innerHTML = '<div class="error">Pour A + B, les deux matrices doivent avoir les mêmes dimensions.</div>';
+      return;
+    }
+    const C = [];
+    for (let i = 0; i < dimA[0]; i++) {
+      const row = [];
+      for (let j = 0; j < dimA[1]; j++) row.push(A[i][j] + B[i][j]);
+      C.push(row);
+    }
+    showResultMatrix('matResult', C);
+    resDiv.innerHTML = `<div class="steps"><div class="step"><strong>Méthode :</strong> on additionne case par case (élément de A à la position (i,j) + élément de B à la même position).</div></div>`;
+  } else {
+    if (dimA[1] !== dimB[0]) {
+      resDiv.innerHTML = `<div class="error">Pour A × B, le nombre de colonnes de A (${dimA[1]}) doit égaler le nombre de lignes de B (${dimB[0]}).</div>`;
+      return;
+    }
+    const C = [];
+    for (let i = 0; i < dimA[0]; i++) {
+      const row = [];
+      for (let j = 0; j < dimB[1]; j++) {
+        let s = 0;
+        for (let k = 0; k < dimA[1]; k++) s += A[i][k] * B[k][j];
+        row.push(s);
+      }
+      C.push(row);
+    }
+    showResultMatrix('matResult', C);
+    resDiv.innerHTML = `<div class="steps"><div class="step"><strong>Méthode :</strong> chaque case (i,j) du résultat = somme des produits ligne i de A × colonne j de B.</div><div class="step"><strong>Dimensions :</strong> ${dimA[0]}×${dimA[1]} × ${dimB[0]}×${dimB[1]} = ${dimA[0]}×${dimB[1]}</div></div>`;
+  }
+}
+
+function randomFill() {
+  for (let i = 0; i < dimA[0]; i++) for (let j = 0; j < dimA[1]; j++) {
+    document.getElementById(`A-${i}-${j}`).value = Math.floor(Math.random() * 11) - 5;
+  }
+  for (let i = 0; i < dimB[0]; i++) for (let j = 0; j < dimB[1]; j++) {
+    document.getElementById(`B-${i}-${j}`).value = Math.floor(Math.random() * 11) - 5;
+  }
+}
+
+function clearMatrices() {
+  for (let i = 0; i < dimA[0]; i++) for (let j = 0; j < dimA[1]; j++) {
+    document.getElementById(`A-${i}-${j}`).value = 0;
+  }
+  for (let i = 0; i < dimB[0]; i++) for (let j = 0; j < dimB[1]; j++) {
+    document.getElementById(`B-${i}-${j}`).value = 0;
+  }
+  document.getElementById('ops-result').innerHTML = '';
+}
+
+// Determinant 2x2
+function runDet() {
+  const a = parseFloat(document.getElementById('det-a').value);
+  const b = parseFloat(document.getElementById('det-b').value);
+  const c = parseFloat(document.getElementById('det-c').value);
+  const d = parseFloat(document.getElementById('det-d').value);
+  if ([a, b, c, d].some(isNaN)) {
+    document.getElementById('det-result').innerHTML = '<div class="error">Entrez des valeurs valides.</div>';
+    return;
+  }
+  const det = a * d - b * c;
+  const inv = det !== 0;
+  const html =
+    `<div class="steps">
+      <div class="step"><strong>Formule :</strong> det(M) = a×d − b×c</div>
+      <div class="step"><strong>Calcul :</strong> ${a} × ${d} − ${b} × ${c} = ${a * d} − ${b * c} = <strong>${fmt(det)}</strong></div>
+      <div class="step"><strong>Conclusion :</strong> ${inv ? 'M est inversible (det ≠ 0).' : 'M n\'est PAS inversible (det = 0). Le système associé n\'a pas de solution unique.'}</div>
+    </div>`;
+  document.getElementById('det-result').innerHTML = html;
+}
+
+// Système 2x2 par Cramer
+function runSys() {
+  const a11 = parseFloat(document.getElementById('sys-a11').value);
+  const a12 = parseFloat(document.getElementById('sys-a12').value);
+  const a21 = parseFloat(document.getElementById('sys-a21').value);
+  const a22 = parseFloat(document.getElementById('sys-a22').value);
+  const b1 = parseFloat(document.getElementById('sys-b1').value);
+  const b2 = parseFloat(document.getElementById('sys-b2').value);
+  if ([a11, a12, a21, a22, b1, b2].some(isNaN)) {
+    document.getElementById('sys-result').innerHTML = '<div class="error">Entrez des valeurs valides.</div>';
+    return;
+  }
+  document.getElementById('sys-display').innerHTML =
+    `${a11}·x + ${a12}·y = ${b1}<br>${a21}·x + ${a22}·y = ${b2}`;
+  const detM = a11 * a22 - a12 * a21;
+  const detMx = b1 * a22 - a12 * b2;
+  const detMy = a11 * b2 - b1 * a21;
+  let html = `<div class="steps">
+    <div class="step"><strong>det(M) :</strong> ${a11} × ${a22} − ${a12} × ${a21} = ${fmt(detM)}</div>`;
+  if (detM === 0) {
+    if (detMx === 0 && detMy === 0) {
+      html += `<div class="step"><strong>Conclusion :</strong> det(M) = 0 et les deux équations sont dépendantes. <strong>Une infinité de solutions.</strong></div>`;
+    } else {
+      html += `<div class="step"><strong>Conclusion :</strong> det(M) = 0 et le système est incompatible. <strong>Aucune solution.</strong></div>`;
+    }
+  } else {
+    const x = detMx / detM;
+    const y = detMy / detM;
+    html += `<div class="step"><strong>det(M_x) :</strong> ${b1} × ${a22} − ${a12} × ${b2} = ${fmt(detMx)}</div>
+      <div class="step"><strong>det(M_y) :</strong> ${a11} × ${b2} − ${b1} × ${a21} = ${fmt(detMy)}</div>
+      <div class="step"><strong>Solution :</strong> x = ${fmt(detMx)} / ${fmt(detM)} = <strong>${fmt(x)}</strong></div>
+      <div class="step"><strong>Solution :</strong> y = ${fmt(detMy)} / ${fmt(detM)} = <strong>${fmt(y)}</strong></div>
+      <div class="step"><strong>Vérification :</strong> ${a11}·${fmt(x)} + ${a12}·${fmt(y)} = ${fmt(a11 * x + a12 * y)} (doit valoir ${b1})</div>`;
+  }
+  html += `</div>`;
+  document.getElementById('sys-result').innerHTML = html;
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  rebuildMatrices();
+  randomFill();
+  doOp('mul');
+});
+</script>
+</body>
+</html>

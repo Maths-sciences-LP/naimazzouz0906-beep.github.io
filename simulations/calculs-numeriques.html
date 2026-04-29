@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Calculs numériques — Simulation</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f4f9;color:#333;padding:20px;min-height:100vh}
+.container{max-width:780px;margin:0 auto}
+header{background:linear-gradient(135deg,#b45309,#92400e);color:#fff;padding:25px 25px 22px;border-radius:10px 10px 0 0;position:relative;text-align:center}
+header h1{font-size:1.5em;margin-bottom:4px}
+header p{opacity:.92;font-size:.95em}
+.btn-back{position:absolute;left:15px;top:15px;background:rgba(255,255,255,.2);color:#fff;text-decoration:none;padding:5px 12px;border-radius:5px;font-size:.85em;transition:background .2s}
+.btn-back:hover{background:rgba(255,255,255,.35)}
+.card{background:#fff;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:25px;margin-bottom:20px}
+.card.standalone{border-radius:10px;margin-top:20px}
+.intro{background:#fffbeb;border-left:4px solid #b45309;padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:20px;font-size:.95em;line-height:1.55}
+.intro strong{color:#92400e}
+.tabs{display:flex;gap:0;margin-bottom:20px;border-bottom:2px solid #fde68a;flex-wrap:wrap}
+.tab{flex:1;min-width:130px;padding:10px 16px;cursor:pointer;border:none;background:none;font-size:.95em;color:#92400e;font-weight:600;border-bottom:3px solid transparent;transition:all .2s}
+.tab.active{color:#b45309;border-bottom-color:#b45309;background:#fef3c7}
+.tab:hover{background:#fffbeb}
+.tool-section{display:none}
+.tool-section.active{display:block}
+.input-row{display:flex;align-items:center;gap:10px;margin:14px 0;flex-wrap:wrap}
+.input-row label{font-weight:600;min-width:140px;color:#78350f}
+input[type=number],input[type=text],select{padding:8px 12px;border:2px solid #fde68a;border-radius:6px;font-size:1em;font-family:inherit;outline:none;transition:border-color .2s}
+input[type=number]{width:140px}
+input[type=text]{width:180px}
+select{min-width:140px}
+input:focus,select:focus{border-color:#b45309}
+.result-box{background:#fef3c7;border:2px solid #fcd34d;border-radius:8px;padding:16px;margin-top:14px;text-align:center;font-size:1.05em}
+.result-box .lbl{font-size:.82em;color:#78350f;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.result-box .val{font-size:1.4em;font-weight:700;color:#78350f;font-family:monospace}
+.steps{background:#fffbeb;border-left:4px solid #b45309;padding:12px 16px;border-radius:0 8px 8px 0;margin-top:12px;font-size:.92em}
+.steps .step{padding:4px 0;font-family:monospace}
+.steps .step strong{color:#92400e}
+.tip{background:#f3e8ff;border-left:4px solid #7c3aed;padding:12px 16px;border-radius:0 8px 8px 0;margin-top:14px;font-size:.92em}
+.tip strong{color:#6d28d9}
+.error{color:#dc2626;font-weight:600;text-align:center;padding:14px;background:#fee2e2;border-radius:8px;margin-top:10px}
+.btn-go{background:#b45309;color:#fff;border:none;padding:9px 20px;border-radius:6px;cursor:pointer;font-weight:600;font-size:.95em;transition:background .2s}
+.btn-go:hover{background:#92400e}
+.examples{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.example-btn{background:#fff;color:#b45309;border:1.5px solid #fcd34d;padding:5px 12px;border-radius:18px;cursor:pointer;font-size:.85em;font-weight:600;transition:all .15s}
+.example-btn:hover{background:#fef3c7;transform:translateY(-1px)}
+@media(max-width:600px){
+  .container{padding:0}
+  .input-row{flex-direction:column;align-items:flex-start;gap:6px}
+  .input-row label{min-width:auto}
+  input[type=number],input[type=text]{width:100%}
+  header h1{font-size:1.25em}
+  .tab{font-size:.85em;padding:8px 10px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <a href="../simulations.html" class="btn-back">← Retour</a>
+  <h1>Calculs numériques</h1>
+  <p>CAP · Calculs sur les nombres, conversions et arrondis</p>
+</header>
+
+<div class="card">
+  <div class="intro">
+    <strong>À quoi ça sert ?</strong> Cette simulation propose 4 outils essentiels pour les calculs numériques en CAP : conversion d'unités, notation scientifique, priorités opératoires, et arrondi avec chiffres significatifs. Chaque outil affiche les étapes pour t'aider à comprendre le raisonnement.
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-tab="conversion" onclick="setTab('conversion')">📏 Conversions</button>
+    <button class="tab" data-tab="notation" onclick="setTab('notation')">10ⁿ Notation</button>
+    <button class="tab" data-tab="priorites" onclick="setTab('priorites')">🔢 Priorités</button>
+    <button class="tab" data-tab="arrondi" onclick="setTab('arrondi')">≈ Arrondi</button>
+  </div>
+
+  <!-- ── 1. Conversions d'unités ──────────────────────────── -->
+  <div class="tool-section active" id="tool-conversion">
+    <div class="input-row">
+      <label for="conv-val">Valeur :</label>
+      <input type="number" id="conv-val" value="1500" step="any">
+      <select id="conv-from">
+        <optgroup label="Longueur">
+          <option value="L:m">m</option><option value="L:cm">cm</option><option value="L:mm">mm</option><option value="L:km">km</option>
+        </optgroup>
+        <optgroup label="Masse">
+          <option value="M:kg" selected>kg</option><option value="M:g">g</option><option value="M:t">t</option>
+        </optgroup>
+        <optgroup label="Volume">
+          <option value="V:m3">m³</option><option value="V:dm3">dm³</option><option value="V:cm3">cm³</option><option value="V:L">L</option><option value="V:mL">mL</option>
+        </optgroup>
+        <optgroup label="Temps">
+          <option value="T:h">h</option><option value="T:min">min</option><option value="T:s">s</option>
+        </optgroup>
+      </select>
+      <span>→</span>
+      <select id="conv-to">
+        <optgroup label="Longueur">
+          <option value="L:m">m</option><option value="L:cm">cm</option><option value="L:mm">mm</option><option value="L:km">km</option>
+        </optgroup>
+        <optgroup label="Masse">
+          <option value="M:kg">kg</option><option value="M:g" selected>g</option><option value="M:t">t</option>
+        </optgroup>
+        <optgroup label="Volume">
+          <option value="V:m3">m³</option><option value="V:dm3">dm³</option><option value="V:cm3">cm³</option><option value="V:L">L</option><option value="V:mL">mL</option>
+        </optgroup>
+        <optgroup label="Temps">
+          <option value="T:h">h</option><option value="T:min">min</option><option value="T:s">s</option>
+        </optgroup>
+      </select>
+      <button class="btn-go" onclick="runConversion()">Convertir</button>
+    </div>
+    <div id="conv-result"></div>
+    <div class="examples">
+      <button class="example-btn" onclick="presetConv(1500,'M:kg','M:g')">1500 kg → g</button>
+      <button class="example-btn" onclick="presetConv(2.5,'L:km','L:m')">2,5 km → m</button>
+      <button class="example-btn" onclick="presetConv(750,'V:mL','V:L')">750 mL → L</button>
+      <button class="example-btn" onclick="presetConv(3,'T:h','T:s')">3 h → s</button>
+    </div>
+    <div class="tip">
+      <strong>💡 Astuce :</strong> Pour convertir, repère la position dans le tableau d'unités. Pour passer d'une unité plus grande à une plus petite, on multiplie. Pour passer d'une plus petite à une plus grande, on divise.
+    </div>
+  </div>
+
+  <!-- ── 2. Notation scientifique ─────────────────────────── -->
+  <div class="tool-section" id="tool-notation">
+    <div class="input-row">
+      <label for="not-val">Nombre :</label>
+      <input type="text" id="not-val" value="32500000" placeholder="ex : 32500000 ou 0.000084">
+      <button class="btn-go" onclick="runNotation()">Convertir en notation scientifique</button>
+    </div>
+    <div id="not-result"></div>
+    <div class="examples">
+      <button class="example-btn" onclick="presetNot('300000000')">300 000 000 (vitesse lumière)</button>
+      <button class="example-btn" onclick="presetNot('0.000084')">0,000 084</button>
+      <button class="example-btn" onclick="presetNot('6.022e23')">6,022 × 10²³ (Avogadro)</button>
+      <button class="example-btn" onclick="presetNot('0.00000016')">1,6 × 10⁻⁷</button>
+    </div>
+    <div class="tip">
+      <strong>💡 Notation scientifique :</strong> tout nombre s'écrit \( a \times 10^n \) avec \( 1 \leq |a| < 10 \) et \( n \) entier relatif. Pratique pour les très grands ou très petits nombres en physique-chimie.
+    </div>
+  </div>
+
+  <!-- ── 3. Priorités opératoires ─────────────────────────── -->
+  <div class="tool-section" id="tool-priorites">
+    <div class="input-row">
+      <label for="prio-val">Expression :</label>
+      <input type="text" id="prio-val" value="3 + 4 × 5 - 2" placeholder="ex : 3 + 4 × 5 - 2">
+      <button class="btn-go" onclick="runPriorites()">Calculer pas à pas</button>
+    </div>
+    <div id="prio-result"></div>
+    <div class="examples">
+      <button class="example-btn" onclick="presetPrio('3 + 4 × 5 - 2')">3 + 4 × 5 − 2</button>
+      <button class="example-btn" onclick="presetPrio('(8 - 3) × 2 + 1')">(8 − 3) × 2 + 1</button>
+      <button class="example-btn" onclick="presetPrio('15 / 3 + 2 × 4')">15 / 3 + 2 × 4</button>
+      <button class="example-btn" onclick="presetPrio('2 + 3^2 × 5')">2 + 3² × 5</button>
+    </div>
+    <div class="tip">
+      <strong>💡 Ordre des priorités :</strong> 1) parenthèses, 2) puissances, 3) multiplications/divisions de gauche à droite, 4) additions/soustractions de gauche à droite. (PEMDAS)
+    </div>
+  </div>
+
+  <!-- ── 4. Arrondi & chiffres significatifs ──────────────── -->
+  <div class="tool-section" id="tool-arrondi">
+    <div class="input-row">
+      <label for="arr-val">Nombre :</label>
+      <input type="number" id="arr-val" value="3.14159" step="any">
+    </div>
+    <div class="input-row">
+      <label for="arr-mode">Type d'arrondi :</label>
+      <select id="arr-mode">
+        <option value="dec:0">Entier</option>
+        <option value="dec:1">1 décimale</option>
+        <option value="dec:2" selected>2 décimales</option>
+        <option value="dec:3">3 décimales</option>
+        <option value="sig:1">1 chiffre significatif</option>
+        <option value="sig:2">2 chiffres significatifs</option>
+        <option value="sig:3">3 chiffres significatifs</option>
+      </select>
+      <button class="btn-go" onclick="runArrondi()">Arrondir</button>
+    </div>
+    <div id="arr-result"></div>
+    <div class="examples">
+      <button class="example-btn" onclick="presetArr(3.14159,'dec:2')">π ≈ ? (2 déc.)</button>
+      <button class="example-btn" onclick="presetArr(2547,'sig:2')">2547 (2 sig.)</button>
+      <button class="example-btn" onclick="presetArr(0.00832,'sig:2')">0,00832 (2 sig.)</button>
+      <button class="example-btn" onclick="presetArr(149.78,'dec:0')">149,78 (entier)</button>
+    </div>
+    <div class="tip">
+      <strong>💡 Décimale vs chiffre significatif :</strong> arrondir « à 2 décimales » = garder 2 chiffres après la virgule. Arrondir « à 2 chiffres significatifs » = garder les 2 premiers chiffres non nuls. Les chiffres significatifs sont essentiels en physique pour exprimer la précision d'une mesure.
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+// ─────── Tabs ───────
+function setTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === name));
+  document.querySelectorAll('.tool-section').forEach(s => s.classList.toggle('active', s.id === 'tool-' + name));
+}
+
+// ─────── 1. Conversions ───────
+const factors = {
+  L: { m: 1, cm: 0.01, mm: 0.001, km: 1000 },
+  M: { kg: 1, g: 0.001, t: 1000 },
+  V: { m3: 1, dm3: 0.001, cm3: 1e-6, L: 0.001, mL: 1e-6 },
+  T: { h: 3600, min: 60, s: 1 }
+};
+const labels = {
+  L: { m: 'm', cm: 'cm', mm: 'mm', km: 'km' },
+  M: { kg: 'kg', g: 'g', t: 't' },
+  V: { m3: 'm³', dm3: 'dm³', cm3: 'cm³', L: 'L', mL: 'mL' },
+  T: { h: 'h', min: 'min', s: 's' }
+};
+
+function fmt(n) {
+  if (Math.abs(n) >= 1e6 || (Math.abs(n) < 0.001 && n !== 0)) {
+    return n.toExponential(4).replace('e', ' × 10^');
+  }
+  // Up to 6 significant digits, no trailing zeros
+  return parseFloat(n.toPrecision(8)).toString().replace('.', ',');
+}
+
+function runConversion() {
+  const val = parseFloat(document.getElementById('conv-val').value);
+  const from = document.getElementById('conv-from').value;
+  const to = document.getElementById('conv-to').value;
+  const resDiv = document.getElementById('conv-result');
+  if (isNaN(val)) {
+    resDiv.innerHTML = '<div class="error">Entrez une valeur numérique.</div>';
+    return;
+  }
+  const [fCat, fUnit] = from.split(':');
+  const [tCat, tUnit] = to.split(':');
+  if (fCat !== tCat) {
+    resDiv.innerHTML = '<div class="error">Conversion impossible : les deux unités doivent être de la même catégorie.</div>';
+    return;
+  }
+  const valBase = val * factors[fCat][fUnit];
+  const result = valBase / factors[tCat][tUnit];
+  const factor = factors[fCat][fUnit] / factors[tCat][tUnit];
+  resDiv.innerHTML =
+    `<div class="result-box">
+      <div class="lbl">Résultat</div>
+      <div class="val">${fmt(val)} ${labels[fCat][fUnit]} = ${fmt(result)} ${labels[tCat][tUnit]}</div>
+    </div>
+    <div class="steps">
+      <div class="step"><strong>Étape 1 :</strong> ramener à l'unité de base (${fCat === 'L' ? 'm' : fCat === 'M' ? 'kg' : fCat === 'V' ? 'm³' : 's'})</div>
+      <div class="step">${val} ${labels[fCat][fUnit]} × ${factors[fCat][fUnit]} = ${fmt(valBase)} ${fCat === 'L' ? 'm' : fCat === 'M' ? 'kg' : fCat === 'V' ? 'm³' : 's'}</div>
+      <div class="step"><strong>Étape 2 :</strong> convertir vers ${labels[tCat][tUnit]}</div>
+      <div class="step">${fmt(valBase)} ÷ ${factors[tCat][tUnit]} = <strong>${fmt(result)} ${labels[tCat][tUnit]}</strong></div>
+      <div class="step" style="margin-top:6px"><strong>Coefficient direct :</strong> × ${fmt(factor)}</div>
+    </div>`;
+}
+
+function presetConv(v, f, t) {
+  document.getElementById('conv-val').value = v;
+  document.getElementById('conv-from').value = f;
+  document.getElementById('conv-to').value = t;
+  runConversion();
+}
+
+// ─────── 2. Notation scientifique ───────
+function runNotation() {
+  const raw = document.getElementById('not-val').value.trim().replace(',', '.');
+  const resDiv = document.getElementById('not-result');
+  const num = parseFloat(raw);
+  if (isNaN(num) || num === 0) {
+    resDiv.innerHTML = '<div class="error">Entrez un nombre non nul.</div>';
+    return;
+  }
+  const sign = num < 0 ? '-' : '';
+  const abs = Math.abs(num);
+  const exp = Math.floor(Math.log10(abs));
+  const mantissa = abs / Math.pow(10, exp);
+  resDiv.innerHTML =
+    `<div class="result-box">
+      <div class="lbl">Notation scientifique</div>
+      <div class="val">${sign}${mantissa.toFixed(4).replace(/\.?0+$/, '').replace('.', ',')} × 10<sup>${exp}</sup></div>
+    </div>
+    <div class="steps">
+      <div class="step"><strong>Forme décimale :</strong> ${num.toString().replace('.', ',')}</div>
+      <div class="step"><strong>Exposant :</strong> ${exp} (déplacement de ${Math.abs(exp)} positions de la virgule ${exp >= 0 ? 'vers la gauche' : 'vers la droite'})</div>
+      <div class="step"><strong>Mantisse :</strong> ${sign}${mantissa.toFixed(6).replace(/\.?0+$/, '').replace('.', ',')} (entre 1 et 10)</div>
+      <div class="step"><strong>Résultat :</strong> ${sign}${mantissa.toFixed(4).replace(/\.?0+$/, '').replace('.', ',')} × 10<sup>${exp}</sup></div>
+    </div>`;
+}
+
+function presetNot(v) {
+  document.getElementById('not-val').value = v;
+  runNotation();
+}
+
+// ─────── 3. Priorités opératoires ───────
+function runPriorites() {
+  const expr = document.getElementById('prio-val').value
+    .replace(/×/g, '*').replace(/÷/g, '/').replace(/,/g, '.').replace(/\^/g, '**');
+  const resDiv = document.getElementById('prio-result');
+  let result;
+  try {
+    if (!/^[\d\s+\-*/().*]+$/.test(expr)) throw new Error('Caractères non autorisés');
+    result = Function('"use strict"; return (' + expr + ')')();
+    if (!isFinite(result)) throw new Error('Résultat infini');
+  } catch (e) {
+    resDiv.innerHTML = '<div class="error">Expression invalide. Utilise +, −, ×, ÷, parenthèses, ^ pour les puissances.</div>';
+    return;
+  }
+  // Decompose by priority
+  const original = document.getElementById('prio-val').value;
+  let html =
+    `<div class="result-box">
+      <div class="lbl">Résultat</div>
+      <div class="val">${original} = ${parseFloat(result.toFixed(6))}</div>
+    </div>
+    <div class="steps">
+      <div class="step"><strong>Ordre à respecter :</strong></div>
+      <div class="step">1️⃣ Calculer ce qui est entre parenthèses</div>
+      <div class="step">2️⃣ Calculer les puissances (²,³,…)</div>
+      <div class="step">3️⃣ Calculer multiplications et divisions, de gauche à droite</div>
+      <div class="step">4️⃣ Calculer additions et soustractions, de gauche à droite</div>
+      <div class="step" style="margin-top:8px"><strong>Vérifie l'expression : ${original}</strong></div>
+    </div>`;
+  resDiv.innerHTML = html;
+}
+
+function presetPrio(v) {
+  document.getElementById('prio-val').value = v.replace(/²/g, '^2').replace(/³/g, '^3');
+  runPriorites();
+}
+
+// ─────── 4. Arrondi ───────
+function runArrondi() {
+  const val = parseFloat(document.getElementById('arr-val').value);
+  const mode = document.getElementById('arr-mode').value;
+  const resDiv = document.getElementById('arr-result');
+  if (isNaN(val)) {
+    resDiv.innerHTML = '<div class="error">Entrez un nombre.</div>';
+    return;
+  }
+  const [type, n] = mode.split(':');
+  const nNum = parseInt(n);
+  let result, label;
+  if (type === 'dec') {
+    result = parseFloat(val.toFixed(nNum));
+    label = `Arrondi à ${nNum} décimale${nNum > 1 ? 's' : ''}`;
+  } else {
+    if (val === 0) result = 0;
+    else {
+      const exp = Math.floor(Math.log10(Math.abs(val)));
+      const factor = Math.pow(10, nNum - 1 - exp);
+      result = Math.round(val * factor) / factor;
+    }
+    label = `Arrondi à ${nNum} chiffre${nNum > 1 ? 's' : ''} significatif${nNum > 1 ? 's' : ''}`;
+  }
+  const valStr = val.toString().replace('.', ',');
+  const resStr = result.toString().replace('.', ',');
+  resDiv.innerHTML =
+    `<div class="result-box">
+      <div class="lbl">${label}</div>
+      <div class="val">${valStr} ≈ ${resStr}</div>
+    </div>
+    <div class="steps">
+      <div class="step"><strong>Valeur d'origine :</strong> ${valStr}</div>
+      <div class="step"><strong>Précision demandée :</strong> ${label.toLowerCase()}</div>
+      <div class="step"><strong>Règle :</strong> arrondir au plus proche (5 ou plus → arrondi supérieur, 4 ou moins → arrondi inférieur)</div>
+      <div class="step"><strong>Résultat arrondi :</strong> ${resStr}</div>
+    </div>`;
+}
+
+function presetArr(v, m) {
+  document.getElementById('arr-val').value = v;
+  document.getElementById('arr-mode').value = m;
+  runArrondi();
+}
+
+// ─────── Init ───────
+window.addEventListener('DOMContentLoaded', () => {
+  runConversion();
+  runNotation();
+  runArrondi();
+});
+</script>
+</body>
+</html>

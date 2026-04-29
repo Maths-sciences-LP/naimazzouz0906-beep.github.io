@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Combinatoire et dénombrement — Simulation</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f4f9;color:#333;padding:20px;min-height:100vh}
+.container{max-width:860px;margin:0 auto}
+header{background:linear-gradient(135deg,#4f46e5,#3730a3);color:#fff;padding:25px 25px 22px;border-radius:10px 10px 0 0;position:relative;text-align:center}
+header h1{font-size:1.5em;margin-bottom:4px}
+header p{opacity:.92;font-size:.95em}
+.btn-back{position:absolute;left:15px;top:15px;background:rgba(255,255,255,.2);color:#fff;text-decoration:none;padding:5px 12px;border-radius:5px;font-size:.85em;transition:background .2s}
+.btn-back:hover{background:rgba(255,255,255,.35)}
+.card{background:#fff;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:25px;margin-bottom:20px}
+.card.standalone{border-radius:10px;margin-top:20px}
+.intro{background:#eef2ff;border-left:4px solid #4f46e5;padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:20px;font-size:.95em;line-height:1.55}
+.intro strong{color:#3730a3}
+.tabs{display:flex;gap:0;margin-bottom:20px;border-bottom:2px solid #c7d2fe;flex-wrap:wrap}
+.tab{flex:1;min-width:120px;padding:10px 14px;cursor:pointer;border:none;background:none;font-size:.93em;color:#3730a3;font-weight:600;border-bottom:3px solid transparent;transition:all .2s}
+.tab.active{color:#4f46e5;border-bottom-color:#4f46e5;background:#eef2ff}
+.tab:hover{background:#f5f3ff}
+.tool{display:none}
+.tool.active{display:block}
+.input-row{display:flex;align-items:center;gap:10px;margin:14px 0;flex-wrap:wrap}
+.input-row label{font-weight:600;min-width:140px;color:#3730a3}
+input[type=number]{padding:8px 12px;border:2px solid #c7d2fe;border-radius:6px;font-size:1em;width:100px;outline:none}
+input[type=number]:focus{border-color:#4f46e5}
+.btn-go{background:#4f46e5;color:#fff;border:none;padding:9px 20px;border-radius:6px;cursor:pointer;font-weight:600;font-size:.95em}
+.btn-go:hover{background:#3730a3}
+.formula-box{background:#eef2ff;border:2px solid #a5b4fc;border-radius:8px;padding:14px 18px;margin:14px 0;text-align:center;font-size:1.15em;color:#3730a3}
+.result-box{background:#fef3c7;border:2px solid #fcd34d;border-radius:8px;padding:16px;margin-top:14px;text-align:center}
+.result-box .lbl{font-size:.82em;color:#78350f;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.result-box .val{font-size:1.5em;font-weight:700;color:#78350f;font-family:monospace}
+.steps{background:#f5f3ff;border-left:4px solid #4f46e5;padding:12px 16px;border-radius:0 8px 8px 0;margin-top:12px;font-size:.92em}
+.step{padding:5px 0;font-family:monospace}
+.step strong{color:#3730a3;font-family:'Segoe UI',sans-serif}
+.tip{background:#dcfce7;border-left:4px solid #16a34a;padding:12px 16px;border-radius:0 8px 8px 0;margin-top:14px;font-size:.92em}
+.tip strong{color:#15803d}
+
+/* Triangle de Pascal */
+.pascal{margin:18px auto;text-align:center;overflow-x:auto}
+.pascal-row{display:flex;justify-content:center;gap:4px;margin:2px 0}
+.pascal-cell{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#eef2ff;color:#3730a3;font-weight:600;font-size:.9em;border:2px solid #c7d2fe;transition:all .2s}
+.pascal-cell.highlight{background:#4f46e5;color:#fff;border-color:#3730a3;transform:scale(1.15);box-shadow:0 4px 10px rgba(79,70,229,.3)}
+.examples{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.example-btn{background:#fff;color:#4f46e5;border:1.5px solid #c7d2fe;padding:5px 12px;border-radius:18px;cursor:pointer;font-size:.85em;font-weight:600;transition:all .15s}
+.example-btn:hover{background:#eef2ff;transform:translateY(-1px)}
+
+@media(max-width:600px){
+  .container{padding:0}
+  header h1{font-size:1.25em}
+  .input-row{flex-direction:column;align-items:flex-start;gap:6px}
+  .input-row label{min-width:auto}
+  .pascal-cell{width:34px;height:34px;font-size:.78em}
+  .tab{font-size:.82em;padding:8px 8px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <a href="../simulations.html" class="btn-back">← Retour</a>
+  <h1>Combinatoire et dénombrement</h1>
+  <p>Terminale LGT · Ch01 · Permutations · Arrangements · Combinaisons</p>
+</header>
+
+<div class="card">
+  <div class="intro">
+    <strong>À quoi ça sert ?</strong> En combinatoire, on compte les façons de choisir et d'arranger des éléments. Cette simulation propose 4 outils : factorielle, permutations (\(n!\)), arrangements (\(A_n^k\)), combinaisons (\(C_n^k\)) et le triangle de Pascal. Choisis n et k, et observe les résultats avec les étapes de calcul.
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-tab="fact" onclick="setTab('fact')">n!</button>
+    <button class="tab" data-tab="arr" onclick="setTab('arr')">Arrangements \(A_n^k\)</button>
+    <button class="tab" data-tab="comb" onclick="setTab('comb')">Combinaisons \(C_n^k\)</button>
+    <button class="tab" data-tab="pascal" onclick="setTab('pascal')">Triangle de Pascal</button>
+  </div>
+
+  <!-- ── Factorielle ─────────────────────────────────── -->
+  <div class="tool active" id="tool-fact">
+    <div class="formula-box">\( n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1 \)</div>
+    <p style="font-size:.92em;color:#475569;margin:8px 0;line-height:1.5">Le nombre de <strong>permutations</strong> de \( n \) éléments distincts. Exemple : ranger 5 livres sur une étagère = \(5! = 120\) façons.</p>
+    <div class="input-row">
+      <label for="fact-n">n =</label>
+      <input type="number" id="fact-n" value="5" min="0" max="15">
+      <button class="btn-go" onclick="runFact()">Calculer</button>
+    </div>
+    <div id="fact-result"></div>
+    <div class="examples">
+      <button class="example-btn" onclick="presetFact(0)">0! = 1</button>
+      <button class="example-btn" onclick="presetFact(5)">5!</button>
+      <button class="example-btn" onclick="presetFact(7)">7!</button>
+      <button class="example-btn" onclick="presetFact(10)">10!</button>
+    </div>
+  </div>
+
+  <!-- ── Arrangements ─────────────────────────────────── -->
+  <div class="tool" id="tool-arr">
+    <div class="formula-box">\( A_n^k = \dfrac{n!}{(n-k)!} = n \times (n-1) \times \cdots \times (n-k+1) \)</div>
+    <p style="font-size:.92em;color:#475569;margin:8px 0;line-height:1.5">Le nombre de <strong>k-arrangements</strong> de n éléments : on choisit k éléments parmi n <em>en tenant compte de l'ordre</em>. Exemple : podium des 3 premiers parmi 8 athlètes = \(A_8^3 = 336\) façons.</p>
+    <div class="input-row">
+      <label for="arr-n">n =</label>
+      <input type="number" id="arr-n" value="8" min="0" max="15">
+      <label for="arr-k" style="min-width:auto">k =</label>
+      <input type="number" id="arr-k" value="3" min="0" max="15">
+      <button class="btn-go" onclick="runArr()">Calculer</button>
+    </div>
+    <div id="arr-result"></div>
+    <div class="examples">
+      <button class="example-btn" onclick="presetArr(8,3)">A(8,3) podium</button>
+      <button class="example-btn" onclick="presetArr(10,4)">A(10,4)</button>
+      <button class="example-btn" onclick="presetArr(5,5)">A(5,5) = 5!</button>
+    </div>
+  </div>
+
+  <!-- ── Combinaisons ─────────────────────────────────── -->
+  <div class="tool" id="tool-comb">
+    <div class="formula-box">\( C_n^k = \binom{n}{k} = \dfrac{n!}{k!\,(n-k)!} \)</div>
+    <p style="font-size:.92em;color:#475569;margin:8px 0;line-height:1.5">Le nombre de <strong>combinaisons</strong> de k éléments parmi n : on choisit k éléments <em>sans tenir compte de l'ordre</em>. Exemple : choisir 5 cartes parmi 32 pour une main de poker = \(C_{32}^5 = 201\,376\) mains possibles.</p>
+    <div class="input-row">
+      <label for="comb-n">n =</label>
+      <input type="number" id="comb-n" value="32" min="0" max="50">
+      <label for="comb-k" style="min-width:auto">k =</label>
+      <input type="number" id="comb-k" value="5" min="0" max="50">
+      <button class="btn-go" onclick="runComb()">Calculer</button>
+    </div>
+    <div id="comb-result"></div>
+    <div class="examples">
+      <button class="example-btn" onclick="presetComb(32,5)">C(32,5) main poker</button>
+      <button class="example-btn" onclick="presetComb(49,6)">C(49,6) Loto</button>
+      <button class="example-btn" onclick="presetComb(10,3)">C(10,3) jury</button>
+      <button class="example-btn" onclick="presetComb(7,2)">C(7,2)</button>
+    </div>
+    <div class="tip">
+      <strong>💡 À retenir :</strong> \(C_n^k = C_n^{n-k}\) (symétrie). Choisir 5 cartes parmi 32 revient à choisir les 27 qu'on ne prend pas.
+    </div>
+  </div>
+
+  <!-- ── Triangle de Pascal ─────────────────────────── -->
+  <div class="tool" id="tool-pascal">
+    <p style="font-size:.92em;color:#475569;margin:8px 0;line-height:1.5">Le <strong>triangle de Pascal</strong> donne tous les coefficients binomiaux. Chaque cellule = somme des deux du dessus. Cliquez sur une cellule pour voir \(C_n^k\) en surbrillance.</p>
+    <div class="input-row">
+      <label for="pascal-rows">Nombre de lignes :</label>
+      <input type="number" id="pascal-rows" value="8" min="1" max="12" oninput="drawPascal()">
+    </div>
+    <div class="pascal" id="pascal-display"></div>
+    <div class="formula-box" id="pascal-info" style="font-size:1em">Cliquez sur une cellule pour la sélectionner.</div>
+    <div class="tip">
+      <strong>💡 Relation de Pascal :</strong> \(C_n^k = C_{n-1}^{k-1} + C_{n-1}^k\). C'est ce qui permet de construire le triangle ligne par ligne, sans calcul de factorielle.
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function setTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === name));
+  document.querySelectorAll('.tool').forEach(s => s.classList.toggle('active', s.id === 'tool-' + name));
+  if (name === 'pascal') drawPascal();
+  if (window.MathJax) MathJax.typesetPromise();
+}
+
+function fact(n) {
+  if (n < 0) return null;
+  if (n === 0) return 1;
+  let r = 1;
+  for (let i = 2; i <= n; i++) r *= i;
+  return r;
+}
+
+function binom(n, k) {
+  if (k < 0 || k > n) return 0;
+  if (k === 0 || k === n) return 1;
+  k = Math.min(k, n - k);
+  let r = 1;
+  for (let i = 0; i < k; i++) r = r * (n - i) / (i + 1);
+  return Math.round(r);
+}
+
+function fmt(n) {
+  if (n >= 1e9) return n.toExponential(3);
+  return n.toLocaleString('fr-FR');
+}
+
+// Factorielle
+function runFact() {
+  const n = parseInt(document.getElementById('fact-n').value);
+  const resDiv = document.getElementById('fact-result');
+  if (isNaN(n) || n < 0) {
+    resDiv.innerHTML = '<div style="color:#dc2626;text-align:center;padding:10px">n doit être un entier positif.</div>';
+    return;
+  }
+  if (n > 15) {
+    resDiv.innerHTML = '<div style="color:#dc2626;text-align:center;padding:10px">n ≤ 15 pour rester lisible.</div>';
+    return;
+  }
+  const r = fact(n);
+  let dev = '';
+  if (n === 0) dev = '0! = 1 (par convention)';
+  else if (n === 1) dev = '1! = 1';
+  else {
+    const arr = [];
+    for (let i = n; i >= 1; i--) arr.push(i);
+    dev = arr.join(' × ');
+  }
+  resDiv.innerHTML =
+    `<div class="result-box"><div class="lbl">Résultat</div><div class="val">${n}! = ${fmt(r)}</div></div>
+    <div class="steps">
+      <div class="step"><strong>Définition :</strong> ${n}! = produit des entiers de 1 à ${n}</div>
+      <div class="step"><strong>Calcul :</strong> ${dev}</div>
+      <div class="step"><strong>Résultat :</strong> ${fmt(r)}</div>
+    </div>`;
+}
+function presetFact(n) { document.getElementById('fact-n').value = n; runFact(); }
+
+// Arrangements
+function runArr() {
+  const n = parseInt(document.getElementById('arr-n').value);
+  const k = parseInt(document.getElementById('arr-k').value);
+  const resDiv = document.getElementById('arr-result');
+  if (isNaN(n) || isNaN(k) || k < 0 || n < 0) {
+    resDiv.innerHTML = '<div style="color:#dc2626;text-align:center;padding:10px">n et k doivent être positifs.</div>';
+    return;
+  }
+  if (k > n) {
+    resDiv.innerHTML = '<div style="color:#dc2626;text-align:center;padding:10px">Il faut k ≤ n.</div>';
+    return;
+  }
+  const r = fact(n) / fact(n - k);
+  let dev = '';
+  if (k === 0) dev = `A(${n},0) = ${n}! / ${n}! = 1`;
+  else {
+    const arr = [];
+    for (let i = 0; i < k; i++) arr.push(n - i);
+    dev = arr.join(' × ');
+  }
+  resDiv.innerHTML =
+    `<div class="result-box"><div class="lbl">Arrangement</div><div class="val">A(${n},${k}) = ${fmt(r)}</div></div>
+    <div class="steps">
+      <div class="step"><strong>Formule :</strong> A(${n},${k}) = ${n}! / (${n}−${k})! = ${n}! / ${n - k}!</div>
+      <div class="step"><strong>Calcul direct :</strong> ${dev}</div>
+      <div class="step"><strong>Résultat :</strong> ${fmt(r)} arrangements</div>
+      <div class="step" style="margin-top:6px"><em>Interprétation : ${fmt(r)} façons de choisir et ordonner ${k} éléments parmi ${n}.</em></div>
+    </div>`;
+}
+function presetArr(n, k) { document.getElementById('arr-n').value = n; document.getElementById('arr-k').value = k; runArr(); }
+
+// Combinaisons
+function runComb() {
+  const n = parseInt(document.getElementById('comb-n').value);
+  const k = parseInt(document.getElementById('comb-k').value);
+  const resDiv = document.getElementById('comb-result');
+  if (isNaN(n) || isNaN(k) || k < 0 || n < 0) {
+    resDiv.innerHTML = '<div style="color:#dc2626;text-align:center;padding:10px">n et k doivent être positifs.</div>';
+    return;
+  }
+  if (k > n) {
+    resDiv.innerHTML = '<div style="color:#dc2626;text-align:center;padding:10px">Il faut k ≤ n.</div>';
+    return;
+  }
+  const r = binom(n, k);
+  const arr = fact(n) / fact(n - k);
+  resDiv.innerHTML =
+    `<div class="result-box"><div class="lbl">Combinaison</div><div class="val">C(${n},${k}) = ${fmt(r)}</div></div>
+    <div class="steps">
+      <div class="step"><strong>Formule :</strong> C(${n},${k}) = ${n}! / (${k}! × ${n - k}!)</div>
+      <div class="step"><strong>Lien avec arrangements :</strong> A(${n},${k}) / ${k}! = ${fmt(arr)} / ${k}! = ${fmt(r)}</div>
+      <div class="step"><strong>Résultat :</strong> ${fmt(r)} combinaisons</div>
+      <div class="step" style="margin-top:6px"><em>Interprétation : ${fmt(r)} façons de choisir ${k} éléments parmi ${n}, sans tenir compte de l'ordre.</em></div>
+      <div class="step" style="margin-top:6px"><strong>Symétrie :</strong> C(${n},${k}) = C(${n},${n - k}) = ${fmt(binom(n, n - k))}</div>
+    </div>`;
+}
+function presetComb(n, k) { document.getElementById('comb-n').value = n; document.getElementById('comb-k').value = k; runComb(); }
+
+// Triangle de Pascal
+let selected = null;
+function drawPascal() {
+  const rows = parseInt(document.getElementById('pascal-rows').value) || 8;
+  const cap = Math.min(rows, 12);
+  const div = document.getElementById('pascal-display');
+  div.innerHTML = '';
+  for (let n = 0; n < cap; n++) {
+    const row = document.createElement('div');
+    row.className = 'pascal-row';
+    for (let k = 0; k <= n; k++) {
+      const cell = document.createElement('button');
+      cell.className = 'pascal-cell';
+      cell.textContent = binom(n, k);
+      cell.dataset.n = n;
+      cell.dataset.k = k;
+      cell.setAttribute('aria-label', `C(${n},${k}) = ${binom(n, k)}`);
+      cell.onclick = () => selectPascal(n, k);
+      row.appendChild(cell);
+    }
+    div.appendChild(row);
+  }
+  if (selected) {
+    const c = div.querySelector(`[data-n="${selected.n}"][data-k="${selected.k}"]`);
+    if (c) c.classList.add('highlight');
+  }
+}
+
+function selectPascal(n, k) {
+  selected = { n, k };
+  document.querySelectorAll('.pascal-cell').forEach(c => c.classList.remove('highlight'));
+  const c = document.querySelector(`[data-n="${n}"][data-k="${k}"]`);
+  if (c) c.classList.add('highlight');
+  const info = document.getElementById('pascal-info');
+  info.innerHTML = `\\( \\binom{${n}}{${k}} = ${binom(n, k)} \\) — ligne ${n + 1}, position ${k + 1}`;
+  if (window.MathJax) MathJax.typesetPromise([info]);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  runFact();
+  runArr();
+  runComb();
+  drawPascal();
+});
+</script>
+</body>
+</html>
