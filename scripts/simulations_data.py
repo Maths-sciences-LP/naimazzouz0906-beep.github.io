@@ -1009,4 +1009,250 @@ CHAPTER_SIMS = {
             "attenuation-sonore.html": "Conçois un caisson d'insonorisation autour d'une machine bruyante. Choisis matériaux, épaisseur et forme pour atteindre l'atténuation souhaitée.",
         },
     },
+
+    # ═══════════════════════════════════════════════════════════════════
+    # PHASE 1 — RÉUTILISATIONS DE SIMULATIONS EXISTANTES (2026-04-29)
+    # ═══════════════════════════════════════════════════════════════════
+
+    # ─── MATHS PREMIÈRE — Chapitres complétés ──────────────────────────
+    "maths/premiere/ch02": {
+        "sims": ["probabilites.html"],
+        "pedagogy": {
+            "probabilites.html": "Réutilise la simulation des probabilités vue en Seconde pour explorer la loi des grands nombres et fluctuation des fréquences. Sert de base avant d'aborder les arbres de probabilités et les événements composés.",
+        },
+    },
+    "maths/premiere/ch07": {
+        "sims": ["solides.html"],
+        "pedagogy": {
+            "solides.html": "Manipule les solides usuels (pavé, cylindre, cône, sphère, pyramide) en faisant varier leurs dimensions. Observe l'effet des agrandissements sur les volumes (×k³) — résultat-clé pour les exercices d'optimisation et de devis.",
+        },
+    },
+    "maths/premiere/ch08": {
+        "sims": ["vecteurs.html"],
+        "pedagogy": {
+            "vecteurs.html": "Construis des vecteurs dans le plan, calcule leurs sommes graphiquement (parallélogramme) et par coordonnées. Vérifie la colinéarité avec le déterminant. Applications directes en physique (forces, vitesses).",
+        },
+    },
+
+    # ─── MATHS TERMINALE — Chapitre 02 manquant ─────────────────────────
+    "maths/terminale/ch02": {
+        "sims": ["probabilites.html"],
+        "pedagogy": {
+            "probabilites.html": "Travaille la fluctuation des fréquences avant d'introduire les probabilités conditionnelles, la formule de Bayes et les arbres pondérés. La loi des grands nombres reste la base de l'inférence.",
+        },
+    },
+
+    # ─── MATHS CAP — Couverture complète des 7 chapitres ────────────────
+    "maths/cap/ch01": {
+        "sims": ["statistiques.html"],
+        "pedagogy": {
+            "statistiques.html": "Saisis tes propres données (nb d'absents par jour, ventes mensuelles, etc.) et observe la moyenne, la médiane, l'étendue. Utile pour les TP et études statistiques de l'atelier.",
+        },
+    },
+    "maths/cap/ch02": {
+        "sims": ["probabilites.html"],
+        "pedagogy": {
+            "probabilites.html": "Lance des dés ou tire dans une urne un grand nombre de fois et observe la stabilisation des fréquences. Comprends intuitivement pourquoi la fréquence se rapproche de la probabilité.",
+        },
+    },
+    "maths/cap/ch03": {
+        "sims": ["proportionnalite.html"],
+        "pedagogy": {
+            "proportionnalite.html": "Manipule des situations concrètes (recettes, prix au kilo, pourcentages de TVA, remises) et observe le coefficient de proportionnalité en action. La règle de trois devient évidente.",
+        },
+    },
+    "maths/cap/ch04": {
+        "sims": ["balance.html", "equations.html"],
+        "pedagogy": {
+            "balance.html": "La métaphore de la balance illustre concrètement le principe : ce qu'on fait à un membre, on doit le faire à l'autre. Idéal pour saisir l'idée d'équilibre avant la manipulation algébrique.",
+            "equations.html": "Quand tu bloques, entre l'équation et regarde la résolution étape par étape. Sert aussi de modèle de rédaction pour tes propres exercices.",
+        },
+    },
+    "maths/cap/ch05": {
+        "sims": ["fonction-machine.html", "droite-affine.html"],
+        "pedagogy": {
+            "fonction-machine.html": "La fonction comme « machine » qui transforme un nombre en un autre. Image, antécédent, lecture graphique deviennent intuitifs.",
+            "droite-affine.html": "Trace une droite y = ax + b en faisant varier a (pente) et b (ordonnée à l'origine). Visualise comment chaque coefficient agit sur la droite.",
+        },
+    },
+    "maths/cap/ch06": {
+        "sims": ["figures-planes.html", "pythagore.html", "solides.html"],
+        "pedagogy": {
+            "figures-planes.html": "Manipule carré, rectangle, triangle, cercle et observe le périmètre et l'aire en temps réel. Attention : doubler la longueur multiplie l'aire par 4 !",
+            "pythagore.html": "Démonstration visuelle par les aires : a² + b² = c². Comprends le « pourquoi ça marche » au-delà de la formule.",
+            "solides.html": "Volume d'un pavé, cylindre, cône, sphère, pyramide. Application directe : calcul de volume d'une pièce, d'un réservoir.",
+        },
+    },
+    # Pas de sim adaptée pour ch07 (Calculs numériques) — à créer en Phase 2
+
+    # ─── PC CAP — Couverture des 7 chapitres ────────────────────────────
+    # ch01 (Sécurité) : chapitre réglementaire, pas de simulation pertinente
+    "physique-chimie/cap/ch02": {
+        "sims": ["circuit-electrique.html", "ohm.html", "puissance.html"],
+        "pedagogy": {
+            "circuit-electrique.html": "Construis un circuit en série ou en parallèle, branche les appareils de mesure et anticipe les valeurs avant de mesurer.",
+            "ohm.html": "Trace toi-même la caractéristique d'un dipôle ohmique : la pente de la droite EST la résistance.",
+            "puissance.html": "Calcule la puissance d'un appareil et l'énergie consommée. Compare en kWh et estime le coût au tarif EDF.",
+        },
+    },
+    "physique-chimie/cap/ch03": {
+        "sims": ["forces.html", "mouvement.html"],
+        "pedagogy": {
+            "forces.html": "Combine plusieurs forces (poids, tension, frottement) sur un objet et trouve la condition d'équilibre.",
+            "mouvement.html": "Observe différents types de mouvements et apprends à les nommer (uniforme, accéléré, décéléré).",
+        },
+    },
+    "physique-chimie/cap/ch04": {
+        "sims": ["atome.html", "atome-couches.html", "concentration.html"],
+        "pedagogy": {
+            "atome.html": "Construis n'importe quel atome de la table périodique en ajoutant protons, neutrons et électrons.",
+            "atome-couches.html": "Visualise la répartition des électrons sur les couches K, L, M et comprends pourquoi certains éléments sont stables.",
+            "concentration.html": "Prépare une solution avec le bon protocole (peser, dissoudre, compléter au trait de jauge) avant de passer au labo.",
+        },
+    },
+    "physique-chimie/cap/ch05": {
+        "sims": ["son-2nde.html", "son.html"],
+        "pedagogy": {
+            "son-2nde.html": "Modifie la fréquence et entends la hauteur changer. Modifie l'amplitude et entends le volume changer.",
+            "son.html": "Calcule le niveau sonore en décibels L = 10 × log(I/I₀) — utile pour identifier les seuils de protection auditive en atelier.",
+        },
+    },
+    "physique-chimie/cap/ch06": {
+        "sims": ["chaleur.html", "transferts-thermiques.html", "changement-etat.html"],
+        "pedagogy": {
+            "chaleur.html": "Distingue chaleur (transfert d'énergie) et température (état d'agitation). La simulation montre clairement la différence.",
+            "transferts-thermiques.html": "Identifie les trois modes de transfert (conduction, convection, rayonnement) sur des exemples concrets.",
+            "changement-etat.html": "Trace la courbe T = f(t) et observe les paliers de fusion et d'ébullition pour un corps pur.",
+        },
+    },
+    "physique-chimie/cap/ch07": {
+        "sims": ["refraction.html", "sources-lumineuses.html", "melangeur.html"],
+        "pedagogy": {
+            "refraction.html": "Fais varier l'angle d'incidence et observe la réfraction air→eau. Trouve l'angle limite à partir duquel la réflexion devient totale.",
+            "sources-lumineuses.html": "Compare les spectres : continu pour le soleil et l'incandescence, raies pour le néon, peigne pour la LED.",
+            "melangeur.html": "Découvre la synthèse additive : R + V + B = blanc. Application : éclairage de scène, écrans LED, signalétique.",
+        },
+    },
+
+    # ─── MATHS LGT TERMINALE — Réutilisations applicables ───────────────
+    "maths/lgt-terminale/ch02": {
+        "sims": ["vecteurs.html"],
+        "pedagogy": {
+            "vecteurs.html": "Manipule des vecteurs et leurs sommes dans le plan avant d'étendre la notion à l'espace (3 coordonnées). Les opérations restent les mêmes : addition, multiplication par un scalaire, colinéarité.",
+        },
+    },
+    "maths/lgt-terminale/ch05": {
+        "sims": ["suites.html"],
+        "pedagogy": {
+            "suites.html": "Compare la croissance des suites arithmétiques et géométriques. Observe la convergence quand |q| < 1, la divergence sinon. Base intuitive pour étudier les limites de suites.",
+        },
+    },
+    "maths/lgt-terminale/ch06": {
+        "sims": ["polynome3.html", "exp-log.html"],
+        "pedagogy": {
+            "polynome3.html": "Trace une fonction polynôme et observe son comportement aux infinis (ce que devient f(x) quand x → ±∞). Lien direct avec les limites en l'infini.",
+            "exp-log.html": "Compare les croissances de eˣ et ln(x) — l'une explose, l'autre est très lente. Concept-clé pour les limites et les croissances comparées.",
+        },
+    },
+    "maths/lgt-terminale/ch07": {
+        "sims": ["derivee.html"],
+        "pedagogy": {
+            "derivee.html": "Déplace le point de tangence sur la courbe et observe la pente changer. Le lien dérivée ↔ tangente devient évident, base pour étudier la convexité.",
+        },
+    },
+    "maths/lgt-terminale/ch08": {
+        "sims": ["polynome3.html"],
+        "pedagogy": {
+            "polynome3.html": "Une fonction polynôme est continue partout. Trace-la et observe que la courbe ne présente jamais de saut — visualisation de la continuité.",
+        },
+    },
+    "maths/lgt-terminale/ch09": {
+        "sims": ["exp-log.html"],
+        "pedagogy": {
+            "exp-log.html": "Sélectionne le mode logarithme et explore les propriétés du ln : ln(1)=0, ln(e)=1, croissance lente. Indispensable avant les exercices sur les équations contenant ln.",
+        },
+    },
+    "maths/lgt-terminale/ch10": {
+        "sims": ["trigonometrie.html"],
+        "pedagogy": {
+            "trigonometrie.html": "Utilise le cercle trigonométrique pour visualiser cos(x) et sin(x), leurs périodicités et symétries. Préparation aux études graphiques des fonctions sin et cos.",
+        },
+    },
+    "maths/lgt-terminale/ch12": {
+        "sims": ["integrale.html"],
+        "pedagogy": {
+            "integrale.html": "Visualise l'aire sous la courbe entre a et b. Compare l'évaluation par primitive avec une approximation par rectangles — c'est le théorème fondamental.",
+        },
+    },
+    "maths/lgt-terminale/ch13": {
+        "sims": ["probabilites.html"],
+        "pedagogy": {
+            "probabilites.html": "Lance une expérience de Bernoulli un grand nombre de fois et observe la fluctuation. Base pour comprendre la loi binomiale (somme d'épreuves indépendantes).",
+        },
+    },
+    "maths/lgt-terminale/ch15": {
+        "sims": ["probabilites.html"],
+        "pedagogy": {
+            "probabilites.html": "Observe la concentration des fréquences autour de la probabilité théorique quand n grandit. Formulation expérimentale de la loi des grands nombres.",
+        },
+    },
+
+    # ─── MATHS BTS — Réutilisations applicables ─────────────────────────
+    "maths/bts/ch01": {
+        "sims": ["suites.html"],
+        "pedagogy": {
+            "suites.html": "Reprends la base : suites arithmétiques (linéaires) et géométriques (exponentielles). Convergence selon la raison. Outil indispensable avant les séries en BTS.",
+        },
+    },
+    "maths/bts/ch02": {
+        "sims": ["traceur.html", "polynome3.html"],
+        "pedagogy": {
+            "traceur.html": "Trace une fonction polynôme du second degré pour étudier son sens de variation, ses extremums, et le lien avec sa dérivée.",
+            "polynome3.html": "Étend l'étude aux fonctions de degré 3 : extremums locaux, points d'inflexion. Préparation aux études complètes de fonctions BTS.",
+        },
+    },
+    "maths/bts/ch04": {
+        "sims": ["integrale.html"],
+        "pedagogy": {
+            "integrale.html": "Aire sous la courbe entre a et b — notion centrale du calcul intégral. La simulation permet de confirmer visuellement les résultats algébriques.",
+        },
+    },
+    "maths/bts/ch08": {
+        "sims": ["probabilites.html"],
+        "pedagogy": {
+            "probabilites.html": "Reprends la base : fréquence vs probabilité, loi des grands nombres. Avant d'introduire les variables aléatoires et leurs lois en BTS.",
+        },
+    },
+    "maths/bts/ch10": {
+        "sims": ["statistiques.html"],
+        "pedagogy": {
+            "statistiques.html": "Saisis une série, calcule moyenne, médiane, écart-type. Visualise l'effet d'un point aberrant sur chaque indicateur — c'est différent !",
+        },
+    },
+    "maths/bts/ch12": {
+        "sims": ["complexes.html"],
+        "pedagogy": {
+            "complexes.html": "Place un complexe dans le plan, calcule module et argument. Application directe en électricité (impédance Z = R + jX) et en signal (transformée de Fourier complexe).",
+        },
+    },
+    "maths/bts/ch13": {
+        "sims": ["figures-planes.html", "pythagore.html"],
+        "pedagogy": {
+            "figures-planes.html": "Périmètres et aires des figures usuelles. Préparation aux configurations géométriques planes du BTS.",
+            "pythagore.html": "Application directe en topographie, métrologie, cinématique. Calcul des distances entre deux points par leurs coordonnées.",
+        },
+    },
+    "maths/bts/ch14": {
+        "sims": ["solides.html"],
+        "pedagogy": {
+            "solides.html": "Modélisation géométrique : volumes des solides usuels. Calcul de capacités, dimensionnement de réservoirs et de pièces mécaniques.",
+        },
+    },
+    "maths/bts/ch15": {
+        "sims": ["vecteurs.html", "scalaire.html"],
+        "pedagogy": {
+            "vecteurs.html": "Calcul vectoriel : addition, multiplication par un scalaire, colinéarité. Base avant les calculs de forces, vitesses, et applications mécaniques.",
+            "scalaire.html": "Produit scalaire pour calculer angles, projections, et orthogonalité. Application directe en énergie/travail (W = F⃗·d⃗).",
+        },
+    },
 }
