@@ -14,7 +14,11 @@ body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:
 .sim-container { max-width:960px; margin:auto; }
 .btn-back { display:inline-block; margin-bottom:14px; text-decoration:none; color:var(--primary); font-size:.85em; font-weight:700; }
 
-header { text-align:center; border-bottom:3px solid var(--primary); padding-bottom:14px; margin-bottom:20px; }
+header { background:linear-gradient(135deg,#6f42c1,#553c9a); color:#fff; padding:25px 25px 22px; border-radius:10px; text-align:center; position:relative; margin:-30px -30px 22px }
+header h1 { color:#fff; font-size:1.45em; margin:0 0 4px }
+header .sous-titre { color:rgba(255,255,255,0.92); margin:0 }
+.btn-back { position:absolute; left:15px; top:15px; background:rgba(255,255,255,0.2); color:#fff; text-decoration:none; padding:5px 12px; border-radius:5px; font-size:0.85em; transition:background 0.2s; z-index:10 }
+.btn-back:hover { background:rgba(255,255,255,0.35) }
 h1 { margin:0 0 4px; color:var(--primary); font-size:1.5em; }
 .sous-titre { color:var(--muted); font-size:.9em; margin:0; }
 
@@ -83,11 +87,10 @@ h1 { margin:0 0 4px; color:var(--primary); font-size:1.5em; }
 </style>
 <body>
 <div class="sim-container">
-<a href="../simulations.html" class="btn-back">&#8592; Retour au labo de simulations</a>
-
 <header>
+  <a href="../simulations.html" class="btn-back">&#8592; Retour</a>
   <h1>Types de liaisons chimiques</h1>
-  <p class="sous-titre">2nde Bac Pro &middot; Physique-Chimie &middot; Ch07 &ndash; Structure de la mati&egrave;re</p>
+  <p class="sous-titre">2nde Bac Pro · Ch07 · Structure de la matière</p>
 </header>
 
 <div class="objectifs">
