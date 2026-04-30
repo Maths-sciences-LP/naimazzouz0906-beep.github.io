@@ -1,7 +1,7 @@
 # Audit Pedagogique — Mathematiques (Seconde, Premiere, Terminale)
 
 **Date** : 2026-03-16
-**Derniere mise a jour** : 2026-03-18
+**Derniere mise a jour** : 2026-04-30 (audits avril : Terminale lecons + simulations Maths polish + nouvelles sims)
 **Perimetre** : Qualite pedagogique des cours (lecon.html) de mathematiques
 **Methode** : Lecture integrale de 5 chapitres par niveau + lecture structurelle de tous les autres
 
@@ -377,3 +377,47 @@ La section V "Representation graphique des suites" (ligne 273-309) explique comm
 - [ ] QCM maths : privilegier calcul mental, reconnaissance de formules, lecture graphique, vrai/faux sur proprietes
 - [ ] Interro maths : privilegier calculs directs, tableaux a completer, exercices de reconnaissance
 - [ ] Specs detaillees : voir `prompts/prompt-qcm-interro.md`
+
+---
+
+## Mises à jour avril 2026
+
+### Audits effectués (par section)
+
+| Section | Période | Périmètre | Erreurs scientifiques |
+|---|---|---|---|
+| Maths Seconde Pro | mars 2026 | 14 ch + tous fichiers | déjà documenté plus haut |
+| Maths Première Pro | mars-avril | 9 ch × 8 fichiers | corrections via PR #380 |
+| Maths Terminale Pro | avril 2026 | 11 ch leçons + ~77 autres | **5 corrections leçons** (PR #381) |
+| Maths CAP | avril 2026 | 7 ch × 8 fichiers | 0 erreur |
+
+### Corrections leçons Terminale (PR #381)
+
+- **ch03 (Suites géométriques)** : somme `12000 × (1−0,85⁸) / 0,15` corrigée à **≈ 58 200** (au lieu de 55 320)
+- **ch04 (Polynômes degré 3)** : valeurs C(t) recalculées : C(2)=14, C(6)=30, C(8)=14 (au lieu de 10, 42, 22) ; tables de balayage f(0,5)/f(1,5) ; B(7)=0 ; emoji corrompu Casio fixé ; preset boîte 4×3 dm clarifié
+- **ch09 (exp/ln)** : symbole `ℜ` (relation d'ordre) → `ℝ` (réels) — 8 occurrences ; « cléf » → « clé » ; sections « Erreurs fréquentes » et simulation replacées dans `.c`
+- **ch10 (Complexes)** : « A retenir » → « À retenir » ; simulation replacée dans `.c`
+- **ch11 (Produit scalaire)** : « A retenir » → « À retenir » ; simulation replacée dans `.c`
+
+### Polish des simulations Maths (avril 2026)
+
+- **3 sims restructurées** : graphe-equation, inegalite, traceur (header gradient + intro pédagogique)
+- **5 sims enrichies** avec bloc « À explorer » : balance, derivee, vecteurs, integrale, entrainement-ineq
+- **6 sims rééditées** précédemment : equations (refonte complète), fonction-machine, polynome3, suites, complexes, exp-log
+
+### 4 nouvelles simulations Maths créées
+
+- **calculs-numeriques.html** (CAP ch07) : 4 outils (conversions, notation scientifique, priorités, arrondi) — débloque CAP à 100 %
+- **combinatoire.html** (LGT ch01 + BTS ch08, LGT ch13) : factorielle, arrangements, combinaisons, triangle de Pascal interactif
+- **probabilites-conditionnelles.html** : arbre pondéré 2 niveaux, 4 scénarios (test médical, contrôle qualité, urnes, personnalisé), formule de Bayes — mappée à 5 chapitres
+- **matrices.html** (BTS ch16) : opérations, déterminant 2×2, méthode de Cramer
+
+### Couverture finale
+
+| Niveau | Chapitres | Sim associée |
+|---|---|---|
+| Maths Seconde | 14 | 14/14 ✅ |
+| Maths Première | 9 | 9/9 ✅ |
+| Maths Terminale | 11 | 11/11 ✅ |
+| Maths CAP | 7 | 7/7 ✅ |
+| **Lycée pro Maths** | **41** | **41/41 (100 %)** |

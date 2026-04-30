@@ -1,7 +1,7 @@
 # Audit Pedagogique Approfondi — Physique-Chimie
 
 **Date** : 2026-03-16
-**Derniere mise a jour** : 2026-03-18
+**Derniere mise a jour** : 2026-04-30 (audits avril : 5 sections PC + polish 27 sims + securite-laboratoire)
 **Perimetre** : Toutes les pages lecon.html de physique-chimie (seconde, 1ere ICCER, 1ere ERA, Tle ICCER, Tle ERA)
 **Methode** : Lecture integrale ou partielle de 25+ fichiers, analyses statistiques CSS sur 50 fichiers
 
@@ -445,3 +445,88 @@
 - [ ] QCM PC : privilegier unites/conversions, schemas, protocoles, vocabulaire scientifique, securite
 - [ ] Interro PC : privilegier applications numeriques, schemas a legender, questions de cours, analyse de documents
 - [ ] Specs detaillees : voir `prompts/prompt-qcm-interro.md`
+
+---
+
+## Mises a jour avril 2026
+
+### Audits scientifiques complets — 5 sections PC (2026-04-15)
+
+| Section | Chapitres | Fichiers | Erreurs scientifiques | Typos / corrections |
+|---|---|---|---|---|
+| PC 1ere ICCER | 10 | 80 | 0 | 2 typos « A retenir » |
+| PC 1ere ERA | 10 | 80 | 0 | 9 typos accents |
+| PC Term ICCER | 8 | 64 | 0 | 8 typos + encoding ch06 |
+| PC Term ERA | 8 | 65 | 0 | 9 typos |
+| PC CAP | 7 | 56 | 0 | 31 typos QCM corriges |
+| **Total** | **43** | **345** | **0** | **59 corrections** |
+
+**Methode** : relecture integrale de chaque `lecon.html`, `qcm.html`, `interro.html`, `ds.html` ; verification des unites, formules, schemas SVG, protocoles experimentaux ; controle de coherence avec les programmes officiels.
+
+**Verdict** : aucune erreur scientifique detectee. Le contenu PC est solide. Les corrections concernent uniquement la typographie et l'encoding (1 fichier).
+
+### Polish visuel des 27 simulations PC (2026-04-29 / 30)
+
+**Refactor structure complet (5 sims)** : `atome.html`, `atome-couches.html`, `modeles-atome.html`, `liaisons-chimiques.html`, `melangeur.html`
+- Header standard avec gradient `linear-gradient(135deg, primary, primary*0.75)`
+- `btn-back` integre dans le header avec visibilite garantie
+- Cards uniformisees (visualization, controls, infos)
+
+**Upgrade headers (22 sims)** : passage de couleur plate a gradient via `scripts/upgrade_pc_sim_headers.py`
+- Couleur secondaire calculee automatiquement (factor 0.75)
+- Aucune divergence visuelle entre simulations
+
+**Bug memory leak corrige** (`modeles-atome.html`) :
+- Probleme : `animationFrames.push(requestAnimationFrame(animate))` a chaque frame -> tableau croissant indefiniment
+- Fix : pattern de generation token (`let currentGen = 0; if (gen !== currentGen) return;`)
+- Chaque helper recoit le parametre `gen`
+
+### Creation `securite-laboratoire.html` (2026-04-29)
+
+**Couverture lycee pro** : passage de 97/98 a **98/98 (100%)**
+
+**4 modules interactifs** :
+1. **Pictogrammes SGH** : 9 pictogrammes avec descriptions et exemples (corrosif, inflammable, toxique, etc.)
+2. **Quiz EPI** : 4 scenarios (atelier menuiserie, laboratoire chimie, soudure, manutention) avec selection des EPI adaptes
+3. **Securite electrique** : tensions, classes IP, AC vs DC, scenarios chantier
+4. **Niveaux sonores** : graphique Chart.js logarithmique, 8 sources de bruit professionnelles, seuil 80 dB(A)
+
+**Aria-labels** : 12 ajoutes sur SVG/canvas (WCAG 2.1)
+
+### 2 fragments HTML repares (2026-04-30)
+
+- `python.html` et `logique.html` : etaient des fragments sans `<!doctype>`, `<head>`, `<body>` -> conversion en documents HTML complets autonomes
+- Effet : ces simulations sont desormais accessibles directement (auparavant elles dependaient d'une page parente)
+
+### Aria-labels accessibilite (2026-04-29 / 30)
+
+- **114 aria-label** ajoutes sur `<canvas>` et `<svg>` dans toutes les simulations PC + Maths
+- Conformite WCAG 2.1 niveau AA atteinte sur les elements graphiques
+
+### Mobile responsive (2026-04-30)
+
+- 3 nouveaux breakpoints CSS (`styles.css`) : 380 / 600 / 800 px
+- 10 sims PC adaptees (canvas/SVG `max-width: 100%`, tableaux scrollables, font-size 16px sur input pour eviter le zoom iOS)
+
+### Audits techniques complementaires (2026-04-29 / 30)
+
+- Audit qualite approfondi des 78 simulations (verification manuelle Opus, recalculs pas a pas)
+- 5 bugs corriges : 2 simulations non-autonomes, 2 fragments HTML, 1 code mort
+- 17 fichiers HTML structure reparee (`<div class="c">` non ferme — pattern mecanique identifie et corrige)
+- Objectifs injectes sur 544 pages de ressources (PC + Maths)
+- 138 pages `index.html` par chapitre + sommaires cliquables
+- Page catalogue `simulations.html` regeneree (82 sims listees)
+
+### Bilan PC avril 2026
+
+| Indicateur | Avant | Apres |
+|---|---|---|
+| Erreurs scientifiques | 0 detectees | 0 |
+| Typos / encoding | non audite | 59 corriges |
+| Simulations PC polies | 0 | 27 |
+| Simulations autonomes | 80/82 | 82/82 |
+| Couverture lycee pro | 97/98 (99%) | **98/98 (100%)** |
+| Aria-labels canvas/SVG | partiel | 114 ajoutes |
+| Pages index chapitre | 0 | 138 |
+
+**Verdict global PC** : qualite scientifique confirmee (0 erreur sur 5 sections), uniformisation visuelle achevee, couverture programme complete.

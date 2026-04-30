@@ -1,25 +1,27 @@
 # Audit Doublons & Uniformisation des ressources
 
 **Date** : 2026-03-18
-**Derniere mise a jour** : 2026-03-22
-**Perimetre** : Uniformisation du schema de pages par chapitre (automatismes, QCM, interrogations, fiches)
+**Derniere mise a jour** : 2026-04-30 (uniformisation simulations, indexes par chapitre, fragments fixés)
+**Perimetre** : Uniformisation du schema de pages par chapitre + simulations + uniformite visuelle
 
 ---
 
-## Resume executif
+## Etat actuel (avril 2026)
 
-Le site compte **84 chapitres Bac Pro** (hors BTS). Chaque chapitre doit proposer un ensemble uniforme de ressources. L'audit a revele des incoherences : un doublon d'automatismes (corrige), des pages QCM et interro existantes mais isolees, et une couverture incomplete des types de ressources.
+Le site couvre maintenant **138 chapitres** (98 lycee pro + 15 LGT Term + 25 BTS). Couverture des ressources :
 
-**Decision prise :** chaque chapitre doit a terme proposer **6 types de pages** :
-
-| Page | Role | Existe |
-|---|---|---|
-| `lecon.html` | Cours (identique pour tous) | 84/84 |
-| `exercices.html` | Exercices differencies (socle/standard/appro) | 77/84 |
-| `ds.html` | Devoir surveille differencie (1h, 20 pts) | 77/84 |
-| `qcm.html` | QCM interactif auto-corrige (15 questions, 15-20 min) | **1/84** |
-| `interro.html` | Interrogation ecrite courte & diagnostique (10-15 min, 5-8 questions) | **1/84** |
-| `fiche.html` | Fiche de revision / synthese | 57/84 |
+| Page | Role | Couverture lycee pro | Total |
+|---|---|---|---|
+| `lecon.html` | Cours | 98/98 ✅ | 138/138 ✅ |
+| `exercices.html` | Exercices differencies | 98/98 ✅ | varie |
+| `ds.html` | DS differencie | 98/98 ✅ | varie |
+| `qcm.html` | QCM interactif | majoritaire | varie |
+| `interro.html` | Interrogation 10-15 min | majoritaire | varie |
+| `fiche.html` | Fiche revision | majoritaire | varie |
+| `index.html` | **Page d'accueil chapitre** | 98/98 ✅ (NEW avril 2026) | 138/138 ✅ |
+| `simulation.html` | **Hub des simulations interactives** | 98/98 ✅ (NEW avril 2026) | 120/138 |
+| `activite.html` | Activite de decouverte | majoritaire | 130+ |
+| `exercices-capacites.html` | Exercices par capacites du programme | varie | varie |
 
 ---
 
@@ -235,3 +237,48 @@ Les 84 fichiers `exercices.html` utilisaient **5 formats HTML differents** selon
 - **0 ancien format** residuel (div.exo-num, details, strong, star badges)
 - **0 div desequilibre**
 - **Compatible diff.js** : le mecanisme CSS body-class fonctionne avec le format individuel
+
+---
+
+## Uniformisation visuelle des simulations (2026-04-29 / 30)
+
+### Headers gradients
+
+Avant la session d'avril, certaines simulations avaient des headers à fond plat (#XXXXXX), d'autres avec gradients. Convergence vers le pattern `linear-gradient(135deg, couleur, couleur×0.75)` :
+
+- **22 simulations PC** modernisées via `scripts/upgrade_pc_sim_headers.py` (script idempotent qui calcule la couleur sombre automatiquement)
+- **5 simulations PC** avec layout non-standard refactorisées : atome.html (refonte complète), atome-couches.html, modeles-atome.html, liaisons-chimiques.html, melangeur.html
+- **3 simulations Maths** sans gradient corrigées : graphe-equation.html, inegalite.html, traceur.html
+- **5 simulations Maths** enrichies avec un bloc « À explorer » : balance, derivee, vecteurs, integrale, entrainement-ineq
+
+### Palette consolidée par domaine
+
+| Domaine | Couleur primaire | Couleur sombre |
+|---|---|---|
+| Mathématiques | `#1976d2` | `#0a4f9c` |
+| Électricité | `#0284c7` ou `#e91e63` | `#0369a1` |
+| Mécanique | `#0284c7` | `#0369a1` |
+| Fluides | `#0891b2` | `#155e75` |
+| Thermique | `#e67e22` | `#92400e` |
+| Chimie | `#6f42c1` | `#553c9a` |
+| Optique & Ondes | `#c026d3` | `#86198f` |
+| Sécurité | `#dc2626` | `#991b1b` |
+
+### Fragments HTML corrigés (2026-04-29)
+
+`python.html` et `logique.html` étaient des **fragments HTML** (sans DOCTYPE/html/head/body) liés depuis 4 sommaires Maths. Ouverts directement, ils s'affichaient sans styles ni navigation.
+
+→ **Correction** : enveloppage en pages HTML complètes avec DOCTYPE, lien styles.css/print.css, header standardisé, inclusion de `nav.js`. Conservation du contenu pédagogique original.
+
+### Structure HTML uniformisée (2026-04-30)
+
+17 pages avaient un déséquilibre `<div>` / `</div>` (pattern récurrent : `<div class="c">` non fermé avant `</body>`). Toutes corrigées.
+
+### Mobile uniformisé
+
+Avant : 1 seul breakpoint à 600 px (insuffisant). Après : 3 niveaux (380/600/800 px) avec règles ciblées :
+- Tables scrollables sur tablette
+- Canvas/SVG max-width 100%
+- Inputs font 16 px (anti-zoom iOS)
+- Boutons taille tactile minimale
+- MathJax overflow-x

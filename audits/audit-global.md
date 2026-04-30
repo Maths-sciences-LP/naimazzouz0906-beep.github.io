@@ -1,37 +1,47 @@
 # Audit Global du Site Pédagogique
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-04-22
-**Note** : compteur simulations corrigé (63 → 70) le 2026-04-06 ; relecture Seconde Pro le 2026-04-22
+**Dernière mise à jour** : 2026-04-30 (audit complet + couverture simulations 100% + index par chapitre)
 **Périmètre** : ensemble du site maths-sciences-lp.github.io
 
 ---
 
-## Vue d'ensemble
+## Vue d'ensemble (avril 2026)
 
 | Indicateur | Valeur |
 |---|---|
-| Pages HTML (chapitres) | **504** |
-| Sections (matière/niveau) | 8 (+1 BTS) |
-| Chapitres couverts | **84** |
-| Simulations interactives | 70 |
-| Complétude structurelle | **100 %** (504/504 fichiers) |
-| Stubs détectés | **0** |
-| Sigles interdits (contenu) | ~90 occurrences |
+| Pages HTML totales | **~1190** |
+| Sections (matière/niveau) | **12** (Maths Seconde, 1ère, Terminale, LGT Term, CAP, BTS · PC Seconde, 1ère ICCER, 1ère ERA, Term ICCER, Term ERA, CAP) |
+| Chapitres couverts | **138** |
+| **Pages d'accueil par chapitre** (`index.html`) | **138** ✅ (créées avril 2026) |
+| **Pages simulation par chapitre** (`simulation.html`) | **120** |
+| Simulations interactives autonomes | **82** (catalogue régénéré) |
+| Couverture simulations Lycée Pro | **98/98 (100 %)** ✅ |
+| Activités (`activite.html`) | **130+** (Bac Pro + CAP + PC) |
+| Sommaires cliquables (titres → index) | **13/13** ✅ |
+| Objectifs injectés sur pages-ressources | **544 pages** |
+| Aria-label sur canvas/SVG | **114 ajoutés** (a11y WCAG 2.1) |
+| Sigles interdits (contenu) | **0** (corrigés en mars/avril) |
+| Pages HTML structurellement saines | **100%** (17 fixes balance divs) |
+| Mobile responsive | **3 breakpoints** (380/600/800 px) |
 
-### Couverture par section
+### Couverture par section (avril 2026)
 
-| Section | Chapitres | Score | Fichiers | Couverture |
+| Section | Chapitres | Index | Simulation | Couverture |
 |---|---|---|---|---|
-| maths/seconde | 14/14 | 13/13 | 84/84 | 100 % |
-| maths/premiere | 9/9 | 13/13 | 54/54 | 100 % |
-| maths/terminale | 11/11 | 13/13 | 66/66 | 100 % |
-| physique-chimie/seconde | 14/14 | 13/13 | 84/84 | 100 % |
-| physique-chimie/premiere-iccer | 10/10 | 13/13 | 60/60 | 100 % |
-| physique-chimie/premiere-era | 10/10 | 13/13 | 60/60 | 100 % |
-| physique-chimie/terminale-iccer | 8/8 | 13/13 | 48/48 | 100 % |
-| physique-chimie/terminale-era | 8/8 | 13/13 | 48/48 | 100 % |
-| **TOTAL** | **84** | **13/13** | **504/504** | **100 %** |
+| maths/seconde | 14/14 | 14/14 ✅ | 14/14 ✅ | 100 % |
+| maths/premiere | 9/9 | 9/9 ✅ | 9/9 ✅ | 100 % |
+| maths/terminale | 11/11 | 11/11 ✅ | 11/11 ✅ | 100 % |
+| maths/lgt-terminale | 15/15 | 15/15 ✅ | 11/15 | 73 % |
+| maths/cap | 7/7 | 7/7 ✅ | 7/7 ✅ | 100 % |
+| maths/bts | 25/25 | 25/25 ✅ | 11/25 | 44 % (BTS hors lycée pro) |
+| physique-chimie/seconde | 14/14 | 14/14 ✅ | 14/14 ✅ | 100 % |
+| physique-chimie/premiere-iccer | 10/10 | 10/10 ✅ | 10/10 ✅ | 100 % |
+| physique-chimie/premiere-era | 10/10 | 10/10 ✅ | 10/10 ✅ | 100 % |
+| physique-chimie/terminale-iccer | 8/8 | 8/8 ✅ | 8/8 ✅ | 100 % |
+| physique-chimie/terminale-era | 8/8 | 8/8 ✅ | 8/8 ✅ | 100 % |
+| physique-chimie/cap | 7/7 | 7/7 ✅ | 7/7 ✅ | 100 % |
+| **TOTAL** | **138** | **138/138** ✅ | **120/138** | **87 %** (100% lycée pro) |
 
 ### Couverture par type de page
 

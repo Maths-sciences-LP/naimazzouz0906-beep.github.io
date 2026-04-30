@@ -1,7 +1,7 @@
 # Audit Pédagogique des Exercices
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-03-26 (corrections CSS inline + étiquettes type BTS + rectificatif activite.html)
+**Dernière mise à jour** : 2026-04-30 (audits scientifiques avril : 5 sections PC + Maths CAP + 17 fichiers HTML structure réparée)
 **Périmètre** : exercices.html, ds.html, qcm.html et interro.html — 8 sections (maths seconde/première/terminale, physique-chimie seconde/première-iccer/première-era/terminale-iccer/terminale-era)
 **Méthode** : échantillonnage de 2-3 fichiers exercices.html et 2-3 fichiers ds.html par section, lecture et analyse qualitative.
 
@@ -652,3 +652,74 @@ De nombreux fichiers `exercices.html` redéfinissent des classes déjà présent
 **Bilan Seconde (2026-03-19)** : la Seconde est la **première section 100% complète** du site avec les 6 types de pages (lecon, exercices, ds, fiche, qcm, interro) sur les 28 chapitres. Différenciation systématique (56 fichiers exercices/ds + 28 interro avec diff.js). Total : 170 fichiers HTML en Seconde.
 
 **Specs détaillées** : voir `prompts/prompt-qcm-interro.md`.
+
+---
+
+## Mises à jour avril 2026
+
+### Audits scientifiques exhaustifs — 5 sections PC + Maths CAP (2026-04-15)
+
+| Section | Chapitres | Fichiers (lecon + exo + qcm + interro + ds) | Erreurs scientifiques | Corrections |
+|---|---|---|---|---|
+| Maths CAP | 7 | 56 | 0 | 0 typo (100% conforme) |
+| PC CAP | 7 | 56 | 0 | **31 typos QCM corrigés** |
+| PC 1ère ICCER | 10 | 80 | 0 | 2 typos « À retenir » |
+| PC 1ère ERA | 10 | 80 | 0 | 9 typos accents |
+| PC Term ICCER | 8 | 64 | 0 | 8 typos + encoding ch06 |
+| PC Term ERA | 8 | 65 | 0 | 9 typos |
+| **Total** | **50** | **401** | **0** | **59 corrections** |
+
+**Méthode** : relecture intégrale Opus de chaque exercice + correction, vérification des unités, formules, schémas SVG, protocoles ; recalculs pas à pas pour les exercices numériques.
+
+**Verdict** : aucune erreur scientifique détectée sur les 5 sections PC + Maths CAP. Les corrections concernent uniquement la typographie/encoding.
+
+### Audit Terminale Maths — corrections leçons (2026-04-15)
+
+Audit ciblé sur les leçons (chapitres signalés en jaune) :
+- **ch03** : correction de la formule de la somme géométrique (signe / placement de l'exposant)
+- **ch04** : correction du polynôme de degré 3 (énoncé incohérent avec la résolution)
+- **ch09** : remplacement du symbole `ℜ` (partie réelle) par `ℝ` (ensemble des réels) — confusion typographique
+- **ch10** : accents corrigés
+- **ch11** : accents corrigés
+
+### Réparation structure HTML (2026-04-30) — 17 fichiers
+
+**Pattern identifié** : `<div class="c">` non fermé avant `</body>` (manquant `</div>`)
+
+| Section | Fichiers concernés (commit 58c6c9e6) |
+|---|---|
+| PC 1ère ICCER | ch07/interro.html |
+| PC 1ère ERA | ch02/interro.html |
+| PC Term ICCER | ch02/interro.html |
+| PC Term ERA | ch01/ds.html (1 close en trop retiré), ch03/ds.html, ch04/ds.html |
+| Maths Seconde | ch01/exercices-capacites.html, ch05/exercices-capacites.html |
+| Maths Première | ch08/exercices-capacites.html |
+| Maths Terminale | ch04/exercices-capacites.html, ch04/interro.html (**3 closes manquants** — diff-socle/standard/appro), ch05/exercices-capacites.html, ch06/exercices-capacites.html, ch08/ds.html, ch10/ds.html, ch10/exercices-capacites.html, ch11/exercices-capacites.html |
+
+**Total** : 6 PC + 11 Maths = 17 fichiers. Vérification : opens=closes sur les 17.
+
+**Effet** : pages désormais structurellement saines, pas d'effet visuel mais correction nécessaire pour l'accessibilité et le rendu mobile.
+
+### Page catalogue + index chapitre (2026-04-29)
+
+- **138 pages `index.html`** créées (1 par chapitre) avec liens vers les 6 ressources (leçon, exos, DS, QCM, interro, fiche) + activités + simulations
+- **Sommaires cliquables** dans 13 fichiers de section (ex : `maths-2nde-mama.html`, `pc-tle-iccer.html`)
+- **`simulations.html`** régénérée : 82 simulations listées, 8 catégories, recherche client-side, filtres
+
+### Objectifs pédagogiques injectés (2026-04-29)
+
+- **544 pages de ressources** enrichies d'un encadré « Objectifs du chapitre » en haut de page (basé sur le programme officiel)
+- Cohérence visuelle : même format sur leçon, exercices, DS, QCM, interro, fiche
+
+### Bilan exercices avril 2026
+
+| Indicateur | Avant avril | Après avril |
+|---|---|---|
+| Erreurs scientifiques détectées | non auditées | 0 sur 401 fichiers |
+| Typos / encoding | non audités | 59 corrigés |
+| Fichiers HTML structure cassée | 17 | 0 (réparés) |
+| Pages avec « Objectifs » | partielles | 544 (uniformisées) |
+| Pages index par chapitre | 0 | 138 |
+| Catalogue simulations | obsolète | 82 sims (à jour) |
+
+**Verdict global exercices** : aucune erreur scientifique sur 401 fichiers PC + Maths CAP audités. Structure HTML uniformisée. Couverture 100% lycée pro confirmée (98/98 chapitres).
