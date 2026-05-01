@@ -82,9 +82,9 @@ canvas{display:block;margin:0 auto;max-width:100%}
 <body>
 <div class="container">
   <header>
-    <a href="../simulations.html" class="btn-back">&larr; Retour</a>
+    <a href="../simulations.html" class="btn-back">← Retour</a>
     <h1>Eclairage d'un atelier</h1>
-    <p class="sous-titre">Normes et calculs &middot; \(E = \dfrac{\Phi}{S}\)</p>
+    <p class="sous-titre">Normes et calculs · \(E = \dfrac{\Phi}{S}\)</p>
   </header>
 
   <div class="body-content">
@@ -163,15 +163,15 @@ canvas{display:block;margin:0 auto;max-width:100%}
       <div class="cost-results">
         <div class="cost-card">
           <div class="cost-label">Cout / jour</div>
-          <div class="cost-value" id="costDay">0,40 &euro;</div>
+          <div class="cost-value" id="costDay">0,40 €</div>
         </div>
         <div class="cost-card">
           <div class="cost-label">Cout / mois (22 j)</div>
-          <div class="cost-value" id="costMonth">8,71 &euro;</div>
+          <div class="cost-value" id="costMonth">8,71 €</div>
         </div>
         <div class="cost-card">
           <div class="cost-label">Cout / an (250 j)</div>
-          <div class="cost-value" id="costYear">99,00 &euro;</div>
+          <div class="cost-value" id="costYear">99,00 €</div>
         </div>
       </div>
     </div>
@@ -274,9 +274,9 @@ function update() {
   const yearlyCost = dailyCost * 250;
 
   function fmtEuro(v) { return v.toFixed(2).replace('.', ','); }
-  document.getElementById('costDay').innerHTML = fmtEuro(dailyCost) + ' &euro;';
-  document.getElementById('costMonth').innerHTML = fmtEuro(monthlyCost) + ' &euro;';
-  document.getElementById('costYear').innerHTML = fmtEuro(yearlyCost) + ' &euro;';
+  document.getElementById('costDay').innerHTML = fmtEuro(dailyCost) + ' €';
+  document.getElementById('costMonth').innerHTML = fmtEuro(monthlyCost) + ' €';
+  document.getElementById('costYear').innerHTML = fmtEuro(yearlyCost) + ' €';
 
   // Draw
   draw(L, l, n, E, eNorme);

@@ -78,9 +78,9 @@ canvas{display:block;margin:0 auto;max-width:100%}
 <body>
 <div class="container">
   <header>
-    <a href="../simulations.html" class="btn-back">&larr; Retour</a>
+    <a href="../simulations.html" class="btn-back">← Retour</a>
     <h1>Theoreme de Pythagore</h1>
-    <p class="sous-titre">2nde Bac Pro &middot; Ch12 &middot; \(a^2 + b^2 = c^2\)</p>
+    <p class="sous-titre">2nde Bac Pro · Ch12 · \(a^2 + b^2 = c^2\)</p>
   </header>
 
   <div class="body-content">
@@ -112,7 +112,7 @@ canvas{display:block;margin:0 auto;max-width:100%}
     <!-- Result -->
     <div class="result-box" id="resultBox">
       <div class="result-c" id="resultC">c = 5</div>
-      <div class="result-detail" id="resultDetail">c = &radic;(9 + 16) = &radic;25 = 5</div>
+      <div class="result-detail" id="resultDetail">c = √(9 + 16) = √25 = 5</div>
     </div>
 
     <!-- Formula -->
@@ -176,7 +176,7 @@ function update() {
 
   document.getElementById('resultC').textContent = 'c = ' + (cExact ? Math.sqrt(c2) : cRound.toFixed(2));
   document.getElementById('resultDetail').innerHTML =
-    'c = &radic;(' + fmt(a2) + ' + ' + fmt(b2) + ') = &radic;' + fmt(c2) +
+    'c = √(' + fmt(a2) + ' + ' + fmt(b2) + ') = √' + fmt(c2) +
     ' = ' + (cExact ? Math.sqrt(c2) : cRound.toFixed(2));
 
   // Formula

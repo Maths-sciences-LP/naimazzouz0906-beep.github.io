@@ -36,14 +36,14 @@ canvas{max-width:100%;height:auto}
 <body>
 <div class="container">
   <header>
-    <a href="../simulations.html" class="btn-back">&larr; Retour</a>
+    <a href="../simulations.html" class="btn-back">← Retour</a>
     <h1>Transformateur et Transport d'Énergie</h1>
-    <p>Terminale Bac Pro &middot; Ch01 ERA</p>
+    <p>Terminale Bac Pro · Ch01 ERA</p>
   </header>
 
   <div class="explication">
     <strong>Principe :</strong> Un transformateur modifie la tension alternative grâce à deux bobines (primaire et secondaire) couplées magnétiquement. La relation fondamentale est :
-    <strong>U2/U1 = N2/N1 = m</strong> (rapport de transformation). Le transport en haute tension réduit les pertes par effet Joule dans les lignes (<strong>P<sub>pertes</sub> = R &times; I&sup2;</strong>).
+    <strong>U2/U1 = N2/N1 = m</strong> (rapport de transformation). Le transport en haute tension réduit les pertes par effet Joule dans les lignes (<strong>P<sub>pertes</sub> = R × I&sup2;</strong>).
   </div>
 
   <!-- TRANSFORMER VISUALIZATION -->
@@ -77,7 +77,7 @@ canvas{max-width:100%;height:auto}
 
     <div class="row">
       <div>
-        <label>Résistance de la ligne R : <span class="val" id="vRL">5</span> &Omega;</label>
+        <label>Résistance de la ligne R : <span class="val" id="vRL">5</span> Ω</label>
         <input type="range" id="sRL" min="0.5" max="50" step="0.5" value="5" oninput="updateTransport()">
       </div>
       <div>
@@ -93,7 +93,7 @@ canvas{max-width:100%;height:auto}
     <canvas aria-label="Schéma du transport de l'énergie électrique en haute tension" id="cvTransport" width="820" height="260" style="margin-top:15px;"></canvas>
 
     <div class="warn">
-      <strong>Conclusion :</strong> Plus la tension de transport est élevée, plus le courant est faible (car P = U &times; I), et donc plus les pertes \( P_{\text{pertes}} = R \times I^2 \) sont faibles. C'est pourquoi on transporte l'électricité en haute tension !
+      <strong>Conclusion :</strong> Plus la tension de transport est élevée, plus le courant est faible (car P = U × I), et donc plus les pertes \( P_{\text{pertes}} = R \times I^2 \) sont faibles. C'est pourquoi on transporte l'électricité en haute tension !
     </div>
   </div>
 </div>
@@ -281,8 +281,8 @@ function update() {
 
   $('resTransfo').innerHTML = `
     <p><strong>Rapport de transformation :</strong> m = N2 / N1 = ${N2} / ${N1} = <span class="val">${m.toFixed(3)}</span> ${typeBadge}</p>
-    <p><strong>Tension secondaire :</strong> U2 = U1 &times; m = ${U1} &times; ${m.toFixed(3)} = <span class="val">${U2.toFixed(1)} V</span></p>
-    <p><strong>Conservation de la puissance :</strong> P1 &asymp; P2 &rArr; si P = 100 kW :</p>
+    <p><strong>Tension secondaire :</strong> U2 = U1 × m = ${U1} × ${m.toFixed(3)} = <span class="val">${U2.toFixed(1)} V</span></p>
+    <p><strong>Conservation de la puissance :</strong> P1 ≈ P2 ⇒ si P = 100 kW :</p>
     <p style="margin-left:20px;">I1 = P / U1 = ${I1.toFixed(2)} A &nbsp;|&nbsp; I2 = P / U2 = ${I2.toFixed(2)} A</p>
   `;
 }
@@ -311,7 +311,7 @@ function updateTransport() {
   $('resTransport').innerHTML = `
     <p><strong>Puissance transportée :</strong> P = 100 kW à U = ${uLabel}</p>
     <p><strong>Courant dans la ligne :</strong> I = P / U = ${I.toFixed(3)} A</p>
-    <p><strong>Pertes par effet Joule :</strong> P<sub>pertes</sub> = R &times; I&sup2; = ${R} &times; ${I.toFixed(3)}&sup2; = <span class="val" style="color:${pct > 50 ? '#dc2626' : pct > 10 ? '#d97706' : '#16a34a'}">${Ppertes.toFixed(1)} W (${pct.toFixed(2)} %)</span></p>
+    <p><strong>Pertes par effet Joule :</strong> P<sub>pertes</sub> = R × I&sup2; = ${R} × ${I.toFixed(3)}&sup2; = <span class="val" style="color:${pct > 50 ? '#dc2626' : pct > 10 ? '#d97706' : '#16a34a'}">${Ppertes.toFixed(1)} W (${pct.toFixed(2)} %)</span></p>
     <p><strong>Puissance utile reçue :</strong> ${Math.max(0, Putile).toFixed(1)} W</p>
     ${pct > 100 ? '<p style="color:#dc2626;font-weight:bold;">Les pertes dépassent la puissance transportée ! Situation impossible en pratique.</p>' : ''}
   `;

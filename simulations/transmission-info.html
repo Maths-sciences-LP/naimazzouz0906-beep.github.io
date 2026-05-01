@@ -43,9 +43,9 @@ canvas{max-width:100%;height:auto}
 <body>
 <div class="container">
   <header>
-    <a href="../simulations.html" class="btn-back">&larr; Retour</a>
+    <a href="../simulations.html" class="btn-back">← Retour</a>
     <h1>Transmettre l'Information</h1>
-    <p>Terminale Bac Pro &middot; Ch07 ERA</p>
+    <p>Terminale Bac Pro · Ch07 ERA</p>
   </header>
 
   <div class="explication">
@@ -317,7 +317,7 @@ function updateSignal() {
       <p><strong>Signal :</strong> f = ${f} Hz, A = ${A.toFixed(1)} V, T = ${(T * 1000).toFixed(2)} ms</p>
       <p><strong>Echantillonnage :</strong> F<sub>e</sub> = ${Fe} Hz, T<sub>e</sub> = ${(Te * 1000).toFixed(2)} ms</p>
       <p><strong>Quantification :</strong> ${bits} bits = ${nLevels} niveaux, pas = ${step.toFixed(4)} V</p>
-      <p><strong>Shannon :</strong> F<sub>e</sub> / f = ${ratio.toFixed(1)} ${shannonOk ? '<span class="badge badge-ok">Fe &ge; 2&times;f &mdash; OK</span>' : '<span class="badge badge-err">Fe &lt; 2&times;f &mdash; ALIASING !</span>'}</p>
+      <p><strong>Shannon :</strong> F<sub>e</sub> / f = ${ratio.toFixed(1)} ${shannonOk ? '<span class="badge badge-ok">Fe ≥ 2×f — OK</span>' : '<span class="badge badge-err">Fe &lt; 2×f — ALIASING !</span>'}</p>
     `;
   } else {
     $('resSignal').innerHTML = `
@@ -440,10 +440,10 @@ function updateShannon() {
   const ratio = Fe / f;
   $('resShannon').innerHTML = `
     <p><strong>f<sub>max</sub> = ${f} Hz</strong> &nbsp;|&nbsp; <strong>F<sub>e</sub> = ${Fe} Hz</strong> &nbsp;|&nbsp; F<sub>e</sub> / f<sub>max</sub> = ${ratio.toFixed(2)}</p>
-    <p><strong>Condition de Shannon :</strong> F<sub>e</sub> &ge; 2 &times; f<sub>max</sub> = ${2 * f} Hz
+    <p><strong>Condition de Shannon :</strong> F<sub>e</sub> ≥ 2 × f<sub>max</sub> = ${2 * f} Hz
     ${shannonOk
-      ? '<span class="badge badge-ok">Condition respectee &mdash; reconstruction fidele</span>'
-      : '<span class="badge badge-err">Condition NON respectee &mdash; ALIASING (repliement de spectre)</span>'}
+      ? '<span class="badge badge-ok">Condition respectee — reconstruction fidele</span>'
+      : '<span class="badge badge-err">Condition NON respectee — ALIASING (repliement de spectre)</span>'}
     </p>
     ${!shannonOk ? '<p style="color:#dc2626;font-size:0.9em;">Le signal reconstruit ne correspond plus a l\'original. Des frequences parasites apparaissent (aliasing). Il faut augmenter F<sub>e</sub> a au moins ' + (2 * f) + ' Hz.</p>' : ''}
   `;
@@ -550,7 +550,7 @@ function updateQuant() {
   $('resQuant').innerHTML = `
     <p><strong>Resolution :</strong> ${bits} bits = <span class="val">${nLevels} niveaux</span> de quantification</p>
     <p><strong>Pas de quantification :</strong> q = 2A / 2<sup>${bits}</sup> = ${step.toFixed(4)} V</p>
-    <p><strong>Erreur maximale :</strong> &plusmn; q/2 = &plusmn; ${errMax.toFixed(4)} V</p>
+    <p><strong>Erreur maximale :</strong> ± q/2 = ± ${errMax.toFixed(4)} V</p>
     <p style="font-size:0.9em;color:#6b7280;">Plus le nombre de bits est eleve, plus la quantification est fine et le signal numerique est fidele a l'original. En audio CD : 16 bits (65 536 niveaux), en telephonie : 8 bits (256 niveaux).</p>
   `;
 }

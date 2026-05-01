@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch21 &ndash; Représentation de l&rsquo;espace &ndash; BTS</title>
+<title>Ch21 – Représentation de l’espace – BTS</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print"><style>
@@ -18,9 +18,9 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
 </head>
 <body>
 <div class="c">
-<a href="../../../maths-bts.html" class="nb">&larr; Retour au sommaire</a>
+<a href="../../../maths-bts.html" class="nb">← Retour au sommaire</a>
 <header>
-  <h1>Chapitre 21 &ndash; Représentation de l&rsquo;espace</h1>
+  <h1>Chapitre 21 – Représentation de l’espace</h1>
   <p class="sous-titre">BTS &nbsp;|&nbsp; Mathématiques &nbsp;|&nbsp; Groupement B1</p>
   <p class="maj">Dernière mise à jour&nbsp;: mars 2026</p>
 </header>
@@ -29,14 +29,14 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
 <div class="objectifs">
   <strong>Objectifs du chapitre</strong>
   <ul>
-    <li>Maîtriser les systèmes de coordonnées cartésiennes, cylindriques et sphériques dans l&rsquo;espace.</li>
-    <li>Représenter et étudier les droites et plans dans l&rsquo;espace à l&rsquo;aide de leurs équations.</li>
+    <li>Maîtriser les systèmes de coordonnées cartésiennes, cylindriques et sphériques dans l’espace.</li>
+    <li>Représenter et étudier les droites et plans dans l’espace à l’aide de leurs équations.</li>
     <li>Calculer des distances (point-droite, point-plan) et des angles (dièdre, droite-plan).</li>
     <li>Reconnaître et équationner les surfaces courantes (sphère, cylindre, cône, quadriques).</li>
     <li>Effectuer des projections orthogonales et faire le lien avec le dessin technique.</li>
     <li>Appliquer les matrices de transformation (rotation, symétrie, homothétie) en coordonnées homogènes.</li>
-    <li>Introduire les notions de courbure et torsion d&rsquo;une courbe gauche.</li>
-    <li>Résoudre des problèmes d&rsquo;intersection de surfaces et de sections planes.</li>
+    <li>Introduire les notions de courbure et torsion d’une courbe gauche.</li>
+    <li>Résoudre des problèmes d’intersection de surfaces et de sections planes.</li>
   </ul>
 </div>
 
@@ -44,38 +44,38 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
 <div class="situation">
   <strong>Situation professionnelle</strong>
   <p>
-    Mathieu est technicien supérieur en bureau d&rsquo;études mécaniques dans une société qui fabrique
+    Mathieu est technicien supérieur en bureau d’études mécaniques dans une société qui fabrique
     des équipements industriels. Son logiciel de CAO génère des pièces en 3D, mais les collègues
-    de l&rsquo;atelier ont besoin de plans en 2D avec vues de face, de dessus et de côté, ainsi
+    de l’atelier ont besoin de plans en 2D avec vues de face, de dessus et de côté, ainsi
     que de sections transversales.
   </p>
   <p>
     Pour valider les assemblages, Mathieu doit aussi vérifier que certaines surfaces ne se croisent
     pas, calculer des distances minimales entre pièces mobiles et déterminer les angles entre plans
-    de coupe. Toutes ces opérations reposent sur la <strong>géométrie analytique de l&rsquo;espace</strong>.
+    de coupe. Toutes ces opérations reposent sur la <strong>géométrie analytique de l’espace</strong>.
   </p>
   <p>
-    Axelle, architecte en bureau d&rsquo;études bâtiment, utilise les mêmes outils pour modéliser
+    Axelle, architecte en bureau d’études bâtiment, utilise les mêmes outils pour modéliser
     des charpentes métalliques complexes, calculer des volumes de terrassement et concevoir des
     façades courbes.
   </p>
 </div>
 
 <!-- SECTION 1 — REPÈRES -->
-<h2>1. Repères dans l&rsquo;espace</h2>
+<h2>1. Repères dans l’espace</h2>
 
 <h3>1.1 Repère cartésien</h3>
 <div class="def">
   <span class="label-def">Définition</span>
-  Un repère cartésien de l&rsquo;espace est un triplet \((O, \vec{i}, \vec{j}, \vec{k})\)
-  où \(O\) est l&rsquo;origine et \(\vec{i}, \vec{j}, \vec{k}\) sont trois vecteurs unitaires
+  Un repère cartésien de l’espace est un triplet \((O, \vec{i}, \vec{j}, \vec{k})\)
+  où \(O\) est l’origine et \(\vec{i}, \vec{j}, \vec{k}\) sont trois vecteurs unitaires
   orthogonaux deux à deux formant une base directe&nbsp;:
   \[
     \vec{i} \cdot \vec{j} = \vec{j} \cdot \vec{k} = \vec{k} \cdot \vec{i} = 0,
     \quad |\vec{i}| = |\vec{j}| = |\vec{k}| = 1,
     \quad \vec{i} \times \vec{j} = \vec{k}.
   \]
-  Tout point \(M\) de l&rsquo;espace est repéré par ses coordonnées \((x, y, z)\) telles que&nbsp;:
+  Tout point \(M\) de l’espace est repéré par ses coordonnées \((x, y, z)\) telles que&nbsp;:
   \[\overrightarrow{OM} = x\,\vec{i} + y\,\vec{j} + z\,\vec{k}.\]
 </div>
 
@@ -132,9 +132,9 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
   <span class="label-def">Définition</span>
   Un point \(M\) est repéré en coordonnées cylindriques par \((r, \theta, z)\) où&nbsp;:
   <ul>
-    <li>\(r \geq 0\)&nbsp;: distance à l&rsquo;axe \((Oz)\).</li>
+    <li>\(r \geq 0\)&nbsp;: distance à l’axe \((Oz)\).</li>
     <li>\(\theta \in [0, 2\pi[\)&nbsp;: angle dans le plan \(xOy\) par rapport à \(\vec{i}\).</li>
-    <li>\(z\)&nbsp;: côte (même qu&rsquo;en cartésien).</li>
+    <li>\(z\)&nbsp;: côte (même qu’en cartésien).</li>
   </ul>
 </div>
 <div class="formule-box">
@@ -154,7 +154,7 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
   <span class="label-def">Définition</span>
   Un point \(M\) est repéré par \((\rho, \theta, \varphi)\) où&nbsp;:
   <ul>
-    <li>\(\rho = OM \geq 0\)&nbsp;: distance à l&rsquo;origine.</li>
+    <li>\(\rho = OM \geq 0\)&nbsp;: distance à l’origine.</li>
     <li>\(\theta \in [0, 2\pi[\)&nbsp;: angle azimutal (longitude).</li>
     <li>\(\varphi \in [0, \pi]\)&nbsp;: angle polaire (colatitude), mesuré depuis \((Oz)\).</li>
   </ul>
@@ -185,7 +185,7 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
 </div>
 
 <!-- SECTION 2 — DROITES -->
-<h2>2. Droites dans l&rsquo;espace</h2>
+<h2>2. Droites dans l’espace</h2>
 
 <h3>2.1 Représentation paramétrique</h3>
 <div class="def">
@@ -220,8 +220,8 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
 \]
 </div>
 <p>
-  Si l&rsquo;un des coefficients est nul (ex. \(c=0\)), la droite est dans un plan parallèle à \(xOy\)
-  et les équations s&rsquo;adaptent en conséquence.
+  Si l’un des coefficients est nul (ex. \(c=0\)), la droite est dans un plan parallèle à \(xOy\)
+  et les équations s’adaptent en conséquence.
 </p>
 
 <h3>2.3 Positions relatives de deux droites</h3>
@@ -230,7 +230,7 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
     <strong>Sécantes</strong>&nbsp;: elles se croisent en un point commun ; leurs directions ne sont pas colinéaires.
   </div>
   <div class="pos-rel">
-    <strong>Parallèles</strong>&nbsp;: \(\vec{u}_1 \parallel \vec{u}_2\) et elles n&rsquo;ont pas de point commun.
+    <strong>Parallèles</strong>&nbsp;: \(\vec{u}_1 \parallel \vec{u}_2\) et elles n’ont pas de point commun.
   </div>
   <div class="pos-rel">
     <strong>Confondues</strong>&nbsp;: \(\vec{u}_1 \parallel \vec{u}_2\) et elles partagent tous leurs points.
@@ -257,7 +257,7 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
   \]
 </div>
 
-<h3>2.4 Distance d&rsquo;un point à une droite</h3>
+<h3>2.4 Distance d’un point à une droite</h3>
 <div class="formule-box">
   Si \(H\) est le projeté orthogonal du point \(P\) sur la droite \(D\)&nbsp;:
   \[
@@ -276,19 +276,19 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
 </div>
 
 <!-- SECTION 3 — PLANS -->
-<h2>3. Plans dans l&rsquo;espace</h2>
+<h2>3. Plans dans l’espace</h2>
 
-<h3>3.1 Équation générale d&rsquo;un plan</h3>
+<h3>3.1 Équation générale d’un plan</h3>
 <div class="def">
   <span class="label-def">Définition</span>
-  L&rsquo;équation générale d&rsquo;un plan est&nbsp;:
+  L’équation générale d’un plan est&nbsp;:
   \[
     ax + by + cz + d = 0 \qquad (a, b, c) \neq (0, 0, 0)
   \]
   Le vecteur \(\vec{n} = (a, b, c)\) est le <strong>vecteur normal</strong> au plan.
 </div>
 
-<h3>3.2 Déterminer l&rsquo;équation d&rsquo;un plan</h3>
+<h3>3.2 Déterminer l’équation d’un plan</h3>
 <div class="prop">
   <span class="label-prop">Cas usuels</span>
   <ul>
@@ -298,7 +298,7 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
     </li>
     <li>
       <strong>Plan passant par \(A, B, C\) non alignés</strong>&nbsp;:
-      on calcule \(\vec{n} = \overrightarrow{AB} \times \overrightarrow{AC}\) puis l&rsquo;équation.
+      on calcule \(\vec{n} = \overrightarrow{AB} \times \overrightarrow{AC}\) puis l’équation.
     </li>
     <li>
       <strong>Plan contenant deux droites sécantes</strong>&nbsp;:
@@ -317,7 +317,7 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
   Vérification&nbsp;: \(B(0,2,0)\)&nbsp;: \(0+6+0-6=0\). \(C(0,0,3)\)&nbsp;: \(0+0+6-6=0\). ✓
 </div>
 
-<h3>3.3 Distance d&rsquo;un point à un plan</h3>
+<h3>3.3 Distance d’un point à un plan</h3>
 <div class="formule-box">
 \[
   d(P_0, \pi) = \frac{|ax_0 + by_0 + cz_0 + d|}{\sqrt{a^2+b^2+c^2}}
@@ -338,7 +338,7 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
     <ul>
       <li><strong>Parallèles</strong>&nbsp;: \(\vec{n}_1 \parallel \vec{n}_2\) et \(d_1/a_1 \neq d_2/a_2\).</li>
       <li><strong>Confondus</strong>&nbsp;: équations proportionnelles.</li>
-      <li><strong>Sécants</strong>&nbsp;: droite d&rsquo;intersection, angle dièdre \(\theta = \arccos\!\left(\dfrac{|\vec{n}_1\cdot\vec{n}_2|}{|\vec{n}_1||\vec{n}_2|}\right)\).</li>
+      <li><strong>Sécants</strong>&nbsp;: droite d’intersection, angle dièdre \(\theta = \arccos\!\left(\dfrac{|\vec{n}_1\cdot\vec{n}_2|}{|\vec{n}_1||\vec{n}_2|}\right)\).</li>
     </ul>
   </div>
   <div>
@@ -352,7 +352,7 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
 </div>
 
 <!-- SECTION 4 — SOLIDES -->
-<h2>4. Solides et surfaces dans l&rsquo;espace</h2>
+<h2>4. Solides et surfaces dans l’espace</h2>
 
 <h3>4.1 Sphère</h3>
 <div class="def">
@@ -364,27 +364,27 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
   Développée&nbsp;: \(x^2+y^2+z^2 - 2ax - 2by - 2cz + (a^2+b^2+c^2-r^2) = 0\).
 </div>
 <p>
-  L&rsquo;intersection d&rsquo;une sphère et d&rsquo;un plan est un cercle (ou un point, ou vide).
+  L’intersection d’une sphère et d’un plan est un cercle (ou un point, ou vide).
   Si le plan est à distance \(d\) du centre, le cercle a pour rayon \(\rho = \sqrt{r^2-d^2}\).
 </p>
 
 <h3>4.2 Cylindre</h3>
 <div class="def">
   <span class="label-def">Définition</span>
-  Le <strong>cylindre de révolution</strong> d&rsquo;axe \((Oz)\) et de rayon \(R\) a pour équation&nbsp;:
+  Le <strong>cylindre de révolution</strong> d’axe \((Oz)\) et de rayon \(R\) a pour équation&nbsp;:
   \[x^2 + y^2 = R^2\]
-  Pour un cylindre d&rsquo;axe \(\Delta\) de vecteur directeur \(\vec{u}\) passant par \(A\)&nbsp;:
+  Pour un cylindre d’axe \(\Delta\) de vecteur directeur \(\vec{u}\) passant par \(A\)&nbsp;:
   \[|\overrightarrow{AM} \times \vec{u}|^2 = R^2 |\vec{u}|^2\]
 </div>
 <p>
   En CAO, les cylindres apparaissent dans les alésages, arbres, tuyauteries.
-  En coordonnées cylindriques, l&rsquo;équation s&rsquo;écrit simplement \(r = R\).
+  En coordonnées cylindriques, l’équation s’écrit simplement \(r = R\).
 </p>
 
 <h3>4.3 Cône</h3>
 <div class="def">
   <span class="label-def">Définition</span>
-  Le <strong>cône de révolution</strong> de sommet \(O\), d&rsquo;axe \((Oz)\) et de demi-angle \(\alpha\)&nbsp;:
+  Le <strong>cône de révolution</strong> de sommet \(O\), d’axe \((Oz)\) et de demi-angle \(\alpha\)&nbsp;:
   \[
     x^2 + y^2 = z^2 \tan^2\!\alpha \qquad \text{(ou } r = |z|\tan\alpha \text{ en cylindrique)}
   \]
@@ -393,7 +393,7 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
 <h3>4.4 Surfaces quadratiques (quadriques)</h3>
 <p>
   Les surfaces du second degré (quadriques) sont les surfaces les plus courantes en géométrie
-  analytique de l&rsquo;espace&nbsp;:
+  analytique de l’espace&nbsp;:
 </p>
 <div class="grid2">
   <div>
@@ -484,8 +484,8 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
 
 <h3>5.3 Perspective isométrique</h3>
 <p>
-  En perspective isométrique, les trois axes \(x, y, z\) sont représentés à \(120°\) l&rsquo;un
-  de l&rsquo;autre et conservent tous la même échelle. La matrice de projection isométrique est&nbsp;:
+  En perspective isométrique, les trois axes \(x, y, z\) sont représentés à \(120°\) l’un
+  de l’autre et conservent tous la même échelle. La matrice de projection isométrique est&nbsp;:
 </p>
 <div class="formule-box">
 \[
@@ -497,13 +497,13 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
 </div>
 
 <!-- SECTION 6 — TRANSFORMATIONS -->
-<h2>6. Transformations dans l&rsquo;espace</h2>
+<h2>6. Transformations dans l’espace</h2>
 
 <h3>6.1 Représentation matricielle en coordonnées homogènes</h3>
 <p>
   En CAO 3D, les transformations géométriques sont représentées par des matrices \(4 \times 4\)
   opérant sur les coordonnées <strong>homogènes</strong> \((x, y, z, 1)^\top\). Cette représentation
-  unifie les rotations, translations, changements d&rsquo;échelle et projections en un seul formalisme.
+  unifie les rotations, translations, changements d’échelle et projections en un seul formalisme.
 </p>
 <div class="formule-box">
 \[
@@ -528,7 +528,7 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
 
 <h3>6.3 Rotations autour des axes</h3>
 <p>
-  Rotation d&rsquo;angle \(\theta\) autour de l&rsquo;axe \((Oz)\)&nbsp;:
+  Rotation d’angle \(\theta\) autour de l’axe \((Oz)\)&nbsp;:
 </p>
 <div class="formule-box">
 \[
@@ -563,15 +563,15 @@ table.mat thead td{background:var(--p);color:#fff;font-weight:600}
 </div>
 <div class="att">
   <span class="label-att">Attention</span>
-  L&rsquo;ordre des rotations est important&nbsp;: en général, \(\mathbf{R}_x\mathbf{R}_y \neq \mathbf{R}_y\mathbf{R}_x\).
+  L’ordre des rotations est important&nbsp;: en général, \(\mathbf{R}_x\mathbf{R}_y \neq \mathbf{R}_y\mathbf{R}_x\).
   Les matrices de rotation ne commutent pas. Pour composer des transformations successives,
   on multiplie les matrices de <strong>droite à gauche</strong>&nbsp;:
   \(\mathbf{M}_{\text{total}} = \mathbf{M}_n \cdots \mathbf{M}_2 \mathbf{M}_1\).
 </div>
 
-<h3>6.4 Rotation autour d&rsquo;un axe quelconque</h3>
+<h3>6.4 Rotation autour d’un axe quelconque</h3>
 <p>
-  Pour une rotation d&rsquo;angle \(\theta\) autour d&rsquo;un axe unitaire \(\hat{u} = (u_x, u_y, u_z)\),
+  Pour une rotation d’angle \(\theta\) autour d’un axe unitaire \(\hat{u} = (u_x, u_y, u_z)\),
   la <strong>formule de Rodrigues</strong> donne&nbsp;:
 </p>
 <div class="formule-box">
@@ -604,7 +604,7 @@ où \([\hat{u}]_\times =
 </div>
 <p>
   Homothétie uniforme de rapport \(k\)&nbsp;: \(s_x = s_y = s_z = k\).
-  Changement d&rsquo;échelle non uniforme (déformation) si les rapports diffèrent.
+  Changement d’échelle non uniforme (déformation) si les rapports diffèrent.
 </p>
 
 <!-- SECTION 7 — GÉOMÉTRIE DIFFÉRENTIELLE -->
@@ -612,12 +612,12 @@ où \([\hat{u}]_\times =
 
 <h3>7.1 Courbes gauches</h3>
 <p>
-  Une <strong>courbe gauche</strong> (ou courbe dans l&rsquo;espace) est une courbe qui ne peut
+  Une <strong>courbe gauche</strong> (ou courbe dans l’espace) est une courbe qui ne peut
   pas être tracée dans un plan. Elle est paramétrée par \(\mathbf{r}(t) = (x(t), y(t), z(t))\).
 </p>
 <div class="def">
   <span class="label-def">Trièdre de Frenet</span>
-  Le repère mobile le long d&rsquo;une courbe est constitué de trois vecteurs unitaires&nbsp;:
+  Le repère mobile le long d’une courbe est constitué de trois vecteurs unitaires&nbsp;:
   <ul>
     <li><strong>Vecteur tangent</strong>&nbsp;: \(\vec{T} = \dfrac{\mathbf{r}'}{|\mathbf{r}'|}\)</li>
     <li><strong>Vecteur normal principal</strong>&nbsp;: \(\vec{N} = \dfrac{\vec{T}'}{|\vec{T}'|}\)</li>
@@ -654,27 +654,27 @@ où \([\hat{u}]_\times =
 <!-- SECTION 8 — APPLICATIONS -->
 <h2>8. Applications — sections et intersections</h2>
 
-<h3>8.1 Section d&rsquo;un solide par un plan</h3>
+<h3>8.1 Section d’un solide par un plan</h3>
 <p>
-  La section d&rsquo;un cylindre \(x^2+y^2=R^2\) par un plan oblique \(ax+by+cz+d=0\) est une ellipse
-  (si le plan n&rsquo;est pas parallèle à l&rsquo;axe). Les dimensions de l&rsquo;ellipse dépendent
-  de l&rsquo;angle d&rsquo;inclinaison du plan par rapport à l&rsquo;axe.
+  La section d’un cylindre \(x^2+y^2=R^2\) par un plan oblique \(ax+by+cz+d=0\) est une ellipse
+  (si le plan n’est pas parallèle à l’axe). Les dimensions de l’ellipse dépendent
+  de l’angle d’inclinaison du plan par rapport à l’axe.
 </p>
 <div class="ex">
   <span class="label-def">Exemple professionnel</span>
   Un tuyau circulaire de rayon \(R = 50\,\text{mm}\) est coupé en biais à \(45°\).
-  La coupe a la forme d&rsquo;une ellipse de demi-axes \(R = 50\,\text{mm}\) et
+  La coupe a la forme d’une ellipse de demi-axes \(R = 50\,\text{mm}\) et
   \(R/\cos 45° = 50\sqrt{2} \approx 70.7\,\text{mm}\).
   Le technicien doit préparer un gabarit de découpe en traçant cette ellipse.
 </div>
 
 <h3>8.2 Intersection de deux plans</h3>
 <p>
-  L&rsquo;intersection de deux plans non parallèles est une droite.
+  L’intersection de deux plans non parallèles est une droite.
   Pour \(\pi_1: a_1x+b_1y+c_1z+d_1=0\) et \(\pi_2: a_2x+b_2y+c_2z+d_2=0\)&nbsp;:
 </p>
 <ul>
-  <li>Le vecteur directeur de la droite d&rsquo;intersection est \(\vec{u} = \vec{n}_1 \times \vec{n}_2\).</li>
+  <li>Le vecteur directeur de la droite d’intersection est \(\vec{u} = \vec{n}_1 \times \vec{n}_2\).</li>
   <li>On trouve un point en fixant une coordonnée et en résolvant le système \(2\times 2\).</li>
 </ul>
 
@@ -688,29 +688,29 @@ où \([\hat{u}]_\times =
   Droite&nbsp;: \((x,y,z) = (3,3,0) + t(2,1,-3)\).
 </div>
 
-<h3>8.3 Intersection d&rsquo;une droite et d&rsquo;une sphère</h3>
+<h3>8.3 Intersection d’une droite et d’une sphère</h3>
 <p>
-  Pour trouver les points d&rsquo;intersection de la droite
+  Pour trouver les points d’intersection de la droite
   \(\mathbf{r}(t) = \mathbf{A} + t\,\vec{u}\) et de la sphère \(|\mathbf{r}-\mathbf{C}|^2 = R^2\)&nbsp;:
 </p>
 <ol>
   <li>Substituer&nbsp;: \(|\mathbf{A}+t\vec{u}-\mathbf{C}|^2 = R^2\).</li>
   <li>Poser \(\mathbf{m} = \mathbf{A}-\mathbf{C}\). Développer&nbsp;: \(|\vec{u}|^2 t^2 + 2(\mathbf{m}\cdot\vec{u})t + |\mathbf{m}|^2 - R^2 = 0\).</li>
   <li>Discriminant&nbsp;: \(\Delta = (\mathbf{m}\cdot\vec{u})^2 - |\vec{u}|^2(|\mathbf{m}|^2-R^2)\).</li>
-  <li>Si \(\Delta > 0\)&nbsp;: 2 points. \(\Delta = 0\)&nbsp;: tangence. \(\Delta < 0\)&nbsp;: pas d&rsquo;intersection.</li>
+  <li>Si \(\Delta > 0\)&nbsp;: 2 points. \(\Delta = 0\)&nbsp;: tangence. \(\Delta < 0\)&nbsp;: pas d’intersection.</li>
 </ol>
 
 <!-- MÉTHODE -->
 <div class="meth">
-  <span class="label-meth">Méthode</span> — Trouver l&rsquo;intersection d&rsquo;une droite et d&rsquo;un plan
+  <span class="label-meth">Méthode</span> — Trouver l’intersection d’une droite et d’un plan
   <ol>
     <li><strong>Écrire la droite</strong> sous forme paramétrique&nbsp;:
         \(\begin{cases}x=x_0+ta\\y=y_0+tb\\z=z_0+tc\end{cases}\)</li>
-    <li><strong>Substituer</strong> dans l&rsquo;équation du plan \(ax+by+cz+d=0\).</li>
+    <li><strong>Substituer</strong> dans l’équation du plan \(ax+by+cz+d=0\).</li>
     <li><strong>Résoudre</strong> en \(t\) (équation du premier degré en \(t\)).</li>
-    <li><strong>Calculer</strong> les coordonnées du point d&rsquo;intersection en remplaçant \(t\) dans
+    <li><strong>Calculer</strong> les coordonnées du point d’intersection en remplaçant \(t\) dans
         les équations paramétriques.</li>
-    <li><strong>Vérifier</strong> en substituant le point obtenu dans l&rsquo;équation du plan.</li>
+    <li><strong>Vérifier</strong> en substituant le point obtenu dans l’équation du plan.</li>
   </ol>
   <p><strong>Cas particuliers&nbsp;:</strong> si \(a\alpha+b\beta+c\gamma=0\) (i.e. \(\vec{u}\cdot\vec{n}=0\)),
      la droite est parallèle au plan (ou incluse si le point appartient au plan).</p>
@@ -739,7 +739,7 @@ où \([\hat{u}]_\times =
     <li>Distance point-plan&nbsp;: \(d = |ax_0+by_0+cz_0+d|/\sqrt{a^2+b^2+c^2}\).</li>
     <li>Droites gauches&nbsp;: non coplanaires, distance \(d = |(\vec{u}_1\times\vec{u}_2)\cdot\overrightarrow{A_1A_2}|/|\vec{u}_1\times\vec{u}_2|\).</li>
     <li>En CAO, les transformations se représentent par des matrices \(4\times 4\) en coordonnées homogènes.</li>
-    <li>Pour trouver l&rsquo;intersection droite-plan&nbsp;: substituer la forme paramétrique dans l&rsquo;équation du plan, résoudre en \(t\).</li>
+    <li>Pour trouver l’intersection droite-plan&nbsp;: substituer la forme paramétrique dans l’équation du plan, résoudre en \(t\).</li>
   </ul>
 </div>
 
@@ -779,8 +779,8 @@ où \([\hat{u}]_\times =
 </div>
 
 <div class="exo">
-  <strong>Exercice 2 — Équation d&rsquo;un plan</strong>
-  <p>Trouver l&rsquo;équation du plan passant par \(A(2, 0, 1)\), \(B(0, 3, 0)\) et \(C(1, 1, 2)\).</p>
+  <strong>Exercice 2 — Équation d’un plan</strong>
+  <p>Trouver l’équation du plan passant par \(A(2, 0, 1)\), \(B(0, 3, 0)\) et \(C(1, 1, 2)\).</p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>
@@ -798,7 +798,7 @@ où \([\hat{u}]_\times =
 <div class="exo">
   <strong>Exercice 3 — Distance point-plan</strong>
   <p>
-    Dans une charpente métallique, deux poutres définissent un plan d&rsquo;appui \(\pi: 3x+4y-12z=24\).
+    Dans une charpente métallique, deux poutres définissent un plan d’appui \(\pi: 3x+4y-12z=24\).
     Un boulon de fixation est situé au point \(P(2, 1, 3)\).
     Calculer la distance du boulon au plan pour vérifier que le jeu de montage est supérieur à
     \(5\,\text{mm}\) (les coordonnées sont en décimètres).
@@ -820,9 +820,9 @@ où \([\hat{u}]_\times =
 <div class="exo">
   <strong>Exercice 4 — Intersection droite-plan</strong>
   <p>
-    La trajectoire d&rsquo;un rayon lumineux en simulation optique suit la droite
+    La trajectoire d’un rayon lumineux en simulation optique suit la droite
     \(D: (x,y,z) = (0,0,1) + t(1,2,1)\).
-    Trouver le point d&rsquo;intersection avec le plan miroir \(\pi: x + 2y - 2z + 4 = 0\).
+    Trouver le point d’intersection avec le plan miroir \(\pi: x + 2y - 2z + 4 = 0\).
   </p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
@@ -836,7 +836,7 @@ où \([\hat{u}]_\times =
       \(3t + 2 = 0 \Rightarrow t = -2/3\).
     </p>
     <p>
-      Point d&rsquo;intersection&nbsp;:
+      Point d’intersection&nbsp;:
       \(x = -2/3\), \(y = -4/3\), \(z = 1-2/3 = 1/3\).<br>
       \(I\!\left(-\dfrac{2}{3}, -\dfrac{4}{3}, \dfrac{1}{3}\right)\).
     </p>
@@ -847,9 +847,9 @@ où \([\hat{u}]_\times =
 </div>
 
 <div class="exo">
-  <strong>Exercice 5 — Rotation d&rsquo;un point</strong>
+  <strong>Exercice 5 — Rotation d’un point</strong>
   <p>
-    On effectue une rotation de \(90°\) autour de l&rsquo;axe \((Oz)\) sur le point \(P(3, 0, 2)\).
+    On effectue une rotation de \(90°\) autour de l’axe \((Oz)\) sur le point \(P(3, 0, 2)\).
     Trouver les coordonnées du point transformé \(P'\).
   </p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
@@ -869,10 +869,10 @@ où \([\hat{u}]_\times =
 </div>
 
 <div class="exo">
-  <strong>Exercice 6 — Section d&rsquo;un cylindre</strong>
+  <strong>Exercice 6 — Section d’un cylindre</strong>
   <p>
-    Un tuyau de ventilation de rayon \(R = 80\,\text{mm}\) d&rsquo;axe \((Oz)\) est coupé par le
-    plan incliné \(\pi: z = x\tan 30°\) (coupe à \(30°\) de l&rsquo;horizontale).
+    Un tuyau de ventilation de rayon \(R = 80\,\text{mm}\) d’axe \((Oz)\) est coupé par le
+    plan incliné \(\pi: z = x\tan 30°\) (coupe à \(30°\) de l’horizontale).
     Montrer que la section est une ellipse et calculer ses demi-axes.
   </p>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>

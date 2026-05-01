@@ -62,8 +62,8 @@ canvas{display:block;margin:0 auto;max-width:100%}
 <body>
 <div class="container">
   <header>
-    <a href="../simulations.html" class="btn-back">&larr; Retour</a>
-    <h1>Presse hydraulique &mdash; Principe de Pascal</h1>
+    <a href="../simulations.html" class="btn-back">← Retour</a>
+    <h1>Presse hydraulique — Principe de Pascal</h1>
     <p class="sous-titre">Multiplier les forces grace aux fluides</p>
   </header>
 
@@ -113,7 +113,7 @@ canvas{display:block;margin:0 auto;max-width:100%}
     <!-- Application menuiserie -->
     <div class="appli-box">
       <div class="appli-title">Application en menuiserie — Collage de placage</div>
-      <p>Pour coller du placage a <strong>8 bar</strong> sur une surface de <strong>600 &times; 400 mm</strong> :</p>
+      <p>Pour coller du placage a <strong>8 bar</strong> sur une surface de <strong>600 × 400 mm</strong> :</p>
       <p id="appliCalc" style="margin-top:6px"></p>
       <div id="appliResult" class="appli-result"></div>
     </div>
@@ -193,11 +193,11 @@ function update() {
   const peutLeFaire = F2 >= forceNecessaire;
 
   document.getElementById('appliCalc').innerHTML =
-    'Force necessaire = p &times; S = 8 &times; 10<sup>5</sup> &times; ' + surfacePlacage_m2 + ' = <strong>' + formatN(forceNecessaire) + ' N</strong>';
+    'Force necessaire = p × S = 8 × 10<sup>5</sup> × ' + surfacePlacage_m2 + ' = <strong>' + formatN(forceNecessaire) + ' N</strong>';
   const appliEl = document.getElementById('appliResult');
   if (peutLeFaire) {
     appliEl.className = 'appli-result appli-ok';
-    appliEl.innerHTML = 'Oui, cette presse peut le faire (F<sub>2</sub> = ' + formatN(Math.round(F2)) + ' N &ge; ' + formatN(forceNecessaire) + ' N)';
+    appliEl.innerHTML = 'Oui, cette presse peut le faire (F<sub>2</sub> = ' + formatN(Math.round(F2)) + ' N ≥ ' + formatN(forceNecessaire) + ' N)';
   } else {
     appliEl.className = 'appli-result appli-ko';
     appliEl.innerHTML = 'Non, force insuffisante (F<sub>2</sub> = ' + formatN(Math.round(F2)) + ' N &lt; ' + formatN(forceNecessaire) + ' N)';

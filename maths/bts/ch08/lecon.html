@@ -11,27 +11,27 @@
 </head>
 <body>
 <div class="c">
-<a href="../../../maths-bts.html" class="nb">&larr; Retour au sommaire</a>
+<a href="../../../maths-bts.html" class="nb">← Retour au sommaire</a>
 <header>
-  <h1>Chapitre 8 &ndash; Probabilit&eacute;s 1</h1>
-  <p class="sous-titre">BTS &mdash; Tous groupements</p>
+  <h1>Chapitre 8 – Probabilités 1</h1>
+  <p class="sous-titre">BTS — Tous groupements</p>
 </header>
 
 <div class="objectifs">
-  <strong>Je vais apprendre &agrave; :</strong>
+  <strong>Je vais apprendre à :</strong>
   <ul>
-    <li>D&eacute;finir une exp&eacute;rience al&eacute;atoire, un univers et des &eacute;v&eacute;nements</li>
-    <li>Calculer des probabilit&eacute;s &agrave; l&rsquo;aide des axiomes de Kolmogorov</li>
-    <li>Utiliser les probabilit&eacute;s conditionnelles et la formule de Bayes</li>
-    <li>D&eacute;terminer si deux &eacute;v&eacute;nements sont ind&eacute;pendants</li>
-    <li>D&eacute;finir une variable al&eacute;atoire discr&egrave;te, calculer esp&eacute;rance, variance et &eacute;cart-type</li>
-    <li>Reconna&icirc;tre et utiliser la loi binomiale \(B(n,p)\)</li>
-    <li>D&eacute;finir et utiliser la loi uniforme sur \([a\,;\,b]\)</li>
-    <li>D&eacute;finir et utiliser la loi normale \(\mathcal{N}(\mu,\sigma^2)\) et la loi normale centr&eacute;e r&eacute;duite</li>
+    <li>Définir une expérience aléatoire, un univers et des événements</li>
+    <li>Calculer des probabilités à l’aide des axiomes de Kolmogorov</li>
+    <li>Utiliser les probabilités conditionnelles et la formule de Bayes</li>
+    <li>Déterminer si deux événements sont indépendants</li>
+    <li>Définir une variable aléatoire discrète, calculer espérance, variance et écart-type</li>
+    <li>Reconnaître et utiliser la loi binomiale \(B(n,p)\)</li>
+    <li>Définir et utiliser la loi uniforme sur \([a\,;\,b]\)</li>
+    <li>Définir et utiliser la loi normale \(\mathcal{N}(\mu,\sigma^2)\) et la loi normale centrée réduite</li>
     <li>Approcher une loi binomiale par une loi normale</li>
-    <li>Calculer esp&eacute;rance et variance de combinaisons lin&eacute;aires de v.a.</li>
-    <li>Appliquer le th&eacute;or&egrave;me de la limite centrée (TLC)</li>
-    <li>Appliquer ces outils au contr&ocirc;le qualit&eacute; et &agrave; la fiabilit&eacute; industrielle</li>
+    <li>Calculer espérance et variance de combinaisons linéaires de v.a.</li>
+    <li>Appliquer le théorème de la limite centrée (TLC)</li>
+    <li>Appliquer ces outils au contrôle qualité et à la fiabilité industrielle</li>
   </ul>
 </div>
 
@@ -39,62 +39,62 @@
 <h2>Situation professionnelle</h2>
 
 <div class="situation">
-  <h3>Contr&ocirc;le qualit&eacute; dans une production de panneaux</h3>
-  <p>Un technicien en agencement r&eacute;ceptionne un lot de 500 panneaux de bois m&eacute;lamin&eacute;. Le fournisseur annonce un taux de d&eacute;faut de 3&nbsp;%. Pour v&eacute;rifier cette affirmation, le technicien pr&eacute;l&egrave;ve un &eacute;chantillon de 20 panneaux et compte le nombre de panneaux d&eacute;fectueux.</p>
-  <p><strong>Probl&egrave;me :</strong> Quelle est la probabilit&eacute; de trouver au moins 2 panneaux d&eacute;fectueux dans l&rsquo;&eacute;chantillon ? &Agrave; partir de quel nombre de d&eacute;fauts le technicien doit-il rejeter le lot ? La r&eacute;ponse passe par les <em>probabilit&eacute;s</em>, la <em>loi binomiale</em> et, pour de grands &eacute;chantillons, son <em>approximation par la loi normale</em>.</p>
+  <h3>Contrôle qualité dans une production de panneaux</h3>
+  <p>Un technicien en agencement réceptionne un lot de 500 panneaux de bois mélaminé. Le fournisseur annonce un taux de défaut de 3&nbsp;%. Pour vérifier cette affirmation, le technicien prélève un échantillon de 20 panneaux et compte le nombre de panneaux défectueux.</p>
+  <p><strong>Problème :</strong> Quelle est la probabilité de trouver au moins 2 panneaux défectueux dans l’échantillon ? À partir de quel nombre de défauts le technicien doit-il rejeter le lot ? La réponse passe par les <em>probabilités</em>, la <em>loi binomiale</em> et, pour de grands échantillons, son <em>approximation par la loi normale</em>.</p>
 </div>
 
 <!-- ==================== 1. EXPÉRIENCE ALÉATOIRE ==================== -->
-<h2>1. Exp&eacute;rience al&eacute;atoire, univers, &eacute;v&eacute;nements</h2>
+<h2>1. Expérience aléatoire, univers, événements</h2>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; Exp&eacute;rience al&eacute;atoire</span><br>
-  Une <strong>exp&eacute;rience al&eacute;atoire</strong> est une exp&eacute;rience dont on ne peut pas pr&eacute;voir avec certitude le r&eacute;sultat, mais dont on peut d&eacute;crire l&rsquo;ensemble des r&eacute;sultats possibles.
+  <span class="label label-def">Définition — Expérience aléatoire</span><br>
+  Une <strong>expérience aléatoire</strong> est une expérience dont on ne peut pas prévoir avec certitude le résultat, mais dont on peut décrire l’ensemble des résultats possibles.
 </div>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; Univers</span><br>
-  L&rsquo;<strong>univers</strong> \(\Omega\) est l&rsquo;ensemble de tous les r&eacute;sultats possibles (ou <em>issues</em>) d&rsquo;une exp&eacute;rience al&eacute;atoire.
+  <span class="label label-def">Définition — Univers</span><br>
+  L’<strong>univers</strong> \(\Omega\) est l’ensemble de tous les résultats possibles (ou <em>issues</em>) d’une expérience aléatoire.
 </div>
 
 <div class="ex">
   <span class="label label-ex">Exemple</span>
-  <p>On contr&ocirc;le un panneau de bois : il est conforme (C) ou d&eacute;fectueux (D).</p>
+  <p>On contrôle un panneau de bois : il est conforme (C) ou défectueux (D).</p>
   <p>\(\Omega = \{C\,,\,D\}\)</p>
-  <p>On lance un d&eacute; &agrave; six faces : \(\Omega = \{1,\,2,\,3,\,4,\,5,\,6\}\).</p>
+  <p>On lance un dé à six faces : \(\Omega = \{1,\,2,\,3,\,4,\,5,\,6\}\).</p>
 </div>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; &Eacute;v&eacute;nement</span><br>
-  Un <strong>&eacute;v&eacute;nement</strong> est un sous-ensemble de \(\Omega\). Un &eacute;v&eacute;nement contenant une seule issue est dit <strong>&eacute;l&eacute;mentaire</strong>. L&rsquo;&eacute;v&eacute;nement \(\Omega\) est l&rsquo;&eacute;v&eacute;nement <strong>certain</strong> ; l&rsquo;&eacute;v&eacute;nement \(\varnothing\) est l&rsquo;&eacute;v&eacute;nement <strong>impossible</strong>.
+  <span class="label label-def">Définition — Événement</span><br>
+  Un <strong>événement</strong> est un sous-ensemble de \(\Omega\). Un événement contenant une seule issue est dit <strong>élémentaire</strong>. L’événement \(\Omega\) est l’événement <strong>certain</strong> ; l’événement \(\varnothing\) est l’événement <strong>impossible</strong>.
 </div>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; Op&eacute;rations sur les &eacute;v&eacute;nements</span><br>
-  Soient \(A\) et \(B\) deux &eacute;v&eacute;nements de \(\Omega\) :
+  <span class="label label-def">Définition — Opérations sur les événements</span><br>
+  Soient \(A\) et \(B\) deux événements de \(\Omega\) :
   <ul>
-    <li>\(A \cup B\) : &laquo;&nbsp;\(A\) ou \(B\)&nbsp;&raquo; &mdash; au moins l&rsquo;un des deux se r&eacute;alise</li>
-    <li>\(A \cap B\) : &laquo;&nbsp;\(A\) et \(B\)&nbsp;&raquo; &mdash; les deux se r&eacute;alisent simultan&eacute;ment</li>
-    <li>\(\bar{A}\) : le <strong>compl&eacute;mentaire</strong> de \(A\) &mdash; \(A\) ne se r&eacute;alise pas</li>
+    <li>\(A \cup B\) : «&nbsp;\(A\) ou \(B\)&nbsp;» — au moins l’un des deux se réalise</li>
+    <li>\(A \cap B\) : «&nbsp;\(A\) et \(B\)&nbsp;» — les deux se réalisent simultanément</li>
+    <li>\(\bar{A}\) : le <strong>complémentaire</strong> de \(A\) — \(A\) ne se réalise pas</li>
     <li>\(A\) et \(B\) sont <strong>incompatibles</strong> si \(A \cap B = \varnothing\)</li>
   </ul>
 </div>
 
 <!-- ==================== 2. AXIOMES DE KOLMOGOROV ==================== -->
-<h2>2. Probabilit&eacute; d&rsquo;un &eacute;v&eacute;nement &mdash; Axiomes de Kolmogorov</h2>
+<h2>2. Probabilité d’un événement — Axiomes de Kolmogorov</h2>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; Probabilit&eacute;</span><br>
-  Une <strong>probabilit&eacute;</strong> \(P\) sur \(\Omega\) est une application de l&rsquo;ensemble des &eacute;v&eacute;nements vers \([0\,;\,1]\) v&eacute;rifiant les <strong>axiomes de Kolmogorov</strong> :
+  <span class="label label-def">Définition — Probabilité</span><br>
+  Une <strong>probabilité</strong> \(P\) sur \(\Omega\) est une application de l’ensemble des événements vers \([0\,;\,1]\) vérifiant les <strong>axiomes de Kolmogorov</strong> :
   <ol>
-    <li>Pour tout &eacute;v&eacute;nement \(A\) : \(0 \leqslant P(A) \leqslant 1\)</li>
+    <li>Pour tout événement \(A\) : \(0 \leqslant P(A) \leqslant 1\)</li>
     <li>\(P(\Omega) = 1\)</li>
     <li>Si \(A\) et \(B\) sont incompatibles : \(P(A \cup B) = P(A) + P(B)\)</li>
   </ol>
 </div>
 
 <div class="prop">
-  <span class="label label-prop">Propri&eacute;t&eacute;s fondamentales</span><br>
+  <span class="label label-prop">Propriétés fondamentales</span><br>
   <ul>
     <li>\(P(\varnothing) = 0\)</li>
     <li>\(P(\bar{A}) = 1 - P(A)\)</li>
@@ -105,129 +105,129 @@
 
 <div class="ex">
   <span class="label label-ex">Exemple</span>
-  <p>Un lot de pi&egrave;ces m&eacute;talliques contient 5&nbsp;% de pi&egrave;ces hors tol&eacute;rance et 3&nbsp;% de pi&egrave;ces avec un d&eacute;faut d&rsquo;aspect. Parmi les pi&egrave;ces, 1&nbsp;% cumulent les deux d&eacute;fauts.</p>
-  <p>Soit \(H\) : &laquo;&nbsp;pi&egrave;ce hors tol&eacute;rance&nbsp;&raquo; et \(A\) : &laquo;&nbsp;d&eacute;faut d&rsquo;aspect&nbsp;&raquo;.</p>
+  <p>Un lot de pièces métalliques contient 5&nbsp;% de pièces hors tolérance et 3&nbsp;% de pièces avec un défaut d’aspect. Parmi les pièces, 1&nbsp;% cumulent les deux défauts.</p>
+  <p>Soit \(H\) : «&nbsp;pièce hors tolérance&nbsp;» et \(A\) : «&nbsp;défaut d’aspect&nbsp;».</p>
   <p>\(P(H \cup A) = P(H) + P(A) - P(H \cap A) = 0{,}05 + 0{,}03 - 0{,}01 = 0{,}07\)</p>
-  <p>La probabilit&eacute; qu&rsquo;une pi&egrave;ce pr&eacute;sente au moins un d&eacute;faut est de 7&nbsp;%.</p>
+  <p>La probabilité qu’une pièce présente au moins un défaut est de 7&nbsp;%.</p>
 </div>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; &Eacute;quiprobabilit&eacute;</span><br>
-  Si tous les &eacute;v&eacute;nements &eacute;l&eacute;mentaires ont la m&ecirc;me probabilit&eacute;, on dit qu&rsquo;il y a <strong>&eacute;quiprobabilit&eacute;</strong>. Dans ce cas, pour tout &eacute;v&eacute;nement \(A\) :
+  <span class="label label-def">Définition — Équiprobabilité</span><br>
+  Si tous les événements élémentaires ont la même probabilité, on dit qu’il y a <strong>équiprobabilité</strong>. Dans ce cas, pour tout événement \(A\) :
   \[P(A) = \frac{\text{nombre d'issues favorables}}{\text{nombre total d'issues}} = \frac{\text{card}(A)}{\text{card}(\Omega)}\]
 </div>
 
 <!-- ==================== 3. PROBABILITÉS CONDITIONNELLES ==================== -->
-<h2>3. Probabilit&eacute;s conditionnelles</h2>
+<h2>3. Probabilités conditionnelles</h2>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; Probabilit&eacute; conditionnelle</span><br>
-  Soit \(B\) un &eacute;v&eacute;nement de probabilit&eacute; non nulle. La <strong>probabilit&eacute; conditionnelle</strong> de \(A\) sachant \(B\) est :
+  <span class="label label-def">Définition — Probabilité conditionnelle</span><br>
+  Soit \(B\) un événement de probabilité non nulle. La <strong>probabilité conditionnelle</strong> de \(A\) sachant \(B\) est :
   \[P(A \mid B) = \frac{P(A \cap B)}{P(B)}\]
-  Elle repr&eacute;sente la probabilit&eacute; que \(A\) se r&eacute;alise, <em>sachant que \(B\) est d&eacute;j&agrave; r&eacute;alis&eacute;</em>.
+  Elle représente la probabilité que \(A\) se réalise, <em>sachant que \(B\) est déjà réalisé</em>.
 </div>
 
 <div class="prop">
-  <span class="label label-prop">Propri&eacute;t&eacute; &mdash; Probabilit&eacute; de l&rsquo;intersection</span><br>
+  <span class="label label-prop">Propriété — Probabilité de l’intersection</span><br>
   \[P(A \cap B) = P(A \mid B) \times P(B) = P(B \mid A) \times P(A)\]
 </div>
 
 <div class="ex">
-  <span class="label label-ex">Exemple &mdash; Contr&ocirc;le de production</span>
-  <p>Dans une usine de menuiserie, 60&nbsp;% des panneaux sont produits par la machine M1 et 40&nbsp;% par la machine M2. Le taux de d&eacute;faut de M1 est de 2&nbsp;%, celui de M2 est de 5&nbsp;%.</p>
-  <p>On note \(D\) : &laquo;&nbsp;panneau d&eacute;fectueux&nbsp;&raquo;, \(M_1\) et \(M_2\) les &eacute;v&eacute;nements &laquo;&nbsp;provient de M1&nbsp;&raquo; et &laquo;&nbsp;provient de M2&nbsp;&raquo;.</p>
+  <span class="label label-ex">Exemple — Contrôle de production</span>
+  <p>Dans une usine de menuiserie, 60&nbsp;% des panneaux sont produits par la machine M1 et 40&nbsp;% par la machine M2. Le taux de défaut de M1 est de 2&nbsp;%, celui de M2 est de 5&nbsp;%.</p>
+  <p>On note \(D\) : «&nbsp;panneau défectueux&nbsp;», \(M_1\) et \(M_2\) les événements «&nbsp;provient de M1&nbsp;» et «&nbsp;provient de M2&nbsp;».</p>
   <p>\(P(D \mid M_1) = 0{,}02\), \(P(D \mid M_2) = 0{,}05\), \(P(M_1) = 0{,}6\), \(P(M_2) = 0{,}4\).</p>
   <p>\(P(D \cap M_1) = P(D \mid M_1) \times P(M_1) = 0{,}02 \times 0{,}6 = 0{,}012\)</p>
 </div>
 
 <!-- ==================== 4. INDÉPENDANCE ==================== -->
-<h2>4. Ind&eacute;pendance de deux &eacute;v&eacute;nements</h2>
+<h2>4. Indépendance de deux événements</h2>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; Ind&eacute;pendance</span><br>
-  Deux &eacute;v&eacute;nements \(A\) et \(B\) sont <strong>ind&eacute;pendants</strong> si et seulement si :
+  <span class="label label-def">Définition — Indépendance</span><br>
+  Deux événements \(A\) et \(B\) sont <strong>indépendants</strong> si et seulement si :
   \[P(A \cap B) = P(A) \times P(B)\]
-  De mani&egrave;re &eacute;quivalente : \(P(A \mid B) = P(A)\) (la r&eacute;alisation de \(B\) ne modifie pas la probabilit&eacute; de \(A\)).
+  De manière équivalente : \(P(A \mid B) = P(A)\) (la réalisation de \(B\) ne modifie pas la probabilité de \(A\)).
 </div>
 
 <div class="att">
   <span class="label label-att">Attention</span><br>
-  <strong>Ind&eacute;pendant &ne; incompatible.</strong> Deux &eacute;v&eacute;nements incompatibles (\(A \cap B = \varnothing\)) ne sont jamais ind&eacute;pendants (sauf si l&rsquo;un a une probabilit&eacute; nulle), car \(P(A \cap B) = 0 \neq P(A) \times P(B)\) en g&eacute;n&eacute;ral.
+  <strong>Indépendant ≠ incompatible.</strong> Deux événements incompatibles (\(A \cap B = \varnothing\)) ne sont jamais indépendants (sauf si l’un a une probabilité nulle), car \(P(A \cap B) = 0 \neq P(A) \times P(B)\) en général.
 </div>
 
 <div class="ex">
   <span class="label label-ex">Exemple</span>
-  <p>On contr&ocirc;le deux composants d&rsquo;un syst&egrave;me de chauffage, ind&eacute;pendamment l&rsquo;un de l&rsquo;autre. La probabilit&eacute; de d&eacute;faillance du composant A est 0,03 et celle du composant B est 0,05.</p>
-  <p>Probabilit&eacute; que les deux tombent en panne simultan&eacute;ment :</p>
+  <p>On contrôle deux composants d’un système de chauffage, indépendamment l’un de l’autre. La probabilité de défaillance du composant A est 0,03 et celle du composant B est 0,05.</p>
+  <p>Probabilité que les deux tombent en panne simultanément :</p>
   <p>\(P(A \cap B) = 0{,}03 \times 0{,}05 = 0{,}0015 = 0{,}15\,\%\)</p>
 </div>
 
 <!-- ==================== 5. PROBABILITÉS TOTALES ==================== -->
-<h2>5. Formule des probabilit&eacute;s totales</h2>
+<h2>5. Formule des probabilités totales</h2>
 
 <div class="prop">
-  <span class="label label-prop">Propri&eacute;t&eacute; &mdash; Formule des probabilit&eacute;s totales</span><br>
-  Si \(B_1, B_2, \ldots, B_n\) forment un <strong>syst&egrave;me complet d&rsquo;&eacute;v&eacute;nements</strong> (partition de \(\Omega\) : ils sont deux &agrave; deux incompatibles et leur r&eacute;union est \(\Omega\)), alors pour tout &eacute;v&eacute;nement \(A\) :
+  <span class="label label-prop">Propriété — Formule des probabilités totales</span><br>
+  Si \(B_1, B_2, \ldots, B_n\) forment un <strong>système complet d’événements</strong> (partition de \(\Omega\) : ils sont deux à deux incompatibles et leur réunion est \(\Omega\)), alors pour tout événement \(A\) :
   \[P(A) = \sum_{k=1}^{n} P(A \mid B_k) \times P(B_k)\]
 </div>
 
 <div class="meth">
-  <span class="label label-meth">M&eacute;thode &mdash; Utiliser un arbre pond&eacute;r&eacute;</span><br>
+  <span class="label label-meth">Méthode — Utiliser un arbre pondéré</span><br>
   <ol>
-    <li>Identifier le syst&egrave;me complet d&rsquo;&eacute;v&eacute;nements (\(B_1, B_2, \ldots\))</li>
-    <li>Dessiner l&rsquo;arbre : premi&egrave;re branche pour chaque \(B_k\), puis sous-branches pour \(A\) et \(\bar{A}\)</li>
-    <li>Porter les probabilit&eacute;s sur chaque branche</li>
-    <li>Multiplier le long d&rsquo;un chemin pour obtenir \(P(A \cap B_k)\)</li>
-    <li>Additionner les chemins menant &agrave; \(A\) pour obtenir \(P(A)\)</li>
+    <li>Identifier le système complet d’événements (\(B_1, B_2, \ldots\))</li>
+    <li>Dessiner l’arbre : première branche pour chaque \(B_k\), puis sous-branches pour \(A\) et \(\bar{A}\)</li>
+    <li>Porter les probabilités sur chaque branche</li>
+    <li>Multiplier le long d’un chemin pour obtenir \(P(A \cap B_k)\)</li>
+    <li>Additionner les chemins menant à \(A\) pour obtenir \(P(A)\)</li>
   </ol>
 </div>
 
 <div class="ex">
-  <span class="label label-ex">Exemple &mdash; Suite de l&rsquo;usine de menuiserie</span>
-  <p>Reprenons l&rsquo;exemple pr&eacute;c&eacute;dent (M1 : 60&nbsp;%, d&eacute;faut 2&nbsp;% ; M2 : 40&nbsp;%, d&eacute;faut 5&nbsp;%).</p>
-  <p>\(\{M_1\,,\,M_2\}\) est un syst&egrave;me complet d&rsquo;&eacute;v&eacute;nements. On applique la formule des probabilit&eacute;s totales :</p>
+  <span class="label label-ex">Exemple — Suite de l’usine de menuiserie</span>
+  <p>Reprenons l’exemple précédent (M1 : 60&nbsp;%, défaut 2&nbsp;% ; M2 : 40&nbsp;%, défaut 5&nbsp;%).</p>
+  <p>\(\{M_1\,,\,M_2\}\) est un système complet d’événements. On applique la formule des probabilités totales :</p>
   <p>\(P(D) = P(D \mid M_1) \times P(M_1) + P(D \mid M_2) \times P(M_2)\)</p>
   <p>\(P(D) = 0{,}02 \times 0{,}6 + 0{,}05 \times 0{,}4 = 0{,}012 + 0{,}020 = 0{,}032\)</p>
-  <p>La probabilit&eacute; globale qu&rsquo;un panneau soit d&eacute;fectueux est de <strong>3,2&nbsp;%</strong>.</p>
+  <p>La probabilité globale qu’un panneau soit défectueux est de <strong>3,2&nbsp;%</strong>.</p>
 </div>
 
 <!-- ==================== 6. FORMULE DE BAYES ==================== -->
 <h2>6. Formule de Bayes</h2>
 
 <div class="prop">
-  <span class="label label-prop">Propri&eacute;t&eacute; &mdash; Formule de Bayes</span><br>
-  Si \(B_1, B_2, \ldots, B_n\) forment un syst&egrave;me complet d&rsquo;&eacute;v&eacute;nements et \(P(A) > 0\), alors :
+  <span class="label label-prop">Propriété — Formule de Bayes</span><br>
+  Si \(B_1, B_2, \ldots, B_n\) forment un système complet d’événements et \(P(A) > 0\), alors :
   \[P(B_k \mid A) = \frac{P(A \mid B_k) \times P(B_k)}{P(A)}\]
-  Cette formule permet d&rsquo;&laquo;&nbsp;inverser le conditionnement&nbsp;&raquo; : on conna&icirc;t \(P(A \mid B_k)\), on cherche \(P(B_k \mid A)\).
+  Cette formule permet d’«&nbsp;inverser le conditionnement&nbsp;» : on connaît \(P(A \mid B_k)\), on cherche \(P(B_k \mid A)\).
 </div>
 
 <div class="ex">
-  <span class="label label-ex">Exemple &mdash; Identifier la machine d&rsquo;origine</span>
-  <p>Un panneau est trouv&eacute; d&eacute;fectueux. Quelle est la probabilit&eacute; qu&rsquo;il provienne de M2 ?</p>
+  <span class="label label-ex">Exemple — Identifier la machine d’origine</span>
+  <p>Un panneau est trouvé défectueux. Quelle est la probabilité qu’il provienne de M2 ?</p>
   <p>\(P(M_2 \mid D) = \frac{P(D \mid M_2) \times P(M_2)}{P(D)} = \frac{0{,}05 \times 0{,}4}{0{,}032} = \frac{0{,}020}{0{,}032} = 0{,}625\)</p>
-  <p>Il y a <strong>62,5&nbsp;%</strong> de chances que le panneau d&eacute;fectueux provienne de la machine M2.</p>
+  <p>Il y a <strong>62,5&nbsp;%</strong> de chances que le panneau défectueux provienne de la machine M2.</p>
 </div>
 
 <div class="retenir">
-  <strong>&Agrave; retenir &mdash; Cha&icirc;ne logique des calculs</strong>
+  <strong>À retenir — Chaîne logique des calculs</strong>
   <ol>
-    <li><strong>Identifier</strong> le syst&egrave;me complet d&rsquo;&eacute;v&eacute;nements</li>
-    <li><strong>Probabilit&eacute;s totales</strong> : calculer \(P(A)\)</li>
+    <li><strong>Identifier</strong> le système complet d’événements</li>
+    <li><strong>Probabilités totales</strong> : calculer \(P(A)\)</li>
     <li><strong>Bayes</strong> : inverser le conditionnement pour trouver \(P(B_k \mid A)\)</li>
   </ol>
 </div>
 
 <!-- ==================== 7. VARIABLES ALÉATOIRES DISCRÈTES ==================== -->
-<h2>7. Variables al&eacute;atoires discr&egrave;tes</h2>
+<h2>7. Variables aléatoires discrètes</h2>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; Variable al&eacute;atoire discr&egrave;te</span><br>
-  Une <strong>variable al&eacute;atoire discr&egrave;te</strong> \(X\) est une application de \(\Omega\) vers \(\mathbb{R}\) qui associe &agrave; chaque issue un nombre r&eacute;el. Elle ne prend qu&rsquo;un nombre fini ou d&eacute;nombrable de valeurs.
+  <span class="label label-def">Définition — Variable aléatoire discrète</span><br>
+  Une <strong>variable aléatoire discrète</strong> \(X\) est une application de \(\Omega\) vers \(\mathbb{R}\) qui associe à chaque issue un nombre réel. Elle ne prend qu’un nombre fini ou dénombrable de valeurs.
 </div>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; Loi de probabilit&eacute;</span><br>
-  La <strong>loi de probabilit&eacute;</strong> de \(X\) est la donn&eacute;e de toutes les valeurs prises par \(X\) et de leurs probabilit&eacute;s respectives. On la pr&eacute;sente g&eacute;n&eacute;ralement sous forme de tableau :
+  <span class="label label-def">Définition — Loi de probabilité</span><br>
+  La <strong>loi de probabilité</strong> de \(X\) est la donnée de toutes les valeurs prises par \(X\) et de leurs probabilités respectives. On la présente généralement sous forme de tableau :
 </div>
 
 <table>
@@ -237,29 +237,29 @@
 <p>Avec \(\displaystyle\sum_{i=1}^{n} p_i = 1\) et \(p_i \geqslant 0\) pour tout \(i\).</p>
 
 <div class="ex">
-  <span class="label label-ex">Exemple &mdash; Nombre de panneaux d&eacute;fectueux</span>
-  <p>On pr&eacute;l&egrave;ve 3 panneaux dans un lot o&ugrave; la proportion de d&eacute;fectueux est \(p = 0{,}1\). Soit \(X\) le nombre de panneaux d&eacute;fectueux.</p>
+  <span class="label label-ex">Exemple — Nombre de panneaux défectueux</span>
+  <p>On prélève 3 panneaux dans un lot où la proportion de défectueux est \(p = 0{,}1\). Soit \(X\) le nombre de panneaux défectueux.</p>
   <p>\(X\) prend les valeurs 0, 1, 2, 3.</p>
 </div>
 
 <!-- ==================== 8. ESPÉRANCE, VARIANCE, ÉCART-TYPE ==================== -->
-<h2>8. Esp&eacute;rance, variance, &eacute;cart-type</h2>
+<h2>8. Espérance, variance, écart-type</h2>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; Esp&eacute;rance</span><br>
-  L&rsquo;<strong>esp&eacute;rance</strong> de \(X\) est la <em>valeur moyenne th&eacute;orique</em> de \(X\) :
+  <span class="label label-def">Définition — Espérance</span><br>
+  L’<strong>espérance</strong> de \(X\) est la <em>valeur moyenne théorique</em> de \(X\) :
   \[E(X) = \sum_{i=1}^{n} x_i \, p_i\]
 </div>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; Variance et &eacute;cart-type</span><br>
-  La <strong>variance</strong> mesure la dispersion de \(X\) autour de son esp&eacute;rance :
+  <span class="label label-def">Définition — Variance et écart-type</span><br>
+  La <strong>variance</strong> mesure la dispersion de \(X\) autour de son espérance :
   \[V(X) = \sum_{i=1}^{n} (x_i - E(X))^2 \, p_i = E(X^2) - [E(X)]^2\]
-  L&rsquo;<strong>&eacute;cart-type</strong> est \(\sigma(X) = \sqrt{V(X)}\).
+  L’<strong>écart-type</strong> est \(\sigma(X) = \sqrt{V(X)}\).
 </div>
 
 <div class="prop">
-  <span class="label label-prop">Propri&eacute;t&eacute;s de l&rsquo;esp&eacute;rance et de la variance</span><br>
+  <span class="label label-prop">Propriétés de l’espérance et de la variance</span><br>
   Pour \(a, b \in \mathbb{R}\) :
   <ul>
     <li>\(E(aX + b) = aE(X) + b\)</li>
@@ -270,13 +270,13 @@
 
 <div class="ex">
   <span class="label label-ex">Exemple</span>
-  <p>Un technicien chauffagiste re&ccedil;oit un nombre al&eacute;atoire \(X\) d&rsquo;appels urgents par jour :</p>
+  <p>Un technicien chauffagiste reçoit un nombre aléatoire \(X\) d’appels urgents par jour :</p>
   <table>
     <tr><th>\(x_i\)</th><td>0</td><td>1</td><td>2</td><td>3</td></tr>
     <tr><th>\(P(X = x_i)\)</th><td>0,3</td><td>0,4</td><td>0,2</td><td>0,1</td></tr>
   </table>
   <p>\(E(X) = 0 \times 0{,}3 + 1 \times 0{,}4 + 2 \times 0{,}2 + 3 \times 0{,}1 = 0 + 0{,}4 + 0{,}4 + 0{,}3 = 1{,}1\)</p>
-  <p>En moyenne, le technicien re&ccedil;oit <strong>1,1 appel urgent par jour</strong>.</p>
+  <p>En moyenne, le technicien reçoit <strong>1,1 appel urgent par jour</strong>.</p>
   <p>\(E(X^2) = 0 + 1 \times 0{,}4 + 4 \times 0{,}2 + 9 \times 0{,}1 = 0{,}4 + 0{,}8 + 0{,}9 = 2{,}1\)</p>
   <p>\(V(X) = 2{,}1 - (1{,}1)^2 = 2{,}1 - 1{,}21 = 0{,}89\)</p>
   <p>\(\sigma(X) = \sqrt{0{,}89} \approx 0{,}94\)</p>
@@ -286,48 +286,48 @@
 <h2>9. Loi binomiale \(B(n,p)\)</h2>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; &Eacute;preuve de Bernoulli</span><br>
-  Une <strong>&eacute;preuve de Bernoulli</strong> de param&egrave;tre \(p\) est une exp&eacute;rience al&eacute;atoire &agrave; deux issues :
+  <span class="label label-def">Définition — Épreuve de Bernoulli</span><br>
+  Une <strong>épreuve de Bernoulli</strong> de paramètre \(p\) est une expérience aléatoire à deux issues :
   <ul>
-    <li><strong>Succ&egrave;s</strong> (S), de probabilit&eacute; \(p\)</li>
-    <li><strong>&Eacute;chec</strong> (E), de probabilit&eacute; \(q = 1 - p\)</li>
+    <li><strong>Succès</strong> (S), de probabilité \(p\)</li>
+    <li><strong>Échec</strong> (E), de probabilité \(q = 1 - p\)</li>
   </ul>
 </div>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; Loi binomiale</span><br>
-  Soit \(X\) le nombre de succ&egrave;s lors de la r&eacute;p&eacute;tition de \(n\) &eacute;preuves de Bernoulli <strong>ind&eacute;pendantes</strong> de m&ecirc;me param&egrave;tre \(p\). On dit que \(X\) suit la <strong>loi binomiale</strong> de param&egrave;tres \(n\) et \(p\), not&eacute;e \(X \sim B(n,p)\).
+  <span class="label label-def">Définition — Loi binomiale</span><br>
+  Soit \(X\) le nombre de succès lors de la répétition de \(n\) épreuves de Bernoulli <strong>indépendantes</strong> de même paramètre \(p\). On dit que \(X\) suit la <strong>loi binomiale</strong> de paramètres \(n\) et \(p\), notée \(X \sim B(n,p)\).
   <p>Pour \(k \in \{0, 1, \ldots, n\}\) :</p>
   \[P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}\]
-  <p>o&ugrave; \(\displaystyle\binom{n}{k} = \frac{n!}{k!(n-k)!}\) est le coefficient binomial.</p>
+  <p>où \(\displaystyle\binom{n}{k} = \frac{n!}{k!(n-k)!}\) est le coefficient binomial.</p>
 </div>
 
 <div class="formula-box">
-  <strong>Loi binomiale \(B(n,p)\) &mdash; Param&egrave;tres</strong>
+  <strong>Loi binomiale \(B(n,p)\) — Paramètres</strong>
   <ul>
-    <li>Esp&eacute;rance : \(E(X) = np\)</li>
+    <li>Espérance : \(E(X) = np\)</li>
     <li>Variance : \(V(X) = np(1-p)\)</li>
-    <li>&Eacute;cart-type : \(\sigma(X) = \sqrt{np(1-p)}\)</li>
+    <li>Écart-type : \(\sigma(X) = \sqrt{np(1-p)}\)</li>
   </ul>
 </div>
 
 <div class="meth">
-  <span class="label label-meth">M&eacute;thode &mdash; V&eacute;rifier les conditions d&rsquo;application</span><br>
-  On peut mod&eacute;liser par une loi binomiale si :
+  <span class="label label-meth">Méthode — Vérifier les conditions d’application</span><br>
+  On peut modéliser par une loi binomiale si :
   <ol>
-    <li>L&rsquo;exp&eacute;rience est r&eacute;p&eacute;t&eacute;e un nombre fixe \(n\) de fois</li>
-    <li>Chaque r&eacute;p&eacute;tition a exactement deux issues (succ&egrave;s/&eacute;chec)</li>
-    <li>La probabilit&eacute; de succ&egrave;s \(p\) est constante &agrave; chaque r&eacute;p&eacute;tition</li>
-    <li>Les r&eacute;p&eacute;titions sont ind&eacute;pendantes</li>
+    <li>L’expérience est répétée un nombre fixe \(n\) de fois</li>
+    <li>Chaque répétition a exactement deux issues (succès/échec)</li>
+    <li>La probabilité de succès \(p\) est constante à chaque répétition</li>
+    <li>Les répétitions sont indépendantes</li>
   </ol>
 </div>
 
 <div class="ex">
-  <span class="label label-ex">Exemple &mdash; Contr&ocirc;le qualit&eacute; de panneaux</span>
-  <p>Un fabricant produit des panneaux de bois avec un taux de d&eacute;faut de \(p = 0{,}03\). On pr&eacute;l&egrave;ve \(n = 20\) panneaux. Soit \(X\) le nombre de panneaux d&eacute;fectueux : \(X \sim B(20\,;\,0{,}03)\).</p>
-  <p><strong>Probabilit&eacute; d&rsquo;avoir exactement 0 d&eacute;faut :</strong></p>
+  <span class="label label-ex">Exemple — Contrôle qualité de panneaux</span>
+  <p>Un fabricant produit des panneaux de bois avec un taux de défaut de \(p = 0{,}03\). On prélève \(n = 20\) panneaux. Soit \(X\) le nombre de panneaux défectueux : \(X \sim B(20\,;\,0{,}03)\).</p>
+  <p><strong>Probabilité d’avoir exactement 0 défaut :</strong></p>
   <p>\(P(X = 0) = \binom{20}{0}(0{,}03)^0(0{,}97)^{20} = (0{,}97)^{20} \approx 0{,}5438\)</p>
-  <p><strong>Probabilit&eacute; d&rsquo;avoir au moins 2 d&eacute;fauts :</strong></p>
+  <p><strong>Probabilité d’avoir au moins 2 défauts :</strong></p>
   <p>\(P(X \geqslant 2) = 1 - P(X = 0) - P(X = 1)\)</p>
   <p>\(P(X = 1) = \binom{20}{1}(0{,}03)^1(0{,}97)^{19} = 20 \times 0{,}03 \times (0{,}97)^{19} \approx 0{,}3364\)</p>
   <p>\(P(X \geqslant 2) \approx 1 - 0{,}5438 - 0{,}3364 = 0{,}1198 \approx 12\,\%\)</p>
@@ -335,44 +335,44 @@
 </div>
 
 <div class="att">
-  <span class="label label-att">Attention &mdash; Tirage sans remise</span><br>
-  La loi binomiale suppose des tirages <strong>ind&eacute;pendants</strong> (avec remise). Si l&rsquo;on tire sans remise dans un petit lot, on utilise la <strong>loi hyperg&eacute;om&eacute;trique</strong>. Cependant, si la taille du lot est grande devant la taille de l&rsquo;&eacute;chantillon (au moins 10 fois), l&rsquo;approximation binomiale reste acceptable.
+  <span class="label label-att">Attention — Tirage sans remise</span><br>
+  La loi binomiale suppose des tirages <strong>indépendants</strong> (avec remise). Si l’on tire sans remise dans un petit lot, on utilise la <strong>loi hypergéométrique</strong>. Cependant, si la taille du lot est grande devant la taille de l’échantillon (au moins 10 fois), l’approximation binomiale reste acceptable.
 </div>
 
 <!-- ==================== 10. LOI UNIFORME SUR [a,b] ==================== -->
 <h2>10. Loi uniforme sur \([a\,;\,b]\)</h2>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; Loi uniforme continue</span><br>
-  Une variable al&eacute;atoire \(X\) suit la <strong>loi uniforme</strong> sur \([a\,;\,b]\), not&eacute;e \(X \sim \mathcal{U}([a\,;\,b])\), si sa <strong>fonction de densit&eacute;</strong> est constante sur \([a\,;\,b]\) :
+  <span class="label label-def">Définition — Loi uniforme continue</span><br>
+  Une variable aléatoire \(X\) suit la <strong>loi uniforme</strong> sur \([a\,;\,b]\), notée \(X \sim \mathcal{U}([a\,;\,b])\), si sa <strong>fonction de densité</strong> est constante sur \([a\,;\,b]\) :
   \[f(x) = \begin{cases} \dfrac{1}{b-a} & \text{si } x \in [a\,;\,b] \\ 0 & \text{sinon} \end{cases}\]
-  Intuitivement, toutes les valeurs de l&rsquo;intervalle sont &laquo;&nbsp;&eacute;quiprobables&nbsp;&raquo;.
+  Intuitivement, toutes les valeurs de l’intervalle sont «&nbsp;équiprobables&nbsp;».
 </div>
 
 <div class="formula-box">
-  <strong>Loi uniforme \(\mathcal{U}([a\,;\,b])\) &mdash; Param&egrave;tres</strong>
+  <strong>Loi uniforme \(\mathcal{U}([a\,;\,b])\) — Paramètres</strong>
   <ul>
-    <li>Esp&eacute;rance : \(E(X) = \dfrac{a+b}{2}\)</li>
+    <li>Espérance : \(E(X) = \dfrac{a+b}{2}\)</li>
     <li>Variance : \(V(X) = \dfrac{(b-a)^2}{12}\)</li>
-    <li>&Eacute;cart-type : \(\sigma(X) = \dfrac{b-a}{\sqrt{12}} = \dfrac{b-a}{2\sqrt{3}}\)</li>
+    <li>Écart-type : \(\sigma(X) = \dfrac{b-a}{\sqrt{12}} = \dfrac{b-a}{2\sqrt{3}}\)</li>
   </ul>
 </div>
 
 <div class="prop">
-  <span class="label label-prop">Propri&eacute;t&eacute; &mdash; Calcul de probabilit&eacute;</span><br>
+  <span class="label label-prop">Propriété — Calcul de probabilité</span><br>
   Pour \([c\,;\,d] \subset [a\,;\,b]\) :
   \[P(c \leqslant X \leqslant d) = \frac{d - c}{b - a}\]
-  La probabilit&eacute; est proportionnelle &agrave; la longueur de l&rsquo;intervalle.
+  La probabilité est proportionnelle à la longueur de l’intervalle.
 </div>
 
 <div class="ex">
-  <span class="label label-ex">Exemple &mdash; Temps d&rsquo;attente d&rsquo;un ascenseur de chantier</span>
-  <p>Sur un chantier de construction, un ascenseur de chantier effectue un cycle complet toutes les 8 minutes. Un menuisier arrive &agrave; un instant al&eacute;atoire. Son temps d&rsquo;attente \(X\) (en minutes) suit une loi uniforme sur \([0\,;\,8]\).</p>
+  <span class="label label-ex">Exemple — Temps d’attente d’un ascenseur de chantier</span>
+  <p>Sur un chantier de construction, un ascenseur de chantier effectue un cycle complet toutes les 8 minutes. Un menuisier arrive à un instant aléatoire. Son temps d’attente \(X\) (en minutes) suit une loi uniforme sur \([0\,;\,8]\).</p>
   <p>\(E(X) = \dfrac{0 + 8}{2} = 4\) min (attente moyenne : 4 minutes)</p>
   <p>\(\sigma(X) = \dfrac{8 - 0}{2\sqrt{3}} \approx 2{,}31\) min</p>
-  <p>Probabilit&eacute; d&rsquo;attendre moins de 2 minutes :</p>
+  <p>Probabilité d’attendre moins de 2 minutes :</p>
   <p>\(P(X \leqslant 2) = \dfrac{2 - 0}{8 - 0} = \dfrac{2}{8} = 0{,}25 = 25\,\%\)</p>
-  <p>Probabilit&eacute; d&rsquo;attendre entre 3 et 6 minutes :</p>
+  <p>Probabilité d’attendre entre 3 et 6 minutes :</p>
   <p>\(P(3 \leqslant X \leqslant 6) = \dfrac{6 - 3}{8 - 0} = \dfrac{3}{8} = 0{,}375 = 37{,}5\,\%\)</p>
 </div>
 
@@ -380,29 +380,29 @@
 <h2>11. Loi normale \(\mathcal{N}(\mu,\sigma^2)\)</h2>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; Loi normale (loi de Gauss)</span><br>
-  Une variable al&eacute;atoire \(X\) suit la <strong>loi normale</strong> de param&egrave;tres \(\mu\) (esp&eacute;rance) et \(\sigma^2\) (variance), not&eacute;e \(X \sim \mathcal{N}(\mu,\sigma^2)\), si sa fonction de densit&eacute; est :
+  <span class="label label-def">Définition — Loi normale (loi de Gauss)</span><br>
+  Une variable aléatoire \(X\) suit la <strong>loi normale</strong> de paramètres \(\mu\) (espérance) et \(\sigma^2\) (variance), notée \(X \sim \mathcal{N}(\mu,\sigma^2)\), si sa fonction de densité est :
   \[f(x) = \frac{1}{\sigma\sqrt{2\pi}}\,e^{-\frac{(x-\mu)^2}{2\sigma^2}}\]
-  La courbe repr&eacute;sentative est la c&eacute;l&egrave;bre <strong>courbe de Gauss</strong> (courbe en cloche).
+  La courbe représentative est la célèbre <strong>courbe de Gauss</strong> (courbe en cloche).
 </div>
 
 <div class="prop">
-  <span class="label label-prop">Propri&eacute;t&eacute;s de la courbe de Gauss</span><br>
+  <span class="label label-prop">Propriétés de la courbe de Gauss</span><br>
   <ul>
-    <li>La courbe est <strong>sym&eacute;trique</strong> par rapport &agrave; la droite \(x = \mu\)</li>
+    <li>La courbe est <strong>symétrique</strong> par rapport à la droite \(x = \mu\)</li>
     <li>Le maximum est atteint en \(x = \mu\)</li>
-    <li>Les points d&rsquo;inflexion sont en \(x = \mu - \sigma\) et \(x = \mu + \sigma\)</li>
-    <li>L&rsquo;aire totale sous la courbe vaut 1</li>
-    <li>Plus \(\sigma\) est petit, plus la courbe est resserr&eacute;e autour de \(\mu\)</li>
+    <li>Les points d’inflexion sont en \(x = \mu - \sigma\) et \(x = \mu + \sigma\)</li>
+    <li>L’aire totale sous la courbe vaut 1</li>
+    <li>Plus \(\sigma\) est petit, plus la courbe est resserrée autour de \(\mu\)</li>
   </ul>
 </div>
 
 <div class="formula-box">
-  <strong>R&egrave;gle des 68-95-99,7</strong>
+  <strong>Règle des 68-95-99,7</strong>
   <ul>
-    <li>\(P(\mu - \sigma \leqslant X \leqslant \mu + \sigma) \approx 0{,}6827\) &mdash; environ <strong>68&nbsp;%</strong></li>
-    <li>\(P(\mu - 2\sigma \leqslant X \leqslant \mu + 2\sigma) \approx 0{,}9545\) &mdash; environ <strong>95&nbsp;%</strong></li>
-    <li>\(P(\mu - 3\sigma \leqslant X \leqslant \mu + 3\sigma) \approx 0{,}9973\) &mdash; environ <strong>99,7&nbsp;%</strong></li>
+    <li>\(P(\mu - \sigma \leqslant X \leqslant \mu + \sigma) \approx 0{,}6827\) — environ <strong>68&nbsp;%</strong></li>
+    <li>\(P(\mu - 2\sigma \leqslant X \leqslant \mu + 2\sigma) \approx 0{,}9545\) — environ <strong>95&nbsp;%</strong></li>
+    <li>\(P(\mu - 3\sigma \leqslant X \leqslant \mu + 3\sigma) \approx 0{,}9973\) — environ <strong>99,7&nbsp;%</strong></li>
   </ul>
 </div>
 
@@ -412,43 +412,43 @@
 </div>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; Loi normale centr&eacute;e r&eacute;duite</span><br>
-  La <strong>loi normale centr&eacute;e r&eacute;duite</strong> est la loi \(\mathcal{N}(0,1)\) : elle a pour esp&eacute;rance 0 et pour &eacute;cart-type 1. On la note souvent \(Z\).
+  <span class="label label-def">Définition — Loi normale centrée réduite</span><br>
+  La <strong>loi normale centrée réduite</strong> est la loi \(\mathcal{N}(0,1)\) : elle a pour espérance 0 et pour écart-type 1. On la note souvent \(Z\).
   <p>Si \(X \sim \mathcal{N}(\mu,\sigma^2)\), alors la variable :</p>
   \[Z = \frac{X - \mu}{\sigma}\]
-  suit la loi \(\mathcal{N}(0,1)\). Cette transformation s&rsquo;appelle la <strong>r&eacute;duction</strong> (ou centrage-r&eacute;duction).
+  suit la loi \(\mathcal{N}(0,1)\). Cette transformation s’appelle la <strong>réduction</strong> (ou centrage-réduction).
 </div>
 
 <div class="meth">
-  <span class="label label-meth">M&eacute;thode &mdash; Calculer \(P(a \leqslant X \leqslant b)\) avec la table de la loi normale</span><br>
+  <span class="label label-meth">Méthode — Calculer \(P(a \leqslant X \leqslant b)\) avec la table de la loi normale</span><br>
   <ol>
-    <li>Centrer-r&eacute;duire : \(P(a \leqslant X \leqslant b) = P\!\left(\dfrac{a - \mu}{\sigma} \leqslant Z \leqslant \dfrac{b - \mu}{\sigma}\right)\)</li>
+    <li>Centrer-réduire : \(P(a \leqslant X \leqslant b) = P\!\left(\dfrac{a - \mu}{\sigma} \leqslant Z \leqslant \dfrac{b - \mu}{\sigma}\right)\)</li>
     <li>Utiliser la table de \(\mathcal{N}(0,1)\) ou la calculatrice pour lire \(\Phi(z) = P(Z \leqslant z)\)</li>
     <li>Appliquer : \(P(z_1 \leqslant Z \leqslant z_2) = \Phi(z_2) - \Phi(z_1)\)</li>
   </ol>
-  <p>Propri&eacute;t&eacute; de sym&eacute;trie : \(\Phi(-z) = 1 - \Phi(z)\)</p>
+  <p>Propriété de symétrie : \(\Phi(-z) = 1 - \Phi(z)\)</p>
 </div>
 
 <div class="ex">
-  <span class="label label-ex">Exemple &mdash; Longueur de tasseaux de bois</span>
-  <p>Un menuisier agenceur d&eacute;bite des tasseaux dont la longueur \(X\) (en mm) suit la loi \(\mathcal{N}(500\,;\,4)\) (soit \(\mu = 500\) mm et \(\sigma = 2\) mm).</p>
-  <p><strong>Probabilit&eacute; qu&rsquo;un tasseau mesure entre 497 et 503 mm :</strong></p>
+  <span class="label label-ex">Exemple — Longueur de tasseaux de bois</span>
+  <p>Un menuisier agenceur débite des tasseaux dont la longueur \(X\) (en mm) suit la loi \(\mathcal{N}(500\,;\,4)\) (soit \(\mu = 500\) mm et \(\sigma = 2\) mm).</p>
+  <p><strong>Probabilité qu’un tasseau mesure entre 497 et 503 mm :</strong></p>
   <p>\(P(497 \leqslant X \leqslant 503) = P\!\left(\dfrac{497 - 500}{2} \leqslant Z \leqslant \dfrac{503 - 500}{2}\right) = P(-1{,}5 \leqslant Z \leqslant 1{,}5)\)</p>
   <p>\(= \Phi(1{,}5) - \Phi(-1{,}5) = 2\Phi(1{,}5) - 1 \approx 2 \times 0{,}9332 - 1 = 0{,}8664\)</p>
-  <p>Environ <strong>86,6&nbsp;%</strong> des tasseaux sont dans la tol&eacute;rance \(\pm 3\) mm.</p>
-  <p><strong>Probabilit&eacute; qu&rsquo;un tasseau d&eacute;passe 505 mm :</strong></p>
+  <p>Environ <strong>86,6&nbsp;%</strong> des tasseaux sont dans la tolérance \(\pm 3\) mm.</p>
+  <p><strong>Probabilité qu’un tasseau dépasse 505 mm :</strong></p>
   <p>\(P(X > 505) = P\!\left(Z > \dfrac{505-500}{2}\right) = P(Z > 2{,}5) = 1 - \Phi(2{,}5) \approx 1 - 0{,}9938 = 0{,}0062\)</p>
-  <p>Moins de <strong>0,6&nbsp;%</strong> des tasseaux d&eacute;passent 505 mm.</p>
+  <p>Moins de <strong>0,6&nbsp;%</strong> des tasseaux dépassent 505 mm.</p>
 </div>
 
 <!-- ==================== 12. APPROXIMATION BINOMIALE → NORMALE ==================== -->
-<h2>12. Approximation d&rsquo;une loi binomiale par une loi normale</h2>
+<h2>12. Approximation d’une loi binomiale par une loi normale</h2>
 
 <div class="prop">
-  <span class="label label-prop">Propri&eacute;t&eacute; &mdash; Approximation normale de la binomiale</span><br>
-  Lorsque \(n\) est assez grand, la loi binomiale \(B(n,p)\) peut &ecirc;tre approch&eacute;e par une loi normale :
+  <span class="label label-prop">Propriété — Approximation normale de la binomiale</span><br>
+  Lorsque \(n\) est assez grand, la loi binomiale \(B(n,p)\) peut être approchée par une loi normale :
   \[X \sim B(n,p) \;\approx\; \mathcal{N}(np,\;np(1-p))\]
-  <strong>Conditions d&rsquo;application</strong> (r&egrave;gle pratique) :
+  <strong>Conditions d’application</strong> (règle pratique) :
   <ul>
     <li>\(n \geqslant 30\)</li>
     <li>\(np \geqslant 5\)</li>
@@ -457,151 +457,151 @@
 </div>
 
 <div class="meth">
-  <span class="label label-meth">M&eacute;thode &mdash; Correction de continuit&eacute;</span><br>
-  La loi binomiale est discr&egrave;te (valeurs enti&egrave;res), la loi normale est continue. Pour am&eacute;liorer l&rsquo;approximation, on applique une <strong>correction de continuit&eacute;</strong> :
+  <span class="label label-meth">Méthode — Correction de continuité</span><br>
+  La loi binomiale est discrète (valeurs entières), la loi normale est continue. Pour améliorer l’approximation, on applique une <strong>correction de continuité</strong> :
   <ul>
-    <li>\(P(X = k) \approx P(k - 0{,}5 \leqslant Y \leqslant k + 0{,}5)\) o&ugrave; \(Y \sim \mathcal{N}(np,\,np(1-p))\)</li>
+    <li>\(P(X = k) \approx P(k - 0{,}5 \leqslant Y \leqslant k + 0{,}5)\) où \(Y \sim \mathcal{N}(np,\,np(1-p))\)</li>
     <li>\(P(X \leqslant k) \approx P(Y \leqslant k + 0{,}5)\)</li>
     <li>\(P(X \geqslant k) \approx P(Y \geqslant k - 0{,}5)\)</li>
   </ul>
 </div>
 
 <div class="ex">
-  <span class="label label-ex">Exemple &mdash; Contr&ocirc;le qualit&eacute; de briques r&eacute;fractaires</span>
-  <p>Une usine produit des briques r&eacute;fractaires pour des chemin&eacute;es et po&ecirc;les. Le taux de d&eacute;faut est \(p = 0{,}08\). On pr&eacute;l&egrave;ve un &eacute;chantillon de \(n = 200\) briques. Soit \(X\) le nombre de briques d&eacute;fectueuses.</p>
-  <p>\(X \sim B(200\,;\,0{,}08)\). V&eacute;rifions les conditions :</p>
+  <span class="label label-ex">Exemple — Contrôle qualité de briques réfractaires</span>
+  <p>Une usine produit des briques réfractaires pour des cheminées et poêles. Le taux de défaut est \(p = 0{,}08\). On prélève un échantillon de \(n = 200\) briques. Soit \(X\) le nombre de briques défectueuses.</p>
+  <p>\(X \sim B(200\,;\,0{,}08)\). Vérifions les conditions :</p>
   <ul>
-    <li>\(n = 200 \geqslant 30\) &check;</li>
-    <li>\(np = 200 \times 0{,}08 = 16 \geqslant 5\) &check;</li>
-    <li>\(n(1-p) = 200 \times 0{,}92 = 184 \geqslant 5\) &check;</li>
+    <li>\(n = 200 \geqslant 30\) ✓</li>
+    <li>\(np = 200 \times 0{,}08 = 16 \geqslant 5\) ✓</li>
+    <li>\(n(1-p) = 200 \times 0{,}92 = 184 \geqslant 5\) ✓</li>
   </ul>
   <p>On approche par \(Y \sim \mathcal{N}(16\,;\,14{,}72)\), soit \(\mu = 16\) et \(\sigma = \sqrt{14{,}72} \approx 3{,}84\).</p>
-  <p><strong>Probabilit&eacute; d&rsquo;avoir au plus 20 briques d&eacute;fectueuses</strong> (avec correction de continuit&eacute;) :</p>
+  <p><strong>Probabilité d’avoir au plus 20 briques défectueuses</strong> (avec correction de continuité) :</p>
   <p>\(P(X \leqslant 20) \approx P(Y \leqslant 20{,}5) = \Phi\!\left(\dfrac{20{,}5 - 16}{3{,}84}\right) = \Phi(1{,}17) \approx 0{,}879\)</p>
-  <p>Environ <strong>87,9&nbsp;%</strong> de chances d&rsquo;observer au plus 20 d&eacute;fauts.</p>
+  <p>Environ <strong>87,9&nbsp;%</strong> de chances d’observer au plus 20 défauts.</p>
 </div>
 
 <!-- ==================== 13. ESPÉRANCE ET VARIANCE DE COMBINAISONS LINÉAIRES ==================== -->
-<h2>13. Esp&eacute;rance et variance de combinaisons lin&eacute;aires</h2>
+<h2>13. Espérance et variance de combinaisons linéaires</h2>
 
 <div class="prop">
-  <span class="label label-prop">Propri&eacute;t&eacute; &mdash; Lin&eacute;arit&eacute; de l&rsquo;esp&eacute;rance</span><br>
-  Pour toutes variables al&eacute;atoires \(X\) et \(Y\), et pour \(a, b \in \mathbb{R}\) :
+  <span class="label label-prop">Propriété — Linéarité de l’espérance</span><br>
+  Pour toutes variables aléatoires \(X\) et \(Y\), et pour \(a, b \in \mathbb{R}\) :
   <ul>
     <li>\(E(aX + b) = aE(X) + b\)</li>
-    <li>\(E(X + Y) = E(X) + E(Y)\) <em>(toujours vraie, m&ecirc;me si \(X\) et \(Y\) ne sont pas ind&eacute;pendantes)</em></li>
-    <li>Plus g&eacute;n&eacute;ralement : \(E\!\left(\displaystyle\sum_{i=1}^n a_i X_i + b\right) = \sum_{i=1}^n a_i\,E(X_i) + b\)</li>
+    <li>\(E(X + Y) = E(X) + E(Y)\) <em>(toujours vraie, même si \(X\) et \(Y\) ne sont pas indépendantes)</em></li>
+    <li>Plus généralement : \(E\!\left(\displaystyle\sum_{i=1}^n a_i X_i + b\right) = \sum_{i=1}^n a_i\,E(X_i) + b\)</li>
   </ul>
 </div>
 
 <div class="prop">
-  <span class="label label-prop">Propri&eacute;t&eacute; &mdash; Variance d&rsquo;une combinaison lin&eacute;aire</span><br>
+  <span class="label label-prop">Propriété — Variance d’une combinaison linéaire</span><br>
   Pour \(a, b \in \mathbb{R}\) :
   <ul>
     <li>\(V(aX + b) = a^2\,V(X)\)</li>
-    <li>Si \(X\) et \(Y\) sont <strong>ind&eacute;pendantes</strong> : \(V(X + Y) = V(X) + V(Y)\)</li>
-    <li>Plus g&eacute;n&eacute;ralement, si \(X_1, \ldots, X_n\) sont mutuellement ind&eacute;pendantes :<br>
+    <li>Si \(X\) et \(Y\) sont <strong>indépendantes</strong> : \(V(X + Y) = V(X) + V(Y)\)</li>
+    <li>Plus généralement, si \(X_1, \ldots, X_n\) sont mutuellement indépendantes :<br>
     \(V\!\left(\displaystyle\sum_{i=1}^n a_i X_i\right) = \sum_{i=1}^n a_i^2\,V(X_i)\)</li>
   </ul>
 </div>
 
 <div class="att">
   <span class="label label-att">Attention</span><br>
-  La formule \(V(X+Y) = V(X) + V(Y)\) n&rsquo;est valable que si \(X\) et \(Y\) sont <strong>ind&eacute;pendantes</strong>. Sans ind&eacute;pendance, il faut ajouter un terme de covariance : \(V(X+Y) = V(X) + V(Y) + 2\,\text{Cov}(X,Y)\).
+  La formule \(V(X+Y) = V(X) + V(Y)\) n’est valable que si \(X\) et \(Y\) sont <strong>indépendantes</strong>. Sans indépendance, il faut ajouter un terme de covariance : \(V(X+Y) = V(X) + V(Y) + 2\,\text{Cov}(X,Y)\).
 </div>
 
 <div class="ex">
-  <span class="label label-ex">Exemple &mdash; Co&ucirc;t total d&rsquo;une installation</span>
-  <p>Un technicien chauffagiste installe des radiateurs. Le temps d&rsquo;installation d&rsquo;un radiateur est une variable al&eacute;atoire \(X\) d&rsquo;esp&eacute;rance \(E(X) = 45\) min et d&rsquo;&eacute;cart-type \(\sigma(X) = 8\) min. Le co&ucirc;t d&rsquo;une installation est \(C = 30X + 50\) (en euros, avec 30 &euro;/h de main-d&rsquo;&oelig;uvre et 50 &euro; de mat&eacute;riel fixe).</p>
-  <p>\(E(C) = 30\,E(X) + 50 = 30 \times 45 + 50 = 1400\) &euro;</p>
+  <span class="label label-ex">Exemple — Coût total d’une installation</span>
+  <p>Un technicien chauffagiste installe des radiateurs. Le temps d’installation d’un radiateur est une variable aléatoire \(X\) d’espérance \(E(X) = 45\) min et d’écart-type \(\sigma(X) = 8\) min. Le coût d’une installation est \(C = 30X + 50\) (en euros, avec 30 €/h de main-d’œuvre et 50 € de matériel fixe).</p>
+  <p>\(E(C) = 30\,E(X) + 50 = 30 \times 45 + 50 = 1400\) €</p>
   <p>\(V(C) = 30^2\,V(X) = 900 \times 64 = 57\,600\)</p>
-  <p>\(\sigma(C) = \sqrt{57\,600} = 240\) &euro;</p>
-  <p><strong>Installation de 4 radiateurs ind&eacute;pendants :</strong> soit \(S = X_1 + X_2 + X_3 + X_4\).</p>
+  <p>\(\sigma(C) = \sqrt{57\,600} = 240\) €</p>
+  <p><strong>Installation de 4 radiateurs indépendants :</strong> soit \(S = X_1 + X_2 + X_3 + X_4\).</p>
   <p>\(E(S) = 4 \times 45 = 180\) min ; \(V(S) = 4 \times 64 = 256\) ; \(\sigma(S) = 16\) min.</p>
 </div>
 
 <!-- ==================== 14. THÉORÈME DE LA LIMITE CENTRÉE ==================== -->
-<h2>14. Th&eacute;or&egrave;me de la limite centr&eacute;e (TLC)</h2>
+<h2>14. Théorème de la limite centrée (TLC)</h2>
 
 <div class="prop">
-  <span class="label label-prop">Propri&eacute;t&eacute; &mdash; Th&eacute;or&egrave;me de la limite centr&eacute;e</span><br>
-  Soient \(X_1, X_2, \ldots, X_n\) des variables al&eacute;atoires <strong>ind&eacute;pendantes et identiquement distribu&eacute;es</strong> (i.i.d.) d&rsquo;esp&eacute;rance \(\mu\) et de variance \(\sigma^2\). On pose :
+  <span class="label label-prop">Propriété — Théorème de la limite centrée</span><br>
+  Soient \(X_1, X_2, \ldots, X_n\) des variables aléatoires <strong>indépendantes et identiquement distribuées</strong> (i.i.d.) d’espérance \(\mu\) et de variance \(\sigma^2\). On pose :
   \[S_n = X_1 + X_2 + \cdots + X_n \qquad\text{et}\qquad \bar{X}_n = \frac{S_n}{n}\]
   Alors, pour \(n\) assez grand :
   <ul>
     <li>La <strong>somme</strong> : \(S_n \approx \mathcal{N}(n\mu,\;n\sigma^2)\)</li>
     <li>La <strong>moyenne</strong> : \(\bar{X}_n \approx \mathcal{N}\!\left(\mu,\;\dfrac{\sigma^2}{n}\right)\)</li>
   </ul>
-  En pratique, l&rsquo;approximation est bonne d&egrave;s que \(n \geqslant 30\).
+  En pratique, l’approximation est bonne dès que \(n \geqslant 30\).
 </div>
 
 <div class="retenir">
-  <strong>&Agrave; retenir &mdash; TLC en version centr&eacute;e r&eacute;duite</strong>
+  <strong>À retenir — TLC en version centrée réduite</strong>
   \[\frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} \;\xrightarrow{\;\mathcal{L}\;}\; \mathcal{N}(0,1)\]
-  <p>Plus l&rsquo;&eacute;chantillon est grand, plus la moyenne \(\bar{X}_n\) se concentre autour de \(\mu\).</p>
+  <p>Plus l’échantillon est grand, plus la moyenne \(\bar{X}_n\) se concentre autour de \(\mu\).</p>
 </div>
 
 <div class="ex">
-  <span class="label label-ex">Exemple &mdash; R&eacute;sistance thermique de panneaux isolants</span>
-  <p>Un fabricant de panneaux isolants sait que la r&eacute;sistance thermique \(R\) d&rsquo;un panneau a pour esp&eacute;rance \(\mu = 3{,}5\) m&sup2;&middot;K/W et &eacute;cart-type \(\sigma = 0{,}4\) m&sup2;&middot;K/W. On mesure un &eacute;chantillon de \(n = 36\) panneaux.</p>
+  <span class="label label-ex">Exemple — Résistance thermique de panneaux isolants</span>
+  <p>Un fabricant de panneaux isolants sait que la résistance thermique \(R\) d’un panneau a pour espérance \(\mu = 3{,}5\) m&sup2;·K/W et écart-type \(\sigma = 0{,}4\) m&sup2;·K/W. On mesure un échantillon de \(n = 36\) panneaux.</p>
   <p>Par le TLC, la moyenne \(\bar{R}\) suit approximativement :</p>
   <p>\(\bar{R} \sim \mathcal{N}\!\left(3{,}5\;;\;\dfrac{0{,}16}{36}\right) = \mathcal{N}(3{,}5\;;\;0{,}00444)\)</p>
-  <p>Soit \(\sigma_{\bar{R}} = \dfrac{0{,}4}{\sqrt{36}} = \dfrac{0{,}4}{6} \approx 0{,}0667\) m&sup2;&middot;K/W.</p>
-  <p><strong>Probabilit&eacute; que la moyenne de l&rsquo;&eacute;chantillon soit inf&eacute;rieure &agrave; 3,4 :</strong></p>
+  <p>Soit \(\sigma_{\bar{R}} = \dfrac{0{,}4}{\sqrt{36}} = \dfrac{0{,}4}{6} \approx 0{,}0667\) m&sup2;·K/W.</p>
+  <p><strong>Probabilité que la moyenne de l’échantillon soit inférieure à 3,4 :</strong></p>
   <p>\(P(\bar{R} < 3{,}4) = P\!\left(Z < \dfrac{3{,}4 - 3{,}5}{0{,}0667}\right) = P(Z < -1{,}50) = 1 - \Phi(1{,}50) \approx 1 - 0{,}9332 = 0{,}0668\)</p>
-  <p>Il n&rsquo;y a qu&rsquo;environ <strong>6,7&nbsp;%</strong> de chances que la moyenne de l&rsquo;&eacute;chantillon soit inf&eacute;rieure &agrave; 3,4.</p>
+  <p>Il n’y a qu’environ <strong>6,7&nbsp;%</strong> de chances que la moyenne de l’échantillon soit inférieure à 3,4.</p>
 </div>
 
 <div class="meth">
-  <span class="label label-meth">M&eacute;thode &mdash; Appliquer le TLC</span><br>
+  <span class="label label-meth">Méthode — Appliquer le TLC</span><br>
   <ol>
-    <li>Identifier les v.a. \(X_i\) ind&eacute;pendantes et de m&ecirc;me loi, avec \(\mu = E(X_i)\) et \(\sigma^2 = V(X_i)\)</li>
-    <li>V&eacute;rifier que \(n \geqslant 30\)</li>
+    <li>Identifier les v.a. \(X_i\) indépendantes et de même loi, avec \(\mu = E(X_i)\) et \(\sigma^2 = V(X_i)\)</li>
+    <li>Vérifier que \(n \geqslant 30\)</li>
     <li>Pour la <strong>somme</strong> \(S_n\) : utiliser \(\mathcal{N}(n\mu,\,n\sigma^2)\)</li>
     <li>Pour la <strong>moyenne</strong> \(\bar{X}_n\) : utiliser \(\mathcal{N}\!\left(\mu,\,\dfrac{\sigma^2}{n}\right)\)</li>
-    <li>Centrer-r&eacute;duire et utiliser la table de \(\mathcal{N}(0,1)\)</li>
+    <li>Centrer-réduire et utiliser la table de \(\mathcal{N}(0,1)\)</li>
   </ol>
 </div>
 
 <!-- ==================== 15. APPLICATIONS ==================== -->
-<h2>15. Applications au contr&ocirc;le qualit&eacute; et &agrave; la fiabilit&eacute;</h2>
+<h2>15. Applications au contrôle qualité et à la fiabilité</h2>
 
 <div class="def">
-  <span class="label label-def">D&eacute;finition &mdash; Contr&ocirc;le par &eacute;chantillonnage</span><br>
-  Le <strong>contr&ocirc;le par &eacute;chantillonnage</strong> consiste &agrave; pr&eacute;lever al&eacute;atoirement \(n\) pi&egrave;ces dans un lot et &agrave; d&eacute;cider d&rsquo;accepter ou de refuser le lot en fonction du nombre de d&eacute;fectueux observ&eacute;s.
+  <span class="label label-def">Définition — Contrôle par échantillonnage</span><br>
+  Le <strong>contrôle par échantillonnage</strong> consiste à prélever aléatoirement \(n\) pièces dans un lot et à décider d’accepter ou de refuser le lot en fonction du nombre de défectueux observés.
 </div>
 
 <div class="meth">
-  <span class="label label-meth">M&eacute;thode &mdash; Plan de contr&ocirc;le simple</span><br>
+  <span class="label label-meth">Méthode — Plan de contrôle simple</span><br>
   <ol>
-    <li>D&eacute;finir la taille d&rsquo;&eacute;chantillon \(n\) et le seuil d&rsquo;acceptation \(c\)</li>
-    <li>Pr&eacute;lever \(n\) pi&egrave;ces et compter le nombre \(X\) de d&eacute;fectueux</li>
+    <li>Définir la taille d’échantillon \(n\) et le seuil d’acceptation \(c\)</li>
+    <li>Prélever \(n\) pièces et compter le nombre \(X\) de défectueux</li>
     <li>Si \(X \leqslant c\) : <strong>accepter</strong> le lot ; si \(X > c\) : <strong>refuser</strong></li>
   </ol>
-  <p>En mod&eacute;lisant \(X \sim B(n,p)\), on peut calculer la probabilit&eacute; d&rsquo;accepter un lot de proportion de d&eacute;fectueux \(p\).</p>
+  <p>En modélisant \(X \sim B(n,p)\), on peut calculer la probabilité d’accepter un lot de proportion de défectueux \(p\).</p>
 </div>
 
 <div class="ex">
-  <span class="label label-ex">Exemple &mdash; Plan de contr&ocirc;le \(n = 50\), \(c = 2\)</span>
-  <p>Un fabricant de quincaillerie livre un lot de 2000 ferrures. On pr&eacute;l&egrave;ve 50 pi&egrave;ces (le lot est assez grand pour justifier le mod&egrave;le binomial). Le lot est accept&eacute; si on trouve au plus 2 d&eacute;fectueux.</p>
-  <p>Si le vrai taux de d&eacute;faut est \(p = 0{,}02\), alors \(\lambda = np = 50 \times 0{,}02 = 1\) et on approche par \(\mathcal{P}(1)\) :</p>
+  <span class="label label-ex">Exemple — Plan de contrôle \(n = 50\), \(c = 2\)</span>
+  <p>Un fabricant de quincaillerie livre un lot de 2000 ferrures. On prélève 50 pièces (le lot est assez grand pour justifier le modèle binomial). Le lot est accepté si on trouve au plus 2 défectueux.</p>
+  <p>Si le vrai taux de défaut est \(p = 0{,}02\), alors \(\lambda = np = 50 \times 0{,}02 = 1\) et on approche par \(\mathcal{P}(1)\) :</p>
   <p>\(P(X \leqslant 2) = e^{-1}\left(1 + 1 + \frac{1}{2}\right) = e^{-1} \times 2{,}5 \approx 0{,}3679 \times 2{,}5 \approx 0{,}920\)</p>
-  <p>Le lot a environ <strong>92&nbsp;%</strong> de chances d&rsquo;&ecirc;tre accept&eacute;.</p>
+  <p>Le lot a environ <strong>92&nbsp;%</strong> de chances d’être accepté.</p>
 </div>
 
 <div class="retenir">
-  <strong>&Agrave; retenir &mdash; Les formules essentielles</strong>
+  <strong>À retenir — Les formules essentielles</strong>
   <table>
     <tr><th>Formule</th><th>Expression</th></tr>
-    <tr><td>Probabilit&eacute; conditionnelle</td><td>\(P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}\)</td></tr>
-    <tr><td>Ind&eacute;pendance</td><td>\(P(A \cap B) = P(A) \times P(B)\)</td></tr>
-    <tr><td>Probabilit&eacute;s totales</td><td>\(P(A) = \displaystyle\sum P(A \mid B_k) \, P(B_k)\)</td></tr>
+    <tr><td>Probabilité conditionnelle</td><td>\(P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}\)</td></tr>
+    <tr><td>Indépendance</td><td>\(P(A \cap B) = P(A) \times P(B)\)</td></tr>
+    <tr><td>Probabilités totales</td><td>\(P(A) = \displaystyle\sum P(A \mid B_k) \, P(B_k)\)</td></tr>
     <tr><td>Bayes</td><td>\(P(B_k \mid A) = \dfrac{P(A \mid B_k) \, P(B_k)}{P(A)}\)</td></tr>
     <tr><td>Binomiale \(B(n,p)\)</td><td>\(P(X=k) = \dbinom{n}{k} p^k (1-p)^{n-k}\)</td></tr>
     <tr><td>Uniforme \(\mathcal{U}([a,b])\)</td><td>\(P(c \leqslant X \leqslant d) = \dfrac{d-c}{b-a}\), \(E(X) = \dfrac{a+b}{2}\)</td></tr>
-    <tr><td>Normale \(\mathcal{N}(\mu,\sigma^2)\)</td><td>Centrage-r&eacute;duction : \(Z = \dfrac{X - \mu}{\sigma} \sim \mathcal{N}(0,1)\)</td></tr>
+    <tr><td>Normale \(\mathcal{N}(\mu,\sigma^2)\)</td><td>Centrage-réduction : \(Z = \dfrac{X - \mu}{\sigma} \sim \mathcal{N}(0,1)\)</td></tr>
     <tr><td>Approximation \(B \to \mathcal{N}\)</td><td>\(B(n,p) \approx \mathcal{N}(np,\,np(1-p))\) si \(n \geqslant 30\), \(np \geqslant 5\), \(n(1-p) \geqslant 5\)</td></tr>
-    <tr><td>Combinaisons lin&eacute;aires</td><td>\(E(X+Y) = E(X)+E(Y)\) ; \(V(X+Y) = V(X)+V(Y)\) (si ind&eacute;p.)</td></tr>
+    <tr><td>Combinaisons linéaires</td><td>\(E(X+Y) = E(X)+E(Y)\) ; \(V(X+Y) = V(X)+V(Y)\) (si indép.)</td></tr>
     <tr><td>TLC</td><td>\(\bar{X}_n \approx \mathcal{N}\!\left(\mu,\,\dfrac{\sigma^2}{n}\right)\) pour \(n\) grand</td></tr>
   </table>
 </div>

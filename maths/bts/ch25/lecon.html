@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch25 &ndash; Algorithmique appliquée – BTS</title>
+<title>Ch25 – Algorithmique appliquée – BTS</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
@@ -35,10 +35,10 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 </head>
 <body>
 <div class="c">
-<a href="../../../maths-bts.html" class="nb">&larr; Retour au sommaire BTS</a>
+<a href="../../../maths-bts.html" class="nb">← Retour au sommaire BTS</a>
 
 <header>
-  <h1>Chapitre 25 &ndash; Algorithmique appliquée</h1>
+  <h1>Chapitre 25 – Algorithmique appliquée</h1>
   <p class="sous-titre">BTS &nbsp;|&nbsp; Mathématiques &nbsp;|&nbsp; Groupement D2</p>
   <p class="maj">Dernière mise à jour : mars 2026</p>
 </header>
@@ -59,7 +59,7 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 
 <!-- ══════════════════════════════════════════════ SITUATION ══ -->
 <div class="situation">
-  <h3>Situation professionnelle &mdash; Développeur en informatique industrielle</h3>
+  <h3>Situation professionnelle — Développeur en informatique industrielle</h3>
   <p>
     <strong>Contexte :</strong> Karim est technicien informatique dans une unité de production
     automobile. Sa mission : développer un programme de traitement des données de mesure
@@ -115,7 +115,7 @@ i = <span class="nb2">0</span>
 <h3>2.1 Recherche séquentielle</h3>
 
 <div class="def">
-  <span class="label-def">Algorithme &mdash; Recherche séquentielle</span>
+  <span class="label-def">Algorithme — Recherche séquentielle</span>
   Parcourt le tableau de gauche à droite et compare chaque élément avec la valeur cible.
   Fonctionne sur tout tableau (trié ou non).
   <pre><code><span class="kw">def</span> <span class="fn">recherche_sequentielle</span>(tableau, cible):
@@ -135,7 +135,7 @@ t = [<span class="nb2">5</span>, <span class="nb2">3</span>, <span class="nb2">8
 <h3>2.2 Recherche dichotomique</h3>
 
 <div class="def">
-  <span class="label-def">Algorithme &mdash; Recherche dichotomique (binaire)</span>
+  <span class="label-def">Algorithme — Recherche dichotomique (binaire)</span>
   <strong>Prérequis :</strong> le tableau doit être <em>trié</em>.<br>
   Principe : à chaque étape, on compare la cible avec l'élément médian
   et on restreint la recherche à la moitié restante pertinente.
@@ -163,8 +163,8 @@ t = [<span class="nb2">1</span>, <span class="nb2">2</span>, <span class="nb2">3
 <div class="ex">
   <strong>Comparaison chiffrée :</strong><br>
   Pour un tableau de \(n = 1\,000\,000\) éléments :<br>
-  &bull; Recherche séquentielle : jusqu'à 1 000 000 comparaisons<br>
-  &bull; Recherche dichotomique : \(\lceil\log_2(1\,000\,000)\rceil = 20\) comparaisons au maximum
+  • Recherche séquentielle : jusqu'à 1 000 000 comparaisons<br>
+  • Recherche dichotomique : \(\lceil\log_2(1\,000\,000)\rceil = 20\) comparaisons au maximum
 </div>
 
 <!-- ══════════════════════════════════════════════ 3. TRI ══ -->
@@ -173,7 +173,7 @@ t = [<span class="nb2">1</span>, <span class="nb2">2</span>, <span class="nb2">3
 <h3>3.1 Tri à bulles (Bubble Sort)</h3>
 
 <div class="def">
-  <span class="label-def">Algorithme &mdash; Tri à bulles</span>
+  <span class="label-def">Algorithme — Tri à bulles</span>
   Principe : parcourir le tableau en comparant des éléments adjacents et en les échangeant
   si nécessaire. Répéter jusqu'à ce qu'aucun échange ne soit effectué.
   <pre><code><span class="kw">def</span> <span class="fn">tri_bulles</span>(t):
@@ -206,7 +206,7 @@ t = [<span class="nb2">1</span>, <span class="nb2">2</span>, <span class="nb2">3
 <h3>3.2 Tri par insertion</h3>
 
 <div class="def">
-  <span class="label-def">Algorithme &mdash; Tri par insertion</span>
+  <span class="label-def">Algorithme — Tri par insertion</span>
   Pour chaque élément \(t[i]\), on l'insère à sa bonne position dans la partie déjà triée \(t[0..i-1]\).
   <pre><code><span class="kw">def</span> <span class="fn">tri_insertion</span>(t):
     <span class="st">"""Tri par insertion (modifie t en place)."""</span>
@@ -224,7 +224,7 @@ t = [<span class="nb2">1</span>, <span class="nb2">2</span>, <span class="nb2">3
 <h3>3.3 Tri par sélection</h3>
 
 <div class="def">
-  <span class="label-def">Algorithme &mdash; Tri par sélection</span>
+  <span class="label-def">Algorithme — Tri par sélection</span>
   À chaque tour, on sélectionne le minimum de la partie non triée et on l'échange avec le premier élément non trié.
   <pre><code><span class="kw">def</span> <span class="fn">tri_selection</span>(t):
     <span class="st">"""Tri par sélection (modifie t en place)."""</span>
@@ -242,7 +242,7 @@ t = [<span class="nb2">1</span>, <span class="nb2">2</span>, <span class="nb2">3
 <h3>3.4 Tri rapide (Quicksort)</h3>
 
 <div class="def">
-  <span class="label-def">Algorithme &mdash; Tri rapide</span>
+  <span class="label-def">Algorithme — Tri rapide</span>
   Principe <em>diviser pour régner</em> :<br>
   1. Choisir un <strong>pivot</strong>.<br>
   2. Partitionner : éléments &lt; pivot à gauche, éléments &gt; pivot à droite.<br>
@@ -291,7 +291,7 @@ t = [<span class="nb2">1</span>, <span class="nb2">2</span>, <span class="nb2">3
 <h3>4.1 Pile (LIFO — Last In First Out)</h3>
 
 <div class="def">
-  <span class="label-def">Définition &mdash; Pile</span>
+  <span class="label-def">Définition — Pile</span>
   Une <strong>pile</strong> est une structure de données où le dernier élément inséré est le premier
   extrait (principe LIFO).<br>
   Opérations : <code>push</code> (empiler), <code>pop</code> (dépiler), <code>peek</code> (lire le sommet).
@@ -323,7 +323,7 @@ sommet = pile.pop()  <span class="cm"># pop  → sommet = 30, pile = [10, 20]</s
     <div>
       <p style="margin:0 0 .3rem;font-size:.85rem;color:#555">Après push(10), push(20), push(30) :</p>
       <div class="stack-wrap">
-        <div class="stack-cell">30 &larr; sommet</div>
+        <div class="stack-cell">30 ← sommet</div>
         <div class="stack-cell">20</div>
         <div class="stack-cell">10</div>
       </div>
@@ -331,7 +331,7 @@ sommet = pile.pop()  <span class="cm"># pop  → sommet = 30, pile = [10, 20]</s
     <div>
       <p style="margin:0 0 .3rem;font-size:.85rem;color:#555">Après pop() (retourne 30) :</p>
       <div class="stack-wrap">
-        <div class="stack-cell">20 &larr; sommet</div>
+        <div class="stack-cell">20 ← sommet</div>
         <div class="stack-cell">10</div>
       </div>
     </div>
@@ -341,7 +341,7 @@ sommet = pile.pop()  <span class="cm"># pop  → sommet = 30, pile = [10, 20]</s
 <h3>4.2 File (FIFO — First In First Out)</h3>
 
 <div class="def">
-  <span class="label-def">Définition &mdash; File</span>
+  <span class="label-def">Définition — File</span>
   Une <strong>file</strong> est une structure où le premier élément inséré est le premier extrait (FIFO).
   Opérations : <code>enqueue</code> (enfiler par l'arrière), <code>dequeue</code> (défiler par l'avant).
   <pre><code><span class="kw">from</span> collections <span class="kw">import</span> deque
@@ -360,7 +360,7 @@ premier = file.popleft()  <span class="cm"># dequeue → "alerte_1"</span>
 <h3>4.3 Liste chaînée</h3>
 
 <div class="def">
-  <span class="label-def">Définition &mdash; Liste chaînée</span>
+  <span class="label-def">Définition — Liste chaînée</span>
   Chaque <strong>nœud</strong> contient une valeur et un pointeur vers le nœud suivant.
   Contrairement à un tableau, les éléments ne sont pas contigus en mémoire.
   <pre><code><span class="kw">class</span> <span class="fn">Noeud</span>:
@@ -400,11 +400,11 @@ premier = file.popleft()  <span class="cm"># dequeue → "alerte_1"</span>
 <h3>5.1 Principe de la récursivité</h3>
 
 <div class="def">
-  <span class="label-def">Définition &mdash; Récursivité</span>
+  <span class="label-def">Définition — Récursivité</span>
   Une fonction est <strong>récursive</strong> si elle s'appelle elle-même.
   Tout algorithme récursif comporte obligatoirement :<br>
-  &bull; Un ou plusieurs <strong>cas de base</strong> (condition d'arrêt) — sans appel récursif.<br>
-  &bull; Un ou plusieurs <strong>appels récursifs</strong> sur un problème de taille strictement plus petite.<br><br>
+  • Un ou plusieurs <strong>cas de base</strong> (condition d'arrêt) — sans appel récursif.<br>
+  • Un ou plusieurs <strong>appels récursifs</strong> sur un problème de taille strictement plus petite.<br><br>
   Sans cas de base (ou si le cas de base n'est jamais atteint), on obtient une <em>récursion infinie</em>
   (équivalent d'une boucle infinie), qui provoque un dépassement de pile (<em>stack overflow</em>).
 </div>
@@ -527,7 +527,7 @@ premier = file.popleft()  <span class="cm"># dequeue → "alerte_1"</span>
 <h3>7.1 Notation Big-O</h3>
 
 <div class="def">
-  <span class="label-def">Définition &mdash; Notation Big-O</span>
+  <span class="label-def">Définition — Notation Big-O</span>
   La <strong>notation \(O(f(n))\)</strong> (Big-O) décrit la croissance asymptotique du nombre d'opérations
   d'un algorithme en fonction de la taille \(n\) de l'entrée.<br><br>
   On dit que l'algorithme est \(O(f(n))\) s'il existe des constantes \(c > 0\) et \(n_0\)
@@ -568,7 +568,7 @@ premier = file.popleft()  <span class="cm"># dequeue → "alerte_1"</span>
 </div>
 
 <!-- ══════════════════════════════════════════════ 8. APPLICATION PYTHON ══ -->
-<h2>8. Application &mdash; Traitement de données industrielles</h2>
+<h2>8. Application — Traitement de données industrielles</h2>
 
 <p>
   Programme complet de traitement des données de cotes de pièces pour Karim.
@@ -648,7 +648,7 @@ COTE_NOMINALE = <span class="nb2">100.0</span>  <span class="cm"># mm</span>
 
 <!-- ══════════════════════════════════════════════ MÉTHODE ══ -->
 <div class="meth">
-  <span class="label-meth">Méthode &mdash; Analyser et écrire un algorithme</span>
+  <span class="label-meth">Méthode — Analyser et écrire un algorithme</span>
   <ol>
     <li><strong>Comprendre le problème :</strong> données d'entrée, résultat attendu, contraintes.</li>
     <li><strong>Choisir la structure de données :</strong>
@@ -665,7 +665,7 @@ COTE_NOMINALE = <span class="nb2">100.0</span>  <span class="cm"># mm</span>
 
 <!-- ══════════════════════════════════════════════ À RETENIR ══ -->
 <div class="retenir">
-  <h3>À retenir &mdash; Algorithmique appliquée</h3>
+  <h3>À retenir — Algorithmique appliquée</h3>
   <div class="grid2">
     <div>
       <strong>Recherche et tri</strong>

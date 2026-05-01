@@ -38,13 +38,13 @@ canvas{max-width:100%;height:auto}
 <body>
 <div class="container">
   <header>
-    <a href="../simulations.html" class="btn-back">&larr; Retour</a>
+    <a href="../simulations.html" class="btn-back">← Retour</a>
     <h1>Pile Électrochimique</h1>
-    <p>Terminale Bac Pro &middot; Ch02 ERA</p>
+    <p>Terminale Bac Pro · Ch02 ERA</p>
   </header>
 
   <div class="explication">
-    <strong>Principe :</strong> Une pile transforme de l'<strong>énergie chimique en énergie électrique</strong> grâce à une réaction d'oxydoréduction spontanée. L'anode (borne &minus;) est le siège de l'oxydation, la cathode (borne +) est le siège de la réduction. La force électromotrice (f.e.m.) est : <strong>E = E&deg;(cathode) &minus; E&deg;(anode)</strong>.
+    <strong>Principe :</strong> Une pile transforme de l'<strong>énergie chimique en énergie électrique</strong> grâce à une réaction d'oxydoréduction spontanée. L'anode (borne −) est le siège de l'oxydation, la cathode (borne +) est le siège de la réduction. La force électromotrice (f.e.m.) est : <strong>E = E°(cathode) − E°(anode)</strong>.
   </div>
 
   <!-- CELL BUILDER -->
@@ -52,7 +52,7 @@ canvas{max-width:100%;height:auto}
     <h2>1. Construire une pile</h2>
     <div class="row">
       <div>
-        <label>Métal de l'anode (borne &minus;) :</label>
+        <label>Métal de l'anode (borne −) :</label>
         <select id="selAnode" onchange="updatePile()">
           <option value="Zn" selected>Zinc (Zn)</option>
           <option value="Fe">Fer (Fe)</option>
@@ -73,7 +73,7 @@ canvas{max-width:100%;height:auto}
     <canvas aria-label="Pile électrochimique avec deux demi-piles, pont salin et circuit extérieur" id="cvPile" width="820" height="360" style="margin-top:15px;"></canvas>
 
     <div id="warnSame" class="warn" style="display:none;">Les deux électrodes sont identiques : aucune réaction n'est possible. La f.e.m. serait nulle.</div>
-    <div id="warnReverse" class="warn" style="display:none;">Attention : E&deg;(anode) > E&deg;(cathode). En pratique, les rôles seraient inversés. La pile fonctionne dans l'autre sens.</div>
+    <div id="warnReverse" class="warn" style="display:none;">Attention : E°(anode) > E°(cathode). En pratique, les rôles seraient inversés. La pile fonctionne dans l'autre sens.</div>
 
     <div class="result" id="resPile"></div>
   </div>
@@ -91,7 +91,7 @@ canvas{max-width:100%;height:auto}
         <tr><td><strong>Pile alcaline</strong></td><td>1,5</td><td>~80</td><td>1 (jetable)</td><td>-</td><td>Appareils courants</td></tr>
         <tr><td><strong>Ni-Cd</strong></td><td>1,2</td><td>~50</td><td>~1 000</td><td>Oui</td><td>Ancien outillage (interdit UE)</td></tr>
         <tr><td><strong>Ni-MH</strong></td><td>1,2</td><td>~80</td><td>~500</td><td>Faible</td><td>Piles rechargeables AA/AAA</td></tr>
-        <tr><td><strong>Li-ion</strong></td><td>3,6 &ndash; 3,7</td><td>~150 &ndash; 250</td><td>~500 &ndash; 1 000</td><td>Non</td><td>Outillage pro, smartphones</td></tr>
+        <tr><td><strong>Li-ion</strong></td><td>3,6 – 3,7</td><td>~150 – 250</td><td>~500 – 1 000</td><td>Non</td><td>Outillage pro, smartphones</td></tr>
         <tr><td><strong>LiFePO4</strong></td><td>3,2</td><td>~100</td><td>~2 000</td><td>Non</td><td>Stockage solaire</td></tr>
       </tbody>
     </table>
@@ -349,7 +349,7 @@ function updateBat() {
 
   $('resBat').innerHTML = `
     <p><strong>Charge :</strong> Q = ${Q.toFixed(1)} Ah = ${Qc.toFixed(0)} C (coulombs)</p>
-    <p><strong>Énergie stockée :</strong> E = U &times; Q = ${U.toFixed(1)} &times; ${Q.toFixed(1)} = <span class="val">${E.toFixed(1)} Wh</span> = ${(E / 1000).toFixed(3)} kWh</p>
+    <p><strong>Énergie stockée :</strong> E = U × Q = ${U.toFixed(1)} × ${Q.toFixed(1)} = <span class="val">${E.toFixed(1)} Wh</span> = ${(E / 1000).toFixed(3)} kWh</p>
     <p><strong>Énergie en joules :</strong> ${Ej.toFixed(0)} J</p>
     <p style="margin-top:10px;padding-top:8px;border-top:1px solid #e5e7eb;">
       <strong>Exemple :</strong> Avec un outil consommant 500 W, cette batterie tiendrait environ <span class="val">${tMin.toFixed(1)} min</span>.

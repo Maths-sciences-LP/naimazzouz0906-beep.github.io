@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch24 &ndash; Graphes et ordonnancement – BTS</title>
+<title>Ch24 – Graphes et ordonnancement – BTS</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
@@ -40,10 +40,10 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 </head>
 <body>
 <div class="c">
-<a href="../../../maths-bts.html" class="nb">&larr; Retour au sommaire BTS</a>
+<a href="../../../maths-bts.html" class="nb">← Retour au sommaire BTS</a>
 
 <header>
-  <h1>Chapitre 24 &ndash; Graphes et ordonnancement</h1>
+  <h1>Chapitre 24 – Graphes et ordonnancement</h1>
   <p class="sous-titre">BTS &nbsp;|&nbsp; Mathématiques &nbsp;|&nbsp; Groupement D2</p>
   <p class="maj">Dernière mise à jour : mars 2026</p>
 </header>
@@ -65,7 +65,7 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 
 <!-- ══════════════════════════════════════════════ SITUATION ══ -->
 <div class="situation">
-  <h3>Situation professionnelle &mdash; Chargé de projet en construction industrielle</h3>
+  <h3>Situation professionnelle — Chargé de projet en construction industrielle</h3>
   <p>
     <strong>Contexte :</strong> Maxime est chargé de projet dans une entreprise de construction
     de bâtiments industriels. Il doit piloter la réhabilitation d'un entrepôt logistique :
@@ -93,10 +93,10 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 <h3>1.1 Définitions de base</h3>
 
 <div class="def">
-  <span class="label-def">Définition &mdash; Graphe</span>
+  <span class="label-def">Définition — Graphe</span>
   Un <strong>graphe</strong> \(G = (V, E)\) est un couple formé de :<br>
-  &bull; un ensemble fini \(V\) de <strong>sommets</strong> (vertices, nœuds)<br>
-  &bull; un ensemble \(E\) d'<strong>arêtes</strong> (edges), chaque arête reliant deux sommets<br><br>
+  • un ensemble fini \(V\) de <strong>sommets</strong> (vertices, nœuds)<br>
+  • un ensemble \(E\) d'<strong>arêtes</strong> (edges), chaque arête reliant deux sommets<br><br>
   Un graphe est <strong>non orienté</strong> si les arêtes n'ont pas de sens (\(\{u,v\} = \{v,u\}\)).
   Il est <strong>orienté</strong> (digraphe) si les arêtes ont un sens (\((u,v) \neq (v,u)\)).
   Dans ce cas les arêtes s'appellent des <strong>arcs</strong>.<br><br>
@@ -148,12 +148,12 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 </div>
 
 <div class="def">
-  <span class="label-def">Définition &mdash; Degré d'un sommet</span>
+  <span class="label-def">Définition — Degré d'un sommet</span>
   Dans un graphe non orienté, le <strong>degré</strong> \(d(v)\) d'un sommet \(v\)
   est le nombre d'arêtes qui lui sont incidentes (on compte deux fois une boucle).<br><br>
   Dans un graphe orienté :<br>
-  &bull; <strong>Degré entrant</strong> \(d^-(v)\) : nombre d'arcs arrivant en \(v\)<br>
-  &bull; <strong>Degré sortant</strong> \(d^+(v)\) : nombre d'arcs partant de \(v\)<br><br>
+  • <strong>Degré entrant</strong> \(d^-(v)\) : nombre d'arcs arrivant en \(v\)<br>
+  • <strong>Degré sortant</strong> \(d^+(v)\) : nombre d'arcs partant de \(v\)<br><br>
   <strong>Lemme des poignées de mains :</strong>
   \[\sum_{v \in V} d(v) = 2|E|\]
   En particulier, le nombre de sommets de degré impair est toujours pair.
@@ -162,7 +162,7 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 <h3>1.2 Matrice d'adjacence</h3>
 
 <div class="def">
-  <span class="label-def">Définition &mdash; Matrice d'adjacence</span>
+  <span class="label-def">Définition — Matrice d'adjacence</span>
   Pour un graphe \(G\) à \(n\) sommets numérotés \(1, \ldots, n\),
   la <strong>matrice d'adjacence</strong> \(M\) est la matrice \(n \times n\) telle que :
   \[M_{ij} = \begin{cases} 1 & \text{s'il existe une arête (ou un arc) de } i \text{ vers } j \\ 0 & \text{sinon} \end{cases}\]
@@ -170,7 +170,7 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 </div>
 
 <div class="ex">
-  <strong>Exemple &mdash; Graphe orienté à 4 sommets :</strong><br>
+  <strong>Exemple — Graphe orienté à 4 sommets :</strong><br>
   Arcs : \(1 \to 2\), \(1 \to 3\), \(2 \to 4\), \(3 \to 4\), \(4 \to 1\).<br>
   \[M = \begin{pmatrix} 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 \end{pmatrix}\]
   La matrice est en général <em>non symétrique</em> pour un graphe orienté,
@@ -181,18 +181,18 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 <h2>2. Chemins, chaînes et cycles</h2>
 
 <div class="def">
-  <span class="label-def">Définitions &mdash; Chemins et chaînes</span>
+  <span class="label-def">Définitions — Chemins et chaînes</span>
   Dans un graphe non orienté :<br>
-  &bull; Une <strong>chaîne</strong> est une suite de sommets \(v_0, v_1, \ldots, v_k\)
+  • Une <strong>chaîne</strong> est une suite de sommets \(v_0, v_1, \ldots, v_k\)
   tels que \(\{v_{i-1}, v_i\} \in E\) pour tout \(i\). La <strong>longueur</strong> est \(k\).<br>
-  &bull; Un <strong>cycle</strong> est une chaîne dont les extrémités coïncident (\(v_0 = v_k\)).<br><br>
+  • Un <strong>cycle</strong> est une chaîne dont les extrémités coïncident (\(v_0 = v_k\)).<br><br>
   Dans un graphe orienté :<br>
-  &bull; Un <strong>chemin</strong> est une suite d'arcs consécutifs orientés dans le même sens.<br>
-  &bull; Un <strong>circuit</strong> est un chemin dont les extrémités coïncident.
+  • Un <strong>chemin</strong> est une suite d'arcs consécutifs orientés dans le même sens.<br>
+  • Un <strong>circuit</strong> est un chemin dont les extrémités coïncident.
 </div>
 
 <div class="def">
-  <span class="label-def">Définition &mdash; Connexité</span>
+  <span class="label-def">Définition — Connexité</span>
   Un graphe non orienté est <strong>connexe</strong> s'il existe une chaîne entre toute paire de sommets.
   Un graphe orienté est <strong>fortement connexe</strong> s'il existe un chemin orienté
   dans chaque sens entre toute paire de sommets.
@@ -201,7 +201,7 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 <h3>2.1 Parcours de graphes</h3>
 
 <div class="prop">
-  <span class="label-prop">Algorithme BFS &mdash; Parcours en largeur (Breadth-First Search)</span>
+  <span class="label-prop">Algorithme BFS — Parcours en largeur (Breadth-First Search)</span>
   Explore le graphe niveau par niveau à partir d'un sommet source \(s\).
   Utilise une <strong>file</strong> (FIFO).<br><br>
   <strong>Pseudo-code :</strong>
@@ -219,7 +219,7 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 </div>
 
 <div class="prop">
-  <span class="label-prop">Algorithme DFS &mdash; Parcours en profondeur (Depth-First Search)</span>
+  <span class="label-prop">Algorithme DFS — Parcours en profondeur (Depth-First Search)</span>
   Explore aussi loin que possible avant de revenir en arrière. Utilise une <strong>pile</strong> (LIFO)
   ou la récursion.<br><br>
   <strong>Pseudo-code récursif :</strong>
@@ -237,7 +237,7 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 <h3>3.1 Arbres et forêts</h3>
 
 <div class="def">
-  <span class="label-def">Définition &mdash; Arbre</span>
+  <span class="label-def">Définition — Arbre</span>
   Un <strong>arbre</strong> est un graphe connexe sans cycle.
   Un arbre à \(n\) sommets a exactement \(n-1\) arêtes.<br>
   Une <strong>forêt</strong> est un graphe sans cycle (union d'arbres disjoints).
@@ -277,7 +277,7 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 </div>
 
 <!-- ══════════════════════════════════════════════ 4. DIJKSTRA ══ -->
-<h2>4. Plus court chemin &mdash; Algorithme de Dijkstra</h2>
+<h2>4. Plus court chemin — Algorithme de Dijkstra</h2>
 
 <div class="prop">
   <span class="label-prop">Algorithme de Dijkstra</span>
@@ -301,10 +301,10 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 </div>
 
 <div class="ex">
-  <strong>Exemple &mdash; Réseau de livraison</strong><br>
+  <strong>Exemple — Réseau de livraison</strong><br>
   Un livreur part du dépôt A et doit rejoindre le client F.
   Le graphe pondéré (poids = distance en km) est :<br>
-  A-B : 4 &bull; A-C : 2 &bull; B-D : 5 &bull; B-E : 1 &bull; C-B : 1 &bull; C-D : 8 &bull; D-F : 2 &bull; E-F : 3<br>
+  A-B : 4 • A-C : 2 • B-D : 5 • B-E : 1 • C-B : 1 • C-D : 8 • D-F : 2 • E-F : 3<br>
 </div>
 
 <div class="dijkstra-steps">
@@ -343,7 +343,7 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
   </div>
 </div>
 
-<p><strong>Résultat :</strong> chemin le plus court A &rarr; C &rarr; B &rarr; E &rarr; F, distance = <strong>7 km</strong>.</p>
+<p><strong>Résultat :</strong> chemin le plus court A → C → B → E → F, distance = <strong>7 km</strong>.</p>
 
 <div class="att">
   <span class="label-att">Limitation</span>
@@ -393,29 +393,29 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 </div>
 
 <div class="ex">
-  <strong>Exemple &mdash; Réseau de câblage de 5 sites :</strong><br>
+  <strong>Exemple — Réseau de câblage de 5 sites :</strong><br>
   Arêtes : A-B:4, A-C:2, B-C:5, B-D:10, C-D:3, C-E:8, D-E:7<br><br>
   <strong>Kruskal :</strong><br>
-  1. A-C:2 &rarr; ajouter (pas de cycle)<br>
-  2. C-D:3 &rarr; ajouter<br>
-  3. A-B:4 &rarr; ajouter<br>
-  4. B-C:5 &rarr; cycle A-B-C-A, REJETER<br>
-  5. D-E:7 &rarr; ajouter<br>
+  1. A-C:2 → ajouter (pas de cycle)<br>
+  2. C-D:3 → ajouter<br>
+  3. A-B:4 → ajouter<br>
+  4. B-C:5 → cycle A-B-C-A, REJETER<br>
+  5. D-E:7 → ajouter<br>
   ACM = {A-C, C-D, A-B, D-E}, poids total = 2+3+4+7 = <strong>16</strong>
 </div>
 
 <!-- ══════════════════════════════════════════════ 6. PERT ══ -->
-<h2>6. Ordonnancement de projets &mdash; Méthode PERT</h2>
+<h2>6. Ordonnancement de projets — Méthode PERT</h2>
 
 <h3>6.1 Principe</h3>
 
 <div class="def">
-  <span class="label-def">Définition &mdash; Réseau PERT</span>
+  <span class="label-def">Définition — Réseau PERT</span>
   La méthode <strong>PERT</strong> (Program Evaluation and Review Technique) représente un projet
   comme un graphe orienté sans circuit où :<br>
-  &bull; Les <strong>arcs</strong> représentent les <strong>tâches</strong> (avec leur durée).<br>
-  &bull; Les <strong>nœuds</strong> représentent des <strong>étapes</strong> (débuts/fins de tâches).<br>
-  &bull; Une arête fictive (durée 0) peut représenter une contrainte d'antériorité sans tâche réelle.<br><br>
+  • Les <strong>arcs</strong> représentent les <strong>tâches</strong> (avec leur durée).<br>
+  • Les <strong>nœuds</strong> représentent des <strong>étapes</strong> (débuts/fins de tâches).<br>
+  • Une arête fictive (durée 0) peut représenter une contrainte d'antériorité sans tâche réelle.<br><br>
   On distingue le nœud initial (début du projet) et le nœud final (fin du projet).
 </div>
 
@@ -444,7 +444,7 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 <h3>6.3 Marge totale et marge libre</h3>
 
 <div class="def">
-  <span class="label-def">Définition &mdash; Marges d'une tâche \(ij\) de durée \(d_{ij}\)</span>
+  <span class="label-def">Définition — Marges d'une tâche \(ij\) de durée \(d_{ij}\)</span>
   <ul>
     <li><strong>Marge totale :</strong> \(MT_{ij} = T^-_j - T^+_i - d_{ij}\)<br>
         Retard maximum possible sur la tâche sans retarder la fin du projet.</li>
@@ -456,7 +456,7 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 <h3>6.4 Chemin critique</h3>
 
 <div class="def">
-  <span class="label-def">Définition &mdash; Chemin critique</span>
+  <span class="label-def">Définition — Chemin critique</span>
   Le <strong>chemin critique</strong> est le chemin le plus long (en durée) du réseau PERT,
   du nœud initial au nœud final. Il donne la <strong>durée minimale</strong> du projet.<br><br>
   Une tâche est <strong>critique</strong> si et seulement si :
@@ -465,7 +465,7 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 </div>
 
 <!-- ══════════════════════════════════════════════ 7. EXEMPLE COMPLET PERT ══ -->
-<h2>7. Application industrielle &mdash; Réseau PERT complet</h2>
+<h2>7. Application industrielle — Réseau PERT complet</h2>
 
 <p>
   <strong>Projet :</strong> Réhabilitation d'un entrepôt industriel. Le tableau ci-dessous
@@ -512,11 +512,11 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 <h2>8. Diagramme de Gantt</h2>
 
 <div class="def">
-  <span class="label-def">Définition &mdash; Diagramme de Gantt</span>
+  <span class="label-def">Définition — Diagramme de Gantt</span>
   Le <strong>diagramme de Gantt</strong> est une représentation graphique du planning d'un projet.
   Chaque tâche est représentée par une barre horizontale dont :<br>
-  &bull; la position en \(x\) correspond à la date de début<br>
-  &bull; la longueur correspond à la durée<br><br>
+  • la position en \(x\) correspond à la date de début<br>
+  • la longueur correspond à la durée<br><br>
   Il complète le PERT en offrant une lecture directe des plages temporelles,
   des ressources mobilisées et des possibilités de décalage.
 </div>
@@ -551,7 +551,7 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 </div>
 <p style="font-size:.84rem;color:#555">
   <span style="color:#f87171;font-weight:700">█</span> Tâche critique (marge = 0)
-  &nbsp;&bull;&nbsp;
+  &nbsp;•&nbsp;
   <span style="color:#93c5fd;font-weight:700">▒</span> Tâche non critique (marge &gt; 0)
 </p>
 
@@ -559,14 +559,14 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 <h2>9. Coloration de graphes</h2>
 
 <div class="def">
-  <span class="label-def">Définition &mdash; Coloration</span>
+  <span class="label-def">Définition — Coloration</span>
   Une <strong>coloration</strong> d'un graphe est une affectation d'une couleur à chaque sommet
   de sorte que deux sommets adjacents (reliés par une arête) aient des couleurs différentes.
   Le <strong>nombre chromatique</strong> \(\chi(G)\) est le nombre minimal de couleurs nécessaires.<br><br>
   <em>Applications :</em><br>
-  &bull; <strong>Planification d'examens :</strong> les épreuves ayant des candidats communs doivent être
+  • <strong>Planification d'examens :</strong> les épreuves ayant des candidats communs doivent être
   placées à des créneaux différents (sommets = épreuves, arêtes = conflits, couleurs = créneaux).<br>
-  &bull; <strong>Attribution de fréquences radio :</strong> deux antennes proches ne peuvent pas utiliser
+  • <strong>Attribution de fréquences radio :</strong> deux antennes proches ne peuvent pas utiliser
   la même fréquence (sommets = antennes, arêtes = interférences potentielles).
 </div>
 
@@ -583,7 +583,7 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 
 <!-- ══════════════════════════════════════════════ MÉTHODE ══ -->
 <div class="meth">
-  <span class="label-meth">Méthode &mdash; Calcul du chemin critique (PERT)</span>
+  <span class="label-meth">Méthode — Calcul du chemin critique (PERT)</span>
   <ol>
     <li><strong>Lister les tâches</strong> avec durées et antériorités (tableau).</li>
     <li><strong>Construire le réseau PERT</strong> : nœuds = étapes, arcs = tâches.</li>
@@ -600,7 +600,7 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
 
 <!-- ══════════════════════════════════════════════ À RETENIR ══ -->
 <div class="retenir">
-  <h3>À retenir &mdash; Graphes et ordonnancement</h3>
+  <h3>À retenir — Graphes et ordonnancement</h3>
   <div class="grid2">
     <div>
       <strong>Graphes</strong>
@@ -616,9 +616,9 @@ pre code{display:block;background:#1e1e2e;color:#cdd6f4;border-radius:8px;paddin
     <div>
       <strong>PERT / Gantt</strong>
       <ul>
-        <li>T⁺ : propagation &rarr;, prendre le MAX</li>
-        <li>T⁻ : propagation &larr;, prendre le MIN</li>
-        <li>MT = T⁻(fin) &minus; T⁺(début) &minus; durée</li>
+        <li>T⁺ : propagation →, prendre le MAX</li>
+        <li>T⁻ : propagation ←, prendre le MIN</li>
+        <li>MT = T⁻(fin) − T⁺(début) − durée</li>
         <li>Chemin critique : MT = 0 pour toutes les tâches</li>
         <li>Durée projet = longueur du chemin critique</li>
         <li>Gantt : visualisation du planning en barres temporelles</li>

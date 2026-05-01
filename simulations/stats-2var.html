@@ -55,16 +55,16 @@ header p{opacity:.85;font-size:.95em}
 </style>
 <body>
 <header>
-  <a href="../simulations.html" class="btn-back">&larr; Retour</a>
-  <h1>Statistiques &agrave; deux variables</h1>
-  <p>Terminale Bac Pro &middot; Ch01</p>
+  <a href="../simulations.html" class="btn-back">← Retour</a>
+  <h1>Statistiques à deux variables</h1>
+  <p>Terminale Bac Pro · Ch01</p>
 </header>
 
 <div class="container">
   <div class="card">
-    <h2>Jeu de donn&eacute;es</h2>
+    <h2>Jeu de données</h2>
     <div class="preset-btns">
-      <button onclick="loadPreset('temp')" id="btn-temp">Temp&eacute;rature / Consommation</button>
+      <button onclick="loadPreset('temp')" id="btn-temp">Température / Consommation</button>
       <button onclick="loadPreset('surface')" id="btn-surface">Surface / Prix</button>
       <button onclick="loadPreset('heures')" id="btn-heures">Heures / Note</button>
     </div>
@@ -83,21 +83,21 @@ header p{opacity:.85;font-size:.95em}
   </div>
 
   <div class="card">
-    <h2>Nuage de points et droite de r&eacute;gression</h2>
+    <h2>Nuage de points et droite de régression</h2>
     <div class="chart-container">
       <canvas aria-label="Nuage de points avec droite d'ajustement linéaire" id="scatterChart"></canvas>
     </div>
   </div>
 
   <div class="card">
-    <h2>R&eacute;sultats statistiques</h2>
+    <h2>Résultats statistiques</h2>
     <div class="stats-grid">
       <div class="stat-box">
-        <div class="label">Droite de r&eacute;gression</div>
+        <div class="label">Droite de régression</div>
         <div class="value neutral" id="eqLine">-</div>
       </div>
       <div class="stat-box">
-        <div class="label">Coefficient de corr&eacute;lation r</div>
+        <div class="label">Coefficient de corrélation r</div>
         <div class="value" id="corrR">-</div>
       </div>
       <div class="stat-box">
@@ -105,7 +105,7 @@ header p{opacity:.85;font-size:.95em}
         <div class="value neutral" id="coefA">-</div>
       </div>
       <div class="stat-box">
-        <div class="label">Coefficient b (ordonn&eacute;e &agrave; l'origine)</div>
+        <div class="label">Coefficient b (ordonnée à l'origine)</div>
         <div class="value neutral" id="coefB">-</div>
       </div>
     </div>
@@ -113,12 +113,12 @@ header p{opacity:.85;font-size:.95em}
   </div>
 
   <div class="card">
-    <h2>Pr&eacute;diction (interpolation / extrapolation)</h2>
-    <p style="font-size:.9em;color:#718096;margin-bottom:8px">Entrez une valeur de x pour estimer y &agrave; l'aide de la droite de r&eacute;gression.</p>
+    <h2>Prédiction (interpolation / extrapolation)</h2>
+    <p style="font-size:.9em;color:#718096;margin-bottom:8px">Entrez une valeur de x pour estimer y à l'aide de la droite de régression.</p>
     <div class="predict-row">
       <label>x =</label>
       <input type="number" id="predictX" step="any">
-      <button onclick="predict()">Pr&eacute;dire y</button>
+      <button onclick="predict()">Prédire y</button>
     </div>
     <div class="predict-result" id="predictResult"></div>
   </div>

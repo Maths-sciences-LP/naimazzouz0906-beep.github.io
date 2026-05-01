@@ -58,9 +58,9 @@ canvas{display:block;margin:0 auto;border-radius:8px;border:1px solid #e0e0e0;ba
 </style>
 <body>
 <div class="header">
-  <a href="../simulations.html" class="btn-back">&larr; Retour</a>
+  <a href="../simulations.html" class="btn-back">← Retour</a>
   <h1>Vecteurs</h1>
-  <p>Terminale Bac Pro &middot; Ch06</p>
+  <p>Terminale Bac Pro · Ch06</p>
 </div>
 <div class="container">
 
@@ -89,8 +89,8 @@ canvas{display:block;margin:0 auto;border-radius:8px;border:1px solid #e0e0e0;ba
 
   <div class="ops">
     <button class="btn-add" id="btn-add" onclick="setOp('add')">u + v</button>
-    <button class="btn-sub" id="btn-sub" onclick="setOp('sub')">u &minus; v</button>
-    <button class="btn-scl" id="btn-scl" onclick="setOp('scl')">k &middot; u</button>
+    <button class="btn-sub" id="btn-sub" onclick="setOp('sub')">u − v</button>
+    <button class="btn-scl" id="btn-scl" onclick="setOp('scl')">k · u</button>
     <button class="btn-reset" onclick="setOp(null)">Effacer</button>
   </div>
   <div class="k-row" id="k-row" style="display:none">
@@ -301,7 +301,7 @@ function draw(){
   const cb = document.getElementById('collin-box');
   const isCollin = Math.abs(det) < 0.01;
   cb.className = 'collin ' + (isCollin ? 'yes' : 'no');
-  cb.innerHTML = `det(u, v) = ${uxv} &times; ${vyv} &minus; ${uyv} &times; ${vxv} = <strong>${det}</strong> &rarr; ` +
+  cb.innerHTML = `det(u, v) = ${uxv} × ${vyv} − ${uyv} × ${vxv} = <strong>${det}</strong> → ` +
     (isCollin ? '&#10003; Colinéaires' : 'Non colinéaires');
 }
 

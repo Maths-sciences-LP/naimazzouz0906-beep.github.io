@@ -47,9 +47,9 @@ input[type=range]{width:100%;accent-color:#0284c7;cursor:pointer}
 </style>
 <body>
 <header>
-  <a href="../simulations.html" class="btn-back">&larr; Retour</a>
-  <h1>Forces et &Eacute;quilibre</h1>
-  <p>2nde Bac Pro &middot; Ch06 &middot; P = m &times; g</p>
+  <a href="../simulations.html" class="btn-back">← Retour</a>
+  <h1>Forces et Équilibre</h1>
+  <p>2nde Bac Pro · Ch06 · P = m × g</p>
 </header>
 
 <div class="container">
@@ -61,22 +61,22 @@ input[type=range]{width:100%;accent-color:#0284c7;cursor:pointer}
     </div>
     <div class="legend">
       <span><span class="dot" style="background:#dc2626"></span> Poids \(\vec{P}\)</span>
-      <span><span class="dot" style="background:#2563eb"></span> R&eacute;action normale \(\vec{R_N}\)</span>
+      <span><span class="dot" style="background:#2563eb"></span> Réaction normale \(\vec{R_N}\)</span>
       <span><span class="dot" style="background:#f59e0b"></span> Frottement \(\vec{f}\)</span>
-      <span><span class="dot" style="background:#16a34a;border:1px dashed #16a34a"></span> R&eacute;sultante</span>
+      <span><span class="dot" style="background:#16a34a;border:1px dashed #16a34a"></span> Résultante</span>
     </div>
   </div>
 
   <!-- Controls -->
   <div class="card">
-    <h2>Param&egrave;tres</h2>
+    <h2>Paramètres</h2>
     <div class="controls-grid">
       <div class="slider-group">
         <label>Masse m : <span class="val" id="vMass">10.0 kg</span></label>
         <input type="range" id="sMass" min="0.5" max="50" value="10" step="0.5" oninput="update()">
       </div>
       <div class="slider-group">
-        <label>Angle d'inclinaison &alpha; : <span class="val" id="vAngle">0&deg;</span></label>
+        <label>Angle d'inclinaison α : <span class="val" id="vAngle">0°</span></label>
         <input type="range" id="sAngle" min="0" max="60" value="0" step="1" oninput="update()">
       </div>
     </div>
@@ -95,16 +95,16 @@ input[type=range]{width:100%;accent-color:#0284c7;cursor:pointer}
     <h2>Formules</h2>
     <div class="formulas">
       \( P = m \times g \quad \text{avec } g = 10 \text{ N/kg} \)<br>
-      Sur un plan inclin&eacute; d'angle \(\alpha\) :<br>
-      \( P_\parallel = P \times \sin(\alpha) \quad \) (composante parall&egrave;le au plan)<br>
+      Sur un plan incliné d'angle \(\alpha\) :<br>
+      \( P_\parallel = P \times \sin(\alpha) \quad \) (composante parallèle au plan)<br>
       \( P_\perp = P \times \cos(\alpha) \quad \) (composante perpendiculaire au plan)<br>
-      &Eacute;quilibre : \( \sum \vec{F} = \vec{0} \)
+      Équilibre : \( \sum \vec{F} = \vec{0} \)
     </div>
   </div>
 
   <!-- Context -->
   <div class="context">
-    <div><strong>Contexte professionnel :</strong> Lorsqu'un menuisier pose un panneau de bois sur un &eacute;tabli inclin&eacute;, le panneau reste en place gr&acirc;ce &agrave; l'&eacute;quilibre entre son poids, la r&eacute;action du support et les forces de frottement.</div>
+    <div><strong>Contexte professionnel :</strong> Lorsqu'un menuisier pose un panneau de bois sur un établi incliné, le panneau reste en place grâce à l'équilibre entre son poids, la réaction du support et les forces de frottement.</div>
   </div>
 </div>
 
@@ -119,7 +119,7 @@ function update() {
   const showComp = document.getElementById('cbComp').checked;
 
   document.getElementById('vMass').textContent = m.toFixed(1) + ' kg';
-  document.getElementById('vAngle').innerHTML = angle + '&deg;';
+  document.getElementById('vAngle').innerHTML = angle + '°';
 
   const alpha = angle * Math.PI / 180;
   const P = m * g;
@@ -134,19 +134,19 @@ function update() {
 
   document.getElementById('readings').innerHTML = `
     <div class="reading-box"><div class="label">Poids P</div><div class="value">${P.toFixed(1)} N</div></div>
-    <div class="reading-box"><div class="label">P<sub>&parallel;</sub></div><div class="value">${Ppar.toFixed(1)} N</div></div>
-    <div class="reading-box"><div class="label">P<sub>&perp;</sub></div><div class="value">${Pperp.toFixed(1)} N</div></div>
-    <div class="reading-box"><div class="label">R&eacute;action N</div><div class="value">${RN.toFixed(1)} N</div></div>
+    <div class="reading-box"><div class="label">P<sub>∥</sub></div><div class="value">${Ppar.toFixed(1)} N</div></div>
+    <div class="reading-box"><div class="label">P<sub>⊥</sub></div><div class="value">${Pperp.toFixed(1)} N</div></div>
+    <div class="reading-box"><div class="label">Réaction N</div><div class="value">${RN.toFixed(1)} N</div></div>
     <div class="reading-box"><div class="label">Frottement f</div><div class="value">${(isEquilibrium ? Ppar : Ppar * 0.6).toFixed(1)} N</div></div>
   `;
 
   const badge = document.getElementById('eqBadge');
   if (isEquilibrium) {
     badge.className = 'eq-badge ok';
-    badge.innerHTML = '&#10003; &Eacute;QUILIBRE &mdash; &Sigma;F = 0';
+    badge.innerHTML = '&#10003; ÉQUILIBRE — ΣF = 0';
   } else {
     badge.className = 'eq-badge no';
-    badge.innerHTML = '&#10007; D&Eacute;S&Eacute;QUILIBRE &mdash; l\'objet glisse !';
+    badge.innerHTML = '&#10007; DÉSÉQUILIBRE — l\'objet glisse !';
   }
 
   draw(m, angle, alpha, P, Ppar, Pperp, RN, friction, showComp, isEquilibrium);

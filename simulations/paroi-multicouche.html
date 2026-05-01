@@ -85,7 +85,7 @@ canvas{width:100%;display:block;border-radius:6px}
 <body>
 <header>
   <a href="../physique-chimie/seconde/ch11/lecon.html" class="btn-back">← Retour au cours</a>
-  <h1>Paroi multicouche — R&eacute;sistance thermique et flux</h1>
+  <h1>Paroi multicouche — Résistance thermique et flux</h1>
   <p>Chapitre 11 — Transferts thermiques — 2nde Bac Pro</p>
 </header>
 
@@ -95,14 +95,14 @@ canvas{width:100%;display:block;border-radius:6px}
 <div class="card">
   <h2>Principe</h2>
   <p style="font-size:.92em;color:#475569">
-    Construisez une paroi multicouche en ajoutant des mat&eacute;riaux et en r&eacute;glant leur &eacute;paisseur.
-    La simulation calcule la <strong>r&eacute;sistance thermique surfacique</strong> de chaque couche
+    Construisez une paroi multicouche en ajoutant des matériaux et en réglant leur épaisseur.
+    La simulation calcule la <strong>résistance thermique surfacique</strong> de chaque couche
     (\(R = e / \lambda\)) et le <strong>flux thermique</strong> total qui traverse la paroi.
   </p>
   <div class="formulas">
-    <strong>Formules utilis&eacute;es :</strong><br>
-    R&eacute;sistance surfacique d'une couche : \( R_{\text{couche}} = \dfrac{e}{\lambda} \) &nbsp;(m<sup>2</sup>&middot;K/W)<br>
-    R&eacute;sistance totale : \( R_{\text{total}} = R_1 + R_2 + \cdots + R_n \)<br>
+    <strong>Formules utilisées :</strong><br>
+    Résistance surfacique d'une couche : \( R_{\text{couche}} = \dfrac{e}{\lambda} \) &nbsp;(m<sup>2</sup>·K/W)<br>
+    Résistance totale : \( R_{\text{total}} = R_1 + R_2 + \cdots + R_n \)<br>
     Flux thermique : \( \Phi = \dfrac{S \times \Delta T}{R_{\text{total}}} \) &nbsp;(W)
   </div>
 </div>
@@ -111,8 +111,8 @@ canvas{width:100%;display:block;border-radius:6px}
 <div class="card">
   <h2>Configurations types</h2>
   <div class="presets">
-    <button class="btn-preset" onclick="loadPreset('beton')">Mur b&eacute;ton nu</button>
-    <button class="btn-preset" onclick="loadPreset('ossature')">Ossature bois isol&eacute;e</button>
+    <button class="btn-preset" onclick="loadPreset('beton')">Mur béton nu</button>
+    <button class="btn-preset" onclick="loadPreset('ossature')">Ossature bois isolée</button>
     <button class="btn-preset" onclick="loadPreset('parpaing')">Mur parpaing + isolation</button>
   </div>
 </div>
@@ -139,13 +139,13 @@ canvas{width:100%;display:block;border-radius:6px}
 
 <!-- PARAMETERS & RESULTS -->
 <div class="card">
-  <h2>Param&egrave;tres et r&eacute;sultats</h2>
+  <h2>Paramètres et résultats</h2>
   <div class="row">
     <div class="col">
-      <label>Temp&eacute;rature int&eacute;rieure T<sub>int</sub> <span class="val" id="vTint">20 &deg;C</span></label>
+      <label>Température intérieure T<sub>int</sub> <span class="val" id="vTint">20 °C</span></label>
       <input type="range" id="sTint" min="10" max="30" value="20" step="1" oninput="update()">
 
-      <label>Temp&eacute;rature ext&eacute;rieure T<sub>ext</sub> <span class="val" id="vText">0 &deg;C</span></label>
+      <label>Température extérieure T<sub>ext</sub> <span class="val" id="vText">0 °C</span></label>
       <input type="range" id="sText" min="-10" max="15" value="0" step="1" oninput="update()">
 
       <label>Surface de la paroi S <span class="val" id="vS">10 m&sup2;</span></label>
@@ -155,30 +155,30 @@ canvas{width:100%;display:block;border-radius:6px}
       <div class="results">
         <div class="res-box">
           <div class="res-label">R<sub>total</sub></div>
-          <div class="res-value" id="resR">&mdash;</div>
-          <div class="res-unit">m&sup2;&middot;K/W</div>
+          <div class="res-value" id="resR">—</div>
+          <div class="res-unit">m&sup2;·K/W</div>
         </div>
         <div class="res-box">
-          <div class="res-label">Flux &Phi;</div>
-          <div class="res-value" id="resPhi">&mdash;</div>
+          <div class="res-label">Flux Φ</div>
+          <div class="res-value" id="resPhi">—</div>
           <div class="res-unit">W</div>
         </div>
         <div class="res-box">
-          <div class="res-label">&Eacute;nergie annuelle</div>
-          <div class="res-value" id="resE">&mdash;</div>
+          <div class="res-label">Énergie annuelle</div>
+          <div class="res-value" id="resE">—</div>
           <div class="res-unit">kWh/an</div>
         </div>
         <div class="res-box">
-          <div class="res-label">Co&ucirc;t annuel</div>
-          <div class="res-value" id="resCost">&mdash;</div>
-          <div class="res-unit">&euro;/an</div>
+          <div class="res-label">Coût annuel</div>
+          <div class="res-value" id="resCost">—</div>
+          <div class="res-unit">€/an</div>
         </div>
       </div>
 
       <!-- RE 2020 -->
       <div class="re-wrap">
         <div id="badgeRE"></div>
-        <div class="re-note">Seuil RE 2020 pour murs : R &ge; 4,0 m&sup2;&middot;K/W</div>
+        <div class="re-note">Seuil RE 2020 pour murs : R ≥ 4,0 m&sup2;·K/W</div>
       </div>
 
       <!-- Dynamic formula -->
@@ -189,7 +189,7 @@ canvas{width:100%;display:block;border-radius:6px}
 
 <!-- CHART -->
 <div class="card">
-  <h2>Contribution de chaque couche &agrave; R<sub>total</sub></h2>
+  <h2>Contribution de chaque couche à R<sub>total</sub></h2>
   <div class="chart-container">
     <canvas aria-label="Graphique de la résistance thermique cumulée à travers la paroi" id="chartR"></canvas>
   </div>
@@ -197,7 +197,7 @@ canvas{width:100%;display:block;border-radius:6px}
 
 <!-- CONTEXT -->
 <div class="card context">
-  <strong>Contexte professionnel :</strong> Un menuisier agenceur doit concevoir une cloison s&eacute;parant un atelier chauff&eacute; d'un local non chauff&eacute;. Il choisit les mat&eacute;riaux et les &eacute;paisseurs pour atteindre une r&eacute;sistance thermique suffisante et respecter les exigences de la RE 2020. Cette simulation permet de comparer diff&eacute;rentes compositions de paroi et d'&eacute;valuer les &eacute;conomies d'&eacute;nergie.
+  <strong>Contexte professionnel :</strong> Un menuisier agenceur doit concevoir une cloison séparant un atelier chauffé d'un local non chauffé. Il choisit les matériaux et les épaisseurs pour atteindre une résistance thermique suffisante et respecter les exigences de la RE 2020. Cette simulation permet de comparer différentes compositions de paroi et d'évaluer les économies d'énergie.
 </div>
 
 </div>

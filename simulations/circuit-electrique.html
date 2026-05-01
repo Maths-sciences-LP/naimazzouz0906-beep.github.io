@@ -39,40 +39,40 @@
 <body>
 <div class="container">
   <header>
-    <a href="../simulations.html" class="btn-back">&larr; Retour</a>
-    <h1>Grandeurs &Eacute;lectriques et Circuits</h1>
-    <p>2nde Bac Pro &middot; Ch02 &middot; P = U &times; I</p>
+    <a href="../simulations.html" class="btn-back">← Retour</a>
+    <h1>Grandeurs Électriques et Circuits</h1>
+    <p>2nde Bac Pro · Ch02 · P = U × I</p>
   </header>
 
   <div class="card">
     <h3>Circuit interactif</h3>
     <div class="toggle-group">
-      <button class="toggle-btn active" onclick="setMode('serie')">S&eacute;rie</button>
-      <button class="toggle-btn" onclick="setMode('parallele')">Parall&egrave;le</button>
+      <button class="toggle-btn active" onclick="setMode('serie')">Série</button>
+      <button class="toggle-btn" onclick="setMode('parallele')">Parallèle</button>
     </div>
     <canvas aria-label="Circuit électrique animé avec déplacement des électrons (montage série ou parallèle)" id="canvas" height="380"></canvas>
     <div class="results" id="results"></div>
   </div>
 
   <div class="card">
-    <h3>Param&egrave;tres du circuit</h3>
+    <h3>Paramètres du circuit</h3>
     <div class="row">
       <div>
         <label>Tension U : <span id="vU" style="color:#1d4ed8;">12</span> V</label>
         <input type="range" id="slU" min="0" max="24" step="0.5" value="12" oninput="update()">
-        <label>R&eacute;sistance R<sub>1</sub> : <span id="vR1" style="color:#b45309;">10</span> &Omega;</label>
+        <label>Résistance R<sub>1</sub> : <span id="vR1" style="color:#b45309;">10</span> Ω</label>
         <input type="range" id="slR1" min="1" max="100" step="1" value="10" oninput="update()">
         <div id="r2group">
-          <label>R&eacute;sistance R<sub>2</sub> : <span id="vR2" style="color:#b45309;">20</span> &Omega;</label>
+          <label>Résistance R<sub>2</sub> : <span id="vR2" style="color:#b45309;">20</span> Ω</label>
           <input type="range" id="slR2" min="1" max="100" step="1" value="20" oninput="update()">
         </div>
       </div>
       <div>
         <div class="formule">
-          <strong>Loi d'Ohm :</strong> U = R &times; I<br>
-          <strong>Puissance :</strong> P = U &times; I<br>
-          <strong>S&eacute;rie :</strong> R<sub>eq</sub> = R<sub>1</sub> + R<sub>2</sub><br>
-          <strong>Parall&egrave;le :</strong> R<sub>eq</sub> = (R<sub>1</sub> &times; R<sub>2</sub>) / (R<sub>1</sub> + R<sub>2</sub>)
+          <strong>Loi d'Ohm :</strong> U = R × I<br>
+          <strong>Puissance :</strong> P = U × I<br>
+          <strong>Série :</strong> R<sub>eq</sub> = R<sub>1</sub> + R<sub>2</sub><br>
+          <strong>Parallèle :</strong> R<sub>eq</sub> = (R<sub>1</sub> × R<sub>2</sub>) / (R<sub>1</sub> + R<sub>2</sub>)
         </div>
         <div class="info-box" id="infoMode"></div>
       </div>
@@ -129,9 +129,9 @@ function update() {
   const res = document.getElementById('results');
   let extra = '';
   if (mode === 'serie') {
-    extra = `<div class="result-box r-r"><div class="val">${v.Req.toFixed(1)}</div><div class="lbl">R<sub>eq</sub> (&Omega;)</div></div>`;
+    extra = `<div class="result-box r-r"><div class="val">${v.Req.toFixed(1)}</div><div class="lbl">R<sub>eq</sub> (Ω)</div></div>`;
   } else {
-    extra = `<div class="result-box r-r"><div class="val">${v.Req.toFixed(1)}</div><div class="lbl">R<sub>eq</sub> (&Omega;)</div></div>`;
+    extra = `<div class="result-box r-r"><div class="val">${v.Req.toFixed(1)}</div><div class="lbl">R<sub>eq</sub> (Ω)</div></div>`;
   }
   res.innerHTML =
     `<div class="result-box r-u"><div class="val">${v.U.toFixed(1)}</div><div class="lbl">U (V)</div></div>` +
@@ -143,10 +143,10 @@ function update() {
   if (mode === 'serie') {
     const I1 = v.I, I2 = v.I;
     const U1 = v.R1 * v.I, U2 = v.R2 * v.I;
-    info.innerHTML = `<strong>Mode s&eacute;rie</strong><br>Le courant est identique partout : I = ${v.I.toFixed(2)} A<br>U<sub>R1</sub> = ${U1.toFixed(1)} V, U<sub>R2</sub> = ${U2.toFixed(1)} V<br>V&eacute;rification : ${U1.toFixed(1)} + ${U2.toFixed(1)} = ${(U1+U2).toFixed(1)} V`;
+    info.innerHTML = `<strong>Mode série</strong><br>Le courant est identique partout : I = ${v.I.toFixed(2)} A<br>U<sub>R1</sub> = ${U1.toFixed(1)} V, U<sub>R2</sub> = ${U2.toFixed(1)} V<br>Vérification : ${U1.toFixed(1)} + ${U2.toFixed(1)} = ${(U1+U2).toFixed(1)} V`;
   } else {
     const I1 = v.U / v.R1, I2 = v.U / v.R2;
-    info.innerHTML = `<strong>Mode parall&egrave;le</strong><br>La tension est identique aux bornes : U = ${v.U.toFixed(1)} V<br>I<sub>R1</sub> = ${I1.toFixed(2)} A, I<sub>R2</sub> = ${I2.toFixed(2)} A<br>I<sub>total</sub> = ${(I1+I2).toFixed(2)} A`;
+    info.innerHTML = `<strong>Mode parallèle</strong><br>La tension est identique aux bornes : U = ${v.U.toFixed(1)} V<br>I<sub>R1</sub> = ${I1.toFixed(2)} A, I<sub>R2</sub> = ${I2.toFixed(2)} A<br>I<sub>total</sub> = ${(I1+I2).toFixed(2)} A`;
   }
 }
 

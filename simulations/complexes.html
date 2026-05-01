@@ -58,9 +58,9 @@ canvas{display:block;margin:0 auto;border-radius:8px;border:1px solid #e0e0e0;ba
 </style>
 <body>
 <div class="header">
-  <a href="../simulations.html" class="btn-back">&larr; Retour</a>
+  <a href="../simulations.html" class="btn-back">← Retour</a>
   <h1>Nombres complexes</h1>
-  <p>Terminale Bac Pro &middot; Ch10</p>
+  <p>Terminale Bac Pro · Ch10</p>
 </div>
 <div class="container">
 
@@ -78,7 +78,7 @@ canvas{display:block;margin:0 auto;border-radius:8px;border:1px solid #e0e0e0;ba
     <span><span class="dot" style="background:#e53935"></span> w</span>
     <span><span class="dot" style="background:#2e7d32"></span> Conjugué</span>
     <span><span class="dot" style="background:#e65100"></span> z + w</span>
-    <span><span class="dot" style="background:#7b1fa2"></span> z &times; w</span>
+    <span><span class="dot" style="background:#7b1fa2"></span> z × w</span>
   </div>
 
   <div class="ctrl-grid">
@@ -97,7 +97,7 @@ canvas{display:block;margin:0 auto;border-radius:8px;border:1px solid #e0e0e0;ba
   <div class="ops">
     <button class="btn-conj" id="btn-conj" onclick="toggleOp('conj')">Conjugué z&#772;</button>
     <button class="btn-sum" id="btn-sum" onclick="toggleOp('sum')">z + w</button>
-    <button class="btn-prod" id="btn-prod" onclick="toggleOp('prod')">z &times; w</button>
+    <button class="btn-prod" id="btn-prod" onclick="toggleOp('prod')">z × w</button>
     <button class="btn-reset" onclick="clearOps()">Effacer</button>
   </div>
 </div>
@@ -317,22 +317,22 @@ function draw(){
     drawPoint(pr, pi, '#7b1fa2', 'z\u00d7w', 5);
     const modP = Math.sqrt(pr*pr+pi*pi);
     const argP = Math.atan2(pi, pr)*180/Math.PI;
-    resHtml += `<strong>z &times; w :</strong> ${formatComplex(parseFloat(pr.toFixed(2)), parseFloat(pi.toFixed(2)))}<br>`;
-    resHtml += `|z&times;w| = ${modP.toFixed(2)} = |z|&middot;|w| = ${modZ.toFixed(2)}&times;${Math.sqrt(wa*wa+wb*wb).toFixed(2)}<br>`;
-    resHtml += `arg(z&times;w) = ${argP.toFixed(1)}&deg; = arg(z)+arg(w) = ${argDeg(za,zb).toFixed(1)}&deg;+${argDeg(wa,wb).toFixed(1)}&deg;<br>`;
+    resHtml += `<strong>z × w :</strong> ${formatComplex(parseFloat(pr.toFixed(2)), parseFloat(pi.toFixed(2)))}<br>`;
+    resHtml += `|z×w| = ${modP.toFixed(2)} = |z|·|w| = ${modZ.toFixed(2)}×${Math.sqrt(wa*wa+wb*wb).toFixed(2)}<br>`;
+    resHtml += `arg(z×w) = ${argP.toFixed(1)}° = arg(z)+arg(w) = ${argDeg(za,zb).toFixed(1)}°+${argDeg(wa,wb).toFixed(1)}°<br>`;
   }
 
   // Info z
   const argZd = argDeg(za,zb);
   document.getElementById('info-z').innerHTML =
-    `z = ${formatComplex(za,zb)}<br>|z| = ${modZ.toFixed(2)}<br>arg(z) = ${argZd.toFixed(1)}&deg;<br>` +
-    `Forme trigo : ${modZ.toFixed(2)}(cos ${argZd.toFixed(1)}&deg; + i sin ${argZd.toFixed(1)}&deg;)`;
+    `z = ${formatComplex(za,zb)}<br>|z| = ${modZ.toFixed(2)}<br>arg(z) = ${argZd.toFixed(1)}°<br>` +
+    `Forme trigo : ${modZ.toFixed(2)}(cos ${argZd.toFixed(1)}° + i sin ${argZd.toFixed(1)}°)`;
 
   const modW = Math.sqrt(wa*wa+wb*wb);
   const argWd = argDeg(wa,wb);
   document.getElementById('info-w').innerHTML =
-    `w = ${formatComplex(wa,wb)}<br>|w| = ${modW.toFixed(2)}<br>arg(w) = ${argWd.toFixed(1)}&deg;<br>` +
-    `Forme trigo : ${modW.toFixed(2)}(cos ${argWd.toFixed(1)}&deg; + i sin ${argWd.toFixed(1)}&deg;)`;
+    `w = ${formatComplex(wa,wb)}<br>|w| = ${modW.toFixed(2)}<br>arg(w) = ${argWd.toFixed(1)}°<br>` +
+    `Forme trigo : ${modW.toFixed(2)}(cos ${argWd.toFixed(1)}° + i sin ${argWd.toFixed(1)}°)`;
 
   const resBox = document.getElementById('res-box');
   if(resHtml){

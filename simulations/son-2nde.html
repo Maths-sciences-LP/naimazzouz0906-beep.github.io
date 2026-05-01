@@ -56,21 +56,21 @@
 <body>
 <div class="container">
   <header>
-    <a href="../simulations.html" class="btn-back">&larr; Retour</a>
-    <h1>Caract&eacute;ristiques d'un Son</h1>
-    <p>2nde Bac Pro &middot; Ch09 &middot; v = d/t &middot; &lambda; = v/f</p>
+    <a href="../simulations.html" class="btn-back">← Retour</a>
+    <h1>Caractéristiques d'un Son</h1>
+    <p>2nde Bac Pro · Ch09 · v = d/t · λ = v/f</p>
   </header>
 
   <div class="card">
     <h3>Oscilloscope virtuel</h3>
     <div class="toggle-group">
-      <button class="toggle-btn active" onclick="setWaveMode('pure')">Sinuso&iuml;de pure</button>
+      <button class="toggle-btn active" onclick="setWaveMode('pure')">Sinusoïde pure</button>
       <button class="toggle-btn" onclick="setWaveMode('complex')">Son complexe</button>
     </div>
     <canvas aria-label="Forme d'onde du signal sonore avec fréquence et amplitude réglables" id="waveCanvas" height="200"></canvas>
     <div class="row" style="margin-top:15px;">
       <div>
-        <label>Fr&eacute;quence f : <span id="vF">440</span> Hz</label>
+        <label>Fréquence f : <span id="vF">440</span> Hz</label>
         <input type="range" id="slF" min="20" max="2000" step="10" value="440" oninput="update()">
         <label>Amplitude A : <span id="vA">0.50</span></label>
         <input type="range" id="slA" min="0.1" max="1.0" step="0.05" value="0.5" oninput="update()">
@@ -79,12 +79,12 @@
         <div class="results">
           <div class="result-box r-f"><div class="val" id="rF">440</div><div class="lbl">f (Hz)</div></div>
           <div class="result-box r-t"><div class="val" id="rT">2.27</div><div class="lbl">T (ms)</div></div>
-          <div class="result-box r-l"><div class="val" id="rL">0.77</div><div class="lbl">&lambda; (m)</div></div>
+          <div class="result-box r-l"><div class="val" id="rL">0.77</div><div class="lbl">λ (m)</div></div>
           <div class="result-box r-v"><div class="val">340</div><div class="lbl">v (m/s)</div></div>
         </div>
         <div class="formule" style="margin-top:12px;">
           v = d / t = 340 m/s (dans l'air)<br>
-          &lambda; = v / f<br>
+          λ = v / f<br>
           f = 1 / T
         </div>
       </div>
@@ -92,24 +92,24 @@
   </div>
 
   <div class="card">
-    <h3>Spectre fr&eacute;quentiel</h3>
-    <p class="zone-label">Zone : <span id="zoneLabel" style="color:#0f766e;">M&eacute;diums</span></p>
+    <h3>Spectre fréquentiel</h3>
+    <p class="zone-label">Zone : <span id="zoneLabel" style="color:#0f766e;">Médiums</span></p>
     <div class="freq-indicator" id="freqIndicator"></div>
     <div class="freq-bar">
       <div class="fb-infra">&lt;20</div>
       <div class="fb-grave">Graves<br>20-300</div>
-      <div class="fb-medium">M&eacute;diums<br>300-3000</div>
+      <div class="fb-medium">Médiums<br>300-3000</div>
       <div class="fb-aigu">Aigus<br>3k-20k</div>
       <div class="fb-ultra">&gt;20k</div>
     </div>
-    <p style="font-size:0.82em;color:#64748b;margin:0;">Unit&eacute; : Hz. L'oreille humaine per&ccedil;oit les sons entre 20 Hz et 20 000 Hz.</p>
+    <p style="font-size:0.82em;color:#64748b;margin:0;">Unité : Hz. L'oreille humaine perçoit les sons entre 20 Hz et 20 000 Hz.</p>
   </div>
 
   <div class="card">
     <h3>Niveau sonore (dB) en atelier</h3>
     <div class="db-scale" id="dbScale"></div>
     <div style="margin-top:12px;" id="dangerZone"></div>
-    <p style="font-size:0.82em;color:#64748b;margin-top:8px;">L'amplitude du son est li&eacute;e au niveau sonore en d&eacute;cibels. Au-del&agrave; de 80 dB, une exposition prolong&eacute;e endommage l'audition.</p>
+    <p style="font-size:0.82em;color:#64748b;margin-top:8px;">L'amplitude du son est liée au niveau sonore en décibels. Au-delà de 80 dB, une exposition prolongée endommage l'audition.</p>
   </div>
 </div>
 

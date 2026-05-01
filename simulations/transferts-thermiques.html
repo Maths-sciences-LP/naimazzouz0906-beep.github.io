@@ -41,9 +41,9 @@
 <body>
 <div class="container">
   <header>
-    <a href="../simulations.html" class="btn-back">&larr; Retour</a>
-    <h1>Transferts Thermiques et &Eacute;quilibre</h1>
-    <p>2nde Bac Pro &middot; Ch11 &middot; Conduction &middot; Convection &middot; Rayonnement</p>
+    <a href="../simulations.html" class="btn-back">← Retour</a>
+    <h1>Transferts Thermiques et Équilibre</h1>
+    <p>2nde Bac Pro · Ch11 · Conduction · Convection · Rayonnement</p>
   </header>
 
   <div class="card">
@@ -60,30 +60,30 @@
         <div>
           <canvas aria-label="Animation de la conduction thermique à travers une barre" id="cvConduction" height="220"></canvas>
           <div class="info-box">
-            La <strong>conduction</strong> est le transfert de chaleur de proche en proche dans un solide, sans d&eacute;placement de mati&egrave;re.
-            Plus la conductivit&eacute; thermique &lambda; est grande, plus le transfert est rapide.
+            La <strong>conduction</strong> est le transfert de chaleur de proche en proche dans un solide, sans déplacement de matière.
+            Plus la conductivité thermique λ est grande, plus le transfert est rapide.
           </div>
         </div>
         <div>
-          <label>Mat&eacute;riau :</label>
+          <label>Matériau :</label>
           <select id="selMat" onchange="updateConduction()">
-            <option value="390">Cuivre (&lambda; = 390 W/m&middot;K)</option>
-            <option value="237">Aluminium (&lambda; = 237 W/m&middot;K)</option>
-            <option value="50">Acier (&lambda; = 50 W/m&middot;K)</option>
-            <option value="0.15">Bois (&lambda; = 0,15 W/m&middot;K)</option>
+            <option value="390">Cuivre (λ = 390 W/m·K)</option>
+            <option value="237">Aluminium (λ = 237 W/m·K)</option>
+            <option value="50">Acier (λ = 50 W/m·K)</option>
+            <option value="0.15">Bois (λ = 0,15 W/m·K)</option>
           </select>
-          <label>Temp. chaude T<sub>c</sub> : <span id="vTc">200</span> &deg;C</label>
+          <label>Temp. chaude T<sub>c</sub> : <span id="vTc">200</span> °C</label>
           <input type="range" id="slTc" min="50" max="500" step="10" value="200" oninput="updateConduction()">
-          <label>Temp. froide T<sub>f</sub> : <span id="vTf">20</span> &deg;C</label>
+          <label>Temp. froide T<sub>f</sub> : <span id="vTf">20</span> °C</label>
           <input type="range" id="slTf" min="-20" max="100" step="5" value="20" oninput="updateConduction()">
           <div class="results">
-            <div class="result-box r-lam"><div class="val" id="rLam">390</div><div class="lbl">&lambda; (W/m&middot;K)</div></div>
-            <div class="result-box r-hot"><div class="val" id="rDT">180</div><div class="lbl">&Delta;T (&deg;C)</div></div>
+            <div class="result-box r-lam"><div class="val" id="rLam">390</div><div class="lbl">λ (W/m·K)</div></div>
+            <div class="result-box r-hot"><div class="val" id="rDT">180</div><div class="lbl">ΔT (°C)</div></div>
           </div>
           <div class="formule" style="margin-top:12px;">
             <strong>Flux thermique :</strong><br>
-            &Phi; = &lambda; &times; S &times; &Delta;T / e<br>
-            &Delta;T = T<sub>c</sub> &minus; T<sub>f</sub>
+            Φ = λ × S × ΔT / e<br>
+            ΔT = T<sub>c</sub> − T<sub>f</sub>
           </div>
         </div>
       </div>
@@ -100,14 +100,14 @@
           <label>Puissance du radiateur : <span id="vPrad">1500</span> W</label>
           <input type="range" id="slPrad" min="500" max="3000" step="100" value="1500" oninput="updateConvection()">
           <div class="info-box">
-            La <strong>convection</strong> est le transfert de chaleur par d&eacute;placement d'un fluide (air, eau).
-            L'air chauff&eacute; par le radiateur monte (moins dense), se refroidit au contact des parois
-            et redescend, cr&eacute;ant un mouvement circulaire.
+            La <strong>convection</strong> est le transfert de chaleur par déplacement d'un fluide (air, eau).
+            L'air chauffé par le radiateur monte (moins dense), se refroidit au contact des parois
+            et redescend, créant un mouvement circulaire.
           </div>
           <div class="formule" style="margin-top:12px;">
             L'air chaud monte (moins dense).<br>
             L'air froid descend (plus dense).<br>
-            &rarr; Circulation naturelle (convection)
+            → Circulation naturelle (convection)
           </div>
         </div>
       </div>
@@ -121,18 +121,18 @@
           <canvas aria-label="Animation du rayonnement thermique d'un corps chaud" id="cvRayonnement" height="280"></canvas>
         </div>
         <div>
-          <label>Temp&eacute;rature de l'objet : <span id="vTray">500</span> &deg;C</label>
+          <label>Température de l'objet : <span id="vTray">500</span> °C</label>
           <input type="range" id="slTray" min="20" max="1000" step="10" value="500" oninput="updateRayonnement()">
           <div class="info-box">
-            Le <strong>rayonnement</strong> est le transfert de chaleur par ondes &eacute;lectromagn&eacute;tiques (infrarouges).
-            Il ne n&eacute;cessite aucun support mat&eacute;riel.
-            Plus un objet est chaud, plus il rayonne d'&eacute;nergie et plus sa couleur &eacute;volue :
-            rouge sombre &rarr; orange &rarr; jaune &rarr; blanc.
+            Le <strong>rayonnement</strong> est le transfert de chaleur par ondes électromagnétiques (infrarouges).
+            Il ne nécessite aucun support matériel.
+            Plus un objet est chaud, plus il rayonne d'énergie et plus sa couleur évolue :
+            rouge sombre → orange → jaune → blanc.
           </div>
           <div class="formule" style="margin-top:12px;">
             <strong>Loi de Stefan-Boltzmann :</strong><br>
-            P = &sigma; &times; S &times; T<sup>4</sup><br>
-            &sigma; = 5,67 &times; 10<sup>&minus;8</sup> W&middot;m<sup>&minus;2</sup>&middot;K<sup>&minus;4</sup>
+            P = σ × S × T<sup>4</sup><br>
+            σ = 5,67 × 10<sup>−8</sup> W·m<sup>−2</sup>·K<sup>−4</sup>
           </div>
         </div>
       </div>
@@ -141,23 +141,23 @@
 
   <!-- EQUILIBRE THERMIQUE -->
   <div class="card">
-    <h3>&Eacute;quilibre thermique</h3>
-    <p style="font-size:0.9em;color:#64748b;margin-top:0;">Deux objets &agrave; temp&eacute;ratures diff&eacute;rentes &eacute;voluent vers une temp&eacute;rature d'&eacute;quilibre.</p>
+    <h3>Équilibre thermique</h3>
+    <p style="font-size:0.9em;color:#64748b;margin-top:0;">Deux objets à températures différentes évoluent vers une température d'équilibre.</p>
     <div class="row">
       <div>
         <canvas aria-label="Mise en équilibre thermique de deux corps en contact" id="cvEquilibre" height="250"></canvas>
       </div>
       <div>
-        <label>Temp. objet A : <span id="vTA">90</span> &deg;C</label>
+        <label>Temp. objet A : <span id="vTA">90</span> °C</label>
         <input type="range" id="slTA" min="0" max="200" step="5" value="90" oninput="resetEquilibre()">
-        <label>Temp. objet B : <span id="vTB">20</span> &deg;C</label>
+        <label>Temp. objet B : <span id="vTB">20</span> °C</label>
         <input type="range" id="slTB" min="0" max="200" step="5" value="20" oninput="resetEquilibre()">
         <button onclick="startEquilibre()" style="width:100%;padding:10px;background:#e67e22;color:white;border:none;border-radius:8px;font-weight:600;font-size:1em;cursor:pointer;margin-top:8px;">Lancer la simulation</button>
         <div class="results" style="margin-top:12px;">
           <div class="result-box r-hot"><div class="val" id="rTA2">90</div><div class="lbl">T<sub>A</sub> actuelle</div></div>
           <div class="result-box r-cold"><div class="val" id="rTB2">20</div><div class="lbl">T<sub>B</sub> actuelle</div></div>
         </div>
-        <div class="result-box r-eq" style="margin-top:10px;"><div class="val" id="rTeq">55</div><div class="lbl">T<sub>&eacute;q</sub> = (T<sub>A</sub> + T<sub>B</sub>) / 2</div></div>
+        <div class="result-box r-eq" style="margin-top:10px;"><div class="val" id="rTeq">55</div><div class="lbl">T<sub>éq</sub> = (T<sub>A</sub> + T<sub>B</sub>) / 2</div></div>
       </div>
     </div>
   </div>

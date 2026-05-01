@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Suites num&eacute;riques &mdash; Simulation</title>
+<title>Suites numériques — Simulation</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <style>
@@ -53,9 +53,9 @@ header p{opacity:.85;font-size:.95em}
 </style>
 <body>
 <header>
-  <a href="../simulations.html" class="btn-back">&larr; Retour</a>
-  <h1>Suites num&eacute;riques</h1>
-  <p>Terminale Bac Pro &middot; Ch03</p>
+  <a href="../simulations.html" class="btn-back">← Retour</a>
+  <h1>Suites numériques</h1>
+  <p>Terminale Bac Pro · Ch03</p>
 </header>
 
 <div class="container">
@@ -67,12 +67,12 @@ header p{opacity:.85;font-size:.95em}
   </div>
 
   <div class="tabs">
-    <div class="tab active" onclick="switchTab('arith')">Suite arithm&eacute;tique</div>
-    <div class="tab" onclick="switchTab('geom')">Suite g&eacute;om&eacute;trique</div>
+    <div class="tab active" onclick="switchTab('arith')">Suite arithmétique</div>
+    <div class="tab" onclick="switchTab('geom')">Suite géométrique</div>
   </div>
 
   <div class="card">
-    <h2 id="paramTitle">Param&egrave;tres de la suite arithm&eacute;tique</h2>
+    <h2 id="paramTitle">Paramètres de la suite arithmétique</h2>
     <div class="slider-row">
       <label id="lblU0">u<sub>0</sub> =</label>
       <input type="range" id="sliderU0" min="-10" max="10" value="2" step="0.5">
@@ -90,7 +90,7 @@ header p{opacity:.85;font-size:.95em}
   </div>
 
   <div class="card">
-    <h2>Formule du terme g&eacute;n&eacute;ral</h2>
+    <h2>Formule du terme général</h2>
     <div class="formula-display" id="formulaBox"></div>
     <div class="sum-display">
       <div class="label" id="sumLabel">Somme des n premiers termes</div>
@@ -101,7 +101,7 @@ header p{opacity:.85;font-size:.95em}
   </div>
 
   <div class="card">
-    <h2>Repr&eacute;sentation graphique</h2>
+    <h2>Représentation graphique</h2>
     <div class="chart-container">
       <canvas aria-label="Représentation graphique des termes d'une suite arithmétique ou géométrique" id="suiteChart"></canvas>
     </div>
@@ -177,9 +177,9 @@ function update() {
   const fb = document.getElementById('formulaBox');
   if (mode === 'arith') {
     const sign = r >= 0 ? '+' : '\u2212';
-    fb.innerHTML = `\\( u_n = ${u0} ${sign} ${Math.abs(r)} \\times n \\)&emsp;\u2192&emsp;\\( u_n = u_0 + n \\cdot r \\)`;
+    fb.innerHTML = `\\( u_n = ${u0} ${sign} ${Math.abs(r)} \\times n \\) \u2192 \\( u_n = u_0 + n \\cdot r \\)`;
   } else {
-    fb.innerHTML = `\\( u_n = ${u0} \\times ${r}^{n} \\)&emsp;\u2192&emsp;\\( u_n = u_0 \\times q^n \\)`;
+    fb.innerHTML = `\\( u_n = ${u0} \\times ${r}^{n} \\) \u2192 \\( u_n = u_0 \\times q^n \\)`;
   }
   if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([fb]);
 

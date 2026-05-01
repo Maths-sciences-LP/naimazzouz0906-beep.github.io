@@ -47,9 +47,9 @@ select:focus{border-color:#7c3aed;outline:none}
 </style>
 <body>
 <header>
-  <a href="../simulations.html" class="btn-back">&larr; Retour</a>
-  <h1>R&eacute;flexion et R&eacute;fraction de la lumi&egrave;re</h1>
-  <p style="margin:0;opacity:0.85;">2nde Bac Pro &middot; Ch13 &middot; R&eacute;flexion et r&eacute;fraction de la lumi&egrave;re</p>
+  <a href="../simulations.html" class="btn-back">← Retour</a>
+  <h1>Réflexion et Réfraction de la lumière</h1>
+  <p style="margin:0;opacity:0.85;">2nde Bac Pro · Ch13 · Réflexion et réfraction de la lumière</p>
 </header>
 
 <div class="container">
@@ -61,18 +61,18 @@ select:focus{border-color:#7c3aed;outline:none}
     </div>
     <div class="legend">
       <span><span class="dot" style="background:#facc15"></span> Rayon incident</span>
-      <span><span class="dot" style="background:#f97316"></span> Rayon r&eacute;fl&eacute;chi</span>
-      <span><span class="dot" style="background:#22d3ee"></span> Rayon r&eacute;fract&eacute;</span>
+      <span><span class="dot" style="background:#f97316"></span> Rayon réfléchi</span>
+      <span><span class="dot" style="background:#22d3ee"></span> Rayon réfracté</span>
       <span><span class="dot" style="background:rgba(255,255,255,.4);border:1px dashed #fff"></span> Normale</span>
     </div>
   </div>
 
   <!-- Controls -->
   <div class="card">
-    <h2>Param&egrave;tres</h2>
+    <h2>Paramètres</h2>
     <div class="controls-grid">
       <div class="slider-group">
-        <label>Angle d'incidence i<sub>1</sub> : <span class="val" id="vAngle">30&deg;</span></label>
+        <label>Angle d'incidence i<sub>1</sub> : <span class="val" id="vAngle">30°</span></label>
         <input type="range" id="sAngle" min="0" max="89" value="30" step="1" oninput="update()">
       </div>
       <div></div>
@@ -94,14 +94,14 @@ select:focus{border-color:#7c3aed;outline:none}
       </div>
     </div>
     <div class="readings" id="readings"></div>
-    <div class="alert-box" id="alertTIR">&#9888; R&eacute;flexion totale ! Aucun rayon r&eacute;fract&eacute;.</div>
+    <div class="alert-box" id="alertTIR">&#9888; Réflexion totale ! Aucun rayon réfracté.</div>
   </div>
 
   <!-- Formulas -->
   <div class="card">
     <h2>Lois de l'optique</h2>
     <div class="formulas">
-      <strong>Loi de la r&eacute;flexion :</strong> \( i_r = i_1 \) &mdash; l'angle de r&eacute;flexion &eacute;gale l'angle d'incidence.<br>
+      <strong>Loi de la réflexion :</strong> \( i_r = i_1 \) — l'angle de réflexion égale l'angle d'incidence.<br>
       <strong>Loi de Snell-Descartes :</strong> \( n_1 \cdot \sin(i_1) = n_2 \cdot \sin(i_2) \)<br>
       <strong>Angle critique :</strong> \( i_c = \arcsin\!\left(\dfrac{n_2}{n_1}\right) \) &nbsp; (si \( n_1 > n_2 \))
     </div>
@@ -109,7 +109,7 @@ select:focus{border-color:#7c3aed;outline:none}
 
   <!-- Context -->
   <div class="context">
-    <div><strong>Applications :</strong> La r&eacute;fraction explique pourquoi un b&acirc;ton semble bris&eacute; dans l'eau, comment fonctionnent les lentilles de lunettes, et comment la fibre optique guide la lumi&egrave;re par r&eacute;flexion totale interne.</div>
+    <div><strong>Applications :</strong> La réfraction explique pourquoi un bâton semble brisé dans l'eau, comment fonctionnent les lentilles de lunettes, et comment la fibre optique guide la lumière par réflexion totale interne.</div>
   </div>
 </div>
 
@@ -126,7 +126,7 @@ function update() {
   const n1 = +document.getElementById('selM1').value;
   const n2 = +document.getElementById('selM2').value;
 
-  document.getElementById('vAngle').innerHTML = i1deg + '&deg;';
+  document.getElementById('vAngle').innerHTML = i1deg + '°';
 
   const i1 = i1deg * Math.PI / 180;
   const sinI2 = n1 * Math.sin(i1) / n2;
@@ -144,12 +144,12 @@ function update() {
   let readingsHTML = `
     <div class="reading-box"><div class="label">n<sub>1</sub> (${mediaNames[n1.toFixed(2)]})</div><div class="value">${n1.toFixed(2)}</div></div>
     <div class="reading-box"><div class="label">n<sub>2</sub> (${mediaNames[n2.toFixed(2)]})</div><div class="value">${n2.toFixed(2)}</div></div>
-    <div class="reading-box"><div class="label">i<sub>1</sub> (incidence)</div><div class="value">${i1deg}&deg;</div></div>
-    <div class="reading-box"><div class="label">i<sub>r</sub> (r&eacute;flexion)</div><div class="value">${i1deg}&deg;</div></div>
-    <div class="reading-box"><div class="label">i<sub>2</sub> (r&eacute;fraction)</div><div class="value">${hasTIR ? '---' : i2deg.toFixed(1) + '&deg;'}</div></div>
+    <div class="reading-box"><div class="label">i<sub>1</sub> (incidence)</div><div class="value">${i1deg}°</div></div>
+    <div class="reading-box"><div class="label">i<sub>r</sub> (réflexion)</div><div class="value">${i1deg}°</div></div>
+    <div class="reading-box"><div class="label">i<sub>2</sub> (réfraction)</div><div class="value">${hasTIR ? '---' : i2deg.toFixed(1) + '°'}</div></div>
   `;
   if (icDeg !== null) {
-    readingsHTML += `<div class="reading-box"><div class="label">Angle critique i<sub>c</sub></div><div class="value">${icDeg.toFixed(1)}&deg;</div></div>`;
+    readingsHTML += `<div class="reading-box"><div class="label">Angle critique i<sub>c</sub></div><div class="value">${icDeg.toFixed(1)}°</div></div>`;
   }
   document.getElementById('readings').innerHTML = readingsHTML;
 
