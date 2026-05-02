@@ -1,7 +1,7 @@
 # Journal de bord du projet
 
 **Site :** https://maths-sciences-lp.github.io/
-**Dernière mise à jour :** 2026-05-01 (Phase 2 suite — visuels PC Seconde Pro)
+**Dernière mise à jour :** 2026-05-02 (Ch06 ICCER : 6 activités complémentaires + fix MathJax 54 index.html + nouveau prompt)
 
 ---
 
@@ -43,6 +43,38 @@
 ---
 
 ## Travail réalisé
+
+### Session 2 mai 2026 — Ch06 ICCER : activités complémentaires + fix MathJax + nouveau prompt
+
+**Périmètre** : enrichissement du chapitre 6 « Transport par un fluide » (Terminale ICCER, Grpt 1) avec 6 activités complémentaires de formats variés ; correction d'un bug MathJax sur 54 pages d'index générées ; rédaction d'un prompt de référence pour les activités supplémentaires.
+
+**Bug MathJax sur les pages `index.html` (urgence signalée par l'utilisateur)** :
+- Symptôme : les objectifs de chapitre contenant des formules `\(P=F/S\)`, `\(P_1V_1=P_2V_2\)`, etc. s'affichaient en texte brut sur 54 pages.
+- Cause : `scripts/generate_chapter_index.py` ne chargeait pas le script MathJax dans le `<head>` HTML.
+- Correction : ajout de la balise `<script async src="...mathjax-3...">` au template du script + patch des 54 pages déjà générées.
+
+**Nouveau prompt** `prompts/prompt-activite-supplementaire-pc.md` :
+- Différencie les activités supplémentaires de l'activité de découverte principale.
+- Définit 6 formats types (situation pro / fiche technique / TP numérique / DM / diagnostic / projet ouvert).
+- Convention de nommage `activite-N-slug.html`, structure HTML, mise à jour de l'`index.html`, checklist.
+
+**6 activités complémentaires créées sur Ch06 ICCER** (effort visuel SVG important) :
+| # | Titre | Format | Durée | SVG remarquable |
+|---|---|---|---|---|
+| 2 | Remplissage ballon ECS | A — situation pro | 25 min | Schéma ballon + tuyau + vanne |
+| 3 | Mesure débit chez soi | D — DM | 30 min | Protocole : robinet, bouteille graduée, chronomètre |
+| 4 | Effet Venturi (projet) | F — projet ouvert | 35 min | Coupe Venturi avec lignes de courant + 3 manomètres + réservoir engrais |
+| 5 | TP tableur v(D) | C — TP numérique | 50 min | Interface tableur stylisée + graphique v(D) avec 3 lignes-limites colorées |
+| 6 | Choisir une pompe Wilo | B — fiche technique | 40 min | 3 fiches techniques + graphique courbes pompes + courbe circuit + point de fonctionnement |
+| 7 | Diagnostic d'une fuite | E — diagnostic | 35 min | 2 compteurs Itron à comparer + graphique conso mensuelle 12 mois |
+
+**Mise à jour `index.html` ch06 ICCER** : nouvelle section « Activités complémentaires » avec 6 cartes (icônes, descriptions, tags compétences). Compteur 9 → 15 ressources.
+
+**Mises à jour** : `audits/audit-log.md`, `JOURNAL.md`, `scripts/generate_chapter_index.py`, 54 pages `index.html`.
+
+**PR** : #397 (mergée — fix MathJax + activités 2 et 3) puis #398 (mergée — activités 4 à 7 + index + audit-log).
+
+---
 
 ### Session 30 avril 2026 — Audit total du site
 
