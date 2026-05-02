@@ -97,6 +97,7 @@
     </table>
   </div>
 
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir des conseils pour la mise en forme</button>
   <div class="corr">
     <ul>
@@ -114,6 +115,7 @@
 <div class="exo">
   <h2>Question 2 <span class="badge-yellow">REA</span> – Conversion D en mètres (colonne B)</h2>
   <p>En cellule B5, saisir la formule qui convertit le diamètre de mm en m. Puis recopier la formule jusqu'en B11.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la formule</button>
   <div class="corr">
     <p><strong>B5 :</strong> <code>=A5/1000</code></p>
@@ -132,6 +134,7 @@
   <h2>Question 3 <span class="badge-yellow">REA</span> – Calcul de la section (colonne C)</h2>
   <p>En cellule C5, saisir la formule qui calcule la section circulaire \(S = \pi \times \left(\dfrac{D}{2}\right)^2\). Puis recopier jusqu'en C11.</p>
   <p><em>Aide : la fonction <code>PI()</code> donne la valeur de π. La fonction <code>PUISSANCE(x;2)</code> ou l'opérateur <code>^2</code> élève au carré.</em></p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la formule</button>
   <div class="corr">
     <p><strong>C5 :</strong> <code>=PI()*(B5/2)^2</code></p>
@@ -151,6 +154,7 @@
   <h2>Question 4 <span class="badge-yellow">REA</span> – Calcul de la vitesse (colonne D)</h2>
   <p>En cellule D5, saisir la formule qui calcule la vitesse \(v = \dfrac{Q_v}{S}\). <strong>Attention :</strong> le débit est en L/s en B2, il faut le convertir en m³/s (× 0,001 ou ÷ 1000).</p>
   <p><em>Astuce : utilise <code>$B$2</code> pour figer la cellule du débit (référence absolue) lors de la recopie.</em></p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la formule</button>
   <div class="corr">
     <p><strong>D5 :</strong> <code>=($B$2/1000)/C5</code></p>
@@ -215,6 +219,7 @@
     <li>Une <strong>ligne horizontale orange à v = 1,5 m/s</strong> (limite bruit)</li>
   </ul>
 
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir l'allure du graphique attendu</button>
   <div class="corr">
     <p>Le graphique doit ressembler à ceci (forme en hyperbole décroissante) :</p>
@@ -342,6 +347,7 @@
     <li>les diamètres pour lesquels la vitesse est <strong>en zone optimale</strong> (entre 0,3 et 1,5 m/s)</li>
     <li>le diamètre <strong>le plus petit</strong> qui satisfait la norme ECS</li>
   </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ul>
@@ -360,6 +366,7 @@
     <li>le risque de bruit</li>
     <li>le coût (un tube DN26 coûte plus cher qu'un DN18)</li>
   </ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>Le choix optimal est <strong>DN18</strong> ou <strong>DN20</strong> :</p>
@@ -374,6 +381,7 @@
 <div class="exo diff-appro">
   <h2>Question 9 <span class="badge-blue">VAL</span> – Tester un autre débit <span class="tag-appro">Approfondissement</span></h2>
   <p>Modifier la cellule B2 et entrer 0,50 L/s (besoins augmentés). <strong>Sans recalculer manuellement</strong>, observer ce qui se passe dans le tableau. Quel est le nouveau diamètre minimum recommandé ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>Toutes les vitesses sont multipliées par <strong>0,50/0,30 ≈ 1,67</strong> (relation de proportionnalité, débit ↑ ⇒ vitesse ↑).</p>
@@ -392,6 +400,7 @@
 <div class="exo">
   <h2>Question 10 <span class="badge-yellow">COM</span> – Bilan</h2>
   <p>Rédiger une <strong>conclusion en 5 lignes</strong> pour Sonia, qui répond à la problématique et propose un diamètre justifié.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir un exemple de conclusion</button>
   <div class="corr">
     <p><em>Pour un débit ECS de 0,30 L/s, l'analyse au tableur montre que le DN12 est interdit (vitesse 2,65 m/s, supérieure à la limite de 2 m/s qui érode le cuivre) et que le DN15 génère un risque de bruit (1,70 m/s &gt; 1,5 m/s). Le diamètre <strong>DN20</strong> est la solution recommandée : la vitesse de 0,96 m/s respecte toutes les normes, garantit une bonne durée de vie de l'installation et offre une marge de sécurité si les besoins futurs augmentent. Si le budget est contraint, le DN18 reste acceptable. L'usage du tableur permet d'adapter facilement le calcul à d'autres débits ou d'autres contraintes.</em></p>
