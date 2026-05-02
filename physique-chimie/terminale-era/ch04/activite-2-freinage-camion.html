@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Activité 2 – Sécurité de freinage d'un camion – Term ERA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE</a>
+<header>
+  <h1>Activité 2 – Sécurité de freinage d'un camion de livraison <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 4 – Vitesse et accélération | Term Bac Pro (Grpt 3) | Mécanique | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
+
+<div class="objectifs"><strong>Objectifs :</strong>
+<ul><li>Calculer une accélération à partir d'un changement de vitesse</li>
+<li>Calculer une distance d'arrêt</li>
+<li>Comprendre l'effet de la masse et de la vitesse sur la sécurité</li></ul></div>
+
+<div class="situation">
+  <h2>Situation – livrer une cuisine sans casse</h2>
+  <p><em>Ahmed, livreur d'une menuiserie d'agencement, transporte une cuisine équipée (1 200 kg) dans un camion 7,5 t. Sur la route, il roule à 50 km/h en zone urbaine. Un piéton traverse soudain. Il faut freiner.</em></p>
+
+  <h3>Document — Distances d'arrêt selon vitesse et état chaussée</h3>
+  <table>
+    <thead><tr><th>Vitesse</th><th>Distance réaction (1 s)</th><th>Distance freinage sec</th><th>Distance freinage mouillé</th><th>Total mouillé</th></tr></thead>
+    <tbody>
+      <tr><td>30 km/h</td><td>8 m</td><td>5 m</td><td>10 m</td><td>18 m</td></tr>
+      <tr><td>50 km/h</td><td>14 m</td><td>14 m</td><td>28 m</td><td>42 m</td></tr>
+      <tr><td>70 km/h</td><td>19 m</td><td>27 m</td><td>54 m</td><td>73 m</td></tr>
+      <tr><td>90 km/h</td><td>25 m</td><td>45 m</td><td>90 m</td><td>115 m</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Données :</strong> décélération camion chargé sec ≈ 7 m/s² ; mouillé ≈ 3,5 m/s² ; temps de réaction humain ≈ 1 s.</p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> À 50 km/h, Ahmed peut-il s'arrêter à temps si un piéton apparaît à 30 m sur chaussée mouillée ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Convertir 50 km/h en m/s. Aide : 1 km/h = 1/3,6 m/s.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>v = 50 / 3,6 ≈ <strong>13,9 m/s</strong></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la distance parcourue pendant le temps de réaction (1 s à 50 km/h).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>d<sub>réac</sub> = v × t = 13,9 × 1 = <strong>13,9 m ≈ 14 m</strong>. Cohérent avec le tableau.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>D'après le tableau, distance totale d'arrêt sur chaussée mouillée à 50 km/h ? Le piéton à 30 m sera-t-il évité ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>D<sub>totale</sub> = 42 m. Or le piéton est à 30 m. <strong>NON, Ahmed ne peut pas s'arrêter à temps.</strong> Choc à environ 30 km/h résiduel.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>À 30 km/h sous la pluie, distance totale ? Conclusion sur l'importance des limitations en zone urbaine.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>À 30 km/h : 18 m total — Ahmed s'arrête bien avant les 30 m du piéton.</p>
+    <p>Conclusion : la limitation 30 km/h en ville sauve des vies. À 50 km/h, on ne s'arrête pas à 30 m sous la pluie. Les zones « 30 » devant les écoles ne sont pas un caprice — elles sont basées sur la physique.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Pourquoi un camion chargé met-il plus longtemps à s'arrêter qu'une voiture ? Que faire pour Ahmed pendant les livraisons ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Plus la masse est importante, plus l'énergie cinétique (E = ½mv²) à dissiper est grande, donc plus il faut de distance pour s'arrêter (à freinage égal).</p>
+    <p>Recommandations pour Ahmed :</p>
+    <ul>
+      <li>Réduire la vitesse en ville (30-40 km/h conseillé même sur axes 50)</li>
+      <li>Augmenter la distance de sécurité (règle des 2 secondes)</li>
+      <li>Anticiper le freinage par observation lointaine</li>
+      <li>Vérifier les pneus et freins régulièrement</li>
+    </ul>
+  </div>
+</div>
+
+<div class="retenir"><strong>À retenir</strong>
+<ul><li><strong>Distance d'arrêt = distance réaction (v × 1 s) + distance freinage (v² / 2a).</strong></li>
+<li><strong>v² explique tout :</strong> doubler la vitesse <strong>quadruple</strong> la distance de freinage.</li>
+<li><strong>Sous la pluie :</strong> distance freinage × 2 (adhérence divisée par 2).</li>
+<li><strong>30 km/h en zone scolaire</strong> = règle physique, pas idéologique.</li></ul></div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

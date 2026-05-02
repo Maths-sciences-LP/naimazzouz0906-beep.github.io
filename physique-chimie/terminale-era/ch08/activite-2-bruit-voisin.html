@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch08 – Activité 2 – Bruit d'atelier qui dérange le voisin – Term ERA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE</a>
+<header>
+  <h1>Activité 2 – Diagnostic du bruit d'atelier perçu chez le voisin <span style="font-size:.55em;color:#b91c1c;font-weight:600">DIAGNOSTIC</span></h1>
+  <p class="sous-titre">Chapitre 8 – Atténuation onde sonore | Term Bac Pro (Grpt 3) | Physique – Acoustique | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
+
+<div class="objectifs"><strong>Objectifs :</strong>
+<ul><li>Calculer le niveau sonore reçu après atténuation par distance et paroi</li>
+<li>Vérifier la conformité à la réglementation</li>
+<li>Choisir une solution pour réduire la nuisance</li></ul></div>
+
+<div class="situation">
+  <h2>Situation – plainte du voisin pour nuisance sonore</h2>
+  <p><em>Anaïs, ébéniste, reçoit une plainte de son voisin (maison à 15 m de l'atelier). Il se plaint du bruit du dépoussiéreur central et de la scie circulaire pendant la journée. Anaïs fait venir un acousticien.</em></p>
+
+  <h3>Document — Mesures à 1 m des sources et au niveau du voisin</h3>
+  <table>
+    <thead><tr><th>Source</th><th>Niveau à 1 m de la source</th><th>Niveau mesuré chez le voisin</th></tr></thead>
+    <tbody>
+      <tr><td>Scie circulaire à format en marche</td><td>92 dB</td><td>52 dB</td></tr>
+      <tr><td>Dépoussiéreur central</td><td>88 dB</td><td>60 dB</td></tr>
+      <tr><td>Bruit de fond (sans atelier)</td><td>—</td><td>40 dB (jour) / 32 dB (nuit)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Réglementation bruit de voisinage (Code santé publique R1336-5)</h3>
+  <ul>
+    <li><strong>Émergence</strong> = différence entre bruit ambiant avec source et bruit ambiant seul</li>
+    <li>Émergence max admissible : <strong>5 dB le jour, 3 dB la nuit</strong></li>
+    <li>Au-delà : trouble du voisinage caractérisé (sanction possible)</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Le bruit de l'atelier d'Anaïs respecte-t-il la réglementation ? Sinon que faire ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer l'émergence due à chaque source pendant la journée (par rapport aux 40 dB ambiants).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li</li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Émergence = niveau avec source − niveau ambiant.</p>
+    <ul>
+      <li>Scie : 52 − 40 = <strong>12 dB</strong> ✗ (limite 5 dB)</li>
+      <li>Dépoussiéreur : 60 − 40 = <strong>20 dB</strong> ✗ (limite 5 dB)</li>
+    </ul>
+    <p>Les 2 dépassent largement la limite. Le voisin a juridiquement raison de se plaindre.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <p>Calculer l'atténuation totale entre les sources (scie 92 dB à 1 m) et le voisin (52 dB). Comparer à l'atténuation théorique attendue (champ libre + distance × 2 = 15 m).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Atténuation : 92 − 52 = <strong>40 dB</strong>.</p>
+    <p>En champ libre, doublement de distance = −6 dB. De 1 m à 16 m, on quadruple-double 4 fois (1→2→4→8→16) → atténuation théorique = 4 × 6 = 24 dB.</p>
+    <p>Les 16 dB supplémentaires (40 − 24) viennent du <strong>mur de l'atelier</strong> (béton 20 cm + bardage tôle), du <strong>jardin avec arbres</strong> et du <strong>mur en limite de propriété</strong>.</p>
+    <p>Mais 40 dB d'atténuation, malgré tout, ne suffisent pas car les sources sont très bruyantes au départ.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">VAL</span></h2>
+  <p>Pour respecter une émergence ≤ 5 dB, le niveau chez le voisin doit être ≤ 45 dB. Quelle réduction supplémentaire faut-il pour le dépoussiéreur (60 dB actuellement) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Il faut passer de 60 à 45 dB → réduction de <strong>15 dB</strong> à obtenir.</p>
+    <p>Solutions possibles (cumulatives) :</p>
+    <ul>
+      <li>Capoter le dépoussiéreur : −10 à −15 dB</li>
+      <li>Le déplacer à l'intérieur de l'atelier (côté opposé au voisin) : −5 à −10 dB</li>
+      <li>Construire un mur acoustique en limite : −5 à −10 dB</li>
+      <li>Limiter horaires d'usage (pas avant 8 h, pas après 19 h)</li>
+    </ul>
+    <p>Combinaison : capotage (−12 dB) + déplacement (−5 dB) = −17 dB. Niveau résiduel chez voisin : 60 − 17 = 43 dB ≤ 45 dB ✓.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 4 lignes le compte-rendu de l'acousticien à Anaïs.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>Diagnostic bruit voisinage — 2 mai 2026. La plainte du voisin est légitime : émergence de 12 dB (scie) et 20 dB (dépoussiéreur), au-dessus de la limite légale de 5 dB le jour. Le mur d'atelier atténue déjà bien le son (40 dB de réduction sur la scie), mais les sources sont trop bruyantes au départ.</em></p>
+    <p><em>Solution recommandée : <strong>capoter le dépoussiéreur</strong> (caisson insonorisé, ~ 800 €) + le déplacer à l'opposé du voisin. Pour la scie : étudier un capotage local ou limiter aux horaires de bureau (8 h - 19 h). Investissement total ~ 1 200 €. Régularisation et bonne entente avec le voisinage.</em></p>
+  </div>
+</div>
+
+<div class="retenir"><strong>À retenir</strong>
+<ul><li><strong>Émergence :</strong> niveau avec source − niveau ambiant. Limite légale 5 dB jour, 3 dB nuit.</li>
+<li><strong>Atténuation par distance</strong> en champ libre : −6 dB par doublement de distance.</li>
+<li><strong>Atténuation par mur</strong> : variable (10 à 50 dB selon matériau et masse).</li>
+<li><strong>Solutions :</strong> capotage de la source (le plus efficace), distance, mur acoustique, horaires limités.</li></ul></div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

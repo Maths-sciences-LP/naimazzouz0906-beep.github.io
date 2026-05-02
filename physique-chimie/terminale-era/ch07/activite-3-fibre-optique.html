@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch07 – Activité 3 – Choisir une fibre optique – Term ERA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE</a>
+<header>
+  <h1>Activité 3 – Choisir une fibre optique pour un musée connecté <span style="font-size:.55em;color:#7c2d12;font-weight:600">FICHE TECHNIQUE</span></h1>
+  <p class="sous-titre">Chapitre 7 – Transmission de l'information | Term Bac Pro (Grpt 3) | Physique – Optique | ⏱ 35 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
+
+<div class="objectifs"><strong>Objectifs :</strong>
+<ul><li>Comprendre le principe de la réflexion totale dans la fibre optique</li>
+<li>Comparer fibre monomode et multimode</li>
+<li>Choisir une fibre selon distance et débit requis</li></ul></div>
+
+<div class="situation">
+  <h2>Situation – équiper un musée d'un réseau gigabit</h2>
+  <p><em>Sébastien, technicien d'agencement spécialisé en muséographie, équipe un nouveau musée d'art contemporain. Les expositions interactives nécessitent un réseau capable de transmettre 10 Gb/s entre 12 vidéoprojecteurs 4K et le serveur central, sur des distances de 50 à 600 m.</em></p>
+
+  <h3>Document 1 — Principe de la fibre optique</h3>
+  <p>Une fibre optique transmet l'information sous forme d'<strong>impulsions lumineuses</strong> (laser ou LED). La lumière voyage dans le cœur de la fibre par <strong>réflexion totale</strong> sur la gaine externe (indice de réfraction n<sub>cœur</sub> &gt; n<sub>gaine</sub>).</p>
+  <p>Avantages sur le câble cuivre :</p>
+  <ul>
+    <li>Débit énorme (jusqu'à 100 Gb/s par fibre)</li>
+    <li>Atténuation très faible (0,2 dB/km à 1550 nm)</li>
+    <li>Insensible aux perturbations électromagnétiques</li>
+    <li>Léger (1 km de fibre = 100 g vs 5 kg pour 1 km de cuivre)</li>
+  </ul>
+
+  <h3>Document 2 — 2 types de fibre optique</h3>
+  <table>
+    <thead><tr><th>Type</th><th>Diamètre cœur</th><th>Atténuation</th><th>Distance max</th><th>Débit</th><th>Prix/m posé</th></tr></thead>
+    <tbody>
+      <tr><td>Multimode OM4 (50 µm)</td><td>50 µm</td><td>3 dB/km</td><td>~ 400 m à 10 Gb/s</td><td>10-40 Gb/s</td><td>4 €</td></tr>
+      <tr><td>Monomode OS2 (9 µm)</td><td>9 µm</td><td>0,2 dB/km</td><td>&gt; 50 km</td><td>jusqu'à 100 Gb/s</td><td>3 €</td></tr>
+    </tbody>
+  </table>
+  <p>La <strong>multimode</strong> utilise une LED (moins cher, plusieurs trajets de lumière dans le cœur large) — bien pour courtes distances.</p>
+  <p>La <strong>monomode</strong> utilise un laser (cœur très fin, un seul trajet, signal très propre) — bien pour longues distances et hauts débits.</p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Sébastien a 12 liaisons à faire entre 50 et 600 m, à 10 Gb/s. Quelle fibre choisir et où ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Expliquer le principe de la réflexion totale dans une fibre optique.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La fibre comporte un <strong>cœur</strong> (silice dopée, indice n<sub>1</sub>) entouré d'une <strong>gaine</strong> (silice pure, indice n<sub>2</sub> &lt; n<sub>1</sub>). La lumière qui arrive sur l'interface cœur/gaine sous un angle suffisant (au-delà de l'angle limite) est <strong>totalement réfléchie</strong> dans le cœur. Elle « rebondit » des milliers de fois et progresse le long de la fibre sans s'échapper, sur des distances kilométriques. C'est le phénomène de <strong>réflexion totale</strong>, prévu par la loi de Snell-Descartes.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <p>Pour les liaisons de 50 m vers les écrans proches, quelle fibre choisir ? Pour celles de 600 m vers le serveur central éloigné ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Liaisons 50 m</strong> : OM4 multimode largement suffisante (10 Gb/s à 400 m max). Plus simple, modules réseau moins chers (LED).</p>
+    <p><strong>Liaisons 600 m</strong> : la multimode OM4 est <strong>au-delà de sa limite</strong> (400 m à 10 Gb/s). Choisir <strong>OS2 monomode</strong> qui supporte facilement 600 m. Modules laser SFP+ un peu plus chers (~ 50 € pièce vs 30 €) mais nécessaires.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer l'atténuation totale d'une liaison monomode de 600 m. Le signal du module SFP+ est émis à 0 dBm. Quel signal arrive au récepteur ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Atténuation : 600 m × 0,2 dB/km = 0,12 dB.</p>
+    <p>Signal au récepteur : 0 − 0,12 = <strong>−0,12 dBm</strong></p>
+    <p>Sensibilité typique d'un récepteur SFP+ 10G : −15 dBm. Marge de 14,9 dB → <strong>très large marge</strong>, signal robuste, fiable même avec dégradation des soudures de fibre dans le temps.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 4 lignes la conclusion de l'étude technique de Sébastien.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li</li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>Étude réseau musée — 2 mai 2026. Pour les 8 liaisons courtes (≤ 100 m vers les vidéoprojecteurs proches du serveur) : <strong>fibre multimode OM4</strong> (4 €/m + modules SFP+ MM 30 €/pce). Pour les 4 liaisons longues (jusqu'à 600 m) : <strong>fibre monomode OS2</strong> (3 €/m + modules SFP+ SM 50 €/pce). Atténuation à 600 m : 0,12 dB → marge confortable. Total câble + modules : ~ 8 000 € HT, garantie performance 10 ans.</em></p>
+  </div>
+</div>
+
+<div class="retenir"><strong>À retenir</strong>
+<ul><li><strong>Fibre optique :</strong> transmission par réflexion totale dans un cœur de silice. λ utilisée 850, 1 310 ou 1 550 nm.</li>
+<li><strong>Multimode (OM4) :</strong> cœur large 50 µm, LED, jusqu'à 400 m à 10 Gb/s. Économique courtes distances.</li>
+<li><strong>Monomode (OS2) :</strong> cœur fin 9 µm, laser, &gt; 50 km. Performances haut de gamme.</li>
+<li><strong>Atténuation :</strong> très faible (0,2 dB/km mono, 3 dB/km multi). Insensible aux ondes EM, idéal industrie.</li></ul></div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 3 – LED vs néon vs halogène – Term ERA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE</a>
+<header>
+  <h1>Activité 3 – Comparer 3 technologies d'éclairage <span style="font-size:.55em;color:#7c2d12;font-weight:600">FICHE TECHNIQUE</span></h1>
+  <p class="sous-titre">Chapitre 6 – Source lumineuse | Term Bac Pro (Grpt 3) | Physique – Optique | ⏱ 35 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
+
+<div class="objectifs"><strong>Objectifs :</strong>
+<ul><li>Comparer 3 technologies d'éclairage (LED, fluorescent, halogène)</li>
+<li>Calculer le coût total sur 5 ans (achat + énergie)</li>
+<li>Choisir selon le contexte d'usage</li></ul></div>
+
+<div class="situation">
+  <h2>Situation – choix de luminaires pour un nouveau showroom</h2>
+  <p><em>Aymeric, agenceur, ouvre un nouveau showroom de cuisines de 80 m². Il doit choisir 12 luminaires identiques pour un éclairement uniforme à 500 lx. Le showroom est ouvert 70 h/semaine = 3 640 h/an.</em></p>
+
+  <h3>3 luminaires candidats (chacun fournit ≈ 5 000 lm)</h3>
+  <table>
+    <thead><tr><th>Type</th><th>Puissance</th><th>Efficacité</th><th>Durée vie</th><th>IRC</th><th>Prix unitaire</th></tr></thead>
+    <tbody>
+      <tr><td>A — Halogène 250 W</td><td>250 W</td><td>20 lm/W</td><td>2 000 h</td><td>100</td><td>15 €</td></tr>
+      <tr><td>B — Fluo compact 60 W</td><td>60 W</td><td>83 lm/W</td><td>10 000 h</td><td>85</td><td>22 €</td></tr>
+      <tr><td>C — LED 38 W</td><td>38 W</td><td>132 lm/W</td><td>50 000 h</td><td>92</td><td>55 €</td></tr>
+    </tbody>
+  </table>
+  <p><em>IRC (Indice de Rendu des Couleurs) : 100 = parfait (lumière du soleil), &lt; 80 = couleurs déformées. Pour un showroom où l'on présente des bois et finitions, IRC ≥ 90 est recommandé.</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quelle technologie Aymeric doit-il choisir, sachant qu'il pèse coût total et qualité de la lumière ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer pour 12 luminaires : le <strong>coût d'achat</strong> initial, et le nombre de remplacements nécessaires sur 5 ans (3 640 × 5 = 18 200 h).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>A — Halogène : 12 × 15 = 180 € initial. Renouvellements : 18 200 / 2 000 ≈ 9 fois → <strong>180 + 9 × 180 = 1 800 €</strong></li>
+      <li>B — Fluo : 12 × 22 = 264 € initial. Renouvellements : 18 200 / 10 000 ≈ 2 fois → <strong>264 × 3 = 792 €</strong></li>
+      <li>C — LED : 12 × 55 = 660 € initial. 0 renouvellement (50 000 h &gt; 18 200) → <strong>660 €</strong></li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la consommation et le coût d'énergie sur 5 ans (tarif 0,18 €/kWh).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>A : 12 × 250 × 18 200 = 54 600 kWh → <strong>9 828 €</strong></li>
+      <li>B : 12 × 60 × 18 200 = 13 104 kWh → <strong>2 359 €</strong></li>
+      <li>C : 12 × 38 × 18 200 = 8 299 kWh → <strong>1 494 €</strong></li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">VAL</span></h2>
+  <p>Total achat + énergie sur 5 ans pour chacun. Conclure.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>A : 1 800 + 9 828 = <strong>11 628 €</strong></li>
+      <li>B : 792 + 2 359 = <strong>3 151 €</strong></li>
+      <li>C : 660 + 1 494 = <strong>2 154 €</strong> ✓</li>
+    </ul>
+    <p>La <strong>LED</strong> est <strong>5,4× moins chère que l'halogène</strong> sur 5 ans. Le surcoût initial (660 vs 180 €) est récupéré en quelques mois.</p>
+    <p>De plus, IRC 92 (LED) est suffisant pour un showroom (vs 85 pour fluo). Choix : <strong>LED (C)</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Pourquoi l'halogène est-il devenu obsolète, malgré son IRC parfait de 100 ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>L'halogène fonctionne par incandescence : un filament chauffé à 3 000 °C émet de la lumière. Mais 90-95 % de l'énergie se transforme en chaleur, seulement 5-10 % en lumière utile. C'est <strong>très peu efficace</strong>.</p>
+    <p>Conséquences :</p>
+    <ul>
+      <li>Consommation 5-7× supérieure à la LED pour la même lumière</li>
+      <li>Durée de vie 25× plus courte (filament qui claque)</li>
+      <li>Dégagement de chaleur important (climatisation à augmenter en été)</li>
+    </ul>
+    <p>L'UE a banni la production d'halogènes domestiques en 2018 pour raisons écologiques. Reste autorisé en usages spécialisés (théâtres, automobile).</p>
+  </div>
+</div>
+
+<div class="retenir"><strong>À retenir</strong>
+<ul><li><strong>3 technologies historiques :</strong> incandescence/halogène (5-15 lm/W) → fluorescent (60-90 lm/W) → LED (100-150 lm/W).</li>
+<li><strong>LED gagnante en 2026 :</strong> 5× plus efficace que halogène, durée 50 000 h.</li>
+<li><strong>IRC :</strong> ≥ 90 pour showroom, finition, beauté ; ≥ 80 pour atelier ; ≥ 70 pour parking.</li>
+<li><strong>Halogène :</strong> banni en domestique depuis 2018. Reste seul l'IRC parfait (100) pour usages très qualitatifs.</li></ul></div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

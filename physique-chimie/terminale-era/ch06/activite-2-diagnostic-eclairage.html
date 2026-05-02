@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 2 – Diagnostic d'un éclairage d'atelier insuffisant – Term ERA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE</a>
+<header>
+  <h1>Activité 2 – Diagnostic d'un éclairage d'atelier insuffisant <span style="font-size:.55em;color:#b91c1c;font-weight:600">DIAGNOSTIC</span></h1>
+  <p class="sous-titre">Chapitre 6 – Source lumineuse | Term Bac Pro (Grpt 3) | Physique – Optique | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
+
+<div class="objectifs"><strong>Objectifs :</strong>
+<ul><li>Comprendre les notions de flux lumineux (lm), éclairement (lux), efficacité (lm/W)</li>
+<li>Comparer un éclairement mesuré aux normes du Code du travail</li>
+<li>Calculer la puissance nécessaire pour respecter la norme</li></ul></div>
+
+<div class="situation">
+  <h2>Situation – ouvriers qui se plaignent du manque de lumière</h2>
+  <p><em>Les 4 ouvriers de l'atelier d'ébénisterie de Léna se plaignent : « On y voit mal sur le plan de travail. » Ahmed, électricien, vient mesurer l'éclairement avec un luxmètre.</em></p>
+
+  <h3>Document — Mesures d'Ahmed</h3>
+  <ul>
+    <li>Atelier 200 m² avec 8 néons fluorescents 36 W (datent de 2005)</li>
+    <li>Hauteur des plans de travail : 0,90 m</li>
+    <li>Mesure du luxmètre sur les plans de travail : <strong>180 lux</strong> en moyenne</li>
+    <li>Norme NF EN 12464-1 (Code du travail) : éclairement minimum <strong>500 lux</strong> pour un atelier de menuiserie/ébénisterie (travail de précision)</li>
+  </ul>
+
+  <h3>Notions clés</h3>
+  <ul>
+    <li><strong>Flux lumineux Φ</strong> (lumen, lm) : quantité totale de lumière émise par une source</li>
+    <li><strong>Éclairement E</strong> (lux, lx) : quantité de lumière reçue par une surface. 1 lx = 1 lm/m²</li>
+    <li><strong>Efficacité lumineuse</strong> (lm/W) : rendement énergétique. Un néon T8 ≈ 80 lm/W ; un tube LED ≈ 130 lm/W</li>
+    <li>Un néon 36 W usé peut perdre 30-40 % de son flux lumineux après 10 ans</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Pourquoi l'éclairement est-il insuffisant et que faut-il faire pour atteindre 500 lux ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">ANA</span></h2>
+  <p>Comparer la mesure (180 lx) à la norme (500 lx). Conclure.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>180 lux mesurés vs 500 lux exigés. Déficit de <strong>320 lux</strong>, soit ~ 65 % en-dessous de la norme. Non-conformité claire au Code du travail. Risque légal en cas d'inspection + risque accident (visibilité insuffisante = accidents avec scie circulaire, etc.).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <p>Citer 2 causes possibles à l'éclairement faible.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li><strong>Vieillissement :</strong> les néons ont 20 ans, leur flux a diminué de 30-40 %. Un néon 36 W neuf émet ~ 3 000 lm ; usé, plutôt 2 000 lm.</li>
+      <li><strong>Sous-dimensionnement initial :</strong> 8 × 36 = 288 W pour 200 m² = 1,4 W/m². Pour atteindre 500 lx en menuiserie il faut typiquement 5 à 7 W/m² avec des néons (ou 2-3 W/m² avec des LED modernes).</li>
+      <li><strong>Encrassement :</strong> diffuseurs des luminaires couverts de poussière de bois → atténuation supplémentaire.</li>
+      <li><strong>Couleurs sombres des murs/plafonds :</strong> peu de réflexion lumineuse.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Pour atteindre 500 lx, calculer le flux lumineux total nécessaire (en lm) : Φ = E × S × facteur correction (1,5 ; tient compte des pertes par diffuseur et coefficient d'utilisation).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Φ = 500 × 200 × 1,5 = <strong>150 000 lm</strong></p>
+    <p>Avec des tubes LED 130 lm/W : P = 150 000 / 130 ≈ <strong>1 150 W</strong>. Soit environ 25 tubes LED de 50 W (ou 32 tubes de 36 W).</p>
+    <p>Avec des néons modernes 80 lm/W : P = 150 000 / 80 ≈ 1 875 W. Soit ~ 50 néons de 36 W. Beaucoup plus.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Ahmed propose 2 solutions : (a) remplacer les 8 néons par 25 tubes LED 50 W, ou (b) ajouter 16 néons supplémentaires. Calculer la consommation annuelle (10 h/jour × 220 j/an) et conclure.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Heures/an : 2 200 h.</p>
+    <ul>
+      <li>(a) LED : 25 × 50 = 1 250 W → 1 250 × 2 200 / 1000 = <strong>2 750 kWh/an</strong> → 495 €/an</li>
+      <li>(b) Néons : (8 + 16) × 36 = 864 W → 864 × 2 200 / 1000 = 1 901 kWh/an → 342 €/an. <strong>Mais 24 néons</strong> dans un atelier déjà mal éclairé risquent d'être insuffisants (1 920 lm × 24 = 46 000 lm seulement).</li>
+    </ul>
+    <p>L'option LED est <strong>conforme aux 500 lx</strong> dès le départ et durable (50 000 h vs 8 000 h pour néons). Recommandation : option (a). Coût installation ~ 1 200 € amorti par durée de vie 5 fois plus longue + meilleur confort visuel.</p>
+  </div>
+</div>
+
+<div class="retenir"><strong>À retenir</strong>
+<ul><li><strong>Flux Φ (lm) :</strong> lumière émise par la source. <strong>Éclairement E (lux) :</strong> lumière reçue (E = Φ/S).</li>
+<li><strong>Norme menuiserie :</strong> 500 lux sur le plan de travail (NF EN 12464-1).</li>
+<li><strong>Efficacité :</strong> LED ≈ 130 lm/W (best), néons 80 lm/W, halogène 18 lm/W (worst).</li>
+<li><strong>LED moderne :</strong> 50 000 h de vie (vs 8 000 h pour néon). Investissement vite rentable.</li></ul></div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

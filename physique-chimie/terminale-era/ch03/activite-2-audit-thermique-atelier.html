@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch03 – Activité 2 – Audit thermique atelier menuiserie – Term ERA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE</a>
+<header>
+  <h1>Activité 2 – Audit caméra thermique d'un atelier de menuiserie <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 3 – Rayonnement thermique et effet de serre | Term Bac Pro (Grpt 3) | Physique – Thermique | ⏱ 35 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
+
+<div class="objectifs"><strong>Objectifs :</strong>
+<ul><li>Interpréter une image de caméra thermique d'un atelier non isolé</li>
+<li>Calculer le coût annuel des pertes thermiques</li>
+<li>Hiérarchiser les travaux d'isolation</li></ul></div>
+
+<div class="situation">
+  <h2>Situation – atelier qui consomme trop en chauffage</h2>
+  <p><em>Léna, ébéniste, gère un atelier de 200 m² construit en 1990 avec une isolation faible. Son chauffage électrique a coûté 4 200 € l'hiver dernier. Elle fait appel à Yanis, technicien en énergie du bâtiment, qui réalise un audit à la caméra thermique par −2 °C extérieur.</em></p>
+
+  <h3>Mesures relevées par la caméra (températures extérieures de paroi)</h3>
+  <table>
+    <thead><tr><th>Élément</th><th>T paroi ext. (°C)</th><th>Pertes estimées</th></tr></thead>
+    <tbody>
+      <tr><td>Toiture (200 m², tôle non isolée)</td><td>+5 °C ⚠️ très chaud</td><td>40 %</td></tr>
+      <tr><td>Murs en parpaing brut (180 m²)</td><td>0 °C tiède</td><td>25 %</td></tr>
+      <tr><td>Portes coulissantes ateliers (24 m²)</td><td>+3 °C très chaud</td><td>15 %</td></tr>
+      <tr><td>Sol béton (200 m²)</td><td>−1 °C légèrement chaud</td><td>10 %</td></tr>
+      <tr><td>Ponts thermiques + ventilation</td><td>(non visible)</td><td>10 %</td></tr>
+    </tbody>
+  </table>
+  <p><em>Plus la paroi extérieure est chaude par rapport à l'extérieur (−2 °C), plus elle est <strong>mal isolée</strong>.</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quels travaux Léna doit-elle prioriser pour réduire au maximum sa facture de chauffage ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Pourquoi la caméra thermique « voit »-elle ce que l'œil ne voit pas ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Tout objet émet un rayonnement infrarouge dont l'intensité dépend de sa température (loi de Stefan : P ∝ T⁴). L'œil ne perçoit que la lumière visible (0,4-0,8 µm) ; la caméra capte les IR thermiques (8-14 µm) et les traduit en couleurs visibles. Les zones plus chaudes apparaissent en rouge/blanc, les zones froides en bleu.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le coût attribuable à chaque élément (sur les 4 200 €/an).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>Toiture : 40 % × 4 200 = <strong>1 680 €/an</strong></li>
+      <li>Murs : 25 % × 4 200 = <strong>1 050 €/an</strong></li>
+      <li>Portes : 15 % × 4 200 = <strong>630 €/an</strong></li>
+      <li>Sol : 10 % × 4 200 = 420 €/an</li>
+      <li>Ponts thermiques : 10 % × 4 200 = 420 €/an</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">VAL</span></h2>
+  <p>Yanis propose 3 chantiers : isoler la toiture par soufflage de laine (40 €/m² → 8 000 €), poser des rideaux thermiques sur les portes (1 200 €), isoler les murs par l'extérieur (180 €/m² → 32 400 €). Quel ordre de priorité ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Critère de priorité = ratio €économie/€investissement :</p>
+    <ul>
+      <li><strong>Toiture</strong> : 1 680 € économisés/an pour 8 000 € → ROI 4,8 ans, supprime 40 % des pertes. <strong>PRIORITÉ 1</strong></li>
+      <li><strong>Rideaux portes</strong> : économie partielle ~ 250 €/an (les portes restent perméables) pour 1 200 € → ROI 5 ans. <strong>PRIORITÉ 2</strong> (rapide à mettre en œuvre)</li>
+      <li><strong>ITE murs</strong> : 1 050 € économisés/an pour 32 400 € → ROI 30 ans. Trop long. À reporter.</li>
+    </ul>
+    <p>Plan : commencer par toiture + rideaux (9 200 € investis, 1 930 €/an économisés, ROI 4,8 ans, et 50 %+ des pertes traitées).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 4 lignes le rapport d'audit de Yanis à Léna.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>Audit thermique — 2 mai 2026. Sur les 4 200 €/an de chauffage, 40 % (1 680 €) s'envolent par la toiture non isolée, 15 % (630 €) par les portes coulissantes. Recommandation : isoler la toiture par soufflage de laine (8 000 €, ROI 4,8 ans) et poser des rideaux thermiques sur les portes (1 200 €, ROI 5 ans). Total ≈ 9 200 € pour économiser ≈ 2 000 €/an. ITE des murs reportée (ROI 30 ans). Aides MaPrimeRénov' applicables sur la toiture.</em></p>
+  </div>
+</div>
+
+<div class="retenir"><strong>À retenir</strong>
+<ul><li><strong>Caméra thermique :</strong> visualise les pertes de chaleur. Plus la paroi est chaude, plus elle est mal isolée.</li>
+<li><strong>Pertes typiques d'un atelier non isolé :</strong> toiture 40 %, murs 25 %, ouvertures 15 %, sol 10 %.</li>
+<li><strong>Priorité de rénovation :</strong> toujours isoler la toiture en premier (rapport coût/efficacité optimal).</li></ul></div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

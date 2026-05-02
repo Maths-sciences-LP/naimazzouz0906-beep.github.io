@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch01 – Activité 3 – Choisir un disjoncteur différentiel – Term ERA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 3 – Choisir un disjoncteur différentiel pour un atelier <span style="font-size:.55em;color:#7c2d12;font-weight:600">FICHE TECHNIQUE</span></h1>
+  <p class="sous-titre">Chapitre 1 – Transporter l'énergie électrique | Terminale Bac Pro (Grpt 3) | Physique – Sécurité électrique | ⏱ 35 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comprendre le rôle d'un disjoncteur différentiel (DDR)</li>
+    <li>Choisir un calibre adapté (intensité nominale, sensibilité)</li>
+    <li>Distinguer les types AC, A, B, F selon les charges</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – mise aux normes électriques d'un atelier</h2>
+  <p><em>Mathéo, électricien intervenant chez un menuisier-agenceur, doit installer le tableau électrique d'un nouvel atelier de 80 m². Il doit choisir des disjoncteurs différentiels (DDR) adaptés aux différents circuits.</em></p>
+
+  <h3>Document 1 — Le rôle du DDR</h3>
+  <p>Un disjoncteur différentiel coupe automatiquement le courant en cas de <strong>fuite à la terre</strong> (par exemple si une personne touche un appareil défectueux). Il protège donc <strong>les personnes contre l'électrocution</strong>, en plus de la protection contre les courts-circuits assurée par le disjoncteur classique.</p>
+  <p>Caractéristiques principales :</p>
+  <ul>
+    <li><strong>Intensité nominale I<sub>n</sub></strong> (16 A, 25 A, 32 A, 40 A, 63 A) : courant max admissible</li>
+    <li><strong>Sensibilité I<sub>Δn</sub></strong> (10 mA, 30 mA, 300 mA, 500 mA) : seuil de fuite qui déclenche la coupure</li>
+    <li><strong>Type</strong> :
+      <ul>
+        <li>AC : courant alternatif sinusoïdal pur (éclairage, chauffage)</li>
+        <li>A : alternatif + composantes pulsées (machines à laver, lave-vaisselle)</li>
+        <li>F : pour onduleurs, chargeurs (charges électroniques)</li>
+        <li>B : tous types y compris DC (bornes recharge VE, panneaux PV)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Document 2 — Norme NF C 15-100 (résidentiel/tertiaire)</h3>
+  <ul>
+    <li>Sensibilité <strong>30 mA obligatoire</strong> pour toute prise et appareil accessible aux personnes</li>
+    <li>Intensité du DDR ≥ somme des intensités des disjoncteurs en aval</li>
+    <li>1 DDR de 30 mA peut protéger <strong>≤ 8 circuits</strong> (au-delà : risque de déclenchement intempestif)</li>
+  </ul>
+
+  <h3>Document 3 — Inventaire des circuits du nouvel atelier</h3>
+  <table>
+    <thead><tr><th>Circuit</th><th>Type d'appareil</th><th>I (A)</th></tr></thead>
+    <tbody>
+      <tr><td>1 — Éclairage LED bureau</td><td>électronique (drivers LED)</td><td>2</td></tr>
+      <tr><td>2 — Éclairage néons atelier</td><td>AC pur</td><td>4</td></tr>
+      <tr><td>3 — Prises bureau (PC, écrans)</td><td>électronique</td><td>10</td></tr>
+      <tr><td>4 — Scie format (3 kW mono)</td><td>moteur</td><td>13</td></tr>
+      <tr><td>5 — Dégauchisseuse (4 kW mono)</td><td>moteur</td><td>17</td></tr>
+      <tr><td>6 — Aspirateur central (5,5 kW tri)</td><td>moteur tri</td><td>10 (par phase)</td></tr>
+      <tr><td>7 — Compresseur (2,2 kW)</td><td>moteur</td><td>10</td></tr>
+      <tr><td>8 — Chauffage électrique (3 kW)</td><td>résistif</td><td>13</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Comment Mathéo doit-il répartir les 8 circuits sur des DDR adaptés (calibre, sensibilité, type) en respectant la norme ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Citer la <strong>fonction principale</strong> d'un DDR. Quelle est la sensibilité obligatoire pour les prises accessibles ? Pourquoi ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Fonction :</strong> couper le courant en cas de fuite à la terre, pour protéger les personnes contre l'électrocution.</p>
+    <p><strong>Sensibilité obligatoire :</strong> <strong>30 mA</strong> pour toute prise/appareil accessible. C'est le seuil au-dessous duquel le courant n'est pas mortel pour un humain en bonne santé (le seuil mortel direct est de 50 mA, on se laisse une marge de sécurité de 1,7).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <p>Mathéo a 2 DDR 40 A / 30 mA disponibles. Sur lequel mettre les circuits ? Justifier en respectant la règle « max 8 circuits par DDR » et les types AC/A/F.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Répartition équilibrée :</p>
+    <ul>
+      <li><strong>DDR n°1 (type F — adapté à l'électronique) :</strong> circuits 1 (LED), 3 (PC bureau), 6 (aspirateur central tri avec variateur de fréquence si présent), 8 (chauffage). 4 circuits, intensité totale ≈ 35 A.</li>
+      <li><strong>DDR n°2 (type A — moteurs) :</strong> circuits 2 (néons), 4 (scie), 5 (dégau), 7 (compresseur). 4 circuits, ≈ 44 A → ATTENTION dépasse 40 A.</li>
+    </ul>
+    <p>En pratique, on protège chaque circuit avec un disjoncteur dédié (16 A pour LED, 32 A pour moteurs lourds, etc.). Le DDR ne se déclenche que si la SOMME des courants entre phase et neutre ne s'équilibre pas (= fuite). Donc le calibre du DDR n'a pas besoin d'égaler la somme arithmétique des disjoncteurs aval.</p>
+    <p>Cependant, pour les surcharges, il faut respecter I<sub>DDR</sub> ≥ I de l'usage simultané maximal. Ici, pas tous les moteurs ne tourneront en même temps → 40 A est suffisant.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">VAL</span></h2>
+  <p>Pourquoi est-il <strong>important</strong> de choisir un DDR de type A ou F pour les circuits avec moteurs ou électronique ? Que se passerait-il avec un type AC ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Un DDR de type AC ne détecte que les fuites en courant alternatif <strong>sinusoïdal pur</strong>. Pour des charges modernes (variateurs, alimentations à découpage, moteurs avec composantes pulsées), une partie du courant de fuite peut être <strong>continue</strong> ou <strong>pulsée</strong>. Le DDR AC ne « voit » pas ces fuites et ne déclenche pas → <strong>danger pour les personnes</strong>.</p>
+    <p>Type A : voit AC + pulsé (95 % des cas modernes).</p>
+    <p>Type F : voit AC + pulsé + composantes haute fréquence (variateurs).</p>
+    <p>Type B : voit tout y compris DC (panneaux PV, bornes VE).</p>
+    <p>Recommandation 2026 : <strong>type A minimum partout</strong>, type F pour les ateliers avec variateurs.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Mathéo trouve un DDR 40 A / 30 mA / type F à 95 €. Il existe aussi un DDR 40 A / 30 mA / type AC à 32 €. Calculer la différence et expliquer en quoi le surcoût de 63 € est justifié.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Différence : 95 − 32 = <strong>63 € par DDR</strong> (× 2 pour l'atelier = 126 € de surcoût total).</p>
+    <p>Justification :</p>
+    <ul>
+      <li>Le type AC est <strong>aveugle</strong> à des fuites courantes en milieu industriel.</li>
+      <li>Risque : électrocution mortelle d'un opérateur si une machine moderne fuit en composante pulsée.</li>
+      <li>Conformité : la norme NF C 15-100 récente impose le type A minimum, et le F est recommandé en industrie.</li>
+    </ul>
+    <p>Le surcoût est négligeable face à la sécurité des personnes et à la responsabilité pénale du chef d'entreprise en cas d'accident.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger la <strong>recommandation finale</strong> de Mathéo au gérant de l'atelier en 4 lignes.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>Recommandation tableau électrique — 2 mai 2026.</em></p>
+    <p><em>Pour votre nouvel atelier, j'installe <strong>2 disjoncteurs différentiels 40 A / 30 mA / type F</strong> protégeant chacun 4 circuits, plus 8 disjoncteurs individuels selon le calibre nécessaire. Le surcoût type F vs AC (~ 130 € total) est indispensable pour protéger les opérateurs face aux fuites complexes des machines modernes (variateurs). Sensibilité 30 mA = norme obligatoire pour la protection des personnes.</em></p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>DDR :</strong> protège les <strong>personnes</strong> contre l'électrocution (détection fuite à la terre).</li>
+    <li><strong>Sensibilité 30 mA</strong> obligatoire pour tout circuit accessible (norme NF C 15-100).</li>
+    <li><strong>Types :</strong> AC (sinus pur) → A (+ pulsé) → F (+ HF) → B (+ DC). En atelier moderne : <strong>F minimum</strong>.</li>
+    <li><strong>Règle « 8 circuits max » par DDR 30 mA</strong> pour éviter les déclenchements intempestifs.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Activité 3 – Vitesse de coupe d'une dégauchisseuse – Term ERA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE</a>
+<header>
+  <h1>Activité 3 – Vitesse de coupe d'une dégauchisseuse-raboteuse <span style="font-size:.55em;color:#7c2d12;font-weight:600">FICHE TECHNIQUE</span></h1>
+  <p class="sous-titre">Chapitre 4 – Vitesse et accélération | Term Bac Pro (Grpt 3) | Mécanique | ⏱ 35 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
+
+<div class="objectifs"><strong>Objectifs :</strong>
+<ul><li>Distinguer vitesse de rotation (tr/min) et vitesse linéaire (m/s)</li>
+<li>Calculer la vitesse linéaire d'un point d'un fer de rabot</li>
+<li>Comprendre l'effet de la vitesse de coupe sur la qualité de la coupe</li></ul></div>
+
+<div class="situation">
+  <h2>Situation – pourquoi 5000 tr/min ?</h2>
+  <p><em>Karim, ébéniste, achète une nouvelle dégauchisseuse-raboteuse. La fiche annonce : « Arbre porte-fers Ø 75 mm, vitesse 5 000 tr/min, vitesse de coupe 19,6 m/s. » Karim se demande comment ces 3 chiffres sont liés et pourquoi ils importent pour la qualité de coupe.</em></p>
+
+  <h3>Document — Vitesse linéaire d'un point en rotation</h3>
+  <p>Pour un arbre de rayon r tournant à la fréquence n (tours par seconde) :</p>
+  <p style="text-align:center"><strong>v<sub>linéaire</sub> = 2π × r × n</strong> &nbsp;&nbsp;&nbsp; (v en m/s, r en m, n en tr/s)</p>
+  <p>Ou en fonction de tr/min :</p>
+  <p style="text-align:center"><strong>v = 2π × r × N / 60</strong> &nbsp;&nbsp;&nbsp; (N en tr/min)</p>
+  <p>La <strong>qualité de la coupe</strong> du bois dépend de la vitesse linéaire du tranchant : trop lente → arrachement de fibres ; trop rapide → brûlure du bois.</p>
+  <p>Vitesses de coupe recommandées : 18-25 m/s pour le bois feuillu, 30-50 m/s pour le bois résineux.</p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Comment passer de la vitesse de rotation (5 000 tr/min) à la vitesse de coupe (m/s), et pourquoi cette dernière est la grandeur clé ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Convertir 5 000 tr/min en tr/s.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>n = 5 000 / 60 ≈ <strong>83,3 tr/s</strong> (ou 83,3 Hz)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la vitesse linéaire d'un point situé sur le tranchant d'un fer (à r = 75/2 = 37,5 mm de l'axe).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>r = 0,0375 m</p>
+    <p>v = 2π × 0,0375 × 83,3 = 19,6 m/s ✓ (cohérent avec la fiche).</p>
+    <p>Ou en km/h : 19,6 × 3,6 ≈ <strong>71 km/h</strong>. Le tranchant du fer file à 71 km/h !</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>Karim envisage de passer la vitesse à 4 000 tr/min (en sous-rotation). Calculer la nouvelle vitesse de coupe et conclure sur la qualité.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>v' = 2π × 0,0375 × (4000/60) = <strong>15,7 m/s</strong></p>
+    <p>15,7 m/s est <strong>en dessous</strong> de la plage recommandée pour le feuillu (18-25 m/s). Risque d'arrachement de fibres, surface de moins bonne qualité, surconsommation des fers (qui forcent davantage).</p>
+    <p>Conclusion : <strong>conserver 5 000 tr/min</strong> pour le bois feuillu.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Un fabricant propose une autre dégauchisseuse à 6 000 tr/min, mais avec un arbre Ø 60 mm. Quelle est sa vitesse de coupe ? Comparer.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>r = 0,030 m, n = 100 tr/s</p>
+    <p>v = 2π × 0,030 × 100 = <strong>18,8 m/s</strong></p>
+    <p>Comparable au modèle de Karim (19,6 m/s), légèrement inférieure. Les 2 sont dans la bonne plage. Le choix se fera sur d'autres critères (largeur, bruit, prix).</p>
+  </div>
+</div>
+
+<div class="retenir"><strong>À retenir</strong>
+<ul><li><strong>v<sub>linéaire</sub> = 2π × r × n</strong> (n en tr/s) ou <strong>v = π × D × N / 60</strong> (N en tr/min).</li>
+<li><strong>Vitesse de coupe optimale</strong> : 18-25 m/s feuillu, 30-50 m/s résineux. Trop lente = arrachement, trop rapide = brûlure.</li>
+<li><strong>Astuce :</strong> doubler le diamètre (à n constant) double la vitesse de coupe. Doubler la vitesse de rotation aussi.</li></ul></div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
