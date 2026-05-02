@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch01 – Activité 2 – Mesure de puissance avec wattmètre prise – Terminale ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 2 – Mesure de puissance avec un wattmètre prise <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 1 – Évaluer la puissance consommée | Terminale Bac Pro (Grpt 1) | Physique – Électricité | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Lire les indications d'un wattmètre prise (U, I, P, cos φ)</li>
+    <li>Calculer la puissance apparente S = U × I et le facteur de puissance cos φ = P/S</li>
+    <li>Classer des appareils selon leur nature (résistive, inductive, électronique)</li>
+  </ul>
+</div>
+
+<p style="margin:8px 0;padding:8px 12px;background:#fef3c7;border-left:3px solid #b45309;font-size:.9em">
+  💡 Notions centrales : <a href="lecon.html">leçon</a> §3 (puissance active P, apparente S) et §4 (facteur de puissance cos φ).
+</p>
+
+<!-- ===== SITUATION ===== -->
+<div class="situation">
+  <h2>Situation – audit énergétique d'une maison</h2>
+  <p><em>Sarah, technicienne en maintenance énergétique, réalise un audit chez un client qui se plaint d'une facture d'électricité élevée. Elle utilise un <strong>wattmètre prise</strong> (modèle Voltcraft Energy Logger 4000) qu'elle branche entre la prise murale et chaque appareil pendant son fonctionnement. L'écran affiche U, I, P et le cos φ.</em></p>
+
+  <!-- SVG wattmètre prise -->
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 520 280" style="max-width:520px;display:block;margin:0 auto" role="img" aria-label="Schéma : prise murale, wattmètre prise branché dessus, appareil branché sur le wattmètre. Le wattmètre affiche U=230V, I=6,5A, P=1495W, cos φ=1,00.">
+      <defs>
+        <linearGradient id="gradMur" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#fef3c7"/>
+          <stop offset="100%" stop-color="#fde68a"/>
+        </linearGradient>
+        <style>
+          .mur{fill:url(#gradMur);stroke:#92400e;stroke-width:1.5}
+          .wattmetre{fill:#f1f5f9;stroke:#1e293b;stroke-width:2}
+          .ecran{fill:#0f172a;stroke:#1e293b;stroke-width:1.5}
+          .lcd{font:600 11px monospace;fill:#22c55e}
+          .pin{fill:#94a3b8;stroke:#475569;stroke-width:1}
+          .cable{stroke:#1f2937;stroke-width:3;fill:none;stroke-linecap:round}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+
+      <text class="ti" x="260" y="20">Wattmètre prise — mesure d'une charge domestique</text>
+
+      <!-- Mur de fond -->
+      <rect class="mur" x="20" y="40" width="160" height="220" rx="3"/>
+      <text class="lbl" x="100" y="55" text-anchor="middle" font-style="italic" fill="#7c2d12">mur (prise 230 V)</text>
+
+      <!-- Prise murale -->
+      <rect x="60" y="120" width="80" height="80" rx="6" fill="#fff" stroke="#475569" stroke-width="2"/>
+      <circle cx="85" cy="155" r="4" fill="#1f2937"/>
+      <circle cx="115" cy="155" r="4" fill="#1f2937"/>
+      <circle cx="100" cy="180" r="3" fill="#9ca3af"/>
+      <text class="lbl" x="100" y="225" text-anchor="middle">prise murale</text>
+
+      <!-- Wattmètre -->
+      <rect class="wattmetre" x="200" y="80" width="180" height="180" rx="10"/>
+      <!-- Écran LCD -->
+      <rect class="ecran" x="215" y="100" width="150" height="80" rx="4"/>
+      <text class="lcd" x="225" y="120">U = 230 V</text>
+      <text class="lcd" x="225" y="138">I = 6,50 A</text>
+      <text class="lcd" x="225" y="156">P = 1495 W</text>
+      <text class="lcd" x="225" y="174">cos φ = 1,00</text>
+
+      <!-- Boutons -->
+      <circle cx="240" cy="220" r="8" fill="#dc2626" stroke="#7f1d1d" stroke-width="1"/>
+      <circle cx="270" cy="220" r="8" fill="#16a34a" stroke="#14532d" stroke-width="1"/>
+      <circle cx="300" cy="220" r="8" fill="#0969da" stroke="#1e3a8a" stroke-width="1"/>
+      <text class="lbl" x="290" y="245" text-anchor="middle" font-size="9">RESET / MODE / SET</text>
+
+      <!-- Broches du wattmètre vers la prise -->
+      <line class="cable" x1="200" y1="155" x2="140" y2="155"/>
+      <circle cx="190" cy="148" r="3" fill="#9ca3af"/>
+      <circle cx="190" cy="162" r="3" fill="#9ca3af"/>
+
+      <!-- Sortie vers appareil -->
+      <line class="cable" x1="380" y1="170" x2="430" y2="170"/>
+      <line class="cable" x1="430" y1="170" x2="430" y2="220"/>
+
+      <!-- Appareil (sèche-cheveux stylisé) -->
+      <ellipse cx="475" cy="220" rx="35" ry="20" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+      <rect x="455" y="235" width="40" height="20" rx="3" fill="#475569" stroke="#1f2937" stroke-width="1.5"/>
+      <text class="lbl" x="475" y="270" text-anchor="middle">appareil</text>
+      <text class="lbl" x="475" y="195" text-anchor="middle" fill="#0969da" font-weight="bold">sèche-cheveux</text>
+
+      <!-- Légende sens du courant -->
+      <path d="M 152 110 L 192 110" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrR)"/>
+      <text class="lbl" x="172" y="105" text-anchor="middle" fill="#b91c1c" font-weight="bold">230 V</text>
+      <defs>
+        <marker id="arrR" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+          <polygon points="0,0 8,4 0,8" fill="#dc2626"/>
+        </marker>
+      </defs>
+    </svg>
+  </div>
+
+  <h3>Mesures relevées par Sarah pour 4 appareils</h3>
+  <table>
+    <thead>
+      <tr><th>Appareil</th><th>U (V)</th><th>I (A)</th><th>P mesurée (W)</th><th>cos φ affiché</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Sèche-cheveux (1 500 W annoncé)</td><td>230</td><td>6,50</td><td>1 495</td><td>1,00</td></tr>
+      <tr><td>Réfrigérateur (compresseur en marche)</td><td>230</td><td>0,90</td><td>145</td><td>0,70</td></tr>
+      <tr><td>Lave-linge (en chauffe)</td><td>230</td><td>9,50</td><td>2 185</td><td>1,00</td></tr>
+      <tr><td>Box internet + chargeur USB</td><td>230</td><td>0,15</td><td>12</td><td>0,35</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Pourquoi le facteur de puissance cos φ varie-t-il autant d'un appareil à l'autre, et comment expliquer ces différences à partir de la nature des appareils ?
+</div>
+
+<!-- ===== QUESTIONS ===== -->
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Citer les <strong>cinq grandeurs</strong> affichées (ou calculables) par un wattmètre prise. Donner le symbole et l'unité de chacune.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>Grandeur</th><th>Symbole</th><th>Unité</th></tr></thead>
+      <tbody>
+        <tr><td>Tension (efficace)</td><td>U</td><td>V (volts)</td></tr>
+        <tr><td>Intensité (efficace)</td><td>I</td><td>A (ampères)</td></tr>
+        <tr><td>Puissance active</td><td>P</td><td>W (watts)</td></tr>
+        <tr><td>Puissance apparente</td><td>S = U×I</td><td>VA (volt-ampères)</td></tr>
+        <tr><td>Facteur de puissance</td><td>cos φ = P/S</td><td>sans unité</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la puissance apparente S = U × I pour les 4 appareils, et compléter le tableau.</p>
+  <table>
+    <thead><tr><th>Appareil</th><th>U×I (VA)</th></tr></thead>
+    <tbody>
+      <tr><td>Sèche-cheveux</td><td>……</td></tr>
+      <tr><td>Réfrigérateur</td><td>……</td></tr>
+      <tr><td>Lave-linge</td><td>……</td></tr>
+      <tr><td>Box + chargeur</td><td>……</td></tr>
+    </tbody>
+  </table>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>Sèche-cheveux : 230 × 6,50 = <strong>1 495 VA</strong></li>
+      <li>Réfrigérateur : 230 × 0,90 = <strong>207 VA</strong></li>
+      <li>Lave-linge : 230 × 9,50 = <strong>2 185 VA</strong></li>
+      <li>Box + chargeur : 230 × 0,15 = <strong>34,5 VA</strong></li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Vérifier la cohérence du cos φ affiché en calculant cos φ = P / S pour chaque appareil.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>Sèche-cheveux : 1 495 / 1 495 = <strong>1,00</strong> ✓</li>
+      <li>Réfrigérateur : 145 / 207 = <strong>0,70</strong> ✓</li>
+      <li>Lave-linge : 2 185 / 2 185 = <strong>1,00</strong> ✓</li>
+      <li>Box + chargeur : 12 / 34,5 = <strong>0,35</strong> ✓</li>
+    </ul>
+    <p>Les valeurs calculées correspondent à celles affichées par le wattmètre.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>D'après leur facteur de puissance, classer les 4 appareils en 3 catégories :</p>
+  <ul>
+    <li><strong>Charge résistive</strong> (cos φ ≈ 1) : l'appareil convertit l'électricité en chaleur.</li>
+    <li><strong>Charge inductive</strong> (0,5 ≲ cos φ ≲ 0,9) : l'appareil contient un moteur ou un transformateur.</li>
+    <li><strong>Charge non-linéaire / électronique</strong> (cos φ &lt; 0,5) : l'appareil contient une alimentation à découpage (transformateur électronique).</li>
+  </ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li><strong>Charges résistives :</strong> sèche-cheveux et lave-linge (en phase de chauffe) — leur résistance chauffante est presque purement résistive.</li>
+      <li><strong>Charge inductive :</strong> réfrigérateur — son compresseur contient un moteur asynchrone qui crée un déphasage entre U et I.</li>
+      <li><strong>Charge non-linéaire :</strong> box + chargeur USB — leurs alimentations à découpage déforment le courant et donnent un cos φ très faible.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Sarah dit au client : « C'est la box qui a le plus mauvais cos φ. Pourtant, elle ne consomme presque rien. C'est paradoxal, non ? »</p>
+  <p>Expliquer ce qu'elle veut dire et pourquoi un mauvais cos φ d'un petit appareil n'est pas un problème.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le cos φ de la box (0,35) est très bas, ce qui signifie qu'elle « gaspille » du courant réactif. Mais comme la puissance active P consommée est très faible (12 W seulement), l'impact en valeur absolue reste négligeable :</p>
+    <ul>
+      <li>S apparente = 34,5 VA → mais seulement 12 W d'énergie réelle consommée.</li>
+      <li>Différence = 22 VA d'énergie réactive — ce qui ne représente <strong>quasiment rien</strong> à l'échelle d'un foyer.</li>
+    </ul>
+    <p>Le problème devient sérieux uniquement <strong>en milieu industriel</strong> : avec des moteurs de plusieurs kW à cos φ = 0,5 ou 0,6, EDF facture une pénalité pour la puissance réactive (« tg φ » sur la facture).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">REA</span></h2>
+  <p>Le client laisse tourner la box <strong>24h/24</strong>. Calculer son énergie consommée annuellement (en kWh) et son coût annuel au tarif EDF de 0,20 €/kWh.</p>
+  <p><em>Aide : 1 an = 8 760 h.</em></p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>E = P × t = 12 × 8 760 = 105 120 Wh = <strong>105 kWh/an</strong></p>
+    <p>Coût = 105 × 0,20 = <strong>21 €/an</strong></p>
+    <p>C'est faible, mais cumulé pour les 5 ou 6 appareils en veille permanente d'un foyer (box, frigo, télé, four micro-ondes, chargeurs branchés…), on arrive vite à <strong>100 à 150 €/an</strong> de consommations « invisibles ».</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes la note de Sarah au client, qui répond à la problématique :</p>
+  <ul>
+    <li>quels sont les types d'appareils qui ont un bon ou mauvais cos φ ?</li>
+    <li>pourquoi ce n'est pas grave en habitat individuel ?</li>
+    <li>une astuce pour réduire la facture d'électricité (autre que cos φ).</li>
+  </ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>Note pour le client — audit énergétique du 2 mai 2026.</em></p>
+    <p><em>Le facteur de puissance varie selon la nature des appareils : excellent (cos φ ≈ 1) pour les appareils à résistance chauffante (sèche-cheveux, lave-linge en chauffe, four), moyen (0,7) pour les appareils contenant un moteur (réfrigérateur, machine à laver en essorage), médiocre (0,3 à 0,5) pour les appareils électroniques (box, télé, chargeurs). Dans une maison, ces écarts ne sont pas problématiques car la facture EDF résidentielle ne pénalise que la puissance active. Pour réduire votre facture, le levier le plus efficace est plutôt de <strong>débrancher les appareils en veille</strong> qui consomment 100 à 150 €/an pour rien.</em></p>
+  </div>
+</div>
+
+<!-- ===== A RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Wattmètre prise :</strong> outil de terrain qui affiche U, I, P et cos φ pour n'importe quel appareil branché sur 230 V.</li>
+    <li><strong>Trois grandeurs liées :</strong> S = U × I (apparente, VA), P (active, W), cos φ = P/S.</li>
+    <li><strong>Nature de la charge :</strong> résistive (cos φ ≈ 1, chauffage) ; inductive (0,5–0,9, moteurs) ; électronique (&lt; 0,5, alimentations à découpage).</li>
+    <li><strong>Cos φ et facture résidentielle :</strong> EDF ne pénalise PAS le mauvais cos φ chez les particuliers — seulement les industriels au-delà d'un seuil.</li>
+    <li><strong>Vraie économie domestique :</strong> traquer les consommations en veille (24h/24), pas le cos φ.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

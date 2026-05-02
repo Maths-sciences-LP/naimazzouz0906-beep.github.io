@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch01 – Activité 3 – Diagnostic d'une facture EDF d'atelier – Terminale ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.facture{background:#fff;border:2px solid #1e40af;border-radius:8px;padding:0;margin:14px 0;box-shadow:0 4px 12px rgba(0,0,0,.1);overflow:hidden;font-family:'Times New Roman',serif}
+.facture-header{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.facture-header h3{margin:0;color:#fff;border:none;font-size:1.15em;font-family:Arial,sans-serif}
+.facture-body{padding:18px 22px}
+.facture-body h4{color:#1e40af;border-bottom:1px solid #cbd5e1;padding-bottom:4px;margin:14px 0 8px;font-family:Arial,sans-serif}
+.facture-row{display:flex;justify-content:space-between;padding:5px 0;font-size:.93em;border-bottom:1px dashed #e2e8f0}
+.facture-row.alert{background:#fee2e2;color:#991b1b;font-weight:600;padding:6px 8px;border-radius:4px;border:none}
+.facture-total{display:flex;justify-content:space-between;padding:10px 8px;background:#dbeafe;font-weight:700;color:#1e3a8a;border-radius:4px;margin-top:10px;font-size:1.05em}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 3 – Diagnostic d'une facture EDF d'atelier <span style="font-size:.55em;color:#b91c1c;font-weight:600">DIAGNOSTIC</span></h1>
+  <p class="sous-titre">Chapitre 1 – Évaluer la puissance consommée | Terminale Bac Pro (Grpt 1) | Physique – Électricité | ⏱ 40 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Lire une facture d'électricité industrielle</li>
+    <li>Calculer puissance active P, apparente S et réactive Q</li>
+    <li>Comprendre l'origine de la pénalité « tg φ » et proposer une solution (compensation par condensateurs)</li>
+  </ul>
+</div>
+
+<p style="margin:8px 0;padding:8px 12px;background:#fef3c7;border-left:3px solid #b45309;font-size:.9em">
+  💡 Notions centrales : <a href="lecon.html">leçon</a> §3 (P, S, Q), §4 (cos φ), §5 (triangle des puissances) et §9 (applications industrielles).
+</p>
+
+<!-- ===== SITUATION ===== -->
+<div class="situation">
+  <h2>Situation – Mehdi reçoit une facture surprenante</h2>
+  <p><em>Mehdi gère un atelier de tournage industriel avec 4 moteurs asynchrones de 5 kW. Il reçoit la facture EDF du mois et tombe sur une ligne « pénalité énergie réactive » de plus de 200 €. Il appelle Karim, consultant énergétique, qui explique le problème et propose une solution : installer une <strong>batterie de condensateurs</strong> pour compenser le facteur de puissance.</em></p>
+
+  <h3>Facture EDF — Atelier tournage MEHDI SARL — Avril 2026</h3>
+
+  <div class="facture">
+    <div class="facture-header">
+      <h3>⚡ EDF Entreprises — Facture mensuelle</h3>
+      <span style="font-size:.85em;opacity:.9">Référence : 2026-04 / Tarif Vert option base</span>
+    </div>
+    <div class="facture-body">
+      <h4>Caractéristiques du contrat</h4>
+      <div class="facture-row"><span>Puissance souscrite</span><span>30 kVA</span></div>
+      <div class="facture-row"><span>Type d'utilisation</span><span>Atelier mécanique — 22 jours × 8 h/jour</span></div>
+      <div class="facture-row"><span>Période de facturation</span><span>1 au 30 avril 2026</span></div>
+
+      <h4>Énergie consommée</h4>
+      <div class="facture-row"><span>Énergie active consommée</span><span>3 520 kWh</span></div>
+      <div class="facture-row"><span>Énergie réactive consommée</span><span>4 110 kVARh</span></div>
+      <div class="facture-row"><span>Tg φ moyen mesuré</span><span>1,17 (équivalent cos φ ≈ 0,65)</span></div>
+
+      <h4>Tarification</h4>
+      <div class="facture-row"><span>Énergie active : 3 520 kWh × 0,15 €/kWh</span><span>528,00 €</span></div>
+      <div class="facture-row"><span>Abonnement mensuel 30 kVA</span><span>72,00 €</span></div>
+      <div class="facture-row alert"><span>⚠ Pénalité énergie réactive (au-delà de 40 % de E active) :<br>&nbsp;&nbsp;&nbsp;(4 110 − 0,4 × 3 520) × 0,02 €/kVARh = 2 702 × 0,02 €</span><span>54,04 €</span></div>
+      <div class="facture-row alert"><span>⚠ Dépassement puissance souscrite (pointe à 36 kVA)</span><span>148,00 €</span></div>
+
+      <div class="facture-total"><span>TOTAL HT à régler</span><span>802,04 €</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Pourquoi Mehdi paie-t-il une pénalité « énergie réactive », et comment Karim peut-il l'aider à supprimer cette ligne grâce à une batterie de condensateurs ?
+</div>
+
+<!-- ===== QUESTIONS ===== -->
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Identifier sur la facture les <strong>3 énergies</strong> mentionnées et leur unité. Donner aussi la grandeur trigonométrique mesurée par EDF en lien avec le facteur de puissance.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li><strong>Énergie active</strong> : 3 520 kWh — l'énergie réellement convertie en travail/chaleur.</li>
+      <li><strong>Énergie réactive</strong> : 4 110 kVARh — l'énergie échangée entre le réseau et les bobinages des moteurs (sans travail utile).</li>
+      <li><strong>Énergie apparente</strong> : non écrite explicitement, mais c'est la « somme » des deux (au sens du triangle des puissances).</li>
+      <li><strong>Tg φ</strong> = Q/P = énergie réactive / énergie active = 4 110 / 3 520 ≈ <strong>1,17</strong>. Quand tg φ &gt; 0,4, EDF facture une pénalité.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la puissance active <strong>moyenne</strong> P, la puissance réactive <strong>moyenne</strong> Q et la puissance apparente S sur le mois (en kW, kVAR et kVA).</p>
+  <p><em>Aide : durée de fonctionnement = 22 jours × 8 h = 176 h. P (kW) = E active (kWh) / durée (h).</em></p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>Durée : 22 × 8 = <strong>176 h</strong></li>
+      <li>P = 3 520 / 176 = <strong>20 kW</strong></li>
+      <li>Q = 4 110 / 176 ≈ <strong>23,4 kVAR</strong></li>
+      <li>S = √(P² + Q²) = √(20² + 23,4²) = √(400 + 547,6) = √947,6 ≈ <strong>30,8 kVA</strong></li>
+    </ul>
+    <p>Vérification cos φ = P/S = 20 / 30,8 ≈ <strong>0,65</strong> ✓ (correspond à la facture).</p>
+  </div>
+</div>
+
+<!-- SVG triangle des puissances avant et après -->
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>Le triangle des puissances illustre la relation entre P, Q et S. Sur le schéma ci-dessous, identifier les 3 puissances et expliquer pourquoi un mauvais cos φ <strong>fait travailler le réseau pour rien</strong>.</p>
+
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 320" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Triangle des puissances : côté horizontal P (active), côté vertical Q (réactive), hypoténuse S (apparente). Angle phi entre P et S. À gauche : situation actuelle de l'atelier P=20 kW, Q=23 kVAR, S=31 kVA, phi grand. À droite : situation après compensation par condensateurs P=20 kW, Q=6,4 kVAR, S=21 kVA, phi petit.">
+      <defs>
+        <style>
+          .axis{stroke:#1a202c;stroke-width:1.5}
+          .triA{fill:#fee2e2;stroke:#dc2626;stroke-width:2.2}
+          .triB{fill:#dcfce7;stroke:#16a34a;stroke-width:2.2}
+          .lblP{font:600 11px sans-serif;fill:#1d4ed8}
+          .lblQ{font:600 11px sans-serif;fill:#7c3aed}
+          .lblS{font:700 12px sans-serif;fill:#b91c1c}
+          .lblSb{font:700 12px sans-serif;fill:#15803d}
+          .lblphi{font:600 12px sans-serif;fill:#0f172a;font-style:italic}
+          .arc{fill:none;stroke:#475569;stroke-width:1.3}
+          .ti{font:700 12px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+
+      <!-- Cas A : avant compensation -->
+      <text class="ti" x="130" y="22">Avant compensation (atelier seul)</text>
+      <!-- Triangle : P horizontal de (40, 270) à (240, 270), Q vertical de (40, 270) à (40, 35), S hypoténuse -->
+      <!-- Pour cos φ ≈ 0,65 : P/S = 0,65 ; on prend P=200 px (20 kW × 10), donc S=200/0,65=308 px, Q=√(308²-200²)=234 px -->
+      <!-- En pixels : P=20 kW → 200 px, Q=23,4 kVAR → 234 px, S=30,8 kVA → 308 px -->
+      <!-- Mais 234 px en haut serait y=270-234=36 → OK, dans le cadre -->
+      <polygon class="triA" points="40,270 200,270 40,30"/>
+      <line class="axis" x1="40" y1="270" x2="200" y2="270"/>
+      <line class="axis" x1="40" y1="270" x2="40" y2="30"/>
+
+      <text class="lblP" x="120" y="290" text-anchor="middle">P = 20 kW (active)</text>
+      <text class="lblQ" x="20" y="150" transform="rotate(-90 20 150)" text-anchor="middle">Q = 23,4 kVAR (réactive)</text>
+      <text class="lblS" x="135" y="155" transform="rotate(-56 135 155)" text-anchor="middle">S ≈ 31 kVA</text>
+      <!-- Arc de phi -->
+      <path class="arc" d="M 75 270 A 35 35 0 0 0 64 248"/>
+      <text class="lblphi" x="78" y="258">φ ≈ 49°</text>
+
+      <text x="120" y="312" text-anchor="middle" font-size="11" fill="#7f1d1d" font-weight="600">cos φ = 0,65 — pénalité EDF</text>
+
+      <!-- Cas B : après compensation -->
+      <text class="ti" x="410" y="22">Après compensation (condensateurs)</text>
+      <!-- Pour cos φ ≈ 0,95 : P/S = 0,95 ; P=200 px, S=200/0,95=210 px, Q=√(210²-200²)=64 px -->
+      <polygon class="triB" points="320,270 480,270 320,206"/>
+      <line class="axis" x1="320" y1="270" x2="480" y2="270"/>
+      <line class="axis" x1="320" y1="270" x2="320" y2="30"/>
+
+      <text class="lblP" x="400" y="290" text-anchor="middle">P = 20 kW (inchangée)</text>
+      <text class="lblQ" x="305" y="240" transform="rotate(-90 305 240)" text-anchor="middle">Q = 6,4 kVAR</text>
+      <text class="lblSb" x="395" y="232" transform="rotate(-22 395 232)" text-anchor="middle">S ≈ 21 kVA</text>
+      <!-- Arc de phi (petit) -->
+      <path class="arc" d="M 355 270 A 35 35 0 0 0 353 258"/>
+      <text class="lblphi" x="370" y="262">φ ≈ 18°</text>
+
+      <text x="400" y="312" text-anchor="middle" font-size="11" fill="#14532d" font-weight="600">cos φ = 0,95 — pas de pénalité</text>
+
+      <!-- Flèche de transformation -->
+      <path d="M 230 150 L 290 150" stroke="#0969da" stroke-width="3" fill="none" marker-end="url(#arrTransfo)"/>
+      <text x="260" y="142" text-anchor="middle" font-size="11" fill="#0969da" font-weight="bold">+ condensateurs</text>
+      <defs>
+        <marker id="arrTransfo" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+          <polygon points="0,0 10,5 0,10" fill="#0969da"/>
+        </marker>
+      </defs>
+
+    </svg>
+  </div>
+
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le triangle des puissances montre :</p>
+    <ul>
+      <li>P (côté horizontal, actif) : c'est l'énergie <strong>utile</strong> qui fait tourner les moteurs. Mehdi en a besoin.</li>
+      <li>Q (côté vertical, réactif) : c'est l'énergie qui <strong>oscille</strong> entre le réseau et les bobinages des moteurs sans produire de travail.</li>
+      <li>S (hypoténuse, apparente) : c'est l'énergie totale que le réseau doit transporter — câbles, transformateurs, lignes haute tension dimensionnés sur S, pas sur P.</li>
+    </ul>
+    <p>Avec cos φ = 0,65, le réseau doit transporter <strong>30,8 kVA</strong> alors que seulement <strong>20 kW</strong> sont utiles. EDF facture donc une pénalité car la pénalité couvre les pertes en ligne et l'usure prématurée du réseau.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Karim propose d'installer une <strong>batterie de condensateurs</strong> de 17 kVAR. Cette batterie « fournit » localement de la puissance réactive, ce qui réduit Q vue par le réseau.</p>
+  <p>Calculer la nouvelle puissance réactive Q', le nouveau cos φ', et la nouvelle puissance apparente S'.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>Q' = Q − Q<sub>condo</sub> = 23,4 − 17 = <strong>6,4 kVAR</strong></li>
+      <li>S' = √(P² + Q'²) = √(20² + 6,4²) = √(400 + 41) = √441 ≈ <strong>21 kVA</strong></li>
+      <li>cos φ' = P / S' = 20 / 21 ≈ <strong>0,95</strong></li>
+    </ul>
+    <p>Le nouveau cos φ' = 0,95 est <strong>au-dessus du seuil de pénalité</strong> (qui correspond à cos φ &gt; 0,93 environ, soit tg φ &lt; 0,4).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer l'<strong>économie annuelle</strong> réalisée par Mehdi grâce à la batterie de condensateurs (suppression de la pénalité réactive de 54 €/mois) et le <strong>temps de retour sur investissement</strong> si la batterie coûte 1 800 € installée.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>Économie mensuelle : 54 €</li>
+      <li>Économie annuelle : 54 × 12 = <strong>648 €/an</strong></li>
+      <li>Temps de retour : 1 800 / 648 ≈ <strong>2,8 ans</strong>, soit environ <strong>33 mois</strong>.</li>
+    </ul>
+    <p>De plus, en réduisant la puissance apparente S de 30,8 → 21 kVA, Mehdi <strong>sort des dépassements de puissance souscrite</strong> (148 €/mois supplémentaires sur la facture). Le retour sur investissement est en réalité <strong>encore plus court</strong> (de l'ordre d'1 an).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Un autre client, propriétaire d'un atelier qui ne fonctionne <strong>que 2h par semaine</strong>, a aussi un mauvais cos φ. Karim recommande-t-il les condensateurs ? Justifier.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Non, pas forcément.</strong> La pénalité réactive est proportionnelle au temps d'utilisation. Si l'atelier ne fonctionne que 2h/semaine (≈ 100 h/an au lieu de 2 100 h pour Mehdi), la pénalité annuelle ne sera que de l'ordre de :</p>
+    <p>54 € × 100 / 2 100 ≈ <strong>2,5 €/an</strong></p>
+    <p>Avec un coût d'investissement de 1 800 €, le retour serait de <strong>700 ans</strong> — économiquement absurde. Karim recommandera plutôt de revoir le contrat ou d'accepter la petite pénalité.</p>
+    <p><em>Règle générale :</em> les condensateurs ne sont rentables que pour des installations <strong>fonctionnant régulièrement</strong> avec une puissance significative.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5–7 lignes le compte-rendu que Karim laisse à Mehdi, qui répond à la problématique :</p>
+  <ul>
+    <li>diagnostic chiffré (origine de la pénalité)</li>
+    <li>solution proposée et son fonctionnement</li>
+    <li>économies attendues et retour sur investissement</li>
+  </ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>Compte-rendu — Atelier Mehdi SARL — 2 mai 2026.</em></p>
+    <p><em>Votre facture EDF présente une pénalité de 54 €/mois pour énergie réactive excessive. Cette pénalité vient de vos 4 moteurs asynchrones (5 kW chacun) qui consomment beaucoup de puissance réactive : votre cos φ moyen est de 0,65 alors que le seuil EDF est à 0,93. Concrètement, vous payez 31 kVA d'énergie au réseau alors que vous n'en utilisez réellement que 20 kW.</em></p>
+    <p><em>La solution est d'installer une <strong>batterie de condensateurs de 17 kVAR</strong> en tête d'installation. Les condensateurs fournissent localement la puissance réactive dont les moteurs ont besoin — le réseau n'a plus à la transporter. Votre nouveau cos φ passera à 0,95 : pénalité supprimée et puissance souscrite réduite.</em></p>
+    <p><em>Coût installation : 1 800 €. Économies : 648 €/an de pénalité réactive + ~600 €/an de pénalité dépassement = <strong>~1 250 €/an</strong>. Retour sur investissement &lt; 1,5 an. Je recommande la mise en place.</em></p>
+  </div>
+</div>
+
+<!-- ===== A RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Triangle des puissances :</strong> S² = P² + Q². L'apparente S est ce que le réseau doit transporter ; l'active P est ce qui produit du travail ; la réactive Q « oscille » sans rien produire.</li>
+    <li><strong>cos φ = P/S</strong> et <strong>tg φ = Q/P</strong>. EDF facture une pénalité au-delà de tg φ = 0,4 (soit cos φ &lt; 0,93).</li>
+    <li><strong>Compensation par condensateurs :</strong> les condensateurs « stockent » l'énergie réactive localement → le réseau ne la transporte plus → cos φ remonte → pas de pénalité.</li>
+    <li><strong>Rentabilité :</strong> les condensateurs sont rentables uniquement pour des installations fortement utilisées (industrie, commerce). Inutile dans un habitat individuel.</li>
+    <li><strong>Lien avec la pratique :</strong> tout atelier mécanique avec moteurs asynchrones ≥ 10 kW devrait être compensé.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
