@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch07 – Activité 4 – Protection d'une coque de bateau – Terminale ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 4 – Protection d'une coque de bateau en milieu marin <span style="font-size:.55em;color:#059669;font-weight:600">ÉTUDE DOCUMENTAIRE</span></h1>
+  <p class="sous-titre">Chapitre 7 – Oxydoréduction et corrosion | Terminale Bac Pro (Grpt 1) | Chimie | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comprendre l'agressivité particulière du milieu marin pour les métaux</li>
+    <li>Comparer 3 méthodes de protection (peinture, anode sacrificielle, courant imposé)</li>
+    <li>Faire le lien entre une protection « bateau » et une protection « cuve enterrée »</li>
+  </ul>
+</div>
+
+<p style="margin:8px 0;padding:8px 12px;background:#fef3c7;border-left:3px solid #b45309;font-size:.9em">
+  💡 Notions centrales : <a href="lecon.html">leçon</a> §6-9 (corrosion, passivation, anode sacrificielle).
+</p>
+
+<!-- ===== SITUATION ===== -->
+<div class="situation">
+  <h2>Situation – le bateau de pêche du capitaine Marc</h2>
+  <p><em>Marc, capitaine d'un bateau de pêche en acier de 18 m amarré à La Rochelle, sort son bateau de l'eau pour la révision annuelle. La coque est inspectée par Hugo, technicien naval. Hugo constate plusieurs <strong>anodes zinc soudées sur la coque</strong> (qu'il appellera « patatoïdes »), partiellement rongées. Marc demande à Hugo : « C'est quoi exactement ces blocs ? Pourquoi mon bateau en a besoin ? »</em></p>
+
+  <h3>Document 1 — Pourquoi le milieu marin est-il très agressif ?</h3>
+  <p>L'eau de mer est <strong>l'environnement naturel le plus corrosif</strong> pour les métaux ferreux, pour 4 raisons cumulatives :</p>
+  <ol>
+    <li><strong>Forte concentration en ions Cl⁻</strong> (≈ 19 g/L) : les chlorures pénètrent les couches de protection (oxydes, peintures) et accélèrent la corrosion.</li>
+    <li><strong>Conductivité électrique élevée</strong> : l'eau salée est ~ 100 × plus conductrice que l'eau douce. Toute paire de métaux différents en contact forme une <strong>pile galvanique</strong> active.</li>
+    <li><strong>Oxygène dissous</strong> : nécessaire à la corrosion (réduction du dioxygène à la cathode).</li>
+    <li><strong>Mouvement de l'eau</strong> : la circulation d'eau renouvelle en permanence l'oxygène dissous au contact du métal et arrache les couches protectrices.</li>
+  </ol>
+  <p>Une coque d'acier nu sans protection serait perforée en <strong>moins de 5 ans</strong> en eau de mer.</p>
+
+  <h3>Document 2 — Les 3 méthodes de protection d'une coque</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 720 320" style="max-width:720px;display:block;margin:0 auto" role="img" aria-label="Schéma de 3 méthodes de protection d'une coque de bateau : peinture (couche extérieure isolante), anode sacrificielle zinc (bloc fixé sur la coque qui se sacrifie), protection cathodique par courant imposé (anode insoluble + générateur électrique). Les 3 méthodes sont souvent combinées en pratique.">
+      <defs>
+        <linearGradient id="mer" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#0ea5e9"/>
+          <stop offset="100%" stop-color="#1e3a8a"/>
+        </linearGradient>
+        <style>
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+          .lbl{font:11px sans-serif;text-anchor:middle;fill:#1a202c}
+          .lblB{font:600 12px sans-serif;text-anchor:middle;fill:#1d4ed8}
+          .lblG{font:600 11px sans-serif;text-anchor:middle;fill:#15803d}
+          .coque{fill:#94a3b8;stroke:#1f2937;stroke-width:2}
+          .peinture{fill:#dc2626;opacity:.6}
+          .anode{fill:#fef3c7;stroke:#b45309;stroke-width:1.8}
+        </style>
+      </defs>
+      <text class="ti" x="360" y="22">3 méthodes pour protéger une coque (souvent combinées)</text>
+
+      <!-- Mer en arrière-plan (fond) -->
+      <rect y="50" width="720" height="270" fill="url(#mer)" opacity=".25"/>
+
+      <!-- Méthode 1 : Peinture -->
+      <text class="lblB" x="120" y="65">1. PEINTURE ISOLANTE</text>
+      <rect class="coque" x="60" y="80" width="120" height="40"/>
+      <rect class="peinture" x="58" y="76" width="124" height="6"/>
+      <text class="lbl" x="120" y="105" font-weight="bold" fill="#fff" font-size="10">acier coque</text>
+      <text class="lbl" x="120" y="140" font-size="10" fill="#7f1d1d" font-weight="bold">peinture antifouling rouge</text>
+      <text class="lbl" x="120" y="155" font-size="9" fill="#475569">isole le métal de l'eau</text>
+      <text class="lbl" x="120" y="170" font-size="9" fill="#475569">2-3 ans avant repeinture</text>
+      <text class="lbl" x="120" y="185" font-size="9" fill="#475569">→ écailles avec le temps</text>
+
+      <!-- Méthode 2 : Anode sacrificielle -->
+      <text class="lblB" x="360" y="65">2. ANODE SACRIFICIELLE</text>
+      <rect class="coque" x="300" y="80" width="120" height="40"/>
+      <rect class="peinture" x="298" y="76" width="124" height="6"/>
+      <ellipse class="anode" cx="360" cy="115" rx="20" ry="8"/>
+      <line x1="360" y1="120" x2="360" y2="130" stroke="#1f2937" stroke-width="2"/>
+      <text class="lbl" x="360" y="105" font-weight="bold" fill="#fff" font-size="10">acier coque</text>
+      <text class="lbl" x="360" y="155" font-size="10" fill="#92400e" font-weight="bold">bloc Zn ou Al</text>
+      <text class="lbl" x="360" y="170" font-size="9" fill="#475569">se sacrifie à la place de l'acier</text>
+      <text class="lbl" x="360" y="185" font-size="9" fill="#475569">à remplacer 1×/an typiquement</text>
+
+      <!-- Méthode 3 : Protection courant imposé -->
+      <text class="lblB" x="600" y="65">3. COURANT IMPOSÉ</text>
+      <rect class="coque" x="540" y="80" width="120" height="40"/>
+      <rect class="peinture" x="538" y="76" width="124" height="6"/>
+      <ellipse class="anode" cx="595" cy="115" rx="14" ry="6" fill="#cbd5e1"/>
+      <line x1="595" y1="121" x2="595" y2="135" stroke="#1f2937" stroke-width="2"/>
+      <line x1="540" y1="100" x2="565" y2="135" stroke="#dc2626" stroke-width="2"/>
+      <line x1="565" y1="135" x2="595" y2="135" stroke="#dc2626" stroke-width="2"/>
+      <!-- Source courant -->
+      <rect x="610" y="140" width="40" height="22" fill="#fef3c7" stroke="#b45309" stroke-width="1.5" rx="3"/>
+      <text x="630" y="155" text-anchor="middle" font-size="9" fill="#92400e" font-weight="bold">+</text>
+      <line x1="630" y1="135" x2="630" y2="140" stroke="#1f2937" stroke-width="1.5"/>
+      <text class="lbl" x="600" y="105" font-weight="bold" fill="#fff" font-size="10">acier coque</text>
+      <text class="lbl" x="600" y="180" font-size="9" fill="#475569">anode inerte (Pt, Ti)</text>
+      <text class="lbl" x="600" y="193" font-size="9" fill="#475569">+ générateur courant continu</text>
+      <text class="lbl" x="600" y="206" font-size="9" fill="#475569">→ bateaux et plateformes</text>
+
+      <text x="360" y="270" text-anchor="middle" font-size="11" fill="#475569" font-style="italic">En pratique on combine peinture + anodes sacrificielles. Sur les gros navires industriels, on ajoute la protection par courant imposé.</text>
+    </svg>
+  </div>
+
+  <h3>Document 3 — État des anodes du bateau de Marc</h3>
+  <p>Sur la coque, Hugo a relevé l'état de 6 anodes zinc :</p>
+  <table>
+    <thead><tr><th>Anode</th><th>Position</th><th>Masse origine</th><th>Masse résiduelle</th><th>% rongé</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Tribord avant</td><td>2,5 kg</td><td>1,1 kg</td><td>56 %</td></tr>
+      <tr><td>2</td><td>Tribord arrière</td><td>2,5 kg</td><td>0,4 kg</td><td>84 %</td></tr>
+      <tr><td>3</td><td>Bâbord avant</td><td>2,5 kg</td><td>1,2 kg</td><td>52 %</td></tr>
+      <tr><td>4</td><td>Bâbord arrière</td><td>2,5 kg</td><td>0,3 kg</td><td>88 %</td></tr>
+      <tr><td>5</td><td>Quille (centre)</td><td>3,5 kg</td><td>2,2 kg</td><td>37 %</td></tr>
+      <tr><td>6</td><td>Hélice (gouvernail)</td><td>1,0 kg</td><td>0,1 kg</td><td>90 %</td></tr>
+    </tbody>
+  </table>
+  <p><em>Toutes ces anodes ont été installées il y a exactement 1 an (révision précédente).</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Pourquoi l'eau de mer est-elle si corrosive, et comment Hugo peut-il expliquer à Marc le rôle de chaque type de protection sur sa coque ?
+</div>
+
+<!-- ===== QUESTIONS ===== -->
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Citer les <strong>4 raisons</strong> qui rendent l'eau de mer particulièrement corrosive pour les métaux.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li><strong>Forte concentration en ions Cl⁻</strong> (~19 g/L), qui pénètrent les couches protectrices.</li>
+      <li><strong>Conductivité électrique élevée</strong> (eau salée), ce qui amplifie les piles galvaniques.</li>
+      <li><strong>Oxygène dissous</strong> qui alimente la corrosion (réduction de O₂).</li>
+      <li><strong>Mouvement de l'eau</strong> qui renouvelle l'oxygène et arrache les couches de protection.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <p>Sur le schéma du document 2, quelle <strong>unique méthode</strong> serait suffisante à elle seule ? Pourquoi en pratique on combine plutôt 2 ou 3 méthodes ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Aucune méthode n'est suffisante seule en pratique :</strong></p>
+    <ul>
+      <li><strong>Peinture seule :</strong> elle s'écaille dès qu'elle est rayée (par les fonds, les amarres, les coquillages). À la moindre fissure, l'eau de mer attaque le métal en dessous.</li>
+      <li><strong>Anode seule :</strong> elle ne fonctionne efficacement que sur les zones électriquement « proches ». Sans peinture, la surface à protéger serait gigantesque et l'anode serait consommée trop vite.</li>
+      <li><strong>Courant imposé seul :</strong> trop coûteux pour un petit bateau. Réservé aux gros navires.</li>
+    </ul>
+    <p><strong>En pratique : peinture pour réduire la surface à protéger + anodes sacrificielles pour les zones où la peinture est endommagée.</strong> Cette combinaison offre le meilleur rapport coût/efficacité pour la majorité des bateaux.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>D'après le document 3, quelles <strong>2 zones</strong> du bateau de Marc s'usent le plus rapidement ? Proposer une explication.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Les anodes les plus rongées sont :</p>
+    <ul>
+      <li>Anode 6 (hélice / gouvernail) : 90 % rongée — c'est la <strong>plus exposée</strong> à l'usure, car l'hélice tourne en permanence dans l'eau et les flux turbulents arrachent la peinture autour. De plus, l'hélice elle-même est en bronze (alliage Cu-Sn), métal moins réducteur que l'acier → effet de pile galvanique.</li>
+      <li>Anodes 2 et 4 (arrière tribord et bâbord) : 84-88 % rongées — zone proche du moteur et des passages d'arbre, exposée aux courants parasites de l'installation électrique du bord.</li>
+    </ul>
+    <p>Les anodes de proue (1 et 3) et de quille (5) sont moins sollicitées.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Hugo recommande à Marc de <strong>remplacer les 6 anodes</strong> à chaque révision annuelle (même celles peu rongées). Cette recommandation est-elle pertinente ? Justifier.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>OUI, c'est pertinent et c'est la <strong>règle pour les bateaux pros</strong>. Plusieurs raisons :</p>
+    <ul>
+      <li><strong>Mutualiser la pose :</strong> le bateau est déjà à sec et démonté. Faire venir le grutier 6 mois plus tard pour 2 anodes coûte plus cher que de tout remplacer maintenant.</li>
+      <li><strong>Sécurité :</strong> une anode rongée à 56 % aujourd'hui sera à 90 %+ d'ici 6 mois. Si elle n'est pas remplacée, la zone qu'elle protégeait perdra sa protection en mer, là où l'on ne peut pas intervenir facilement.</li>
+      <li><strong>Coût modeste :</strong> 6 anodes zinc ≈ 200 €. Le coût de remplacement de toute la coque en cas de perforation : plusieurs dizaines de milliers d'euros.</li>
+    </ul>
+    <p>C'est l'application du principe : <strong>remplacement systématique préventif avant défaillance</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Faire le <strong>lien</strong> entre la protection d'un bateau et la protection d'une cuve enterrée (vue en activité 3). Quels sont les 2 points communs et la principale différence ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Points communs :</strong></p>
+    <ul>
+      <li>Mêmes principes physico-chimiques : oxydoréduction, anode sacrificielle, électron qui circule pour protéger l'acier.</li>
+      <li>Même règle de choix : l'anode doit être plus réductrice que le métal protégé. La masse détermine la durée de vie.</li>
+    </ul>
+    <p><strong>Principale différence : le milieu</strong></p>
+    <ul>
+      <li>Pour une <strong>cuve enterrée</strong> (terre argileuse) : milieu peu conducteur → on choisit du <strong>magnésium</strong> (haute tension de polarisation).</li>
+      <li>Pour un <strong>bateau</strong> (eau de mer) : milieu très conducteur → on choisit du <strong>zinc</strong> ou de l'<strong>aluminium</strong> (suffisants car la conductivité fait passer le courant facilement).</li>
+    </ul>
+    <p>Règle universelle : le métal sacrificiel est choisi selon la conductivité du milieu, le métal protégé étant toujours l'acier dans ces 2 cas.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 6 lignes l'<strong>explication d'Hugo à Marc</strong> qui répond à la problématique avec un langage simple.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>L'eau de mer attaque très fort tout ce qui est en métal : elle est <strong>très conductrice</strong> à cause du sel, riche en oxygène, et les ions chlorure des sels « grignotent » les couches de peinture. Sans protection, ta coque en acier serait perforée en moins de 5 ans.</em></p>
+    <p><em>Pour la protéger, on combine 2 méthodes complémentaires : (1) une <strong>peinture spéciale</strong> qui isole l'acier de l'eau, à refaire tous les 2-3 ans ; (2) ces fameuses « patatoïdes », ce sont des <strong>blocs de zinc</strong> qu'on appelle <strong>anodes sacrificielles</strong>. Le zinc est un métal qui « préfère » s'oxyder à la place de l'acier — on le sacrifie volontairement pour protéger ta coque.</em></p>
+    <p><em>Tes 6 anodes ont déjà 1 an. La plupart sont bien rongées (jusqu'à 90 % pour celle de l'hélice !). Je te recommande de toutes les remplacer maintenant : 200 € pour 1 an de tranquillité, contre des dizaines de milliers d'euros si la coque devait être refaite.</em></p>
+  </div>
+</div>
+
+<!-- ===== A RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Eau de mer = milieu corrosif extrême</strong> (Cl⁻, conductivité, O₂ dissous, mouvement). Sans protection : perforation en 5 ans.</li>
+    <li><strong>3 méthodes de protection :</strong> (1) peinture isolante, (2) anodes sacrificielles, (3) protection cathodique par courant imposé. En pratique : peinture + anodes pour les bateaux.</li>
+    <li><strong>Choix du métal sacrificiel :</strong> Zn ou Al pour eau de mer (très conductrice), Mg pour les sols (peu conducteurs).</li>
+    <li><strong>Règle de maintenance :</strong> remplacement systématique annuel pour les bateaux pros, même les anodes peu rongées (mutualisation des coûts de mise à sec).</li>
+    <li><strong>Universalité :</strong> mêmes principes pour cuves enterrées, ballons ECS, coques de bateaux, plateformes pétrolières.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

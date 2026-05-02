@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch07 – Activité 2 – Diagnostic corrosion d'un ballon ECS – Terminale ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.indice{background:#fffbeb;border:1px solid #fde68a;border-left:4px solid #b45309;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.indice-head{font-weight:700;color:#7c2d12;margin-bottom:6px;font-size:.95em}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 2 – Diagnostic de corrosion d'un ballon ECS <span style="font-size:.55em;color:#b91c1c;font-weight:600">DIAGNOSTIC</span></h1>
+  <p class="sous-titre">Chapitre 7 – Oxydoréduction et corrosion | Terminale Bac Pro (Grpt 1) | Chimie | ⏱ 35 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comprendre le principe de l'anode sacrificielle (anode en magnésium dans un ballon ECS)</li>
+    <li>Identifier les signes d'une anode usée à partir de mesures et observations</li>
+    <li>Justifier le remplacement périodique de l'anode pour la durée de vie du ballon</li>
+  </ul>
+</div>
+
+<p style="margin:8px 0;padding:8px 12px;background:#fef3c7;border-left:3px solid #b45309;font-size:.9em">
+  💡 Notions centrales : <a href="lecon.html">leçon</a> §6 (corrosion par O₂), §9 (anode sacrificielle).
+</p>
+
+<!-- ===== SITUATION ===== -->
+<div class="situation">
+  <h2>Situation – la cuve fuit après 8 ans seulement</h2>
+  <p><em>Mehdi, plombier chauffagiste, est appelé chez un client : son ballon d'eau chaude sanitaire (ECS) de 8 ans s'est <strong>percé par le fond</strong> et fuit dans la cave. Le ballon est neuf à comparer (un voisin du même immeuble a un ballon identique de 22 ans qui fonctionne encore !). Mehdi suspecte un défaut d'<strong>anode sacrificielle</strong>.</em></p>
+
+  <h3>Indice 1 — Photo du ballon démonté</h3>
+  <p>Mehdi vidange et démonte le ballon pour examiner l'intérieur. Il observe :</p>
+  <ul>
+    <li>Une <strong>cuve d'acier émaillé</strong> (revêtement émail bleu protecteur, mais avec des micro-fissures inévitables)</li>
+    <li>Une <strong>anode en magnésium</strong> de 35 cm vissée dans la cuve, qui doit normalement protéger l'acier</li>
+    <li>Une couche importante de <strong>boues rouges</strong> au fond de la cuve (rouille)</li>
+  </ul>
+
+  <h3>Indice 2 — État de l'anode magnésium</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 600 200" style="max-width:600px;display:block;margin:0 auto" role="img" aria-label="Comparaison de 2 anodes magnésium : à gauche une anode neuve, gros barreau cylindrique de 35 cm, environ 600 g ; à droite l'anode démontée chez le client, complètement rongée : il ne reste qu'un fil métallique de quelques mm avec quelques restes de magnésium, masse résiduelle 50 g.">
+      <defs>
+        <style>
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+          .lbl{font:11px sans-serif;text-anchor:middle;fill:#1a202c}
+          .lblG{font:600 12px sans-serif;text-anchor:middle;fill:#15803d}
+          .lblR{font:700 12px sans-serif;text-anchor:middle;fill:#b91c1c}
+          .anode-neuve{fill:#94a3b8;stroke:#475569;stroke-width:2}
+          .anode-rongee{fill:#7c2d12;stroke:#1f2937;stroke-width:1.5}
+          .ame{fill:#475569;stroke:#1f2937;stroke-width:1.5}
+        </style>
+      </defs>
+      <text class="ti" x="300" y="22">État de l'anode magnésium — comparaison</text>
+
+      <!-- Anode neuve à gauche -->
+      <text class="lblG" x="150" y="50">ANODE NEUVE (référence)</text>
+      <rect x="80" y="60" width="20" height="15" class="ame"/>
+      <text class="lbl" x="60" y="73" text-anchor="end" font-size="9">tête vis</text>
+      <rect class="anode-neuve" x="60" y="75" width="60" height="100"/>
+      <text class="lbl" x="90" y="190" font-weight="bold">35 cm × Ø 22 mm — 600 g</text>
+
+      <!-- Anode rongée à droite -->
+      <text class="lblR" x="450" y="50">ANODE DU CLIENT (8 ans)</text>
+      <rect x="440" y="60" width="20" height="15" class="ame"/>
+      <text class="lbl" x="425" y="73" text-anchor="end" font-size="9">tête vis</text>
+      <!-- Âme métallique nue (le fil central) -->
+      <rect class="ame" x="446" y="75" width="8" height="100"/>
+      <!-- Quelques résidus de Mg -->
+      <rect class="anode-rongee" x="442" y="75" width="16" height="20"/>
+      <rect class="anode-rongee" x="443" y="135" width="14" height="15"/>
+      <rect class="anode-rongee" x="442" y="160" width="16" height="12"/>
+      <text class="lbl" x="450" y="190" font-weight="bold" fill="#b91c1c">≈ 4 cm utiles — 50 g</text>
+
+      <!-- Annotation centrale -->
+      <text x="300" y="120" text-anchor="middle" font-size="13" font-weight="bold" fill="#b91c1c">Perte de masse :</text>
+      <text x="300" y="138" text-anchor="middle" font-size="11" fill="#1a202c">600 − 50 = <strong>550 g</strong> consommés</text>
+      <text x="300" y="155" text-anchor="middle" font-size="10" fill="#475569" font-style="italic">soit 92 % de l'anode rongée</text>
+    </svg>
+  </div>
+
+  <h3>Indice 3 — Rappel pédagogique du fonctionnement</h3>
+  <p>Dans un ballon ECS, l'eau contient des ions et de l'oxygène dissous. La cuve en acier (Fe) <strong>devrait normalement</strong> s'oxyder selon : Fe → Fe²⁺ + 2e⁻ (corrosion de l'acier).</p>
+  <p>Pour <strong>protéger l'acier</strong>, on installe une anode en magnésium (Mg). Le magnésium est <strong>plus réducteur</strong> que le fer dans la classification électrochimique (Mg²⁺/Mg est plus haut que Fe²⁺/Fe). C'est donc le magnésium qui s'oxyde <strong>en priorité</strong> :</p>
+  <p style="text-align:center;font-weight:bold">Mg → Mg²⁺ + 2e⁻ (l'anode se sacrifie)</p>
+  <p>Tant que le magnésium est présent, l'acier est protégé. Quand l'anode est complètement consommée, l'acier commence à s'oxyder et la cuve se perce — typiquement par le fond.</p>
+
+  <h3>Indice 4 — Données techniques</h3>
+  <ul>
+    <li>Couples Ox/Red de la classification électrochimique :
+      <table>
+        <thead><tr><th>Couple</th><th>Position dans la classification</th></tr></thead>
+        <tbody>
+          <tr><td>Mg²⁺ / Mg</td><td>plus réducteur (haut)</td></tr>
+          <tr><td>Zn²⁺ / Zn</td><td>plus réducteur</td></tr>
+          <tr><td>Fe²⁺ / Fe</td><td>moyen</td></tr>
+          <tr><td>Cu²⁺ / Cu</td><td>moins réducteur (bas)</td></tr>
+        </tbody>
+      </table>
+    </li>
+    <li>Masse molaire : M(Mg) = 24 g/mol ; M(Fe) = 56 g/mol</li>
+    <li>Durée de vie typique d'une anode dans un ballon ECS : <strong>5 à 10 ans</strong> selon la qualité de l'eau (eau dure → consommation plus rapide)</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Pourquoi la cuve d'acier du ballon s'est-elle percée alors qu'il y avait une anode magnésium ? Comment Mehdi peut-il expliquer le phénomène et conseiller le client pour son prochain ballon ?
+</div>
+
+<!-- ===== QUESTIONS ===== -->
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Écrire la <strong>demi-équation d'oxydation</strong> de l'acier (fer) puis celle du magnésium.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>Oxydation du fer : <strong>Fe → Fe²⁺ + 2 e⁻</strong></li>
+      <li>Oxydation du magnésium : <strong>Mg → Mg²⁺ + 2 e⁻</strong></li>
+    </ul>
+    <p>Dans les deux cas, le métal perd 2 électrons et devient un cation 2+. C'est une <strong>oxydation</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <p>Pourquoi est-ce le <strong>magnésium</strong> qui s'oxyde plutôt que le fer dans le ballon ? Justifier en utilisant la classification électrochimique (indice 4).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Dans la classification électrochimique, le couple Mg²⁺/Mg est situé <strong>plus haut</strong> que Fe²⁺/Fe. Cela signifie que le magnésium est un <strong>réducteur plus fort</strong> que le fer.</p>
+    <p>Quand 2 métaux sont en contact dans un milieu conducteur (eau ionisée), c'est <strong>le réducteur le plus fort</strong> qui s'oxyde en premier. Donc le Mg est consommé tandis que le Fe est protégé.</p>
+    <p>C'est exactement le principe de l'<strong>anode sacrificielle</strong> : on sacrifie volontairement un métal moins cher (Mg) pour protéger un métal plus cher (Fe) ou plus important (la cuve du ballon).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">VAL</span></h2>
+  <p>Diagnostic : <strong>pourquoi le ballon du client s'est-il percé alors qu'il y avait une anode</strong> ? Quel signal Mehdi aurait-il pu surveiller pour anticiper ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Cause :</strong> l'anode magnésium était <strong>complètement consommée</strong> (92 % rongée, ne restait que l'âme métallique en acier inoxydable au centre + quelques résidus). Sans Mg restant, la protection cathodique a cessé. À partir de ce moment, c'est <strong>l'acier de la cuve qui s'est mis à s'oxyder</strong>, jusqu'au perçage par le fond (où l'eau stagne et le dépôt de boues est maximal).</p>
+    <p><strong>Signal d'alerte :</strong> il faut <strong>contrôler l'anode tous les 2 ans environ</strong>. Si elle est rongée à plus de 50 %, la remplacer immédiatement. Coût d'une anode neuve : 30-50 € + 1 h de pose. C'est <strong>30 fois moins cher</strong> que de remplacer le ballon entier (800-1 500 €).</p>
+    <p>Sur le ballon du voisin (22 ans en service), l'anode a probablement déjà été remplacée 2 ou 3 fois.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la <strong>quantité de matière</strong> n(Mg) consommée pendant 8 ans, sachant que 550 g de magnésium ont été oxydés. Combien d'électrons ont été libérés (en moles) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>n(Mg) = m / M = 550 / 24 = <strong>22,9 mol</strong></li>
+      <li>D'après la demi-équation Mg → Mg²⁺ + 2 e⁻, chaque mole de Mg libère 2 moles d'électrons.</li>
+      <li>n(e⁻) = 2 × 22,9 = <strong>45,8 mol d'électrons</strong></li>
+    </ul>
+    <p>Ce sont ces ~ 46 moles d'électrons qui ont protégé la cuve d'acier pendant 8 ans en réduisant le dioxygène dissous au lieu de laisser s'oxyder le fer.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Le client demande : « Et si vous mettiez une anode en cuivre ? Le cuivre ne rouille pas, ce serait mieux. » Cette idée est-elle correcte ? Justifier.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>NON, l'idée est incorrecte — c'est même catastrophique !</strong></p>
+    <p>Le cuivre est <strong>moins réducteur</strong> que le fer (couple Cu²⁺/Cu <strong>en bas</strong> de la classification). Si on installait une anode en cuivre dans un ballon en acier :</p>
+    <ul>
+      <li>Le couple le plus réducteur des deux deviendrait le fer (acier de la cuve).</li>
+      <li>Donc <strong>c'est l'acier qui s'oxyderait</strong>, le cuivre étant inerte.</li>
+      <li>L'anode cuivre ne se consommerait pas (ce serait son seul intérêt) mais ne protégerait <strong>rien</strong>.</li>
+      <li>Pire : la présence de cuivre <strong>accélère</strong> la corrosion galvanique de l'acier (effet de pile galvanique).</li>
+    </ul>
+    <p>Règle absolue : <strong>l'anode sacrificielle doit toujours être plus réductrice que le métal à protéger</strong>. Pour protéger l'acier, on choisit Mg, Zn ou Al (jamais Cu, Ag, Au).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes le <strong>compte-rendu d'intervention</strong> de Mehdi avec :</p>
+  <ul>
+    <li>le diagnostic chimique (anode HS, oxydation de l'acier)</li>
+    <li>la solution proposée (changement de ballon + anode neuve)</li>
+    <li>le conseil d'entretien préventif</li>
+  </ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>Compte-rendu — Ballon ECS percé — 2 mai 2026.</em></p>
+    <p><em>Diagnostic : votre ballon (8 ans) s'est percé par le fond suite à la consommation totale de l'<strong>anode sacrificielle en magnésium</strong> (vérifiée à 92 % rongée à l'ouverture). Sans magnésium restant pour se sacrifier, c'est l'acier de la cuve qui s'est oxydé jusqu'au trou. Cette panne aurait été évitée par un contrôle régulier de l'anode.</em></p>
+    <p><em>Solution : installation d'un nouveau ballon ECS de 200 L (1 200 € posé), équipé d'une anode magnésium neuve de série.</em></p>
+    <p><em>Conseil entretien : faire <strong>contrôler l'anode tous les 2 ans</strong>. Si rongée à plus de 50 %, la remplacer (30-50 €). Avec ce simple geste, votre ballon peut durer 20-25 ans au lieu de 8.</em></p>
+  </div>
+</div>
+
+<!-- ===== A RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Anode sacrificielle :</strong> métal plus réducteur (Mg, Zn, Al) qui s'oxyde à la place du métal à protéger (acier).</li>
+    <li><strong>Choix de l'anode :</strong> dans la classification électrochimique, le métal sacrificiel doit être <strong>plus haut</strong> (plus réducteur) que le métal protégé. Pour protéger l'acier : Mg, Zn ou Al — JAMAIS Cu.</li>
+    <li><strong>Demi-équation type :</strong> M → M²⁺ + n e⁻ (oxydation du métal sacrificiel).</li>
+    <li><strong>Durée de vie typique d'une anode magnésium</strong> dans un ballon ECS : 5 à 10 ans (varie avec la dureté de l'eau).</li>
+    <li><strong>Maintenance préventive :</strong> contrôle tous les 2 ans. Remplacement à 50 % de consommation. Coût ≈ 30-50 € contre 1 200 € pour changer le ballon entier.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

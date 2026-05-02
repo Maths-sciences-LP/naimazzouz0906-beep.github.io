@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch07 – Activité 3 – Choisir une anode pour cuve enterrée – Terminale ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.fiche{background:#f8fafc;border:2px solid #1e40af;border-radius:10px;padding:0;margin:14px 0;box-shadow:0 4px 12px rgba(0,0,0,.1);overflow:hidden}
+.fiche-header{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;padding:14px 20px}
+.fiche-header h3{margin:0;color:#fff;border:none;font-size:1.1em}
+.fiche-body{padding:16px 20px}
+.fiche-row{display:flex;justify-content:space-between;border-bottom:1px dashed #cbd5e1;padding:6px 0;font-size:.92em}
+.fiche-row:last-child{border-bottom:none}
+.fiche-row span:first-child{color:#475569}
+.fiche-row span:last-child{font-weight:600;color:#1e3a8a;font-family:'Menlo','Consolas',monospace}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 3 – Choisir une anode pour une cuve à fioul enterrée <span style="font-size:.55em;color:#7c2d12;font-weight:600">FICHE TECHNIQUE</span></h1>
+  <p class="sous-titre">Chapitre 7 – Oxydoréduction et corrosion | Terminale Bac Pro (Grpt 1) | Chimie | ⏱ 40 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comparer 3 métaux sacrificiels (Mg, Zn, Al) pour la protection cathodique</li>
+    <li>Calculer la durée de vie d'une anode selon sa masse et la consommation annuelle</li>
+    <li>Choisir l'anode adaptée à un cahier des charges (durée de vie, prix, contraintes)</li>
+  </ul>
+</div>
+
+<p style="margin:8px 0;padding:8px 12px;background:#fef3c7;border-left:3px solid #b45309;font-size:.9em">
+  💡 Notions centrales : <a href="lecon.html">leçon</a> §4 (classification électrochimique), §9 (anode sacrificielle).
+</p>
+
+<!-- ===== SITUATION ===== -->
+<div class="situation">
+  <h2>Situation – protéger une cuve à fioul de 5 000 L</h2>
+  <p><em>Sofiane, technicien chez un installateur de chauffage fioul, doit installer une cuve à fioul de 5 000 L enterrée chez un particulier. La cuve est en acier galvanisé et sera enterrée dans une terre argileuse <strong>relativement humide</strong>. Pour protéger la cuve de la corrosion (durée de vie souhaitée 30 ans), Sofiane doit choisir le bon type d'anode sacrificielle parmi 3 options du fournisseur.</em></p>
+
+  <h3>Document 1 — Pourquoi protéger la cuve ?</h3>
+  <p>Une cuve enterrée est en contact avec la terre humide qui contient des ions et de l'oxygène : milieu propice à la corrosion électrochimique. Sans protection, la cuve d'acier rouille progressivement et finit par fuir (catastrophe environnementale + financière : 5 000 L de fioul échappés représentent une amende ≥ 50 000 € et des années de dépollution).</p>
+
+  <p>La <strong>protection cathodique par anode sacrificielle</strong> consiste à enterrer un bloc de métal plus réducteur que l'acier, relié électriquement à la cuve. Ce métal s'oxyde à la place de l'acier.</p>
+
+  <h3>Document 2 — Schéma de l'installation</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 660 280" style="max-width:660px;display:block;margin:0 auto" role="img" aria-label="Schéma : cuve à fioul de 5000L enterrée dans la terre, reliée par un câble électrique isolé à un bloc d'anode sacrificielle enterré 2 mètres plus loin. La terre humide ferme le circuit. Les électrons libérés par l'oxydation de l'anode protègent l'acier de la cuve.">
+      <defs>
+        <linearGradient id="terre" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#a16207"/>
+          <stop offset="100%" stop-color="#78350f"/>
+        </linearGradient>
+        <style>
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+          .lbl{font:11px sans-serif;text-anchor:middle;fill:#1a202c}
+          .lblB{font:600 11px sans-serif;text-anchor:middle;fill:#1d4ed8}
+        </style>
+      </defs>
+      <text class="ti" x="330" y="22">Protection cathodique d'une cuve enterrée</text>
+
+      <!-- Surface du sol -->
+      <rect y="50" width="660" height="20" fill="#84cc16" opacity=".5"/>
+      <line y1="70" x2="660" y2="70" stroke="#15803d" stroke-width="1.5"/>
+      <text class="lbl" x="50" y="63" font-size="9" fill="#15803d">surface du sol</text>
+
+      <!-- Terre -->
+      <rect y="70" width="660" height="210" fill="url(#terre)" opacity=".55"/>
+      <text class="lbl" x="500" y="180" font-style="italic" fill="#fef3c7" opacity=".9" font-size="11">terre humide (électrolyte)</text>
+
+      <!-- Cuve -->
+      <ellipse cx="200" cy="150" rx="120" ry="40" fill="#cbd5e1" stroke="#1f2937" stroke-width="2.5"/>
+      <ellipse cx="200" cy="150" rx="115" ry="36" fill="none" stroke="#475569" stroke-width="1"/>
+      <text class="lbl" x="200" y="155" font-weight="bold" fill="#1f2937">CUVE FIOUL 5 000 L (acier galvanisé)</text>
+      <text class="lbl" x="200" y="170" font-size="10" fill="#475569" font-style="italic">à protéger</text>
+
+      <!-- Tubulure de remplissage -->
+      <rect x="190" y="50" width="20" height="60" fill="#94a3b8" stroke="#1f2937" stroke-width="1.5"/>
+      <text class="lbl" x="200" y="42" font-size="9">tubulure</text>
+
+      <!-- Anode -->
+      <rect x="500" y="180" width="40" height="60" fill="#fef3c7" stroke="#b45309" stroke-width="2.5"/>
+      <text class="lbl" x="520" y="215" font-weight="bold" fill="#92400e" font-size="10">ANODE</text>
+      <text class="lbl" x="520" y="227" font-weight="bold" fill="#92400e" font-size="10">SACRIFICIELLE</text>
+
+      <!-- Câble électrique -->
+      <path d="M 320 150 Q 400 140 500 200" stroke="#dc2626" stroke-width="2.5" fill="none" stroke-dasharray="6 3"/>
+      <text class="lbl" x="410" y="135" fill="#b91c1c" font-weight="bold" font-size="11">câble électrique isolé</text>
+      <text class="lbl" x="410" y="148" fill="#b91c1c" font-size="9">(transport des e⁻)</text>
+
+      <!-- Indication des électrons -->
+      <text x="340" y="170" font-size="14" fill="#dc2626" font-weight="bold">e⁻</text>
+      <text x="380" y="160" font-size="14" fill="#dc2626" font-weight="bold">e⁻</text>
+      <text x="430" y="170" font-size="14" fill="#dc2626" font-weight="bold">e⁻</text>
+
+      <!-- Légende sens -->
+      <text x="330" y="265" text-anchor="middle" font-size="11" fill="#475569" font-style="italic">L'anode (Mg, Zn ou Al) s'oxyde et libère des électrons qui « immunisent » la cuve d'acier contre l'oxydation.</text>
+    </svg>
+  </div>
+
+  <h3>Document 3 — 3 types d'anode disponibles chez le fournisseur</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:14px 0">
+
+    <div class="fiche">
+      <div class="fiche-header"><h3>A — Anode Magnésium</h3></div>
+      <div class="fiche-body">
+        <div class="fiche-row"><span>Métal</span><span>Mg pur 99,9 %</span></div>
+        <div class="fiche-row"><span>Masse</span><span>10 kg</span></div>
+        <div class="fiche-row"><span>Capacité de courant</span><span>1,2 A·h/g</span></div>
+        <div class="fiche-row"><span>Tension Mg/Fe</span><span>−1,5 V (forte)</span></div>
+        <div class="fiche-row"><span>Adapté à</span><span>Sols résistifs (terre)</span></div>
+        <div class="fiche-row"><span>Prix</span><span>180 €</span></div>
+      </div>
+    </div>
+
+    <div class="fiche">
+      <div class="fiche-header"><h3>B — Anode Zinc</h3></div>
+      <div class="fiche-body">
+        <div class="fiche-row"><span>Métal</span><span>Zn pur 99,9 %</span></div>
+        <div class="fiche-row"><span>Masse</span><span>10 kg</span></div>
+        <div class="fiche-row"><span>Capacité de courant</span><span>0,8 A·h/g</span></div>
+        <div class="fiche-row"><span>Tension Zn/Fe</span><span>−0,5 V (modérée)</span></div>
+        <div class="fiche-row"><span>Adapté à</span><span>Eau de mer, sols humides salés</span></div>
+        <div class="fiche-row"><span>Prix</span><span>120 €</span></div>
+      </div>
+    </div>
+
+    <div class="fiche">
+      <div class="fiche-header"><h3>C — Anode Aluminium</h3></div>
+      <div class="fiche-body">
+        <div class="fiche-row"><span>Métal</span><span>Al + 5 % Zn (alliage)</span></div>
+        <div class="fiche-row"><span>Masse</span><span>10 kg</span></div>
+        <div class="fiche-row"><span>Capacité de courant</span><span>2,7 A·h/g</span></div>
+        <div class="fiche-row"><span>Tension Al/Fe</span><span>−1,1 V</span></div>
+        <div class="fiche-row"><span>Adapté à</span><span>Eau de mer uniquement</span></div>
+        <div class="fiche-row"><span>Prix</span><span>150 €</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <h3>Document 4 — Données de calcul</h3>
+  <ul>
+    <li>Courant de protection nécessaire pour cette cuve enterrée : <strong>I = 25 mA</strong> (donné par le bureau d'études)</li>
+    <li>Durée de vie souhaitée : <strong>30 ans</strong></li>
+    <li>Coefficient d'utilisation effectif d'une anode : 85 % (15 % perdus en réactions parasites)</li>
+    <li>Masse molaires : M(Mg) = 24 ; M(Zn) = 65 ; M(Al) = 27 g/mol</li>
+    <li>Capacité = (charge totale en A·h) / masse en g. Une anode de capacité 1,2 A·h/g pourra fournir 1,2 A pendant 1 h par gramme.</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quelle anode (Mg, Zn ou Al) Sofiane doit-il choisir pour assurer 30 ans de protection à la cuve enterrée dans une terre argileuse ?
+</div>
+
+<!-- ===== QUESTIONS ===== -->
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Calculer la <strong>quantité de charge totale</strong> nécessaire pour fournir 25 mA pendant 30 ans (en A·h).</p>
+  <p><em>Aide : 1 an = 8 760 h. Q = I × t.</em></p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>t = 30 × 8 760 = 262 800 h</p>
+    <p>Q = I × t = 0,025 × 262 800 = <strong>6 570 A·h</strong></p>
+    <p>L'anode devra fournir 6 570 ampères-heures pour assurer 30 ans de protection.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la <strong>masse minimale</strong> nécessaire pour chacune des 3 anodes (en tenant compte du coefficient d'utilisation de 85 %).</p>
+  <p><em>Aide : masse = Q / (capacité × 0,85)</em></p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>A (Mg) : m = 6 570 / (1,2 × 0,85) = 6 570 / 1,02 ≈ <strong>6 441 g ≈ 6,5 kg</strong></li>
+      <li>B (Zn) : m = 6 570 / (0,8 × 0,85) = 6 570 / 0,68 ≈ <strong>9 662 g ≈ 9,7 kg</strong></li>
+      <li>C (Al) : m = 6 570 / (2,7 × 0,85) = 6 570 / 2,295 ≈ <strong>2 863 g ≈ 2,9 kg</strong></li>
+    </ul>
+    <p>Tous les modèles vendus à 10 kg seraient suffisants en masse.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Pour chaque anode (10 kg), calculer la <strong>durée de vie</strong> réelle (en années) à 25 mA en continu.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Q<sub>fournie</sub> = capacité × masse × 0,85. Puis t = Q/I.</p>
+    <ul>
+      <li>A (Mg) : Q = 1,2 × 10 000 × 0,85 = 10 200 A·h → t = 10 200 / 0,025 = 408 000 h = <strong>46,6 ans</strong></li>
+      <li>B (Zn) : Q = 0,8 × 10 000 × 0,85 = 6 800 A·h → t = 6 800 / 0,025 = 272 000 h = <strong>31,1 ans</strong></li>
+      <li>C (Al) : Q = 2,7 × 10 000 × 0,85 = 22 950 A·h → t = 918 000 h = <strong>104,8 ans</strong></li>
+    </ul>
+    <p>Toutes les anodes durent au moins 30 ans. Le critère masse/durée de vie ne sera pas discriminant.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Quelle anode est la plus adaptée à une cuve enterrée dans <strong>terre argileuse</strong> ? Justifier en regardant les recommandations du fournisseur.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>L'anode <strong>magnésium (A)</strong> est la plus adaptée. Justification :</p>
+    <ul>
+      <li>Le fabricant indique « adapté aux sols résistifs (terre) » pour le Mg.</li>
+      <li>Le Zinc et l'Aluminium sont conçus pour des milieux <strong>très conducteurs</strong> (eau de mer, sols salés). Dans une terre argileuse, leur fonctionnement est <strong>incomplet</strong> car la résistivité du sol est trop élevée pour leur tension de polarisation faible.</li>
+      <li>Le Mg avec sa <strong>tension de polarisation élevée (−1,5 V)</strong> peut « pousser » assez d'électrons même dans un sol peu conducteur.</li>
+    </ul>
+    <p>Règle de choix :</p>
+    <ul>
+      <li><strong>Sols (résistifs) :</strong> Mg</li>
+      <li><strong>Eau saumâtre / sols humides salés :</strong> Zn ou Al</li>
+      <li><strong>Eau de mer :</strong> Al (longue durée) ou Zn (économique)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Sofiane confirme son choix : anode magnésium (A) à 180 €. Le client demande : « Pourquoi pas la moins chère, l'anode zinc à 120 € ? Elle dure aussi 30 ans. »</p>
+  <p>Expliquer pourquoi l'écart de prix de 60 € est un investissement judicieux.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>L'anode zinc, dans un sol argileux résistif, ne fonctionnera <strong>pas correctement</strong> (incomplet, voire pas du tout selon l'humidité). Le résultat catastrophique : la cuve ne sera <strong>pas protégée efficacement</strong>, et pourra fuir avant 30 ans.</p>
+    <p>Conséquences possibles d'une fuite :</p>
+    <ul>
+      <li>Perte du fioul : 5 000 L × 1,30 €/L = <strong>6 500 €</strong></li>
+      <li>Dépollution du sol : <strong>10 000 à 30 000 €</strong></li>
+      <li>Amende environnementale : <strong>jusqu'à 50 000 €</strong></li>
+      <li>Remplacement de la cuve : <strong>3 000 à 5 000 €</strong></li>
+    </ul>
+    <p>Total potentiel : <strong>20 000 à 90 000 €</strong>. L'écart de 60 € sur le choix de l'anode est dérisoire face à ce risque. C'est un faux compromis.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes la <strong>recommandation finale</strong> de Sofiane au client.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>Recommandation protection cuve fioul — 2 mai 2026.</em></p>
+    <p><em>Pour votre cuve enterrée de 5 000 L, je recommande l'<strong>anode magnésium 10 kg (référence A, 180 € HT)</strong>. C'est le seul des 3 types adapté aux sols résistifs comme votre terre argileuse. Sa tension de polarisation de −1,5 V est suffisante pour assurer la protection cathodique malgré la faible conductivité du sol. Durée de vie attendue : 46 ans, bien au-delà de la durée de vie utile de la cuve (30 ans).</em></p>
+    <p><em>Les anodes zinc (120 €) et aluminium (150 €) sont moins chères mais conçues pour l'eau de mer ou les sols salés — inadaptées à votre terrain. L'écart de prix (60 € maximum) est négligeable face au risque de fuite (entre 20 000 et 90 000 € de dommages).</em></p>
+    <p><em>Je prévois aussi un <strong>contrôle annuel</strong> par mesure de potentiel cuve/sol pour valider que la protection fonctionne bien.</em></p>
+  </div>
+</div>
+
+<!-- ===== A RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>3 métaux sacrificiels</strong> selon le milieu : Mg pour les sols (terre), Zn pour eau de mer / sols salés (économique), Al pour eau de mer (longue durée).</li>
+    <li><strong>Capacité de courant</strong> (A·h/g) : exprime combien d'A·h on peut tirer de 1 g de métal. Mg : 1,2 ; Zn : 0,8 ; Al : 2,7.</li>
+    <li><strong>Calcul de durée de vie :</strong> t = (capacité × masse × η) / I, avec η ≈ 0,85 (rendement réel).</li>
+    <li><strong>Choisir une anode :</strong> 1) vérifier la compatibilité avec le milieu (sol vs eau salée) ; 2) vérifier la durée de vie ; 3) puis seulement comparer les prix.</li>
+    <li><strong>Coût d'une fuite</strong> de cuve enterrée : 20 000 à 90 000 €. Économiser sur l'anode est toujours une fausse économie.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
