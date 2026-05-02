@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 4 – Effet Venturi (projet) – Terminale ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 4 – Effet Venturi : pourquoi une buse de pulvérisation aspire-t-elle ? <span style="font-size:.55em;color:#059669;font-weight:600">PROJET OUVERT</span></h1>
+  <p class="sous-titre">Chapitre 6 – Transport de masse et de volume par un fluide | Terminale Bac Pro (Grpt 1) | Physique – Mécanique des fluides | ⏱ 35 min</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Mettre en relation le débit, la section et la vitesse d'écoulement</li>
+    <li>Construire un raisonnement physique pour expliquer un phénomène du quotidien</li>
+    <li>Découvrir l'effet Venturi (lien pression ↔ vitesse)</li>
+  </ul>
+</div>
+
+<p style="margin:8px 0;padding:8px 12px;background:#fef3c7;border-left:3px solid #b45309;font-size:.9em">
+  💡 Notion centrale issue de <a href="lecon.html">la leçon</a> : conservation du débit \(Q_v = S \times v\) le long d'une canalisation.
+</p>
+
+<!-- ===== SITUATION ===== -->
+<div class="situation">
+  <h2>Situation – un outil étrange du jardinier</h2>
+  <p><em>Mehdi, technicien de maintenance dans une jardinerie, observe un pulvérisateur d'engrais branché sur un tuyau d'arrosage. Quand il ouvre l'eau, le pulvérisateur <strong>aspire automatiquement</strong> l'engrais liquide depuis un petit réservoir situé sous l'embout, sans aucune pompe ni moteur. Il se demande comment c'est physiquement possible.</em></p>
+
+  <h3>Description de la buse</h3>
+  <p>La buse est constituée de :</p>
+  <ul>
+    <li>une <strong>arrivée d'eau</strong> sous pression du tuyau d'arrosage (DN15)</li>
+    <li>un <strong>rétrécissement</strong> au centre (col, DN6) où la section diminue brutalement</li>
+    <li>un <strong>petit orifice</strong> au niveau du col, relié par un tube plongeur au réservoir d'engrais</li>
+    <li>une <strong>sortie</strong> qui s'élargit à nouveau et projette le mélange eau + engrais</li>
+  </ul>
+
+  <!-- SVG : coupe d'une buse Venturi avec lignes de courant et manomètres -->
+  <div class="svg-wrap" style="margin:16px 0">
+    <svg width="100%" viewBox="0 0 720 440" style="max-width:720px;display:block;margin:0 auto" role="img" aria-label="Coupe d'une buse Venturi : entrée large à gauche (S1, vitesse v1 faible, pression P1 élevée), rétrécissement central (S2, vitesse v2 rapide, pression P2 faible), sortie large à droite. Trois manomètres montrent que la pression chute au col. Tube plongeur descend du col vers un réservoir d'engrais soumis à la pression atmosphérique : l'engrais est poussé vers le haut.">
+      <defs>
+        <linearGradient id="presHigh" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#1e3a8a"/>
+          <stop offset="100%" stop-color="#3b82f6"/>
+        </linearGradient>
+        <linearGradient id="presLow" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#bfdbfe"/>
+          <stop offset="100%" stop-color="#dbeafe"/>
+        </linearGradient>
+        <linearGradient id="engGrad" x1="0" x2="0" y1="1" y2="0">
+          <stop offset="0%" stop-color="#15803d"/>
+          <stop offset="100%" stop-color="#86efac"/>
+        </linearGradient>
+        <style>
+          .wall{fill:#cbd5e1;stroke:#334155;stroke-width:2.2}
+          .water-hi{fill:url(#presHigh);opacity:.85}
+          .water-lo{fill:url(#presLow);opacity:.95}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblB{font:600 12px sans-serif;text-anchor:middle;fill:#1d4ed8}
+          .lblR{font:700 13px sans-serif;text-anchor:middle;fill:#b91c1c}
+          .lblG{font:600 11px sans-serif;text-anchor:middle;fill:#15803d}
+          .ti{font:700 14px sans-serif;text-anchor:middle;fill:#0969da}
+          .stream{stroke:#0284c7;stroke-width:1.4;fill:none;opacity:.85}
+          .stream-fast{stroke:#dc2626;stroke-width:2;fill:none;opacity:.9}
+          .mano-glass{fill:#fff;stroke:#475569;stroke-width:1.6}
+          .mano-needle{stroke:#dc2626;stroke-width:2;stroke-linecap:round}
+          .arr-eng{stroke:#15803d;stroke-width:3;fill:none;stroke-linecap:round}
+          .axis{stroke:#94a3b8;stroke-width:1;stroke-dasharray:3 3}
+        </style>
+        <marker id="arrFast" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <polygon points="0,0 9,4.5 0,9" fill="#dc2626"/>
+        </marker>
+        <marker id="arrSlow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <polygon points="0,0 9,4.5 0,9" fill="#0284c7"/>
+        </marker>
+        <marker id="arrEng" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+          <polygon points="0,0 10,5 0,10" fill="#15803d"/>
+        </marker>
+      </defs>
+
+      <text class="ti" x="360" y="22">Buse Venturi — coupe longitudinale</text>
+
+      <!-- Conduite : profil interne (lumen) -->
+      <!-- Le profil est défini par : entrée large (y=130 à y=230), rétrécit linéairement vers le col (y=160 à y=200), s'élargit à nouveau -->
+      <!-- Eau dans la section large d'entrée (haute pression) -->
+      <path class="water-hi" d="M 60 130 L 240 130 L 320 160 L 320 200 L 240 230 L 60 230 Z"/>
+      <!-- Eau au col (basse pression) -->
+      <path class="water-lo" d="M 320 160 L 400 160 L 400 200 L 320 200 Z"/>
+      <!-- Eau dans la section large de sortie (haute pression) -->
+      <path class="water-hi" d="M 400 160 L 480 130 L 660 130 L 660 230 L 480 230 L 400 200 Z"/>
+
+      <!-- Parois de la conduite (haut) -->
+      <path class="wall" d="M 60 110 L 240 110 L 320 145 L 400 145 L 480 110 L 660 110 L 660 130 L 480 130 L 400 160 L 320 160 L 240 130 L 60 130 Z"/>
+      <!-- Parois de la conduite (bas) -->
+      <path class="wall" d="M 60 250 L 240 250 L 320 215 L 400 215 L 480 250 L 660 250 L 660 230 L 480 230 L 400 200 L 320 200 L 240 230 L 60 230 Z"/>
+
+      <!-- Lignes de courant (4 lignes qui se resserrent au col) -->
+      <path class="stream" d="M 65 150 L 245 150 L 325 170 L 395 170 L 475 150 L 655 150" marker-end="url(#arrSlow)"/>
+      <path class="stream" d="M 65 170 L 245 170 L 325 175 L 395 175 L 475 170 L 655 170" marker-end="url(#arrSlow)"/>
+      <path class="stream" d="M 65 190 L 245 190 L 325 185 L 395 185 L 475 190 L 655 190" marker-end="url(#arrSlow)"/>
+      <path class="stream" d="M 65 210 L 245 210 L 325 190 L 395 190 L 475 210 L 655 210" marker-end="url(#arrSlow)"/>
+
+      <!-- Indicateur de vitesse au col -->
+      <path class="stream-fast" d="M 330 180 L 390 180" marker-end="url(#arrFast)"/>
+
+      <!-- Tube plongeur (sous le col) -->
+      <rect x="350" y="215" width="20" height="100" fill="#94a3b8" stroke="#334155" stroke-width="1.6"/>
+      <rect x="354" y="219" width="12" height="96" fill="url(#engGrad)" opacity=".75"/>
+
+      <!-- Réservoir d'engrais (forme bouteille) -->
+      <path d="M 270 320 L 450 320 L 440 410 L 280 410 Z" fill="#fff" stroke="#15803d" stroke-width="2"/>
+      <path d="M 273 350 L 447 350 L 440 410 L 280 410 Z" fill="url(#engGrad)" opacity=".55"/>
+      <line x1="280" y1="370" x2="295" y2="370" stroke="#15803d" stroke-width="1"/>
+      <line x1="280" y1="390" x2="295" y2="390" stroke="#15803d" stroke-width="1"/>
+      <text class="lblG" x="360" y="400" font-size="13">engrais liquide</text>
+
+      <!-- Flèches pression atmosphérique sur surface de l'engrais -->
+      <path d="M 290 312 L 290 340" stroke="#475569" stroke-width="1.5" fill="none" marker-end="url(#arrSlow)"/>
+      <path d="M 360 312 L 360 340" stroke="#475569" stroke-width="1.5" fill="none" marker-end="url(#arrSlow)"/>
+      <path d="M 430 312 L 430 340" stroke="#475569" stroke-width="1.5" fill="none" marker-end="url(#arrSlow)"/>
+      <text class="lbl" x="360" y="306" text-anchor="middle" fill="#475569" font-style="italic">pression atmosphérique pousse l'engrais</text>
+
+      <!-- Flèche d'aspiration interne dans le tube -->
+      <path class="arr-eng" d="M 360 305 L 360 230" marker-end="url(#arrEng)"/>
+      <text class="lblG" x="380" y="270">↑ poussé vers le col</text>
+
+      <!-- ====== MANOMÈTRES (cadrans) au-dessus de chaque section ====== -->
+      <!-- Manomètre P1 (entrée) — aiguille HAUTE -->
+      <g transform="translate(140 70)">
+        <circle class="mano-glass" cx="0" cy="0" r="22"/>
+        <line class="mano-needle" x1="0" y1="0" x2="14" y2="-15"/>
+        <circle cx="0" cy="0" r="2.5" fill="#1a202c"/>
+        <text class="lbl" x="0" y="-32" text-anchor="middle" font-weight="bold" fill="#1d4ed8">P₁ ≈ 3 bar</text>
+        <text class="lbl" x="0" y="38" text-anchor="middle" fill="#475569">manomètre</text>
+      </g>
+      <line class="axis" x1="140" y1="92" x2="140" y2="125"/>
+
+      <!-- Manomètre P2 (col) — aiguille BASSE -->
+      <g transform="translate(360 70)">
+        <circle class="mano-glass" cx="0" cy="0" r="22"/>
+        <line class="mano-needle" x1="0" y1="0" x2="-14" y2="-15"/>
+        <circle cx="0" cy="0" r="2.5" fill="#1a202c"/>
+        <text class="lblR" x="0" y="-32">P₂ ≪ P₁</text>
+        <text class="lbl" x="0" y="38" text-anchor="middle" fill="#475569">manomètre</text>
+      </g>
+      <line class="axis" x1="360" y1="92" x2="360" y2="155"/>
+
+      <!-- Manomètre P3 (sortie) — aiguille HAUTE -->
+      <g transform="translate(580 70)">
+        <circle class="mano-glass" cx="0" cy="0" r="22"/>
+        <line class="mano-needle" x1="0" y1="0" x2="14" y2="-15"/>
+        <circle cx="0" cy="0" r="2.5" fill="#1a202c"/>
+        <text class="lbl" x="0" y="-32" text-anchor="middle" font-weight="bold" fill="#1d4ed8">P₃ ≈ P₁</text>
+        <text class="lbl" x="0" y="38" text-anchor="middle" fill="#475569">manomètre</text>
+      </g>
+      <line class="axis" x1="580" y1="92" x2="580" y2="125"/>
+
+      <!-- Étiquettes de section + DN -->
+      <text class="lblB" x="140" y="270">S₁ — DN15 (Ø 15 mm)</text>
+      <text class="lblB" x="140" y="285">v₁ ≈ 0,47 m/s — lente</text>
+
+      <text class="lblR" x="360" y="270" font-size="13">S₂ — DN6 (col)</text>
+      <text class="lblR" x="360" y="285">v₂ ≈ 2,94 m/s — RAPIDE</text>
+
+      <text class="lblB" x="580" y="270">S₁ — DN15</text>
+      <text class="lblB" x="580" y="285">v₃ ≈ 0,47 m/s — lente</text>
+
+      <!-- Légende couleur -->
+      <g transform="translate(60 425)">
+        <rect width="14" height="10" fill="url(#presHigh)"/>
+        <text class="lbl" x="20" y="9">eau haute pression</text>
+        <rect x="160" width="14" height="10" fill="url(#presLow)" stroke="#94a3b8" stroke-width=".5"/>
+        <text class="lbl" x="180" y="9">eau basse pression</text>
+        <rect x="320" width="14" height="10" fill="url(#engGrad)" opacity=".75"/>
+        <text class="lbl" x="340" y="9">engrais liquide</text>
+      </g>
+    </svg>
+  </div>
+
+  <h3>Données mesurées par Mehdi</h3>
+  <table>
+    <thead>
+      <tr><th>Section</th><th>Diamètre intérieur</th><th>Section S</th><th>Débit Q<sub>v</sub></th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Entrée et sortie (S₁)</td><td>15 mm</td><td>1,77 cm²</td><td>Q<sub>v</sub> = 5 L/min</td></tr>
+      <tr><td>Col (S₂)</td><td>6 mm</td><td>0,283 cm²</td><td>Q<sub>v</sub> = 5 L/min</td></tr>
+    </tbody>
+  </table>
+
+  <p><em>Rappel : la conservation du débit dit que le même débit traverse toutes les sections d'une canalisation : \(Q_v = S_1 \times v_1 = S_2 \times v_2\).</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Pourquoi l'eau qui passe dans la buse aspire-t-elle l'engrais depuis le réservoir ? Comment expliquer ce phénomène à partir de ce que tu sais sur le débit et la vitesse d'un fluide ?
+</div>
+
+<!-- ===== QUESTIONS GUIDÉES (facultatives) ===== -->
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span> – Calculer la vitesse à l'entrée</h2>
+  <p>À partir de la relation \(Q_v = S \times v\), calculer la vitesse \(v_1\) de l'eau à l'entrée de la buse (en m/s).</p>
+  <p><em>Aide : convertir le débit en m³/s. \(Q_v = 5\,\text{L/min} = 8{,}33 \times 10^{-5}\,\text{m}^3/\text{s}\). La section \(S_1 = 1{,}77 \,\text{cm}^2 = 1{,}77 \times 10^{-4}\,\text{m}^2\).</em></p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(v_1 = \dfrac{Q_v}{S_1} = \dfrac{8{,}33 \times 10^{-5}}{1{,}77 \times 10^{-4}} \approx \mathbf{0{,}47 \,\text{m/s}}\)</p>
+    <p>L'eau circule à environ 47 cm/s dans la partie large.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span> – Calculer la vitesse au col</h2>
+  <p>Calculer la vitesse \(v_2\) de l'eau au niveau du col (en m/s) puis comparer à \(v_1\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(v_2 = \dfrac{Q_v}{S_2} = \dfrac{8{,}33 \times 10^{-5}}{0{,}283 \times 10^{-4}} \approx \mathbf{2{,}94 \,\text{m/s}}\)</p>
+    <p>L'eau circule à environ 2,94 m/s au col.</p>
+    <p><strong>Comparaison :</strong> \(\dfrac{v_2}{v_1} = \dfrac{2{,}94}{0{,}47} \approx 6{,}3\). L'eau est environ <strong>6 fois plus rapide</strong> au col qu'à l'entrée.</p>
+    <p>Vérification simple : le rapport des vitesses est l'inverse du rapport des sections. \(\dfrac{S_1}{S_2} = \dfrac{1{,}77}{0{,}283} \approx 6{,}3\) ✓</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span> – Lien vitesse / pression (à découvrir)</h2>
+  <p>Le physicien <strong>Daniel Bernoulli</strong> (1738) a montré expérimentalement une règle qui peut sembler surprenante :</p>
+  <p style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #0969da;font-style:italic">
+    « Dans un fluide en écoulement, plus la vitesse est grande, plus la pression est faible. »
+  </p>
+  <p>D'après cette règle, où la pression de l'eau est-elle <strong>la plus faible</strong> dans la buse ? Justifier.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>D'après la règle de Bernoulli, la pression est <strong>minimale là où la vitesse est maximale</strong>. Or la vitesse est maximale au col (2,94 m/s contre 0,47 m/s à l'entrée). Donc la pression de l'eau est <strong>la plus faible au col</strong> de la buse.</p>
+    <p>Inversement, à l'entrée et à la sortie, la vitesse est faible donc la pression est élevée (proche de la pression du tuyau d'arrosage, ≈ 3 bar).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span> – Comprendre l'aspiration</h2>
+  <p>Le tube plongeur relie le col de la buse au réservoir d'engrais. La pression atmosphérique pousse sur la surface libre de l'engrais (≈ 1 bar = 10⁵ Pa).</p>
+  <p>Compare la pression au col à la pression atmosphérique. Quel est le sens du flux d'engrais ? Pourquoi l'engrais monte-t-il dans le tube ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Au col, la vitesse étant grande, la <strong>pression est inférieure à la pression atmosphérique</strong>. On a donc :</p>
+    <p>P<sub>col</sub> &lt; P<sub>atm</sub></p>
+    <p>L'engrais, soumis à la pression atmosphérique sur sa surface libre, se trouve à une pression supérieure à celle qui règne au col. Il est donc <strong>poussé</strong> du réservoir (haute pression) vers le col (basse pression), c'est-à-dire qu'il monte dans le tube plongeur.</p>
+    <p>L'engrais est alors entraîné par le courant d'eau rapide, mélangé, et projeté avec l'eau à la sortie.</p>
+    <p><strong>Ce n'est pas l'eau qui « aspire » au sens d'une pompe — c'est la pression atmosphérique qui pousse l'engrais</strong> dans une zone de basse pression créée par la vitesse de l'eau. C'est exactement le même principe qui fait monter une boisson dans une paille.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span> – Que se passe-t-il si on ferme la buse ?</h2>
+  <p>Mehdi obstrue partiellement la sortie de la buse avec son doigt. Le débit d'eau diminue presque jusqu'à 0. Que devient l'aspiration de l'engrais ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Si le débit tombe à 0, alors la vitesse au col tombe aussi à 0 (puisque \(v_2 = Q_v / S_2\)). D'après Bernoulli, la pression au col remonte à la valeur de la pression statique du réseau (≈ 3 bar), bien <strong>supérieure à la pression atmosphérique</strong>.</p>
+    <p>Du coup, le flux d'engrais s'<strong>inverse</strong> : l'eau du tuyau pousse de l'eau dans le réservoir d'engrais ! C'est pour ça qu'on ne doit jamais boucher complètement la sortie d'une buse Venturi en fonctionnement, sous peine de remplir le réservoir d'eau et de diluer l'engrais.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">COM</span> – Synthèse</h2>
+  <p>Rédiger une <strong>réponse à la problématique</strong> de l'activité (5 à 8 lignes), en suivant ce plan :</p>
+  <ol>
+    <li>Décrire ce qui se passe dans la buse (vitesse de l'eau).</li>
+    <li>Citer la règle de Bernoulli (lien vitesse ↔ pression).</li>
+    <li>Expliquer pourquoi l'engrais monte dans le tube.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir un exemple de rédaction</button>
+  <div class="corr">
+    <p><em>Quand l'eau passe dans la buse Venturi, sa vitesse augmente fortement au niveau du rétrécissement central (le col) : on calcule qu'elle est environ 6 fois plus rapide au col qu'à l'entrée. D'après la règle de Bernoulli, plus un fluide circule vite, plus sa pression diminue : au col, la pression de l'eau devient inférieure à la pression atmosphérique. Le réservoir d'engrais, lui, est soumis à la pression atmosphérique normale. L'engrais est donc poussé du réservoir (pression élevée) vers le col (pression faible) en remontant dans le tube plongeur. Une fois au col, il est entraîné par le courant rapide d'eau et projeté avec elle. Ce n'est donc pas une « aspiration » au sens d'une pompe : c'est la pression atmosphérique qui pousse l'engrais dans une zone de basse pression créée par la vitesse de l'eau.</em></p>
+  </div>
+</div>
+
+<!-- ===== POUR ALLER PLUS LOIN ===== -->
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin (BTS) <span class="badge-blue">VAL</span></h2>
+  <p>L'effet Venturi est utilisé dans de nombreux dispositifs industriels et du quotidien. <strong>Cite-en au moins 3</strong> et explique brièvement où l'effet est utile.</p>
+  <button class="bc" onclick="toggle(this)">Voir des exemples</button>
+  <div class="corr">
+    <ul>
+      <li><strong>Carburateur de moteur thermique</strong> (avant l'injection électronique) : l'air rapide aspire le carburant pour former le mélange.</li>
+      <li><strong>Aérosols et pulvérisateurs</strong> (engrais, peinture, parfum) : un jet d'air aspire et atomise le liquide.</li>
+      <li><strong>Trompe à eau</strong> (laboratoire de chimie) : l'eau qui circule rapidement crée une dépression utilisée pour des filtrations sous vide.</li>
+      <li><strong>Pompes à venturi</strong> en CVC : sans pièces mobiles, fiables, utilisées en chaufferie pour créer une circulation secondaire.</li>
+      <li><strong>Débitmètre Venturi</strong> : la mesure de la chute de pression au col permet de calculer le débit (utilisé en industrie pour les fluides incompressibles).</li>
+      <li><strong>Aile d'avion</strong> : la portance s'explique en partie par l'accélération de l'air sur l'extrados (donc baisse de pression au-dessus de l'aile).</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== A RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Conservation du débit :</strong> \(Q_v = S \times v\). Quand la section diminue, la vitesse augmente d'autant.</li>
+    <li><strong>Règle de Bernoulli (énoncé qualitatif) :</strong> dans un fluide en écoulement, là où la vitesse est grande, la pression est faible — et inversement.</li>
+    <li><strong>Effet Venturi :</strong> dans le rétrécissement d'une canalisation, la vitesse augmente et la pression diminue, ce qui permet d'aspirer un fluide depuis un réservoir extérieur.</li>
+    <li><strong>Ordre de grandeur typique :</strong> dans une buse de pulvérisation, la vitesse au col peut être 5 à 10 fois plus grande qu'à l'entrée.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

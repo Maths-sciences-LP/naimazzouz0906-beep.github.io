@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 5 – TP tableur : vitesse, section, débit – Terminale ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.tableur{background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:0;margin:14px 0;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.tableur-bar{background:#e2e8f0;padding:6px 12px;font:600 12px sans-serif;color:#475569;border-bottom:1px solid #cbd5e1}
+.tableur table{width:100%;border-collapse:collapse;margin:0}
+.tableur th{background:#1e40af;color:#fff;padding:6px 10px;font-size:.85em;border:1px solid #1e3a8a}
+.tableur td{padding:5px 10px;border:1px solid #cbd5e1;text-align:center;font-family:'Menlo','Consolas',monospace;font-size:.9em;background:#fff}
+.tableur td.formula{background:#fef3c7;color:#7c2d12;text-align:left;font-size:.78em}
+.tableur td.todo{background:#fef9c3;color:#a16207;font-style:italic}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 5 – TP tableur : étude vitesse / section / débit <span style="font-size:.55em;color:#0891b2;font-weight:600">TP NUMÉRIQUE</span></h1>
+  <p class="sous-titre">Chapitre 6 – Transport de masse et de volume par un fluide | Terminale Bac Pro (Grpt 1) | Physique – Mécanique des fluides | ⏱ 50 min</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Utiliser un tableur (LibreOffice Calc, Excel ou Google Sheets) pour automatiser un calcul physique</li>
+    <li>Étudier l'effet du diamètre d'une canalisation sur la vitesse d'écoulement</li>
+    <li>Vérifier le respect des normes (vitesse maximale autorisée en ECS)</li>
+  </ul>
+</div>
+
+<p style="margin:8px 0;padding:8px 12px;background:#fef3c7;border-left:3px solid #b45309;font-size:.9em">
+  💡 Notion centrale : conservation du débit \(Q_v = S \times v\) et calcul de la section \(S = \pi \left(\dfrac{D}{2}\right)^2\) (vue dans <a href="lecon.html">la leçon</a>).
+</p>
+
+<!-- ===== SITUATION ===== -->
+<div class="situation">
+  <h2>Situation – dimensionnement d'un réseau ECS</h2>
+  <p><em>Sonia, dessinatrice projeteuse en bureau d'études CVC, doit choisir le diamètre des canalisations d'eau chaude sanitaire (ECS) pour un nouveau bâtiment. Le débit imposé par les besoins est de <strong>Q<sub>v</sub> = 0,30 L/s</strong> (douche + cuisine simultanées).</em></p>
+
+  <h3>Contraintes réglementaires</h3>
+  <table>
+    <thead>
+      <tr><th>Paramètre</th><th>Valeur</th><th>Pourquoi cette limite ?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>v &lt; 2 m/s en ECS</td><td>norme DTU 60.11</td><td>Au-delà : érosion des cuivres, durée de vie diminuée</td></tr>
+      <tr><td>v &lt; 1,5 m/s en collectif</td><td>recommandation</td><td>Limite le bruit (sifflements dans les murs)</td></tr>
+      <tr><td>v &gt; 0,3 m/s minimum</td><td>recommandation</td><td>En dessous : dépôts de calcaire et risque légionellose</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Question de Sonia :</strong> quel diamètre choisir parmi les options du catalogue (DN12, DN15, DN18, DN20, DN22, DN26, DN32) pour respecter <strong>toutes les contraintes</strong> ?</p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Pour un débit imposé de 0,30 L/s, comment choisir le diamètre d'une canalisation ECS qui respecte à la fois la vitesse maximale (2 m/s) et minimale (0,3 m/s) ?
+</div>
+
+<!-- ===== PARTIE 1 - PRÉPARATION ===== -->
+<h2 style="color:var(--p);margin-top:30px">📋 Partie 1 – Préparation du tableur</h2>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Ouvrir LibreOffice Calc (ou Excel / Google Sheets) et créer un nouveau classeur. Recopier la structure suivante <strong>exactement</strong> :</p>
+
+  <div class="tableur">
+    <div class="tableur-bar">📊 Mon-tp-debit.ods — Feuille 1</div>
+    <table>
+      <thead>
+        <tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1</strong></td><td colspan="6" style="background:#dbeafe;text-align:left;font-weight:600">Étude vitesse / diamètre — débit imposé Q<sub>v</sub> = 0,30 L/s</td></tr>
+        <tr><td><strong>2</strong></td><td>Débit (L/s)</td><td>0,30</td><td></td><td colspan="3" style="background:#fef3c7;text-align:left;font-style:italic;font-size:.8em">cellule modifiable pour tester d'autres débits</td></tr>
+        <tr><td><strong>3</strong></td><td colspan="6"></td></tr>
+        <tr><td><strong>4</strong></td><td>D (mm)</td><td>D (m)</td><td>S (m²)</td><td>v (m/s)</td><td>Conformité</td><td>Bruit</td></tr>
+        <tr><td><strong>5</strong></td><td>12</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td></tr>
+        <tr><td><strong>6</strong></td><td>15</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td></tr>
+        <tr><td><strong>7</strong></td><td>18</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td></tr>
+        <tr><td><strong>8</strong></td><td>20</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td></tr>
+        <tr><td><strong>9</strong></td><td>22</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td></tr>
+        <tr><td><strong>10</strong></td><td>26</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td></tr>
+        <tr><td><strong>11</strong></td><td>32</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td><td class="todo">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button class="bc" onclick="toggle(this)">Voir des conseils pour la mise en forme</button>
+  <div class="corr">
+    <ul>
+      <li>Cellule B2 : entrer la valeur 0,30 (avec virgule) — c'est ton débit de référence.</li>
+      <li>Ligne 4 : entrer les en-têtes de colonnes en gras.</li>
+      <li>Colonne A (lignes 5 à 11) : diamètres en mm comme indiqué.</li>
+      <li>Tu peux mettre les cellules « formule » sur fond jaune pour les distinguer des cellules de données.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== PARTIE 2 - FORMULES ===== -->
+<h2 style="color:var(--p);margin-top:30px">🧮 Partie 2 – Saisir les formules</h2>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span> – Conversion D en mètres (colonne B)</h2>
+  <p>En cellule B5, saisir la formule qui convertit le diamètre de mm en m. Puis recopier la formule jusqu'en B11.</p>
+  <button class="bc" onclick="toggle(this)">Voir la formule</button>
+  <div class="corr">
+    <p><strong>B5 :</strong> <code>=A5/1000</code></p>
+    <p>Recopier vers le bas en sélectionnant B5 puis en faisant glisser le coin inférieur droit jusqu'en B11. La formule s'adapte automatiquement (B6 = A6/1000, etc.).</p>
+    <p>Résultats attendus :</p>
+    <table>
+      <tr><th>Cellule</th><th>D (mm)</th><th>D (m)</th></tr>
+      <tr><td>B5</td><td>12</td><td>0,012</td></tr>
+      <tr><td>B6</td><td>15</td><td>0,015</td></tr>
+      <tr><td>B11</td><td>32</td><td>0,032</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span> – Calcul de la section (colonne C)</h2>
+  <p>En cellule C5, saisir la formule qui calcule la section circulaire \(S = \pi \times \left(\dfrac{D}{2}\right)^2\). Puis recopier jusqu'en C11.</p>
+  <p><em>Aide : la fonction <code>PI()</code> donne la valeur de π. La fonction <code>PUISSANCE(x;2)</code> ou l'opérateur <code>^2</code> élève au carré.</em></p>
+  <button class="bc" onclick="toggle(this)">Voir la formule</button>
+  <div class="corr">
+    <p><strong>C5 :</strong> <code>=PI()*(B5/2)^2</code></p>
+    <p>Format à appliquer sur la colonne C : nombre scientifique ou nombre avec 6 décimales.</p>
+    <p>Résultats attendus :</p>
+    <table>
+      <tr><th>D (mm)</th><th>S (m²)</th></tr>
+      <tr><td>12</td><td>1,131 × 10⁻⁴</td></tr>
+      <tr><td>15</td><td>1,767 × 10⁻⁴</td></tr>
+      <tr><td>20</td><td>3,142 × 10⁻⁴</td></tr>
+      <tr><td>32</td><td>8,042 × 10⁻⁴</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span> – Calcul de la vitesse (colonne D)</h2>
+  <p>En cellule D5, saisir la formule qui calcule la vitesse \(v = \dfrac{Q_v}{S}\). <strong>Attention :</strong> le débit est en L/s en B2, il faut le convertir en m³/s (× 0,001 ou ÷ 1000).</p>
+  <p><em>Astuce : utilise <code>$B$2</code> pour figer la cellule du débit (référence absolue) lors de la recopie.</em></p>
+  <button class="bc" onclick="toggle(this)">Voir la formule</button>
+  <div class="corr">
+    <p><strong>D5 :</strong> <code>=($B$2/1000)/C5</code></p>
+    <p>Les <code>$</code> verrouillent la cellule B2 lors de la recopie. Sans ces $, la formule glisserait : D6 = B3/C6 ce qui serait faux.</p>
+    <p>Résultats attendus :</p>
+    <table>
+      <tr><th>D (mm)</th><th>S (m²)</th><th>v (m/s)</th></tr>
+      <tr><td>12</td><td>1,131 × 10⁻⁴</td><td>2,65</td></tr>
+      <tr><td>15</td><td>1,767 × 10⁻⁴</td><td>1,70</td></tr>
+      <tr><td>18</td><td>2,545 × 10⁻⁴</td><td>1,18</td></tr>
+      <tr><td>20</td><td>3,142 × 10⁻⁴</td><td>0,955</td></tr>
+      <tr><td>22</td><td>3,801 × 10⁻⁴</td><td>0,789</td></tr>
+      <tr><td>26</td><td>5,309 × 10⁻⁴</td><td>0,565</td></tr>
+      <tr><td>32</td><td>8,042 × 10⁻⁴</td><td>0,373</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-yellow">REA</span> – Conditionnel (colonnes E et F)</h2>
+  <p>Utiliser la fonction <code>SI(...)</code> pour automatiser la conformité.</p>
+  <ul>
+    <li><strong>E5 :</strong> conformité norme ECS (v &lt; 2 m/s) — afficher « OK » ou « ✗ trop rapide » ou « ✗ trop lent » (si v &lt; 0,3)</li>
+    <li><strong>F5 :</strong> conformité bruit collectif (v &lt; 1,5 m/s) — afficher « ok » ou « risque bruit »</li>
+  </ul>
+  <button class="bc" onclick="toggle(this)">Voir les formules</button>
+  <div class="corr">
+    <p><strong>E5 :</strong> <code>=SI(D5&gt;2;"✗ trop rapide";SI(D5&lt;0,3;"✗ trop lent";"OK"))</code></p>
+    <p><strong>F5 :</strong> <code>=SI(D5&gt;1,5;"risque bruit";"ok")</code></p>
+    <p>Tableau final attendu :</p>
+    <div class="tableur">
+      <div class="tableur-bar">📊 Résultat — débit 0,30 L/s</div>
+      <table>
+        <thead>
+          <tr><th>D (mm)</th><th>S (m²)</th><th>v (m/s)</th><th>Conformité ECS</th><th>Bruit</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>12</td><td>1,131e-4</td><td style="background:#fee2e2"><strong>2,65</strong></td><td style="background:#fee2e2">✗ trop rapide</td><td style="background:#fee2e2">risque bruit</td></tr>
+          <tr><td>15</td><td>1,767e-4</td><td>1,70</td><td style="background:#dcfce7">OK</td><td style="background:#fee2e2">risque bruit</td></tr>
+          <tr><td>18</td><td>2,545e-4</td><td>1,18</td><td style="background:#dcfce7">OK</td><td style="background:#dcfce7">ok</td></tr>
+          <tr><td>20</td><td>3,142e-4</td><td>0,955</td><td style="background:#dcfce7">OK</td><td style="background:#dcfce7">ok</td></tr>
+          <tr><td>22</td><td>3,801e-4</td><td>0,789</td><td style="background:#dcfce7">OK</td><td style="background:#dcfce7">ok</td></tr>
+          <tr><td>26</td><td>5,309e-4</td><td>0,565</td><td style="background:#dcfce7">OK</td><td style="background:#dcfce7">ok</td></tr>
+          <tr><td>32</td><td>8,042e-4</td><td>0,373</td><td style="background:#fef3c7">OK (limite basse)</td><td style="background:#dcfce7">ok</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PARTIE 3 - GRAPHE ===== -->
+<h2 style="color:var(--p);margin-top:30px">📈 Partie 3 – Tracer le graphique</h2>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">REA</span> – Construire un graphique</h2>
+  <p>Sélectionner les colonnes A (D en mm) et D (vitesse en m/s) — lignes 4 à 11 — puis insérer un graphique de type <strong>nuage de points avec courbe lisse (XY scatter)</strong>.</p>
+  <p>Ajouter sur le graphique :</p>
+  <ul>
+    <li>Titre : « Vitesse en fonction du diamètre — Q<sub>v</sub> = 0,30 L/s »</li>
+    <li>Axes : <em>Diamètre (mm)</em> et <em>Vitesse (m/s)</em></li>
+    <li>Une <strong>ligne horizontale rouge à v = 2 m/s</strong> (limite ECS) — clic droit sur le graphique → ajouter une série de données constante</li>
+    <li>Une <strong>ligne horizontale orange à v = 1,5 m/s</strong> (limite bruit)</li>
+  </ul>
+
+  <button class="bc" onclick="toggle(this)">Voir l'allure du graphique attendu</button>
+  <div class="corr">
+    <p>Le graphique doit ressembler à ceci (forme en hyperbole décroissante) :</p>
+
+    <!-- SVG du graphe attendu -->
+    <div class="svg-wrap" style="margin:14px 0">
+      <svg width="100%" viewBox="0 0 560 380" style="max-width:560px;display:block;margin:0 auto" role="img" aria-label="Graphique vitesse en fonction du diamètre. Courbe décroissante en hyperbole, partant de 2,65 m/s pour D=12 mm jusqu'à 0,37 m/s pour D=32 mm. Une ligne horizontale rouge à v=2 m/s (limite ECS) et une ligne horizontale orange à v=1,5 m/s (limite bruit). Zone verte entre v=0,3 et v=1,5 marquée comme zone optimale.">
+        <defs>
+          <style>
+            .axis{stroke:#1a202c;stroke-width:1.5}
+            .grid{stroke:#cbd5e1;stroke-width:.6}
+            .lim-rouge{stroke:#dc2626;stroke-width:2;stroke-dasharray:6 4}
+            .lim-orange{stroke:#ea580c;stroke-width:2;stroke-dasharray:6 4}
+            .lim-vert{stroke:#16a34a;stroke-width:1.5;stroke-dasharray:4 4}
+            .courbe{stroke:#0969da;stroke-width:2.5;fill:none}
+            .point{fill:#0969da;stroke:#fff;stroke-width:1.5}
+            .lbl{font:11px sans-serif;fill:#1a202c}
+            .lblA{font:600 12px sans-serif;fill:#1a202c}
+            .lblR{font:600 11px sans-serif;fill:#b91c1c}
+            .lblO{font:600 11px sans-serif;fill:#c2410c}
+            .lblG{font:600 11px sans-serif;fill:#15803d}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+          </style>
+        </defs>
+
+        <text class="ti" x="280" y="20">Vitesse en fonction du diamètre — Q_v = 0,30 L/s</text>
+
+        <!-- Cadre zone optimale (verte) entre y=v=0.3 et y=v=1.5 -->
+        <!-- Mapping : x: 12 mm → 70px, 32 mm → 510px (440px pour 20mm = 22px/mm)
+                       y: 0 m/s → 340px, 3 m/s → 60px (280px pour 3 m/s = 93,3 px/(m/s)) -->
+        <rect x="70" y="200" width="440" height="112" fill="#dcfce7" opacity=".5"/>
+
+        <!-- Grilles -->
+        <g class="grid">
+          <line x1="70" y1="60" x2="510" y2="60"/>
+          <line x1="70" y1="107" x2="510" y2="107"/>
+          <line x1="70" y1="153" x2="510" y2="153"/>
+          <line x1="70" y1="200" x2="510" y2="200"/>
+          <line x1="70" y1="247" x2="510" y2="247"/>
+          <line x1="70" y1="293" x2="510" y2="293"/>
+          <line x1="70" y1="340" x2="510" y2="340"/>
+          <line x1="158" y1="60" x2="158" y2="340"/>
+          <line x1="246" y1="60" x2="246" y2="340"/>
+          <line x1="334" y1="60" x2="334" y2="340"/>
+          <line x1="422" y1="60" x2="422" y2="340"/>
+        </g>
+
+        <!-- Axes -->
+        <line class="axis" x1="70" y1="340" x2="520" y2="340"/>
+        <line class="axis" x1="70" y1="50" x2="70" y2="340"/>
+
+        <!-- Graduations X -->
+        <g class="lbl" text-anchor="middle">
+          <text x="70" y="357">10</text>
+          <text x="158" y="357">15</text>
+          <text x="246" y="357">20</text>
+          <text x="334" y="357">25</text>
+          <text x="422" y="357">30</text>
+          <text x="510" y="357">35</text>
+        </g>
+        <text class="lblA" x="290" y="375" text-anchor="middle">Diamètre D (mm)</text>
+
+        <!-- Graduations Y -->
+        <g class="lbl" text-anchor="end">
+          <text x="62" y="344">0</text>
+          <text x="62" y="297">0,5</text>
+          <text x="62" y="251">1,0</text>
+          <text x="62" y="204">1,5</text>
+          <text x="62" y="158">2,0</text>
+          <text x="62" y="111">2,5</text>
+          <text x="62" y="64">3,0</text>
+        </g>
+        <text class="lblA" x="20" y="200" transform="rotate(-90 20 200)" text-anchor="middle">Vitesse v (m/s)</text>
+
+        <!-- Limites horizontales -->
+        <line class="lim-rouge" x1="70" y1="153" x2="510" y2="153"/>
+        <text class="lblR" x="500" y="148" text-anchor="end">v = 2,0 m/s — limite ECS</text>
+
+        <line class="lim-orange" x1="70" y1="200" x2="510" y2="200"/>
+        <text class="lblO" x="500" y="195" text-anchor="end">v = 1,5 m/s — limite bruit</text>
+
+        <line class="lim-vert" x1="70" y1="312" x2="510" y2="312"/>
+        <text class="lblG" x="500" y="324" text-anchor="end">v = 0,3 m/s — limite basse</text>
+        <text class="lblG" x="135" y="270">zone optimale</text>
+
+        <!-- Courbe v(D) — en utilisant les valeurs calculées -->
+        <!-- Points : (12, 2.65), (15, 1.70), (18, 1.18), (20, 0.955), (22, 0.789), (26, 0.565), (32, 0.373) -->
+        <!-- En pixels (avec : x_px = 70 + (D-10)*17.6, y_px = 340 - v*93.3) -->
+        <!-- D=12 → x=105.2 ; v=2.65 → y=92 -->
+        <!-- D=15 → x=158 ; v=1.70 → y=181 -->
+        <!-- D=18 → x=210.8 ; v=1.18 → y=230 -->
+        <!-- D=20 → x=246 ; v=0.955 → y=251 -->
+        <!-- D=22 → x=281.2 ; v=0.789 → y=266 -->
+        <!-- D=26 → x=351.6 ; v=0.565 → y=287 -->
+        <!-- D=32 → x=457.2 ; v=0.373 → y=305 -->
+
+        <path class="courbe" d="M 105 92 Q 130 130 158 181 Q 185 215 211 230 Q 230 240 246 251 Q 265 260 281 266 Q 320 280 352 287 Q 410 297 457 305"/>
+
+        <!-- Points -->
+        <circle class="point" cx="105" cy="92" r="5"/>
+        <circle class="point" cx="158" cy="181" r="5"/>
+        <circle class="point" cx="211" cy="230" r="5"/>
+        <circle class="point" cx="246" cy="251" r="5"/>
+        <circle class="point" cx="281" cy="266" r="5"/>
+        <circle class="point" cx="352" cy="287" r="5"/>
+        <circle class="point" cx="457" cy="305" r="5"/>
+
+        <!-- Annotation sur le point hors-norme -->
+        <text class="lblR" x="105" y="80" text-anchor="middle">DN12 ✗</text>
+        <text class="lblG" x="246" y="245" text-anchor="middle">DN20 ✓</text>
+
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PARTIE 4 - INTERPRÉTATION ===== -->
+<h2 style="color:var(--p);margin-top:30px">🔍 Partie 4 – Interpréter et conclure</h2>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span> – Lire le graphique</h2>
+  <p>D'après le graphique, indiquer :</p>
+  <ol type="a">
+    <li>les diamètres pour lesquels la vitesse <strong>dépasse 2 m/s</strong></li>
+    <li>les diamètres pour lesquels la vitesse est <strong>en zone optimale</strong> (entre 0,3 et 1,5 m/s)</li>
+    <li>le diamètre <strong>le plus petit</strong> qui satisfait la norme ECS</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>a) Seul le DN12 dépasse 2 m/s (v ≈ 2,65 m/s).</li>
+      <li>b) Du DN18 (v = 1,18 m/s) au DN26 (v = 0,57 m/s) sont en zone optimale. Le DN32 reste acceptable mais frôle la limite basse (0,37 m/s).</li>
+      <li>c) Le plus petit diamètre conforme est <strong>DN15</strong> (v = 1,70 m/s &lt; 2 m/s) — mais il génère un risque de bruit (v &gt; 1,5 m/s). Le plus petit diamètre <strong>réellement recommandé</strong> est donc <strong>DN18</strong>.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-blue">VAL</span> – Choix de Sonia</h2>
+  <p>Quel diamètre Sonia doit-elle choisir ? Justifier en argumentant sur :</p>
+  <ul>
+    <li>la conformité réglementaire</li>
+    <li>le risque de bruit</li>
+    <li>le coût (un tube DN26 coûte plus cher qu'un DN18)</li>
+  </ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le choix optimal est <strong>DN18</strong> ou <strong>DN20</strong> :</p>
+    <ul>
+      <li><strong>DN18</strong> (v = 1,18 m/s) : conforme aux deux normes, économique, mais peu de marge si le débit augmente ponctuellement.</li>
+      <li><strong>DN20</strong> (v = 0,96 m/s) : conforme, marge de sécurité confortable, légèrement plus cher mais durée de vie supérieure.</li>
+    </ul>
+    <p>En pratique, dans un bureau d'études, on choisirait souvent <strong>DN20</strong> car la marge de sécurité couvre les évolutions futures (besoins accrus, augmentation pression réseau).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 9 <span class="badge-blue">VAL</span> – Tester un autre débit</h2>
+  <p>Modifier la cellule B2 et entrer 0,50 L/s (besoins augmentés). <strong>Sans recalculer manuellement</strong>, observer ce qui se passe dans le tableau. Quel est le nouveau diamètre minimum recommandé ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Toutes les vitesses sont multipliées par <strong>0,50/0,30 ≈ 1,67</strong> (relation de proportionnalité, débit ↑ ⇒ vitesse ↑).</p>
+    <table>
+      <tr><th>D (mm)</th><th>v à 0,30 L/s</th><th>v à 0,50 L/s</th></tr>
+      <tr><td>15</td><td>1,70</td><td>2,83 ✗</td></tr>
+      <tr><td>18</td><td>1,18</td><td>1,96 (limite)</td></tr>
+      <tr><td>20</td><td>0,955</td><td>1,59 (bruit)</td></tr>
+      <tr><td>22</td><td>0,789</td><td>1,32 ok</td></tr>
+    </table>
+    <p>Le DN15 devient non conforme. Le DN18 frôle la limite ECS. Le diamètre minimum recommandé devient <strong>DN22</strong>.</p>
+    <p><strong>C'est l'intérêt du tableur :</strong> en changeant une seule cellule, on obtient instantanément les nouveaux résultats. Pas besoin de tout recalculer à la main.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 10 <span class="badge-yellow">COM</span> – Bilan</h2>
+  <p>Rédiger une <strong>conclusion en 5 lignes</strong> pour Sonia, qui répond à la problématique et propose un diamètre justifié.</p>
+  <button class="bc" onclick="toggle(this)">Voir un exemple de conclusion</button>
+  <div class="corr">
+    <p><em>Pour un débit ECS de 0,30 L/s, l'analyse au tableur montre que le DN12 est interdit (vitesse 2,65 m/s, supérieure à la limite de 2 m/s qui érode le cuivre) et que le DN15 génère un risque de bruit (1,70 m/s &gt; 1,5 m/s). Le diamètre <strong>DN20</strong> est la solution recommandée : la vitesse de 0,96 m/s respecte toutes les normes, garantit une bonne durée de vie de l'installation et offre une marge de sécurité si les besoins futurs augmentent. Si le budget est contraint, le DN18 reste acceptable. L'usage du tableur permet d'adapter facilement le calcul à d'autres débits ou d'autres contraintes.</em></p>
+  </div>
+</div>
+
+<!-- ===== A RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Outil tableur :</strong> automatise les calculs répétitifs ; modifier une cellule met à jour tout le tableau et le graphique.</li>
+    <li><strong>Référence absolue :</strong> les <code>$</code> dans <code>$B$2</code> verrouillent une cellule lors de la recopie d'une formule — indispensable pour les constantes.</li>
+    <li><strong>Norme ECS :</strong> 0,3 m/s &lt; v &lt; 2 m/s (limite haute pour éviter l'érosion du cuivre, limite basse pour éviter dépôts et stagnation).</li>
+    <li><strong>Recommandation bruit :</strong> v &lt; 1,5 m/s en collectif pour limiter les bruits dans les murs.</li>
+    <li><strong>Conséquence :</strong> à débit donné, plus le diamètre est grand, plus la vitesse est faible (\(v = Q_v/S\) avec \(S \propto D^2\)).</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

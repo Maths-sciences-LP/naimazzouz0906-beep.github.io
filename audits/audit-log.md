@@ -1,9 +1,29 @@
 # Journal des audits
-**Dernière mise à jour** : 2026-05-01 (Phase 4 visuels Seconde TERMINÉE 15/15)
+**Dernière mise à jour** : 2026-05-02 (6 activités complémentaires Ch06 ICCER + fix MathJax)
 
 Ce fichier est mis à jour automatiquement à chaque exécution d'un skill d'audit.
 
 ## Sessions récentes (avril-mai 2026)
+
+## 2026-05-02 — Ch06 ICCER : 6 activités complémentaires + fix MathJax 54 pages
+- **Bug critique signalé** : pages `index.html` ne chargeaient pas MathJax → formules en texte brut sur 54 chapitres (ex. ch07 PC première ERA : `\(P=F/S\)` non rendu)
+  - Correction du script `scripts/generate_chapter_index.py` (ajout MathJax dans le `<head>`)
+  - Patch des 54 `index.html` existants concernés (script Python)
+- **Nouveau prompt** `prompts/prompt-activite-supplementaire-pc.md` :
+  - 6 formats types (situation pro / fiche technique / TP numérique / DM / diagnostic / projet ouvert)
+  - Convention de nommage `activite-N-slug.html`
+  - Structure HTML, mise à jour `index.html`, checklist
+- **6 nouvelles activités créées sur le Ch06 ICCER** (transport par un fluide) :
+  - `activite-2-remplissage-ballon-ecs.html` (format A, 25 min, APP/REA)
+  - `activite-3-mesure-debit-domestique.html` (format D / DM, 30 min, REA)
+  - `activite-4-effet-venturi.html` (format F / projet ouvert, 35 min, ANA/VAL — découverte loi de Bernoulli)
+  - `activite-5-tp-simulateur-debit.html` (format C / TP tableur, 50 min, REA/VAL — courbes v(D), normes ECS)
+  - `activite-6-choisir-pompe.html` (format B / fiche technique, 40 min, APP/ANA/COM — courbes constructeur Wilo, point de fonctionnement)
+  - `activite-7-diagnostic-fuite.html` (format E, 35 min, ANA/VAL — enquête sur compteur d'eau)
+- **Effort visuel important** : tous les SVG inline ambitieux (manomètres, courbes caractéristiques, compteurs d'eau, graphiques mensuels, tableurs stylisés). Conventions accessibilité respectées (role + aria-label).
+- `index.html` du ch06 ICCER mis à jour avec une nouvelle section « Activités complémentaires »
+- 2 PR : #397 (mergée — fix MathJax + activités 2 et 3) + branche `claude/ch06-iccer-activites-suite` (4 activités restantes)
+
 
 ### 2026-04-29 / 30 — Sessions globales (parallèle audit total)
 - Audit qualité approfondi des 78 simulations (vérification manuelle Opus, recalculs)

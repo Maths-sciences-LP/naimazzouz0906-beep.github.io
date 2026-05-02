@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 6 – Choisir une pompe pour ECS – Terminale ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.fiche{background:#f8fafc;border:2px solid #1e40af;border-radius:10px;padding:0;margin:14px 0;box-shadow:0 4px 12px rgba(0,0,0,.1);overflow:hidden}
+.fiche-header{background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%);color:#fff;padding:14px 20px}
+.fiche-header h3{margin:0;color:#fff;border:none;font-size:1.1em}
+.fiche-header .ref{font-size:.82em;opacity:.9;margin-top:4px}
+.fiche-body{padding:16px 20px}
+.fiche-row{display:flex;justify-content:space-between;border-bottom:1px dashed #cbd5e1;padding:6px 0;font-size:.92em}
+.fiche-row:last-child{border-bottom:none}
+.fiche-row span:first-child{color:#475569}
+.fiche-row span:last-child{font-weight:600;color:#1e3a8a;font-family:'Menlo','Consolas',monospace}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 6 – Choisir une pompe de bouclage pour ECS <span style="font-size:.55em;color:#7c2d12;font-weight:600">FICHE TECHNIQUE</span></h1>
+  <p class="sous-titre">Chapitre 6 – Transport de masse et de volume par un fluide | Terminale Bac Pro (Grpt 1) | Physique – Mécanique des fluides | ⏱ 40 min</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Lire une fiche technique de pompe constructeur</li>
+    <li>Comprendre la notion de hauteur manométrique totale (HMT)</li>
+    <li>Déterminer un point de fonctionnement à l'intersection de deux courbes</li>
+    <li>Choisir une pompe parmi plusieurs modèles selon des critères techniques et économiques</li>
+  </ul>
+</div>
+
+<p style="margin:8px 0;padding:8px 12px;background:#fef3c7;border-left:3px solid #b45309;font-size:.9em">
+  💡 Cette activité prolonge la <a href="lecon.html">leçon</a> sur le débit en introduisant la notion de <strong>HMT</strong> (vue plus en détail au chapitre suivant) et de <strong>point de fonctionnement</strong>, vocabulaire utilisé en bureau d'études CVC.
+</p>
+
+<!-- ===== SITUATION ===== -->
+<div class="situation">
+  <h2>Situation – installation d'un bouclage ECS</h2>
+  <p><em>Lucas, technicien chauffagiste chez un installateur, doit choisir une pompe de bouclage ECS pour une maison individuelle de 180 m². Le bouclage permet de maintenir une circulation d'eau chaude en permanence dans le réseau, pour éviter d'attendre 30 secondes au robinet le matin.</em></p>
+
+  <h3>Caractéristiques du circuit (calculées par le bureau d'études)</h3>
+  <ul>
+    <li>Débit nécessaire pour le bouclage : <strong>Q<sub>besoin</sub> = 0,30 m³/h</strong> (3 fois le volume du tube par heure)</li>
+    <li>Hauteur manométrique requise : <strong>HMT<sub>besoin</sub> = 1,5 mCE</strong> (mètres de colonne d'eau, pour vaincre les pertes de charge)</li>
+    <li>Type de fluide : eau à 60 °C</li>
+    <li>Alimentation électrique : 230 V / 50 Hz monophasé</li>
+  </ul>
+
+  <p><strong>Rappel :</strong> la <em>HMT</em> (hauteur manométrique totale) représente la <em>« force »</em> que la pompe doit fournir pour faire circuler le fluide. Elle s'exprime en mètres de colonne d'eau (mCE). 1 mCE ≈ 0,1 bar.</p>
+
+  <h3>Trois modèles disponibles au catalogue Wilo Star-Z (gamme bouclage ECS)</h3>
+  <p>Le commercial Wilo a transmis trois fiches techniques.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:14px 0">
+
+    <div class="fiche">
+      <div class="fiche-header">
+        <h3>Pompe A — Star-Z 15</h3>
+        <div class="ref">Réf. WILO-4081176</div>
+      </div>
+      <div class="fiche-body">
+        <div class="fiche-row"><span>Débit max</span><span>0,9 m³/h</span></div>
+        <div class="fiche-row"><span>HMT max</span><span>1,3 mCE</span></div>
+        <div class="fiche-row"><span>Puissance élec.</span><span>15 W</span></div>
+        <div class="fiche-row"><span>Raccord</span><span>DN15</span></div>
+        <div class="fiche-row"><span>Prix indicatif</span><span>185 €</span></div>
+      </div>
+    </div>
+
+    <div class="fiche">
+      <div class="fiche-header">
+        <h3>Pompe B — Star-Z 25/2</h3>
+        <div class="ref">Réf. WILO-4081177</div>
+      </div>
+      <div class="fiche-body">
+        <div class="fiche-row"><span>Débit max</span><span>2,5 m³/h</span></div>
+        <div class="fiche-row"><span>HMT max</span><span>2,2 mCE</span></div>
+        <div class="fiche-row"><span>Puissance élec.</span><span>80 W</span></div>
+        <div class="fiche-row"><span>Raccord</span><span>DN25</span></div>
+        <div class="fiche-row"><span>Prix indicatif</span><span>320 €</span></div>
+      </div>
+    </div>
+
+    <div class="fiche">
+      <div class="fiche-header">
+        <h3>Pompe C — Star-Z 30/7</h3>
+        <div class="ref">Réf. WILO-4081178</div>
+      </div>
+      <div class="fiche-body">
+        <div class="fiche-row"><span>Débit max</span><span>4,5 m³/h</span></div>
+        <div class="fiche-row"><span>HMT max</span><span>7,0 mCE</span></div>
+        <div class="fiche-row"><span>Puissance élec.</span><span>180 W</span></div>
+        <div class="fiche-row"><span>Raccord</span><span>DN30</span></div>
+        <div class="fiche-row"><span>Prix indicatif</span><span>540 €</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <h3>Courbes caractéristiques fournies par le constructeur</h3>
+  <p>Une <strong>courbe caractéristique</strong> de pompe montre la relation HMT (hauteur que la pompe peut fournir) en fonction du débit. Plus on demande de débit, moins la HMT est élevée — la courbe est <strong>décroissante</strong>.</p>
+
+  <!-- SVG : courbes caractéristiques des 3 pompes + courbe circuit -->
+  <div class="svg-wrap" style="margin:16px 0">
+    <svg width="100%" viewBox="0 0 640 420" style="max-width:640px;display:block;margin:0 auto" role="img" aria-label="Courbes caractéristiques des 3 pompes Wilo Star-Z 15, 25/2 et 30/7. Axe X : débit en m³/h de 0 à 5. Axe Y : HMT en mCE de 0 à 8. Trois courbes décroissantes représentent chaque pompe. Une courbe parabolique croissante représente la résistance du circuit. Le point de fonctionnement est l'intersection courbe pompe / courbe circuit. Le point besoin (0,30 m³/h ; 1,5 mCE) est marqué.">
+      <defs>
+        <style>
+          .axis{stroke:#1a202c;stroke-width:1.5}
+          .grid{stroke:#cbd5e1;stroke-width:.6}
+          .pompeA{stroke:#16a34a;stroke-width:2.6;fill:none}
+          .pompeB{stroke:#0969da;stroke-width:2.6;fill:none}
+          .pompeC{stroke:#7c3aed;stroke-width:2.6;fill:none}
+          .circuit{stroke:#dc2626;stroke-width:2.5;fill:none;stroke-dasharray:5 4}
+          .besoin{stroke:#ea580c;stroke-width:2;fill:#fbbf24}
+          .pf{fill:#0969da;stroke:#fff;stroke-width:2}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .lblG{font:700 11px sans-serif;fill:#15803d}
+          .lblB{font:700 11px sans-serif;fill:#1d4ed8}
+          .lblP{font:700 11px sans-serif;fill:#6d28d9}
+          .lblR{font:700 11px sans-serif;fill:#b91c1c}
+          .lblO{font:700 11px sans-serif;fill:#c2410c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+
+      <text class="ti" x="320" y="20">Courbes caractéristiques constructeur Wilo Star-Z (bouclage ECS)</text>
+
+      <!-- Mapping :
+           x: 0 m³/h → 70px ; 5 m³/h → 590px (520px pour 5 = 104 px/(m³/h))
+           y: 0 mCE → 380px ; 8 mCE → 60px (320px pour 8 = 40 px/mCE) -->
+
+      <!-- Grilles (Y tous les 1 mCE, X tous les 1 m³/h) -->
+      <g class="grid">
+        <line x1="70" y1="60" x2="590" y2="60"/>
+        <line x1="70" y1="100" x2="590" y2="100"/>
+        <line x1="70" y1="140" x2="590" y2="140"/>
+        <line x1="70" y1="180" x2="590" y2="180"/>
+        <line x1="70" y1="220" x2="590" y2="220"/>
+        <line x1="70" y1="260" x2="590" y2="260"/>
+        <line x1="70" y1="300" x2="590" y2="300"/>
+        <line x1="70" y1="340" x2="590" y2="340"/>
+        <line x1="70" y1="380" x2="590" y2="380"/>
+        <line x1="174" y1="60" x2="174" y2="380"/>
+        <line x1="278" y1="60" x2="278" y2="380"/>
+        <line x1="382" y1="60" x2="382" y2="380"/>
+        <line x1="486" y1="60" x2="486" y2="380"/>
+        <line x1="590" y1="60" x2="590" y2="380"/>
+      </g>
+
+      <!-- Axes -->
+      <line class="axis" x1="70" y1="380" x2="600" y2="380"/>
+      <line class="axis" x1="70" y1="50" x2="70" y2="380"/>
+
+      <!-- Graduations X -->
+      <g class="lbl" text-anchor="middle">
+        <text x="70" y="397">0</text>
+        <text x="174" y="397">1</text>
+        <text x="278" y="397">2</text>
+        <text x="382" y="397">3</text>
+        <text x="486" y="397">4</text>
+        <text x="590" y="397">5</text>
+      </g>
+      <text class="lblA" x="330" y="415" text-anchor="middle">Débit Q (m³/h)</text>
+
+      <!-- Graduations Y -->
+      <g class="lbl" text-anchor="end">
+        <text x="62" y="384">0</text>
+        <text x="62" y="344">1</text>
+        <text x="62" y="304">2</text>
+        <text x="62" y="264">3</text>
+        <text x="62" y="224">4</text>
+        <text x="62" y="184">5</text>
+        <text x="62" y="144">6</text>
+        <text x="62" y="104">7</text>
+        <text x="62" y="64">8</text>
+      </g>
+      <text class="lblA" x="20" y="220" transform="rotate(-90 20 220)" text-anchor="middle">HMT (mCE)</text>
+
+      <!-- Courbe Pompe A : (0; 1.3) → (0.9; 0). Décroissante -->
+      <!-- Points : Q=0 → HMT=1.3 mCE → (70; 328) ; Q=0.9 → HMT=0 → (164; 380) -->
+      <path class="pompeA" d="M 70 328 Q 130 340 164 380"/>
+      <text class="lblG" x="180" y="370">Pompe A — Star-Z 15 (max 0,9 m³/h)</text>
+
+      <!-- Courbe Pompe B : (0; 2.2) → (2.5; 0). Décroissante -->
+      <!-- Points : Q=0 → HMT=2.2 → (70; 292) ; Q=1.25 → HMT=1.6 → (200; 316) ; Q=2.5 → HMT=0 → (330; 380) -->
+      <path class="pompeB" d="M 70 292 Q 200 316 330 380"/>
+      <text class="lblB" x="345" y="376">Pompe B — Star-Z 25/2 (max 2,5 m³/h)</text>
+
+      <!-- Courbe Pompe C : (0; 7) → (4.5; 0). Décroissante -->
+      <!-- Points : Q=0 → HMT=7 → (70; 100) ; Q=2.25 → HMT=5 → (304; 180) ; Q=4.5 → HMT=0 → (538; 380) -->
+      <path class="pompeC" d="M 70 100 Q 304 180 538 380"/>
+      <text class="lblP" x="450" y="200">Pompe C — Star-Z 30/7 (max 4,5 m³/h)</text>
+
+      <!-- Courbe résistance du circuit : HMT_circuit = k × Q² (parabole)
+           passe par (0,30; 1,5) → besoin
+           k = 1.5 / 0.30² = 16.67
+           Q=0 → 0 (70; 380) ; Q=0.5 → 4.17 → (122; 213) ; Q=1.0 → 16.67 → hors-cadre -->
+      <!-- Tracer de Q=0 à Q=0.65 environ pour rester lisible -->
+      <!-- Q=0 → (70; 380) ; Q=0.20 → 0.67 → (91; 353) ; Q=0.30 → 1.5 → (101; 320) ; Q=0.40 → 2.67 → (112; 273) ; Q=0.50 → 4.17 → (122; 213) ; Q=0.60 → 6 → (132; 140) -->
+      <path class="circuit" d="M 70 380 Q 88 376 91 353 Q 96 340 101 320 Q 107 300 112 273 Q 117 245 122 213 Q 127 178 132 140"/>
+      <text class="lblR" x="155" y="155">courbe résistance</text>
+      <text class="lblR" x="155" y="170">du circuit (HMT = k·Q²)</text>
+
+      <!-- Point besoin (0,30 m³/h ; 1,5 mCE) → (101; 320) -->
+      <circle class="besoin" cx="101" cy="320" r="7"/>
+      <line stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3 3" x1="101" y1="380" x2="101" y2="320"/>
+      <line stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3 3" x1="70" y1="320" x2="101" y2="320"/>
+      <text class="lblO" x="116" y="316">point besoin</text>
+      <text class="lblO" x="116" y="328">(0,30 m³/h ; 1,5 mCE)</text>
+
+      <!-- Légende -->
+      <g transform="translate(80 50)">
+        <rect width="280" height="14" fill="#fef3c7" opacity=".6"/>
+        <text class="lbl" x="6" y="11" font-style="italic">Le point de fonctionnement = intersection courbe pompe / courbe circuit</text>
+      </g>
+
+    </svg>
+  </div>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quelle pompe (A, B ou C) Lucas doit-il choisir pour respecter à la fois le besoin du circuit (0,30 m³/h ; 1,5 mCE) et le critère économique (consommation électrique) ?
+</div>
+
+<!-- ===== QUESTIONS ===== -->
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span> – Lecture des fiches</h2>
+  <p>Compléter le tableau récapitulatif :</p>
+  <table>
+    <thead><tr><th>Pompe</th><th>Q max (m³/h)</th><th>HMT max (mCE)</th><th>Puissance (W)</th><th>Prix (€)</th></tr></thead>
+    <tbody>
+      <tr><td>A — Star-Z 15</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
+      <tr><td>B — Star-Z 25/2</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
+      <tr><td>C — Star-Z 30/7</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
+    </tbody>
+  </table>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Pompe</th><th>Q max (m³/h)</th><th>HMT max (mCE)</th><th>Puissance (W)</th><th>Prix (€)</th></tr>
+      <tr><td>A — Star-Z 15</td><td>0,9</td><td>1,3</td><td>15</td><td>185</td></tr>
+      <tr><td>B — Star-Z 25/2</td><td>2,5</td><td>2,2</td><td>80</td><td>320</td></tr>
+      <tr><td>C — Star-Z 30/7</td><td>4,5</td><td>7,0</td><td>180</td><td>540</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">ANA</span> – Pompe A est-elle adaptée ?</h2>
+  <p>La pompe A peut-elle fournir le débit besoin (0,30 m³/h) <strong>tout en assurant</strong> la HMT besoin (1,5 mCE) ? Justifier en lisant le graphique.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Non, la pompe A ne convient pas.</strong></p>
+    <p>Sur la courbe verte (pompe A), à Q = 0,30 m³/h, on lit HMT ≈ 1,1 mCE. Or le circuit demande 1,5 mCE. La pompe A ne peut pas fournir suffisamment de hauteur manométrique : elle « calera » à un débit plus faible, sans assurer le bouclage correct.</p>
+    <p>Plus globalement, la HMT max de la pompe A (1,3 mCE) est <strong>inférieure</strong> à la HMT besoin (1,5 mCE) : impossible de répondre au cahier des charges, quel que soit le débit.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span> – Point de fonctionnement avec la pompe B</h2>
+  <p>Le <strong>point de fonctionnement</strong> est l'intersection entre la courbe de la pompe et la courbe résistance du circuit (en pointillés rouges).</p>
+  <p>Lire sur le graphique le point de fonctionnement de la pompe B (couleur bleue) et compléter :</p>
+  <ul>
+    <li>Q<sub>fct B</sub> ≈ …… m³/h</li>
+    <li>HMT<sub>fct B</sub> ≈ …… mCE</li>
+  </ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>L'intersection se situe à environ <strong>Q ≈ 0,30 m³/h</strong> et <strong>HMT ≈ 1,5 mCE</strong>.</p>
+    <p>Autrement dit, la pompe B passe <strong>exactement</strong> par le point besoin du circuit : elle est dimensionnée juste comme il faut.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span> – Pompe C est-elle un meilleur choix ?</h2>
+  <p>Lucas se dit : « Plus puissant = mieux, je prends la pompe C par sécurité. » Critique cette idée.</p>
+  <p>Indiquer où se situerait approximativement le point de fonctionnement avec la pompe C, et ce que cela impliquerait pour l'installation.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Avec la pompe C, le point de fonctionnement se situerait à un débit beaucoup plus élevé (≈ 0,55 m³/h) car la courbe pompe C est très haute. Ce surdimensionnement aurait plusieurs conséquences <strong>négatives</strong> :</p>
+    <ul>
+      <li><strong>Vitesse trop élevée</strong> dans les canalisations → bruit, érosion accélérée du cuivre.</li>
+      <li><strong>Consommation électrique plus que doublée</strong> : 180 W contre 80 W (en fonctionnement permanent 24h/24, c'est ≈ 880 kWh/an d'écart, soit ~150 €/an de surcoût).</li>
+      <li><strong>Prix d'achat plus élevé</strong> : 540 € au lieu de 320 € (+ 220 €).</li>
+      <li><strong>Régulation difficile</strong> : la pompe travaille en bas de sa courbe, dans une zone peu efficace.</li>
+    </ul>
+    <p>Conclusion : <strong>« plus puissant ≠ mieux »</strong>. En pompage, on choisit la pompe qui passe au plus près du point besoin, en zone optimale de fonctionnement.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-yellow">REA</span> – Coût de fonctionnement</h2>
+  <p>La pompe fonctionne 24 h/24 toute l'année. Calculer pour la pompe B et la pompe C :</p>
+  <ul>
+    <li>la consommation annuelle en kWh : \(E = P \times t\)</li>
+    <li>le coût annuel en € si le prix de l'électricité est de 0,20 €/kWh</li>
+  </ul>
+  <p><em>Aide : 1 an = 8 760 heures.</em></p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Pompe B (80 W) :</strong></p>
+    <ul>
+      <li>E = 80 × 8 760 = 700 800 Wh = <strong>701 kWh/an</strong></li>
+      <li>Coût = 701 × 0,20 = <strong>140 €/an</strong></li>
+    </ul>
+    <p><strong>Pompe C (180 W) :</strong></p>
+    <ul>
+      <li>E = 180 × 8 760 = 1 576 800 Wh = <strong>1 577 kWh/an</strong></li>
+      <li>Coût = 1 577 × 0,20 = <strong>315 €/an</strong></li>
+    </ul>
+    <p><strong>Surcoût annuel pompe C vs pompe B :</strong> 315 − 140 = <strong>175 €/an</strong>. Sur 10 ans : 1 750 € (sans compter l'inflation du prix de l'électricité). C'est plus que le prix d'achat de la pompe elle-même !</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">COM</span> – Recommandation à Lucas</h2>
+  <p>Rédiger en 5–6 lignes la recommandation à présenter à Lucas, en indiquant :</p>
+  <ul>
+    <li>le modèle choisi</li>
+    <li>la justification technique (point de fonctionnement)</li>
+    <li>la justification économique (consommation, coût annuel, prix)</li>
+  </ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple de recommandation</button>
+  <div class="corr">
+    <p><em>La pompe recommandée pour ce circuit de bouclage ECS est la <strong>Wilo Star-Z 25/2</strong> (pompe B). Sa courbe caractéristique passe par le point besoin du circuit (0,30 m³/h ; 1,5 mCE), ce qui assure un fonctionnement précis et stable. La pompe A (Star-Z 15) est trop faible : sa HMT max (1,3 mCE) est inférieure aux 1,5 mCE requis. La pompe C (Star-Z 30/7) est très surdimensionnée : son surcoût d'achat (+220 €) et surtout sa consommation électrique double (315 €/an au lieu de 140 €/an) pénalisent fortement l'installation, sans bénéfice technique. La pompe B représente l'optimum technique et économique. Investissement initial : 320 € + ~140 €/an d'électricité.</em></p>
+  </div>
+</div>
+
+<!-- ===== A RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Courbe caractéristique d'une pompe :</strong> graphique HMT en fonction du débit Q. Toujours décroissante (plus on demande de débit, moins la pression disponible est grande).</li>
+    <li><strong>Courbe résistance du circuit :</strong> graphique HMT besoin en fonction de Q. Croissante (plus on veut de débit, plus il y a de pertes de charge à vaincre). Forme parabolique : HMT ≈ k × Q².</li>
+    <li><strong>Point de fonctionnement :</strong> intersection des deux courbes. C'est <strong>le seul couple (Q ; HMT)</strong> auquel le système fonctionne.</li>
+    <li><strong>Règle du bon dimensionnement :</strong> on choisit une pompe dont la courbe passe au plus près du point besoin. Surdimensionner = surconsommer. Sous-dimensionner = ne pas atteindre le débit voulu.</li>
+    <li><strong>Bouclage ECS résidentiel :</strong> ordres de grandeur typiques 0,2 à 0,5 m³/h ; HMT 1 à 3 mCE ; puissance 10 à 100 W.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

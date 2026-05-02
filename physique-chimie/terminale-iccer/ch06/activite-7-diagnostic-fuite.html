@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 7 – Diagnostic d'une fuite – Terminale ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.indice{background:#fffbeb;border:1px solid #fde68a;border-left:4px solid #b45309;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.indice-head{font-weight:700;color:#7c2d12;margin-bottom:6px;font-size:.95em}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 7 – Diagnostic d'une fuite : enquête sur le compteur d'eau <span style="font-size:.55em;color:#b91c1c;font-weight:600">DIAGNOSTIC</span></h1>
+  <p class="sous-titre">Chapitre 6 – Transport de masse et de volume par un fluide | Terminale Bac Pro (Grpt 1) | Physique – Mécanique des fluides | ⏱ 35 min</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Lire un compteur d'eau et calculer un débit moyen à partir d'un relevé</li>
+    <li>Croiser plusieurs indices pour identifier la cause d'une anomalie</li>
+    <li>Distinguer plusieurs ordres de grandeur de fuites domestiques</li>
+  </ul>
+</div>
+
+<p style="margin:8px 0;padding:8px 12px;background:#fef3c7;border-left:3px solid #b45309;font-size:.9em">
+  💡 Notion centrale (vue dans <a href="lecon.html">la leçon</a>) : un débit moyen se calcule par \(Q_v = \dfrac{V}{t}\). Cette activité applique cette relation à un cas de diagnostic.
+</p>
+
+<!-- ===== SITUATION ===== -->
+<div class="situation">
+  <h2>Situation – l'enquête de Mme Berthier</h2>
+  <p><em>Mme Berthier vient de recevoir sa facture d'eau du semestre. Stupéfaite : <strong>146 m³</strong> consommés en 6 mois pour un foyer de 2 personnes. Soit le double de l'an dernier (78 m³). Elle suspecte une fuite et appelle Karim, plombier, pour diagnostiquer.</em></p>
+
+  <h3>Méthode professionnelle de Karim</h3>
+  <p>Karim explique qu'avant de chercher la fuite, il faut <strong>la quantifier</strong> et <strong>l'identifier</strong>. Sa méthode :</p>
+  <ol>
+    <li>Faire un relevé du compteur d'eau à 2 instants différents, <strong>tout robinet fermé</strong>.</li>
+    <li>Calculer le débit moyen sur cette période.</li>
+    <li>Comparer à des ordres de grandeur connus (chasse d'eau, robinet, fuite enterrée…).</li>
+    <li>En déduire la nature probable de la fuite.</li>
+  </ol>
+
+  <h3>Le compteur — relevé n°1 (lundi 8h00)</h3>
+  <p>Karim photographie le compteur d'eau de Mme Berthier avant de partir au chantier. Tous les robinets, WC et appareils sont coupés.</p>
+
+  <!-- SVG : compteur d'eau type Itron -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0">
+    <!-- Relevé 1 -->
+    <div style="text-align:center">
+      <div class="svg-wrap">
+        <svg width="100%" viewBox="0 0 280 220" style="max-width:280px" role="img" aria-label="Compteur d'eau circulaire affichant 1247,8523 m³. Cinq chiffres noirs pour les m³ entiers, quatre chiffres rouges pour les décimales. Petit indicateur de débit (étoile) qui tourne.">
+          <defs>
+            <radialGradient id="metFace" cx="50%" cy="40%">
+              <stop offset="0%" stop-color="#fef3c7"/>
+              <stop offset="100%" stop-color="#fcd34d"/>
+            </radialGradient>
+          </defs>
+          <!-- Boîtier -->
+          <circle cx="140" cy="110" r="100" fill="url(#metFace)" stroke="#78350f" stroke-width="3"/>
+          <circle cx="140" cy="110" r="92" fill="none" stroke="#92400e" stroke-width="1"/>
+
+          <!-- En-tête -->
+          <text x="140" y="38" text-anchor="middle" font="600 11px sans-serif" fill="#7c2d12">COMPTEUR D'EAU</text>
+          <text x="140" y="52" text-anchor="middle" font="9px sans-serif" fill="#7c2d12">Itron Aquadis+ DN20</text>
+
+          <!-- Cadran rectangulaire des m³ -->
+          <rect x="60" y="80" width="120" height="34" fill="#fff" stroke="#1a202c" stroke-width="1.8" rx="3"/>
+          <line x1="120" y1="80" x2="120" y2="114" stroke="#dc2626" stroke-width="2"/>
+          <text x="90" y="105" text-anchor="middle" font="700 22px monospace" fill="#1a202c" letter-spacing="3">01247</text>
+          <text x="150" y="105" text-anchor="middle" font="700 18px monospace" fill="#dc2626" letter-spacing="2">8523</text>
+
+          <text x="140" y="128" text-anchor="middle" font="9px sans-serif" fill="#475569">m³ × 0,0001</text>
+          <text x="140" y="138" text-anchor="middle" font="600 9px sans-serif" fill="#7c2d12">noir : m³ — rouge : litres</text>
+
+          <!-- Indicateur de débit (étoile) -->
+          <g transform="translate(140 175)">
+            <circle r="14" fill="#fff" stroke="#1a202c" stroke-width="1.5"/>
+            <polygon points="0,-10 3,-3 10,-3 4.5,2 6,9 0,5 -6,9 -4.5,2 -10,-3 -3,-3" fill="#dc2626" transform="rotate(45)"/>
+          </g>
+          <text x="140" y="200" text-anchor="middle" font="9px sans-serif" fill="#475569">indicateur de débit</text>
+
+        </svg>
+      </div>
+      <p style="font-size:.9em;margin:6px 0;color:#7c2d12;font-weight:600">📅 Lundi 8h00<br>Relevé : 1247,8523 m³</p>
+    </div>
+
+    <!-- Relevé 2 -->
+    <div style="text-align:center">
+      <div class="svg-wrap">
+        <svg width="100%" viewBox="0 0 280 220" style="max-width:280px" role="img" aria-label="Compteur d'eau le lundi soir 20h00 affichant 1247,9483 m³. La valeur a augmenté alors que tous les robinets étaient fermés.">
+          <defs>
+            <radialGradient id="metFace2" cx="50%" cy="40%">
+              <stop offset="0%" stop-color="#fef3c7"/>
+              <stop offset="100%" stop-color="#fcd34d"/>
+            </radialGradient>
+          </defs>
+          <circle cx="140" cy="110" r="100" fill="url(#metFace2)" stroke="#78350f" stroke-width="3"/>
+          <circle cx="140" cy="110" r="92" fill="none" stroke="#92400e" stroke-width="1"/>
+
+          <text x="140" y="38" text-anchor="middle" font="600 11px sans-serif" fill="#7c2d12">COMPTEUR D'EAU</text>
+          <text x="140" y="52" text-anchor="middle" font="9px sans-serif" fill="#7c2d12">Itron Aquadis+ DN20</text>
+
+          <rect x="60" y="80" width="120" height="34" fill="#fff" stroke="#1a202c" stroke-width="1.8" rx="3"/>
+          <line x1="120" y1="80" x2="120" y2="114" stroke="#dc2626" stroke-width="2"/>
+          <text x="90" y="105" text-anchor="middle" font="700 22px monospace" fill="#1a202c" letter-spacing="3">01247</text>
+          <text x="150" y="105" text-anchor="middle" font="700 18px monospace" fill="#dc2626" letter-spacing="2">9483</text>
+
+          <text x="140" y="128" text-anchor="middle" font="9px sans-serif" fill="#475569">m³ × 0,0001</text>
+          <text x="140" y="138" text-anchor="middle" font="600 9px sans-serif" fill="#dc2626">⚠ il a tourné !</text>
+
+          <g transform="translate(140 175)">
+            <circle r="14" fill="#fff" stroke="#1a202c" stroke-width="1.5"/>
+            <polygon points="0,-10 3,-3 10,-3 4.5,2 6,9 0,5 -6,9 -4.5,2 -10,-3 -3,-3" fill="#dc2626" transform="rotate(120)"/>
+          </g>
+          <text x="140" y="200" text-anchor="middle" font="9px sans-serif" fill="#dc2626" font-weight="600">l'étoile tourne lentement</text>
+
+        </svg>
+      </div>
+      <p style="font-size:.9em;margin:6px 0;color:#7c2d12;font-weight:600">📅 Lundi 20h00 (12h plus tard)<br>Relevé : 1247,9483 m³</p>
+    </div>
+  </div>
+
+  <h3>Indices supplémentaires recueillis par Karim</h3>
+
+  <div class="indice">
+    <div class="indice-head">🔍 Indice 1 — Conversation avec la cliente</div>
+    <p>« <em>Tout marche normalement, je ne vois aucune fuite visible. Mes WC ne font pas de bruit anormal. Je n'ai pas changé mes habitudes.</em> »</p>
+  </div>
+
+  <div class="indice">
+    <div class="indice-head">🔍 Indice 2 — Inspection visuelle</div>
+    <p>Karim inspecte les robinets, joints, raccords sous évier et lavabo. <strong>Aucune trace d'humidité</strong>. Les joints des chasses d'eau semblent bons.</p>
+  </div>
+
+  <div class="indice">
+    <div class="indice-head">🔍 Indice 3 — Test du papier toilette</div>
+    <p>Karim place une feuille de papier toilette pliée dans le fond de la cuvette des WC, à l'arrière, et revient 30 min plus tard. <strong>Le papier est mouillé</strong> sur l'un des deux WC (celui de l'étage). Pourtant, on n'entend aucun écoulement.</p>
+  </div>
+
+  <div class="indice">
+    <div class="indice-head">🔍 Indice 4 — Historique de consommation</div>
+    <p>Karim consulte l'historique fourni par le compteur connecté (téléchargé sur le smartphone du fournisseur d'eau).</p>
+
+    <!-- SVG : graphique consommation par mois -->
+    <div class="svg-wrap" style="margin:12px 0">
+      <svg width="100%" viewBox="0 0 600 280" style="max-width:600px;display:block;margin:0 auto" role="img" aria-label="Graphique en bâtons de la consommation mensuelle d'eau. Janvier à juin 2025 : entre 11 et 14 m³ par mois. Juillet à décembre 2025 : entre 22 et 28 m³ par mois. La consommation a doublé à partir de juillet, sans rupture nette mais avec une augmentation graduelle qui s'installe.">
+        <defs>
+          <style>
+            .ax{stroke:#1a202c;stroke-width:1.5}
+            .gd{stroke:#cbd5e1;stroke-width:.6}
+            .barNo{fill:#16a34a}
+            .barFu{fill:#dc2626}
+            .lbl{font:11px sans-serif;fill:#1a202c}
+            .lblA{font:600 12px sans-serif;fill:#1a202c}
+            .annot{font:600 11px sans-serif;fill:#b91c1c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+          </style>
+        </defs>
+
+        <text class="ti" x="300" y="20">Consommation mensuelle d'eau — Mme Berthier</text>
+
+        <!-- Mapping :
+             x: position des 12 mois sur 50px chacun, à partir de x=60
+             y: 0 m³ → 240px ; 30 m³ → 50px (190px pour 30 m³ = 6.33 px/m³) -->
+
+        <!-- Grilles -->
+        <g class="gd">
+          <line x1="60" y1="240" x2="560" y2="240"/>
+          <line x1="60" y1="208" x2="560" y2="208"/>
+          <line x1="60" y1="177" x2="560" y2="177"/>
+          <line x1="60" y1="145" x2="560" y2="145"/>
+          <line x1="60" y1="114" x2="560" y2="114"/>
+          <line x1="60" y1="82" x2="560" y2="82"/>
+          <line x1="60" y1="50" x2="560" y2="50"/>
+        </g>
+
+        <line class="ax" x1="60" y1="240" x2="570" y2="240"/>
+        <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
+
+        <!-- Y graduations -->
+        <g class="lbl" text-anchor="end">
+          <text x="55" y="244">0</text>
+          <text x="55" y="212">5</text>
+          <text x="55" y="180">10</text>
+          <text x="55" y="148">15</text>
+          <text x="55" y="116">20</text>
+          <text x="55" y="84">25</text>
+          <text x="55" y="52">30</text>
+        </g>
+        <text class="lblA" x="22" y="140" transform="rotate(-90 22 140)" text-anchor="middle">Conso (m³)</text>
+
+        <!-- Barres : valeurs en m³ (12, 11, 13, 12, 14, 13, 22, 24, 26, 27, 25, 22)
+             hauteur en pixels = valeur × 6.33
+             y_top = 240 - hauteur
+             largeur barre = 30 px, écart = 10 px, position début = 65 + i × 40 -->
+
+        <g>
+          <!-- Janvier 12 m³ -->
+          <rect class="barNo" x="68" y="164" width="30" height="76"/>
+          <text class="lbl" x="83" y="158" text-anchor="middle">12</text>
+          <!-- Février 11 -->
+          <rect class="barNo" x="108" y="170" width="30" height="70"/>
+          <text class="lbl" x="123" y="164" text-anchor="middle">11</text>
+          <!-- Mars 13 -->
+          <rect class="barNo" x="148" y="158" width="30" height="82"/>
+          <text class="lbl" x="163" y="152" text-anchor="middle">13</text>
+          <!-- Avril 12 -->
+          <rect class="barNo" x="188" y="164" width="30" height="76"/>
+          <text class="lbl" x="203" y="158" text-anchor="middle">12</text>
+          <!-- Mai 14 -->
+          <rect class="barNo" x="228" y="151" width="30" height="89"/>
+          <text class="lbl" x="243" y="145" text-anchor="middle">14</text>
+          <!-- Juin 13 -->
+          <rect class="barNo" x="268" y="158" width="30" height="82"/>
+          <text class="lbl" x="283" y="152" text-anchor="middle">13</text>
+          <!-- Juillet 22 -->
+          <rect class="barFu" x="308" y="101" width="30" height="139"/>
+          <text class="lbl" x="323" y="95" text-anchor="middle" fill="#b91c1c" font-weight="bold">22</text>
+          <!-- Août 24 -->
+          <rect class="barFu" x="348" y="88" width="30" height="152"/>
+          <text class="lbl" x="363" y="82" text-anchor="middle" fill="#b91c1c" font-weight="bold">24</text>
+          <!-- Septembre 26 -->
+          <rect class="barFu" x="388" y="75" width="30" height="165"/>
+          <text class="lbl" x="403" y="69" text-anchor="middle" fill="#b91c1c" font-weight="bold">26</text>
+          <!-- Octobre 27 -->
+          <rect class="barFu" x="428" y="69" width="30" height="171"/>
+          <text class="lbl" x="443" y="63" text-anchor="middle" fill="#b91c1c" font-weight="bold">27</text>
+          <!-- Novembre 25 -->
+          <rect class="barFu" x="468" y="82" width="30" height="158"/>
+          <text class="lbl" x="483" y="76" text-anchor="middle" fill="#b91c1c" font-weight="bold">25</text>
+          <!-- Décembre 22 -->
+          <rect class="barFu" x="508" y="101" width="30" height="139"/>
+          <text class="lbl" x="523" y="95" text-anchor="middle" fill="#b91c1c" font-weight="bold">22</text>
+        </g>
+
+        <!-- X labels -->
+        <g class="lbl" text-anchor="middle">
+          <text x="83" y="256">Jan</text>
+          <text x="123" y="256">Fév</text>
+          <text x="163" y="256">Mar</text>
+          <text x="203" y="256">Avr</text>
+          <text x="243" y="256">Mai</text>
+          <text x="283" y="256">Jui</text>
+          <text x="323" y="256">Jul</text>
+          <text x="363" y="256">Aoû</text>
+          <text x="403" y="256">Sep</text>
+          <text x="443" y="256">Oct</text>
+          <text x="483" y="256">Nov</text>
+          <text x="523" y="256">Déc</text>
+        </g>
+        <text class="lblA" x="300" y="275" text-anchor="middle">Mois (année 2025)</text>
+
+        <!-- Annotation -->
+        <line stroke="#b91c1c" stroke-width="2" stroke-dasharray="6 4" x1="303" y1="40" x2="303" y2="240"/>
+        <text class="annot" x="306" y="48">⚠ Doublement à partir de juillet</text>
+
+        <!-- Légende -->
+        <g transform="translate(60 30)">
+          <rect width="12" height="10" class="barNo"/>
+          <text class="lbl" x="18" y="9">consommation normale</text>
+          <rect x="170" width="12" height="10" class="barFu"/>
+          <text class="lbl" x="188" y="9">consommation anormale</text>
+        </g>
+
+      </svg>
+    </div>
+  </div>
+
+  <h3>Ordres de grandeur (à connaître par cœur en plomberie)</h3>
+  <table>
+    <thead>
+      <tr><th>Type de fuite</th><th>Débit typique</th><th>Indices</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Robinet qui goutte</td><td>2 à 5 L/h</td><td>Visible et audible</td></tr>
+      <tr><td>Chasse d'eau qui « chuchote » (joint flotteur)</td><td>10 à 30 L/h</td><td>Bruit léger, papier toilette mouillé en fond de cuvette</td></tr>
+      <tr><td>Chasse d'eau franchement défectueuse</td><td>100 à 300 L/h</td><td>Bruit d'écoulement permanent</td></tr>
+      <tr><td>Joint de canalisation enterré</td><td>5 à 50 L/h</td><td>Pas visible, humidité possible au sol après plusieurs mois</td></tr>
+      <tr><td>Rupture franche de canalisation</td><td>&gt; 1 000 L/h</td><td>Inondation visible, urgence</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quel est le débit de la fuite chez Mme Berthier, et quelle est la cause la plus probable ? Comment justifier ta réponse à partir des relevés et des indices recueillis ?
+</div>
+
+<!-- ===== QUESTIONS ===== -->
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span> – Lecture du compteur</h2>
+  <p>Lire et noter les <strong>deux relevés</strong> du compteur d'eau (les chiffres rouges sont les décimales : 1 m³ = 1 000 L donc le dernier chiffre rouge représente 0,1 L).</p>
+  <p>Calculer le volume \(V\) écoulé entre les deux relevés, en m³ puis en litres.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Relevé 1 (lundi 8h) :</strong> 1247,8523 m³</p>
+    <p><strong>Relevé 2 (lundi 20h) :</strong> 1247,9483 m³</p>
+    <p>\(V = 1247{,}9483 - 1247{,}8523 = \mathbf{0{,}0960\,\text{m}^3 = 96\,\text{L}}\)</p>
+    <p>96 litres se sont écoulés en 12 heures, alors que tous les robinets étaient fermés. C'est anormal.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span> – Calcul du débit de fuite</h2>
+  <p>Calculer le débit de fuite Q<sub>fuite</sub> en L/h, puis en L/jour et en m³/an. (Hypothèse : la fuite reste constante.)</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Durée entre les deux relevés : t = 12 h.</p>
+    <p>\(Q_\text{fuite} = \dfrac{V}{t} = \dfrac{96\,\text{L}}{12\,\text{h}} = \mathbf{8\,\text{L/h}}\)</p>
+    <p>Conversion en L/jour : Q × 24 = 8 × 24 = <strong>192 L/jour</strong></p>
+    <p>Conversion en m³/an : 192 × 365 = 70 080 L/an = <strong>70 m³/an</strong></p>
+    <p>Cette fuite, à elle seule, génère <strong>70 m³ par an</strong>. Au tarif de l'eau (≈ 4 €/m³ en France), cela représente <strong>≈ 280 € de surcoût annuel</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">VAL</span> – Cohérence avec la facture</h2>
+  <p>Sur les 6 derniers mois, Mme Berthier a consommé 146 m³ au lieu de 78 m³ habituellement. Calculer la différence et comparer avec la consommation théorique de la fuite sur 6 mois (≈ 183 jours). Conclure.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Surconsommation observée :</strong> 146 − 78 = <strong>68 m³</strong> sur 6 mois.</p>
+    <p><strong>Consommation théorique de la fuite :</strong> 192 L/jour × 183 jours ≈ 35 136 L = <strong>≈ 35 m³</strong>.</p>
+    <p>L'écart est important : 68 m³ observés contre 35 m³ théoriques. Plusieurs explications possibles :</p>
+    <ul>
+      <li>La fuite n'est <strong>pas constante</strong> : elle a peut-être augmenté avec le temps (joint qui se dégrade progressivement). Le graphique mensuel le confirme : la consommation augmente de juillet (22) à octobre (27).</li>
+      <li>La fuite a démarré <strong>avant juillet</strong>, ou a varié selon la pression du réseau.</li>
+      <li>Le débit mesuré aujourd'hui (8 L/h) est probablement <strong>plus faible</strong> que le débit moyen sur les 6 mois.</li>
+    </ul>
+    <p>Si on calcule un débit moyen <em>équivalent</em> sur 6 mois : 68 m³ / 183 jours ≈ <strong>15,5 L/h</strong> en moyenne.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span> – Identifier la cause</h2>
+  <p>À partir du débit calculé (8 L/h aujourd'hui, ~15 L/h en moyenne) et des indices 1 à 4, identifier la <strong>cause la plus probable</strong> de la fuite parmi les 5 du tableau « ordres de grandeur ».</p>
+  <p>Justifier en montrant pourquoi tu écartes les autres causes.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Cause la plus probable : chasse d'eau qui « chuchote » (joint flotteur défectueux)</strong>, sur le WC de l'étage.</p>
+    <p>Justification :</p>
+    <ul>
+      <li><strong>Robinet qui goutte (2–5 L/h)</strong> : trop faible (débit observé 8 L/h, et indice 2 → aucune trace visible).</li>
+      <li><strong>Chasse d'eau qui chuchote (10–30 L/h)</strong> : ✓ correspond bien à la plage. L'indice 3 (papier toilette mouillé sur le WC de l'étage) confirme un écoulement silencieux dans la cuvette.</li>
+      <li><strong>Chasse d'eau franchement défectueuse (100–300 L/h)</strong> : trop fort (la cliente n'entend rien selon l'indice 1).</li>
+      <li><strong>Joint de canalisation enterré (5–50 L/h)</strong> : la plage colle, mais l'indice 3 (papier toilette mouillé) localise précisément la fuite dans le WC, ce qui rend cette hypothèse moins probable.</li>
+      <li><strong>Rupture franche (&gt; 1 000 L/h)</strong> : exclu, pas d'inondation, débit observé bien plus faible.</li>
+    </ul>
+    <p>Le test du papier toilette est un classique du métier de plombier : il révèle les fuites silencieuses où le joint du flotteur (mécanisme de la chasse) laisse passer un mince filet d'eau directement dans la cuvette, sans que la chasse ne se déclenche.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span> – Vérification proposée</h2>
+  <p>Proposer un <strong>test simple</strong> que Karim peut faire pour confirmer que la fuite vient bien de la chasse d'eau du WC de l'étage (et pas d'ailleurs dans la maison).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Karim peut <strong>fermer la vanne d'arrivée d'eau</strong> située sous la chasse d'eau du WC suspect (toutes les chasses d'eau françaises modernes en sont équipées). Il attend ensuite 1 à 2 heures et vérifie le compteur :</p>
+    <ul>
+      <li>Si le compteur a <strong>cessé de tourner</strong> : la fuite vient bien de cette chasse d'eau. Il faut remplacer le mécanisme (joint flotteur ou tout le mécanisme : ~30 €).</li>
+      <li>Si le compteur <strong>continue de tourner</strong> : il y a une autre fuite (ou plusieurs) dans la maison. Karim doit alors fermer un par un les autres points (autres WC, machine à laver, ballon ECS, jardin).</li>
+    </ul>
+    <p>C'est la <strong>méthode par élimination</strong>, indispensable en diagnostic.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">COM</span> – Compte-rendu pour la cliente</h2>
+  <p>Rédiger en 6–8 lignes le <strong>compte-rendu professionnel</strong> que Karim laisse à Mme Berthier, avec :</p>
+  <ul>
+    <li>le diagnostic chiffré (débit, perte annuelle en m³ et en €)</li>
+    <li>la cause identifiée</li>
+    <li>la solution proposée et son coût estimatif</li>
+  </ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple de compte-rendu</button>
+  <div class="corr">
+    <p><em>Diagnostic du 12 mai 2026 — Mme Berthier, fuite d'eau.</em></p>
+    <p><em>Le compteur d'eau a relevé une fuite de <strong>96 litres en 12 heures</strong>, soit un débit de 8 L/h aujourd'hui. Sur la base de votre historique de consommation, le débit moyen depuis l'apparition de la fuite (juillet 2025) est estimé à environ 15 L/h, ce qui représente <strong>environ 70 m³/an</strong> et un surcoût d'environ <strong>280 €/an</strong> sur votre facture.</em></p>
+    <p><em>Le test du papier toilette a révélé la cause : le mécanisme de la chasse d'eau du WC de l'étage présente un joint flotteur défectueux qui laisse s'écouler un mince filet d'eau permanent dans la cuvette, sans bruit ni écoulement visible.</em></p>
+    <p><em>Solution : remplacement du mécanisme complet de chasse d'eau. Pièce ≈ 30 €, main d'œuvre ≈ 80 €. <strong>Total ≈ 110 €</strong>, amorti en moins de 6 mois grâce à l'économie réalisée sur la facture d'eau.</em></p>
+  </div>
+</div>
+
+<!-- ===== A RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Diagnostic d'une fuite :</strong> méthode en 4 étapes — quantifier (compteur), identifier la nature (ordres de grandeur), localiser (test simple), proposer une solution.</li>
+    <li><strong>Calcul du débit moyen :</strong> \(Q_v = V / t\), avec V en L et t en h pour obtenir des L/h.</li>
+    <li><strong>Ordres de grandeur de fuite à connaître :</strong> robinet qui goutte 2–5 L/h, chasse silencieuse 10–30 L/h, chasse bruyante 100–300 L/h, fuite enterrée 5–50 L/h.</li>
+    <li><strong>Coût annuel d'une petite fuite :</strong> 10 L/h → 90 m³/an → ≈ 360 €/an. Une fuite « invisible » de 8 L/h coûte plus cher en un an que sa réparation (≈ 110 €).</li>
+    <li><strong>Méthode du papier toilette :</strong> outil professionnel pour détecter les fuites silencieuses de chasse d'eau.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
