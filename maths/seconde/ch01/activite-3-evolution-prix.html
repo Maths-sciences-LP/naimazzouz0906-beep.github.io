@@ -1,60 +1,217 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch01 – Activité 3 – Évolutions de prix successives – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch01 – Activité 3 – Évolutions successives de prix – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 3 – Augmentations et baisses successives <span style="font-size:.55em;color:#7c2d12;font-weight:600">ÉTUDE DE CAS</span></h1>
-<p class="sous-titre">Chapitre 1 – Proportionnalité et pourcentages | 2nde Bac Pro MAMA | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Composer plusieurs évolutions en pourcentage</li>
-<li>Comprendre que +20 % puis −20 % ≠ retour au prix initial</li></ul></div>
+<header>
+  <h1>Activité 3 – Évolutions successives du prix du chêne <span style="font-size:.55em;color:#7c2d12;font-weight:600">ÉTUDE DE CAS</span></h1>
+  <p class="sous-titre">Chapitre 1 – Proportionnalité et pourcentages | 2nde Bac Pro MAMA | Mathématiques | ⏱ 55 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 09:00</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – flambée du prix du bois</h2>
-<p><em>Le prix du chêne a augmenté de 30 % en 2024, puis baissé de 15 % en 2025. Mehdi, ébéniste, voudrait savoir où en est le prix par rapport à 2023.</em></p>
-<p>Prix de référence 2023 : 100 €/m³.</p></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Composer plusieurs évolutions exprimées en pourcentages</li>
+    <li>Comprendre que les pourcentages ne s'additionnent pas (+ 30 % puis − 15 % ≠ + 15 %)</li>
+    <li>Calculer le pourcentage d'évolution global d'une période à l'autre</li>
+    <li>Trouver le pourcentage de baisse compensant exactement une hausse</li>
+  </ul>
+</div>
+
+<!-- ===== SITUATION ===== -->
+<div class="situation">
+  <h2>Situation – le marché du bois pour Mehdi, ébéniste</h2>
+  <p><em>Mehdi gère un atelier d'ébénisterie à Bordeaux. Il achète régulièrement du chêne français (planches massives) auprès de la même scierie locale. Suite aux événements géopolitiques de 2024 et à la sécheresse, le prix du chêne a fortement augmenté en 2024 puis légèrement baissé en 2025. Mehdi veut préparer son budget 2026 et a besoin de comprendre où en est le prix par rapport à 2023.</em></p>
+
+  <h3>Document 1 — Historique des évolutions du prix</h3>
+  <table>
+    <thead>
+      <tr><th>Année</th><th>Évolution</th><th>Cause principale</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>2023</td><td>Référence (100 %)</td><td>Marché stable</td></tr>
+      <tr><td>2024</td><td><strong>+ 30 %</strong></td><td>Sécheresse + tension géopolitique</td></tr>
+      <tr><td>2025</td><td><strong>− 15 %</strong></td><td>Ouverture du marché européen</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document 2 — Prix de référence 2023</h3>
+  <p>Prix de la planche de chêne brut (épaisseur 27 mm) : <strong>100 €/m³</strong> en moyenne en 2023.</p>
+
+  <h3>Document 3 — Outils de calcul</h3>
+  <ul>
+    <li><strong>Augmentation de p % :</strong> coefficient multiplicateur 1 + p/100. Exemple : + 30 % → ×1,30.</li>
+    <li><strong>Diminution de p % :</strong> coefficient multiplicateur 1 − p/100. Exemple : − 15 % → ×0,85.</li>
+    <li><strong>Évolutions successives :</strong> les coefficients se <strong>multiplient</strong>, ils ne s'additionnent pas.</li>
+    <li><strong>Évolution globale en % :</strong> (coefficient global − 1) × 100. Si coef global = 1,10 → + 10 %.</li>
+  </ul>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Le prix de 2025 est-il revenu à celui de 2023 ?</div>
+  <strong>Problématique :</strong> Après ces 2 années de fluctuations (+ 30 % puis − 15 %), le prix du chêne en 2025 est-il revenu à celui de 2023, supérieur, ou inférieur ? De combien exactement ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer le prix en 2024 (après +30 %) puis en 2025 (après −15 %).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>2024 : 100 × 1,30 = <strong>130 €/m³</strong></p>
-<p>2025 : 130 × 0,85 = <strong>110,50 €/m³</strong></p>
-<p>Coefficient global : 1,30 × 0,85 = 1,105 → +10,5 % en 2 ans (pas 0 % !).</p>
-</div></div>
+<!-- ===== QUESTIONS ===== -->
 
-<div class="exo"><h2>Question 2 <span class="badge-blue">VAL</span></h2>
-<p>Pourquoi +30 % puis −15 % ne s'annule pas ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Les pourcentages s'appliquent à des bases différentes :</p>
-<ul>
-<li>+30 % de 100 = +30 € → base 130</li>
-<li>−15 % de 130 = −19,5 € (pas de 100 !)</li>
-</ul>
-<p>Pour annuler exactement +30 %, il faudrait baisser de 23 % (1/1,30 ≈ 0,77).</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Sans calculer, donner ton intuition : après une hausse de 30 % puis une baisse de 15 %, on obtient :</p>
+  <ol type="a">
+    <li>Le même prix qu'au départ</li>
+    <li>Un prix inférieur à celui de 2023</li>
+    <li>Un prix supérieur à celui de 2023</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir une analyse</button>
+  <div class="corr">
+    <p>Beaucoup d'élèves choisissent (a) en se disant : « 30 − 15 = 15 % d'écart, mais je ne sais pas si c'est en plus ou en moins ». L'intuition juste est en réalité (c) : le prix est <strong>supérieur</strong> à celui de 2023. La question 2 va le démontrer mathématiquement.</p>
+    <p>L'erreur classique : ajouter ou soustraire les pourcentages. Les pourcentages NE S'ADDITIONNENT PAS lorsqu'ils s'appliquent à des bases différentes.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-yellow">REA</span></h2>
-<p>Quel pourcentage de baisse en 2025 aurait ramené le prix à 100 € ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>On veut 130 × k = 100 → k = 100/130 ≈ 0,769 → baisse de 23,1 %.</p>
-<p>Règle : pour annuler +x %, il faut baisser de x/(100+x) %.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le prix du chêne en 2024 (après la hausse de 30 %), à partir du prix de référence 100 €/m³ de 2023.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Coefficient multiplicateur : 1 + 30/100 = 1,30.</p>
+    <p>Prix 2024 = 100 × 1,30 = <strong>130 €/m³</strong>.</p>
+    <p>Vérification par soustraction : 30 % de 100 = 30. Donc 100 + 30 = 130 €/m³ ✓</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Évolutions successives :</strong> on multiplie les coefficients (1,30 × 0,85 = 1,105 = +10,5 %).</li>
-<li><strong>Piège :</strong> +x % puis −x % ≠ retour au point de départ.</li>
-<li><strong>Annuler une hausse de x % :</strong> il faut baisser de x/(100+x) %.</li></ul></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le prix en 2025 (après la baisse de 15 % par rapport à 2024).</p>
+  <p><em>Attention : la baisse de 15 % s'applique au prix de 2024 (130 €/m³), pas au prix de 2023.</em></p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Coefficient multiplicateur : 1 − 15/100 = 0,85.</p>
+    <p>Prix 2025 = 130 × 0,85 = <strong>110,50 €/m³</strong>.</p>
+    <p>Vérification : 15 % de 130 = 19,50. Donc 130 − 19,50 = 110,50 €/m³ ✓</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Calculer le <strong>coefficient global</strong> entre 2023 et 2025 (en multipliant les 2 coefficients), puis l'évolution globale en pourcentage.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Coefficient global = 1,30 × 0,85 = <strong>1,105</strong>.</p>
+    <p>Évolution globale : (1,105 − 1) × 100 = <strong>+ 10,5 %</strong>.</p>
+    <p>Vérification directe : Prix 2025 / Prix 2023 = 110,50 / 100 = 1,105 ✓</p>
+    <p>Donc le prix de 2025 est <strong>supérieur de 10,5 %</strong> au prix de 2023, malgré la baisse de 15 % en 2025. Confirme l'intuition (c) de la question 1.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Pourquoi + 30 % puis − 15 % donne + 10,5 % et non + 15 % (comme on le calculerait en additionnant) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Les pourcentages s'appliquent à des <strong>bases différentes</strong> :</p>
+    <ul>
+      <li>+ 30 % de 2023 → 30 % de <strong>100</strong> = 30 €. Nouvelle base : 130 €.</li>
+      <li>− 15 % de 2024 → 15 % de <strong>130</strong> = 19,50 €. La base a changé.</li>
+    </ul>
+    <p>Si on additionnait simplement (+ 30 − 15 = + 15 %), on ferait l'erreur d'appliquer les 2 pourcentages à la même base. Or la baisse de 15 % s'applique à 130 €, pas à 100 €.</p>
+    <p><strong>Différence de calcul :</strong></p>
+    <ul>
+      <li>Méthode fausse (addition) : 100 + 15 = 115 €</li>
+      <li>Méthode correcte (multiplication des coefficients) : 100 × 1,30 × 0,85 = 110,50 €</li>
+    </ul>
+    <p>L'écart de 4,50 € (~ 4 %) est non négligeable, et croît avec l'amplitude des évolutions.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">REA</span></h2>
+  <p>Mehdi se demande : si le prix avait <strong>baissé</strong> de 30 % en 2024 puis <strong>augmenté</strong> de 15 % en 2025, quel serait le prix final ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Coefficient global = (1 − 0,30) × (1 + 0,15) = 0,70 × 1,15 = <strong>0,805</strong>.</p>
+    <p>Prix 2025 = 100 × 0,805 = <strong>80,50 €/m³</strong>.</p>
+    <p>Évolution globale : (0,805 − 1) × 100 = <strong>− 19,5 %</strong>.</p>
+    <p>Encore une fois, ce n'est pas − 15 % comme on pourrait le penser en additionnant (− 30 + 15 = − 15). C'est − 19,5 %.</p>
+    <p>Cette dissymétrie est importante en finance et en commerce.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Pour ramener le prix exactement à celui de 2023 (100 €/m³), il aurait fallu une baisse de combien de % en 2025 (au lieu de 15 %) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>On cherche le coefficient k tel que 130 × k = 100, donc k = 100 / 130 ≈ <strong>0,769</strong>.</p>
+    <p>Soit une baisse de 1 − 0,769 = 0,231 = <strong>23,1 %</strong>.</p>
+    <p>Pour annuler une hausse de 30 %, il faut baisser non pas de 30 % mais de <strong>23,1 %</strong>.</p>
+    <p>Règle générale : pour annuler une hausse de p %, il faut baisser de p / (100 + p) × 100 %.</p>
+    <p>Exemples :</p>
+    <ul>
+      <li>+ 10 % → annulé par − 9,1 %</li>
+      <li>+ 50 % → annulé par − 33,3 %</li>
+      <li>+ 100 % (×2) → annulé par − 50 %</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">REA</span></h2>
+  <p>Pour son budget 2026, Mehdi prévoit que le prix va encore baisser de 8 % en 2026 par rapport à 2025. Quel serait alors le prix final, et quelle serait l'évolution globale 2023 → 2026 ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Prix 2026 = Prix 2025 × 0,92 = 110,50 × 0,92 ≈ <strong>101,66 €/m³</strong>.</p>
+    <p>Coefficient global 2023 → 2026 : 1,30 × 0,85 × 0,92 = <strong>1,017</strong>, soit <strong>+ 1,7 %</strong>.</p>
+    <p>Mehdi peut anticiper que son chêne reviendra quasi au prix de 2023 fin 2026, avec un léger surcoût de 1,7 %.</p>
+    <p>Pour un atelier qui consomme 5 m³/an, le surcoût annuel par rapport à 2023 sera : 5 × (101,66 − 100) = ~ 8,30 €. Modeste.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 9 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une <strong>note de synthèse</strong> que Mehdi peut joindre à son budget prévisionnel 2026, en expliquant l'évolution réelle des prix par rapport à 2023.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>Note Budget Bois 2026 — Atelier Mehdi Ébénisterie.</em></p>
+    <p><em>Le prix du chêne brut a évolué de la façon suivante depuis notre référence 2023 (100 €/m³) : + 30 % en 2024 (130 €/m³ — sécheresse + géopolitique), puis − 15 % en 2025 (110,50 €/m³ — détente du marché européen). <strong>Contrairement à l'intuition, ces 2 évolutions ne s'annulent pas</strong> : le prix de 2025 reste supérieur de 10,5 % à 2023.</em></p>
+    <p><em>Pour 2026, en supposant une nouvelle baisse de 8 %, le prix devrait revenir autour de 102 €/m³, soit + 1,7 % par rapport à 2023. Sur notre consommation moyenne de 5 m³/an, cela représente un surcoût budgétaire d'environ 8 €/an, négligeable. Je propose donc de <strong>maintenir notre budget « bois » 2026 au niveau 2023</strong>, avec une marge de sécurité de 10 % pour absorber les fluctuations.</em></p>
+  </div>
+</div>
+
+<!-- ===== A RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Coefficient multiplicateur :</strong> + p % → 1 + p/100 ; − p % → 1 − p/100.</li>
+    <li><strong>Évolutions successives :</strong> on multiplie les coefficients (× et non +).</li>
+    <li><strong>Piège :</strong> + p % puis − p % ne donne PAS le prix initial. Le coefficient global est (1+p/100)(1−p/100) = 1 − p²/10000, légèrement inférieur à 1.</li>
+    <li><strong>Pourcentage d'évolution globale :</strong> (coefficient global − 1) × 100.</li>
+    <li><strong>Pour annuler une hausse de p %,</strong> il faut baisser de p / (100 + p) × 100 % (et non de p %).</li>
+    <li><strong>Application en finance, commerce, économie :</strong> ne jamais additionner les pourcentages d'évolutions successives.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

@@ -1,64 +1,208 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch01 – Activité 2 – Remise sur devis – 2nde Bac Pro MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch01 – Activité 2 – Remise commerciale sur un devis – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 2 – Remise commerciale sur un devis <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
-<p class="sous-titre">Chapitre 1 – Proportionnalité et pourcentages | 2nde Bac Pro MAMA | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}
+.devis{background:#fff;border:2px solid #1e40af;border-radius:8px;padding:0;margin:14px 0;box-shadow:0 4px 12px rgba(0,0,0,.1);overflow:hidden;font-family:'Times New Roman',serif}
+.devis-header{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;padding:14px 20px}
+.devis-header h3{margin:0;color:#fff;border:none;font-size:1.15em;font-family:Arial,sans-serif}
+.devis-body{padding:18px 22px}
+.devis-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #e2e8f0;font-size:.93em}
+.devis-row.total{padding:10px 8px;background:#dbeafe;font-weight:700;color:#1e3a8a;border-radius:4px;margin-top:10px;font-size:1.05em;border:none}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Calculer un prix après remise (pourcentage)</li>
-<li>Calculer la TVA sur un montant HT</li>
-<li>Comprendre l'effet d'une remise sur le bénéfice</li></ul></div>
+<header>
+  <h1>Activité 2 – Remise commerciale sur un devis de cuisine <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 1 – Proportionnalité et pourcentages | 2nde Bac Pro MAMA | Mathématiques | ⏱ 35 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 09:00</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – devis cuisine sur mesure</h2>
-<p><em>Karim, menuisier agenceur, prépare un devis pour une cuisine équipée. Prix HT : 8 500 €. Le client demande une remise de 5 %. Karim fait son calcul.</em></p>
-<p>TVA en France : 20 % pour la fourniture, 10 % pour la pose. Pour simplifier, on appliquera 20 % sur le total.</p></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Calculer un montant après remise (pourcentage de réduction)</li>
+    <li>Calculer une TVA et passer du HT au TTC</li>
+    <li>Comprendre l'impact d'une remise sur la marge de l'artisan</li>
+    <li>Utiliser les coefficients multiplicateurs (×0,95 et ×1,20)</li>
+  </ul>
+</div>
+
+<!-- ===== SITUATION ===== -->
+<div class="situation">
+  <h2>Situation – devis cuisine sur mesure chez M. Dubois</h2>
+  <p><em>Karim, menuisier agenceur de 32 ans, gère sa propre micro-entreprise depuis 5 ans. Il rencontre M. Dubois qui souhaite faire installer une cuisine équipée sur mesure dans sa nouvelle maison à Tours. Karim chiffre les prestations et envoie un premier devis. Le client trouve le prix élevé et demande un effort commercial.</em></p>
+
+  <h3>Document 1 — Devis initial transmis à M. Dubois</h3>
+  <div class="devis">
+    <div class="devis-header">
+      <h3>📋 Devis n° 2026-042 — Cuisine sur mesure</h3>
+      <div style="font-size:.82em;opacity:.9;margin-top:4px">Karim Bensaïd Menuiserie — 37000 Tours · 12 avril 2026</div>
+    </div>
+    <div class="devis-body">
+      <div class="devis-row"><span>Caissons bas en chêne (8 unités)</span><span>2 800 €</span></div>
+      <div class="devis-row"><span>Caissons hauts en chêne (6 unités)</span><span>1 950 €</span></div>
+      <div class="devis-row"><span>Plan de travail hêtre massif 3 m</span><span>950 €</span></div>
+      <div class="devis-row"><span>Façades vitrées (2 unités)</span><span>480 €</span></div>
+      <div class="devis-row"><span>Quincaillerie + accessoires</span><span>620 €</span></div>
+      <div class="devis-row"><span>Pose et installation (3 jours)</span><span>1 700 €</span></div>
+      <div class="devis-row total"><span>Total HT</span><span>8 500 €</span></div>
+    </div>
+  </div>
+
+  <h3>Document 2 — Demande du client</h3>
+  <p><em>« Karim, votre devis me convient mais le prix dépasse mon budget initial de 10 000 € TTC. Pouvez-vous me consentir une remise commerciale de 5 % ? »</em></p>
+
+  <h3>Document 3 — Données techniques</h3>
+  <ul>
+    <li>Taux de TVA applicable : <strong>20 %</strong> (sur l'ensemble du devis pour simplifier)</li>
+    <li>Marge de Karim sur ce devis : <strong>25 %</strong> du prix HT (avant remise)</li>
+    <li>1 € HT × 1,20 = 1 € TTC ; remise de p % → coefficient 1 − p/100</li>
+  </ul>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Quel est le prix TTC final après la remise, et combien Karim « offre » réellement au client ?</div>
+  <strong>Problématique :</strong> Quel est le prix TTC final après la remise demandée par M. Dubois, et combien Karim « offre » réellement sur sa marge ? Cet effort est-il acceptable ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer le montant de la remise (5 % de 8 500 € HT).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Remise = 8 500 × 5/100 = 8 500 × 0,05 = <strong>425 €</strong></p>
-</div></div>
+<!-- ===== QUESTIONS ===== -->
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Calculer le prix HT après remise et le prix TTC.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>HT remisé = 8 500 − 425 = <strong>8 075 €</strong>. Ou : 8 500 × 0,95 = 8 075 € (méthode coefficient multiplicateur).</p>
-<p>TTC = 8 075 × 1,20 = <strong>9 690 €</strong></p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Identifier sur le devis :</p>
+  <ol type="a">
+    <li>Le montant total <strong>hors taxes</strong> (HT)</li>
+    <li>Le pourcentage de remise demandé par le client</li>
+    <li>Le taux de TVA applicable</li>
+    <li>Le pourcentage de marge de Karim</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>(a) Total HT = <strong>8 500 €</strong></li>
+      <li>(b) Remise demandée = <strong>5 %</strong></li>
+      <li>(c) TVA = <strong>20 %</strong></li>
+      <li>(d) Marge Karim = <strong>25 % du HT</strong></li>
+    </ul>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Karim a une marge de 25 % sur le prix HT. Quel est son bénéfice avec et sans remise ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Sans remise : marge = 8 500 × 0,25 = 2 125 €</p>
-<p>Avec remise 5 % : la marge passe directement de 2 125 € à 2 125 − 425 = <strong>1 700 €</strong> (la remise vient entièrement sur la marge).</p>
-<p>5 % de remise = 20 % de marge en moins ! C'est un piège classique : un petit pourcentage de remise mange une grosse part du bénéfice.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le <strong>montant de la remise</strong> (5 % de 8 500 €). Détailler le calcul.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour calculer p % d'une valeur V, on multiplie : V × p/100.</p>
+    <p>Remise = 8 500 × 5/100 = 8 500 × 0,05 = <strong>425 €</strong></p>
+    <p>Karim accorde 425 € de réduction au client.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 4 <span class="badge-yellow">COM</span></h2>
-<p>Quelle réponse Karim peut-il donner au client ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir un exemple</button>
-<div class="corr">
-<p><em>« Je peux vous accorder 5 % de remise, ce qui ramène le prix à 8 075 € HT (9 690 € TTC). Si vous payez comptant à la commande, je peux aussi proposer 3 % supplémentaire (gain trésorerie). Pour aller plus loin sur le prix, il faudrait revoir certaines fournitures (façades, plan de travail). »</em></p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le <strong>nouveau prix HT</strong> (après remise) par 2 méthodes différentes :</p>
+  <ol type="a">
+    <li>Méthode soustraction : prix initial − montant remise</li>
+    <li>Méthode coefficient multiplicateur : prix × (1 − 5/100)</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>(a) Soustraction : 8 500 − 425 = <strong>8 075 €</strong> HT</li>
+      <li>(b) Coefficient : 8 500 × (1 − 0,05) = 8 500 × 0,95 = <strong>8 075 €</strong> HT</li>
+    </ul>
+    <p>Les deux méthodes donnent le même résultat. La méthode (b) est plus rapide pour les calculs en chaîne (par ex. enchaîner remise puis TVA).</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Remise de p % :</strong> coefficient multiplicateur 1 − p/100. Remise 5 % = ×0,95.</li>
-<li><strong>TVA 20 % :</strong> coefficient ×1,20.</li>
-<li><strong>Attention :</strong> une remise vient sur la marge, pas sur le coût. 5 % remise = parfois 20-30 % de marge en moins.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le <strong>prix TTC final</strong> (après remise et avec TVA 20 %).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Prix TTC = HT × (1 + 20/100) = 8 075 × 1,20 = <strong>9 690 €</strong></p>
+    <p>Vérification : montant TVA = 8 075 × 0,20 = 1 615 €. Donc TTC = 8 075 + 1 615 = 9 690 € ✓</p>
+    <p>Calcul en une seule fois (« coefficient global ») :</p>
+    <p>Prix TTC final = 8 500 × 0,95 × 1,20 = 8 500 × 1,14 = 9 690 € ✓</p>
+    <p>Le client est sous son budget de 10 000 € TTC : <strong>marge de 310 €</strong>.</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Calculer la <strong>marge de Karim avant remise</strong> (25 % de 8 500 € HT).</p>
+  <p>Puis montrer que <strong>la remise vient entièrement sur la marge</strong> (pas sur le coût du matériel ou de la main d'œuvre).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Marge initiale = 8 500 × 0,25 = <strong>2 125 €</strong>.</p>
+    <p>Le coût réel de Karim (matières, main d'œuvre, charges) = 8 500 − 2 125 = <strong>6 375 €</strong>. Ce coût ne change pas avec la remise (les caissons et la pose coûtent toujours pareil à fabriquer).</p>
+    <p>Avec remise, Karim encaisse 8 075 € HT mais ses coûts restent à 6 375 €.</p>
+    <p>Sa nouvelle marge = 8 075 − 6 375 = <strong>1 700 €</strong>.</p>
+    <p>Marge perdue = 2 125 − 1 700 = <strong>425 €</strong> = exactement le montant de la remise.</p>
+    <p>Conclusion : la remise diminue <strong>uniquement la marge</strong> de l'artisan, pas ses coûts. Une remise de 425 € = 425 € en moins dans sa poche.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Karim raisonne ainsi : « Une remise de 5 % du prix, ce n'est pas grand-chose, j'accepte. » Cette intuition est-elle juste ?</p>
+  <p>Calculer le pourcentage de marge perdue : (425 / marge initiale) × 100.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pourcentage de marge perdue = 425 / 2 125 × 100 = <strong>20 %</strong> de marge en moins !</p>
+    <p>Effet pédagogique surprenant : <strong>5 % de remise sur le prix = 20 % de marge en moins</strong>.</p>
+    <p>L'intuition de Karim était fausse. Un petit pourcentage de remise mange une grosse part du bénéfice. Ce piège est classique chez les artisans débutants.</p>
+    <p>Règle générale : <strong>% perte marge = % remise / taux de marge</strong>. Ici 5 % / 25 % = 20 %.</p>
+    <p>Si la marge n'avait été que de 10 % : 5 % de remise = 50 % de marge en moins ! Très dangereux.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes la <strong>réponse de Karim au client</strong> qui :</p>
+  <ul>
+    <li>accepte (ou refuse) la remise demandée</li>
+    <li>explique sa décision</li>
+    <li>propose éventuellement une alternative</li>
+  </ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple de réponse</button>
+  <div class="corr">
+    <p><em>Bonjour M. Dubois,</em></p>
+    <p><em>Je peux vous accorder la remise de 5 % demandée, ce qui ramène le prix à <strong>8 075 € HT, soit 9 690 € TTC</strong>. Vous restez sous votre budget de 10 000 € TTC.</em></p>
+    <p><em>Je préfère être transparent : cette remise vient entièrement sur ma marge artisanale et représente 20 % de mon bénéfice sur ce chantier — je ne peux pas aller plus loin sans renoncer à la qualité ou aux finitions choisies. Si vous voulez un prix encore inférieur, nous pouvons étudier ensemble : remplacer 2 façades vitrées par des façades pleines (économie ~ 200 €), ou repousser certaines options à plus tard.</em></p>
+    <p><em>Sinon, je peux démarrer le chantier dès la semaine du 5 mai. Bonne réception, Karim.</em></p>
+  </div>
+</div>
+
+<!-- ===== A RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Remise de p % :</strong> coefficient multiplicateur 1 − p/100. Exemple : remise 5 % → ×0,95.</li>
+    <li><strong>TVA 20 % :</strong> coefficient ×1,20 pour passer du HT au TTC. (Inverse : ÷ 1,20 pour passer du TTC au HT.)</li>
+    <li><strong>Combinaison de coefficients :</strong> remise puis TVA = ×0,95 × 1,20 = ×1,14 (en un seul calcul).</li>
+    <li><strong>Attention au piège :</strong> une remise vient sur la <strong>marge</strong>, pas sur le coût. % de marge perdue = % remise / taux de marge.</li>
+    <li><strong>Règle pratique pour artisan :</strong> avant d'accepter une remise, calculer son impact sur la marge réelle, pas seulement sur le prix affiché.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
