@@ -1,77 +1,255 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch02 – Activité 4 – Probabilités du loto et arnaques – Term Bac Pro</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch02 – Activité 4 – Le Loto, un mauvais investissement (espérance) – Term Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
-</head><body><div class="c"><a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 4 – Le loto : un mauvais investissement <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
-<p class="sous-titre">Chapitre 2 – Probabilités | Terminale Bac Pro | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Calculer une probabilité combinatoire</li>
-<li>Calculer une espérance de gain</li>
-<li>Aiguiser son esprit critique face aux jeux d'argent</li></ul></div>
+<header>
+  <h1>Activité 4 – Le Loto : un mauvais investissement (calcul d'espérance) <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
+  <p class="sous-titre">Chapitre 2 – Probabilités conditionnelles | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – pub : « Tentez votre chance, gagnez 5 millions ! »</h2>
-<p><em>Au Loto FDJ classique, on choisit 5 numéros sur 49 + 1 numéro « chance » sur 10. Coût d'une grille : 2,20 €. Les probabilités officielles :</em></p>
-<table>
-<thead><tr><th>Combinaison</th><th>Probabilité</th><th>Gain moyen</th></tr></thead>
-<tbody>
-<tr><td>5 + chance (jackpot)</td><td>1 / 19 068 840</td><td>~ 5 000 000 €</td></tr>
-<tr><td>5 sans chance</td><td>1 / 2 118 760</td><td>~ 100 000 €</td></tr>
-<tr><td>4 + chance</td><td>1 / 86 677</td><td>~ 1 000 €</td></tr>
-<tr><td>3 + chance</td><td>1 / 2 016</td><td>~ 50 €</td></tr>
-<tr><td>2 + chance</td><td>1 / 144</td><td>~ 4 €</td></tr>
-<tr><td>0/1/2 sans chance</td><td>~ 90 %</td><td>0 €</td></tr>
-</tbody></table></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Calculer une probabilité combinatoire</li>
+    <li>Calculer l'espérance mathématique d'un gain</li>
+    <li>Comparer espérance et mise pour évaluer un jeu</li>
+    <li>Aiguiser l'esprit critique face aux jeux d'argent</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – publicité Loto FDJ : « Tentez votre chance ! »</h2>
+  <p><em>Au Loto FDJ classique, on choisit 5 numéros sur 49 + 1 numéro « chance » sur 10. Coût d'une grille : 2,20 €. Question : sur le long terme, ce jeu fait-il gagner ou perdre de l'argent au joueur ?</em></p>
+
+  <h3>Document — gains et probabilités officielles</h3>
+  <table>
+    <thead>
+      <tr><th>Combinaison</th><th>Probabilité</th><th>Gain moyen</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>5 numéros + chance (jackpot)</td><td>1 / 19 068 840</td><td>≈ 5 000 000 €</td></tr>
+      <tr><td>5 numéros sans chance</td><td>1 / 2 118 760</td><td>≈ 100 000 €</td></tr>
+      <tr><td>4 + chance</td><td>1 / 86 677</td><td>≈ 1 000 €</td></tr>
+      <tr><td>4 sans chance</td><td>1 / 9 631</td><td>≈ 50 €</td></tr>
+      <tr><td>3 + chance</td><td>1 / 2 016</td><td>≈ 50 €</td></tr>
+      <tr><td>3 sans chance</td><td>1 / 224</td><td>≈ 6 €</td></tr>
+      <tr><td>2 + chance</td><td>1 / 144</td><td>≈ 4 €</td></tr>
+      <tr><td>0, 1, ou 2 sans chance</td><td>≈ 90 %</td><td>0 € (perte de la mise)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document — espérance de gain (visualisation)</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 240" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Comparaison mise (2,20€) et espérance de gain (0,37€). La mise est largement plus haute que l'espérance, donc perte de 1,83€ par grille en moyenne.">
+      <defs>
+        <style>
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 13px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Mise vs Espérance de gain (par grille)</text>
+
+      <!-- Barre mise (2,20 €) à gauche -->
+      <rect x="120" y="55" width="100" height="160" fill="#dc2626"/>
+      <text x="170" y="80" class="lblA" text-anchor="middle" fill="#fff">MISE</text>
+      <text x="170" y="100" class="lbl" text-anchor="middle" fill="#fff">2,20 €</text>
+      <text x="170" y="230" class="lbl" text-anchor="middle">vous payez</text>
+
+      <!-- Barre espérance (0,37 €) à droite, hauteur proportionnelle 27 px -->
+      <rect x="320" y="188" width="100" height="27" fill="#15803d"/>
+      <text x="370" y="180" class="lblA" text-anchor="middle">ESPÉRANCE</text>
+      <text x="370" y="205" class="lbl" text-anchor="middle" fill="#fff">0,37 €</text>
+      <text x="370" y="230" class="lbl" text-anchor="middle">vous récupérez en moyenne</text>
+
+      <!-- Différence (perte) -->
+      <line x1="220" y1="55" x2="320" y2="55" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 2"/>
+      <line x1="220" y1="188" x2="320" y2="188" stroke="#15803d" stroke-width="2" stroke-dasharray="3 2"/>
+      <line x1="270" y1="55" x2="270" y2="188" stroke="#7c3aed" stroke-width="2" marker-end="url(#arr)" marker-start="url(#arrs)"/>
+      <text x="285" y="125" class="lblA" fill="#7c3aed" font-weight="bold">Perte</text>
+      <text x="285" y="142" class="lblA" fill="#7c3aed" font-weight="bold">moyenne :</text>
+      <text x="285" y="159" class="lblA" fill="#7c3aed" font-weight="bold">1,83 €</text>
+
+      <defs>
+        <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L9,3 z" fill="#7c3aed"/>
+        </marker>
+        <marker id="arrs" markerWidth="10" markerHeight="10" refX="2" refY="3" orient="auto">
+          <path d="M9,0 L9,6 L0,3 z" fill="#7c3aed"/>
+        </marker>
+      </defs>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §5 (espérance mathématique) et §6 (loi des grands nombres).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Sur le long terme, le Loto fait-il gagner ou perdre de l'argent ?</div>
+  <strong>Problématique :</strong> Quelle est l'espérance de gain au Loto, et est-ce un investissement rentable sur le long terme ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer l'espérance de gain E(G) par grille en additionnant probabilité × gain pour chaque rang.</p>
-<ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<ul>
-<li>Jackpot : 5 000 000 / 19 068 840 ≈ 0,262 €</li>
-<li>5 sans : 100 000 / 2 118 760 ≈ 0,047 €</li>
-<li>4+ch : 1 000 / 86 677 ≈ 0,012 €</li>
-<li>3+ch : 50 / 2 016 ≈ 0,025 €</li>
-<li>2+ch : 4 / 144 ≈ 0,028 €</li>
-</ul>
-<p>E(G) ≈ 0,374 € par grille jouée. À comparer aux <strong>2,20 €</strong> de mise.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">APP</span></h2>
+  <p>Pourquoi la probabilité d'avoir 5 numéros + chance est-elle 1/19 068 840 ? Vérifier (combinaisons C(49,5) × 10).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Nombre de façons de choisir 5 numéros sur 49 : C(49, 5) = 49! / (5! × 44!) = 1 906 884.</p>
+    <p>Multiplié par les 10 numéros chance possibles : 1 906 884 × 10 = <strong>19 068 840</strong>.</p>
+    <p>1 chance sur 19 millions. <strong>Quasiment impossible.</strong> Cette probabilité est si faible que sur la durée moyenne d'une vie humaine (en jouant 1 grille/jour), il faudrait <strong>52 250 ans</strong> pour gagner 1 fois !</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Quelle est la perte moyenne par grille ? Si Bertrand joue 1 grille par semaine pendant 50 ans, combien aura-t-il perdu ?</p>
-<ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Perte par grille : 2,20 − 0,37 = <strong>1,83 € par grille</strong> (en moyenne).</p>
-<p>Sur 50 ans : 1,83 × 52 × 50 = <strong>4 758 €</strong> de perte cumulée. Et avec une probabilité &gt; 99 % d'avoir des gains modestes seulement.</p>
-<p>Si Bertrand avait placé ces 2,20 € chaque semaine sur un livret A à 3 % : capital final ~ 13 000 €. Soit un manque à gagner total de ~ 18 000 €.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer l'espérance E(G) du gain par grille (= somme de probabilité × gain pour chaque rang).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>Rang</th><th>P × Gain</th></tr></thead>
+      <tbody>
+        <tr><td>5+ch</td><td>5 000 000 / 19 068 840 ≈ 0,262 €</td></tr>
+        <tr><td>5 ss</td><td>100 000 / 2 118 760 ≈ 0,047 €</td></tr>
+        <tr><td>4+ch</td><td>1 000 / 86 677 ≈ 0,012 €</td></tr>
+        <tr><td>3+ch</td><td>50 / 2 016 ≈ 0,025 €</td></tr>
+        <tr><td>2+ch</td><td>4 / 144 ≈ 0,028 €</td></tr>
+      </tbody>
+    </table>
+    <p>E(G) ≈ 0,262 + 0,047 + 0,012 + 0,025 + 0,028 ≈ <strong>0,37 €</strong>.</p>
+    <p>(Quelques rangs intermédiaires non détaillés ajoutent environ 0,03 €.)</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Citer 3 raisons pour lesquelles les gens jouent malgré une espérance négative.</p>
-<ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<ol>
-<li><strong>Biais de représentativité :</strong> on imagine plus facilement « gagner 5 M€ » que « perdre 2,20 € × 1 000 fois ».</li>
-<li><strong>Effet « rêver » :</strong> le plaisir d'imaginer le gain pendant la semaine vaut, pour beaucoup, le coût du ticket.</li>
-<li><strong>Mauvaise compréhension des probabilités :</strong> 1/19 millions est un chiffre incompréhensible (= il faudrait jouer 365 000 ans à 1 grille/jour).</li>
-<li><strong>Médiatisation des gagnants :</strong> on voit les gagnants à la télé, jamais les 99,99 % de perdants.</li>
-</ol>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la perte moyenne par grille. Si Bertrand joue 1 grille par semaine pendant 50 ans, combien aura-t-il perdu en moyenne ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Perte par grille : mise − E(G) = 2,20 − 0,37 = <strong>1,83 € par grille</strong> en moyenne.</p>
+    <p>Sur 50 ans : 1,83 × 52 × 50 = <strong>4 758 € perdus</strong> en moyenne.</p>
+    <p>Avec très forte probabilité (&gt; 99 %), Bertrand n'aura gagné que des petits lots cumulés.</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Espérance E(X) = Σ x·P(X=x).</strong> Si E &lt; mise → jeu défavorable au joueur.</li>
-<li><strong>Loto FDJ :</strong> E ≈ 0,37 € pour une mise de 2,20 € (perte moyenne 83 %).</li>
-<li><strong>Les jeux d'argent sont conçus pour faire gagner l'organisateur</strong> (sinon ils n'existeraient pas).</li>
-<li><strong>Esprit critique :</strong> les grilles « système » ne changent rien aux probabilités, malgré ce que prétendent certains vendeurs.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Si Bertrand avait placé ces 2,20 € hebdomadaires sur un livret A à 3 % d'intérêts, combien aurait-il accumulé en 50 ans ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Versement annuel : 2,20 × 52 = 114,40 €.</p>
+    <p>Capital après 50 ans avec intérêts composés à 3 % :</p>
+    <p>C = 114,40 × ((1,03^50 − 1) / 0,03) ≈ 114,40 × 112,80 ≈ <strong>12 900 €</strong>.</p>
+    <p>Comparaison :</p>
+    <ul>
+      <li>Loto : −4 758 € (perte cumulée)</li>
+      <li>Livret A : +12 900 € (capital constitué)</li>
+    </ul>
+    <p>Différence : <strong>17 658 €</strong> de manque à gagner pour Bertrand. Soit ~ 6 mois de salaire SMIC !</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Citer 3 raisons psychologiques pour lesquelles les gens continuent à jouer malgré une espérance négative.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li><strong>Biais de représentativité :</strong> on imagine plus facilement « gagner 5 M€ » que « perdre 2,20 € × 1 000 fois ».</li>
+      <li><strong>Effet « rêver » :</strong> le plaisir d'imaginer le gain pendant la semaine vaut, pour beaucoup, le coût du ticket. Économie comportementale.</li>
+      <li><strong>Mauvaise compréhension des probabilités :</strong> 1/19 millions est un chiffre incompréhensible (= 52 000 ans de jeu quotidien).</li>
+      <li><strong>Médiatisation des gagnants :</strong> on voit les rares gagnants à la télé, jamais les 99,99 % de perdants.</li>
+      <li><strong>Effet de quasi-gain :</strong> avoir 4 numéros sur 5 fait croire qu'on a « failli gagner » → on rejoue.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Le « bouton magique » : si on multiplie sa mise par 10 (jouer 10 grilles différentes), divise-t-on la probabilité d'attendre par 10 ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Oui, mais on multiplie aussi la mise par 10. L'espérance reste <strong>la même proportionnellement</strong>.</p>
+    <p>10 grilles : mise 22 €, espérance 3,70 €, perte 18,30 € en moyenne.</p>
+    <p>1 grille : mise 2,20 €, espérance 0,37 €, perte 1,83 €.</p>
+    <p>Multiplier les grilles ne « bat » pas l'espérance défavorable. C'est juste une <strong>plus grosse mise</strong> avec la même rentabilité (négative).</p>
+    <p>Ce piège est très fréquent : les joueurs croient qu'« en jouant plus », ils augmentent leurs chances. Vrai pour la probabilité absolue, mais pas pour l'<strong>espérance par euro misé</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Comparer l'espérance Loto avec celle de la roulette de casino (rouge/noir). À la roulette, P(rouge) = 18/37 (un 0 vert), gain × 2 si on mise sur rouge. Quelle espérance pour 1 € misé ?</p>
+  <ul class="lignes-reponse"><li</li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>P(rouge) = 18/37 ≈ 0,486. Gain : 2 € si rouge, 0 € sinon (mise 1 € perdue).</p>
+    <p>E(G) = 0,486 × 2 + 0,514 × 0 = <strong>0,973 €</strong>.</p>
+    <p>Pour 1 € misé, on récupère 0,97 € en moyenne. Perte 2,7 % par mise.</p>
+    <p>Comparaison : Loto perd 83 % de la mise (0,37/2,20). Roulette ne perd que 2,7 %.</p>
+    <p><strong>La roulette est moins défavorable</strong> que le Loto en proportion. Mais sur volume joué, on perd quand même de l'argent. Tous les jeux d'argent sont conçus pour faire gagner l'organisateur.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une note pédagogique pour ton entourage : « Le Loto et autres jeux d'argent — ce que disent les maths ».</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Le Loto et les jeux d'argent : ce que disent les maths</strong></em></p>
+    <p><em>Au Loto, pour 2,20 € misés, l'espérance de gain est <strong>0,37 €</strong>. Donc 83 % de la mise est perdue en moyenne (au profit de la FDJ et de l'État). Tous les jeux d'argent sont conçus ainsi.</em></p>
+    <p><em>Sur une vie de joueur (1 grille/semaine, 50 ans), c'est environ <strong>4 700 € perdus</strong>. Placés sur un livret A : ces mêmes versements auraient produit ~ 13 000 €.</em></p>
+    <p><em>Jouer reste une <strong>distraction payante</strong> (le « rêve » a une valeur). Mais ne jamais y voir un investissement. Pour devenir riche : épargne régulière, formation, et travail. Pas le hasard.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Certaines combinaisons de Loto sont jouées beaucoup plus souvent (dates de naissance, séquences 1-2-3-4-5...). Si on gagne avec une combinaison « populaire », le gain est partagé entre les gagnants. Comment choisir des numéros pour <strong>maximiser le gain en cas de jackpot</strong> (sans changer la probabilité) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La probabilité de gagner le jackpot reste 1/19 068 840 quelle que soit la combinaison. Mais en cas de gain :</p>
+    <ul>
+      <li>Si combinaison « populaire » (ex. dates : 1-12-25-1-2026 → uniquement chiffres ≤ 31) : gain partagé avec d'autres → chacun reçoit moins.</li>
+      <li>Si combinaison « impopulaire » (numéros &gt; 31, suites étranges) : moins de partage → gain plus gros.</li>
+    </ul>
+    <p>Statistiques : ~ 1/3 des grilles utilisent uniquement des dates. Choisir au moins 2 numéros entre 32 et 49 réduit le partage de ~ 30 % en moyenne.</p>
+    <p>Mais attention : <strong>ça ne change pas l'espérance globale</strong>. C'est juste un effet de partage en cas de gain rare.</p>
+    <p>Stratégie « optimale » mathématiquement : ne pas jouer du tout. C'est le seul jeu auquel on est sûr de ne pas perdre.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Espérance E(X) = Σ x · P(X = x).</strong> Si E &lt; mise → jeu défavorable au joueur.</li>
+    <li><strong>Loto FDJ :</strong> espérance 0,37 € pour une mise de 2,20 € (perte moyenne 83 %).</li>
+    <li><strong>Tous les jeux d'argent</strong> sont conçus pour faire gagner l'organisateur (sinon ils n'existeraient pas).</li>
+    <li><strong>Esprit critique :</strong> se méfier des « systèmes infaillibles ». Aucune combinaison de numéros n'est plus probable qu'une autre.</li>
+    <li><strong>Investissement long terme :</strong> épargne classique &gt;&gt;&gt; jeux d'argent.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
