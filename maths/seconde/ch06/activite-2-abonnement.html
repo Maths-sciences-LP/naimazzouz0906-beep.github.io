@@ -1,50 +1,254 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch06 – Activité 2 – Choisir un abonnement – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 2 – Choisir un abonnement (inéquation) – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 2 – Choisir un abonnement téléphonique <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
-<p class="sous-titre">Chapitre 6 – Inéquations 1er degré | 2nde Bac Pro MAMA | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul><li>Modéliser une comparaison de tarifs par une inéquation</li><li>Trouver le seuil de rentabilité</li></ul></div>
+<header>
+  <h1>Activité 2 – Choisir un abonnement téléphonique : seuil de rentabilité <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 6 – Inéquations du 1er degré | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – téléphone pro</h2>
-<p><em>Hugo, jeune apprenti, choisit un forfait pour son téléphone pro :</em></p>
-<ul><li><strong>Forfait A :</strong> 15 €/mois + 0,10 €/min</li>
-<li><strong>Forfait B :</strong> 25 €/mois illimité</li></ul></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Modéliser une comparaison de tarifs par une inéquation</li>
+    <li>Résoudre une inéquation du 1er degré</li>
+    <li>Trouver et interpréter un seuil de rentabilité</li>
+    <li>Choisir une offre adaptée à son usage</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – téléphone pro pour le chantier</h2>
+  <p><em>Hugo, jeune apprenti menuisier, vient de signer son alternance. Il doit acheter un téléphone professionnel pour ses chantiers et appels clients. Deux forfaits sont proposés par son opérateur :</em></p>
+
+  <div style="background:#fff;padding:12px 16px;border-radius:8px;border:1px solid #cbd5e1;margin:14px 0">
+    <p style="margin:6px 0"><strong>📱 Forfait A — « pas cher mais limité »</strong> : 15 €/mois + 0,10 €/min de communication</p>
+    <p style="margin:6px 0"><strong>📱 Forfait B — « tout illimité »</strong> : 25 €/mois, communications illimitées</p>
+  </div>
+
+  <h3>Document — graphique des deux forfaits</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Graphique du coût mensuel selon le nombre de minutes. Forfait A : droite affine partant de 15€ et croissant à 0,10€/min. Forfait B : droite horizontale à 25€. Intersection à 100 min/25€.">
+        <defs>
+          <style>
+            .ax{stroke:#1a202c;stroke-width:1.5}
+            .gd{stroke:#cbd5e1;stroke-width:.6}
+            .lbl{font:11px sans-serif;fill:#1a202c}
+            .lblA{font:600 12px sans-serif;fill:#1a202c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+          </style>
+        </defs>
+        <text class="ti" x="270" y="22">Coût mensuel selon le nombre de minutes</text>
+
+        <!-- Y : 0€ → 240, 50€ → 50. 1€ = 3,8 px. 15€ → 183, 25€ → 145, 50€ → 50 -->
+        <g class="gd">
+          <line x1="60" y1="50" x2="500" y2="50"/>
+          <line x1="60" y1="107" x2="500" y2="107"/>
+          <line x1="60" y1="145" x2="500" y2="145"/>
+          <line x1="60" y1="183" x2="500" y2="183"/>
+          <line x1="60" y1="240" x2="500" y2="240"/>
+        </g>
+        <line class="ax" x1="60" y1="240" x2="510" y2="240"/>
+        <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
+
+        <g class="lbl" text-anchor="end">
+          <text x="55" y="244">0€</text>
+          <text x="55" y="187">15€</text>
+          <text x="55" y="149">25€</text>
+          <text x="55" y="111">35€</text>
+          <text x="55" y="54">50€</text>
+        </g>
+        <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">Coût (€)</text>
+
+        <!-- X : 0 → 60, 200 → 500. 50 min = 110 px -->
+        <g class="lbl" text-anchor="middle">
+          <text x="60" y="258">0</text>
+          <text x="170" y="258">50</text>
+          <text x="280" y="258">100</text>
+          <text x="390" y="258">150</text>
+          <text x="500" y="258">200</text>
+        </g>
+        <text class="lblA" x="270" y="275" text-anchor="middle">Minutes/mois</text>
+
+        <!-- Forfait A : C = 15 + 0,10 x. (0,15) → (60,183) ; (200, 35) → (500, 107) -->
+        <line x1="60" y1="183" x2="500" y2="107" stroke="#dc2626" stroke-width="2.5"/>
+        <text x="455" y="98" class="lbl" fill="#dc2626" font-weight="bold">A</text>
+
+        <!-- Forfait B : 25 € constant. y=145 -->
+        <line x1="60" y1="145" x2="500" y2="145" stroke="#15803d" stroke-width="2.5"/>
+        <text x="490" y="138" class="lbl" fill="#15803d" font-weight="bold">B</text>
+
+        <!-- Point intersection : (100, 25€) → x=280, y=145 -->
+        <circle cx="280" cy="145" r="6" fill="#7c3aed"/>
+        <line x1="280" y1="145" x2="280" y2="240" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3 2"/>
+        <text x="280" y="258" class="lbl" fill="#7c3aed" font-weight="bold" text-anchor="middle">seuil 100</text>
+
+        <!-- Zones colorées -->
+        <text x="170" y="220" class="lbl" fill="#dc2626" font-weight="bold" text-anchor="middle">A &lt; B</text>
+        <text x="170" y="234" class="lbl" fill="#dc2626" text-anchor="middle">(A meilleur)</text>
+        <text x="400" y="118" class="lbl" fill="#15803d" font-weight="bold" text-anchor="middle">B &lt; A</text>
+        <text x="400" y="132" class="lbl" fill="#15803d" text-anchor="middle">(B meilleur)</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §3 (résolution d'inéquation) et §5 (interprétation graphique).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> À partir de combien de minutes B est-il plus avantageux ?</div>
+  <strong>Problématique :</strong> À partir de combien de minutes par mois le forfait B (illimité) devient-il plus avantageux que le forfait A ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Écrire l'inéquation A &gt; B (où x = minutes de communication).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>15 + 0,10 x &gt; 25 → 0,10 x &gt; 10 → x &gt; <strong>100 minutes</strong>.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">APP</span></h2>
+  <p>Calculer le coût mensuel du forfait A pour :</p>
+  <ol type="a">
+    <li>50 minutes</li>
+    <li>100 minutes</li>
+    <li>150 minutes</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>50 min : 15 + 0,10 × 50 = <strong>20 €</strong></li>
+      <li>100 min : 15 + 0,10 × 100 = <strong>25 €</strong></li>
+      <li>150 min : 15 + 0,10 × 150 = <strong>30 €</strong></li>
+    </ul>
+    <p>Comparaison avec B (25 €) : à 100 min, A et B coûtent pareil. Avant : A &lt; B. Après : A &gt; B.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-blue">VAL</span></h2>
-<p>Hugo téléphone en moyenne 80 min/mois. Quel forfait choisir ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>80 &lt; 100 → forfait A (15 + 0,10×80 = 23 €) moins cher que B (25 €). Économie 2 €/mois = 24 €/an.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>On note x le nombre de minutes par mois.</p>
+  <ol type="a">
+    <li>Exprimer le coût C_A du forfait A en fonction de x.</li>
+    <li>Exprimer C_B (constant).</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>a. C_A = 15 + 0,10 × x (forfait fixe + variable).</p>
+    <p>b. C_B = 25 (constant, indépendant de x).</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">ANA</span></h2>
-<p>Si Hugo passe à 130 min/mois, quel forfait ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>130 &gt; 100 → A coûte 15 + 13 = 28 € &gt; 25 € (B). <strong>Forfait B</strong> plus avantageux.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Écrire l'inéquation traduisant « le forfait B est plus avantageux que le forfait A » et la résoudre.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>« B plus avantageux que A » → C_B &lt; C_A → 25 &lt; 15 + 0,10 × x</p>
+    <p>25 − 15 &lt; 0,10 × x → 10 &lt; 0,10 × x</p>
+    <p>10 / 0,10 &lt; x → 100 &lt; x → <strong>x &gt; 100 minutes</strong>.</p>
+    <p><strong>Conclusion :</strong> dès que Hugo dépasse 100 min/mois, le forfait B est moins cher.</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Inéquation linéaire :</strong> ax + b &gt; cx + d. Résoudre comme une équation, sans changer le sens (sauf si on multiplie par négatif).</li>
-<li><strong>Seuil de rentabilité :</strong> valeur où les 2 options ont le même coût.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Hugo estime téléphoner en moyenne 80 minutes par mois. Quel forfait choisir ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>80 &lt; 100 → en-dessous du seuil → <strong>Forfait A</strong> moins cher.</p>
+    <p>Vérification : C_A = 15 + 0,10 × 80 = <strong>23 €</strong> &lt; 25 € (forfait B).</p>
+    <p>Économie : 2 €/mois = <strong>24 €/an</strong>.</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>L'année suivante, Hugo prend des responsabilités et passe à 130 minutes par mois. Quel forfait choisir ? Calculer la différence.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>130 &gt; 100 → <strong>Forfait B</strong> moins cher.</p>
+    <p>C_A = 15 + 0,10 × 130 = <strong>28 €</strong> ; C_B = 25 €.</p>
+    <p>Différence : 3 €/mois = <strong>36 €/an</strong>.</p>
+    <p>Hugo doit changer de forfait pour économiser.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Sur le graphique du document, vérifier graphiquement le seuil de rentabilité (100 min). Que remarque-t-on entre la courbe et le calcul ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Sur le graphique, les deux droites se croisent au point (100 min ; 25 €). Avant le croisement, la droite A (rouge) est sous la droite B (verte) → A moins cher. Après, A passe au-dessus → B moins cher.</p>
+    <p>Le calcul (x &gt; 100) et la lecture graphique <strong>concordent</strong>. Méthode complémentaire pour vérification.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Un troisième opérateur propose le forfait C : 20 €/mois + 0,05 €/min. Hugo téléphone 130 min/mois. Comparer les 3 forfaits et déterminer le moins cher.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour 130 min :</p>
+    <ul>
+      <li>A : 15 + 0,10 × 130 = 28 €</li>
+      <li>B : 25 €</li>
+      <li>C : 20 + 0,05 × 130 = 20 + 6,50 = <strong>26,50 €</strong></li>
+    </ul>
+    <p>Classement : <strong>B (25) &lt; C (26,50) &lt; A (28)</strong>. Le forfait B reste le moins cher.</p>
+    <p><em>Pro :</em> toujours <strong>recalculer</strong> à chaque changement d'usage. Le « bon » forfait n'est pas universel.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 4 lignes une recommandation à Hugo, à partir de l'analyse réalisée.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>Hugo, ton choix de forfait dépend de ton temps moyen d'appels par mois. Le seuil de rentabilité est <strong>100 minutes</strong>.</em></p>
+    <p><em>– En-dessous (≤ 100 min/mois), prends le <strong>forfait A à 15 €</strong> : tu économiseras quelques euros.</em></p>
+    <p><em>– Au-dessus (≥ 100 min/mois), prends le <strong>forfait B à 25 €</strong> illimité : tu paieras moins et tu n'auras pas à surveiller le compteur.</em></p>
+    <p><em>Refais le calcul chaque année si ton usage évolue.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Pour gérer les imprévus, on conseille souvent de prendre un forfait avec une « marge de sécurité » de 30 % au-dessus de la consommation moyenne. Pour Hugo (consommation moyenne 80 min/mois), recalculer le seuil utile.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Marge 30 % au-dessus de 80 : 80 × 1,30 = <strong>104 minutes</strong>.</p>
+    <p>104 &gt; 100 → en cas de pic d'utilisation, Hugo peut dépasser 100 min. Le forfait A devient alors plus cher : C_A = 15 + 0,10 × 104 = 25,40 €.</p>
+    <p><strong>Recommandation finale :</strong> avec une marge prudente, le forfait B (25 € illimité) est <strong>plus sûr</strong>. Le surcoût de 1-2 €/mois est faible comparé au risque d'une grosse facture en cas de mois exceptionnel.</p>
+    <p>C'est le principe de l'<strong>aversion au risque</strong> en gestion : payer un peu plus pour éviter un gros aléa.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Inéquation du 1er degré :</strong> ax + b &lt; cx + d. Résoudre comme une équation, sans changer le sens (sauf si on multiplie/divise par un négatif).</li>
+    <li><strong>Seuil de rentabilité :</strong> valeur de x pour laquelle deux options ont le même coût. À gauche du seuil, l'une est plus avantageuse ; à droite, l'autre.</li>
+    <li><strong>Méthode :</strong> exprimer chaque coût en fonction de x → écrire l'inéquation → résoudre → interpréter.</li>
+    <li><strong>Vérification :</strong> graphique (intersection des droites) et test numérique (un point avant et un après le seuil).</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

@@ -1,51 +1,265 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch06 – Activité 3 – Seuil de rentabilité – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 3 – Combien de tabourets pour être rentable ? – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 3 – Combien de tabourets pour être rentable ? <span style="font-size:.55em;color:#7c2d12;font-weight:600">SITUATION PRO</span></h1>
-<p class="sous-titre">Chapitre 6 – Inéquations 1er degré | 2nde Bac Pro MAMA | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul><li>Distinguer charges fixes et charges variables</li><li>Calculer un seuil de rentabilité</li></ul></div>
+<header>
+  <h1>Activité 3 – Combien de tabourets vendre pour être rentable ? <span style="font-size:.55em;color:#7c2d12;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 6 – Inéquations du 1er degré | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – petit atelier</h2>
-<p><em>Mehdi se lance comme artisan. Il fabrique des tabourets vendus 35 € pièce. Charges fixes (loyer, électricité) : 800 €/mois. Coût des matériaux/tabouret : 12 €.</em></p></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Distinguer charges fixes et charges variables</li>
+    <li>Établir et résoudre une inéquation de rentabilité</li>
+    <li>Comprendre la notion de marge unitaire</li>
+    <li>Analyser l'effet d'une variation de prix sur le seuil</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – installation d'un artisan menuisier</h2>
+  <p><em>Mehdi, ancien apprenti, se lance comme artisan menuisier. Il a loué un petit atelier dans une zone artisanale. Il a fait son business plan et identifié les éléments suivants pour la fabrication de ses tabourets en chêne :</em></p>
+
+  <h3>Document — éléments du business plan</h3>
+  <table>
+    <thead>
+      <tr><th>Élément</th><th>Montant</th><th>Type</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Loyer atelier</td><td>500 €/mois</td><td>Charge fixe</td></tr>
+      <tr><td>Électricité, assurances</td><td>200 €/mois</td><td>Charge fixe</td></tr>
+      <tr><td>Téléphone, internet</td><td>100 €/mois</td><td>Charge fixe</td></tr>
+      <tr><td><strong>Total charges fixes</strong></td><td><strong>800 €/mois</strong></td><td></td></tr>
+      <tr><td>Bois et vis (par tabouret)</td><td>10 €</td><td>Charge variable</td></tr>
+      <tr><td>Vernis, finition (par tabouret)</td><td>2 €</td><td>Charge variable</td></tr>
+      <tr><td><strong>Total charges variables</strong></td><td><strong>12 €/tabouret</strong></td><td></td></tr>
+      <tr><td>Prix de vente unitaire</td><td>35 €/tabouret</td><td>Recette</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document — graphique recettes vs charges</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Graphique : recettes (droite passant par 0, pente 35) et charges totales (droite partant de 800€, pente 12). Intersection au seuil de rentabilité ≈ 35 tabourets / 1225€.">
+        <defs>
+          <style>
+            .ax{stroke:#1a202c;stroke-width:1.5}
+            .gd{stroke:#cbd5e1;stroke-width:.6}
+            .lbl{font:11px sans-serif;fill:#1a202c}
+            .lblA{font:600 12px sans-serif;fill:#1a202c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+          </style>
+        </defs>
+        <text class="ti" x="270" y="22">Recettes et charges totales selon le nombre de tabourets</text>
+
+        <!-- Y : 0 € → 240, 2500 € → 50. 1 € = 0,076 px. 800 → 240-61=179. 1225 → 240-93=147. 1750 (50t) → 240-133=107. 2500 → 50 -->
+        <g class="gd">
+          <line x1="60" y1="50" x2="500" y2="50"/>
+          <line x1="60" y1="93" x2="500" y2="93"/>
+          <line x1="60" y1="135" x2="500" y2="135"/>
+          <line x1="60" y1="178" x2="500" y2="178"/>
+          <line x1="60" y1="240" x2="500" y2="240"/>
+        </g>
+        <line class="ax" x1="60" y1="240" x2="510" y2="240"/>
+        <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
+
+        <g class="lbl" text-anchor="end">
+          <text x="55" y="244">0</text>
+          <text x="55" y="182">800</text>
+          <text x="55" y="139">1 400</text>
+          <text x="55" y="97">2 000</text>
+          <text x="55" y="54">2 500</text>
+        </g>
+        <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">Euros</text>
+
+        <!-- X : 0 → 60, 70 → 500. 10 t = 63 px -->
+        <g class="lbl" text-anchor="middle">
+          <text x="60" y="258">0</text>
+          <text x="186" y="258">20</text>
+          <text x="312" y="258">40</text>
+          <text x="438" y="258">60</text>
+        </g>
+        <text class="lblA" x="270" y="275" text-anchor="middle">Nombre de tabourets vendus / mois</text>
+
+        <!-- Recettes R = 35 n : (0,0) → (60,240) ; (70, 2450) → (500, 240-2450*0,076) = (500, 53,8) -->
+        <line x1="60" y1="240" x2="500" y2="54" stroke="#15803d" stroke-width="2.5"/>
+        <text x="490" y="46" class="lbl" fill="#15803d" font-weight="bold">Recettes</text>
+
+        <!-- Charges C = 800 + 12 n : (0, 800) → (60, 179) ; (70, 1640) → (500, 240-1640*0,076) = (500, 115) -->
+        <line x1="60" y1="179" x2="500" y2="115" stroke="#dc2626" stroke-width="2.5"/>
+        <text x="490" y="108" class="lbl" fill="#dc2626" font-weight="bold">Charges</text>
+
+        <!-- Intersection : n=34,8 → x=60+34,8*6,3=279 ; y=147 -->
+        <circle cx="279" cy="147" r="6" fill="#7c3aed"/>
+        <line x1="279" y1="147" x2="279" y2="240" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3 2"/>
+        <text x="279" y="258" class="lbl" fill="#7c3aed" font-weight="bold" text-anchor="middle">seuil ≈ 35</text>
+
+        <!-- Zones colorées -->
+        <text x="170" y="220" class="lbl" fill="#dc2626" font-weight="bold" text-anchor="middle">Pertes</text>
+        <text x="400" y="80" class="lbl" fill="#15803d" font-weight="bold" text-anchor="middle">Bénéfices</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §3 (résolution d'inéquation) et §4 (interprétation graphique).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Combien de tabourets vendre par mois pour être rentable ?</div>
+  <strong>Problématique :</strong> Combien Mehdi doit-il vendre de tabourets par mois pour gagner de l'argent (être rentable) ? Et comment ce nombre change-t-il s'il modifie son prix ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Établir l'inéquation : recette &gt; charges totales (où n = nb de tabourets).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Recette = 35 n. Charges = 800 + 12 n.</p>
-<p>35 n &gt; 800 + 12 n → 23 n &gt; 800 → n &gt; <strong>34,8 → 35 tabourets/mois</strong>.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">APP</span></h2>
+  <p>Pour n tabourets vendus en un mois, exprimer :</p>
+  <ol type="a">
+    <li>la recette totale R(n)</li>
+    <li>les charges totales C(n) = charges fixes + charges variables</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>a. R(n) = 35 × n (chaque tabouret rapporte 35 €).</p>
+    <p>b. C(n) = 800 + 12 × n (loyer fixe + matériaux par tabouret).</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-blue">VAL</span></h2>
-<p>Mehdi vend 50 tabourets/mois. Quel bénéfice ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Recette : 50 × 35 = 1 750 €. Charges : 800 + 50 × 12 = 1 400 €. Bénéfice : <strong>350 €/mois</strong>.</p>
-<p>Pour vivre correctement, il devra vendre plus (~ 80-100/mois) ou augmenter ses prix.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Mehdi est rentable quand sa recette dépasse ses charges. Écrire l'inéquation correspondante et la résoudre.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>R(n) &gt; C(n) → 35 n &gt; 800 + 12 n</p>
+    <p>35 n − 12 n &gt; 800 → 23 n &gt; 800</p>
+    <p>n &gt; 800 / 23 ≈ <strong>34,78</strong></p>
+    <p>Comme n est un nombre entier de tabourets, n ≥ <strong>35 tabourets/mois</strong>.</p>
+    <p><strong>Conclusion :</strong> Mehdi doit vendre au minimum 35 tabourets par mois pour être rentable.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">ANA</span></h2>
-<p>S'il augmente son prix à 40 €, à partir de combien de tabourets est-il rentable ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>40 n &gt; 800 + 12 n → 28 n &gt; 800 → n &gt; <strong>28,6 → 29 tabourets/mois</strong>.</p>
-<p>Le seuil baisse de 35 à 29 (économie de 6 unités) — important pour un démarrage d'activité.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">APP</span></h2>
+  <p>Calculer la <strong>marge unitaire</strong> (= bénéfice apporté par chaque tabouret vendu, hors charges fixes) et l'utiliser pour retrouver le seuil de rentabilité.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Marge unitaire = prix de vente − coût variable = 35 − 12 = <strong>23 €/tabouret</strong>.</p>
+    <p>Pour couvrir les 800 € de charges fixes, il faut vendre 800 / 23 ≈ 34,78 tabourets, soit <strong>35</strong>. Cohérent avec la question 2.</p>
+    <p>La marge unitaire est <strong>l'outil clé</strong> de tout entrepreneur : elle dit combien chaque vente contribue à couvrir les frais fixes (puis à dégager du bénéfice).</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Seuil de rentabilité :</strong> nb d'unités où recettes = charges fixes + charges variables.</li>
-<li><strong>Marge unitaire :</strong> prix de vente − coût variable. Plus elle est grande, plus vite on est rentable.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Au mois de mars, Mehdi vend 50 tabourets. Calculer son bénéfice mensuel.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>R(50) = 35 × 50 = <strong>1 750 €</strong> ; C(50) = 800 + 12 × 50 = 800 + 600 = <strong>1 400 €</strong>.</p>
+    <p>Bénéfice : 1 750 − 1 400 = <strong>350 €/mois</strong>.</p>
+    <p>Avec 350 € de bénéfice, Mehdi ne peut <strong>pas vivre</strong> de son activité (smic ≈ 1 400 €/mois). Il doit augmenter ses ventes ou son prix.</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Pour gagner au moins 1 200 €/mois (sur lesquels il devra payer ses cotisations sociales), combien de tabourets Mehdi doit-il vendre ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Bénéfice = R − C = 35 n − (800 + 12 n) = 23 n − 800.</p>
+    <p>23 n − 800 ≥ 1 200 → 23 n ≥ 2 000 → n ≥ 86,96 → <strong>n ≥ 87 tabourets</strong>.</p>
+    <p>Soit environ <strong>3 tabourets par jour ouvré</strong> (87 / 22 jours). Ambitieux pour une fabrication artisanale.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Mehdi envisage d'augmenter son prix de vente à 40 € par tabouret. Calculer le nouveau seuil de rentabilité. Comparer avec le précédent.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Nouvelle marge unitaire : 40 − 12 = <strong>28 €</strong>.</p>
+    <p>Inéquation : 40 n &gt; 800 + 12 n → 28 n &gt; 800 → n &gt; 28,57 → <strong>n ≥ 29 tabourets</strong>.</p>
+    <p>Comparaison : seuil passe de 35 à 29 → <strong>économie de 6 tabourets/mois</strong> à fabriquer. Important au démarrage de l'activité, où la production est limitée.</p>
+    <p>⚠️ Risque : si le marché ne supporte pas le nouveau prix (perte de clients), le gain s'inverse.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Mehdi pense aussi à réduire ses charges fixes en travaillant à domicile (loyer 0 €). Charges fixes deviendraient : 200 € (élec + tel) + 100 € (assurance pro) = 300 €. Quel serait alors le seuil au prix initial de 35 € ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Inéquation : 35 n &gt; 300 + 12 n → 23 n &gt; 300 → n &gt; 13,04 → <strong>n ≥ 14 tabourets/mois</strong>.</p>
+    <p>Énorme baisse : de 35 à 14 (− 60 %).</p>
+    <p>Conclusion : <strong>réduire les charges fixes</strong> a un effet plus puissant qu'augmenter le prix (de 35 à 29). C'est le premier levier d'optimisation pour un débutant.</p>
+    <p>Inconvénients à considérer : pas d'image pro, moins de visibilité, voisinage (bruit), assurances spécifiques, espace limité.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes le résumé pour le banquier de Mehdi (simulation des scénarios étudiés).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Synthèse — Seuils de rentabilité atelier menuiserie</strong></em></p>
+    <table>
+      <thead><tr><th>Scénario</th><th>Prix</th><th>Charges fixes</th><th>Seuil</th></tr></thead>
+      <tbody>
+        <tr><td>Initial</td><td>35 €</td><td>800 €</td><td><strong>35 tab.</strong></td></tr>
+        <tr><td>Prix relevé</td><td>40 €</td><td>800 €</td><td>29 tab.</td></tr>
+        <tr><td>Atelier maison</td><td>35 €</td><td>300 €</td><td>14 tab.</td></tr>
+      </tbody>
+    </table>
+    <p><em>Pour viser un revenu correct (1 200 €/mois), il faut produire ≥ 87 tabourets/mois (3/jour) au prix initial. Recommandation : commencer en atelier maison la 1ère année (seuil bas), puis louer un atelier dès que le carnet de commandes est stabilisé.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Mehdi diversifie : il fabrique aussi des étagères vendues 60 € (coût matériaux 25 €). Charges fixes 800 €. Il vend t tabourets et e étagères. Quelle inéquation traduire « être rentable » ? Donner 3 combinaisons (t ; e) qui assurent la rentabilité.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Recette : 35 t + 60 e. Charges : 800 + 12 t + 25 e.</p>
+    <p>R &gt; C : 35 t + 60 e &gt; 800 + 12 t + 25 e → <strong>23 t + 35 e &gt; 800</strong>.</p>
+    <p>Combinaisons possibles :</p>
+    <ul>
+      <li>(35 ; 0) : 23 × 35 = 805 &gt; 800 ✓ (que des tabourets)</li>
+      <li>(0 ; 23) : 35 × 23 = 805 &gt; 800 ✓ (que des étagères)</li>
+      <li>(20 ; 11) : 23 × 20 + 35 × 11 = 460 + 385 = 845 &gt; 800 ✓ (mix)</li>
+    </ul>
+    <p><strong>Observation :</strong> les étagères ont une marge de 35 € (plus haute que 23 €), donc plus rentables à l'unité, mais demandent plus de matière première et de temps de fabrication.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Charges fixes :</strong> ne dépendent pas du nombre d'unités vendues (loyer, abonnements).</li>
+    <li><strong>Charges variables :</strong> proportionnelles aux ventes (matières premières).</li>
+    <li><strong>Seuil de rentabilité :</strong> nombre d'unités à partir duquel R(n) &gt; C(n). Calculé par l'inéquation a × n &gt; F + b × n.</li>
+    <li><strong>Marge unitaire :</strong> p − cv. Plus elle est élevée, plus le seuil est bas et la rentabilité rapide.</li>
+    <li><strong>Stratégies :</strong> ↑ prix, ↓ charges fixes, ↓ coût variable. Choisir selon le contexte.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

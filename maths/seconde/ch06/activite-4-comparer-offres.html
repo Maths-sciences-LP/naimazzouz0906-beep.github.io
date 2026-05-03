@@ -1,52 +1,255 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch06 – Activité 4 – Choisir une location de fourgon – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 4 – Comparer 2 offres de location de fourgon – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 4 – Comparer 2 offres de location <span style="font-size:.55em;color:#7c2d12;font-weight:600">ÉTUDE DE CAS</span></h1>
-<p class="sous-titre">Chapitre 6 – Inéquations 1er degré | 2nde Bac Pro MAMA | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul><li>Modéliser et comparer 2 offres tarifaires</li></ul></div>
+<header>
+  <h1>Activité 4 – Comparer 2 offres de location de fourgon <span style="font-size:.55em;color:#7c2d12;font-weight:600">ÉTUDE DE CAS</span></h1>
+  <p class="sous-titre">Chapitre 6 – Inéquations du 1er degré | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – livraison meubles à un client éloigné</h2>
-<p><em>Léa loue un fourgon pour livrer un meuble à 200 km :</em></p>
-<ul><li><strong>A :</strong> 50 € forfait + 0,30 €/km</li>
-<li><strong>B :</strong> 80 € forfait + 0,15 €/km</li></ul></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Modéliser deux offres tarifaires affines</li>
+    <li>Trouver le seuil de bascule entre deux options</li>
+    <li>Choisir une offre selon le profil d'utilisation</li>
+    <li>Lire un graphique de comparaison de tarifs</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – atelier d'agencement et livraisons</h2>
+  <p><em>Léa, jeune artisan agenceuse, vient de remporter un contrat avec un client à 200 km de son atelier. Elle doit livrer son mobilier sur place. Elle ne possède pas de fourgon : elle doit en louer un. Deux loueurs proches lui font une proposition :</em></p>
+
+  <div style="background:#fff;padding:12px 16px;border-radius:8px;border:1px solid #cbd5e1;margin:14px 0">
+    <p style="margin:6px 0"><strong>🚐 Offre A — « Hertz Pro »</strong> : 50 € de forfait + 0,30 €/km parcouru</p>
+    <p style="margin:6px 0"><strong>🚐 Offre B — « Europcar Express »</strong> : 80 € de forfait + 0,15 €/km parcouru</p>
+  </div>
+
+  <h3>Document — graphique des deux offres</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Graphique des coûts en fonction des km. Offre A : départ 50€, pente 0,30. Offre B : départ 80€, pente 0,15. Intersection à 200 km / 110€.">
+        <defs>
+          <style>
+            .ax{stroke:#1a202c;stroke-width:1.5}
+            .gd{stroke:#cbd5e1;stroke-width:.6}
+            .lbl{font:11px sans-serif;fill:#1a202c}
+            .lblA{font:600 12px sans-serif;fill:#1a202c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+          </style>
+        </defs>
+        <text class="ti" x="270" y="22">Coût total selon les kilomètres parcourus</text>
+
+        <!-- Y : 0 € → 240, 200 € → 50. 1 € = 0,95 px. 50 → 192,5. 80 → 164. 110 → 135,5. 170 → 78,5. 200 → 50 -->
+        <g class="gd">
+          <line x1="60" y1="50" x2="500" y2="50"/>
+          <line x1="60" y1="98" x2="500" y2="98"/>
+          <line x1="60" y1="145" x2="500" y2="145"/>
+          <line x1="60" y1="193" x2="500" y2="193"/>
+          <line x1="60" y1="240" x2="500" y2="240"/>
+        </g>
+        <line class="ax" x1="60" y1="240" x2="510" y2="240"/>
+        <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
+
+        <g class="lbl" text-anchor="end">
+          <text x="55" y="244">0</text>
+          <text x="55" y="197">50</text>
+          <text x="55" y="149">100</text>
+          <text x="55" y="102">150</text>
+          <text x="55" y="54">200</text>
+        </g>
+        <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">Coût (€)</text>
+
+        <!-- X : 0 → 60, 500 km → 500. 100 km = 88 px -->
+        <g class="lbl" text-anchor="middle">
+          <text x="60" y="258">0</text>
+          <text x="148" y="258">100</text>
+          <text x="236" y="258">200</text>
+          <text x="324" y="258">300</text>
+          <text x="412" y="258">400</text>
+          <text x="500" y="258">500</text>
+        </g>
+        <text class="lblA" x="270" y="275" text-anchor="middle">Kilomètres parcourus</text>
+
+        <!-- Offre A : 50 + 0,30x. (0, 50) → (60, 192,5) ; (500, 200) → (500, 50) -->
+        <line x1="60" y1="193" x2="500" y2="50" stroke="#dc2626" stroke-width="2.5"/>
+        <text x="490" y="44" class="lbl" fill="#dc2626" font-weight="bold">A</text>
+
+        <!-- Offre B : 80 + 0,15x. (0, 80) → (60, 164) ; (500, 155) → (500, 240-155*0,95) = (500, 92,75) -->
+        <line x1="60" y1="164" x2="500" y2="93" stroke="#15803d" stroke-width="2.5"/>
+        <text x="490" y="86" class="lbl" fill="#15803d" font-weight="bold">B</text>
+
+        <!-- Point intersection : 200 km / 110 € → x=236, y=135,5 -->
+        <circle cx="236" cy="136" r="6" fill="#7c3aed"/>
+        <line x1="236" y1="136" x2="236" y2="240" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3 2"/>
+        <text x="236" y="258" class="lbl" fill="#7c3aed" font-weight="bold" text-anchor="middle">seuil 200 km</text>
+        <text x="195" y="132" class="lbl" fill="#7c3aed" text-anchor="end">110€</text>
+
+        <text x="148" y="220" class="lbl" fill="#dc2626" font-weight="bold" text-anchor="middle">A &lt; B</text>
+        <text x="380" y="76" class="lbl" fill="#15803d" font-weight="bold" text-anchor="middle">B &lt; A</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §3 (résolution d'inéquation) et §5 (interprétation graphique).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Quelle offre choisir ?</div>
+  <strong>Problématique :</strong> Quelle offre choisir pour la livraison de 200 km (aller-retour 400 km) ? Et plus généralement, comment décider selon la distance ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer le coût des 2 offres pour 200 km aller-retour (= 400 km).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>A : 50 + 0,30 × 400 = 50 + 120 = <strong>170 €</strong></p>
-<p>B : 80 + 0,15 × 400 = 80 + 60 = <strong>140 €</strong></p>
-<p>B est moins cher pour cette livraison.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">APP</span></h2>
+  <p>Pour x kilomètres parcourus, exprimer le coût total des deux offres :</p>
+  <ol type="a">
+    <li>C_A(x) pour l'offre A</li>
+    <li>C_B(x) pour l'offre B</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>a. C_A(x) = 50 + 0,30 × x (forfait + tarif km).</p>
+    <p>b. C_B(x) = 80 + 0,15 × x.</p>
+    <p>Ce sont 2 fonctions affines, à l'image de quasi tous les contrats commerciaux.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>À partir de combien de km B est-il moins cher que A ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>B &lt; A : 80 + 0,15 x &lt; 50 + 0,30 x → 30 &lt; 0,15 x → x &gt; <strong>200 km</strong>.</p>
-<p>Pour ≤ 200 km : A. Pour &gt; 200 km : B.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le coût des deux offres pour la livraison du contrat (aller-retour, soit 200 + 200 = <strong>400 km</strong>).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>C_A(400) = 50 + 0,30 × 400 = 50 + 120 = <strong>170 €</strong>.</p>
+    <p>C_B(400) = 80 + 0,15 × 400 = 80 + 60 = <strong>140 €</strong>.</p>
+    <p>Pour cette livraison (400 km), l'offre B est <strong>30 € moins chère</strong>.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Léa fait souvent &lt; 100 km. Quelle offre prendre ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p><strong>Offre A</strong> car forfait plus bas, idéal pour des courts trajets fréquents. À 100 km : A = 50+30 = 80 €, B = 80+15 = 95 €. A économise 15 €/livraison.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Trouver le seuil x* (en km) à partir duquel l'offre B devient plus avantageuse que A. Écrire et résoudre l'inéquation.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>« B moins cher que A » → C_B(x) &lt; C_A(x) → 80 + 0,15 x &lt; 50 + 0,30 x</p>
+    <p>80 − 50 &lt; 0,30 x − 0,15 x → 30 &lt; 0,15 x</p>
+    <p>30 / 0,15 &lt; x → 200 &lt; x → <strong>x &gt; 200 km</strong>.</p>
+    <p><strong>Conclusion :</strong> au-delà de 200 km, B est moins cher. En-dessous, A est moins cher.</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Comparer 2 offres affines :</strong> trouver le seuil x* où les coûts sont égaux. Ensuite la moins « pentue » est meilleure pour les grands x.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">APP</span></h2>
+  <p>Vérifier le résultat précédent : calculer les deux coûts pour x = 200 km (le seuil) et constater l'égalité.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>C_A(200) = 50 + 0,30 × 200 = 50 + 60 = <strong>110 €</strong>.</p>
+    <p>C_B(200) = 80 + 0,15 × 200 = 80 + 30 = <strong>110 €</strong>.</p>
+    <p>Égalité ✓ → on est bien au seuil. Au-dessous (ex. 100 km), A est moins cher (80 € vs 95 €). Au-dessus (ex. 300 km), B est moins cher (125 € vs 140 €).</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Léa effectue souvent des livraisons courtes (≤ 100 km). Quelle offre lui conseilles-tu pour son utilisation habituelle ? Calculer l'économie pour une livraison de 80 km.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour x = 80 km :</p>
+    <ul>
+      <li>A : 50 + 0,30 × 80 = <strong>74 €</strong></li>
+      <li>B : 80 + 0,15 × 80 = <strong>92 €</strong></li>
+    </ul>
+    <p>Économie offre A vs B : 18 € par livraison courte.</p>
+    <p><strong>Recommandation :</strong> pour des livraisons régulières en zone proche, prendre <strong>l'offre A</strong>. Forfait plus bas = plus économique pour les courts trajets.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Comparer les deux offres en termes de « pente » (= tarif au kilomètre) et de « forfait » (= prix de départ). Comment la pente détermine-t-elle l'offre la plus avantageuse pour les grands trajets ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Comparaison :</p>
+    <table>
+      <thead><tr><th></th><th>Forfait (€)</th><th>Pente (€/km)</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>50</td><td>0,30</td></tr>
+        <tr><td>B</td><td>80</td><td>0,15</td></tr>
+      </tbody>
+    </table>
+    <p>L'offre A a un forfait <strong>plus bas</strong> mais une pente <strong>plus élevée</strong>. L'offre B a un forfait plus haut mais une pente plus douce.</p>
+    <p><strong>Règle générale :</strong> pour les <strong>grands x</strong>, l'offre la moins « pentue » l'emporte (B). Pour les <strong>petits x</strong>, l'offre au plus bas forfait l'emporte (A).</p>
+    <p>Connaître les pentes permet d'anticiper le bon choix sans même calculer le seuil.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">VAL</span></h2>
+  <p>L'offre A propose une promotion : forfait abaissé à 30 € (pente inchangée à 0,30 €/km). Recalculer le seuil. Comment évolue-t-il ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Nouvel C_A(x) = 30 + 0,30 × x.</p>
+    <p>B &lt; A : 80 + 0,15 x &lt; 30 + 0,30 x → 50 &lt; 0,15 x → x &gt; 50 / 0,15 ≈ <strong>333 km</strong>.</p>
+    <p>Le seuil <strong>monte de 200 à 333 km</strong>. Avec ce forfait promo, A est avantageux <strong>plus souvent</strong> (jusqu'à 333 km au lieu de 200). Stratégie commerciale efficace pour gagner les clients « courts trajets ».</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 4 lignes une fiche d'aide à la décision pour Léa : selon la distance d'une livraison, quelle offre choisir ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Aide à la décision — location fourgon</strong></em></p>
+    <p><em>Calcul des kilomètres aller-retour total. Si total ≤ 200 km : choisir l'<strong>offre A</strong> (Hertz Pro, 50 € + 0,30 €/km). Si total &gt; 200 km : choisir l'<strong>offre B</strong> (Europcar Express, 80 € + 0,15 €/km).</em></p>
+    <p><em>Au seuil exact (200 km), les deux offres coûtent 110 € — choisir alors selon la disponibilité ou le confort. Refaire ce calcul si l'un des loueurs change ses tarifs.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Léa envisage d'<strong>acheter</strong> son propre fourgon (12 000 € amortis sur 4 ans) plutôt que de louer. Carburant ≈ 0,12 €/km. Combien de km parcourus par an pour rentabiliser l'achat (par rapport à l'offre B) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Coût annuel achat : 12 000 / 4 = 3 000 €/an + carburant 0,12 €/km.</p>
+    <p>C_achat(x) = 3 000 + 0,12 x (en €/an, x = km/an).</p>
+    <p>Soit n le nb de livraisons/an avec x km/an total. Pour louer (B) : n × 80 + 0,15 × x.</p>
+    <p>Difficile à comparer sans hypothèse. Hypothèse : n = x / 100 (livraisons moyennes 100 km). Coût location B annuel : 0,80 x + 0,15 x = 0,95 x.</p>
+    <p>3 000 + 0,12 x &lt; 0,95 x → 3 000 &lt; 0,83 x → x &gt; 3 614 km/an, soit ~36 livraisons/an.</p>
+    <p>Si Léa fait au moins 36 livraisons/an, l'achat est rentable. Sinon, louer reste plus avantageux.</p>
+    <p><strong>Note pratique :</strong> ce calcul oublie l'assurance, l'entretien, la TVA. À refaire avec un comptable avant décision.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Comparer 2 offres affines :</strong> écrire les deux fonctions C(x) = forfait + pente × x, résoudre C₁(x) &lt; C₂(x).</li>
+    <li><strong>Seuil de bascule :</strong> point d'égalité des deux offres. À gauche du seuil, l'offre la moins « forfaitaire » gagne ; à droite, l'offre la moins « pentue » gagne.</li>
+    <li><strong>Vérification graphique :</strong> les deux droites se croisent au seuil. Lire l'intersection.</li>
+    <li><strong>Toujours adapter au profil d'utilisation :</strong> usage régulier court ≠ usage occasionnel long.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
