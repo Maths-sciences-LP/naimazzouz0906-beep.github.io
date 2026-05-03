@@ -1,49 +1,252 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch14 – Activité 4 – Maquette à l'échelle – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch14 – Activité 4 – Volume d'une maquette à l'échelle (k, k², k³) – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 4 – Volume d'une maquette à l'échelle <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
-<p class="sous-titre">Chapitre 14 – Solides et volumes | 2nde Bac Pro MAMA | ⏱ 25 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="situation"><h2>Situation – maquette d'une cuisine au 1/10</h2>
-<p><em>Sami fabrique la maquette d'une cuisine pour la présentation client. Échelle 1/10. La cuisine réelle fait 4 m × 3 m × 2,4 m (hauteur).</em></p></div>
+<header>
+  <h1>Activité 4 – Maquette à l'échelle 1/10 : effet sur les longueurs, aires et volumes <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
+  <p class="sous-titre">Chapitre 14 – Solides et volumes | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Dimensions de la maquette ? Volume de la maquette ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Maquette : 4/10 m = 40 cm, 3/10 = 30 cm, 2,4/10 = 24 cm. Soit 0,40 × 0,30 × 0,24 m.</p>
-<p>V_maquette = 0,40 × 0,30 × 0,24 = <strong>0,0288 m³ ≈ 29 L</strong>.</p>
-</div></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comprendre l'effet d'une homothétie de rapport k sur les dimensions</li>
+    <li>Appliquer les coefficients k, k² et k³ aux longueurs, aires et volumes</li>
+    <li>Estimer la matière (peinture, panneaux) à partir d'une maquette</li>
+    <li>Concevoir et exploiter une maquette pour la présentation client</li>
+  </ul>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Volume de la cuisine réelle ? Calculer le rapport.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>V_réel = 4 × 3 × 2,4 = 28,8 m³.</p>
-<p>Rapport : V_réel / V_maquette = 28,8 / 0,0288 = <strong>1 000</strong>.</p>
-<p>Échelle linéaire 1/10 → échelle volumique 1/10³ = <strong>1/1 000</strong>.</p>
-</div></div>
+<div class="situation">
+  <h2>Situation – maquette de présentation client</h2>
+  <p><em>Sami, technicien d'agencement, doit présenter à un client une cuisine sur mesure. Pour faciliter la visualisation, il décide de fabriquer une <strong>maquette à l'échelle 1/10</strong> de la cuisine.</em></p>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Sami a peint sa maquette (10 ml de peinture utilisés). Quelle quantité pour la cuisine réelle ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Échelle linéaire 1/10 → échelle de SURFACE 1/100 (l'aire est en m², dimensions au carré).</p>
-<p>Quantité réelle : 10 mL × 100 = <strong>1 000 mL = 1 L</strong>.</p>
-<p>Règle générale : agrandissement de rapport k → aires ×k², volumes ×k³.</p>
-</div></div>
+  <div style="background:#fff;padding:12px 16px;border-radius:8px;border:1px solid #cbd5e1;margin:14px 0">
+    <p style="margin:6px 0">📋 <strong>Cuisine réelle</strong> : 4 m × 3 m × 2,4 m (hauteur sous plafond)</p>
+    <p style="margin:6px 0">📋 <strong>Échelle de la maquette</strong> : 1/10 (chaque longueur réelle est divisée par 10)</p>
+  </div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Agrandissement de rapport k :</strong> longueurs ×k, aires ×k², volumes ×k³.</li>
-<li><strong>Maquette 1/10 :</strong> 1000× moins de volume, 100× moins de surface, 10× moins de longueur.</li>
-<li><strong>Conséquence :</strong> peindre une maquette demande 100× moins de peinture qu'une vraie pièce.</li></ul></div>
+  <h3>Document — règle d'or des homothéties</h3>
+  <div style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #1d4ed8;margin:14px 0">
+    <p>Pour un agrandissement (ou réduction) de rapport <strong>k</strong> :</p>
+    <ul>
+      <li><strong>longueurs</strong> sont multipliées par <strong>k</strong></li>
+      <li><strong>aires</strong> sont multipliées par <strong>k²</strong></li>
+      <li><strong>volumes</strong> sont multipliés par <strong>k³</strong></li>
+    </ul>
+    <p>Exemple : maquette 1/10 → longueurs ÷10, aires ÷100, volumes ÷1 000.</p>
+  </div>
 
-</div><script src="../../../nav.js"></script></body></html>
+  <h3>Document — visualisation des effets</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Comparaison cuisine réelle (gros pavé) et maquette 1/10 (petit pavé). Les volumes sont 1000 fois plus petits, les aires 100 fois.">
+        <defs>
+          <style>
+            .b{stroke:#1a202c;stroke-width:1.5}
+            .lbl{font:12px sans-serif;fill:#1a202c}
+            .lblA{font:600 13px sans-serif;fill:#1a202c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+          </style>
+        </defs>
+        <text class="ti" x="270" y="22">Effet de l'échelle 1/10 sur les dimensions</text>
+
+        <!-- Cuisine réelle : pavé en perspective. Largeur 200 px (4 m), hauteur 120 px (2,4 m), profondeur 30 px en perspective. -->
+        <text class="lblA" x="160" y="55" text-anchor="middle">Cuisine réelle</text>
+        <rect class="b" x="60" y="80" width="200" height="120" fill="#fde68a" opacity=".7"/>
+        <line class="b" x1="260" y1="80" x2="290" y2="60"/>
+        <line class="b" x1="60" y1="80" x2="90" y2="60"/>
+        <line class="b" x1="90" y1="60" x2="290" y2="60"/>
+        <line class="b" x1="290" y1="60" x2="290" y2="180"/>
+        <line class="b" x1="290" y1="180" x2="260" y2="200"/>
+
+        <text x="160" y="220" class="lbl" text-anchor="middle">4 × 3 × 2,4 m</text>
+        <text x="160" y="235" class="lbl" text-anchor="middle" font-weight="bold">28,8 m³</text>
+
+        <!-- Maquette 1/10 : 20×12 px (très petit) -->
+        <text class="lblA" x="430" y="55" text-anchor="middle">Maquette 1/10</text>
+        <rect class="b" x="420" y="120" width="20" height="12" fill="#fde68a" opacity=".7"/>
+        <line class="b" x1="440" y1="120" x2="443" y2="118"/>
+        <line class="b" x1="420" y1="120" x2="423" y2="118"/>
+        <line class="b" x1="423" y1="118" x2="443" y2="118"/>
+        <line class="b" x1="443" y1="118" x2="443" y2="130"/>
+
+        <text x="430" y="160" class="lbl" text-anchor="middle">40 × 30 × 24 cm</text>
+        <text x="430" y="175" class="lbl" text-anchor="middle" font-weight="bold">28,8 L</text>
+
+        <!-- Flèche -->
+        <line x1="280" y1="140" x2="410" y2="140" stroke="#0056b3" stroke-width="2" marker-end="url(#arrow)"/>
+        <text x="345" y="135" class="lbl" fill="#0056b3" font-weight="bold" text-anchor="middle">×1/10 (longueur)</text>
+        <text x="345" y="150" class="lbl" fill="#0056b3" text-anchor="middle">×1/100 (aire)</text>
+        <text x="345" y="165" class="lbl" fill="#0056b3" text-anchor="middle">×1/1000 (volume)</text>
+
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#0056b3"/>
+          </marker>
+        </defs>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du chapitre 13 (échelles) et du cours §6 (effet d'un agrandissement sur volumes).</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Comment la fabrication de la maquette permet-elle d'estimer les besoins en matériaux pour la cuisine réelle ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer les dimensions de la maquette (échelle 1/10).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Chaque dimension est divisée par 10 :</p>
+    <ul>
+      <li>Longueur : 4 m / 10 = 0,40 m = <strong>40 cm</strong></li>
+      <li>Largeur : 3 m / 10 = 0,30 m = <strong>30 cm</strong></li>
+      <li>Hauteur : 2,4 m / 10 = 0,24 m = <strong>24 cm</strong></li>
+    </ul>
+    <p>La maquette tient sur une grande table (40 × 30 cm) avec 24 cm de hauteur.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le volume de la maquette et celui de la cuisine réelle. En déduire le rapport entre les deux.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>V_maquette = 0,40 × 0,30 × 0,24 = <strong>0,0288 m³ = 28,8 L</strong>.</p>
+    <p>V_réel = 4 × 3 × 2,4 = <strong>28,8 m³</strong>.</p>
+    <p>Rapport : V_réel / V_maquette = 28,8 / 0,0288 = <strong>1 000</strong>.</p>
+    <p>Échelle linéaire 1/10 → échelle volumique 1 / 10³ = 1/1 000. ✓</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">APP</span></h2>
+  <p>Calculer la surface des 4 murs de la cuisine réelle (sans les plafonds, ni les portes/fenêtres). Calculer la surface équivalente sur la maquette.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Surface des 4 murs (réel) = 2 × (4 × 2,4) + 2 × (3 × 2,4) = 19,2 + 14,4 = <strong>33,6 m²</strong>.</p>
+    <p>Sur la maquette : 2 × (0,40 × 0,24) + 2 × (0,30 × 0,24) = 0,192 + 0,144 = <strong>0,336 m²</strong>.</p>
+    <p>Rapport : 33,6 / 0,336 = <strong>100</strong>. Échelle aire : 1 / 10² = 1/100. ✓</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Sami a utilisé 10 mL de peinture pour peindre la maquette. Quelle quantité de peinture sera nécessaire pour la cuisine réelle ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La quantité de peinture est <strong>proportionnelle à la SURFACE</strong> (pas au volume).</p>
+    <p>Échelle aire : 1/100 → quantité réelle = 10 × 100 = <strong>1 000 mL = 1 L</strong>.</p>
+    <p>1 L de peinture pour les 4 murs + plafond. Cohérent avec la couvrance habituelle (~ 10 m²/L pour 1 couche).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Sami a aussi utilisé 12 g de carrelage miniature pour le sol de la maquette. Combien de carrelage faudra-t-il pour la cuisine réelle ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le carrelage couvre une surface (le sol) → échelle aire = 1/100.</p>
+    <p>Masse réelle : 12 × 100 = <strong>1 200 g = 1,2 kg</strong>.</p>
+    <p>Cohérent avec la surface du sol : 4 × 3 = 12 m². À 100 g/m² (pour des carreaux fins), ça donne 1 200 g.</p>
+    <p>Si carrelage standard 25 kg/m² : 12 × 25 = 300 kg → la maquette ne représente pas la <strong>masse réelle</strong> (les matériaux ne sont pas du même type), juste les <strong>proportions</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Pourquoi les surfaces évoluent en k² et les volumes en k³ ? Démontrer pour un cube de côté c.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Soit un cube de côté c. Si on applique l'agrandissement k :</p>
+    <ul>
+      <li>Nouveau côté : k × c</li>
+      <li>Nouvelle aire d'une face : (k × c)² = k² × c² → aire × k²</li>
+      <li>Nouveau volume : (k × c)³ = k³ × c³ → volume × k³</li>
+    </ul>
+    <p>Cette règle se généralise à <strong>toute figure</strong>, pas seulement aux cubes : c'est une propriété fondamentale de la géométrie.</p>
+    <p>Conséquence pratique : un objet « 2 fois plus grand » prend <strong>4 fois plus de surface</strong> et <strong>8 fois plus de volume</strong>. Énorme effet.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Une fourmi (~1 cm) et un éléphant (~3 m) ont des rapports d'échelle k = 300. Pourquoi un éléphant ne peut-il pas grimper aux murs comme une fourmi ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La <strong>force d'adhérence</strong> est proportionnelle à la <strong>surface de contact</strong> (k²).</p>
+    <p>Le <strong>poids</strong> est proportionnel au <strong>volume</strong> (k³) (la masse est proportionnelle au volume si même densité).</p>
+    <p>Rapport poids/adhérence : k³ / k² = k. Pour k = 300 : un éléphant a <strong>300 fois plus de poids par cm² d'adhérence</strong> qu'une fourmi.</p>
+    <p>Conclusion : <strong>les petits êtres adhèrent mieux que les grands</strong>. C'est pourquoi les insectes peuvent grimper, pas les mammifères.</p>
+    <p>Cette « <strong>loi d'échelle</strong> » est cruciale en biologie, en bâtiment (pourquoi un grand bâtiment a besoin de fondations massives), en industrie...</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une note pratique pour un agenceur sur l'utilité des maquettes et la règle k, k², k³.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Maquettes et règles d'échelle — Mémo agenceur</strong></em></p>
+    <p><em>Les maquettes 1/10 ou 1/20 sont d'excellents outils de présentation client : visualisation rapide, ajustements faciles avant commande définitive. Elles permettent aussi d'<strong>estimer les matériaux</strong> en multipliant correctement.</em></p>
+    <p><em>Règle d'or pour passer de la maquette au réel :</em></p>
+    <ul><em>
+      <li><strong>Longueurs</strong> (ex. plinthes en m) → multiplier par k (= 10 pour 1/10)</li>
+      <li><strong>Aires</strong> (ex. peinture en m²) → multiplier par k² (= 100)</li>
+      <li><strong>Volumes</strong> (ex. matériau granulaire en m³) → multiplier par k³ (= 1 000)</li>
+    </em></ul>
+    <p><em>Toujours <strong>vérifier le résultat</strong> par un calcul direct sur les dimensions réelles avant commande.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Sami compare 2 cubes de glace : un petit (1 cm de côté, masse 1 g) et un gros (5 cm de côté). Combien pèse le gros cube et en combien de temps fond-il (le temps de fonte est proportionnel au volume / aire) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>k = 5/1 = 5. Volume × k³ = 125 → masse gros cube = 125 g.</p>
+    <p>Temps de fonte ∝ V / A = k³ / k² = k. Donc gros cube fond <strong>5 fois plus longtemps</strong> que petit.</p>
+    <p>Si le petit fond en 10 minutes, le gros prend 50 minutes.</p>
+    <p>C'est pour ça que les <strong>gros glaçons</strong> dans un cocktail durent plus longtemps que des petits, et que les <strong>icebergs</strong> mettent des années à fondre dans l'océan.</p>
+    <p>Application : conservation des aliments congelés, dimensionnement de chambres froides, isolation thermique…</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Agrandissement (ou réduction) de rapport k :</strong> longueurs × k, aires × k², volumes × k³.</li>
+    <li><strong>Maquette 1/10 :</strong> 10× moins de longueur, 100× moins de surface, 1 000× moins de volume.</li>
+    <li><strong>Conséquence pro :</strong> peinture (surface) ∝ k², matières granulaires (volume) ∝ k³.</li>
+    <li><strong>Conséquence physique :</strong> les petits objets sont relativement plus solides, plus adhérents, plus rapides à fondre que les gros.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

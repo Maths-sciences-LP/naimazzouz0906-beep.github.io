@@ -1,46 +1,252 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch14 – Activité 2 – Volume d'un caisson – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch14 – Activité 2 – Volume d'un caisson de meuble (pavé droit) – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 2 – Volume d'un caisson de meuble <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
-<p class="sous-titre">Chapitre 14 – Solides et volumes | 2nde Bac Pro MAMA | ⏱ 25 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="situation"><h2>Situation – devis</h2>
-<p><em>Karim fabrique un caisson rectangulaire pour un dressing : 2 m × 0,6 m × 0,6 m.</em></p></div>
+<header>
+  <h1>Activité 2 – Volume d'un caisson de meuble : volume utile et bois nécessaire <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 14 – Solides et volumes | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer le volume.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>V = L × l × h = 2 × 0,6 × 0,6 = <strong>0,72 m³</strong> = 720 L.</p>
-</div></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Calculer le volume d'un pavé droit V = L × l × h</li>
+    <li>Calculer l'aire totale des 6 faces d'un pavé</li>
+    <li>Distinguer volume extérieur et volume utile intérieur</li>
+    <li>Calculer le volume de matière (bois) nécessaire à la fabrication</li>
+  </ul>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Calculer le volume de bois utilisé pour les 6 faces (épaisseur 18 mm).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Aire totale des 6 faces : 2(2×0,6 + 2×0,6 + 0,6×0,6) = 2(1,2+1,2+0,36) = 5,52 m².</p>
-<p>Volume bois : 5,52 × 0,018 ≈ <strong>0,099 m³ ≈ 0,1 m³</strong>.</p>
-<p>Au prix 600 €/m³ pour panneau aggloméré 19 mm : 60 € de bois pour ce caisson.</p>
-</div></div>
+<div class="situation">
+  <h2>Situation – fabrication d'un caisson de dressing</h2>
+  <p><em>Karim, gérant d'une menuiserie, doit fabriquer un caisson rectangulaire pour un dressing sur mesure dans la chambre du client. Voici les caractéristiques :</em></p>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Calculer le volume utile intérieur (sachant que les faces ont 18 mm d'épaisseur).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Dimensions intérieures : (2 − 0,036) × (0,6 − 0,036) × (0,6 − 0,036) ≈ 1,964 × 0,564 × 0,564 ≈ <strong>0,625 m³</strong>.</p>
-<p>Soit 5 % de moins que le volume extérieur. Pour des cuisines pro, il faut prévoir cette marge dans le rangement.</p>
-</div></div>
+  <div style="background:#fff;padding:12px 16px;border-radius:8px;border:1px solid #cbd5e1;margin:14px 0">
+    <p style="margin:6px 0">📋 <strong>Cahier des charges</strong></p>
+    <p style="margin:6px 0">• Forme : caisson rectangulaire (pavé droit)</p>
+    <p style="margin:6px 0">• Dimensions extérieures : 2,00 m (hauteur) × 0,60 m (largeur) × 0,60 m (profondeur)</p>
+    <p style="margin:6px 0">• Matériau : panneau aggloméré 18 mm</p>
+    <p style="margin:6px 0">• Pour les 6 faces (haut, bas, 2 côtés, fond, façade)</p>
+    <p style="margin:6px 0">• Tarif aggloméré : 600 €/m³</p>
+  </div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Pavé droit :</strong> V = L × l × h. <strong>Aire totale :</strong> 2(Ll + lh + Lh).</li>
-<li><strong>Volume utile</strong> intérieur ≠ volume extérieur. Soustraire l'épaisseur des faces.</li></ul></div>
+  <h3>Document — schéma du caisson en perspective</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Pavé droit en perspective représentant un caisson rectangulaire de 2m x 0,6m x 0,6m. Les 3 dimensions sont cotées : hauteur 2 m, largeur 0,6 m, profondeur 0,6 m.">
+        <defs>
+          <style>
+            .b{stroke:#1a202c;stroke-width:1.5}
+            .ed{stroke:#1a202c;stroke-width:1;stroke-dasharray:4 3}
+            .lbl{font:12px sans-serif;fill:#1a202c}
+            .lblA{font:600 13px sans-serif;fill:#1a202c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+          </style>
+        </defs>
+        <text class="ti" x="270" y="22">Caisson de dressing — 2 m × 0,60 m × 0,60 m</text>
 
-</div><script src="../../../nav.js"></script></body></html>
+        <!-- Pavé en perspective. Avant : x=180, y=50-240 (hauteur 190 px = 2m). Largeur 60 px (= 0,6 m). Décalage perspective : 30 px en x et y -->
+        <!-- Face avant : (180,50) - (240,50) - (240,240) - (180,240) -->
+        <rect x="180" y="50" width="60" height="190" fill="#fde68a" opacity=".7" stroke="#1a202c" stroke-width="1.5"/>
+
+        <!-- Arête supérieure profondeur -->
+        <line class="b" x1="240" y1="50" x2="290" y2="20"/>
+        <line class="b" x1="180" y1="50" x2="230" y2="20"/>
+        <line class="b" x1="230" y1="20" x2="290" y2="20"/>
+
+        <!-- Face de droite -->
+        <polygon points="240,50 290,20 290,210 240,240" fill="#fbbf24" opacity=".7" stroke="#1a202c" stroke-width="1.5"/>
+
+        <!-- Arêtes cachées (pointillés) -->
+        <line class="ed" x1="180" y1="240" x2="230" y2="210"/>
+        <line class="ed" x1="230" y1="20" x2="230" y2="210"/>
+        <line class="ed" x1="230" y1="210" x2="290" y2="210"/>
+
+        <!-- Cotes -->
+        <text x="155" y="148" class="lblA" text-anchor="end" font-weight="bold">2,00 m</text>
+        <line x1="170" y1="50" x2="170" y2="240" stroke="#1a202c" stroke-width="1"/>
+        <line x1="166" y1="50" x2="174" y2="50" stroke="#1a202c" stroke-width="1"/>
+        <line x1="166" y1="240" x2="174" y2="240" stroke="#1a202c" stroke-width="1"/>
+
+        <text x="210" y="265" class="lblA" text-anchor="middle" font-weight="bold">0,60 m</text>
+        <text x="290" y="35" class="lbl" font-weight="bold">0,60 m</text>
+
+        <!-- Annotation : volume utile -->
+        <text x="350" y="100" class="lblA" font-weight="bold">Volume extérieur :</text>
+        <text x="350" y="118" class="lbl">V = L × l × h</text>
+        <text x="350" y="134" class="lbl">V = 2 × 0,6 × 0,6</text>
+        <text x="350" y="150" class="lbl" font-weight="bold" fill="#0056b3">V = 0,72 m³</text>
+
+        <text x="350" y="190" class="lblA" font-weight="bold" fill="#dc2626">⚠ Volume utile :</text>
+        <text x="350" y="208" class="lbl">≠ volume extérieur</text>
+        <text x="350" y="224" class="lbl">(épaisseur des faces 18 mm)</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §1 (volume d'un pavé droit) et §2 (aire totale des 6 faces).</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Combien de bois faut-il acheter pour fabriquer ce caisson, et quel est le volume utile pour le rangement ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le volume extérieur du caisson (V_ext).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>V_ext = L × l × h = 2 × 0,6 × 0,6 = <strong>0,72 m³</strong>.</p>
+    <p>Conversion : 0,72 m³ × 1 000 = <strong>720 litres</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer l'aire totale des 6 faces du caisson (= surface de bois nécessaire si pas de joints).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le caisson a 3 paires de faces opposées :</p>
+    <ul>
+      <li>2 grandes faces (hauteur × largeur) : 2 × (2 × 0,6) = <strong>2,4 m²</strong></li>
+      <li>2 grandes faces (hauteur × profondeur) : 2 × (2 × 0,6) = <strong>2,4 m²</strong></li>
+      <li>2 petites faces (largeur × profondeur, haut et bas) : 2 × (0,6 × 0,6) = <strong>0,72 m²</strong></li>
+    </ul>
+    <p>A_totale = 2,4 + 2,4 + 0,72 = <strong>5,52 m²</strong>.</p>
+    <p>Formule : A = 2 × (Ll + lh + Lh) = 2 × (1,2 + 0,36 + 1,2) = 2 × 2,76 = 5,52 m². ✓</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le volume de bois nécessaire (en m³), sachant que l'épaisseur du panneau est de 18 mm. En déduire le coût du bois (600 €/m³).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Volume de bois ≈ aire totale × épaisseur = 5,52 × 0,018 = <strong>0,0994 m³ ≈ 0,10 m³</strong>.</p>
+    <p>Coût bois : 0,10 × 600 = <strong>60 €</strong>.</p>
+    <p><strong>Note :</strong> ce calcul est <strong>approximatif</strong> car il compte les arêtes plusieurs fois (où 2 faces se rejoignent). En pratique, on majore de 5-10 % pour les chutes et coupes : 65-70 € budget bois.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Calculer les dimensions intérieures et le volume utile (intérieur) du caisson, en tenant compte de l'épaisseur du panneau (18 mm = 0,018 m sur chaque côté).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Chaque dimension intérieure = dimension extérieure − 2 × épaisseur (panneau de chaque côté).</p>
+    <p>Hauteur intérieure : 2,00 − 2 × 0,018 = 2,00 − 0,036 = <strong>1,964 m</strong>.</p>
+    <p>Largeur intérieure : 0,60 − 0,036 = <strong>0,564 m</strong>.</p>
+    <p>Profondeur intérieure : 0,60 − 0,036 = <strong>0,564 m</strong>.</p>
+    <p>V_utile = 1,964 × 0,564 × 0,564 ≈ <strong>0,625 m³</strong>.</p>
+    <p>Comparaison : 0,625 / 0,72 ≈ 87 %. Le volume utile est <strong>13 % plus petit</strong> que le volume extérieur — perte due aux parois.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Si Karim utilisait du panneau de 25 mm (plus solide) au lieu de 18 mm, comment évoluerait le volume utile ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Avec 25 mm : dimensions intérieures réduites de 2 × 0,025 = 0,05 m sur chaque dimension.</p>
+    <p>1,950 × 0,550 × 0,550 ≈ <strong>0,590 m³</strong> de volume utile.</p>
+    <p>Comparaison : 0,590 / 0,72 ≈ 82 % (vs 87 % pour 18 mm).</p>
+    <p>Plus l'épaisseur est forte, plus on perd de volume utile. Compromis classique : <strong>solidité vs capacité de rangement</strong>.</p>
+    <p>Pour un dressing classique, 18-19 mm suffit. Pour des plans de travail ou plateaux porteurs, 25-30 mm.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Le client demande de pouvoir ranger 30 boîtes à chaussures (25 × 15 × 10 cm chacune). Tient-il dans le caisson ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Volume d'une boîte : 0,25 × 0,15 × 0,10 = 0,00375 m³ = 3,75 L.</p>
+    <p>Volume total des 30 boîtes : 30 × 3,75 = <strong>112,5 L</strong> = 0,1125 m³.</p>
+    <p>Volume utile du caisson : 625 L. <strong>625 / 112,5 ≈ 5,6</strong> → on peut théoriquement y mettre 5 fois plus de boîtes.</p>
+    <p>Mais en pratique : <strong>l'espace n'est pas tout cubique</strong>. Avec des étagères + circulation, on peut y mettre ~ 50-80 boîtes selon l'organisation.</p>
+    <p>Conclusion : <strong>largement suffisant</strong> pour les 30 boîtes du client.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">VAL</span></h2>
+  <p>Karim ajoute 4 étagères horizontales à l'intérieur (chacune en panneau 18 mm). Calculer le volume de bois supplémentaire et le nouveau volume utile (réduit par les 4 étagères).</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Une étagère : 0,564 × 0,564 × 0,018 = 0,00572 m³ ≈ 5,7 L.</p>
+    <p>4 étagères : 4 × 5,7 = <strong>22,8 L</strong> de bois en plus = 0,023 m³.</p>
+    <p>Coût supplémentaire : 0,023 × 600 = <strong>13,80 €</strong>.</p>
+    <p>Volume utile restant : 625 − 22,8 = <strong>602 L</strong> (perte ~ 4 %).</p>
+    <p>Les étagères divisent l'espace en 5 zones de ~120 L chacune : <strong>plus pratique</strong> pour ranger même si un peu moins de volume total.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Présenter le récapitulatif chiffré de la fabrication du caisson au client.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Récapitulatif — Caisson de dressing</strong></em></p>
+    <table>
+      <thead><tr><th>Caractéristique</th><th>Valeur</th></tr></thead>
+      <tbody>
+        <tr><td>Dimensions extérieures</td><td>2,00 × 0,60 × 0,60 m</td></tr>
+        <tr><td>Volume extérieur</td><td>0,72 m³ (720 L)</td></tr>
+        <tr><td>Volume utile (intérieur)</td><td>0,625 m³ (625 L)</td></tr>
+        <tr><td>Surface de bois (6 faces + 4 étagères)</td><td>5,52 + 1,27 = 6,79 m²</td></tr>
+        <tr><td>Volume de bois (panneau 18 mm)</td><td>≈ 0,12 m³</td></tr>
+        <tr><td>Coût matière première</td><td>≈ 75 € (avec marge de 5 %)</td></tr>
+      </tbody>
+    </table>
+    <p><em>Avec main-d'œuvre et accessoires (charnières, poignées, vis), prix client estimé : 250-300 €. Délai : 5 jours. Garantie : 2 ans.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Karim envisage des caissons en série (10 unités identiques pour un client professionnel). Calculer le volume total de bois, le coût matière, et la marge si le tarif client est de 280 €/caisson (10 caissons).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Volume bois : 10 × 0,12 = <strong>1,2 m³</strong>.</p>
+    <p>Coût matière : 1,2 × 600 = <strong>720 €</strong> (avec remise quantité éventuelle, peut descendre à 650 €).</p>
+    <p>Tarif client : 10 × 280 = <strong>2 800 €</strong>.</p>
+    <p>Marge brute : 2 800 − 720 = 2 080 €. À soustraire : 30 h main-d'œuvre × 25 €/h = 750 €. Marge nette : ~ 1 330 € sur le lot.</p>
+    <p>Marge nette/caisson : 133 € → ratio ~ 50 %. Bon contrat. Attention au cash-flow : commande matière + production avant paiement.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Volume d'un pavé droit :</strong> V = L × l × h.</li>
+    <li><strong>Aire totale (6 faces) :</strong> A = 2 × (Ll + lh + Lh).</li>
+    <li><strong>Volume utile intérieur ≠ volume extérieur :</strong> soustraire 2 × épaisseur sur chaque dimension.</li>
+    <li><strong>Volume de bois (matière) :</strong> aire totale × épaisseur (approximation, à majorer pour chutes).</li>
+    <li><strong>Conversion utile :</strong> 1 m³ = 1 000 L.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
