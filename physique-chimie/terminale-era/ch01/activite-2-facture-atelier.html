@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch01 – Activité 2 – Diagnostic facture EDF atelier menuiserie – Term ERA</title>
+<title>Ch01 – Activité 2 – Diagnostic facture EDF atelier menuiserie – PC Term ERA-MA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9}</style>
 </head>
 <body>
 <div class="c">
@@ -15,23 +15,24 @@
 
 <header>
   <h1>Activité 2 – Diagnostic d'une facture EDF d'atelier de menuiserie <span style="font-size:.55em;color:#b91c1c;font-weight:600">DIAGNOSTIC</span></h1>
-  <p class="sous-titre">Chapitre 1 – Transporter l'énergie électrique | Terminale Bac Pro (Grpt 3) | Physique – Électricité | ⏱ 35 min</p>
-  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+  <p class="sous-titre">Chapitre 1 – Transporter l'énergie électrique | Terminale Bac Pro ERA-MA | Physique-Chimie | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
 </header>
-<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
 <div class="objectifs">
   <strong>Objectifs :</strong>
   <ul>
-    <li>Lire une facture d'électricité professionnelle</li>
-    <li>Calculer les consommations d'un atelier à partir de ses équipements</li>
-    <li>Identifier les leviers d'économie d'énergie</li>
+    <li>Lire et interpréter une facture d'électricité professionnelle</li>
+    <li>Calculer la consommation d'un atelier à partir de l'inventaire des équipements</li>
+    <li>Identifier les équipements énergivores et les leviers d'économie</li>
+    <li>Évaluer la rentabilité d'un investissement (ROI)</li>
   </ul>
 </div>
 
 <div class="situation">
   <h2>Situation – facture qui explose chez Anaïs</h2>
-  <p><em>Anaïs, gérante d'un atelier de menuiserie de 6 employés, voit sa facture d'électricité passer de 450 €/mois à 720 €/mois en un an, sans avoir augmenté son activité. Elle suspecte un dysfonctionnement et appelle Lucas, conseiller énergie d'EDF Pro.</em></p>
+  <p><em>Anaïs, gérante d'un atelier de menuiserie de 6 employés, voit sa facture d'électricité passer de 450 €/mois à 720 €/mois en un an, sans avoir augmenté son activité. Elle suspecte un dysfonctionnement et appelle Lucas, conseiller énergie d'EDF Pro, pour un diagnostic.</em></p>
 
   <h3>Document 1 — Facture EDF avril 2026</h3>
   <table>
@@ -49,7 +50,7 @@
     <tbody>
       <tr><td>Scie circulaire à format</td><td>3,0</td><td>3</td><td>22</td></tr>
       <tr><td>Dégauchisseuse-raboteuse</td><td>4,0</td><td>2</td><td>22</td></tr>
-      <tr><td>Aspirateur central (oublié allumé !)</td><td>5,5</td><td>11</td><td>22</td></tr>
+      <tr><td>Aspirateur central <em>(oublié allumé !)</em></td><td>5,5</td><td>11</td><td>22</td></tr>
       <tr><td>Compresseur</td><td>2,2</td><td>1</td><td>22</td></tr>
       <tr><td>Éclairage 8 néons 36 W (anciens)</td><td>0,29</td><td>10</td><td>22</td></tr>
       <tr><td>Chauffage électrique (8 mois/an)</td><td>3,0</td><td>10</td><td>22</td></tr>
@@ -57,44 +58,119 @@
   </table>
 
   <p><em>Le chef d'atelier a remarqué que l'aspirateur central tourne en continu de 7 h à 18 h, alors qu'il ne devrait fonctionner qu'à la demande des machines (~ 4 h/jour effectif).</em></p>
+
+  <h3>Document 3 — Répartition de la consommation (visuelle)</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Diagramme en barres de la consommation mensuelle des 6 équipements. L'aspirateur domine avec 1331 kWh/mois.">
+      <defs>
+        <style>
+          .ax{stroke:#1a202c;stroke-width:1.5}
+          .gd{stroke:#cbd5e1;stroke-width:.6}
+          .lbl{font:10px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#2da44e}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Consommation mensuelle par équipement (kWh)</text>
+
+      <!-- Y : 0 → 240, 1500 kWh → 50. 1 kWh = 0,127 px. 1331 → 71. 660 → 156. 198 → 215. 176 → 218. 64 → 232. 48 → 234 -->
+      <g class="gd">
+        <line x1="60" y1="50" x2="500" y2="50"/>
+        <line x1="60" y1="98" x2="500" y2="98"/>
+        <line x1="60" y1="145" x2="500" y2="145"/>
+        <line x1="60" y1="193" x2="500" y2="193"/>
+        <line x1="60" y1="240" x2="500" y2="240"/>
+      </g>
+      <line class="ax" x1="60" y1="240" x2="510" y2="240"/>
+      <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
+
+      <g class="lbl" text-anchor="end">
+        <text x="55" y="244">0</text>
+        <text x="55" y="197">375</text>
+        <text x="55" y="149">750</text>
+        <text x="55" y="102">1 125</text>
+        <text x="55" y="54">1 500</text>
+      </g>
+      <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">kWh / mois</text>
+
+      <!-- Barres -->
+      <rect x="80" y="215" width="50" height="25" fill="#86efac"/>
+      <text x="105" y="258" class="lbl" text-anchor="middle">Scie</text>
+      <text x="105" y="210" class="lbl" text-anchor="middle">198</text>
+
+      <rect x="145" y="218" width="50" height="22" fill="#86efac"/>
+      <text x="170" y="258" class="lbl" text-anchor="middle">Dégau</text>
+      <text x="170" y="213" class="lbl" text-anchor="middle">176</text>
+
+      <rect x="210" y="71" width="50" height="169" fill="#dc2626"/>
+      <text x="235" y="258" class="lbl" text-anchor="middle" font-weight="bold" fill="#dc2626">Aspi</text>
+      <text x="235" y="65" class="lbl" text-anchor="middle" font-weight="bold" fill="#dc2626">1 331 ⚠</text>
+
+      <rect x="275" y="234" width="50" height="6" fill="#86efac"/>
+      <text x="300" y="258" class="lbl" text-anchor="middle">Compr.</text>
+      <text x="300" y="231" class="lbl" text-anchor="middle">48</text>
+
+      <rect x="340" y="232" width="50" height="8" fill="#86efac"/>
+      <text x="365" y="258" class="lbl" text-anchor="middle">Néons</text>
+      <text x="365" y="229" class="lbl" text-anchor="middle">64</text>
+
+      <rect x="405" y="156" width="50" height="84" fill="#0ea5e9"/>
+      <text x="430" y="258" class="lbl" text-anchor="middle">Chauff.</text>
+      <text x="430" y="151" class="lbl" text-anchor="middle">660</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §2 (puissance et énergie : E = P × t) et §4 (analyse d'une facture).</em></p>
 </div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-  <strong>Problématique :</strong> Pourquoi la facture d'Anaïs a-t-elle augmenté de 60 % et quelle action prioritaire Lucas peut-il recommander ?
+  <strong>Problématique :</strong> Pourquoi la facture d'Anaïs a-t-elle augmenté de 60 %, et quelle action prioritaire Lucas peut-il recommander ?
 </div>
 
 <div class="exo">
   <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Rappeler la formule reliant énergie consommée E (en kWh), puissance P (en kW) et durée t (en heures).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>E = P × t</strong></p>
+    <p>avec E en kilowatt-heure (kWh), P en kilowatt (kW), t en heures (h).</p>
+    <p>Exemple : un appareil de 2 kW utilisé 5 h consomme 2 × 5 = 10 kWh.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
   <p>Calculer la consommation mensuelle E (kWh) de chaque équipement avec : E = P × heures/jour × jours/mois.</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <table>
-      <thead><tr><th>Équipement</th><th>E (kWh/mois)</th></tr></thead>
+      <thead><tr><th>Équipement</th><th>Calcul</th><th>E (kWh/mois)</th></tr></thead>
       <tbody>
-        <tr><td>Scie circulaire</td><td>3,0×3×22 = <strong>198</strong></td></tr>
-        <tr><td>Dégau-rabot</td><td>4,0×2×22 = <strong>176</strong></td></tr>
-        <tr><td>Aspirateur central</td><td>5,5×11×22 = <strong>1 331</strong></td></tr>
-        <tr><td>Compresseur</td><td>2,2×1×22 = <strong>48</strong></td></tr>
-        <tr><td>Éclairage néons</td><td>0,29×10×22 = <strong>64</strong></td></tr>
-        <tr><td>Chauffage</td><td>3,0×10×22 = <strong>660</strong></td></tr>
-        <tr><td><strong>Total</strong></td><td><strong>≈ 2 477 kWh</strong></td></tr>
+        <tr><td>Scie circulaire</td><td>3,0 × 3 × 22</td><td><strong>198</strong></td></tr>
+        <tr><td>Dégau-rabot</td><td>4,0 × 2 × 22</td><td><strong>176</strong></td></tr>
+        <tr><td>Aspirateur central</td><td>5,5 × 11 × 22</td><td><strong>1 331</strong></td></tr>
+        <tr><td>Compresseur</td><td>2,2 × 1 × 22</td><td><strong>48</strong></td></tr>
+        <tr><td>Éclairage néons</td><td>0,29 × 10 × 22</td><td><strong>64</strong></td></tr>
+        <tr><td>Chauffage</td><td>3,0 × 10 × 22</td><td><strong>660</strong></td></tr>
+        <tr><td colspan="2"><strong>Total</strong></td><td><strong>≈ 2 477 kWh</strong></td></tr>
       </tbody>
     </table>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
   <p>La facture indique 3 600 kWh consommés. L'inventaire donne ~ 2 477 kWh théoriques. D'où vient l'écart ? Quel équipement est principalement en cause ?</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>Écart = 3 600 − 2 477 = <strong>1 123 kWh inexpliqués</strong>.</p>
-    <p>L'<strong>aspirateur central</strong> est le suspect principal : 5,5 kW est une grosse puissance, et le chef d'atelier a remarqué qu'il tourne en continu (11 h/jour) au lieu de 4 h/jour. Recalcul :</p>
+    <p>L'<strong>aspirateur central</strong> est le suspect principal : 5,5 kW est une grosse puissance, et le chef d'atelier a remarqué qu'il tourne en continu (11 h/jour) au lieu des 4 h/jour utiles.</p>
     <ul>
-      <li>Conso « normale » à 4 h/jour : 5,5 × 4 × 22 = 484 kWh</li>
-      <li>Conso « anormale » à 11 h/jour : 5,5 × 11 × 22 = 1 331 kWh</li>
+      <li>Conso « normale » à 4 h/jour : 5,5 × 4 × 22 = <strong>484 kWh</strong></li>
+      <li>Conso actuelle à 11 h/jour : 5,5 × 11 × 22 = <strong>1 331 kWh</strong></li>
       <li>Surcoût : 1 331 − 484 = <strong>847 kWh/mois en trop</strong></li>
     </ul>
     <p>Cause probable : capteur de démarrage automatique défectueux ou opérateurs qui oublient d'éteindre.</p>
@@ -102,40 +178,82 @@
 </div>
 
 <div class="exo">
-  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
   <p>Calculer l'économie annuelle réalisée si Anaïs installe une <strong>commande automatique</strong> qui ne fait tourner l'aspirateur que pendant l'usage des machines (4 h/jour). Coût installation : 1 200 € HT.</p>
-  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ul>
       <li>Économie mensuelle : 847 kWh × 0,18 €/kWh = <strong>152 €/mois</strong></li>
       <li>Économie annuelle : 152 × 12 = <strong>≈ 1 830 €/an</strong></li>
-      <li>Retour sur investissement : 1 200 / 1 830 ≈ <strong>8 mois</strong></li>
+      <li>Retour sur investissement (ROI) : 1 200 / 1 830 ≈ <strong>8 mois</strong> seulement</li>
     </ul>
+    <p>L'investissement est très rentable.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
   <p>Lucas suggère aussi de remplacer les <strong>néons par des LED</strong> (économie ≈ 50 % sur l'éclairage). Calculer le gain annuel et conclure si c'est prioritaire.</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>Économie éclairage : 64 kWh × 0,5 = 32 kWh/mois × 0,18 = <strong>5,80 €/mois ≈ 70 €/an</strong>.</p>
     <p>Coût remplacement 8 néons par 8 tubes LED : ~ 250 €. ROI : <strong>3,5 ans</strong>.</p>
-    <p>Comparé à l'aspirateur (1 830 €/an, ROI 8 mois), <strong>l'aspirateur est la priorité absolue</strong>. Les LED viennent en second lieu (gain modeste mais utile sur le long terme).</p>
+    <p>Comparé à l'aspirateur (1 830 €/an, ROI 8 mois), <strong>l'aspirateur est la priorité absolue</strong>. Les LED viennent en second lieu (gain modeste mais utile sur le long terme, et durée de vie LED 10 fois plus longue).</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 5 <span class="badge-yellow">COM</span></h2>
-  <p>Rédiger en 5 lignes la note de Lucas à Anaïs.</p>
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>L'abonnement 30 kVA coûte 72 €/mois. Si Anaïs réduit la puissance souscrite à 24 kVA (60 €/mois), combien économise-t-elle par an ? Risque-t-elle des disjonctions ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Économie abonnement : (72 − 60) × 12 = <strong>144 €/an</strong>.</p>
+    <p>Risque de disjonction : il faut vérifier la <strong>puissance simultanée maximale</strong> appelée. Si tous les équipements démarrent ensemble : 3 + 4 + 5,5 + 2,2 + 0,29 + 3 = 18 kW (pic), avec coefficient de démarrage moteur ×3 → pic 30-40 kW pendant 1-2 secondes.</p>
+    <p>À 24 kVA, le disjoncteur lâcherait. Conclusion : <strong>conserver 30 kVA</strong> ou installer un délesteur intelligent pour économiser sans risque.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">VAL</span></h2>
+  <p>Sur 1 an, en cumulant les actions « aspirateur » + « LED », quel pourcentage de la facture totale Anaïs économise-t-elle ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Économie cumulée : 1 830 + 70 = <strong>1 900 €/an</strong>.</p>
+    <p>Facture annuelle actuelle : 720 × 12 = 8 640 €.</p>
+    <p>Pourcentage économisé : 1 900 / 8 640 ≈ <strong>22 %</strong>.</p>
+    <p>Avec un investissement total de seulement 1 450 € (1 200 + 250). Excellent retour.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes la note de Lucas à Anaïs avec la liste des actions hiérarchisées.</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir un exemple</button>
   <div class="corr">
-    <p><em>Note diagnostic — Atelier Anaïs SAS — 2 mai 2026.</em></p>
-    <p><em>L'augmentation de 60 % de votre facture vient à 75 % de l'<strong>aspirateur central</strong> qui tourne 11 h/jour au lieu des 4 h utiles, soit 847 kWh/mois inutiles. Recommandation prioritaire : installer un automatisme de démarrage couplé aux machines (1 200 € HT, économie 1 830 €/an, ROI 8 mois).</em></p>
-    <p><em>Action secondaire : remplacer les néons par des tubes LED (gain ~70 €/an). Total potentiel : ~1 900 €/an d'économie.</em></p>
+    <p><em><strong>Note diagnostic — Atelier Anaïs SAS</strong></em></p>
+    <p><em>L'augmentation de 60 % de votre facture vient à 75 % de l'<strong>aspirateur central</strong> qui tourne 11 h/jour au lieu des 4 h utiles, soit 847 kWh/mois inutiles.</em></p>
+    <p><em><strong>Action prioritaire (P1) :</strong> installer un automatisme de démarrage couplé aux machines. Coût 1 200 € HT, économie 1 830 €/an, ROI 8 mois.</em></p>
+    <p><em><strong>Action secondaire (P2) :</strong> remplacer les néons par des tubes LED. Coût 250 €, économie 70 €/an. ROI 3,5 ans.</em></p>
+    <p><em>Total potentiel : <strong>1 900 €/an d'économie (22 % de la facture annuelle)</strong> pour 1 450 € d'investissement.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Anaïs envisage d'installer 20 m² de panneaux solaires (production ~ 3 000 kWh/an). À 0,18 €/kWh autoconsommé, calculer le gain annuel. Coût installation 5 000 € HT, ROI ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Gain annuel : 3 000 × 0,18 = <strong>540 €/an</strong>.</p>
+    <p>ROI brut : 5 000 / 540 ≈ <strong>9,3 ans</strong>.</p>
+    <p>Avec aides à l'autoconsommation (ADEME, prime CEE) : ~ 1 500 € de subvention → coût net ~ 3 500 € → ROI ~ 6,5 ans.</p>
+    <p>Durée de vie panneaux : 25-30 ans. Sur cette période, gain net total ≈ 13 000 €.</p>
+    <p>Décision : intéressant à long terme, mais en priorité absolue après les actions « aspirateur » (ROI 8 mois) et « LED » (ROI 3,5 ans). Stratégie : étalement sur 3 ans.</p>
   </div>
 </div>
 
@@ -145,7 +263,8 @@
     <li><strong>E = P × t :</strong> calcul fondamental de l'énergie consommée. P en kW, t en heures, E en kWh.</li>
     <li><strong>Méthode de diagnostic :</strong> additionner les conso théoriques, comparer à la facture, repérer l'écart.</li>
     <li><strong>Levier d'économie #1 en atelier :</strong> traquer les <strong>équipements oubliés en marche</strong> (aspirateur, compresseur, éclairage). Souvent &gt; 50 % de la facture.</li>
-    <li><strong>Tarif moyen pro :</strong> 0,15 à 0,20 €/kWh. Levier rentable à étudier dès qu'on dépasse 500 €/mois.</li>
+    <li><strong>Tarif moyen pro :</strong> 0,15 à 0,20 €/kWh. Hiérarchiser par ROI pour les investissements.</li>
+    <li><strong>Aides disponibles :</strong> CEE (Certificats d'Économie d'Énergie), ADEME, aides régionales.</li>
   </ul>
 </div>
 

@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch01 – Activité 4 – Pertes en ligne d'un câble d'atelier – Term ERA</title>
+<title>Ch01 – Activité 4 – Pertes par effet Joule dans un câble – PC Term ERA-MA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9}</style>
 </head>
 <body>
 <div class="c">
@@ -15,17 +15,18 @@
 
 <header>
   <h1>Activité 4 – Pertes par effet Joule dans un câble d'atelier <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
-  <p class="sous-titre">Chapitre 1 – Transporter l'énergie électrique | Terminale Bac Pro (Grpt 3) | Physique – Électricité | ⏱ 30 min</p>
-  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+  <p class="sous-titre">Chapitre 1 – Transporter l'énergie électrique | Terminale Bac Pro ERA-MA | Physique-Chimie | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
 </header>
-<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
 <div class="objectifs">
   <strong>Objectifs :</strong>
   <ul>
     <li>Calculer les pertes par effet Joule (P = R × I²)</li>
-    <li>Comprendre le rôle de la section du câble</li>
-    <li>Choisir une section adaptée pour minimiser les pertes</li>
+    <li>Calculer la résistance d'un câble (R = ρ × L / S)</li>
+    <li>Choisir une section de câble adaptée pour minimiser les pertes</li>
+    <li>Respecter la norme NF C 15-100 (chute de tension max)</li>
   </ul>
 </div>
 
@@ -33,18 +34,61 @@
   <h2>Situation – atelier excentré et câble qui chauffe</h2>
   <p><em>Léa, ébéniste, a fait construire une extension d'atelier à 50 m de son tableau électrique principal. Elle se plaint que la scie à format (3 kW, 13 A) « manque de jus » — elle démarre lentement, et le câble qui l'alimente est chaud au toucher après 1 heure d'usage. Hugo, électricien, suspecte un câble sous-dimensionné.</em></p>
 
-  <h3>Document 1 — Câble installé</h3>
+  <h3>Document 1 — Câble actuel</h3>
   <ul>
-    <li>Câble cuivre 2 conducteurs, longueur aller-retour : <strong>2 × 50 = 100 m</strong> (l'aller et le retour comptent !)</li>
+    <li>Câble cuivre 2 conducteurs (phase + neutre)</li>
+    <li>Longueur aller-retour : <strong>2 × 50 = 100 m</strong> (l'aller et le retour comptent !)</li>
     <li>Section actuelle : <strong>2,5 mm²</strong></li>
     <li>Résistivité du cuivre : ρ = <strong>1,7 × 10⁻⁸ Ω·m</strong></li>
-    <li>Relation : R = ρ × L / S</li>
+    <li>Relation : <strong>R = ρ × L / S</strong></li>
   </ul>
 
   <h3>Document 2 — Loi de Joule</h3>
-  <p>La puissance perdue par échauffement dans une résistance R traversée par un courant I :</p>
-  <p style="text-align:center">\(P_\text{Joule} = R \times I^2\)</p>
-  <p>Cette puissance est <strong>dissipée en chaleur</strong> dans le câble. Elle est perdue (n'arrive pas à la machine).</p>
+  <div style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #1d4ed8;margin:14px 0;text-align:center">
+    <p style="font-size:1.1em"><strong>P_Joule = R × I²</strong></p>
+    <p>Cette puissance est <strong>dissipée en chaleur</strong> dans le câble. Elle est perdue (n'arrive pas à la machine).</p>
+  </div>
+
+  <h3>Document 3 — Schéma : circuit avec pertes en ligne</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 220" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Schéma : tableau électrique 230V à gauche, câble de 50m+50m, machine 3kW à droite. Pertes en ligne par effet Joule représentées par symbole de chaleur.">
+      <defs>
+        <style>
+          .b{stroke:#1a202c;stroke-width:1.5;fill:none}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#2da44e}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Pertes par effet Joule dans le câble</text>
+
+      <!-- Tableau électrique (gauche) -->
+      <rect class="b" x="40" y="80" width="80" height="100" fill="#fbbf24" opacity=".5"/>
+      <text x="80" y="105" class="lblA" text-anchor="middle">Tableau</text>
+      <text x="80" y="125" class="lbl" text-anchor="middle">230 V</text>
+      <text x="80" y="200" class="lbl" text-anchor="middle">(source)</text>
+
+      <!-- Machine (droite) -->
+      <rect class="b" x="420" y="80" width="80" height="100" fill="#86efac" opacity=".7"/>
+      <text x="460" y="105" class="lblA" text-anchor="middle">Scie</text>
+      <text x="460" y="125" class="lbl" text-anchor="middle">3 kW / 13 A</text>
+      <text x="460" y="200" class="lbl" text-anchor="middle">(charge)</text>
+
+      <!-- Câbles aller (haut) -->
+      <line class="b" x1="120" y1="100" x2="420" y2="100" stroke="#dc2626" stroke-width="2.5"/>
+      <text x="270" y="93" class="lbl" fill="#dc2626" font-weight="bold" text-anchor="middle">Phase (50 m, 2,5 mm²)</text>
+
+      <!-- Câbles retour (bas) -->
+      <line class="b" x1="120" y1="160" x2="420" y2="160" stroke="#0969da" stroke-width="2.5"/>
+      <text x="270" y="173" class="lbl" fill="#0969da" font-weight="bold" text-anchor="middle">Neutre (50 m, 2,5 mm²)</text>
+
+      <!-- Effet Joule (chaleur) -->
+      <text x="270" y="135" class="lblA" fill="#dc2626" text-anchor="middle">🔥 Pertes Joule = R × I²</text>
+      <text x="270" y="150" class="lbl" fill="#dc2626" text-anchor="middle">le câble chauffe !</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §3 (effet Joule) et §4 (dimensionnement de câble).</em></p>
 </div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
@@ -52,72 +96,133 @@
 </div>
 
 <div class="exo">
-  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
-  <p>Calculer la résistance R du câble actuel (2,5 mm² × 100 m).</p>
-  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <h2>Question 1 <span class="badge-blue">APP</span></h2>
+  <p>Pourquoi compte-t-on la longueur aller-retour (2 × 50 = 100 m) et non simplement 50 m ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>S = 2,5 mm² = 2,5 × 10⁻⁶ m²</p>
-    <p>R = ρ × L / S = 1,7×10⁻⁸ × 100 / (2,5×10⁻⁶) = <strong>0,68 Ω</strong></p>
+    <p>Le courant doit passer par la <strong>phase</strong> (aller) ET revenir par le <strong>neutre</strong> (retour). Les deux conducteurs sont parcourus par le même courant.</p>
+    <p>Donc la résistance totale = résistance phase + résistance neutre = 2 × R d'un conducteur de 50 m.</p>
+    <p>La longueur effective pour les pertes = <strong>100 m</strong> (aller + retour).</p>
+    <p>Erreur classique de débutant : oublier de doubler la longueur → sous-estimation des pertes par 2.</p>
   </div>
 </div>
 
 <div class="exo">
   <h2>Question 2 <span class="badge-yellow">REA</span></h2>
-  <p>Calculer la puissance perdue par effet Joule en fonctionnement à 13 A.</p>
-  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <p>Calculer la résistance R du câble actuel (section S = 2,5 mm², longueur L = 100 m).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>P<sub>Joule</sub> = R × I² = 0,68 × 13² = 0,68 × 169 = <strong>115 W</strong></p>
-    <p>Sur les 3 000 W demandés par la scie, 115 W sont perdus dans le câble (≈ 3,8 %). Pas catastrophique mais le câble chauffe en effet.</p>
+    <p>S = 2,5 mm² = 2,5 × 10⁻⁶ m².</p>
+    <p>R = ρ × L / S = (1,7 × 10⁻⁸) × 100 / (2,5 × 10⁻⁶)</p>
+    <p>R = 1,7 × 10⁻⁶ / (2,5 × 10⁻⁶) = <strong>0,68 Ω</strong>.</p>
   </div>
 </div>
 
 <div class="exo">
   <h2>Question 3 <span class="badge-yellow">REA</span></h2>
-  <p>Calculer la chute de tension U<sub>Joule</sub> = R × I dans le câble. Comparer aux 230 V nominaux. Conclure sur le « manque de jus » signalé par Léa.</p>
-  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <p>Calculer la puissance perdue par effet Joule en fonctionnement à I = 13 A.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>U<sub>Joule</sub> = R × I = 0,68 × 13 = <strong>8,8 V</strong></p>
-    <p>Pourcentage : 8,8 / 230 = <strong>3,8 %</strong>.</p>
-    <p>La norme NF C 15-100 limite la chute de tension à <strong>3 % en éclairage et 5 % en force motrice</strong>. Ici 3,8 % : <strong>limite acceptable</strong> pour une machine, mais juste.</p>
-    <p>Au démarrage (pic à I = 30 A pendant 1 s), la chute monte à 0,68 × 30 = 20 V (8,7 %) — le moteur reçoit alors seulement 210 V au lieu de 230 V, ce qui explique le démarrage poussif.</p>
+    <p>P_Joule = R × I² = 0,68 × 13² = 0,68 × 169 = <strong>115 W</strong>.</p>
+    <p>Sur les 3 000 W demandés par la scie, 115 W sont perdus dans le câble (≈ <strong>3,8 %</strong>). Pas catastrophique en soi, mais le câble chauffe en effet (115 W répartis sur 100 m de câble = c'est suffisant pour le sentir tiède).</p>
   </div>
 </div>
 
 <div class="exo">
   <h2>Question 4 <span class="badge-yellow">REA</span></h2>
-  <p>Calculer la résistance et les pertes pour un câble de section <strong>6 mm²</strong> (à la place de 2,5 mm²).</p>
+  <p>Calculer la chute de tension U_Joule = R × I dans le câble. Comparer aux 230 V nominaux. Conclure sur le « manque de jus » signalé par Léa.</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>R<sub>6</sub> = 1,7×10⁻⁸ × 100 / (6×10⁻⁶) = <strong>0,28 Ω</strong></p>
-    <p>P<sub>Joule</sub> = 0,28 × 169 = <strong>48 W</strong> (au lieu de 115 W : <strong>réduction de 58 %</strong>)</p>
-    <p>U<sub>Joule</sub> = 0,28 × 13 = <strong>3,7 V</strong> = 1,6 % (largement conforme).</p>
-    <p>Au démarrage : 0,28 × 30 = 8,4 V — bien meilleur (3,7 %), démarrage normal.</p>
+    <p>U_Joule = R × I = 0,68 × 13 = <strong>8,8 V</strong>.</p>
+    <p>Pourcentage : 8,8 / 230 = <strong>3,8 %</strong>.</p>
+    <p>La norme NF C 15-100 limite la chute de tension à <strong>3 % en éclairage et 5 % en force motrice</strong>. Ici 3,8 % : limite acceptable pour une machine, mais juste.</p>
+    <p>Au démarrage (pic à I = 30 A pendant 1 s, courant d'appel des moteurs), la chute monte à 0,68 × 30 = <strong>20 V (8,7 %)</strong> — le moteur reçoit alors seulement 210 V au lieu de 230 V, ce qui explique le démarrage poussif.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
-  <p>Calculer les économies annuelles avec le 6 mm² (atelier 8 h/jour × 200 jours/an, tarif 0,18 €/kWh). Coût remplacement 50 m de câble 6 mm² + pose : 280 €. Le remplacement est-il rentable ?</p>
+  <h2>Question 5 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la résistance et les pertes pour un câble de section <strong>6 mm²</strong> (au lieu de 2,5 mm²).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>R_6 = (1,7 × 10⁻⁸) × 100 / (6 × 10⁻⁶) = <strong>0,28 Ω</strong>.</p>
+    <p>P_Joule = 0,28 × 169 = <strong>48 W</strong> (au lieu de 115 W → <strong>réduction de 58 %</strong>).</p>
+    <p>U_Joule = 0,28 × 13 = <strong>3,7 V = 1,6 %</strong> (largement conforme).</p>
+    <p>Au démarrage : 0,28 × 30 = 8,4 V (3,7 %) — bien meilleur, démarrage normal.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Quelle relation simple entre la section et la résistance ? Que se passe-t-il si on prend du 10 mm² ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>R = ρ × L / S → R est <strong>inversement proportionnelle à S</strong>.</p>
+    <p>Doubler la section = diviser R par 2 = diviser les pertes par 2 (à courant constant).</p>
+    <p>Avec 10 mm² (section × 4 par rapport à 2,5 mm²) :</p>
+    <p>R_10 = 0,68 / 4 = 0,17 Ω. P_Joule = 0,17 × 169 = <strong>29 W</strong>.</p>
+    <p>Pertes divisées par 4 par rapport au 2,5 mm². Mais coût aussi plus élevé.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">VAL</span></h2>
+  <p>Calculer l'économie annuelle avec le 6 mm² (atelier 8 h/jour × 200 jours/an, tarif 0,18 €/kWh). Coût remplacement 50 m de câble 6 mm² + pose : 280 €. Le remplacement est-il rentable ?</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ul>
-      <li>Économie de puissance : 115 − 48 = 67 W</li>
-      <li>Heures/an : 8 × 200 = 1 600 h</li>
-      <li>Énergie économisée : 67 × 1 600 / 1000 = 107 kWh/an</li>
-      <li>Coût économisé : 107 × 0,18 = <strong>19 €/an</strong></li>
-      <li>ROI : 280 / 19 ≈ <strong>15 ans</strong></li>
+      <li>Économie de puissance : 115 − 48 = 67 W.</li>
+      <li>Heures/an : 8 × 200 = 1 600 h.</li>
+      <li>Énergie économisée : 67 × 1 600 / 1 000 = 107 kWh/an.</li>
+      <li>Coût économisé : 107 × 0,18 = <strong>19 €/an</strong>.</li>
+      <li>ROI : 280 / 19 ≈ <strong>15 ans</strong>.</li>
     </ul>
     <p>Le remplacement n'est <strong>pas rentable purement énergétiquement</strong>. Mais il l'est :</p>
     <ul>
       <li>Pour la <strong>conformité</strong> (chute proche des 5 % autorisés)</li>
       <li>Pour le <strong>démarrage</strong> de la machine (autrement laborieux)</li>
       <li>Pour la <strong>longévité</strong> du câble (un câble qui chauffe vieillit l'isolant)</li>
+      <li>Pour la <strong>sécurité</strong> (risque incendie si surchauffe prolongée)</li>
     </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes la note technique d'Hugo pour Léa : diagnostic + recommandation.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Diagnostic câble extension atelier — 50 m</strong></em></p>
+    <p><em>Le câble actuel (2,5 mm²) est <strong>sous-dimensionné</strong> pour la distance de 50 m. Pertes 115 W (3,8 % en régime, 8,7 % au démarrage) → la scie démarre mal, le câble chauffe.</em></p>
+    <p><em><strong>Recommandation :</strong> remplacer par du câble 6 mm² (R divisée par 2,4, pertes divisées par 2,4).</em></p>
+    <p><em>Investissement : 280 € (matériel + pose 1 demi-journée).</em></p>
+    <p><em>Bénéfices : conformité norme, démarrage propre, longévité câble, sécurité incendie. Économie énergie modeste (19 €/an) mais gain global important.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Pourquoi transporte-t-on l'électricité sur le réseau (Enedis, RTE) en très haute tension (400 kV) au lieu de 230 V directement ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour transporter une puissance P : P = U × I → I = P / U.</p>
+    <p>Pertes Joule : P_Joule = R × I² → augmenter U réduit I, donc <strong>réduit énormément les pertes</strong> (par carré).</p>
+    <p>Comparaison pour transporter 1 GW sur 100 km :</p>
+    <ul>
+      <li>À 230 V : I = 4,3 millions A → impossible (câbles fondraient).</li>
+      <li>À 400 kV : I = 2 500 A → pertes ~ 1-2 % avec gros câbles.</li>
+    </ul>
+    <p>C'est pourquoi le réseau est en très haute tension (400 kV pour le transport, 20 kV pour la distribution, abaissé à 230 V à proximité des maisons par les transformateurs).</p>
+    <p>Sans transformateurs (Tesla, 1888), pas de réseau électrique moderne possible.</p>
   </div>
 </div>
 
@@ -127,7 +232,8 @@
     <li><strong>Effet Joule :</strong> P = R × I². Toute résistance traversée par un courant chauffe.</li>
     <li><strong>Résistance d'un câble :</strong> R = ρ × L / S. Doubler la section divise R par 2 et les pertes par 2.</li>
     <li><strong>Norme NF C 15-100 :</strong> chute de tension max 3 % éclairage / 5 % force motrice.</li>
-    <li><strong>Règle pratique :</strong> au-delà de 30 m de câble, vérifier la section. 1,5 mm² pour ≤ 10 A, 2,5 mm² pour 16 A, 6 mm² pour 32 A si distance &gt; 30 m.</li>
+    <li><strong>Règle pratique :</strong> au-delà de 30 m, vérifier la section. 1,5 mm² pour ≤ 10 A, 2,5 mm² pour 16 A, 6 mm² pour 32 A si distance &gt; 30 m.</li>
+    <li><strong>Réseau :</strong> très haute tension pour transporter loin avec peu de pertes (V × I = constant, mais I² fait toute la différence).</li>
   </ul>
 </div>
 
