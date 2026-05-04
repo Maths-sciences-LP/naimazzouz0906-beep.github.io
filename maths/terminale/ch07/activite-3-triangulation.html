@@ -1,60 +1,251 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch07 – Activité 3 – Triangulation cadastrale – Term Bac Pro</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch07 – Activité 3 – Triangulation : mesurer une largeur de fleuve – Term Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
-</head><body><div class="c"><a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 3 – Mesurer une largeur de fleuve par triangulation <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DE CAS</span></h1>
-<p class="sous-titre">Chapitre 7 – Trigonométrie | Terminale Bac Pro | ⏱ 35 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Utiliser la loi des sinus dans un triangle quelconque</li>
-<li>Mesurer une distance inaccessible par triangulation</li></ul></div>
+<header>
+  <h1>Activité 3 – Mesurer une largeur de fleuve par triangulation <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DE CAS</span></h1>
+  <p class="sous-titre">Chapitre 7 – Trigonométrie | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – géomètre sur le terrain</h2>
-<p><em>Olivier, géomètre, doit mesurer la largeur d'un fleuve impossible à traverser. Il utilise la <strong>triangulation</strong> :</em></p>
-<ol>
-<li>Il pose 2 piquets A et B sur sa rive, distants de 50 m.</li>
-<li>Il vise un arbre C sur l'autre rive depuis A : angle BÂC = 80°.</li>
-<li>Il vise C depuis B : angle ABC = 60°.</li>
-</ol>
-<p><strong>Loi des sinus :</strong> dans un triangle ABC, BC/sin(Â) = AC/sin(B̂) = AB/sin(Ĉ)</p></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Utiliser la loi des sinus dans un triangle quelconque</li>
+    <li>Mesurer une distance inaccessible par triangulation</li>
+    <li>Calculer une hauteur dans un triangle non rectangle</li>
+    <li>Comprendre le principe utilisé en géodésie et GPS</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – géomètre sur le terrain</h2>
+  <p><em>Olivier, géomètre, doit mesurer la largeur d'un fleuve impossible à traverser (courant fort, pas de pont à proximité). Il utilise la <strong>triangulation</strong>, technique millénaire qui permet de mesurer des distances sans s'y rendre.</em></p>
+
+  <h3>Document — méthode du géomètre</h3>
+  <ol>
+    <li>Il pose 2 piquets A et B sur sa rive, distants de 50 m (mesure horizontale précise).</li>
+    <li>Il vise un arbre C sur l'autre rive depuis A : angle BÂC = 80°.</li>
+    <li>Il vise C depuis B : angle ABC = 60°.</li>
+  </ol>
+
+  <h3>Document — schéma du triangle ABC</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Triangle ABC : A et B sur la rive proche (séparés de 50m), C sur la rive opposée. Angles : 80° en A, 60° en B, 40° en C. Le fleuve a une largeur perpendiculaire à AB.">
+      <defs>
+        <style>
+          .b{stroke:#1a202c;stroke-width:1.5}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 13px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Triangulation pour mesurer la largeur du fleuve</text>
+
+      <!-- Rive A -->
+      <line x1="60" y1="220" x2="500" y2="220" stroke="#7c2d12" stroke-width="3"/>
+      <text x="60" y="245" class="lbl" fill="#7c2d12">rive proche (sec)</text>
+
+      <!-- Fleuve -->
+      <rect x="60" y="60" width="440" height="160" fill="#3b82f6" opacity=".25"/>
+      <text x="270" y="135" class="lbl" fill="#0969da" font-style="italic" text-anchor="middle">FLEUVE (impossible à traverser)</text>
+
+      <!-- Rive opposée -->
+      <line x1="60" y1="60" x2="500" y2="60" stroke="#15803d" stroke-width="3"/>
+      <text x="60" y="55" class="lbl" fill="#15803d">rive opposée</text>
+
+      <!-- Points A, B sur la rive -->
+      <circle cx="160" cy="220" r="6" fill="#dc2626"/>
+      <text x="160" y="240" class="lblA" text-anchor="middle">A</text>
+
+      <circle cx="360" cy="220" r="6" fill="#dc2626"/>
+      <text x="360" y="240" class="lblA" text-anchor="middle">B</text>
+
+      <text x="260" y="232" class="lblA" text-anchor="middle">50 m</text>
+
+      <!-- Point C sur la rive opposée -->
+      <circle cx="290" cy="100" r="6" fill="#15803d"/>
+      <text x="290" y="92" class="lblA" text-anchor="middle">C (arbre)</text>
+
+      <!-- Triangle ABC -->
+      <line class="b" x1="160" y1="220" x2="290" y2="100" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 2"/>
+      <line class="b" x1="360" y1="220" x2="290" y2="100" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 2"/>
+
+      <!-- Angles -->
+      <path d="M 175,205 A 18,18 0 0,0 167,210" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+      <text x="180" y="200" class="lbl" fill="#7c3aed" font-weight="bold">80°</text>
+
+      <path d="M 345,210 A 18,18 0 0,0 350,205" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+      <text x="338" y="200" class="lbl" fill="#7c3aed" font-weight="bold">60°</text>
+
+      <text x="290" y="115" class="lbl" fill="#7c3aed" font-weight="bold" text-anchor="middle">Ĉ ?</text>
+
+      <!-- Largeur du fleuve (perpendiculaire AB) -->
+      <line x1="160" y1="220" x2="160" y2="100" stroke="#0969da" stroke-width="1.5" stroke-dasharray="5 3"/>
+      <text x="100" y="160" class="lblA" fill="#0969da" font-weight="bold">h = ?</text>
+      <text x="100" y="175" class="lbl" fill="#0969da">largeur</text>
+    </svg>
+  </div>
+
+  <h3>Document — loi des sinus</h3>
+  <div style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #1d4ed8;margin:14px 0">
+    <p>Dans tout triangle ABC :</p>
+    <p style="text-align:center;font-size:1.1em"><strong>BC / sin(Â) = AC / sin(B̂) = AB / sin(Ĉ)</strong></p>
+    <p>(Le côté opposé à un angle est proportionnel au sinus de cet angle.)</p>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §3 (loi des sinus) et §4 (résolution d'un triangle).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Quelle est la largeur du fleuve (distance perpendiculaire de la rive A au point C) ?</div>
+  <strong>Problématique :</strong> Quelle est la largeur du fleuve (distance perpendiculaire de la rive proche à l'arbre C) ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer l'angle Ĉ.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Â + B̂ + Ĉ = 180° → Ĉ = 180 − 80 − 60 = <strong>40°</strong></p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">APP</span></h2>
+  <p>Calculer l'angle Ĉ du triangle ABC.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Somme des angles d'un triangle : Â + B̂ + Ĉ = 180°.</p>
+    <p>Ĉ = 180 − 80 − 60 = <strong>40°</strong>.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Appliquer la loi des sinus pour calculer AC (distance arbre - piquet A).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>AB / sin(Ĉ) = AC / sin(B̂)</p>
-<p>50 / sin(40°) = AC / sin(60°)</p>
-<p>AC = 50 × sin(60°) / sin(40°) = 50 × 0,866 / 0,643 ≈ <strong>67,4 m</strong></p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Appliquer la loi des sinus pour calculer AC (distance du piquet A à l'arbre C).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>AB / sin(Ĉ) = AC / sin(B̂)</p>
+    <p>50 / sin(40°) = AC / sin(60°)</p>
+    <p>AC = 50 × sin(60°) / sin(40°)</p>
+    <p>AC = 50 × 0,866 / 0,643 ≈ <strong>67,4 m</strong>.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-yellow">REA</span></h2>
-<p>La largeur du fleuve est la distance perpendiculaire entre A et C (côté C de l'angle Â). Calculer h = AC × sin(Â).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>h = AC × sin(80°) = 67,4 × 0,985 ≈ <strong>66,4 m</strong></p>
-<p>Le fleuve fait environ 66 m de large à cet endroit. Olivier a mesuré sans avoir à traverser.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer aussi BC en appliquant la loi des sinus.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>BC = AB × sin(Â) / sin(Ĉ) = 50 × sin(80°) / sin(40°) = 50 × 0,985 / 0,643 ≈ <strong>76,6 m</strong>.</p>
+    <p>Cohérent : BC &gt; AC car l'angle  &gt; B̂ (côté opposé plus grand).</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Triangulation :</strong> mesurer une distance inaccessible via 2 angles depuis une base connue.</li>
-<li><strong>Loi des sinus :</strong> a/sin(A) = b/sin(B) = c/sin(C). Vraie dans tout triangle (pas seulement rectangle).</li>
-<li><strong>Application :</strong> géomètre, géodésie, astronomie (mesure de distances étoiles), GPS.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>La largeur du fleuve est la distance perpendiculaire de la rive proche à l'arbre C. Calculer h = AC × sin(Â).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>h = AC × sin(80°) = 67,4 × 0,985 ≈ <strong>66,4 m</strong>.</p>
+    <p>Le fleuve fait environ <strong>66 m de large</strong> à cet endroit. Olivier a mesuré sans avoir à traverser.</p>
+    <p>Vérification avec BC : h = BC × sin(B̂) = 76,6 × sin(60°) = 76,6 × 0,866 ≈ <strong>66,3 m</strong>. ✓ Concordance.</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Pourquoi la triangulation est-elle utile ? Citer 3 autres situations professionnelles où elle s'applique.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La triangulation permet de mesurer une distance <strong>sans s'y rendre physiquement</strong>, à partir d'angles et d'une seule longueur de référence. Outil indispensable du géomètre depuis l'Antiquité.</p>
+    <p><strong>Applications :</strong></p>
+    <ul>
+      <li><strong>Cartographie :</strong> mesure de la position des villes (réseau IGN français).</li>
+      <li><strong>Astronomie :</strong> distance des étoiles par parallaxe (Terre = base de 300 millions de km diamètre orbital).</li>
+      <li><strong>Géodésie :</strong> mesure de la forme de la Terre (méridien de Paris).</li>
+      <li><strong>GPS :</strong> position calculée par triangulation depuis 4 satellites.</li>
+      <li><strong>Topographie de chantier :</strong> implantation de bâtiments, ponts, tunnels.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Si Olivier avait pris les angles 70° en A et 75° en B (et la même base 50 m), quelle largeur trouverait-il ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Ĉ = 180 − 70 − 75 = 35°.</p>
+    <p>AC = 50 × sin(75°) / sin(35°) = 50 × 0,966 / 0,574 ≈ 84,2 m.</p>
+    <p>h = AC × sin(70°) = 84,2 × 0,940 ≈ <strong>79,1 m</strong>.</p>
+    <p>Le fleuve serait plus large à cet endroit. Logique : avec des angles plus aigus, l'arbre est plus loin.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Quelle erreur de mesure obtient-on si chaque angle a une précision de ± 1° (instruments d'arpentage standards) ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Calculs avec les valeurs extrêmes (Â = 79°, B̂ = 59°) :</p>
+    <p>Ĉ = 180 − 79 − 59 = 42°. AC = 50 × sin(59°) / sin(42°) = 50 × 0,857 / 0,669 ≈ 64,1 m.</p>
+    <p>h = AC × sin(79°) = 64,1 × 0,982 ≈ <strong>62,9 m</strong>.</p>
+    <p>Avec Â = 81°, B̂ = 61° : h ≈ <strong>69,8 m</strong>.</p>
+    <p>Marge : 62,9 à 69,8 m, soit ±5 % d'incertitude pour ±1° par angle.</p>
+    <p>Conclusion : la précision angulaire est cruciale. Pour une grande précision (cadastre), il faut un théodolite à 0,01° (5 m d'erreur sur 1 km).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger un mode opératoire en 5 lignes pour la mesure d'une distance inaccessible.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Méthode — Triangulation pour distance inaccessible</strong></em></p>
+    <p><em>1. Choisir 2 points <strong>A et B sur la rive accessible</strong>, séparés d'une distance connue (le plus long possible pour la précision).</em></p>
+    <p><em>2. Repérer le <strong>point C visé</strong> (arbre, pylône, sommet) sur l'autre rive.</em></p>
+    <p><em>3. Mesurer les <strong>angles BÂC et ABC</strong> avec un théodolite ou une boussole de précision.</em></p>
+    <p><em>4. Calculer Ĉ = 180° − Â − B̂. Puis appliquer la <strong>loi des sinus</strong> pour AC.</em></p>
+    <p><em>5. La <strong>largeur perpendiculaire</strong> est h = AC × sin(Â). Vérifier en croisant avec BC × sin(B̂).</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Le GPS triangule à partir de 4 satellites pour calculer votre position 3D. Pourquoi 4 et pas 3 ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour positionner un point sur Terre, il faut 3 dimensions (latitude, longitude, altitude) → 3 inconnues.</p>
+    <p>Mais le GPS mesure des <strong>temps de vol</strong> de signaux, qui dépendent aussi de l'<strong>horloge interne du récepteur</strong> (forcément moins précise que les horloges atomiques des satellites). 4 inconnues au total.</p>
+    <p>Donc on a besoin de <strong>4 satellites</strong> pour résoudre les 4 inconnues : c'est un système de 4 équations à 4 inconnues.</p>
+    <p>Avec moins de 4 satellites visibles : pas de fix GPS (on perd la précision verticale ou horaire).</p>
+    <p>Le GPS classique nécessite 4-12 satellites visibles selon la position. Précision : 5-10 m en civil, 1 cm en militaire.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Triangulation :</strong> mesurer une distance inaccessible via 2 angles depuis une base connue.</li>
+    <li><strong>Loi des sinus :</strong> a / sin(A) = b / sin(B) = c / sin(C). Vraie dans <strong>tout triangle</strong> (pas seulement rectangle).</li>
+    <li><strong>Somme des angles :</strong> 180° dans tout triangle → si on connaît 2 angles, le 3ème est calculé.</li>
+    <li><strong>Application :</strong> géomètre, géodésie, astronomie (parallaxe), GPS.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

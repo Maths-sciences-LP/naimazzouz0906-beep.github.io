@@ -1,58 +1,253 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch07 – Activité 2 – Pente d'un toit – Term Bac Pro</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch07 – Activité 2 – Pente d'un toit (trigonométrie) – Term Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
-</head><body><div class="c"><a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 2 – Calcul de la pente et longueur d'un toit <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
-<p class="sous-titre">Chapitre 7 – Trigonométrie | Terminale Bac Pro | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Calculer la longueur d'un côté d'un triangle rectangle (sin, cos, tan)</li>
-<li>Convertir entre pourcentage de pente et angle</li>
-<li>Vérifier la conformité aux DTU</li></ul></div>
+<header>
+  <h1>Activité 2 – Calcul de la pente et longueur d'un toit <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 7 – Trigonométrie | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – devis charpente</h2>
-<p><em>Léa, charpentière, doit calculer la longueur des chevrons pour une nouvelle maison. Le toit a une <strong>pente de 35 %</strong>, la portée (largeur de la maison) est de 8 m. Le faîtage est au centre.</em></p>
-<p>Conversion : pente p% = 100 × tan(α). Donc tan(α) = p/100.</p></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Utiliser sin, cos, tan dans un triangle rectangle</li>
+    <li>Convertir entre pourcentage de pente et angle</li>
+    <li>Vérifier la conformité aux DTU couverture</li>
+    <li>Établir un devis matière (longueur de bois)</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – devis charpente d'une maison</h2>
+  <p><em>Léa, charpentière, doit calculer la longueur des chevrons pour une nouvelle maison. Le toit a une <strong>pente de 35 %</strong>, la portée (largeur de la maison) est de 8 m, le faîtage est au centre du toit.</em></p>
+
+  <h3>Document — schéma du toit (coupe transversale)</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Coupe transversale d'un toit en V inversé : portée 8 m, hauteur 1,4 m au faîtage, longueur de chevron 4,24 m, angle de pente 19,3°.">
+      <defs>
+        <style>
+          .b{stroke:#1a202c;stroke-width:1.5}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Coupe transversale du toit (échelle 1 m = 40 px)</text>
+
+      <!-- Échelle 1 m = 40 px. Portée 8 m = 320 px. Hauteur 1,4 m = 56 px -->
+      <!-- Centre x = 270, sol y = 220 -->
+
+      <!-- Murs verticaux -->
+      <line class="b" x1="110" y1="220" x2="110" y2="180" stroke-width="2"/>
+      <line class="b" x1="430" y1="220" x2="430" y2="180" stroke-width="2"/>
+
+      <!-- Sol -->
+      <line x1="60" y1="220" x2="500" y2="220" stroke="#7c2d12" stroke-width="3"/>
+
+      <!-- Toit en V inversé -->
+      <line class="b" x1="110" y1="180" x2="270" y2="124" stroke="#dc2626" stroke-width="3"/>
+      <line class="b" x1="270" y1="124" x2="430" y2="180" stroke="#dc2626" stroke-width="3"/>
+
+      <!-- Faîtage horizontal -->
+      <line class="b" x1="110" y1="180" x2="430" y2="180" stroke-dasharray="3 2"/>
+
+      <!-- Verticale centrale (hauteur faîtage) -->
+      <line class="b" x1="270" y1="180" x2="270" y2="124" stroke-dasharray="3 2"/>
+
+      <!-- Cotes -->
+      <text x="270" y="245" class="lblA" text-anchor="middle">8 m (portée)</text>
+      <line x1="110" y1="235" x2="430" y2="235" stroke="#1a202c" stroke-width="1"/>
+
+      <text x="200" y="175" class="lbl" text-anchor="middle">4 m</text>
+
+      <text x="284" y="155" class="lbl" fill="#0969da" font-weight="bold">h = 1,40 m</text>
+
+      <text x="180" y="145" class="lblA" fill="#dc2626" font-weight="bold" text-anchor="middle" transform="rotate(-19 180 145)">L = 4,24 m</text>
+
+      <!-- Angle -->
+      <path d="M 130,180 A 20,20 0 0,0 137,173" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+      <text x="142" y="173" class="lbl" fill="#7c3aed" font-weight="bold">α</text>
+
+      <!-- Murs étiquette -->
+      <text x="100" y="200" class="lbl" text-anchor="end">mur</text>
+    </svg>
+  </div>
+
+  <h3>Document — conversion pente / angle</h3>
+  <div style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #1d4ed8;margin:14px 0">
+    <p>Pente p % et angle α (par rapport à l'horizontale) sont liés par :</p>
+    <p style="text-align:center;font-size:1.1em"><strong>p % = 100 × tan(α)</strong>, soit <strong>tan(α) = p / 100</strong></p>
+    <p>Repères : 100 % = 45° (toit très pentu) ; 50 % ≈ 27° ; 35 % ≈ 19° ; 10 % ≈ 5,7°.</p>
+  </div>
+
+  <h3>Document — DTU pour la couverture</h3>
+  <table>
+    <thead>
+      <tr><th>Type de couverture</th><th>Pente min DTU</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Bac acier ondulé</td><td>7 %</td></tr>
+      <tr><td>Tuiles plates</td><td>35 %</td></tr>
+      <tr><td>Tuiles canal (méditerranéennes)</td><td>30 %</td></tr>
+      <tr><td>Ardoises naturelles</td><td>70 %</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §1 (sin/cos/tan dans un triangle rectangle) et §2 (conversion angle/pente).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Quelle longueur de chevron Léa doit-elle commander ?</div>
+  <strong>Problématique :</strong> Quelle longueur de chevron Léa doit-elle commander, et la pente choisie est-elle conforme aux DTU ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer l'angle α de la pente.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>tan(α) = 35/100 = 0,35</p>
-<p>α = arctan(0,35) ≈ <strong>19,3°</strong></p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer l'angle α de la pente du toit.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>tan(α) = p / 100 = 35 / 100 = 0,35.</p>
+    <p>α = arctan(0,35) ≈ <strong>19,3°</strong>.</p>
+    <p>(Calculatrice : touche tan⁻¹ ou arctan, en mode degrés.)</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>La portée du toit est 8 m, donc l'horizontale du chevron est 4 m (du mur au faîtage). Calculer la hauteur h du faîtage et la longueur L du chevron.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>tan(α) = h / 4 → h = 4 × tan(19,3°) = 4 × 0,35 = <strong>1,40 m</strong> (faîtage à 1,40 m au-dessus des murs)</p>
-<p>cos(α) = 4 / L → L = 4 / cos(19,3°) = 4 / 0,944 ≈ <strong>4,24 m</strong></p>
-<p>Vérification Pythagore : √(4² + 1,4²) = √(16 + 1,96) = √17,96 ≈ 4,24 ✓</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Le faîtage est au centre, donc l'horizontale d'un chevron mesure 4 m (du mur au faîtage). Calculer la hauteur h du faîtage par rapport aux murs.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>tan(α) = côté opposé / côté adjacent = h / 4.</p>
+    <p>h = 4 × tan(19,3°) = 4 × 0,35 = <strong>1,40 m</strong>.</p>
+    <p>Le faîtage culmine à 1,40 m au-dessus des sablières (les murs supportant le toit).</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Pour une couverture en tuiles, le DTU 40.21 impose une pente minimum de 35 %. Léa ajoute 30 cm de débord à chaque chevron. Quelle longueur finale commander ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Longueur commandée : 4,24 + 0,30 = <strong>4,54 m → 4,60 m</strong> (arrondir au format commercial supérieur).</p>
-<p>Pour 12 chevrons (6 par côté), Léa commande 12 × 4,60 = 55,2 m de bois total.</p>
-<p>La pente de 35 % est exactement au minimum DTU pour les tuiles plates. Aucune marge — toute déviation pendant la pose pourrait causer un défaut d'étanchéité.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la longueur L d'un chevron (= hypoténuse du triangle rectangle).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Méthode 1 (cosinus) : cos(α) = adjacent / hypoténuse = 4 / L.</p>
+    <p>L = 4 / cos(19,3°) = 4 / 0,944 ≈ <strong>4,24 m</strong>.</p>
+    <p>Méthode 2 (Pythagore) : L = √(4² + 1,40²) = √(16 + 1,96) = √17,96 ≈ 4,24 m. ✓</p>
+    <p>Les deux méthodes donnent le même résultat. À choisir selon ce qui est connu.</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Pente p% ↔ angle α :</strong> tan(α) = p/100. 100 % = 45° ; 35 % ≈ 19° ; 50 % ≈ 27°.</li>
-<li><strong>Triangle rectangle :</strong> sin = opposé/hyp ; cos = adjacent/hyp ; tan = opposé/adjacent.</li>
-<li><strong>DTU couverture :</strong> tuiles ≥ 35 %, ardoises ≥ 70 %, bac acier ≥ 7 %.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">APP</span></h2>
+  <p>La pente de 35 % est-elle conforme au DTU pour des tuiles plates ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pente DTU minimum pour tuiles plates : 35 %.</p>
+    <p>Pente choisie : 35 % → conformité <strong>tout juste respectée</strong>.</p>
+    <p>Pas de marge de sécurité. Toute imperfection de pose (chevrons légèrement inclinés, tassement) pourrait faire passer en-dessous du seuil → infiltrations.</p>
+    <p>Recommandation : passer à 40 % pour avoir une marge de sécurité, ou utiliser des tuiles canal (DTU 30 %).</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Léa ajoute 30 cm de débord à chaque chevron (saillie hors mur). Quelle longueur commerciale commander ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Longueur de chevron : 4,24 + 0,30 = <strong>4,54 m</strong>.</p>
+    <p>Le bois se vend par formats commerciaux : 3, 4, 4,5, 5, 6 m.</p>
+    <p>Léa commande des chevrons de <strong>5 m</strong> (au format supérieur disponible) : 4,54 m utilisés + 0,46 m de chute = ~ 9 % de pertes.</p>
+    <p>Si elle veut moins de chute, elle pourrait commander 4,5 m (4,5 &lt; 4,54 → insuffisant !) ou choisir une scierie qui coupe sur mesure.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">REA</span></h2>
+  <p>La maison fait 12 m de long. Avec un espacement de 60 cm entre chevrons, combien de chevrons sont nécessaires (par côté) ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Nombre d'intervalles : 12 / 0,60 = 20 intervalles → <strong>21 chevrons par côté</strong> (n+1 chevrons pour n intervalles).</p>
+    <p>Total pour la maison (2 côtés) : 42 chevrons.</p>
+    <p>Longueur de bois totale : 42 × 5 = <strong>210 m</strong> de bois.</p>
+    <p>À 8 €/m, coût total : 210 × 8 = <strong>1 680 € de chevrons</strong> (hors pannes, sablières, voliges).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Pour la maison voisine, le client veut une couverture en ardoises (DTU min 70 %). Si la portée est aussi 8 m, calculer la hauteur du faîtage et la longueur des chevrons.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pente 70 % → tan(α) = 0,70 → α ≈ 35°.</p>
+    <p>Hauteur du faîtage : h = 4 × 0,70 = <strong>2,80 m</strong>.</p>
+    <p>Longueur du chevron : L = 4 / cos(35°) = 4 / 0,819 ≈ <strong>4,88 m</strong>.</p>
+    <p>Comparaison : pour la même portée, l'ardoise impose un toit plus pentu et des chevrons 15 % plus longs. La maison aura un look plus « breton ».</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes la fiche métré pour le devis (récap des chevrons à commander).</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Métré chevrons — Maison 12 × 8 m, toit pente 35 %</strong></em></p>
+    <table>
+      <thead><tr><th>Désignation</th><th>Calcul</th><th>Quantité</th></tr></thead>
+      <tbody>
+        <tr><td>Chevrons (4,24 m + 0,30 m débord)</td><td>arrondi 5 m</td><td>42 unités × 5 m</td></tr>
+        <tr><td>Total bois chevrons</td><td>42 × 5</td><td>210 m</td></tr>
+        <tr><td>Coût matière (8 €/m)</td><td></td><td>1 680 € HT</td></tr>
+      </tbody>
+    </table>
+    <p><em>Pente 35 % conforme au DTU 40.21 tuiles plates (limite). À porter à 40 % pour marge de sécurité. Hors pannes, sablières et voliges (à devis séparé).</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Pour une rampe d'accès handicapée, la norme PMR limite la pente à 5 % (idéal) ou 8 % (max). Calculer la longueur de rampe nécessaire pour franchir 50 cm de dénivelé à 5 %.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pente 5 % → tan(α) = 0,05 → α ≈ 2,86°.</p>
+    <p>Pour gagner 0,50 m de hauteur : longueur horizontale L_h = 0,50 / 0,05 = <strong>10 m</strong>.</p>
+    <p>À 8 % (max admissible) : L_h = 0,50 / 0,08 = 6,25 m.</p>
+    <p>Une marche de 50 cm requiert donc <strong>10 m de rampe</strong> en respectant les normes PMR confort.</p>
+    <p>Sans rampe, une personne en fauteuil ne peut pas franchir cette marche → exclusion. C'est pourquoi les normes d'accessibilité sont si strictes.</p>
+    <p>En complément : palier de repos tous les 10 m, garde-corps obligatoire au-delà de 50 cm de hauteur.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Pente p % ↔ angle α :</strong> tan(α) = p / 100. 100 % = 45° ; 35 % ≈ 19° ; 50 % ≈ 27°.</li>
+    <li><strong>Triangle rectangle :</strong> sin(α) = opposé / hyp ; cos(α) = adjacent / hyp ; tan(α) = opposé / adjacent.</li>
+    <li><strong>Calcul d'une hypoténuse :</strong> hyp = adjacent / cos(α) (ou Pythagore).</li>
+    <li><strong>DTU couverture :</strong> tuiles plates ≥ 35 %, ardoises ≥ 70 %, bac acier ≥ 7 %.</li>
+    <li><strong>Norme PMR :</strong> rampes &lt; 5 % (idéal) ou 8 % (max).</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

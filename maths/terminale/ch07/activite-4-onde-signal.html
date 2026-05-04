@@ -1,70 +1,267 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch07 – Activité 4 – Modélisation d'un signal sinusoïdal – Term Bac Pro</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch07 – Activité 4 – Modéliser une tension sinusoïdale – Term Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
-</head><body><div class="c"><a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 4 – Modéliser une tension sinusoïdale <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
-<p class="sous-titre">Chapitre 7 – Trigonométrie | Terminale Bac Pro | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Comprendre la fonction sinusoïdale du courant alternatif</li>
-<li>Identifier amplitude, période, fréquence</li>
-<li>Calculer une valeur efficace</li></ul></div>
+<header>
+  <h1>Activité 4 – Modéliser une tension sinusoïdale (220 V secteur) <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 7 – Trigonométrie | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – mesure d'une tension secteur</h2>
-<p><em>Charlotte, électronicienne, branche un oscilloscope sur la prise EDF (230 V). Elle observe :</em></p>
-<ul>
-<li>Une sinusoïde d'<strong>amplitude crête U_max = 325 V</strong></li>
-<li>Une <strong>période T = 20 ms</strong></li>
-</ul>
-<p>Modèle : <strong>u(t) = U_max × sin(2π × f × t)</strong> avec f = 1/T (fréquence en Hz)</p></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comprendre la fonction sinusoïdale du courant alternatif</li>
+    <li>Identifier amplitude, période, fréquence d'une sinusoïde</li>
+    <li>Calculer une valeur efficace</li>
+    <li>Faire le lien entre maths et électrotechnique</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – mesure d'une tension secteur</h2>
+  <p><em>Charlotte, technicienne en électrotechnique, branche un oscilloscope sur une prise du secteur français (« 230 V »). Elle observe sur l'écran une courbe sinusoïdale et veut faire le lien avec les valeurs nominales.</em></p>
+
+  <h3>Document — observations à l'oscilloscope</h3>
+  <ul>
+    <li>Forme du signal : <strong>sinusoïdale</strong></li>
+    <li>Amplitude crête (max) : <strong>U_max = 325 V</strong></li>
+    <li>Période : <strong>T = 20 ms = 0,020 s</strong></li>
+  </ul>
+
+  <h3>Document — modèle mathématique</h3>
+  <div style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #1d4ed8;margin:14px 0;text-align:center">
+    <p style="font-size:1.1em"><strong>u(t) = U_max × sin(2π × f × t)</strong></p>
+    <p>avec f = 1 / T (fréquence en Hz)</p>
+  </div>
+
+  <h3>Document — courbe de la tension</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Sinusoïde de la tension : amplitude 325 V, période 20 ms, valeur efficace 230 V indiquée par lignes pointillées.">
+      <defs>
+        <style>
+          .ax{stroke:#1a202c;stroke-width:1.5}
+          .gd{stroke:#cbd5e1;stroke-width:.6}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">u(t) = 325 × sin(100π × t) — secteur 230 V / 50 Hz</text>
+
+      <g class="gd">
+        <line x1="60" y1="50" x2="500" y2="50"/>
+        <line x1="60" y1="98" x2="500" y2="98"/>
+        <line x1="60" y1="145" x2="500" y2="145"/>
+        <line x1="60" y1="193" x2="500" y2="193"/>
+        <line x1="60" y1="240" x2="500" y2="240"/>
+      </g>
+      <line class="ax" x1="60" y1="145" x2="510" y2="145"/>
+      <line class="ax" x1="60" y1="40" x2="60" y2="245"/>
+
+      <g class="lbl" text-anchor="end">
+        <text x="55" y="54">+325</text>
+        <text x="55" y="86">+230</text>
+        <text x="55" y="148">0</text>
+        <text x="55" y="200">−230</text>
+        <text x="55" y="244">−325</text>
+      </g>
+      <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">u (V)</text>
+
+      <g class="lbl" text-anchor="middle">
+        <text x="60" y="258">0</text>
+        <text x="170" y="258">5</text>
+        <text x="280" y="258">10</text>
+        <text x="390" y="258">15</text>
+        <text x="500" y="258">20</text>
+      </g>
+      <text class="lblA" x="270" y="275" text-anchor="middle">t (ms)</text>
+
+      <!-- Sinusoïde : sur 20 ms = 1 période. Amplitude → 95 px -->
+      <path d="M 60,145 Q 115,50 170,50 Q 225,50 280,145 Q 335,240 390,240 Q 445,240 500,145" fill="none" stroke="#0969da" stroke-width="2.5"/>
+
+      <!-- Lignes pointillées U_eff -->
+      <line x1="60" y1="86" x2="500" y2="86" stroke="#dc2626" stroke-width="1" stroke-dasharray="3 2"/>
+      <text x="495" y="83" class="lbl" fill="#dc2626" font-weight="bold" text-anchor="end">U_eff = +230 V</text>
+
+      <line x1="60" y1="204" x2="500" y2="204" stroke="#dc2626" stroke-width="1" stroke-dasharray="3 2"/>
+      <text x="495" y="216" class="lbl" fill="#dc2626" font-weight="bold" text-anchor="end">U_eff = −230 V</text>
+
+      <!-- Marqueur U_max -->
+      <circle cx="170" cy="50" r="4" fill="#15803d"/>
+      <text x="170" y="42" class="lbl" fill="#15803d" font-weight="bold" text-anchor="middle">U_max</text>
+
+      <!-- Période -->
+      <line x1="60" y1="250" x2="500" y2="250" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3 2"/>
+      <text x="280" y="245" class="lbl" fill="#7c3aed" font-weight="bold" text-anchor="middle">T = 20 ms</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §5 (sinus comme fonction périodique) et §6 (application en électrotechnique).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Comment retrouver les 230 V « efficaces » alors qu'on observe une amplitude crête de 325 V ?</div>
+  <strong>Problématique :</strong> Pourquoi le secteur est-il étiqueté « 230 V » alors que l'oscilloscope montre une amplitude de 325 V ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer la fréquence f du courant.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>f = 1/T = 1/(20 × 10⁻³) = <strong>50 Hz</strong> ✓ (norme française).</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la fréquence f du courant.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>f = 1 / T = 1 / 0,020 = <strong>50 Hz</strong> ✓ (norme française et européenne).</p>
+    <p>(50 cycles complets par seconde → 100 alternances/s, soit toutes les 10 ms le courant change de sens.)</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Calculer la valeur de u à t = 5 ms (quart de période). Justifier.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>u(5 ms) = 325 × sin(2π × 50 × 0,005) = 325 × sin(π/2) = 325 × 1 = <strong>325 V</strong></p>
-<p>À T/4, l'argument du sinus vaut π/2 (90°), donc u atteint son maximum.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer u(t) pour t = 5 ms (quart de période). Que représente cette valeur ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>u(5 ms) = 325 × sin(2π × 50 × 0,005) = 325 × sin(π/2) = 325 × 1 = <strong>325 V</strong>.</p>
+    <p>À T/4 = 5 ms, l'argument du sinus vaut π/2 (90°), donc u atteint son <strong>maximum</strong> (la « crête » de la sinusoïde).</p>
+    <p>De même, u(15 ms) = 325 × sin(3π/2) = −325 V (crête négative).</p>
+    <p>u(0) = u(10 ms) = u(20 ms) = 0 V (passage par zéro).</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-yellow">REA</span></h2>
-<p>La <strong>valeur efficace</strong> d'une sinusoïde est U_eff = U_max / √2. Calculer U_eff. Cohérent avec « 230 V » ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>U_eff = 325 / √2 = 325 / 1,414 ≈ <strong>230 V</strong> ✓</p>
-<p>Le « 230 V » noté sur les prises est la valeur efficace, pas la valeur crête. La valeur crête vaut 325 V !</p>
-<p>Significance : c'est la valeur efficace qui est équivalente à un courant continu pour la dissipation de chaleur (c'est elle qui chauffe les radiateurs).</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la valeur efficace U_eff = U_max / √2.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>U_eff = 325 / √2 = 325 / 1,414 ≈ <strong>230 V</strong>.</p>
+    <p>C'est exactement la valeur nominale du secteur français ! La cohérence est parfaite.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 4 <span class="badge-blue">VAL</span></h2>
-<p>Pourquoi les radiateurs et chauffe-eaux ne se soucient pas de la sinusoïdalité — alors que les LED le font ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p><strong>Charges résistives</strong> (radiateur, chauffe-eau, ampoule incandescente) : seule la puissance moyenne dissipée compte. P = U_eff × I_eff. Peu importe la forme exacte de la tension.</p>
-<p><strong>Charges électroniques</strong> (LED, alimentations à découpage, ordinateurs) : utilisent la forme sinusoïdale spécifiquement. Une onde « pseudo-sinus » pourrait endommager le PFC.</p>
-<p>D'où l'importance des onduleurs <strong>« sinusoïde pure »</strong> pour le matériel informatique.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Pourquoi étiquette-t-on les prises avec la valeur efficace (230 V) et non la valeur crête (325 V) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La valeur efficace est <strong>équivalente à un courant continu</strong> pour la dissipation de chaleur :</p>
+    <ul>
+      <li>Une résistance R sous 230 V efficace (alternatif) chauffe comme sous 230 V continu.</li>
+      <li>Puissance dissipée : P = U_eff² / R.</li>
+    </ul>
+    <p>C'est donc la valeur <strong>physiquement utile</strong> pour le dimensionnement des appareils. La valeur crête (325 V) est nécessaire pour les composants devant supporter le pic de tension (isolation, semi-conducteurs).</p>
+    <p>Convention universelle : on note la valeur efficace pour les utilisateurs ; la valeur crête pour les ingénieurs.</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Sinusoïde :</strong> u(t) = U_max × sin(2π·f·t). 3 paramètres : amplitude, fréquence, phase.</li>
-<li><strong>U_eff = U_max / √2</strong> pour une sinusoïde pure. C'est la valeur affichée sur les prises (230 V).</li>
-<li><strong>50 Hz</strong> en Europe, 60 Hz aux USA.</li></ul></div>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Aux États-Unis, le secteur est en 120 V / 60 Hz. Calculer la valeur crête, la période, et comparer à la France.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>U_max = 120 × √2 = 170 V (vs 325 V en France).</p>
+    <p>T = 1/f = 1/60 ≈ 16,7 ms (vs 20 ms en France).</p>
+    <p>Comparaison :</p>
+    <ul>
+      <li>USA : U_eff = 120 V → moins dangereux mais nécessite des fils plus gros pour la même puissance.</li>
+      <li>France : U_eff = 230 V → plus efficace (P = U × I, à U doublé, I divisé par 2 pour même P → cuivre divisé par 2 environ).</li>
+    </ul>
+    <p>Pour cette raison, le 230 V s'est imposé en Europe pour les usages domestiques.</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Pourquoi les radiateurs ne se soucient pas de la sinusoïdalité — alors que les LED le font ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Charges résistives</strong> (radiateur, chauffe-eau, ampoule incandescente) : seule la puissance moyenne dissipée compte. P = U_eff × I_eff. La forme exacte de la tension est indifférente.</p>
+    <p><strong>Charges électroniques</strong> (LED, ordinateurs, alim à découpage) : utilisent la forme sinusoïdale spécifiquement. Une onde « pseudo-sinus » (petits onduleurs bon marché) peut :</p>
+    <ul>
+      <li>Faire vibrer les transformateurs (bruit, échauffement)</li>
+      <li>Endommager les correcteurs de facteur de puissance (PFC)</li>
+      <li>Réduire la durée de vie des composants</li>
+    </ul>
+    <p>D'où l'importance des onduleurs <strong>« sinusoïde pure »</strong> pour le matériel informatique sensible.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Calculer la puissance dissipée par un radiateur de résistance R = 50 Ω sous 230 V efficaces. Comparer avec une alimentation continue 230 V.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>P = U_eff² / R = 230² / 50 = 52 900 / 50 = <strong>1 058 W ≈ 1 kW</strong>.</p>
+    <p>Avec un courant continu de 230 V : P = 230² / 50 = 1 058 W (identique).</p>
+    <p>C'est le sens même de la valeur efficace : <strong>équivalence en chauffage</strong>.</p>
+    <p>Sur un mois (8 h/jour utilisation) : énergie = 1,058 × 8 × 30 = 254 kWh. À 0,18 €/kWh : <strong>45,72 €/mois</strong>. Pour 1 radiateur seulement.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une fiche d'aide pour un nouvel apprenti : valeurs efficaces vs crêtes du secteur.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Fiche — Le secteur 230 V / 50 Hz</strong></em></p>
+    <ul><em>
+      <li><strong>Tension efficace :</strong> 230 V (= valeur affichée sur les prises). Sert pour calculer la puissance des appareils.</li>
+      <li><strong>Tension crête :</strong> 325 V = 230 × √2. C'est le maximum atteint par la sinusoïde 100 fois par seconde.</li>
+      <li><strong>Fréquence :</strong> 50 Hz → période 20 ms. 100 changements de sens du courant par seconde.</li>
+      <li><strong>Sécurité :</strong> attention, les composants doivent supporter la valeur <strong>crête</strong> ! (325 V ne se voit pas avec un multimètre standard qui n'affiche que U_eff.)</li>
+      <li><strong>Hors d'Europe :</strong> 120 V / 60 Hz aux USA, 100 V / 50-60 Hz au Japon. Adapter les appareils pour les voyages.</li>
+    </em></ul>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Pour le triphasé industriel (400 V efficaces entre phases), calculer la tension crête. Pourquoi le triphasé est-il plus efficace que le monophasé ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>U_max triphasé entre phases : 400 × √2 ≈ <strong>566 V crête</strong>.</p>
+    <p>Le triphasé utilise 3 sinusoïdes décalées de 120° l'une par rapport à l'autre (au lieu d'une seule en monophasé).</p>
+    <p>Avantages :</p>
+    <ul>
+      <li><strong>Puissance disponible 3× plus grande</strong> dans le même câble.</li>
+      <li><strong>Moteurs auto-démarrants</strong> (champ magnétique tournant naturellement).</li>
+      <li><strong>Moins de pertes</strong> dans les longs trajets (effet Joule réduit grâce à des courants plus faibles).</li>
+    </ul>
+    <p>Inconvénients : 4 fils (3 phases + neutre) au lieu de 2, équipements plus chers, dangereux (566 V crête).</p>
+    <p>C'est pourquoi le triphasé est utilisé pour : industrie, gros électroménager (cuisinière), recharge de voitures électriques rapides, transport haute tension.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Sinusoïde :</strong> u(t) = U_max × sin(2π·f·t). 3 paramètres : amplitude (U_max), fréquence (f), phase.</li>
+    <li><strong>U_eff = U_max / √2</strong> pour une sinusoïde pure. C'est la valeur affichée sur les prises (230 V).</li>
+    <li><strong>Période :</strong> T = 1 / f. En France : T = 20 ms, f = 50 Hz.</li>
+    <li><strong>Puissance dissipée :</strong> P = U_eff² / R (= P d'un courant continu équivalent).</li>
+    <li><strong>Standards mondiaux :</strong> 230 V/50 Hz (Europe), 120 V/60 Hz (USA), 100 V/50-60 Hz (Japon).</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
