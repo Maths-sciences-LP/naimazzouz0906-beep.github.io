@@ -1,65 +1,234 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch05 – Activité 4 – Richter et décibels – Term Bac Pro</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Activité 4 – Échelles logarithmiques (Richter, dB) – Term Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
-</head><body><div class="c"><a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 4 – Échelles logarithmiques (Richter, dB) <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
-<p class="sous-titre">Chapitre 5 – Exponentielle / log décimal | Terminale Bac Pro | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Comparer 2 séismes par leur magnitude Richter</li>
-<li>Comparer 2 sons par leur niveau dB</li>
-<li>Sentir la « démesure » des phénomènes naturels</li></ul></div>
+<header>
+  <h1>Activité 4 – Échelles logarithmiques : séismes (Richter) et bruits (décibels) <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
+  <p class="sous-titre">Chapitre 5 – Exponentielle et logarithme décimal | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – séismes et bruits, comment comparer ?</h2>
-<p><em>Mathilde lit que le séisme de 2025 en Turquie était de magnitude 7,8, alors que celui d'Agadir 1960 était de 5,9. Elle lit aussi qu'un avion au décollage fait 130 dB et un marteau-piqueur 100 dB. Que signifient vraiment ces écarts ?</em></p>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comparer 2 séismes par leur magnitude Richter</li>
+    <li>Comparer 2 sons par leur niveau en décibels</li>
+    <li>Comprendre la « démesure » des phénomènes naturels</li>
+    <li>Faire le lien entre perception humaine et échelle logarithmique</li>
+  </ul>
+</div>
 
-<h3>Échelle Richter (énergie)</h3>
-<p><strong>M = (2/3) log(E) − 4,8</strong> où E est l'énergie libérée en joules.</p>
-<p>Conséquence : 1 unité de magnitude = facteur 10^(3/2) ≈ 31,6 sur l'énergie.</p>
+<div class="situation">
+  <h2>Situation – les échelles « cachent » la réalité physique</h2>
+  <p><em>Mathilde lit que le séisme de 2025 en Turquie était de magnitude 7,8, alors que celui d'Agadir en 1960 était de 5,9. Elle lit aussi qu'un avion au décollage fait 130 dB et un marteau-piqueur 100 dB. Ces écarts paraissent modestes, mais qu'en est-il en réalité physique ?</em></p>
 
-<h3>Échelle dB (intensité sonore)</h3>
-<p><strong>L = 10 log(I/I₀)</strong> où I₀ = 10⁻¹² W/m² (seuil d'audition).</p>
-<p>Conséquence : 10 dB = facteur 10 sur l'intensité.</p></div>
+  <h3>Document 1 — échelle de Richter (énergie d'un séisme)</h3>
+  <div style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #1d4ed8;margin:14px 0">
+    <p style="text-align:center"><strong>M = (2/3) × log(E) − 4,8</strong> où E = énergie libérée (joules)</p>
+    <p>Conséquence : 1 unité de magnitude = facteur 10^(3/2) ≈ <strong>31,6 sur l'énergie</strong>.</p>
+  </div>
+
+  <h3>Document 2 — échelle des décibels (intensité sonore)</h3>
+  <div style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #1d4ed8;margin:14px 0">
+    <p style="text-align:center"><strong>L = 10 × log(I / I₀)</strong> où I₀ = 10⁻¹² W/m² (seuil audition)</p>
+    <p>Conséquence : 10 dB = facteur 10 sur l'intensité physique.</p>
+  </div>
+
+  <h3>Document — quelques exemples typiques</h3>
+  <table>
+    <thead>
+      <tr><th>Magnitude Richter</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>2-3</td><td>Détecté par sismographes uniquement</td></tr>
+      <tr><td>4-5</td><td>Léger tremblement, ressenti</td></tr>
+      <tr><td>6-7</td><td>Dégâts importants, victimes (L'Aquila 6,3)</td></tr>
+      <tr><td>8-9</td><td>Catastrophe (Sumatra 2004 : 9,1)</td></tr>
+      <tr><td>9,5</td><td>Maximum enregistré (Chili 1960)</td></tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <tr><th>Décibels</th><th>Source</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>0 dB</td><td>Seuil d'audition</td></tr>
+      <tr><td>30 dB</td><td>Chuchotement</td></tr>
+      <tr><td>60 dB</td><td>Conversation normale</td></tr>
+      <tr><td>85 dB</td><td>Trafic routier dense (seuil danger)</td></tr>
+      <tr><td>100 dB</td><td>Marteau-piqueur, concert</td></tr>
+      <tr><td>130 dB</td><td>Avion au décollage (seuil douleur)</td></tr>
+      <tr><td>180 dB</td><td>Tir de fusée Saturn V</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité approfondit les notions du cours §5 (échelles logarithmiques) avec des phénomènes naturels.</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Quel est le rapport réel entre les phénomènes comparés ?</div>
+  <strong>Problématique :</strong> Quels sont les rapports physiques réels que cachent ces échelles « compactes » ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer le rapport d'énergie entre un séisme M=7,8 (Turquie) et M=5,9 (Agadir).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Différence de magnitude : 7,8 − 5,9 = 1,9.</p>
-<p>Rapport d'énergie : 10^(1,5 × 1,9) = 10^2,85 ≈ <strong>708</strong>.</p>
-<p>Le séisme de Turquie a libéré <strong>708 fois plus d'énergie</strong> que celui d'Agadir. La perception linéaire (« presque 2 unités d'écart ») masque l'énorme différence physique.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le rapport d'énergie entre le séisme de Turquie (M = 7,8) et celui d'Agadir (M = 5,9).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Différence de magnitude : 7,8 − 5,9 = 1,9.</p>
+    <p>Rapport d'énergie : 10^(1,5 × 1,9) = 10^2,85 ≈ <strong>708</strong>.</p>
+    <p>Le séisme de Turquie a libéré <strong>~ 700 fois plus d'énergie</strong> que celui d'Agadir.</p>
+    <p>La perception linéaire (« presque 2 unités d'écart ») <strong>masque</strong> l'énorme différence physique.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Calculer le rapport d'intensité sonore entre un avion (130 dB) et un marteau-piqueur (100 dB).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Différence : 130 − 100 = 30 dB.</p>
-<p>Rapport d'intensité : 10^(30/10) = 10³ = <strong>1 000</strong>.</p>
-<p>L'avion produit 1 000 fois plus d'énergie sonore (W/m²) que le marteau-piqueur. C'est pourquoi l'avion est dangereux dès quelques minutes d'exposition non protégée, alors qu'on peut « supporter » un marteau-piqueur (avec EPI) plusieurs heures.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Comparer le séisme de Sumatra 2004 (M = 9,1) à celui de Turquie (M = 7,8).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Différence : 9,1 − 7,8 = 1,3.</p>
+    <p>Rapport d'énergie : 10^(1,5 × 1,3) = 10^1,95 ≈ <strong>89</strong>.</p>
+    <p>Sumatra 2004 a libéré <strong>89 fois plus d'énergie</strong> que la Turquie 2025.</p>
+    <p>Comparaison cumulée : Sumatra 2004 vs Agadir 1960 : 89 × 708 ≈ <strong>63 000 fois</strong> plus d'énergie. Astronomique.</p>
+    <p>C'est pour ça que Sumatra 2004 a déclenché un mégatsunami avec 230 000 morts, alors que Agadir, plus localisé, a fait 12 000 morts.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">ANA</span></h2>
-<p>Sur l'échelle dB, on dit qu'« on double la sensation perçue tous les 10 dB ». Mais l'intensité physique est × 10. Expliquer ce paradoxe.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Notre perception est <strong>logarithmique</strong> (loi de Weber-Fechner). Notre cerveau « perçoit » le log de l'intensité physique. C'est exactement pour cela qu'on a inventé l'échelle dB : elle correspond à la <strong>perception</strong> (linéaire en dB) plutôt qu'à la <strong>réalité physique</strong> (intensité en W/m²).</p>
-<p>10 dB = ×10 en intensité physique = ×2 en sensation perçue. C'est aussi pour ça que les échelles log (pH, Richter, dB) sont si pratiques : elles « collent » à notre perception.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le rapport d'intensité sonore entre un avion (130 dB) et un marteau-piqueur (100 dB).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Différence : 130 − 100 = 30 dB.</p>
+    <p>Rapport d'intensité physique (W/m²) : 10^(30/10) = 10³ = <strong>1 000</strong>.</p>
+    <p>L'avion produit <strong>1 000 fois plus d'énergie sonore</strong> que le marteau-piqueur.</p>
+    <p>C'est pourquoi l'avion est dangereux dès quelques minutes d'exposition non protégée, alors qu'on peut « supporter » un marteau-piqueur (avec EPI) plusieurs heures.</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Richter :</strong> M = (2/3) log(E) − 4,8. 1 unité = ×31,6 énergie.</li>
-<li><strong>Décibels :</strong> L = 10 log(I/I₀). 10 dB = ×10 intensité physique = ×2 sensation.</li>
-<li><strong>Échelles log universelles</strong> dans les phénomènes naturels — révèlent l'amplitude réelle des écarts apparemment modestes.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Sur l'échelle dB, on dit qu'« on double la sensation perçue tous les 10 dB ». Mais l'intensité physique est multipliée par 10. Expliquer ce paradoxe.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Notre perception est <strong>logarithmique</strong> (loi de Weber-Fechner). Notre cerveau « perçoit » le log de l'intensité physique réelle.</p>
+    <p>C'est exactement pour cela qu'on a inventé l'échelle dB : elle correspond à la <strong>perception</strong> (linéaire en dB) plutôt qu'à la <strong>réalité physique</strong> (intensité en W/m²).</p>
+    <p>10 dB = × 10 en intensité physique = × 2 en sensation perçue.</p>
+    <p>Ce phénomène est universel pour tous les sens (vue, ouïe, toucher). Notre cerveau « écrase » les grandes plages dynamiques pour ne pas saturer.</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>2 sources sonores qui font chacune 60 dB sont placées côte à côte. Quel niveau résulte (en dB) ? Pourquoi pas 120 dB ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Les <strong>intensités physiques s'ajoutent</strong> (pas les dB) :</p>
+    <p>I₁ = I₂ = 10⁶ × I₀. I_total = 2 × 10⁶ × I₀.</p>
+    <p>L_total = 10 × log(2 × 10⁶) = 10 × (log 2 + 6) = 10 × 6,301 ≈ <strong>63 dB</strong>.</p>
+    <p>2 sources de 60 dB ne donnent que 63 dB (et non 120 dB). Doubler une source = +3 dB.</p>
+    <p>4 sources de 60 dB = 66 dB. 10 sources = 70 dB. Pour passer de 60 à 80 dB (sensation × 4), il faudrait <strong>100 sources</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>L'OMS recommande un seuil d'exposition à 85 dB pour 8 h/jour. Si Karim utilise une scie circulaire qui émet 95 dB, combien de temps peut-il travailler par jour sans risque (sans EPI) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Règle d'exposition : la dose acceptable est <strong>divisée par 2 tous les 3 dB de plus</strong>.</p>
+    <p>De 85 à 95 dB : +10 dB → exposition divisée par 2³·³ ≈ 10.</p>
+    <p>Donc 8 h / 10 = <strong>environ 48 minutes par jour maximum</strong>.</p>
+    <p>Au-delà : risque de surdité progressive (irréversible).</p>
+    <p>Recommandation pro : <strong>EPI obligatoire</strong> (casque anti-bruit) qui réduit l'exposition de 25-30 dB.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>L'aéroport demande à un nouvel avion d'être 10 dB plus silencieux que l'ancien (passer de 130 à 120 dB). Quel défi technique cela représente-t-il ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>−10 dB = <strong>diviser l'intensité sonore par 10</strong>.</p>
+    <p>Défi énorme techniquement :</p>
+    <ul>
+      <li>Repenser les moteurs (turboréacteurs à haut taux de dilution)</li>
+      <li>Carénages de buses optimisés acoustiquement</li>
+      <li>Approche descendante en glissement</li>
+      <li>Surfaces antibruit autour de l'aéroport</li>
+    </ul>
+    <p>Pour le grand public, la perception est seulement « 2 fois moins fort ». Pour les ingénieurs, c'est une révolution. C'est pourquoi les normes acoustiques avancent par très petits pas (ex. ICAO Chapter 14 : −7 dB par étape).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une note pédagogique : « Pourquoi les échelles logarithmiques sont-elles trompeuses pour le grand public ? »</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Les échelles logarithmiques cachent la réalité physique</strong></em></p>
+    <p><em>Quand on lit « séisme magnitude 7,8 » ou « bruit 130 dB », notre cerveau perçoit ces valeurs <strong>linéairement</strong>. Mais ce sont des échelles <strong>logarithmiques</strong> : 1 unité Richter = ×31 sur l'énergie ; 10 dB = ×10 sur l'intensité.</em></p>
+    <p><em>Conséquences :</em></p>
+    <ul><em>
+      <li>Un séisme M=7,8 libère 700× plus d'énergie qu'un M=5,9.</li>
+      <li>Un avion (130 dB) émet 1 000× plus d'intensité qu'un marteau-piqueur (100 dB).</li>
+    </em></ul>
+    <p><em>Toujours <strong>« dé-loguer »</strong> mentalement les valeurs avant de comparer. Idem pour le pH (acidité), magnitudes stellaires, ISO photo.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>L'échelle de Mercalli classe les séismes par leurs <strong>effets visibles</strong> (I à XII), de manière linéaire. Pourquoi a-t-on remplacé Mercalli par Richter pour la communication scientifique ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Mercalli (1884, révisé 1931) : <strong>I (imperceptible) à XII (destruction totale)</strong>. Linéaire et qualitative.</p>
+    <p>Richter (1935) : magnitude <strong>quantitative</strong> calculée à partir des sismographes.</p>
+    <p>Avantages de Richter :</p>
+    <ul>
+      <li>Mesurable physiquement (pas dépendante des dégâts observés).</li>
+      <li>Indépendante de la distance à l'épicentre (Mercalli varie selon où on est).</li>
+      <li>Liée à l'énergie réelle, pour la science.</li>
+    </ul>
+    <p>Mercalli reste utile pour décrire les <strong>effets sur les habitants</strong> (mémoire collective, indemnisation), Richter pour la <strong>physique</strong>.</p>
+    <p>Aujourd'hui, on utilise une variante améliorée de Richter : la <strong>« moment magnitude » Mw</strong>, plus précise pour les très gros séismes (Sumatra 9,1).</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Richter :</strong> M = (2/3) log(E) − 4,8. 1 unité = × 31,6 énergie.</li>
+    <li><strong>Décibels :</strong> L = 10 log(I / I₀). 10 dB = × 10 intensité physique = × 2 sensation perçue.</li>
+    <li><strong>Sommation des sons :</strong> les intensités s'ajoutent, pas les dB. Doubler une source = +3 dB.</li>
+    <li><strong>Échelles log universelles</strong> dans les phénomènes naturels — révèlent l'amplitude réelle des écarts apparemment modestes.</li>
+    <li><strong>Lien perception :</strong> notre cerveau perçoit lui-même en log (Weber-Fechner). Les échelles log sont « naturelles » pour nous.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

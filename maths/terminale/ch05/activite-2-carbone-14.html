@@ -1,61 +1,268 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch05 – Activité 2 – Datation au carbone 14 – Term Bac Pro</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Activité 2 – Datation au carbone 14 (logarithme) – Term Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
-</head><body><div class="c"><a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 2 – Datation au carbone 14 <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DE CAS</span></h1>
-<p class="sous-titre">Chapitre 5 – Exponentielle / log décimal | Terminale Bac Pro | ⏱ 35 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Modéliser une décroissance exponentielle</li>
-<li>Utiliser le logarithme pour résoudre une équation exponentielle</li>
-<li>Comprendre la datation par radioactivité</li></ul></div>
+<header>
+  <h1>Activité 2 – Datation au carbone 14 par le logarithme <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DE CAS</span></h1>
+  <p class="sous-titre">Chapitre 5 – Exponentielle et logarithme décimal | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – âge d'un fragment de bois</h2>
-<p><em>Un archéologue trouve un fragment de bois dans une tombe et veut dater sa coupe. Il mesure la teneur en carbone 14 (¹⁴C) du fragment : <strong>30 % du taux observé sur du bois actuel</strong>.</em></p>
-<p>Le ¹⁴C se désintègre selon : <strong>N(t) = N₀ × 0,5^(t/5730)</strong> où :</p>
-<ul><li>N₀ : nombre d'atomes ¹⁴C à la mort de l'arbre</li>
-<li>5730 ans : période radioactive (« demi-vie »)</li>
-<li>t : temps écoulé depuis la coupe (années)</li></ul></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Modéliser une décroissance exponentielle</li>
+    <li>Utiliser le logarithme pour résoudre une équation exponentielle</li>
+    <li>Comprendre la notion de demi-vie radioactive</li>
+    <li>Comprendre la datation par radioactivité</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – âge d'un fragment de bois antique</h2>
+  <p><em>Un archéologue trouve un fragment de bois dans une tombe préhistorique. Pour le dater, il fait analyser sa teneur en carbone 14 (¹⁴C) au laboratoire. Résultat : <strong>30 % du taux observé sur du bois actuel</strong>. De quelle époque date la coupe de l'arbre ?</em></p>
+
+  <h3>Document — principe de la datation au carbone 14</h3>
+  <div style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #1d4ed8;margin:14px 0">
+    <p>Le ¹⁴C est radioactif et se désintègre selon la loi exponentielle :</p>
+    <p style="text-align:center;font-size:1.1em"><strong>N(t) = N₀ × 0,5^(t/5 730)</strong></p>
+    <p>où :</p>
+    <ul>
+      <li>N₀ : nombre d'atomes ¹⁴C à la mort de l'arbre (référence)</li>
+      <li>N(t) : nombre d'atomes restants après t années</li>
+      <li>5 730 ans : <strong>demi-vie</strong> du ¹⁴C (temps pour que la moitié des atomes se désintègrent)</li>
+      <li>t : temps écoulé depuis la coupe (années)</li>
+    </ul>
+  </div>
+
+  <h3>Document — courbe de décroissance du ¹⁴C</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Courbe exponentielle décroissante : taux de C14 vs temps. À 5730 ans, 50% restant. À 11460 ans, 25%. Décroissance par moitié à chaque demi-vie.">
+      <defs>
+        <style>
+          .ax{stroke:#1a202c;stroke-width:1.5}
+          .gd{stroke:#cbd5e1;stroke-width:.6}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Décroissance du carbone 14 dans le temps</text>
+
+      <g class="gd">
+        <line x1="60" y1="50" x2="500" y2="50"/>
+        <line x1="60" y1="98" x2="500" y2="98"/>
+        <line x1="60" y1="145" x2="500" y2="145"/>
+        <line x1="60" y1="193" x2="500" y2="193"/>
+        <line x1="60" y1="240" x2="500" y2="240"/>
+      </g>
+      <line class="ax" x1="60" y1="240" x2="510" y2="240"/>
+      <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
+
+      <g class="lbl" text-anchor="end">
+        <text x="55" y="244">0%</text>
+        <text x="55" y="197">25%</text>
+        <text x="55" y="149">50%</text>
+        <text x="55" y="102">75%</text>
+        <text x="55" y="54">100%</text>
+      </g>
+      <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">% C14 restant</text>
+
+      <g class="lbl" text-anchor="middle">
+        <text x="60" y="258">0</text>
+        <text x="170" y="258">5 730</text>
+        <text x="280" y="258">11 460</text>
+        <text x="390" y="258">17 190</text>
+        <text x="500" y="258">22 920</text>
+      </g>
+      <text class="lblA" x="270" y="275" text-anchor="middle">Temps t (années)</text>
+
+      <!-- Courbe exponentielle décroissante : (0,100%)→(60,50). (5730, 50%)→(170,145). (11460,25%)→(280,193). (17190, 12,5%)→(390,217). (22920, 6,25%)→(500,228). -->
+      <path d="M 60,50 Q 110,80 170,145 Q 220,180 280,193 Q 340,210 500,228" fill="none" stroke="#0969da" stroke-width="2.5"/>
+
+      <!-- Points clés demi-vies -->
+      <circle cx="170" cy="145" r="5" fill="#dc2626"/>
+      <text x="170" y="138" class="lbl" fill="#dc2626" font-weight="bold" text-anchor="middle">50% (1 demi-vie)</text>
+
+      <circle cx="280" cy="193" r="5" fill="#dc2626"/>
+      <text x="280" y="186" class="lbl" fill="#dc2626" font-weight="bold" text-anchor="middle">25% (2 demi-vies)</text>
+
+      <!-- Point fragment 30% -->
+      <line x1="60" y1="174" x2="500" y2="174" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3 2"/>
+      <circle cx="220" cy="174" r="6" fill="#7c3aed"/>
+      <text x="225" y="170" class="lbl" fill="#7c3aed" font-weight="bold">30% → t ≈ 9 950 ans</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §3 (logarithme décimal) et §4 (résolution d'équation exponentielle).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> De quelle époque date le fragment de bois ?</div>
+  <strong>Problématique :</strong> Comment retrouver l'âge d'un objet à partir de son taux résiduel de carbone 14 ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>L'équation à résoudre est : 0,30 = 0,5^(t/5730). Calculer t en utilisant log.</p>
-<ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>log(0,30) = (t/5730) × log(0,5)</p>
-<p>t = 5730 × log(0,30) / log(0,5) = 5730 × (−0,5229) / (−0,3010) = 5730 × 1,737</p>
-<p>t ≈ <strong>9 952 ans</strong>. Le bois date d'environ 10 000 ans avant aujourd'hui (donc ~ 8 000 av. J.-C., mésolithique).</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">APP</span></h2>
+  <p>Combien reste-t-il de C14 dans un échantillon vieux de :</p>
+  <ol type="a">
+    <li>5 730 ans (= 1 demi-vie)</li>
+    <li>11 460 ans (= 2 demi-vies)</li>
+    <li>17 190 ans (= 3 demi-vies)</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>1 demi-vie : 0,5¹ = <strong>50 %</strong></li>
+      <li>2 demi-vies : 0,5² = <strong>25 %</strong></li>
+      <li>3 demi-vies : 0,5³ = <strong>12,5 %</strong></li>
+    </ul>
+    <p>Chaque demi-vie divise la quantité restante par 2. C'est la <strong>signature de la décroissance exponentielle</strong>.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-blue">ANA</span></h2>
-<p>Pourquoi le carbone 14 permet de dater l'organique mort, mais pas une roche ?</p>
-<ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Le ¹⁴C se forme en permanence dans l'atmosphère (réaction des rayons cosmiques avec l'azote). Tous les êtres vivants l'absorbent (par photosynthèse ou alimentation) et leur teneur en ¹⁴C est en équilibre avec l'atmosphère pendant qu'ils vivent.</p>
-<p>À leur mort, l'absorption cesse. Le ¹⁴C accumulé se désintègre lentement (5 730 ans de demi-vie). En mesurant le ratio résiduel, on remonte à l'âge.</p>
-<p>Une <strong>roche</strong> ne contient pas de carbone organique (sauf charbon, calcaire), et n'a pas absorbé ¹⁴C de l'atmosphère. On utilise alors d'autres isotopes (uranium-plomb pour les roches, périodes en milliards d'années).</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Le fragment a 30 % de C14. Écrire l'équation à résoudre pour trouver t.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>N(t)/N₀ = 0,30 → 0,5^(t/5 730) = 0,30.</p>
+    <p>Cette équation est de la forme <strong>a^x = b</strong>, qui ne se résout pas par les méthodes usuelles. On utilise le <strong>logarithme</strong>.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Pourquoi le carbone 14 ne peut pas dater au-delà de ~50 000 ans ?</p>
-<ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Au bout de 50 000 ans (≈ 9 demi-vies), il ne reste que 0,5⁹ ≈ 0,2 % du ¹⁴C initial. La quantité résiduelle est trop faible pour être mesurée fiablement (rapport signal/bruit insuffisant).</p>
-<p>Pour dater plus ancien : autres méthodes (potassium-argon, uranium-plomb, thermoluminescence...).</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Résoudre 0,5^(t/5 730) = 0,30 en utilisant le logarithme décimal.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Appliquer log aux deux membres :</p>
+    <p>log(0,5^(t/5 730)) = log(0,30)</p>
+    <p>(t / 5 730) × log(0,5) = log(0,30) (propriété : log(a^n) = n × log(a))</p>
+    <p>t = 5 730 × log(0,30) / log(0,5)</p>
+    <p>= 5 730 × (−0,5229) / (−0,3010)</p>
+    <p>= 5 730 × 1,737</p>
+    <p>≈ <strong>9 952 ans</strong>.</p>
+    <p>Le fragment de bois date d'environ <strong>10 000 ans</strong>.</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Décroissance exponentielle :</strong> N(t) = N₀ × 0,5^(t/T) où T = demi-vie.</li>
-<li><strong>Résoudre une équation a^x = b :</strong> appliquer log → x = log(b)/log(a).</li>
-<li><strong>Carbone 14 :</strong> demi-vie 5 730 ans. Datation jusqu'à ~ 50 000 ans.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Le fragment date donc d'environ −8 000 av. J.-C. À quelle période historique cela correspond-il ? Que peut-on en déduire ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>−8 000 av. J.-C. correspond au <strong>Mésolithique</strong> (transition entre Paléolithique et Néolithique).</p>
+    <p>À cette époque :</p>
+    <ul>
+      <li>Fin de la dernière ère glaciaire</li>
+      <li>Apparition de l'agriculture en Mésopotamie et Moyen-Orient</li>
+      <li>Sociétés de chasseurs-cueilleurs en Europe</li>
+      <li>Premiers sites néolithiques (Çatal Höyük en cours)</li>
+    </ul>
+    <p>Si la tombe contient ce bois, elle a probablement été creusée à cette époque (datation cohérente avec le contexte archéologique du site).</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Pourquoi le carbone 14 permet-il de dater l'organique mort, mais pas une roche ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le ¹⁴C se forme en permanence dans l'atmosphère (réaction des rayons cosmiques avec l'azote N₁₄). Tous les êtres vivants l'absorbent (photosynthèse pour les plantes, alimentation pour les animaux), et leur teneur en ¹⁴C est en <strong>équilibre avec l'atmosphère</strong> pendant qu'ils vivent.</p>
+    <p>À leur mort, l'absorption cesse. Le ¹⁴C accumulé se désintègre lentement (demi-vie 5 730 ans). En mesurant le ratio résiduel ¹⁴C / ¹²C, on remonte à l'âge.</p>
+    <p>Une <strong>roche minérale</strong> ne contient pas de carbone organique (sauf charbon, calcaire), et n'a pas absorbé ¹⁴C de l'atmosphère. On utilise d'autres isotopes :</p>
+    <ul>
+      <li><strong>Uranium-plomb</strong> (demi-vie 4,5 milliards d'années) pour les roches anciennes</li>
+      <li><strong>Potassium-argon</strong> (1,3 G ans) pour les volcans</li>
+      <li><strong>Thermoluminescence</strong> pour les céramiques</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Pourquoi le carbone 14 ne peut pas dater au-delà de ~50 000 ans ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Au bout de 50 000 ans, on a passé environ 50 000 / 5 730 ≈ 8,7 demi-vies.</p>
+    <p>Quantité restante : 0,5^8,7 ≈ <strong>0,24 %</strong> du ¹⁴C initial.</p>
+    <p>À ce niveau, la quantité résiduelle est <strong>trop faible</strong> pour être mesurée fiablement (rapport signal/bruit insuffisant, contamination atmosphérique parasite).</p>
+    <p>Pour dater plus ancien (préhumains, roches) : autres méthodes (potassium-argon, uranium-plomb, thermoluminescence, racémisation des acides aminés...).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-yellow">REA</span></h2>
+  <p>Un autre échantillon a 7 % de C14. Calculer son âge.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>0,5^(t/5 730) = 0,07.</p>
+    <p>t = 5 730 × log(0,07) / log(0,5) = 5 730 × (−1,155) / (−0,3010) = 5 730 × 3,838 ≈ <strong>21 990 ans</strong>.</p>
+    <p>Cet échantillon date d'environ −20 000 av. J.-C., en plein <strong>Paléolithique supérieur</strong> (homo sapiens, art rupestre, dernière glaciation).</p>
+    <p>Ces dates sont compatibles avec les peintures de Lascaux (~ 18 000 av. J.-C.) ou Chauvet (~ 36 000 av. J.-C.).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger un mode opératoire en 5 lignes pour calculer l'âge à partir d'un taux de C14 (utilisable en classe).</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Méthode — Datation au C14</strong></em></p>
+    <p><em>1. Mesurer le pourcentage p de C14 résiduel par rapport à un échantillon actuel (ex. 30 % → p = 0,30).</em></p>
+    <p><em>2. Écrire l'équation : 0,5^(t/5 730) = p.</em></p>
+    <p><em>3. Appliquer log : (t/5 730) × log(0,5) = log(p).</em></p>
+    <p><em>4. Calculer : <strong>t = 5 730 × log(p) / log(0,5)</strong>. Calculatrice : touche LOG.</em></p>
+    <p><em>5. Vérification cohérence : p = 50 % → t = 5 730 ans (1 demi-vie). Si l'âge sort de [0 ; 50 000 ans], la méthode est inutilisable, choisir un autre isotope.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Une autre méthode utilise le logarithme népérien : N(t) = N₀ × e^(−λt) avec λ = ln(2) / T (T = demi-vie). Calculer λ pour le C14, puis vérifier le résultat trouvé pour le fragment à 30 %.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>λ = ln(2) / 5 730 = 0,693 / 5 730 ≈ <strong>1,21 × 10⁻⁴ par an</strong>.</p>
+    <p>Équation : 0,30 = e^(−1,21 × 10⁻⁴ × t).</p>
+    <p>ln(0,30) = −1,21 × 10⁻⁴ × t → t = −ln(0,30) / 1,21 × 10⁻⁴ = 1,2040 / 1,21 × 10⁻⁴ ≈ <strong>9 950 ans</strong>. ✓</p>
+    <p>Même résultat. Les deux écritures (en base 0,5 ou en base e) sont équivalentes.</p>
+    <p>En sciences, on utilise plus souvent la base e (logarithme népérien) car elle apparaît naturellement dans les équations différentielles de la physique nucléaire.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Décroissance exponentielle :</strong> N(t) = N₀ × 0,5^(t/T), où T = demi-vie.</li>
+    <li><strong>Résoudre une équation a^x = b :</strong> appliquer log → x = log(b) / log(a).</li>
+    <li><strong>Propriété du log :</strong> log(a^n) = n × log(a).</li>
+    <li><strong>Carbone 14 :</strong> demi-vie 5 730 ans. Datation jusqu'à ~ 50 000 ans.</li>
+    <li><strong>Autres isotopes :</strong> uranium-plomb, potassium-argon pour les périodes géologiques (millions ou milliards d'années).</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

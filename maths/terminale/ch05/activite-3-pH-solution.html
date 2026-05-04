@@ -1,59 +1,262 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch05 – Activité 3 – pH d'une solution – Term Bac Pro</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Activité 3 – Le pH : échelle logarithmique de l'acidité – Term Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
-</head><body><div class="c"><a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 3 – Le pH : application industrielle du logarithme <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
-<p class="sous-titre">Chapitre 5 – Exponentielle / log décimal | Terminale Bac Pro | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Comprendre pourquoi le pH est une échelle logarithmique</li>
-<li>Calculer un pH à partir d'une concentration</li>
-<li>Comparer 2 solutions par leur acidité</li></ul></div>
+<header>
+  <h1>Activité 3 – Le pH : application industrielle du logarithme <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 5 – Exponentielle et logarithme décimal | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – contrôle qualité d'eau d'aquarium</h2>
-<p><em>Léa, technicienne aquariologue, contrôle l'eau d'un bac à crevettes (espèce sensible aux variations de pH). Le pH idéal est 6,5.</em></p>
-<p>Le pH se calcule par : <strong>pH = −log([H⁺])</strong> où [H⁺] est la concentration en ions hydronium en mol/L.</p>
-<p>Échelle : pH 0 (très acide) → pH 7 (neutre) → pH 14 (très basique).</p></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comprendre pourquoi le pH est une échelle logarithmique</li>
+    <li>Calculer un pH à partir d'une concentration</li>
+    <li>Comparer deux solutions par leur acidité</li>
+    <li>Connaître d'autres échelles logarithmiques (décibels, Richter)</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – contrôle qualité d'eau d'aquarium</h2>
+  <p><em>Léa, technicienne aquariologue, contrôle l'eau d'un bac à crevettes Caridina (espèce très sensible aux variations de pH). Le pH idéal pour ces crevettes est 6,5. Léa fait des analyses régulières et doit comprendre l'échelle pH.</em></p>
+
+  <h3>Document — la formule du pH</h3>
+  <div style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #1d4ed8;margin:14px 0;text-align:center">
+    <p style="font-size:1.2em"><strong>pH = − log([H⁺])</strong></p>
+    <p>où [H⁺] est la concentration en ions hydronium (mol/L)</p>
+  </div>
+
+  <h3>Document — échelle de pH usuelle</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 200" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Échelle de pH de 0 à 14, gradient rouge (acide) au violet (basique). Repères : 0 acide batterie, 2 jus citron, 5 pluie, 7 eau pure, 9 savon, 14 lessive.">
+      <defs>
+        <style>
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+          <linearGradient id="phgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#dc2626"/>
+            <stop offset="35%" stop-color="#fbbf24"/>
+            <stop offset="50%" stop-color="#86efac"/>
+            <stop offset="65%" stop-color="#3b82f6"/>
+            <stop offset="100%" stop-color="#7c3aed"/>
+          </linearGradient>
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Échelle de pH (0 = très acide ; 14 = très basique)</text>
+
+      <!-- Rectangle gradient -->
+      <rect x="60" y="80" width="420" height="40" fill="url(#phgrad)"/>
+
+      <!-- Graduations -->
+      <g class="lbl" text-anchor="middle">
+        <text x="60" y="140">0</text>
+        <text x="120" y="140">2</text>
+        <text x="180" y="140">4</text>
+        <text x="240" y="140">7</text>
+        <text x="300" y="140">9</text>
+        <text x="360" y="140">11</text>
+        <text x="480" y="140">14</text>
+      </g>
+
+      <!-- Légendes -->
+      <text x="60" y="160" class="lbl" text-anchor="middle">batterie</text>
+      <text x="120" y="160" class="lbl" text-anchor="middle">citron</text>
+      <text x="180" y="160" class="lbl" text-anchor="middle">vinaigre</text>
+      <text x="240" y="160" class="lbl" text-anchor="middle" font-weight="bold">eau pure</text>
+      <text x="300" y="160" class="lbl" text-anchor="middle">savon</text>
+      <text x="360" y="160" class="lbl" text-anchor="middle">javel</text>
+      <text x="480" y="160" class="lbl" text-anchor="middle">lessive</text>
+
+      <text x="120" y="68" class="lbl" text-anchor="middle" fill="#dc2626" font-weight="bold">ACIDE</text>
+      <text x="240" y="68" class="lbl" text-anchor="middle" fill="#15803d" font-weight="bold">NEUTRE</text>
+      <text x="380" y="68" class="lbl" text-anchor="middle" fill="#7c3aed" font-weight="bold">BASIQUE</text>
+
+      <!-- Marqueur idéal aquarium -->
+      <line x1="220" y1="80" x2="220" y2="120" stroke="#000" stroke-width="3"/>
+      <text x="220" y="195" class="lbl" text-anchor="middle" font-weight="bold">★ aquarium 6,5</text>
+    </svg>
+  </div>
+
+  <h3>Document — concentrations correspondantes</h3>
+  <table>
+    <thead>
+      <tr><th>pH</th><th>[H⁺] (mol/L)</th><th>Exemple</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>0</td><td>1 = 10⁰</td><td>acide batterie</td></tr>
+      <tr><td>2</td><td>10⁻²</td><td>jus de citron</td></tr>
+      <tr><td>5</td><td>10⁻⁵</td><td>pluie acide, café</td></tr>
+      <tr><td>6,5</td><td>3,2 × 10⁻⁷</td><td>aquarium crevettes</td></tr>
+      <tr><td>7</td><td>10⁻⁷</td><td>eau pure (neutre)</td></tr>
+      <tr><td>9</td><td>10⁻⁹</td><td>bicarbonate</td></tr>
+      <tr><td>14</td><td>10⁻¹⁴</td><td>soude caustique</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §3 (logarithme décimal) et §5 (échelles logarithmiques).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Pourquoi un changement de 1 unité de pH est-il déjà important ?</div>
+  <strong>Problématique :</strong> Pourquoi un changement de 1 unité de pH représente-t-il une variation aussi importante ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer le pH pour [H⁺] = 10⁻⁶ mol/L et [H⁺] = 3,2 × 10⁻⁷ mol/L.</p>
-<ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>pH₁ = −log(10⁻⁶) = <strong>6</strong> (légèrement acide)</p>
-<p>pH₂ = −log(3,2 × 10⁻⁷) = −log(3,2) − log(10⁻⁷) = −0,505 + 7 = <strong>6,5</strong> (idéal)</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le pH pour [H⁺] = 10⁻⁶ mol/L et [H⁺] = 3,2 × 10⁻⁷ mol/L.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>pH₁ = −log(10⁻⁶) = <strong>6</strong> (légèrement acide).</p>
+    <p>pH₂ = −log(3,2 × 10⁻⁷) = −[log(3,2) + log(10⁻⁷)] = −[0,505 − 7] = <strong>6,5</strong> (cible aquarium).</p>
+    <p>Propriété utile : log(a × 10ⁿ) = log(a) + n.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Léa mesure pH = 5,5 dans le bac. Calculer la nouvelle [H⁺]. Comparer à [H⁺] idéale.</p>
-<ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>pH = 5,5 → [H⁺] = 10⁻⁵·⁵ = 10⁻⁶ × 10⁰·⁵ ≈ 3,16 × 10⁻⁶ mol/L.</p>
-<p>Comparé à [H⁺] idéale = 3,2 × 10⁻⁷ : le bac est <strong>10 fois plus acide</strong> que la cible !</p>
-<p>La perception « pH 5,5 vs 6,5 » paraît modeste, mais la concentration d'ions H⁺ a été multipliée par 10. Les crevettes en stress hydroionique.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Inversement, calculer [H⁺] pour pH = 5,5.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>pH = 5,5 → −log([H⁺]) = 5,5 → log([H⁺]) = −5,5.</p>
+    <p>[H⁺] = 10^(−5,5) = 10⁻⁶ × 10^(0,5) = 10⁻⁶ × 3,16 ≈ <strong>3,16 × 10⁻⁶ mol/L</strong>.</p>
+    <p>Le pH inverse l'exponentielle : pour passer du pH à [H⁺], faire 10^(−pH).</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Pourquoi utiliser une échelle logarithmique ? Citer 2 autres échelles logarithmiques utilisées en physique.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Une échelle logarithmique permet d'afficher des grandeurs qui varient sur <strong>plusieurs ordres de grandeur</strong> sur une seule échelle compacte.</p>
-<p>Pour le pH, [H⁺] varie de 10⁰ à 10⁻¹⁴ mol/L → impossible à afficher linéairement (rapport de 10¹⁴). Avec le log : 0 → 14, lisible et mesurable.</p>
-<p>Autres exemples : <strong>échelle des décibels</strong> (acoustique), <strong>magnitude de Richter</strong> (séismes), <strong>magnitude apparente</strong> (étoiles).</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>Léa mesure pH = 5,5 dans le bac (au lieu de 6,5 attendu). Calculer le rapport entre la nouvelle [H⁺] et la [H⁺] idéale. Que conclure ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>[H⁺] mesurée : 3,16 × 10⁻⁶ mol/L.</p>
+    <p>[H⁺] cible : 3,2 × 10⁻⁷ mol/L.</p>
+    <p>Rapport : 3,16 × 10⁻⁶ / 3,2 × 10⁻⁷ ≈ <strong>10</strong>.</p>
+    <p>L'eau du bac est <strong>10 fois plus acide</strong> que la cible. La perception « pH 5,5 vs 6,5 » paraît modeste, mais en réalité, la concentration d'ions H⁺ a été multipliée par 10. Les crevettes sont en stress hydroionique sévère.</p>
+    <p><strong>Action urgente :</strong> ajuster le pH par ajout de bicarbonate ou eau distillée.</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>pH = −log([H⁺]).</strong> Échelle logarithmique de l'acidité.</li>
-<li><strong>1 unité de pH = facteur 10</strong> sur la concentration en H⁺.</li>
-<li><strong>Échelles log :</strong> pour grandeurs s'étendant sur plusieurs ordres de grandeur (pH, dB, Richter).</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Pourquoi utiliser une échelle logarithmique pour le pH plutôt que directement [H⁺] ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Les concentrations [H⁺] varient de <strong>10⁰ = 1 mol/L</strong> (acide concentré) à <strong>10⁻¹⁴ mol/L</strong> (base concentrée), soit un facteur de 10¹⁴ entre les extrêmes.</p>
+    <p>Impossible à représenter linéairement sur une échelle compacte (un graphique avec 10⁰ et 10⁻¹⁴ serait illisible).</p>
+    <p>Le logarithme « compresse » cette plage : pH 0 → pH 14 sur une échelle simple, lisible et mesurable.</p>
+    <p>Avantage supplémentaire : <strong>l'œil humain et l'oreille perçoivent eux-mêmes en log</strong> (Weber-Fechner) — les échelles log sont « naturelles » pour notre cerveau.</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Citer 3 autres échelles logarithmiques utilisées en physique ou en ingénierie.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li><strong>Décibels (dB) :</strong> intensité sonore. dB = 10 × log(I/I₀). 0 dB = seuil d'audition, 130 dB = douleur. +3 dB = intensité × 2.</li>
+      <li><strong>Magnitude de Richter :</strong> énergie d'un séisme. Magnitude 6 = 32 fois plus énergétique que magnitude 5.</li>
+      <li><strong>Magnitude apparente :</strong> luminosité des étoiles (échelle inversée).</li>
+      <li><strong>EC50 / LD50 :</strong> doses létales en pharmaco (échelles log de concentration).</li>
+      <li><strong>Indice ISO photo :</strong> sensibilité (multipliée par 2 à chaque cran).</li>
+    </ul>
+    <p>Toutes ces échelles « écrasent » des plages très étendues pour permettre la mesure et la comparaison.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Pour normaliser le pH du bac de 5,5 à 6,5, Léa veut diviser la [H⁺] par 10. Si le bac contient 100 L d'eau, combien de moles d'ions H⁺ doit-elle « neutraliser » ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Volume : 100 L = 0,1 m³.</p>
+    <p>[H⁺] actuel : 3,16 × 10⁻⁶ mol/L. Cible : 3,2 × 10⁻⁷ mol/L.</p>
+    <p>Différence : 3,16 × 10⁻⁶ − 3,2 × 10⁻⁷ ≈ 2,84 × 10⁻⁶ mol/L à neutraliser.</p>
+    <p>Pour 100 L : 2,84 × 10⁻⁶ × 100 = <strong>2,84 × 10⁻⁴ mol</strong> ≈ 0,000 28 mol d'ions H⁺ à neutraliser.</p>
+    <p>Avec du bicarbonate (NaHCO₃, masse molaire 84 g/mol) : 84 × 0,000 28 ≈ <strong>0,024 g</strong>.</p>
+    <p>Une demi-pincée de bicarbonate suffit ! Mais ajout très progressif pour ne pas choquer les crevettes.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Si la pluie acide a un pH de 4,5, combien de fois est-elle plus acide que l'eau pure (pH 7) ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Différence : pH 7 − 4,5 = 2,5 unités.</p>
+    <p>Rapport [H⁺] : 10^2,5 ≈ <strong>316 fois plus d'ions H⁺</strong>.</p>
+    <p>La pluie acide est donc 316 fois plus acide que l'eau pure. Énorme.</p>
+    <p>Conséquences : altération des forêts, érosion des bâtiments, acidification des lacs (avec mort des poissons).</p>
+    <p>Cause principale : émissions de SO₂ et NOx par les industries et l'automobile (qui forment H₂SO₄ et HNO₃ dans l'atmosphère).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une fiche d'aide pour Léa : suivi du pH du bac à crevettes.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Fiche — Suivi du pH du bac à crevettes Caridina</strong></em></p>
+    <p><em>1. <strong>Cible : pH 6,5</strong> (= [H⁺] = 3,2 × 10⁻⁷ mol/L).</em></p>
+    <p><em>2. Mesurer le pH 1×/jour (sonde ou bandelette).</em></p>
+    <p><em>3. Tolérance : ±0,2 unité (= ratio max ×1,6 sur [H⁺]). Au-delà, action immédiate.</em></p>
+    <p><em>4. Si pH baisse (acidification) : ajouter du <strong>bicarbonate de soude</strong> très progressivement (0,1 g/100 L).</em></p>
+    <p><em>5. Si pH monte : ajouter de l'<strong>eau distillée</strong> ou diluer avec de l'osmose inverse. Toujours par paliers de 0,2 maximum par jour pour ne pas stresser les crevettes.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Le pH des océans est passé de 8,2 (préindustrielle) à 8,1 (actuel) en 200 ans, à cause de l'absorption du CO₂. Calculer l'augmentation relative de [H⁺]. Pourquoi est-ce une catastrophe écologique ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Différence : pH 8,2 → 8,1 = baisse de 0,1 unité.</p>
+    <p>Rapport [H⁺] : 10^0,1 ≈ <strong>1,26</strong>. Soit <strong>+26 %</strong> d'ions H⁺ dans les océans.</p>
+    <p>Conséquences :</p>
+    <ul>
+      <li>Acidification altère la formation des coquilles (calcaire) → mortalité des coquillages, coraux, planctons.</li>
+      <li>Effondrement de toute la chaîne alimentaire marine (50 % de l'oxygène mondial vient du plancton).</li>
+      <li>Disparition possible de 50-90 % des coraux d'ici 2100 (rapports GIEC).</li>
+    </ul>
+    <p>Bien que « petite » en apparence (0,1 unité), c'est l'<strong>une des plus grandes menaces</strong> écologiques actuelles. Les échelles log nous trompent visuellement.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>pH = − log([H⁺]).</strong> Échelle logarithmique de l'acidité.</li>
+    <li><strong>1 unité de pH = facteur 10</strong> sur la concentration en H⁺.</li>
+    <li><strong>Inverse :</strong> [H⁺] = 10^(−pH).</li>
+    <li><strong>Échelles log :</strong> pour grandeurs s'étendant sur plusieurs ordres de grandeur (pH, dB, Richter, étoiles).</li>
+    <li><strong>Méfiance :</strong> petits changements en log = gros changements en valeur réelle. Toujours dé-loguer pour interpréter.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
