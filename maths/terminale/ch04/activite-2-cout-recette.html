@@ -1,76 +1,261 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch04 – Activité 2 – Bénéfice maximal d'une PME – Term Bac Pro</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Activité 2 – Bénéfice maximal d'une PME (polynôme degré 3) – Term Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
-</head><body><div class="c"><a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 2 – Bénéfice maximal d'une production <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
-<p class="sous-titre">Chapitre 4 – Polynômes degré 3 | Terminale Bac Pro | ⏱ 35 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Modéliser un bénéfice par un polynôme degré 3</li>
-<li>Étudier ses variations pour trouver le maximum</li>
-<li>Interpréter dans un contexte économique</li></ul></div>
+<header>
+  <h1>Activité 2 – Bénéfice maximal d'une production : étude d'un polynôme degré 3 <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 4 – Polynômes du 3ème degré et dérivées | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – atelier de meubles</h2>
-<p><em>Mathilde fabrique des chaises en bois. Pour x chaises produites par jour (avec 0 ≤ x ≤ 50) :</em></p>
-<ul>
-<li><strong>Recette R(x)</strong> = 80 x €  (prix de vente unitaire 80 €)</li>
-<li><strong>Coût C(x)</strong> = 0,02 x³ − 0,5 x² + 30 x + 200 € (charges fixes + main d'œuvre + matières)</li>
-</ul>
-<p>Le bénéfice est : <strong>B(x) = R(x) − C(x) = −0,02 x³ + 0,5 x² + 50 x − 200</strong></p></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Modéliser un bénéfice par un polynôme du 3ème degré</li>
+    <li>Calculer la dérivée et trouver le maximum</li>
+    <li>Interpréter dans un contexte économique</li>
+    <li>Comprendre le concept de coût marginal et de rendement décroissant</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – atelier de fabrication de chaises en bois</h2>
+  <p><em>Mathilde, gérante d'un atelier de menuiserie, fabrique des chaises en bois. Elle modélise sa production journalière par les fonctions suivantes (où x est le nombre de chaises produites, 0 ≤ x ≤ 50) :</em></p>
+
+  <div style="background:#fff;padding:12px 16px;border-radius:8px;border:1px solid #cbd5e1;margin:14px 0">
+    <p style="margin:6px 0">📋 <strong>Modèle économique de l'atelier</strong></p>
+    <p style="margin:6px 0">• Recette : <strong>R(x) = 80 × x</strong> € (prix de vente unitaire 80 €)</p>
+    <p style="margin:6px 0">• Coût : <strong>C(x) = 0,02 x³ − 0,5 x² + 30 x + 200</strong> € (charges fixes + main-d'œuvre + matières premières)</p>
+    <p style="margin:6px 0">• Bénéfice : <strong>B(x) = R(x) − C(x) = −0,02 x³ + 0,5 x² + 50 x − 200</strong> €</p>
+  </div>
+
+  <h3>Document — graphique du bénéfice selon la production</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Courbe du bénéfice B(x) en forme de cubique : départ négatif, croissance, maximum à x≈38, puis décroissance.">
+      <defs>
+        <style>
+          .ax{stroke:#1a202c;stroke-width:1.5}
+          .gd{stroke:#cbd5e1;stroke-width:.6}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Bénéfice B(x) = −0,02 x³ + 0,5 x² + 50 x − 200</text>
+
+      <g class="gd">
+        <line x1="60" y1="50" x2="500" y2="50"/>
+        <line x1="60" y1="98" x2="500" y2="98"/>
+        <line x1="60" y1="145" x2="500" y2="145"/>
+        <line x1="60" y1="193" x2="500" y2="193"/>
+        <line x1="60" y1="240" x2="500" y2="240"/>
+      </g>
+      <line class="ax" x1="60" y1="240" x2="510" y2="240"/>
+      <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
+
+      <g class="lbl" text-anchor="end">
+        <text x="55" y="244">−500</text>
+        <text x="55" y="197">0</text>
+        <text x="55" y="149">500</text>
+        <text x="55" y="102">1 000</text>
+        <text x="55" y="54">1 500</text>
+      </g>
+      <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">Bénéfice (€)</text>
+
+      <g class="lbl" text-anchor="middle">
+        <text x="60" y="258">0</text>
+        <text x="148" y="258">10</text>
+        <text x="236" y="258">20</text>
+        <text x="324" y="258">30</text>
+        <text x="395" y="258" font-weight="bold" fill="#dc2626">38</text>
+        <text x="412" y="258">40</text>
+        <text x="500" y="258">50</text>
+      </g>
+      <text class="lblA" x="270" y="275" text-anchor="middle">Nombre de chaises</text>
+
+      <!-- Points (x, B) en pixels : (0, -200) → y=219 ; (10, 330) → y=162 ; (20, 840) → y=113 ; (30, 1210) → y=78 ; (38, 1325) → y=66 ; (40, 1320) → y=66 ; (50, 1050) → y=92 -->
+      <path d="M 60,219 Q 130,200 148,162 Q 200,135 236,113 Q 280,90 324,78 Q 360,68 395,65 Q 430,68 500,92" fill="none" stroke="#0969da" stroke-width="2.5"/>
+
+      <!-- Maximum -->
+      <circle cx="395" cy="65" r="6" fill="#dc2626"/>
+      <text x="395" y="55" class="lbl" fill="#dc2626" font-weight="bold" text-anchor="middle">★ max ≈ 1 325 €</text>
+
+      <!-- Zone non rentable (B<0) -->
+      <line x1="60" y1="193" x2="500" y2="193" stroke="#15803d" stroke-width="1" stroke-dasharray="3 2"/>
+      <text x="495" y="208" class="lbl" fill="#15803d" font-weight="bold" text-anchor="end">B = 0</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §1 (polynôme degré 3) et §3 (étude des variations par la dérivée).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Combien de chaises Mathilde doit-elle produire par jour pour maximiser son bénéfice ?</div>
+  <strong>Problématique :</strong> Combien de chaises Mathilde doit-elle produire par jour pour maximiser son bénéfice ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer B(x) pour x = 10, 20, 30, 40 chaises.</p>
-<ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<table>
-<tr><th>x</th><th>−0,02 x³</th><th>+0,5 x²</th><th>+50 x</th><th>−200</th><th>B(x)</th></tr>
-<tr><td>10</td><td>−20</td><td>50</td><td>500</td><td>−200</td><td>330 €</td></tr>
-<tr><td>20</td><td>−160</td><td>200</td><td>1 000</td><td>−200</td><td>840 €</td></tr>
-<tr><td>30</td><td>−540</td><td>450</td><td>1 500</td><td>−200</td><td>1 210 €</td></tr>
-<tr><td>40</td><td>−1 280</td><td>800</td><td>2 000</td><td>−200</td><td>1 320 €</td></tr>
-<tr><td>50</td><td>−2 500</td><td>1 250</td><td>2 500</td><td>−200</td><td>1 050 €</td></tr>
-</table>
-<p>Le bénéfice augmente puis baisse. Maximum entre x = 40 et x = 50.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer B(x) pour x = 10, 20, 30, 40, 50 chaises.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>x</th><th>−0,02 x³</th><th>+0,5 x²</th><th>+50 x</th><th>−200</th><th>B(x)</th></tr></thead>
+      <tbody>
+        <tr><td>10</td><td>−20</td><td>50</td><td>500</td><td>−200</td><td><strong>330 €</strong></td></tr>
+        <tr><td>20</td><td>−160</td><td>200</td><td>1 000</td><td>−200</td><td><strong>840 €</strong></td></tr>
+        <tr><td>30</td><td>−540</td><td>450</td><td>1 500</td><td>−200</td><td><strong>1 210 €</strong></td></tr>
+        <tr><td>40</td><td>−1 280</td><td>800</td><td>2 000</td><td>−200</td><td><strong>1 320 €</strong></td></tr>
+        <tr><td>50</td><td>−2 500</td><td>1 250</td><td>2 500</td><td>−200</td><td><strong>1 050 €</strong></td></tr>
+      </tbody>
+    </table>
+    <p>Le bénéfice augmente jusqu'à 40 chaises (1 320 €), puis baisse à 50 chaises (1 050 €).</p>
+    <p>Le maximum est entre x = 30 et x = 50, plus précisément autour de 38-40.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Calculer B'(x) (dérivée), puis résoudre B'(x) = 0 pour trouver le maximum exact.</p>
-<ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>B'(x) = −0,06 x² + x + 50</p>
-<p>B'(x) = 0 → 0,06 x² − x − 50 = 0</p>
-<p>Δ = 1 + 4 × 0,06 × 50 = 1 + 12 = 13</p>
-<p>x = (1 ± √13) / (2 × 0,06) = (1 ± 3,606) / 0,12</p>
-<p>x = 38,4 ou x = −21,7 (rejeté car &lt; 0). <strong>Maximum à x ≈ 38 chaises/jour</strong>.</p>
-<p>B(38) = −0,02×54 872 + 0,5×1 444 + 50×38 − 200 = −1 097 + 722 + 1 900 − 200 = <strong>1 325 €</strong></p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">APP</span></h2>
+  <p>Calculer la dérivée B'(x) du bénéfice.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>B(x) = −0,02 x³ + 0,5 x² + 50 x − 200.</p>
+    <p>B'(x) = 3 × (−0,02) x² + 2 × 0,5 × x + 50 = <strong>−0,06 x² + x + 50</strong>.</p>
+    <p>La dérivée d'un polynôme degré 3 est un polynôme degré 2.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Pourquoi le bénéfice baisse-t-il après 38 chaises ? Expliquer économiquement.</p>
-<ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Au-delà de 38 chaises, le coût marginal (coût d'une chaise supplémentaire) dépasse les 80 € de prix de vente. Causes possibles :</p>
-<ul>
-<li>Heures supplémentaires plus chères</li>
-<li>Saturation des machines (perte de productivité)</li>
-<li>Prix unitaires des matières premières qui grimpent (pénurie)</li>
-</ul>
-<p>Conclusion : <strong>il vaut mieux produire moins mais mieux</strong> — l'optimum n'est pas le maximum de production. Recommandation : viser 35-40 chaises/jour.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Résoudre B'(x) = 0 pour trouver le maximum.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>−0,06 x² + x + 50 = 0 → 0,06 x² − x − 50 = 0 (en multipliant par −1).</p>
+    <p>Discriminant : Δ = 1² − 4 × 0,06 × (−50) = 1 + 12 = 13.</p>
+    <p>x = (1 ± √13) / (2 × 0,06) = (1 ± 3,606) / 0,12</p>
+    <p>x₁ = 4,606 / 0,12 ≈ <strong>38,4</strong> ou x₂ = −2,606 / 0,12 ≈ −21,7 (rejeté car &lt; 0).</p>
+    <p><strong>Maximum à x ≈ 38 chaises/jour</strong>.</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Polynômes degré 3 :</strong> permettent de modéliser des coûts à rendement décroissant.</li>
-<li><strong>Optimisation :</strong> max/min trouvé via la dérivée (B'(x) = 0).</li>
-<li><strong>En économie :</strong> l'optimum n'est jamais le maximum brut — on s'arrête où le coût marginal = revenu marginal.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le bénéfice maximal B(38).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>B(38) = −0,02 × 38³ + 0,5 × 38² + 50 × 38 − 200</p>
+    <p>= −0,02 × 54 872 + 0,5 × 1 444 + 1 900 − 200</p>
+    <p>= −1 097,4 + 722 + 1 900 − 200 = <strong>1 324,6 € ≈ 1 325 €/jour</strong>.</p>
+    <p>Soit ~ 24 000 €/mois (sur 18 jours ouvrés). Activité rentable.</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Pourquoi le bénéfice baisse-t-il après 38 chaises ? Expliquer économiquement.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Au-delà de 38 chaises, le <strong>coût marginal</strong> (coût d'une chaise supplémentaire) dépasse les 80 € de prix de vente. Causes possibles :</p>
+    <ul>
+      <li><strong>Heures supplémentaires</strong> plus chères (majoration 25 % à 50 %)</li>
+      <li><strong>Saturation des machines</strong> (perte de productivité, casses)</li>
+      <li><strong>Pénurie de matières premières</strong> (prix unitaires qui grimpent)</li>
+      <li><strong>Fatigue et erreurs</strong> du personnel sous pression</li>
+    </ul>
+    <p>Concept économique : <strong>rendement décroissant</strong>. Au-delà d'un certain point, produire plus coûte plus cher qu'il ne rapporte.</p>
+    <p>Conclusion : <strong>il vaut mieux produire moins mais mieux</strong>. L'optimum n'est pas le maximum de production.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>À combien de chaises la production devient-elle non rentable (B(x) &lt; 0) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour B(x) &lt; 0, on cherche les zéros de B. Calcul (numériquement ou par dichotomie) :</p>
+    <p>B(0) = −200 (négatif)</p>
+    <p>B(5) = −0,02 × 125 + 0,5 × 25 + 250 − 200 = −2,5 + 12,5 + 250 − 200 = 60 (positif).</p>
+    <p>Donc le seuil de rentabilité est entre 0 et 5 chaises (probablement ~ 4).</p>
+    <p>Pour x &gt; 50, hors du domaine d'étude. Voir aussi : B(60) = −0,02 × 216 000 + 0,5 × 3 600 + 3 000 − 200 = −4 320 + 1 800 + 3 000 − 200 = 280 € (positif... mais x &gt; 50 est hors domaine).</p>
+    <p>Dans le domaine 0 ≤ x ≤ 50 : Mathilde est rentable dès 4-5 chaises/jour.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Si Mathilde augmente le prix de vente à 100 € (au lieu de 80 €), comment évolue B(x) ? Et la production optimale ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Nouvelle B(x) = 100 x − C(x) = 100 x − (0,02 x³ − 0,5 x² + 30 x + 200) = −0,02 x³ + 0,5 x² + 70 x − 200.</p>
+    <p>B'(x) = −0,06 x² + x + 70 = 0 → 0,06 x² − x − 70 = 0.</p>
+    <p>Δ = 1 + 16,8 = 17,8 → √Δ ≈ 4,22.</p>
+    <p>x = (1 + 4,22) / 0,12 ≈ <strong>43,5 chaises/jour</strong>.</p>
+    <p>L'optimum monte de 38 à 43-44 chaises. Augmenter le prix de vente <strong>permet de produire plus rentablement</strong>.</p>
+    <p>B_max ≈ 100 × 43,5 − C(43,5) ≈ 4 350 − 2 700 ≈ 1 650 €/jour. Gain de ~ 25 % par rapport au scénario 80 €.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une note pour Mathilde résumant les recommandations de production et les sensibilités au prix.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Note — Optimisation de la production de chaises</strong></em></p>
+    <p><em>Le bénéfice journalier est maximal pour <strong>38 chaises produites</strong> (≈ 1 325 €/jour). Au-delà, les coûts marginaux dépassent le prix de vente → diminution du bénéfice.</em></p>
+    <p><em>Recommandations :</em></p>
+    <ul><em>
+      <li>Cibler 35-40 chaises/jour (zone optimale).</li>
+      <li>Chercher à augmenter le prix de vente (passage à 100 € → optimum à 43, gain +25 %).</li>
+      <li>Étudier la réduction des coûts variables (achats matière en gros, automatisation).</li>
+    </em></ul>
+    <p><em>Refaire le calcul si les coûts évoluent (matières, salaires, énergie).</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>L'économiste utilise la notion de « coût marginal » Cm(x) = C'(x). Calculer Cm(x), Cm(20), Cm(38). Vérifier qu'au point optimal, Cm = prix de vente.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>C(x) = 0,02 x³ − 0,5 x² + 30 x + 200 → C'(x) = <strong>0,06 x² − x + 30</strong>.</p>
+    <p>Cm(20) = 0,06 × 400 − 20 + 30 = 24 − 20 + 30 = <strong>34 €</strong>. La 21ème chaise coûte 34 €, vendue 80 € → marge nette 46 €.</p>
+    <p>Cm(38) = 0,06 × 1 444 − 38 + 30 = 86,64 − 38 + 30 ≈ <strong>78,64 €</strong>. La 39ème chaise coûte ~ 79 €, vendue 80 → marge ≈ 1 €.</p>
+    <p>À l'optimum, <strong>Cm ≈ prix de vente</strong>. C'est la règle économique fondamentale : on s'arrête de produire quand la dernière unité ne rapporte plus rien.</p>
+    <p>Cm(50) = 150 − 50 + 30 = <strong>130 €</strong>. La 51ème chaise coûterait 130 € → vente à 80 → perte 50 €. Confirmé : il ne faut pas dépasser 38.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Polynôme degré 3 :</strong> P(x) = ax³ + bx² + cx + d. Permet de modéliser les coûts à rendement décroissant.</li>
+    <li><strong>Dérivée :</strong> P'(x) = 3ax² + 2bx + c. C'est un polynôme degré 2.</li>
+    <li><strong>Optimisation :</strong> max/min trouvé via P'(x) = 0 (point critique).</li>
+    <li><strong>En économie :</strong> l'optimum n'est pas le max de production. On s'arrête où coût marginal = revenu marginal.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
