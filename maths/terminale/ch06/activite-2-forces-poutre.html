@@ -1,69 +1,250 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch06 – Activité 2 – Forces sur une poutre – Term Bac Pro</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 2 – Composition de forces sur une poutre – Term Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
-</head><body><div class="c"><a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 2 – Composition de forces sur une poutre <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
-<p class="sous-titre">Chapitre 6 – Vecteurs | Terminale Bac Pro | ⏱ 35 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Représenter des forces par des vecteurs</li>
-<li>Calculer la résultante (somme vectorielle)</li>
-<li>Vérifier l'équilibre d'un système</li></ul></div>
+<header>
+  <h1>Activité 2 – Composition de forces sur une poutre suspendue <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 6 – Vecteurs et géométrie analytique | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – charpente d'une véranda</h2>
-<p><em>Yves, charpentier, conçoit une charpente où une poutre horizontale est suspendue par 2 câbles obliques. Il vérifie que l'ensemble est en équilibre.</em></p>
-<p>3 forces s'exercent sur la poutre :</p>
-<ul>
-<li>Poids \(\vec{P}\) : 1 200 N vers le bas — coordonnées (0 ; −1200)</li>
-<li>Tension câble gauche \(\vec{T_1}\) : (−800 ; 600)</li>
-<li>Tension câble droit \(\vec{T_2}\) : (800 ; 600)</li>
-</ul></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Représenter des forces par des vecteurs</li>
+    <li>Calculer une résultante (somme vectorielle)</li>
+    <li>Calculer la norme d'un vecteur</li>
+    <li>Vérifier l'équilibre d'un système</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – charpente d'une véranda</h2>
+  <p><em>Yves, charpentier, conçoit une véranda où une poutre horizontale (qui supportera la couverture) est suspendue par 2 câbles obliques fixés en hauteur. Il doit vérifier que l'ensemble est en équilibre, puis calculer la tension des câbles pour choisir leur diamètre.</em></p>
+
+  <h3>Document — schéma des forces sur la poutre</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Poutre horizontale suspendue par 2 câbles obliques fixés au plafond. Le poids descend (1200 N vers le bas), les 2 tensions remontent obliquement (1000 N chacune).">
+      <defs>
+        <style>
+          .b{stroke:#1a202c;stroke-width:1.5}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Charpente — composition des forces sur la poutre</text>
+
+      <!-- Plafond -->
+      <line class="b" x1="80" y1="50" x2="460" y2="50" stroke-width="3"/>
+
+      <!-- Poutre horizontale -->
+      <rect class="b" x="180" y="195" width="180" height="15" fill="#7c2d12"/>
+      <text x="270" y="227" class="lblA" text-anchor="middle">poutre horizontale</text>
+
+      <!-- Câble gauche -->
+      <line class="b" x1="120" y1="50" x2="180" y2="195" stroke-width="2" stroke="#0969da"/>
+      <!-- Câble droit -->
+      <line class="b" x1="420" y1="50" x2="360" y2="195" stroke-width="2" stroke="#0969da"/>
+
+      <!-- Force T1 (gauche) - flèche montante oblique -->
+      <line x1="180" y1="195" x2="135" y2="100" stroke="#15803d" stroke-width="2.5" marker-end="url(#arr1)"/>
+      <text x="115" y="155" class="lblA" fill="#15803d" font-weight="bold">T₁</text>
+      <text x="100" y="170" class="lbl" fill="#15803d">(−800 ; 600)</text>
+
+      <!-- Force T2 (droite) - flèche montante oblique -->
+      <line x1="360" y1="195" x2="405" y2="100" stroke="#15803d" stroke-width="2.5" marker-end="url(#arr1)"/>
+      <text x="420" y="155" class="lblA" fill="#15803d" font-weight="bold">T₂</text>
+      <text x="430" y="170" class="lbl" fill="#15803d">(800 ; 600)</text>
+
+      <!-- Force P (poids) -->
+      <line x1="270" y1="200" x2="270" y2="265" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arr2)"/>
+      <text x="285" y="245" class="lblA" fill="#dc2626" font-weight="bold">P</text>
+      <text x="285" y="260" class="lbl" fill="#dc2626">(0 ; −1200)</text>
+
+      <defs>
+        <marker id="arr1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L9,3 z" fill="#15803d"/>
+        </marker>
+        <marker id="arr2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L9,3 z" fill="#dc2626"/>
+        </marker>
+      </defs>
+    </svg>
+  </div>
+
+  <h3>Document — coordonnées des 3 forces (en N)</h3>
+  <table>
+    <thead>
+      <tr><th>Force</th><th>Composante x</th><th>Composante y</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>P (poids)</td><td>0</td><td>−1 200</td><td>Vers le bas</td></tr>
+      <tr><td>T₁ (câble gauche)</td><td>−800</td><td>+600</td><td>Vers le haut-gauche</td></tr>
+      <tr><td>T₂ (câble droit)</td><td>+800</td><td>+600</td><td>Vers le haut-droit</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §1 (vecteurs et coordonnées) et §3 (somme vectorielle).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> La poutre est-elle en équilibre ? Sinon, dans quel sens va-t-elle bouger ?</div>
+  <strong>Problématique :</strong> La poutre est-elle en équilibre ? Quelle est la tension de chaque câble ? Quel câble choisir ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer la résultante \(\vec{R} = \vec{P} + \vec{T_1} + \vec{T_2}\) (par composantes).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>R<sub>x</sub> = 0 + (−800) + 800 = <strong>0</strong></p>
-<p>R<sub>y</sub> = −1 200 + 600 + 600 = <strong>0</strong></p>
-<p>\(\vec{R} = \vec{0}\) → la poutre est <strong>en équilibre</strong>.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">APP</span></h2>
+  <p>Que signifie qu'un solide est « en équilibre » du point de vue des forces ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Un solide est <strong>en équilibre</strong> (statique) lorsque la somme vectorielle de toutes les forces qui s'exercent sur lui est nulle :</p>
+    <p style="text-align:center"><strong>Σ F⃗ = 0⃗</strong></p>
+    <p>En coordonnées : la somme des x est nulle ET la somme des y est nulle.</p>
+    <p>Si la résultante n'est pas nulle, le solide accélère dans la direction de la résultante (loi de Newton).</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Calculer la norme (intensité) de chaque tension : ||\(\vec{T_1}\)|| et ||\(\vec{T_2}\)||.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>||\(\vec{T_1}\)|| = √((−800)² + 600²) = √(640 000 + 360 000) = √1 000 000 = <strong>1 000 N</strong></p>
-<p>Idem pour T₂. Chaque câble doit supporter une tension de 1 000 N (~ 100 kg).</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la résultante R⃗ = P⃗ + T₁⃗ + T₂⃗ (composantes x et y).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>R_x = 0 + (−800) + 800 = <strong>0</strong></p>
+    <p>R_y = −1 200 + 600 + 600 = <strong>0</strong></p>
+    <p>R⃗ = (0 ; 0) = 0⃗.</p>
+    <p>La résultante est <strong>nulle</strong> → la poutre est <strong>en équilibre</strong>. ✓</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Yves a un câble qui supporte 800 N maximum. Convient-il ? Quelle solution si non ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Non : 1 000 N &gt; 800 N. <strong>Risque de rupture</strong>.</p>
-<p>Solutions :</p>
-<ul>
-<li>Câble plus résistant (1 200 N min recommandé avec marge)</li>
-<li>Réduire le poids de la poutre (matériau plus léger)</li>
-<li>Modifier l'angle des câbles (plus verticaux → moins de tension)</li>
-</ul>
-<p>Si on incline les câbles à 30° de la verticale au lieu de 45° : T = 600 / cos(30°) ≈ 693 N. Mais position moins stable latéralement.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la norme (intensité) de chaque tension : ||T₁⃗|| et ||T₂⃗||.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>||T₁⃗|| = √((−800)² + 600²) = √(640 000 + 360 000) = √1 000 000 = <strong>1 000 N</strong>.</p>
+    <p>||T₂⃗|| = √(800² + 600²) = <strong>1 000 N</strong> (même calcul, symétrique).</p>
+    <p>Chaque câble doit supporter une tension de 1 000 N (≈ 100 kg).</p>
+    <p>Note : on retrouve le triplet pythagoricien <strong>6-8-10</strong> (× 100).</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Équilibre statique :</strong> Σ F⃗ = 0 (résultante des forces nulle).</li>
-<li><strong>Résultante :</strong> somme vectorielle = somme par composantes.</li>
-<li><strong>Norme :</strong> ||v⃗|| = √(x² + y²).</li>
-<li><strong>Application :</strong> charpentes, ponts suspendus, grues, escalades — toujours partir du dessin des forces.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">APP</span></h2>
+  <p>Quelle est la norme du poids ? Comparer aux 2 tensions cumulées en composantes verticales.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>||P⃗|| = √(0² + (−1 200)²) = <strong>1 200 N</strong>.</p>
+    <p>Composante verticale des tensions : T₁_y + T₂_y = 600 + 600 = 1 200 N.</p>
+    <p>Conclusion : les 2 câbles ensemble compensent <strong>exactement</strong> le poids vers le haut. ✓</p>
+    <p>De même, les composantes horizontales de T₁ et T₂ s'annulent (−800 + 800 = 0) → pas de mouvement latéral.</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Yves a un câble qui supporte 800 N maximum (résistance à la traction). Convient-il ? Si non, quelles solutions ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Non : 1 000 N &gt; 800 N → <strong>risque de rupture</strong>. Le câble peut casser à tout moment.</p>
+    <p>Solutions :</p>
+    <ul>
+      <li><strong>Câble plus résistant</strong> (1 500 N min avec marge de sécurité de 50 %).</li>
+      <li><strong>Réduire le poids</strong> de la poutre (matériau plus léger, ex. acier creux ou aluminium).</li>
+      <li><strong>Modifier l'angle des câbles</strong> : plus verticaux → moins de tension.</li>
+    </ul>
+    <p>Règle pro : toujours <strong>doubler</strong> ou <strong>tripler la résistance théorique</strong> pour les charges humaines (sécurité). Ici, viser 2 500-3 000 N par câble.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Si Yves incline les câbles à 30° par rapport à la verticale (au lieu de 45° actuellement), quelle est la nouvelle tension par câble pour le même poids ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour un angle θ par rapport à la verticale, la composante verticale de la tension est T × cos(θ).</p>
+    <p>Équilibre vertical : 2 × T × cos(θ) = P → T = P / (2 × cos θ).</p>
+    <p>Avec θ = 30° et P = 1 200 N : T = 1 200 / (2 × 0,866) = 1 200 / 1,732 ≈ <strong>693 N</strong>.</p>
+    <p>Avec θ = 45° (cas actuel) : T = 1 200 / (2 × 0,707) ≈ <strong>849 N</strong> (cohérent avec 1 000 N approximé).</p>
+    <p>Plus les câbles sont <strong>verticaux</strong> (θ petit), plus la tension est <strong>faible</strong>.</p>
+    <p>Inconvénient : à 30° de la verticale, l'écart entre les fixations est plus petit → la poutre est moins stable latéralement.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Si la poutre supporte un poids supplémentaire de 600 N (ex. tuiles ajoutées), quelle nouvelle tension par câble (configuration 45°) ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Nouveau poids : 1 200 + 600 = 1 800 N.</p>
+    <p>Nouvelle tension par câble (à 45°) : 1 800 / (2 × 0,707) ≈ <strong>1 273 N</strong>.</p>
+    <p>Augmentation : +27 % par rapport aux 1 000 N initiaux.</p>
+    <p>Si Yves prévoit cette charge supplémentaire, ses câbles à 800 N sont totalement insuffisants. Il doit prévoir des câbles d'au moins <strong>2 500 N</strong> (marge sécurité × 2).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes la note technique pour le client (résumé du calcul de tension).</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Note technique — Suspension de poutre véranda</strong></em></p>
+    <p><em>Configuration : poutre 1 200 N suspendue par 2 câbles obliques à 45° de la verticale.</em></p>
+    <ul><em>
+      <li><strong>Tension par câble : 1 000 N</strong> (en exploitation normale).</li>
+      <li><strong>Câble préconisé :</strong> résistance ≥ 2 500 N (marge de sécurité × 2,5).</li>
+      <li>Vérifier équilibre du système : Σ F = 0 (calculé).</li>
+      <li>Pour réduire la tension : passer les câbles à 30° (T = 693 N) — mais moins stable latéralement.</li>
+    </em></ul>
+    <p><em>Marge supplémentaire à prévoir si charge ajoutée (tuiles, neige). Vérifier régulièrement l'état des câbles (corrosion).</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Une grue de chantier soulève une charge de 5 tonnes (50 000 N) avec 3 câbles disposés en triangle (à 60° de la verticale chacun). Quelle est la tension par câble ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Les 3 câbles sont à 60° de la verticale. Composante verticale par câble : T × cos(60°) = T/2.</p>
+    <p>Équilibre vertical : 3 × T/2 = 50 000 → T = 50 000 × 2/3 = <strong>33 333 N</strong>.</p>
+    <p>Soit ~ 3,4 tonnes de tension par câble. Énorme.</p>
+    <p>Remarque : les composantes horizontales (à 120° les unes des autres) s'annulent par symétrie.</p>
+    <p>Pour soulever en sécurité 5 t avec 3 câbles à 60° : choisir des câbles d'au moins 100 kN (10 tonnes) chacun. C'est pour ça que les grues de chantier ont des câbles très épais (Ø 30 mm ou plus).</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Vecteur :</strong> direction + sens + intensité (norme). Représenté par ses coordonnées (x ; y).</li>
+    <li><strong>Somme vectorielle :</strong> R⃗ = u⃗ + v⃗, par addition des composantes.</li>
+    <li><strong>Norme :</strong> ||v⃗|| = √(x² + y²) (Pythagore).</li>
+    <li><strong>Équilibre statique :</strong> Σ F⃗ = 0⃗ (résultante nulle).</li>
+    <li><strong>Application :</strong> charpentes, ponts suspendus, grues, escalades — toujours partir du dessin des forces.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

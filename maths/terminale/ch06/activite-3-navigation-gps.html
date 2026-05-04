@@ -1,66 +1,275 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch06 – Activité 3 – Navigation GPS et vecteur position – Term Bac Pro</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 3 – Navigation par vecteur position – Term Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
-</head><body><div class="c"><a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 3 – Navigation par vecteur position <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DE CAS</span></h1>
-<p class="sous-titre">Chapitre 6 – Vecteurs | Terminale Bac Pro | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Utiliser les coordonnées de vecteurs en navigation</li>
-<li>Calculer une distance et un cap</li></ul></div>
+<header>
+  <h1>Activité 3 – Navigation par vecteur position : optimiser une tournée <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DE CAS</span></h1>
+  <p class="sous-titre">Chapitre 6 – Vecteurs et géométrie analytique | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – livraison à vélo cargo</h2>
-<p><em>Tom, livreur à vélo cargo, doit relier 3 clients dans le quartier (coordonnées en km dans un repère orthonormé centré sur le point de départ) :</em></p>
-<ul>
-<li>A (3 ; 4) — boulangerie</li>
-<li>B (−2 ; 5) — restaurant</li>
-<li>C (1 ; −3) — bureau</li>
-</ul></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Utiliser les coordonnées de vecteurs en navigation</li>
+    <li>Calculer un vecteur entre 2 points</li>
+    <li>Calculer une distance par la norme</li>
+    <li>Comparer plusieurs tournées pour optimiser</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – livraison à vélo cargo</h2>
+  <p><em>Tom, livreur à vélo cargo dans une ville plate, doit relier 3 clients dans le quartier. Voici leurs positions, en kilomètres par rapport à son point de départ (l'entrepôt) :</em></p>
+
+  <table>
+    <thead>
+      <tr><th>Point</th><th>Coordonnées (km)</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>O</td><td>(0 ; 0)</td><td>Entrepôt (départ et arrivée)</td></tr>
+      <tr><td>A</td><td>(3 ; 4)</td><td>Boulangerie</td></tr>
+      <tr><td>B</td><td>(−2 ; 5)</td><td>Restaurant</td></tr>
+      <tr><td>C</td><td>(1 ; −3)</td><td>Bureau</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document — repère orthonormé</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Repère orthonormé avec les 4 points : O à l'origine, A en (3,4), B en (-2,5), C en (1,-3). Distances et vecteurs visualisés.">
+      <defs>
+        <style>
+          .ax{stroke:#1a202c;stroke-width:1.5}
+          .gd{stroke:#cbd5e1;stroke-width:.6}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Carte des 3 clients (échelle 1 km = 25 px)</text>
+
+      <!-- Origine au centre. 1 km = 25 px. Centre x=270, y=145 -->
+      <g class="gd">
+        <line x1="60" y1="50" x2="500" y2="50"/>
+        <line x1="60" y1="95" x2="500" y2="95"/>
+        <line x1="60" y1="170" x2="500" y2="170"/>
+        <line x1="60" y1="220" x2="500" y2="220"/>
+        <line x1="120" y1="40" x2="120" y2="240"/>
+        <line x1="170" y1="40" x2="170" y2="240"/>
+        <line x1="220" y1="40" x2="220" y2="240"/>
+        <line x1="320" y1="40" x2="320" y2="240"/>
+        <line x1="370" y1="40" x2="370" y2="240"/>
+        <line x1="420" y1="40" x2="420" y2="240"/>
+      </g>
+
+      <!-- Axes principaux -->
+      <line class="ax" x1="60" y1="145" x2="510" y2="145"/>
+      <line class="ax" x1="270" y1="40" x2="270" y2="245"/>
+
+      <text x="510" y="148" class="lbl">x</text>
+      <text x="270" y="35" class="lbl" text-anchor="middle">y</text>
+
+      <!-- O à l'origine -->
+      <circle cx="270" cy="145" r="6" fill="#0969da"/>
+      <text x="263" y="160" class="lblA" text-anchor="end" fill="#0969da">O (0;0)</text>
+
+      <!-- A (3, 4) → x = 270+3*25 = 345, y = 145-4*25 = 45 -->
+      <circle cx="345" cy="45" r="6" fill="#dc2626"/>
+      <text x="350" y="40" class="lblA" fill="#dc2626">A (3;4)</text>
+
+      <!-- B (-2, 5) → x = 220, y = 20. Limit y to 25 -->
+      <circle cx="220" cy="25" r="6" fill="#15803d"/>
+      <text x="215" y="20" class="lblA" text-anchor="end" fill="#15803d">B (−2;5)</text>
+
+      <!-- C (1, -3) → x = 295, y = 220 -->
+      <circle cx="295" cy="220" r="6" fill="#7c3aed"/>
+      <text x="300" y="225" class="lblA" fill="#7c3aed">C (1;−3)</text>
+
+      <!-- Vecteurs OA, OB, OC -->
+      <line x1="270" y1="145" x2="343" y2="47" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr)"/>
+      <line x1="270" y1="145" x2="222" y2="27" stroke="#15803d" stroke-width="1.5" marker-end="url(#arr2)"/>
+      <line x1="270" y1="145" x2="293" y2="218" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr3)"/>
+
+      <defs>
+        <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L9,3 z" fill="#dc2626"/>
+        </marker>
+        <marker id="arr2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L9,3 z" fill="#15803d"/>
+        </marker>
+        <marker id="arr3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L9,3 z" fill="#7c3aed"/>
+        </marker>
+      </defs>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §1 (vecteur entre 2 points), §2 (norme) et §4 (application en repère).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Quel parcours minimise la distance totale ?</div>
+  <strong>Problématique :</strong> Quel parcours O → 3 clients → O minimise la distance totale parcourue par Tom ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer la distance origine-A, origine-B, origine-C.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>OA = √(3² + 4²) = √25 = <strong>5 km</strong></p>
-<p>OB = √(4 + 25) = √29 ≈ <strong>5,4 km</strong></p>
-<p>OC = √(1 + 9) = √10 ≈ <strong>3,2 km</strong></p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la distance entre l'origine O(0 ; 0) et chacun des 3 clients A, B, C.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Distance (norme du vecteur) : ||OM⃗|| = √(x_M² + y_M²).</p>
+    <ul>
+      <li>OA = √(3² + 4²) = √(9 + 16) = √25 = <strong>5 km</strong> (triplet pythagoricien 3-4-5)</li>
+      <li>OB = √((−2)² + 5²) = √(4 + 25) = √29 ≈ <strong>5,4 km</strong></li>
+      <li>OC = √(1² + (−3)²) = √(1 + 9) = √10 ≈ <strong>3,2 km</strong></li>
+    </ul>
+    <p>C est le plus proche, A et B sont à distance similaire.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Calculer le vecteur \(\vec{AB}\) (déplacement de A à B). Sa norme.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>\(\vec{AB}\) = (x_B − x_A ; y_B − y_A) = (−2 − 3 ; 5 − 4) = (−5 ; 1)</p>
-<p>||\(\vec{AB}\)|| = √(25 + 1) = √26 ≈ <strong>5,1 km</strong></p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le vecteur AB⃗ (déplacement de A à B). Quelle est sa norme ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>AB⃗ = (x_B − x_A ; y_B − y_A) = (−2 − 3 ; 5 − 4) = <strong>(−5 ; 1)</strong>.</p>
+    <p>||AB⃗|| = √((−5)² + 1²) = √(25 + 1) = √26 ≈ <strong>5,1 km</strong>.</p>
+    <p>C'est la distance directe entre A et B.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">ANA</span></h2>
-<p>Comparer 2 trajets : (a) Origine → A → B → C → Origine. (b) Origine → C → A → B → Origine. Quel est le plus court ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Distances utiles :</p>
-<ul>
-<li>OA = 5,0 ; OB = 5,4 ; OC = 3,2</li>
-<li>AB = 5,1 ; BC = √(9 + 64) = √73 ≈ 8,5 ; AC = √(4 + 49) = √53 ≈ 7,3</li>
-</ul>
-<p>Trajet (a) : 5,0 + 5,1 + 8,5 + 3,2 = <strong>21,8 km</strong></p>
-<p>Trajet (b) : 3,2 + 7,3 + 5,1 + 5,4 = <strong>21,0 km</strong></p>
-<p>Le trajet (b) est légèrement plus court (~ 4 % d'économie). Sur 100 livraisons/mois, ~ 80 km économisés.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer également les distances AC, BC.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>AC⃗ = (1 − 3 ; −3 − 4) = (−2 ; −7) → ||AC⃗|| = √(4 + 49) = √53 ≈ <strong>7,3 km</strong>.</p>
+    <p>BC⃗ = (1 − (−2) ; −3 − 5) = (3 ; −8) → ||BC⃗|| = √(9 + 64) = √73 ≈ <strong>8,5 km</strong>.</p>
+    <p>BC est la plus grande distance entre 2 clients.</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Vecteur entre 2 points :</strong> \(\vec{AB}\) = (x_B − x_A ; y_B − y_A).</li>
-<li><strong>Norme :</strong> distance = √(Δx² + Δy²) (Pythagore).</li>
-<li><strong>Optimisation de trajet :</strong> problème du voyageur de commerce. Tester plusieurs ordres pour trouver le plus court.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Comparer 2 trajets pour la tournée (départ et retour à O) :</p>
+  <ol type="a">
+    <li>O → A → B → C → O</li>
+    <li>O → C → A → B → O</li>
+  </ol>
+  <p>Quel est le plus court ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Récapitulatif : OA = 5,0 ; OB = 5,4 ; OC = 3,2 ; AB = 5,1 ; AC = 7,3 ; BC = 8,5.</p>
+    <p>Trajet (a) : OA + AB + BC + CO = 5,0 + 5,1 + 8,5 + 3,2 = <strong>21,8 km</strong>.</p>
+    <p>Trajet (b) : OC + CA + AB + BO = 3,2 + 7,3 + 5,1 + 5,4 = <strong>21,0 km</strong>.</p>
+    <p>Le trajet (b) est <strong>plus court de 0,8 km</strong>. Économie de ~ 4 %.</p>
+    <p>Sur 100 tournées par mois (≈ 1 par jour ouvré), économie ~ 80 km/mois. Significatif pour le temps de travail.</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Calculer un 3ème trajet : O → B → A → C → O. Le comparer aux 2 précédents.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Trajet (c) : OB + BA + AC + CO = 5,4 + 5,1 + 7,3 + 3,2 = <strong>21,0 km</strong>.</p>
+    <p>Identique au trajet (b). C'est en fait l'ordre <strong>inverse</strong> de (b) : O → C → A → B → O ↔ O → B → A → C → O.</p>
+    <p>Pour 3 points autour de O, il y a 6 ordres possibles, mais 3 sont les inverses des autres → seulement 3 distances différentes possibles.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Avec un vélo à 15 km/h, combien de temps prend la tournée optimale (21 km) ? Et avec un véhicule à 30 km/h ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Temps = distance / vitesse.</p>
+    <p>Vélo (15 km/h) : 21 / 15 = <strong>1 h 24 min</strong>.</p>
+    <p>Véhicule (30 km/h en ville) : 21 / 30 = <strong>42 min</strong>.</p>
+    <p>Temps réel à prévoir : ajouter 5-10 min par client (livraison, paiement) → vélo ~ 1h45-2h, véhicule ~ 1h-1h15.</p>
+    <p>Avec 5-6 livraisons/jour : vélo cargo réaliste pour les courtes distances urbaines.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Tom doit livrer un 4ème client D(−4 ; −2). Recalculer toutes les distances depuis D et chercher le meilleur trajet à 4 escales.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Distances depuis D :</p>
+    <ul>
+      <li>OD = √(16 + 4) = √20 ≈ 4,5</li>
+      <li>DA = √((−4−3)² + (−2−4)²) = √(49 + 36) = √85 ≈ 9,2</li>
+      <li>DB = √((−4+2)² + (−2−5)²) = √(4 + 49) = √53 ≈ 7,3</li>
+      <li>DC = √((−4−1)² + (−2+3)²) = √(25 + 1) = √26 ≈ 5,1</li>
+    </ul>
+    <p>Avec 4 points (24 ordres possibles, 12 distincts), trouver l'optimum nécessite des essais. Solution intuitive : ordre par direction.</p>
+    <p>Trajet O → C → D → B → A → O : 3,2 + 5,1 + 7,3 + 5,1 + 5,0 = <strong>25,7 km</strong>.</p>
+    <p>Trajet O → D → C → A → B → O : 4,5 + 5,1 + 7,3 + 5,1 + 5,4 = 27,4 km. Moins bon.</p>
+    <p>Le 1er ordre paraît meilleur. À tester avec un algorithme dédié pour confirmer.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une procédure pour Tom : comment optimiser sa tournée chaque matin ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Procédure — Optimisation de tournée à vélo cargo</strong></em></p>
+    <p><em>1. Lister les coordonnées des clients dans un repère centré sur l'entrepôt.</em></p>
+    <p><em>2. Calculer toutes les distances entre paires de points (formule √((Δx)² + (Δy)²)) → tableau matriciel.</em></p>
+    <p><em>3. Tracer un schéma rapide. Tester plusieurs ordres en partant intuitivement par les plus proches ou en suivant un sens logique (horloge).</em></p>
+    <p><em>4. Pour 3-4 clients : 6-12 ordres possibles, calculer chaque trajet manuellement.</em></p>
+    <p><em>5. Pour 5+ clients : utiliser une appli routière (Google Maps « optimiser », Circuit) qui résout automatiquement le problème du voyageur de commerce.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Le problème du voyageur de commerce (TSP) : pour n clients, on a (n−1)!/2 trajets possibles. Pour n = 10, calculer ce nombre. Pour n = 20 ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>n = 10 : 9! / 2 = 362 880 / 2 = <strong>181 440 trajets différents</strong>.</p>
+    <p>n = 20 : 19! / 2 = 121 645 100 408 832 000 / 2 ≈ 6 × 10¹⁶. <strong>60 millions de milliards de trajets</strong>.</p>
+    <p>Impossible à tester un par un, même avec un super-ordinateur.</p>
+    <p>Le TSP est l'un des problèmes les plus étudiés en algorithmique. <strong>Pas de solution exacte rapide</strong> connue (problème NP-hard).</p>
+    <p>Solutions pratiques : algorithmes heuristiques (« plus proche voisin », « 2-opt », « algorithmes génétiques ») qui donnent une <strong>approximation</strong> proche de l'optimum en quelques secondes.</p>
+    <p>Applications réelles : UPS, Amazon, La Poste utilisent des logiciels TSP pour optimiser leurs millions de tournées chaque jour. Économies massives en carburant.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Vecteur entre 2 points :</strong> AB⃗ = (x_B − x_A ; y_B − y_A).</li>
+    <li><strong>Norme (distance) :</strong> ||AB⃗|| = √((x_B − x_A)² + (y_B − y_A)²).</li>
+    <li><strong>Optimisation de tournée :</strong> tester plusieurs ordres, choisir le plus court.</li>
+    <li><strong>Problème du voyageur de commerce (TSP) :</strong> NP-hard. Approximations heuristiques pour les grandes instances.</li>
+    <li><strong>Applications :</strong> logistique, livraison, transport public, drones.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

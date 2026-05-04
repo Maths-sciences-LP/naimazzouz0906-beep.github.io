@@ -1,65 +1,255 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch06 – Activité 4 – Avion et vent (composition de mouvements) – Term Bac Pro</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 4 – Avion et vent (composition de vecteurs vitesse) – Term Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
-</head><body><div class="c"><a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 4 – Avion et vent : composition de vecteurs vitesse <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DE CAS</span></h1>
-<p class="sous-titre">Chapitre 6 – Vecteurs | Terminale Bac Pro | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Composer des vecteurs vitesse</li>
-<li>Calculer la vitesse réelle (vitesse-sol)</li>
-<li>Comprendre la dérive due au vent</li></ul></div>
+<header>
+  <h1>Activité 4 – Avion et vent : composition de vecteurs vitesse <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DE CAS</span></h1>
+  <p class="sous-titre">Chapitre 6 – Vecteurs et géométrie analytique | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – avion qui vole vers le Nord avec vent latéral</h2>
-<p><em>Un petit avion vole avec une vitesse propre de 200 km/h cap au Nord. Un vent souffle d'Ouest à 50 km/h.</em></p>
-<p>Vecteurs (axe x = Est, axe y = Nord) :</p>
-<ul>
-<li>Vitesse propre de l'avion : \(\vec{v_a}\) = (0 ; 200)</li>
-<li>Vitesse du vent : \(\vec{v_v}\) = (50 ; 0) (vers l'Est, car vient d'Ouest)</li>
-</ul>
-<p>Vitesse réelle (par rapport au sol) : \(\vec{v} = \vec{v_a} + \vec{v_v}\)</p></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Composer des vecteurs vitesse</li>
+    <li>Calculer la vitesse réelle (vitesse-sol)</li>
+    <li>Comprendre la dérive due au vent</li>
+    <li>Calculer l'angle de correction nécessaire</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – avion qui vole avec vent latéral</h2>
+  <p><em>Un petit avion d'aérodrome vole avec une vitesse propre de 200 km/h cap au Nord (vitesse par rapport à l'air). Un vent souffle d'Ouest à 50 km/h. La trajectoire réelle de l'avion par rapport au sol n'est pas exactement vers le Nord.</em></p>
+
+  <h3>Document — vecteurs vitesse en jeu</h3>
+  <table>
+    <thead>
+      <tr><th>Vecteur</th><th>Composantes (km/h)</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>v_a⃗ (vitesse propre avion)</td><td>(0 ; 200)</td><td>Cap Nord, intensité 200 km/h</td></tr>
+      <tr><td>v_v⃗ (vent)</td><td>(50 ; 0)</td><td>Vers l'Est (vent venant d'Ouest)</td></tr>
+      <tr><td>v⃗ = v_a⃗ + v_v⃗ (vitesse-sol)</td><td>(50 ; 200)</td><td>Composition</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document — schéma vectoriel</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Composition de 2 vecteurs : vitesse avion (0,200) cap Nord et vent (50,0) vers Est. Vitesse résultante (50,200) déviée de 14° vers l'Est.">
+      <defs>
+        <style>
+          .b{stroke:#1a202c;stroke-width:1.5}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Composition des vitesses (avion + vent)</text>
+
+      <!-- Repère : x = Est, y = Nord. Origine en (180, 240). 1 km/h = 1 px -->
+      <!-- Axes -->
+      <line class="b" x1="100" y1="240" x2="450" y2="240"/>
+      <line class="b" x1="180" y1="270" x2="180" y2="40"/>
+      <text x="455" y="245" class="lbl" font-weight="bold">E</text>
+      <text x="180" y="35" class="lbl" font-weight="bold" text-anchor="middle">N</text>
+      <text x="100" y="245" class="lbl" font-weight="bold">O</text>
+      <text x="180" y="270" class="lbl" font-weight="bold" text-anchor="middle">S</text>
+
+      <!-- Avion vitesse propre (0, 200) → de (180, 240) à (180, 40) -->
+      <line x1="180" y1="240" x2="180" y2="60" stroke="#0969da" stroke-width="3" marker-end="url(#arr)"/>
+      <text x="170" y="148" class="lblA" fill="#0969da" font-weight="bold" text-anchor="end">v_a (avion)</text>
+      <text x="170" y="163" class="lbl" fill="#0969da" text-anchor="end">200 km/h</text>
+
+      <!-- Vent (50, 0) → de (180, 240) à (230, 240) -->
+      <line x1="180" y1="240" x2="230" y2="240" stroke="#dc2626" stroke-width="3" marker-end="url(#arr2)"/>
+      <text x="205" y="258" class="lblA" fill="#dc2626" font-weight="bold" text-anchor="middle">v_v</text>
+      <text x="205" y="270" class="lbl" fill="#dc2626" text-anchor="middle">50 km/h</text>
+
+      <!-- Vitesse résultante (50, 200) → de (180, 240) à (230, 60) -->
+      <line x1="180" y1="240" x2="230" y2="60" stroke="#15803d" stroke-width="3" marker-end="url(#arr3)"/>
+      <text x="245" y="148" class="lblA" fill="#15803d" font-weight="bold">v_réelle</text>
+      <text x="245" y="163" class="lbl" fill="#15803d">≈ 206 km/h</text>
+
+      <!-- Parallélogramme (en pointillés) -->
+      <line class="b" x1="180" y1="60" x2="230" y2="60" stroke-dasharray="3 2" stroke-width="1"/>
+      <line class="b" x1="230" y1="240" x2="230" y2="60" stroke-dasharray="3 2" stroke-width="1"/>
+
+      <!-- Angle de dérive 14° -->
+      <path d="M 180,140 A 100,100 0 0,0 192,143" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+      <text x="200" y="135" class="lbl" fill="#7c3aed" font-weight="bold">α ≈ 14°</text>
+
+      <defs>
+        <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L9,3 z" fill="#0969da"/>
+        </marker>
+        <marker id="arr2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L9,3 z" fill="#dc2626"/>
+        </marker>
+        <marker id="arr3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L9,3 z" fill="#15803d"/>
+        </marker>
+      </defs>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §3 (somme de vecteurs) et §4 (norme et angle d'un vecteur).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Quelle est la vitesse réelle de l'avion par rapport au sol et son cap effectif ?</div>
+  <strong>Problématique :</strong> Quelle est la vitesse réelle de l'avion par rapport au sol et son cap effectif (avec dérive due au vent) ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer le vecteur vitesse réelle \(\vec{v}\) et sa norme.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>\(\vec{v}\) = (0 + 50 ; 200 + 0) = <strong>(50 ; 200)</strong></p>
-<p>||\(\vec{v}\)|| = √(50² + 200²) = √(2 500 + 40 000) = √42 500 ≈ <strong>206 km/h</strong></p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le vecteur vitesse-sol v⃗ = v_a⃗ + v_v⃗.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>v⃗ = (0 + 50 ; 200 + 0) = <strong>(50 ; 200)</strong>.</p>
+    <p>L'avion a maintenant une composante Est (50) en plus de sa composante Nord (200).</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Calculer l'angle de dérive de l'avion par rapport au Nord (utiliser tan).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>tan(α) = composante Est / composante Nord = 50 / 200 = 0,25</p>
-<p>α = arctan(0,25) ≈ <strong>14°</strong> vers l'Est.</p>
-<p>L'avion dérive de 14° vers l'Est par rapport à son cap. Sur 100 km parcourus, ≈ 25 km vers l'Est.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la norme ||v⃗|| (vitesse réelle par rapport au sol).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>||v⃗|| = √(50² + 200²) = √(2 500 + 40 000) = √42 500 ≈ <strong>206 km/h</strong>.</p>
+    <p>L'avion va en réalité un peu <strong>plus vite</strong> que sa vitesse propre (200 km/h), à cause de la composante du vent qui s'ajoute.</p>
+    <p>Mais cette vitesse n'est <strong>pas dans le bon sens</strong> : elle est inclinée vers l'Est.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Le pilote veut atteindre une destination plein Nord. Quelle correction doit-il faire ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Pour aller plein Nord par rapport au sol malgré le vent d'Ouest, le pilote doit <strong>incliner son cap vers l'Ouest</strong>. Calcul :</p>
-<p>Composante Est de l'avion : −50 km/h (pour annuler le vent). Donc \(\vec{v_a}\) = (−50 ; v_y) avec ||\(\vec{v_a}\)|| = 200.</p>
-<p>v_y = √(200² − 50²) = √37 500 ≈ 193,6 km/h</p>
-<p>Cap : tan(α) = 50/193,6 → α ≈ <strong>14,5° vers l'Ouest</strong></p>
-<p>Vitesse-sol résultante : 193,6 km/h. Le pilote « gaspille » 6,4 km/h pour compenser le vent.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer l'angle de dérive α de l'avion par rapport au Nord (utiliser tan).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>tan(α) = composante Est / composante Nord = 50 / 200 = 0,25.</p>
+    <p>α = arctan(0,25) ≈ <strong>14°</strong> vers l'Est.</p>
+    <p>L'avion dérive de 14° vers l'Est par rapport à son cap. Sur 100 km parcourus, il s'écarte de ~ 25 km vers l'Est de sa cible initiale.</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Composition de vitesses :</strong> \(\vec{v_{réelle}} = \vec{v_{propre}} + \vec{v_{vent/courant}}\).</li>
-<li><strong>Avion en vent latéral :</strong> doit incliner son cap pour compenser, perd un peu de vitesse-sol.</li>
-<li><strong>Application identique :</strong> bateaux en courant, nageurs en rivière.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Le pilote veut atteindre une destination plein Nord. Quelle correction de cap doit-il faire ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour que la vitesse résultante soit plein Nord (composante Est = 0), le pilote doit <strong>incliner son cap vers l'Ouest</strong>.</p>
+    <p>Soit v_a⃗ = (−v_x ; v_y) avec ||v_a⃗|| = 200 km/h. Pour que v⃗ soit plein Nord :</p>
+    <p>v_x + 50 = 0 → v_x = −50 (vers l'Ouest).</p>
+    <p>v_y = √(200² − 50²) = √37 500 ≈ <strong>193,6 km/h</strong>.</p>
+    <p>Cap : tan(α) = 50/193,6 → α = arctan(0,258) ≈ <strong>14,5° vers l'Ouest du Nord</strong>.</p>
+    <p>Vitesse-sol résultante (plein Nord) : 193,6 km/h.</p>
+    <p>Le pilote « gaspille » 200 − 193,6 = 6,4 km/h pour compenser le vent. Inévitable.</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Si l'avion va à 200 km/h et le vent est dans la même direction (vent arrière), quelle est sa vitesse-sol ? Et si le vent est de face ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Vent arrière (50 km/h cap Nord) :</strong> v_a + v_v = (0 ; 200) + (0 ; 50) = (0 ; 250). Vitesse-sol = <strong>250 km/h</strong>. Plus vite !</p>
+    <p><strong>Vent de face (50 km/h vers le Sud) :</strong> v_v⃗ = (0 ; −50). v⃗ = (0 ; 150). Vitesse-sol = <strong>150 km/h</strong>. Plus lent.</p>
+    <p>Application aviation : les vols Paris-New York (vent contraire) durent ~ 8h, alors que New York-Paris (vent arrière) ne dure que 7h. Différence : ~ 1h grâce au jet stream (~ 200-300 km/h à 10 000 m).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Pour 1 heure de vol avec correction (situation question 4), de combien de km Tom va-t-il vers le Nord ? Vers l'Ouest ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Vitesse-sol corrigée : v⃗ = (0 ; 193,6) — plein Nord.</p>
+    <p>Distance parcourue en 1 h :</p>
+    <ul>
+      <li>Vers le Nord : 193,6 × 1 = <strong>193,6 km</strong>.</li>
+      <li>Vers l'Est ou l'Ouest : <strong>0 km</strong> (compensation du vent par le cap incliné).</li>
+    </ul>
+    <p>Position après 1 h : (0 ; 193,6). Atteinte de la cible si elle était à 193,6 km plein Nord.</p>
+    <p>Sans correction, Tom serait à (50 ; 200) → trajectoire à 14° vers l'Est, manque la cible.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">VAL</span></h2>
+  <p>Comment Tom utilise-t-il ce calcul en navigation aérienne réelle ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>En aviation, on utilise la <strong>« règle du triangle des vents »</strong>, fondée exactement sur ce calcul vectoriel.</p>
+    <p>Avant chaque vol, le pilote :</p>
+    <ul>
+      <li>Consulte la <strong>carte météo en altitude</strong> (force et direction du vent).</li>
+      <li>Calcule (calculatrice E6B ou app GPS) le <strong>cap à tenir</strong> et la <strong>vitesse-sol</strong> attendue.</li>
+      <li>Estime le <strong>temps de vol</strong> et le <strong>carburant nécessaire</strong>.</li>
+    </ul>
+    <p>Sans ce calcul, on dérive et on rate sa destination ! Tous les pilotes apprennent ça en 1ère heure.</p>
+    <p>Application identique pour les <strong>marins, nageurs en rivière, voiliers</strong> qui dérivent à cause des courants.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes la procédure du pilote pour préparer un vol avec vent latéral.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Procédure — Préparation d'un vol avec vent latéral</strong></em></p>
+    <p><em>1. Consulter la <strong>météo aéronautique</strong> (METAR, TAF) : direction et force du vent à l'altitude prévue.</em></p>
+    <p><em>2. Tracer le <strong>cap géographique</strong> entre le départ et la destination (boussole, carte aéronautique).</em></p>
+    <p><em>3. Décomposer le vent en composante <strong>longitudinale</strong> (vent arrière/face) et <strong>latérale</strong>.</em></p>
+    <p><em>4. Calculer le <strong>cap à tenir</strong> : incliner vers le côté d'où vient le vent (compensation). Utiliser le triangle des vents.</em></p>
+    <p><em>5. Estimer la <strong>vitesse-sol et le temps de vol</strong> ; ajuster le plan de vol et le carburant en conséquence.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Une nageuse veut traverser une rivière de 80 m de large, perpendiculairement, en nageant à 1 m/s. Le courant l'entraîne à 0,5 m/s parallèlement à la rive. Combien de temps met-elle ? Et où arrive-t-elle ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>v_nageuse⃗ = (0 ; 1) m/s (perpendiculaire au courant). v_courant⃗ = (0,5 ; 0).</p>
+    <p>v⃗ = (0,5 ; 1). ||v⃗|| = √(0,25 + 1) = √1,25 ≈ 1,12 m/s.</p>
+    <p>Temps de traversée (déterminé par la composante perpendiculaire 1 m/s) : t = 80 / 1 = <strong>80 secondes</strong>.</p>
+    <p>Distance parallèle parcourue (entraînement par le courant) : 0,5 × 80 = <strong>40 m</strong>.</p>
+    <p>La nageuse arrive 40 m en aval de son point cible. Pour atterrir face à elle, elle devrait nager légèrement contre le courant (cap incliné).</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Composition de vitesses :</strong> v_réelle⃗ = v_propre⃗ + v_vent/courant⃗.</li>
+    <li><strong>Avion en vent latéral :</strong> doit incliner son cap vers la source du vent pour compenser. Perd un peu de vitesse-sol.</li>
+    <li><strong>Vent arrière / face :</strong> ajoute / soustrait à la vitesse propre.</li>
+    <li><strong>Application identique :</strong> bateaux en courant, nageurs en rivière, drones par vent.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
