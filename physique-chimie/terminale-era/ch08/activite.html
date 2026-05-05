@@ -7,15 +7,17 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
 </head>
 <body>
 <div class="c">
 <a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE ERA-MA (Grpt 3)</a>
 
 <header>
-  <h1>Activite – Isolation acoustique entre l'atelier et le bureau</h1>
-  <p class="sous-titre">Chapitre 8 – Attenuer une onde sonore | Terminale Bac Pro ERA-MA (Grpt 3) | Physique – Signaux | &#9201; 35 min</p>
+  <h1>Activité – Isolation acoustique entre l'atelier et le bureau</h1>
+  <p class="sous-titre">Chapitre 8 – Atténuer une onde sonore | Terminale Bac Pro ERA-MA (Grpt 3) | Physique – Signaux | &#9201; 35 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
 </header>
 <button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 <div class="objectifs">
@@ -74,8 +76,40 @@
     <li>L'indice d'affaiblissement R mesure la reduction du niveau sonore a travers une paroi : \(R = L_i - L_t\) (en dB).</li>
     <li>Le coefficient de transmission \(\tau\) est le rapport de la pression transmise sur la pression incidente : \(\tau = \dfrac{p_{\text{transmise}}}{p_{\text{incidente}}}\).</li>
     <li>Relation entre R et \(\tau\) : \(R = -20 \times \log(\tau)\).</li>
-    <li>Quelques reperes : \(\tau = 0{,}1 \Rightarrow R = 20\) dB &nbsp;|&nbsp; \(\tau = 0{,}01 \Rightarrow R = 40\) dB &nbsp;|&nbsp; \(\tau = 0{,}001 \Rightarrow R = 60\) dB.</li>
+    <li>Quelques repères : \(\tau = 0{,}1 \Rightarrow R = 20\) dB &nbsp;|&nbsp; \(\tau = 0{,}01 \Rightarrow R = 40\) dB &nbsp;|&nbsp; \(\tau = 0{,}001 \Rightarrow R = 60\) dB.</li>
   </ul>
+
+  <h3>Document 4 – Principe de la double paroi désolidarisée (schéma)</h3>
+  <div class="svg-wrap">
+    <svg viewBox="0 0 540 220" xmlns="http://www.w3.org/2000/svg" style="max-width:540px;width:100%;height:auto">
+      <text x="60" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">Atelier</text>
+      <text x="60" y="38" text-anchor="middle" font-size="11" fill="#dc2626">L_i = 95 dB</text>
+
+      <rect x="180" y="40" width="20" height="140" fill="#cbd5e1" stroke="#475569"/>
+      <rect x="200" y="40" width="80" height="140" fill="#fef3c7" stroke="#f59e0b" stroke-dasharray="3,3"/>
+      <rect x="280" y="40" width="20" height="140" fill="#cbd5e1" stroke="#475569"/>
+
+      <text x="190" y="200" text-anchor="middle" font-size="10" fill="#475569">BA13</text>
+      <text x="240" y="200" text-anchor="middle" font-size="10" fill="#92400e">vide + laine</text>
+      <text x="290" y="200" text-anchor="middle" font-size="10" fill="#475569">BA13</text>
+
+      <path d="M 30 80 Q 100 65 175 80" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#a)"/>
+      <path d="M 30 110 Q 100 110 175 110" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#a)"/>
+      <path d="M 30 140 Q 100 155 175 140" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#a)"/>
+
+      <path d="M 305 110 Q 380 110 455 110" stroke="#16a34a" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#b)"/>
+
+      <defs>
+        <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#dc2626"/></marker>
+        <marker id="b" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#16a34a"/></marker>
+      </defs>
+
+      <text x="490" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">Bureau</text>
+      <text x="490" y="38" text-anchor="middle" font-size="11" fill="#16a34a">L_t ≈ 42 dB</text>
+      <text x="240" y="60" text-anchor="middle" font-size="10" fill="#92400e">masse–ressort–masse</text>
+    </svg>
+    <p style="font-size:.85em;color:#64748b;margin:6px 0 0">La double paroi désolidarisée : la laine minérale joue le rôle de ressort, les deux plaques jouent le rôle de masses. Bien plus efficace qu'une paroi simple de même masse totale.</p>
+  </div>
 </div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
@@ -89,6 +123,7 @@
   <p>a) D'apres le document 1, quel est le niveau sonore dans l'atelier lorsque la scie fonctionne ?</p>
   <p>b) Quel est le niveau sonore mesure dans le bureau avec la cloison actuelle ?</p>
   <p>c) Ce niveau est-il acceptable pour un bureau ? Justifier a l'aide de la norme.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> Le niveau sonore dans l'atelier est de <strong>95 dB</strong>.</p>
@@ -101,6 +136,7 @@
   <h2>Question 2 <span class="badge-yellow">REA</span></h2>
   <p>Calculer l'indice d'affaiblissement R de la cloison actuelle (solution A).</p>
   <p>Donnees : \(L_i = 95\) dB (atelier) et \(L_t = 62\) dB (bureau).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>\[R = L_i - L_t = 95 - 62 = \mathbf{33 \text{ dB}}\]</p>
@@ -112,6 +148,7 @@
   <h2>Question 3 <span class="badge-blue">ANA</span></h2>
   <p>Pour atteindre le seuil de confort de 45 dB dans le bureau, calculer l'indice d'affaiblissement R <strong>minimal</strong> necessaire.</p>
   <p>Donnees : \(L_i = 95\) dB, \(L_t \le 45\) dB.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>\[R_{\min} = L_i - L_{t,\max} = 95 - 45 = \mathbf{50 \text{ dB}}\]</p>
@@ -124,6 +161,7 @@
   <p>D'apres le document 2, identifier les solutions dont le R moyen est superieur ou egal a 50 dB.</p>
   <p>a) Quelles solutions respectent l'objectif ?</p>
   <p>b) La solution B (placo + laine minerale, R = 42 dB) est-elle suffisante ? Calculer le niveau sonore qui passerait dans le bureau.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> Les solutions dont R ≥ 50 dB sont :<br>
@@ -138,6 +176,7 @@
   <h2>Question 5 <span class="badge-yellow">REA</span></h2>
   <p>Pour la solution C (double cloison, R = 53 dB), calculer le coefficient de transmission \(\tau\).</p>
   <p>Utiliser la formule : \(R = -20 \times \log(\tau)\), donc \(\log(\tau) = \dfrac{-R}{20}\).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>\[\log(\tau) = \frac{-53}{20} = -2{,}65\]</p>
@@ -151,6 +190,7 @@
   <p>Observer les masses surfaciques et les R moyens des solutions A a E dans le document 2.</p>
   <p>a) Comment evolue R lorsque la masse surfacique augmente ? Formuler une regle generale.</p>
   <p>b) La solution D (beton 360 kg/m&sup2;, R = 52 dB) est 9 fois plus lourde que la solution C (40 kg/m&sup2;, R = 53 dB), pourtant C isole mieux. Pourquoi ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> En general, R augmente avec la masse surfacique. C'est la <strong>loi de masse</strong> : plus une paroi est lourde, mieux elle isole du bruit.</p>
@@ -163,6 +203,7 @@
   <p>D'apres le document 2, on remarque que R varie selon la frequence. Pour la solution B (placo + laine), R = 38 dB a 500 Hz mais R = 48 dB a 2 000 Hz.</p>
   <p>a) Cette paroi isole-t-elle mieux les sons graves (basses frequences) ou les sons aigus (hautes frequences) ?</p>
   <p>b) La scie a ruban produit surtout des sons a 1 000 Hz. Quel est le R de la solution C a cette frequence ? Le bureau sera-t-il conforme a la norme ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> La paroi isole <strong>mieux les sons aigus</strong> (hautes frequences) : R = 48 dB a 2 000 Hz contre R = 38 dB a 500 Hz. Les sons graves sont plus difficiles a bloquer.</p>
@@ -186,6 +227,7 @@
       <tr><td>Facilite d'installation</td><td>......</td><td>......</td></tr>
     </tbody>
   </table>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <table>
@@ -210,6 +252,7 @@
   <p>a) Calculer \(\tau\) pour la solution A (R = 33 dB).</p>
   <p>b) Rappeler \(\tau\) pour la solution C (calcule a la question 5).</p>
   <p>c) Combien de fois la solution C laisse-t-elle passer moins de pression sonore que la solution A ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> Solution A : \(\log(\tau) = \dfrac{-33}{20} = -1{,}65\), donc \(\tau_A = 10^{-1{,}65} \approx \mathbf{0{,}022}\) (2,2 % de pression transmise).</p>
@@ -226,9 +269,22 @@
     <li>La solution retenue et pourquoi</li>
     <li>Le niveau sonore attendu apres travaux</li>
   </ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>Le niveau sonore dans le bureau atteint actuellement 62 dB lorsque la scie fonctionne, alors que la norme impose un maximum de 45 dB pour le confort au travail. La cloison actuelle en placo simple n'offre qu'un affaiblissement de 33 dB, ce qui est insuffisant. La solution recommandee est la mise en place d'une <strong>double cloison desolidarisee</strong> (deux plaques de placo-platre separees par un vide d'air et de la laine minerale), qui offre un affaiblissement de 53 dB. Avec cette solution, le niveau dans le bureau serait ramene a environ <strong>42 dB</strong>, conforme a la norme. Cette solution est preferee au mur beton car elle est legere (40 kg/m&sup2;), facile a installer sans reprise de structure, et presente un excellent rapport performance/poids grace au principe masse-ressort-masse.</p>
+  </div>
+</div>
+
+<!-- ===== BONUS ===== -->
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Antoine remarque qu'en fermant la porte coupe-feu de l'atelier, le niveau dans le bureau passe de 62 dB à 58 dB. Quel est l'indice d'affaiblissement R apporté <em>par la porte seule</em> ? Si l'atelier passe à 105 dB lors d'une découpe particulièrement bruyante, le bureau (avec la porte fermée et la nouvelle cloison double R = 53 dB) sera-t-il encore conforme à la norme ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La fermeture de la porte fait gagner \(62 - 58 = \mathbf{4 \text{ dB}}\) supplémentaires (R apporté par la porte ≈ 4 dB par rapport à la situation porte ouverte).</p>
+    <p>Avec la cloison double (R = 53 dB) et porte fermée (+4 dB) : R total ≈ 57 dB. Niveau bureau pour L_i = 105 dB : \(L_t = 105 - 57 = \mathbf{48 \text{ dB}}\). Légèrement au-dessus du seuil de 45 dB (3 dB de dépassement). Il faudrait soit améliorer la porte, soit prévoir un sas acoustique.</p>
   </div>
 </div>
 
@@ -236,13 +292,14 @@
 <div class="retenir">
   <strong>À retenir</strong>
   <ul>
-    <li>L'<strong>indice d'affaiblissement acoustique R</strong> (en dB) mesure la capacite d'une paroi a reduire le son : \(R = L_i - L_t\). Plus R est grand, meilleure est l'isolation.</li>
+    <li>L'<strong>indice d'affaiblissement acoustique R</strong> (en dB) mesure la capacité d'une paroi à réduire le son : \(R = L_i - L_t\). Plus R est grand, meilleure est l'isolation.</li>
     <li>Le <strong>coefficient de transmission</strong> \(\tau\) est le rapport de la pression transmise sur la pression incidente. Relation : \(R = -20 \times \log(\tau)\).</li>
-    <li><strong>Loi de masse :</strong> plus une paroi est lourde (masse surfacique elevee), mieux elle isole du bruit. En doublant la masse, on gagne environ +6 dB.</li>
-    <li><strong>Principe de la double paroi :</strong> deux parois separees par un vide d'air (masse-ressort-masse) isolent mieux qu'une seule paroi de meme masse totale.</li>
-    <li>R depend de la <strong>frequence</strong> : les sons graves (basses frequences) sont plus difficiles a bloquer que les sons aigus.</li>
-    <li>Reglementation : D<sub>nT,A</sub> ≥ 53 dB entre logements, confort bureau ≤ 45 dB (NF S 31-080).</li>
+    <li><strong>Loi de masse :</strong> plus une paroi est lourde (masse surfacique élevée), mieux elle isole du bruit. En doublant la masse, on gagne environ +6 dB.</li>
+    <li><strong>Principe de la double paroi :</strong> deux parois séparées par un vide d'air (masse-ressort-masse) isolent mieux qu'une seule paroi de même masse totale.</li>
+    <li>R dépend de la <strong>fréquence</strong> : les sons graves (basses fréquences) sont plus difficiles à bloquer que les sons aigus.</li>
+    <li>Réglementation : D<sub>nT,A</sub> ≥ 53 dB entre logements, confort bureau ≤ 45 dB (NF S 31-080).</li>
   </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §1 (Atténuation et niveau sonore), §2 (Indice d'affaiblissement R et coefficient τ) et §3 (Loi de masse, double paroi) de la leçon Ch08.</em></p>
 </div>
 
 </div>

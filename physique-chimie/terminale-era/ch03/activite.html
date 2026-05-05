@@ -3,215 +3,283 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch03 – Activité – Rayonnement thermique &amp; effet de serre – Terminale ERA-MA</title>
+<title>Ch03 – Activité – Choisir un vitrage économe – PC Term ERA-MA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9}</style>
 </head>
 <body>
 <div class="c">
-<a href="../../../pc-term-erama.html" class="nb">← Retour au sommaire</a>
+<a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE</a>
 
 <header>
-  <h1>Activité – Choisir le vitrage d'un showroom économe en énergie</h1>
-  <p class="sous-titre">Chapitre 3 | Terminale Bac Pro ERA-MA (Grpt 3) | Physique – Thermique | &#9201; 30 min</p>
+  <h1>Activité – Choisir le vitrage d'un showroom économe en énergie <span style="font-size:.55em;color:#7c2d12;font-weight:600">FICHE TECHNIQUE</span></h1>
+  <p class="sous-titre">Chapitre 3 – Rayonnement thermique | Terminale Bac Pro ERA-MA | Physique-Chimie | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, 19:15</p>
 </header>
 <button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
 <div class="objectifs">
   <strong>Objectifs :</strong>
   <ul>
-    <li>Comprendre que tout corps émet un rayonnement thermique lié à sa température</li>
-    <li>Découvrir la loi de Wien et l'identifier dans des situations concrètes</li>
-    <li>Expliquer le mécanisme de l'effet de serre et son rôle dans le choix des vitrages</li>
+    <li>Comprendre que tout corps émet un rayonnement thermique lié à sa T</li>
+    <li>Appliquer la loi de Wien : λ<sub>max</sub> = b / T</li>
+    <li>Expliquer le mécanisme de l'effet de serre dans un vitrage</li>
+    <li>Choisir un vitrage selon facteur solaire g et émissivité</li>
+    <li>Calculer la puissance solaire entrant dans un local</li>
   </ul>
 </div>
 
-<!-- ===== DOCUMENT D'ACCROCHE ===== -->
 <div class="situation">
-  <h2>Situation professionnelle</h2>
-  <p>
-    <em>Antoine est concepteur de mobilier chez <strong>Espace Design Intérieur</strong>, un bureau d'études spécialisé dans l'agencement haut de gamme à Toulouse. Son client, un fabricant de meubles, souhaite aménager un <strong>showroom de 120 m²</strong> avec de grandes baies vitrées pour exposer ses créations en lumière naturelle. Mais le client veut aussi limiter la surchauffe en été et les pertes de chaleur en hiver.</em>
-  </p>
-  <p>Antoine doit choisir entre trois types de vitrages. Il dispose des données suivantes :</p>
+  <h2>Situation – aménager un showroom de meubles haut de gamme</h2>
+  <p><em>Antoine est concepteur de mobilier chez Espace Design Intérieur à Toulouse. Son client veut aménager un showroom de 120 m² avec de grandes baies vitrées (40 m² de vitrage) pour exposer ses créations en lumière naturelle. Mais le client veut aussi limiter la surchauffe en été et les pertes de chaleur en hiver. Antoine doit choisir entre 3 types de vitrages.</em></p>
 
-  <h3>Document 1 – Données sur le rayonnement</h3>
+  <h3>Document 1 — Schéma de l'effet de serre dans un vitrage</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 220" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Schéma : rayonnement solaire visible traverse le vitrage, chauffe les surfaces intérieures, qui réémettent en IR lointain bloqué par le vitrage → effet de serre.">
+      <defs>
+        <style>
+          .lbl{font:11px sans-serif;fill:#1a202c;text-anchor:middle}
+          .lblA{font:600 12px sans-serif;fill:#1a202c;text-anchor:middle}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#2da44e}
+          .val{font:600 11px sans-serif;fill:#dc2626;text-anchor:middle}
+        </style>
+        <marker id="arrR" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#dc2626"/></marker>
+        <marker id="arrO" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#f59e0b"/></marker>
+      </defs>
+      <text class="ti" x="270" y="20">Effet de serre dans un vitrage</text>
 
+      <!-- Soleil -->
+      <circle cx="60" cy="60" r="20" fill="#fbbf24" stroke="#f59e0b"/>
+      <text x="60" y="65" class="lbl">☀</text>
+      <text x="60" y="100" class="lbl">5 800 K</text>
+
+      <!-- Vitrage -->
+      <rect x="280" y="40" width="20" height="160" fill="#bae6fd" stroke="#1a202c" opacity="0.7"/>
+      <text x="290" y="35" class="lbl">vitrage</text>
+
+      <!-- Pièce -->
+      <rect x="300" y="40" width="220" height="160" fill="#fef3c7" stroke="#1a202c"/>
+      <text x="410" y="80" class="lblA">Showroom</text>
+      <text x="410" y="100" class="lbl">20 °C</text>
+      <rect x="380" y="160" width="60" height="20" fill="#a16207"/>
+      <text x="410" y="195" class="lbl">meubles</text>
+
+      <!-- Rayonnement solaire visible (entrant) -->
+      <line x1="80" y1="70" x2="380" y2="160" stroke="#fbbf24" stroke-width="2.5" marker-end="url(#arrO)"/>
+      <text x="200" y="105" class="lblA" fill="#f59e0b">visible (500 nm)</text>
+      <text x="200" y="120" class="lbl">traverse le vitrage</text>
+
+      <!-- Rayonnement IR (sortant, bloqué) -->
+      <line x1="380" y1="170" x2="305" y2="100" stroke="#dc2626" stroke-width="2" stroke-dasharray="4 2"/>
+      <text x="350" y="80" class="val">IR (10 µm)</text>
+      <text x="350" y="55" class="val">bloqué !</text>
+
+      <text x="170" y="200" class="lblA">Loi de Wien : λ<sub>max</sub> = b / T</text>
+    </svg>
+  </div>
+
+  <h3>Document 2 — Sources de rayonnement et constantes</h3>
   <table>
-    <thead>
-      <tr>
-        <th>Source de rayonnement</th>
-        <th>Température</th>
-        <th>Type de rayonnement principal</th>
-      </tr>
-    </thead>
+    <thead><tr><th>Source</th><th>Température</th><th>Rayonnement principal</th></tr></thead>
     <tbody>
-      <tr><td>Soleil</td><td>5 800 K</td><td>Visible + infrarouge proche + UV</td></tr>
-      <tr><td>Mur du showroom (intérieur)</td><td>20 °C (293 K)</td><td>Infrarouge lointain</td></tr>
-      <tr><td>Sol asphalté en été</td><td>60 °C (333 K)</td><td>Infrarouge lointain</td></tr>
+      <tr><td>Soleil</td><td>5 800 K</td><td>Visible + IR proche + UV</td></tr>
+      <tr><td>Mur intérieur showroom</td><td>20 °C = 293 K</td><td>Infrarouge lointain</td></tr>
+      <tr><td>Sol asphalté en été</td><td>60 °C = 333 K</td><td>Infrarouge lointain</td></tr>
     </tbody>
   </table>
+  <p>Constante de Wien : <strong>b = 2,898 × 10⁻³ m·K</strong>.</p>
 
-  <p><strong>Constante de Wien :</strong> \(b = 2{,}898 \times 10^{-3}\ \text{m·K}\)</p>
-
-  <h3>Document 2 – Comparatif des vitrages</h3>
-
+  <h3>Document 3 — Comparatif des 3 vitrages</h3>
   <table>
-    <thead>
-      <tr>
-        <th>Caractéristique</th>
-        <th>Simple vitrage</th>
-        <th>Double vitrage standard</th>
-        <th>Double vitrage à contrôle solaire</th>
-      </tr>
-    </thead>
+    <thead><tr><th>Caractéristique</th><th>Simple</th><th>Double standard</th><th>Double contrôle solaire</th></tr></thead>
     <tbody>
       <tr><td>Facteur solaire g</td><td>0,85</td><td>0,65</td><td>0,35</td></tr>
       <tr><td>Transmission lumineuse</td><td>90 %</td><td>80 %</td><td>60 %</td></tr>
-      <tr><td>Émissivité (face intérieure)</td><td>0,89</td><td>0,15 (couche basse émissivité)</td><td>0,10 (couche basse émissivité)</td></tr>
+      <tr><td>Émissivité (Low-E)</td><td>0,89</td><td>0,15</td><td>0,10</td></tr>
       <tr><td>Coefficient U (W/m²·K)</td><td>5,8</td><td>1,4</td><td>1,1</td></tr>
-      <tr><td>Prix indicatif (€/m²)</td><td>40</td><td>120</td><td>180</td></tr>
+      <tr><td>Prix (€/m²)</td><td>40</td><td>120</td><td>180</td></tr>
     </tbody>
   </table>
+  <ul>
+    <li><strong>Facteur solaire g</strong> = fraction d'énergie solaire qui traverse (0 à 1). Plus g faible, moins de chaleur entre.</li>
+    <li><strong>Émissivité</strong> = capacité de la surface à émettre de l'IR (0 à 1). Plus faible = moins de pertes vers l'extérieur.</li>
+  </ul>
 
-  <p><em>Le facteur solaire g représente la fraction de l'énergie solaire totale qui traverse le vitrage (entre 0 et 1). Plus g est faible, moins le vitrage laisse passer la chaleur du Soleil.</em></p>
-  <p><em>L'émissivité mesure la capacité d'une surface à émettre du rayonnement infrarouge (entre 0 et 1). Plus l'émissivité est faible, moins la surface rayonne de la chaleur vers l'extérieur.</em></p>
+  <h3>Document 4 — Données showroom</h3>
+  <ul>
+    <li>Surface vitrée : <strong>S = 40 m²</strong>.</li>
+    <li>Ensoleillement moyen été (midi) : <strong>E = 600 W/m²</strong>.</li>
+    <li>Formule : P<sub>solaire</sub> = g × E × S.</li>
+  </ul>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité s'appuie sur §1 (rayonnement et loi de Wien), §2 (effet de serre) et §3 (vitrage et performances thermiques) de la leçon Ch03.</em></p>
 </div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-  <strong>Problématique :</strong> Comment choisir le vitrage d'un showroom de menuiserie pour réduire les apports solaires en été tout en maintenant un éclairage naturel suffisant ?
-</div>
-
-<!-- ===== QUESTIONS ===== -->
-
-<div class="exo">
-<h2>Question 1 <span class="badge-green">APP</span></h2>
-<p><strong>a)</strong> Quelle est la température de surface du Soleil ? Et celle du mur intérieur du showroom ?</p>
-<p><strong>b)</strong> Le rayonnement du Soleil est-il principalement visible ou infrarouge ? Et celui du mur ?</p>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-  <p><strong>a)</strong> Le Soleil a une température de surface de 5 800 K. Le mur intérieur du showroom est à environ 20 °C, soit 293 K.</p>
-  <p><strong>b)</strong> Le Soleil émet principalement dans le <strong>visible</strong> (et aussi de l'infrarouge proche et de l'UV). Le mur, beaucoup plus froid, émet dans l'<strong>infrarouge lointain</strong>, invisible à l'oeil nu.</p>
-</div>
+  <strong>Problématique :</strong> Comment choisir le vitrage du showroom pour limiter la surchauffe en été tout en maintenant l'éclairage naturel ?
 </div>
 
 <div class="exo">
-<h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Appliquer la <strong>loi de Wien</strong> pour calculer la longueur d'onde du pic d'émission du Soleil et du mur intérieur.</p>
-<p>\[\lambda_{\max} = \dfrac{b}{T} = \dfrac{2{,}898 \times 10^{-3}}{T}\]</p>
-<p><strong>a)</strong> Calculer \(\lambda_{\max}\) pour le Soleil (T = 5 800 K). Exprimer le résultat en nanomètres (1 m = 10⁹ nm).</p>
-<p><strong>b)</strong> Calculer \(\lambda_{\max}\) pour le mur (T = 293 K). Exprimer le résultat en micromètres (1 m = 10⁶ μm).</p>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-  <p><strong>a)</strong> Soleil : \(\lambda_{\max} = \dfrac{2{,}898 \times 10^{-3}}{5\,800} = 5{,}0 \times 10^{-7}\ \text{m} = 500\ \text{nm}\)</p>
-  <p>Ce pic est dans le domaine <strong>visible</strong> (jaune-vert).</p>
-  <p><strong>b)</strong> Mur : \(\lambda_{\max} = \dfrac{2{,}898 \times 10^{-3}}{293} = 9{,}9 \times 10^{-6}\ \text{m} \approx 10\ \mu\text{m}\)</p>
-  <p>Ce pic est dans l'<strong>infrarouge lointain</strong>, bien au-delà du visible (700 nm).</p>
-</div>
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>a) Quelle est la température du Soleil ? Et celle du mur intérieur du showroom ?</p>
+  <p>b) Le rayonnement du Soleil est-il principalement visible ou infrarouge ? Et celui du mur ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>a) Soleil : T = <strong>5 800 K</strong>. Mur : T = 20 °C = <strong>293 K</strong>.</p>
+    <p>b) Soleil : <strong>visible</strong> (+ IR proche + UV). Mur : <strong>infrarouge lointain</strong>, invisible à l'œil.</p>
+  </div>
 </div>
 
 <div class="exo">
-<h2>Question 3 <span class="badge-blue">ANA</span></h2>
-<p>La loi de Wien montre que plus un corps est chaud, plus il rayonne dans des longueurs d'onde courtes.</p>
-<p><strong>a)</strong> Le sol asphalté en été (60 °C = 333 K) émet-il un rayonnement visible ou infrarouge ? Justifier par un calcul.</p>
-<p><strong>b)</strong> Expliquer pourquoi on ne "voit" pas le rayonnement thermique émis par un bâtiment, alors qu'une caméra thermique le détecte.</p>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-  <p><strong>a)</strong> \(\lambda_{\max} = \dfrac{2{,}898 \times 10^{-3}}{333} = 8{,}7 \times 10^{-6}\ \text{m} = 8{,}7\ \mu\text{m}\)</p>
-  <p>Ce rayonnement est dans l'<strong>infrarouge</strong> (bien au-delà de 700 nm). Le sol asphalté, même très chaud en été, émet un rayonnement <strong>invisible</strong> à l'oeil nu.</p>
-  <p><strong>b)</strong> Les bâtiments émettent dans l'infrarouge lointain (autour de 10 μm), une longueur d'onde que l'oeil humain ne peut pas détecter (il ne perçoit que 400 à 700 nm). La caméra thermique possède un capteur spécialement conçu pour détecter les infrarouges et les convertir en image colorée.</p>
-</div>
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Appliquer la loi de Wien : λ<sub>max</sub> = b / T.</p>
+  <p>a) λ<sub>max</sub> du Soleil (T = 5 800 K). Exprimer en nm.</p>
+  <p>b) λ<sub>max</sub> du mur (T = 293 K). Exprimer en µm.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>a) λ<sub>max</sub> = (2,898 × 10⁻³) / 5 800 = <strong>5,0 × 10⁻⁷ m = 500 nm</strong>. Domaine <strong>visible</strong> (jaune-vert).</p>
+    <p>b) λ<sub>max</sub> = (2,898 × 10⁻³) / 293 = <strong>9,9 × 10⁻⁶ m ≈ 10 µm</strong>. Domaine <strong>infrarouge lointain</strong>, bien au-delà du visible (700 nm).</p>
+  </div>
 </div>
 
 <div class="exo">
-<h2>Question 4 <span class="badge-blue">ANA</span></h2>
-<p>Expliquer le principe de l'<strong>effet de serre</strong> à travers un vitrage, en complétant les étapes suivantes :</p>
-<ol>
-  <li>Le rayonnement solaire (principalement visible) traverse le vitrage et entre dans le showroom.</li>
-  <li>Ce rayonnement est absorbé par le sol, les murs et les meubles, qui ...</li>
-  <li>Ces surfaces, réchauffées à environ 20-30 °C, ré-émettent de l'énergie sous forme de ...</li>
-  <li>Le vitrage est ... à ce rayonnement infrarouge lointain : il le bloque et le renvoie vers l'intérieur.</li>
-  <li>Résultat : la chaleur est ... à l'intérieur du showroom.</li>
-</ol>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>a) Le sol asphalté en été (T = 333 K) émet-il un rayonnement visible ou IR ? Calcul.</p>
+  <p>b) Pourquoi ne « voit-on » pas le rayonnement thermique d'un bâtiment, alors qu'une caméra thermique le détecte ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>a) λ<sub>max</sub> = (2,898 × 10⁻³) / 333 = <strong>8,7 × 10⁻⁶ m = 8,7 µm → IR</strong>. Le sol même chaud émet un rayonnement <strong>invisible</strong> à l'œil.</p>
+    <p>b) Les bâtiments émettent dans l'IR lointain (~ 10 µm). L'œil humain ne perçoit que 400 à 700 nm → on ne voit pas. La <strong>caméra thermique</strong> a un capteur spécial (microbolomètre) qui détecte les IR et les traduit en image colorée.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Compléter l'explication de l'effet de serre :</p>
   <ol>
     <li>Le rayonnement solaire (principalement visible) traverse le vitrage et entre dans le showroom.</li>
-    <li>Ce rayonnement est absorbé par le sol, les murs et les meubles, qui <strong>s'échauffent</strong>.</li>
-    <li>Ces surfaces, réchauffées à environ 20-30 °C, ré-émettent de l'énergie sous forme de <strong>rayonnement infrarouge lointain</strong> (longueur d'onde ~10 μm).</li>
-    <li>Le vitrage est <strong>opaque</strong> à ce rayonnement infrarouge lointain : il le bloque et le renvoie vers l'intérieur.</li>
-    <li>Résultat : la chaleur est <strong>piégée</strong> à l'intérieur du showroom.</li>
+    <li>Il est absorbé par le sol, les murs et les meubles, qui …</li>
+    <li>Ces surfaces réchauffées (~ 20-30 °C) ré-émettent de l'énergie sous forme de …</li>
+    <li>Le vitrage est … à ce rayonnement IR lointain : il le bloque et le renvoie vers l'intérieur.</li>
+    <li>Résultat : la chaleur est … à l'intérieur.</li>
   </ol>
-  <p>C'est exactement le mécanisme de l'effet de serre : le vitrage laisse passer le visible mais bloque l'infrarouge émis par les surfaces intérieures.</p>
-</div>
-</div>
-
-<div class="exo">
-<h2>Question 5 <span class="badge-green">APP</span></h2>
-<p>Relever dans le document 2 le facteur solaire g et l'émissivité de chaque vitrage. Rappeler ce que représentent ces deux grandeurs.</p>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-  <table>
-    <thead>
-      <tr><th>Vitrage</th><th>Facteur solaire g</th><th>Émissivité</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Simple vitrage</td><td>0,85</td><td>0,89</td></tr>
-      <tr><td>Double vitrage standard</td><td>0,65</td><td>0,15</td></tr>
-      <tr><td>Double vitrage à contrôle solaire</td><td>0,35</td><td>0,10</td></tr>
-    </tbody>
-  </table>
-  <p>Le <strong>facteur solaire g</strong> représente la fraction de l'énergie solaire qui traverse le vitrage (plus g est faible, moins de chaleur solaire entre). L'<strong>émissivité</strong> mesure la capacité de la surface intérieure du vitrage à émettre du rayonnement infrarouge (plus elle est faible, moins le vitrage rayonne de la chaleur vers l'extérieur en hiver).</p>
-</div>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Le rayonnement solaire (visible) traverse le vitrage.</li>
+      <li>Absorbé par sol/murs/meubles → ils <strong>s'échauffent</strong>.</li>
+      <li>Ces surfaces (~ 20-30 °C) ré-émettent en <strong>infrarouge lointain</strong> (λ ~ 10 µm).</li>
+      <li>Le vitrage est <strong>opaque</strong> à l'IR lointain → il bloque et renvoie.</li>
+      <li>La chaleur est <strong>piégée</strong> à l'intérieur (effet de serre).</li>
+    </ol>
+    <p>Le verre laisse passer le visible mais bloque l'IR : c'est ce qui crée l'effet de serre dans une véranda et explique le réchauffement climatique (CO₂ joue le rôle du verre dans l'atmosphère).</p>
+  </div>
 </div>
 
 <div class="exo">
-<h2>Question 6 <span class="badge-yellow">REA</span></h2>
-<p>Le showroom possède 40 m² de surface vitrée. En été, l'ensoleillement moyen est de 600 W/m².</p>
-<p>Calculer la <strong>puissance solaire entrant</strong> dans le showroom pour chaque type de vitrage : \(P_{solaire} = g \times \text{ensoleillement} \times \text{surface vitrée}\).</p>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-  <p><strong>Simple vitrage :</strong> \(P = 0{,}85 \times 600 \times 40 = 20\,400\ \text{W} = 20{,}4\ \text{kW}\)</p>
-  <p><strong>Double vitrage standard :</strong> \(P = 0{,}65 \times 600 \times 40 = 15\,600\ \text{W} = 15{,}6\ \text{kW}\)</p>
-  <p><strong>Double vitrage à contrôle solaire :</strong> \(P = 0{,}35 \times 600 \times 40 = 8\,400\ \text{W} = 8{,}4\ \text{kW}\)</p>
-  <p>Le vitrage à contrôle solaire divise par plus de 2 la puissance solaire entrant par rapport au simple vitrage.</p>
-</div>
-</div>
-
-<div class="exo">
-<h2>Question 7 <span class="badge-green">VAL</span></h2>
-<p>Le client souhaite un showroom lumineux (bonne transmission lumineuse) mais qui ne surchauffe pas en été.</p>
-<p><strong>a)</strong> Quel vitrage limite le plus la surchauffe ? Quel est son inconvénient pour l'éclairage naturel ?</p>
-<p><strong>b)</strong> Le simple vitrage est-il envisageable pour ce projet ? Justifier avec au moins deux arguments.</p>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-  <p><strong>a)</strong> Le <strong>double vitrage à contrôle solaire</strong> limite le plus la surchauffe (g = 0,35, seulement 8,4 kW entrent). Son inconvénient est une transmission lumineuse réduite (60 % au lieu de 80 % ou 90 %), ce qui donne un éclairage naturel un peu plus faible.</p>
-  <p><strong>b)</strong> Le simple vitrage n'est pas envisageable :
-  <br>– 20,4 kW de chaleur solaire entrent en été, provoquant une surchauffe majeure.
-  <br>– Son émissivité élevée (0,89) signifie qu'il laisse s'échapper beaucoup de chaleur en hiver.
-  <br>– Son coefficient U (5,8 W/m²·K) est très mauvais pour l'isolation thermique.
-  <br>– Il ne respecte pas les normes thermiques actuelles (RT 2012 / RE 2020).</p>
-</div>
+  <h2>Question 5 <span class="badge-green">APP</span></h2>
+  <p>Relever dans le Doc 3 le facteur solaire g et l'émissivité de chaque vitrage.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>Vitrage</th><th>g</th><th>Émissivité</th></tr></thead>
+      <tbody>
+        <tr><td>Simple</td><td>0,85</td><td>0,89</td></tr>
+        <tr><td>Double standard</td><td>0,65</td><td>0,15</td></tr>
+        <tr><td>Double contrôle solaire</td><td>0,35</td><td>0,10</td></tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <div class="exo">
-<h2>Question 8 <span class="badge-red">COM</span></h2>
-<p>Rédiger une recommandation de 3 à 5 lignes pour Antoine, en lui expliquant quel vitrage choisir pour le showroom et pourquoi. Utiliser les notions de rayonnement thermique, de facteur solaire et d'émissivité dans la justification.</p>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-  <p>Pour le showroom, le <strong>double vitrage à contrôle solaire</strong> est le meilleur choix. Son faible facteur solaire (g = 0,35) limite l'apport de chaleur solaire en été à 8,4 kW au lieu de 20,4 kW avec du simple vitrage, réduisant ainsi la surchauffe et les coûts de climatisation. Sa très faible émissivité (0,10) grâce à la couche basse émissivité empêche le rayonnement infrarouge intérieur de s'échapper en hiver, piégeant la chaleur à l'intérieur. La transmission lumineuse de 60 % reste suffisante pour un showroom (complétée par un éclairage d'appoint). Le surcoût (180 €/m² contre 120 €/m²) est rapidement amorti par les économies d'énergie.</p>
-</div>
+  <h2>Question 6 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la puissance solaire entrante pour chaque vitrage : P = g × E × S (E = 600 W/m², S = 40 m²).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>Simple : P = 0,85 × 600 × 40 = <strong>20 400 W = 20,4 kW</strong>.</li>
+      <li>Double standard : P = 0,65 × 600 × 40 = <strong>15 600 W = 15,6 kW</strong>.</li>
+      <li>Double contrôle solaire : P = 0,35 × 600 × 40 = <strong>8 400 W = 8,4 kW</strong>.</li>
+    </ul>
+    <p>Le contrôle solaire divise par <strong>2,4</strong> la puissance entrante par rapport au simple vitrage.</p>
+  </div>
 </div>
 
-<!-- ===== À RETENIR ===== -->
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">VAL</span></h2>
+  <p>Le client veut un showroom lumineux mais sans surchauffe.</p>
+  <p>a) Quel vitrage limite le plus la surchauffe ? Inconvénient pour l'éclairage ?</p>
+  <p>b) Le simple vitrage est-il envisageable ? Justifier (au moins 2 arguments).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le <strong>double contrôle solaire</strong> (g = 0,35, 8,4 kW). Inconvénient : transmission lumineuse réduite à 60 % (vs 80-90 % pour les autres) → éclairage naturel un peu moins intense.</p>
+    <p>b) Simple vitrage : <strong>impossible</strong>.</p>
+    <ul>
+      <li>20,4 kW de surchauffe en été.</li>
+      <li>Émissivité 0,89 = pertes massives en hiver (mur froid → IR rayonné vers l'extérieur).</li>
+      <li>U = 5,8 W/m²·K : très mauvais isolant.</li>
+      <li><strong>Non conforme</strong> à la réglementation thermique RT2012 / RE2020.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger une recommandation (5 lignes) pour Antoine. Quel vitrage choisir ? Justifier avec rayonnement, g, émissivité.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Recommandation — vitrage showroom 40 m²</strong></em></p>
+    <p><em>Choix : <strong>double vitrage à contrôle solaire</strong> (180 €/m²).</em></p>
+    <p><em>Faible facteur solaire (g = 0,35) → seulement 8,4 kW d'apport solaire en été (vs 20,4 kW en simple vitrage), réduisant fortement la surchauffe et les coûts de climatisation.</em></p>
+    <p><em>Très faible émissivité (0,10) grâce à la couche Low-E → empêche le rayonnement IR intérieur de s'échapper en hiver, gardant la chaleur à l'intérieur.</em></p>
+    <p><em>Transmission lumineuse 60 % suffisante avec un éclairage LED d'appoint. Surcoût (180 vs 40 €/m² = 5 600 € sur 40 m²) amorti en 3-5 ans par les économies d'énergie.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Comment fonctionne le vitrage à contrôle solaire à l'échelle moléculaire ? Pourquoi peut-il bloquer l'IR sans bloquer le visible ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le verre standard est composé de SiO₂ (silice). Il est <strong>transparent au visible</strong> (400-700 nm) car les électrons de la silice n'absorbent pas dans cette gamme. En revanche, il <strong>absorbe l'IR lointain</strong> (&gt; 5 µm) car les vibrations moléculaires Si-O résonnent dans cette gamme.</p>
+    <p>Pour le <strong>contrôle solaire</strong>, on dépose sur le verre une couche métallique ultra-fine (typiquement <strong>argent ou oxyde d'étain</strong>, épaisseur ~ 10 nm). Effets :</p>
+    <ul>
+      <li>Cette couche est si fine qu'elle reste <strong>transparente au visible</strong> (60 % de transmission).</li>
+      <li>Mais elle <strong>réfléchit l'IR proche</strong> du soleil (responsable de la chauffe) → moins d'apport solaire.</li>
+      <li>Et elle a une <strong>très faible émissivité</strong> (0,10) → bloque aussi l'IR intérieur en hiver.</li>
+    </ul>
+    <p>Le vitrage à contrôle solaire est donc un compromis subtil entre transmission (visible nécessaire pour la lumière) et réflexion (IR bloqué). C'est la même idée pour les vitres teintées des voitures (couche métallique réfléchissante).</p>
+    <p>Évolutions récentes :</p>
+    <ul>
+      <li><strong>Vitrage thermochrome</strong> : devient opaque au-dessus de 25 °C (en cours de commercialisation 2024-2026).</li>
+      <li><strong>Vitrage électrochrome (SmartGlass)</strong> : transparence pilotable à la demande par tension électrique. Utilisé sur l'A380, dans l'hôtellerie de luxe.</li>
+    </ul>
+    <p>Pour Antoine : la technologie de vitrage évolue rapidement. Préconiser systématiquement aux clients d'opter pour la dernière norme (RE2020) et les solutions Low-E avec couche métallique pour optimiser confort + économies.</p>
+  </div>
+</div>
+
 <div class="retenir">
   <strong>À retenir</strong>
   <ul>
-    <li><strong>Rayonnement thermique :</strong> tout corps dont la température est supérieure à 0 K émet un rayonnement électromagnétique</li>
-    <li><strong>Loi de Wien :</strong> \(\lambda_{\max} = \dfrac{b}{T}\) avec \(b = 2{,}898 \times 10^{-3}\ \text{m·K}\) — plus un corps est chaud, plus il rayonne dans des longueurs d'onde courtes</li>
-    <li><strong>Effet de serre :</strong> le vitrage laisse passer le rayonnement visible du Soleil mais bloque le rayonnement infrarouge émis par les surfaces intérieures → la chaleur est piégée</li>
-    <li><strong>Émissivité :</strong> capacité d'une surface à émettre de l'infrarouge (0 à 1). Une couche basse émissivité limite les pertes de chaleur par rayonnement</li>
-    <li><strong>Facteur solaire g :</strong> fraction de l'énergie solaire traversant le vitrage (0 à 1). Un g faible protège de la surchauffe</li>
+    <li><strong>Tout corps</strong> dont T &gt; 0 K émet un rayonnement électromagnétique.</li>
+    <li><strong>Loi de Wien :</strong> λ<sub>max</sub> = b / T avec b = 2,898 × 10⁻³ m·K. Plus T est élevée, plus λ est courte.</li>
+    <li><strong>Soleil (5 800 K) → 500 nm visible.</strong> <strong>Bâtiment (293 K) → 10 µm IR.</strong></li>
+    <li><strong>Effet de serre :</strong> le vitrage laisse passer le visible mais bloque l'IR émis par les surfaces intérieures → chaleur piégée.</li>
+    <li><strong>Facteur solaire g</strong> (0 à 1) : fraction d'énergie solaire transmise. Plus faible = moins de surchauffe.</li>
+    <li><strong>Émissivité</strong> (0 à 1) : capacité d'émission IR. Plus faible = moins de pertes en hiver.</li>
+    <li><strong>Coefficient U</strong> (W/m²·K) : déperdition globale. Simple = 5,8 ; double Low-E = 1,1.</li>
   </ul>
 </div>
 

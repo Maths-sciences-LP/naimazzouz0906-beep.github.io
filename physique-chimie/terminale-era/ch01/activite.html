@@ -3,64 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch01 – Activité – Transport de l'énergie électrique – Terminale ERA-MA</title>
+<title>Ch01 – Activité – Câbler un grand atelier de menuiserie – PC Term ERA-MA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9}</style>
 </head>
 <body>
 <div class="c">
-<a href="../../../pc-term-erama.html" class="nb">← Retour au sommaire</a>
+<a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE</a>
 
 <header>
-  <h1>Activité – Câbler un grand atelier de menuiserie</h1>
-  <p class="sous-titre">Chapitre 1 | Terminale Bac Pro ERA-MA (Grpt 3) | Physique – Électricité | &#9201; 35 min</p>
+  <h1>Activité – Câbler un grand atelier de menuiserie <span style="font-size:.55em;color:#7c2d12;font-weight:600">FICHE TECHNIQUE</span></h1>
+  <p class="sous-titre">Chapitre 1 – Énergie électrique | Terminale Bac Pro ERA-MA | Physique-Chimie | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, 19:00</p>
 </header>
 <button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
 <div class="objectifs">
   <strong>Objectifs :</strong>
   <ul>
-    <li>Découvrir la relation entre résistance, longueur et section d'un câble</li>
-    <li>Calculer la chute de tension et les pertes par effet Joule dans une ligne électrique</li>
-    <li>Comprendre l'importance du choix de la section de câble en installation électrique</li>
+    <li>Calculer la résistance d'un câble : R = ρ × L / S</li>
+    <li>Calculer les pertes par effet Joule : P<sub>J</sub> = R × I²</li>
+    <li>Calculer la chute de tension : ΔU = R × I</li>
+    <li>Choisir une section de câble adaptée (norme NF C 15-100, ΔU ≤ 3 %)</li>
+    <li>Comparer le coût d'investissement et les pertes énergétiques</li>
   </ul>
 </div>
 
-<!-- ===== DOCUMENT D'ACCROCHE ===== -->
 <div class="situation">
-  <h2>Situation professionnelle</h2>
-  <p>
-    <em>Marc est électricien chez <strong>Élec-Bois Services</strong>, une entreprise d'installation électrique spécialisée dans les ateliers de menuiserie, à Dijon. Il doit câbler un <strong>grand atelier de fabrication de mobilier</strong> de 1 200 m². Le tableau électrique principal est situé à l'entrée du bâtiment. Les machines (scie à panneaux, dégauchisseuse, toupie) sont installées au fond de l'atelier, à 80 m du tableau.</em>
-  </p>
-  <p>Marc doit choisir la bonne <strong>section de câble</strong> pour alimenter les machines sans provoquer de chute de tension excessive ni d'échauffement dangereux. Il dispose des données suivantes :</p>
+  <h2>Situation – câblage d'un grand atelier de menuiserie</h2>
+  <p><em>Marc est électricien chez Élec-Bois Services à Dijon. Il doit câbler un grand atelier de fabrication de mobilier de 1 200 m². Le tableau électrique principal est à l'entrée ; les machines (scie à panneaux, dégauchisseuse, toupie) sont au fond, à 80 m du tableau. Marc doit choisir la section de câble qui respecte la norme de chute de tension (≤ 3 %) sans surcoût excessif.</em></p>
 
-  <h3>Fiche technique de l'installation</h3>
+  <h3>Document 1 — Schéma de l'installation</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 200" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Schéma : tableau électrique 230 V, câble cuivre 80 m aller (160 m aller-retour), machines 4600 W au bout. Pertes Joule dans le câble.">
+      <defs>
+        <style>
+          .lbl{font:11px sans-serif;fill:#1a202c;text-anchor:middle}
+          .lblA{font:600 12px sans-serif;fill:#1a202c;text-anchor:middle}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#2da44e}
+          .val{font:600 11px sans-serif;fill:#dc2626;text-anchor:middle}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="20">Atelier de menuiserie 1 200 m² — câble 80 m</text>
 
+      <!-- Tableau électrique -->
+      <rect x="40" y="80" width="80" height="80" fill="#e0e7ff" stroke="#1a202c" stroke-width="1.5"/>
+      <text x="80" y="105" class="lblA">Tableau</text>
+      <text x="80" y="125" class="val">230 V</text>
+      <text x="80" y="180" class="lbl">disjoncteur 32 A</text>
+
+      <!-- Câble (chauffe à cause des pertes) -->
+      <line x1="120" y1="100" x2="420" y2="100" stroke="#fb923c" stroke-width="6"/>
+      <line x1="120" y1="140" x2="420" y2="140" stroke="#fb923c" stroke-width="6"/>
+      <text x="270" y="80" class="lbl">câble cuivre 80 m (aller)</text>
+      <text x="270" y="170" class="val">L<sub>tot</sub> = 160 m (aller-retour)</text>
+
+      <!-- Machines -->
+      <rect x="420" y="80" width="80" height="80" fill="#fbbf24" stroke="#1a202c" stroke-width="1.5"/>
+      <text x="460" y="105" class="lblA">Machines</text>
+      <text x="460" y="125" class="val">P = 4 600 W</text>
+      <text x="460" y="140" class="val">I = 20 A</text>
+      <text x="460" y="180" class="lbl">scie, dégau, toupie</text>
+    </svg>
+  </div>
+
+  <h3>Document 2 — Fiche technique de l'installation</h3>
+  <ul>
+    <li>Tension d'alimentation : <strong>U = 230 V</strong> (monophasé).</li>
+    <li>Puissance totale des machines : <strong>P = 4 600 W</strong>.</li>
+    <li>Longueur du câble (aller simple) : <strong>L = 80 m</strong>.</li>
+    <li>Résistivité du cuivre : <strong>ρ = 1,7 × 10⁻⁸ Ω·m</strong>.</li>
+    <li>Norme NF C 15-100 : ΔU<sub>max</sub> = <strong>3 %</strong> de U, soit 6,9 V.</li>
+  </ul>
+
+  <h3>Document 3 — Sections de câble disponibles</h3>
   <table>
-    <thead>
-      <tr>
-        <th>Donnée</th>
-        <th>Valeur</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Tension d'alimentation</td><td>230 V (monophasé)</td></tr>
-      <tr><td>Puissance totale des machines</td><td>P = 4 600 W</td></tr>
-      <tr><td>Longueur du câble (aller simple)</td><td>L = 80 m</td></tr>
-      <tr><td>Résistivité du cuivre</td><td>\(\rho = 1{,}7 \times 10^{-8}\ \Omega \cdot \text{m}\)</td></tr>
-    </tbody>
-  </table>
-
-  <h3>Sections de câble disponibles</h3>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Section S (mm²)</th>
-        <th>Prix indicatif (€/m)</th>
-      </tr>
-    </thead>
+    <thead><tr><th>Section S (mm²)</th><th>Prix (€/m)</th></tr></thead>
     <tbody>
       <tr><td>2,5</td><td>1,20</td></tr>
       <tr><td>6</td><td>2,80</td></tr>
@@ -69,191 +89,220 @@
     </tbody>
   </table>
 
-  <p><strong>Rappel :</strong> un câble aller-retour a une longueur totale de \(2 \times L\).</p>
-  <p><strong>Norme :</strong> la chute de tension maximale autorisée est de <strong>3 %</strong> de la tension d'alimentation, soit \(0{,}03 \times 230 = 6{,}9\ \text{V}\).</p>
+  <h3>Document 4 — Formules clés</h3>
+  <ul>
+    <li>P = U × I → I = P / U.</li>
+    <li>R = ρ × L / S (avec L en m et S en m² ; 1 mm² = 10⁻⁶ m²).</li>
+    <li>P<sub>J</sub> = R × I² (pertes par effet Joule, en W).</li>
+    <li>ΔU = R × I (chute de tension, en V).</li>
+    <li>Câble aller-retour : L<sub>totale</sub> = 2 × L.</li>
+  </ul>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité s'appuie sur §1 (résistance R = ρL/S), §2 (effet Joule) et §3 (chute de tension, NF C 15-100) de la leçon Ch01.</em></p>
 </div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-  <strong>Problématique :</strong> Quelle section de câble choisir pour alimenter les machines d'un grand atelier de menuiserie sans dépasser la chute de tension réglementaire et sans risque d'échauffement ?
-</div>
-
-<!-- ===== QUESTIONS ===== -->
-
-<div class="exo">
-<h2>Question 1 <span class="badge-green">APP</span></h2>
-<p><strong>a)</strong> Identifier la tension d'alimentation de l'atelier et la puissance totale des machines.</p>
-<p><strong>b)</strong> Calculer l'intensité du courant appelé par les machines. On rappelle que \(P = U \times I\).</p>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-  <p><strong>a)</strong> La tension d'alimentation est \(U = 230\ \text{V}\) et la puissance totale est \(P = 4\,600\ \text{W}\).</p>
-  <p><strong>b)</strong> On utilise \(I = \dfrac{P}{U} = \dfrac{4\,600}{230} = 20\ \text{A}\).</p>
-</div>
+  <strong>Problématique :</strong> Quelle section de câble choisir pour respecter la norme NF C 15-100 (ΔU ≤ 3 %) tout en limitant le coût ?
 </div>
 
 <div class="exo">
-<h2>Question 2 <span class="badge-blue">ANA</span></h2>
-<p>La résistance d'un câble dépend de trois grandeurs : sa résistivité \(\rho\), sa longueur \(L\) et sa section \(S\).</p>
-<p><strong>a)</strong> Parmi les propositions suivantes, identifier celle qui est correcte :</p>
-<ul>
-  <li>Proposition A : \(R = \rho \times S \times L\)</li>
-  <li>Proposition B : \(R = \dfrac{\rho \times L}{S}\)</li>
-  <li>Proposition C : \(R = \dfrac{\rho \times S}{L}\)</li>
-</ul>
-<p><strong>b)</strong> Justifier physiquement : si on double la longueur du câble, la résistance augmente-t-elle ou diminue-t-elle ? Et si on double la section ?</p>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-  <p><strong>a)</strong> La proposition correcte est la <strong>B</strong> : \(R = \dfrac{\rho \times L}{S}\).</p>
-  <p><strong>b)</strong> Si on double la longueur L, la résistance R double (proportionnalité directe). Si on double la section S, la résistance est divisée par 2 (proportionnalité inverse). Un câble plus long résiste davantage au passage du courant ; un câble plus gros laisse mieux passer le courant.</p>
-</div>
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>a) Identifier U et P de l'installation.</p>
+  <p>b) Calculer l'intensité I appelée par les machines.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>a) U = <strong>230 V</strong> ; P = <strong>4 600 W</strong>.</p>
+    <p>b) I = P / U = 4 600 / 230 = <strong>20 A</strong>.</p>
+  </div>
 </div>
 
 <div class="exo">
-<h2>Question 3 <span class="badge-yellow">REA</span></h2>
-<p>Calculer la résistance totale du câble (aller-retour) pour chacune des quatre sections disponibles.</p>
-<p><strong>Rappel :</strong> \(R = \dfrac{\rho \times L_{totale}}{S}\) avec \(L_{totale} = 2 \times 80 = 160\ \text{m}\), \(\rho = 1{,}7 \times 10^{-8}\ \Omega \cdot \text{m}\) et S en m² (convertir mm² en m² : diviser par \(10^6\)).</p>
-<p>Compléter le tableau suivant :</p>
-<table>
-  <thead>
-    <tr>
-      <th>Section S (mm²)</th>
-      <th>Section S (m²)</th>
-      <th>Résistance R (Ω)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>2,5</td><td>2,5 × 10⁻⁶</td><td>...</td></tr>
-    <tr><td>6</td><td>6 × 10⁻⁶</td><td>...</td></tr>
-    <tr><td>10</td><td>10 × 10⁻⁶</td><td>...</td></tr>
-    <tr><td>16</td><td>16 × 10⁻⁶</td><td>...</td></tr>
-  </tbody>
-</table>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-  <p>On applique \(R = \dfrac{1{,}7 \times 10^{-8} \times 160}{S}\) :</p>
+  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <p>La résistance d'un câble dépend de ρ, L et S. Parmi les propositions, identifier la bonne formule :</p>
+  <p>A : R = ρ × S × L &nbsp; B : R = ρ × L / S &nbsp; C : R = ρ × S / L</p>
+  <p>b) Justifier physiquement : si on double L, R augmente ou diminue ? Et si on double S ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>a) Bonne formule : <strong>B</strong> → R = ρ × L / S.</p>
+    <p>b) Si L double → R double (proportionnalité directe). Si S double → R divisée par 2 (proportionnalité inverse).</p>
+    <p>Image : un câble plus long oppose plus de résistance. Un câble plus gros laisse mieux passer le courant (comme un tuyau plus large laisse mieux passer l'eau).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la résistance totale du câble (aller-retour, L<sub>tot</sub> = 160 m) pour chacune des 4 sections.</p>
   <table>
-    <thead>
-      <tr><th>Section S (mm²)</th><th>Section S (m²)</th><th>Résistance R (Ω)</th></tr>
-    </thead>
+    <thead><tr><th>S (mm²)</th><th>S (m²)</th><th>R (Ω) = ρL/S</th></tr></thead>
     <tbody>
-      <tr><td>2,5</td><td>2,5 × 10⁻⁶</td><td>\(\dfrac{1{,}7 \times 10^{-8} \times 160}{2{,}5 \times 10^{-6}} = \dfrac{2{,}72 \times 10^{-6}}{2{,}5 \times 10^{-6}} = 1{,}09\ \Omega\)</td></tr>
-      <tr><td>6</td><td>6 × 10⁻⁶</td><td>\(\dfrac{2{,}72 \times 10^{-6}}{6 \times 10^{-6}} = 0{,}453\ \Omega\)</td></tr>
-      <tr><td>10</td><td>10 × 10⁻⁶</td><td>\(\dfrac{2{,}72 \times 10^{-6}}{10 \times 10^{-6}} = 0{,}272\ \Omega\)</td></tr>
-      <tr><td>16</td><td>16 × 10⁻⁶</td><td>\(\dfrac{2{,}72 \times 10^{-6}}{16 \times 10^{-6}} = 0{,}170\ \Omega\)</td></tr>
+      <tr><td>2,5</td><td>2,5 × 10⁻⁶</td><td>…</td></tr>
+      <tr><td>6</td><td>6 × 10⁻⁶</td><td>…</td></tr>
+      <tr><td>10</td><td>10 × 10⁻⁶</td><td>…</td></tr>
+      <tr><td>16</td><td>16 × 10⁻⁶</td><td>…</td></tr>
     </tbody>
   </table>
-</div>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>R = (1,7 × 10⁻⁸ × 160) / S = 2,72 × 10⁻⁶ / S.</p>
+    <table>
+      <thead><tr><th>S (mm²)</th><th>R (Ω)</th></tr></thead>
+      <tbody>
+        <tr><td>2,5</td><td>2,72×10⁻⁶ / 2,5×10⁻⁶ = <strong>1,09</strong></td></tr>
+        <tr><td>6</td><td>2,72×10⁻⁶ / 6×10⁻⁶ = <strong>0,453</strong></td></tr>
+        <tr><td>10</td><td>2,72×10⁻⁶ / 10×10⁻⁶ = <strong>0,272</strong></td></tr>
+        <tr><td>16</td><td>2,72×10⁻⁶ / 16×10⁻⁶ = <strong>0,170</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <div class="exo">
-<h2>Question 4 <span class="badge-yellow">REA</span></h2>
-<p>Pour chaque section de câble, calculer la <strong>chute de tension</strong> \(\Delta U = R \times I\) (avec \(I = 20\ \text{A}\)).</p>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la chute de tension ΔU = R × I (avec I = 20 A) pour chaque section.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>S (mm²)</th><th>R</th><th>ΔU = R × 20 (V)</th></tr></thead>
+      <tbody>
+        <tr><td>2,5</td><td>1,09</td><td>1,09 × 20 = <strong>21,8</strong></td></tr>
+        <tr><td>6</td><td>0,453</td><td>9,06 ≈ <strong>9,1</strong></td></tr>
+        <tr><td>10</td><td>0,272</td><td><strong>5,4</strong></td></tr>
+        <tr><td>16</td><td>0,170</td><td><strong>3,4</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la puissance perdue par effet Joule P<sub>J</sub> = R × I² pour chaque section.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>I² = 400 A².</p>
+    <table>
+      <thead><tr><th>S (mm²)</th><th>P<sub>J</sub> = R × 400 (W)</th></tr></thead>
+      <tbody>
+        <tr><td>2,5</td><td><strong>436 W</strong></td></tr>
+        <tr><td>6</td><td><strong>181 W</strong></td></tr>
+        <tr><td>10</td><td><strong>109 W</strong></td></tr>
+        <tr><td>16</td><td><strong>68 W</strong></td></tr>
+      </tbody>
+    </table>
+    <p>Plus la section augmente, plus les pertes diminuent.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Compléter le tableau récapitulatif. Quelles sections respectent la norme (ΔU ≤ 3 % de 230 V = 6,9 V) ?</p>
   <table>
-    <thead>
-      <tr><th>Section S (mm²)</th><th>R (Ω)</th><th>ΔU = R × I (V)</th></tr>
-    </thead>
+    <thead><tr><th>S (mm²)</th><th>ΔU (V)</th><th>ΔU (%)</th><th>Conforme ?</th></tr></thead>
     <tbody>
-      <tr><td>2,5</td><td>1,09</td><td>\(1{,}09 \times 20 = 21{,}8\ \text{V}\)</td></tr>
-      <tr><td>6</td><td>0,453</td><td>\(0{,}453 \times 20 = 9{,}1\ \text{V}\)</td></tr>
-      <tr><td>10</td><td>0,272</td><td>\(0{,}272 \times 20 = 5{,}4\ \text{V}\)</td></tr>
-      <tr><td>16</td><td>0,170</td><td>\(0{,}170 \times 20 = 3{,}4\ \text{V}\)</td></tr>
+      <tr><td>2,5</td><td>…</td><td>…</td><td>…</td></tr>
+      <tr><td>6</td><td>…</td><td>…</td><td>…</td></tr>
+      <tr><td>10</td><td>…</td><td>…</td><td>…</td></tr>
+      <tr><td>16</td><td>…</td><td>…</td><td>…</td></tr>
     </tbody>
   </table>
-</div>
-</div>
-
-<div class="exo">
-<h2>Question 5 <span class="badge-yellow">REA</span></h2>
-<p>Pour chaque section de câble, calculer la <strong>puissance perdue par effet Joule</strong> dans le câble : \(P_J = R \times I^2\).</p>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-  <table>
-    <thead>
-      <tr><th>Section S (mm²)</th><th>R (Ω)</th><th>P<sub>J</sub> = R × I² (W)</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>2,5</td><td>1,09</td><td>\(1{,}09 \times 20^2 = 1{,}09 \times 400 = 436\ \text{W}\)</td></tr>
-      <tr><td>6</td><td>0,453</td><td>\(0{,}453 \times 400 = 181\ \text{W}\)</td></tr>
-      <tr><td>10</td><td>0,272</td><td>\(0{,}272 \times 400 = 109\ \text{W}\)</td></tr>
-      <tr><td>16</td><td>0,170</td><td>\(0{,}170 \times 400 = 68\ \text{W}\)</td></tr>
-    </tbody>
-  </table>
-</div>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>S (mm²)</th><th>ΔU (V)</th><th>ΔU (%)</th><th>Conforme ?</th></tr></thead>
+      <tbody>
+        <tr><td>2,5</td><td>21,8</td><td>9,5 %</td><td>❌ Non</td></tr>
+        <tr><td>6</td><td>9,1</td><td>4,0 %</td><td>❌ Non</td></tr>
+        <tr><td>10</td><td>5,4</td><td>2,3 %</td><td>✅ Oui</td></tr>
+        <tr><td>16</td><td>3,4</td><td>1,5 %</td><td>✅ Oui (large marge)</td></tr>
+      </tbody>
+    </table>
+    <p>Seules les sections <strong>10 mm² et 16 mm²</strong> respectent la norme NF C 15-100.</p>
+  </div>
 </div>
 
 <div class="exo">
-<h2>Question 6 <span class="badge-blue">ANA</span></h2>
-<p>Compléter le tableau récapitulatif ci-dessous et déterminer quelles sections respectent la norme de chute de tension maximale (3 % de 230 V = 6,9 V).</p>
-<table>
-  <thead>
-    <tr><th>Section (mm²)</th><th>ΔU (V)</th><th>ΔU en % de 230 V</th><th>Conforme ? (≤ 3 %)</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>2,5</td><td>...</td><td>...</td><td>...</td></tr>
-    <tr><td>6</td><td>...</td><td>...</td><td>...</td></tr>
-    <tr><td>10</td><td>...</td><td>...</td><td>...</td></tr>
-    <tr><td>16</td><td>...</td><td>...</td><td>...</td></tr>
-  </tbody>
-</table>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-  <table>
-    <thead>
-      <tr><th>Section (mm²)</th><th>ΔU (V)</th><th>ΔU en % de 230 V</th><th>Conforme ?</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>2,5</td><td>21,8</td><td>9,5 %</td><td><strong>Non</strong></td></tr>
-      <tr><td>6</td><td>9,1</td><td>4,0 %</td><td><strong>Non</strong></td></tr>
-      <tr><td>10</td><td>5,4</td><td>2,3 %</td><td><strong>Oui</strong></td></tr>
-      <tr><td>16</td><td>3,4</td><td>1,5 %</td><td><strong>Oui</strong></td></tr>
-    </tbody>
-  </table>
-  <p>Seules les sections de <strong>10 mm²</strong> et <strong>16 mm²</strong> respectent la norme de 3 % de chute de tension.</p>
-</div>
+  <h2>Question 7 <span class="badge-blue">VAL</span></h2>
+  <p>Calculer le pourcentage de puissance perdue (P<sub>J</sub> / P × 100) pour les câbles 10 et 16 mm². Commenter.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>10 mm² : 109 / 4 600 × 100 ≈ <strong>2,4 %</strong>.</p>
+    <p>16 mm² : 68 / 4 600 × 100 ≈ <strong>1,5 %</strong>.</p>
+    <p>Pertes acceptables dans les 2 cas. Le câble 16 mm² perd moins (~ 0,9 % de moins) mais coûte plus cher.</p>
+  </div>
 </div>
 
 <div class="exo">
-<h2>Question 7 <span class="badge-green">VAL</span></h2>
-<p>Calculer le pourcentage de puissance perdue par effet Joule pour les câbles de 10 mm² et 16 mm², en utilisant la formule :</p>
-<p>\[\%\text{pertes} = \dfrac{P_J}{P} \times 100\]</p>
-<p>Commenter les résultats obtenus.</p>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-  <p><strong>Câble de 10 mm² :</strong> \(\dfrac{109}{4\,600} \times 100 \approx 2{,}4\ \%\) de la puissance est perdue en chaleur.</p>
-  <p><strong>Câble de 16 mm² :</strong> \(\dfrac{68}{4\,600} \times 100 \approx 1{,}5\ \%\) de la puissance est perdue en chaleur.</p>
-  <p>Les pertes sont acceptables dans les deux cas. Le câble de 16 mm² perd moins d'énergie, mais il est plus cher.</p>
-</div>
-</div>
-
-<div class="exo">
-<h2>Question 8 <span class="badge-green">VAL</span></h2>
-<p>Calculer le coût total du câble (aller-retour = 160 m) pour les sections de 10 mm² et 16 mm². Quel câble Marc devrait-il choisir ? Justifier.</p>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-  <p><strong>Câble de 10 mm² :</strong> \(160 \times 4{,}50 = 720\ \text{€}\)</p>
-  <p><strong>Câble de 16 mm² :</strong> \(160 \times 7{,}00 = 1\,120\ \text{€}\)</p>
-  <p>Marc devrait choisir le câble de <strong>10 mm²</strong> : il respecte la norme (chute de tension de 2,3 %, inférieure à 3 %), les pertes Joule restent faibles (2,4 %) et il coûte 400 € de moins que le 16 mm². Le câble de 16 mm² serait un choix de confort supplémentaire, mais le 10 mm² est suffisant et conforme.</p>
-</div>
+  <h2>Question 8 <span class="badge-blue">VAL</span></h2>
+  <p>Calculer le coût total du câble (160 m) pour les sections 10 et 16 mm². Quel câble Marc devrait-il choisir ? Justifier.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>10 mm² : 160 × 4,50 = <strong>720 €</strong>.</p>
+    <p>16 mm² : 160 × 7,00 = <strong>1 120 €</strong>. Surcoût : 400 €.</p>
+    <p><strong>Recommandation : 10 mm²</strong>. Conforme à la norme (ΔU = 2,3 %), pertes acceptables (2,4 %), 400 € moins cher. Le 16 mm² serait du « confort » sans réel besoin.</p>
+    <p><strong>Mais attention :</strong> si l'atelier prévoit d'ajouter des machines plus tard, le 16 mm² (overcalibré) anticipe une montée en puissance. Le surcoût initial est compensé par l'absence de retravaux.</p>
+  </div>
 </div>
 
 <div class="exo">
-<h2>Question 9 <span class="badge-red">COM</span></h2>
-<p>Rédiger une phrase de synthèse expliquant pourquoi il est important de bien dimensionner la section d'un câble électrique sur un chantier.</p>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-  <p>Un câble de section trop faible a une résistance élevée, ce qui provoque une chute de tension importante aux bornes des machines (elles fonctionnent mal) et des pertes par effet Joule (échauffement du câble, gaspillage d'énergie, risque d'incendie). Augmenter la section du câble diminue sa résistance et limite ces problèmes, mais augmente le coût. Il faut donc trouver le bon compromis en respectant la norme de chute de tension maximale de 3 %.</p>
-</div>
+  <h2>Question 9 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger un paragraphe de synthèse (4-5 phrases) expliquant pourquoi il est important de bien dimensionner la section d'un câble électrique.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>Un câble sous-dimensionné a une résistance élevée → 3 conséquences graves :</em></p>
+    <ol>
+      <li><em><strong>Chute de tension</strong> excessive : les machines reçoivent moins que 230 V → fonctionnement dégradé, mise en sécurité.</em></li>
+      <li><em><strong>Pertes par effet Joule</strong> : énergie gaspillée en chaleur dans le câble (jusqu'à 10 % de la puissance pour les très petites sections).</em></li>
+      <li><em><strong>Risque d'incendie</strong> : échauffement du câble qui peut faire fondre l'isolant et déclencher un feu (surtout en atelier bois !).</em></li>
+    </ol>
+    <p><em>Augmenter la section coûte plus cher à l'achat mais évite ces problèmes. La <strong>norme NF C 15-100</strong> impose une chute de tension &lt; 3 %, ce qui dimensionne automatiquement le câble.</em></p>
+  </div>
 </div>
 
-<!-- ===== À RETENIR ===== -->
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Pourquoi le réseau électrique haute tension utilise-t-il du 400 000 V (400 kV) plutôt que du 230 V pour transporter l'électricité sur de longues distances ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Les pertes Joule dépendent du <strong>carré du courant</strong> : P<sub>J</sub> = R × I². Pour transporter une même puissance, deux options :</p>
+    <ul>
+      <li><strong>Faible tension, fort courant</strong> : 230 V × 4 350 A = 1 MW.</li>
+      <li><strong>Haute tension, faible courant</strong> : 400 000 V × 2,5 A = 1 MW.</li>
+    </ul>
+    <p>Pour un câble R = 1 Ω :</p>
+    <ul>
+      <li>Cas 1 (4 350 A) : P<sub>J</sub> = 4 350² ≈ <strong>19 MW perdus</strong> → impossible.</li>
+      <li>Cas 2 (2,5 A) : P<sub>J</sub> = 2,5² ≈ <strong>6 W perdus</strong> → négligeable.</li>
+    </ul>
+    <p>Rapport : <strong>3 millions !</strong> D'où l'intérêt d'élever la tension pour le transport longue distance (400 kV en France).</p>
+    <p>Architecture du réseau français :</p>
+    <ul>
+      <li><strong>THT</strong> : 400 kV / 225 kV (lignes RTE entre régions).</li>
+      <li><strong>HT</strong> : 90 kV / 63 kV (distribution régionale).</li>
+      <li><strong>MT</strong> : 20 kV (postes de quartier).</li>
+      <li><strong>BT</strong> : 400 V / 230 V (domestique, ateliers).</li>
+    </ul>
+    <p>Chaque transformation se fait dans des postes électriques (~ 100 000 postes en France). On transporte en HT, on distribue en BT (sécurité utilisateur).</p>
+  </div>
+</div>
+
 <div class="retenir">
   <strong>À retenir</strong>
   <ul>
-    <li><strong>Résistance d'un câble :</strong> \(R = \dfrac{\rho \times L}{S}\) — \(\rho\) résistivité (Ω·m), L longueur (m), S section (m²)</li>
-    <li><strong>Pertes par effet Joule :</strong> \(P_J = R \times I^2\) — une puissance gaspillée sous forme de chaleur dans le câble</li>
-    <li><strong>Chute de tension :</strong> \(\Delta U = R \times I\) — la tension disponible aux bornes des machines diminue</li>
-    <li><strong>Dimensionnement des câbles :</strong> augmenter la section S diminue la résistance R, ce qui réduit les pertes et la chute de tension</li>
+    <li><strong>Résistance d'un câble :</strong> R = ρ × L / S. ρ en Ω·m, L en m, S en m² (1 mm² = 10⁻⁶ m²).</li>
+    <li><strong>Pertes par effet Joule :</strong> P<sub>J</sub> = R × I². Dépend du <strong>carré du courant</strong>.</li>
+    <li><strong>Chute de tension :</strong> ΔU = R × I.</li>
+    <li><strong>Norme NF C 15-100 :</strong> ΔU ≤ 3 % de la tension nominale.</li>
+    <li><strong>Câble aller-retour :</strong> longueur totale = 2 × longueur simple.</li>
+    <li><strong>Choix de section :</strong> compromis entre coût (achat) et pertes/sécurité (fonctionnement).</li>
   </ul>
 </div>
 

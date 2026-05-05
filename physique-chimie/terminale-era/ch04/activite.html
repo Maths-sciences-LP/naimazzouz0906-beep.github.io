@@ -7,7 +7,8 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
 </head>
 <body>
 <div class="c">
@@ -16,6 +17,7 @@
 <header>
   <h1>Activité – Mouvement d'une tête de découpe sur machine CNC</h1>
   <p class="sous-titre">Chapitre 4 | Terminale Bac Pro ERA-MA (Grpt 3) | Physique – Mécanique | &#9201; 35 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
 </header>
 <button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 <div class="objectifs">
@@ -59,6 +61,25 @@
     <li><strong>Phase 2 (2,5 à 4,5 s) :</strong> la tête se déplace à vitesse constante (usinage du panneau)</li>
     <li><strong>Phase 3 (4,5 à 6,0 s) :</strong> la tête décélère et s'arrête en fin de course</li>
   </ul>
+
+  <h3>Document 3 – Schéma de la machine CNC</h3>
+  <div class="svg-wrap">
+    <svg viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;width:100%;height:auto">
+      <rect x="20" y="160" width="480" height="20" fill="#94a3b8" stroke="#475569"/>
+      <rect x="40" y="60" width="440" height="100" fill="#fef3c7" stroke="#92400e" stroke-width="1.5"/>
+      <text x="260" y="115" text-anchor="middle" font-size="13" fill="#92400e" font-weight="600">Panneau de bois (zone d'usinage)</text>
+      <rect x="80" y="30" width="60" height="40" fill="#2da44e" stroke="#166534" stroke-width="2"/>
+      <text x="110" y="55" text-anchor="middle" font-size="11" fill="white" font-weight="700">CNC</text>
+      <line x1="110" y1="70" x2="110" y2="90" stroke="#166534" stroke-width="3"/>
+      <polygon points="105,85 115,85 110,98" fill="#166534"/>
+      <line x1="40" y1="200" x2="480" y2="200" stroke="#0ea5e9" stroke-width="2" marker-end="url(#arr)"/>
+      <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#0ea5e9"/></marker></defs>
+      <text x="260" y="215" text-anchor="middle" font-size="12" fill="#0369a1" font-weight="600">axe X (déplacement de la tête)</text>
+      <text x="40" y="50" font-size="11" fill="#64748b">x = 0</text>
+      <text x="450" y="50" font-size="11" fill="#64748b">x = 340 mm</text>
+    </svg>
+    <p style="font-size:.85em;color:#64748b;margin:6px 0 0">La tête de découpe se déplace en ligne droite le long de l'axe X.</p>
+  </div>
 </div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
@@ -72,6 +93,7 @@
 <p><strong>a)</strong> Quelle est la position initiale de la tête de découpe (à t = 0 s) ? Et sa position finale (à t = 6,0 s) ?</p>
 <p><strong>b)</strong> Calculer la distance totale parcourue par la tête de découpe.</p>
 <p><strong>c)</strong> Calculer la vitesse moyenne sur l'ensemble du trajet : \(v_{moy} = \dfrac{d}{t}\). Exprimer le résultat en mm/s.</p>
+<ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
 <button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> Position initiale : x = 0 mm. Position finale : x = 340 mm.</p>
@@ -160,6 +182,7 @@
 <p><strong>a)</strong> Pendant quelle phase la vitesse augmente-t-elle ? Comment appelle-t-on ce type de mouvement ?</p>
 <p><strong>b)</strong> Pendant quelle phase la vitesse reste-t-elle constante ? Quelle est la valeur de cette vitesse ? Comment appelle-t-on ce type de mouvement ?</p>
 <p><strong>c)</strong> Pendant quelle phase la vitesse diminue-t-elle ? Comment appelle-t-on ce phénomène ?</p>
+<ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
 <button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> Pendant la <strong>phase 1</strong> (0 à 2,5 s), la vitesse augmente de 10 à 80 mm/s. C'est un mouvement <strong>accéléré</strong> (la tête prend de la vitesse).</p>
@@ -173,6 +196,7 @@
 <p>Calculer l'accélération de la tête de découpe pendant la <strong>phase 1</strong> (démarrage).</p>
 <p>On utilise : \(a = \dfrac{\Delta v}{\Delta t} = \dfrac{v_f - v_i}{t_f - t_i}\)</p>
 <p><em>Prendre v<sub>i</sub> = 10 mm/s (début de phase 1, à t = 0,25 s) et v<sub>f</sub> = 80 mm/s (fin de phase 1, à t = 2,25 s).</em></p>
+<ul class="lignes-reponse"><li></li><li></li><li></li></ul>
 <button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>\(a = \dfrac{v_f - v_i}{t_f - t_i} = \dfrac{80 - 10}{2{,}25 - 0{,}25} = \dfrac{70}{2{,}0} = 35\ \text{mm/s}^2\)</p>
@@ -183,6 +207,7 @@
 <div class="exo">
 <h2>Question 5 <span class="badge-yellow">REA</span></h2>
 <p>Calculer l'accélération pendant la <strong>phase 2</strong> (usinage à vitesse constante).</p>
+<ul class="lignes-reponse"><li></li><li></li></ul>
 <button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>\(a = \dfrac{v_f - v_i}{\Delta t} = \dfrac{80 - 80}{2{,}0} = \dfrac{0}{2{,}0} = 0\ \text{mm/s}^2\)</p>
@@ -194,6 +219,7 @@
 <h2>Question 6 <span class="badge-yellow">REA</span></h2>
 <p>Calculer l'accélération pendant la <strong>phase 3</strong> (freinage).</p>
 <p><em>Prendre v<sub>i</sub> = 80 mm/s (à t = 4,25 s) et v<sub>f</sub> = 20 mm/s (à t = 5,75 s).</em></p>
+<ul class="lignes-reponse"><li></li><li></li><li></li></ul>
 <button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>\(a = \dfrac{v_f - v_i}{t_f - t_i} = \dfrac{20 - 80}{5{,}75 - 4{,}25} = \dfrac{-60}{1{,}5} = -40\ \text{mm/s}^2\)</p>
@@ -238,6 +264,7 @@
   <li>une droite descendante</li>
 </ul>
 <p>Que représente la pente de la droite v(t) ?</p>
+<ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
 <button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <ul>
@@ -254,6 +281,7 @@
 <p>Hugo souhaite vérifier la distance parcourue pendant la phase 2 (usinage).</p>
 <p><strong>a)</strong> Calculer cette distance en utilisant \(d = v \times t\) avec v = 80 mm/s et t = 2,0 s.</p>
 <p><strong>b)</strong> Vérifier ce résultat en lisant les positions dans le tableau : quelle est la position à t = 2,5 s et à t = 4,5 s ?</p>
+<ul class="lignes-reponse"><li></li><li></li><li></li></ul>
 <button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p><strong>a)</strong> \(d = v \times t = 80 \times 2{,}0 = 160\ \text{mm}\).</p>
@@ -264,10 +292,22 @@
 <div class="exo">
 <h2>Question 10 <span class="badge-red">COM</span></h2>
 <p>Rédiger un court paragraphe (3 à 5 lignes) décrivant le mouvement complet de la tête de découpe. Utiliser les mots : <em>accélération, vitesse constante, décélération, mouvement rectiligne uniforme</em>.</p>
+<ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
 <button class="bc" onclick="toggle(this)">Voir la correction</button>
 <div class="corr">
   <p>La tête de découpe de la machine CNC effectue un mouvement en trois phases. Elle démarre à l'arrêt et subit une accélération d'environ 35 mm/s² pendant 2,5 secondes, atteignant progressivement la vitesse d'usinage de 80 mm/s. Pendant la phase d'usinage (2 secondes), elle se déplace en mouvement rectiligne uniforme à vitesse constante de 80 mm/s. Enfin, elle subit une décélération d'environ 40 mm/s² pendant 1,5 seconde pour s'arrêter en fin de course. La distance totale parcourue est de 340 mm.</p>
 </div>
+</div>
+
+<!-- ===== BONUS ===== -->
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>La machine CNC peut être réglée pour usiner un panneau plus grand, de 600 mm de long. En conservant les phases d'accélération (2,5 s) et de freinage (1,5 s), combien de temps durerait alors la phase 2 (usinage) si la vitesse d'usinage est toujours de 80 mm/s ? Et quelle serait la durée totale du cycle ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Distance parcourue pendant les phases 1 et 3 (calculée au cycle initial) : 120 mm + 60 mm ≈ 180 mm. Reste pour la phase 2 : 600 − 180 = 420 mm. Durée phase 2 : t = d/v = 420 / 80 = 5,25 s. <strong>Durée totale du cycle</strong> : 2,5 + 5,25 + 1,5 ≈ 9,3 s.</p>
+  </div>
 </div>
 
 <!-- ===== À RETENIR ===== -->
@@ -281,6 +321,7 @@
     <li><strong>Mouvement décéléré :</strong> vitesse diminue, \(a < 0\) → graphe v(t) descendant</li>
     <li><strong>Distance pendant un MRU :</strong> \(d = v \times t\)</li>
   </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §1 (Vitesse moyenne et instantanée), §2 (Accélération) et §3 (Mouvement rectiligne uniforme) de la leçon Ch04.</em></p>
 </div>
 
 </div>
