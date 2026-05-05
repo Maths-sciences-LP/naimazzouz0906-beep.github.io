@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 4 – Plan incliné rampe d'accès – 2nde Bac Pro MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd;--s:#0ea5e9}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 4 – Plan incliné : rampe d'accès atelier <span style="font-size:.55em;color:#6f42c1;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 6 – Forces et équilibre | 2nde Bac Pro MAMA | Physique-Chimie | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Décomposer le poids sur un plan incliné</li>
+    <li>Calculer la force nécessaire pour pousser une charge sur une rampe</li>
+    <li>Comparer effort sur rampe vs effort de soulèvement direct</li>
+    <li>Choisir l'angle d'inclinaison optimal d'une rampe</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – aménager une rampe pour le quai de chargement</h2>
+  <p><em>David, technicien d'agencement chez <strong>Bois & Cie 60</strong> à Beauvais, doit aménager une rampe d'accès pour décharger les panneaux livrés sur palette. Le quai du camion est à 1,20 m du sol. David peut prévoir une rampe de 2 m, 3 m, 4 m ou 6 m de longueur. Il doit choisir la plus efficace pour faire glisser des palettes de 200 kg avec un transpalette manuel.</em></p>
+
+  <h3>Document 1 – Décomposition du poids sur un plan incliné</h3>
+  <div class="svg-wrap">
+    <svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="max-width:480px;width:100%;height:auto">
+      <line x1="40" y1="220" x2="440" y2="220" stroke="#475569" stroke-width="2"/>
+      <line x1="40" y1="220" x2="380" y2="80" stroke="#92400e" stroke-width="2"/>
+      <line x1="380" y1="80" x2="380" y2="220" stroke="#475569" stroke-width="1" stroke-dasharray="3,3"/>
+      <path d="M 80 220 A 40 40 0 0 0 75 205" fill="none" stroke="#0969da" stroke-width="1.5"/>
+      <text x="100" y="215" font-size="11" fill="#0969da" font-weight="700">α</text>
+      <rect x="190" y="125" width="50" height="25" fill="#fef3c7" stroke="#92400e" stroke-width="1.5" transform="rotate(-22 215 137)"/>
+      <text x="215" y="118" text-anchor="middle" font-size="11" font-weight="700">palette</text>
+      <line x1="215" y1="137" x2="215" y2="200" stroke="#0969da" stroke-width="2.5"/>
+      <text x="222" y="195" font-size="11" fill="#0969da" font-weight="700">P</text>
+      <line x1="215" y1="137" x2="170" y2="155" stroke="#dc2626" stroke-width="2.5"/>
+      <text x="155" y="160" font-size="10" fill="#dc2626" font-weight="700">P_∥</text>
+      <line x1="215" y1="137" x2="240" y2="195" stroke="#16a34a" stroke-width="2.5"/>
+      <text x="248" y="180" font-size="10" fill="#16a34a" font-weight="700">P_⊥</text>
+      <text x="380" y="240" text-anchor="middle" font-size="11">L (longueur rampe)</text>
+      <text x="395" y="155" font-size="11" fill="#475569">h</text>
+    </svg>
+    <p style="font-size:.85em;color:#64748b;margin:6px 0 0">Le poids P se décompose : P_⊥ (perpendiculaire à la rampe, supportée par le sol) et P_∥ (parallèle à la rampe, à vaincre pour faire monter).</p>
+  </div>
+
+  <h3>Document 2 – Formules</h3>
+  <ul>
+    <li>sin α = h / L (h = hauteur, L = longueur de rampe)</li>
+    <li>P_∥ = P × sin α (force pour pousser sans frottement)</li>
+    <li>P_⊥ = P × cos α (force normale, supportée par le sol)</li>
+    <li>Avec frottements : F_pousser = P × sin α + μ × P × cos α (μ = coef de frottement)</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quelle longueur de rampe David doit-il choisir pour pouvoir pousser sa palette de 200 kg sans effort excessif ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le poids P d'une palette de 200 kg.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>P = 200 × 9,81 = <strong>1 962 N</strong> (≈ 2 kN).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Pour les 4 longueurs de rampe possibles (h = 1,20 m), calculer l'angle α et la force parallèle au plan (P × sin α).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>L (m)</th><th>sin α = h/L</th><th>α (°)</th><th>P_∥ = P × sin α</th></tr></thead>
+      <tbody>
+        <tr><td>2,0</td><td>1,2/2 = 0,60</td><td>36,9°</td><td>1 962 × 0,60 = <strong>1 177 N (≈ 120 kg)</strong></td></tr>
+        <tr><td>3,0</td><td>1,2/3 = 0,40</td><td>23,6°</td><td>1 962 × 0,40 = <strong>785 N (≈ 80 kg)</strong></td></tr>
+        <tr><td>4,0</td><td>1,2/4 = 0,30</td><td>17,5°</td><td>1 962 × 0,30 = <strong>589 N (≈ 60 kg)</strong></td></tr>
+        <tr><td>6,0</td><td>1,2/6 = 0,20</td><td>11,5°</td><td>1 962 × 0,20 = <strong>392 N (≈ 40 kg)</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>Sans rampe, soulever directement la palette demanderait F = P = 1 962 N (≈ 200 kg).</p>
+  <p><strong>a)</strong> Que représente la rampe en termes d'effort ?</p>
+  <p><strong>b)</strong> Quelle est la rampe la plus « efficace » ? Pourquoi ne choisit-on pas tout le temps une rampe très longue ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> La rampe permet de <strong>réduire la force à fournir</strong> en allongeant la distance. Avec une rampe de 6 m, on doit fournir 5 fois moins de force qu'en soulevant directement (392 N vs 1 962 N).</p>
+    <p><strong>b)</strong> La rampe la plus longue (6 m) demande le moins d'effort. <strong>Mais</strong> :</p>
+    <ul>
+      <li>Elle prend plus de place au sol (encombrement).</li>
+      <li>La distance à parcourir est plus grande (donc plus long).</li>
+      <li>Coût plus élevé (matériau).</li>
+    </ul>
+    <p>Compromis usuel : 8 à 10 % de pente (sin α ≈ 0,08 à 0,10), ce qui est plus long que 6 m mais très confortable.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>En réalité, il y a des frottements. Le coefficient de frottement transpalette/sol est μ = 0,05 (roues caoutchouc sur acier).</p>
+  <p>Calculer la force totale à fournir pour pousser sur une rampe de 4 m :</p>
+  <p><em>F = P × sin α + μ × P × cos α</em></p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>α = 17,5° → sin α = 0,30, cos α = 0,954.</p>
+    <p>F = 1 962 × 0,30 + 0,05 × 1 962 × 0,954 = 589 + 94 = <strong>683 N</strong> (≈ 70 kg).</p>
+    <p>Les frottements ajoutent ≈ 16 % à la force « théorique » sans frottement.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>La force qu'un homme peut pousser horizontalement de manière prolongée est d'environ 30 kg (≈ 300 N) — recommandation INRS.</p>
+  <p>Avec une force de 30 kg max, quelle rampe peut-on utiliser pour la palette ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour F ≤ 300 N (sans frottement) :</p>
+    <ul>
+      <li>Rampe 2 m : 1 177 N → impossible seul.</li>
+      <li>Rampe 3 m : 785 N → impossible seul.</li>
+      <li>Rampe 4 m : 589 N → impossible seul.</li>
+      <li>Rampe 6 m : 392 N → presque OK, mais avec frottements 392 + 96 ≈ 488 N → encore trop pour 1 personne.</li>
+    </ul>
+    <p>Aucune rampe seule ne permet à 1 personne de monter cette palette. <strong>Solutions :</strong> à 2 personnes, ou utiliser un transpalette électrique.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>La norme PMR (personnes à mobilité réduite) impose une pente maximale de <strong>5 % (sin α ≈ 0,05)</strong>.</p>
+  <p>Calculer la longueur de rampe nécessaire pour respecter cette norme avec h = 1,20 m. Une telle rampe est-elle envisageable dans l'atelier ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pente 5 % = sin α = 0,05 → L = h / sin α = 1,20 / 0,05 = <strong>24 m</strong>.</p>
+    <p>24 m est trop long pour un atelier classique (ferait toute la longueur du quai de chargement). Pour les locaux pro, on tolère 8 à 12 % en pente. La norme 5 % concerne les ERP avec accueil de PMR (rampes d'accès aux bâtiments publics).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>David choisit la rampe de 4 m. Pour faciliter le travail, il achète un transpalette électrique 24 V (capacité 1 500 kg, force motrice 1 500 N).</p>
+  <p>Vérifier que le transpalette peut monter une palette de 200 kg sur cette rampe (avec frottements).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Force nécessaire (calculée Q4) : 683 N. Force motrice du transpalette : 1 500 N.</p>
+    <p>1 500 &gt; 683 → <strong>OK ✔</strong>. Le transpalette monte la palette sans difficulté, avec une marge de plus du double.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger le bordereau de validation de l'aménagement, en précisant : longueur de rampe choisie, pente, force max requise, équipement, conformité norme.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Aménagement quai de chargement — Bois & Cie 60</strong><br>
+      • Hauteur quai : 1,20 m · Longueur rampe : <strong>4,00 m</strong> · Pente : 30 % (17,5°)<br>
+      • Charge max prévue : palette 200 kg<br>
+      • Force motrice nécessaire : 683 N (avec frottement μ = 0,05)<br>
+      • Équipement : <strong>transpalette électrique 24 V</strong> (capa. 1 500 N) — interdit en pousser manuel seul<br>
+      • Conformité : pente non-PMR (utilisation pro uniquement, pas d'accès public).
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Le travail effectué pour monter la palette de 200 kg jusqu'à 1,20 m est : W = P × h. Calculer ce travail. Comparer aux énergies suivantes : 1 calorie d'eau (4,18 J), 1 ampoule LED 10 W pendant 1 h.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>W = 1 962 × 1,20 = <strong>2 354 J</strong> (joules).</p>
+    <p>Comparaison :</p>
+    <ul>
+      <li>1 cal d'eau : 4,18 J → notre travail = 563 calories. Équivalent à chauffer 1 kg d'eau de 1 °C : 4 180 J donc on est à environ 0,56 °C de réchauffement.</li>
+      <li>Ampoule LED 10 W × 1 h = 36 000 J → notre travail correspond à seulement <strong>4 minutes</strong> d'éclairage LED.</li>
+    </ul>
+    <p>L'énergie mécanique nécessaire est faible comparée à celle d'un appareil ménager. Mais elle doit être délivrée à la bonne intensité : c'est la force qui pose problème, pas l'énergie totale.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li>Sur un plan incliné d'angle α, le poids se décompose : P_∥ = P × sin α et P_⊥ = P × cos α.</li>
+    <li>La <strong>force pour pousser</strong> sur une rampe (sans frottement) = P × sin α.</li>
+    <li>Plus la rampe est longue, plus l'angle est faible, plus l'effort est petit (mais la distance plus grande).</li>
+    <li><strong>Frottements :</strong> ajouter μ × P × cos α à la force.</li>
+    <li>Norme PMR : pente max 5 %. Pente pro courante : 8 à 12 %.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §1 (Notion de force), §2 (Le poids) et §7 (Équilibre sur plan incliné) de la leçon Ch06.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
