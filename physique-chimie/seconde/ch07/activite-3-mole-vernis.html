@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch07 – Activité 3 – Mole et masse molaire – 2nde Bac Pro MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd;--s:#0ea5e9}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 3 – Préparer un solvant : moles et masse molaire <span style="font-size:.55em;color:#6f42c1;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 7 – Structure de la matière | 2nde Bac Pro MAMA | Physique-Chimie | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Calculer la masse molaire d'une molécule</li>
+    <li>Convertir entre masse, mole et nombre de molécules</li>
+    <li>Doser un mélange dans le bon rapport (vernis + diluant)</li>
+    <li>Comprendre l'évaporation et la masse perdue</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – diluer un vernis pour pulvérisation</h2>
+  <p><em>Akim, vernisseur chez <strong>Atelier de la Croix-Rousse</strong> à Lyon, prépare un vernis polyuréthane pour pistolet pneumatique. Le fabricant indique une dilution de <strong>15 % avec du white-spirit</strong>. Akim doit calculer les bonnes quantités, et comprendre l'impact de l'évaporation du solvant pendant la pulvérisation.</em></p>
+
+  <h3>Document 1 – Le white-spirit</h3>
+  <ul>
+    <li>Le white-spirit est principalement composé d'<strong>octane</strong> (C₈H₁₈), un alcane à 8 carbones.</li>
+    <li>Masse molaire de l'octane : à calculer.</li>
+    <li>Masse atomique : C = 12 g/mol, H = 1 g/mol.</li>
+    <li>Densité : 0,75 (1 L pèse 750 g).</li>
+    <li>Volatil : s'évapore facilement à température ambiante.</li>
+  </ul>
+
+  <h3>Document 2 – Notation et formules essentielles</h3>
+  <ul>
+    <li><strong>Quantité de matière</strong> n (en moles, mol)</li>
+    <li><strong>Masse</strong> m (en g) — <strong>Masse molaire</strong> M (en g/mol)</li>
+    <li>Relation : \(n = \dfrac{m}{M}\) → \(m = n \times M\)</li>
+    <li>1 mole = 6,02 × 10²³ entités (atomes ou molécules) — Nombre d'Avogadro N_A</li>
+    <li>Nombre d'entités : N = n × N_A</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> En utilisant la notion de mole, comment Akim peut-il préparer précisément son vernis dilué et estimer la quantité de white-spirit qui s'évaporera ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la masse molaire de l'octane C₈H₁₈.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>M(C₈H₁₈) = 8 × M_C + 18 × M_H = 8 × 12 + 18 × 1 = 96 + 18 = <strong>114 g/mol</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Akim utilise 2,0 L de vernis. À 15 % de dilution, calculer le volume de white-spirit nécessaire.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>15 % de 2,0 L = 0,15 × 2,0 = <strong>0,30 L = 300 mL</strong> de white-spirit.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la masse correspondante de white-spirit (densité 0,75).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>m = ρ × V = 750 g/L × 0,30 L = <strong>225 g</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le nombre de moles d'octane dans cette masse de white-spirit.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>n = m / M = 225 / 114 ≈ <strong>1,97 mol</strong> d'octane.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le nombre N de molécules d'octane (utiliser N_A = 6,02 × 10²³).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>N = n × N_A = 1,97 × 6,02 × 10²³ ≈ <strong>1,19 × 10²⁴ molécules</strong>.</p>
+    <p>(Plus de mille milliards de milliards de molécules dans seulement 300 mL.)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Pendant la pulvérisation, environ <strong>80 % du white-spirit s'évapore</strong> dans l'air avant de toucher la pièce.</p>
+  <p><strong>a)</strong> Quelle masse s'évapore ?</p>
+  <p><strong>b)</strong> Combien de moles d'octane partent dans l'atmosphère de l'atelier ?</p>
+  <p><strong>c)</strong> Pourquoi cela impose-t-il une bonne ventilation et un masque à cartouche ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> 80 % de 225 g = <strong>180 g</strong> évaporés.</p>
+    <p><strong>b)</strong> n = 180 / 114 = <strong>1,58 mol</strong> d'octane libérée dans l'air.</p>
+    <p><strong>c)</strong> 180 g de vapeurs organiques dans une cabine de 50 m³ donne une concentration énorme. Sans ventilation, on dépasserait largement la VLEP (valeur limite d'exposition professionnelle = 0,5 g/m³ pour le white-spirit). Sans masque cartouche, l'opérateur respirerait des vapeurs nocives pour le foie et le système nerveux.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Akim fait 4 pulvérisations de 2 L par jour, 5 jours par semaine, 45 semaines par an.</p>
+  <p>Calculer la masse totale de white-spirit qui s'évapore en une année.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pulvérisations annuelles : 4 × 5 × 45 = 900.</p>
+    <p>Évaporation par pulvérisation : 180 g.</p>
+    <p>Total : 900 × 180 = <strong>162 000 g = 162 kg</strong> de white-spirit évaporés/an.</p>
+    <p>Soit environ 216 L par an. Il faut donc absolument une cabine de pulvérisation aspirée et un masque cartouche A.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Akim doit afficher un mémo de préparation pour son binôme. Rédiger les 5 étapes en 4-5 lignes.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Préparation vernis polyuréthane (dilution 15 %)</strong><br>
+      1. Pour 2 L de vernis → ajouter <strong>300 mL de white-spirit</strong> (mesure éprouvette).<br>
+      2. Mélanger doucement 5 min — éviter les bulles.<br>
+      3. Vérifier la viscosité avec coupe Ford (résultat attendu : 18 s).<br>
+      4. Mettre EPI : masque cartouche A, gants nitrile, lunettes.<br>
+      5. Ventilation cabine ON. Pulvériser à 25 cm de la pièce.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Si on remplaçait le white-spirit (octane C₈H₁₈) par de l'<strong>acétate d'éthyle</strong> (CH₃COOC₂H₅, soit C₄H₈O₂), de masse molaire à calculer, faudrait-il plus ou moins de moles pour 225 g de solvant ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>M(C₄H₈O₂) = 4 × 12 + 8 × 1 + 2 × 16 = 48 + 8 + 32 = <strong>88 g/mol</strong>.</p>
+    <p>n = 225 / 88 ≈ <strong>2,56 mol</strong> (au lieu de 1,97 mol pour l'octane).</p>
+    <p>L'acétate d'éthyle a une masse molaire plus faible : pour la même masse, il y a <strong>plus de molécules</strong>. À volatilité comparable, le pouvoir solvant peut être différent. Le choix dépend des propriétés chimiques (polarité, vitesse d'évaporation) et de la toxicité.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li>La <strong>masse molaire</strong> M (g/mol) = somme des masses atomiques de tous les atomes.</li>
+    <li><strong>1 mole</strong> = 6,02 × 10²³ entités (Avogadro).</li>
+    <li>Relation clé : \(n = m/M\) ; m = n × M ; N = n × N_A.</li>
+    <li>Pour les solvants volatils, calculer la quantité évaporée et adapter la ventilation et les EPI.</li>
+    <li>La VLEP doit être respectée pour la sécurité au travail.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §1 (L'atome), §2 (Les éléments chimiques), §5bis (Masses atomiques) et §6 (Applications en atelier) de la leçon Ch07.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
