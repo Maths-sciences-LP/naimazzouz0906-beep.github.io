@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Activité 4 – Monophasé et triphasé – 2nde Bac Pro MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd;--s:#0ea5e9}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 4 – Monophasé ou triphasé pour un atelier ? <span style="font-size:.55em;color:#6f42c1;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 4 – Signaux électriques alternatifs | 2nde Bac Pro MAMA | Physique-Chimie | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Distinguer monophasé (230 V) et triphasé (400 V)</li>
+    <li>Identifier les machines qui nécessitent du triphasé</li>
+    <li>Choisir le type d'abonnement EDF pour un atelier de menuiserie</li>
+    <li>Comparer les sections de câble entre mono et tri pour une même puissance</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – ouverture d'un nouvel atelier</h2>
+  <p><em>Sami, futur artisan menuisier de 30 ans, prépare l'ouverture de son atelier à <strong>Béziers</strong>. Il a sélectionné le matériel et doit demander à ENEDIS le bon abonnement. Le commercial lui demande : « Vous voulez du monophasé 12 kVA ou du triphasé 9 kVA / 18 kVA ? ». Sami doit comprendre la différence pour ne pas se tromper.</em></p>
+
+  <h3>Document 1 – Le triphasé : 3 phases décalées de 120°</h3>
+  <div class="svg-wrap">
+    <svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" style="max-width:480px;width:100%;height:auto">
+      <line x1="40" y1="120" x2="440" y2="120" stroke="#475569" stroke-width="1"/>
+      <text x="445" y="124" font-size="11" fill="#475569">t</text>
+      <text x="35" y="50" text-anchor="end" font-size="10" fill="#64748b">+325 V</text>
+      <text x="35" y="195" text-anchor="end" font-size="10" fill="#64748b">−325 V</text>
+      <path d="M 40 120 Q 80 30 120 120 T 200 120 T 280 120 T 360 120 T 440 120" stroke="#dc2626" stroke-width="2" fill="none"/>
+      <text x="50" y="44" font-size="11" fill="#dc2626" font-weight="700">Phase 1</text>
+      <path d="M 40 80 Q 67 165 93 120 T 173 120 T 253 120 T 333 120 T 413 120" stroke="#16a34a" stroke-width="2" fill="none"/>
+      <text x="200" y="64" font-size="11" fill="#16a34a" font-weight="700">Phase 2 (120° plus tard)</text>
+      <path d="M 40 160 Q 67 50 93 120 T 173 120 T 253 120 T 333 120 T 413 120" stroke="#0969da" stroke-width="2" fill="none"/>
+      <text x="240" y="200" font-size="11" fill="#0969da" font-weight="700">Phase 3 (240° plus tard)</text>
+    </svg>
+    <p style="font-size:.85em;color:#64748b;margin:6px 0 0">Le triphasé est composé de 3 sinusoïdes décalées d'un tiers de période (120°) : à tout instant, au moins une phase est à un niveau élevé. C'est ce qui permet aux moteurs triphasés de tourner sans à-coups.</p>
+  </div>
+
+  <h3>Document 2 – Caractéristiques des deux installations</h3>
+  <table>
+    <thead><tr><th>Caractéristique</th><th>Monophasé</th><th>Triphasé</th></tr></thead>
+    <tbody>
+      <tr><td>Nombre de fils (sans la terre)</td><td>2 (phase + neutre)</td><td>4 (3 phases + neutre)</td></tr>
+      <tr><td>Tension entre phase et neutre</td><td>230 V</td><td>230 V</td></tr>
+      <tr><td>Tension entre 2 phases</td><td>—</td><td>400 V</td></tr>
+      <tr><td>Couleur des fils</td><td>Marron (P) + bleu (N)</td><td>Marron, noir, gris (P1, P2, P3) + bleu (N)</td></tr>
+      <tr><td>Puissance maxi (compteur courant)</td><td>12 kVA</td><td>36 kVA</td></tr>
+      <tr><td>Abonnement (12 kVA / 9 kVA tri)</td><td>≈ 200 €/an</td><td>≈ 270 €/an</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document 3 – Liste des machines prévues par Sami</h3>
+  <table>
+    <thead><tr><th>Machine</th><th>Puissance</th><th>Type</th></tr></thead>
+    <tbody>
+      <tr><td>Scie à panneaux</td><td>4,5 kW</td><td>Triphasé</td></tr>
+      <tr><td>Toupie</td><td>3,0 kW</td><td>Triphasé</td></tr>
+      <tr><td>Compresseur</td><td>2,2 kW</td><td>Triphasé</td></tr>
+      <tr><td>Aspirateur copeaux</td><td>1,5 kW</td><td>Monophasé</td></tr>
+      <tr><td>Ponceuse à plat</td><td>1,1 kW</td><td>Monophasé</td></tr>
+      <tr><td>Outils portatifs (2 prises)</td><td>2 × 1,5 kW max</td><td>Monophasé</td></tr>
+      <tr><td>Éclairage LED + bureautique</td><td>0,5 kW</td><td>Monophasé</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Sami doit-il demander un abonnement monophasé ou triphasé pour son atelier, et quelle puissance souscrire ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p><strong>a)</strong> Combien de fils transportent du courant en monophasé ? En triphasé ?</p>
+  <p><strong>b)</strong> Citer une raison pour laquelle les gros moteurs sont triphasés.</p>
+  <p><strong>c)</strong> Une prise normale d'habitation est-elle monophasée ou triphasée ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Monophasé : 2 fils (phase + neutre). Triphasé : 4 fils (3 phases + neutre).</p>
+    <p><strong>b)</strong> Le triphasé permet de créer un <strong>champ tournant</strong> dans le moteur : démarrage en douceur, couple uniforme, peu de vibrations. Les moteurs sont aussi plus compacts à puissance égale.</p>
+    <p><strong>c)</strong> Les prises classiques d'une habitation sont <strong>monophasées</strong> (230 V).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <p>Dans la liste des machines prévues par Sami, quelles sont celles qui <strong>imposent</strong> obligatoirement le triphasé ?</p>
+  <p>En conséquence, quel type d'abonnement Sami doit-il souscrire ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Machines triphasées : <strong>scie (4,5 kW)</strong>, <strong>toupie (3 kW)</strong>, <strong>compresseur (2,2 kW)</strong>. Ces 3 machines exigent du triphasé.</p>
+    <p><strong>Conclusion :</strong> Sami doit obligatoirement souscrire un abonnement <strong>triphasé</strong>. Il pourra alimenter les machines monophasées en branchant sur une seule des 3 phases.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la puissance totale installée (somme des puissances de toutes les machines).</p>
+  <p>Quelle puissance d'abonnement Sami doit-il choisir : 9 kVA, 12 kVA, 18 kVA ou 24 kVA ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Total : 4,5 + 3,0 + 2,2 + 1,5 + 1,1 + 3,0 + 0,5 = <strong>15,8 kW</strong>.</p>
+    <p>En considérant un coefficient de simultanéité de 0,7 (toutes les machines ne tournent pas à pleine puissance en même temps) : 15,8 × 0,7 ≈ 11 kW.</p>
+    <p><strong>Choix :</strong> abonnement triphasé <strong>12 kVA</strong> (12 kVA ≈ 12 kW pour cos φ ≈ 1). Avec marge de croissance, on peut aussi prendre 18 kVA si Sami envisage d'ajouter du matériel.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Pour la scie 4,5 kW, calculer l'intensité absorbée :</p>
+  <p><strong>a)</strong> Si elle était monophasée 230 V (P = U × I).</p>
+  <p><strong>b)</strong> Triphasée 400 V avec cos φ = 0,85 (P = U × I × √3 × cos φ).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Monophasé : I = 4 500 / 230 ≈ <strong>19,6 A</strong></p>
+    <p><strong>b)</strong> Triphasé : I = 4 500 / (400 × √3 × 0,85) = 4 500 / 588,5 ≈ <strong>7,6 A</strong></p>
+    <p>Le triphasé permet de transporter la même puissance avec une intensité <strong>2,6 fois plus faible</strong>. Donc des câbles plus fins, moins de pertes Joule, et des disjoncteurs plus petits.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>D'après le document 2, le triphasé coûte 70 €/an de plus en abonnement. Pour une installation de 16 kW, est-ce un investissement justifié ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Oui, l'investissement est totalement justifié :</p>
+    <ul>
+      <li>Sans triphasé, Sami ne pourrait pas faire fonctionner ses 3 grosses machines (scie, toupie, compresseur). Pas de tri = pas d'atelier.</li>
+      <li>Pour 16 kW en monophasé, il faudrait 70 A (16 000/230). Aucun abonnement résidentiel ne propose cette puissance en mono.</li>
+      <li>Les câbles plus fins (sections 1,5 ou 2,5 mm² au lieu de 6 ou 10) compensent largement les 70 €/an d'abonnement.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Sami doit équilibrer les <strong>charges monophasées</strong> sur les 3 phases. Il a : aspirateur (1,5 kW), ponceuse (1,1 kW), 2 prises (1,5 kW chacune), éclairage (0,5 kW).</p>
+  <p>Proposer une répartition des 5 charges sur les 3 phases pour équilibrer au mieux.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Total : 1,5 + 1,1 + 1,5 + 1,5 + 0,5 = 6,1 kW. Idéalement 6,1 / 3 ≈ 2,03 kW par phase.</p>
+    <table>
+      <thead><tr><th>Phase</th><th>Charges</th><th>Total</th></tr></thead>
+      <tbody>
+        <tr><td>P1</td><td>Aspirateur (1,5) + Éclairage (0,5)</td><td>2,0 kW</td></tr>
+        <tr><td>P2</td><td>Ponceuse (1,1) + Prise 1 (1,5)</td><td>2,6 kW</td></tr>
+        <tr><td>P3</td><td>Prise 2 (1,5)</td><td>1,5 kW</td></tr>
+      </tbody>
+    </table>
+    <p>Répartition acceptable. On peut aussi déplacer la prise 2 vers P1 si on veut équilibrer plus finement (mais en pratique, les écarts &lt; 1 kW sont sans effet).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Une installation triphasée bien équilibrée permet d'<strong>annuler le courant dans le neutre</strong>.</p>
+  <p>Pourquoi est-ce un avantage ? Que se passe-t-il si une phase est très chargée et les autres peu ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Avec 3 phases équilibrées, leurs courants se compensent au point neutre (somme = 0). Le fil neutre transporte alors un courant nul → moins d'échauffement, moins de pertes.</p>
+    <p>Si une phase est très chargée et les autres pas, l'équilibre est rompu : le neutre porte le courant déséquilibré → risque d'échauffement du fil de neutre, voire <strong>fusion du neutre</strong> (très dangereux) qui pourrait porter les phases à 400 V au lieu de 230 V vers les appareils. C'est pourquoi un installateur équilibre toujours les charges.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Sami doit appeler ENEDIS pour faire sa demande. Rédiger en 4-5 lignes le message qu'il devrait laisser, en justifiant son choix.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>« Bonjour, je suis Sami Lafaille, futur artisan menuisier. Je demande un raccordement <strong>triphasé 400 V</strong> avec un abonnement de <strong>12 kVA</strong> pour mon atelier. Cette puissance est nécessaire pour alimenter ma scie à panneaux 4,5 kW, ma toupie 3 kW et mon compresseur 2,2 kW (toutes en triphasé), ainsi que les machines monophasées (aspirateur, ponceuse, prises outils, éclairage). Je prévois une marge pour absorber les pics simultanés (coefficient de simultanéité 0,7 → besoin réel ≈ 11 kW). Pouvez-vous me confirmer le délai et le coût de mise en service ? »</p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Si Sami achète plus tard un robot-portique CNC consommant 7 kW (triphasé), son abonnement 12 kVA suffira-t-il ? Quelle puissance souscrire dans cette hypothèse ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Nouveau total : 15,8 + 7 = <strong>22,8 kW</strong>. Avec coef de simultanéité 0,7 : ≈ 16 kW.</p>
+    <p>L'abonnement 12 kVA serait insuffisant. Il faudrait passer à <strong>18 kVA</strong> minimum, voire <strong>24 kVA</strong> pour avoir une marge confortable.</p>
+    <p>Bonne pratique : prévoir d'emblée un abonnement légèrement surdimensionné si on envisage des extensions, car changer d'abonnement coûte des frais d'intervention ENEDIS.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Monophasé :</strong> 2 fils (phase + neutre), 230 V. Pour les habitations et petits ateliers (&lt; 12 kVA).</li>
+    <li><strong>Triphasé :</strong> 4 fils (3 phases + neutre). 230 V phase-neutre, 400 V phase-phase. Pour ateliers avec moteurs ≥ 3 kW.</li>
+    <li>Avantages du triphasé : moteurs plus performants, intensité réduite à puissance égale, sections de câble plus fines.</li>
+    <li>Puissance triphasée : \(P = U \times I \times \sqrt{3} \times \cos\varphi\) avec U = 400 V (tension phase-phase).</li>
+    <li><strong>Équilibrage des charges :</strong> répartir les charges monophasées sur les 3 phases pour annuler le courant dans le neutre.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §3 (Le secteur en France), §5 (La valeur efficace) et §6 (Applications en atelier de menuiserie) de la leçon Ch04.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch09 – Activité 2 – Mesure du bruit en atelier – 2nde Bac Pro MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd;--s:#0ea5e9}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 2 – Mesurer et interpréter le bruit d'un atelier <span style="font-size:.55em;color:#6f42c1;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 9 – Caractéristiques d'un son | 2nde Bac Pro MAMA | Physique-Chimie | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Mesurer un niveau sonore en dB(A) avec un sonomètre</li>
+    <li>Comprendre l'échelle logarithmique des décibels</li>
+    <li>Identifier les machines bruyantes et leurs risques</li>
+    <li>Choisir les EPI auditifs adaptés</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – évaluation des risques auditifs</h2>
+  <p><em>Camille, déléguée santé-sécurité chez <strong>Atelier 35</strong> à Rennes, fait le tour de l'atelier avec un sonomètre. Elle relève le niveau sonore de chaque poste pour identifier les zones à risque et choisir les EPI auditifs adaptés.</em></p>
+
+  <h3>Document 1 – Mesures au sonomètre (à 1 m de la source)</h3>
+  <table>
+    <thead><tr><th>Poste / machine</th><th>Niveau sonore (dB(A))</th></tr></thead>
+    <tbody>
+      <tr><td>Bureau (ordinateur, voix douce)</td><td>45</td></tr>
+      <tr><td>Aspirateur copeaux</td><td>78</td></tr>
+      <tr><td>Ponceuse à plat</td><td>82</td></tr>
+      <tr><td>Scie à panneaux (à vide)</td><td>88</td></tr>
+      <tr><td>Scie à panneaux (en coupe)</td><td>96</td></tr>
+      <tr><td>Toupie (rabotage profilé)</td><td>102</td></tr>
+      <tr><td>Compresseur (démarrage)</td><td>92</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document 2 – Réglementation française (Code du travail R4434-1)</h3>
+  <table>
+    <thead><tr><th>Niveau d'exposition (8 h)</th><th>Mesures obligatoires</th></tr></thead>
+    <tbody>
+      <tr><td>≥ 80 dB(A) <em>(seuil d'action inférieur)</em></td><td>Information, formation, EPI mis à disposition</td></tr>
+      <tr><td>≥ 85 dB(A) <em>(seuil d'action supérieur)</em></td><td>EPI obligatoires, signalisation, surveillance médicale</td></tr>
+      <tr><td>≥ 87 dB(A) <em>(VLEP avec EPI)</em></td><td>Limite max après atténuation par EPI</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document 3 – Quelques repères</h3>
+  <ul>
+    <li>Doublement de l'intensité = +3 dB. Doublement de la pression = +6 dB.</li>
+    <li>Le seuil de douleur est à 120 dB.</li>
+    <li>Bouchons d'oreille : SNR (atténuation) typique 25-30 dB.</li>
+    <li>Casque anti-bruit : SNR 32-37 dB.</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quels postes de l'atelier dépassent le seuil réglementaire et quels EPI Camille doit-elle imposer ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p><strong>a)</strong> Quelle est l'unité du niveau sonore ?</p>
+  <p><strong>b)</strong> Que signifie le « (A) » dans dB(A) ?</p>
+  <p><strong>c)</strong> Comment varie le niveau sonore quand on s'éloigne d'une source ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Le décibel (dB) — unité sans dimension, échelle logarithmique.</p>
+    <p><strong>b)</strong> dB(A) = pondération « A » qui imite la sensibilité de l'oreille humaine. Le sonomètre atténue les très basses et très hautes fréquences (qu'on perçoit moins fort) et accentue les fréquences moyennes (1-4 kHz, sensibilité maximale).</p>
+    <p><strong>c)</strong> Le niveau sonore <strong>diminue avec la distance</strong> : −6 dB chaque fois que la distance double (en champ libre).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <p>Pour chaque poste, indiquer s'il dépasse le seuil d'action inférieur (80 dB) et le seuil d'action supérieur (85 dB).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>Poste</th><th>dB(A)</th><th>≥ 80 ?</th><th>≥ 85 ?</th></tr></thead>
+      <tbody>
+        <tr><td>Bureau</td><td>45</td><td>Non</td><td>Non</td></tr>
+        <tr><td>Aspirateur</td><td>78</td><td>Non</td><td>Non</td></tr>
+        <tr><td>Ponceuse</td><td>82</td><td>Oui (info)</td><td>Non</td></tr>
+        <tr><td>Scie (vide)</td><td>88</td><td>Oui</td><td>Oui (EPI obligatoires)</td></tr>
+        <tr><td>Scie (coupe)</td><td>96</td><td>Oui</td><td>Oui</td></tr>
+        <tr><td>Toupie</td><td>102</td><td>Oui</td><td>Oui</td></tr>
+        <tr><td>Compresseur</td><td>92</td><td>Oui</td><td>Oui</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>Avec un casque anti-bruit SNR = 32 dB, calculer le niveau perçu à l'oreille pour les postes les plus bruyants (toupie 102 dB et scie en coupe 96 dB).</p>
+  <p>Ces niveaux sont-ils sous la limite de 87 dB(A) (VLEP avec EPI) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Toupie :</strong> 102 − 32 = <strong>70 dB(A)</strong> à l'oreille.</p>
+    <p><strong>Scie en coupe :</strong> 96 − 32 = <strong>64 dB(A)</strong>.</p>
+    <p>Les deux niveaux sont bien sous 87 dB(A). Le casque protège efficacement.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>L'opérateur de la toupie travaille 6 h par jour à ce poste, le reste à des postes non bruyants.</p>
+  <p>Calculer son niveau d'exposition moyen sur 8 h, en utilisant l'approximation logarithmique :</p>
+  <p style="text-align:center">\(L_{eq} = 10 \times \log\left(\dfrac{t_1}{8} \times 10^{L_1/10} + \dfrac{t_2}{8} \times 10^{L_2/10}\right)\)</p>
+  <p>Avec L₁ = 102 dB pendant t₁ = 6 h, et L₂ = 70 dB pendant t₂ = 2 h.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>L_eq = 10 × log[(6/8) × 10^10,2 + (2/8) × 10^7,0]</p>
+    <p>= 10 × log[0,75 × 1,585 × 10¹⁰ + 0,25 × 10⁷]</p>
+    <p>= 10 × log[1,189 × 10¹⁰ + 2,5 × 10⁶]</p>
+    <p>≈ 10 × log[1,189 × 10¹⁰] (le 2,5 × 10⁶ est négligeable)</p>
+    <p>≈ 10 × 10,075 ≈ <strong>100,7 dB(A)</strong></p>
+    <p>L'exposition moyenne sur 8 h reste bien au-dessus de 85 dB → port du casque obligatoire toute la journée.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Camille remarque que la scie passe de 88 dB(A) à vide à 96 dB(A) en coupe.</p>
+  <p>Que signifie cette différence en termes d'intensité sonore physique ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Différence : 96 − 88 = 8 dB. Sachant que +3 dB = ×2 en intensité :</p>
+    <p>+8 dB ≈ × 6,3 fois plus d'intensité sonore en coupe qu'à vide.</p>
+    <p>Le bois qui résiste à la lame génère un bruit beaucoup plus intense. C'est pourquoi le port du casque est obligatoire dès qu'on commence à scier (pas seulement quand la scie est lancée à vide).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>L'aspirateur (78 dB) est juste sous le seuil. Mais avec la scie qui démarre en parallèle (96 dB), quel est le niveau combiné ?</p>
+  <p>Pour additionner deux sources : différence ≤ 1 dB → +3 dB ; différence 2-3 dB → +2 dB ; différence ≥ 10 dB → +0 dB (la plus faible est négligeable).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Différence : 96 − 78 = 18 dB → l'aspirateur est négligeable face à la scie.</p>
+    <p>Niveau combiné ≈ <strong>96 dB(A)</strong>. L'aspirateur n'apporte qu'un effet imperceptible.</p>
+    <p>Conclusion : c'est toujours la machine la plus bruyante qui détermine le niveau global, sauf si plusieurs machines équivalentes fonctionnent ensemble.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Camille propose 3 mesures pour réduire l'exposition au bruit :</p>
+  <ol type="A">
+    <li>Capotage acoustique de la toupie (gain : −15 dB)</li>
+    <li>Aspiration améliorée diminuant le bruit de coupe de 4 dB</li>
+    <li>Port systématique du casque SNR 32</li>
+  </ol>
+  <p>Classer ces 3 mesures par <strong>efficacité collective</strong>.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1. Capotage (−15 dB)</strong> : protection collective de tous les opérateurs présents. Très efficace.</p>
+    <p><strong>2. Aspiration (−4 dB)</strong> : protection collective également mais gain plus modeste.</p>
+    <p><strong>3. Casque (−32 dB)</strong> : protection individuelle uniquement (efficace seulement si porté).</p>
+    <p>Ordre d'efficacité <strong>collective</strong> : 1 &gt; 2 &gt; 3. La hiérarchie réglementaire impose toujours d'agir d'abord à la source (capotage) puis individuellement (EPI).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger en 4-5 lignes le rapport HSE de Camille à la direction.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>« Mesures sonores au sonomètre dans l'atelier — synthèse : 4 postes sur 7 dépassent le seuil supérieur de 85 dB(A) (scie, toupie, compresseur, scie en coupe). Pour la toupie en particulier (102 dB(A)), l'exposition moyenne sur 8 h reste à 100 dB → casque OBLIGATOIRE imposé toute la journée. <strong>Recommandations :</strong> 1) Installer un capotage acoustique sur la toupie (−15 dB). 2) Continuer à fournir des casques SNR 32 minimum à tous les opérateurs. 3) Mettre en place une signalisation « zone bruyante » et une surveillance médicale annuelle. »</p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Si on s'éloigne de la toupie de 1 m à 4 m, calculer le nouveau niveau sonore (atténuation par doublement de distance : −6 dB).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>De 1 m à 2 m : −6 dB. De 2 m à 4 m : −6 dB encore. Total : −12 dB.</p>
+    <p>Niveau à 4 m : 102 − 12 = <strong>90 dB(A)</strong>. Toujours au-dessus du seuil de 85 dB. Même à 8 m, on aurait 84 dB(A) → encore proche de la limite.</p>
+    <p>S'éloigner ne suffit pas pour la toupie : le casque reste obligatoire dans tout l'atelier quand elle fonctionne.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Niveau sonore</strong> mesuré en dB(A) avec un sonomètre.</li>
+    <li>Échelle logarithmique : +3 dB = ×2 en intensité ; +10 dB = ×10 (perçu ×2 par l'oreille).</li>
+    <li>Seuil d'action inférieur : 80 dB(A). Seuil supérieur (EPI obligatoires) : 85 dB(A). VLEP avec EPI : 87 dB(A).</li>
+    <li>Atténuation par distance : −6 dB par doublement (champ libre).</li>
+    <li>Hiérarchie : protection collective (capotage, aspiration) &gt; protection individuelle (casque, bouchons).</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §3 (Amplitude et intensité sonore) et §7 (Applications acoustiques en atelier) de la leçon Ch09.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

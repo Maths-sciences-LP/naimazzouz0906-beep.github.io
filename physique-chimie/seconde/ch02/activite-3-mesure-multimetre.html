@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch02 – Activité 3 – Mesurer avec un multimètre – 2nde Bac Pro MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd;--s:#0ea5e9}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 3 – Mesurer la tension et l'intensité au multimètre <span style="font-size:.55em;color:#6f42c1;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 2 – Grandeurs électriques et circuits | 2nde Bac Pro MAMA | Physique-Chimie | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Brancher correctement un voltmètre (en dérivation) et un ampèremètre (en série)</li>
+    <li>Choisir le calibre adapté pour une mesure</li>
+    <li>Lire et interpréter les valeurs affichées par un multimètre</li>
+    <li>Identifier la cause d'un dysfonctionnement par la mesure</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – panne sur la presse à plaquer chants</h2>
+  <p><em>Inès, technicienne de maintenance chez <strong>Atelier du Bois Massif</strong> à Strasbourg, doit diagnostiquer une panne sur la <strong>presse à plaquer chants</strong> qui ne chauffe plus. Le moteur tourne, mais la résistance chauffante reste froide. Inès sort son multimètre numérique pour vérifier le circuit électrique pas à pas.</em></p>
+
+  <h3>Document 1 – Schéma électrique simplifié de la presse</h3>
+  <div class="svg-wrap">
+    <svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" style="max-width:480px;width:100%;height:auto">
+      <line x1="40" y1="60" x2="40" y2="180" stroke="#1e293b" stroke-width="2"/>
+      <rect x="35" y="100" width="10" height="40" fill="#fbbf24" stroke="#92400e"/>
+      <text x="55" y="125" font-size="10">230 V</text>
+
+      <line x1="40" y1="60" x2="180" y2="60" stroke="#1e293b" stroke-width="2"/>
+      <rect x="180" y="50" width="40" height="20" fill="#dbeafe" stroke="#1e3a8a"/>
+      <text x="200" y="64" text-anchor="middle" font-size="10">Inter</text>
+      <line x1="220" y1="60" x2="320" y2="60" stroke="#1e293b" stroke-width="2"/>
+
+      <rect x="320" y="50" width="40" height="20" fill="#fee2e2" stroke="#991b1b"/>
+      <text x="340" y="64" text-anchor="middle" font-size="10">Fusible</text>
+      <line x1="360" y1="60" x2="440" y2="60" stroke="#1e293b" stroke-width="2"/>
+
+      <rect x="370" y="100" width="60" height="40" fill="#fef3c7" stroke="#92400e"/>
+      <text x="400" y="125" text-anchor="middle" font-size="11" font-weight="700">R</text>
+      <text x="400" y="155" text-anchor="middle" font-size="10">résistance</text>
+
+      <line x1="440" y1="60" x2="440" y2="100" stroke="#1e293b" stroke-width="2"/>
+      <line x1="440" y1="140" x2="440" y2="180" stroke="#1e293b" stroke-width="2"/>
+      <line x1="440" y1="180" x2="40" y2="180" stroke="#1e293b" stroke-width="2"/>
+
+      <text x="100" y="220" font-size="10" fill="#64748b">Mesures à faire :</text>
+      <text x="100" y="234" font-size="10" fill="#64748b">U aux bornes de la résistance · I dans le circuit · continuité du fusible</text>
+    </svg>
+    <p style="font-size:.85em;color:#64748b;margin:6px 0 0">La résistance R chauffe par effet Joule lorsqu'elle est traversée par le courant. Elle ne fonctionne que si tout le circuit est passant.</p>
+  </div>
+
+  <h3>Document 2 – Le multimètre numérique</h3>
+  <ul>
+    <li>Mode <strong>V~</strong> (volt alternatif) : mesure de tension. Branchement <strong>en dérivation</strong> (parallèle) sur le composant.</li>
+    <li>Mode <strong>A~</strong> (ampère alternatif) : mesure d'intensité. Branchement <strong>en série</strong> (le courant traverse l'appareil).</li>
+    <li>Mode <strong>Ω</strong> (ohmmètre) : mesure de résistance. <strong>Toujours hors tension</strong> (circuit débranché).</li>
+    <li>Mode <strong>continuité</strong> (icône 🔊) : émet un bip si la résistance est ≈ 0 (fil ou fusible non coupé).</li>
+  </ul>
+
+  <h3>Document 3 – Mesures réalisées par Inès</h3>
+  <table>
+    <thead><tr><th>Mesure</th><th>Calibre</th><th>Affichage</th></tr></thead>
+    <tbody>
+      <tr><td>Tension à l'entrée du circuit (avant fusible)</td><td>V~ 750 V</td><td>231 V</td></tr>
+      <tr><td>Tension après le fusible (à l'entrée de R)</td><td>V~ 750 V</td><td>0 V</td></tr>
+      <tr><td>Continuité du fusible (hors tension)</td><td>continuité</td><td>OL (pas de bip)</td></tr>
+      <tr><td>Résistance R (hors tension, déconnectée)</td><td>Ω 200 Ω</td><td>112 Ω</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> À partir des mesures du multimètre, Inès peut-elle identifier précisément le composant défectueux dans le circuit de la presse à plaquer ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p><strong>a)</strong> Que signifient les symboles <strong>V~</strong> et <strong>A~</strong> sur le multimètre ?</p>
+  <p><strong>b)</strong> Comment branche-t-on un voltmètre par rapport au composant à mesurer ?</p>
+  <p><strong>c)</strong> Comment branche-t-on un ampèremètre ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> V~ = volt alternatif (tension AC). A~ = ampère alternatif (intensité AC). Le tilde « ~ » signifie « alternatif » (par opposition à V= ou A= pour le continu).</p>
+    <p><strong>b)</strong> Voltmètre : <strong>en dérivation</strong> (parallèle). On place les deux pointes aux deux bornes du composant.</p>
+    <p><strong>c)</strong> Ampèremètre : <strong>en série</strong>. On ouvre le circuit et on intercale l'appareil pour que le courant le traverse.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <p>Inès lit 231 V à l'entrée du circuit (avant le fusible) mais 0 V après le fusible.</p>
+  <p><strong>a)</strong> Que peut-on en conclure sur le fusible ?</p>
+  <p><strong>b)</strong> La mesure de continuité affiche « OL » (Over Limit, pas de bip). Cela confirme-t-il l'hypothèse ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Si la tension est de 231 V avant le fusible et 0 V après, c'est que <strong>le fusible est ouvert (grillé)</strong> : il interrompt le courant.</p>
+    <p><strong>b)</strong> Oui : « OL » signifie résistance infinie (pas de continuité). Le fusible est bel et bien grillé. Sa résistance interne devrait être quasi nulle (quelques mΩ) si tout va bien.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>La résistance chauffante mesure 112 Ω. La presse fonctionne sous 230 V.</p>
+  <p>Calculer l'intensité qui devrait traverser la résistance en fonctionnement normal.</p>
+  <p><em>Loi d'Ohm : \(I = \dfrac{U}{R}\)</em></p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(I = \dfrac{U}{R} = \dfrac{230}{112} \approx \mathbf{2{,}05 \text{ A}}\)</p>
+    <p>L'intensité est d'environ 2 A. Le fusible doit donc être calibré pour supporter au moins cette intensité (généralement 2,5 A ou 3,15 A).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la puissance dissipée par effet Joule dans la résistance.</p>
+  <p><em>Formule : \(P = U \times I\) ou \(P = R \times I^2\)</em></p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(P = U \times I = 230 \times 2{,}05 \approx \mathbf{472 \text{ W}}\)</p>
+    <p>Vérification : \(P = R \times I^2 = 112 \times 2{,}05^2 \approx 471\) W ✔</p>
+    <p>La résistance dissipe ≈ 470 W sous forme de chaleur, suffisant pour chauffer la plaque de placage chants.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Inès trouve dans le tiroir trois fusibles disponibles : <strong>1,6 A · 2,5 A · 6,3 A</strong>.</p>
+  <p><strong>a)</strong> Quel fusible doit-elle choisir pour remplacer le fusible grillé ?</p>
+  <p><strong>b)</strong> Que se passe-t-il si elle met un fusible 1,6 A à la place ? Et un fusible 6,3 A ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Intensité nominale : 2,05 A. Le fusible doit être <strong>légèrement supérieur</strong> à cette valeur pour ne pas griller à chaque fois → <strong>2,5 A</strong> (le 1,6 A grillerait, le 6,3 A est trop large).</p>
+    <p><strong>b)</strong></p>
+    <ul>
+      <li><strong>1,6 A</strong> : grille immédiatement à chaque mise en route (intensité nominale 2,05 A &gt; 1,6 A).</li>
+      <li><strong>6,3 A</strong> : ne grille pas en cas de défaut. <strong>Très dangereux</strong> : si la résistance se met en court-circuit (ex. fil cassé), l'intensité grimpe sans protection — risque d'incendie. Le fusible doit toujours être adapté à l'intensité réelle.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Avant de remplacer le fusible, Inès se demande pourquoi il a grillé. Elle vérifie que la résistance n'est pas court-circuitée.</p>
+  <p><strong>a)</strong> Si R était court-circuitée (R ≈ 0 Ω), quelle intensité circulerait théoriquement ?</p>
+  <p><strong>b)</strong> Pourquoi un court-circuit fait-il griller le fusible ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Avec R ≈ 0, théoriquement \(I = U/R \to \infty\). En pratique, l'intensité grimpe à plusieurs centaines d'ampères, limitée seulement par la résistance des fils (très faible).</p>
+    <p><strong>b)</strong> Le fusible 2,5 A ne supporte pas une intensité aussi élevée : son fil interne fond <strong>en quelques millisecondes</strong>, coupant le circuit avant qu'un incendie ne se déclare ou que les autres composants ne soient détruits. C'est le rôle de protection du fusible.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Inès vérifie aussi la résistance R seule (déconnectée du circuit). Le multimètre lit 112 Ω.</p>
+  <p><strong>a)</strong> Cette valeur est-elle cohérente avec la valeur attendue (sachant que la résistance nominale du fabricant est de 110 Ω, tolérance ±5 %) ?</p>
+  <p><strong>b)</strong> Faut-il remplacer la résistance ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Valeur attendue : 110 ± 5 % → entre 104,5 Ω et 115,5 Ω. <strong>112 Ω est dans la fourchette</strong>, la résistance est bonne.</p>
+    <p><strong>b)</strong> Non, la résistance n'est pas en cause. Inès peut juste remplacer le fusible (calibre 2,5 A) et la presse devrait redémarrer.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger en 4-5 lignes le rapport d'intervention d'Inès, en mentionnant : la panne constatée, les mesures faites, le diagnostic, la pièce remplacée et un conseil de prévention.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>« <strong>Intervention sur presse à plaquer chants — résistance ne chauffe plus.</strong> Mesures multimètre : 231 V à l'entrée du circuit, 0 V après le fusible → fusible grillé confirmé par test de continuité (OL). Résistance mesurée à 112 Ω, conforme à la valeur nominale. <strong>Diagnostic :</strong> fusible 2,5 A grillé, sans défaut sur la résistance. <strong>Pièce remplacée :</strong> fusible 5×20 mm 2,5 A temporisé. La presse fonctionne à nouveau. <strong>Conseil :</strong> ne jamais remplacer par un calibre supérieur (ex. 6,3 A) — risque incendie. Vérifier la propreté de la résistance pour éviter les coupures futures. »</p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Le multimètre d'Inès affiche un message d'erreur quand elle veut mesurer 231 V sur le calibre <strong>V~ 200 V</strong>. Pourquoi ? Quelle règle générale faut-il retenir pour le choix du calibre ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>231 V dépasse la valeur maximale du calibre 200 V. Le multimètre affiche « OL » (Over Limit) ou « 1.000 » (dépassement) pour signaler que la valeur est trop grande pour ce calibre.</p>
+    <p><strong>Règle générale :</strong> toujours choisir un calibre <strong>immédiatement supérieur</strong> à la valeur estimée. Si la valeur est inconnue, commencer par le calibre le plus grand et descendre progressivement pour gagner en précision.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Voltmètre :</strong> en <strong>dérivation</strong> (parallèle) aux bornes du composant. Mesure tension U en V.</li>
+    <li><strong>Ampèremètre :</strong> en <strong>série</strong> (le courant le traverse). Mesure intensité I en A.</li>
+    <li><strong>Ohmmètre :</strong> hors tension, sur composant déconnecté. Mesure résistance R en Ω.</li>
+    <li>Choisir un calibre légèrement supérieur à la valeur attendue.</li>
+    <li>Loi d'Ohm : \(U = R \times I\) ; Puissance : \(P = U \times I\).</li>
+    <li>Un fusible doit être calibré juste au-dessus de l'intensité nominale du circuit (jamais au-dessus).</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §2 (Grandeurs fondamentales), §3 (Instruments de mesure) et §4-5 (Circuits série et parallèle) de la leçon Ch02.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

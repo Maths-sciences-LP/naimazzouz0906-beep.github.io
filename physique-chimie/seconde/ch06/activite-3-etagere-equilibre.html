@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 3 – Équilibre d'une étagère – 2nde Bac Pro MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd;--s:#0ea5e9}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 3 – Équilibre d'une étagère murale <span style="font-size:.55em;color:#6f42c1;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 6 – Forces et équilibre | 2nde Bac Pro MAMA | Physique-Chimie | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Identifier les forces agissant sur un objet à l'équilibre</li>
+    <li>Représenter les forces par des vecteurs</li>
+    <li>Appliquer la condition d'équilibre (somme nulle des forces)</li>
+    <li>Choisir une fixation adaptée à la charge</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – pose d'étagères pour une bibliothèque sur mesure</h2>
+  <p><em>Lucie, agenceuse chez <strong>Bois & Espaces</strong> à Mulhouse, installe une bibliothèque murale chez un client. Chaque étagère en chêne (60 × 25 cm, épaisseur 22 mm) doit supporter en moyenne <strong>15 livres de poche par mètre linéaire</strong>. Lucie doit choisir la fixation adaptée parmi celles disponibles dans son atelier.</em></p>
+
+  <h3>Document 1 – Données techniques</h3>
+  <ul>
+    <li>Étagère en chêne massif 60 × 25 cm × 22 mm.</li>
+    <li>Masse volumique chêne : ρ = 720 kg/m³.</li>
+    <li>15 livres de poche par mètre = 9 livres pour 60 cm. Masse moyenne d'un livre : 200 g.</li>
+    <li>Mur en plaque de plâtre 13 mm sur ossature métal (cloison sèche).</li>
+    <li>g = 9,81 N/kg.</li>
+  </ul>
+
+  <h3>Document 2 – Caractéristiques des fixations</h3>
+  <table>
+    <thead><tr><th>Fixation</th><th>Charge max par fixation</th><th>Compatibilité</th></tr></thead>
+    <tbody>
+      <tr><td>Cheville expansion plastique 8 mm</td><td>5 kg</td><td>Brique pleine, béton</td></tr>
+      <tr><td>Cheville à expansion métal Molly 4 mm</td><td>15 kg</td><td>Plaque de plâtre, BA13</td></tr>
+      <tr><td>Cheville Molly 6 mm</td><td>30 kg</td><td>Plaque de plâtre BA13/BA15</td></tr>
+      <tr><td>Vis bois directement dans montant métal</td><td>40 kg</td><td>Si on touche un montant d'ossature</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document 3 – Bilan des forces sur l'étagère</h3>
+  <div class="svg-wrap">
+    <svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" style="max-width:480px;width:100%;height:auto">
+      <rect x="60" y="40" width="20" height="180" fill="#cbd5e1" stroke="#475569"/>
+      <text x="55" y="35" text-anchor="end" font-size="10" fill="#64748b">mur</text>
+      <rect x="80" y="100" width="280" height="20" fill="#fef3c7" stroke="#92400e" stroke-width="2"/>
+      <text x="220" y="115" text-anchor="middle" font-size="11" font-weight="700">étagère + livres</text>
+      <line x1="80" y1="110" x2="100" y2="110" stroke="#dc2626" stroke-width="3"/>
+      <line x1="100" y1="110" x2="105" y2="105" stroke="#dc2626" stroke-width="3"/>
+      <line x1="100" y1="110" x2="105" y2="115" stroke="#dc2626" stroke-width="3"/>
+      <text x="100" y="100" font-size="11" fill="#dc2626" font-weight="700">F_fixation</text>
+      <line x1="220" y1="120" x2="220" y2="200" stroke="#0969da" stroke-width="3"/>
+      <line x1="220" y1="200" x2="215" y2="195" stroke="#0969da" stroke-width="3"/>
+      <line x1="220" y1="200" x2="225" y2="195" stroke="#0969da" stroke-width="3"/>
+      <text x="225" y="195" font-size="11" fill="#0969da" font-weight="700">P (poids total)</text>
+    </svg>
+    <p style="font-size:.85em;color:#64748b;margin:6px 0 0">À l'équilibre, la force exercée par la fixation (vers le haut) compense exactement le poids total (vers le bas). \(\vec{F} + \vec{P} = \vec{0}\).</p>
+  </div>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Combien de chevilles Molly Lucie doit-elle utiliser pour fixer en toute sécurité une étagère de 60 cm chargée de livres ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p><strong>a)</strong> Calculer le volume de l'étagère, puis sa masse.</p>
+  <p><strong>b)</strong> Calculer la masse des 9 livres.</p>
+  <p><strong>c)</strong> En déduire la masse totale (étagère + livres).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> V = 0,60 × 0,25 × 0,022 = 0,0033 m³. Masse étagère : 720 × 0,0033 ≈ <strong>2,4 kg</strong>.</p>
+    <p><strong>b)</strong> Masse livres : 9 × 0,200 = <strong>1,8 kg</strong>.</p>
+    <p><strong>c)</strong> Masse totale : 2,4 + 1,8 = <strong>4,2 kg</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le poids total de l'ensemble (étagère + livres) en newtons.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>P = 4,2 × 9,81 ≈ <strong>41,2 N</strong>. Soit ≈ 4,2 kgf (kilogrammes-force).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>Énoncer la <strong>condition d'équilibre</strong> pour un objet immobile sous l'action de plusieurs forces.</p>
+  <p>Comment s'applique-t-elle à l'étagère ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Condition d'équilibre : <strong>la somme vectorielle de toutes les forces qui s'exercent sur l'objet doit être nulle</strong>. \(\sum \vec{F} = \vec{0}\)</p>
+    <p>Pour l'étagère : 2 forces agissent.</p>
+    <ul>
+      <li>Le <strong>poids P</strong> (vers le bas) = 41,2 N.</li>
+      <li>La <strong>force de la fixation F</strong> (vers le haut) doit valoir 41,2 N pour équilibrer le poids.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Le mur est en plaque de plâtre. D'après le document 2, quelle fixation est compatible ?</p>
+  <p>Combien de chevilles Molly 6 mm faut-il pour supporter 4,2 kg ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Compatibilité : Molly 4 ou 6 mm (les chevilles plastique ne tiennent pas dans le BA13). On choisira <strong>Molly 6 mm</strong> (30 kg/chev) pour avoir une marge.</p>
+    <p>Théoriquement, 1 cheville suffit (30 kg ≫ 4,2 kg). En pratique, on en met <strong>2 chevilles minimum</strong> pour assurer le maintien à l'horizontale et empêcher la rotation. <strong>Choix : 2 chevilles Molly 6 mm.</strong></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Le client demande que l'étagère puisse aussi accueillir <strong>quelques objets en céramique</strong> (vases, bibelots). Au pire, l'étagère pourrait porter 25 kg.</p>
+  <p>Vérifier que les 2 chevilles Molly 6 mm sont encore suffisantes.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Charge maximale envisageable : 25 kg. Capacité de 2 chevilles Molly 6 : 2 × 30 = <strong>60 kg</strong>.</p>
+    <p>60 kg &gt; 25 kg → fixation adéquate avec un coefficient de sécurité de 60/25 = 2,4. Très satisfaisant (on recommande au moins ×2).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Lucie ajoute un livre supplémentaire (un dictionnaire de 3 kg) en bout d'étagère. Cela peut-il faire basculer l'étagère ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>L'étagère ne peut pas basculer si elle est <strong>solidement fixée au mur par 2 points distincts</strong> (par exemple en haut + en bas, ou aux 2 extrémités). Les 2 chevilles empêchent la rotation autour d'un axe.</p>
+    <p>Avec 1 seule cheville centrale : oui, le dictionnaire en bout pourrait faire pivoter l'étagère. Avec 2 chevilles, le couple créé est repris par le mur. Pas de basculement.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Lucie veut installer une étagère <strong>plus longue (90 cm)</strong> pour des livres reliés (charge estimée 18 kg). Combien de chevilles Molly 6 doit-elle prévoir avec un coefficient de sécurité de 2 ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Capacité demandée avec coef 2 : 18 × 2 = 36 kg.</p>
+    <p>Nombre de chevilles : 36 / 30 = 1,2 → arrondi au supérieur : <strong>2 chevilles minimum</strong>.</p>
+    <p>Pour une étagère longue, il vaut mieux en mettre <strong>3</strong> (régulièrement réparties) pour éviter le fléchissement au centre.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger le bon de commande des fixations pour les 5 étagères de la bibliothèque (60 cm chacune). Préciser le calcul de la quantité.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Bon de commande – Bibliothèque client M./Mme [...]</strong><br>
+      • 5 étagères en chêne 60 × 25 cm × 22 mm (déjà fabriquées)<br>
+      • <strong>10 chevilles Molly métal 6 mm</strong> (2 par étagère pour stabilité)<br>
+      • Vis associées : 10 vis tête fraisée bois 4 × 30 mm<br>
+      • Niveau à bulle, perceuse, mèche béton 6 mm<br>
+      <em>Justification :</em> charge max prévue par étagère ≈ 4 à 25 kg. 2 chevilles Molly 6 mm = 60 kg de capacité = coef sécurité ×2,4.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Si le client veut une étagère « invisible » avec des consoles cachées (uniquement la console métallique enfoncée dans le mur, sans visserie apparente), quelles forces s'exercent en plus ? Pourquoi cette technique exige-t-elle une fixation très solide ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Avec une console encastrée, la console crée un <strong>couple</strong> (effet de levier) car la charge est en porte-à-faux. La force d'arrachement sur la fixation devient bien supérieure au simple poids :</p>
+    <p>Force d'arrachement ≈ Poids × (longueur d'étagère / longueur ancrée). Pour une étagère de 60 cm avec console ancrée de 10 cm dans le mur, le bras de levier multiplie la force par environ 6.</p>
+    <p>Pour 4 kg de charge, on aurait ≈ 24 kg de force d'arrachement par console. Il faut donc des chevilles très solides (Molly 8 mm dans béton, voire scellement chimique). On évite cette technique sur cloison sèche.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li>Un objet est en équilibre si la somme des forces qui s'exercent sur lui est nulle : \(\sum \vec{F} = \vec{0}\).</li>
+    <li>Le <strong>poids</strong> est toujours dirigé vers le bas, le <strong>support</strong> oppose une réaction vers le haut.</li>
+    <li>Une fixation doit toujours avoir un <strong>coefficient de sécurité ≥ 2</strong>.</li>
+    <li>Pour une étagère, prévoir <strong>2 fixations minimum</strong> (stabilité, anti-rotation).</li>
+    <li>Choisir la fixation selon le matériau du mur : cheville plastique (béton), Molly (BA13), tirefond (bois).</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §1 (Force), §2 (Poids), §3 (Réaction du support) et §5 (Condition d'équilibre) de la leçon Ch06.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
