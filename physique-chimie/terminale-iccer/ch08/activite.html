@@ -7,15 +7,17 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
 </head>
 <body>
 <div class="c">
 <a href="../../../pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
 <header>
-  <h1>Activite – Bruit d'une pompe a chaleur et reglementation acoustique</h1>
+  <h1>Activité – Bruit d'une pompe à chaleur et réglementation acoustique</h1>
   <p class="sous-titre">Chapitre 8 – Propagation d'un signal sonore | Terminale Bac Pro (Grpt 1) | Physique – Signaux | &#9201; 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
 </header>
 <button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 <div class="objectifs">
@@ -72,6 +74,41 @@
     <li>Domaine d'audition humaine : de 20 Hz a 20 000 Hz</li>
     <li>En champ libre, quand la distance double, le niveau sonore diminue d'environ <strong>6 dB</strong>.</li>
   </ul>
+
+  <h3>Atténuation du son avec la distance (graphe)</h3>
+  <div class="svg-wrap">
+    <svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" style="max-width:480px;width:100%;height:auto">
+      <line x1="60" y1="200" x2="450" y2="200" stroke="#475569" stroke-width="1.5" marker-end="url(#aa)"/>
+      <line x1="60" y1="200" x2="60" y2="20" stroke="#475569" stroke-width="1.5" marker-end="url(#aa)"/>
+      <text x="450" y="220" text-anchor="end" font-size="11" fill="#475569">distance d (m)</text>
+      <text x="50" y="20" text-anchor="end" font-size="11" fill="#475569">L (dB)</text>
+      <defs><marker id="aa" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#475569"/></marker></defs>
+
+      <text x="60" y="215" text-anchor="middle" font-size="10" fill="#64748b">1</text>
+      <text x="120" y="215" text-anchor="middle" font-size="10" fill="#64748b">2</text>
+      <text x="190" y="215" text-anchor="middle" font-size="10" fill="#64748b">4</text>
+      <text x="270" y="215" text-anchor="middle" font-size="10" fill="#64748b">8</text>
+      <text x="370" y="215" text-anchor="middle" font-size="10" fill="#64748b">16</text>
+
+      <line x1="55" y1="60" x2="65" y2="60" stroke="#475569"/>
+      <text x="50" y="64" text-anchor="end" font-size="10" fill="#64748b">62</text>
+      <line x1="55" y1="120" x2="65" y2="120" stroke="#475569"/>
+      <text x="50" y="124" text-anchor="end" font-size="10" fill="#64748b">50</text>
+      <line x1="55" y1="180" x2="65" y2="180" stroke="#475569"/>
+      <text x="50" y="184" text-anchor="end" font-size="10" fill="#64748b">38</text>
+
+      <polyline points="60,60 120,90 190,120 270,150 370,180" stroke="#0969da" stroke-width="2.5" fill="none"/>
+      <circle cx="60" cy="60" r="4" fill="#0969da"/>
+      <circle cx="120" cy="90" r="4" fill="#0969da"/>
+      <circle cx="190" cy="120" r="4" fill="#0969da"/>
+      <circle cx="270" cy="150" r="4" fill="#0969da"/>
+      <circle cx="370" cy="180" r="4" fill="#0969da"/>
+
+      <line x1="60" y1="135" x2="370" y2="135" stroke="#dc2626" stroke-width="1" stroke-dasharray="5,3"/>
+      <text x="380" y="139" font-size="10" fill="#dc2626">limite jour : 40 dB</text>
+    </svg>
+    <p style="font-size:.85em;color:#64748b;margin:6px 0 0">Chaque doublement de la distance fait perdre environ 6 dB. Pour atteindre la limite de 40 dB, il faut s'éloigner d'environ 12–13 m.</p>
+  </div>
 </div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
@@ -85,6 +122,7 @@
   <p>a) A quelle distance le niveau sonore de la PAC est-il le plus eleve ? Quelle est sa valeur ?</p>
   <p>b) Les frequences de 250 Hz et 1 000 Hz sont-elles dans le domaine audible par l'oreille humaine ? Justifier.</p>
   <p>c) Expliquer avec vos mots ce que signifie l'<strong>emergence</strong> d'un bruit.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> Le niveau sonore est le plus eleve a 1 m de la PAC : <strong>62 dB(A)</strong>.</p>
@@ -98,6 +136,7 @@
   <p>Observer le tableau de mesures et repondre :</p>
   <p>a) De combien de dB le niveau sonore diminue-t-il quand on passe de 1 m a 2 m ? De 2 m a 4 m ? De 4 m a 8 m ?</p>
   <p>b) Que constatez-vous ? Formuler la regle d'attenuation en une phrase.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong></p>
@@ -114,6 +153,7 @@
   <h2>Question 3 <span class="badge-yellow">REA</span></h2>
   <p>La cloture du voisin est a 5 m de la PAC. Par interpolation, estimer le niveau sonore de la PAC a cette distance.</p>
   <p><em>Aide : 5 m est entre 4 m (50 dB) et 8 m (44 dB). On peut aussi utiliser la regle : \(L(d) = L(1\,\text{m}) - 20 \times \log\!\left(\dfrac{d}{1}\right)\).</em></p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>Avec la formule : \(L(5) = 62 - 20 \times \log(5) = 62 - 20 \times 0{,}699 = 62 - 14{,}0 = 48{,}0\) dB</p>
@@ -127,6 +167,7 @@
   <p>a) Calculer l'<strong>emergence</strong> (difference entre le bruit total et le bruit de fond).</p>
   <p>b) L'emergence est-elle conforme a la reglementation de <strong>jour</strong> (limite : 5 dB) ?</p>
   <p>c) L'emergence est-elle conforme a la reglementation de <strong>nuit</strong> (limite : 3 dB) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> Emergence = 48 − 35 = <strong>13 dB(A)</strong>.</p>
@@ -140,6 +181,7 @@
   <p>Pour respecter la reglementation de jour (emergence ≤ 5 dB), le niveau sonore a la cloture ne doit pas depasser \(35 + 5 = 40\) dB(A).</p>
   <p>a) A quelle distance minimale de la PAC faudrait-il placer la cloture pour respecter cette limite ? Utiliser le tableau de mesures.</p>
   <p>b) En mode nuit (52 dB a 1 m), calculer le niveau sonore a 5 m et verifier si la limite nocturne de 38 dB(A) est respectee.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> D'apres le tableau, le niveau est de 38 dB a 16 m. A 8 m, il est de 44 dB (trop fort). Il faudrait une distance d'environ <strong>12 a 16 m</strong> pour respecter la limite de 40 dB.</p>
@@ -155,6 +197,7 @@
   <p>a) Rappeler la relation entre la longueur d'onde \(\lambda\), la vitesse du son \(c_\text{son}\) et la frequence \(f\).</p>
   <p>b) Calculer \(\lambda\) pour \(f = 250\) Hz dans l'air a 20 °C.</p>
   <p>c) Calculer \(\lambda\) pour la frequence du compresseur (\(f = 1\,000\) Hz).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(\lambda = \dfrac{c_\text{son}}{f}\)</p>
@@ -170,6 +213,7 @@
   <p>Nadia envisage d'installer un <strong>ecran acoustique</strong> (mur anti-bruit) entre la PAC et la cloture du voisin. Ce type d'ecran est efficace pour attenuer les sons dont la longueur d'onde est <strong>inferieure</strong> a la dimension de l'ecran. Les sons dont la longueur d'onde est superieure a l'ecran le contournent par diffraction.</p>
   <p>a) L'ecran prevu mesure 1,80 m de haut et 2,00 m de large. Sera-t-il efficace pour attenuer le bruit du ventilateur (250 Hz, λ = 1,36 m) ? Et celui du compresseur (1 000 Hz, λ = 0,34 m) ?</p>
   <p>b) Proposer une solution complementaire pour le bruit grave du ventilateur.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong></p>
@@ -186,6 +230,7 @@
   <p>Nadia entend le bruit de la PAC depuis la fenetre de la maison du voisin, situee a 10 m. Elle chronometre un echo contre le mur du fond du jardin (aller-retour de 40 m) et mesure un delai de 0,12 s.</p>
   <p>a) En deduire la vitesse du son experimentale : \(c_\text{son} = \dfrac{d_\text{aller-retour}}{\Delta t}\).</p>
   <p>b) Comparer cette valeur a la vitesse theorique (340 m/s). Calculer l'ecart relatif en pourcentage.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>a)</strong> \(c_\text{son} = \dfrac{40}{0{,}12} = 333\) m/s</p>
@@ -202,9 +247,22 @@
     <li>Les solutions preconisees pour la rendre conforme.</li>
     <li>L'interet de connaitre la longueur d'onde pour choisir une protection acoustique.</li>
   </ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>En fonctionnement normal, la pompe a chaleur produit une emergence de 13 dB a la cloture du voisin, ce qui depasse largement les limites reglementaires de 5 dB le jour et 3 dB la nuit. Le mode nuit (52 dB a 1 m) permet de respecter de justesse la limite nocturne. Pour le fonctionnement de jour, il est necessaire d'installer un ecran acoustique et d'eloigner la PAC a au moins 12 m de la cloture. La connaissance de la longueur d'onde est essentielle : un ecran est efficace pour les sons dont la longueur d'onde est inferieure a ses dimensions, ce qui guide le choix de la taille et du type de protection.</p>
+  </div>
+</div>
+
+<!-- ===== BONUS ===== -->
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Nadia veut connaître la fréquence à laquelle correspond une longueur d'onde de 17 mm dans l'air à 20 °C. Cette fréquence est-elle audible par l'oreille humaine ? À quel type de bruit (grave, médium, aigu, ultrason) correspond-elle ? Cette plage est-elle particulièrement gênante pour le voisinage ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(f = \dfrac{c}{\lambda} = \dfrac{340}{0{,}017} = \mathbf{20\,000 \text{ Hz}}\), soit la limite supérieure de l'audition humaine. Au-dessus, c'est l'ultrason (inaudible).</p>
+    <p>Les très hautes fréquences (sifflement aigu) sont peu confortables mais s'atténuent vite avec la distance et sont facilement bloquées par un écran. En revanche, les <strong>basses fréquences</strong> (50–250 Hz) du compresseur traversent les murs et sont les plus gênantes pour le voisinage : elles nécessitent des silent-blocs et des caissons d'insonorisation lourds.</p>
   </div>
 </div>
 
@@ -212,12 +270,13 @@
 <div class="retenir">
   <strong>À retenir</strong>
   <ul>
-    <li>La <strong>vitesse du son</strong> dans l'air est d'environ 340 m/s a 20 °C. Elle se calcule par \(v = \dfrac{d}{\Delta t}\).</li>
-    <li>La <strong>longueur d'onde</strong> : \(\lambda = \dfrac{c_\text{son}}{f}\). Plus la frequence est basse, plus la longueur d'onde est grande.</li>
-    <li>L'echelle des <strong>decibels</strong> (dB) est logarithmique. En champ libre, quand la distance double, le niveau sonore baisse de 6 dB.</li>
-    <li>L'<strong>attenuation</strong> du son avec la distance et les obstacles (ecrans acoustiques) depend de la longueur d'onde du son.</li>
-    <li>La reglementation sur le bruit de voisinage impose une <strong>emergence maximale</strong> de 5 dB le jour et 3 dB la nuit.</li>
+    <li>La <strong>vitesse du son</strong> dans l'air est d'environ 340 m/s à 20 °C. Elle se calcule par \(v = \dfrac{d}{\Delta t}\).</li>
+    <li>La <strong>longueur d'onde</strong> : \(\lambda = \dfrac{c_\text{son}}{f}\). Plus la fréquence est basse, plus la longueur d'onde est grande.</li>
+    <li>L'échelle des <strong>décibels</strong> (dB) est logarithmique. En champ libre, quand la distance double, le niveau sonore baisse de 6 dB.</li>
+    <li>L'<strong>atténuation</strong> du son avec la distance et les obstacles (écrans acoustiques) dépend de la longueur d'onde du son.</li>
+    <li>La réglementation sur le bruit de voisinage impose une <strong>émergence maximale</strong> de 5 dB le jour et 3 dB la nuit.</li>
   </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §1 (Vitesse du son et longueur d'onde), §2 (Échelle des décibels et atténuation), et §3 (Diffraction et écrans acoustiques) de la leçon Ch08.</em></p>
 </div>
 
 </div>
