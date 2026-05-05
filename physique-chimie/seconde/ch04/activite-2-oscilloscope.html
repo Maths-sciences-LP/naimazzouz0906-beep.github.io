@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Activité 2 – Lire un oscillogramme – 2nde Bac Pro MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd;--s:#0ea5e9}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 2 – Lire un oscillogramme du secteur EDF <span style="font-size:.55em;color:#6f42c1;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 4 – Signaux électriques alternatifs | 2nde Bac Pro MAMA | Physique-Chimie | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Mesurer la période et la fréquence d'un signal alternatif sur oscilloscope</li>
+    <li>Mesurer l'amplitude (tension max) d'un signal sinusoïdal</li>
+    <li>Calculer la valeur efficace d'une tension</li>
+    <li>Comprendre la signification du « 230 V » du secteur</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – contrôle d'un onduleur de secours</h2>
+  <p><em>Hugo, technicien de maintenance dans une entreprise de fabrication de menuiseries à Cholet, doit vérifier le bon fonctionnement de l'onduleur qui prend le relais en cas de coupure EDF. Pour cela, il branche un oscilloscope à la sortie de l'onduleur et capture l'oscillogramme. Il doit confirmer que le signal est bien sinusoïdal, à 50 Hz et 230 V efficace, comme le secteur.</em></p>
+
+  <h3>Document 1 – Oscillogramme observé par Hugo</h3>
+  <div class="svg-wrap">
+    <svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" style="max-width:480px;width:100%;height:auto">
+      <rect x="40" y="20" width="400" height="240" fill="#0a0a23" stroke="#475569"/>
+      <g stroke="#1e3a8a" stroke-width="0.5" opacity="0.6">
+        <line x1="80" y1="20" x2="80" y2="260"/>
+        <line x1="120" y1="20" x2="120" y2="260"/>
+        <line x1="160" y1="20" x2="160" y2="260"/>
+        <line x1="200" y1="20" x2="200" y2="260"/>
+        <line x1="240" y1="20" x2="240" y2="260"/>
+        <line x1="280" y1="20" x2="280" y2="260"/>
+        <line x1="320" y1="20" x2="320" y2="260"/>
+        <line x1="360" y1="20" x2="360" y2="260"/>
+        <line x1="400" y1="20" x2="400" y2="260"/>
+        <line x1="40" y1="60" x2="440" y2="60"/>
+        <line x1="40" y1="100" x2="440" y2="100"/>
+        <line x1="40" y1="140" x2="440" y2="140"/>
+        <line x1="40" y1="180" x2="440" y2="180"/>
+        <line x1="40" y1="220" x2="440" y2="220"/>
+      </g>
+      <line x1="40" y1="140" x2="440" y2="140" stroke="#475569" stroke-width="1"/>
+      <path d="M 40 140 Q 80 30 120 140 T 200 140 T 280 140 T 360 140 T 440 140" stroke="#fbbf24" stroke-width="2.5" fill="none"/>
+      <text x="240" y="280" text-anchor="middle" font-size="11" fill="#1e3a8a" font-weight="700">Sensibilité H : 5 ms/div · Sensibilité V : 100 V/div</text>
+      <text x="50" y="35" font-size="11" fill="#fbbf24">+325 V</text>
+      <text x="50" y="248" font-size="11" fill="#fbbf24">−325 V</text>
+    </svg>
+    <p style="font-size:.85em;color:#64748b;margin:6px 0 0">Sur l'écran : 1 division horizontale = 5 ms, 1 division verticale = 100 V. La courbe jaune = la tension u(t) en sortie de l'onduleur.</p>
+  </div>
+
+  <h3>Document 2 – Lectures sur l'oscillogramme</h3>
+  <ul>
+    <li>Le signal atteint son maximum à <strong>+325 V</strong> et son minimum à <strong>−325 V</strong>.</li>
+    <li>La courbe se répète tous les <strong>4 carreaux</strong> (largeur d'une période complète).</li>
+    <li>Sensibilité horizontale : 5 ms par carreau (= 5 ms/div).</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> En lisant l'oscillogramme, Hugo peut-il vérifier que l'onduleur restitue bien un signal de 230 V à 50 Hz, équivalent au secteur EDF ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p><strong>a)</strong> Quelle est la différence entre un courant continu et un courant alternatif ?</p>
+  <p><strong>b)</strong> Quelle forme caractéristique a le signal du secteur EDF ?</p>
+  <p><strong>c)</strong> Quelle est la fréquence légale du secteur en France ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Continu (DC) : la tension reste constante au cours du temps. Alternatif (AC) : la tension varie périodiquement, alternativement positive puis négative.</p>
+    <p><strong>b)</strong> Le secteur a une forme <strong>sinusoïdale</strong>.</p>
+    <p><strong>c)</strong> La fréquence légale du secteur EDF est de <strong>50 Hz</strong> (50 cycles par seconde).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>D'après l'oscillogramme, lire :</p>
+  <p><strong>a)</strong> La tension <strong>maximale</strong> U_max (en V).</p>
+  <p><strong>b)</strong> La <strong>période</strong> T (durée d'un cycle complet, en ms puis en s).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Le maximum est à +325 V (3,25 carreaux × 100 V/div). Donc <strong>U_max = 325 V</strong>.</p>
+    <p><strong>b)</strong> 1 période = 4 carreaux × 5 ms/div = <strong>20 ms = 0,020 s</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la <strong>fréquence</strong> du signal à partir de la période.</p>
+  <p><em>\(f = \dfrac{1}{T}\)</em></p>
+  <p>Comparer à la fréquence du secteur EDF (50 Hz).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(f = \dfrac{1}{T} = \dfrac{1}{0{,}020} = \mathbf{50 \text{ Hz}}\)</p>
+    <p>Le signal de l'onduleur est bien à <strong>50 Hz</strong>, exactement comme le secteur EDF. ✔</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>La <strong>valeur efficace</strong> d'une tension sinusoïdale s'obtient par : \(U_\text{eff} = \dfrac{U_\text{max}}{\sqrt{2}}\).</p>
+  <p>Calculer la valeur efficace de la tension de l'onduleur.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(U_\text{eff} = \dfrac{325}{\sqrt{2}} = \dfrac{325}{1{,}414} \approx \mathbf{230 \text{ V}}\)</p>
+    <p>L'onduleur restitue bien une tension efficace de 230 V. ✔</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>L'onduleur produit donc un signal sinusoïdal à 50 Hz et 230 V efficace, identique au secteur EDF.</p>
+  <p><strong>a)</strong> Pourquoi indique-t-on toujours « 230 V » sur les appareils alors que la tension va en réalité jusqu'à 325 V au maximum ?</p>
+  <p><strong>b)</strong> En quoi la valeur efficace est-elle physiquement plus utile que la valeur maximale ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> La <strong>valeur efficace</strong> est la tension équivalente en continu qui produirait la même puissance moyenne dissipée dans une résistance. C'est la valeur utile pour calculer la chaleur produite par un radiateur, l'éclairement d'une lampe, etc.</p>
+    <p><strong>b)</strong> Avec U_eff = 230 V, on calcule directement la puissance dissipée par effet Joule : \(P = U_\text{eff}^2 / R\). Avec U_max = 325 V, on aurait une formule plus compliquée car U(t) varie avec le temps.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Hugo branche un radiateur de résistance R = 53 Ω sur l'onduleur (donc sous 230 V efficace).</p>
+  <p><strong>a)</strong> Calculer l'intensité efficace I_eff = U_eff / R.</p>
+  <p><strong>b)</strong> Calculer la puissance dissipée P = U_eff × I_eff.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(I_\text{eff} = \dfrac{230}{53} \approx \mathbf{4{,}34 \text{ A}}\)</p>
+    <p><strong>b)</strong> \(P = 230 \times 4{,}34 \approx \mathbf{998 \text{ W}}\) ≈ 1 kW.</p>
+    <p>C'est un radiateur 1000 W classique. La formule \(P = U_\text{eff} \times I_\text{eff}\) fonctionne directement avec les valeurs efficaces.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Hugo regarde un autre oscillogramme issu d'un onduleur bas de gamme : la courbe a une <strong>forme rectangulaire</strong> (signal carré) au lieu d'être sinusoïdale.</p>
+  <p><strong>a)</strong> Le signal est-il toujours alternatif ? Toujours périodique ?</p>
+  <p><strong>b)</strong> Pourquoi un onduleur de qualité doit-il restituer un signal sinusoïdal et non carré ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Oui, un signal carré reste alternatif (alterne + et −) et périodique. Mais il n'est <strong>pas sinusoïdal</strong>.</p>
+    <p><strong>b)</strong> Beaucoup d'appareils (moteurs, alimentations électroniques, lampes à LED) sont conçus pour un signal sinusoïdal. Un signal carré peut provoquer :</p>
+    <ul>
+      <li>des bruits anormaux dans les moteurs (à cause des harmoniques),</li>
+      <li>un échauffement excessif des bobinages,</li>
+      <li>une perturbation des appareils sensibles (lecteurs DVD, ordinateurs).</li>
+    </ul>
+    <p>Pour un atelier équipé de machines (scies, ponceuses), il faut impérativement un onduleur « pure sine » (sinusoïde pure).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Hugo doit rédiger une fiche de contrôle pour valider l'onduleur. Compléter en 4 lignes : forme du signal, période, fréquence, tension efficace, conformité.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Fiche de contrôle onduleur — Atelier Cholet</strong><br>
+      • Forme du signal : sinusoïdale (pure sine)<br>
+      • Période mesurée : T = 20 ms<br>
+      • Fréquence calculée : f = 1/T = 50 Hz ✔<br>
+      • Tension max : U_max = 325 V → U_eff = 325/√2 ≈ 230 V ✔<br>
+      <strong>Conclusion :</strong> onduleur conforme aux spécifications du secteur EDF (230 V – 50 Hz).
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Aux États-Unis, le secteur est à <strong>120 V – 60 Hz</strong>. Calculer la tension maximale (U_max) d'un signal sinusoïdal américain. Pourquoi est-il dangereux de brancher un appareil français (230 V) sur une prise américaine ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(U_\text{max} = U_\text{eff} \times \sqrt{2} = 120 \times 1{,}414 \approx 170 \text{ V}\)</p>
+    <p>Brancher un appareil 230 V sur 120 V : il fonctionnera mais à <strong>puissance réduite</strong> (les LED clignotent, les moteurs tournent au ralenti, les radiateurs chauffent moitié moins). Inversement, un appareil 120 V branché sur 230 V <strong>grille immédiatement</strong> car la tension est presque doublée. Toujours utiliser un transformateur d'adaptation lors des voyages.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Période T :</strong> durée d'un cycle complet, en s.</li>
+    <li><strong>Fréquence f :</strong> nombre de cycles par seconde, en Hz. \(f = 1/T\).</li>
+    <li><strong>Secteur EDF :</strong> 50 Hz, sinusoïdal, U_max = 325 V, U_eff = 230 V.</li>
+    <li><strong>Valeur efficace :</strong> \(U_\text{eff} = U_\text{max} / \sqrt{2}\). C'est la valeur indiquée sur les appareils.</li>
+    <li>L'<strong>oscilloscope</strong> permet de visualiser un signal et de mesurer sa période et son amplitude grâce aux divisions de l'écran.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §2 (Le signal sinusoïdal), §3 (Le secteur en France), §4 (L'oscilloscope) et §5 (La valeur efficace) de la leçon Ch04.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
