@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch01 – Activité 4 – Tri des déchets de l'atelier – 2nde Bac Pro MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd;--s:#0ea5e9}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}
+.bac{background:#fff;border:3px solid;border-radius:10px;padding:14px 18px;margin:10px 0;box-shadow:0 3px 8px rgba(0,0,0,.08)}
+.bac.jaune{border-color:#eab308;background:#fefce8}
+.bac.bleu{border-color:#0969da;background:#dbeafe}
+.bac.vert{border-color:#16a34a;background:#dcfce7}
+.bac.rouge{border-color:#dc2626;background:#fee2e2}
+.bac.noir{border-color:#1e293b;background:#f1f5f9}
+.bac h4{margin:0 0 6px;color:inherit}
+.bac.jaune h4{color:#a16207}
+.bac.bleu h4{color:#0c4a6e}
+.bac.vert h4{color:#166534}
+.bac.rouge h4{color:#991b1b}
+.bac.noir h4{color:#1e293b}
+.bac p{margin:4px 0;font-size:.9em}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 4 – Trier les déchets de l'atelier de menuiserie <span style="font-size:.55em;color:#6f42c1;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 1 – Sécurité en laboratoire et en atelier | 2nde Bac Pro MAMA | Physique-Chimie | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Identifier les différents types de déchets produits en atelier de menuiserie</li>
+    <li>Associer chaque déchet à la filière de tri appropriée</li>
+    <li>Comprendre la dangerosité des déchets diffus spécifiques (DDS)</li>
+    <li>Calculer le coût d'élimination des déchets dangereux</li>
+  </ul>
+</div>
+
+<!-- ===== SITUATION ===== -->
+<div class="situation">
+  <h2>Situation – fin de chantier, beaucoup de déchets à évacuer</h2>
+  <p><em>Lucie, responsable HSE (Hygiène, Sécurité, Environnement) chez <strong>Grands Ateliers du Bois</strong> à Limoges, fait le tour des bacs de tri en fin de journée. Les apprentis ont jeté leurs déchets sans toujours bien respecter le tri. Avant l'enlèvement par le prestataire, Lucie doit vérifier que chaque déchet est dans le bon bac, car certains sont strictement réglementés.</em></p>
+
+  <h3>Document 1 – Les 5 bacs de tri de l'atelier</h3>
+
+  <div class="bac jaune">
+    <h4>🟡 BAC JAUNE — Déchets recyclables (DIB / DIR)</h4>
+    <p>Cartons, papiers, emballages plastiques propres, métaux. Filière de recyclage. Coût d'enlèvement bas.</p>
+  </div>
+
+  <div class="bac bleu">
+    <h4>🔵 BAC BLEU — Déchets de bois propre</h4>
+    <p>Copeaux, sciure, chutes de bois massif non traité, palettes. Recyclage en panneaux ou en biomasse énergie. Coût bas.</p>
+  </div>
+
+  <div class="bac vert">
+    <h4>🟢 BAC VERT — Bois traités / panneaux MDF / mélaminé</h4>
+    <p>Bois imprégné, MDF, contreplaqué, panneaux mélaminés. <strong>Filière séparée</strong> car les colles et les vernis ne permettent pas le compostage. Coût moyen.</p>
+  </div>
+
+  <div class="bac rouge">
+    <h4>🔴 BAC ROUGE — DDS (Déchets Diffus Spécifiques) / DEEE</h4>
+    <p>Pots de vernis vides ou usagés, chiffons solvantés, restes de colle, batteries, néons usagés, aérosols. <strong>Déchets dangereux</strong> : enlèvement par prestataire agréé (ADIVALOR, ECODDS). Coût élevé.</p>
+  </div>
+
+  <div class="bac noir">
+    <h4>⚫ BAC NOIR — Ordures ménagères résiduelles (OMR)</h4>
+    <p>Ce qui ne peut pas être trié ailleurs : restes de repas, papiers souillés, plastiques composites. <strong>Ne doit JAMAIS contenir de produits dangereux.</strong></p>
+  </div>
+
+  <h3>Document 2 – Tarifs d'enlèvement par filière (en € HT par tonne)</h3>
+  <table>
+    <thead><tr><th>Filière</th><th>Coût €/tonne</th><th>Devenir</th></tr></thead>
+    <tbody>
+      <tr><td>DIB recyclables (jaune)</td><td>40 €</td><td>Recyclage matière</td></tr>
+      <tr><td>Bois propre (bleu)</td><td>30 €</td><td>Recyclage / biomasse</td></tr>
+      <tr><td>Bois traité (vert)</td><td>120 €</td><td>Incinération avec récup. d'énergie</td></tr>
+      <tr><td>OMR (noir)</td><td>180 €</td><td>Incinération / enfouissement</td></tr>
+      <tr><td>DDS (rouge)</td><td>650 €</td><td>Traitement spécialisé (incinération haute température)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document 3 – Liste des déchets de la journée</h3>
+  <table>
+    <thead><tr><th>Déchet</th><th>Quantité</th></tr></thead>
+    <tbody>
+      <tr><td>1. Sciure de chêne (ponçage)</td><td>15 kg</td></tr>
+      <tr><td>2. Pot de vernis usagé (~ 200 mL au fond)</td><td>3 pots</td></tr>
+      <tr><td>3. Chutes de panneau MDF</td><td>8 kg</td></tr>
+      <tr><td>4. Chiffons imprégnés de vernis</td><td>1,5 kg</td></tr>
+      <tr><td>5. Cartons d'emballage</td><td>4 kg</td></tr>
+      <tr><td>6. Tube fluorescent grillé</td><td>1 unité</td></tr>
+      <tr><td>7. Restes de baguette de pain (déjeuner)</td><td>0,3 kg</td></tr>
+      <tr><td>8. Aérosol vide de lubrifiant</td><td>1 unité</td></tr>
+      <tr><td>9. Chutes de planches massif (chêne brut)</td><td>20 kg</td></tr>
+      <tr><td>10. Bouteille en plastique vide</td><td>0,1 kg</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Comment Lucie peut-elle organiser le tri rigoureux des 10 déchets de la journée pour respecter la réglementation et limiter le coût total d'enlèvement ?
+</div>
+
+<!-- ===== QUESTIONS ===== -->
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p><strong>a)</strong> Que signifient les sigles <strong>DIB</strong>, <strong>DDS</strong> et <strong>DEEE</strong> ?</p>
+  <p><strong>b)</strong> Pourquoi ne peut-on pas jeter un pot de vernis vide dans le bac jaune (recyclables) avec les autres pots métalliques ?</p>
+  <p><strong>c)</strong> Pourquoi le bois traité (mélaminé, MDF) ne peut-il pas être recyclé avec le bois propre ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> DIB = <strong>Déchets Industriels Banals</strong> (recyclables non dangereux) ; DDS = <strong>Déchets Diffus Spécifiques</strong> (déchets dangereux des artisans, particuliers) ; DEEE = <strong>Déchets d'Équipements Électriques et Électroniques</strong>.</p>
+    <p><strong>b)</strong> Le pot contient encore des <strong>résidus de vernis</strong> (solvants, résines), classés comme déchets dangereux. Il faut le traiter en filière DDS, pas comme un simple emballage métallique.</p>
+    <p><strong>c)</strong> Le MDF et les panneaux mélaminés contiennent des <strong>colles à base de résines</strong> (urée-formol, mélamine-formol) qui dégagent du formaldéhyde lors du compostage. Ils sont incinérés avec récupération d'énergie, dans une filière séparée.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Pour chaque déchet du document 3, indiquer le bac de destination.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>Déchet</th><th>Bac</th></tr></thead>
+      <tbody>
+        <tr><td>1. Sciure de chêne</td><td>🔵 BLEU (bois propre)</td></tr>
+        <tr><td>2. Pots de vernis usagés</td><td>🔴 ROUGE (DDS)</td></tr>
+        <tr><td>3. Chutes de MDF</td><td>🟢 VERT (bois traité)</td></tr>
+        <tr><td>4. Chiffons imprégnés de vernis</td><td>🔴 ROUGE (DDS)</td></tr>
+        <tr><td>5. Cartons</td><td>🟡 JAUNE (recyclables)</td></tr>
+        <tr><td>6. Tube fluorescent</td><td>🔴 ROUGE (DEEE — filière spéciale, pas mélangé aux DDS chimiques)</td></tr>
+        <tr><td>7. Reste de baguette</td><td>⚫ NOIR (ordures ménagères)</td></tr>
+        <tr><td>8. Aérosol vide</td><td>🔴 ROUGE (DDS — résidu inflammable + gaz)</td></tr>
+        <tr><td>9. Chutes de chêne brut</td><td>🔵 BLEU (bois propre)</td></tr>
+        <tr><td>10. Bouteille plastique</td><td>🟡 JAUNE (recyclables)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>Calculer la masse totale de déchets de la journée par bac de tri.</p>
+  <table>
+    <thead><tr><th>Bac</th><th>Déchets concernés</th><th>Masse (kg)</th></tr></thead>
+    <tbody>
+      <tr><td>🔵 Bois propre</td><td>...</td><td>...</td></tr>
+      <tr><td>🟢 Bois traité</td><td>...</td><td>...</td></tr>
+      <tr><td>🟡 Recyclables</td><td>...</td><td>...</td></tr>
+      <tr><td>🔴 DDS</td><td>...</td><td>...</td></tr>
+      <tr><td>⚫ OMR</td><td>...</td><td>...</td></tr>
+    </tbody>
+  </table>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>Bac</th><th>Déchets</th><th>Masse</th></tr></thead>
+      <tbody>
+        <tr><td>🔵 Bois propre</td><td>Sciure + chutes chêne</td><td>15 + 20 = <strong>35 kg</strong></td></tr>
+        <tr><td>🟢 Bois traité</td><td>Chutes MDF</td><td><strong>8 kg</strong></td></tr>
+        <tr><td>🟡 Recyclables</td><td>Cartons + bouteille</td><td>4 + 0,1 = <strong>4,1 kg</strong></td></tr>
+        <tr><td>🔴 DDS</td><td>3 pots vernis (≈ 0,8 kg) + chiffons (1,5 kg) + tube fluo (0,2 kg) + aérosol (0,2 kg)</td><td>≈ <strong>2,7 kg</strong></td></tr>
+        <tr><td>⚫ OMR</td><td>Reste de baguette</td><td><strong>0,3 kg</strong></td></tr>
+      </tbody>
+    </table>
+    <p>Total journalier : ≈ 50 kg.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>À l'aide du document 2, calculer le <strong>coût d'enlèvement</strong> de chaque catégorie de déchets, sachant que les tarifs sont en €/tonne.</p>
+  <p><em>Attention : 1 tonne = 1 000 kg, donc on convertit les masses en tonnes (ex. 35 kg = 0,035 t).</em></p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>Bac</th><th>Masse (t)</th><th>Tarif (€/t)</th><th>Coût (€)</th></tr></thead>
+      <tbody>
+        <tr><td>🔵 Bois propre</td><td>0,035</td><td>30</td><td>0,035 × 30 = <strong>1,05 €</strong></td></tr>
+        <tr><td>🟢 Bois traité</td><td>0,008</td><td>120</td><td>0,008 × 120 = <strong>0,96 €</strong></td></tr>
+        <tr><td>🟡 Recyclables</td><td>0,0041</td><td>40</td><td>0,0041 × 40 ≈ <strong>0,16 €</strong></td></tr>
+        <tr><td>🔴 DDS</td><td>0,0027</td><td>650</td><td>0,0027 × 650 ≈ <strong>1,76 €</strong></td></tr>
+        <tr><td>⚫ OMR</td><td>0,0003</td><td>180</td><td>0,0003 × 180 ≈ <strong>0,05 €</strong></td></tr>
+      </tbody>
+    </table>
+    <p><strong>Coût total journalier ≈ 4,00 €.</strong> Sur l'année (220 j ouvrés) : ≈ 880 €.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Lucie remarque que <strong>les DDS ne pèsent que 2,7 kg (5 % du tonnage)</strong> mais qu'ils représentent près de <strong>44 % du coût d'élimination</strong> (1,76 € sur 4 €).</p>
+  <p><strong>a)</strong> Justifier ce résultat.</p>
+  <p><strong>b)</strong> Que se passerait-il si un apprenti jetait <strong>par erreur</strong> un chiffon imprégné de vernis (1,5 kg) dans le bac bleu (bois propre) ? Pourquoi est-ce un problème ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Le tarif des DDS (650 €/t) est <strong>22 fois plus élevé</strong> que celui du bois propre (30 €/t). Une petite quantité coûte donc beaucoup. C'est dû au traitement spécialisé : incinération à haute température, traitement des fumées, prestataire agréé.</p>
+    <p><strong>b)</strong> <strong>Toute la benne de bois propre serait contaminée</strong> par le solvant : elle ne pourrait plus être recyclée et devrait être reclassée en DDS. La benne entière (mettons 1 tonne de bois propre) coûterait alors 650 € au lieu de 30 € → un surcoût d'environ <strong>620 € pour un seul chiffon mal trié</strong> ! Sans compter le risque d'auto-inflammation du chiffon.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Une <strong>FDS</strong> (Fiche de Données de Sécurité) du vernis indique : « point d'éclair : 28 °C ». Cela signifie que les vapeurs s'enflamment dès 28 °C en présence d'une étincelle.</p>
+  <p><strong>a)</strong> Pourquoi un chiffon imprégné de vernis présente-t-il un risque d'auto-inflammation ?</p>
+  <p><strong>b)</strong> Comment doit-on stocker les chiffons solvantés en attendant l'enlèvement DDS ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> Le chiffon imprégné s'oxyde lentement à l'air libre (réaction chimique avec l'oxygène). Cette oxydation dégage de la chaleur. Si la chaleur ne se dissipe pas (chiffon tassé dans une poubelle, en boule), la température monte progressivement. Quand elle atteint le point d'éclair (28 °C pour ce vernis), les vapeurs s'enflamment <strong>spontanément, sans flamme extérieure</strong>.</p>
+    <p><strong>b)</strong> Stockage correct :</p>
+    <ul>
+      <li>Dans un <strong>récipient métallique fermé</strong> (pas en plastique qui fond) avec couvercle qui se referme automatiquement.</li>
+      <li>Dans un local <strong>aéré, à l'écart de toute source de chaleur</strong>.</li>
+      <li>Étiqueté <strong>« DDS solvants »</strong>, daté.</li>
+      <li>Vidé régulièrement (ne pas accumuler des semaines).</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Lucie veut sensibiliser les apprentis. Elle estime qu'<strong>1 erreur de tri par jour sur les DDS</strong> entraîne en moyenne 100 € de surcoût (à cause de la contamination d'autres bennes).</p>
+  <p>Calculer le surcoût annuel (220 jours travaillés) que représente une mauvaise pratique de tri pour l'entreprise.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Surcoût annuel = 100 € × 220 j = <strong>22 000 €/an</strong>.</p>
+    <p>C'est l'équivalent d'environ <strong>2 mois de salaire net</strong> d'un apprenti chargé de l'entreprise. Une formation de quelques heures sur le tri est largement rentable.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Lucie demande à un apprenti de rédiger une affiche en 5 lignes maximum à coller au-dessus des bacs de tri.</p>
+  <p>Rédiger cette affiche.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>♻️ AVANT DE JETER, JE TRIE :</strong><br>
+      🔵 BLEU : copeaux, sciure, planches massives non traitées.<br>
+      🟢 VERT : MDF, mélaminé, contreplaqué, bois traité.<br>
+      🟡 JAUNE : cartons, papiers, plastiques propres.<br>
+      🔴 ROUGE (DDS) : pots de vernis, chiffons solvantés, aérosols, néons. <strong>JAMAIS dans une autre benne !</strong><br>
+      ⚫ NOIR : déchets de pause-déjeuner uniquement.<br>
+      ⚠️ Une erreur sur les DDS = +100 € pour l'entreprise.
+    </p>
+  </div>
+</div>
+
+<!-- ===== BONUS ===== -->
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>L'entreprise envisage d'installer une <strong>presse à copeaux</strong> qui compacte les copeaux et la sciure pour fabriquer des <strong>bûchettes énergétiques</strong> revendues à 80 €/tonne. Si la production de bois propre atteint 35 kg/jour (220 jours/an), quelle économie cela représente-t-il par rapport à l'enlèvement classique ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Production annuelle : 35 kg × 220 = 7 700 kg = 7,7 tonnes.</p>
+    <p><strong>Coût actuel</strong> (enlèvement bois propre) : 7,7 × 30 = <strong>231 €/an de coût</strong>.</p>
+    <p><strong>Recette nouvelle</strong> (vente bûchettes) : 7,7 × 80 = <strong>616 €/an de revenu</strong>.</p>
+    <p><strong>Gain total</strong> : 616 + 231 = <strong>847 €/an</strong> (économie + revenu). En plus, on contribue à l'économie circulaire : le bois sert à chauffer des particuliers ou des chaudières biomasse.</p>
+  </div>
+</div>
+
+<!-- ===== A RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li>Le <strong>tri sélectif</strong> en atelier sépare au minimum 5 catégories : recyclables (jaune), bois propre (bleu), bois traité (vert), DDS (rouge), OMR (noir).</li>
+    <li>Les <strong>DDS</strong> (Déchets Diffus Spécifiques) regroupent tous les déchets dangereux des artisans : restes de vernis, chiffons solvantés, aérosols, etc.</li>
+    <li>Le <strong>coût d'élimination</strong> des DDS est élevé (≈ 650 €/tonne, soit 20× plus que les déchets banals).</li>
+    <li>Une <strong>erreur de tri</strong> peut contaminer toute une benne et multiplier le coût d'élimination par 20.</li>
+    <li>Les chiffons solvantés peuvent <strong>s'auto-enflammer</strong> par oxydation : stockage en récipient métallique fermé.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §7 (Tri sélectif des déchets chimiques) de la leçon Ch01 et complète les notions de §2 (pictogrammes) et §3 (EPI).</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
