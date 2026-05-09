@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 3 – Caisson volume et Thalès – CAP Ébéniste</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#b45309;--p-bg:#fffbeb;--p-border:#fde68a}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-cap.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 3 – Calculer un volume de caisson et vérifier l'équerrage <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 6 — Géométrie | CAP Ébéniste | Mathématiques | ⏱ 35 min</p>
+  <p class="maj">Dernière mise à jour : 7 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Calculer le volume d'un parallélépipède rectangle</li>
+    <li>Calculer une surface de placage</li>
+    <li>Utiliser le théorème de Pythagore pour vérifier l'équerrage (3-4-5)</li>
+    <li>Appliquer le théorème de Thalès pour un agrandissement</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – fabrication d'un caisson de rangement</h2>
+  <p><em>Inès, apprentie ébéniste à Lyon, fabrique un caisson de rangement sur mesure pour un client. Elle réalise le caisson en panneau de bois aggloméré, qu'elle plaque ensuite avec du chêne. Le maître d'apprentissage veut qu'elle vérifie l'équerrage de la caisse à la fin du montage avec une équerre 3-4-5.</em></p>
+
+  <h3>Document 1 — Dimensions du caisson</h3>
+  <ul>
+    <li>Longueur : <strong>80 cm</strong>.</li>
+    <li>Largeur : <strong>40 cm</strong>.</li>
+    <li>Hauteur : <strong>50 cm</strong>.</li>
+  </ul>
+
+  <h3>Document 2 — Schéma du caisson</h3>
+  <div class="svg-wrap">
+  <svg viewBox="0 0 360 200" width="360" height="200" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="60,150 220,150 280,110 120,110" fill="#fbbf24" stroke="#92400e" stroke-width="2"/>
+    <polygon points="60,150 220,150 220,50 60,50" fill="#d97706" stroke="#92400e" stroke-width="2"/>
+    <polygon points="220,50 280,10 280,110 220,150" fill="#92400e" stroke="#7c2d12" stroke-width="2"/>
+    <text x="140" y="105" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Façade</text>
+    <text x="250" y="85" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Côté</text>
+    <text x="140" y="170" text-anchor="middle" font-size="11" font-weight="700">Plateau bas</text>
+    <text x="140" y="185" text-anchor="middle" font-size="9" fill="#475569">L = 80 cm × l = 40 cm</text>
+    <text x="40" y="100" text-anchor="middle" font-size="10" fill="#475569" transform="rotate(-90,40,100)">h = 50 cm</text>
+  </svg>
+  </div>
+
+  <h3>Document 3 — Méthode 3-4-5 pour vérifier l'équerrage</h3>
+  <p>On reporte 30 cm sur un côté, 40 cm sur l'autre côté, et on mesure la diagonale. Si elle vaut <strong>50 cm</strong> exactement, l'angle est droit (Pythagore : $30^2 + 40^2 = 900 + 1600 = 2500 = 50^2$).</p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quel est le volume utile du caisson, la surface de placage à prévoir, et l'angle du caisson est-il bien droit ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Calculer le <strong>volume utile</strong> du caisson en cm³ puis en L.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$V = L \times l \times h = 80 \times 40 \times 50 = $ <strong>160 000 cm³</strong>.</p>
+    <p>Conversion : $160\,000 \,$cm³ = $160 \,$dm³ = <strong>160 L</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la <strong>surface totale extérieure</strong> du caisson (6 faces). Soit la surface à plaquer.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Faces avant + arrière : $2 \times 80 \times 50 = 8\,000 \,$cm².</p>
+    <p>Faces gauche + droite : $2 \times 40 \times 50 = 4\,000 \,$cm².</p>
+    <p>Dessus + dessous : $2 \times 80 \times 40 = 6\,400 \,$cm².</p>
+    <p>Total : $8\,000 + 4\,000 + 6\,400 = 18\,400 \,$cm² = <strong>1,84 m²</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Le placage chêne coûte <strong>32 €/m²</strong>. Combien coûte le placage de l'extérieur du caisson, sachant que les chutes représentent 8 % ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Surface réelle commandée : $1,84 \times 1,08 = 1,99 \,$m² → arrondir à <strong>2 m²</strong>.</p>
+    <p>Coût : $2 \times 32 = $ <strong>64 €</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Pour vérifier l'équerrage, Inès reporte <strong>30 cm</strong> sur un côté du plateau bas et <strong>40 cm</strong> sur l'autre. Elle mesure la diagonale = <strong>49,5 cm</strong>. Le caisson est-il d'équerre ? Justifier.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Si angle droit : $30^2 + 40^2 = 900 + 1\,600 = 2\,500$ → diagonale = $\sqrt{2\,500} = 50 \,$cm.</p>
+    <p>Mesurée : 49,5 cm. <strong>L'angle n'est PAS droit</strong> (écart 5 mm).</p>
+    <p>Inès doit <strong>reprendre l'équerrage</strong> : repousser un panneau de quelques mm jusqu'à obtenir 50 cm exact.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Quel angle obtient-on avec une diagonale de 49,5 cm au lieu de 50 cm ? Donner une indication intuitive (légèrement aigu, presque droit, très oblique…).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$49,5 < 50$ → le 3<sup>e</sup> côté est <strong>plus court</strong> que prévu → l'angle est <strong>légèrement aigu</strong> (< 90°).</p>
+    <p>Avec une calculatrice : angle ≈ 88,7°. Écart de ~1,3° : visible à l'œil sur une étagère ! Le caisson serait « tordu ».</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Le client souhaite un caisson <strong>plus grand</strong>, à l'échelle. Si on multiplie chaque dimension par 1,2, par quel coefficient le <strong>volume</strong> est-il multiplié ? Et la <strong>surface de placage</strong> ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Volume : ×$1,2^3 = $ <strong>×1,728</strong>. Nouveau volume : $160 \times 1,728 \approx 277 \,$L.</p>
+    <p>Surface : ×$1,2^2 = $ <strong>×1,44</strong>. Nouvelle surface : $1,84 \times 1,44 \approx 2,65 \,$m² (placage).</p>
+    <p>Quand on multiplie les dimensions par $k$ : surface ×$k^2$, volume ×$k^3$.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Inès doit fabriquer un <strong>second caisson identique</strong> dont la diagonale du plateau bas (de coin à coin) doit valoir exactement la même que le premier. Calculer cette diagonale (Pythagore avec $L = 80$ et $l = 40$).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$d = \sqrt{80^2 + 40^2} = \sqrt{6\,400 + 1\,600} = \sqrt{8\,000}$.</p>
+    <p>$d \approx 89,4 \,$cm.</p>
+    <p>C'est une mesure de référence pour vérifier que les 2 caissons sont rigoureusement identiques.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger en 5 lignes la <strong>fiche de fabrication</strong> du caisson avec les contrôles de cotes et d'équerrage.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Atelier Lyon — Fiche fabrication caisson · 7 mai 2026</strong><br>
+      • <strong>Cotes :</strong> 80 × 40 × 50 cm — volume utile 160 L, surface ext 1,84 m².<br>
+      • <strong>Placage chêne :</strong> 2 m² commandés (chutes 8 %), coût 64 €.<br>
+      • <strong>Contrôle équerrage :</strong> méthode 3-4-5 → diagonale doit valoir 50 cm.<br>
+      • <strong>Diagonale plateau :</strong> $\sqrt{80^2 + 40^2} \approx 89,4$ cm (référence).<br>
+      • <strong>Tolérance :</strong> ± 1 mm. Au-delà, redresser avant collage final.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Inès veut tracer une <strong>séparation interne oblique</strong> dans le caisson, de coin haut-gauche à coin bas-droit. Calculer la longueur de cette diagonale (la grande, en 3D : longueur 80, largeur 40, hauteur 50).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Diagonale 3D : $D = \sqrt{L^2 + l^2 + h^2} = \sqrt{80^2 + 40^2 + 50^2} = \sqrt{6\,400 + 1\,600 + 2\,500} = \sqrt{10\,500}$.</p>
+    <p>$D \approx $ <strong>102,5 cm</strong>.</p>
+    <p>Application : pose d'un tirant de renfort en diagonale dans une grande caisse.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Volume parallélépipède rectangle :</strong> $V = L \times l \times h$.</li>
+    <li><strong>Surface totale (6 faces) :</strong> $S = 2(Ll + Lh + lh)$.</li>
+    <li><strong>Conversions :</strong> 1 dm³ = 1 L ; 1 m³ = 1 000 L ; 1 m² = 10 000 cm².</li>
+    <li><strong>Pythagore :</strong> vérification d'équerre (3-4-5 ou autre).</li>
+    <li><strong>Agrandissement coefficient $k$ :</strong> longueurs ×$k$, surfaces ×$k^2$, volumes ×$k^3$.</li>
+    <li><strong>Application pro :</strong> dimensionnement, contrôle qualité, devis placage.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §2 (Aires), §3 (Volumes), §4 (Pythagore) et §7 (Conversions) de la leçon Ch06.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

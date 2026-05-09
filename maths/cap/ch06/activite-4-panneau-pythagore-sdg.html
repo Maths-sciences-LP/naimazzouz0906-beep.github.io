@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 4 – Diagonale et aire d'un panneau – CAP SDG</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#b45309;--p-bg:#fffbeb;--p-border:#fde68a}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-cap.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 4 – Diagonale et surface d'un panneau enseigne <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 6 — Géométrie | CAP SDG (Signalétique et Décors Graphiques) | Mathématiques | ⏱ 35 min</p>
+  <p class="maj">Dernière mise à jour : 7 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Calculer le périmètre et l'aire d'un rectangle et d'un trapèze</li>
+    <li>Appliquer le théorème de Pythagore (diagonale d'un panneau)</li>
+    <li>Vérifier l'équerrage d'un panneau découpé</li>
+    <li>Convertir des unités d'aire</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – pose d'un panneau enseigne sur façade</h2>
+  <p><em>Sami, apprenti en signalétique chez « Couleurs Vives » à Marseille, prépare un panneau d'enseigne pour une boutique de prêt-à-porter. La gérante veut une enseigne en forme de trapèze (plus large en haut). Sami doit calculer la surface, la diagonale du panneau (pour la fixation), et choisir la quantité de profilé alu pour l'encadrement.</em></p>
+
+  <h3>Document 1 — Schéma du panneau trapézoïdal</h3>
+  <div class="svg-wrap">
+  <svg viewBox="0 0 380 220" width="380" height="220" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="60,40 320,40 280,180 100,180" fill="#fbbf24" stroke="#b45309" stroke-width="3"/>
+    <text x="190" y="115" text-anchor="middle" font-size="20" font-weight="700" fill="#92400e">CHIC &amp; CO</text>
+    <line x1="60" y1="30" x2="320" y2="30" stroke="#1f2937" stroke-width="1"/>
+    <text x="190" y="22" text-anchor="middle" font-size="11" fill="#1f2937">B = 260 cm</text>
+    <line x1="100" y1="190" x2="280" y2="190" stroke="#1f2937" stroke-width="1"/>
+    <text x="190" y="205" text-anchor="middle" font-size="11" fill="#1f2937">b = 180 cm</text>
+    <line x1="50" y1="40" x2="50" y2="180" stroke="#1f2937" stroke-width="1"/>
+    <text x="40" y="115" text-anchor="middle" font-size="11" fill="#1f2937" transform="rotate(-90,40,115)">h = 140 cm</text>
+    <line x1="60" y1="40" x2="280" y2="180" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,3"/>
+    <text x="200" y="125" font-size="10" fill="#dc2626" font-weight="700">Diagonale (à calculer)</text>
+  </svg>
+  </div>
+
+  <h3>Document 2 — Cotes du trapèze</h3>
+  <ul>
+    <li>Grande base $B$ = <strong>260 cm</strong> (haut).</li>
+    <li>Petite base $b$ = <strong>180 cm</strong> (bas).</li>
+    <li>Hauteur $h$ = <strong>140 cm</strong>.</li>
+  </ul>
+
+  <h3>Document 3 — Tarifs</h3>
+  <ul>
+    <li>Adhésif imprimé : <strong>180 €/m²</strong>.</li>
+    <li>Profilé alu : <strong>15 €/m</strong>.</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quelle est la surface du panneau, la longueur de profilé alu pour l'encadrement, et la longueur de la diagonale (pour la fixation murale) ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>L'<strong>aire d'un trapèze</strong> est : $A = \dfrac{(B + b) \times h}{2}$. Calculer l'aire du panneau en cm² puis en m².</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$A = \dfrac{(260 + 180) \times 140}{2} = \dfrac{440 \times 140}{2} = \dfrac{61\,600}{2} = $ <strong>30 800 cm²</strong>.</p>
+    <p>En m² : $30\,800 \div 10\,000 = $ <strong>3,08 m²</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le <strong>coût de l'adhésif imprimé</strong> pour ce panneau (180 €/m², chutes négligées).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$3,08 \times 180 = $ <strong>554,40 €</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Pour calculer la <strong>longueur des côtés obliques</strong> du trapèze, on utilise Pythagore. Le « décrochement » horizontal de chaque côté est $\dfrac{B - b}{2} = \dfrac{260 - 180}{2} = 40 \,$cm. Quelle est la longueur d'un côté oblique ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Triangle rectangle : côtés 40 cm (horizontal) et 140 cm (vertical).</p>
+    <p>$c = \sqrt{40^2 + 140^2} = \sqrt{1\,600 + 19\,600} = \sqrt{21\,200} \approx $ <strong>145,6 cm</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Calculer le <strong>périmètre</strong> du panneau (somme des 4 côtés). Quelle longueur de profilé alu faut-il prévoir, en ajoutant 5 % pour les coupes d'onglet ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Périmètre = $260 + 180 + 2 \times 145,6 = 731,2 \,$cm = <strong>7,31 m</strong>.</p>
+    <p>Avec marge 5 % : $7,31 \times 1,05 = 7,68 \,$m → commander <strong>7,70 m</strong> de profilé.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Calculer la <strong>diagonale</strong> du panneau (du coin haut-gauche au coin bas-droit). On peut considérer le « rectangle englobant » de 260 cm de large et 140 cm de haut.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Diagonale = $\sqrt{260^2 + 140^2} = \sqrt{67\,600 + 19\,600} = \sqrt{87\,200} \approx $ <strong>295,3 cm</strong>.</p>
+    <p>Soit ≈ 2,95 m. Mesure utile pour la fixation diagonale (sécurité, charge).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Sami veut <strong>vérifier l'équerrage</strong> du panneau lors de la pose : il mesure les <strong>2 diagonales</strong>. Si le panneau est rectangulaire (et non trapézoïdal), elles doivent être égales. Pour le trapèze, comment vérifier la <strong>symétrie</strong> ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour un trapèze <strong>isocèle</strong> (côtés obliques égaux), les <strong>2 diagonales</strong> doivent être égales aussi.</p>
+    <p>Diag 1 (haut-gauche → bas-droit) ≈ 295,3 cm — Diag 2 (haut-droit → bas-gauche) ≈ 295,3 cm.</p>
+    <p>Si les 2 diagonales diffèrent → panneau dissymétrique, à recouper.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Sami calcule le <strong>devis total</strong> (adhésif + profilé alu). Le client a un budget de 700 € HT. Le devis tient-il dans le budget ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Adhésif : 554,40 €. Alu : $7,70 \times 15 = 115,50 \,€$.</p>
+    <p>Total HT = $554,40 + 115,50 = $ <strong>669,90 €</strong>. Marge : ~30 €.</p>
+    <p><strong>Budget OK</strong>. Le client peut financer l'opération.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger en 5 lignes le <strong>devis détaillé</strong> que Sami remet à la gérante de la boutique.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Couleurs Vives Marseille — Devis enseigne « CHIC & CO » · 7 mai 2026</strong><br>
+      • <strong>Forme :</strong> trapèze isocèle, B = 260 cm, b = 180 cm, h = 140 cm.<br>
+      • <strong>Surface :</strong> 3,08 m² → adhésif imprimé 554,40 € HT.<br>
+      • <strong>Encadrement :</strong> profilé alu 7,70 m → 115,50 € HT.<br>
+      • <strong>Diagonale fixation :</strong> 2,95 m (équerrage à contrôler par 2 diagonales).<br>
+      • <strong>Total HT :</strong> 669,90 € (dans le budget 700 €). Pose comprise.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Si la gérante demande à <strong>doubler les dimensions</strong> du panneau (B, b, h ×2), comment évoluent l'aire et le périmètre ? Calculer le nouveau coût adhésif.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Périmètre × 2 (linéaire). Aire × $2^2 = $ <strong>×4</strong>.</p>
+    <p>Nouvelle aire : $3,08 \times 4 = 12,32 \,$m². Coût : $12,32 \times 180 = $ <strong>2 217,60 €</strong>.</p>
+    <p>Multiplié par 4 ! La gérante doit revoir son budget ou redimensionner.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Aire trapèze :</strong> $A = \dfrac{(B + b) \times h}{2}$.</li>
+    <li><strong>Pythagore :</strong> dans un triangle rectangle, $\text{hyp}^2 = c_1^2 + c_2^2$.</li>
+    <li><strong>Diagonale d'un rectangle :</strong> $d = \sqrt{L^2 + l^2}$.</li>
+    <li><strong>Conversion d'aire :</strong> 1 m² = 10 000 cm².</li>
+    <li>Pour un trapèze isocèle, les 2 <strong>diagonales</strong> sont égales (test d'équerrage / symétrie).</li>
+    <li><strong>Application pro :</strong> dimensionnement enseigne, devis matière, contrôle qualité pose.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §2 (Aires), §4 (Pythagore) et §7 (Conversions d'unités) de la leçon Ch06.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
