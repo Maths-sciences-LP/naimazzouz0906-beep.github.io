@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Activité 2 – Volume ballon ECS et Pythagore – CAP MIT</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#b45309;--p-bg:#fffbeb;--p-border:#fde68a}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-cap.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 2 – Dimensionner un ballon d'eau chaude et tirer un tube en oblique <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 6 — Géométrie | CAP MIT (Métiers Installation Thermique) | Mathématiques | ⏱ 35 min</p>
+  <p class="maj">Dernière mise à jour : 7 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Calculer le volume d'un cylindre</li>
+    <li>Convertir m³ ↔ L</li>
+    <li>Appliquer le théorème de Pythagore en contexte professionnel</li>
+    <li>Vérifier la cohérence d'une dimension</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – installation chez un particulier</h2>
+  <p><em>Karim, apprenti chauffagiste à Rennes, doit installer un ballon d'eau chaude cylindrique de 200 L de capacité affichée. Le ballon est posé en hauteur dans le placard et il faut tirer un tube de cuivre du ballon vers le distributeur central, en passant en oblique pour éviter une poutre.</em></p>
+
+  <h3>Document 1 — Caractéristiques du ballon</h3>
+  <ul>
+    <li>Forme : cylindre vertical.</li>
+    <li>Diamètre intérieur : <strong>50 cm</strong>.</li>
+    <li>Hauteur intérieure : <strong>1,02 m</strong>.</li>
+    <li>Capacité affichée constructeur : <strong>200 L</strong>.</li>
+  </ul>
+
+  <h3>Document 2 — Schéma du raccordement</h3>
+  <div class="svg-wrap">
+  <svg viewBox="0 0 380 220" width="380" height="220" xmlns="http://www.w3.org/2000/svg">
+    <rect x="40" y="30" width="60" height="160" fill="#e5e7eb" stroke="#475569" stroke-width="2"/>
+    <ellipse cx="70" cy="30" rx="30" ry="8" fill="#9ca3af" stroke="#475569" stroke-width="2"/>
+    <ellipse cx="70" cy="190" rx="30" ry="8" fill="#9ca3af" stroke="#475569" stroke-width="2"/>
+    <text x="70" y="110" text-anchor="middle" font-size="11" font-weight="700">Ballon</text>
+    <text x="70" y="125" text-anchor="middle" font-size="10">200 L</text>
+    <line x1="100" y1="60" x2="280" y2="160" stroke="#dc2626" stroke-width="3"/>
+    <text x="190" y="105" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="700">Tube cuivre</text>
+    <text x="100" y="55" font-size="9" fill="#dc2626">Sortie ballon</text>
+    <rect x="270" y="155" width="80" height="40" fill="#fde68a" stroke="#92400e" stroke-width="2"/>
+    <text x="310" y="180" text-anchor="middle" font-size="11" font-weight="700">Distrib.</text>
+    <line x1="100" y1="60" x2="280" y2="60" stroke="#475569" stroke-dasharray="4,3"/>
+    <line x1="280" y1="60" x2="280" y2="160" stroke="#475569" stroke-dasharray="4,3"/>
+    <text x="190" y="55" text-anchor="middle" font-size="10" fill="#475569">L horizontal = 180 cm</text>
+    <text x="290" y="115" font-size="10" fill="#475569" transform="rotate(90,290,115)">h vert. = 100 cm</text>
+  </svg>
+  </div>
+
+  <h3>Document 3 — Formules utiles</h3>
+  <ul>
+    <li>Volume d'un cylindre : $V = \pi \cdot r^2 \cdot h$ (avec $r$ = rayon, $h$ = hauteur).</li>
+    <li>Théorème de Pythagore : dans un triangle rectangle d'hypoténuse $c$, $c^2 = a^2 + b^2$.</li>
+    <li>$1 \,$m³ = 1 000 L. $1 \,$dm³ = 1 L.</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> La capacité affichée du ballon est-elle juste ? Quelle longueur de cuivre faut-il commander pour le tube oblique ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Quel est le <strong>rayon</strong> du ballon en m ? Et la <strong>hauteur</strong> ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Diamètre 50 cm = 0,50 m → rayon $r = $ <strong>0,25 m</strong>.</p>
+    <p>Hauteur $h = $ <strong>1,02 m</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le <strong>volume</strong> du ballon en m³ avec $\pi \approx 3,14$.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$V = \pi \cdot r^2 \cdot h = 3,14 \times 0,25^2 \times 1,02 = 3,14 \times 0,0625 \times 1,02 \approx $ <strong>0,200 m³</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Convertir le volume en <strong>litres</strong>. La capacité affichée (200 L) est-elle exacte ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$0,200 \,$m³ = $200$ L (car 1 m³ = 1 000 L).</p>
+    <p>La capacité affichée est <strong>exacte</strong> ✓.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>D'après le schéma, le tube de cuivre forme l'<strong>hypoténuse</strong> d'un triangle rectangle de côtés horizontal 1,80 m et vertical 1,00 m. Calculer la longueur du tube nécessaire (Pythagore).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$c^2 = 1,80^2 + 1,00^2 = 3,24 + 1,00 = 4,24$.</p>
+    <p>$c = \sqrt{4,24} \approx $ <strong>2,06 m</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Karim prévoit <strong>10 % de marge</strong> pour les coudes et la coupe. Quelle longueur de tube faut-il commander ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$2,06 \times 1,10 = 2,266 \,$m → arrondir à <strong>2,30 m</strong> (mesure pratique).</p>
+    <p>Coupes en barres de 2,5 m de cuivre standard : 1 barre suffit, chute = 20 cm.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Le client demande à Karim de <strong>cheminer en horizontal puis vertical</strong> au lieu de l'oblique (en passant par le coin du placard). Quelle serait alors la longueur de tube nécessaire ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$1,80 + 1,00 = $ <strong>2,80 m</strong> (somme des deux côtés du rectangle).</p>
+    <p>Avec marge 10 % : 3,08 m → 3,10 m. <strong>Plus long de 80 cm</strong> que l'oblique.</p>
+    <p>L'oblique économise du cuivre, mais nécessite 2 raccords coudés en moins.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Le cuivre coûte <strong>14 €/m</strong> et un raccord coudé <strong>3,50 €</strong>. Comparer les coûts des deux options (oblique vs cheminement angulaire).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Option oblique : $2,30 \times 14 = 32,20 \,€$ (cuivre seul, 0 coude supplémentaire).</p>
+    <p>Option angulaire : $3,10 \times 14 + 1 \times 3,50 = 43,40 + 3,50 = 46,90 \,€$ (cuivre + 1 coude 90°).</p>
+    <p>Économie option oblique : $46,90 - 32,20 = $ <strong>14,70 €</strong> (~31 %).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger en 5 lignes la <strong>fiche d'intervention</strong> que Karim donne au client pour l'installation.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>ProThermie Rennes — Intervention installation ballon ECS · 7 mai 2026</strong><br>
+      • <strong>Ballon :</strong> cylindre Ø 50 cm, h = 1,02 m, capacité 200 L vérifiée par calcul ($\pi r^2 h$).<br>
+      • <strong>Cheminement tube :</strong> oblique entre ballon et distributeur (Pythagore).<br>
+      • <strong>Longueur :</strong> $\sqrt{1,80^2 + 1,00^2} = 2,06$ m + 10 % = 2,30 m commandés.<br>
+      • <strong>Coût matière :</strong> 32,20 € (économie 14,70 € vs cheminement angulaire).<br>
+      • <strong>Garantie :</strong> 5 ans cuivre, étanchéité testée à 6 bars en sortie chantier.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Le client souhaite installer un ballon plus grand (<strong>300 L</strong>). Sachant que la hauteur reste 1,02 m, quel doit être le nouveau diamètre intérieur ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$V = \pi r^2 h$ → $r^2 = \dfrac{V}{\pi h} = \dfrac{0,300}{3,14 \times 1,02} \approx 0,0936$.</p>
+    <p>$r = \sqrt{0,0936} \approx 0,306 \,$m → <strong>diamètre ≈ 61 cm</strong>.</p>
+    <p>Soit ~11 cm de plus en diamètre. Vérifier que le placard est assez large.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Volume cylindre :</strong> $V = \pi \cdot r^2 \cdot h$.</li>
+    <li><strong>Conversion :</strong> $1 \,$m³ = $1\,000$ L = $1\,000$ dm³.</li>
+    <li><strong>Pythagore :</strong> dans un triangle rectangle, $\text{hyp}^2 = c_1^2 + c_2^2$.</li>
+    <li>L'oblique est <strong>plus court</strong> que la somme des deux côtés (cheminement direct).</li>
+    <li>Toujours prévoir une <strong>marge de coupe</strong> (5-15 % selon les cas).</li>
+    <li><strong>Application pro :</strong> dimensionnement, devis matière, optimisation tracé.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §3 (Volumes), §4 (Pythagore) et §7 (Conversions) de la leçon Ch06.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
