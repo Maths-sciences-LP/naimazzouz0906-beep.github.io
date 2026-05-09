@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Activité 2 – Température d'un ballon d'ECS – CAP MIT</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#b45309;--p-bg:#fffbeb;--p-border:#fde68a}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-cap.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 2 – Étudier la température d'un ballon d'eau chaude <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 5 — Fonctions | CAP MIT (Métiers Installation Thermique) | Mathématiques | ⏱ 35 min</p>
+  <p class="maj">Dernière mise à jour : 7 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Lire un tableau de valeurs et tracer une courbe</li>
+    <li>Lire l'image et l'antécédent sur un graphique</li>
+    <li>Identifier une fonction affine et calculer son taux d'évolution</li>
+    <li>Interpréter une fonction dans un contexte thermique</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – chauffe d'un ballon d'eau chaude sanitaire</h2>
+  <p><em>Karim, apprenti chauffagiste à Strasbourg, intervient chez un client qui se plaint de la lenteur de chauffe de son ballon d'eau chaude (ECS). Il branche un thermomètre dans le ballon et relève la température toutes les 15 minutes pour vérifier le bon fonctionnement de la résistance électrique de 3 kW.</em></p>
+
+  <h3>Document 1 — Relevés de Karim</h3>
+  <table>
+    <thead><tr><th>Temps t (min)</th><th>0</th><th>15</th><th>30</th><th>45</th><th>60</th><th>75</th></tr></thead>
+    <tbody><tr><td>Température T (°C)</td><td>15</td><td>23</td><td>31</td><td>39</td><td>47</td><td>55</td></tr></tbody>
+  </table>
+
+  <h3>Document 2 — Graphique fourni</h3>
+  <div class="svg-wrap">
+  <svg viewBox="0 0 380 240" width="380" height="240" xmlns="http://www.w3.org/2000/svg">
+    <line x1="50" y1="200" x2="350" y2="200" stroke="#1f2937" stroke-width="1.5"/>
+    <line x1="50" y1="200" x2="50" y2="20" stroke="#1f2937" stroke-width="1.5"/>
+    <text x="200" y="225" text-anchor="middle" font-size="11">Temps t (min)</text>
+    <text x="20" y="110" text-anchor="middle" font-size="11" transform="rotate(-90,20,110)">T (°C)</text>
+    <g font-size="9" fill="#475569">
+      <line x1="50" y1="200" x2="50" y2="205" stroke="#1f2937"/><text x="50" y="215">0</text>
+      <line x1="100" y1="200" x2="100" y2="205" stroke="#1f2937"/><text x="100" y="215">15</text>
+      <line x1="150" y1="200" x2="150" y2="205" stroke="#1f2937"/><text x="150" y="215">30</text>
+      <line x1="200" y1="200" x2="200" y2="205" stroke="#1f2937"/><text x="200" y="215">45</text>
+      <line x1="250" y1="200" x2="250" y2="205" stroke="#1f2937"/><text x="250" y="215">60</text>
+      <line x1="300" y1="200" x2="300" y2="205" stroke="#1f2937"/><text x="300" y="215">75</text>
+      <line x1="45" y1="200" x2="50" y2="200" stroke="#1f2937"/><text x="40" y="203" text-anchor="end">0</text>
+      <line x1="45" y1="170" x2="50" y2="170" stroke="#1f2937"/><text x="40" y="173" text-anchor="end">15</text>
+      <line x1="45" y1="140" x2="50" y2="140" stroke="#1f2937"/><text x="40" y="143" text-anchor="end">30</text>
+      <line x1="45" y1="110" x2="50" y2="110" stroke="#1f2937"/><text x="40" y="113" text-anchor="end">45</text>
+      <line x1="45" y1="80" x2="50" y2="80" stroke="#1f2937"/><text x="40" y="83" text-anchor="end">60</text>
+    </g>
+    <polyline points="50,170 100,154 150,138 200,122 250,106 300,90" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <g fill="#dc2626">
+      <circle cx="50" cy="170" r="3"/>
+      <circle cx="100" cy="154" r="3"/>
+      <circle cx="150" cy="138" r="3"/>
+      <circle cx="200" cy="122" r="3"/>
+      <circle cx="250" cy="106" r="3"/>
+      <circle cx="300" cy="90" r="3"/>
+    </g>
+    <text x="320" y="92" font-size="10" fill="#dc2626" font-weight="700">T(t)</text>
+  </svg>
+  <p style="text-align:center;font-size:.85em;color:#475569">Échelle : 1 cm = 15 min en abscisse, 1 cm = 15 °C en ordonnée.</p>
+  </div>
+
+  <h3>Document 3 — Spécifications constructeur</h3>
+  <p>Le ballon doit atteindre <strong>60 °C</strong> en moins de <strong>1 h 30</strong> pour respecter la norme constructeur (3 kW, ballon 200 L).</p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Le ballon respecte-t-il la norme constructeur ? Au bout de combien de temps atteint-il 60 °C ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>D'après le tableau, quelle est l'<strong>image</strong> de $t = 30$ min ? Et l'<strong>antécédent</strong> de 47 °C ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Image de 30 : $T(30) = $ <strong>31 °C</strong>.</p>
+    <p>Antécédent de 47 : $t = $ <strong>60 min</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer l'<strong>augmentation de température</strong> entre $t = 0$ et $t = 75$ min. Quelle est l'augmentation par minute (taux d'évolution) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Augmentation totale : $55 - 15 = 40 \,$°C en 75 min.</p>
+    <p>Taux par minute : $\dfrac{40}{75} \approx $ <strong>0,53 °C/min</strong>.</p>
+    <p>Vérification entre 0 et 15 min : $\dfrac{23-15}{15} = \dfrac{8}{15} \approx 0,53 \,$°C/min ✓ (constant → fonction affine).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>La température T en fonction du temps $t$ peut s'écrire $T(t) = a \cdot t + b$ (fonction affine). Identifier $a$ (taux par minute) et $b$ (température initiale).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$a = \dfrac{8}{15} \approx 0,533$ °C/min (pente).</p>
+    <p>$b = 15$ °C (température au départ, $t = 0$).</p>
+    <p>Donc <strong>$T(t) = 0,533 \cdot t + 15$</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>En utilisant la fonction $T(t) = 0,533 \cdot t + 15$, calculer la température prévue au bout de 90 min (1 h 30).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$T(90) = 0,533 \times 90 + 15 = 48 + 15 = $ <strong>63 °C</strong>.</p>
+    <p>(Avec $a = 8/15$ exact : $T(90) = 8 \times 6 + 15 = 48 + 15 = 63 \,$°C.)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Au bout de combien de minutes la température atteint-elle <strong>60 °C</strong> ? Résoudre $0,533 t + 15 = 60$.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$0,533 t = 60 - 15 = 45$ → $t = \dfrac{45}{0,533} \approx 84,4$ min.</p>
+    <p>Avec $a = 8/15$ : $\dfrac{8}{15} t = 45$ → $t = \dfrac{45 \times 15}{8} = \dfrac{675}{8} = $ <strong>84,4 min ≈ 1 h 24</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Le ballon respecte-t-il la <strong>norme constructeur</strong> (60 °C en moins d'1 h 30) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>1 h 30 = 90 min ; le ballon atteint 60 °C en 84,4 min. <strong>OUI</strong>, la norme est respectée (avec ~6 min de marge).</p>
+    <p>La résistance fonctionne correctement, l'isolation aussi (pas de perte excessive).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Le client se plaint pourtant que sa douche soit tiède. Quelle peut être l'origine du problème selon Karim, si la chauffe est conforme ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Hypothèses :</p>
+    <ul>
+      <li>Le <strong>thermostat</strong> est mal réglé (consigne fixée à 50 °C au lieu de 60).</li>
+      <li>Le ballon est <strong>sous-dimensionné</strong> par rapport aux usages (douche puis lave-linge → vide réservoir).</li>
+      <li>Une <strong>fuite</strong> ou un mélangeur défectueux apporte de l'eau froide dans la sortie.</li>
+    </ul>
+    <p>La fonction T(t) est conforme : le problème n'est pas la chauffe mais l'usage ou le réglage.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger en 5 lignes le <strong>compte-rendu d'intervention</strong> de Karim pour son patron et le client.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>ProThermie Strasbourg — Intervention ballon ECS · 7 mai 2026</strong><br>
+      • <strong>Mesures :</strong> 6 relevés sur 75 min, courbe linéaire de pente 0,53 °C/min.<br>
+      • <strong>Modèle :</strong> $T(t) = 0,533 \cdot t + 15$ (chauffe régulière, conforme à un fonctionnement nominal).<br>
+      • <strong>Estimation :</strong> 60 °C atteints en 84 min, &lt; 1 h 30 (norme respectée).<br>
+      • <strong>Diagnostic :</strong> ballon en bon état. Pb signalé probablement lié au thermostat ou usage.<br>
+      • <strong>Recommandations :</strong> régler thermostat à 60 °C, vérifier mitigeur, sensibiliser le client à la consommation séquentielle.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Si Karim remplace la résistance par une <strong>plus puissante</strong> (4,5 kW au lieu de 3 kW), la pente est multipliée par 1,5. Quel sera le nouveau temps pour atteindre 60 °C ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Nouvelle pente : $a' = 0,533 \times 1,5 = 0,8 \,$°C/min.</p>
+    <p>Équation : $0,8 t + 15 = 60$ → $0,8 t = 45$ → $t = $ <strong>56,25 min ≈ 56 min</strong>.</p>
+    <p>Gain de temps : ~28 min. Mais consommation électrique +50 % par cycle de chauffe.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Image :</strong> $f(x)$, valeur prise par la fonction.</li>
+    <li><strong>Antécédent :</strong> valeur $x$ qui donne une image donnée.</li>
+    <li><strong>Fonction affine :</strong> $f(x) = a \cdot x + b$ (graphique = droite).</li>
+    <li><strong>$a$ :</strong> taux d'évolution (pente de la droite).</li>
+    <li><strong>$b$ :</strong> ordonnée à l'origine (valeur en $x = 0$).</li>
+    <li><strong>Application pro :</strong> évolution d'une grandeur dans le temps (température, niveau, vitesse…).</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §3 (Tableau de valeurs), §4 (Représentation graphique) et §6 (Fonction linéaire/affine) de la leçon Ch05.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
