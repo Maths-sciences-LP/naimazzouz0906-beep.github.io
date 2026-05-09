@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Activité 3 – Saturateur bois et dilution – CAP Ébéniste</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-cap.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 3 – Diluer un vernis pour pulvérisation <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 4 — Chimie | CAP Ébéniste | Physique-Chimie | ⏱ 35 min</p>
+  <p class="maj">Dernière mise à jour : 7 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Calculer une concentration massique</li>
+    <li>Effectuer une dilution avec facteur connu</li>
+    <li>Comprendre la composition d'un vernis (résine/solvant/pigments)</li>
+    <li>Mesurer le pH d'un produit de finition</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – application d'un vernis au pistolet</h2>
+  <p><em>Inès, apprentie ébéniste à Bordeaux, doit appliquer un vernis polyuréthane au pistolet. Le vernis livré en pot est trop épais (visqueux) pour passer dans la buse. Inès doit le diluer avec du diluant universel selon le ratio fabricant. Elle calcule aussi la quantité totale nécessaire pour 4 m² de surface.</em></p>
+
+  <h3>Document 1 — Données vernis</h3>
+  <ul>
+    <li>Vernis pur : <strong>50 % d'extrait sec</strong> (résine + pigments) = 500 g/L.</li>
+    <li>Couvrance recommandée : <strong>120 g/m²</strong> de vernis pur.</li>
+    <li>Surface à vernir : <strong>4 m²</strong>.</li>
+    <li>Pot disponible : <strong>1 L</strong>.</li>
+  </ul>
+
+  <h3>Document 2 — Dilution recommandée</h3>
+  <ul>
+    <li>Pour <strong>pulvérisation</strong> : diluer à 80 % vernis + 20 % diluant.</li>
+    <li>Pour <strong>brosse</strong> : pas de dilution (vernis pur).</li>
+    <li>Diluant universel : sans extrait sec.</li>
+  </ul>
+
+  <h3>Document 3 — pH des produits</h3>
+  <ul>
+    <li>Vernis polyuréthane : pH = 6,5 (neutre).</li>
+    <li>Lessive Saint-Marc (nettoyage avant vernis) : pH = 11 (basique).</li>
+    <li>Cire d'abeille en suspension : pH = 7 (neutre).</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Combien de vernis pur et de diluant Inès doit-elle préparer pour vernir 4 m² au pistolet ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Calculer la <strong>masse de vernis pur</strong> nécessaire pour 4 m² (couvrance 120 g/m²).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$m = 120 \times 4 = $ <strong>480 g</strong> de vernis pur.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Le vernis a un extrait sec de 50 % (densité ≈ 1, donc 500 g/L). Quel <strong>volume</strong> de vernis pur Inès doit-elle utiliser ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le vernis pur fait 1 000 g/L (densité ≈ 1).</p>
+    <p>$V = \dfrac{m}{\rho} = \dfrac{480}{1000} = $ <strong>0,48 L = 480 mL</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Pour la pulvérisation, on dilue 80 % vernis + 20 % diluant. Calculer le <strong>volume de diluant</strong> à ajouter aux 480 mL de vernis pur.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Si 480 mL = 80 % du total → 100 % = $\dfrac{480}{0,80} = 600 \,$mL.</p>
+    <p>Diluant : $600 - 480 = $ <strong>120 mL</strong>. Soit 1 part de diluant pour 4 parts de vernis.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Quel est le <strong>volume total</strong> de la solution diluée ? Et la <strong>concentration massique</strong> en extrait sec ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$V_{total} = 600 \,$mL = 0,6 L.</p>
+    <p>Masse extrait sec : 50 % × 480 g = 240 g.</p>
+    <p>$C_m = \dfrac{240}{0,6} = $ <strong>400 g/L</strong>.</p>
+    <p>(Au lieu de 500 g/L pour le vernis pur — dilué d'un facteur 1,25.)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Inès lit que le pH du vernis est <strong>neutre (≈ 6,5)</strong>. Pourquoi est-ce important pour le bois ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Un produit acide pourrait <strong>tacher</strong> ou <strong>brunir</strong> certains bois (chêne, châtaignier riches en tanins).</p>
+    <p>Un produit basique pourrait <strong>noircir</strong> le bois (réaction tanin + base, comme l'eau de javel).</p>
+    <p>Un pH neutre garantit l'absence de réaction et le respect des couleurs naturelles.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Inès doit nettoyer le bois avec de la lessive Saint-Marc (pH 11) avant vernis. Pourquoi faut-il <strong>rincer</strong> abondamment avant d'appliquer le vernis ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le pH 11 est <strong>très basique</strong>. Si on applique le vernis (neutre) sur un bois alcalin :</p>
+    <ul>
+      <li>Risque de <strong>réaction</strong> (cloques, blanchiment, accroche médiocre).</li>
+      <li>Le tanin du bois peut migrer (taches brunes).</li>
+    </ul>
+    <p>Rincer jusqu'à pH ≈ 7 (test au papier indicateur).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Inès a-t-elle assez avec son <strong>pot de 1 L</strong> de vernis pour la totalité de la commande (4 m²) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Besoin : 480 mL de vernis pur. Disponible : 1 000 mL.</p>
+    <p><strong>Largement suffisant</strong> : marge de 520 mL pour reprises éventuelles ou seconde couche.</p>
+    <p>Reste à acheter le diluant (120 mL minimum, prendre 250 mL pour avoir une marge).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger en 5 lignes la <strong>fiche préparation vernis</strong> qu'Inès affiche en cabine.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Atelier Bordeaux — Fiche préparation vernis polyuréthane · 7 mai 2026</strong><br>
+      • <strong>Surface :</strong> 4 m² → besoin 480 g vernis pur (couvrance 120 g/m²).<br>
+      • <strong>Dilution pulvérisation :</strong> 80 % vernis (480 mL) + 20 % diluant (120 mL) = 600 mL total.<br>
+      • <strong>Concentration extrait sec :</strong> 400 g/L (vernis dilué).<br>
+      • <strong>Préparation bois :</strong> nettoyer Saint-Marc puis rincer jusqu'à pH 7.<br>
+      • <strong>EPI :</strong> masque cartouche, gants, ventilation cabine ON.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Si Inès doit vernir <strong>2 couches</strong> (double passage), combien de vernis pur et de diluant doit-elle préparer ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$2 \times 480 = $ <strong>960 mL de vernis pur</strong> (rentre dans le pot 1 L → tout juste).</p>
+    <p>Diluant : $2 \times 120 = $ <strong>240 mL</strong>.</p>
+    <p>Recommandation : commander un 2<sup>e</sup> pot pour les retouches futures (consommation prévue ~96 % du pot).</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Concentration massique :</strong> $C_m = \dfrac{m}{V}$ (g/L).</li>
+    <li><strong>Dilution :</strong> on conserve la masse de soluté ($C_1 V_1 = C_2 V_2$).</li>
+    <li><strong>Couvrance :</strong> masse de produit par unité de surface (g/m²).</li>
+    <li><strong>pH du bois :</strong> rincer jusqu'à pH neutre avant vernis pour éviter tâches.</li>
+    <li><strong>Vernis dilué pour pulvérisation, pur pour brosse.</strong></li>
+    <li><strong>Application pro :</strong> finition bois, dilution, contrôle pH, calcul matière.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §2 (pH), §3 (Dilution), §4 (Concentration) de la leçon Ch04.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
