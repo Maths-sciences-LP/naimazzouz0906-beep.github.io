@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Activité 3 – Coût de fabrication de tabourets – CAP Ébéniste</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#b45309;--p-bg:#fffbeb;--p-border:#fde68a}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-cap.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 3 – Calculer le coût de fabrication de tabourets <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 5 — Fonctions | CAP Ébéniste | Mathématiques | ⏱ 35 min</p>
+  <p class="maj">Dernière mise à jour : 7 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Distinguer fonction linéaire et fonction affine</li>
+    <li>Construire et lire un tableau de valeurs</li>
+    <li>Tracer la représentation graphique de $C(n) = a \cdot n + b$</li>
+    <li>Calculer un seuil de rentabilité</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – atelier de fabrication artisanale</h2>
+  <p><em>Inès, apprentie ébéniste à Strasbourg, fabrique des tabourets en hêtre pour vendre sur les marchés. Elle veut connaître son coût de production exact pour fixer un prix de vente cohérent. L'atelier de son maître facture à Inès des frais fixes (loyer, électricité, machines amorties) et des frais variables (matière première, finition, vis).</em></p>
+
+  <h3>Document 1 — Coûts mensuels</h3>
+  <ul>
+    <li>Loyer atelier (part Inès) : <strong>120 € / mois</strong>.</li>
+    <li>Coût matière + finition par tabouret : <strong>22 €</strong>.</li>
+  </ul>
+
+  <h3>Document 2 — Tableau de coûts à compléter</h3>
+  <table>
+    <thead><tr><th>Nombre de tabourets $n$</th><th>0</th><th>5</th><th>10</th><th>15</th><th>20</th><th>30</th></tr></thead>
+    <tbody><tr><td>Coût total $C(n)$ (€)</td><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td></tr></tbody>
+  </table>
+
+  <h3>Document 3 — Prix de vente</h3>
+  <p>Sur le marché, Inès vend chaque tabouret à <strong>40 €</strong> pièce. La <strong>recette</strong> mensuelle est donc $R(n) = 40 \cdot n$.</p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> À partir de combien de tabourets vendus Inès commence-t-elle à gagner de l'argent ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Exprimer la fonction <strong>coût total</strong> $C(n)$ (en €) en fonction du nombre $n$ de tabourets fabriqués.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>$C(n) = 22 \cdot n + 120$</strong>.</p>
+    <p>C'est une <strong>fonction affine</strong> ($n \neq 0$ donne $b \neq 0$). Pas linéaire car coefficient $b = 120 \neq 0$.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Compléter le tableau de valeurs.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>$n$</th><th>0</th><th>5</th><th>10</th><th>15</th><th>20</th><th>30</th></tr></thead>
+      <tbody><tr><td>$C(n)$ (€)</td><td>120</td><td>230</td><td>340</td><td>450</td><td>560</td><td>780</td></tr></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Pour 25 tabourets, calculer $C(25)$ et $R(25)$. Inès gagne-t-elle ou perd-elle ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$C(25) = 22 \times 25 + 120 = 550 + 120 = 670 \,€$.</p>
+    <p>$R(25) = 40 \times 25 = 1\,000 \,€$.</p>
+    <p>Bénéfice = $1\,000 - 670 = $ <strong>+330 €</strong>. Inès gagne de l'argent à 25 tabourets.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Tracer (mentalement ou sur cahier) les courbes de $C(n)$ et $R(n)$ pour $n$ entre 0 et 30. Que représente leur point d'intersection ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Les deux droites se croisent au <strong>seuil de rentabilité</strong> : c'est le nombre de tabourets pour lesquels recette = coût (bénéfice nul).</p>
+    <p>Avant ce point, Inès est en perte ; après, en bénéfice.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Calculer ce seuil de rentabilité en résolvant $C(n) = R(n)$.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$22n + 120 = 40n$</p>
+    <p>$120 = 40n - 22n = 18n$</p>
+    <p>$n = \dfrac{120}{18} \approx 6,67$.</p>
+    <p>Inès doit vendre <strong>au moins 7 tabourets par mois</strong> pour être rentable. À 6 tabourets : perte ; à 7 : bénéfice de $7 \times 40 - (22 \times 7 + 120) = 280 - 274 = 6 \,€$.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Exprimer le <strong>bénéfice</strong> $B(n)$ en fonction de $n$. Est-ce une fonction linéaire, affine ou autre ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$B(n) = R(n) - C(n) = 40n - (22n + 120) = 18n - 120$.</p>
+    <p>C'est une <strong>fonction affine</strong> de pente 18 (chaque tabouret rapporte 18 € de marge brute) et d'ordonnée à l'origine $-120$ (perte fixe).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Inès veut atteindre un bénéfice de <strong>500 € par mois</strong>. Combien de tabourets doit-elle vendre ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>$B(n) = 500$ → $18n - 120 = 500$ → $18n = 620$ → $n = \dfrac{620}{18} \approx 34,4$.</p>
+    <p>Il faut vendre au moins <strong>35 tabourets</strong>. Soit ~1 tabouret par jour ouvré sur 4 semaines.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger en 5 lignes la <strong>note d'analyse économique</strong> qu'Inès tient dans son cahier d'apprentie.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Atelier Strasbourg — Cahier d'apprentie Inès · 7 mai 2026</strong><br>
+      • <strong>Modèle économique :</strong> coût $C(n) = 22n + 120$ ; recette $R(n) = 40n$.<br>
+      • <strong>Bénéfice :</strong> $B(n) = 18n - 120$ (fonction affine, pente 18 €/tabouret).<br>
+      • <strong>Seuil de rentabilité :</strong> 7 tabourets par mois ($\approx 6,67$ exact).<br>
+      • <strong>Objectif 500 €/mois :</strong> 35 tabourets à fabriquer (rythme 1/jour ouvré).<br>
+      • <strong>Lever d'incertitude :</strong> trouver des marchés réguliers pour vendre plus de 35 tabourets.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Inès trouve un fournisseur de hêtre <strong>moins cher</strong> qui réduit le coût matière à 18 € par tabouret. Quel est le nouveau seuil de rentabilité ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Nouveau coût : $C(n) = 18n + 120$. Nouveau bénéfice : $B(n) = 22n - 120$.</p>
+    <p>Seuil : $22n = 120$ → $n = \dfrac{120}{22} \approx 5,5$ → <strong>6 tabourets</strong>.</p>
+    <p>Gain : 1 tabouret de moins par mois pour devenir rentable, et marge unitaire passe de 18 à 22 €.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Fonction linéaire :</strong> $f(x) = a \cdot x$ (passe par l'origine).</li>
+    <li><strong>Fonction affine :</strong> $f(x) = a \cdot x + b$ (avec $b \neq 0$).</li>
+    <li><strong>Coût d'une production :</strong> coût fixe + coût variable × quantité.</li>
+    <li><strong>Seuil de rentabilité :</strong> $C(n) = R(n)$ → équation à résoudre.</li>
+    <li><strong>Bénéfice :</strong> $B(n) = R(n) - C(n)$ — souvent affine.</li>
+    <li><strong>Application pro :</strong> tarification, décision d'investissement, viabilité économique.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §3 (Tableau de valeurs), §6 (Fonction linéaire/affine) et application au coût de production de la leçon Ch05.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
