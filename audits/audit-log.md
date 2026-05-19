@@ -1,5 +1,7 @@
 # Journal des audits
-**Dernière mise à jour** : 2026-05-10 (/check-quality physique-chimie/seconde/ch13 — confirmation 🟡 ds.html 0 visuel sur 13 questions Optique (réflexion/réfraction/fibre/prisme) alors que chapitre extrêmement visuel ; reste du chapitre globalement très bon (lecon riche en SVG/Chart.js/Canvas animé, exercices.html ratio 25 %, activité avec grand SVG pédagogique))
+**Dernière mise à jour** : 2026-05-19 (corrections appliquées sur physique-chimie/seconde/ch09 suite à /audit-chapter + relecture cours + relecture exercices : défonceuse 107→105 dB activité 4 et recalculs Q2/Q3/Q6/Q7/Q8/bonus, ajout défonceuse 105 dB tableau §3 leçon et Chart.js, retrait « scie à ruban » des cordes vibrantes §1, précision direction célérité bois §5, reformulation timbre §4, voix parlée nuancée §2, précision « moyenne sur 8 h » §3, lien Ch01 cliquable §7, lien retour sommaire harmonisé, timestamps `.maj` corrigés sur activités 2/3/4 et ajout sur activité 1, titre Activité 3 harmonisé index↔fichier, exercice 6 contexte ultrason corrigé : « paroi » → capteur de stationnement (340 m/s en air, physique cohérente))
+**Dernière mise à jour précédente** : 2026-05-19 (/audit-chapter physique-chimie/seconde/ch09 — focus activités)
+**Dernière mise à jour précédente** : 2026-05-10 (/check-quality physique-chimie/seconde/ch13 — confirmation 🟡 ds.html 0 visuel sur 13 questions Optique (réflexion/réfraction/fibre/prisme) alors que chapitre extrêmement visuel ; reste du chapitre globalement très bon (lecon riche en SVG/Chart.js/Canvas animé, exercices.html ratio 25 %, activité avec grand SVG pédagogique))
 
 Ce fichier est mis à jour automatiquement à chaque exécution d'un skill d'audit.
 
@@ -115,7 +117,7 @@ Confirmation 🟡 ciblée sur `ds.html` : 0 visuel pour 13 questions sur les tro
 | physique-chimie/seconde/ch06 | — | — | — | 2026-05-10 | 🟢 |
 | physique-chimie/seconde/ch07 | — | 2026-05-10 | — | 2026-05-10 | 🟡 |
 | physique-chimie/seconde/ch08 | — | — | — | 2026-05-10 | 🟢 |
-| physique-chimie/seconde/ch09 | — | — | — | 2026-05-10 | 🟢 |
+| physique-chimie/seconde/ch09 | 2026-05-19 | 2026-05-19 | — | 2026-05-10 | 🟢 |
 | physique-chimie/seconde/ch10 | — | — | — | 2026-05-10 | 🟢 |
 | physique-chimie/seconde/ch11 | — | — | 2026-04-06 | 2026-05-10 | 🟢 |
 | physique-chimie/seconde/ch12 | — | — | — | 2026-05-10 | 🟢 |
